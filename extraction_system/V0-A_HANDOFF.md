@@ -16,6 +16,7 @@ Deliver the smallest working GLiNER-BioMed to GLiREL zero-shot extraction pipeli
 - Declared GLiREL's missing `loguru` and DeBERTa tokenizer `protobuf` runtime dependencies; pinned the compatible released model stack without monkey patching.
 - Updated repository navigation, current architecture, and current product wording.
 - Kept all implementation work inside `extraction_system`; no BioRED evaluation or excluded subsystem was added.
+- Committed the V0-A implementation on branch `extraction_system` as `0ef9473` (`Implement V0-A biomedical extractor`).
 
 ## Verification already completed
 
@@ -27,13 +28,13 @@ Deliver the smallest working GLiNER-BioMed to GLiREL zero-shot extraction pipeli
 
 ## Outstanding
 
-- The working-tree changes have not been committed.
 - GPU execution was not exercised; the verified project environment used CPU PyTorch.
 - Extraction quality and production thresholds remain intentionally untuned. BioRED evaluation belongs to a later task.
+- The repository root has an unrelated untracked `C:\Projects\Biomed\.gitignore`; it is outside the `extraction_system` project boundary and must remain untouched unless explicitly brought into scope.
 
 ## Next action
 
-Review the V0-A working tree and, if accepted, commit it before starting a separately scoped evaluation task.
+Begin only the next explicitly assigned extraction-system task. Read `AGENTS.md` first, then load the linked current-truth documents as needed; do not start BioRED evaluation or remove retained environments/caches without an explicit request.
 
 ## Material files
 
@@ -43,6 +44,7 @@ Review the V0-A working tree and, if accepted, commit it before starting a separ
 - `tests/test_pipeline.py`
 - `pyproject.toml`
 - `uv.lock`
+- `TALIA_V0-A_COMPREHENSIVE_REPORT.md`
 
 ## Authoritative references
 
