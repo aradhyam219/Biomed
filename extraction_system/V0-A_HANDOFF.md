@@ -1,6 +1,9 @@
 # V0-A Working Biomedical Extractor — Active State
 
-Status: ready-for-review
+Status: superseded by `V0-B_HANDOFF.md`
+
+V0-A remains the production baseline. Continue current work from
+`V0-B_HANDOFF.md`; this file is retained only as the completed V0-A state.
 
 ## Goal
 
