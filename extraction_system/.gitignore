@@ -1,4 +1,5 @@
 .cache/
+.internal/handoffs/
 .python/
 .tools/
 .venv/
