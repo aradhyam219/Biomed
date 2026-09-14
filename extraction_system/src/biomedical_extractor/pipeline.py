@@ -44,6 +44,7 @@ class RelationModel(Protocol):
         threshold: float,
         ner: Sequence[Sequence[Any]],
         flat_ner: bool,
+        top_k: int,
     ) -> list[dict[str, Any]]: ...
 
 
@@ -53,6 +54,7 @@ class ExtractionConfig:
     relation_labels: tuple[str, ...] = DEFAULT_RELATION_LABELS
     entity_threshold: float = 0.5
     relation_threshold: float = 0.5
+    relation_top_k: int = -1
     entity_model: str = DEFAULT_ENTITY_MODEL
     relation_model: str = DEFAULT_RELATION_MODEL
     device: str | None = None
@@ -70,6 +72,8 @@ class ExtractionConfig:
         ):
             if not 0.0 <= value <= 1.0:
                 raise ValueError(f"{name} must be between 0 and 1")
+        if self.relation_top_k == 0 or self.relation_top_k < -1:
+            raise ValueError("relation_top_k must be -1 or a positive integer")
 
 
 @dataclass(frozen=True)
@@ -177,7 +181,15 @@ class BiomedicalExtractor:
                 f"Entity types are outside the configured schema: {sorted(unknown_types)}"
             )
 
-        tokens = _tokenize(text)
+        # Supplied annotations can name a substring of a hyphenated or otherwise
+        # compound token. Splitting only at their exact character boundaries keeps
+        # the gold mention unchanged and gives GLiREL a representable token span.
+        entity_boundaries = {
+            boundary
+            for entity in entities
+            for boundary in (entity.start, entity.end)
+        }
+        tokens = _tokenize(text, entity_boundaries)
         relation_ner, entity_ids_by_span = _to_glirel_entities(
             text, tokens, entities
         )
@@ -187,6 +199,7 @@ class BiomedicalExtractor:
             threshold=self.config.relation_threshold,
             ner=relation_ner,
             flat_ner=True,
+            top_k=self.config.relation_top_k,
         )
         return self._normalize_relations(raw_relations, entity_ids_by_span)
 
@@ -253,11 +266,34 @@ class BiomedicalExtractor:
         return tuple(relations)
 
 
-def _tokenize(text: str) -> tuple[_Token, ...]:
-    return tuple(
-        _Token(match.group(), match.start(), match.end())
-        for match in _GLIREL_TOKEN_PATTERN.finditer(text)
-    )
+def _tokenize(
+    text: str, required_boundaries: set[int] | None = None
+) -> tuple[_Token, ...]:
+    """Tokenize text while preserving any supplied entity character boundaries.
+
+    GLiREL's regular expression normally joins hyphenated words. BioRED can annotate
+    a substring of such a token (and occasionally a prefix such as ``H3`` in
+    ``H3K36me3``). ``required_boundaries`` therefore splits matching tokens without
+    changing or widening the original half-open entity character spans.
+    """
+
+    boundaries = required_boundaries or set()
+    tokens: list[_Token] = []
+    for match in _GLIREL_TOKEN_PATTERN.finditer(text):
+        cuts = [
+            match.start(),
+            *sorted(
+                boundary
+                for boundary in boundaries
+                if match.start() < boundary < match.end()
+            ),
+            match.end(),
+        ]
+        tokens.extend(
+            _Token(text[start:end], start, end)
+            for start, end in zip(cuts, cuts[1:])
+        )
+    return tuple(tokens)
 
 
 def _to_glirel_entities(

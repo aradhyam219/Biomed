@@ -27,7 +27,7 @@ class FakeEntityModel:
 
 
 class FakeRelationModel:
-    def predict_relations(self, text, labels, *, threshold, ner, flat_ner):
+    def predict_relations(self, text, labels, *, threshold, ner, flat_ner, top_k):
         assert text == [
             "BRCA1",
             "mutations",
@@ -42,6 +42,7 @@ class FakeRelationModel:
         assert threshold == 0.3
         assert ner == [[0, 0, "gene", "BRCA1"], [5, 6, "disease", "breast cancer"]]
         assert flat_ner is True
+        assert top_k == -1
         return [
             {
                 "head_pos": [0, 1],
@@ -89,7 +90,7 @@ class PipelineTests(unittest.TestCase):
 
     def test_rejects_relation_to_unknown_entity_span(self):
         class BadRelationModel(FakeRelationModel):
-            def predict_relations(self, text, labels, *, threshold, ner, flat_ner):
+            def predict_relations(self, text, labels, *, threshold, ner, flat_ner, top_k):
                 return [{"head_pos": [0, 1], "tail_pos": [4, 5], "label": "association", "score": 0.8}]
 
         with self.assertRaisesRegex(ValueError, "unknown GLiREL entity span"):
@@ -97,7 +98,7 @@ class PipelineTests(unittest.TestCase):
 
     def test_rejects_out_of_schema_relation_label(self):
         class BadRelationModel(FakeRelationModel):
-            def predict_relations(self, text, labels, *, threshold, ner, flat_ner):
+            def predict_relations(self, text, labels, *, threshold, ner, flat_ner, top_k):
                 return [{"head_pos": [0, 1], "tail_pos": [5, 7], "label": "unconfigured", "score": 0.8}]
 
         with self.assertRaisesRegex(ValueError, "outside the configured schema"):
@@ -127,15 +128,6 @@ class PipelineTests(unittest.TestCase):
         self.assertEqual(relations[0].source, "GOLD1")
         self.assertEqual(relations[0].target, "GOLD2")
 
-    def test_rejects_character_span_inside_a_glirel_token(self):
-        entities = (
-            Entity("E1", "BRCA1", "gene", 1, 6, None),
-            Entity("E2", "TP53", "gene", 14, 18, None),
-        )
-
-        with self.assertRaisesRegex(ValueError, "does not align"):
-            make_extractor().extract_relations("pBRCA1x binds TP53", entities)
-
     def test_rejects_duplicate_supplied_entity_ids(self):
         entities = (
             Entity("E1", "BRCA1", "gene", 0, 5, None),
@@ -145,9 +137,37 @@ class PipelineTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "non-empty and unique"):
             make_extractor().extract_relations(TEXT, entities)
 
+    def test_supplied_entity_boundaries_split_compound_glirel_token(self):
+        text = "histone H3K36 trimethylation"
+
+        class BoundaryModel:
+            def predict_relations(self, text, labels, *, threshold, ner, flat_ner, top_k):
+                self.text = text
+                self.ner = ner
+                return []
+
+        model = BoundaryModel()
+        extractor = make_extractor(relation_model=model)
+        entities = (
+            Entity("E1", "histone H3", "gene", 0, 10, None),
+            Entity("E2", "H3", "gene", 8, 10, None),
+        )
+
+        extractor.extract_relations(text, entities)
+
+        self.assertEqual(model.text, ["histone", "H3", "K36", "trimethylation"])
+        self.assertEqual(
+            model.ner,
+            [[0, 1, "gene", "histone H3"], [1, 1, "gene", "H3"]],
+        )
+
     def test_config_rejects_invalid_threshold(self):
         with self.assertRaisesRegex(ValueError, "between 0 and 1"):
             ExtractionConfig(entity_threshold=1.1)
+
+    def test_config_rejects_invalid_relation_top_k(self):
+        with self.assertRaisesRegex(ValueError, "-1 or a positive integer"):
+            ExtractionConfig(relation_top_k=0)
 
 
 if __name__ == "__main__":

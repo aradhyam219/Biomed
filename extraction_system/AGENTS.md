@@ -80,6 +80,13 @@ Do not repeatedly run expensive model/evaluation work without a specific uncerta
 
 Repository truth should evolve with the code.
 
+For non-trivial code changes, keep documentation close to the behavior: new
+non-trivial modules need a responsibility/data-flow module docstring; public or
+non-obvious functions/classes need purpose, input/output, and invariant docstrings;
+and non-obvious transformations need short comments explaining why. Identify the
+authoritative source for external dataset/model assumptions, never narrate obvious
+syntax, and update documentation whenever the documented behavior changes.
+
 Codex is explicitly expected to update authoritative documentation as part of implementation when a task changes the truth those documents own:
 
 - **Product/domain behavior changed:** update `docs/product/CURRENT_SPEC.md`.

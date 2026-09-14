@@ -69,6 +69,10 @@ The three evaluation modes answer different questions:
    - BioRED text and BioRED human-annotated entities are given to the relation extractor.
    - Predicted relations are compared with BioRED gold relations.
    - Purpose: isolate relation-extraction quality from upstream entity errors.
+   - `biomedical_extractor.biored` owns deterministic BioC parsing, normalized
+     concept aggregation, threshold selection, and scoring.
+   - `biomedical_extractor.biored_cli` owns the GLiREL-only evaluation command and
+     incremental raw-score cache; it never loads GLiNER.
 
 3. **End-to-end evaluation**
    - BioRED text passes through the complete production extraction path.
@@ -82,7 +86,7 @@ The three evaluation modes answer different questions:
 | Entity extraction | `BiomedicalExtractor.extract_entities` runs GLiNER-BioMed on input text | Entity predictions, character spans/types, entity confidence | BioRED-specific evaluation logic or downstream platform behavior |
 | Relation extraction | `BiomedicalExtractor.extract_relations` runs GLiREL over supplied normalized entities | Relation predictions and relation confidence | Entity discovery, downstream graph construction, dataset-specific production assumptions |
 | Normalization / pipeline boundary | `BiomedicalExtractor.extract` composes both stages into one serializable result | Stable result structure, token-span conversion, and entity/relation linkage | Biomedical knowledge-graph persistence or downstream reasoning |
-| Evaluation | Measure extraction behavior against annotated data | BioRED loading/adaptation, metrics, failure examples | Production extraction semantics |
+| Evaluation | Measure extraction behavior against annotated data | BioRED loading/adaptation, gold-mention inference orchestration, concept aggregation, cached scores, metrics, failure examples | Production extraction semantics or model training |
 
 The module names and paths above reflect the current repository and should change only when the implementation changes.
 
