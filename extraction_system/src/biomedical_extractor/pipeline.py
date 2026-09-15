@@ -1,3 +1,12 @@
+"""Run the production biomedical entity-to-relation extraction pipeline.
+
+GLiNER first emits half-open character-span entities. The relation handoff tokenizes
+the original text at every entity boundary, converts each entity to GLiREL's
+inclusive token-span input, and remembers the corresponding half-open token span.
+GLiREL predictions use those half-open token spans, which are resolved back to the
+stable entity IDs exposed in :class:`ExtractionResult`.
+"""
+
 from __future__ import annotations
 
 import re
@@ -30,12 +39,16 @@ _GLIREL_TOKEN_PATTERN = re.compile(r"\w+(?:[-_]\w+)*|\S")
 
 
 class EntityModel(Protocol):
+    """Entity-model interface required by the production pipeline."""
+
     def predict_entities(
         self, text: str, labels: Sequence[str], *, threshold: float
     ) -> list[dict[str, Any]]: ...
 
 
 class RelationModel(Protocol):
+    """Supplied-entity relation-model interface required by the pipeline."""
+
     def predict_relations(
         self,
         text: Sequence[str],
@@ -50,6 +63,8 @@ class RelationModel(Protocol):
 
 @dataclass(frozen=True)
 class ExtractionConfig:
+    """Model identifiers, schemas, thresholds, and device for one extractor."""
+
     entity_labels: tuple[str, ...] = DEFAULT_ENTITY_LABELS
     relation_labels: tuple[str, ...] = DEFAULT_RELATION_LABELS
     entity_threshold: float = 0.5
@@ -78,6 +93,8 @@ class ExtractionConfig:
 
 @dataclass(frozen=True)
 class Entity:
+    """Normalized entity with a stable ID and half-open character offsets."""
+
     id: str
     text: str
     type: str
@@ -88,6 +105,8 @@ class Entity:
 
 @dataclass(frozen=True)
 class Relation:
+    """Normalized directed relation whose endpoints are entity IDs."""
+
     source: str
     target: str
     type: str
@@ -96,10 +115,14 @@ class Relation:
 
 @dataclass(frozen=True)
 class ExtractionResult:
+    """Immutable normalized output from a complete extraction pass."""
+
     entities: tuple[Entity, ...]
     relations: tuple[Relation, ...]
 
     def to_dict(self) -> dict[str, list[dict[str, Any]]]:
+        """Return a JSON-serializable entity/relation mapping."""
+
         return {
             "entities": [asdict(entity) for entity in self.entities],
             "relations": [asdict(relation) for relation in self.relations],
@@ -108,18 +131,28 @@ class ExtractionResult:
 
 @dataclass(frozen=True)
 class _Token:
+    """One GLiREL input token with half-open source-character offsets."""
+
     text: str
     start: int
     end: int
 
 
 class BiomedicalExtractor:
+    """Coordinate entity inference, supplied-entity relation inference, and normalization.
+
+    Public results use character-span entities and entity-ID relation endpoints;
+    GLiREL's token-span representation remains internal to the relation handoff.
+    """
+
     def __init__(
         self,
         entity_model: EntityModel,
         relation_model: RelationModel,
         config: ExtractionConfig | None = None,
     ) -> None:
+        """Bind already loaded model objects to a validated extraction config."""
+
         self.entity_model = entity_model
         self.relation_model = relation_model
         self.config = config or ExtractionConfig()
@@ -128,6 +161,8 @@ class BiomedicalExtractor:
     def from_pretrained(
         cls, config: ExtractionConfig | None = None
     ) -> BiomedicalExtractor:
+        """Load configured GLiNER and GLiREL checkpoints on the selected device."""
+
         from gliner import GLiNER
         from glirel import GLiREL
         import torch
@@ -145,6 +180,8 @@ class BiomedicalExtractor:
         return cls(entity_model, relation_model, config)
 
     def extract(self, text: str) -> ExtractionResult:
+        """Extract normalized entities and relations from ordinary biomedical text."""
+
         if not isinstance(text, str):
             raise TypeError("text must be a string")
         if not text.strip():
@@ -155,6 +192,8 @@ class BiomedicalExtractor:
         return ExtractionResult(entities=entities, relations=relations)
 
     def extract_entities(self, text: str) -> tuple[Entity, ...]:
+        """Run GLiNER and validate its character spans and configured labels."""
+
         if not isinstance(text, str):
             raise TypeError("text must be a string")
         if not text.strip():
@@ -169,6 +208,13 @@ class BiomedicalExtractor:
     def extract_relations(
         self, text: str, entities: Sequence[Entity]
     ) -> tuple[Relation, ...]:
+        """Run GLiREL with supplied entities and return entity-ID relations.
+
+        Entity offsets remain half-open character spans at this API boundary. They
+        are converted internally to GLiREL's inclusive token-span NER input and
+        resolved from GLiREL's half-open prediction spans back to the same IDs.
+        """
+
         if not isinstance(text, str):
             raise TypeError("text must be a string")
         if len(entities) < 2:
@@ -299,6 +345,13 @@ def _tokenize(
 def _to_glirel_entities(
     text: str, tokens: Sequence[_Token], entities: Sequence[Entity]
 ) -> tuple[list[list[Any]], dict[tuple[int, int], str]]:
+    """Convert character-span entities to GLiREL spans and an ID lookup.
+
+    ``relation_ner`` uses GLiREL's inclusive ``[start_token, end_token]`` input.
+    ``entity_ids_by_span`` uses half-open ``(start_token, end_token)`` keys because
+    that is how GLiREL reports relation endpoints.
+    """
+
     starts = {token.start: index for index, token in enumerate(tokens)}
     ends = {token.end: index for index, token in enumerate(tokens)}
     relation_ner: list[list[Any]] = []
@@ -318,6 +371,8 @@ def _to_glirel_entities(
         end_token_inclusive = ends[entity.end]
         if start_token > end_token_inclusive:
             raise ValueError(f"Entity {entity.id} resolves to an invalid token span")
+        # One endpoint lookup bridges GLiREL's inclusive NER input and half-open
+        # relation output without changing the normalized entity identity.
         token_span = (start_token, end_token_inclusive + 1)
         if token_span in entity_ids_by_span:
             raise ValueError(f"Multiple entities resolve to GLiREL token span {token_span}")
@@ -333,6 +388,8 @@ def _to_glirel_entities(
 
 
 def _relation_span(prediction: dict[str, Any], key: str) -> tuple[int, int]:
+    """Validate and normalize one half-open GLiREL prediction endpoint."""
+
     raw_span = prediction[key]
     if not isinstance(raw_span, (list, tuple)) or len(raw_span) != 2:
         raise ValueError(f"Invalid GLiREL {key}: {raw_span!r}")

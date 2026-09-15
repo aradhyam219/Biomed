@@ -1,3 +1,9 @@
+"""Command-line entry point for production biomedical extraction.
+
+The command turns one text argument into the pipeline's normalized JSON entity and
+relation payload, loading the configured GLiNER and GLiREL checkpoints on demand.
+"""
+
 from __future__ import annotations
 
 import argparse
@@ -13,6 +19,8 @@ from .pipeline import (
 
 
 def _parser() -> argparse.ArgumentParser:
+    """Build the production extraction command-line contract."""
+
     parser = argparse.ArgumentParser(
         description="Extract biomedical entities and relations from text."
     )
@@ -36,6 +44,8 @@ def _parser() -> argparse.ArgumentParser:
 
 
 def main(argv: Sequence[str] | None = None) -> int:
+    """Parse CLI options, run one extraction, and print normalized JSON."""
+
     args = _parser().parse_args(argv)
     config = ExtractionConfig(
         entity_labels=tuple(args.entity_labels or DEFAULT_ENTITY_LABELS),

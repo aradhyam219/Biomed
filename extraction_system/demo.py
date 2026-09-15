@@ -1,3 +1,9 @@
+"""Interactive console demo for the production extraction pipeline.
+
+The demo collects multiline biomedical text, runs the same GLiNER-to-GLiREL data
+flow as the package CLI, and presents both readable tables and normalized JSON.
+"""
+
 from __future__ import annotations
 
 import json
@@ -18,6 +24,8 @@ logging.getLogger("transformers").setLevel(logging.ERROR)
 
 
 def read_text() -> str:
+    """Read multiline input until ``END`` or end-of-file."""
+
     print("Paste or type biomedical text below.")
     print("Enter END on a new line when finished.\n")
     lines: list[str] = []
@@ -33,14 +41,20 @@ def read_text() -> str:
 
 
 def section(title: str) -> None:
+    """Print a visible heading between demo output sections."""
+
     print(f"\n{SEPARATOR}\n{title}\n{SEPARATOR}\n")
 
 
 def score(value: float | None) -> str:
+    """Format optional model confidence for the human-readable view."""
+
     return "n/a" if value is None else f"{value:.2f}"
 
 
 def main() -> int:
+    """Run one interactive extraction and print readable and JSON views."""
+
     text = read_text()
     if not text:
         print("\nNo text entered. Nothing to extract.")

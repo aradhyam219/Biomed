@@ -112,17 +112,34 @@ This maximum-evidence rule prevents repeated mentions of one concept from creati
 duplicate document-level relations. It also handles a same-concept pair
 deterministically as `(concept, concept)`.
 
+## Complete-fit development set and coverage
+
+V0-B is a **BioRED development complete-fit baseline**, not a full or official
+BioRED development score. The current `jackboyla/glirel-large-v0` checkpoint accepts
+at most 512 supplied-entity tokens. Exact preflight identifies one official
+development document above that limit: PMID `19880293` has 554 tokens.
+
+The authorized evaluation set therefore contains the other 99 documents. PMID
+`19880293` remains unevaluated: it is not truncated, windowed, chunked, inferred, or
+counted as a false negative. The exclusion is decided solely by pre-inference
+sequence length and independently of prediction outcome. The report always includes
+document coverage, total official-development gold relations, evaluated-document
+gold relations, gold-relation coverage, and the excluded document's gold count.
+
+This exception is specific to V0-B and this checkpoint. Any other over-limit PMID
+fails closed rather than being silently excluded.
+
 ## Threshold calibration and metrics
 
 Inference runs once per development document at relation threshold `0.0` and saves
 the resulting concept-label scores incrementally. A smoke run, subset run, and full
 run can share one cache: already present document IDs are not inferred again.
 
-The scorer evaluates all distinct concept-level score boundaries and chooses the
-threshold with maximum typed micro F1 on development data. An exact F1 tie prefers
-higher precision, then the higher threshold. Predictions use the inclusive decision
-`score >= threshold`. This is a development-calibrated operating point, not an
-unbiased test estimate.
+The scorer evaluates all distinct concept-level score boundaries over the authorized
+99-document complete-fit set and chooses the threshold with maximum typed micro F1.
+An exact F1 tie prefers higher precision, then the higher threshold. Predictions use
+the inclusive decision `score >= threshold`. This is a development-calibrated
+operating point, not an unbiased test estimate.
 
 Pair-only TP/FP/FN compare exact sets of `(document, unordered concept pair)` and
 ignore label. Typed TP/FP/FN compare `(document, unordered concept pair, canonical
@@ -133,21 +150,46 @@ as `N/A`. Novelty is intentionally absent. Per-label metrics use the same typed 
 The summary also records pre/post-threshold counts, selected operating points, and a
 small set of high-confidence true positives, false positives, and false negatives.
 
+## Current V0-B result
+
+The completed zero-shot run used the dataset and protocol above. The ignored raw
+cache contains predictions for exactly the 99 evaluated documents; PMID `19880293`
+is absent. Seventy-four valid cached predictions were reused and only the remaining
+25 complete-fit documents were inferred.
+
+```text
+BioRED development complete-fit baseline
+Evaluated: 99 / 100 documents
+Excluded: PMID 19880293
+Exclusion reason: exceeds current GLiREL checkpoint input limit
+Document coverage: 99.00%
+Total official-dev gold relations: 1162
+Gold relations in evaluated documents: 1156
+Gold-relation coverage: 99.48%
+Gold relations in excluded document: 6
+```
+
+The threshold calibrated once over those 99 documents is `0.14250895`. At that
+threshold, pair-only micro precision/recall/F1 are `0.2212 / 0.4775 / 0.3023`
+(`TP=552`, `FP=1944`, `FN=604`), and typed micro precision/recall/F1 are
+`0.1322 / 0.2855 / 0.1807` (`TP=330`, `FP=2166`, `FN=826`). This is a
+development-calibrated complete-fit baseline and must not be cited as a full or
+official BioRED development score.
+
 ## Sequence integrity and limitations
 
 The checkpoint and GLiREL preprocessing enforce `max_len=512`. Length is measured
-after the exact gold-boundary token splits used for supplied entities. The original
-development split contains one over-limit document: PMID `19880293` has 554 tokens.
-GLiREL 1.2.1 would silently truncate it during span preprocessing, invalidating a
-full-document score. The evaluator therefore aborts before inference whenever the
-selected documents include any over-limit case; it neither excludes nor truncates
-that document. Chunking and cross-chunk aggregation require a deliberate later
-methodological decision and are outside V0-B's authorized scope.
+after the exact gold-boundary token splits used for supplied entities. GLiREL 1.2.1
+would silently truncate PMID `19880293`; the evaluator instead removes it before
+model loading under the complete-fit policy above. Chunking and cross-chunk
+aggregation remain outside V0-B's authorized scope.
 
 Other limitations:
 
 - threshold selection and quality reporting use the same development split;
 - zero-shot prompt behavior is checkpoint-specific;
+- the 99/100 complete-fit result may contain selection bias and must never be
+  described as a full or official BioRED development score;
 - concept IDs are supplied by BioRED only for scoring isolation and are not a new
   production entity-linking feature;
 - no GLiNER evaluation, end-to-end BioRED run, novelty prediction, training,
@@ -166,6 +208,8 @@ uv run biored-evaluate --dataset C:\path\to\BioRED
 ```
 
 Use `--cache` and `--output` to choose alternate generated JSON paths. By default,
-both are under `.cache/`. The summary contains dataset identity, checkpoint, schema,
-top-k policy, threshold, pair-only and typed metrics, per-label metrics, counts,
-sequence diagnostics, and representative errors.
+both are under `.cache/`. The command has no model-selection option: V0-B is fixed to
+`jackboyla/glirel-large-v0` / `DEFAULT_RELATION_MODEL`. The summary contains dataset
+identity, checkpoint, schema, top-k policy, coverage and exclusion counts, threshold,
+pair-only and typed metrics, per-label metrics, sequence diagnostics, and
+representative errors.

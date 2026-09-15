@@ -41,6 +41,8 @@ from biomedical_extractor.pipeline import (
 RAW_TOP_K = 1
 FINAL_TOP_K = 1
 GLIREL_TRAINING_MAX_LEN = 512
+EXCLUDED_DOCUMENT_ID = "19880293"
+EXCLUSION_REASON = "exceeds current GLiREL checkpoint input limit"
 
 
 class _ForbiddenEntityModel:
@@ -78,7 +80,6 @@ def _parser() -> argparse.ArgumentParser:
         help="Machine-readable evaluation summary.",
     )
     parser.add_argument("--device", help="Torch device, for example cpu or cuda.")
-    parser.add_argument("--model", default=DEFAULT_RELATION_MODEL)
     parser.add_argument(
         "--offline",
         action="store_true",
@@ -87,15 +88,15 @@ def _parser() -> argparse.ArgumentParser:
     return parser
 
 
-def _load_model(model_name: str, device: str | None, offline: bool) -> Any:
-    """Load only GLiREL so the experiment remains isolated from GLiNER."""
+def _load_model(device: str | None, offline: bool) -> Any:
+    """Load V0-B's fixed GLiREL checkpoint without loading GLiNER."""
 
     from glirel import GLiREL
     import torch
 
     selected_device = device or ("cuda" if torch.cuda.is_available() else "cpu")
     model = GLiREL.from_pretrained(
-        model_name,
+        DEFAULT_RELATION_MODEL,
         map_location=selected_device,
         local_files_only=offline,
     )
@@ -103,7 +104,7 @@ def _load_model(model_name: str, device: str | None, offline: bool) -> Any:
     return model
 
 
-def _extractor(model: Any, device: str | None, model_name: str) -> BiomedicalExtractor:
+def _extractor(model: Any, device: str | None) -> BiomedicalExtractor:
     """Bind the real relation model to V0-A's supplied-entity adapter."""
 
     config = ExtractionConfig(
@@ -114,20 +115,20 @@ def _extractor(model: Any, device: str | None, model_name: str) -> BiomedicalExt
         # applied after inference because GLiREL's primitive cannot express the
         # symmetric eight-family union exactly.
         relation_top_k=RAW_TOP_K,
-        relation_model=model_name,
+        relation_model=DEFAULT_RELATION_MODEL,
         device=device,
     )
     return BiomedicalExtractor(_ForbiddenEntityModel(), model, config)
 
 
-def _cache_identity(dataset: BioREDDataset, model_name: str) -> dict[str, Any]:
+def _cache_identity(dataset: BioREDDataset) -> dict[str, Any]:
     """Return every input that makes cached inference scores reusable."""
 
     return {
         "format_version": 1,
         "dataset_sha256": dataset.sha256,
         "split": dataset.split,
-        "model": model_name,
+        "model": DEFAULT_RELATION_MODEL,
         "relation_prompts": CANONICAL_TO_PROMPT,
         "raw_top_k": RAW_TOP_K,
         "final_top_k": FINAL_TOP_K,
@@ -222,8 +223,33 @@ def _sequence_summary(documents: Sequence[BioREDDocument]) -> dict[str, Any]:
         "checkpoint_max_len": GLIREL_TRAINING_MAX_LEN,
         "longest_document": {"document_id": longest_id, "tokens": longest_length},
         "documents_over_max_len": over_training_max,
-        "over_limit_policy": "abort before inference; never truncate or exclude",
+        "over_limit_policy": (
+            "exclude PMID 19880293 from the complete-fit baseline; never truncate "
+            "or chunk it"
+        ),
     }
+
+
+def _complete_fit_documents(
+    documents: Sequence[BioREDDocument], sequence_summary: Mapping[str, Any]
+) -> tuple[BioREDDocument, ...]:
+    """Return documents that fit intact under the one authorized exclusion.
+
+    Sequence length is computed before model loading and without consulting cached
+    or new predictions. Any over-limit PMID other than 19880293 is outside the
+    approved V0-B protocol and fails closed instead of being silently excluded.
+    """
+
+    excluded_ids = {
+        item["document_id"] for item in sequence_summary["documents_over_max_len"]
+    }
+    unexpected = excluded_ids - {EXCLUDED_DOCUMENT_ID}
+    if unexpected:
+        raise ValueError(
+            "V0-B authorizes only PMID 19880293 for sequence-length exclusion; "
+            f"unexpected over-limit documents: {sorted(unexpected)}"
+        )
+    return tuple(document for document in documents if document.id not in excluded_ids)
 
 
 def _threshold_summary(
@@ -291,13 +317,21 @@ def _diagnostics(
 def _build_summary(
     dataset: BioREDDataset,
     documents: Sequence[BioREDDocument],
-    model_name: str,
     candidates: Sequence[ScoredRelation],
     mention_prediction_count: int,
 ) -> dict[str, Any]:
     """Assemble the reproducible machine-readable result and diagnostics."""
 
     gold = tuple(relation for document in documents for relation in document.relations)
+    official_gold_count = sum(
+        len(document.relations) for document in dataset.documents
+    )
+    excluded_document = next(
+        document
+        for document in dataset.documents
+        if document.id == EXCLUDED_DOCUMENT_ID
+    )
+    evaluated_gold_count = len(gold)
     threshold, result = calibrate_threshold(gold, candidates)
     predictions: tuple[ScoredRelation, ...] = result.pop("predictions")
     return {
@@ -309,7 +343,12 @@ def _build_summary(
             "date": dataset.date,
             "key": dataset.key,
         },
-        "model_checkpoint": model_name,
+        "evaluation_name": (
+            "BioRED development complete-fit baseline"
+            if len(documents) == len(dataset.documents) - 1
+            else "BioRED V0-B diagnostic subset"
+        ),
+        "model_checkpoint": DEFAULT_RELATION_MODEL,
         "gold_entities": True,
         "gliner_used": False,
         "relation_schema": list(BIORED_RELATION_LABELS),
@@ -320,6 +359,25 @@ def _build_summary(
         "raw_top_k": RAW_TOP_K,
         "final_top_k": FINAL_TOP_K,
         "selected_dev_threshold": threshold,
+        "coverage": {
+            "documents": {
+                "evaluated": len(documents),
+                "official_dev_total": len(dataset.documents),
+                "percentage": 100.0 * len(documents) / len(dataset.documents),
+            },
+            "gold_relations": {
+                "evaluated": evaluated_gold_count,
+                "official_dev_total": official_gold_count,
+                "percentage": 100.0 * evaluated_gold_count / official_gold_count,
+            },
+            "excluded_documents": [
+                {
+                    "document_id": EXCLUDED_DOCUMENT_ID,
+                    "reason": EXCLUSION_REASON,
+                    "gold_relations": len(excluded_document.relations),
+                }
+            ],
+        },
         "counts": {
             "documents": len(documents),
             "gold_mentions": sum(len(document.mentions) for document in documents),
@@ -345,9 +403,10 @@ def _build_summary(
                 "aggregation keeps one final label per pair."
             ),
             (
-                "The evaluator aborts before inference if any selected document "
-                "exceeds GLiREL's 512-token limit."
+                "PMID 19880293 is unevaluated because its 554-token supplied-entity "
+                "input exceeds this checkpoint's 512-token limit."
             ),
+            "This is not a full or official BioRED development score.",
         ],
     }
 
@@ -359,7 +418,20 @@ def _format_metric(value: float | None) -> str:
 def _print_summary(summary: Mapping[str, Any]) -> None:
     """Render the contract's concise human-readable baseline report."""
 
-    print("BioRED V0-B gold-entity relation baseline")
+    coverage = summary["coverage"]
+    documents = coverage["documents"]
+    gold = coverage["gold_relations"]
+    excluded = coverage["excluded_documents"][0]
+    print(summary["evaluation_name"])
+    print(f"Evaluated: {documents['evaluated']} / {documents['official_dev_total']} documents")
+    print(f"Excluded: PMID {excluded['document_id']}")
+    print(f"Exclusion reason: {excluded['reason']}")
+    print(f"Document coverage: {documents['percentage']:.2f}%")
+    print(f"Total official-dev gold relations: {gold['official_dev_total']}")
+    print(f"Gold relations in evaluated documents: {gold['evaluated']}")
+    print(f"Gold-relation coverage: {gold['percentage']:.2f}%")
+    print(f"Gold relations in excluded document: {excluded['gold_relations']}")
+    print("Limitation: this is not a full/official BioRED development score.")
     print(f"Source/split: {summary['dataset']['path']} ({summary['dataset']['split']})")
     print(f"Documents: {summary['counts']['documents']}")
     print(f"GLiREL checkpoint: {summary['model_checkpoint']}")
@@ -398,24 +470,30 @@ def main(argv: Sequence[str] | None = None) -> int:
     if args.limit is not None and args.limit <= 0:
         raise ValueError("--limit must be a positive integer")
     dataset = load_biored(args.dataset, args.split)
-    documents = dataset.documents[: args.limit]
-    sequence_summary = _sequence_summary(documents)
-    over_limit = sequence_summary["documents_over_max_len"]
-    if over_limit:
+    selected_documents = dataset.documents[: args.limit]
+    sequence_summary = _sequence_summary(selected_documents)
+    try:
+        documents = _complete_fit_documents(selected_documents, sequence_summary)
+    except ValueError as error:
+        print(str(error), file=sys.stderr)
+        return 2
+    excluded_ids = {
+        item["document_id"] for item in sequence_summary["documents_over_max_len"]
+    }
+    if args.limit is None and excluded_ids != {EXCLUDED_DOCUMENT_ID}:
         print(
-            "Cannot run a methodologically valid full-document evaluation: "
-            f"{len(over_limit)} selected document(s) exceed GLiREL's "
-            f"{GLIREL_TRAINING_MAX_LEN}-token limit: {over_limit}. "
-            "No over-limit document was inferred, truncated, or excluded.",
+            "Official-dev V0-B requires the independently preflighted exclusion "
+            f"of PMID {EXCLUDED_DOCUMENT_ID}; observed exclusions: "
+            f"{sorted(excluded_ids)}.",
             file=sys.stderr,
         )
         return 2
 
-    identity = _cache_identity(dataset, args.model)
+    identity = _cache_identity(dataset)
     cache = _read_cache(args.cache, identity)
     missing_ids = [document.id for document in documents if document.id not in cache["documents"]]
-    model = _load_model(args.model, args.device, args.offline) if missing_ids else None
-    extractor = _extractor(model, args.device, args.model) if model is not None else None
+    model = _load_model(args.device, args.offline) if missing_ids else None
+    extractor = _extractor(model, args.device) if model is not None else None
     if extractor is None:
         # No inference occurs on a fully cached run; this placeholder is never used.
         extractor = BiomedicalExtractor(_ForbiddenEntityModel(), object())
@@ -423,8 +501,9 @@ def main(argv: Sequence[str] | None = None) -> int:
         documents, extractor, cache, args.cache
     )
     summary = _build_summary(
-        dataset, documents, args.model, candidates, mention_prediction_count
+        dataset, documents, candidates, mention_prediction_count
     )
+    summary["sequence_integrity"] = sequence_summary
     _write_json(args.output, summary)
     _print_summary(summary)
     print(f"Machine-readable summary: {args.output.resolve()}")
