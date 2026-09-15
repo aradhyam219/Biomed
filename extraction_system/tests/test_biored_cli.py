@@ -12,11 +12,20 @@ from biomedical_extractor.biored_cli import (
     EXCLUDED_DOCUMENT_ID,
     _build_summary,
     _complete_fit_documents,
+    _default_output,
     _parser,
 )
 
 
 class BioREDCLITests(unittest.TestCase):
+    def test_final_report_is_tracked_but_subset_diagnostics_remain_cached(self):
+        self.assertEqual(
+            _default_output(None), Path("reports/biored_v0b_complete_fit.json")
+        )
+        self.assertEqual(
+            _default_output(5), Path(".cache/biored_v0b_subset_summary.json")
+        )
+
     def test_model_checkpoint_is_not_cli_configurable(self):
         with self.assertRaises(SystemExit):
             _parser().parse_args(["--dataset", "dev.json", "--model", "other"])

@@ -50,9 +50,9 @@ The threshold calibrated once on the authorized 99 documents is `0.14250895`.
 
 - Focused BioRED evaluator and production pipeline tests: 22 passed.
 - Final real-model run exited successfully using the project-local CPU environment.
-- Generated artifacts remain ignored:
-  - `.cache/v0b_raw.json`
-  - `.cache/v0b_complete_fit_summary.json`
+- Raw predictions remain ignored at `.cache/v0b_raw.json`.
+- The machine-readable final report is tracked at
+  `reports/biored_v0b_complete_fit.json` for Talia and other reviewers.
 - Cache after completion: 99 documents; excluded PMID absent.
 
 ## Scope held

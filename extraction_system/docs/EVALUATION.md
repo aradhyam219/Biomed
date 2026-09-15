@@ -155,7 +155,8 @@ small set of high-confidence true positives, false positives, and false negative
 The completed zero-shot run used the dataset and protocol above. The ignored raw
 cache contains predictions for exactly the 99 evaluated documents; PMID `19880293`
 is absent. Seventy-four valid cached predictions were reused and only the remaining
-25 complete-fit documents were inferred.
+25 complete-fit documents were inferred. The machine-readable result is tracked at
+`reports/biored_v0b_complete_fit.json` for reviewer access.
 
 ```text
 BioRED development complete-fit baseline
@@ -207,8 +208,10 @@ uv run biored-evaluate --dataset C:\path\to\BioRED --limit 1
 uv run biored-evaluate --dataset C:\path\to\BioRED
 ```
 
-Use `--cache` and `--output` to choose alternate generated JSON paths. By default,
-both are under `.cache/`. The command has no model-selection option: V0-B is fixed to
+Use `--cache` and `--output` to choose alternate JSON paths. Raw scores and limited
+diagnostic summaries default under ignored `.cache/`; a full run defaults to the
+tracked `reports/biored_v0b_complete_fit.json` so its machine-readable result is
+available to reviewers. The command has no model-selection option: V0-B is fixed to
 `jackboyla/glirel-large-v0` / `DEFAULT_RELATION_MODEL`. The summary contains dataset
 identity, checkpoint, schema, top-k policy, coverage and exclusion counts, threshold,
 pair-only and typed metrics, per-label metrics, sequence diagnostics, and

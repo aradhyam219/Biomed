@@ -76,8 +76,10 @@ def _parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--output",
         type=Path,
-        default=Path(".cache/biored_v0b_summary.json"),
-        help="Machine-readable evaluation summary.",
+        help=(
+            "Machine-readable evaluation summary. Full runs default to the tracked "
+            "reports directory; limited diagnostics default to .cache."
+        ),
     )
     parser.add_argument("--device", help="Torch device, for example cpu or cuda.")
     parser.add_argument(
@@ -86,6 +88,14 @@ def _parser() -> argparse.ArgumentParser:
         help="Use only already-cached Hugging Face model files.",
     )
     return parser
+
+
+def _default_output(limit: int | None) -> Path:
+    """Keep final baseline reports tracked while diagnostics remain disposable."""
+
+    if limit is None:
+        return Path("reports/biored_v0b_complete_fit.json")
+    return Path(".cache/biored_v0b_subset_summary.json")
 
 
 def _load_model(device: str | None, offline: bool) -> Any:
@@ -470,6 +480,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     if args.limit is not None and args.limit <= 0:
         raise ValueError("--limit must be a positive integer")
     dataset = load_biored(args.dataset, args.split)
+    output_path = args.output or _default_output(args.limit)
     selected_documents = dataset.documents[: args.limit]
     sequence_summary = _sequence_summary(selected_documents)
     try:
@@ -504,9 +515,9 @@ def main(argv: Sequence[str] | None = None) -> int:
         dataset, documents, candidates, mention_prediction_count
     )
     summary["sequence_integrity"] = sequence_summary
-    _write_json(args.output, summary)
+    _write_json(output_path, summary)
     _print_summary(summary)
-    print(f"Machine-readable summary: {args.output.resolve()}")
+    print(f"Machine-readable summary: {output_path.resolve()}")
     return 0
 
 

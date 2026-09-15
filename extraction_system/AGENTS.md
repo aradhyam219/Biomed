@@ -15,6 +15,7 @@ The current system is deliberately narrow. It is one component inside a larger s
 - **Current architecture:** `docs/ARCHITECTURE.md`
 - **Production package:** `src/biomedical_extractor/`
 - **Focused tests:** `tests/`
+- **Tracked machine-readable evaluation reports:** `reports/`
 - **Dependency truth:** `pyproject.toml` and `uv.lock`
 - **Decision records:** introduce `docs/decisions/` only when a durable, non-obvious architectural decision genuinely needs rationale preserved.
 - **Active task state:** introduce a small task-state file only when work spans sessions and the next session cannot cheaply recover the needed delta from repository truth.
@@ -32,6 +33,9 @@ Canonical commands:
 - Entity extraction and relation extraction remain independently evaluable.
 - The production path must produce normalized, machine-consumable structured output.
 - Evaluation code must not leak dataset-specific assumptions into the production extraction path.
+- Machine-readable final evaluation reports intended for review must be written to
+  `reports/` and committed with the evaluation; raw predictions, incremental caches,
+  and limited-run diagnostics remain under ignored `.cache/`.
 - Do not broaden this component into adjacent platform capabilities unless a later task explicitly changes the product scope.
 
 ## Architectural boundaries
