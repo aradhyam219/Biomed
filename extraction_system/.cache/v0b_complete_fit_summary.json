@@ -1,0 +1,289 @@
+{
+  "candidate_pair_policy": "BioRED eight concept-pair families; no stricter label/type matrix",
+  "counts": {
+    "concept_label_scores": 7992,
+    "documents": 99,
+    "gold_mentions": 3484,
+    "gold_relations": 1156,
+    "predicted_after_threshold": 2496,
+    "predicted_before_threshold": 6773,
+    "raw_mention_predictions": 111058,
+    "supplied_relation_mentions": 3098
+  },
+  "coverage": {
+    "documents": {
+      "evaluated": 99,
+      "official_dev_total": 100,
+      "percentage": 99.0
+    },
+    "excluded_documents": [
+      {
+        "document_id": "19880293",
+        "gold_relations": 6,
+        "reason": "exceeds current GLiREL checkpoint input limit"
+      }
+    ],
+    "gold_relations": {
+      "evaluated": 1156,
+      "official_dev_total": 1162,
+      "percentage": 99.48364888123925
+    }
+  },
+  "dataset": {
+    "date": "2021-11-30",
+    "key": "BioC.key",
+    "path": "C:\\Projects\\Biomed\\extraction_system\\.cache\\BIORED\\BioRED\\Dev.BioC.JSON",
+    "sha256": "d5ab4d05673ac46fb5e3b2904d2820462dec2c4c50dfcdd8678635ff1b8ce1f5",
+    "source": "PubTator",
+    "split": "dev"
+  },
+  "diagnostics": {
+    "high_confidence_false_positives": [
+      {
+        "concept_a": "2264",
+        "concept_b": "2264",
+        "document_id": "24288432",
+        "relation_type": "Association",
+        "score": 0.6384876370429993
+      },
+      {
+        "concept_a": "2252",
+        "concept_b": "2264",
+        "document_id": "24288432",
+        "relation_type": "Association",
+        "score": 0.6306359171867371
+      },
+      {
+        "concept_a": "2248",
+        "concept_b": "2264",
+        "document_id": "24288432",
+        "relation_type": "Association",
+        "score": 0.6294609308242798
+      }
+    ],
+    "high_confidence_true_positives": [
+      {
+        "concept_a": "2264",
+        "concept_b": "D001997",
+        "document_id": "24288432",
+        "relation_type": "Association",
+        "score": 0.6409297585487366
+      },
+      {
+        "concept_a": "2264",
+        "concept_b": "D012127",
+        "document_id": "24288432",
+        "relation_type": "Association",
+        "score": 0.593403160572052
+      },
+      {
+        "concept_a": "2248",
+        "concept_b": "D012127",
+        "document_id": "24288432",
+        "relation_type": "Association",
+        "score": 0.5767913460731506
+      }
+    ],
+    "representative_false_negatives": [
+      {
+        "best_predicted_label": null,
+        "best_score": null,
+        "concept_a": "6528",
+        "concept_b": "C564766",
+        "document_id": "14510914",
+        "relation_type": "Negative_Correlation"
+      },
+      {
+        "best_predicted_label": null,
+        "best_score": null,
+        "concept_a": "6528",
+        "concept_b": "D003409",
+        "document_id": "14510914",
+        "relation_type": "Association"
+      },
+      {
+        "best_predicted_label": null,
+        "best_score": null,
+        "concept_a": "6528",
+        "concept_b": "D007454",
+        "document_id": "14510914",
+        "relation_type": "Association"
+      }
+    ]
+  },
+  "evaluation_name": "BioRED development complete-fit baseline",
+  "final_top_k": 1,
+  "gliner_used": false,
+  "gold_entities": true,
+  "limitations": [
+    "Threshold and reported quality are calibrated on the same development split.",
+    "GLiREL top_k=1 is applied per directed mention pair; concept aggregation keeps one final label per pair.",
+    "PMID 19880293 is unevaluated because its 554-token supplied-entity input exceeds this checkpoint's 512-token limit.",
+    "This is not a full or official BioRED development score."
+  ],
+  "model_checkpoint": "jackboyla/glirel-large-v0",
+  "pair_only": {
+    "f1": 0.3023001095290252,
+    "fn": 604,
+    "fp": 1944,
+    "precision": 0.22115384615384615,
+    "recall": 0.47750865051903113,
+    "tp": 552
+  },
+  "per_label": {
+    "Association": {
+      "f1": 0.22124219037118706,
+      "fn": 256,
+      "fp": 1863,
+      "precision": 0.13909426987061,
+      "recall": 0.5403949730700179,
+      "support": 557,
+      "tp": 301
+    },
+    "Bind": {
+      "f1": 0.13043478260869565,
+      "fn": 16,
+      "fp": 24,
+      "precision": 0.1111111111111111,
+      "recall": 0.15789473684210525,
+      "support": 19,
+      "tp": 3
+    },
+    "Comparison": {
+      "f1": 0.15,
+      "fn": 2,
+      "fp": 32,
+      "precision": 0.08571428571428572,
+      "recall": 0.6,
+      "support": 5,
+      "tp": 3
+    },
+    "Conversion": {
+      "f1": null,
+      "fn": 0,
+      "fp": 5,
+      "precision": 0.0,
+      "recall": null,
+      "support": 0,
+      "tp": 0
+    },
+    "Cotreatment": {
+      "f1": 0.028571428571428574,
+      "fn": 9,
+      "fp": 59,
+      "precision": 0.016666666666666666,
+      "recall": 0.1,
+      "support": 10,
+      "tp": 1
+    },
+    "Drug_Interaction": {
+      "f1": null,
+      "fn": 0,
+      "fp": 29,
+      "precision": 0.0,
+      "recall": null,
+      "support": 0,
+      "tp": 0
+    },
+    "Negative_Correlation": {
+      "f1": 0.07207207207207207,
+      "fn": 204,
+      "fp": 105,
+      "precision": 0.10256410256410256,
+      "recall": 0.05555555555555555,
+      "support": 216,
+      "tp": 12
+    },
+    "Positive_Correlation": {
+      "f1": 0.04901960784313726,
+      "fn": 339,
+      "fp": 49,
+      "precision": 0.1694915254237288,
+      "recall": 0.02865329512893983,
+      "support": 349,
+      "tp": 10
+    }
+  },
+  "raw_top_k": 1,
+  "relation_prompts": {
+    "Association": "association",
+    "Bind": "bind",
+    "Comparison": "comparison",
+    "Conversion": "conversion",
+    "Cotreatment": "cotreatment",
+    "Drug_Interaction": "drug interaction",
+    "Negative_Correlation": "negative correlation",
+    "Positive_Correlation": "positive correlation"
+  },
+  "relation_schema": [
+    "Association",
+    "Positive_Correlation",
+    "Negative_Correlation",
+    "Bind",
+    "Conversion",
+    "Drug_Interaction",
+    "Comparison",
+    "Cotreatment"
+  ],
+  "selected_dev_threshold": 0.14250895380973816,
+  "sequence_integrity": {
+    "checkpoint_max_len": 512,
+    "documents_over_max_len": [
+      {
+        "document_id": "19880293",
+        "tokens": 554
+      }
+    ],
+    "longest_document": {
+      "document_id": "19880293",
+      "tokens": 554
+    },
+    "over_limit_policy": "exclude PMID 19880293 from the complete-fit baseline; never truncate or chunk it",
+    "tokenizer": "\\w+(?:[-_]\\w+)*|\\S with exact gold-boundary splits"
+  },
+  "threshold_summary": [
+    {
+      "predicted": 6773,
+      "threshold": 0.0,
+      "typed_f1": 0.14125362593012988,
+      "typed_precision": 0.08268123431271224,
+      "typed_recall": 0.4844290657439446
+    },
+    {
+      "predicted": 3231,
+      "threshold": 0.1,
+      "typed_f1": 0.17506268520629134,
+      "typed_precision": 0.11884865366759517,
+      "typed_recall": 0.33217993079584773
+    },
+    {
+      "predicted": 2496,
+      "threshold": 0.14250895380973816,
+      "typed_f1": 0.18072289156626506,
+      "typed_precision": 0.13221153846153846,
+      "typed_recall": 0.28546712802768165
+    },
+    {
+      "predicted": 917,
+      "threshold": 0.3,
+      "typed_f1": 0.10226724553786781,
+      "typed_precision": 0.11559432933478735,
+      "typed_recall": 0.09169550173010381
+    },
+    {
+      "predicted": 133,
+      "threshold": 0.5,
+      "typed_f1": 0.020170674941815358,
+      "typed_precision": 0.09774436090225563,
+      "typed_recall": 0.01124567474048443
+    }
+  ],
+  "typed_micro": {
+    "f1": 0.18072289156626506,
+    "fn": 826,
+    "fp": 2166,
+    "precision": 0.13221153846153846,
+    "recall": 0.28546712802768165,
+    "tp": 330
+  }
+}
