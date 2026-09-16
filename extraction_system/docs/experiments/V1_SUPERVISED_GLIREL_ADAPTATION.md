@@ -5,7 +5,7 @@
 | Stage | Status | Evidence |
 |---|---|---|
 | V1-A — BioRED Training Preparation | **Completed and verified locally** | Deterministic Train conversion, 512-token preflight, native-collator negative-label test, provenance check, and reproducibility checks passed. |
-| V1-B — GPU Fine-Tuning & Evaluation | **Pending V1-B1 smoke rerun after diagnostic correction** | The first AWS smoke stopped during optimizer construction; the post-optimizer attempt reached forward/backward but exposed ambiguity in the old one-scalar update check. |
+| V1-B — GPU Fine-Tuning & Evaluation | **Pending V1-B1 bounded dynamic-AMP recovery smoke** | The third AWS attempt proved initial-scale FP16 gradient overflow on the deterministic worst-case batch, but the old smoke raised before dynamic scaler recovery could run. |
 
 This is the one living report for V1. It records the prepared experiment now and
 will be updated with the actual GPU progression, selected checkpoint, Dev metrics,
@@ -260,12 +260,13 @@ The package is pinned to `glirel==1.2.1`. The first supervised configuration is:
 
 The `4,000`-microstep setting is intentionally the first evidence-gathering
 viability run, not a sweep or an asserted optimum. With gradient accumulation of
-8, the scheduler has 500 optimizer-update steps and 50 warmup steps; `scheduler.step()`
-runs once per optimizer update. Periodic checkpoints are saved at microsteps
-1,000, 2,000, and 3,000; the 4,000-step boundary is represented by the single
-`final` save rather than a duplicate `step_4000` directory. Entity markers are
-disabled in the runner so the measured 512-token preflight remains the model input
-length.
+8, the nominal schedule has 500 intended optimizer-update boundaries and 50
+warmup updates; `scheduler.step()` advances only after an actual successful
+optimizer update. Skipped AMP updates are counted separately and are not hidden
+inside the actual update count. Periodic checkpoints are saved at microsteps 1,000,
+2,000, and 3,000; the 4,000-step boundary is represented by the single `final`
+save rather than a duplicate `step_4000` directory. Entity markers are disabled in
+the runner so the measured 512-token preflight remains the model input length.
 No GPU training was run locally.
 
 The later target hardware is one Tesla T4 with 15,360 MiB VRAM. The batch size,
@@ -274,14 +275,15 @@ not a general hardware-tuning framework.
 
 The GPU smoke path selects the fitting example with the largest estimated ordered
 non-self entity-pair workload, breaking ties by token length and document ID. It
-resets CUDA peak counters, performs a finite forward/loss check, uses the enabled
-FP16 scaler for backward and optimizer update, explicitly unscales once, validates
-the complete gradient set and global norm, and verifies execution through optimizer
-state reaching step 1. It records scaler scales, synchronized stage timings, and
-peak allocated/reserved CUDA memory before post-step validation. It does not clone a
-full trainable parameter or infer update execution from one floating-point element.
-These are implementation checks for the AWS smoke gate; the measured attempts are
-recorded below.
+resets CUDA peak counters, reuses that same batch for at most eight attempts, and
+per attempt performs a finite forward/loss check, FP16 scaled backward, one
+explicit unscale, complete gradient/norm inspection, `scaler.step()`, and
+`scaler.update()`. Overflow attempts are recorded with their lowered scale and
+retried from clean gradients; PASS requires optimizer state reaching step 1. The
+smoke returns structured PASS/BLOCKER evidence with scale trajectory, per-attempt
+timings, and peak allocated/reserved CUDA memory. It does not clone a full
+trainable parameter or infer execution from one floating-point element. The
+measured attempts are recorded below.
 
 ## Implementation and reproducibility
 
@@ -290,15 +292,15 @@ recorded below.
 - `src/biomedical_extractor/biored.py` — reuse the existing parser while allowing
   isolated Train/Dev/Test file resolution.
 - `src/biomedical_extractor/biored_training.py` — deterministic converter,
-  preflight/statistics/provenance checks, V1 config, native GLiREL smoke/training
-  runner, and generated-artifact CLI.
+  preflight/statistics/provenance checks, V1 config, dynamic-AMP smoke/training
+  runner with truthful optimizer accounting, and generated-artifact CLI.
 - `src/biomedical_extractor/biored_cli.py` — optional local-checkpoint evaluation
   using the unchanged V0-B concept-level aggregation and metrics; default behavior
   remains V0-B.
 - `tests/test_biored_training.py` — converter, exclusion, split, provenance,
   prompt-label alignment, native negative-label, smoke-selection, scheduler,
-  gradient/update/timing diagnostics, training-schedule, and runner-construction
-  tests.
+  gradient/update/timing diagnostics, dynamic-AMP retry, training-schedule, and
+  runner-construction tests.
 - `tests/test_biored_cli.py` — custom-checkpoint cache/report isolation coverage.
 - `pyproject.toml` — `biored-v1` command entry point.
 - `docs/ARCHITECTURE.md` — current structural boundary for supervised adaptation.
@@ -508,10 +510,35 @@ parameter-change assertion:
 This was not a demonstrated training failure. The old smoke could not distinguish
 GradScaler skipping the optimizer update because another gradient was non-finite
 from the optimizer step executing while the single sampled scalar remained
-unchanged. The smoke verification is being corrected to validate all unscaled
-gradients, record scaler scale changes, and use AdamW state reaching step 1 as the
-execution invariant. V1-B1 remains **PENDING RERUN after diagnostic correction**;
-the 4,000-microstep training run and Dev evaluation remain **NOT RUN**.
+unchanged. The diagnostic correction now validates all unscaled gradients, records
+scaler scale changes, and uses AdamW state reaching step 1 as the execution
+invariant. The third attempt below exposed the separate initial-scale overflow
+condition; bounded dynamic-AMP recovery remains pending. The 4,000-microstep
+training run and Dev evaluation remain **NOT RUN**.
+
+## V1-B1 initial-scale AMP overflow — bounded recovery pending (2026-09-16)
+
+The third measured AWS attempt ran at exact HEAD
+`c075b8d4bfa068b03ce77b1e03dd77add5bbb28a` on the same deterministic worst-case
+smoke batch. It proved overflow at the current FP16 GradScaler scale, but not that
+dynamic AMP recovery fails:
+
+| Field | Result |
+|---|---|
+| Smoke selection | Deterministic worst-case batch |
+| Forward execution | Reached |
+| Backward | Completed |
+| Loss | Finite |
+| Post-`scaler.unscale_(optimizer)` gradient validation | One or more gradients were non-finite |
+| Smoke result | Raised the AMP-overflow blocker immediately; no recovery retry ran |
+| Attempt wall time | `15.251s` |
+| CUDA OOM | None |
+
+This establishes initial-scale FP16 gradient overflow on the worst-case batch. It
+does not establish that FP16 training is non-viable because the smoke's immediate
+failure rule prevented the normal dynamic scaler backoff and retry behavior.
+V1-B1 remains **PENDING bounded dynamic-AMP recovery smoke**. The 4,000-microstep
+training run and Dev evaluation remain **NOT RUN**.
 
 ## V1-B results and checkpoint selection — pending
 

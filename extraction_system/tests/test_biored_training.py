@@ -18,6 +18,7 @@ from biomedical_extractor.biored import (
 )
 from biomedical_extractor.biored_training import (
     GLIREL_RELATION_LABELS,
+    SMOKE_MAX_AMP_ATTEMPTS,
     TrainingPlan,
     V1TrainingConfig,
     _build_v1_optimizer,
@@ -294,6 +295,192 @@ class BioREDTrainingTests(unittest.TestCase):
             }.issubset(result["stage_timings_seconds"])
         )
 
+    def test_smoke_retries_overflow_and_records_scale_trajectory(self):
+        import torch
+
+        class TinySmokeModel(torch.nn.Module):
+            def __init__(self):
+                super().__init__()
+                self.weight = torch.nn.Parameter(torch.tensor([1.0, 0.0]))
+
+            def forward(self, batch):
+                del batch
+                return {"total_loss": self.weight[0].square()}
+
+        class RecoveringScaler:
+            instance = None
+
+            def __init__(self, enabled):
+                del enabled
+                self.scale_value = 8.0
+                self.unscale_calls = 0
+                self.step_calls = 0
+                RecoveringScaler.instance = self
+
+            def is_enabled(self):
+                return True
+
+            def scale(self, loss):
+                return loss * self.scale_value
+
+            def unscale_(self, optimizer):
+                self.unscale_calls += 1
+                if self.unscale_calls == 1:
+                    for group in optimizer.param_groups:
+                        for parameter in group["params"]:
+                            if parameter.grad is not None:
+                                parameter.grad.fill_(float("inf"))
+
+            def step(self, optimizer):
+                self.step_calls += 1
+                if self.step_calls > 1:
+                    return optimizer.step()
+                return None
+
+            def update(self):
+                if self.step_calls == 1:
+                    self.scale_value /= 2
+
+            def get_scale(self):
+                return self.scale_value
+
+        model = TinySmokeModel()
+        batch = {
+            "tokens": [["G", "D"]],
+            "rel_label": torch.zeros((1, 2), dtype=torch.long),
+        }
+        example = {
+            "metadata": {"document_id": "PM1"},
+            "tokenized_text": ["G", "D"],
+            "ner": [[0, 0, "Gene", "G"], [1, 1, "Disease", "D"]],
+            "relations": [],
+        }
+        config = V1TrainingConfig(device="cpu", mixed_precision="none")
+
+        with tempfile.TemporaryDirectory() as directory:
+            plan = TrainingPlan(
+                Path(directory) / "train.jsonl",
+                Path(directory) / "checkpoints",
+                config,
+            )
+            with patch(
+                "biomedical_extractor.biored_training._load_glirel_model",
+                return_value=model,
+            ), patch(
+                "biomedical_extractor.biored_training.load_training_examples",
+                return_value=[example],
+            ), patch(
+                "biomedical_extractor.biored_training._native_loader",
+                return_value=[batch],
+            ), patch(
+                "biomedical_extractor.biored_training._build_v1_optimizer",
+                return_value=torch.optim.AdamW(
+                    [{"params": [model.weight], "weight_decay": 0.0}], lr=0.1
+                ),
+            ), patch.object(torch.cuda.amp, "GradScaler", RecoveringScaler):
+                result = run_gpu_smoke_test(plan)
+
+        self.assertEqual(result["status"], "PASS")
+        self.assertEqual(result["attempt_count"], 2)
+        self.assertEqual(result["amp_overflow_attempts"], 1)
+        self.assertEqual(result["successful_scale"], 4.0)
+        self.assertEqual(result["successful_global_unscaled_gradient_norm"] > 0, True)
+        self.assertTrue(result["optimizer_step_completed"])
+        self.assertEqual(result["optimizer_parameters_at_step_1"], 1)
+        self.assertEqual(
+            result["scaler_scale_trajectory"],
+            [
+                {"attempt": 1, "before": 8.0, "after": 4.0},
+                {"attempt": 2, "before": 4.0, "after": 4.0},
+            ],
+        )
+        self.assertEqual(result["attempts"][0]["status"], "AMP_OVERFLOW")
+        self.assertTrue(result["attempts"][0]["optimizer_update_skipped"])
+        self.assertEqual(result["attempts"][1]["status"], "PASS")
+
+    def test_smoke_returns_structured_blocker_after_overflow_retry_bound(self):
+        import torch
+
+        class TinySmokeModel(torch.nn.Module):
+            def __init__(self):
+                super().__init__()
+                self.weight = torch.nn.Parameter(torch.tensor([1.0, 0.0]))
+
+            def forward(self, batch):
+                del batch
+                return {"total_loss": self.weight[0].square()}
+
+        class AlwaysOverflowScaler:
+            def __init__(self, enabled):
+                del enabled
+                self.scale_value = 8.0
+
+            def scale(self, loss):
+                return loss * self.scale_value
+
+            def unscale_(self, optimizer):
+                for group in optimizer.param_groups:
+                    for parameter in group["params"]:
+                        if parameter.grad is not None:
+                            parameter.grad.fill_(float("inf"))
+
+            def step(self, optimizer):
+                del optimizer
+                return None
+
+            def update(self):
+                self.scale_value /= 2
+
+            def get_scale(self):
+                return self.scale_value
+
+        model = TinySmokeModel()
+        batch = {
+            "tokens": [["G", "D"]],
+            "rel_label": torch.zeros((1, 2), dtype=torch.long),
+        }
+        example = {
+            "metadata": {"document_id": "PM1"},
+            "tokenized_text": ["G", "D"],
+            "ner": [[0, 0, "Gene", "G"], [1, 1, "Disease", "D"]],
+            "relations": [],
+        }
+        config = V1TrainingConfig(device="cpu", mixed_precision="none")
+
+        with tempfile.TemporaryDirectory() as directory:
+            plan = TrainingPlan(
+                Path(directory) / "train.jsonl",
+                Path(directory) / "checkpoints",
+                config,
+            )
+            with patch(
+                "biomedical_extractor.biored_training._load_glirel_model",
+                return_value=model,
+            ), patch(
+                "biomedical_extractor.biored_training.load_training_examples",
+                return_value=[example],
+            ), patch(
+                "biomedical_extractor.biored_training._native_loader",
+                return_value=[batch],
+            ), patch(
+                "biomedical_extractor.biored_training._build_v1_optimizer",
+                return_value=torch.optim.AdamW(
+                    [{"params": [model.weight], "weight_decay": 0.0}], lr=0.1
+                ),
+            ), patch.object(torch.cuda.amp, "GradScaler", AlwaysOverflowScaler):
+                result = run_gpu_smoke_test(plan)
+
+        self.assertEqual(result["status"], "BLOCKER")
+        self.assertEqual(result["attempt_count"], SMOKE_MAX_AMP_ATTEMPTS)
+        self.assertEqual(result["amp_overflow_attempts"], SMOKE_MAX_AMP_ATTEMPTS)
+        self.assertIn("persisted", result["blocker_reason"])
+        self.assertEqual(len(result["scaler_scale_trajectory"]), SMOKE_MAX_AMP_ATTEMPTS)
+        self.assertTrue(
+            all(attempt["optimizer_update_skipped"] for attempt in result["attempts"])
+        )
+        self.assertIsNone(result["peak_cuda_memory_allocated_bytes"])
+        self.assertIn("forward", result["stage_timings_seconds"])
+
     def test_training_update_schedule_remains_gradient_accumulation_based(self):
         import torch
 
@@ -326,7 +513,7 @@ class BioREDTrainingTests(unittest.TestCase):
 
         def optimizer_builder(current_model, current_config):
             del current_config
-            return torch.optim.SGD(current_model.parameters(), lr=0.1)
+            return torch.optim.AdamW(current_model.parameters(), lr=0.1)
 
         with tempfile.TemporaryDirectory() as directory:
             plan = TrainingPlan(
@@ -356,6 +543,111 @@ class BioREDTrainingTests(unittest.TestCase):
             [entry["microstep"] for entry in summary["training_progression"]],
             [2, 3],
         )
+
+    def test_training_counts_amp_skips_and_advances_scheduler_only_on_success(self):
+        import torch
+
+        class TinyTrainingModel(torch.nn.Module):
+            def __init__(self):
+                super().__init__()
+                self.weight = torch.nn.Parameter(torch.tensor(1.0))
+
+            def forward(self, batch):
+                del batch
+                return {"total_loss": self.weight.square()}
+
+            def save_pretrained(self, path):
+                Path(path).mkdir(parents=True, exist_ok=True)
+
+        class OneSkippedUpdateScaler:
+            instance = None
+
+            def __init__(self, enabled):
+                del enabled
+                self.step_calls = 0
+                self.scale_value = 8.0
+                OneSkippedUpdateScaler.instance = self
+
+            def is_enabled(self):
+                return True
+
+            def scale(self, loss):
+                return loss
+
+            def step(self, optimizer):
+                self.step_calls += 1
+                if self.step_calls > 1:
+                    return optimizer.step()
+                return None
+
+            def update(self):
+                if self.step_calls == 1:
+                    self.scale_value /= 2
+
+            def get_scale(self):
+                return self.scale_value
+
+        class RecordingScheduler:
+            def __init__(self):
+                self.step_calls = 0
+
+            def step(self):
+                self.step_calls += 1
+
+        model = TinyTrainingModel()
+        example = {
+            "metadata": {"document_id": "PM1"},
+            "tokenized_text": ["G"],
+            "ner": [],
+            "relations": [],
+        }
+        config = V1TrainingConfig(
+            device="cpu",
+            mixed_precision="none",
+            num_steps=3,
+            gradient_accumulation=2,
+            save_every=2,
+        )
+        scheduler = RecordingScheduler()
+
+        with tempfile.TemporaryDirectory() as directory:
+            plan = TrainingPlan(
+                Path(directory) / "train.jsonl",
+                Path(directory) / "checkpoints",
+                config,
+            )
+            with patch(
+                "biomedical_extractor.biored_training._load_glirel_model",
+                return_value=model,
+            ), patch(
+                "biomedical_extractor.biored_training.load_training_examples",
+                return_value=[example],
+            ), patch(
+                "biomedical_extractor.biored_training._native_loader",
+                return_value=[{}],
+            ), patch(
+                "biomedical_extractor.biored_training._build_v1_optimizer",
+                return_value=torch.optim.AdamW(model.parameters(), lr=0.1),
+            ), patch(
+                "transformers.get_cosine_schedule_with_warmup",
+                return_value=scheduler,
+            ), patch.object(
+                torch.cuda.amp, "GradScaler", OneSkippedUpdateScaler
+            ):
+                summary = run_training(plan)
+                serialized = json.loads(
+                    (Path(directory) / "checkpoints" / "training_summary.json")
+                    .read_text(encoding="utf-8")
+                )
+
+        self.assertEqual(summary["optimizer_updates"], 1)
+        self.assertEqual(summary["amp_skipped_updates"], 1)
+        self.assertEqual(summary["intended_optimizer_updates"], 2)
+        self.assertEqual(summary["final_scaler_scale"], 4.0)
+        self.assertEqual(scheduler.step_calls, 1)
+        self.assertEqual(serialized["optimizer_updates"], 1)
+        self.assertEqual(serialized["amp_skipped_updates"], 1)
+        self.assertEqual(serialized["final_scaler_scale"], 4.0)
 
     def test_scheduler_steps_use_optimizer_update_count(self):
         self.assertEqual(calculate_scheduler_steps(4_000, 8, 0.1), (500, 50))

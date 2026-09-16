@@ -39,6 +39,7 @@ from biomedical_extractor.pipeline import DEFAULT_RELATION_MODEL, _tokenize
 
 
 GLIREL_TRAINING_MAX_LEN = 512
+SMOKE_MAX_AMP_ATTEMPTS = 8
 GLIREL_RELATION_LABELS = tuple(
     CANONICAL_TO_PROMPT[label] for label in BIORED_RELATION_LABELS
 )
@@ -894,8 +895,8 @@ def _learning_rate_snapshot(optimizer: Any) -> dict[str, float]:
     }
 
 
-def _validate_unscaled_gradients(model: Any, torch: Any) -> dict[str, Any]:
-    """Validate all unscaled gradients with tensor-level reductions."""
+def _inspect_unscaled_gradients(model: Any, torch: Any) -> dict[str, Any]:
+    """Inspect all unscaled gradients with tensor-level reductions."""
 
     gradients = [
         parameter.grad.detach()
@@ -903,69 +904,133 @@ def _validate_unscaled_gradients(model: Any, torch: Any) -> dict[str, Any]:
         if parameter.requires_grad and parameter.grad is not None
     ]
     if not gradients:
-        raise RuntimeError("V1 GPU smoke test produced no trainable gradients")
+        return {
+            "gradient_tensors": 0,
+            "gradients_finite": False,
+            "gradient_norm_finite": False,
+            "gradient_norm_nonzero": False,
+            "global_unscaled_gradient_norm": None,
+            "gradient_validation_error": "no trainable gradients",
+        }
 
     finite_by_gradient = torch.stack(
         [torch.isfinite(gradient).all() for gradient in gradients]
     )
     if not bool(finite_by_gradient.all().item()):
-        raise RuntimeError(
-            "V1 GPU smoke test AMP-overflow blocker: unscaled gradients contain "
-            "non-finite values; GradScaler would skip optimizer.step()"
-        )
+        return {
+            "gradient_tensors": len(gradients),
+            "gradients_finite": False,
+            "gradient_norm_finite": False,
+            "gradient_norm_nonzero": False,
+            "global_unscaled_gradient_norm": None,
+            "gradient_validation_error": "unscaled gradients contain non-finite values",
+        }
 
     per_gradient_norms = torch._foreach_norm(gradients, 2.0)
     global_norm = torch.linalg.vector_norm(
         torch.stack([norm.float() for norm in per_gradient_norms]), ord=2
     )
-    if not bool(torch.isfinite(global_norm).item()):
-        raise RuntimeError(
-            "V1 GPU smoke test produced a non-finite global unscaled gradient norm"
-        )
-    if not bool(global_norm.gt(0).item()):
-        raise RuntimeError(
-            "V1 GPU smoke test produced a zero global unscaled gradient norm"
-        )
+    norm_finite = bool(torch.isfinite(global_norm).item())
+    if not norm_finite:
+        return {
+            "gradient_tensors": len(gradients),
+            "gradients_finite": True,
+            "gradient_norm_finite": False,
+            "gradient_norm_nonzero": False,
+            "global_unscaled_gradient_norm": None,
+            "gradient_validation_error": "global unscaled gradient norm is non-finite",
+        }
+    norm_nonzero = bool(global_norm.gt(0).item())
     return {
         "gradient_tensors": len(gradients),
         "global_unscaled_gradient_norm": float(global_norm.detach().cpu()),
         "gradients_finite": True,
+        "gradient_norm_finite": norm_finite,
+        "gradient_norm_nonzero": norm_nonzero,
     }
+
+
+def _validate_unscaled_gradients(model: Any, torch: Any) -> dict[str, Any]:
+    """Validate all unscaled gradients with tensor-level reductions."""
+
+    metrics = _inspect_unscaled_gradients(model, torch)
+    if not metrics["gradients_finite"]:
+        if metrics.get("gradient_validation_error") == "no trainable gradients":
+            raise RuntimeError("V1 GPU smoke test produced no trainable gradients")
+        raise RuntimeError(
+            "V1 GPU smoke test AMP-overflow blocker: unscaled gradients contain "
+            "non-finite values; GradScaler would skip optimizer.step()"
+        )
+    if not metrics["gradient_norm_finite"]:
+        raise RuntimeError(
+            "V1 GPU smoke test produced a non-finite global unscaled gradient norm"
+        )
+    if not metrics["gradient_norm_nonzero"]:
+        raise RuntimeError(
+            "V1 GPU smoke test produced a zero global unscaled gradient norm"
+        )
+    return metrics
+
+
+def _optimizer_step_snapshot(optimizer: Any, torch: Any) -> Any:
+    """Return ordered optimizer step state without scalar host synchronization."""
+
+    step_values: list[Any] = []
+    reference_device = None
+    for group in optimizer.param_groups:
+        for parameter in group["params"]:
+            state = optimizer.state.get(parameter)
+            if not state or "step" not in state:
+                step_values.append(None)
+                continue
+            step = state["step"]
+            if torch.is_tensor(step):
+                value = step.detach().reshape(())
+            else:
+                value = torch.as_tensor(step, dtype=torch.float32)
+            if reference_device is None:
+                reference_device = value.device
+            step_values.append(value)
+
+    if not step_values:
+        return torch.empty(0, dtype=torch.float32)
+
+    if reference_device is None:
+        reference_device = torch.device("cpu")
+    return torch.stack(
+        [
+            (
+                torch.zeros((), dtype=torch.float32, device=reference_device)
+                if step is None
+                else step.to(device=reference_device, dtype=torch.float32)
+            )
+            for step in step_values
+        ]
+    )
 
 
 def _optimizer_step_status(optimizer: Any, torch: Any) -> dict[str, Any]:
     """Check optimizer state for a first AdamW update without reading parameters."""
 
-    step_values = []
-    for group in optimizer.param_groups:
-        for parameter in group["params"]:
-            state = optimizer.state.get(parameter)
-            if not state or "step" not in state:
-                continue
-            step = state["step"]
-            if torch.is_tensor(step):
-                step_values.append(step.detach().reshape(()))
-            else:
-                step_values.append(torch.as_tensor(step))
-
-    if not step_values:
+    steps = _optimizer_step_snapshot(optimizer, torch)
+    if not steps.numel():
         return {
             "optimizer_step_completed": False,
             "optimizer_parameters_at_step_1": 0,
         }
-
-    reference_device = step_values[0].device
-    steps = torch.stack(
-        [
-            step.to(device=reference_device, dtype=torch.float32)
-            for step in step_values
-        ]
-    )
     parameters_at_step_1 = int(steps.eq(1).sum().item())
     return {
         "optimizer_step_completed": parameters_at_step_1 > 0,
         "optimizer_parameters_at_step_1": parameters_at_step_1,
     }
+
+
+def _optimizer_step_advanced(before: Any, after: Any, torch: Any) -> bool:
+    """Return whether any optimizer parameter's step state increased."""
+
+    if before.numel() != after.numel():
+        raise RuntimeError("Optimizer parameter state shape changed during training")
+    return bool(torch.gt(after, before).any().item())
 
 
 def _timed_smoke_stage(
@@ -1004,7 +1069,7 @@ def _peak_cuda_memory(torch: Any, device: str) -> dict[str, int | None]:
 
 
 def run_gpu_smoke_test(plan: TrainingPlan) -> dict[str, Any]:
-    """Run one real forward/backward/update check on the selected GPU."""
+    """Run a bounded dynamic-AMP forward/backward/update check on one batch."""
 
     import torch
 
@@ -1048,94 +1113,247 @@ def run_gpu_smoke_test(plan: TrainingPlan) -> dict[str, Any]:
         lambda: _move_batch(next(iter(loader)), device),
     )
 
-    autocast_context = (
-        torch.autocast(device_type="cuda", dtype=torch.float16)
-        if amp_enabled
-        else nullcontext()
-    )
+    attempts: list[dict[str, Any]] = []
+    successful_attempt: dict[str, Any] | None = None
+    memory = {
+        "peak_cuda_memory_allocated_bytes": None,
+        "peak_cuda_memory_reserved_bytes": None,
+    }
+    gradients_zeroed = True
 
-    def forward_pass() -> Any:
-        with autocast_context:
-            output = model(batch)
-            loss = output["total_loss"]
-        if not bool(torch.isfinite(loss).all()):
-            raise RuntimeError(f"V1 GPU smoke test produced a non-finite loss: {loss}")
-        return loss
+    for attempt_number in range(1, SMOKE_MAX_AMP_ATTEMPTS + 1):
+        attempt_timings: dict[str, float] = {}
+        attempt = {
+            "attempt": attempt_number,
+            "loss": None,
+            "gradients_finite": None,
+            "gradient_norm_finite": None,
+            "gradient_norm_nonzero": None,
+            "global_unscaled_gradient_norm": None,
+            "gradient_tensors": 0,
+            "scaler_scale_before": float(scaler.get_scale()),
+            "scaler_scale_after": None,
+            "overflow": None,
+            "optimizer_update_skipped": None,
+            "optimizer_step_completed": False,
+            "optimizer_parameters_at_step_1": 0,
+            "stage_timings_seconds": attempt_timings,
+        }
+        should_retry = False
+        attempt_succeeded = False
+        memory_captured = False
 
-    loss = _timed_smoke_stage(
-        torch, device, stage_timings, "forward", forward_pass
-    )
+        optimizer.zero_grad(set_to_none=True)
+        try:
+            def forward_pass() -> Any:
+                autocast_context = (
+                    torch.autocast(device_type="cuda", dtype=torch.float16)
+                    if amp_enabled
+                    else nullcontext()
+                )
+                with autocast_context:
+                    output = model(batch)
+                    loss = output["total_loss"]
+                if not bool(torch.isfinite(loss).all()):
+                    raise RuntimeError(
+                        f"V1 GPU smoke test produced a non-finite loss: {loss}"
+                    )
+                return loss
 
-    _timed_smoke_stage(
-        torch,
-        device,
-        stage_timings,
+            loss = _timed_smoke_stage(
+                torch, device, attempt_timings, "forward", forward_pass
+            )
+            attempt["loss"] = float(loss.detach().cpu())
+
+            _timed_smoke_stage(
+                torch,
+                device,
+                attempt_timings,
+                "backward",
+                lambda: scaler.scale(loss).backward(),
+            )
+
+            def inspect_gradients() -> dict[str, Any]:
+                scaler.unscale_(optimizer)
+                return _inspect_unscaled_gradients(model, torch)
+
+            gradient_metrics = _timed_smoke_stage(
+                torch,
+                device,
+                attempt_timings,
+                "gradient_validation",
+                inspect_gradients,
+            )
+            attempt.update(gradient_metrics)
+            attempt["overflow"] = not gradient_metrics["gradients_finite"]
+
+            def optimizer_scaler_step() -> float:
+                scaler.step(optimizer)
+                scaler.update()
+                return float(scaler.get_scale())
+
+            scaler_scale_after = _timed_smoke_stage(
+                torch,
+                device,
+                attempt_timings,
+                "optimizer_scaler_step",
+                optimizer_scaler_step,
+            )
+            attempt["scaler_scale_after"] = scaler_scale_after
+            if scaler_scale_after < attempt["scaler_scale_before"]:
+                attempt["overflow"] = True
+
+            # Read peak memory before any post-step optimizer-state validation.
+            memory = _peak_cuda_memory(torch, device)
+            attempt.update(memory)
+            memory_captured = True
+            optimizer_status = _optimizer_step_status(optimizer, torch)
+            attempt.update(optimizer_status)
+            attempt["optimizer_update_skipped"] = not optimizer_status[
+                "optimizer_step_completed"
+            ]
+
+            attempt_succeeded = bool(
+                gradient_metrics["gradients_finite"]
+                and gradient_metrics["gradient_norm_finite"]
+                and gradient_metrics["gradient_norm_nonzero"]
+                and optimizer_status["optimizer_step_completed"]
+            )
+            if attempt_succeeded:
+                attempt["status"] = "PASS"
+                successful_attempt = attempt
+            elif attempt["overflow"] and attempt_number < SMOKE_MAX_AMP_ATTEMPTS:
+                attempt["status"] = "AMP_OVERFLOW"
+                attempt["retry"] = True
+                should_retry = True
+            elif attempt["overflow"]:
+                attempt["status"] = "BLOCKER"
+                attempt["blocker_reason"] = (
+                    "AMP-overflow blocker: non-finite unscaled gradients persisted "
+                    f"through {SMOKE_MAX_AMP_ATTEMPTS} smoke attempts"
+                )
+            elif not gradient_metrics["gradient_norm_nonzero"]:
+                attempt["status"] = "BLOCKER"
+                attempt["blocker_reason"] = (
+                    "gradient-validation blocker: global unscaled gradient norm "
+                    "was zero or not finite"
+                )
+            else:
+                attempt["status"] = "BLOCKER"
+                attempt["blocker_reason"] = (
+                    "optimizer-step blocker: no optimizer parameter reached step 1"
+                )
+        except Exception as error:
+            attempt["status"] = "BLOCKER"
+            attempt["blocker_reason"] = "material runtime error"
+            attempt["error"] = f"{type(error).__name__}: {error}"
+        finally:
+            if not memory_captured:
+                try:
+                    memory = _peak_cuda_memory(torch, device)
+                    attempt.update(memory)
+                except Exception as memory_error:
+                    attempt["memory_error"] = (
+                        f"{type(memory_error).__name__}: {memory_error}"
+                    )
+            try:
+                optimizer.zero_grad(set_to_none=True)
+            except Exception as zero_error:
+                gradients_zeroed = False
+                attempt["gradient_zero_error"] = (
+                    f"{type(zero_error).__name__}: {zero_error}"
+                )
+            attempts.append(attempt)
+
+        if attempt_succeeded:
+            break
+        if not should_retry:
+            break
+
+    timed_stage_names = (
+        "model_load",
+        "batch_materialization",
+        "collator_materialization",
+        "forward",
         "backward",
-        lambda: scaler.scale(loss).backward(),
-    )
-
-    def validate_gradients() -> dict[str, Any]:
-        scaler.unscale_(optimizer)
-        return _validate_unscaled_gradients(model, torch)
-
-    gradient_metrics = _timed_smoke_stage(
-        torch,
-        device,
-        stage_timings,
         "gradient_validation",
-        validate_gradients,
-    )
-
-    scaler_scale_before = float(scaler.get_scale())
-
-    def optimizer_scaler_step() -> float:
-        scaler.step(optimizer)
-        scaler.update()
-        return float(scaler.get_scale())
-
-    scaler_scale_after = _timed_smoke_stage(
-        torch,
-        device,
-        stage_timings,
         "optimizer_scaler_step",
-        optimizer_scaler_step,
     )
-
-    # Read peak memory before any post-step validation can raise and hide it.
-    memory = _peak_cuda_memory(torch, device)
-    optimizer_status = _optimizer_step_status(optimizer, torch)
-    if not optimizer_status["optimizer_step_completed"]:
-        if amp_enabled and scaler_scale_after < scaler_scale_before:
-            failure = (
-                "AMP-overflow blocker: GradScaler skipped optimizer.step() and "
-                "no optimizer parameter reached step 1"
-            )
-        else:
-            failure = (
-                "optimizer-step verification failed: no optimizer parameter "
-                "reached step 1"
-            )
-        raise RuntimeError(
-            "V1 GPU smoke test "
-            f"{failure}; scaler scale {scaler_scale_before} -> "
-            f"{scaler_scale_after}; peak memory {memory}"
+    aggregated_timings = {
+        name: float(stage_timings.get(name, 0.0)) for name in timed_stage_names
+    }
+    for name in timed_stage_names[3:]:
+        aggregated_timings[name] = sum(
+            float(attempt["stage_timings_seconds"].get(name, 0.0))
+            for attempt in attempts
         )
 
-    optimizer.zero_grad(set_to_none=True)
+    last_attempt = attempts[-1]
+    status = "PASS" if successful_attempt is not None else "BLOCKER"
+    successful_loss = (
+        successful_attempt["loss"] if successful_attempt is not None else None
+    )
+    successful_norm = (
+        successful_attempt["global_unscaled_gradient_norm"]
+        if successful_attempt is not None
+        else None
+    )
+    successful_scale = (
+        successful_attempt["scaler_scale_after"]
+        if successful_attempt is not None
+        else None
+    )
     return {
+        "status": status,
         "checkpoint": config.checkpoint,
         "device": device,
         "examples_available": len(examples),
         "tokens": len(batch["tokens"][0]),
         "candidate_pairs": int(batch["rel_label"].shape[1]),
-        "loss": float(loss.detach().cpu()),
+        "loss": successful_loss,
         "amp_enabled": amp_enabled,
-        **gradient_metrics,
-        **optimizer_status,
-        "scaler_scale_before": scaler_scale_before,
-        "scaler_scale_after": scaler_scale_after,
-        "stage_timings_seconds": stage_timings,
-        "gradients_zeroed": True,
+        "attempt_count": len(attempts),
+        "max_attempts": SMOKE_MAX_AMP_ATTEMPTS,
+        "amp_overflow_attempts": sum(
+            1 for attempt in attempts if attempt["overflow"] is True
+        ),
+        "scaler_scale_trajectory": [
+            {
+                "attempt": attempt["attempt"],
+                "before": attempt["scaler_scale_before"],
+                "after": attempt["scaler_scale_after"],
+            }
+            for attempt in attempts
+        ],
+        "successful_scale": successful_scale,
+        "successful_loss": successful_loss,
+        "successful_global_unscaled_gradient_norm": successful_norm,
+        "global_unscaled_gradient_norm": (
+            successful_norm
+            if successful_attempt is not None
+            else last_attempt["global_unscaled_gradient_norm"]
+        ),
+        "gradients_finite": (
+            True
+            if successful_attempt is not None
+            else last_attempt["gradients_finite"]
+        ),
+        "gradient_norm_finite": last_attempt["gradient_norm_finite"],
+        "gradient_norm_nonzero": last_attempt["gradient_norm_nonzero"],
+        "optimizer_step_completed": successful_attempt is not None,
+        "optimizer_parameters_at_step_1": last_attempt[
+            "optimizer_parameters_at_step_1"
+        ],
+        "scaler_scale_before": last_attempt["scaler_scale_before"],
+        "scaler_scale_after": last_attempt["scaler_scale_after"],
+        "attempts": attempts,
+        "stage_timings_seconds": aggregated_timings,
+        "gradients_zeroed": gradients_zeroed,
+        "blocker_reason": (
+            None
+            if successful_attempt is not None
+            else last_attempt.get("blocker_reason", "smoke did not pass")
+        ),
         "tested_example": {
             "document_id": selected_example.get("metadata", {}).get("document_id"),
             "token_count": len(selected_example.get("tokenized_text", ())),
@@ -1176,6 +1394,9 @@ def run_training(plan: TrainingPlan) -> dict[str, Any]:
     )
     amp_enabled = config.mixed_precision == "fp16" and device.startswith("cuda")
     scaler = torch.cuda.amp.GradScaler(enabled=amp_enabled)
+    scaler_enabled = (
+        bool(scaler.is_enabled()) if hasattr(scaler, "is_enabled") else amp_enabled
+    )
     model.train()
     optimizer.zero_grad(set_to_none=True)
     if device.startswith("cuda"):
@@ -1183,6 +1404,7 @@ def run_training(plan: TrainingPlan) -> dict[str, Any]:
     iterator = iter(loader)
     last_loss = None
     updates = 0
+    amp_skipped_updates = 0
     progression: list[dict[str, Any]] = []
     for step in range(1, config.num_steps + 1):
         try:
@@ -1204,39 +1426,52 @@ def run_training(plan: TrainingPlan) -> dict[str, Any]:
             raise RuntimeError(f"V1 training produced a non-finite loss at step {step}")
         scaler.scale(scaled_loss).backward()
         if step % config.gradient_accumulation == 0 or step == config.num_steps:
+            optimizer_steps_before = _optimizer_step_snapshot(optimizer, torch)
             scaler.step(optimizer)
             scaler.update()
-            scheduler.step()
+            optimizer_steps_after = _optimizer_step_snapshot(optimizer, torch)
+            optimizer_stepped = _optimizer_step_advanced(
+                optimizer_steps_before, optimizer_steps_after, torch
+            )
+            if optimizer_stepped:
+                scheduler.step()
+                updates += 1
+            elif scaler_enabled:
+                amp_skipped_updates += 1
             optimizer.zero_grad(set_to_none=True)
-            updates += 1
         last_loss = float(loss.detach().cpu())
         if step % config.save_every == 0 or step == config.num_steps:
             progression.append(
                 {
                     "microstep": step,
                     "optimizer_updates": updates,
+                    "amp_skipped_updates": amp_skipped_updates,
                     "loss": last_loss,
                     "learning_rate": _learning_rate_snapshot(optimizer),
                 }
             )
         if step % config.save_every == 0 and step < config.num_steps:
             model.save_pretrained(plan.output_dir / f"step_{step}")
-    if updates != scheduler_total_steps:
+    if updates > scheduler_total_steps:
         raise RuntimeError(
-            "V1 optimizer-update count diverged from scheduler total steps: "
-            f"{updates} != {scheduler_total_steps}"
+            "V1 optimizer-update count exceeded scheduler total steps: "
+            f"{updates} > {scheduler_total_steps}"
         )
     final_path = plan.output_dir / "final"
     model.save_pretrained(final_path)
     memory = _peak_cuda_memory(torch, device)
+    final_scaler_scale = float(scaler.get_scale())
     summary = {
         "checkpoint": config.checkpoint,
         "output_dir": str(plan.output_dir),
         "final_checkpoint": str(final_path),
         "steps": config.num_steps,
         "optimizer_updates": updates,
+        "amp_skipped_updates": amp_skipped_updates,
         "scheduler_total_steps": scheduler_total_steps,
+        "intended_optimizer_updates": scheduler_total_steps,
         "warmup_steps": warmup_steps,
+        "final_scaler_scale": final_scaler_scale,
         "last_loss": last_loss,
         "examples": len(examples),
         "device": device,
@@ -1308,7 +1543,9 @@ def main(argv: Sequence[str] | None = None) -> int:
     output_dir = args.output_dir if args.command == "train" else Path(".cache/v1/smoke")
     plan = build_training_plan(args.training_jsonl, output_dir, config)
     if args.command == "smoke":
-        print(json.dumps(run_gpu_smoke_test(plan), indent=2, sort_keys=True))
+        result = run_gpu_smoke_test(plan)
+        print(json.dumps(result, indent=2, sort_keys=True))
+        return 0 if result["status"] == "PASS" else 1
     else:
         print(json.dumps(run_training(plan), indent=2, sort_keys=True))
     return 0
