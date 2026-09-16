@@ -419,7 +419,7 @@ matching the AWS/Linux regenerated artifacts:
 
 The 4,000-microstep fine-tuning run and Dev evaluation remain **NOT RUN**.
 
-## V1-B1 GPU smoke — measured blocker; correction pending rerun (2026-09-16)
+## V1-B1 GPU smoke — initial measured blocker (historical; 2026-09-16)
 
 The AWS runtime preflight passed, but the prescribed smoke command did not reach
 the forward pass. The repository was at exact HEAD
@@ -468,30 +468,42 @@ The installed `glirel==1.2.1` `GLiREL.get_optimizer` unconditionally calls
 attribute. This is the immediate root cause. No speculative fix was attempted,
 and the run stopped before full training.
 
-The compatibility correction enabled the later attempt below. V1-B1 smoke remains
-**PENDING RERUN after diagnostic correction**. The 4,000-microstep fine-tuning run
-and Dev evaluation remain **NOT RUN**.
+The compatibility correction was implemented after the historical attempt. The
+post-correction rerun is recorded below; the 4,000-microstep fine-tuning run and
+Dev evaluation remain **NOT RUN**.
 
 ## V1-B1 post-optimizer GPU smoke — diagnostic ambiguity; correction pending rerun (2026-09-16)
 
 The second measured AWS attempt ran at exact HEAD
-`c2586c40d27aa60a699eb9f01897f3e825c5dfd0`. The exact deterministic worst-workload
-selection reached the model execution path:
+`c2586c40d27aa60a699eb9f01897f3e825c5dfd0`, using the unchanged checkpoint,
+deterministic smoke selection, 512-token limit, batch size, FP16 mode, relation
+schema, prepared corpus, learning rates, weight decay, and repository-owned
+optimizer grouping. The existing prepared artifacts were not regenerated and
+matched the required hashes:
+
+- Training JSONL:
+  `e1ecf8985114ccc756a87cece699f76123ab6489d42b8308ffa71ae750b91c51`
+- Statistics:
+  `ae91907822e47d94e1c2179ab4dcfafc73b6bf0e2c953b907090adad3b2fba0f`
+
+The exact deterministic worst-workload selection reached the model execution path.
+The command completed after `23m14.897s` and failed only at the old
+parameter-change assertion:
 
 | Field | Result |
 |---|---|
 | Smoke document | `30442153` — 446 tokens, 71 entities, 4,970 candidate pairs, 1,436 positive relations |
 | Forward execution | Reached |
-| Finite-loss validation | Passed |
+| Finite-loss validation | Passed; loss was not emitted before the diagnostic failure |
+| AMP / FP16 | Enabled (`fp16` on CUDA) |
 | Backward | Completed |
 | Gradient evidence | A finite, non-zero scaled gradient was found |
 | `scaler.step()` | Returned |
 | `scaler.update()` | Returned |
 | CUDA OOM | None |
 | Failure | One sampled parameter scalar was unchanged |
-| Attempt wall time | `23m14.897s` |
-| Stage timings | Not available in this pre-correction run |
 | Peak CUDA memory | Not retained because the old post-step validation raised before the memory read |
+| Attempt wall time | `23m14.897s` |
 
 This was not a demonstrated training failure. The old smoke could not distinguish
 GradScaler skipping the optimizer update because another gradient was non-finite
