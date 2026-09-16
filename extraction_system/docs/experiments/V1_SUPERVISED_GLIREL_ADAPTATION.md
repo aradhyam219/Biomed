@@ -5,7 +5,7 @@
 | Stage | Status | Evidence |
 |---|---|---|
 | V1-A — BioRED Training Preparation | **Completed and verified locally** | Deterministic Train conversion, 512-token preflight, native-collator negative-label test, provenance check, and reproducibility checks passed. |
-| V1-B — GPU Fine-Tuning & Evaluation | **Pending** | No GPU training, checkpoint selection, or fine-tuned Dev inference has been run in this phase. |
+| V1-B — GPU Fine-Tuning & Evaluation | **Blocked at V1-B1 GPU smoke** | The checkpoint loaded on the AWS Tesla T4, but the prescribed smoke path stopped during optimizer construction before forward/backward execution. |
 
 This is the one living report for V1. It records the prepared experiment now and
 will be updated with the actual GPU progression, selected checkpoint, Dev metrics,
@@ -277,7 +277,7 @@ FP16 scaler for backward and optimizer update, finds a finite non-zero gradient,
 snapshots one parameter element, verifies that the sampled state changed, zeroes
 gradients, and reports tested-example diagnostics plus peak allocated/reserved CUDA
 memory. It does not clone a full trainable parameter. These are implementation
-checks for the pending AWS smoke run, not measured V1-B results.
+checks for the AWS smoke gate; the measured attempt is recorded below.
 
 ## Implementation and reproducibility
 
@@ -407,10 +407,63 @@ matching the AWS/Linux regenerated artifacts:
 
 The 4,000-microstep fine-tuning run and Dev evaluation remain **NOT RUN**.
 
+## V1-B1 GPU smoke — **BLOCKER** (2026-09-16)
+
+The AWS runtime preflight passed, but the prescribed smoke command did not reach
+the forward pass. The repository was at exact HEAD
+`c781085b96c6f9412a0c5f7587531e9bbf1ebe80`. The existing prepared artifacts were
+present and matched the confirmed cross-machine hashes without regeneration:
+
+- Training JSONL:
+  `e1ecf8985114ccc756a87cece699f76123ab6489d42b8308ffa71ae750b91c51`
+- Statistics:
+  `ae91907822e47d94e1c2179ab4dcfafc73b6bf0e2c953b907090adad3b2fba0f`
+
+### AWS preflight and smoke evidence
+
+| Field | Result |
+|---|---|
+| GPU | NVIDIA Tesla T4 |
+| Total VRAM | 15,360 MiB (`nvidia-smi`); PyTorch reported 14,912 MiB device capacity |
+| Driver | `595.91.07` |
+| PyTorch | `2.14.0+cu130` |
+| PyTorch CUDA build | `13.0` |
+| CUDA available | `true`; one CUDA device visible |
+| GPU occupancy before smoke | 0 MiB / 0% utilization; no compute process listed |
+| Root disk before smoke | 22 GB free of 78 GB (73% used) |
+| Root disk after checkpoint download | 18 GB free of 78 GB (77% used); no disk blocker |
+| Checkpoint | `jackboyla/glirel-large-v0` loaded successfully before the failure |
+| Smoke FP16 setting | Requested `fp16`; AMP execution not reached |
+| Intended smoke document | `30442153` (selected deterministically; not executed) |
+| Intended workload | 446 tokens, 71 entities, 4,970 candidate pairs, 1,436 positive relations (not executed) |
+| Loss | Not reached |
+| Backward | Not reached |
+| Optimizer step | Not reached; optimizer construction failed |
+| Parameter change | Not reached |
+| Peak allocated VRAM | Not measured; the smoke path failed before peak counters were reset/read |
+| Peak reserved VRAM | Not measured; the smoke path failed before peak counters were reset/read |
+| Attempt wall time | 72.00 seconds, including checkpoint download and startup |
+
+The exact command ran with the required checkpoint, device, FP16 mode, and
+prepared JSONL. It failed at `model.get_optimizer(...)` with:
+
+```text
+AttributeError: 'GLiREL' object has no attribute '_rel_filtering'
+```
+
+The installed `glirel==1.2.1` `GLiREL.get_optimizer` unconditionally calls
+`self._rel_filtering.parameters()`, while the loaded model instance has no such
+attribute. This is the immediate root cause. No speculative fix was attempted,
+and the run stopped before full training.
+
+**V1-B1 GPU smoke = BLOCKER.** The 4,000-microstep fine-tuning run remains
+**NOT RUN** and Dev evaluation remains **NOT RUN**.
+
 ## V1-B results and checkpoint selection — pending
 
-No GPU result exists yet. The following fields must be filled from actual AWS
-artifacts after the smoke test and training run:
+No successful GPU result exists yet. The following fields must be filled from
+actual AWS artifacts after the smoke blocker is resolved and the training run is
+authorized:
 
 - hardware/runtime, CUDA/PyTorch versions, wall time, and peak VRAM;
 - loss/checkpoint progression at the saved steps;
