@@ -474,7 +474,7 @@ The compatibility correction was implemented after the historical attempt. The
 post-correction rerun is recorded below; the 4,000-microstep fine-tuning run and
 Dev evaluation remain **NOT RUN**.
 
-## V1-B1 post-optimizer GPU smoke — diagnostic ambiguity; correction pending rerun (2026-09-16)
+## V1-B1 post-optimizer GPU smoke — diagnostic ambiguity (historical; 2026-09-16)
 
 The second measured AWS attempt ran at exact HEAD
 `c2586c40d27aa60a699eb9f01897f3e825c5dfd0`, using the unchanged checkpoint,
@@ -516,31 +516,61 @@ invariant. The third attempt below exposed the separate initial-scale overflow
 condition; bounded dynamic-AMP recovery remains pending. The 4,000-microstep
 training run and Dev evaluation remain **NOT RUN**.
 
-## V1-B1 initial-scale AMP overflow — bounded recovery pending (2026-09-16)
+## V1-B1 corrected GPU smoke — initial-scale overflow; bounded recovery pending (2026-09-16)
 
-The third measured AWS attempt ran at exact HEAD
-`c075b8d4bfa068b03ce77b1e03dd77add5bbb28a` on the same deterministic worst-case
-smoke batch. It proved overflow at the current FP16 GradScaler scale, but not that
-dynamic AMP recovery fails:
+The exact required smoke command was run at HEAD
+`c075b8d4bfa068b03ce77b1e03dd77add5bbb28a` with the unchanged checkpoint,
+prepared JSONL, CUDA device, and FP16 configuration. The existing prepared
+artifacts were present and were not regenerated; their hashes matched the
+confirmed values:
+
+- Training JSONL:
+  `e1ecf8985114ccc756a87cece699f76123ab6489d42b8308ffa71ae750b91c51`
+- Statistics:
+  `ae91907822e47d94e1c2179ab4dcfafc73b6bf0e2c953b907090adad3b2fba0f`
+
+The deterministic smoke selection was the same worst-workload example as the
+earlier attempts. Model loading, batch preparation, collator materialization,
+forward execution, finite-loss validation, and backward execution all reached
+the execution path. The run then failed during full unscaled-gradient validation
+after `scaler.unscale_(optimizer)`.
+
+The exact exception was:
+
+```text
+RuntimeError: V1 GPU smoke test AMP-overflow blocker: unscaled gradients contain non-finite values; GradScaler would skip optimizer.step()
+```
+
+The smoke raised before it emitted its result JSON. Therefore the available
+third-attempt evidence is:
 
 | Field | Result |
 |---|---|
-| Smoke selection | Deterministic worst-case batch |
-| Forward execution | Reached |
-| Backward | Completed |
-| Loss | Finite |
-| Post-`scaler.unscale_(optimizer)` gradient validation | One or more gradients were non-finite |
-| Smoke result | Raised the AMP-overflow blocker immediately; no recovery retry ran |
-| Attempt wall time | `15.251s` |
-| CUDA OOM | None |
+| Loss | Finite-loss validation passed; numeric loss was not emitted |
+| Global unscaled gradient norm | Not available; validation stopped on non-finite gradients before norm calculation |
+| Scaler scale before / after | Not reached; scale capture occurs after gradient validation |
+| Optimizer parameters reaching step 1 | Not reached; optimizer/scaler step and state check did not execute |
+| Model-load timing | Not emitted because the exception prevented the result JSON |
+| Batch-preparation timing | Not emitted because the exception prevented the result JSON |
+| Collator-materialization timing | Not emitted because the exception prevented the result JSON |
+| Forward timing | Not emitted because the exception prevented the result JSON |
+| Backward timing | Not emitted because the exception prevented the result JSON |
+| Gradient-validation timing | Not emitted; this stage raised the blocker |
+| Optimizer/scaler-step timing | Not reached |
+| Peak allocated CUDA memory | Not measured; the peak-memory read occurs after gradient validation |
+| Peak reserved CUDA memory | Not measured; the peak-memory read occurs after gradient validation |
+| Total wall time | `15.251 seconds` (`real 0m15.251s`; user `0m11.950s`; sys `0m3.488s`) |
 
-This establishes initial-scale FP16 gradient overflow on the worst-case batch. It
-does not establish that FP16 training is non-viable because the smoke's immediate
-failure rule prevented the normal dynamic scaler backoff and retry behavior.
-V1-B1 remains **PENDING bounded dynamic-AMP recovery smoke**. The 4,000-microstep
-training run and Dev evaluation remain **NOT RUN**.
+The stage-timing dictionary and CUDA peak counters were local to the smoke
+process and were not emitted after the exception. No alternate configuration,
+smaller example, max-length reduction, or training run was attempted. This
+third attempt proves initial-scale FP16 gradient overflow on the worst-case
+batch. It does not prove that FP16 training is non-viable: the old immediate
+failure rule prevented normal GradScaler backoff and retry. V1-B1 remains
+**PENDING bounded dynamic-AMP recovery smoke**. The 4,000-microstep training run
+and Dev evaluation remain **NOT RUN**.
 
-## V1-B results and checkpoint selection — pending
+## V1-B results and checkpoint selection — blocked pending V1-B1 resolution
 
 No successful GPU result exists yet. The following fields must be filled from
 actual AWS artifacts after the smoke blocker is resolved and the training run is
