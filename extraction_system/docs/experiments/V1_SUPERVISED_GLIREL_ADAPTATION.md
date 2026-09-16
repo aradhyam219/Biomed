@@ -5,7 +5,7 @@
 | Stage | Status | Evidence |
 |---|---|---|
 | V1-A — BioRED Training Preparation | **Completed and verified locally** | Deterministic Train conversion, 512-token preflight, native-collator negative-label test, provenance check, and reproducibility checks passed. |
-| V1-B — GPU Fine-Tuning & Evaluation | **Pending V1-B1 smoke rerun** | The initial AWS smoke loaded the checkpoint but stopped during optimizer construction; the compatibility correction is implemented and no post-correction smoke result exists yet. |
+| V1-B — GPU Fine-Tuning & Evaluation | **Pending V1-B1 smoke rerun after diagnostic correction** | The first AWS smoke stopped during optimizer construction; the post-optimizer attempt reached forward/backward but exposed ambiguity in the old one-scalar update check. |
 
 This is the one living report for V1. It records the prepared experiment now and
 will be updated with the actual GPU progression, selected checkpoint, Dev metrics,
@@ -275,11 +275,13 @@ not a general hardware-tuning framework.
 The GPU smoke path selects the fitting example with the largest estimated ordered
 non-self entity-pair workload, breaking ties by token length and document ID. It
 resets CUDA peak counters, performs a finite forward/loss check, uses the enabled
-FP16 scaler for backward and optimizer update, finds a finite non-zero gradient,
-snapshots one parameter element, verifies that the sampled state changed, zeroes
-gradients, and reports tested-example diagnostics plus peak allocated/reserved CUDA
-memory. It does not clone a full trainable parameter. These are implementation
-checks for the AWS smoke gate; the measured attempt is recorded below.
+FP16 scaler for backward and optimizer update, explicitly unscales once, validates
+the complete gradient set and global norm, and verifies execution through optimizer
+state reaching step 1. It records scaler scales, synchronized stage timings, and
+peak allocated/reserved CUDA memory before post-step validation. It does not clone a
+full trainable parameter or infer update execution from one floating-point element.
+These are implementation checks for the AWS smoke gate; the measured attempts are
+recorded below.
 
 ## Implementation and reproducibility
 
@@ -294,8 +296,9 @@ checks for the AWS smoke gate; the measured attempt is recorded below.
   using the unchanged V0-B concept-level aggregation and metrics; default behavior
   remains V0-B.
 - `tests/test_biored_training.py` — converter, exclusion, split, provenance,
-  prompt-label alignment, native negative-label, smoke-selection, scheduler, and
-  runner-construction tests.
+  prompt-label alignment, native negative-label, smoke-selection, scheduler,
+  gradient/update/timing diagnostics, training-schedule, and runner-construction
+  tests.
 - `tests/test_biored_cli.py` — custom-checkpoint cache/report isolation coverage.
 - `pyproject.toml` — `biored-v1` command entry point.
 - `docs/ARCHITECTURE.md` — current structural boundary for supervised adaptation.
@@ -395,14 +398,13 @@ representable direction. This is a documented data limitation, not a new global
 candidate constraint. BioRED's legitimate self-concept truth remains available to
 the existing non-directional evaluator.
 
-The measured AWS GPU smoke attempt loaded the checkpoint successfully but stopped
-before forward execution because GLiREL 1.2.1's `GLiREL.get_optimizer()` accessed
-missing `_rel_filtering`. Exact v1.2.1 source inspection confirmed that
+The first measured AWS GPU smoke attempt loaded the checkpoint successfully but
+stopped before forward execution because GLiREL 1.2.1's `GLiREL.get_optimizer()`
+accessed missing `_rel_filtering`. Exact v1.2.1 source inspection confirmed that
 `GLiREL.__init__` does not create `_rel_filtering`, while the official `train.py`
 builds AdamW from `model.named_parameters()`, separating `token_rep_layer` from
 all other trainable parameters. Repository training now follows that supported
-optimizer path. No GPU smoke result exists after the correction; V1-B1 GPU smoke
-remains **PENDING RERUN**.
+optimizer path. The later post-optimizer attempt is recorded below.
 
 ## V1-B1 resume reproducibility gate — **CONFIRMED / PASS** (2026-09-16)
 
@@ -466,9 +468,38 @@ The installed `glirel==1.2.1` `GLiREL.get_optimizer` unconditionally calls
 attribute. This is the immediate root cause. No speculative fix was attempted,
 and the run stopped before full training.
 
-The compatibility correction is implemented, but no post-correction GPU smoke
-result exists yet. V1-B1 GPU smoke remains **PENDING RERUN**. The 4,000-microstep
-fine-tuning run and Dev evaluation remain **NOT RUN**.
+The compatibility correction enabled the later attempt below. V1-B1 smoke remains
+**PENDING RERUN after diagnostic correction**. The 4,000-microstep fine-tuning run
+and Dev evaluation remain **NOT RUN**.
+
+## V1-B1 post-optimizer GPU smoke — diagnostic ambiguity; correction pending rerun (2026-09-16)
+
+The second measured AWS attempt ran at exact HEAD
+`c2586c40d27aa60a699eb9f01897f3e825c5dfd0`. The exact deterministic worst-workload
+selection reached the model execution path:
+
+| Field | Result |
+|---|---|
+| Smoke document | `30442153` — 446 tokens, 71 entities, 4,970 candidate pairs, 1,436 positive relations |
+| Forward execution | Reached |
+| Finite-loss validation | Passed |
+| Backward | Completed |
+| Gradient evidence | A finite, non-zero scaled gradient was found |
+| `scaler.step()` | Returned |
+| `scaler.update()` | Returned |
+| CUDA OOM | None |
+| Failure | One sampled parameter scalar was unchanged |
+| Attempt wall time | `23m14.897s` |
+| Stage timings | Not available in this pre-correction run |
+| Peak CUDA memory | Not retained because the old post-step validation raised before the memory read |
+
+This was not a demonstrated training failure. The old smoke could not distinguish
+GradScaler skipping the optimizer update because another gradient was non-finite
+from the optimizer step executing while the single sampled scalar remained
+unchanged. The smoke verification is being corrected to validate all unscaled
+gradients, record scaler scale changes, and use AdamW state reaching step 1 as the
+execution invariant. V1-B1 remains **PENDING RERUN after diagnostic correction**;
+the 4,000-microstep training run and Dev evaluation remain **NOT RUN**.
 
 ## V1-B results and checkpoint selection — pending
 

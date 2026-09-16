@@ -26,7 +26,9 @@ from biomedical_extractor.biored_training import (
     convert_document_to_glirel,
     _expected_relation_pair_count,
     _native_loader,
+    _optimizer_step_status,
     _select_smoke_example,
+    _validate_unscaled_gradients,
     prepare_training_corpus,
     run_gpu_smoke_test,
     run_training,
@@ -139,6 +141,221 @@ class BioREDTrainingTests(unittest.TestCase):
             high_pair_count,
         )
         self.assertIs(_select_smoke_example((shorter_tie, longer_tie)), longer_tie)
+
+    def test_smoke_accepts_globally_finite_non_zero_unscaled_gradients(self):
+        import torch
+
+        model = torch.nn.Sequential(torch.nn.Linear(2, 2), torch.nn.Linear(2, 1))
+        model(torch.ones(1, 2)).sum().backward()
+
+        metrics = _validate_unscaled_gradients(model, torch)
+
+        self.assertTrue(metrics["gradients_finite"])
+        self.assertGreater(metrics["global_unscaled_gradient_norm"], 0.0)
+        self.assertEqual(metrics["gradient_tensors"], 4)
+
+    def test_smoke_surfaces_non_finite_gradients_as_amp_overflow(self):
+        import torch
+
+        model = torch.nn.Linear(2, 1)
+        model.weight.grad = torch.tensor([[float("inf"), 0.0]])
+
+        with self.assertRaisesRegex(RuntimeError, "AMP-overflow blocker"):
+            _validate_unscaled_gradients(model, torch)
+
+    def test_optimizer_state_distinguishes_skipped_and_executed_step(self):
+        import torch
+
+        parameter = torch.nn.Parameter(torch.tensor([1.0, 2.0]))
+        optimizer = torch.optim.AdamW(
+            [{"params": [parameter], "weight_decay": 0.0}], lr=0.1
+        )
+
+        skipped = _optimizer_step_status(optimizer, torch)
+        self.assertFalse(skipped["optimizer_step_completed"])
+        self.assertEqual(skipped["optimizer_parameters_at_step_1"], 0)
+
+        parameter.grad = torch.tensor([1.0, 0.0])
+        optimizer.step()
+        executed = _optimizer_step_status(optimizer, torch)
+        self.assertTrue(executed["optimizer_step_completed"])
+        self.assertEqual(executed["optimizer_parameters_at_step_1"], 1)
+
+    def test_unchanged_arbitrary_scalar_does_not_fail_optimizer_step_check(self):
+        import torch
+
+        parameter = torch.nn.Parameter(torch.tensor([1.0, 2.0]))
+        optimizer = torch.optim.AdamW(
+            [{"params": [parameter], "weight_decay": 0.0}], lr=0.1
+        )
+        parameter.grad = torch.tensor([1.0, 0.0])
+        unchanged_before = parameter.detach()[1].clone()
+        optimizer.step()
+
+        self.assertEqual(parameter.detach()[1], unchanged_before)
+        self.assertTrue(_optimizer_step_status(optimizer, torch)["optimizer_step_completed"])
+
+    def test_smoke_reports_stage_timings_and_update_diagnostics(self):
+        import torch
+
+        class TinySmokeModel(torch.nn.Module):
+            def __init__(self):
+                super().__init__()
+                self.weight = torch.nn.Parameter(torch.tensor([1.0, 0.0]))
+
+            def forward(self, batch):
+                del batch
+                return {"total_loss": self.weight[0].square()}
+
+        class CountingScaler:
+            instance = None
+
+            def __init__(self, enabled):
+                del enabled
+                self.unscale_calls = 0
+                self.step_calls = 0
+                self.update_calls = 0
+                CountingScaler.instance = self
+
+            def scale(self, loss):
+                return loss
+
+            def unscale_(self, optimizer):
+                del optimizer
+                self.unscale_calls += 1
+
+            def step(self, optimizer):
+                self.step_calls += 1
+                return optimizer.step()
+
+            def update(self):
+                self.update_calls += 1
+
+            def get_scale(self):
+                return 1.0
+
+        model = TinySmokeModel()
+        batch = {
+            "tokens": [["G", "D"]],
+            "rel_label": torch.zeros((1, 2), dtype=torch.long),
+        }
+        example = {
+            "metadata": {"document_id": "PM1"},
+            "tokenized_text": ["G", "D"],
+            "ner": [[0, 0, "Gene", "G"], [1, 1, "Disease", "D"]],
+            "relations": [],
+        }
+        config = V1TrainingConfig(device="cpu", mixed_precision="none")
+
+        def optimizer_builder(current_model, current_config):
+            del current_config
+            return torch.optim.AdamW(
+                [{"params": [current_model.weight], "weight_decay": 0.0}], lr=0.1
+            )
+
+        with tempfile.TemporaryDirectory() as directory:
+            plan = TrainingPlan(
+                Path(directory) / "train.jsonl",
+                Path(directory) / "checkpoints",
+                config,
+            )
+            with patch(
+                "biomedical_extractor.biored_training._load_glirel_model",
+                return_value=model,
+            ), patch(
+                "biomedical_extractor.biored_training.load_training_examples",
+                return_value=[example],
+            ), patch(
+                "biomedical_extractor.biored_training._native_loader",
+                return_value=[batch],
+            ), patch(
+                "biomedical_extractor.biored_training._build_v1_optimizer",
+                side_effect=optimizer_builder,
+            ), patch.object(torch.cuda.amp, "GradScaler", CountingScaler):
+                result = run_gpu_smoke_test(plan)
+
+        self.assertTrue(result["gradients_finite"])
+        self.assertGreater(result["global_unscaled_gradient_norm"], 0.0)
+        self.assertTrue(result["optimizer_step_completed"])
+        self.assertEqual(result["optimizer_parameters_at_step_1"], 1)
+        self.assertEqual(result["scaler_scale_before"], 1.0)
+        self.assertEqual(result["scaler_scale_after"], 1.0)
+        self.assertEqual(CountingScaler.instance.unscale_calls, 1)
+        self.assertEqual(CountingScaler.instance.step_calls, 1)
+        self.assertEqual(CountingScaler.instance.update_calls, 1)
+        self.assertTrue(
+            {
+                "model_load",
+                "batch_materialization",
+                "forward",
+                "backward",
+                "gradient_validation",
+                "optimizer_scaler_step",
+            }.issubset(result["stage_timings_seconds"])
+        )
+
+    def test_training_update_schedule_remains_gradient_accumulation_based(self):
+        import torch
+
+        class TinyTrainingModel(torch.nn.Module):
+            def __init__(self):
+                super().__init__()
+                self.weight = torch.nn.Parameter(torch.tensor(1.0))
+
+            def forward(self, batch):
+                del batch
+                return {"total_loss": self.weight.square()}
+
+            def save_pretrained(self, path):
+                Path(path).mkdir(parents=True, exist_ok=True)
+
+        model = TinyTrainingModel()
+        example = {
+            "metadata": {"document_id": "PM1"},
+            "tokenized_text": ["G"],
+            "ner": [],
+            "relations": [],
+        }
+        config = V1TrainingConfig(
+            device="cpu",
+            mixed_precision="none",
+            num_steps=3,
+            gradient_accumulation=2,
+            save_every=2,
+        )
+
+        def optimizer_builder(current_model, current_config):
+            del current_config
+            return torch.optim.SGD(current_model.parameters(), lr=0.1)
+
+        with tempfile.TemporaryDirectory() as directory:
+            plan = TrainingPlan(
+                Path(directory) / "train.jsonl",
+                Path(directory) / "checkpoints",
+                config,
+            )
+            with patch(
+                "biomedical_extractor.biored_training._load_glirel_model",
+                return_value=model,
+            ), patch(
+                "biomedical_extractor.biored_training.load_training_examples",
+                return_value=[example],
+            ), patch(
+                "biomedical_extractor.biored_training._native_loader",
+                return_value=[{}],
+            ), patch(
+                "biomedical_extractor.biored_training._build_v1_optimizer",
+                side_effect=optimizer_builder,
+            ):
+                summary = run_training(plan)
+
+        self.assertEqual(summary["steps"], 3)
+        self.assertEqual(summary["optimizer_updates"], 2)
+        self.assertEqual(summary["scheduler_total_steps"], 2)
+        self.assertEqual(
+            [entry["microstep"] for entry in summary["training_progression"]],
+            [2, 3],
+        )
 
     def test_scheduler_steps_use_optimizer_update_count(self):
         self.assertEqual(calculate_scheduler_steps(4_000, 8, 0.1), (500, 50))
