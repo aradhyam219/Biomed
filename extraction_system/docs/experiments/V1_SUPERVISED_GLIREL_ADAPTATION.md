@@ -5,7 +5,7 @@
 | Stage | Status | Evidence |
 |---|---|---|
 | V1-A — BioRED Training Preparation | **Completed and verified locally** | Deterministic Train conversion, 512-token preflight, native-collator negative-label test, provenance check, and reproducibility checks passed. |
-| V1-B — GPU Fine-Tuning & Evaluation | **Pending V1-B1 bounded dynamic-AMP recovery smoke** | The third AWS attempt proved initial-scale FP16 gradient overflow on the deterministic worst-case batch, but the old smoke raised before dynamic scaler recovery could run. |
+| V1-B — GPU Fine-Tuning & Evaluation | **Blocked at V1-B1 bounded dynamic-AMP recovery smoke** | The required bounded recovery smoke exhausted all eight attempts with non-finite unscaled gradients; no AdamW update reached step 1. |
 
 This is the one living report for V1. It records the prepared experiment now and
 will be updated with the actual GPU progression, selected checkpoint, Dev metrics,
@@ -513,7 +513,7 @@ from the optimizer step executing while the single sampled scalar remained
 unchanged. The diagnostic correction now validates all unscaled gradients, records
 scaler scale changes, and uses AdamW state reaching step 1 as the execution
 invariant. The third attempt below exposed the separate initial-scale overflow
-condition; bounded dynamic-AMP recovery remains pending. The 4,000-microstep
+condition; bounded dynamic-AMP recovery was pending at that point. The 4,000-microstep
 training run and Dev evaluation remain **NOT RUN**.
 
 ## V1-B1 corrected GPU smoke — initial-scale overflow; bounded recovery pending (2026-09-16)
@@ -567,8 +567,363 @@ smaller example, max-length reduction, or training run was attempted. This
 third attempt proves initial-scale FP16 gradient overflow on the worst-case
 batch. It does not prove that FP16 training is non-viable: the old immediate
 failure rule prevented normal GradScaler backoff and retry. V1-B1 remains
-**PENDING bounded dynamic-AMP recovery smoke**. The 4,000-microstep training run
-and Dev evaluation remain **NOT RUN**.
+At that point, bounded dynamic-AMP recovery was still **PENDING**. The
+4,000-microstep training run and Dev evaluation remain **NOT RUN**.
+
+## V1-B1 bounded dynamic-AMP recovery smoke — **BLOCKER** (2026-09-16)
+
+The exact required smoke command was run at required HEAD
+6654e29df4a8992591ce62d9dcab8cf37b810c20 with the unchanged checkpoint, prepared
+JSONL, CUDA device, and FP16 configuration. The existing prepared artifacts were
+present and were not regenerated; their approved hashes matched:
+
+- Training JSONL:
+  e1ecf8985114ccc756a87cece699f76123ab6489d42b8308ffa71ae750b91c51
+- Statistics:
+  ae91907822e47d94e1c2179ab4dcfafc73b6bf0e2c953b907090adad3b2fba0f
+
+The deterministic worst-workload example was document 30442153: 446 tokens, 71
+entities, 4,970 candidate pairs, and 1,436 positive relations. The smoke
+performed the bounded dynamic GradScaler recovery exactly as configured:
+
+- Result: **BLOCKER**
+- Blocker: AMP-overflow blocker: non-finite unscaled gradients persisted through
+  8 smoke attempts
+- Attempts: 8 of the bounded maximum 8
+- AMP overflow attempts: 8
+- Scaler trajectory: 65,536 → 32,768 → 16,384 → 8,192 → 4,096 → 2,048 →
+  1,024 → 512 → 256
+- Successful scale: null; no successful attempt
+- Successful loss: null
+- Successful global unscaled gradient norm: null
+- Optimizer parameters reaching AdamW step 1: 0
+- Optimizer update: not completed; all 8 updates were skipped
+- Peak allocated CUDA memory: 4,937,766,912 bytes
+- Peak reserved CUDA memory: 6,476,005,376 bytes
+- Total wall time: 17.240 seconds; real 0m17.240s, user 0m13.628s,
+  sys 0m3.434s
+
+Every attempt reached forward, finite-loss validation, backward, gradient
+validation, and the scaler step/update path. Each attempt found non-finite
+unscaled gradients after unscale; the attempt losses were finite but no global
+unscaled norm was available. Aggregate stage timings were:
+
+| Stage | Seconds |
+|---|---:|
+| Model load | 9.078616783997859 |
+| Batch materialization | 1.7489720570010832 |
+| Collator materialization | 0.09928111399858608 |
+| Forward | 1.416587610001443 |
+| Backward | 1.2896279530032189 |
+| Gradient validation | 0.5036210210055287 |
+| Optimizer/scaler step | 0.0013275899946165737 |
+
+The complete emitted result JSON, including all per-attempt timings and memory
+observations, was:
+
+~~~json
+{
+  "amp_enabled": true,
+  "amp_overflow_attempts": 8,
+  "attempt_count": 8,
+  "attempts": [
+    {
+      "attempt": 1,
+      "global_unscaled_gradient_norm": null,
+      "gradient_norm_finite": false,
+      "gradient_norm_nonzero": false,
+      "gradient_tensors": 420,
+      "gradient_validation_error": "unscaled gradients contain non-finite values",
+      "gradients_finite": false,
+      "loss": 12391.03515625,
+      "optimizer_parameters_at_step_1": 0,
+      "optimizer_step_completed": false,
+      "optimizer_update_skipped": true,
+      "overflow": true,
+      "peak_cuda_memory_allocated_bytes": 4937766912,
+      "peak_cuda_memory_reserved_bytes": 6476005376,
+      "retry": true,
+      "scaler_scale_after": 32768.0,
+      "scaler_scale_before": 65536.0,
+      "stage_timings_seconds": {
+        "backward": 0.2469200740015367,
+        "forward": 0.3326561630019569,
+        "gradient_validation": 0.06378732300072443,
+        "optimizer_scaler_step": 0.00033465099841123447
+      },
+      "status": "AMP_OVERFLOW"
+    },
+    {
+      "attempt": 2,
+      "global_unscaled_gradient_norm": null,
+      "gradient_norm_finite": false,
+      "gradient_norm_nonzero": false,
+      "gradient_tensors": 420,
+      "gradient_validation_error": "unscaled gradients contain non-finite values",
+      "gradients_finite": false,
+      "loss": 10141.400390625,
+      "optimizer_parameters_at_step_1": 0,
+      "optimizer_step_completed": false,
+      "optimizer_update_skipped": true,
+      "overflow": true,
+      "peak_cuda_memory_allocated_bytes": 4937766912,
+      "peak_cuda_memory_reserved_bytes": 6476005376,
+      "retry": true,
+      "scaler_scale_after": 16384.0,
+      "scaler_scale_before": 32768.0,
+      "stage_timings_seconds": {
+        "backward": 0.14945013299802667,
+        "forward": 0.4327257959994313,
+        "gradient_validation": 0.06308094099949813,
+        "optimizer_scaler_step": 0.00015697300113970414
+      },
+      "status": "AMP_OVERFLOW"
+    },
+    {
+      "attempt": 3,
+      "global_unscaled_gradient_norm": null,
+      "gradient_norm_finite": false,
+      "gradient_norm_nonzero": false,
+      "gradient_tensors": 420,
+      "gradient_validation_error": "unscaled gradients contain non-finite values",
+      "gradients_finite": false,
+      "loss": 10980.3486328125,
+      "optimizer_parameters_at_step_1": 0,
+      "optimizer_step_completed": false,
+      "optimizer_update_skipped": true,
+      "overflow": true,
+      "peak_cuda_memory_allocated_bytes": 4937766912,
+      "peak_cuda_memory_reserved_bytes": 6476005376,
+      "retry": true,
+      "scaler_scale_after": 8192.0,
+      "scaler_scale_before": 16384.0,
+      "stage_timings_seconds": {
+        "backward": 0.14929300700168824,
+        "forward": 0.10904442100218148,
+        "gradient_validation": 0.06281500900149695,
+        "optimizer_scaler_step": 0.00013111599764670245
+      },
+      "status": "AMP_OVERFLOW"
+    },
+    {
+      "attempt": 4,
+      "global_unscaled_gradient_norm": null,
+      "gradient_norm_finite": false,
+      "gradient_norm_nonzero": false,
+      "gradient_tensors": 420,
+      "gradient_validation_error": "unscaled gradients contain non-finite values",
+      "gradients_finite": false,
+      "loss": 10918.33984375,
+      "optimizer_parameters_at_step_1": 0,
+      "optimizer_step_completed": false,
+      "optimizer_update_skipped": true,
+      "overflow": true,
+      "peak_cuda_memory_allocated_bytes": 4937766912,
+      "peak_cuda_memory_reserved_bytes": 6476005376,
+      "retry": true,
+      "scaler_scale_after": 4096.0,
+      "scaler_scale_before": 8192.0,
+      "stage_timings_seconds": {
+        "backward": 0.14834951200100477,
+        "forward": 0.10827587799940375,
+        "gradient_validation": 0.06293949899918516,
+        "optimizer_scaler_step": 0.000150381001731148
+      },
+      "status": "AMP_OVERFLOW"
+    },
+    {
+      "attempt": 5,
+      "global_unscaled_gradient_norm": null,
+      "gradient_norm_finite": false,
+      "gradient_norm_nonzero": false,
+      "gradient_tensors": 420,
+      "gradient_validation_error": "unscaled gradients contain non-finite values",
+      "gradients_finite": false,
+      "loss": 11596.5849609375,
+      "optimizer_parameters_at_step_1": 0,
+      "optimizer_step_completed": false,
+      "optimizer_update_skipped": true,
+      "overflow": true,
+      "peak_cuda_memory_allocated_bytes": 4937766912,
+      "peak_cuda_memory_reserved_bytes": 6476005376,
+      "retry": true,
+      "scaler_scale_after": 2048.0,
+      "scaler_scale_before": 4096.0,
+      "stage_timings_seconds": {
+        "backward": 0.14833607400214532,
+        "forward": 0.1083072159999574,
+        "gradient_validation": 0.06260476999887032,
+        "optimizer_scaler_step": 0.0001424309994035866
+      },
+      "status": "AMP_OVERFLOW"
+    },
+    {
+      "attempt": 6,
+      "global_unscaled_gradient_norm": null,
+      "gradient_norm_finite": false,
+      "gradient_norm_nonzero": false,
+      "gradient_tensors": 420,
+      "gradient_validation_error": "unscaled gradients contain non-finite values",
+      "gradients_finite": false,
+      "loss": 10479.7802734375,
+      "optimizer_parameters_at_step_1": 0,
+      "optimizer_step_completed": false,
+      "optimizer_update_skipped": true,
+      "overflow": true,
+      "peak_cuda_memory_allocated_bytes": 4937766912,
+      "peak_cuda_memory_reserved_bytes": 6476005376,
+      "retry": true,
+      "scaler_scale_after": 1024.0,
+      "scaler_scale_before": 2048.0,
+      "stage_timings_seconds": {
+        "backward": 0.14866951499789138,
+        "forward": 0.10890329399990151,
+        "gradient_validation": 0.0624832490029803,
+        "optimizer_scaler_step": 0.00011765899762394838
+      },
+      "status": "AMP_OVERFLOW"
+    },
+    {
+      "attempt": 7,
+      "global_unscaled_gradient_norm": null,
+      "gradient_norm_finite": false,
+      "gradient_norm_nonzero": false,
+      "gradient_tensors": 420,
+      "gradient_validation_error": "unscaled gradients contain non-finite values",
+      "gradients_finite": false,
+      "loss": 10159.4052734375,
+      "optimizer_parameters_at_step_1": 0,
+      "optimizer_step_completed": false,
+      "optimizer_update_skipped": true,
+      "overflow": true,
+      "peak_cuda_memory_allocated_bytes": 4937766912,
+      "peak_cuda_memory_reserved_bytes": 6476005376,
+      "retry": true,
+      "scaler_scale_after": 512.0,
+      "scaler_scale_before": 1024.0,
+      "stage_timings_seconds": {
+        "backward": 0.1488422359980177,
+        "forward": 0.10819080999863218,
+        "gradient_validation": 0.06283288000122411,
+        "optimizer_scaler_step": 0.00015420199997606687
+      },
+      "status": "AMP_OVERFLOW"
+    },
+    {
+      "attempt": 8,
+      "blocker_reason": "AMP-overflow blocker: non-finite unscaled gradients persisted through 8 smoke attempts",
+      "global_unscaled_gradient_norm": null,
+      "gradient_norm_finite": false,
+      "gradient_norm_nonzero": false,
+      "gradient_tensors": 420,
+      "gradient_validation_error": "unscaled gradients contain non-finite values",
+      "gradients_finite": false,
+      "loss": 9444.763671875,
+      "optimizer_parameters_at_step_1": 0,
+      "optimizer_step_completed": false,
+      "optimizer_update_skipped": true,
+      "overflow": true,
+      "peak_cuda_memory_allocated_bytes": 4937766912,
+      "peak_cuda_memory_reserved_bytes": 6476005376,
+      "scaler_scale_after": 256.0,
+      "scaler_scale_before": 512.0,
+      "stage_timings_seconds": {
+        "backward": 0.14976740200290806,
+        "forward": 0.10848403199997847,
+        "gradient_validation": 0.06307735000154935,
+        "optimizer_scaler_step": 0.00014017699868418276
+      },
+      "status": "BLOCKER"
+    }
+  ],
+  "blocker_reason": "AMP-overflow blocker: non-finite unscaled gradients persisted through 8 smoke attempts",
+  "candidate_pairs": 4970,
+  "checkpoint": "jackboyla/glirel-large-v0",
+  "device": "cuda",
+  "examples_available": 394,
+  "global_unscaled_gradient_norm": null,
+  "gradient_norm_finite": false,
+  "gradient_norm_nonzero": false,
+  "gradients_finite": false,
+  "gradients_zeroed": true,
+  "loss": null,
+  "max_attempts": 8,
+  "optimizer_parameters_at_step_1": 0,
+  "optimizer_step_completed": false,
+  "peak_cuda_memory_allocated_bytes": 4937766912,
+  "peak_cuda_memory_reserved_bytes": 6476005376,
+  "scaler_scale_after": 256.0,
+  "scaler_scale_before": 512.0,
+  "scaler_scale_trajectory": [
+    {
+      "after": 32768.0,
+      "attempt": 1,
+      "before": 65536.0
+    },
+    {
+      "after": 16384.0,
+      "attempt": 2,
+      "before": 32768.0
+    },
+    {
+      "after": 8192.0,
+      "attempt": 3,
+      "before": 16384.0
+    },
+    {
+      "after": 4096.0,
+      "attempt": 4,
+      "before": 8192.0
+    },
+    {
+      "after": 2048.0,
+      "attempt": 5,
+      "before": 4096.0
+    },
+    {
+      "after": 1024.0,
+      "attempt": 6,
+      "before": 2048.0
+    },
+    {
+      "after": 512.0,
+      "attempt": 7,
+      "before": 1024.0
+    },
+    {
+      "after": 256.0,
+      "attempt": 8,
+      "before": 512.0
+    }
+  ],
+  "stage_timings_seconds": {
+    "backward": 1.2896279530032189,
+    "batch_materialization": 1.7489720570010832,
+    "collator_materialization": 0.09928111399858608,
+    "forward": 1.416587610001443,
+    "gradient_validation": 0.5036210210055287,
+    "model_load": 9.078616783997859,
+    "optimizer_scaler_step": 0.0013275899946165737
+  },
+  "status": "BLOCKER",
+  "successful_global_unscaled_gradient_norm": null,
+  "successful_loss": null,
+  "successful_scale": null,
+  "tested_example": {
+    "document_id": "30442153",
+    "entity_count": 71,
+    "expected_relation_pairs": 4970,
+    "positive_relation_count": 1436,
+    "token_count": 446
+  },
+  "tokens": 446
+}
+~~~
+
+This is a genuine bounded recovery blocker, not an optimizer-construction or
+post-step diagnostic failure. No smaller example, alternate configuration, or
+training run was attempted. The 4,000-microstep fine-tuning run remains
+**NOT RUN**, and Dev evaluation remains **NOT RUN**.
 
 ## V1-B results and checkpoint selection — blocked pending V1-B1 resolution
 
