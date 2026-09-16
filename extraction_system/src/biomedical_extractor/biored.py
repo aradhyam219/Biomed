@@ -57,6 +57,11 @@ BIOC_TO_ENTITY_TYPE = {
     "CellLine": "CellLine",
 }
 RELATION_ENTITY_TYPES = frozenset({"Disease", "Gene", "Chemical", "Variant"})
+BIORED_SPLIT_FILENAMES = {
+    "train": "Train.BioC.JSON",
+    "dev": "Dev.BioC.JSON",
+    "test": "Test.BioC.JSON",
+}
 ALLOWED_PAIR_FAMILIES = frozenset(
     {
         frozenset({"Disease", "Gene"}),
@@ -172,19 +177,30 @@ def split_concept_ids(raw_identifier: str) -> tuple[str, ...]:
 
 
 def resolve_biored_path(dataset_path: str | Path, split: str = "dev") -> Path:
-    """Resolve an explicit BioC JSON file or directory for the requested split."""
+    """Resolve an official BioC JSON file or directory for one split.
+
+    V0-B continues to call this function with ``split="dev"``. Train and test
+    support exists for the isolated V1 experiment data path; it does not change
+    the production extraction path or the V0-B evaluation protocol.
+    """
 
     normalized_split = split.lower()
-    if normalized_split != "dev":
-        raise ValueError("V0-B permits only the original BioRED development split")
+    try:
+        filename = BIORED_SPLIT_FILENAMES[normalized_split]
+    except KeyError as error:
+        raise ValueError(
+            f"BioRED split must be one of {tuple(BIORED_SPLIT_FILENAMES)}"
+        ) from error
     path = Path(dataset_path).expanduser().resolve()
     if path.is_dir():
-        candidates = (path / "Dev.BioC.JSON", path / "BioRED" / "Dev.BioC.JSON")
+        candidates = (path / filename, path / "BioRED" / filename)
         path = next((candidate for candidate in candidates if candidate.is_file()), path)
     if not path.is_file():
-        raise FileNotFoundError(f"BioRED development BioC JSON not found: {path}")
-    if path.name.lower() != "dev.bioc.json":
-        raise ValueError("V0-B dataset file must be the official Dev.BioC.JSON split")
+        raise FileNotFoundError(f"BioRED {normalized_split} BioC JSON not found: {path}")
+    if path.name.casefold() != filename.casefold():
+        raise ValueError(
+            f"BioRED {normalized_split} dataset file must be the official {filename} split"
+        )
     return path
 
 

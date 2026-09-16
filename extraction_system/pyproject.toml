@@ -19,6 +19,7 @@ dependencies = [
 [project.scripts]
 biomedical-extract = "biomedical_extractor.cli:main"
 biored-evaluate = "biomedical_extractor.biored_cli:main"
+biored-v1 = "biomedical_extractor.biored_training:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/biomedical_extractor"]

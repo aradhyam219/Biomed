@@ -79,6 +79,25 @@ The three evaluation modes answer different questions:
    - Predicted entities/relations are compared with BioRED truth.
    - Purpose: measure the behavior of the component as it will actually be used.
 
+The V1 supervised experiment is a separate evaluation/training flow and does not
+enter production extraction:
+
+```text
+BioRED Train
+     |
+     v
+deterministic concept-to-mention projection
+     |
+     v
+native GLiREL fine-tuning -> local checkpoint
+                                |
+BioRED Dev + checkpoint ------+
+                                v
+                 existing concept-level evaluator
+
+BioRED Test remains untouched until a later explicitly authorized evaluation.
+```
+
 ## Components and ownership
 
 | Component | Responsibility | Owns | Must not own |
@@ -87,6 +106,7 @@ The three evaluation modes answer different questions:
 | Relation extraction | `BiomedicalExtractor.extract_relations` runs GLiREL over supplied normalized entities | Relation predictions and relation confidence | Entity discovery, downstream graph construction, dataset-specific production assumptions |
 | Normalization / pipeline boundary | `BiomedicalExtractor.extract` composes both stages into one serializable result | Stable result structure, token-span conversion, and entity/relation linkage | Biomedical knowledge-graph persistence or downstream reasoning |
 | Evaluation | Measure extraction behavior against annotated data | BioRED loading/adaptation, gold-mention inference orchestration, concept aggregation, cached scores, metrics, failure examples | Production extraction semantics or model training |
+| V1 supervised adaptation | `biomedical_extractor.biored_training` prepares BioRED Train examples and runs the native GLiREL loop | Deterministic mention projection, 512-token preflight, generated-data diagnostics, training configuration, local checkpoint serialization | Production extraction behavior, BioRED Test use, alternate model families, hyperparameter sweeps |
 
 The module names and paths above reflect the current repository and should change only when the implementation changes.
 

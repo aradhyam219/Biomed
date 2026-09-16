@@ -2,7 +2,8 @@
 
 This document is the authoritative methodology for the V0-B relation-extraction
 baseline. The experiment asks how the current zero-shot GLiREL checkpoint performs
-when entity recognition is removed as a source of error.
+when entity recognition is removed as a source of error. The separate supervised
+V1 experiment is recorded in `experiments/V1_SUPERVISED_GLIREL_ADAPTATION.md`.
 
 ## Source and split
 
@@ -211,8 +212,11 @@ uv run biored-evaluate --dataset C:\path\to\BioRED
 Use `--cache` and `--output` to choose alternate JSON paths. Raw scores and limited
 diagnostic summaries default under ignored `.cache/`; a full run defaults to the
 tracked `reports/biored_v0b_complete_fit.json` so its machine-readable result is
-available to reviewers. The command has no model-selection option: V0-B is fixed to
-`jackboyla/glirel-large-v0` / `DEFAULT_RELATION_MODEL`. The summary contains dataset
-identity, checkpoint, schema, top-k policy, coverage and exclusion counts, threshold,
-pair-only and typed metrics, per-label metrics, sequence diagnostics, and
-representative errors.
+available to reviewers. With no `--checkpoint`, the command remains fixed to
+`jackboyla/glirel-large-v0` / `DEFAULT_RELATION_MODEL` and produces the accepted
+V0-B report. V1 may pass `--checkpoint <local-fine-tuned-directory>`; that path uses
+the same gold-entity aggregation, threshold calibration, coverage, pair-only,
+typed, and per-label metrics while isolating its raw-score cache and summary. The
+summary contains dataset identity, checkpoint, schema, top-k policy, coverage and
+exclusion counts, threshold, pair-only and typed metrics, per-label metrics,
+sequence diagnostics, and representative errors.

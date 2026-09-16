@@ -1,9 +1,11 @@
-"""Run the V0-B BioRED gold-entity GLiREL development baseline.
+"""Run the BioRED gold-entity GLiREL development evaluation.
 
 This command loads the official development BioC JSON, supplies its gold mentions
 directly to the existing relation stage, caches threshold-free scores after each
 document, calibrates one threshold without rerunning inference, and writes a compact
-machine-readable result. GLiNER is deliberately never loaded.
+machine-readable result. GLiNER is deliberately never loaded. With the default
+checkpoint and paths it remains the accepted V0-B baseline; a local checkpoint can
+be supplied for the V1 Dev comparison without changing the scoring methodology.
 """
 
 from __future__ import annotations
@@ -70,8 +72,18 @@ def _parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--cache",
         type=Path,
-        default=Path(".cache/biored_v0b_raw.json"),
-        help="Incremental raw-score cache; matching documents are never inferred twice.",
+        help=(
+            "Incremental raw-score cache; matching documents are never inferred twice. "
+            "The default is checkpoint-specific."
+        ),
+    )
+    parser.add_argument(
+        "--checkpoint",
+        default=DEFAULT_RELATION_MODEL,
+        help=(
+            "GLiREL checkpoint or local fine-tuned directory. The default is the "
+            "fixed V0-B checkpoint."
+        ),
     )
     parser.add_argument(
         "--output",
@@ -98,15 +110,35 @@ def _default_output(limit: int | None) -> Path:
     return Path(".cache/biored_v0b_subset_summary.json")
 
 
-def _load_model(device: str | None, offline: bool) -> Any:
-    """Load V0-B's fixed GLiREL checkpoint without loading GLiNER."""
+def _default_output_for_checkpoint(limit: int | None, checkpoint: str) -> Path:
+    """Keep a custom-checkpoint result separate from the tracked V0-B report."""
+
+    if checkpoint == DEFAULT_RELATION_MODEL:
+        return _default_output(limit)
+    return (
+        Path(".cache/biored_v1_dev_subset_summary.json")
+        if limit is not None
+        else Path(".cache/biored_v1_dev_summary.json")
+    )
+
+
+def _default_cache(checkpoint: str) -> Path:
+    """Return a raw-score cache whose identity cannot collide across checkpoints."""
+
+    if checkpoint == DEFAULT_RELATION_MODEL:
+        return Path(".cache/biored_v0b_raw.json")
+    return Path(".cache/biored_v1_dev_raw.json")
+
+
+def _load_model(checkpoint: str, device: str | None, offline: bool) -> Any:
+    """Load a V0-B or local V1 GLiREL checkpoint without loading GLiNER."""
 
     from glirel import GLiREL
     import torch
 
     selected_device = device or ("cuda" if torch.cuda.is_available() else "cpu")
     model = GLiREL.from_pretrained(
-        DEFAULT_RELATION_MODEL,
+        checkpoint,
         map_location=selected_device,
         local_files_only=offline,
     )
@@ -114,8 +146,10 @@ def _load_model(device: str | None, offline: bool) -> Any:
     return model
 
 
-def _extractor(model: Any, device: str | None) -> BiomedicalExtractor:
-    """Bind the real relation model to V0-A's supplied-entity adapter."""
+def _extractor(
+    model: Any, device: str | None, checkpoint: str = DEFAULT_RELATION_MODEL
+) -> BiomedicalExtractor:
+    """Bind a GLiREL checkpoint to V0-A's unchanged supplied-entity adapter."""
 
     config = ExtractionConfig(
         entity_labels=tuple(sorted(RELATION_ENTITY_TYPES)),
@@ -125,20 +159,22 @@ def _extractor(model: Any, device: str | None) -> BiomedicalExtractor:
         # applied after inference because GLiREL's primitive cannot express the
         # symmetric eight-family union exactly.
         relation_top_k=RAW_TOP_K,
-        relation_model=DEFAULT_RELATION_MODEL,
+        relation_model=checkpoint,
         device=device,
     )
     return BiomedicalExtractor(_ForbiddenEntityModel(), model, config)
 
 
-def _cache_identity(dataset: BioREDDataset) -> dict[str, Any]:
+def _cache_identity(
+    dataset: BioREDDataset, checkpoint: str = DEFAULT_RELATION_MODEL
+) -> dict[str, Any]:
     """Return every input that makes cached inference scores reusable."""
 
     return {
         "format_version": 1,
         "dataset_sha256": dataset.sha256,
         "split": dataset.split,
-        "model": DEFAULT_RELATION_MODEL,
+        "model": checkpoint,
         "relation_prompts": CANONICAL_TO_PROMPT,
         "raw_top_k": RAW_TOP_K,
         "final_top_k": FINAL_TOP_K,
@@ -329,6 +365,7 @@ def _build_summary(
     documents: Sequence[BioREDDocument],
     candidates: Sequence[ScoredRelation],
     mention_prediction_count: int,
+    checkpoint: str = DEFAULT_RELATION_MODEL,
 ) -> dict[str, Any]:
     """Assemble the reproducible machine-readable result and diagnostics."""
 
@@ -355,10 +392,16 @@ def _build_summary(
         },
         "evaluation_name": (
             "BioRED development complete-fit baseline"
-            if len(documents) == len(dataset.documents) - 1
-            else "BioRED V0-B diagnostic subset"
+            if checkpoint == DEFAULT_RELATION_MODEL
+            else "BioRED V1 fine-tuned Dev evaluation"
+        )
+        if len(documents) == len(dataset.documents) - 1
+        else (
+            "BioRED V0-B diagnostic subset"
+            if checkpoint == DEFAULT_RELATION_MODEL
+            else "BioRED V1 fine-tuned Dev diagnostic subset"
         ),
-        "model_checkpoint": DEFAULT_RELATION_MODEL,
+        "model_checkpoint": checkpoint,
         "gold_entities": True,
         "gliner_used": False,
         "relation_schema": list(BIORED_RELATION_LABELS),
@@ -480,7 +523,8 @@ def main(argv: Sequence[str] | None = None) -> int:
     if args.limit is not None and args.limit <= 0:
         raise ValueError("--limit must be a positive integer")
     dataset = load_biored(args.dataset, args.split)
-    output_path = args.output or _default_output(args.limit)
+    checkpoint = args.checkpoint
+    output_path = args.output or _default_output_for_checkpoint(args.limit, checkpoint)
     selected_documents = dataset.documents[: args.limit]
     sequence_summary = _sequence_summary(selected_documents)
     try:
@@ -500,19 +544,20 @@ def main(argv: Sequence[str] | None = None) -> int:
         )
         return 2
 
-    identity = _cache_identity(dataset)
-    cache = _read_cache(args.cache, identity)
+    cache_path = args.cache or _default_cache(checkpoint)
+    identity = _cache_identity(dataset, checkpoint)
+    cache = _read_cache(cache_path, identity)
     missing_ids = [document.id for document in documents if document.id not in cache["documents"]]
-    model = _load_model(args.device, args.offline) if missing_ids else None
-    extractor = _extractor(model, args.device) if model is not None else None
+    model = _load_model(checkpoint, args.device, args.offline) if missing_ids else None
+    extractor = _extractor(model, args.device, checkpoint) if model is not None else None
     if extractor is None:
         # No inference occurs on a fully cached run; this placeholder is never used.
         extractor = BiomedicalExtractor(_ForbiddenEntityModel(), object())
     candidates, mention_prediction_count = _infer_documents(
-        documents, extractor, cache, args.cache
+        documents, extractor, cache, cache_path
     )
     summary = _build_summary(
-        dataset, documents, candidates, mention_prediction_count
+        dataset, documents, candidates, mention_prediction_count, checkpoint
     )
     summary["sequence_integrity"] = sequence_summary
     _write_json(output_path, summary)

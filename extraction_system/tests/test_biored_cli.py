@@ -11,8 +11,10 @@ from biomedical_extractor.biored import (
 from biomedical_extractor.biored_cli import (
     EXCLUDED_DOCUMENT_ID,
     _build_summary,
+    _cache_identity,
     _complete_fit_documents,
     _default_output,
+    _default_output_for_checkpoint,
     _parser,
 )
 
@@ -29,6 +31,25 @@ class BioREDCLITests(unittest.TestCase):
     def test_model_checkpoint_is_not_cli_configurable(self):
         with self.assertRaises(SystemExit):
             _parser().parse_args(["--dataset", "dev.json", "--model", "other"])
+
+    def test_custom_checkpoint_uses_separate_cache_and_report_defaults(self):
+        dataset = BioREDDataset(
+            path=Path("Dev.BioC.JSON"),
+            split="dev",
+            sha256="sha",
+            source="BioC",
+            date="date",
+            key="key",
+            documents=(),
+        )
+
+        self.assertEqual(
+            _cache_identity(dataset, "local/final")["model"], "local/final"
+        )
+        self.assertEqual(
+            _default_output_for_checkpoint(None, "local/final"),
+            Path(".cache/biored_v1_dev_summary.json"),
+        )
 
     def test_complete_fit_exclusion_and_coverage_are_prediction_independent(self):
         kept = BioREDDocument(
