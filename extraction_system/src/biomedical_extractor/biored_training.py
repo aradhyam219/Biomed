@@ -595,12 +595,13 @@ def prepare_training_corpus(
 
 
 def _write_json(path: Path, value: Mapping[str, Any]) -> None:
-    """Write one generated artifact atomically."""
+    """Write one generated artifact as canonical UTF-8 bytes atomically."""
 
     path = path.resolve()
     path.parent.mkdir(parents=True, exist_ok=True)
     temporary = path.with_suffix(path.suffix + ".tmp")
-    temporary.write_text(json.dumps(value, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    payload = (json.dumps(value, indent=2, sort_keys=True) + "\n").encode("utf-8")
+    temporary.write_bytes(payload)
     temporary.replace(path)
 
 

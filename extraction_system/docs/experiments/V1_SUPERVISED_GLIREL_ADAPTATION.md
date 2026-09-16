@@ -364,9 +364,9 @@ Completed locally without loading the large checkpoint or starting GPU work:
 - verified every generated positive against parsed BioRED gold truth;
 - regenerated the corrected corpus twice and confirmed identical JSONL and
   statistics SHA-256 values (`E1ECF8985114CCC756A87CECE699F76123AB6489D42B8308FFA71AE750B91C51`
-  for JSONL and `C86FD7B1A419CEF4139762EE5056ED7F81E6592E222EF416134476A3ABDB117E`
+  for JSONL and `AE91907822E47D94E1C2179AB4DCFAFC73B6BF0E2C953B907090ADAD3B2FBA0F`
   for statistics);
-- passed the full test suite: 34 tests, including 24 BioRED/CLI/training-focused
+- passed the full test suite: 35 tests, including the BioRED/CLI/training-focused
   tests and the native negative-supervision check;
 - passed Python compilation and `git diff --check`;
 - constructed a training plan without checkpoint loading;
@@ -394,7 +394,7 @@ representable direction. This is a documented data limitation, not a new global
 candidate constraint. BioRED's legitimate self-concept truth remains available to
 the existing non-directional evaluator.
 
-## V1-B1 resume reproducibility gate — BLOCKER (2026-09-16)
+## V1-B1 resume reproducibility gate — local correction verified; AWS confirmation pending (2026-09-16)
 
 The AWS resume gate synchronized `extraction_system` with
 `origin/extraction_system` and verified HEAD
@@ -405,19 +405,27 @@ matched:
 - Train: `53e08e0acff5043937cdd3fdb595639e59bfb0390b64760a3840f6e1a2a69987`
 - Dev: `d5ab4d05673ac46fb5e3b2904d2820462dec2c4c50dfcdd8678635ff1b8ce1f5`
 
-After deleting and regenerating `.cache/v1/biored_train` with `uv run
-biored-v1 prepare --dataset .cache/BIORED --output-dir
-.cache/v1/biored_train`, the training JSONL matched the required digest
-`e1ecf8985114ccc756a87cece699f76123ab6489d42b8308ffa71ae750b91c51`. The
-statistics digest did not match: expected
-`c86fd7b1a419cef4139762ee5056ed7f81e6592e222ef416134476a3abdb117e`, observed
+The remaining mismatch was isolated to text-mode newline serialization, not
+semantic, statistical, or corpus drift: the AWS raw/LF statistics digest was
+`ae91907822e47d94e1c2179ab4dcfafc73b6bf0e2c953b907090adad3b2fba0f`, while the
+same bytes converted to CRLF produced the prior Windows digest
+`c86fd7b1a419cef4139762ee5056ed7f81e6592e222ef416134476a3abdb117e`.
+
+`_write_json()` now serializes the canonical JSON payload to explicit UTF-8
+bytes with LF termination and preserves atomic temporary-file replacement. The
+JSONL generation, corpus conversion, model configuration, and evaluation code
+are unchanged. Focused training tests passed 11/11, including explicit LF-only
+byte checks and existing path-independence coverage. Regenerated locally on this
+AWS/Linux node, the artifacts matched JSONL
+`e1ecf8985114ccc756a87cece699f76123ab6489d42b8308ffa71ae750b91c51` and
+statistics
 `ae91907822e47d94e1c2179ab4dcfafc73b6bf0e2c953b907090adad3b2fba0f`.
 
-This fails the cross-machine preparation reproducibility gate. The exact
-statistics-artifact mismatch is the blocker; no checkpoint was loaded, CUDA or
-Tesla T4 smoke execution was run, and no GPU measurements were collected. The
-full 4,000-microstep fine-tuning run remains **NOT RUN** and Dev evaluation
-remains **NOT RUN**.
+The local correction is verified; Windows regeneration and AWS cross-machine
+confirmation remain pending. No checkpoint was loaded, CUDA or Tesla T4 smoke
+execution was run, and no GPU measurements were collected. The full
+4,000-microstep fine-tuning run remains **NOT RUN** and Dev evaluation remains
+**NOT RUN**.
 
 ## V1-B results and checkpoint selection — pending
 

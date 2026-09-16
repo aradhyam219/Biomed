@@ -27,6 +27,7 @@ from biomedical_extractor.biored_training import (
     prepare_training_corpus,
     verify_biored_dev_hash,
     verify_generated_positive_origins,
+    _write_json,
     write_prepared_corpus,
 )
 
@@ -286,6 +287,21 @@ class BioREDTrainingTests(unittest.TestCase):
             stats["verified_hashes"]["dev"]["filename"], "Dev.BioC.JSON"
         )
         self.assertNotIn("path", stats["verified_hashes"]["dev"])
+
+    def test_json_writer_emits_canonical_lf_utf8_bytes(self):
+        value = {"z": ["line", {"nested": True}], "a": "value"}
+        expected = (json.dumps(value, indent=2, sort_keys=True) + "\n").encode("utf-8")
+
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "artifact.json"
+            _write_json(path, value)
+            emitted = path.read_bytes()
+
+        self.assertNotIn(b"\r\n", emitted)
+        self.assertNotIn(b"\r", emitted)
+        self.assertEqual(emitted[-1:], b"\n")
+        self.assertNotEqual(emitted[-2:], b"\n\n")
+        self.assertEqual(emitted, expected)
 
     def test_training_plan_is_constructed_without_checkpoint_loading(self):
         with tempfile.TemporaryDirectory() as directory:
