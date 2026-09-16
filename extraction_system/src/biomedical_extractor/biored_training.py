@@ -4,8 +4,9 @@ BioRED stores document-level relations between normalized concepts, while GLiREL
 trains on ordered mention-span pairs. This module performs the deliberately narrow
 V1-A projection: eligible mentions are expanded by concept relation, both ordered
 directions are emitted, and duplicate span-pair/label records are removed. The
-training runner then delegates batching, negative-label construction, optimization,
-and model serialization to GLiREL 1.2.1's native mechanisms.
+training runner delegates batching, negative-label construction, and model
+serialization to GLiREL 1.2.1's native mechanisms. Its optimizer construction
+follows the named-parameter AdamW grouping used by the upstream training script.
 
 The module is evaluation/training infrastructure only. It is not imported by the
 production text-to-entities-and-relations path.
@@ -67,6 +68,8 @@ class V1TrainingConfig:
     checkpoint: str = DEFAULT_RELATION_MODEL
     lr_encoder: float = 1e-5
     lr_others: float = 1e-4
+    weight_decay_encoder: float = 0.01
+    weight_decay_other: float = 0.01
     warmup_ratio: float = 0.1
     scheduler: str = "cosine_with_warmup"
     loss_func: str = "binary_cross_entropy_loss"
@@ -107,6 +110,8 @@ class V1TrainingConfig:
             raise ValueError("V1 requires cosine_with_warmup")
         if self.lr_encoder <= 0 or self.lr_others <= 0:
             raise ValueError("Learning rates must be positive")
+        if self.weight_decay_encoder < 0 or self.weight_decay_other < 0:
+            raise ValueError("Weight decay values must be non-negative")
         if not 0 < self.warmup_ratio < 1:
             raise ValueError("warmup_ratio must be between zero and one")
         if self.train_batch_size != 1:
@@ -771,6 +776,59 @@ def _native_loader(model: Any, examples: Sequence[Mapping[str, Any]], config: V1
     )
 
 
+def _build_v1_optimizer(model: Any, config: V1TrainingConfig) -> Any:
+    """Build the supported GLiREL 1.2.1 named-parameter AdamW optimizer."""
+
+    import torch
+    from transformers.pytorch_utils import ALL_LAYERNORM_LAYERS
+    from transformers.trainer_pt_utils import get_parameter_names
+
+    decay_parameter_names = {
+        name
+        for name in get_parameter_names(model, ALL_LAYERNORM_LAYERS)
+        if "bias" not in name
+    }
+    parameter_groups: list[dict[str, Any]] = [
+        {
+            "params": [],
+            "lr": config.lr_others,
+            "weight_decay": config.weight_decay_other,
+        },
+        {"params": [], "lr": config.lr_others, "weight_decay": 0.0},
+        {
+            "params": [],
+            "lr": config.lr_encoder,
+            "weight_decay": config.weight_decay_encoder,
+        },
+        {"params": [], "lr": config.lr_encoder, "weight_decay": 0.0},
+    ]
+
+    trainable_parameter_ids: set[int] = set()
+    grouped_parameter_ids: list[int] = []
+    for name, parameter in model.named_parameters():
+        if not parameter.requires_grad:
+            continue
+        parameter_id = id(parameter)
+        if parameter_id in trainable_parameter_ids:
+            raise RuntimeError(f"Trainable parameter appears more than once: {name}")
+        trainable_parameter_ids.add(parameter_id)
+        is_encoder = "token_rep_layer" in name
+        should_decay = name in decay_parameter_names
+        if is_encoder:
+            group_index = 2 if should_decay else 3
+        else:
+            group_index = 0 if should_decay else 1
+        parameter_groups[group_index]["params"].append(parameter)
+        grouped_parameter_ids.append(parameter_id)
+
+    if set(grouped_parameter_ids) != trainable_parameter_ids or len(
+        grouped_parameter_ids
+    ) != len(trainable_parameter_ids):
+        raise RuntimeError("V1 optimizer parameter grouping is not an exact partition")
+
+    return torch.optim.AdamW(parameter_groups)
+
+
 def _move_batch(batch: Mapping[str, Any], device: str) -> dict[str, Any]:
     """Move native tensor fields while preserving token/label metadata."""
 
@@ -884,7 +942,7 @@ def run_gpu_smoke_test(plan: TrainingPlan) -> dict[str, Any]:
     selected_example = _select_smoke_example(examples)
     loader = _native_loader(model, [selected_example], config)
     model.train()
-    optimizer = model.get_optimizer(config.lr_encoder, config.lr_others)
+    optimizer = _build_v1_optimizer(model, config)
     optimizer.zero_grad(set_to_none=True)
     amp_enabled = config.mixed_precision == "fp16" and device.startswith("cuda")
     scaler = torch.cuda.amp.GradScaler(enabled=amp_enabled)
@@ -959,7 +1017,7 @@ def run_training(plan: TrainingPlan) -> dict[str, Any]:
     model = _load_glirel_model(config)
     device = config.device or ("cuda" if torch.cuda.is_available() else "cpu")
     loader = _native_loader(model, examples, config)
-    optimizer = model.get_optimizer(config.lr_encoder, config.lr_others)
+    optimizer = _build_v1_optimizer(model, config)
     scheduler_total_steps, warmup_steps = calculate_scheduler_steps(
         config.num_steps, config.gradient_accumulation, config.warmup_ratio
     )

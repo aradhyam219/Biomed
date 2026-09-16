@@ -6,6 +6,7 @@ import tempfile
 import unittest
 from pathlib import Path
 from types import SimpleNamespace
+from unittest.mock import patch
 
 from biomedical_extractor.biored import (
     CANONICAL_TO_PROMPT,
@@ -17,7 +18,9 @@ from biomedical_extractor.biored import (
 )
 from biomedical_extractor.biored_training import (
     GLIREL_RELATION_LABELS,
+    TrainingPlan,
     V1TrainingConfig,
+    _build_v1_optimizer,
     build_training_plan,
     calculate_scheduler_steps,
     convert_document_to_glirel,
@@ -25,6 +28,8 @@ from biomedical_extractor.biored_training import (
     _native_loader,
     _select_smoke_example,
     prepare_training_corpus,
+    run_gpu_smoke_test,
+    run_training,
     verify_biored_dev_hash,
     verify_generated_positive_origins,
     _write_json,
@@ -138,6 +143,118 @@ class BioREDTrainingTests(unittest.TestCase):
     def test_scheduler_steps_use_optimizer_update_count(self):
         self.assertEqual(calculate_scheduler_steps(4_000, 8, 0.1), (500, 50))
         self.assertEqual(calculate_scheduler_steps(4_001, 8, 0.1), (501, 50))
+
+    def test_v1_optimizer_uses_upstream_parameter_grouping(self):
+        import torch
+
+        class TinyGLiREL(torch.nn.Module):
+            def __init__(self):
+                super().__init__()
+                self.token_rep_layer = torch.nn.Sequential(
+                    torch.nn.Linear(2, 2), torch.nn.LayerNorm(2)
+                )
+                self.other = torch.nn.Sequential(
+                    torch.nn.Linear(2, 2), torch.nn.LayerNorm(2)
+                )
+                self.frozen = torch.nn.Parameter(torch.ones(2), requires_grad=False)
+
+        model = TinyGLiREL()
+        config = V1TrainingConfig(device="cpu", mixed_precision="none")
+        optimizer = _build_v1_optimizer(model, config)
+
+        grouped = {}
+        grouped_ids = []
+        for group in optimizer.param_groups:
+            for parameter in group["params"]:
+                grouped[id(parameter)] = (
+                    float(group["lr"]),
+                    float(group["weight_decay"]),
+                )
+                grouped_ids.append(id(parameter))
+
+        expected = {
+            "token_rep_layer.0.weight": (1e-5, 0.01),
+            "token_rep_layer.0.bias": (1e-5, 0.0),
+            "token_rep_layer.1.weight": (1e-5, 0.0),
+            "token_rep_layer.1.bias": (1e-5, 0.0),
+            "other.0.weight": (1e-4, 0.01),
+            "other.0.bias": (1e-4, 0.0),
+            "other.1.weight": (1e-4, 0.0),
+            "other.1.bias": (1e-4, 0.0),
+        }
+        named_parameters = dict(model.named_parameters())
+        self.assertFalse(hasattr(model, "_rel_filtering"))
+        self.assertEqual(
+            set(grouped),
+            {
+                id(parameter)
+                for parameter in named_parameters.values()
+                if parameter.requires_grad
+            },
+        )
+        self.assertEqual(len(grouped_ids), len(set(grouped_ids)))
+        for name, parameter in named_parameters.items():
+            if parameter.requires_grad:
+                self.assertEqual(grouped[id(parameter)], expected[name])
+            else:
+                self.assertNotIn(id(parameter), grouped)
+
+        serialized = config.to_dict()
+        self.assertEqual(serialized["weight_decay_encoder"], 0.01)
+        self.assertEqual(serialized["weight_decay_other"], 0.01)
+
+    def test_smoke_and_training_use_the_shared_optimizer_builder(self):
+        class OptimizerBuilderCalled(RuntimeError):
+            pass
+
+        class FakeModel:
+            def train(self):
+                return self
+
+        model = FakeModel()
+        example = {
+            "metadata": {"document_id": "PM1"},
+            "tokenized_text": ["G"],
+            "ner": [],
+            "relations": [],
+        }
+        config = V1TrainingConfig(
+            device="cpu",
+            mixed_precision="none",
+            num_steps=1,
+            gradient_accumulation=1,
+            save_every=1,
+        )
+
+        with tempfile.TemporaryDirectory() as directory:
+            plan = TrainingPlan(
+                Path(directory) / "train.jsonl",
+                Path(directory) / "checkpoints",
+                config,
+            )
+            with patch(
+                "biomedical_extractor.biored_training._load_glirel_model",
+                return_value=model,
+            ), patch(
+                "biomedical_extractor.biored_training.load_training_examples",
+                return_value=[example],
+            ), patch(
+                "biomedical_extractor.biored_training._native_loader",
+                return_value=object(),
+            ), patch(
+                "biomedical_extractor.biored_training._build_v1_optimizer",
+                side_effect=OptimizerBuilderCalled,
+            ) as builder:
+                with self.assertRaises(OptimizerBuilderCalled):
+                    run_gpu_smoke_test(plan)
+                with self.assertRaises(OptimizerBuilderCalled):
+                    run_training(plan)
+
+        self.assertEqual(builder.call_count, 2)
+        self.assertIs(builder.call_args_list[0].args[0], model)
+        self.assertIs(builder.call_args_list[1].args[0], model)
+        self.assertIs(builder.call_args_list[0].args[1], config)
+        self.assertIs(builder.call_args_list[1].args[1], config)
 
     def test_prepare_excludes_over_limit_documents_without_truncation(self):
         short = BioREDDocument(
@@ -312,6 +429,8 @@ class BioREDTrainingTests(unittest.TestCase):
         self.assertEqual(plan.config.checkpoint, "jackboyla/glirel-large-v0")
         self.assertEqual(plan.config.lr_encoder, 1e-5)
         self.assertEqual(plan.config.lr_others, 1e-4)
+        self.assertEqual(plan.config.weight_decay_encoder, 0.01)
+        self.assertEqual(plan.config.weight_decay_other, 0.01)
         self.assertEqual(plan.config.train_batch_size, 1)
         self.assertEqual(plan.config.gradient_accumulation, 8)
         self.assertEqual(plan.config.mixed_precision, "fp16")

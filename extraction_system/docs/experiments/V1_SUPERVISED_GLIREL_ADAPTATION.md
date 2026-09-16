@@ -5,7 +5,7 @@
 | Stage | Status | Evidence |
 |---|---|---|
 | V1-A — BioRED Training Preparation | **Completed and verified locally** | Deterministic Train conversion, 512-token preflight, native-collator negative-label test, provenance check, and reproducibility checks passed. |
-| V1-B — GPU Fine-Tuning & Evaluation | **Blocked at V1-B1 GPU smoke** | The checkpoint loaded on the AWS Tesla T4, but the prescribed smoke path stopped during optimizer construction before forward/backward execution. |
+| V1-B — GPU Fine-Tuning & Evaluation | **Pending V1-B1 smoke rerun** | The initial AWS smoke loaded the checkpoint but stopped during optimizer construction; the compatibility correction is implemented and no post-correction smoke result exists yet. |
 
 This is the one living report for V1. It records the prepared experiment now and
 will be updated with the actual GPU progression, selected checkpoint, Dev metrics,
@@ -138,10 +138,10 @@ negative supervision.
 The focused test `test_native_collator_assigns_zero_to_unlabeled_pairs` verifies
 this behavior without loading the large checkpoint. Prompt-label alignment is
 covered separately for the converter, native training loader, and inference
-configuration. The upstream GLiREL training loop and cosine-warmup configuration were also inspected in the official
-[GLiREL `train.py`](https://github.com/jackboyla/GLiREL/blob/main/train.py); V1
-uses the package's native collator and optimizer with a narrow repository-local
-runner rather than copying a second model implementation.
+configuration. The upstream GLiREL training loop and cosine-warmup configuration
+were also inspected in the official [GLiREL `train.py`](https://github.com/jackboyla/GLiREL/blob/main/train.py);
+V1 uses the package's native collator and a repository-owned AdamW builder that
+matches the upstream named-parameter grouping.
 
 ## V1-A measured Train preparation
 
@@ -238,6 +238,8 @@ The package is pinned to `glirel==1.2.1`. The first supervised configuration is:
 |---|---|
 | `lr_encoder` | `1e-5` |
 | `lr_others` | `1e-4` |
+| `weight_decay_encoder` | `0.01` |
+| `weight_decay_other` | `0.01` |
 | `warmup_ratio` | `0.1` |
 | `scheduler` | `cosine_with_warmup` |
 | `loss_func` | `binary_cross_entropy_loss` |
@@ -376,11 +378,10 @@ Completed locally without loading the large checkpoint or starting GPU work:
 
 ## Material problems and resolutions
 
-The installed GLiREL package provides the model, collator, optimizer, and low-level
-training primitives but no repository-ready high-level trainer. The runner therefore
-uses those native mechanisms and the upstream cosine-warmup loop shape, keeping the
-experiment-specific code limited to BioRED conversion, preflight, configuration,
-and checkpoint serialization.
+The installed GLiREL package provides the model, collator, and low-level training
+primitives but no repository-ready high-level trainer. The runner uses those native
+mechanisms and the upstream cosine-warmup loop shape, with repository-owned
+configuration and optimizer construction kept limited to the experiment.
 
 The V1-B cross-machine preflight exposed path-dependent metadata in the statistics
 artifact. It now records stable filenames/logical identity and SHA-256 values
@@ -393,6 +394,15 @@ self-pairs, so the converter records 101 such cases and keeps every other
 representable direction. This is a documented data limitation, not a new global
 candidate constraint. BioRED's legitimate self-concept truth remains available to
 the existing non-directional evaluator.
+
+The measured AWS GPU smoke attempt loaded the checkpoint successfully but stopped
+before forward execution because GLiREL 1.2.1's `GLiREL.get_optimizer()` accessed
+missing `_rel_filtering`. Exact v1.2.1 source inspection confirmed that
+`GLiREL.__init__` does not create `_rel_filtering`, while the official `train.py`
+builds AdamW from `model.named_parameters()`, separating `token_rep_layer` from
+all other trainable parameters. Repository training now follows that supported
+optimizer path. No GPU smoke result exists after the correction; V1-B1 GPU smoke
+remains **PENDING RERUN**.
 
 ## V1-B1 resume reproducibility gate — **CONFIRMED / PASS** (2026-09-16)
 
@@ -407,7 +417,7 @@ matching the AWS/Linux regenerated artifacts:
 
 The 4,000-microstep fine-tuning run and Dev evaluation remain **NOT RUN**.
 
-## V1-B1 GPU smoke — **BLOCKER** (2026-09-16)
+## V1-B1 GPU smoke — measured blocker; correction pending rerun (2026-09-16)
 
 The AWS runtime preflight passed, but the prescribed smoke command did not reach
 the forward pass. The repository was at exact HEAD
@@ -456,8 +466,9 @@ The installed `glirel==1.2.1` `GLiREL.get_optimizer` unconditionally calls
 attribute. This is the immediate root cause. No speculative fix was attempted,
 and the run stopped before full training.
 
-**V1-B1 GPU smoke = BLOCKER.** The 4,000-microstep fine-tuning run remains
-**NOT RUN** and Dev evaluation remains **NOT RUN**.
+The compatibility correction is implemented, but no post-correction GPU smoke
+result exists yet. V1-B1 GPU smoke remains **PENDING RERUN**. The 4,000-microstep
+fine-tuning run and Dev evaluation remain **NOT RUN**.
 
 ## V1-B results and checkpoint selection — pending
 
