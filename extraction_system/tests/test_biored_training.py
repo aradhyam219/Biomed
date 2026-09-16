@@ -169,7 +169,7 @@ class BioREDTrainingTests(unittest.TestCase):
         self.assertEqual(prepared.stats["generated_positive_relations"]["total"], 2)
         self.assertEqual(len(prepared.examples), 1)
 
-    def test_native_collator_assigns_zero_to_unlabeled_pairs(self):
+    def test_native_collator_uses_inference_order_and_negative_pairs(self):
         from glirel.modules.base import InstructBase
 
         config = SimpleNamespace(
@@ -191,12 +191,12 @@ class BioREDTrainingTests(unittest.TestCase):
             "label": list(GLIREL_RELATION_LABELS),
         }
 
-        batch = native.collate_fn(
-            [example],
-            train_relation_types=list(GLIREL_RELATION_LABELS),
-            device="cpu",
-        )
+        batch = next(iter(_native_loader(native, [example], V1TrainingConfig())))
 
+        self.assertEqual(
+            tuple(batch["classes_to_id"][0]),
+            tuple(CANONICAL_TO_PROMPT.values()),
+        )
         self.assertEqual(batch["rel_label"].tolist(), [[0, 0]])
 
     def test_train_dev_test_loader_keeps_split_identity(self):

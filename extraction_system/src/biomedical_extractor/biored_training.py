@@ -40,9 +40,24 @@ GLIREL_TRAINING_MAX_LEN = 512
 GLIREL_RELATION_LABELS = tuple(
     CANONICAL_TO_PROMPT[label] for label in BIORED_RELATION_LABELS
 )
+_GLIREL_PROMPT_ORDER = {
+    prompt: index for index, prompt in enumerate(GLIREL_RELATION_LABELS)
+}
 EXPECTED_BIORED_DEV_SHA256 = (
     "d5ab4d05673ac46fb5e3b2904d2820462dec2c4c50dfcdd8678635ff1b8ce1f5"
 )
+
+
+class _OrderedRelationPrompt(str):
+    """Keep GLiREL's native ``sorted(label)`` on the inference prompt order."""
+
+    def __lt__(self, other: object) -> bool:
+        if isinstance(other, str):
+            self_order = _GLIREL_PROMPT_ORDER.get(str(self))
+            other_order = _GLIREL_PROMPT_ORDER.get(str(other))
+            if self_order is not None and other_order is not None:
+                return self_order < other_order
+        return super().__lt__(other)
 
 
 @dataclass(frozen=True)
@@ -735,8 +750,20 @@ def _load_glirel_model(config: V1TrainingConfig) -> Any:
 def _native_loader(model: Any, examples: Sequence[Mapping[str, Any]], config: V1TrainingConfig) -> Any:
     """Build GLiREL's own DataLoader and collator for fixed eight-label training."""
 
+    # GLiREL 1.2.1 sorts b["label"] inside collate_fn. These str-compatible
+    # values preserve the inference order without replacing or copying its
+    # native collator; the serialized JSONL remains ordinary prompt strings.
+    collator_examples = [
+        {
+            **example,
+            "label": [
+                _OrderedRelationPrompt(label) for label in example["label"]
+            ],
+        }
+        for example in examples
+    ]
     return model.create_dataloader(
-        list(examples),
+        collator_examples,
         batch_size=config.train_batch_size,
         shuffle=False,
         train_relation_types=list(GLIREL_RELATION_LABELS),
@@ -807,6 +834,28 @@ def _learning_rate_snapshot(optimizer: Any) -> dict[str, float]:
     }
 
 
+def _find_gradient_sample(model: Any, torch: Any) -> tuple[Any, int]:
+    """Find one finite, non-zero gradient element without cloning a parameter."""
+
+    sample_width = 32
+    for parameter in model.parameters():
+        if (
+            not parameter.requires_grad
+            or parameter.grad is None
+            or not parameter.grad.is_contiguous()
+            or not parameter.is_contiguous()
+        ):
+            continue
+        flat_gradient = parameter.grad.detach().view(-1)
+        for start in range(0, flat_gradient.numel(), sample_width):
+            gradient_sample = flat_gradient[start : start + sample_width]
+            valid = torch.isfinite(gradient_sample) & gradient_sample.ne(0)
+            if bool(valid.any()):
+                offset = int(torch.nonzero(valid, as_tuple=False)[0].item())
+                return parameter, start + offset
+    raise RuntimeError("V1 GPU smoke test found no finite non-zero gradient element")
+
+
 def _peak_cuda_memory(torch: Any, device: str) -> dict[str, int | None]:
     """Read peak CUDA allocation counters, or nulls for a non-CUDA run."""
 
@@ -841,13 +890,6 @@ def run_gpu_smoke_test(plan: TrainingPlan) -> dict[str, Any]:
     if device.startswith("cuda"):
         torch.cuda.reset_peak_memory_stats(device)
     batch = _move_batch(next(iter(loader)), device)
-    tracked_parameter = next(
-        (parameter for parameter in model.parameters() if parameter.requires_grad),
-        None,
-    )
-    if tracked_parameter is None:
-        raise RuntimeError("V1 GPU smoke test found no trainable model parameters")
-    parameter_before = tracked_parameter.detach().clone()
     autocast_context = (
         torch.autocast(device_type="cuda", dtype=torch.float16)
         if amp_enabled
@@ -859,11 +901,17 @@ def run_gpu_smoke_test(plan: TrainingPlan) -> dict[str, Any]:
     if not bool(torch.isfinite(loss).all()):
         raise RuntimeError(f"V1 GPU smoke test produced a non-finite loss: {loss}")
     scaler.scale(loss).backward()
+    tracked_parameter, sampled_parameter_index = _find_gradient_sample(model, torch)
+    parameter_before = tracked_parameter.detach().view(-1)[
+        sampled_parameter_index : sampled_parameter_index + 1
+    ].clone()
     scaler.step(optimizer)
     scaler.update()
-    parameter_after = tracked_parameter.detach()
+    parameter_after = tracked_parameter.detach().view(-1)[
+        sampled_parameter_index : sampled_parameter_index + 1
+    ]
     if not bool(torch.isfinite(parameter_after).all()):
-        raise RuntimeError("V1 GPU smoke test produced non-finite updated parameters")
+        raise RuntimeError("V1 GPU smoke test produced a non-finite sampled parameter")
     parameters_changed = bool(torch.any(parameter_after != parameter_before).item())
     if not parameters_changed:
         raise RuntimeError("V1 GPU smoke test optimizer step changed no parameters")
@@ -879,6 +927,7 @@ def run_gpu_smoke_test(plan: TrainingPlan) -> dict[str, Any]:
         "amp_enabled": amp_enabled,
         "optimizer_step_completed": True,
         "parameters_changed": parameters_changed,
+        "sampled_parameter_index": sampled_parameter_index,
         "gradients_zeroed": True,
         "tested_example": {
             "document_id": selected_example.get("metadata", {}).get("document_id"),

@@ -111,6 +111,11 @@ canonical label occur in parsed BioRED gold truth and that its prompt is the
 corresponding mapped label. No evidence-sentence selection, mention ranking,
 multiple-instance learning, or hard-negative mining is used.
 
+Because GLiREL 1.2.1 sorts `example["label"]` inside its native supervised
+collator, the in-memory loader boundary supplies `str`-compatible prompt values
+whose native sort follows the inference order. The serialized JSONL remains plain
+prompt text; the actual collated `classes_to_id` order is tested directly.
+
 ### Token and span conventions
 
 The converter calls the same token pattern and exact character-boundary splitting
@@ -268,9 +273,10 @@ not a general hardware-tuning framework.
 The GPU smoke path selects the fitting example with the largest estimated ordered
 non-self entity-pair workload, breaking ties by token length and document ID. It
 resets CUDA peak counters, performs a finite forward/loss check, uses the enabled
-FP16 scaler for backward and optimizer update, verifies that a trainable parameter
-changed, updates the scaler, zeroes gradients, and reports tested-example
-diagnostics plus peak allocated/reserved CUDA memory. These are implementation
+FP16 scaler for backward and optimizer update, finds a finite non-zero gradient,
+snapshots one parameter element, verifies that the sampled state changed, zeroes
+gradients, and reports tested-example diagnostics plus peak allocated/reserved CUDA
+memory. It does not clone a full trainable parameter. These are implementation
 checks for the pending AWS smoke run, not measured V1-B results.
 
 ## Implementation and reproducibility
