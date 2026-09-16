@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import json
 import tempfile
 import unittest
@@ -26,6 +27,7 @@ from biomedical_extractor.biored_training import (
     prepare_training_corpus,
     verify_biored_dev_hash,
     verify_generated_positive_origins,
+    write_prepared_corpus,
 )
 
 
@@ -240,6 +242,50 @@ class BioREDTrainingTests(unittest.TestCase):
             (base / "Dev.BioC.JSON").write_text(json.dumps(root), encoding="utf-8")
             with self.assertRaisesRegex(ValueError, "SHA-256 mismatch"):
                 verify_biored_dev_hash(base.parent, expected_sha256="not-the-hash")
+
+    def test_prepared_statistics_are_path_independent(self):
+        root = {
+            "source": "BioC",
+            "date": "2021-11-30",
+            "key": "BioC.key",
+            "documents": [
+                {
+                    "id": "PM1",
+                    "passages": [{"offset": 0, "text": "G", "annotations": []}],
+                    "relations": [],
+                }
+            ],
+        }
+
+        stats_bytes = []
+        with tempfile.TemporaryDirectory() as directory:
+            for root_name in ("root_a", "root_b"):
+                base = Path(directory) / root_name / "BioRED"
+                base.mkdir(parents=True)
+                for filename in ("Train.BioC.JSON", "Dev.BioC.JSON"):
+                    (base / filename).write_text(json.dumps(root), encoding="utf-8")
+
+                dataset = load_biored(base.parent, "train")
+                dev_path = base / "Dev.BioC.JSON"
+                dev_sha256 = hashlib.sha256(dev_path.read_bytes()).hexdigest()
+                verified_dev = verify_biored_dev_hash(
+                    base.parent, expected_sha256=dev_sha256
+                )
+                paths = write_prepared_corpus(
+                    prepare_training_corpus(dataset),
+                    Path(directory) / root_name / "output",
+                    verified_dev=verified_dev,
+                )
+                stats_bytes.append(paths["stats"].read_bytes())
+
+        self.assertEqual(stats_bytes[0], stats_bytes[1])
+        stats = json.loads(stats_bytes[0])
+        self.assertEqual(stats["dataset"]["filename"], "Train.BioC.JSON")
+        self.assertNotIn("path", stats["dataset"])
+        self.assertEqual(
+            stats["verified_hashes"]["dev"]["filename"], "Dev.BioC.JSON"
+        )
+        self.assertNotIn("path", stats["verified_hashes"]["dev"])
 
     def test_training_plan_is_constructed_without_checkpoint_loading(self):
         with tempfile.TemporaryDirectory() as directory:

@@ -364,9 +364,9 @@ Completed locally without loading the large checkpoint or starting GPU work:
 - verified every generated positive against parsed BioRED gold truth;
 - regenerated the corrected corpus twice and confirmed identical JSONL and
   statistics SHA-256 values (`E1ECF8985114CCC756A87CECE699F76123AB6489D42B8308FFA71AE750B91C51`
-  for JSONL and `9574D3859B6D2412A045E964C6E537077044DBAFB4ED110CFB156C47A03CE2BC`
+  for JSONL and `C86FD7B1A419CEF4139762EE5056ED7F81E6592E222EF416134476A3ABDB117E`
   for statistics);
-- passed the full test suite: 33 tests, including 23 BioRED/CLI/training-focused
+- passed the full test suite: 34 tests, including 24 BioRED/CLI/training-focused
   tests and the native negative-supervision check;
 - passed Python compilation and `git diff --check`;
 - constructed a training plan without checkpoint loading;
@@ -381,6 +381,11 @@ training primitives but no repository-ready high-level trainer. The runner there
 uses those native mechanisms and the upstream cosine-warmup loop shape, keeping the
 experiment-specific code limited to BioRED conversion, preflight, configuration,
 and checkpoint serialization.
+
+The V1-B cross-machine preflight exposed path-dependent metadata in the statistics
+artifact. It now records stable filenames/logical identity and SHA-256 values
+instead of resolved absolute paths; the training corpus, counts, and behavior are
+unchanged.
 
 The Train corpus contains same-mention cross-product cases, including self-concept
 and multi-concept annotations. GLiREL's native relation-pair generator excludes

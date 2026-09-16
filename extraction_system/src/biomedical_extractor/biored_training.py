@@ -190,14 +190,14 @@ def verify_biored_dev_hash(
             "BioRED Dev.BioC.JSON SHA-256 mismatch: "
             f"expected {expected_sha256}, observed {actual} at {dev_path}"
         )
-    return {"path": str(dev_path), "sha256": actual}
+    return {"filename": dev_path.name, "sha256": actual}
 
 
 def _dataset_identity(dataset: BioREDDataset) -> dict[str, Any]:
     """Return the source identity recorded beside generated examples."""
 
     return {
-        "path": str(dataset.path),
+        "filename": dataset.path.name,
         "split": dataset.split,
         "sha256": dataset.sha256,
         "source": dataset.source,
