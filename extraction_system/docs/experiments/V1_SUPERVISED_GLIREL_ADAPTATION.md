@@ -5,7 +5,7 @@
 | Stage | Status | Evidence |
 |---|---|---|
 | V1-A — BioRED Training Preparation | **Completed and verified locally** | Deterministic Train conversion, 512-token preflight, native-collator negative-label test, provenance check, and reproducibility checks passed. |
-| V1-B — GPU Fine-Tuning & Evaluation | **Pending V1-B1 smoke rerun** | The initial AWS smoke loaded the checkpoint but stopped during optimizer construction; the compatibility correction is implemented and no post-correction smoke result exists yet. |
+| V1-B — GPU Fine-Tuning & Evaluation | **Blocked at V1-B1 smoke gate** | The initial AWS smoke stopped during optimizer construction; the correction rerun reached forward, backward, and optimizer step, but failed the sampled-parameter-change invariant. |
 
 This is the one living report for V1. It records the prepared experiment now and
 will be updated with the actual GPU progression, selected checkpoint, Dev metrics,
@@ -417,7 +417,7 @@ matching the AWS/Linux regenerated artifacts:
 
 The 4,000-microstep fine-tuning run and Dev evaluation remain **NOT RUN**.
 
-## V1-B1 GPU smoke — measured blocker; correction pending rerun (2026-09-16)
+## V1-B1 GPU smoke — initial measured blocker (historical; 2026-09-16)
 
 The AWS runtime preflight passed, but the prescribed smoke command did not reach
 the forward pass. The repository was at exact HEAD
@@ -466,9 +466,54 @@ The installed `glirel==1.2.1` `GLiREL.get_optimizer` unconditionally calls
 attribute. This is the immediate root cause. No speculative fix was attempted,
 and the run stopped before full training.
 
-The compatibility correction is implemented, but no post-correction GPU smoke
-result exists yet. V1-B1 GPU smoke remains **PENDING RERUN**. The 4,000-microstep
-fine-tuning run and Dev evaluation remain **NOT RUN**.
+The compatibility correction was implemented after this historical attempt. The
+post-correction rerun is recorded below; the 4,000-microstep fine-tuning run and
+Dev evaluation remain **NOT RUN**.
+
+## V1-B1 GPU smoke rerun after optimizer correction — **BLOCKER** (2026-09-16)
+
+The prescribed smoke was rerun at exact HEAD
+`c2586c40d27aa60a699eb9f01897f3e825c5dfd0`, using the unchanged checkpoint,
+deterministic smoke selection, 512-token limit, batch size, FP16 mode, relation
+schema, prepared corpus, learning rates, weight decay, and repository-owned
+optimizer grouping. The existing prepared artifacts were not regenerated and
+matched the required hashes:
+
+- Training JSONL:
+  `e1ecf8985114ccc756a87cece699f76123ab6489d42b8308ffa71ae750b91c51`
+- Statistics:
+  `ae91907822e47d94e1c2179ab4dcfafc73b6bf0e2c953b907090adad3b2fba0f`
+
+The exact command completed after `23m14.897s` and failed only at the
+parameter-change assertion. The immediate root cause was:
+
+```text
+RuntimeError: V1 GPU smoke test optimizer step changed no parameters
+```
+
+### Post-correction rerun evidence
+
+| Field | Result |
+|---|---|
+| Tested document ID | `30442153` |
+| Token count | 446 |
+| Entity count | 71 |
+| Candidate-pair count | 4,970 |
+| Positive relation count | 1,436 |
+| Loss | Not emitted; the finite-loss check passed before the reported failure |
+| AMP / FP16 | Enabled (`fp16` on CUDA) |
+| Finite non-zero gradient | Confirmed; gradient sampling completed |
+| Backward | Completed |
+| Optimizer step | Completed; `scaler.step()` and `scaler.update()` returned |
+| Parameter change | **Failed**; sampled parameter was unchanged |
+| Peak allocated VRAM | Not measured; the assertion preceded the peak-counter readout |
+| Peak reserved VRAM | Not measured; the assertion preceded the peak-counter readout |
+| Wall time | 23m14.897s |
+| CUDA OOM | None |
+| Warnings | Existing tokenizer byte-fallback and PyTorch deprecation warnings |
+
+The 4,000-microstep fine-tuning run remains **NOT RUN**. Dev evaluation remains
+**NOT RUN**. No further smoke or training was started after this blocker.
 
 ## V1-B results and checkpoint selection — pending
 
