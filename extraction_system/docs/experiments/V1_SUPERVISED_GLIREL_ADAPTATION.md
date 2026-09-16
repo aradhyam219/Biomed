@@ -100,10 +100,15 @@ adaptation is the document-level-to-mention-level projection required by GLiREL:
 5. Deduplicate identical `(head token span, tail token span, relation label)`
    records deterministically.
 
-Each generated positive carries a `source_gold_relation` diagnostic record. The
-native GLiREL collator ignores this extra field, while the preparation validator
-checks that every positive's document, concept pair, and label occur in parsed
-BioRED gold truth. No evidence-sentence selection, mention ranking,
+BioRED's canonical labels remain authoritative for provenance, statistics, and
+reporting. The GLiREL-facing `relation_text` values and fixed example `label`
+lists use the exact human-readable prompts in `CANONICAL_TO_PROMPT`, the same
+prompt text passed by V0-B/V1 evaluation. Each generated positive also carries
+the canonical relation type and a `source_gold_relation` diagnostic record. The
+native GLiREL collator ignores those extra provenance fields, while the
+preparation validator checks that every positive's document, concept pair, and
+canonical label occur in parsed BioRED gold truth and that its prompt is the
+corresponding mapped label. No evidence-sentence selection, mention ranking,
 multiple-instance learning, or hard-negative mining is used.
 
 ### Token and span conventions
@@ -121,12 +126,14 @@ The installed `glirel==1.2.1` implementation was inspected directly. Its native
 `InstructBase.collate_fn` generates ordered non-self entity pairs, and
 `get_rel_labels` assigns label `0` when a pair is absent from the supplied gold
 relation map. `GLiREL.forward` converts those zeros to negative one-hot targets and
-includes them in `binary_cross_entropy_loss`. V1 exposes all eight fixed relation
-labels in every example, so absent labels/pairs are explicit negative supervision.
+includes them in `binary_cross_entropy_loss`. V1 exposes all eight fixed
+human-readable prompt labels in every example, so absent labels/pairs are explicit
+negative supervision.
 
 The focused test `test_native_collator_assigns_zero_to_unlabeled_pairs` verifies
-this behavior without loading the large checkpoint. The upstream GLiREL training
-loop and cosine-warmup configuration were also inspected in the official
+this behavior without loading the large checkpoint. Prompt-label alignment is
+covered separately for the converter, native training loader, and inference
+configuration. The upstream GLiREL training loop and cosine-warmup configuration were also inspected in the official
 [GLiREL `train.py`](https://github.com/jackboyla/GLiREL/blob/main/train.py); V1
 uses the package's native collator and optimizer with a narrow repository-local
 runner rather than copying a second model implementation.
@@ -240,18 +247,31 @@ The package is pinned to `glirel==1.2.1`. The first supervised configuration is:
 | `train_batch_size` | `1` |
 | `gradient_accumulation` | `8` |
 | mixed precision | FP16 |
-| initial `num_steps` | `20,000` |
-| checkpoint save interval | `1,000` steps |
+| initial `num_steps` | `4,000` microsteps |
+| checkpoint save interval | `1,000` microsteps; final save is separate |
 | seed | `0` |
 
-The `20,000`-step starting point follows the upstream GLiREL training convention;
-it is a first run, not a sweep or an asserted optimum. Entity markers are disabled
-in the runner so the measured 512-token preflight remains the model input length.
+The `4,000`-microstep setting is intentionally the first evidence-gathering
+viability run, not a sweep or an asserted optimum. With gradient accumulation of
+8, the scheduler has 500 optimizer-update steps and 50 warmup steps; `scheduler.step()`
+runs once per optimizer update. Periodic checkpoints are saved at microsteps
+1,000, 2,000, and 3,000; the 4,000-step boundary is represented by the single
+`final` save rather than a duplicate `step_4000` directory. Entity markers are
+disabled in the runner so the measured 512-token preflight remains the model input
+length.
 No GPU training was run locally.
 
 The later target hardware is one Tesla T4 with 15,360 MiB VRAM. The batch size,
 gradient accumulation, and FP16 settings are starting defaults for that hardware,
 not a general hardware-tuning framework.
+
+The GPU smoke path selects the fitting example with the largest estimated ordered
+non-self entity-pair workload, breaking ties by token length and document ID. It
+resets CUDA peak counters, performs a finite forward/loss check, uses the enabled
+FP16 scaler for backward and optimizer update, verifies that a trainable parameter
+changed, updates the scaler, zeroes gradients, and reports tested-example
+diagnostics plus peak allocated/reserved CUDA memory. These are implementation
+checks for the pending AWS smoke run, not measured V1-B results.
 
 ## Implementation and reproducibility
 
@@ -266,7 +286,8 @@ not a general hardware-tuning framework.
   using the unchanged V0-B concept-level aggregation and metrics; default behavior
   remains V0-B.
 - `tests/test_biored_training.py` — converter, exclusion, split, provenance,
-  native negative-label, and runner-construction tests.
+  prompt-label alignment, native negative-label, smoke-selection, scheduler, and
+  runner-construction tests.
 - `tests/test_biored_cli.py` — custom-checkpoint cache/report isolation coverage.
 - `pyproject.toml` — `biored-v1` command entry point.
 - `docs/ARCHITECTURE.md` — current structural boundary for supervised adaptation.
@@ -290,35 +311,35 @@ The preparation command verifies the sibling Dev SHA-256 before reading Train an
 writes `biored_train_glirel.jsonl`, `biored_train_stats.json`, and
 `v1_training_config.json` under the ignored output directory.
 
-The exact later AWS commands are:
+The exact later AWS commands use Ubuntu/bash syntax:
 
-```powershell
+```bash
 # GPU smoke test: one native GLiREL forward/backward pass; no long training.
-uv run biored-v1 smoke `
-  --training-jsonl .cache/v1/biored_train/biored_train_glirel.jsonl `
-  --checkpoint jackboyla/glirel-large-v0 `
-  --device cuda `
+uv run biored-v1 smoke \
+  --training-jsonl .cache/v1/biored_train/biored_train_glirel.jsonl \
+  --checkpoint jackboyla/glirel-large-v0 \
+  --device cuda \
   --mixed-precision fp16
 
-# First real supervised run: save step_1000, step_2000, ... and final.
-uv run biored-v1 train `
-  --training-jsonl .cache/v1/biored_train/biored_train_glirel.jsonl `
-  --checkpoint jackboyla/glirel-large-v0 `
-  --output-dir .cache/v1/checkpoints `
-  --device cuda `
-  --steps 20000 `
-  --save-every 1000 `
-  --mixed-precision fp16 `
+# First viability run: save step_1000, step_2000, step_3000, and final.
+uv run biored-v1 train \
+  --training-jsonl .cache/v1/biored_train/biored_train_glirel.jsonl \
+  --checkpoint jackboyla/glirel-large-v0 \
+  --output-dir .cache/v1/checkpoints \
+  --device cuda \
+  --steps 4000 \
+  --save-every 1000 \
+  --mixed-precision fp16 \
   --seed 0
 
 # Evaluate a selected local fine-tuned checkpoint on the complete-fit Dev split.
-uv run biored-evaluate `
-  --dataset .cache/BIORED `
-  --split dev `
-  --checkpoint .cache/v1/checkpoints/final `
-  --cache .cache/v1/biored_dev_raw.json `
-  --output .cache/v1/biored_dev_summary.json `
-  --device cuda `
+uv run biored-evaluate \
+  --dataset .cache/BIORED \
+  --split dev \
+  --checkpoint .cache/v1/checkpoints/final \
+  --cache .cache/v1/biored_dev_raw.json \
+  --output .cache/v1/biored_dev_summary.json \
+  --device cuda \
   --offline
 ```
 
@@ -335,15 +356,17 @@ Completed locally without loading the large checkpoint or starting GPU work:
 - parsed all 400 Train documents and completed deterministic 512-token preflight;
 - generated all fitting JSONL examples and exact label statistics;
 - verified every generated positive against parsed BioRED gold truth;
-- regenerated the corpus twice and confirmed identical JSONL and statistics SHA-256
-  values (`DEABFB244B4D761E2E9EDE2D4644A7AE002BE883C2912EC1F932D9AB968AE349`
-  for JSONL);
-- passed the full test suite: 30 tests, including 20 BioRED/CLI/training-focused
+- regenerated the corrected corpus twice and confirmed identical JSONL and
+  statistics SHA-256 values (`E1ECF8985114CCC756A87CECE699F76123AB6489D42B8308FFA71AE750B91C51`
+  for JSONL and `9574D3859B6D2412A045E964C6E537077044DBAFB4ED110CFB156C47A03CE2BC`
+  for statistics);
+- passed the full test suite: 33 tests, including 23 BioRED/CLI/training-focused
   tests and the native negative-supervision check;
 - passed Python compilation and `git diff --check`;
 - constructed a training plan without checkpoint loading;
 - added and tested local-checkpoint evaluation plumbing without running inference;
 - did not modify the accepted V0-B report or run V0-B inference.
+- did not run the GPU smoke path or any GPU training locally.
 
 ## Material problems and resolutions
 

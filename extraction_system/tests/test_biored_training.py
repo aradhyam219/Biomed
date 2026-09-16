@@ -7,7 +7,7 @@ from pathlib import Path
 from types import SimpleNamespace
 
 from biomedical_extractor.biored import (
-    BIORED_RELATION_LABELS,
+    CANONICAL_TO_PROMPT,
     BioREDDocument,
     BioREDMention,
     BioREDDataset,
@@ -15,9 +15,14 @@ from biomedical_extractor.biored import (
     load_biored,
 )
 from biomedical_extractor.biored_training import (
+    GLIREL_RELATION_LABELS,
     V1TrainingConfig,
     build_training_plan,
+    calculate_scheduler_steps,
     convert_document_to_glirel,
+    _expected_relation_pair_count,
+    _native_loader,
+    _select_smoke_example,
     prepare_training_corpus,
     verify_biored_dev_hash,
     verify_generated_positive_origins,
@@ -56,8 +61,13 @@ class BioREDTrainingTests(unittest.TestCase):
         self.assertEqual(converted.token_count, 4)
         self.assertEqual(len(relations), 8)
         self.assertEqual(
-            {relation["relation_text"] for relation in relations}, {"Association"}
+            {relation["relation_text"] for relation in relations}, {"association"}
         )
+        self.assertEqual(
+            {relation["canonical_relation_type"] for relation in relations},
+            {"Association"},
+        )
+        self.assertEqual(converted.example["label"], list(GLIREL_RELATION_LABELS))
         self.assertEqual(
             {
                 (
@@ -83,6 +93,48 @@ class BioREDTrainingTests(unittest.TestCase):
             verify_generated_positive_origins(relations and (converted.example,), _dataset((document,)))["invalid"],
             0,
         )
+
+    def test_train_and_inference_use_the_same_prompt_labels(self):
+        from biomedical_extractor.biored_cli import _extractor
+
+        class CapturingModel:
+            def create_dataloader(self, examples, **kwargs):
+                self.train_relation_types = kwargs["train_relation_types"]
+                return object()
+
+        model = CapturingModel()
+        _native_loader(model, (), V1TrainingConfig())
+
+        self.assertEqual(GLIREL_RELATION_LABELS, tuple(CANONICAL_TO_PROMPT.values()))
+        self.assertEqual(model.train_relation_types, list(GLIREL_RELATION_LABELS))
+        self.assertEqual(
+            _extractor(object(), None).config.relation_labels,
+            GLIREL_RELATION_LABELS,
+        )
+
+    def test_smoke_example_selection_is_pair_and_token_deterministic(self):
+        def example(document_id, token_count, entity_count):
+            return {
+                "metadata": {"document_id": document_id},
+                "tokenized_text": ["x"] * token_count,
+                "ner": [[index, index, "Gene", "x"] for index in range(entity_count)],
+                "relations": [],
+            }
+
+        high_pair_count = example("high-pairs", 10, 5)
+        longer_tie = example("longer-tie", 110, 4)
+        shorter_tie = example("shorter-tie", 100, 4)
+
+        self.assertEqual(_expected_relation_pair_count(high_pair_count), 20)
+        self.assertIs(
+            _select_smoke_example((shorter_tie, high_pair_count, longer_tie)),
+            high_pair_count,
+        )
+        self.assertIs(_select_smoke_example((shorter_tie, longer_tie)), longer_tie)
+
+    def test_scheduler_steps_use_optimizer_update_count(self):
+        self.assertEqual(calculate_scheduler_steps(4_000, 8, 0.1), (500, 50))
+        self.assertEqual(calculate_scheduler_steps(4_001, 8, 0.1), (501, 50))
 
     def test_prepare_excludes_over_limit_documents_without_truncation(self):
         short = BioREDDocument(
@@ -136,12 +188,12 @@ class BioREDTrainingTests(unittest.TestCase):
             "tokenized_text": ["G", "D"],
             "ner": [[0, 0, "Gene", "G"], [1, 1, "Disease", "D"]],
             "relations": [],
-            "label": list(BIORED_RELATION_LABELS),
+            "label": list(GLIREL_RELATION_LABELS),
         }
 
         batch = native.collate_fn(
             [example],
-            train_relation_types=list(BIORED_RELATION_LABELS),
+            train_relation_types=list(GLIREL_RELATION_LABELS),
             device="cpu",
         )
 
@@ -201,6 +253,8 @@ class BioREDTrainingTests(unittest.TestCase):
         self.assertEqual(plan.config.train_batch_size, 1)
         self.assertEqual(plan.config.gradient_accumulation, 8)
         self.assertEqual(plan.config.mixed_precision, "fp16")
+        self.assertEqual(plan.config.num_steps, 4_000)
+        self.assertEqual(plan.config.save_every, 1_000)
         self.assertEqual(plan.config.num_unseen_rel_types, 0)
 
 

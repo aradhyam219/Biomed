@@ -25,6 +25,7 @@ from typing import Any, Mapping, Sequence
 
 from biomedical_extractor.biored import (
     BIORED_RELATION_LABELS,
+    CANONICAL_TO_PROMPT,
     RELATION_ENTITY_TYPES,
     BioREDDocument,
     BioREDDataset,
@@ -36,6 +37,9 @@ from biomedical_extractor.pipeline import DEFAULT_RELATION_MODEL, _tokenize
 
 
 GLIREL_TRAINING_MAX_LEN = 512
+GLIREL_RELATION_LABELS = tuple(
+    CANONICAL_TO_PROMPT[label] for label in BIORED_RELATION_LABELS
+)
 EXPECTED_BIORED_DEV_SHA256 = (
     "d5ab4d05673ac46fb5e3b2904d2820462dec2c4c50dfcdd8678635ff1b8ce1f5"
 )
@@ -63,7 +67,7 @@ class V1TrainingConfig:
     train_batch_size: int = 1
     gradient_accumulation: int = 8
     mixed_precision: str = "fp16"
-    num_steps: int = 20_000
+    num_steps: int = 4_000
     save_every: int = 1_000
     seed: int = 0
     device: str | None = None
@@ -105,6 +109,7 @@ class V1TrainingConfig:
         return {
             **asdict(self),
             "relation_labels": list(BIORED_RELATION_LABELS),
+            "glirel_relation_labels": list(GLIREL_RELATION_LABELS),
             "negative_supervision": (
                 "GLiREL native collate_fn assigns label 0 to every generated "
                 "entity pair absent from the supplied gold relations."
@@ -233,6 +238,7 @@ def _relation_record(
 ) -> dict[str, Any]:
     """Build one upstream-compatible GLiREL relation with traceable provenance."""
 
+    canonical_label = relation.relation_type
     return {
         "head": {
             "mention": head.text,
@@ -244,7 +250,8 @@ def _relation_record(
             "position": list(tail_span),
             "type": tail.type,
         },
-        "relation_text": relation.relation_type,
+        "relation_text": CANONICAL_TO_PROMPT[canonical_label],
+        "canonical_relation_type": canonical_label,
         # GLiREL ignores this diagnostic field; it makes every positive auditable.
         "source_gold_relation": _relation_source(relation.document_id, relation),
     }
@@ -343,7 +350,7 @@ def convert_document_to_glirel(
         "ner": ner,
         "relations": relations,
         # The native collator uses this key to expose all eight labels per sample.
-        "label": list(BIORED_RELATION_LABELS),
+        "label": list(GLIREL_RELATION_LABELS),
         "metadata": {
             "document_id": document.id,
             "source_split": split,
@@ -357,7 +364,7 @@ def convert_document_to_glirel(
         "unrepresentable_mention_pairs": unrepresentable,
         "generated_positive_count": len(relations),
         "generated_positive_by_label": dict(
-            Counter(relation["relation_text"] for relation in relations)
+            Counter(relation["canonical_relation_type"] for relation in relations)
         ),
     }
     return ConvertedDocument(document.id, len(tokens), example, diagnostics)
@@ -387,10 +394,17 @@ def verify_generated_positive_origins(
                 source.get("concept_b"),
                 source.get("relation_type"),
             ) if isinstance(source, Mapping) else None
+            canonical_label = source.get("relation_type") if isinstance(source, Mapping) else None
+            expected_prompt = (
+                CANONICAL_TO_PROMPT.get(canonical_label)
+                if isinstance(canonical_label, str)
+                else None
+            )
             if (
                 not isinstance(source, Mapping)
                 or source.get("document_id") not in gold_by_document
-                or relation.get("relation_text") != source.get("relation_type")
+                or relation.get("canonical_relation_type") != canonical_label
+                or relation.get("relation_text") != expected_prompt
                 or example.get("metadata", {}).get("document_id")
                 != source.get("document_id")
                 or key not in gold_by_document[source["document_id"]]
@@ -463,7 +477,7 @@ def prepare_training_corpus(
         for relation in document.relations
     )
     generated_by_label = Counter(
-        relation["relation_text"]
+        relation["canonical_relation_type"]
         for example in examples
         for relation in example["relations"]
     )
@@ -559,6 +573,7 @@ def prepare_training_corpus(
                 "zero labels in binary_cross_entropy_loss."
             ),
             "training_relation_labels": list(BIORED_RELATION_LABELS),
+            "glirel_relation_labels": list(GLIREL_RELATION_LABELS),
         },
     }
     return PreparedTrainingCorpus(dataset, examples, stats)
@@ -620,9 +635,16 @@ def load_training_examples(path: str | Path) -> list[dict[str, Any]]:
                 raise ValueError(
                     f"Training JSONL line {line_number} exceeds max_len=512; refusing truncation"
                 )
-            if tuple(example.get("label", ())) != BIORED_RELATION_LABELS:
+            if tuple(example.get("label", ())) != GLIREL_RELATION_LABELS:
                 raise ValueError(
-                    f"Training JSONL line {line_number} must expose all eight fixed labels"
+                    f"Training JSONL line {line_number} must expose all eight GLiREL prompt labels"
+                )
+            if any(
+                relation.get("relation_text") not in GLIREL_RELATION_LABELS
+                for relation in example.get("relations", ())
+            ):
+                raise ValueError(
+                    f"Training JSONL line {line_number} contains a non-prompt relation label"
                 )
             examples.append(example)
     if not examples:
@@ -717,7 +739,7 @@ def _native_loader(model: Any, examples: Sequence[Mapping[str, Any]], config: V1
         list(examples),
         batch_size=config.train_batch_size,
         shuffle=False,
-        train_relation_types=list(BIORED_RELATION_LABELS),
+        train_relation_types=list(GLIREL_RELATION_LABELS),
     )
 
 
@@ -732,8 +754,76 @@ def _move_batch(batch: Mapping[str, Any], device: str) -> dict[str, Any]:
     }
 
 
+def calculate_scheduler_steps(
+    num_steps: int, gradient_accumulation: int, warmup_ratio: float
+) -> tuple[int, int]:
+    """Return optimizer-update and warmup counts for microstep-based training."""
+
+    if num_steps <= 0:
+        raise ValueError("num_steps must be positive")
+    if gradient_accumulation <= 0:
+        raise ValueError("gradient_accumulation must be positive")
+    if not 0 <= warmup_ratio < 1:
+        raise ValueError("warmup_ratio must be between zero and one")
+    optimizer_updates = (
+        num_steps + gradient_accumulation - 1
+    ) // gradient_accumulation
+    warmup_steps = int(optimizer_updates * warmup_ratio)
+    return optimizer_updates, warmup_steps
+
+
+def _expected_relation_pair_count(example: Mapping[str, Any]) -> int:
+    """Estimate native ordered non-self relation pairs for one fitting example."""
+
+    entity_count = len(example.get("ner", ()))
+    return entity_count * max(entity_count - 1, 0)
+
+
+def _select_smoke_example(examples: Sequence[Mapping[str, Any]]) -> Mapping[str, Any]:
+    """Select the deterministic fitting example with the largest smoke workload."""
+
+    if not examples:
+        raise ValueError("GPU smoke test requires at least one training example")
+
+    def sort_key(example: Mapping[str, Any]) -> tuple[int, int, str]:
+        metadata = example.get("metadata", {})
+        document_id = str(metadata.get("document_id", ""))
+        return (
+            -_expected_relation_pair_count(example),
+            -len(example.get("tokenized_text", ())),
+            document_id,
+        )
+
+    return min(examples, key=sort_key)
+
+
+def _learning_rate_snapshot(optimizer: Any) -> dict[str, float]:
+    """Return the two native GLiREL learning-rate groups by role."""
+
+    groups = optimizer.param_groups
+    return {
+        "others": float(groups[0]["lr"]),
+        "encoder": float(groups[-1]["lr"]),
+    }
+
+
+def _peak_cuda_memory(torch: Any, device: str) -> dict[str, int | None]:
+    """Read peak CUDA allocation counters, or nulls for a non-CUDA run."""
+
+    if not device.startswith("cuda"):
+        return {
+            "peak_cuda_memory_allocated_bytes": None,
+            "peak_cuda_memory_reserved_bytes": None,
+        }
+    torch.cuda.synchronize(device)
+    return {
+        "peak_cuda_memory_allocated_bytes": int(torch.cuda.max_memory_allocated(device)),
+        "peak_cuda_memory_reserved_bytes": int(torch.cuda.max_memory_reserved(device)),
+    }
+
+
 def run_gpu_smoke_test(plan: TrainingPlan) -> dict[str, Any]:
-    """Run one forward/backward construction check on the selected GPU."""
+    """Run one real forward/backward/update check on the selected GPU."""
 
     import torch
 
@@ -741,12 +831,23 @@ def run_gpu_smoke_test(plan: TrainingPlan) -> dict[str, Any]:
     model = _load_glirel_model(config)
     device = config.device or ("cuda" if torch.cuda.is_available() else "cpu")
     examples = load_training_examples(plan.training_jsonl)
-    loader = _native_loader(model, examples[:1], config)
-    batch = _move_batch(next(iter(loader)), device)
+    selected_example = _select_smoke_example(examples)
+    loader = _native_loader(model, [selected_example], config)
     model.train()
     optimizer = model.get_optimizer(config.lr_encoder, config.lr_others)
     optimizer.zero_grad(set_to_none=True)
     amp_enabled = config.mixed_precision == "fp16" and device.startswith("cuda")
+    scaler = torch.cuda.amp.GradScaler(enabled=amp_enabled)
+    if device.startswith("cuda"):
+        torch.cuda.reset_peak_memory_stats(device)
+    batch = _move_batch(next(iter(loader)), device)
+    tracked_parameter = next(
+        (parameter for parameter in model.parameters() if parameter.requires_grad),
+        None,
+    )
+    if tracked_parameter is None:
+        raise RuntimeError("V1 GPU smoke test found no trainable model parameters")
+    parameter_before = tracked_parameter.detach().clone()
     autocast_context = (
         torch.autocast(device_type="cuda", dtype=torch.float16)
         if amp_enabled
@@ -755,9 +856,19 @@ def run_gpu_smoke_test(plan: TrainingPlan) -> dict[str, Any]:
     with autocast_context:
         output = model(batch)
         loss = output["total_loss"]
-    if not torch.isfinite(loss):
+    if not bool(torch.isfinite(loss).all()):
         raise RuntimeError(f"V1 GPU smoke test produced a non-finite loss: {loss}")
-    loss.backward()
+    scaler.scale(loss).backward()
+    scaler.step(optimizer)
+    scaler.update()
+    parameter_after = tracked_parameter.detach()
+    if not bool(torch.isfinite(parameter_after).all()):
+        raise RuntimeError("V1 GPU smoke test produced non-finite updated parameters")
+    parameters_changed = bool(torch.any(parameter_after != parameter_before).item())
+    if not parameters_changed:
+        raise RuntimeError("V1 GPU smoke test optimizer step changed no parameters")
+    optimizer.zero_grad(set_to_none=True)
+    memory = _peak_cuda_memory(torch, device)
     return {
         "checkpoint": config.checkpoint,
         "device": device,
@@ -765,6 +876,18 @@ def run_gpu_smoke_test(plan: TrainingPlan) -> dict[str, Any]:
         "tokens": len(batch["tokens"][0]),
         "candidate_pairs": int(batch["rel_label"].shape[1]),
         "loss": float(loss.detach().cpu()),
+        "amp_enabled": amp_enabled,
+        "optimizer_step_completed": True,
+        "parameters_changed": parameters_changed,
+        "gradients_zeroed": True,
+        "tested_example": {
+            "document_id": selected_example.get("metadata", {}).get("document_id"),
+            "token_count": len(selected_example.get("tokenized_text", ())),
+            "entity_count": len(selected_example.get("ner", ())),
+            "expected_relation_pairs": _expected_relation_pair_count(selected_example),
+            "positive_relation_count": len(selected_example.get("relations", ())),
+        },
+        **memory,
     }
 
 
@@ -787,19 +910,24 @@ def run_training(plan: TrainingPlan) -> dict[str, Any]:
     device = config.device or ("cuda" if torch.cuda.is_available() else "cpu")
     loader = _native_loader(model, examples, config)
     optimizer = model.get_optimizer(config.lr_encoder, config.lr_others)
-    warmup_steps = int(config.num_steps * config.warmup_ratio)
+    scheduler_total_steps, warmup_steps = calculate_scheduler_steps(
+        config.num_steps, config.gradient_accumulation, config.warmup_ratio
+    )
     scheduler = get_cosine_schedule_with_warmup(
         optimizer,
         num_warmup_steps=warmup_steps,
-        num_training_steps=config.num_steps,
+        num_training_steps=scheduler_total_steps,
     )
     amp_enabled = config.mixed_precision == "fp16" and device.startswith("cuda")
     scaler = torch.cuda.amp.GradScaler(enabled=amp_enabled)
     model.train()
     optimizer.zero_grad(set_to_none=True)
+    if device.startswith("cuda"):
+        torch.cuda.reset_peak_memory_stats(device)
     iterator = iter(loader)
     last_loss = None
     updates = 0
+    progression: list[dict[str, Any]] = []
     for step in range(1, config.num_steps + 1):
         try:
             batch = next(iterator)
@@ -816,7 +944,7 @@ def run_training(plan: TrainingPlan) -> dict[str, Any]:
             output = model(batch)
             loss = output["total_loss"]
             scaled_loss = loss / config.gradient_accumulation
-        if not torch.isfinite(loss):
+        if not bool(torch.isfinite(loss).all()):
             raise RuntimeError(f"V1 training produced a non-finite loss at step {step}")
         scaler.scale(scaled_loss).backward()
         if step % config.gradient_accumulation == 0 or step == config.num_steps:
@@ -826,19 +954,38 @@ def run_training(plan: TrainingPlan) -> dict[str, Any]:
             optimizer.zero_grad(set_to_none=True)
             updates += 1
         last_loss = float(loss.detach().cpu())
-        if step % config.save_every == 0:
+        if step % config.save_every == 0 or step == config.num_steps:
+            progression.append(
+                {
+                    "microstep": step,
+                    "optimizer_updates": updates,
+                    "loss": last_loss,
+                    "learning_rate": _learning_rate_snapshot(optimizer),
+                }
+            )
+        if step % config.save_every == 0 and step < config.num_steps:
             model.save_pretrained(plan.output_dir / f"step_{step}")
+    if updates != scheduler_total_steps:
+        raise RuntimeError(
+            "V1 optimizer-update count diverged from scheduler total steps: "
+            f"{updates} != {scheduler_total_steps}"
+        )
     final_path = plan.output_dir / "final"
     model.save_pretrained(final_path)
+    memory = _peak_cuda_memory(torch, device)
     summary = {
         "checkpoint": config.checkpoint,
         "output_dir": str(plan.output_dir),
         "final_checkpoint": str(final_path),
         "steps": config.num_steps,
         "optimizer_updates": updates,
+        "scheduler_total_steps": scheduler_total_steps,
+        "warmup_steps": warmup_steps,
         "last_loss": last_loss,
         "examples": len(examples),
         "device": device,
+        "training_progression": progression,
+        **memory,
     }
     _write_json(plan.output_dir / "training_summary.json", summary)
     return summary
@@ -874,7 +1021,7 @@ def _parser() -> argparse.ArgumentParser:
         command.add_argument("--device", default=None)
         command.add_argument("--mixed-precision", choices=("fp16", "none"), default="fp16")
         command.add_argument("--seed", type=int, default=0)
-        command.add_argument("--steps", type=int, default=20_000)
+        command.add_argument("--steps", type=int, default=4_000)
         command.add_argument("--save-every", type=int, default=1_000)
         command.add_argument("--output-dir", type=Path, required=output_required)
 
