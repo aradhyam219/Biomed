@@ -394,6 +394,31 @@ representable direction. This is a documented data limitation, not a new global
 candidate constraint. BioRED's legitimate self-concept truth remains available to
 the existing non-directional evaluator.
 
+## V1-B1 resume reproducibility gate — BLOCKER (2026-09-16)
+
+The AWS resume gate synchronized `extraction_system` with
+`origin/extraction_system` and verified HEAD
+`34ecff32f5f3adb07c767795b7a4d22418ba50bb`. The required source files were
+present under `.cache/BIORED/BioRED/`; their one-time SHA-256 checks still
+matched:
+
+- Train: `53e08e0acff5043937cdd3fdb595639e59bfb0390b64760a3840f6e1a2a69987`
+- Dev: `d5ab4d05673ac46fb5e3b2904d2820462dec2c4c50dfcdd8678635ff1b8ce1f5`
+
+After deleting and regenerating `.cache/v1/biored_train` with `uv run
+biored-v1 prepare --dataset .cache/BIORED --output-dir
+.cache/v1/biored_train`, the training JSONL matched the required digest
+`e1ecf8985114ccc756a87cece699f76123ab6489d42b8308ffa71ae750b91c51`. The
+statistics digest did not match: expected
+`c86fd7b1a419cef4139762ee5056ed7f81e6592e222ef416134476a3abdb117e`, observed
+`ae91907822e47d94e1c2179ab4dcfafc73b6bf0e2c953b907090adad3b2fba0f`.
+
+This fails the cross-machine preparation reproducibility gate. The exact
+statistics-artifact mismatch is the blocker; no checkpoint was loaded, CUDA or
+Tesla T4 smoke execution was run, and no GPU measurements were collected. The
+full 4,000-microstep fine-tuning run remains **NOT RUN** and Dev evaluation
+remains **NOT RUN**.
+
 ## V1-B results and checkpoint selection — pending
 
 No GPU result exists yet. The following fields must be filled from actual AWS
