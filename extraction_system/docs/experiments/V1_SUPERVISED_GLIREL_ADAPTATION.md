@@ -394,38 +394,18 @@ representable direction. This is a documented data limitation, not a new global
 candidate constraint. BioRED's legitimate self-concept truth remains available to
 the existing non-directional evaluator.
 
-## V1-B1 resume reproducibility gate — local correction verified; AWS confirmation pending (2026-09-16)
+## V1-B1 resume reproducibility gate — **CONFIRMED / PASS** (2026-09-16)
 
-The AWS resume gate synchronized `extraction_system` with
-`origin/extraction_system` and verified HEAD
-`34ecff32f5f3adb07c767795b7a4d22418ba50bb`. The required source files were
-present under `.cache/BIORED/BioRED/`; their one-time SHA-256 checks still
-matched:
+Cross-machine preparation reproducibility is **CONFIRMED / PASS**. The initial
+absolute-path issue was corrected; the remaining CRLF/LF serialization issue
+was isolated and corrected. At Windows commit
+`91ee9149428e39e5eb01b16ff8daaf762a9ad52b`, regeneration produced byte hashes
+matching the AWS/Linux regenerated artifacts:
 
-- Train: `53e08e0acff5043937cdd3fdb595639e59bfb0390b64760a3840f6e1a2a69987`
-- Dev: `d5ab4d05673ac46fb5e3b2904d2820462dec2c4c50dfcdd8678635ff1b8ce1f5`
+- Training JSONL: `E1ECF8985114CCC756A87CECE699F76123AB6489D42B8308FFA71AE750B91C51`
+- Statistics: `AE91907822E47D94E1C2179AB4DCFAFC73B6BF0E2C953B907090ADAD3B2FBA0F`
 
-The remaining mismatch was isolated to text-mode newline serialization, not
-semantic, statistical, or corpus drift: the AWS raw/LF statistics digest was
-`ae91907822e47d94e1c2179ab4dcfafc73b6bf0e2c953b907090adad3b2fba0f`, while the
-same bytes converted to CRLF produced the prior Windows digest
-`c86fd7b1a419cef4139762ee5056ed7f81e6592e222ef416134476a3abdb117e`.
-
-`_write_json()` now serializes the canonical JSON payload to explicit UTF-8
-bytes with LF termination and preserves atomic temporary-file replacement. The
-JSONL generation, corpus conversion, model configuration, and evaluation code
-are unchanged. Focused training tests passed 11/11, including explicit LF-only
-byte checks and existing path-independence coverage. Regenerated locally on this
-AWS/Linux node, the artifacts matched JSONL
-`e1ecf8985114ccc756a87cece699f76123ab6489d42b8308ffa71ae750b91c51` and
-statistics
-`ae91907822e47d94e1c2179ab4dcfafc73b6bf0e2c953b907090adad3b2fba0f`.
-
-The local correction is verified; Windows regeneration and AWS cross-machine
-confirmation remain pending. No checkpoint was loaded, CUDA or Tesla T4 smoke
-execution was run, and no GPU measurements were collected. The full
-4,000-microstep fine-tuning run remains **NOT RUN** and Dev evaluation remains
-**NOT RUN**.
+The 4,000-microstep fine-tuning run and Dev evaluation remain **NOT RUN**.
 
 ## V1-B results and checkpoint selection — pending
 
