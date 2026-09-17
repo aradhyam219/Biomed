@@ -22,6 +22,26 @@ Paste or type biomedical text, then enter `END` on a new line to run extraction.
 
 For scripted use, `uv run biomedical-extract --text "..."` remains available. Entity/relation labels and confidence thresholds can be supplied with `--entity-label`, `--relation-label`, `--entity-threshold`, and `--relation-threshold`.
 
+## Entity-only inspection
+
+NER can be run without loading GLiREL:
+
+```powershell
+uv run biomedical-ner --text "BRCA1 mutations are associated with breast cancer." --entity-label gene --entity-label disease
+```
+
+Programmatic callers use the model-independent entity contract:
+
+```python
+from biomedical_extractor import GLiNERBioMedExtractor
+
+extractor = GLiNERBioMedExtractor.from_pretrained()
+entities = extractor.extract_entities("BRCA1 mutations are associated with breast cancer.")
+```
+
+Each returned entity exposes `id`, `text`, `type`, half-open `start`/`end`
+character offsets, and `score` when the model supplies one.
+
 ## BioRED relation evaluation
 
 Download the official NCBI BioRED archive, extract it locally, and run the

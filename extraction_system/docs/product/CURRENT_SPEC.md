@@ -51,7 +51,8 @@ The current extraction path is:
 ```text
 Biomedical text
       ↓
-GLiNER-BioMed
+EntityExtractor contract
+(currently GLiNER-BioMed)
       ↓
 Biomedical entities
       ↓
@@ -75,6 +76,16 @@ The entity stage must:
 - preserve location/span information needed to identify the entity occurrence;
 - preserve model confidence where available;
 - use a finite configured biomedical entity schema rather than attempting unrestricted ontology generation.
+
+The entity stage exposes a small model-independent contract:
+
+```python
+entities = entity_extractor.extract_entities(text)
+```
+
+Each returned entity contains an `id`, source `text`, `type`, half-open character
+offsets (`start`, `end`), and `score` when supplied by the underlying model.
+GLiNER-specific prediction dictionaries remain inside the GLiNER-BioMed adapter.
 
 The initial schema should stay bounded to the entities needed for the current extraction/evaluation work. Do not enlarge it pre-emptively to cover hypothetical future multi-omics requirements.
 

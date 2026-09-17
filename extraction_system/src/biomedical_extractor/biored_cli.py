@@ -45,10 +45,10 @@ EXCLUDED_DOCUMENT_ID = "19880293"
 EXCLUSION_REASON = "exceeds current GLiREL checkpoint input limit"
 
 
-class _ForbiddenEntityModel:
+class _ForbiddenEntityExtractor:
     """Fail loudly if evaluation accidentally invokes production NER."""
 
-    def predict_entities(self, *args: Any, **kwargs: Any) -> list[dict[str, Any]]:
+    def extract_entities(self, *args: Any, **kwargs: Any) -> tuple[Any, ...]:
         raise AssertionError("BioRED gold-entity evaluation must not run GLiNER")
 
 
@@ -128,7 +128,7 @@ def _extractor(model: Any, device: str | None) -> BiomedicalExtractor:
         relation_model=DEFAULT_RELATION_MODEL,
         device=device,
     )
-    return BiomedicalExtractor(_ForbiddenEntityModel(), model, config)
+    return BiomedicalExtractor(_ForbiddenEntityExtractor(), model, config)
 
 
 def _cache_identity(dataset: BioREDDataset) -> dict[str, Any]:
@@ -507,7 +507,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     extractor = _extractor(model, args.device) if model is not None else None
     if extractor is None:
         # No inference occurs on a fully cached run; this placeholder is never used.
-        extractor = BiomedicalExtractor(_ForbiddenEntityModel(), object())
+        extractor = BiomedicalExtractor(_ForbiddenEntityExtractor(), object())
     candidates, mention_prediction_count = _infer_documents(
         documents, extractor, cache, args.cache
     )

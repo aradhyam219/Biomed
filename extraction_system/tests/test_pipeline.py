@@ -3,27 +3,20 @@ from __future__ import annotations
 import json
 import unittest
 
-from biomedical_extractor.pipeline import BiomedicalExtractor, Entity, ExtractionConfig
+from biomedical_extractor.entity_extraction import Entity
+from biomedical_extractor.pipeline import BiomedicalExtractor, ExtractionConfig
 
 
 TEXT = "BRCA1 mutations are associated with breast cancer."
 
 
-class FakeEntityModel:
-    def predict_entities(self, text, labels, *, threshold):
+class FakeEntityExtractor:
+    def extract_entities(self, text):
         assert text == TEXT
-        assert labels == ("gene", "disease")
-        assert threshold == 0.4
-        return [
-            {"text": "BRCA1", "label": "gene", "start": 0, "end": 5, "score": 0.98},
-            {
-                "text": "breast cancer",
-                "label": "disease",
-                "start": 36,
-                "end": 49,
-                "score": 0.96,
-            },
-        ]
+        return (
+            Entity("E1", "BRCA1", "gene", 0, 5, 0.98),
+            Entity("E2", "breast cancer", "disease", 36, 49, 0.96),
+        )
 
 
 class FakeRelationModel:
@@ -55,9 +48,9 @@ class FakeRelationModel:
         ]
 
 
-def make_extractor(entity_model=None, relation_model=None):
+def make_extractor(entity_extractor=None, relation_model=None):
     return BiomedicalExtractor(
-        entity_model or FakeEntityModel(),
+        entity_extractor or FakeEntityExtractor(),
         relation_model or FakeRelationModel(),
         ExtractionConfig(
             entity_labels=("gene", "disease"),
@@ -81,12 +74,15 @@ class PipelineTests(unittest.TestCase):
         self.assertEqual(json.loads(json.dumps(result)), result)
 
     def test_rejects_entity_span_that_does_not_match_source_text(self):
-        class BadEntityModel(FakeEntityModel):
-            def predict_entities(self, text, labels, *, threshold):
-                return [{"text": "BRCA2", "label": "gene", "start": 0, "end": 5, "score": 0.9}]
+        class BadEntityExtractor(FakeEntityExtractor):
+            def extract_entities(self, text):
+                return (
+                    Entity("E1", "BRCA2", "gene", 0, 5, 0.9),
+                    Entity("E2", "breast cancer", "disease", 36, 49, 0.96),
+                )
 
-        with self.assertRaisesRegex(ValueError, "does not resolve"):
-            make_extractor(entity_model=BadEntityModel()).extract(TEXT)
+        with self.assertRaisesRegex(ValueError, "resolves"):
+            make_extractor(entity_extractor=BadEntityExtractor()).extract(TEXT)
 
     def test_rejects_relation_to_unknown_entity_span(self):
         class BadRelationModel(FakeRelationModel):
@@ -113,15 +109,15 @@ class PipelineTests(unittest.TestCase):
         self.assertEqual(result.to_dict(), {"entities": [], "relations": []})
 
     def test_relations_can_run_with_supplied_entities(self):
-        class UnexpectedEntityModel:
-            def predict_entities(self, text, labels, *, threshold):
+        class UnexpectedEntityExtractor:
+            def extract_entities(self, text):
                 raise AssertionError("Entity extraction should not run")
 
         entities = (
             Entity("GOLD1", "BRCA1", "gene", 0, 5, None),
             Entity("GOLD2", "breast cancer", "disease", 36, 49, None),
         )
-        extractor = make_extractor(entity_model=UnexpectedEntityModel())
+        extractor = make_extractor(entity_extractor=UnexpectedEntityExtractor())
 
         relations = extractor.extract_relations(TEXT, entities)
 

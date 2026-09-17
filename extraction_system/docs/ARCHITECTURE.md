@@ -15,8 +15,8 @@ Its responsibility ends at reliable extraction and normalization. Downstream kno
 Biomedical text
       |
       v
-Entity extraction
-(currently GLiNER-BioMed)
+EntityExtractor contract
+(currently GLiNER-BioMed adapter)
       |
       v
 Normalized biomedical entities
@@ -32,11 +32,21 @@ Normalized structured result
 
 The model choices above describe the current architecture and are not permanent architectural requirements. If a later accepted task replaces or augments them, this document should be updated to the new current truth.
 
-The production implementation lives in `src/biomedical_extractor/`. `BiomedicalExtractor` exposes entity-only, relation-with-supplied-entities, and composed end-to-end extraction. The CLI in `biomedical_extractor.cli` is the demonstration boundary; it does not add an API or service layer.
+The production implementation lives in `src/biomedical_extractor/`. The
+`entity_extraction` module owns the model-independent `EntityExtractor` contract,
+normalized `Entity` value, and GLiNER-BioMed adapter. `BiomedicalExtractor`
+exposes entity-only, relation-with-supplied-entities, and composed end-to-end
+extraction. The CLIs are demonstration boundaries; they do not add an API or
+service layer.
 
 ### Entity-to-relation handoff
 
-GLiNER returns character spans. The pipeline tokenizes source text with GLiREL's token pattern, requires every entity character span to align with those token boundaries, and sends inclusive token spans to GLiREL. GLiREL returns half-open token spans; the pipeline resolves those spans back to the existing normalized entity IDs and preserves head-to-tail direction as source-to-target direction.
+The entity contract returns half-open character spans. The pipeline tokenizes
+source text with GLiREL's token pattern, requires every entity character span to
+align with those token boundaries, and sends inclusive token spans to GLiREL.
+GLiREL returns half-open token spans; the pipeline resolves those spans back to
+the existing normalized entity IDs and preserves head-to-tail direction as
+source-to-target direction.
 
 Invalid offsets, schema labels, duplicate token spans, or relation references are rejected rather than silently remapped.
 
@@ -83,7 +93,7 @@ The three evaluation modes answer different questions:
 
 | Component | Responsibility | Owns | Must not own |
 |---|---|---|---|
-| Entity extraction | `BiomedicalExtractor.extract_entities` runs GLiNER-BioMed on input text | Entity predictions, character spans/types, entity confidence | BioRED-specific evaluation logic or downstream platform behavior |
+| Entity extraction | `entity_extraction.EntityExtractor` runs the configured entity adapter on input text | Normalized entity IDs, character spans/types, entity confidence | GLiNER-specific output outside the adapter, BioRED-specific evaluation logic, or downstream platform behavior |
 | Relation extraction | `BiomedicalExtractor.extract_relations` runs GLiREL over supplied normalized entities | Relation predictions and relation confidence | Entity discovery, downstream graph construction, dataset-specific production assumptions |
 | Normalization / pipeline boundary | `BiomedicalExtractor.extract` composes both stages into one serializable result | Stable result structure, token-span conversion, and entity/relation linkage | Biomedical knowledge-graph persistence or downstream reasoning |
 | Evaluation | Measure extraction behavior against annotated data | BioRED loading/adaptation, gold-mention inference orchestration, concept aggregation, cached scores, metrics, failure examples | Production extraction semantics or model training |
@@ -135,6 +145,16 @@ The exact code representation may follow repository conventions, but these seman
 - output is machine-consumable and independent of the evaluation dataset.
 
 If the public/internal result contract is intentionally changed later, update this section and the product specification in the same task.
+
+The entity-only contract is:
+
+```python
+entities = entity_extractor.extract_entities(text)
+```
+
+It returns normalized entities with `id`, `text`, `type`, half-open `start` and
+`end` offsets, and optional `score`. The current implementation is
+`GLiNERBioMedExtractor`; its raw GLiNER dictionaries do not cross this boundary.
 
 ## Hard invariants
 

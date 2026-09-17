@@ -1,10 +1,11 @@
 """Run the production biomedical entity-to-relation extraction pipeline.
 
-GLiNER first emits half-open character-span entities. The relation handoff tokenizes
-the original text at every entity boundary, converts each entity to GLiREL's
-inclusive token-span input, and remembers the corresponding half-open token span.
-GLiREL predictions use those half-open token spans, which are resolved back to the
-stable entity IDs exposed in :class:`ExtractionResult`.
+The entity stage exposes normalized character-span entities through the local
+``EntityExtractor`` contract. The relation handoff tokenizes the original text at
+every entity boundary, converts each entity to GLiREL's inclusive token-span input,
+and remembers the corresponding half-open token span. GLiREL predictions use those
+half-open token spans, which are resolved back to the stable entity IDs exposed in
+:class:`ExtractionResult`.
 """
 
 from __future__ import annotations
@@ -13,18 +14,16 @@ import re
 from dataclasses import asdict, dataclass
 from typing import Any, Protocol, Sequence
 
-DEFAULT_ENTITY_MODEL = "Ihor/gliner-biomed-base-v1.0"
+from .entity_extraction import (
+    DEFAULT_ENTITY_LABELS,
+    DEFAULT_ENTITY_MODEL,
+    Entity,
+    EntityExtractor,
+    GLiNERBioMedExtractor,
+)
+
 DEFAULT_RELATION_MODEL = "jackboyla/glirel-large-v0"
 
-DEFAULT_ENTITY_LABELS = (
-    "gene",
-    "disease",
-    "chemical",
-    "species",
-    "cell line",
-    "DNA",
-    "RNA",
-)
 DEFAULT_RELATION_LABELS = (
     "association",
     "positive correlation",
@@ -36,14 +35,6 @@ DEFAULT_RELATION_LABELS = (
 )
 
 _GLIREL_TOKEN_PATTERN = re.compile(r"\w+(?:[-_]\w+)*|\S")
-
-
-class EntityModel(Protocol):
-    """Entity-model interface required by the production pipeline."""
-
-    def predict_entities(
-        self, text: str, labels: Sequence[str], *, threshold: float
-    ) -> list[dict[str, Any]]: ...
 
 
 class RelationModel(Protocol):
@@ -92,18 +83,6 @@ class ExtractionConfig:
 
 
 @dataclass(frozen=True)
-class Entity:
-    """Normalized entity with a stable ID and half-open character offsets."""
-
-    id: str
-    text: str
-    type: str
-    start: int
-    end: int
-    score: float | None
-
-
-@dataclass(frozen=True)
 class Relation:
     """Normalized directed relation whose endpoints are entity IDs."""
 
@@ -139,21 +118,21 @@ class _Token:
 
 
 class BiomedicalExtractor:
-    """Coordinate entity inference, supplied-entity relation inference, and normalization.
+    """Coordinate entity extraction, supplied-entity relations, and normalization.
 
-    Public results use character-span entities and entity-ID relation endpoints;
+    The entity stage depends on the local :class:`EntityExtractor` contract;
     GLiREL's token-span representation remains internal to the relation handoff.
     """
 
     def __init__(
         self,
-        entity_model: EntityModel,
+        entity_extractor: EntityExtractor,
         relation_model: RelationModel,
         config: ExtractionConfig | None = None,
     ) -> None:
         """Bind already loaded model objects to a validated extraction config."""
 
-        self.entity_model = entity_model
+        self.entity_extractor = entity_extractor
         self.relation_model = relation_model
         self.config = config or ExtractionConfig()
 
@@ -161,23 +140,24 @@ class BiomedicalExtractor:
     def from_pretrained(
         cls, config: ExtractionConfig | None = None
     ) -> BiomedicalExtractor:
-        """Load configured GLiNER and GLiREL checkpoints on the selected device."""
+        """Load the configured entity and relation checkpoints on the selected device."""
 
-        from gliner import GLiNER
         from glirel import GLiREL
         import torch
 
         config = config or ExtractionConfig()
         device = config.device or ("cuda" if torch.cuda.is_available() else "cpu")
-        entity_model = GLiNER.from_pretrained(
-            config.entity_model, map_location=device
+        entity_extractor = GLiNERBioMedExtractor.from_pretrained(
+            model_name=config.entity_model,
+            labels=config.entity_labels,
+            threshold=config.entity_threshold,
+            device=device,
         )
         relation_model = GLiREL.from_pretrained(
             config.relation_model, map_location=device
         )
-        entity_model.eval()
         relation_model.eval()
-        return cls(entity_model, relation_model, config)
+        return cls(entity_extractor, relation_model, config)
 
     def extract(self, text: str) -> ExtractionResult:
         """Extract normalized entities and relations from ordinary biomedical text."""
@@ -192,18 +172,9 @@ class BiomedicalExtractor:
         return ExtractionResult(entities=entities, relations=relations)
 
     def extract_entities(self, text: str) -> tuple[Entity, ...]:
-        """Run GLiNER and validate its character spans and configured labels."""
+        """Run the configured entity extractor on the supplied text."""
 
-        if not isinstance(text, str):
-            raise TypeError("text must be a string")
-        if not text.strip():
-            return ()
-        predictions = self.entity_model.predict_entities(
-            text,
-            self.config.entity_labels,
-            threshold=self.config.entity_threshold,
-        )
-        return self._normalize_entities(text, predictions)
+        return self.entity_extractor.extract_entities(text)
 
     def extract_relations(
         self, text: str, entities: Sequence[Entity]
@@ -248,36 +219,6 @@ class BiomedicalExtractor:
             top_k=self.config.relation_top_k,
         )
         return self._normalize_relations(raw_relations, entity_ids_by_span)
-
-    def _normalize_entities(
-        self, text: str, predictions: Sequence[dict[str, Any]]
-    ) -> tuple[Entity, ...]:
-        entities: list[Entity] = []
-        for index, prediction in enumerate(predictions, start=1):
-            start = int(prediction["start"])
-            end = int(prediction["end"])
-            predicted_text = str(prediction["text"])
-            label = str(prediction["label"])
-            if not 0 <= start < end <= len(text):
-                raise ValueError(f"Invalid entity character span: [{start}, {end})")
-            if text[start:end] != predicted_text:
-                raise ValueError(
-                    f"Entity span [{start}, {end}) does not resolve to {predicted_text!r}"
-                )
-            if label not in self.config.entity_labels:
-                raise ValueError(f"Entity label {label!r} is outside the configured schema")
-            raw_score = prediction.get("score")
-            entities.append(
-                Entity(
-                    id=f"E{index}",
-                    text=predicted_text,
-                    type=label,
-                    start=start,
-                    end=end,
-                    score=float(raw_score) if raw_score is not None else None,
-                )
-            )
-        return tuple(entities)
 
     def _normalize_relations(
         self,
