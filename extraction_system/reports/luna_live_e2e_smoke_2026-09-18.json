@@ -1,0 +1,163 @@
+{
+  "report_type": "live_e2e_smoke",
+  "report_date": "2026-09-18",
+  "branch": "extraction_system_v2",
+  "source": {
+    "pmid": "27370646",
+    "text": "We observed that inhibiting the expression of p53 decreased the proliferation ability and induced apoptosis/autophagy in SSC-4 cells. Moreover, we observed that this has decreased migration and has blocked the expression of VEGF."
+  },
+  "command": {
+    "argv": [
+      "uv",
+      "run",
+      "--env-file",
+      ".env",
+      "biomedical-extract-llm",
+      "--text",
+      "We observed that inhibiting the expression of p53 decreased the proliferation ability and induced apoptosis/autophagy in SSC-4 cells. Moreover, we observed that this has decreased migration and has blocked the expression of VEGF."
+    ],
+    "status": "PASS",
+    "exit_code": 0,
+    "path": [
+      "text",
+      "GLiNER-BioMed",
+      "GPT-5.6 Luna",
+      "validated relations"
+    ]
+  },
+  "configuration": {
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "high",
+    "max_completion_tokens": 8192,
+    "max_retries": 2,
+    "entity_model": "Ihor/gliner-biomed-base-v1.0",
+    "entity_labels": [
+      "gene",
+      "disease",
+      "chemical",
+      "species",
+      "cell line",
+      "DNA",
+      "RNA"
+    ],
+    "entity_threshold": 0.5,
+    "device": "auto",
+    "entities_manually_supplied": false,
+    "finite_predicate_ontology": false
+  },
+  "latency": {
+    "wall_clock_seconds": 44.842,
+    "scope": "complete command including GLiNER initialization/cache fetch and Luna call"
+  },
+  "token_usage": {
+    "input_tokens": null,
+    "output_tokens": null,
+    "completion_tokens": null,
+    "reasoning_tokens": null,
+    "total_tokens": null,
+    "available": false,
+    "reason": "The current LangChain/CLI boundary does not expose provider usage metadata."
+  },
+  "retry_observability": {
+    "harness_retry_budget": 2,
+    "provider_attempt_count": null,
+    "provider_retry_observed": null,
+    "reason": "The harness does not expose an attempt counter and emitted no retry indication.",
+    "environment_execution_retry": true,
+    "environment_retry_reason": "Initial sandbox execution could not read uv's existing user cache; elevated execution was required before model/provider execution.",
+    "user_initiated_second_paid_run": false
+  },
+  "entities": [
+    {
+      "id": "E1",
+      "text": "p53",
+      "type": "gene",
+      "start": 46,
+      "end": 49,
+      "score": 0.9987726807594299
+    },
+    {
+      "id": "E2",
+      "text": "SSC-4 cells",
+      "type": "cell line",
+      "start": 121,
+      "end": 132,
+      "score": 0.9938382506370544
+    },
+    {
+      "id": "E3",
+      "text": "VEGF",
+      "type": "chemical",
+      "start": 224,
+      "end": 228,
+      "score": 0.8644157648086548
+    }
+  ],
+  "relations": [
+    {
+      "source": "E1",
+      "target": "E2",
+      "predicate": "inhibiting expression of p53 decreased proliferation ability in SSC-4 cells",
+      "evidence": "inhibiting the expression of p53 decreased the proliferation ability and induced apoptosis/autophagy in SSC-4 cells",
+      "negated": false,
+      "surface_form": "inhibiting the expression of p53 decreased the proliferation ability",
+      "score": null
+    },
+    {
+      "source": "E1",
+      "target": "E2",
+      "predicate": "inhibiting expression of p53 induced apoptosis/autophagy in SSC-4 cells",
+      "evidence": "inhibiting the expression of p53 decreased the proliferation ability and induced apoptosis/autophagy in SSC-4 cells",
+      "negated": false,
+      "surface_form": "induced apoptosis/autophagy in SSC-4 cells",
+      "score": null
+    },
+    {
+      "source": "E1",
+      "target": "E2",
+      "predicate": "decreased migration in SSC-4 cells",
+      "evidence": "this has decreased migration",
+      "negated": false,
+      "surface_form": "has decreased migration",
+      "score": null
+    },
+    {
+      "source": "E1",
+      "target": "E3",
+      "predicate": "blocked expression of VEGF",
+      "evidence": "has blocked the expression of VEGF",
+      "negated": false,
+      "surface_form": "has blocked the expression of VEGF",
+      "score": null
+    }
+  ],
+  "validation": {
+    "endpoint_check": {"status": "PASS", "checked": 4, "total": 4},
+    "evidence_grounding_check": {"status": "PASS", "checked": 4, "total": 4},
+    "surface_form_grounding_check": {"status": "PASS", "checked": 4, "total": 4},
+    "validator_acceptance": {"status": "PASS", "accepted": 4, "total": 4},
+    "unsupported_relations_rejected": 0
+  },
+  "secret_safety": {
+    "env_file": ".env",
+    "env_git_ignored": true,
+    "env_git_tracked": false,
+    "secret_value_printed": false,
+    "secret_value_logged": false,
+    "secret_value_committed": false,
+    "secret_value_in_report": false
+  },
+  "repository_changes": {
+    "production_code_changed": false,
+    "prompt_changed": false,
+    "dependency_changed": false,
+    "architecture_changed": false,
+    "report_only": true
+  },
+  "issues": {
+    "material_extraction_issues": [],
+    "operational_notes": [
+      "Initial uv cache permission failure was resolved with elevated execution before the live path ran."
+    ]
+  }
+}
