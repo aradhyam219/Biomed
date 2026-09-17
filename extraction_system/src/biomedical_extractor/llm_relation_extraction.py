@@ -21,7 +21,7 @@ from .relation_extraction import (
 )
 
 DEFAULT_LLM_RELATION_MODEL = "gpt-5.6-luna"
-DEFAULT_LLM_REASONING_EFFORT = "low"
+DEFAULT_LLM_REASONING_EFFORT = "high"
 SUPPORTED_LLM_REASONING_EFFORTS = (
     "none",
     "low",
@@ -57,7 +57,7 @@ class OpenAIConfig:
     api_key: str | None = field(default=None, repr=False)
     base_url: str | None = None
     reasoning_effort: str = DEFAULT_LLM_REASONING_EFFORT
-    max_completion_tokens: int | None = 1024
+    max_completion_tokens: int | None = 8192
     max_retries: int = 2
 
     def __post_init__(self) -> None:
@@ -87,8 +87,12 @@ class OpenAIConfig:
             api_key_env=os.getenv("OPENAI_API_KEY_ENV", "OPENAI_API_KEY"),
             api_key=os.getenv(os.getenv("OPENAI_API_KEY_ENV", "OPENAI_API_KEY")),
             base_url=os.getenv("OPENAI_BASE_URL") or None,
+            reasoning_effort=os.getenv(
+                "BIOMEDICAL_RELATION_REASONING_EFFORT",
+                DEFAULT_LLM_REASONING_EFFORT,
+            ),
             max_completion_tokens=(
-                int(max_completion_tokens) if max_completion_tokens else 1024
+                int(max_completion_tokens) if max_completion_tokens else 8192
             ),
             max_retries=int(os.getenv("BIOMEDICAL_RELATION_MAX_RETRIES", "2")),
         )

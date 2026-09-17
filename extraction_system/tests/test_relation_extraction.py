@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import os
 import sys
 import unittest
 from types import SimpleNamespace
@@ -229,10 +230,30 @@ class RelationContractTests(unittest.TestCase):
 
         self.assertEqual(OpenAIConfig().model, DEFAULT_LLM_RELATION_MODEL)
         self.assertEqual(captured["model"], "gpt-5.6-luna")
-        self.assertEqual(captured["reasoning_effort"], "low")
-        self.assertEqual(captured["max_completion_tokens"], 1024)
+        self.assertEqual(captured["reasoning_effort"], "high")
+        self.assertEqual(captured["max_completion_tokens"], 8192)
         self.assertNotIn("temperature", captured)
         self.assertNotIn("max_tokens", captured)
+
+    def test_environment_defaults_match_luna_live_smoke_configuration(self):
+        with patch.dict(os.environ, {}, clear=True):
+            config = OpenAIConfig.from_environment()
+
+        self.assertEqual(config.reasoning_effort, "high")
+        self.assertEqual(config.max_completion_tokens, 8192)
+
+    def test_environment_overrides_luna_reasoning_and_completion_budget(self):
+        with patch.dict(
+            os.environ,
+            {
+                "BIOMEDICAL_RELATION_REASONING_EFFORT": "xhigh",
+                "BIOMEDICAL_RELATION_MAX_COMPLETION_TOKENS": "2048",
+            },
+        ):
+            config = OpenAIConfig.from_environment()
+
+        self.assertEqual(config.reasoning_effort, "xhigh")
+        self.assertEqual(config.max_completion_tokens, 2048)
 
 
 if __name__ == "__main__":
