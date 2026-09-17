@@ -47,30 +47,39 @@ character offsets, and `score` when the model supplies one.
 
 The LLM relation path accepts the normalized entities above and returns directed
 relations with source/target IDs, a concise predicate, verbatim source evidence,
-an explicit `negated` flag, and optional exact relation wording or score. The
-LangChain/OpenAI objects stay inside the relation harness. Set `OPENAI_API_KEY`
-in the process environment; model and bounded-repair settings can also be
-configured with `BIOMEDICAL_RELATION_MODEL`, `BIOMEDICAL_RELATION_MAX_TOKENS`,
-and `BIOMEDICAL_RELATION_MAX_RETRIES`.
+an explicit `negated` flag, and optional exact relation wording. Predicates are
+normalized descriptions faithful to the source text; the initial LLM path does
+not apply a finite ontology or request a confidence score. The provider-independent
+relation contract can still preserve a score supplied by another implementation.
+LangChain/OpenAI objects stay inside the relation harness.
+
+For local configuration, copy `.env.example` to `.env` and add the key when the
+live smoke is authorized. The documented command uses uv's existing env-file
+support to load it; `.env` is ignored by Git. The model and bounded-repair
+settings can also be configured with `BIOMEDICAL_RELATION_MODEL`,
+`BIOMEDICAL_RELATION_MAX_COMPLETION_TOKENS`, and
+`BIOMEDICAL_RELATION_MAX_RETRIES`.
+
+```powershell
+Copy-Item .env.example .env
+```
 
 Run relation extraction independently with supplied entity JSON:
 
 ```powershell
 $entities = '[{"id":"E1","text":"BRCA1","type":"gene","start":0,"end":5},{"id":"E2","text":"breast cancer","type":"disease","start":24,"end":37}]'
-uv run biomedical-re `
+uv run --env-file .env biomedical-re `
   --text "BRCA1 is associated with breast cancer." `
-  --entities $entities `
-  --predicate association
+  --entities $entities
 ```
 
 Run the composed GLiNER → LLM relation path:
 
 ```powershell
-uv run biomedical-extract-llm `
+uv run --env-file .env biomedical-extract-llm `
   --text "BRCA1 is associated with breast cancer." `
   --entity-label gene `
   --entity-label disease `
-  --predicate association `
   --device cpu
 ```
 

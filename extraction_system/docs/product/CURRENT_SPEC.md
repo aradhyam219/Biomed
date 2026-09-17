@@ -22,7 +22,7 @@ The immediate product objective is a credible, measurable extraction baseline ra
 - biomedical relation extraction over detected or supplied entities;
 - normalized structured output connecting relations to entity identities;
 - entity and relation confidence scores where provided by the models;
-- configurable entity and relation schemas;
+- configurable entity schemas and provider-specific relation schemas where needed;
 - configurable confidence thresholds;
 - independent evaluation of entity extraction;
 - independent evaluation of relation extraction using gold entities;
@@ -97,12 +97,14 @@ The relation stage must:
 - operate on biomedical text together with known/detected entities;
 - extract only relationships asserted by the supplied text;
 - not introduce biological facts from model knowledge;
-- predict relationships from the currently allowed relation schema;
+- for the initial controlled LLM path, emit a concise normalized predicate that
+  faithfully describes the asserted relation without requiring a finite ontology;
 - identify the directed source and target entity IDs unambiguously;
 - include verbatim source-text evidence for every emitted relation;
 - preserve explicit negation rather than converting a negated claim to a positive relation;
 - preserve relation confidence where available;
-- use a finite configured relation schema.
+- preserve provider-independent optional predicate restrictions for implementations
+  that need them; the initial controlled LLM path does not apply one.
 
 The relation extractor must also be usable with externally supplied/gold entities so that relation quality can be evaluated independently from entity-extraction quality.
 
@@ -153,6 +155,9 @@ objects may be used by the initial LLM implementation but must not appear in
 this output or be required by downstream consumers. Deterministic validation
 rejects missing fields, dangling entity IDs, unsupported evidence, and malformed
 relations; exact duplicate records are emitted once.
+The provider-independent relation value may retain an optional score for
+implementations that supply one, but the initial LLM structured-output schema
+does not request or fabricate a relation confidence score.
 
 ## Confidence thresholds
 

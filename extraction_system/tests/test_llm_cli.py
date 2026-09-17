@@ -36,8 +36,6 @@ class LLMCLITests(unittest.TestCase):
                     "BRCA1",
                     "--entity-label",
                     "gene",
-                    "--predicate",
-                    "association",
                     "--max-retries",
                     "0",
                     "--device",
@@ -51,7 +49,7 @@ class LLMCLITests(unittest.TestCase):
         self.assertEqual(kwargs["entity_threshold"], 0.5)
         self.assertEqual(kwargs["device"], "cpu")
         self.assertIsInstance(kwargs["llm_config"], OpenAIConfig)
-        self.assertEqual(kwargs["llm_config"].predicates, ("association",))
+        self.assertEqual(kwargs["llm_config"].model, "gpt-5.6-luna")
         payload = json.loads(output.getvalue())
         self.assertEqual(payload["relations"][0]["target"], "E1")
 

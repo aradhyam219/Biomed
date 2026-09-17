@@ -104,8 +104,8 @@ def validate_relations(
 
     Validation checks only structural and traceability invariants: endpoint IDs,
     required fields, evidence occurrence, optional surface-form occurrence, an
-    optional finite predicate schema, and optional score shape.  It deliberately
-    does not decide whether a biologically plausible claim is true.
+    optional provider-selected predicate schema, and optional score shape. It
+    deliberately does not decide whether a biologically plausible claim is true.
     """
 
     if not isinstance(text, str):

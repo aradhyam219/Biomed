@@ -13,7 +13,7 @@ from .llm_pipeline import (
 )
 from .llm_relation_extraction import (
     DEFAULT_LLM_RELATION_MODEL,
-    DEFAULT_RELATION_PREDICATES,
+    DEFAULT_LLM_REASONING_EFFORT,
     LLMRelationExtractor,
     LangChainRelationExtractor,
     OpenAIConfig,
@@ -36,7 +36,7 @@ __all__ = [
     "DEFAULT_ENTITY_LABELS",
     "DEFAULT_ENTITY_MODEL",
     "DEFAULT_LLM_RELATION_MODEL",
-    "DEFAULT_RELATION_PREDICATES",
+    "DEFAULT_LLM_REASONING_EFFORT",
     "Entity",
     "EntityExtractor",
     "ExtractionConfig",

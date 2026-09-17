@@ -26,13 +26,6 @@ def add_llm_arguments(parser: argparse.ArgumentParser) -> None:
         ),
     )
     parser.add_argument(
-        "--predicate",
-        "--relation-label",
-        action="append",
-        dest="predicates",
-        help="Allowed relation predicate (repeatable)",
-    )
-    parser.add_argument(
         "--max-retries",
         type=int,
         default=None,
@@ -49,14 +42,13 @@ def openai_config_from_args(args: argparse.Namespace) -> OpenAIConfig:
         api_key_env=environment.api_key_env,
         api_key=environment.api_key,
         base_url=environment.base_url,
-        temperature=environment.temperature,
-        max_tokens=environment.max_tokens,
+        reasoning_effort=environment.reasoning_effort,
+        max_completion_tokens=environment.max_completion_tokens,
         max_retries=(
             environment.max_retries
             if args.max_retries is None
             else args.max_retries
         ),
-        predicates=tuple(args.predicates or environment.predicates),
     )
 
 

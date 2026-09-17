@@ -56,10 +56,12 @@ Invalid offsets, schema labels, duplicate token spans, or relation references ar
 
 The controlled LLM handoff sends the original text and serialized normalized
 entities to `RelationExtractor`. The harness requires structured relation
-fields, then the local validator checks supplied endpoint IDs, configured
+fields, then the local validator checks supplied endpoint IDs, concise
 predicates, verbatim evidence and optional surface forms before returning
-relations. It preserves direction and explicit negation; it does not attempt to
-decide biological truth.
+relations. The initial LLM path does not apply a finite predicate ontology;
+other provider implementations may use the contract's optional predicate
+restriction. It preserves direction and explicit negation; it does not attempt
+to decide biological truth or request a confidence score from the LLM.
 
 ## Current evaluation flow
 
@@ -180,8 +182,10 @@ result = relation_extractor.extract_relations(text, entities)
 Each relation contains `source`, `target`, `predicate`, verbatim `evidence`,
 boolean `negated`, and optional `surface_form` and `score`. The relation
 contract is provider-independent; LangChain and OpenAI objects remain inside
-the LLM harness. The preserved `BiomedicalExtractor`/GLiREL path continues to
-serve the existing GLiREL-compatible extraction and BioRED evaluation code.
+the LLM harness. The initial LLM schema omits `score`; the provider-independent
+field remains available for implementations that supply calibrated confidence.
+The preserved `BiomedicalExtractor`/GLiREL path continues to serve the existing
+GLiREL-compatible extraction and BioRED evaluation code.
 
 ## Hard invariants
 
@@ -199,7 +203,9 @@ serve the existing GLiREL-compatible extraction and BioRED evaluation code.
 These are legitimate areas of later evolution because they belong to the extraction problem itself:
 
 - entity label/schema configuration;
-- relation label/schema configuration;
+- provider-specific relation label/schema configuration when an implementation
+  requires it; the initial controlled LLM path intentionally has no finite
+  predicate ontology;
 - entity confidence thresholding;
 - relation confidence thresholding;
 - model replacement, tuning, or fine-tuning when evaluation evidence justifies it;
