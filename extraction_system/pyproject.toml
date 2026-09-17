@@ -5,12 +5,14 @@ build-backend = "hatchling.build"
 [project]
 name = "biomedical-extractor"
 version = "0.1.0"
-description = "Zero-shot biomedical entity and relation extraction with GLiNER and GLiREL"
+description = "Biomedical entity and relation extraction with GLiNER, GLiREL, and a controlled LLM path"
 requires-python = ">=3.11,<3.13"
 dependencies = [
     "gliner==0.2.29",
     "glirel==1.2.1",
     "huggingface-hub>=0.21.4,<1.0",
+    "langchain-core>=0.3,<2.0",
+    "langchain-openai>=0.3,<2.0",
     "loguru>=0.7,<1.0",
     "protobuf>=4.25,<7.0",
     "transformers==4.51.3",
@@ -19,6 +21,8 @@ dependencies = [
 [project.scripts]
 biomedical-extract = "biomedical_extractor.cli:main"
 biomedical-ner = "biomedical_extractor.ner_cli:main"
+biomedical-re = "biomedical_extractor.relation_cli:main"
+biomedical-extract-llm = "biomedical_extractor.llm_cli:main"
 biored-evaluate = "biomedical_extractor.biored_cli:main"
 
 [tool.hatch.build.targets.wheel]

@@ -22,8 +22,8 @@ EntityExtractor contract
 Normalized biomedical entities
       |
       v
-Relation extraction
-(currently GLiREL)
+RelationExtractor contract
+(controlled LLM path; GLiREL compatibility path remains available)
       |
       v
 Normalized structured result
@@ -36,8 +36,12 @@ The production implementation lives in `src/biomedical_extractor/`. The
 `entity_extraction` module owns the model-independent `EntityExtractor` contract,
 normalized `Entity` value, and GLiNER-BioMed adapter. `BiomedicalExtractor`
 exposes entity-only, relation-with-supplied-entities, and composed end-to-end
-extraction. The CLIs are demonstration boundaries; they do not add an API or
-service layer.
+extraction for the existing GLiREL path. `relation_extraction` owns the
+provider-independent grounded relation contract and deterministic validation;
+`llm_relation_extraction` owns the LangChain/OpenAI harness; and
+`llm_pipeline.LLMExtractionPipeline` composes the existing NER contract with
+that LLM relation contract. The CLIs are developer boundaries; they do not add
+an API or service layer.
 
 ### Entity-to-relation handoff
 
@@ -49,6 +53,13 @@ the existing normalized entity IDs and preserves head-to-tail direction as
 source-to-target direction.
 
 Invalid offsets, schema labels, duplicate token spans, or relation references are rejected rather than silently remapped.
+
+The controlled LLM handoff sends the original text and serialized normalized
+entities to `RelationExtractor`. The harness requires structured relation
+fields, then the local validator checks supplied endpoint IDs, configured
+predicates, verbatim evidence and optional surface forms before returning
+relations. It preserves direction and explicit negation; it does not attempt to
+decide biological truth.
 
 ## Current evaluation flow
 
@@ -94,7 +105,7 @@ The three evaluation modes answer different questions:
 | Component | Responsibility | Owns | Must not own |
 |---|---|---|---|
 | Entity extraction | `entity_extraction.EntityExtractor` runs the configured entity adapter on input text | Normalized entity IDs, character spans/types, entity confidence | GLiNER-specific output outside the adapter, BioRED-specific evaluation logic, or downstream platform behavior |
-| Relation extraction | `BiomedicalExtractor.extract_relations` runs GLiREL over supplied normalized entities | Relation predictions and relation confidence | Entity discovery, downstream graph construction, dataset-specific production assumptions |
+| Relation extraction | `relation_extraction.RelationExtractor` runs a configured implementation over supplied normalized entities | Directed endpoint IDs, concise predicates, source evidence, negation, and optional confidence | Entity discovery, biological truth adjudication, downstream graph construction, dataset-specific production assumptions |
 | Normalization / pipeline boundary | `BiomedicalExtractor.extract` composes both stages into one serializable result | Stable result structure, token-span conversion, and entity/relation linkage | Biomedical knowledge-graph persistence or downstream reasoning |
 | Evaluation | Measure extraction behavior against annotated data | BioRED loading/adaptation, gold-mention inference orchestration, concept aggregation, cached scores, metrics, failure examples | Production extraction semantics or model training |
 
@@ -130,7 +141,10 @@ The externally useful result contains two collections:
     {
       "source": "E1",
       "target": "E2",
-      "type": "Association",
+      "predicate": "association",
+      "evidence": "BRCA1 is associated with breast cancer",
+      "negated": false,
+      "surface_form": "associated with",
       "score": 0.91
     }
   ]
@@ -140,7 +154,8 @@ The externally useful result contains two collections:
 The exact code representation may follow repository conventions, but these semantics must remain clear:
 
 - relations reference normalized entity identities;
-- entity and relation types are explicit;
+- entity and relation predicates are explicit;
+- every controlled-LLM relation carries verbatim source evidence and an explicit negation state;
 - confidence is preserved where the underlying model supplies it;
 - output is machine-consumable and independent of the evaluation dataset.
 
@@ -156,11 +171,26 @@ It returns normalized entities with `id`, `text`, `type`, half-open `start` and
 `end` offsets, and optional `score`. The current implementation is
 `GLiNERBioMedExtractor`; its raw GLiNER dictionaries do not cross this boundary.
 
+The controlled relation contract is:
+
+```python
+result = relation_extractor.extract_relations(text, entities)
+```
+
+Each relation contains `source`, `target`, `predicate`, verbatim `evidence`,
+boolean `negated`, and optional `surface_form` and `score`. The relation
+contract is provider-independent; LangChain and OpenAI objects remain inside
+the LLM harness. The preserved `BiomedicalExtractor`/GLiREL path continues to
+serve the existing GLiREL-compatible extraction and BioRED evaluation code.
+
 ## Hard invariants
 
 - BioRED evaluation code must remain separable from production extraction.
 - A failure in entity extraction must be distinguishable from a failure in relation extraction through independent evaluation.
 - Production behavior must not require BioRED gold annotations.
+- No relation may reference an entity ID outside the supplied normalized entity set.
+- Relation evidence must occur verbatim in the supplied source text.
+- Provider-specific objects and unbounded retries must not cross the relation boundary.
 - The subsystem must not silently absorb downstream responsibilities merely because extracted relations may later be used by those systems.
 - Architecture should remain no more complex than needed for the current extraction requirements.
 

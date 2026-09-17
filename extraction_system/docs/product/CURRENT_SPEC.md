@@ -56,7 +56,8 @@ EntityExtractor contract
       ↓
 Biomedical entities
       ↓
-GLiREL
+RelationExtractor contract
+(controlled LLM path; GLiREL remains an evaluation-compatible path)
       ↓
 Biomedical relations
       ↓
@@ -94,8 +95,12 @@ The initial schema should stay bounded to the entities needed for the current ex
 The relation stage must:
 
 - operate on biomedical text together with known/detected entities;
+- extract only relationships asserted by the supplied text;
+- not introduce biological facts from model knowledge;
 - predict relationships from the currently allowed relation schema;
-- identify the source and target entities unambiguously;
+- identify the directed source and target entity IDs unambiguously;
+- include verbatim source-text evidence for every emitted relation;
+- preserve explicit negation rather than converting a negated claim to a positive relation;
 - preserve relation confidence where available;
 - use a finite configured relation schema.
 
@@ -129,7 +134,10 @@ The result must expose entities and relations in a machine-consumable structure 
     {
       "source": "E1",
       "target": "E2",
-      "type": "Association",
+      "predicate": "association",
+      "evidence": "BRCA1 mutations are associated with breast cancer",
+      "negated": false,
+      "surface_form": "associated with",
       "score": 0.91
     }
   ]
@@ -139,6 +147,12 @@ The result must expose entities and relations in a machine-consumable structure 
 The example represents the text `BRCA1 mutations are associated with an increased risk of breast cancer.`; production offsets must always reflect the actual input text.
 
 The implementation may use typed objects internally, but it must be possible to obtain an equivalent normalized serializable representation.
+
+The controlled relation boundary is provider-independent. LangChain/OpenAI
+objects may be used by the initial LLM implementation but must not appear in
+this output or be required by downstream consumers. Deterministic validation
+rejects missing fields, dangling entity IDs, unsupported evidence, and malformed
+relations; exact duplicate records are emitted once.
 
 ## Confidence thresholds
 

@@ -1,0 +1,85 @@
+from __future__ import annotations
+
+import unittest
+
+from biomedical_extractor.entity_extraction import Entity
+from biomedical_extractor.llm_pipeline import ComposedExtractionResult, LLMExtractionPipeline
+from biomedical_extractor.relation_extraction import (
+    Relation,
+    RelationExtractionResult,
+    RelationValidationError,
+)
+
+
+TEXT = "BRCA1 is associated with breast cancer."
+ENTITIES = (
+    Entity("E1", "BRCA1", "gene", 0, 5, 0.9),
+    Entity("E2", "breast cancer", "disease", 24, 37, 0.8),
+)
+RELATION = Relation(
+    "E1",
+    "E2",
+    "association",
+    "BRCA1 is associated with breast cancer",
+    False,
+)
+
+
+class _FakeEntityExtractor:
+    def __init__(self):
+        self.calls = []
+
+    def extract_entities(self, text):
+        self.calls.append(text)
+        return ENTITIES
+
+
+class _FakeRelationExtractor:
+    def __init__(self, result=None):
+        self.calls = []
+        self.result = result or RelationExtractionResult((RELATION,))
+
+    def extract_relations(self, text, entities):
+        self.calls.append((text, tuple(entities)))
+        return self.result
+
+
+class LLMPipelineTests(unittest.TestCase):
+    def test_composed_path_runs_ner_then_relation_extraction(self):
+        entity_extractor = _FakeEntityExtractor()
+        relation_extractor = _FakeRelationExtractor()
+        pipeline = LLMExtractionPipeline(entity_extractor, relation_extractor)
+
+        result = pipeline.extract(TEXT)
+
+        self.assertIsInstance(result, ComposedExtractionResult)
+        self.assertEqual(result.entities, ENTITIES)
+        self.assertEqual(result.relations, (RELATION,))
+        self.assertEqual(entity_extractor.calls, [TEXT])
+        self.assertEqual(relation_extractor.calls, [(TEXT, ENTITIES)])
+        self.assertEqual(result.to_dict()["relations"][0]["evidence"], RELATION.evidence)
+
+    def test_composed_path_rechecks_custom_relation_output(self):
+        invalid = Relation(
+            "E1", "E99", "association", "BRCA1 is associated with breast cancer", False
+        )
+        pipeline = LLMExtractionPipeline(
+            _FakeEntityExtractor(),
+            _FakeRelationExtractor(RelationExtractionResult((invalid,))),
+        )
+
+        with self.assertRaises(RelationValidationError):
+            pipeline.extract(TEXT)
+
+    def test_blank_text_skips_both_stages(self):
+        entity_extractor = _FakeEntityExtractor()
+        relation_extractor = _FakeRelationExtractor()
+        result = LLMExtractionPipeline(entity_extractor, relation_extractor).extract(" ")
+
+        self.assertEqual(result.to_dict(), {"entities": [], "relations": []})
+        self.assertEqual(entity_extractor.calls, [])
+        self.assertEqual(relation_extractor.calls, [])
+
+
+if __name__ == "__main__":
+    unittest.main()

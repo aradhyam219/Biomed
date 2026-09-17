@@ -6,15 +6,53 @@ from .entity_extraction import (
     GLiNERBioMedExtractor,
 )
 from .pipeline import BiomedicalExtractor, ExtractionConfig, ExtractionResult, Relation
+from .llm_pipeline import (
+    BiomedicalLLMExtractor,
+    ComposedExtractionResult,
+    LLMExtractionPipeline,
+)
+from .llm_relation_extraction import (
+    DEFAULT_LLM_RELATION_MODEL,
+    DEFAULT_RELATION_PREDICATES,
+    LLMRelationExtractor,
+    LangChainRelationExtractor,
+    OpenAIConfig,
+    OpenAIRelationExtractor,
+    RELATION_EXTRACTION_SYSTEM_PROMPT,
+)
+from .relation_extraction import (
+    GroundedRelation,
+    RelationExtractionError,
+    RelationExtractionResult,
+    RelationExtractor,
+    RelationValidationError,
+    validate_relations,
+)
 
 __all__ = [
     "BiomedicalExtractor",
+    "BiomedicalLLMExtractor",
+    "ComposedExtractionResult",
     "DEFAULT_ENTITY_LABELS",
     "DEFAULT_ENTITY_MODEL",
+    "DEFAULT_LLM_RELATION_MODEL",
+    "DEFAULT_RELATION_PREDICATES",
     "Entity",
     "EntityExtractor",
     "ExtractionConfig",
     "ExtractionResult",
+    "GroundedRelation",
     "GLiNERBioMedExtractor",
+    "LLMExtractionPipeline",
+    "LLMRelationExtractor",
+    "LangChainRelationExtractor",
+    "OpenAIConfig",
+    "OpenAIRelationExtractor",
     "Relation",
+    "RelationExtractionError",
+    "RelationExtractionResult",
+    "RelationExtractor",
+    "RelationValidationError",
+    "RELATION_EXTRACTION_SYSTEM_PROMPT",
+    "validate_relations",
 ]

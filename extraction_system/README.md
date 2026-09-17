@@ -1,6 +1,7 @@
 # Biomedical Extractor
 
-Minimal zero-shot biomedical extraction pipeline using GLiNER-BioMed for entities and GLiREL for relations.
+Minimal biomedical extraction pipeline using GLiNER-BioMed for entities, a
+controlled OpenAI/LLM relation path, and the preserved GLiREL evaluation path.
 
 ## Setup
 
@@ -41,6 +42,41 @@ entities = extractor.extract_entities("BRCA1 mutations are associated with breas
 
 Each returned entity exposes `id`, `text`, `type`, half-open `start`/`end`
 character offsets, and `score` when the model supplies one.
+
+## Controlled LLM relation extraction
+
+The LLM relation path accepts the normalized entities above and returns directed
+relations with source/target IDs, a concise predicate, verbatim source evidence,
+an explicit `negated` flag, and optional exact relation wording or score. The
+LangChain/OpenAI objects stay inside the relation harness. Set `OPENAI_API_KEY`
+in the process environment; model and bounded-repair settings can also be
+configured with `BIOMEDICAL_RELATION_MODEL`, `BIOMEDICAL_RELATION_MAX_TOKENS`,
+and `BIOMEDICAL_RELATION_MAX_RETRIES`.
+
+Run relation extraction independently with supplied entity JSON:
+
+```powershell
+$entities = '[{"id":"E1","text":"BRCA1","type":"gene","start":0,"end":5},{"id":"E2","text":"breast cancer","type":"disease","start":24,"end":37}]'
+uv run biomedical-re `
+  --text "BRCA1 is associated with breast cancer." `
+  --entities $entities `
+  --predicate association
+```
+
+Run the composed GLiNER → LLM relation path:
+
+```powershell
+uv run biomedical-extract-llm `
+  --text "BRCA1 is associated with breast cancer." `
+  --entity-label gene `
+  --entity-label disease `
+  --predicate association `
+  --device cpu
+```
+
+Programmatic composition uses `LLMExtractionPipeline`; relation-only callers
+can instantiate `LLMRelationExtractor` with their own `Entity` values. The
+normal test suite uses fake model responses and never requires an API key.
 
 ## BioRED relation evaluation
 
