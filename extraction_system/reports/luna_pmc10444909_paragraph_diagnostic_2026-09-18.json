@@ -1,0 +1,1284 @@
+{
+  "report_type": "pmc10444909_paragraph_diagnostic",
+  "report_date": "2026-09-18",
+  "evaluation_status": "COMPLETE_THREE_PARAGRAPH_DIAGNOSTIC",
+  "branch": "extraction_system_v2",
+  "head_commit_before_artifacts": "85338e663d1785cf4a031dea29ee1931e5cf3bdd",
+  "source": {
+    "pmcid": "PMC10444909",
+    "title": "KNTC1 knockdown inhibits proliferation and metastases of liver cancer",
+    "full_text_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10444909/",
+    "paragraphs": [
+      {
+        "section_id": "Sec18",
+        "paragraph_id": "Par19",
+        "beginning": "To investigate the mechanisms by which KNTC1 affects hepatocellular carcinoma..."
+      },
+      {
+        "section_id": "Sec19",
+        "paragraph_id": "Par20",
+        "beginning": "To investigate the role of CDK1 in HCC..."
+      },
+      {
+        "section_id": "Sec20",
+        "paragraph_id": "Par21",
+        "beginning": "Through scratch assays..."
+      }
+    ],
+    "input_source": "Exact paragraphs obtained by splitting the previously evaluated UTF-8 cache passage on its two LF/LF separators; no source text was rewritten.",
+    "combined_passage_sha256": "aacd57ae2f253a69d01ebfe4269e4c1b3ca8cb21c8d7d585bad370767b2cfca5"
+  },
+  "previous_combined_run": {
+    "characters": 2121,
+    "words": 326,
+    "sha256": "aacd57ae2f253a69d01ebfe4269e4c1b3ca8cb21c8d7d585bad370767b2cfca5",
+    "entity_count": 58,
+    "entity_type_counts": {
+      "gene": 33,
+      "cell line": 15,
+      "disease": 6,
+      "RNA": 3,
+      "species": 1,
+      "biological process": 0
+    },
+    "luna_status": "FAILED_NO_STRUCTURED_OUTPUT",
+    "luna_relations": 0,
+    "failure": "openai.LengthFinishReasonError after the configured 8192-token completion ceiling was consumed by reasoning",
+    "failure_usage": {
+      "prompt_tokens": 4474,
+      "completion_tokens": 8192,
+      "reasoning_tokens": 8192,
+      "total_tokens": 12666,
+      "cached_tokens": 0,
+      "cache_write_tokens": 4471
+    }
+  },
+  "configuration": {
+    "production_path": "text -> GLiNER core pass + biological-process pass -> merge/conflict cleanup -> GPT-5.6 Luna -> deterministic validation",
+    "entity_model": "Ihor/gliner-biomed-base-v1.0",
+    "entity_threshold": 0.5,
+    "device": "auto",
+    "entity_label_passes": [
+      {
+        "name": "core",
+        "labels": [
+          "gene",
+          "protein",
+          "disease",
+          "chemical",
+          "species",
+          "cell line",
+          "DNA",
+          "RNA"
+        ]
+      },
+      {
+        "name": "biological_process",
+        "labels": [
+          "biological process"
+        ]
+      }
+    ],
+    "merge_rules_unchanged": true,
+    "relation_model": "gpt-5.6-luna",
+    "reasoning_effort": "high",
+    "max_completion_tokens": 8192,
+    "harness_max_retries": 2,
+    "provider_max_retries": 0,
+    "prompt_unchanged": true,
+    "structured_output_contract_unchanged": true,
+    "validation_rules_unchanged": true
+  },
+  "execution_notes": {
+    "unplanned_local_selector_attempt": {
+      "counted_as_paragraph_experiment": false,
+      "selected_input": "The previously evaluated combined three-paragraph passage",
+      "input_exact": false,
+      "status": "FAILED_NO_STRUCTURED_OUTPUT",
+      "provider_response_received": true,
+      "provider_retry_observed": false,
+      "usage": {
+        "prompt_tokens": 4474,
+        "completion_tokens": 8192,
+        "reasoning_tokens": 8192,
+        "total_tokens": 12666,
+        "cached_tokens": 0,
+        "cache_write_tokens": 4471
+      },
+      "action": "The combined input was not retried; the selector was corrected before the exact Par19, Par20, and Par21 calls."
+    },
+    "exact_paragraph_provider_calls": 3,
+    "provider_calls_repeated_for_valid_results": 0,
+    "secrets_printed_or_reported": false
+  },
+  "paragraph_results": [
+    {
+      "section_id": "Sec18",
+      "paragraph_id": "Par19",
+      "input": {
+        "sha256": "0ae2a28512767a31fba398a935041e55dca2bcc743ded4ad8cfc498abf0e2e98",
+        "characters": 938,
+        "words": 145
+      },
+      "ner": {
+        "status": "PASS",
+        "capture_method": "Unpaid exact-input replay of the existing biomedical-ner entry point after Luna failed before composed JSON serialization; no entities were manually changed.",
+        "entity_count": 27,
+        "type_counts": {
+          "gene": 14,
+          "disease": 3,
+          "cell line": 7,
+          "RNA": 2,
+          "species": 1
+        },
+        "biological_process_detections": [],
+        "entities": [
+          {
+            "id": "E1",
+            "text": "KNTC1",
+            "type": "gene",
+            "start": 39,
+            "end": 44,
+            "score": 0.998789370059967
+          },
+          {
+            "id": "E2",
+            "text": "hepatocellular carcinoma",
+            "type": "disease",
+            "start": 53,
+            "end": 77,
+            "score": 0.9978579878807068
+          },
+          {
+            "id": "E3",
+            "text": "KNTC1",
+            "type": "gene",
+            "start": 138,
+            "end": 143,
+            "score": 0.9986311793327332
+          },
+          {
+            "id": "E4",
+            "text": "CDK1",
+            "type": "gene",
+            "start": 198,
+            "end": 202,
+            "score": 0.9959111213684082
+          },
+          {
+            "id": "E5",
+            "text": "KNTC1",
+            "type": "gene",
+            "start": 224,
+            "end": 229,
+            "score": 0.9984737038612366
+          },
+          {
+            "id": "E6",
+            "text": "KNTC1",
+            "type": "gene",
+            "start": 269,
+            "end": 274,
+            "score": 0.9989458918571472
+          },
+          {
+            "id": "E7",
+            "text": "SK-Hep-1",
+            "type": "cell line",
+            "start": 278,
+            "end": 286,
+            "score": 0.9800129532814026
+          },
+          {
+            "id": "E8",
+            "text": "Huh7",
+            "type": "cell line",
+            "start": 291,
+            "end": 295,
+            "score": 0.985863983631134
+          },
+          {
+            "id": "E9",
+            "text": "mRNA",
+            "type": "RNA",
+            "start": 347,
+            "end": 351,
+            "score": 0.9832562208175659
+          },
+          {
+            "id": "E10",
+            "text": "CDK1",
+            "type": "gene",
+            "start": 362,
+            "end": 366,
+            "score": 0.9973989725112915
+          },
+          {
+            "id": "E11",
+            "text": "KNTC1",
+            "type": "gene",
+            "start": 388,
+            "end": 393,
+            "score": 0.9985122084617615
+          },
+          {
+            "id": "E12",
+            "text": "CDK1",
+            "type": "gene",
+            "start": 438,
+            "end": 442,
+            "score": 0.9959172606468201
+          },
+          {
+            "id": "E13",
+            "text": "CDK1",
+            "type": "gene",
+            "start": 472,
+            "end": 476,
+            "score": 0.9964408278465271
+          },
+          {
+            "id": "E14",
+            "text": "hepatoma cell lines",
+            "type": "cell line",
+            "start": 495,
+            "end": 514,
+            "score": 0.7991281747817993
+          },
+          {
+            "id": "E15",
+            "text": "SK-Hep-1",
+            "type": "cell line",
+            "start": 518,
+            "end": 526,
+            "score": 0.9635050296783447
+          },
+          {
+            "id": "E16",
+            "text": "Huh7",
+            "type": "cell line",
+            "start": 528,
+            "end": 532,
+            "score": 0.9713128209114078
+          },
+          {
+            "id": "E17",
+            "text": "HepG2",
+            "type": "cell line",
+            "start": 534,
+            "end": 539,
+            "score": 0.9442545175552368
+          },
+          {
+            "id": "E18",
+            "text": "SNU449",
+            "type": "cell line",
+            "start": 544,
+            "end": 550,
+            "score": 0.9467526078224182
+          },
+          {
+            "id": "E19",
+            "text": "mRNA",
+            "type": "RNA",
+            "start": 590,
+            "end": 594,
+            "score": 0.971616804599762
+          },
+          {
+            "id": "E20",
+            "text": "CDK1",
+            "type": "gene",
+            "start": 605,
+            "end": 609,
+            "score": 0.9972051978111267
+          },
+          {
+            "id": "E21",
+            "text": "normal hepatocytes",
+            "type": "species",
+            "start": 651,
+            "end": 669,
+            "score": 0.8921070098876953
+          },
+          {
+            "id": "E22",
+            "text": "KNTC1",
+            "type": "gene",
+            "start": 706,
+            "end": 711,
+            "score": 0.9989620447158813
+          },
+          {
+            "id": "E23",
+            "text": "CDK1",
+            "type": "gene",
+            "start": 727,
+            "end": 731,
+            "score": 0.9954432249069214
+          },
+          {
+            "id": "E24",
+            "text": "HCC",
+            "type": "disease",
+            "start": 742,
+            "end": 745,
+            "score": 0.9905000329017639
+          },
+          {
+            "id": "E25",
+            "text": "KNTC1",
+            "type": "gene",
+            "start": 815,
+            "end": 820,
+            "score": 0.9992557168006897
+          },
+          {
+            "id": "E26",
+            "text": "CDK1",
+            "type": "gene",
+            "start": 859,
+            "end": 863,
+            "score": 0.9975722432136536
+          },
+          {
+            "id": "E27",
+            "text": "hepatocellular carcinoma",
+            "type": "disease",
+            "start": 867,
+            "end": 891,
+            "score": 0.9950217008590698
+          }
+        ]
+      },
+      "luna": {
+        "status": "FAILED_NO_STRUCTURED_OUTPUT",
+        "structured_extraction_completed": false,
+        "relations": [],
+        "failure": {
+          "error_type": "openai.LengthFinishReasonError",
+          "message": "Could not parse response content as the length limit was reached; the provider response exhausted the configured completion ceiling in reasoning before structured relation content was available.",
+          "provider_response_received": true,
+          "provider_retry_observed": false
+        },
+        "latency": {
+          "wall_clock_seconds": 104.3,
+          "scope": "Approximate complete in-process production command elapsed time, including GLiNER initialization/cache activity and the Luna call."
+        },
+        "usage": {
+          "prompt_tokens": 2248,
+          "completion_tokens": 8192,
+          "reasoning_tokens": 8192,
+          "total_tokens": 10440,
+          "accepted_prediction_tokens": 0,
+          "text_tokens": null,
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "cache_write_tokens": 2245,
+          "available_only_from_failure_response": true
+        },
+        "retry": {
+          "harness_max_retries": 2,
+          "provider_max_retries": 0,
+          "provider_attempt_count": null,
+          "retry_observed": false,
+          "reason": "The current runtime exposes no attempt counter; no retry indication was emitted."
+        }
+      },
+      "validation": {
+        "entity_span_check": {
+          "status": "PASS",
+          "checked": 27,
+          "total": 27
+        },
+        "relation_endpoint_check": {
+          "status": "NOT_APPLICABLE",
+          "checked": 0,
+          "total": 0,
+          "note": "No normalized relation output was returned."
+        },
+        "relation_evidence_check": {
+          "status": "NOT_APPLICABLE",
+          "checked": 0,
+          "total": 0,
+          "note": "No normalized relation output was returned."
+        },
+        "relation_surface_form_check": {
+          "status": "NOT_APPLICABLE",
+          "checked": 0,
+          "total": 0,
+          "note": "No normalized relation output was returned."
+        },
+        "existing_deterministic_validator": {
+          "status": "NOT_APPLICABLE",
+          "note": "The composed production call raised before a relation result could reach validate_relations."
+        }
+      },
+      "interpretation": {
+        "material_issue_categories": [
+          "entity-stage limitation",
+          "runtime/provider limitation"
+        ],
+        "observed_evidence": [
+          "No biological-process entity was returned for this paragraph.",
+          "The exact paragraph received a provider response but consumed all 8192 completion tokens in reasoning before structured relations were available."
+        ],
+        "semantic_assessment": "Intervention and CDK1/KNTC1 relation semantics are not assessable because Luna returned no normalized relations."
+      }
+    },
+    {
+      "section_id": "Sec19",
+      "paragraph_id": "Par20",
+      "input": {
+        "sha256": "538d8855f35d0a026d08248968dbdf7bac9a05ee77db33a93d78970ded893296",
+        "characters": 652,
+        "words": 103
+      },
+      "ner": {
+        "status": "PASS",
+        "capture_method": "Composed production biomedical-extract-llm output.",
+        "entity_count": 20,
+        "type_counts": {
+          "gene": 12,
+          "disease": 2,
+          "cell line": 2,
+          "RNA": 1,
+          "biological process": 3
+        },
+        "biological_process_detections": [
+          {
+            "id": "E12",
+            "text": "cell viability",
+            "type": "biological process",
+            "start": 324,
+            "end": 338,
+            "score": 0.8416236639022827
+          },
+          {
+            "id": "E13",
+            "text": "proliferative capacity",
+            "type": "biological process",
+            "start": 350,
+            "end": 372,
+            "score": 0.8578466773033142
+          },
+          {
+            "id": "E16",
+            "text": "cell cycle arrest",
+            "type": "biological process",
+            "start": 469,
+            "end": 486,
+            "score": 0.8970630764961243
+          }
+        ],
+        "entities": [
+          {
+            "id": "E1",
+            "text": "CDK1",
+            "type": "gene",
+            "start": 27,
+            "end": 31,
+            "score": 0.9954736828804016
+          },
+          {
+            "id": "E2",
+            "text": "HCC",
+            "type": "disease",
+            "start": 35,
+            "end": 38,
+            "score": 0.9957382678985596
+          },
+          {
+            "id": "E3",
+            "text": "KNTC1",
+            "type": "gene",
+            "start": 56,
+            "end": 61,
+            "score": 0.9908409118652344
+          },
+          {
+            "id": "E4",
+            "text": "CDK1",
+            "type": "gene",
+            "start": 83,
+            "end": 87,
+            "score": 0.9906681180000305
+          },
+          {
+            "id": "E5",
+            "text": "SK-Hep-1",
+            "type": "cell line",
+            "start": 91,
+            "end": 99,
+            "score": 0.9676633477210999
+          },
+          {
+            "id": "E6",
+            "text": "Huh7 cells",
+            "type": "cell line",
+            "start": 104,
+            "end": 114,
+            "score": 0.9580109119415283
+          },
+          {
+            "id": "E7",
+            "text": "CDK1",
+            "type": "gene",
+            "start": 148,
+            "end": 152,
+            "score": 0.994353175163269
+          },
+          {
+            "id": "E8",
+            "text": "KNTC1",
+            "type": "gene",
+            "start": 193,
+            "end": 198,
+            "score": 0.9943479895591736
+          },
+          {
+            "id": "E9",
+            "text": "CDK1",
+            "type": "gene",
+            "start": 210,
+            "end": 214,
+            "score": 0.9884724020957947
+          },
+          {
+            "id": "E10",
+            "text": "mRNA",
+            "type": "RNA",
+            "start": 227,
+            "end": 231,
+            "score": 0.9911541938781738
+          },
+          {
+            "id": "E11",
+            "text": "CDK1",
+            "type": "gene",
+            "start": 280,
+            "end": 284,
+            "score": 0.9933276176452637
+          },
+          {
+            "id": "E12",
+            "text": "cell viability",
+            "type": "biological process",
+            "start": 324,
+            "end": 338,
+            "score": 0.8416236639022827
+          },
+          {
+            "id": "E13",
+            "text": "proliferative capacity",
+            "type": "biological process",
+            "start": 350,
+            "end": 372,
+            "score": 0.8578466773033142
+          },
+          {
+            "id": "E14",
+            "text": "KNTC1",
+            "type": "gene",
+            "start": 383,
+            "end": 388,
+            "score": 0.9931007623672485
+          },
+          {
+            "id": "E15",
+            "text": "CDK1",
+            "type": "gene",
+            "start": 437,
+            "end": 441,
+            "score": 0.9933820962905884
+          },
+          {
+            "id": "E16",
+            "text": "cell cycle arrest",
+            "type": "biological process",
+            "start": 469,
+            "end": 486,
+            "score": 0.8970630764961243
+          },
+          {
+            "id": "E17",
+            "text": "KNTC1",
+            "type": "gene",
+            "start": 497,
+            "end": 502,
+            "score": 0.9912131428718567
+          },
+          {
+            "id": "E18",
+            "text": "CDK1",
+            "type": "gene",
+            "start": 549,
+            "end": 553,
+            "score": 0.995924711227417
+          },
+          {
+            "id": "E19",
+            "text": "hepatocellular carcinoma",
+            "type": "disease",
+            "start": 595,
+            "end": 619,
+            "score": 0.9358283281326294
+          },
+          {
+            "id": "E20",
+            "text": "KNTC1",
+            "type": "gene",
+            "start": 636,
+            "end": 641,
+            "score": 0.9906582832336426
+          }
+        ]
+      },
+      "luna": {
+        "status": "SUCCESS",
+        "structured_extraction_completed": true,
+        "relations": [
+          {
+            "source": "E3",
+            "target": "E5",
+            "predicate": "is knocked down in",
+            "evidence": "knocked down KNTC1 while overexpressing CDK1 in SK-Hep-1 and Huh7 cells",
+            "negated": false,
+            "surface_form": "knocked down KNTC1 while overexpressing CDK1 in SK-Hep-1 and Huh7 cells",
+            "score": null
+          },
+          {
+            "source": "E3",
+            "target": "E6",
+            "predicate": "is knocked down in",
+            "evidence": "knocked down KNTC1 while overexpressing CDK1 in SK-Hep-1 and Huh7 cells",
+            "negated": false,
+            "surface_form": "knocked down KNTC1 while overexpressing CDK1 in SK-Hep-1 and Huh7 cells",
+            "score": null
+          },
+          {
+            "source": "E4",
+            "target": "E5",
+            "predicate": "is overexpressed in",
+            "evidence": "overexpressing CDK1 in SK-Hep-1 and Huh7 cells",
+            "negated": false,
+            "surface_form": "overexpressing CDK1 in",
+            "score": null
+          },
+          {
+            "source": "E4",
+            "target": "E6",
+            "predicate": "is overexpressed in",
+            "evidence": "overexpressing CDK1 in SK-Hep-1 and Huh7 cells",
+            "negated": false,
+            "surface_form": "overexpressing CDK1 in",
+            "score": null
+          },
+          {
+            "source": "E7",
+            "target": "E8",
+            "predicate": "upregulates",
+            "evidence": "overexpression of CDK1 resulted in significant upregulation of KNTC1",
+            "negated": false,
+            "surface_form": "resulted in significant upregulation of",
+            "score": null
+          },
+          {
+            "source": "E7",
+            "target": "E9",
+            "predicate": "upregulates CDK1 protein levels",
+            "evidence": "overexpression of CDK1 resulted in significant upregulation of KNTC1 as well as CDK1 protein and mRNA levels",
+            "negated": false,
+            "surface_form": "upregulation of KNTC1 as well as CDK1 protein and mRNA levels",
+            "score": null
+          },
+          {
+            "source": "E7",
+            "target": "E10",
+            "predicate": "upregulates CDK1 mRNA levels",
+            "evidence": "overexpression of CDK1 resulted in significant upregulation of KNTC1 as well as CDK1 protein and mRNA levels",
+            "negated": false,
+            "surface_form": "upregulation of KNTC1 as well as CDK1 protein and mRNA levels",
+            "score": null
+          },
+          {
+            "source": "E11",
+            "target": "E12",
+            "predicate": "rescues the decrease in cell viability",
+            "evidence": "CDK1 overexpression rescued the decrease in cell viability",
+            "negated": false,
+            "surface_form": "rescued the decrease in cell viability",
+            "score": null
+          },
+          {
+            "source": "E11",
+            "target": "E13",
+            "predicate": "rescues the decrease in proliferative capacity",
+            "evidence": "CDK1 overexpression rescued the decrease in cell viability as well as proliferative capacity caused by KNTC1 knockdown",
+            "negated": false,
+            "surface_form": "rescued the decrease in cell viability as well as proliferative capacity",
+            "score": null
+          },
+          {
+            "source": "E14",
+            "target": "E12",
+            "predicate": "knockdown causes a decrease in cell viability",
+            "evidence": "the decrease in cell viability as well as proliferative capacity caused by KNTC1 knockdown",
+            "negated": false,
+            "surface_form": "caused by KNTC1 knockdown",
+            "score": null
+          },
+          {
+            "source": "E14",
+            "target": "E13",
+            "predicate": "knockdown causes a decrease in proliferative capacity",
+            "evidence": "the decrease in cell viability as well as proliferative capacity caused by KNTC1 knockdown",
+            "negated": false,
+            "surface_form": "caused by KNTC1 knockdown",
+            "score": null
+          },
+          {
+            "source": "E15",
+            "target": "E16",
+            "predicate": "rescues cell cycle arrest",
+            "evidence": "CDK1 overexpression rescued the cell cycle arrest caused by KNTC1 knockdown",
+            "negated": false,
+            "surface_form": "rescued the cell cycle arrest",
+            "score": null
+          },
+          {
+            "source": "E17",
+            "target": "E16",
+            "predicate": "knockdown causes cell cycle arrest",
+            "evidence": "cell cycle arrest caused by KNTC1 knockdown",
+            "negated": false,
+            "surface_form": "caused by KNTC1 knockdown",
+            "score": null
+          },
+          {
+            "source": "E18",
+            "target": "E19",
+            "predicate": "can rescue changes in hepatocellular carcinoma cells",
+            "evidence": "CDK1 overexpression can rescue the changes in hepatocellular carcinoma cells",
+            "negated": false,
+            "surface_form": "can rescue the changes in hepatocellular carcinoma cells",
+            "score": null
+          },
+          {
+            "source": "E20",
+            "target": "E19",
+            "predicate": "knockdown causes changes in hepatocellular carcinoma cells",
+            "evidence": "changes in hepatocellular carcinoma cells caused by KNTC1 knockdown",
+            "negated": false,
+            "surface_form": "caused by KNTC1 knockdown",
+            "score": null
+          }
+        ],
+        "latency": {
+          "wall_clock_seconds": 108.1,
+          "scope": "Approximate complete in-process production command elapsed time, including GLiNER initialization/cache activity and the Luna call."
+        },
+        "usage": {
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "reasoning_tokens": null,
+          "total_tokens": null,
+          "available": false,
+          "reason": "The current LangChain/CLI boundary returned normalized output but exposed no provider usage metadata."
+        },
+        "retry": {
+          "harness_max_retries": 2,
+          "provider_max_retries": 0,
+          "provider_attempt_count": null,
+          "retry_observed": false,
+          "reason": "The current runtime exposes no attempt counter; no retry indication was emitted."
+        }
+      },
+      "validation": {
+        "entity_span_check": {
+          "status": "PASS",
+          "checked": 20,
+          "total": 20
+        },
+        "relation_endpoint_check": {
+          "status": "PASS",
+          "checked": 15,
+          "total": 15
+        },
+        "relation_evidence_check": {
+          "status": "PASS",
+          "checked": 15,
+          "total": 15
+        },
+        "relation_surface_form_check": {
+          "status": "PASS",
+          "checked": 15,
+          "total": 15
+        },
+        "supplied_surface_form_grounding": {
+          "status": "PASS",
+          "checked": 15,
+          "total": 15
+        },
+        "existing_deterministic_validator": {
+          "status": "PASS",
+          "accepted": 15,
+          "total": 15
+        }
+      },
+      "interpretation": {
+        "material_issue_categories": [
+          "no material issue observed"
+        ],
+        "observed_evidence": [
+          "Biological-process entities for cell viability, proliferative capacity, and cell cycle arrest reappeared at paragraph scale.",
+          "Relations preserve knocked-down, overexpressed, upregulated, rescue, and knockdown-caused language in predicates and verbatim evidence.",
+          "The CDK1 rescue/reversal semantics remain connected to the corresponding KNTC1 knockdown effects."
+        ],
+        "semantic_assessment": "The paragraph produced usable, contract-valid entities and relations for the intervention and rescue claims."
+      }
+    },
+    {
+      "section_id": "Sec20",
+      "paragraph_id": "Par21",
+      "input": {
+        "sha256": "b8d8690906dcfb9cb33f3a45cb2b239afae223e2c5b58737d6d6edb6fea0c028",
+        "characters": 527,
+        "words": 78
+      },
+      "ner": {
+        "status": "PASS",
+        "capture_method": "Composed production biomedical-extract-llm output.",
+        "entity_count": 19,
+        "type_counts": {
+          "gene": 7,
+          "biological process": 5,
+          "cell line": 6,
+          "disease": 1
+        },
+        "biological_process_detections": [
+          {
+            "id": "E2",
+            "text": "CDK1 overexpression",
+            "type": "biological process",
+            "start": 38,
+            "end": 57,
+            "score": 0.5162081122398376
+          },
+          {
+            "id": "E3",
+            "text": "cell migration capacity",
+            "type": "biological process",
+            "start": 96,
+            "end": 119,
+            "score": 0.6121155619621277
+          },
+          {
+            "id": "E8",
+            "text": "invasive ability",
+            "type": "biological process",
+            "start": 245,
+            "end": 261,
+            "score": 0.645431637763977
+          },
+          {
+            "id": "E12",
+            "text": "invasive ability",
+            "type": "biological process",
+            "start": 324,
+            "end": 340,
+            "score": 0.6441107988357544
+          },
+          {
+            "id": "E17",
+            "text": "metastasis",
+            "type": "biological process",
+            "start": 465,
+            "end": 475,
+            "score": 0.5536370873451233
+          }
+        ],
+        "entities": [
+          {
+            "id": "E1",
+            "text": "CDK1",
+            "type": "gene",
+            "start": 38,
+            "end": 42,
+            "score": 0.9880565404891968
+          },
+          {
+            "id": "E2",
+            "text": "CDK1 overexpression",
+            "type": "biological process",
+            "start": 38,
+            "end": 57,
+            "score": 0.5162081122398376
+          },
+          {
+            "id": "E3",
+            "text": "cell migration capacity",
+            "type": "biological process",
+            "start": 96,
+            "end": 119,
+            "score": 0.6121155619621277
+          },
+          {
+            "id": "E4",
+            "text": "SK-Hep-1",
+            "type": "cell line",
+            "start": 123,
+            "end": 131,
+            "score": 0.9693441390991211
+          },
+          {
+            "id": "E5",
+            "text": "Huh7 cells",
+            "type": "cell line",
+            "start": 136,
+            "end": 146,
+            "score": 0.9721288681030273
+          },
+          {
+            "id": "E6",
+            "text": "KNTC1",
+            "type": "gene",
+            "start": 178,
+            "end": 183,
+            "score": 0.9743512868881226
+          },
+          {
+            "id": "E7",
+            "text": "KNTC1",
+            "type": "gene",
+            "start": 201,
+            "end": 206,
+            "score": 0.9845486879348755
+          },
+          {
+            "id": "E8",
+            "text": "invasive ability",
+            "type": "biological process",
+            "start": 245,
+            "end": 261,
+            "score": 0.645431637763977
+          },
+          {
+            "id": "E9",
+            "text": "SK-Hep-1",
+            "type": "cell line",
+            "start": 265,
+            "end": 273,
+            "score": 0.9607385396957397
+          },
+          {
+            "id": "E10",
+            "text": "Huh7 cells",
+            "type": "cell line",
+            "start": 278,
+            "end": 288,
+            "score": 0.971917450428009
+          },
+          {
+            "id": "E11",
+            "text": "CDK1",
+            "type": "gene",
+            "start": 290,
+            "end": 294,
+            "score": 0.9850260615348816
+          },
+          {
+            "id": "E12",
+            "text": "invasive ability",
+            "type": "biological process",
+            "start": 324,
+            "end": 340,
+            "score": 0.6441107988357544
+          },
+          {
+            "id": "E13",
+            "text": "SK-Hep-1",
+            "type": "cell line",
+            "start": 344,
+            "end": 352,
+            "score": 0.9613873958587646
+          },
+          {
+            "id": "E14",
+            "text": "Huh7 cells",
+            "type": "cell line",
+            "start": 357,
+            "end": 367,
+            "score": 0.9787888526916504
+          },
+          {
+            "id": "E15",
+            "text": "KNTC1",
+            "type": "gene",
+            "start": 384,
+            "end": 389,
+            "score": 0.9783663749694824
+          },
+          {
+            "id": "E16",
+            "text": "KNTC1",
+            "type": "gene",
+            "start": 452,
+            "end": 457,
+            "score": 0.9791872501373291
+          },
+          {
+            "id": "E17",
+            "text": "metastasis",
+            "type": "biological process",
+            "start": 465,
+            "end": 475,
+            "score": 0.5536370873451233
+          },
+          {
+            "id": "E18",
+            "text": "hepatocellular carcinoma",
+            "type": "disease",
+            "start": 479,
+            "end": 503,
+            "score": 0.9859787821769714
+          },
+          {
+            "id": "E19",
+            "text": "CDK1",
+            "type": "gene",
+            "start": 522,
+            "end": 526,
+            "score": 0.9634972810745239
+          }
+        ]
+      },
+      "luna": {
+        "status": "SUCCESS",
+        "structured_extraction_completed": true,
+        "relations": [
+          {
+            "source": "E2",
+            "target": "E3",
+            "predicate": "increases",
+            "evidence": "CDK1 overexpression resulted in a significant increase in cell migration capacity of SK-Hep-1 and Huh7 cells, with or without inhibition of KNTC1",
+            "negated": false,
+            "surface_form": "resulted in a significant increase in",
+            "score": null
+          },
+          {
+            "source": "E4",
+            "target": "E3",
+            "predicate": "has",
+            "evidence": "cell migration capacity of SK-Hep-1 and Huh7 cells",
+            "negated": false,
+            "surface_form": "capacity of",
+            "score": null
+          },
+          {
+            "source": "E5",
+            "target": "E3",
+            "predicate": "has",
+            "evidence": "cell migration capacity of SK-Hep-1 and Huh7 cells",
+            "negated": false,
+            "surface_form": "capacity of",
+            "score": null
+          },
+          {
+            "source": "E7",
+            "target": "E8",
+            "predicate": "inhibits",
+            "evidence": "KNTC1 knockdown significantly inhibited the invasive ability of SK-Hep-1 and Huh7 cells",
+            "negated": false,
+            "surface_form": "significantly inhibited",
+            "score": null
+          },
+          {
+            "source": "E9",
+            "target": "E8",
+            "predicate": "has",
+            "evidence": "the invasive ability of SK-Hep-1 and Huh7 cells",
+            "negated": false,
+            "surface_form": "ability of",
+            "score": null
+          },
+          {
+            "source": "E10",
+            "target": "E8",
+            "predicate": "has",
+            "evidence": "the invasive ability of SK-Hep-1 and Huh7 cells",
+            "negated": false,
+            "surface_form": "ability of",
+            "score": null
+          },
+          {
+            "source": "E11",
+            "target": "E12",
+            "predicate": "increases",
+            "evidence": "CDK1 overexpression increased the invasive ability of SK-Hep-1 and Huh7 cells with or without KNTC1 inhibition",
+            "negated": false,
+            "surface_form": "increased",
+            "score": null
+          },
+          {
+            "source": "E13",
+            "target": "E12",
+            "predicate": "has",
+            "evidence": "the invasive ability of SK-Hep-1 and Huh7 cells with or without KNTC1 inhibition",
+            "negated": false,
+            "surface_form": "ability of",
+            "score": null
+          },
+          {
+            "source": "E14",
+            "target": "E12",
+            "predicate": "has",
+            "evidence": "the invasive ability of SK-Hep-1 and Huh7 cells with or without KNTC1 inhibition",
+            "negated": false,
+            "surface_form": "ability of",
+            "score": null
+          },
+          {
+            "source": "E17",
+            "target": "E18",
+            "predicate": "is the metastasis of",
+            "evidence": "metastasis of hepatocellular carcinoma cells",
+            "negated": false,
+            "surface_form": "metastasis of",
+            "score": null
+          },
+          {
+            "source": "E19",
+            "target": "E17",
+            "predicate": "mediates",
+            "evidence": "metastasis of hepatocellular carcinoma cells mediated by CDK1",
+            "negated": false,
+            "surface_form": "mediated by CDK1",
+            "score": null
+          }
+        ],
+        "latency": {
+          "wall_clock_seconds": 70.0,
+          "scope": "Approximate complete in-process production command elapsed time, including GLiNER initialization/cache activity and the Luna call."
+        },
+        "usage": {
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "reasoning_tokens": null,
+          "total_tokens": null,
+          "available": false,
+          "reason": "The current LangChain/CLI boundary returned normalized output but exposed no provider usage metadata."
+        },
+        "retry": {
+          "harness_max_retries": 2,
+          "provider_max_retries": 0,
+          "provider_attempt_count": null,
+          "retry_observed": false,
+          "reason": "The current runtime exposes no attempt counter; no retry indication was emitted."
+        }
+      },
+      "validation": {
+        "entity_span_check": {
+          "status": "PASS",
+          "checked": 19,
+          "total": 19
+        },
+        "relation_endpoint_check": {
+          "status": "PASS",
+          "checked": 11,
+          "total": 11
+        },
+        "relation_evidence_check": {
+          "status": "PASS",
+          "checked": 11,
+          "total": 11
+        },
+        "relation_surface_form_check": {
+          "status": "PASS",
+          "checked": 11,
+          "total": 11
+        },
+        "supplied_surface_form_grounding": {
+          "status": "PASS",
+          "checked": 11,
+          "total": 11
+        },
+        "existing_deterministic_validator": {
+          "status": "PASS",
+          "accepted": 11,
+          "total": 11
+        }
+      },
+      "interpretation": {
+        "material_issue_categories": [
+          "no material issue observed"
+        ],
+        "observed_evidence": [
+          "Biological-process entities for migration, invasive ability, and metastasis reappeared at paragraph scale.",
+          "Migration has grounded relations from the CDK1-overexpression process and the named cell lines to cell migration capacity.",
+          "Invasion has grounded relations for KNTC1 inhibition, CDK1 increase, and the named cell lines; the with-or-without intervention wording is retained in evidence.",
+          "All returned relation endpoints and verbatim evidence passed the existing deterministic validator."
+        ],
+        "semantic_assessment": "The paragraph produced usable contract-valid endpoints and relations for the migration and invasion claims. The report does not infer an additional conditional relation beyond what Luna returned."
+      }
+    }
+  ],
+  "comparison": {
+    "paragraphs": [
+      {
+        "paragraph_id": "Par19",
+        "characters": 938,
+        "words": 145,
+        "entities": 27,
+        "biological_process_entities": 0,
+        "luna_status": "FAILED_NO_STRUCTURED_OUTPUT",
+        "relations": 0,
+        "material_issue": "entity-stage limitation; runtime/provider limitation"
+      },
+      {
+        "paragraph_id": "Par20",
+        "characters": 652,
+        "words": 103,
+        "entities": 20,
+        "biological_process_entities": 3,
+        "luna_status": "SUCCESS",
+        "relations": 15,
+        "material_issue": "no material issue observed"
+      },
+      {
+        "paragraph_id": "Par21",
+        "characters": 527,
+        "words": 78,
+        "entities": 19,
+        "biological_process_entities": 5,
+        "luna_status": "SUCCESS",
+        "relations": 11,
+        "material_issue": "no material issue observed"
+      }
+    ],
+    "combined_vs_independent": {
+      "combined_entities": 58,
+      "combined_biological_process_entities": 0,
+      "combined_relations": 0,
+      "independent_total_entities": 66,
+      "independent_biological_process_entities": 8,
+      "independent_successful_relations": 26
+    }
+  },
+  "conclusion": {
+    "supported": [
+      "Paragraph-scale processing materially improved the observed outcome for Par20 and Par21: biological-process entities reappeared, Luna completed structured extraction, and the returned relations passed deterministic validation.",
+      "Par20 preserves knockdown/overexpression intervention language and CDK1 rescue/reversal semantics in grounded relations.",
+      "Par21 provides contract-valid migration and invasion endpoints and relations.",
+      "The improvement is not uniform: Par19 still exhausted the unchanged Luna completion ceiling and also returned no biological-process entities."
+    ],
+    "not_supported": [
+      "This experiment does not justify windowing, aggregation, mention consolidation, coreference, prompt changes, budget changes, or other architecture changes."
+    ]
+  },
+  "secrets": {
+    "api_key_printed": false,
+    "api_key_logged": false,
+    "api_key_reported": false
+  }
+}
