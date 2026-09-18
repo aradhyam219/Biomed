@@ -29,6 +29,7 @@ Canonical commands:
 - focused tests: `uv run python -m unittest discover -s tests -v`
 - active NER inspection: `uv run biomedical-ner --text "..."`
 - BioRED NER evaluation: `uv run biomedical-ner-evaluate --dataset C:\path\to\BioRED`
+- HunFlair2 challenger evaluation: `uv run biomedical-ner-hunflair2-evaluate --dataset C:\path\to\BioRED --offline`
 
 The preserved `demo.py` console command (`uv run python demo.py`) is a deferred
 GLiNER-to-GLiREL relation-pipeline demo, not the current human-facing NER path.

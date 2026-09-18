@@ -15,6 +15,7 @@ from typing import Any, Mapping, Sequence
 from .aioner import AIONER_LABEL_TO_CANONICAL
 from .biored import BioREDDataset, BioREDDocument, BioREDMention
 from .entity_extraction import Entity, EntityExtractor
+from .hunflair2 import HUNFLAIR2_LABEL_TO_CANONICAL
 
 
 # BioRED's loader keeps these short internal names for compatibility with the
@@ -43,10 +44,13 @@ PREDICTED_TYPE_TO_CANONICAL: Mapping[str, str] = {
     # adapter preserves these source labels; this table is the only taxonomy
     # normalization applied before exact-match scoring.
     **AIONER_LABEL_TO_CANONICAL,
+    # HunFlair2 emits the same five shared BioRED categories with its own
+    # official label spelling; the adapter preserves those labels as well.
+    **HUNFLAIR2_LABEL_TO_CANONICAL,
 }
 
 # The shared-class view is deliberately fixed to the five classes supported by
-# both the production GLiNER schema and the official AIONER challenger.
+# the active GLiNER, AIONER, and HunFlair2 comparison adapters.
 COMPARABLE_CANONICAL_TYPES = (
     "CellLine",
     "ChemicalEntity",

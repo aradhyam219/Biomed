@@ -45,7 +45,10 @@ boundary.
 - NER evaluation and evidence-based model selection;
 - adapter/output normalization into the stable local entity representation;
 - a frozen, evaluation-only comparison of the current GLiNER baseline with the
-  official AIONER PubMedBERT-CRF artifact on the official BioRED Test split.
+  official AIONER PubMedBERT-CRF artifact on the official BioRED Test split;
+- a frozen, evaluation-only challenger run of the official HunFlair2 five-class
+  model on that same BioRED Test split, compared with AIONER without changing
+  the production adapter or dependency graph.
 
 ### Deferred or out of scope
 
@@ -163,25 +166,26 @@ The evaluator also preserves bounded machine-readable failure examples and may
 report graph-critical entity recall from BioRED relation participation without
 invoking or evaluating a relation model. Its primary metrics do not use fuzzy
 matching. The current challenger comparison uses a shared five-class view and a
-full-schema view so AIONER's explicit SequenceVariant support is reported rather
-than silently remapped or discarded. The official AIONER runtime and model
-artifact are isolated evaluation inputs; they do not change the production
-GLiNER default.
+full-schema view so AIONER's explicit SequenceVariant support, and HunFlair2's
+lack of that class, are reported rather than silently remapped or discarded.
+The official AIONER and HunFlair2 runtimes and model artifacts are isolated
+evaluation inputs; they do not change the production GLiNER default.
 
 Relation-specific and end-to-end evaluation infrastructure is preserved as
 deferred work; it is not an active acceptance target for the current NER phase.
 
 ## Quality gate and replacement seam
 
-The next NER phase may compare the current GLiNER-BioMed baseline with AIONER /
-PubTator-style NER and HunFlair2 behind the same `EntityExtractor` boundary.
-These candidates are not a model-selection decision. The quality gate must be
-explicitly passed using the agreed NER evaluation evidence before biomedical
-entity normalization/linking or relation work becomes active.
+The current and next NER phases may compare the current GLiNER-BioMed baseline
+with AIONER / PubTator-style NER and HunFlair2 behind the same `EntityExtractor`
+boundary. These challenger runs are not a model-selection decision. The quality
+gate must be explicitly passed using the agreed NER evaluation evidence before
+biomedical entity normalization/linking or relation work becomes active.
 
 No production replacement model, production dependency, training run, or linking
-implementation is introduced by this specification. The AIONER runtime is kept
-outside the production dependency graph for the controlled Test comparison.
+implementation is introduced by this specification. The AIONER and HunFlair2
+runtimes are kept outside the production dependency graph for controlled Test
+comparisons.
 
 ## Product invariants
 

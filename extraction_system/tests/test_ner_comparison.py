@@ -12,6 +12,7 @@ from biomedical_extractor.biored import (
 from biomedical_extractor.entity_extraction import Entity
 from biomedical_extractor.ner_comparison import (
     build_comparison_report,
+    build_model_comparison_report,
     render_comparison_markdown,
     validate_report_arithmetic,
 )
@@ -78,6 +79,28 @@ class NERComparisonTests(unittest.TestCase):
             1,
         )
         self.assertIn("SequenceVariant coverage", render_comparison_markdown(comparison))
+
+        hunflair2 = dict(gliner)
+        hunflair2["predictor"] = {
+            "model": "hunflair/hunflair2-ner",
+            "adapter": "HunFlair2BioMedExtractor",
+        }
+        challenger = build_model_comparison_report(
+            aioner,
+            hunflair2,
+            first_name="AIONER",
+            second_name="HunFlair2",
+        )
+        self.assertEqual(
+            challenger["shared_class_head_to_head"]["models"]["HunFlair2"]["micro"][
+                "tp"
+            ],
+            1,
+        )
+        self.assertFalse(
+            challenger["full_schema_coverage"]["variant"]["hunflair2_supported"]
+        )
+        self.assertIn("AIONER vs HunFlair2", render_comparison_markdown(challenger))
 
 
 if __name__ == "__main__":

@@ -53,6 +53,15 @@ confidence values. Its legacy TensorFlow runtime, model artifact, and prediction
 cache remain isolated under `.cache/`; AIONER is not the production default and
 does not add a production dependency or replace GLiNER.
 
+The repository also contains an evaluation-only `HunFlair2BioMedExtractor` and
+an isolated runtime/report path. It loads the official `hunflair/hunflair2-ner`
+model through Flair, splits complete documents with SciSpaCy, lifts sentence-
+relative spans back to the original source text, and preserves exposed scores.
+The Flair/SciSpaCy environment, model artifact, and prediction cache remain
+under `.cache/hunflair2/`; HunFlair2 is not a production dependency or default
+replacement. Its supported schema is the shared five-class view and it does not
+claim BioRED SequenceVariant coverage.
+
 The production implementation lives in `src/biomedical_extractor/`. The
 `entity_extraction` module owns the model-independent `EntityExtractor` contract,
 the stable `Entity` value, and the current GLiNER-BioMed adapter. Raw GLiNER
@@ -90,7 +99,7 @@ id, text, type, start, end, score
 adapter validates that the source slice exactly matches `Entity.text`.
 
 Alternative entity implementations must be able to satisfy this same boundary.
-The next model has not been selected. Current evaluation candidates include the
+The next model has not been selected. Current evaluation inputs include the
 GLiNER-BioMed baseline, AIONER / PubTator-style NER, and HunFlair2; these are
 comparison candidates, not a preselected winner.
 
@@ -138,8 +147,11 @@ and computes exact-span/type metrics plus bounded failure diagnostics. The
 writes a machine-readable report with a Markdown companion under `reports/`.
 The evaluator can accept another adapter at the same `EntityExtractor` boundary;
 model internals do not cross into scoring. The frozen GLiNER Test report and the
-official AIONER Test report expose shared five-class and full-schema views, while
-`biomedical-ner-compare` produces the deterministic head-to-head comparison.
+official AIONER and HunFlair2 Test reports expose shared five-class and
+full-schema views, while `biomedical-ner-compare` and
+`biomedical-ner-compare-aioner-hunflair2` produce deterministic head-to-head
+comparisons. HunFlair2 inference is delegated to a standalone isolated runtime
+so Flair does not enter the production dependency graph.
 Optional graph-critical recall is derived from BioRED relation participation and
 is strictly an NER diagnostic; no relation model is invoked.
 
@@ -177,6 +189,8 @@ treated as a separate decision rather than added to the default core-NER pass.
 - Existing relation paths remain preserved but are outside the active workstream.
 - The official AIONER runtime and artifact remain evaluation-only and isolated from
   the production dependency graph.
+- The official HunFlair2 runtime, SciSpaCy splitter, and model artifact remain
+  evaluation-only and isolated from the production dependency graph.
 - The architecture must not grow speculative ontology, graph, relation, or model
   infrastructure before the NER quality gate.
 

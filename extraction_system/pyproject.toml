@@ -26,7 +26,9 @@ biomedical-extract-llm = "biomedical_extractor.llm_cli:main"
 biored-evaluate = "biomedical_extractor.biored_cli:main"
 biomedical-ner-evaluate = "biomedical_extractor.ner_evaluation_cli:main"
 biomedical-ner-aioner-evaluate = "biomedical_extractor.aioner_evaluation_cli:main"
+biomedical-ner-hunflair2-evaluate = "biomedical_extractor.hunflair2_evaluation_cli:main"
 biomedical-ner-compare = "biomedical_extractor.ner_comparison_cli:main"
+biomedical-ner-compare-aioner-hunflair2 = "biomedical_extractor.hunflair2_comparison_cli:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/biomedical_extractor"]

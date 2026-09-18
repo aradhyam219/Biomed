@@ -6,6 +6,16 @@ from .aioner import (
     AIONER_SUPPORTED_CANONICAL_TYPES,
     normalize_aioner_predictions,
 )
+from .hunflair2 import (
+    HUNFLAIR2_LABEL_TO_CANONICAL,
+    HUNFLAIR2_MODEL_IDENTIFIER,
+    HUNFLAIR2_OFFICIAL_REPOSITORY,
+    HUNFLAIR2_SUPPORTED_CANONICAL_TYPES,
+    HunFlair2BioMedExtractor,
+    HunFlair2PredictionRuntime,
+    HunFlair2RawPrediction,
+    normalize_hunflair2_predictions,
+)
 from .entity_extraction import (
     DEFAULT_CORE_ENTITY_LABELS,
     DEFAULT_ENTITY_LABELS,
@@ -47,6 +57,10 @@ __all__ = [
     "AIONERPredictionRuntime",
     "AIONERRawPrediction",
     "AIONER_SUPPORTED_CANONICAL_TYPES",
+    "HUNFLAIR2_LABEL_TO_CANONICAL",
+    "HUNFLAIR2_MODEL_IDENTIFIER",
+    "HUNFLAIR2_OFFICIAL_REPOSITORY",
+    "HUNFLAIR2_SUPPORTED_CANONICAL_TYPES",
     "DEFAULT_CORE_ENTITY_LABELS",
     "DEFAULT_ENTITY_LABELS",
     "DEFAULT_ENTITY_MODEL",
@@ -58,6 +72,9 @@ __all__ = [
     "ExtractionResult",
     "GroundedRelation",
     "GLiNERBioMedExtractor",
+    "HunFlair2BioMedExtractor",
+    "HunFlair2PredictionRuntime",
+    "HunFlair2RawPrediction",
     "LLMExtractionPipeline",
     "LLMRelationExtractor",
     "LangChainRelationExtractor",
@@ -71,4 +88,5 @@ __all__ = [
     "RELATION_EXTRACTION_SYSTEM_PROMPT",
     "validate_relations",
     "normalize_aioner_predictions",
+    "normalize_hunflair2_predictions",
 ]

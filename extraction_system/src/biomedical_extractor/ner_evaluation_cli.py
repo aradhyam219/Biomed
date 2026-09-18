@@ -142,11 +142,30 @@ def render_markdown_report(report: Mapping[str, Any]) -> str:
         "- Primary matching: exact half-open character span plus canonical type",
         "- No fuzzy matching, relation model, LLM, or model fine-tuning was used",
         "",
-        "## Taxonomy mapping",
-        "",
-        "| BioRED loader type | Canonical evaluation type |",
-        "| --- | --- |",
     ]
+    runtime = predictor.get("runtime")
+    if runtime:
+        lines.extend(
+            [
+                "## Runtime and inference",
+                "",
+                f"- Runtime versions: `{runtime}`",
+                f"- Model revision: `{predictor.get('model_revision', 'unspecified')}`",
+                f"- Model artifact SHA-256: `{predictor.get('model_artifact_sha256', 'unspecified')}`",
+                f"- Inference duration: `{predictor.get('inference_duration_seconds', 'unspecified')}` seconds",
+                f"- Inference scope: `{predictor.get('inference_scope', 'unspecified')}`",
+                f"- Offset mechanics: `{predictor.get('inference_mechanics', 'unspecified')}`",
+                "",
+            ]
+        )
+    lines.extend(
+        [
+            "## Taxonomy mapping",
+            "",
+            "| BioRED loader type | Canonical evaluation type |",
+            "| --- | --- |",
+        ]
+    )
     for source_type, canonical_type in taxonomy[
         "gold_internal_type_to_canonical"
     ].items():
