@@ -163,11 +163,15 @@ HunFlair2 challengers on identical canonical text, and writes deterministic
 agreement, sentence-level entity co-occurrence, and human-review artifacts under
 `reports/`. It has no target gold labels and therefore cannot establish model
 correctness or select a production winner. The `biomedical-ner-medmentions`
-command independently evaluates the same challengers on the official MedMentions
-ST21pv test split using an explicit, limited semantic-type mapping to the two
-defensible shared classes; unsupported and ambiguous annotations remain visible
-in the report and are excluded from primary metrics. Neither flow invokes a
-relation model or infers relations from entity co-occurrence.
+command runs an exploratory cross-schema stress test on the official MedMentions
+ST21pv test split using explicit UMLS semantic-type mappings; unsupported and
+ambiguous annotations remain visible in the report and are excluded from primary
+metrics. The `biomedical-ner-craft` command is the primary clean independent
+cross-corpus benchmark: it evaluates both challengers on all 97 official CRAFT
+full-text articles, maps only Protein Ontology, ChEBI, and NCBI Taxonomy to the
+current schema, validates canonical source offsets, and writes tracked JSON and
+Markdown evidence. Neither flow invokes a relation model or infers relations
+from entity co-occurrence.
 
 ## Deferred downstream paths
 
@@ -212,9 +216,12 @@ treated as a separate decision rather than added to the default core-NER pass.
 - Target-domain agreement and sentence co-occurrence are descriptive NER
   diagnostics only; they must not be promoted to relation extraction or target
   correctness claims.
-- Cross-corpus MedMentions scoring uses only the documented explicit mapping and
-  exact source spans; unsupported and ambiguous annotations cannot silently enter
-  the primary metrics.
+- MedMentions remains an exploratory cross-schema stress test; its explicit UMLS
+  mapping and exact source spans cannot silently enter the primary metrics or be
+  presented as clean model-selection evidence.
+- CRAFT is the primary clean independent cross-corpus benchmark. Its source
+  release, article text, annotation manifests, exact offset checks, and isolated
+  model artifact identities are recorded in the reviewer-facing report.
 - The architecture must not grow speculative ontology, graph, relation, or model
   infrastructure before the NER quality gate.
 

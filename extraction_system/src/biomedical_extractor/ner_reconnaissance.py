@@ -1009,7 +1009,14 @@ def build_review_packet(
     *,
     target_count: int = 75,
 ) -> dict[str, Any]:
-    """Select deterministic stratified review examples without model judgment."""
+    """Select deterministic stratified review examples without model judgment.
+
+    The first selection pass is intentionally at the top-level category level.
+    The previous bucket-only round-robin could spend the whole packet on the
+    lexicographically earlier category when that category had many paper and
+    entity-class buckets.  After category coverage is secured, the remaining
+    capacity returns to the finer-grained buckets to preserve diversity.
+    """
 
     if not 0 <= target_count <= 100:
         raise ValueError("review target_count must be between 0 and 100")
@@ -1036,14 +1043,52 @@ def build_review_packet(
             ).hexdigest()
         )
     selected: list[Mapping[str, Any]] = []
+
+    # Guarantee one deterministic representative for every available category
+    # whenever the requested packet has enough capacity to do so.
+    categories: defaultdict[str, list[Mapping[str, Any]]] = defaultdict(list)
+    for candidate in unique.values():
+        categories[str(candidate.get("category", ""))].append(candidate)
+    for values in categories.values():
+        values.sort(
+            key=lambda value: hashlib.sha256(
+                json.dumps(value, sort_keys=True, separators=(",", ":")).encode("utf-8")
+            ).hexdigest()
+        )
+    selected_keys: set[str] = set()
+    for category in sorted(categories):
+        if len(selected) >= target_count:
+            break
+        candidate = categories[category][0]
+        selected.append(candidate)
+        selected_keys.add(
+            hashlib.sha256(
+                json.dumps(candidate, sort_keys=True, separators=(",", ":")).encode("utf-8")
+            ).hexdigest()
+        )
+
+    # Fill the remaining capacity with the original paper/entity-class
+    # stratification, excluding the category representatives already selected.
+    remaining_buckets: defaultdict[tuple[str, str, str], list[Mapping[str, Any]]] = defaultdict(
+        list
+    )
+    for bucket, values in buckets.items():
+        remaining_buckets[bucket].extend(
+            candidate
+            for candidate in values
+            if hashlib.sha256(
+                json.dumps(candidate, sort_keys=True, separators=(",", ":")).encode("utf-8")
+            ).hexdigest()
+            not in selected_keys
+        )
     offsets = {bucket: 0 for bucket in buckets}
     while len(selected) < target_count:
         progressed = False
-        for bucket in sorted(buckets):
+        for bucket in sorted(remaining_buckets):
             index = offsets[bucket]
-            if index >= len(buckets[bucket]):
+            if index >= len(remaining_buckets[bucket]):
                 continue
-            selected.append(buckets[bucket][index])
+            selected.append(remaining_buckets[bucket][index])
             offsets[bucket] = index + 1
             progressed = True
             if len(selected) >= target_count:
@@ -1053,10 +1098,17 @@ def build_review_packet(
     return {
         "schema_version": 1,
         "selection": {
-            "method": "sha256-sorted round-robin over category/paper/entity-class buckets",
+            "method": (
+                "category coverage, then sha256-sorted round-robin over "
+                "category/paper/entity-class buckets"
+            ),
             "target_count": target_count,
             "candidate_count": len(unique),
             "selected_count": len(selected),
+            "available_categories": sorted(categories),
+            "selected_categories": sorted(
+                {str(example.get("category", "")) for example in selected}
+            ),
         },
         "examples": [dict(example) for example in selected],
     }

@@ -31,6 +31,7 @@ biomedical-ner-compare = "biomedical_extractor.ner_comparison_cli:main"
 biomedical-ner-compare-aioner-hunflair2 = "biomedical_extractor.hunflair2_comparison_cli:main"
 biomedical-ner-target-domain = "biomedical_extractor.target_domain_cli:main"
 biomedical-ner-medmentions = "biomedical_extractor.medmentions_cli:main"
+biomedical-ner-craft = "biomedical_extractor.craft_cli:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/biomedical_extractor"]

@@ -159,6 +159,41 @@ class NERReconnaissanceTests(unittest.TestCase):
         self.assertEqual(first, second)
         self.assertEqual(first["selection"]["selected_count"], 1)
 
+    def test_review_sampling_covers_later_categories_when_capacity_allows(self):
+        candidates = [
+            {
+                "paper_id": f"PMID:exact-{index}",
+                "category": AGREEMENT_EXACT,
+                "entity_class": f"class-{index}",
+                "source_span": {"start": index, "end": index + 1, "text": "x"},
+            }
+            for index in range(5)
+        ]
+        candidates.extend(
+            [
+                {
+                    "paper_id": "PMID:type",
+                    "category": AGREEMENT_TYPE,
+                    "entity_class": "GeneOrGeneProduct",
+                    "source_span": {"start": 20, "end": 21, "text": "x"},
+                },
+                {
+                    "paper_id": "PMID:multi",
+                    "category": "multi_entity_sentence",
+                    "entity_class": "multiple",
+                    "source_span": {"start": 30, "end": 31, "text": "x"},
+                },
+            ]
+        )
+
+        packet = build_review_packet(candidates, target_count=3)
+        selected_categories = {
+            example["category"] for example in packet["examples"]
+        }
+        self.assertEqual(packet["selection"]["selected_count"], 3)
+        self.assertIn(AGREEMENT_TYPE, selected_categories)
+        self.assertIn("multi_entity_sentence", selected_categories)
+
     def test_target_report_keeps_variant_and_cellline_views_separate(self):
         text = "BRCA1 rs123 cells"
         paper = TargetPaper(

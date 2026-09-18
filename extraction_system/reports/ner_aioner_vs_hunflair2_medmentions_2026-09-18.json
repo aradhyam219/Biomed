@@ -22,6 +22,7 @@
     },
     "available": true
   },
+  "clean_model_selection_evidence": false,
   "comparison": {
     "biored_micro_f1_order": [
       "HunFlair2",
@@ -58,7 +59,8 @@
     "split_sha256": "fece5bcb8c61edf8de73884980b80daf274132ef6d69f0d195c0114acbfdd4ab",
     "split_url": "https://raw.githubusercontent.com/chanzuckerberg/MedMentions/master/full/data/corpus_pubtator_pmids_test.txt"
   },
-  "evaluation_name": "AIONER versus HunFlair2 on MedMentions ST21pv",
+  "evaluation_name": "Exploratory AIONER versus HunFlair2 MedMentions ST21pv cross-schema stress test",
+  "evidence_role": "exploratory cross-schema stress test using explicit UMLS semantic-type mappings",
   "independence_verification": {
     "AIONER": {
       "documented_training_corpora_checked": [
@@ -107,7 +109,8 @@
     "Only explicit, unambiguous semantic-type mappings are scored; unsupported and ambiguous gold mentions are reported separately.",
     "Exact character span and canonical type are required for a true positive.",
     "The default run uses the official MedMentions test PMID split; the split identity and checksums are recorded.",
-    "Annotation conventions differ from BioRED, so cross-corpus scores are not directly interchangeable with BioRED scores."
+    "This exploratory cross-schema stress test is not clean model-selection evidence comparable to BioRED or CRAFT.",
+    "Annotation conventions differ from BioRED and CRAFT, so cross-corpus scores are not directly interchangeable."
   ],
   "mapping": {
     "descriptions": {

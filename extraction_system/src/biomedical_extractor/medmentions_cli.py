@@ -14,7 +14,12 @@ from .cross_corpus import (
     evaluate_medmentions,
     render_medmentions_markdown,
 )
-from .ner_runners import normalize_runner_predictions, run_aioner, run_hunflair2
+from .ner_runners import (
+    load_cached_runner_output,
+    normalize_runner_predictions,
+    run_aioner,
+    run_hunflair2,
+)
 
 
 def _parser() -> argparse.ArgumentParser:
@@ -30,6 +35,7 @@ def _parser() -> argparse.ArgumentParser:
     )
     parser.add_argument("--split", choices=("all", "trng", "dev", "test"), default="test")
     parser.add_argument("--refresh", action="store_true")
+    parser.add_argument("--refresh-predictions", action="store_true")
     parser.add_argument("--report-date", default=date.today().isoformat())
     parser.add_argument("--example-limit", type=int, default=5)
     parser.add_argument("--biored-report", type=Path)
@@ -66,6 +72,39 @@ def _metadata(run: Any, adapter: str) -> dict[str, Any]:
     }
 
 
+def _artifact_sha256(path: Path | None) -> str | None:
+    """Hash one cached model artifact when it is available."""
+
+    if path is None or not path.is_file():
+        return None
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def _cached_aioner_artifact() -> Path | None:
+    """Locate the artifact used by the default AIONER runner."""
+
+    candidates = (
+        Path(".cache/aioner-upstream/pretrained_models/AIONER/PubmedBERT-CRF-AIONER.h5"),
+        Path(".cache/aioner/models/pretrained_models/AIONER/PubmedBERT-CRF-AIONER.h5"),
+    )
+    return next((path for path in candidates if path.is_file()), None)
+
+
+def _cached_hunflair2_artifact() -> Path | None:
+    """Locate the cached HunFlair2 snapshot artifact."""
+
+    model_root = Path(
+        ".cache/hunflair2/flair/models/hunflair2-ner/"
+        "models--hunflair--hunflair2-ner"
+    )
+    ref_path = model_root / "refs" / "main"
+    if not ref_path.is_file():
+        return None
+    revision = ref_path.read_text(encoding="utf-8").strip()
+    artifact = model_root / "snapshots" / revision / "pytorch_model.bin"
+    return artifact if artifact.is_file() else None
+
+
 def main(argv: Sequence[str] | None = None) -> int:
     """Acquire, run, score, and write the MedMentions report pair."""
 
@@ -82,16 +121,44 @@ def main(argv: Sequence[str] | None = None) -> int:
         for document in dataset.documents
     ]
     input_path = args.cache_root / "model_input.json"
-    aioner_run = run_aioner(
-        documents,
-        input_path=input_path,
-        output_path=args.cache_root / "aioner_predictions.json",
-    )
-    hunflair2_run = run_hunflair2(
-        documents,
-        input_path=input_path,
-        output_path=args.cache_root / "hunflair2_predictions.json",
-    )
+    aioner_path = args.cache_root / "aioner_predictions.json"
+    hunflair2_path = args.cache_root / "hunflair2_predictions.json"
+    aioner_artifact = _cached_aioner_artifact()
+    hunflair2_artifact = _cached_hunflair2_artifact()
+    aioner_run = None
+    hunflair2_run = None
+    if not args.refresh and not args.refresh_predictions and aioner_path.is_file():
+        try:
+            aioner_run = load_cached_runner_output(
+                aioner_path,
+                "AIONER",
+                documents,
+                expected_model_artifact_sha256=_artifact_sha256(aioner_artifact),
+            )
+        except (ValueError, json.JSONDecodeError):
+            aioner_run = None
+    if not args.refresh and not args.refresh_predictions and hunflair2_path.is_file():
+        try:
+            hunflair2_run = load_cached_runner_output(
+                hunflair2_path,
+                "HunFlair2",
+                documents,
+                expected_model_artifact_sha256=_artifact_sha256(hunflair2_artifact),
+            )
+        except (ValueError, json.JSONDecodeError):
+            hunflair2_run = None
+    if aioner_run is None:
+        aioner_run = run_aioner(
+            documents,
+            input_path=input_path,
+            output_path=aioner_path,
+        )
+    if hunflair2_run is None:
+        hunflair2_run = run_hunflair2(
+            documents,
+            input_path=input_path,
+            output_path=hunflair2_path,
+        )
     predictions = {
         "AIONER": normalize_runner_predictions(aioner_run, documents),
         "HunFlair2": normalize_runner_predictions(hunflair2_run, documents),

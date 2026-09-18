@@ -1,0 +1,4662 @@
+{
+  "comparison": {
+    "failure_count_difference_HunFlair2_minus_AIONER": {
+      "missed entity": -9480,
+      "overlapping prediction": 143,
+      "schema-unscored / unsupported gold category": 0,
+      "schema-unscored / unsupported predicted category": 658,
+      "span mismatch": 3557,
+      "spurious entity": 2851,
+      "wrong type": 89
+    },
+    "micro_f1_order": [
+      "HunFlair2",
+      "AIONER"
+    ]
+  },
+  "dataset": {
+    "annotation_manifest_sha256": "c8eff2d37121defb90bd5ad841e4ca089f745da0865819070b995c04f1a957f9",
+    "document_count": 97,
+    "documents": [
+      {
+        "gold_mentions": 542,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 20,
+          "scored": 84,
+          "unsupported": 438
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 15,
+          "CL": 104,
+          "GO_BP": 38,
+          "GO_CC": 8,
+          "MONDO": 4,
+          "MOP": 1,
+          "NCBITaxon": 53,
+          "PR": 16,
+          "SO": 77,
+          "UBERON": 226
+        },
+        "id": "PMID:11319941",
+        "pmid": "11319941",
+        "split": "test",
+        "text_characters": 33531,
+        "text_sha256": "c74fa3b5dea728db20e3f91d1406dcf8095aad5d0e65975f875ace118a6750df",
+        "text_source": "11319941.txt"
+      },
+      {
+        "gold_mentions": 529,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 1,
+          "scored": 249,
+          "unsupported": 279
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 46,
+          "CL": 6,
+          "GO_BP": 24,
+          "GO_CC": 8,
+          "MONDO": 79,
+          "NCBITaxon": 189,
+          "PR": 14,
+          "SO": 77,
+          "UBERON": 86
+        },
+        "id": "PMID:11532192",
+        "pmid": "11532192",
+        "split": "train",
+        "text_characters": 40510,
+        "text_sha256": "fd85047b5d00d4b7934cc8c5c4aed9a1c85914dc0c79296e488e0ed5f0cf7257",
+        "text_source": "11532192.txt"
+      },
+      {
+        "gold_mentions": 298,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 11,
+          "scored": 172,
+          "unsupported": 115
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 3,
+          "CL": 4,
+          "GO_BP": 58,
+          "GO_CC": 20,
+          "GO_MF": 1,
+          "MONDO": 9,
+          "MOP": 1,
+          "NCBITaxon": 11,
+          "PR": 158,
+          "SO": 25,
+          "UBERON": 8
+        },
+        "id": "PMID:11597317",
+        "pmid": "11597317",
+        "split": "train",
+        "text_characters": 14358,
+        "text_sha256": "213be1122ed160bab32ce7ea153413dd8bcd97baa57dd624f2e474d92593e451",
+        "text_source": "11597317.txt"
+      },
+      {
+        "gold_mentions": 648,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 11,
+          "scored": 310,
+          "unsupported": 327
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 25,
+          "CL": 24,
+          "GO_BP": 70,
+          "GO_CC": 43,
+          "GO_MF": 7,
+          "MONDO": 12,
+          "MOP": 2,
+          "NCBITaxon": 101,
+          "PR": 184,
+          "SO": 121,
+          "UBERON": 59
+        },
+        "id": "PMID:11604102",
+        "pmid": "11604102",
+        "split": "test",
+        "text_characters": 20678,
+        "text_sha256": "2825ead90eb5e0c64ba381a2ae2057908edb2ed7f94130c4c6f19263cfadd09d",
+        "text_source": "11604102.txt"
+      },
+      {
+        "gold_mentions": 463,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 17,
+          "scored": 154,
+          "unsupported": 292
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 12,
+          "CL": 1,
+          "GO_BP": 41,
+          "GO_CC": 31,
+          "GO_MF": 16,
+          "MONDO": 20,
+          "NCBITaxon": 80,
+          "PR": 66,
+          "SO": 171,
+          "UBERON": 25
+        },
+        "id": "PMID:11897010",
+        "pmid": "11897010",
+        "split": "train",
+        "text_characters": 16347,
+        "text_sha256": "3b6fd171e8232f2cd5afb6afbb30368e6d280b1cacef05a82a01b6ba23a4d328",
+        "text_source": "11897010.txt"
+      },
+      {
+        "gold_mentions": 333,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 10,
+          "scored": 76,
+          "unsupported": 247
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 5,
+          "CL": 40,
+          "GO_BP": 50,
+          "GO_CC": 4,
+          "MONDO": 3,
+          "MOP": 1,
+          "NCBITaxon": 65,
+          "PR": 6,
+          "SO": 54,
+          "UBERON": 105
+        },
+        "id": "PMID:12079497",
+        "pmid": "12079497",
+        "split": "train",
+        "text_characters": 22682,
+        "text_sha256": "70af29deca46175f5ecd79c5c5b86e8010561998d9cea33308e98c0f68d4d85f",
+        "text_source": "12079497.txt"
+      },
+      {
+        "gold_mentions": 521,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 23,
+          "scored": 217,
+          "unsupported": 281
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 34,
+          "CL": 29,
+          "GO_BP": 46,
+          "GO_CC": 67,
+          "MONDO": 7,
+          "NCBITaxon": 51,
+          "PR": 135,
+          "SO": 15,
+          "UBERON": 137
+        },
+        "id": "PMID:12546709",
+        "pmid": "12546709",
+        "split": "train",
+        "text_characters": 33946,
+        "text_sha256": "344e0f4e9a2ec9d0247d03f8dca0f7fb9c33556245b36dd04eacdfc09aa2aa69",
+        "text_source": "12546709.txt"
+      },
+      {
+        "gold_mentions": 892,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 32,
+          "scored": 291,
+          "unsupported": 569
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 21,
+          "CL": 181,
+          "GO_BP": 105,
+          "GO_CC": 17,
+          "GO_MF": 3,
+          "MONDO": 9,
+          "MOP": 7,
+          "NCBITaxon": 56,
+          "PR": 216,
+          "SO": 4,
+          "UBERON": 273
+        },
+        "id": "PMID:12585968",
+        "pmid": "12585968",
+        "split": "train",
+        "text_characters": 38219,
+        "text_sha256": "a659370f7d87c9b3682ed9b1d1ae15cdbca9e8042a4f046c4886916be594bb42",
+        "text_source": "12585968.txt"
+      },
+      {
+        "gold_mentions": 931,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 14,
+          "scored": 353,
+          "unsupported": 564
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 143,
+          "CL": 158,
+          "GO_BP": 78,
+          "GO_CC": 177,
+          "MONDO": 8,
+          "MOP": 1,
+          "NCBITaxon": 65,
+          "PR": 145,
+          "SO": 36,
+          "UBERON": 120
+        },
+        "id": "PMID:12925238",
+        "pmid": "12925238",
+        "split": "train",
+        "text_characters": 36624,
+        "text_sha256": "e23ac67dd953e972be493ca400f8681771670c99542bff6596dfcc891a8ffc51",
+        "text_source": "12925238.txt"
+      },
+      {
+        "gold_mentions": 331,
+        "gold_mentions_by_mapping_status": {
+          "scored": 237,
+          "unsupported": 94
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 54,
+          "CL": 5,
+          "GO_BP": 5,
+          "GO_CC": 11,
+          "MONDO": 12,
+          "MOP": 7,
+          "NCBITaxon": 93,
+          "PR": 90,
+          "SO": 51,
+          "UBERON": 3
+        },
+        "id": "PMID:14609438",
+        "pmid": "14609438",
+        "split": "train",
+        "text_characters": 27835,
+        "text_sha256": "90393630684f51693e644e7ca4d495a2b445f6c3e2072cc136095f70a40af021",
+        "text_source": "14609438.txt"
+      },
+      {
+        "gold_mentions": 1239,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 13,
+          "scored": 75,
+          "unsupported": 1151
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 7,
+          "CL": 19,
+          "GO_BP": 499,
+          "GO_CC": 18,
+          "GO_MF": 22,
+          "MONDO": 1,
+          "MOP": 1,
+          "NCBITaxon": 63,
+          "PR": 5,
+          "SO": 538,
+          "UBERON": 66
+        },
+        "id": "PMID:14611657",
+        "pmid": "14611657",
+        "split": "train",
+        "text_characters": 55281,
+        "text_sha256": "91fd40634e344a48548f93a97c58a22f40d9aa393f61a89c65996d46b547d339",
+        "text_source": "14611657.txt"
+      },
+      {
+        "gold_mentions": 905,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 63,
+          "scored": 182,
+          "unsupported": 660
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 32,
+          "CL": 241,
+          "GO_BP": 109,
+          "GO_CC": 39,
+          "GO_MF": 1,
+          "MONDO": 4,
+          "NCBITaxon": 55,
+          "PR": 96,
+          "SO": 110,
+          "UBERON": 218
+        },
+        "id": "PMID:14624252",
+        "pmid": "14624252",
+        "split": "test",
+        "text_characters": 48727,
+        "text_sha256": "72077b02d6590de8f09c5a97be9c7133be48ab14ba3df3814645dead00dbda24",
+        "text_source": "14624252.txt"
+      },
+      {
+        "gold_mentions": 1287,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 57,
+          "scored": 418,
+          "unsupported": 812
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 37,
+          "CL": 27,
+          "GO_BP": 176,
+          "GO_CC": 15,
+          "GO_MF": 13,
+          "MONDO": 2,
+          "MOP": 7,
+          "NCBITaxon": 44,
+          "PR": 337,
+          "SO": 70,
+          "UBERON": 559
+        },
+        "id": "PMID:14675480",
+        "pmid": "14675480",
+        "split": "test",
+        "text_characters": 43369,
+        "text_sha256": "8375a5970d7b39061f8d024043f286fd2ccd8b0f658654f6ca62314741e24c4c",
+        "text_source": "14675480.txt"
+      },
+      {
+        "gold_mentions": 1352,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 13,
+          "scored": 676,
+          "unsupported": 663
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 62,
+          "CL": 26,
+          "GO_BP": 82,
+          "GO_CC": 31,
+          "GO_MF": 2,
+          "MONDO": 190,
+          "MOP": 1,
+          "NCBITaxon": 145,
+          "PR": 469,
+          "SO": 138,
+          "UBERON": 206
+        },
+        "id": "PMID:14691534",
+        "pmid": "14691534",
+        "split": "test",
+        "text_characters": 55755,
+        "text_sha256": "156c319f5a6bb3fb1529f2508a2bc3862933841e14c54cb44465a826cacbdd6c",
+        "text_source": "14691534.txt"
+      },
+      {
+        "gold_mentions": 556,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 2,
+          "scored": 222,
+          "unsupported": 332
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 21,
+          "CL": 19,
+          "GO_BP": 29,
+          "GO_CC": 44,
+          "GO_MF": 4,
+          "MOP": 2,
+          "NCBITaxon": 110,
+          "PR": 91,
+          "SO": 187,
+          "UBERON": 49
+        },
+        "id": "PMID:14723793",
+        "pmid": "14723793",
+        "split": "train",
+        "text_characters": 23624,
+        "text_sha256": "49ac9967a72c7313aa16ccd79a2e7b94a01818d62f146c94c5afcd4242f5c96d",
+        "text_source": "14723793.txt"
+      },
+      {
+        "gold_mentions": 1454,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 18,
+          "scored": 492,
+          "unsupported": 944
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 77,
+          "CL": 32,
+          "GO_BP": 170,
+          "GO_CC": 6,
+          "GO_MF": 10,
+          "MONDO": 16,
+          "NCBITaxon": 153,
+          "PR": 262,
+          "SO": 169,
+          "UBERON": 559
+        },
+        "id": "PMID:14737183",
+        "pmid": "14737183",
+        "split": "train",
+        "text_characters": 65075,
+        "text_sha256": "2077dc3f2bacbeb6dbc8cc9886b97cd0ca449fa5256a482049c45eb5e02ba4fc",
+        "text_source": "14737183.txt"
+      },
+      {
+        "gold_mentions": 1276,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 35,
+          "scored": 412,
+          "unsupported": 829
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 154,
+          "CL": 63,
+          "GO_BP": 226,
+          "GO_CC": 23,
+          "MONDO": 27,
+          "MOP": 5,
+          "NCBITaxon": 64,
+          "PR": 197,
+          "SO": 15,
+          "UBERON": 502
+        },
+        "id": "PMID:15005800",
+        "pmid": "15005800",
+        "split": "train",
+        "text_characters": 50062,
+        "text_sha256": "70b602411c815e1f8e2758efe80df7c4f5d384b0940202ebe4c93328dc9ffea7",
+        "text_source": "15005800.txt"
+      },
+      {
+        "gold_mentions": 433,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 10,
+          "scored": 171,
+          "unsupported": 252
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 13,
+          "CL": 54,
+          "GO_BP": 58,
+          "MONDO": 2,
+          "NCBITaxon": 36,
+          "PR": 122,
+          "SO": 74,
+          "UBERON": 74
+        },
+        "id": "PMID:15018652",
+        "pmid": "15018652",
+        "split": "test",
+        "text_characters": 13080,
+        "text_sha256": "f2f813d2da16452205784dec9cf1b14b536ce1b758672d9115fad6262403c80b",
+        "text_source": "15018652.txt"
+      },
+      {
+        "gold_mentions": 1733,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 8,
+          "scored": 1102,
+          "unsupported": 623
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 392,
+          "CL": 14,
+          "GO_BP": 121,
+          "GO_CC": 78,
+          "GO_MF": 2,
+          "MONDO": 43,
+          "MOP": 9,
+          "NCBITaxon": 288,
+          "PR": 426,
+          "SO": 91,
+          "UBERON": 269
+        },
+        "id": "PMID:15040800",
+        "pmid": "15040800",
+        "split": "train",
+        "text_characters": 60647,
+        "text_sha256": "6d45ac5622222a3151b7028681df5c98b488ace59704ca69d077ad0a049c9e05",
+        "text_source": "15040800.txt"
+      },
+      {
+        "gold_mentions": 530,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 16,
+          "scored": 363,
+          "unsupported": 151
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 106,
+          "CL": 7,
+          "GO_BP": 120,
+          "GO_CC": 3,
+          "MONDO": 2,
+          "NCBITaxon": 110,
+          "PR": 154,
+          "SO": 4,
+          "UBERON": 24
+        },
+        "id": "PMID:15061865",
+        "pmid": "15061865",
+        "split": "train",
+        "text_characters": 30998,
+        "text_sha256": "988bed1300a3b37869d531c9e07705ba6529d9bcf88ab68e9591b0dddef41666",
+        "text_source": "15061865.txt"
+      },
+      {
+        "gold_mentions": 1126,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 22,
+          "scored": 451,
+          "unsupported": 653
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 56,
+          "CL": 2,
+          "GO_BP": 166,
+          "GO_CC": 172,
+          "GO_MF": 8,
+          "MONDO": 49,
+          "MOP": 24,
+          "NCBITaxon": 53,
+          "PR": 342,
+          "SO": 100,
+          "UBERON": 154
+        },
+        "id": "PMID:15070402",
+        "pmid": "15070402",
+        "split": "test",
+        "text_characters": 40480,
+        "text_sha256": "288408740c8fdce64109dacfa2d7c6e373ffd79933d9a77b84f61922010dcc8f",
+        "text_source": "15070402.txt"
+      },
+      {
+        "gold_mentions": 1246,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 18,
+          "scored": 679,
+          "unsupported": 549
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 35,
+          "CL": 1,
+          "GO_BP": 82,
+          "GO_CC": 58,
+          "GO_MF": 5,
+          "MONDO": 4,
+          "NCBITaxon": 378,
+          "PR": 267,
+          "SO": 403,
+          "UBERON": 13
+        },
+        "id": "PMID:15207008",
+        "pmid": "15207008",
+        "split": "train",
+        "text_characters": 51711,
+        "text_sha256": "104cb0e97eb50b30f97f428f0ce7e5be8c55ab011bcc77d97b41185860f943ae",
+        "text_source": "15207008.txt"
+      },
+      {
+        "gold_mentions": 1094,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 29,
+          "scored": 348,
+          "unsupported": 717
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 23,
+          "CL": 157,
+          "GO_BP": 165,
+          "GO_CC": 58,
+          "GO_MF": 5,
+          "MONDO": 3,
+          "MOP": 2,
+          "NCBITaxon": 68,
+          "PR": 257,
+          "SO": 18,
+          "UBERON": 338
+        },
+        "id": "PMID:15238161",
+        "pmid": "15238161",
+        "split": "test",
+        "text_characters": 59323,
+        "text_sha256": "3d30b026ac46e1c01ffcda7f675beb860aa41c8dbbd7a98f53ceca7fc92f4732",
+        "text_source": "15238161.txt"
+      },
+      {
+        "gold_mentions": 1276,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 37,
+          "scored": 511,
+          "unsupported": 728
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 23,
+          "CL": 124,
+          "GO_BP": 216,
+          "GO_CC": 40,
+          "GO_MF": 9,
+          "MONDO": 9,
+          "NCBITaxon": 143,
+          "PR": 345,
+          "SO": 148,
+          "UBERON": 219
+        },
+        "id": "PMID:15314655",
+        "pmid": "15314655",
+        "split": "train",
+        "text_characters": 41696,
+        "text_sha256": "8d7e24de22e8d3c03ae0a251a5ba4055dc3daac965893a1865e096bd2fb6bcc1",
+        "text_source": "15314655.txt"
+      },
+      {
+        "gold_mentions": 683,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 2,
+          "scored": 271,
+          "unsupported": 410
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 15,
+          "CL": 6,
+          "GO_BP": 12,
+          "GO_CC": 78,
+          "MONDO": 89,
+          "NCBITaxon": 157,
+          "PR": 99,
+          "SO": 165,
+          "UBERON": 62
+        },
+        "id": "PMID:15314659",
+        "pmid": "15314659",
+        "split": "train",
+        "text_characters": 40629,
+        "text_sha256": "6f8aad4ce794dfefbd079e2ff1cf688f200d6a39e5d383fdd0b7e050f0f28b1c",
+        "text_source": "15314659.txt"
+      },
+      {
+        "gold_mentions": 940,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 30,
+          "scored": 409,
+          "unsupported": 501
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 135,
+          "CL": 99,
+          "GO_BP": 66,
+          "GO_CC": 39,
+          "GO_MF": 3,
+          "MONDO": 19,
+          "MOP": 1,
+          "NCBITaxon": 81,
+          "PR": 193,
+          "SO": 23,
+          "UBERON": 281
+        },
+        "id": "PMID:15320950",
+        "pmid": "15320950",
+        "split": "train",
+        "text_characters": 33067,
+        "text_sha256": "1225371de3f8d40901d1d5312720f0c152e9aa935c7938271c3638afdeed1f2c",
+        "text_source": "15320950.txt"
+      },
+      {
+        "gold_mentions": 539,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 20,
+          "scored": 215,
+          "unsupported": 304
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 48,
+          "CL": 85,
+          "GO_BP": 62,
+          "GO_CC": 35,
+          "GO_MF": 2,
+          "MONDO": 19,
+          "MOP": 23,
+          "NCBITaxon": 64,
+          "PR": 111,
+          "SO": 40,
+          "UBERON": 50
+        },
+        "id": "PMID:15328533",
+        "pmid": "15328533",
+        "split": "train",
+        "text_characters": 25816,
+        "text_sha256": "c5d87571c4489b72e0717f73cf6fed00880c31aaa94b48d1a1f70bd75777c0eb",
+        "text_source": "15328533.txt"
+      },
+      {
+        "gold_mentions": 682,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 4,
+          "scored": 371,
+          "unsupported": 307
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 123,
+          "CL": 9,
+          "GO_BP": 97,
+          "GO_CC": 12,
+          "GO_MF": 1,
+          "MONDO": 19,
+          "MOP": 14,
+          "NCBITaxon": 82,
+          "PR": 166,
+          "SO": 55,
+          "UBERON": 104
+        },
+        "id": "PMID:15328538",
+        "pmid": "15328538",
+        "split": "test",
+        "text_characters": 35052,
+        "text_sha256": "82c0e015f447dcb875fa3c762cd12be82fa7b57baae30fabdc0bf615068b5311",
+        "text_source": "15328538.txt"
+      },
+      {
+        "gold_mentions": 1920,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 45,
+          "scored": 664,
+          "unsupported": 1211
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 114,
+          "CL": 259,
+          "GO_BP": 326,
+          "GO_CC": 34,
+          "GO_MF": 11,
+          "MONDO": 7,
+          "MOP": 4,
+          "NCBITaxon": 133,
+          "PR": 418,
+          "SO": 105,
+          "UBERON": 509
+        },
+        "id": "PMID:15345036",
+        "pmid": "15345036",
+        "split": "train",
+        "text_characters": 71810,
+        "text_sha256": "50a8d148a7e3b350ce563b6fd8cffabc2b48a9ba82b079cde3c197973d8ebdff",
+        "text_source": "15345036.txt"
+      },
+      {
+        "gold_mentions": 1668,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 53,
+          "scored": 569,
+          "unsupported": 1046
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 36,
+          "CL": 21,
+          "GO_BP": 258,
+          "GO_CC": 41,
+          "GO_MF": 6,
+          "MONDO": 28,
+          "MOP": 1,
+          "NCBITaxon": 134,
+          "PR": 399,
+          "SO": 169,
+          "UBERON": 575
+        },
+        "id": "PMID:15492776",
+        "pmid": "15492776",
+        "split": "train",
+        "text_characters": 62923,
+        "text_sha256": "84dc20c2b52bd95aa3b0fba7e6f233124fae20bee7b7d1a51668e336480004dd",
+        "text_source": "15492776.txt"
+      },
+      {
+        "gold_mentions": 1097,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 11,
+          "scored": 448,
+          "unsupported": 638
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 39,
+          "CL": 52,
+          "GO_BP": 128,
+          "GO_CC": 145,
+          "MONDO": 1,
+          "MOP": 5,
+          "NCBITaxon": 76,
+          "PR": 333,
+          "SO": 13,
+          "UBERON": 305
+        },
+        "id": "PMID:15550985",
+        "pmid": "15550985",
+        "split": "train",
+        "text_characters": 38150,
+        "text_sha256": "f0ca346aad960d22765201cf66ec7bf9a107c60faf4f24bdb8ca29d4a9629664",
+        "text_source": "15550985.txt"
+      },
+      {
+        "gold_mentions": 475,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 4,
+          "scored": 271,
+          "unsupported": 200
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 22,
+          "CL": 5,
+          "GO_BP": 57,
+          "GO_CC": 14,
+          "MONDO": 44,
+          "MOP": 1,
+          "NCBITaxon": 52,
+          "PR": 198,
+          "SO": 37,
+          "UBERON": 45
+        },
+        "id": "PMID:15560850",
+        "pmid": "15560850",
+        "split": "test",
+        "text_characters": 16270,
+        "text_sha256": "4edbf9c44e77b2f5c167cadaa308f66d94885636475df08cab81cd86819899c7",
+        "text_source": "15560850.txt"
+      },
+      {
+        "gold_mentions": 889,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 12,
+          "scored": 392,
+          "unsupported": 485
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 83,
+          "CL": 36,
+          "GO_BP": 68,
+          "GO_CC": 170,
+          "MONDO": 48,
+          "MOP": 4,
+          "NCBITaxon": 23,
+          "PR": 287,
+          "SO": 38,
+          "UBERON": 132
+        },
+        "id": "PMID:15588329",
+        "pmid": "15588329",
+        "split": "train",
+        "text_characters": 37405,
+        "text_sha256": "f5e4d1a5c2f78d03732b1ffdd809fe168a98fe06380ee39acf7f5f67d2f84d96",
+        "text_source": "15588329.txt"
+      },
+      {
+        "gold_mentions": 954,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 37,
+          "scored": 188,
+          "unsupported": 729
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 24,
+          "CL": 5,
+          "GO_BP": 48,
+          "GO_CC": 1,
+          "MONDO": 77,
+          "NCBITaxon": 59,
+          "PR": 105,
+          "SO": 29,
+          "UBERON": 606
+        },
+        "id": "PMID:15615595",
+        "pmid": "15615595",
+        "split": "test",
+        "text_characters": 33701,
+        "text_sha256": "eabd07fdac7005958a0acc42f0f1a357fefbdba225d432f8e1ecd1a622bcf3de",
+        "text_source": "15615595.txt"
+      },
+      {
+        "gold_mentions": 595,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 21,
+          "scored": 168,
+          "unsupported": 406
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 35,
+          "CL": 45,
+          "GO_BP": 120,
+          "GO_CC": 47,
+          "GO_MF": 1,
+          "MONDO": 4,
+          "NCBITaxon": 56,
+          "PR": 77,
+          "SO": 31,
+          "UBERON": 179
+        },
+        "id": "PMID:15619330",
+        "pmid": "15619330",
+        "split": "test",
+        "text_characters": 37378,
+        "text_sha256": "c10b671df93301617ad6a8bd0aa88eee7757d3bbab1167f93be8c4ba292161ff",
+        "text_source": "15619330.txt"
+      },
+      {
+        "gold_mentions": 1669,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 37,
+          "scored": 756,
+          "unsupported": 876
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 48,
+          "CL": 73,
+          "GO_BP": 300,
+          "GO_CC": 124,
+          "GO_MF": 14,
+          "MONDO": 2,
+          "MOP": 3,
+          "NCBITaxon": 61,
+          "PR": 647,
+          "SO": 124,
+          "UBERON": 273
+        },
+        "id": "PMID:15630473",
+        "pmid": "15630473",
+        "split": "train",
+        "text_characters": 66578,
+        "text_sha256": "68ea5ae463d1703291658f5bb4561dab86f698243e324e07cf55453dd4556c0f",
+        "text_source": "15630473.txt"
+      },
+      {
+        "gold_mentions": 999,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 26,
+          "scored": 307,
+          "unsupported": 666
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 45,
+          "CL": 157,
+          "GO_BP": 99,
+          "GO_CC": 231,
+          "GO_MF": 1,
+          "MONDO": 56,
+          "NCBITaxon": 64,
+          "PR": 198,
+          "SO": 47,
+          "UBERON": 101
+        },
+        "id": "PMID:15676071",
+        "pmid": "15676071",
+        "split": "train",
+        "text_characters": 34212,
+        "text_sha256": "6ea35a1cc36de15681fa57a57040e253b34a4a4aee7c4e3dbfc534af825cb456",
+        "text_source": "15676071.txt"
+      },
+      {
+        "gold_mentions": 1909,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 36,
+          "scored": 1003,
+          "unsupported": 870
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 208,
+          "CL": 61,
+          "GO_BP": 240,
+          "GO_CC": 116,
+          "GO_MF": 2,
+          "MONDO": 37,
+          "MOP": 26,
+          "NCBITaxon": 311,
+          "PR": 488,
+          "SO": 129,
+          "UBERON": 291
+        },
+        "id": "PMID:15760270",
+        "pmid": "15760270",
+        "split": "train",
+        "text_characters": 79956,
+        "text_sha256": "2132e7141e561a1f62c3208829f8fd9892e57616dc9478bbe8b60a2809279b1a",
+        "text_source": "15760270.txt"
+      },
+      {
+        "gold_mentions": 720,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 8,
+          "scored": 211,
+          "unsupported": 501
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 85,
+          "CL": 46,
+          "GO_BP": 90,
+          "GO_CC": 3,
+          "GO_MF": 4,
+          "MONDO": 14,
+          "NCBITaxon": 53,
+          "PR": 73,
+          "SO": 150,
+          "UBERON": 202
+        },
+        "id": "PMID:15784609",
+        "pmid": "15784609",
+        "split": "test",
+        "text_characters": 31866,
+        "text_sha256": "f3267478895b218475304f40a9132d1c3c44492c5d9c4907807241915afd5e9e",
+        "text_source": "15784609.txt"
+      },
+      {
+        "gold_mentions": 1105,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 38,
+          "scored": 399,
+          "unsupported": 668
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 97,
+          "CL": 117,
+          "GO_BP": 64,
+          "GO_CC": 229,
+          "GO_MF": 1,
+          "MONDO": 5,
+          "MOP": 9,
+          "NCBITaxon": 82,
+          "PR": 227,
+          "SO": 36,
+          "UBERON": 238
+        },
+        "id": "PMID:15819996",
+        "pmid": "15819996",
+        "split": "train",
+        "text_characters": 39816,
+        "text_sha256": "87f5772b01b17b79dbad12b012164832c866a1c51f75dfeff1133d54ba1f3e4d",
+        "text_source": "15819996.txt"
+      },
+      {
+        "gold_mentions": 1670,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 28,
+          "scored": 786,
+          "unsupported": 856
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 19,
+          "CL": 172,
+          "GO_BP": 249,
+          "GO_CC": 81,
+          "GO_MF": 8,
+          "MONDO": 2,
+          "MOP": 3,
+          "NCBITaxon": 82,
+          "PR": 685,
+          "SO": 130,
+          "UBERON": 239
+        },
+        "id": "PMID:15836427",
+        "pmid": "15836427",
+        "split": "train",
+        "text_characters": 52600,
+        "text_sha256": "a1cc683db5ab374ccec5521919c6d76f8381a0fbe8d72ea6507442741a5aa9ff",
+        "text_source": "15836427.txt"
+      },
+      {
+        "gold_mentions": 834,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 15,
+          "scored": 499,
+          "unsupported": 320
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 211,
+          "CL": 9,
+          "GO_BP": 61,
+          "GO_CC": 13,
+          "GO_MF": 9,
+          "MONDO": 15,
+          "NCBITaxon": 151,
+          "PR": 148,
+          "SO": 149,
+          "UBERON": 68
+        },
+        "id": "PMID:15850489",
+        "pmid": "15850489",
+        "split": "test",
+        "text_characters": 35943,
+        "text_sha256": "a9900cf04879d9860619beab7a3e81c56b04a154ce4793ad8878f9dcfb4af50c",
+        "text_source": "15850489.txt"
+      },
+      {
+        "gold_mentions": 748,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 15,
+          "scored": 284,
+          "unsupported": 449
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 42,
+          "CL": 48,
+          "GO_BP": 62,
+          "GO_CC": 45,
+          "GO_MF": 7,
+          "MONDO": 18,
+          "MOP": 2,
+          "NCBITaxon": 99,
+          "PR": 143,
+          "SO": 134,
+          "UBERON": 148
+        },
+        "id": "PMID:15876356",
+        "pmid": "15876356",
+        "split": "train",
+        "text_characters": 29610,
+        "text_sha256": "a00db2deacabd901baa4b27bc3cc7ab35ca16ab3c4e5e3081785d743c7bdc53a",
+        "text_source": "15876356.txt"
+      },
+      {
+        "gold_mentions": 1779,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 19,
+          "scored": 669,
+          "unsupported": 1091
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 77,
+          "CL": 178,
+          "GO_BP": 269,
+          "GO_CC": 45,
+          "GO_MF": 6,
+          "MONDO": 3,
+          "NCBITaxon": 93,
+          "PR": 499,
+          "SO": 119,
+          "UBERON": 490
+        },
+        "id": "PMID:15882093",
+        "pmid": "15882093",
+        "split": "test",
+        "text_characters": 57151,
+        "text_sha256": "d4b91b452918060720f57c9ecfaceae3507d60e973d662cd2fc59b41fa806cec",
+        "text_source": "15882093.txt"
+      },
+      {
+        "gold_mentions": 875,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 12,
+          "scored": 308,
+          "unsupported": 555
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 70,
+          "GO_BP": 83,
+          "GO_CC": 271,
+          "GO_MF": 14,
+          "MONDO": 3,
+          "MOP": 6,
+          "NCBITaxon": 57,
+          "PR": 185,
+          "SO": 186
+        },
+        "id": "PMID:15917436",
+        "pmid": "15917436",
+        "split": "train",
+        "text_characters": 45324,
+        "text_sha256": "35a41a7ec31cee3972b8ae432758e5775eb600d9e74712b238b79f2f439ddc0f",
+        "text_source": "15917436.txt"
+      },
+      {
+        "gold_mentions": 732,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 10,
+          "scored": 255,
+          "unsupported": 467
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 31,
+          "CL": 33,
+          "GO_BP": 63,
+          "GO_CC": 10,
+          "MONDO": 138,
+          "NCBITaxon": 141,
+          "PR": 84,
+          "SO": 92,
+          "UBERON": 140
+        },
+        "id": "PMID:15921521",
+        "pmid": "15921521",
+        "split": "train",
+        "text_characters": 27461,
+        "text_sha256": "9109a552ccb6df050f0241774bbcdca26a24e0d3ffb5853c0f6491aead179107",
+        "text_source": "15921521.txt"
+      },
+      {
+        "gold_mentions": 591,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 5,
+          "scored": 282,
+          "unsupported": 304
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 95,
+          "CL": 10,
+          "GO_BP": 118,
+          "GO_CC": 4,
+          "MONDO": 1,
+          "NCBITaxon": 72,
+          "PR": 115,
+          "SO": 167,
+          "UBERON": 9
+        },
+        "id": "PMID:15938754",
+        "pmid": "15938754",
+        "split": "train",
+        "text_characters": 31959,
+        "text_sha256": "c8522bb100b6137e0248f36c2a8d2ba0357f06a69a366c86dfb08882a9aefe83",
+        "text_source": "15938754.txt"
+      },
+      {
+        "gold_mentions": 597,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 31,
+          "scored": 244,
+          "unsupported": 322
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 84,
+          "CL": 52,
+          "GO_BP": 72,
+          "GO_CC": 9,
+          "MONDO": 2,
+          "NCBITaxon": 92,
+          "PR": 76,
+          "SO": 158,
+          "UBERON": 52
+        },
+        "id": "PMID:16026622",
+        "pmid": "16026622",
+        "split": "test",
+        "text_characters": 33293,
+        "text_sha256": "02fde6e3bbacb15d07f73e43d43c9fd6dfac9d71fa960b463b1b5b074c11dbba",
+        "text_source": "16026622.txt"
+      },
+      {
+        "gold_mentions": 795,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 3,
+          "scored": 385,
+          "unsupported": 407
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 37,
+          "CL": 5,
+          "GO_BP": 102,
+          "GO_CC": 101,
+          "MONDO": 1,
+          "MOP": 2,
+          "NCBITaxon": 141,
+          "PR": 207,
+          "SO": 154,
+          "UBERON": 45
+        },
+        "id": "PMID:16027110",
+        "pmid": "16027110",
+        "split": "test",
+        "text_characters": 37058,
+        "text_sha256": "2cf0c24c4799d12c7eb4197e6ad92e4cedf9c8d75d8acf88786db957639bc1f6",
+        "text_source": "16027110.txt"
+      },
+      {
+        "gold_mentions": 730,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 11,
+          "scored": 354,
+          "unsupported": 365
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 8,
+          "CL": 13,
+          "GO_BP": 59,
+          "GO_CC": 57,
+          "MONDO": 21,
+          "MOP": 2,
+          "NCBITaxon": 32,
+          "PR": 314,
+          "SO": 142,
+          "UBERON": 82
+        },
+        "id": "PMID:16098226",
+        "pmid": "16098226",
+        "split": "train",
+        "text_characters": 31591,
+        "text_sha256": "33e0290bdd436199dcb73e25af69902ea3d1aa1ffe6557d8808387f6152199b7",
+        "text_source": "16098226.txt"
+      },
+      {
+        "gold_mentions": 839,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 18,
+          "scored": 228,
+          "unsupported": 593
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 22,
+          "CL": 12,
+          "GO_BP": 114,
+          "GO_CC": 1,
+          "GO_MF": 5,
+          "MONDO": 48,
+          "NCBITaxon": 86,
+          "PR": 121,
+          "SO": 76,
+          "UBERON": 354
+        },
+        "id": "PMID:16103912",
+        "pmid": "16103912",
+        "split": "train",
+        "text_characters": 34316,
+        "text_sha256": "f8c3291728f2cdafc21443224a436f1275fb6deb56ad731ca7bba36059a44ed3",
+        "text_source": "16103912.txt"
+      },
+      {
+        "gold_mentions": 1154,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 20,
+          "scored": 384,
+          "unsupported": 750
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 23,
+          "CL": 22,
+          "GO_BP": 191,
+          "GO_CC": 8,
+          "GO_MF": 10,
+          "MONDO": 22,
+          "NCBITaxon": 19,
+          "PR": 342,
+          "SO": 41,
+          "UBERON": 476
+        },
+        "id": "PMID:16109169",
+        "pmid": "16109169",
+        "split": "train",
+        "text_characters": 36020,
+        "text_sha256": "90b8b79b604240419890c6aee3cf43f004575a43fe24e2a754cc1ba19cae6f36",
+        "text_source": "16109169.txt"
+      },
+      {
+        "gold_mentions": 1565,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 16,
+          "scored": 367,
+          "unsupported": 1182
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 73,
+          "CL": 325,
+          "GO_BP": 181,
+          "GO_CC": 107,
+          "GO_MF": 68,
+          "MONDO": 48,
+          "MOP": 1,
+          "NCBITaxon": 73,
+          "PR": 221,
+          "SO": 228,
+          "UBERON": 240
+        },
+        "id": "PMID:16110338",
+        "pmid": "16110338",
+        "split": "train",
+        "text_characters": 69457,
+        "text_sha256": "79105bfc7cc1b82f451108450af7f8fb87c8d8389335d96e0b5075542b386d00",
+        "text_source": "16110338.txt"
+      },
+      {
+        "gold_mentions": 1060,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 16,
+          "scored": 537,
+          "unsupported": 507
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 135,
+          "CL": 13,
+          "GO_BP": 108,
+          "GO_CC": 148,
+          "MONDO": 51,
+          "MOP": 16,
+          "NCBITaxon": 162,
+          "PR": 240,
+          "SO": 57,
+          "UBERON": 130
+        },
+        "id": "PMID:16121255",
+        "pmid": "16121255",
+        "split": "train",
+        "text_characters": 42108,
+        "text_sha256": "871c214a2f1a7afca9ff8b095bcf5e6ed720fc36a10fe4048e62abbe3c5a82d7",
+        "text_source": "16121255.txt"
+      },
+      {
+        "gold_mentions": 684,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 16,
+          "scored": 275,
+          "unsupported": 393
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 116,
+          "CL": 22,
+          "GO_BP": 45,
+          "GO_CC": 33,
+          "GO_MF": 6,
+          "MONDO": 78,
+          "MOP": 18,
+          "NCBITaxon": 158,
+          "PR": 5,
+          "SO": 84,
+          "UBERON": 119
+        },
+        "id": "PMID:16121256",
+        "pmid": "16121256",
+        "split": "train",
+        "text_characters": 30102,
+        "text_sha256": "6475a97166d48b3aebdb4e86b2e739a8a10b3c41ef2f950268a8fc77b01c9720",
+        "text_source": "16121256.txt"
+      },
+      {
+        "gold_mentions": 1470,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 29,
+          "scored": 658,
+          "unsupported": 783
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 132,
+          "CL": 31,
+          "GO_BP": 434,
+          "GO_CC": 31,
+          "MONDO": 2,
+          "MOP": 2,
+          "NCBITaxon": 201,
+          "PR": 328,
+          "SO": 118,
+          "UBERON": 191
+        },
+        "id": "PMID:16216087",
+        "pmid": "16216087",
+        "split": "train",
+        "text_characters": 70590,
+        "text_sha256": "08198d7a1a95f00eadcdce80936a49f889ad761aa419a57c4f59d01e1d228be0",
+        "text_source": "16216087.txt"
+      },
+      {
+        "gold_mentions": 1322,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 18,
+          "scored": 737,
+          "unsupported": 567
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 133,
+          "CL": 13,
+          "GO_BP": 131,
+          "GO_CC": 38,
+          "GO_MF": 1,
+          "MONDO": 3,
+          "MOP": 14,
+          "NCBITaxon": 136,
+          "PR": 470,
+          "SO": 270,
+          "UBERON": 113
+        },
+        "id": "PMID:16221973",
+        "pmid": "16221973",
+        "split": "train",
+        "text_characters": 47361,
+        "text_sha256": "da4b8121b9ecc00d6fca51bb52feb550c4e844ada2092f6975330e4accf33200",
+        "text_source": "16221973.txt"
+      },
+      {
+        "gold_mentions": 640,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 1,
+          "scored": 265,
+          "unsupported": 374
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 24,
+          "CL": 8,
+          "GO_BP": 89,
+          "GO_CC": 1,
+          "GO_MF": 1,
+          "MONDO": 109,
+          "NCBITaxon": 91,
+          "PR": 150,
+          "SO": 152,
+          "UBERON": 15
+        },
+        "id": "PMID:16255782",
+        "pmid": "16255782",
+        "split": "train",
+        "text_characters": 27666,
+        "text_sha256": "7393551be7354841104422b152305df2ec5489cda2572f6dccbb929409770ed9",
+        "text_source": "16255782.txt"
+      },
+      {
+        "gold_mentions": 1371,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 10,
+          "scored": 844,
+          "unsupported": 517
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 379,
+          "CL": 32,
+          "GO_BP": 137,
+          "GO_CC": 53,
+          "GO_MF": 2,
+          "MONDO": 54,
+          "MOP": 12,
+          "NCBITaxon": 289,
+          "PR": 177,
+          "SO": 151,
+          "UBERON": 85
+        },
+        "id": "PMID:16279840",
+        "pmid": "16279840",
+        "split": "train",
+        "text_characters": 72338,
+        "text_sha256": "0d763f10fd23d5ece991f07095c91a7c2cda82f915fea8e6b492f8b74516d230",
+        "text_source": "16279840.txt"
+      },
+      {
+        "gold_mentions": 1209,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 30,
+          "scored": 577,
+          "unsupported": 602
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 51,
+          "CL": 169,
+          "GO_BP": 139,
+          "GO_CC": 22,
+          "MONDO": 18,
+          "NCBITaxon": 189,
+          "PR": 337,
+          "SO": 65,
+          "UBERON": 219
+        },
+        "id": "PMID:16362077",
+        "pmid": "16362077",
+        "split": "train",
+        "text_characters": 49971,
+        "text_sha256": "bd04a7bdd3f9a6a31418c0de1f6c31eab1d94e6a38c0be2a270ef3e569871136",
+        "text_source": "16362077.txt"
+      },
+      {
+        "gold_mentions": 1429,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 57,
+          "scored": 462,
+          "unsupported": 910
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 23,
+          "CL": 148,
+          "GO_BP": 206,
+          "GO_CC": 7,
+          "GO_MF": 9,
+          "MONDO": 8,
+          "NCBITaxon": 75,
+          "PR": 378,
+          "SO": 177,
+          "UBERON": 398
+        },
+        "id": "PMID:16410827",
+        "pmid": "16410827",
+        "split": "test",
+        "text_characters": 53288,
+        "text_sha256": "a111c8b31993012c34e433343ff8c708dddfecc36a63d383054e503f79c2c6e4",
+        "text_source": "16410827.txt"
+      },
+      {
+        "gold_mentions": 840,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 9,
+          "scored": 282,
+          "unsupported": 549
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 37,
+          "CL": 51,
+          "GO_BP": 131,
+          "GO_CC": 11,
+          "GO_MF": 7,
+          "MONDO": 2,
+          "MOP": 1,
+          "NCBITaxon": 76,
+          "PR": 171,
+          "SO": 240,
+          "UBERON": 113
+        },
+        "id": "PMID:16433929",
+        "pmid": "16433929",
+        "split": "train",
+        "text_characters": 40199,
+        "text_sha256": "36e2fd7c3b8656710881d82c78dbdb7a38ea3709d6414714eb8a74fde6923133",
+        "text_source": "16433929.txt"
+      },
+      {
+        "gold_mentions": 632,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 4,
+          "scored": 82,
+          "unsupported": 546
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 16,
+          "GO_BP": 107,
+          "GO_CC": 2,
+          "GO_MF": 4,
+          "MONDO": 28,
+          "NCBITaxon": 41,
+          "PR": 25,
+          "SO": 297,
+          "UBERON": 112
+        },
+        "id": "PMID:16462940",
+        "pmid": "16462940",
+        "split": "train",
+        "text_characters": 50753,
+        "text_sha256": "6f4784f261ed75651de0bde188bce270a3ad9ae934dd05cac3c8c282362cbdbb",
+        "text_source": "16462940.txt"
+      },
+      {
+        "gold_mentions": 592,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 9,
+          "scored": 304,
+          "unsupported": 279
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 33,
+          "CL": 17,
+          "GO_BP": 80,
+          "GO_CC": 21,
+          "GO_MF": 3,
+          "MONDO": 7,
+          "NCBITaxon": 145,
+          "PR": 129,
+          "SO": 74,
+          "UBERON": 83
+        },
+        "id": "PMID:16504143",
+        "pmid": "16504143",
+        "split": "train",
+        "text_characters": 29071,
+        "text_sha256": "39f0e96016dd9babbeaf1ebc88822f0c9ad7779ad13ec7b439e67724f12a0dfe",
+        "text_source": "16504143.txt"
+      },
+      {
+        "gold_mentions": 621,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 12,
+          "scored": 228,
+          "unsupported": 381
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 35,
+          "CL": 81,
+          "GO_BP": 35,
+          "GO_CC": 7,
+          "GO_MF": 5,
+          "MONDO": 9,
+          "MOP": 1,
+          "NCBITaxon": 49,
+          "PR": 146,
+          "SO": 228,
+          "UBERON": 25
+        },
+        "id": "PMID:16504174",
+        "pmid": "16504174",
+        "split": "train",
+        "text_characters": 22834,
+        "text_sha256": "07357bcd1e06025547d55384cebf81c70aa1ea98ae94a522634ea5a974fcb59f",
+        "text_source": "16504174.txt"
+      },
+      {
+        "gold_mentions": 340,
+        "gold_mentions_by_mapping_status": {
+          "scored": 130,
+          "unsupported": 210
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 16,
+          "GO_BP": 47,
+          "GO_CC": 18,
+          "GO_MF": 1,
+          "MONDO": 77,
+          "MOP": 4,
+          "NCBITaxon": 90,
+          "PR": 24,
+          "SO": 45,
+          "UBERON": 18
+        },
+        "id": "PMID:16507151",
+        "pmid": "16507151",
+        "split": "train",
+        "text_characters": 20121,
+        "text_sha256": "ca32434fdfd7991a82b6d6ae838aa8f1f456d218a8676b4cf34ec44f7cdf2cd3",
+        "text_source": "16507151.txt"
+      },
+      {
+        "gold_mentions": 809,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 17,
+          "scored": 334,
+          "unsupported": 458
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 36,
+          "CL": 18,
+          "GO_BP": 82,
+          "GO_CC": 1,
+          "MONDO": 33,
+          "NCBITaxon": 120,
+          "PR": 184,
+          "SO": 268,
+          "UBERON": 67
+        },
+        "id": "PMID:16517939",
+        "pmid": "16517939",
+        "split": "test",
+        "text_characters": 29697,
+        "text_sha256": "e49b1fff50fc6b94bd08e36cd63357e61994967ef371b9f627b8c524612e966d",
+        "text_source": "16517939.txt"
+      },
+      {
+        "gold_mentions": 1340,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 15,
+          "scored": 580,
+          "unsupported": 745
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 70,
+          "CL": 90,
+          "GO_BP": 163,
+          "GO_CC": 62,
+          "GO_MF": 16,
+          "MONDO": 18,
+          "MOP": 5,
+          "NCBITaxon": 98,
+          "PR": 412,
+          "SO": 254,
+          "UBERON": 152
+        },
+        "id": "PMID:16539743",
+        "pmid": "16539743",
+        "split": "train",
+        "text_characters": 50004,
+        "text_sha256": "a3311e1f4358c0ca038ab2c02be021a5c05849bb25495f9f8b12368a3d76254b",
+        "text_source": "16539743.txt"
+      },
+      {
+        "gold_mentions": 951,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 12,
+          "scored": 454,
+          "unsupported": 485
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 103,
+          "CL": 26,
+          "GO_BP": 76,
+          "GO_CC": 24,
+          "GO_MF": 8,
+          "MONDO": 120,
+          "MOP": 3,
+          "NCBITaxon": 231,
+          "PR": 123,
+          "SO": 128,
+          "UBERON": 109
+        },
+        "id": "PMID:16579849",
+        "pmid": "16579849",
+        "split": "train",
+        "text_characters": 40858,
+        "text_sha256": "e2236ade8782ea6a2e4c0bf841e858e4044bb8a2e74c45f5923a2db146e828f4",
+        "text_source": "16579849.txt"
+      },
+      {
+        "gold_mentions": 570,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 15,
+          "scored": 234,
+          "unsupported": 321
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 9,
+          "CL": 20,
+          "GO_BP": 43,
+          "GO_CC": 3,
+          "GO_MF": 1,
+          "MONDO": 2,
+          "MOP": 1,
+          "NCBITaxon": 68,
+          "PR": 157,
+          "SO": 197,
+          "UBERON": 69
+        },
+        "id": "PMID:16611361",
+        "pmid": "16611361",
+        "split": "test",
+        "text_characters": 17856,
+        "text_sha256": "f321321385c12f591aebc321e311802c42f4363c8db9cafdf390730180417ee7",
+        "text_source": "16611361.txt"
+      },
+      {
+        "gold_mentions": 1735,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 29,
+          "scored": 600,
+          "unsupported": 1106
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 54,
+          "CL": 118,
+          "GO_BP": 203,
+          "GO_CC": 108,
+          "GO_MF": 15,
+          "MONDO": 24,
+          "MOP": 4,
+          "NCBITaxon": 100,
+          "PR": 446,
+          "SO": 282,
+          "UBERON": 381
+        },
+        "id": "PMID:16628246",
+        "pmid": "16628246",
+        "split": "train",
+        "text_characters": 62016,
+        "text_sha256": "3c364b7f7872cedbac7d065c9c167fa3a043ddf769894ec95876e6f36bc58e19",
+        "text_source": "16628246.txt"
+      },
+      {
+        "gold_mentions": 664,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 13,
+          "scored": 155,
+          "unsupported": 496
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 36,
+          "CL": 1,
+          "GO_BP": 44,
+          "GO_CC": 2,
+          "GO_MF": 1,
+          "MONDO": 27,
+          "NCBITaxon": 87,
+          "PR": 32,
+          "SO": 289,
+          "UBERON": 145
+        },
+        "id": "PMID:16670015",
+        "pmid": "16670015",
+        "split": "train",
+        "text_characters": 54457,
+        "text_sha256": "0dd86edba974767dbeff192a991bbd00dfb886f72dd12fbdaf9b25f1f63bb2a9",
+        "text_source": "16670015.txt"
+      },
+      {
+        "gold_mentions": 1402,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 22,
+          "scored": 654,
+          "unsupported": 726
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 16,
+          "CL": 80,
+          "GO_BP": 255,
+          "GO_CC": 32,
+          "GO_MF": 13,
+          "MONDO": 1,
+          "MOP": 2,
+          "NCBITaxon": 52,
+          "PR": 586,
+          "SO": 54,
+          "UBERON": 311
+        },
+        "id": "PMID:16700629",
+        "pmid": "16700629",
+        "split": "train",
+        "text_characters": 42515,
+        "text_sha256": "9568ab023fa39ca5b6bb81ffe3864ad2cbbe01205f031314dc9f84b41d7f05d7",
+        "text_source": "16700629.txt"
+      },
+      {
+        "gold_mentions": 1022,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 30,
+          "scored": 316,
+          "unsupported": 676
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 54,
+          "CL": 19,
+          "GO_BP": 84,
+          "GO_CC": 52,
+          "GO_MF": 3,
+          "MONDO": 1,
+          "MOP": 1,
+          "NCBITaxon": 51,
+          "PR": 212,
+          "SO": 144,
+          "UBERON": 401
+        },
+        "id": "PMID:16787536",
+        "pmid": "16787536",
+        "split": "test",
+        "text_characters": 39067,
+        "text_sha256": "1bee43ae946b26f9655eba193ff76af20f2919e9fcbb11f2a6f087482ec5de25",
+        "text_source": "16787536.txt"
+      },
+      {
+        "gold_mentions": 1099,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 3,
+          "scored": 287,
+          "unsupported": 809
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 72,
+          "CL": 12,
+          "GO_BP": 184,
+          "GO_CC": 14,
+          "GO_MF": 5,
+          "MOP": 1,
+          "NCBITaxon": 154,
+          "PR": 61,
+          "SO": 459,
+          "UBERON": 137
+        },
+        "id": "PMID:16800892",
+        "pmid": "16800892",
+        "split": "test",
+        "text_characters": 49697,
+        "text_sha256": "f6b5a8ad91f8d6c21b2373aca4a06bafa070f7341e24dc9e9369b81330be0a6a",
+        "text_source": "16800892.txt"
+      },
+      {
+        "gold_mentions": 536,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 9,
+          "scored": 229,
+          "unsupported": 298
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 36,
+          "CL": 62,
+          "GO_BP": 55,
+          "GO_CC": 9,
+          "MONDO": 4,
+          "MOP": 1,
+          "NCBITaxon": 34,
+          "PR": 159,
+          "SO": 163,
+          "UBERON": 13
+        },
+        "id": "PMID:16870721",
+        "pmid": "16870721",
+        "split": "train",
+        "text_characters": 29388,
+        "text_sha256": "6a5e19ed002b95605219d50fa76f0df4fff1cc3e5a16596112fe75f5aa427003",
+        "text_source": "16870721.txt"
+      },
+      {
+        "gold_mentions": 1457,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 19,
+          "scored": 720,
+          "unsupported": 718
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 53,
+          "CL": 39,
+          "GO_BP": 189,
+          "GO_CC": 73,
+          "GO_MF": 6,
+          "MONDO": 43,
+          "MOP": 2,
+          "NCBITaxon": 68,
+          "PR": 599,
+          "SO": 65,
+          "UBERON": 320
+        },
+        "id": "PMID:16968134",
+        "pmid": "16968134",
+        "split": "test",
+        "text_characters": 59761,
+        "text_sha256": "565e2e04438ad4d83008d20a7d1053610f2a6300389b387f720e817b8e73bc12",
+        "text_source": "16968134.txt"
+      },
+      {
+        "gold_mentions": 1800,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 59,
+          "scored": 697,
+          "unsupported": 1044
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 65,
+          "CL": 106,
+          "GO_BP": 194,
+          "GO_CC": 28,
+          "GO_MF": 4,
+          "MONDO": 59,
+          "MOP": 1,
+          "NCBITaxon": 180,
+          "PR": 454,
+          "SO": 193,
+          "UBERON": 516
+        },
+        "id": "PMID:17002498",
+        "pmid": "17002498",
+        "split": "train",
+        "text_characters": 61729,
+        "text_sha256": "1aae743cf89b97a071923bd2e84caababfe1f830f724da731c42c807b91c57d6",
+        "text_source": "17002498.txt"
+      },
+      {
+        "gold_mentions": 918,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 9,
+          "scored": 394,
+          "unsupported": 515
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 18,
+          "CL": 15,
+          "GO_BP": 70,
+          "GO_CC": 38,
+          "GO_MF": 3,
+          "MONDO": 132,
+          "MOP": 3,
+          "NCBITaxon": 108,
+          "PR": 269,
+          "SO": 185,
+          "UBERON": 77
+        },
+        "id": "PMID:17020410",
+        "pmid": "17020410",
+        "split": "train",
+        "text_characters": 37975,
+        "text_sha256": "b14df968bb270f6c756298f9c9ee3c0ec35c6444b0cd431b2924072981c3a2fd",
+        "text_source": "17020410.txt"
+      },
+      {
+        "gold_mentions": 826,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 9,
+          "scored": 400,
+          "unsupported": 417
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 53,
+          "CL": 16,
+          "GO_BP": 104,
+          "GO_CC": 12,
+          "MONDO": 83,
+          "MOP": 3,
+          "NCBITaxon": 227,
+          "PR": 125,
+          "SO": 55,
+          "UBERON": 148
+        },
+        "id": "PMID:17022820",
+        "pmid": "17022820",
+        "split": "train",
+        "text_characters": 37688,
+        "text_sha256": "d6da3f5db1796211d9dceae14df26bd354ee75ac442267a3a336afdde6945adb",
+        "text_source": "17022820.txt"
+      },
+      {
+        "gold_mentions": 994,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 23,
+          "scored": 350,
+          "unsupported": 621
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 41,
+          "CL": 80,
+          "GO_BP": 80,
+          "GO_CC": 18,
+          "MONDO": 149,
+          "MOP": 1,
+          "NCBITaxon": 195,
+          "PR": 114,
+          "SO": 68,
+          "UBERON": 248
+        },
+        "id": "PMID:17029558",
+        "pmid": "17029558",
+        "split": "test",
+        "text_characters": 39345,
+        "text_sha256": "96a1e4b9de3899f6ea16a72b239016a1eba7c61c630b19dce7013f67bdb97551",
+        "text_source": "17029558.txt"
+      },
+      {
+        "gold_mentions": 1424,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 38,
+          "scored": 795,
+          "unsupported": 591
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 128,
+          "CL": 90,
+          "GO_BP": 140,
+          "GO_CC": 110,
+          "MONDO": 21,
+          "MOP": 4,
+          "NCBITaxon": 100,
+          "PR": 569,
+          "SO": 110,
+          "UBERON": 152
+        },
+        "id": "PMID:17069463",
+        "pmid": "17069463",
+        "split": "train",
+        "text_characters": 55327,
+        "text_sha256": "825385b13226b5f646d9f2e85a0dd3d2c039826e84c580bad4ff34f0b69c96a2",
+        "text_source": "17069463.txt"
+      },
+      {
+        "gold_mentions": 940,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 54,
+          "scored": 282,
+          "unsupported": 604
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 19,
+          "CL": 14,
+          "GO_BP": 74,
+          "GO_CC": 6,
+          "GO_MF": 2,
+          "MONDO": 43,
+          "MOP": 3,
+          "NCBITaxon": 24,
+          "PR": 253,
+          "SO": 24,
+          "UBERON": 478
+        },
+        "id": "PMID:17078885",
+        "pmid": "17078885",
+        "split": "train",
+        "text_characters": 33729,
+        "text_sha256": "fc55ada8e4ead4fdefe1c64b685b69f479950a1401b0ffb792ea636a8aa96dd2",
+        "text_source": "17078885.txt"
+      },
+      {
+        "gold_mentions": 1137,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 34,
+          "scored": 390,
+          "unsupported": 713
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 124,
+          "CL": 103,
+          "GO_BP": 151,
+          "GO_CC": 266,
+          "GO_MF": 9,
+          "MONDO": 4,
+          "NCBITaxon": 49,
+          "PR": 219,
+          "SO": 109,
+          "UBERON": 103
+        },
+        "id": "PMID:17083276",
+        "pmid": "17083276",
+        "split": "train",
+        "text_characters": 44256,
+        "text_sha256": "ba490759fafffd3728f41d5cf5f30f670876c45baa06946ffaa0d80b9ca42424",
+        "text_source": "17083276.txt"
+      },
+      {
+        "gold_mentions": 2062,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 22,
+          "scored": 1071,
+          "unsupported": 969
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 91,
+          "CL": 38,
+          "GO_BP": 237,
+          "GO_CC": 3,
+          "GO_MF": 21,
+          "MONDO": 19,
+          "MOP": 1,
+          "NCBITaxon": 112,
+          "PR": 868,
+          "SO": 103,
+          "UBERON": 569
+        },
+        "id": "PMID:17194222",
+        "pmid": "17194222",
+        "split": "dev",
+        "text_characters": 65682,
+        "text_sha256": "57117347f077d99a79d75507c27f704a6e4527cea798e901617cf8776361518b",
+        "text_source": "17194222.txt"
+      },
+      {
+        "gold_mentions": 1513,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 31,
+          "scored": 728,
+          "unsupported": 754
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 120,
+          "CL": 59,
+          "GO_BP": 306,
+          "GO_CC": 38,
+          "MONDO": 18,
+          "MOP": 3,
+          "NCBITaxon": 223,
+          "PR": 387,
+          "SO": 39,
+          "UBERON": 320
+        },
+        "id": "PMID:17201918",
+        "pmid": "17201918",
+        "split": "test",
+        "text_characters": 46990,
+        "text_sha256": "19865ac58fcdf85f34a82d675de3d962f328000c73976020f5360461b94c84e4",
+        "text_source": "17201918.txt"
+      },
+      {
+        "gold_mentions": 1271,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 27,
+          "scored": 386,
+          "unsupported": 858
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 36,
+          "CL": 55,
+          "GO_BP": 180,
+          "GO_CC": 197,
+          "MONDO": 110,
+          "MOP": 17,
+          "NCBITaxon": 119,
+          "PR": 232,
+          "SO": 156,
+          "UBERON": 169
+        },
+        "id": "PMID:17206865",
+        "pmid": "17206865",
+        "split": "test",
+        "text_characters": 43309,
+        "text_sha256": "e195da4b2a6c4ceee9caf57064b41916eed9d7e28918d0a601b6e6288b717359",
+        "text_source": "17206865.txt"
+      },
+      {
+        "gold_mentions": 642,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 7,
+          "scored": 97,
+          "unsupported": 538
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 7,
+          "CL": 8,
+          "GO_BP": 121,
+          "GO_CC": 7,
+          "GO_MF": 3,
+          "MONDO": 92,
+          "NCBITaxon": 49,
+          "PR": 44,
+          "SO": 286,
+          "UBERON": 25
+        },
+        "id": "PMID:17244351",
+        "pmid": "17244351",
+        "split": "dev",
+        "text_characters": 30917,
+        "text_sha256": "49cac93e4cf0e4a2a301eb514551ee589dbdd1eeb4735591ba7ac53288faa4b1",
+        "text_source": "17244351.txt"
+      },
+      {
+        "gold_mentions": 1321,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 22,
+          "scored": 554,
+          "unsupported": 745
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 27,
+          "CL": 10,
+          "GO_BP": 208,
+          "GO_CC": 30,
+          "GO_MF": 9,
+          "MONDO": 4,
+          "MOP": 3,
+          "NCBITaxon": 67,
+          "PR": 460,
+          "SO": 166,
+          "UBERON": 337
+        },
+        "id": "PMID:17425782",
+        "pmid": "17425782",
+        "split": "dev",
+        "text_characters": 44103,
+        "text_sha256": "96dbcb06535f22dc91891a6c5bb07869ce0f238f4d6b39dd5fa896fadd07b6f0",
+        "text_source": "17425782.txt"
+      },
+      {
+        "gold_mentions": 1699,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 21,
+          "scored": 569,
+          "unsupported": 1109
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 46,
+          "CL": 174,
+          "GO_BP": 405,
+          "GO_CC": 254,
+          "GO_MF": 15,
+          "MONDO": 1,
+          "MOP": 1,
+          "NCBITaxon": 145,
+          "PR": 379,
+          "SO": 150,
+          "UBERON": 129
+        },
+        "id": "PMID:17447844",
+        "pmid": "17447844",
+        "split": "dev",
+        "text_characters": 56309,
+        "text_sha256": "94fd5eb2d388df49abcc1fd919d16c30725fbcbb28c3a0c3b1d90c1fcbf28aab",
+        "text_source": "17447844.txt"
+      },
+      {
+        "gold_mentions": 1360,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 10,
+          "scored": 701,
+          "unsupported": 649
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 225,
+          "CL": 64,
+          "GO_BP": 152,
+          "GO_CC": 11,
+          "MONDO": 65,
+          "MOP": 13,
+          "NCBITaxon": 288,
+          "PR": 189,
+          "SO": 61,
+          "UBERON": 292
+        },
+        "id": "PMID:17465682",
+        "pmid": "17465682",
+        "split": "test",
+        "text_characters": 53537,
+        "text_sha256": "27d80ff64188485b8b6d16f205a306fe5c9827b3a8d189b067ddf140046a7f1c",
+        "text_source": "17465682.txt"
+      },
+      {
+        "gold_mentions": 1212,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 71,
+          "scored": 612,
+          "unsupported": 529
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 476,
+          "CL": 149,
+          "GO_BP": 216,
+          "GO_CC": 108,
+          "MONDO": 18,
+          "NCBITaxon": 89,
+          "PR": 56,
+          "SO": 4,
+          "UBERON": 96
+        },
+        "id": "PMID:17503968",
+        "pmid": "17503968",
+        "split": "test",
+        "text_characters": 49076,
+        "text_sha256": "76d21994f7f0e2a125f3343c589c5b6085f2d191eb49390917251b4b02d5d839",
+        "text_source": "17503968.txt"
+      },
+      {
+        "gold_mentions": 1128,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 24,
+          "scored": 518,
+          "unsupported": 586
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 37,
+          "CL": 84,
+          "GO_BP": 82,
+          "GO_CC": 34,
+          "GO_MF": 2,
+          "MONDO": 80,
+          "MOP": 6,
+          "NCBITaxon": 195,
+          "PR": 286,
+          "SO": 39,
+          "UBERON": 283
+        },
+        "id": "PMID:17565376",
+        "pmid": "17565376",
+        "split": "test",
+        "text_characters": 37321,
+        "text_sha256": "579a5b1d708f499e64583d4298d7d4a9166d2836fc54442d9abbf119933172d4",
+        "text_source": "17565376.txt"
+      },
+      {
+        "gold_mentions": 643,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 8,
+          "scored": 258,
+          "unsupported": 377
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 31,
+          "CL": 9,
+          "GO_BP": 20,
+          "GO_CC": 26,
+          "MONDO": 104,
+          "MOP": 2,
+          "NCBITaxon": 103,
+          "PR": 124,
+          "SO": 190,
+          "UBERON": 34
+        },
+        "id": "PMID:17590087",
+        "pmid": "17590087",
+        "split": "dev",
+        "text_characters": 32818,
+        "text_sha256": "ca99e33a6061ab7cd038a471c1fcb8b28621677d0621a7235f1c647b3b3c7770",
+        "text_source": "17590087.txt"
+      },
+      {
+        "gold_mentions": 1952,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 53,
+          "scored": 899,
+          "unsupported": 1000
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 99,
+          "CL": 234,
+          "GO_BP": 266,
+          "GO_CC": 138,
+          "GO_MF": 2,
+          "MONDO": 8,
+          "MOP": 2,
+          "NCBITaxon": 58,
+          "PR": 744,
+          "SO": 98,
+          "UBERON": 303
+        },
+        "id": "PMID:17608565",
+        "pmid": "17608565",
+        "split": "dev",
+        "text_characters": 68163,
+        "text_sha256": "6661fcca120af2cc66d0fd3b086c16722587bae5d0121add85761544657e09a9",
+        "text_source": "17608565.txt"
+      },
+      {
+        "gold_mentions": 847,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 10,
+          "scored": 358,
+          "unsupported": 479
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 57,
+          "CL": 13,
+          "GO_BP": 97,
+          "GO_CC": 17,
+          "GO_MF": 11,
+          "MONDO": 41,
+          "MOP": 2,
+          "NCBITaxon": 122,
+          "PR": 182,
+          "SO": 179,
+          "UBERON": 126
+        },
+        "id": "PMID:17677002",
+        "pmid": "17677002",
+        "split": "test",
+        "text_characters": 42262,
+        "text_sha256": "1ce79c998d6208270a7e72ab45378127b98964db3afc884966b06ec9a991533f",
+        "text_source": "17677002.txt"
+      },
+      {
+        "gold_mentions": 1391,
+        "gold_mentions_by_mapping_status": {
+          "ambiguous": 21,
+          "scored": 561,
+          "unsupported": 809
+        },
+        "gold_mentions_by_module": {
+          "CHEBI": 34,
+          "CL": 108,
+          "GO_BP": 398,
+          "GO_CC": 104,
+          "MONDO": 4,
+          "MOP": 10,
+          "NCBITaxon": 145,
+          "PR": 383,
+          "SO": 104,
+          "UBERON": 101
+        },
+        "id": "PMID:17696610",
+        "pmid": "17696610",
+        "split": "dev",
+        "text_characters": 48237,
+        "text_sha256": "81e533c27c7acbc3fcb4b4915e002d0458bc35f45a755d723bb66dbcf9134645",
+        "text_source": "17696610.txt"
+      }
+    ],
+    "expected_release_commit": "2abe82b8bb8089448b84937d5f61d8c218011322",
+    "gold_mentions_by_mapping_status": {
+      "ambiguous": 2015,
+      "scored": 40496,
+      "unsupported": 57112
+    },
+    "gold_mentions_by_module": {
+      "CHEBI": 6748,
+      "CL": 5792,
+      "GO_BP": 12961,
+      "GO_CC": 5259,
+      "GO_MF": 469,
+      "MONDO": 3080,
+      "MOP": 341,
+      "NCBITaxon": 10463,
+      "PR": 23447,
+      "SO": 12243,
+      "UBERON": 18820
+    },
+    "gold_mentions_total": 99623,
+    "name": "CRAFT",
+    "official_release_location": "https://github.com/lhunter-lab/CRAFT/releases/tag/v5.0.2",
+    "official_source_location": "https://github.com/lhunter-lab/CRAFT",
+    "release_identity_verified": true,
+    "release_version": "v5.0.2",
+    "source_manifest_sha256": "1d7300c5bc712278d4cb4485cc119a31dcda5d802a402fe17f846c8253bb1017",
+    "source_repository": "https://github.com/lhunter-lab/CRAFT",
+    "source_revision": "2abe82b8bb8089448b84937d5f61d8c218011322",
+    "source_root": "C:\\Projects\\Biomed\\extraction_system\\.cache\\craft-v5.0.2",
+    "text_manifest_sha256": "1ecf91effe39ea9dccbee8f959b621bf6cb123b106b74e145357376e1f8c959d"
+  },
+  "evaluation_name": "AIONER versus HunFlair2 on CRAFT full-text NER",
+  "independence_verification": {
+    "CRAFT_listed_in_training_recipe": {
+      "AIONER": false,
+      "HunFlair2": false
+    },
+    "authoritative_sources_checked": [
+      "https://doi.org/10.1093/bioinformatics/btad310",
+      "https://github.com/ncbi/AIONER",
+      "https://github.com/flairNLP/flair/blob/master/resources/docs/HUNFLAIR2_TUTORIAL_3_TRAINING_NER.md",
+      "https://pmc.ncbi.nlm.nih.gov/articles/PMC11453098/"
+    ],
+    "documented_training_corpora": {
+      "AIONER": [
+        "BioRED",
+        "NLM-Gene",
+        "GNormPlus",
+        "NCBI Disease",
+        "NLM-Chem",
+        "BC5CDR",
+        "Linnaeus",
+        "Species-800",
+        "tmVar3",
+        "BioID"
+      ],
+      "HunFlair2": [
+        "BioRED",
+        "NLM Gene",
+        "GNormPlus",
+        "SCAI",
+        "NLM Chem",
+        "Linnaeus",
+        "S800",
+        "NCBI Disease"
+      ]
+    },
+    "independent_under_documented_supervised_training": true,
+    "qualification": "This establishes absence from the documented supervised training recipes checked for the exact cached artifacts; it does not establish absence from every possible pretraining source."
+  },
+  "limitations": [
+    "Primary metrics use exact half-open source spans and canonical types only; no fuzzy matching is applied.",
+    "Only Protein Ontology, ChEBI, and NCBI Taxonomy annotations contribute to primary metrics.",
+    "Cell Ontology is not mapped to CellLine, and Sequence Ontology is not mapped to SequenceVariant.",
+    "GO annotations and all other CRAFT ontology modules remain explicit unsupported metadata.",
+    "Discontinuous Knowtator annotations are retained as ambiguous metadata and excluded because they do not define one exact half-open span.",
+    "Ontology identifiers are provenance only; normalization and linking are out of scope.",
+    "This report is cross-corpus evidence and does not make the production-model decision."
+  ],
+  "mapping": {
+    "excluded_modules": {
+      "CL": "Cell Ontology (excluded; not CellLine)",
+      "GO_BP": "Gene Ontology biological process (out of scope)",
+      "GO_CC": "Gene Ontology cellular component (out of scope)",
+      "GO_MF": "Gene Ontology molecular function (out of scope)",
+      "MONDO": "MONDO disease ontology (not mapped in the current schema)",
+      "MOP": "Molecular Process Ontology (not mapped in the current schema)",
+      "SO": "Sequence Ontology (excluded; not SequenceVariant)",
+      "UBERON": "Uberon anatomy ontology (not mapped in the current schema)"
+    },
+    "ontology_normalization_scored": false,
+    "scored_modules": {
+      "CHEBI": {
+        "canonical_type": "ChemicalEntity",
+        "ontology": "ChEBI"
+      },
+      "NCBITaxon": {
+        "canonical_type": "OrganismTaxon",
+        "ontology": "NCBI Taxonomy"
+      },
+      "PR": {
+        "canonical_type": "GeneOrGeneProduct",
+        "ontology": "Protein Ontology"
+      }
+    },
+    "scored_types": [
+      "GeneOrGeneProduct",
+      "ChemicalEntity",
+      "OrganismTaxon"
+    ],
+    "unsupported_and_ambiguous_are_excluded_from_primary_metrics": true
+  },
+  "model_input": {
+    "document_count": 97,
+    "identical_canonical_source_for": [
+      "AIONER",
+      "HunFlair2"
+    ],
+    "path": ".cache\\ner_cross_corpus\\craft\\model_input.json",
+    "sha256": "a128a4549bedb940b59e47267f45c28ef163c36b9ce3cad1f7fbdc741c339744",
+    "source_text_manifest_sha256": "1ecf91effe39ea9dccbee8f959b621bf6cb123b106b74e145357376e1f8c959d"
+  },
+  "models": {
+    "AIONER": {
+      "counts": {
+        "documents_evaluated": 97,
+        "gold_ambiguous_mentions": 2015,
+        "gold_mentions": 99623,
+        "gold_mentions_by_module": {
+          "CHEBI": 6748,
+          "CL": 5792,
+          "GO_BP": 12961,
+          "GO_CC": 5259,
+          "GO_MF": 469,
+          "MONDO": 3080,
+          "MOP": 341,
+          "NCBITaxon": 10463,
+          "PR": 23447,
+          "SO": 12243,
+          "UBERON": 18820
+        },
+        "gold_scored_mentions": 40496,
+        "gold_unsupported_mentions": 57112,
+        "predicted_mentions": 36208,
+        "predicted_scored_mentions": 31653,
+        "predicted_unsupported_mentions": 4555
+      },
+      "failure_analysis": {
+        "counts": {
+          "missed entity": 15322,
+          "overlapping prediction": 174,
+          "schema-unscored / unsupported gold category": 59127,
+          "schema-unscored / unsupported predicted category": 4555,
+          "span mismatch": 2143,
+          "spurious entity": 6479,
+          "wrong type": 104
+        },
+        "example_limit_per_category": 5,
+        "examples": {
+          "missed entity": [
+            {
+              "category": "missed entity",
+              "context": {
+                "end": 944,
+                "start": 777,
+                "text": "/mm3, and the striatal neuron population ranged from 1.4 to 2.5 million. Inbred animals with larger brains had larger striata but lower neuron-packing density resultin"
+              },
+              "document_id": "PMID:11319941",
+              "gold": {
+                "canonical_type": "OrganismTaxon",
+                "concept_ids": [
+                  "NCBITaxon:33208"
+                ],
+                "end": 864,
+                "id": "PMID:11319941:NCBITaxon:organism_Instance_20008",
+                "start": 857,
+                "text": "animals",
+                "type": "Species"
+              },
+              "predicted": null
+            },
+            {
+              "category": "missed entity",
+              "context": {
+                "end": 1563,
+                "start": 1396,
+                "text": "at D19Mit123) and is associated with differences of up to 400,000 neurons among animals.\n\nConclusion\n\nWe have discovered remarkable numerical and volumetric variation "
+              },
+              "document_id": "PMID:11319941",
+              "gold": {
+                "canonical_type": "OrganismTaxon",
+                "concept_ids": [
+                  "NCBITaxon:33208"
+                ],
+                "end": 1483,
+                "id": "PMID:11319941:NCBITaxon:organism_Instance_20012",
+                "start": 1476,
+                "text": "animals",
+                "type": "Species"
+              },
+              "predicted": null
+            },
+            {
+              "category": "missed entity",
+              "context": {
+                "end": 1655,
+                "start": 1490,
+                "text": "lusion\n\nWe have discovered remarkable numerical and volumetric variation in the mouse striatum, and we have been able to map two QTLs that modulate independent anato"
+              },
+              "document_id": "PMID:11319941",
+              "gold": {
+                "canonical_type": "OrganismTaxon",
+                "concept_ids": [
+                  "NCBITaxon:10088"
+                ],
+                "end": 1575,
+                "id": "PMID:11319941:NCBITaxon:organism_Instance_20016",
+                "start": 1570,
+                "text": "mouse",
+                "type": "Species"
+              },
+              "predicted": null
+            },
+            {
+              "category": "missed entity",
+              "context": {
+                "end": 3649,
+                "start": 3484,
+                "text": "iently from large numbers of cases [24,25].\n\nFrom a technical point of view the mouse striatum has several advantages that make it an excellent target for complex tr"
+              },
+              "document_id": "PMID:11319941",
+              "gold": {
+                "canonical_type": "OrganismTaxon",
+                "concept_ids": [
+                  "NCBITaxon:10088"
+                ],
+                "end": 3569,
+                "id": "PMID:11319941:NCBITaxon:organism_Instance_20031",
+                "start": 3564,
+                "text": "mouse",
+                "type": "Species"
+              },
+              "predicted": null
+            },
+            {
+              "category": "missed entity",
+              "context": {
+                "end": 3758,
+                "start": 3589,
+                "text": "l advantages that make it an excellent target for complex trait analysis of the mammalian CNS. First, it is a large, cytoarchitectonically distinct region comprising app"
+              },
+              "document_id": "PMID:11319941",
+              "gold": {
+                "canonical_type": "OrganismTaxon",
+                "concept_ids": [
+                  "NCBITaxon:40674"
+                ],
+                "end": 3678,
+                "id": "PMID:11319941:NCBITaxon:organism_Instance_20035",
+                "start": 3669,
+                "text": "mammalian",
+                "type": "Species"
+              },
+              "predicted": null
+            }
+          ],
+          "overlapping prediction": [
+            {
+              "category": "overlapping prediction",
+              "context": {
+                "end": 495,
+                "start": 286,
+                "text": "ies. Recently the MLIV gene, MCOLN1, has been identified as a new member of the transient receptor potential (TRP) cation channel superfamily. Here we report the cloning and characterization of the mouse homol"
+              },
+              "document_id": "PMID:11897010",
+              "gold": {
+                "canonical_type": "ChemicalEntity",
+                "concept_ids": [
+                  "CHEBI:36916"
+                ],
+                "end": 407,
+                "id": "PMID:11897010:CHEBI:CHEBI_2015_08_26_Instance_25351",
+                "start": 401,
+                "text": "cation",
+                "type": "Chemical"
+              },
+              "predicted": {
+                "canonical_type": "GeneOrGeneProduct",
+                "end": 415,
+                "id": "E5",
+                "score": null,
+                "start": 366,
+                "text": "transient receptor potential (TRP) cation channel",
+                "type": "Gene"
+              }
+            },
+            {
+              "category": "overlapping prediction",
+              "context": {
+                "end": 3801,
+                "start": 3621,
+                "text": " of annexin A7 have been identified, sorcin and galectin-3 [11-13]. Sorcin is a Ca2+-binding protein and belongs to the penta EF-hand protein family [14]. Like annexin A7 it binds "
+              },
+              "document_id": "PMID:12925238",
+              "gold": {
+                "canonical_type": "ChemicalEntity",
+                "concept_ids": [
+                  "CHEBI:29108"
+                ],
+                "end": 3705,
+                "id": "PMID:12925238:CHEBI:CHEBI_2015_08_26_Instance_10451",
+                "start": 3701,
+                "text": "Ca2+",
+                "type": "Chemical"
+              },
+              "predicted": {
+                "canonical_type": "GeneOrGeneProduct",
+                "end": 3721,
+                "id": "E24",
+                "score": null,
+                "start": 3701,
+                "text": "Ca2+-binding protein",
+                "type": "Gene"
+              }
+            },
+            {
+              "category": "overlapping prediction",
+              "context": {
+                "end": 4001,
+                "start": 3823,
+                "text": "-dependent manner. Sorcin also has been described as interaction partner of the ryanodine receptor, and appears to modulate its function [15]. The influence of the sorcin/annexin"
+              },
+              "document_id": "PMID:12925238",
+              "gold": {
+                "canonical_type": "ChemicalEntity",
+                "concept_ids": [
+                  "CHEBI:8925"
+                ],
+                "end": 3912,
+                "id": "PMID:12925238:CHEBI:CHEBI_2015_08_26_Instance_10603",
+                "start": 3903,
+                "text": "ryanodine",
+                "type": "Chemical"
+              },
+              "predicted": {
+                "canonical_type": "GeneOrGeneProduct",
+                "end": 3921,
+                "id": "E29",
+                "score": null,
+                "start": 3903,
+                "text": "ryanodine receptor",
+                "type": "Gene"
+              }
+            },
+            {
+              "category": "overlapping prediction",
+              "context": {
+                "end": 4122,
+                "start": 3944,
+                "text": "te its function [15]. The influence of the sorcin/annexin A7 interaction on the ryanodine receptor is unknown. Sorcin and annexin A7 are coexpressed in all tissues examined so fa"
+              },
+              "document_id": "PMID:12925238",
+              "gold": {
+                "canonical_type": "ChemicalEntity",
+                "concept_ids": [
+                  "CHEBI:8925"
+                ],
+                "end": 4033,
+                "id": "PMID:12925238:CHEBI:CHEBI_2015_08_26_Instance_10605",
+                "start": 4024,
+                "text": "ryanodine",
+                "type": "Chemical"
+              },
+              "predicted": {
+                "canonical_type": "GeneOrGeneProduct",
+                "end": 4042,
+                "id": "E32",
+                "score": null,
+                "start": 4024,
+                "text": "ryanodine receptor",
+                "type": "Gene"
+              }
+            },
+            {
+              "category": "overlapping prediction",
+              "context": {
+                "end": 9007,
+                "start": 8825,
+                "text": "and nanovesicles, were released after Ca2+/ionophore treatment as determined by acetylcholine esterase activity and microscopic examination. Annexin A7 is present in both vesicle typ"
+              },
+              "document_id": "PMID:12925238",
+              "gold": {
+                "canonical_type": "ChemicalEntity",
+                "concept_ids": [
+                  "CHEBI:15355"
+                ],
+                "end": 8918,
+                "id": "PMID:12925238:CHEBI:CHEBI_2015_08_26_Instance_10627",
+                "start": 8905,
+                "text": "acetylcholine",
+                "type": "Chemical"
+              },
+              "predicted": {
+                "canonical_type": "GeneOrGeneProduct",
+                "end": 8927,
+                "id": "E90",
+                "score": null,
+                "start": 8905,
+                "text": "acetylcholine esterase",
+                "type": "Gene"
+              }
+            }
+          ],
+          "schema-unscored / unsupported gold category": [
+            {
+              "category": "schema-unscored / unsupported gold category",
+              "context": {
+                "end": 124,
+                "start": 0,
+                "text": "Complex trait analysis of the mouse striatum: independent QTLs modulate volume and neuron number\n\nAbstract\n\nBackground\n\nThe "
+              },
+              "document_id": "PMID:11319941",
+              "gold": {
+                "canonical_type": null,
+                "concept_ids": [
+                  "UBERON:0002435"
+                ],
+                "end": 44,
+                "id": "PMID:11319941:UBERON:UBERON_Instance_20000",
+                "start": 36,
+                "text": "striatum",
+                "type": "CRAFT_UNSUPPORTED:UBERON"
+              },
+              "predicted": null
+            },
+            {
+              "category": "schema-unscored / unsupported gold category",
+              "context": {
+                "end": 142,
+                "start": 0,
+                "text": "Complex trait analysis of the mouse striatum: independent QTLs modulate volume and neuron number\n\nAbstract\n\nBackground\n\nThe striatum plays a p"
+              },
+              "document_id": "PMID:11319941",
+              "gold": {
+                "canonical_type": null,
+                "concept_ids": [
+                  "SO:0000771"
+                ],
+                "end": 62,
+                "id": "PMID:11319941:SO:SO_2017_06_11_Instance_40989",
+                "start": 58,
+                "text": "QTLs",
+                "type": "CRAFT_UNSUPPORTED:SO"
+              },
+              "predicted": null
+            },
+            {
+              "category": "schema-unscored / unsupported gold category",
+              "context": {
+                "end": 151,
+                "start": 0,
+                "text": "Complex trait analysis of the mouse striatum: independent QTLs modulate volume and neuron number\n\nAbstract\n\nBackground\n\nThe striatum plays a pivotal ro"
+              },
+              "document_id": "PMID:11319941",
+              "gold": {
+                "canonical_type": null,
+                "concept_ids": [
+                  "GO:0065007"
+                ],
+                "end": 71,
+                "id": "PMID:11319941:GO_BP:GO_BP_2016_02_16_Instance_53469",
+                "start": 63,
+                "text": "modulate",
+                "type": "CRAFT_UNSUPPORTED:GO_BP"
+              },
+              "predicted": null
+            },
+            {
+              "category": "schema-unscored / unsupported gold category",
+              "context": {
+                "end": 169,
+                "start": 3,
+                "text": "plex trait analysis of the mouse striatum: independent QTLs modulate volume and neuron number\n\nAbstract\n\nBackground\n\nThe striatum plays a pivotal role in modulating m"
+              },
+              "document_id": "PMID:11319941",
+              "gold": {
+                "canonical_type": null,
+                "concept_ids": [
+                  "CL:0000540"
+                ],
+                "end": 89,
+                "id": "PMID:11319941:CL:CL_basic_2014_02_21_Instance_25943",
+                "start": 83,
+                "text": "neuron",
+                "type": "CRAFT_UNSUPPORTED:CL"
+              },
+              "predicted": null
+            },
+            {
+              "category": "schema-unscored / unsupported gold category",
+              "context": {
+                "end": 212,
+                "start": 44,
+                "text": ": independent QTLs modulate volume and neuron number\n\nAbstract\n\nBackground\n\nThe striatum plays a pivotal role in modulating motor activity and higher cognitive function"
+              },
+              "document_id": "PMID:11319941",
+              "gold": {
+                "canonical_type": null,
+                "concept_ids": [
+                  "UBERON:0002435"
+                ],
+                "end": 132,
+                "id": "PMID:11319941:UBERON:UBERON_Instance_30130",
+                "start": 124,
+                "text": "striatum",
+                "type": "CRAFT_UNSUPPORTED:UBERON"
+              },
+              "predicted": null
+            }
+          ],
+          "schema-unscored / unsupported predicted category": [
+            {
+              "category": "schema-unscored / unsupported predicted category",
+              "context": {
+                "end": 2550,
+                "start": 2372,
+                "text": "ables that influence motor performance and aspects of cognition. In the case of Huntington disease the loss of 15-30% of the normal complement of medium spiny neurons leads to di"
+              },
+              "document_id": "PMID:11319941",
+              "gold": null,
+              "predicted": {
+                "canonical_type": "DiseaseOrPhenotypicFeature",
+                "end": 2470,
+                "id": "E7",
+                "score": null,
+                "start": 2452,
+                "text": "Huntington disease",
+                "type": "Disease"
+              }
+            },
+            {
+              "category": "schema-unscored / unsupported predicted category",
+              "context": {
+                "end": 2654,
+                "start": 2477,
+                "text": "ss of 15-30% of the normal complement of medium spiny neurons leads to distinct movement disorder in both humans and transgenic mouse models [14-17]. The subset of genes that no"
+              },
+              "document_id": "PMID:11319941",
+              "gold": null,
+              "predicted": {
+                "canonical_type": "DiseaseOrPhenotypicFeature",
+                "end": 2574,
+                "id": "E8",
+                "score": null,
+                "start": 2557,
+                "text": "movement disorder",
+                "type": "Disease"
+              }
+            },
+            {
+              "category": "schema-unscored / unsupported predicted category",
+              "context": {
+                "end": 5005,
+                "start": 4838,
+                "text": "ghts (Fig 1A). Brain weights of the two high strains, BXD5 (540 \u00b1 9 mg SEM) and BALB/cJ (527 \u00b1 13 mg), are significantly greater (P < .001) than that of C57BL/6J (476 "
+              },
+              "document_id": "PMID:11319941",
+              "gold": null,
+              "predicted": {
+                "canonical_type": "CellLine",
+                "end": 4925,
+                "id": "E14",
+                "score": null,
+                "start": 4918,
+                "text": "BALB/cJ",
+                "type": "CellLine"
+              }
+            },
+            {
+              "category": "schema-unscored / unsupported predicted category",
+              "context": {
+                "end": 5079,
+                "start": 4911,
+                "text": "M) and BALB/cJ (527 \u00b1 13 mg), are significantly greater (P < .001) than that of C57BL/6J (476 \u00b1 5 mg). Similarly, the brain weights of A/J (395 \u00b1 5 mg) and DBA/2J (403 "
+              },
+              "document_id": "PMID:11319941",
+              "gold": null,
+              "predicted": {
+                "canonical_type": "CellLine",
+                "end": 4999,
+                "id": "E15",
+                "score": null,
+                "start": 4991,
+                "text": "C57BL/6J",
+                "type": "CellLine"
+              }
+            },
+            {
+              "category": "schema-unscored / unsupported predicted category",
+              "context": {
+                "end": 5153,
+                "start": 4987,
+                "text": " of C57BL/6J (476 \u00b1 5 mg). Similarly, the brain weights of A/J (395 \u00b1 5 mg) and DBA/2J (403 \u00b1 5 mg) are significantly lower than those of the other three strains (P <"
+              },
+              "document_id": "PMID:11319941",
+              "gold": null,
+              "predicted": {
+                "canonical_type": "CellLine",
+                "end": 5073,
+                "id": "E16",
+                "score": null,
+                "start": 5067,
+                "text": "DBA/2J",
+                "type": "CellLine"
+              }
+            }
+          ],
+          "span mismatch": [
+            {
+              "category": "span mismatch",
+              "context": {
+                "end": 22489,
+                "start": 22307,
+                "text": "her forebrain structure including widespread neocortical ectopias [46, 47]. The MARCKS-related protein gene is expressed in the striatum during early brain development in the rat [48"
+              },
+              "document_id": "PMID:11319941",
+              "gold": {
+                "canonical_type": "GeneOrGeneProduct",
+                "concept_ids": [
+                  "PR:000010185"
+                ],
+                "end": 22409,
+                "id": "PMID:11319941:PR:PR_reasoned_2017_04_17_Instance_37889",
+                "start": 22387,
+                "text": "MARCKS-related protein",
+                "type": "Gene"
+              },
+              "predicted": {
+                "canonical_type": "GeneOrGeneProduct",
+                "end": 22393,
+                "id": "E56",
+                "score": null,
+                "start": 22387,
+                "text": "MARCKS",
+                "type": "Gene"
+              }
+            },
+            {
+              "category": "span mismatch",
+              "context": {
+                "end": 7015,
+                "start": 6839,
+                "text": "Previously described retinal degeneration [[81]] caused by homozygosity for the Pde6brd1mutation was noted in strains SB/Le, ST/bJ, BUB/BnJ, CBA/J, C3H/HeJ, SJL/J and SWR/J.\n\nS"
+              },
+              "document_id": "PMID:11532192",
+              "gold": {
+                "canonical_type": "GeneOrGeneProduct",
+                "concept_ids": [
+                  "PR:000012479"
+                ],
+                "end": 6924,
+                "id": "PMID:11532192:PR:PR_reasoned_2017_04_17_Instance_6",
+                "start": 6919,
+                "text": "Pde6b",
+                "type": "Gene"
+              },
+              "predicted": {
+                "canonical_type": "GeneOrGeneProduct",
+                "end": 6935,
+                "id": "E53",
+                "score": null,
+                "start": 6919,
+                "text": "Pde6brd1mutation",
+                "type": "Gene"
+              }
+            },
+            {
+              "category": "span mismatch",
+              "context": {
+                "end": 31049,
+                "start": 30881,
+                "text": "eceptors since these cells degenerate in SWR/J mice due to homozygosity for the Pde6brd1 mutation. In agreement with this finding, circadian regulation of wheel running"
+              },
+              "document_id": "PMID:11532192",
+              "gold": {
+                "canonical_type": "GeneOrGeneProduct",
+                "concept_ids": [
+                  "PR:000012479"
+                ],
+                "end": 30966,
+                "id": "PMID:11532192:PR:PR_reasoned_2017_04_17_Instance_8",
+                "start": 30961,
+                "text": "Pde6b",
+                "type": "Gene"
+              },
+              "predicted": {
+                "canonical_type": "GeneOrGeneProduct",
+                "end": 30969,
+                "id": "E233",
+                "score": null,
+                "start": 30961,
+                "text": "Pde6brd1",
+                "type": "Gene"
+              }
+            },
+            {
+              "category": "span mismatch",
+              "context": {
+                "end": 2509,
+                "start": 2342,
+                "text": "RC repeats of BRCA2 are responsible for direct RAD51 interaction. Cells lacking BRCA1/2 fail to form damage-induced subnuclear RAD51 foci with normal efficiency, sugge"
+              },
+              "document_id": "PMID:11597317",
+              "gold": {
+                "canonical_type": "GeneOrGeneProduct",
+                "concept_ids": [
+                  "PR:000004803"
+                ],
+                "end": 2427,
+                "id": "PMID:11597317:PR:PR_reasoned_2017_04_17_Instance_28709",
+                "start": 2422,
+                "text": "BRCA1",
+                "type": "Gene"
+              },
+              "predicted": {
+                "canonical_type": "GeneOrGeneProduct",
+                "end": 2429,
+                "id": "E20",
+                "score": null,
+                "start": 2422,
+                "text": "BRCA1/2",
+                "type": "Gene"
+              }
+            },
+            {
+              "category": "span mismatch",
+              "context": {
+                "end": 520,
+                "start": 344,
+                "text": "DAZAP1 interacts with both the Y chromosome-encoded DAZ and an autosome-encoded DAZ-like protein, DAZL. DAZAP1 contains two RNA-binding domains (RBDs) and a proline-rich C-term"
+              },
+              "document_id": "PMID:11604102",
+              "gold": {
+                "canonical_type": "GeneOrGeneProduct",
+                "concept_ids": [
+                  "PR:000006284"
+                ],
+                "end": 427,
+                "id": "PMID:11604102:PR:PR_reasoned_2017_04_17_Instance_62",
+                "start": 424,
+                "text": "DAZ",
+                "type": "Gene"
+              },
+              "predicted": {
+                "canonical_type": "GeneOrGeneProduct",
+                "end": 440,
+                "id": "E8",
+                "score": null,
+                "start": 424,
+                "text": "DAZ-like protein",
+                "type": "Gene"
+              }
+            }
+          ],
+          "spurious entity": [
+            {
+              "category": "spurious entity",
+              "context": {
+                "end": 1287,
+                "start": 1121,
+                "text": "quantitative trait loci (QTLs) with selective effects on striatal architecture. Bsc10a maps to the central region of Chr 10 (LRS of 17.5 near D10Mit186) and has inten"
+              },
+              "document_id": "PMID:11319941",
+              "gold": null,
+              "predicted": {
+                "canonical_type": "GeneOrGeneProduct",
+                "end": 1207,
+                "id": "E3",
+                "score": null,
+                "start": 1201,
+                "text": "Bsc10a",
+                "type": "Gene"
+              }
+            },
+            {
+              "category": "spurious entity",
+              "context": {
+                "end": 1442,
+                "start": 1275,
+                "text": "nd has intense effects on striatal volume and moderate effects on brain volume. Stnn19a maps to distal Chr 19 (LRS of 15 at D19Mit123) and is associated with differenc"
+              },
+              "document_id": "PMID:11319941",
+              "gold": null,
+              "predicted": {
+                "canonical_type": "GeneOrGeneProduct",
+                "end": 1362,
+                "id": "E4",
+                "score": null,
+                "start": 1355,
+                "text": "Stnn19a",
+                "type": "Gene"
+              }
+            },
+            {
+              "category": "spurious entity",
+              "context": {
+                "end": 11633,
+                "start": 11470,
+                "text": "olume and as much as 50% of the genotypic variance (h2 = 0.39). Alleles in this Chr 10 interval that are inherited from the BXD5 parental strain contribute to a si"
+              },
+              "document_id": "PMID:11319941",
+              "gold": null,
+              "predicted": {
+                "canonical_type": "GeneOrGeneProduct",
+                "end": 11553,
+                "id": "E24",
+                "score": null,
+                "start": 11550,
+                "text": "Chr",
+                "type": "Gene"
+              }
+            },
+            {
+              "category": "spurious entity",
+              "context": {
+                "end": 13242,
+                "start": 13060,
+                "text": "t the scope of effects, we have opted to give this Chr 10 locus a generic name, Brain size control 10a (Bsc10a). The specific striatal component of the Bsc10a was analyzed by mapping"
+              },
+              "document_id": "PMID:11319941",
+              "gold": null,
+              "predicted": {
+                "canonical_type": "GeneOrGeneProduct",
+                "end": 13162,
+                "id": "E25",
+                "score": null,
+                "start": 13140,
+                "text": "Brain size control 10a",
+                "type": "Gene"
+              }
+            },
+            {
+              "category": "spurious entity",
+              "context": {
+                "end": 13250,
+                "start": 13084,
+                "text": "we have opted to give this Chr 10 locus a generic name, Brain size control 10a (Bsc10a). The specific striatal component of the Bsc10a was analyzed by mapping the res"
+              },
+              "document_id": "PMID:11319941",
+              "gold": null,
+              "predicted": {
+                "canonical_type": "GeneOrGeneProduct",
+                "end": 13170,
+                "id": "E26",
+                "score": null,
+                "start": 13164,
+                "text": "Bsc10a",
+                "type": "Gene"
+              }
+            }
+          ],
+          "wrong type": [
+            {
+              "category": "wrong type",
+              "context": {
+                "end": 11679,
+                "start": 11513,
+                "text": "nuclear cataracts (Figure 1C). No posterior sutures were observed in any of the alphaA/BKO lenses examined. All wild type lenses were transparent upon removal from th"
+              },
+              "document_id": "PMID:12546709",
+              "gold": {
+                "canonical_type": "GeneOrGeneProduct",
+                "concept_ids": [
+                  "PR:000005907"
+                ],
+                "end": 11599,
+                "id": "PMID:12546709:PR:PR_reasoned_2017_04_17_Instance_46449",
+                "start": 11593,
+                "text": "alphaA",
+                "type": "Gene"
+              },
+              "predicted": {
+                "canonical_type": "ChemicalEntity",
+                "end": 11599,
+                "id": "E100",
+                "score": null,
+                "start": 11593,
+                "text": "alphaA",
+                "type": "Chemical"
+              }
+            },
+            {
+              "category": "wrong type",
+              "context": {
+                "end": 12693,
+                "start": 12527,
+                "text": " Arrows (A) indicate vacuoles in the equatorial region of a representative 5 wk alphaA/BKO lens. The arrowheads (B) indicate an area of minor light scattering deep to"
+              },
+              "document_id": "PMID:12546709",
+              "gold": {
+                "canonical_type": "GeneOrGeneProduct",
+                "concept_ids": [
+                  "PR:000005907"
+                ],
+                "end": 12613,
+                "id": "PMID:12546709:PR:PR_reasoned_2017_04_17_Instance_46471",
+                "start": 12607,
+                "text": "alphaA",
+                "type": "Gene"
+              },
+              "predicted": {
+                "canonical_type": "ChemicalEntity",
+                "end": 12613,
+                "id": "E109",
+                "score": null,
+                "start": 12607,
+                "text": "alphaA",
+                "type": "Chemical"
+              }
+            },
+            {
+              "category": "wrong type",
+              "context": {
+                "end": 12827,
+                "start": 12661,
+                "text": "f minor light scattering deep to the posterior capsule in a representative 5 wk alphaA/BKO lens.\n\nTable 1\n\nDimensions and gross lenticular appearance of lenses.\n\nExam"
+              },
+              "document_id": "PMID:12546709",
+              "gold": {
+                "canonical_type": "GeneOrGeneProduct",
+                "concept_ids": [
+                  "PR:000005907"
+                ],
+                "end": 12747,
+                "id": "PMID:12546709:PR:PR_reasoned_2017_04_17_Instance_46473",
+                "start": 12741,
+                "text": "alphaA",
+                "type": "Gene"
+              },
+              "predicted": {
+                "canonical_type": "ChemicalEntity",
+                "end": 12747,
+                "id": "E111",
+                "score": null,
+                "start": 12741,
+                "text": "alphaA",
+                "type": "Chemical"
+              }
+            },
+            {
+              "category": "wrong type",
+              "context": {
+                "end": 15412,
+                "start": 15246,
+                "text": "hile the green color represents SYTOX green staining (DNA). (A-E) are from 5 wk alphaA/BKO lenses. (F-J) are from 54 wk alphaA/BKO lenses. (K-O) are from 5 wk wild ty"
+              },
+              "document_id": "PMID:12546709",
+              "gold": {
+                "canonical_type": "GeneOrGeneProduct",
+                "concept_ids": [
+                  "PR:000005907"
+                ],
+                "end": 15332,
+                "id": "PMID:12546709:PR:PR_reasoned_2017_04_17_Instance_46491",
+                "start": 15326,
+                "text": "alphaA",
+                "type": "Gene"
+              },
+              "predicted": {
+                "canonical_type": "ChemicalEntity",
+                "end": 15332,
+                "id": "E120",
+                "score": null,
+                "start": 15326,
+                "text": "alphaA",
+                "type": "Chemical"
+              }
+            },
+            {
+              "category": "wrong type",
+              "context": {
+                "end": 599,
+                "start": 426,
+                "text": "tigated in these mutants the patterns of innervation and of expression of known neurotrophins.\n\nResults\n\nAt birth there is a limited expression of BDNF and NT-3 in the mutan"
+              },
+              "document_id": "PMID:12585968",
+              "gold": {
+                "canonical_type": "GeneOrGeneProduct",
+                "concept_ids": [
+                  "PR:000021998"
+                ],
+                "end": 519,
+                "id": "PMID:12585968:PR:PR_reasoned_2017_04_17_Instance_46635",
+                "start": 506,
+                "text": "neurotrophins",
+                "type": "Gene"
+              },
+              "predicted": {
+                "canonical_type": "ChemicalEntity",
+                "end": 519,
+                "id": "E4",
+                "score": null,
+                "start": 506,
+                "text": "neurotrophins",
+                "type": "Chemical"
+              }
+            }
+          ]
+        }
+      },
+      "metrics": {
+        "macro_f1": 0.6189590415614658,
+        "matching": "exact half-open character span and canonical evaluation type",
+        "micro": {
+          "f1": 0.6307225325368335,
+          "fn": 17743,
+          "fp": 8900,
+          "precision": 0.718826019650586,
+          "predicted": 31653,
+          "recall": 0.5618579612801264,
+          "support": 40496,
+          "tp": 22753
+        },
+        "per_type": {
+          "ChemicalEntity": {
+            "f1": 0.5104595029501162,
+            "fn": 3861,
+            "fp": 1615,
+            "precision": 0.6387024608501118,
+            "predicted": 4470,
+            "recall": 0.42510422870756404,
+            "support": 6716,
+            "tp": 2855
+          },
+          "GeneOrGeneProduct": {
+            "f1": 0.6274749948969177,
+            "fn": 9486,
+            "fp": 6939,
+            "precision": 0.665944540727903,
+            "predicted": 20772,
+            "recall": 0.5932072558857584,
+            "support": 23319,
+            "tp": 13833
+          },
+          "OrganismTaxon": {
+            "f1": 0.7189426268373637,
+            "fn": 4396,
+            "fp": 346,
+            "precision": 0.9460302604897832,
+            "predicted": 6411,
+            "recall": 0.5797724882898384,
+            "support": 10461,
+            "tp": 6065
+          }
+        },
+        "scored_types": [
+          "GeneOrGeneProduct",
+          "ChemicalEntity",
+          "OrganismTaxon"
+        ]
+      },
+      "predictor": {
+        "adapter": "AIONERBioMedExtractor",
+        "document_count": 97,
+        "inference_duration_seconds": 6907.0872623,
+        "inference_scope": "All supplied canonical document text through the official AIONER preprocessing/model path; repository-owned offset lifting only, with no manual correction or threshold change.",
+        "model": "PubmedBERT-CRF-AIONER.h5",
+        "model_artifact_sha256": "78ed76db6355b50002dbf5b51dc6ad9d2ca7dee0abe830f51c4e6329033a23c7",
+        "predicted_entity_count": 36208,
+        "prediction_file": ".cache\\ner_cross_corpus\\craft\\aioner_predictions.json",
+        "prediction_file_sha256": "09c5d7de4400adcdbc4eb070959d3a0959e3b13dbc2c8629e376b79434545daf",
+        "runtime": {
+          "decoder": "crf",
+          "entity_scope": "ALL",
+          "max_batch_characters": 200000,
+          "max_batch_documents": 128,
+          "max_sentence_tokens": 256,
+          "offset_mechanics": "Official AIONER token/BIO output is lifted sequentially onto the untouched document text and validated; the upstream mutable-remainder offset restorer is not used.",
+          "python": "3.8.20",
+          "python_implementation": "CPython",
+          "stanza": "1.4.0",
+          "tensorflow": "2.3.0",
+          "transformers": "4.18.0"
+        }
+      },
+      "schema_coverage": {
+        "gold": {
+          "ambiguous": 2015,
+          "scored": 40496,
+          "scored_fraction": 0.4064924766369212,
+          "total": 99623,
+          "unsupported": 57112
+        },
+        "predicted": {
+          "scored": 31653,
+          "scored_fraction": 0.8741990720282811,
+          "total": 36208,
+          "unsupported": 4555
+        }
+      }
+    },
+    "HunFlair2": {
+      "counts": {
+        "documents_evaluated": 97,
+        "gold_ambiguous_mentions": 2015,
+        "gold_mentions": 99623,
+        "gold_mentions_by_module": {
+          "CHEBI": 6748,
+          "CL": 5792,
+          "GO_BP": 12961,
+          "GO_CC": 5259,
+          "GO_MF": 469,
+          "MONDO": 3080,
+          "MOP": 341,
+          "NCBITaxon": 10463,
+          "PR": 23447,
+          "SO": 12243,
+          "UBERON": 18820
+        },
+        "gold_scored_mentions": 40496,
+        "gold_unsupported_mentions": 57112,
+        "predicted_mentions": 49197,
+        "predicted_scored_mentions": 43984,
+        "predicted_unsupported_mentions": 5213
+      },
+      "failure_analysis": {
+        "counts": {
+          "missed entity": 5842,
+          "overlapping prediction": 317,
+          "schema-unscored / unsupported gold category": 59127,
+          "schema-unscored / unsupported predicted category": 5213,
+          "span mismatch": 5700,
+          "spurious entity": 9330,
+          "wrong type": 193
+        },
+        "example_limit_per_category": 5,
+        "examples": {
+          "missed entity": [
+            {
+              "category": "missed entity",
+              "context": {
+                "end": 944,
+                "start": 777,
+                "text": "/mm3, and the striatal neuron population ranged from 1.4 to 2.5 million. Inbred animals with larger brains had larger striata but lower neuron-packing density resultin"
+              },
+              "document_id": "PMID:11319941",
+              "gold": {
+                "canonical_type": "OrganismTaxon",
+                "concept_ids": [
+                  "NCBITaxon:33208"
+                ],
+                "end": 864,
+                "id": "PMID:11319941:NCBITaxon:organism_Instance_20008",
+                "start": 857,
+                "text": "animals",
+                "type": "Species"
+              },
+              "predicted": null
+            },
+            {
+              "category": "missed entity",
+              "context": {
+                "end": 1563,
+                "start": 1396,
+                "text": "at D19Mit123) and is associated with differences of up to 400,000 neurons among animals.\n\nConclusion\n\nWe have discovered remarkable numerical and volumetric variation "
+              },
+              "document_id": "PMID:11319941",
+              "gold": {
+                "canonical_type": "OrganismTaxon",
+                "concept_ids": [
+                  "NCBITaxon:33208"
+                ],
+                "end": 1483,
+                "id": "PMID:11319941:NCBITaxon:organism_Instance_20012",
+                "start": 1476,
+                "text": "animals",
+                "type": "Species"
+              },
+              "predicted": null
+            },
+            {
+              "category": "missed entity",
+              "context": {
+                "end": 3758,
+                "start": 3589,
+                "text": "l advantages that make it an excellent target for complex trait analysis of the mammalian CNS. First, it is a large, cytoarchitectonically distinct region comprising app"
+              },
+              "document_id": "PMID:11319941",
+              "gold": {
+                "canonical_type": "OrganismTaxon",
+                "concept_ids": [
+                  "NCBITaxon:40674"
+                ],
+                "end": 3678,
+                "id": "PMID:11319941:NCBITaxon:organism_Instance_20035",
+                "start": 3669,
+                "text": "mammalian",
+                "type": "Species"
+              },
+              "predicted": null
+            },
+            {
+              "category": "missed entity",
+              "context": {
+                "end": 7746,
+                "start": 7579,
+                "text": "fore also analyzed a larger sample of genetically heterogeneous ABF2 intercross animals (an F2 intercross between A/J and BXD5). We first determined that the distribut"
+              },
+              "document_id": "PMID:11319941",
+              "gold": {
+                "canonical_type": "OrganismTaxon",
+                "concept_ids": [
+                  "NCBITaxon:33208"
+                ],
+                "end": 7666,
+                "id": "PMID:11319941:NCBITaxon:organism_Instance_20067",
+                "start": 7659,
+                "text": "animals",
+                "type": "Species"
+              },
+              "predicted": null
+            },
+            {
+              "category": "missed entity",
+              "context": {
+                "end": 7972,
+                "start": 7805,
+                "text": "d (Fig 2), before subjecting the data to correlational analysis. In this set of animals brain weight correlates significantly with striatal volume (r = .82, df = 42, P"
+              },
+              "document_id": "PMID:11319941",
+              "gold": {
+                "canonical_type": "OrganismTaxon",
+                "concept_ids": [
+                  "NCBITaxon:33208"
+                ],
+                "end": 7892,
+                "id": "PMID:11319941:NCBITaxon:organism_Instance_20071",
+                "start": 7885,
+                "text": "animals",
+                "type": "Species"
+              },
+              "predicted": null
+            }
+          ],
+          "overlapping prediction": [
+            {
+              "category": "overlapping prediction",
+              "context": {
+                "end": 495,
+                "start": 286,
+                "text": "ies. Recently the MLIV gene, MCOLN1, has been identified as a new member of the transient receptor potential (TRP) cation channel superfamily. Here we report the cloning and characterization of the mouse homol"
+              },
+              "document_id": "PMID:11897010",
+              "gold": {
+                "canonical_type": "ChemicalEntity",
+                "concept_ids": [
+                  "CHEBI:36916"
+                ],
+                "end": 407,
+                "id": "PMID:11897010:CHEBI:CHEBI_2015_08_26_Instance_25351",
+                "start": 401,
+                "text": "cation",
+                "type": "Chemical"
+              },
+              "predicted": {
+                "canonical_type": "GeneOrGeneProduct",
+                "end": 415,
+                "id": "E10",
+                "score": 0.9997369050979614,
+                "start": 366,
+                "text": "transient receptor potential (TRP) cation channel",
+                "type": "Gene"
+              }
+            },
+            {
+              "category": "overlapping prediction",
+              "context": {
+                "end": 2780,
+                "start": 2566,
+                "text": " to chromosome 19p13.2-13.3 and encodes a novel protein that is a member of the transient receptor potential (TRP) cation channel gene superfamily [7-10]. Protein trafficking studies suggest that MLIV is the result"
+              },
+              "document_id": "PMID:11897010",
+              "gold": {
+                "canonical_type": "ChemicalEntity",
+                "concept_ids": [
+                  "CHEBI:36916"
+                ],
+                "end": 2687,
+                "id": "PMID:11897010:CHEBI:CHEBI_2015_08_26_Instance_14633",
+                "start": 2681,
+                "text": "cation",
+                "type": "Chemical"
+              },
+              "predicted": {
+                "canonical_type": "GeneOrGeneProduct",
+                "end": 2700,
+                "id": "E45",
+                "score": 0.9999390906757779,
+                "start": 2646,
+                "text": "transient receptor potential (TRP) cation channel gene",
+                "type": "Gene"
+              }
+            },
+            {
+              "category": "overlapping prediction",
+              "context": {
+                "end": 13466,
+                "start": 13296,
+                "text": "ged extracellular spaces between cells in the equatorial/bow region in 5 wk old alphaA/BKO lenses. Fifty-four wk old alphaA/BKO lenses (Figure 2B) did not stain for nucle"
+              },
+              "document_id": "PMID:12546709",
+              "gold": {
+                "canonical_type": "GeneOrGeneProduct",
+                "concept_ids": [
+                  "PR:000005907"
+                ],
+                "end": 13382,
+                "id": "PMID:12546709:PR:PR_reasoned_2017_04_17_Instance_46479",
+                "start": 13376,
+                "text": "alphaA",
+                "type": "Gene"
+              },
+              "predicted": {
+                "canonical_type": "ChemicalEntity",
+                "end": 13386,
+                "id": "E144",
+                "score": 0.9998492399851481,
+                "start": 13376,
+                "text": "alphaA/BKO",
+                "type": "Chemical"
+              }
+            },
+            {
+              "category": "overlapping prediction",
+              "context": {
+                "end": 13503,
+                "start": 13333,
+                "text": "s in the equatorial/bow region in 5 wk old alphaA/BKO lenses. Fifty-four wk old alphaA/BKO lenses (Figure 2B) did not stain for nucleic acid in the posterior subcapsular "
+              },
+              "document_id": "PMID:12546709",
+              "gold": {
+                "canonical_type": "GeneOrGeneProduct",
+                "concept_ids": [
+                  "PR:000005907"
+                ],
+                "end": 13419,
+                "id": "PMID:12546709:PR:PR_reasoned_2017_04_17_Instance_46481",
+                "start": 13413,
+                "text": "alphaA",
+                "type": "Gene"
+              },
+              "predicted": {
+                "canonical_type": "ChemicalEntity",
+                "end": 13423,
+                "id": "E145",
+                "score": 0.8699397246042887,
+                "start": 13413,
+                "text": "alphaA/BKO",
+                "type": "Chemical"
+              }
+            },
+            {
+              "category": "overlapping prediction",
+              "context": {
+                "end": 17947,
+                "start": 17777,
+                "text": "astructural differences at the equatorial/bow region were also observed between alphaA/BKO lenses (Figure 3B and 3G) and wild type lenses (Figure 3L and 3Q). In contrast "
+              },
+              "document_id": "PMID:12546709",
+              "gold": {
+                "canonical_type": "GeneOrGeneProduct",
+                "concept_ids": [
+                  "PR:000005907"
+                ],
+                "end": 17863,
+                "id": "PMID:12546709:PR:PR_reasoned_2017_04_17_Instance_46509",
+                "start": 17857,
+                "text": "alphaA",
+                "type": "Gene"
+              },
+              "predicted": {
+                "canonical_type": "ChemicalEntity",
+                "end": 17867,
+                "id": "E170",
+                "score": 0.9729626178741455,
+                "start": 17857,
+                "text": "alphaA/BKO",
+                "type": "Chemical"
+              }
+            }
+          ],
+          "schema-unscored / unsupported gold category": [
+            {
+              "category": "schema-unscored / unsupported gold category",
+              "context": {
+                "end": 124,
+                "start": 0,
+                "text": "Complex trait analysis of the mouse striatum: independent QTLs modulate volume and neuron number\n\nAbstract\n\nBackground\n\nThe "
+              },
+              "document_id": "PMID:11319941",
+              "gold": {
+                "canonical_type": null,
+                "concept_ids": [
+                  "UBERON:0002435"
+                ],
+                "end": 44,
+                "id": "PMID:11319941:UBERON:UBERON_Instance_20000",
+                "start": 36,
+                "text": "striatum",
+                "type": "CRAFT_UNSUPPORTED:UBERON"
+              },
+              "predicted": null
+            },
+            {
+              "category": "schema-unscored / unsupported gold category",
+              "context": {
+                "end": 142,
+                "start": 0,
+                "text": "Complex trait analysis of the mouse striatum: independent QTLs modulate volume and neuron number\n\nAbstract\n\nBackground\n\nThe striatum plays a p"
+              },
+              "document_id": "PMID:11319941",
+              "gold": {
+                "canonical_type": null,
+                "concept_ids": [
+                  "SO:0000771"
+                ],
+                "end": 62,
+                "id": "PMID:11319941:SO:SO_2017_06_11_Instance_40989",
+                "start": 58,
+                "text": "QTLs",
+                "type": "CRAFT_UNSUPPORTED:SO"
+              },
+              "predicted": null
+            },
+            {
+              "category": "schema-unscored / unsupported gold category",
+              "context": {
+                "end": 151,
+                "start": 0,
+                "text": "Complex trait analysis of the mouse striatum: independent QTLs modulate volume and neuron number\n\nAbstract\n\nBackground\n\nThe striatum plays a pivotal ro"
+              },
+              "document_id": "PMID:11319941",
+              "gold": {
+                "canonical_type": null,
+                "concept_ids": [
+                  "GO:0065007"
+                ],
+                "end": 71,
+                "id": "PMID:11319941:GO_BP:GO_BP_2016_02_16_Instance_53469",
+                "start": 63,
+                "text": "modulate",
+                "type": "CRAFT_UNSUPPORTED:GO_BP"
+              },
+              "predicted": null
+            },
+            {
+              "category": "schema-unscored / unsupported gold category",
+              "context": {
+                "end": 169,
+                "start": 3,
+                "text": "plex trait analysis of the mouse striatum: independent QTLs modulate volume and neuron number\n\nAbstract\n\nBackground\n\nThe striatum plays a pivotal role in modulating m"
+              },
+              "document_id": "PMID:11319941",
+              "gold": {
+                "canonical_type": null,
+                "concept_ids": [
+                  "CL:0000540"
+                ],
+                "end": 89,
+                "id": "PMID:11319941:CL:CL_basic_2014_02_21_Instance_25943",
+                "start": 83,
+                "text": "neuron",
+                "type": "CRAFT_UNSUPPORTED:CL"
+              },
+              "predicted": null
+            },
+            {
+              "category": "schema-unscored / unsupported gold category",
+              "context": {
+                "end": 212,
+                "start": 44,
+                "text": ": independent QTLs modulate volume and neuron number\n\nAbstract\n\nBackground\n\nThe striatum plays a pivotal role in modulating motor activity and higher cognitive function"
+              },
+              "document_id": "PMID:11319941",
+              "gold": {
+                "canonical_type": null,
+                "concept_ids": [
+                  "UBERON:0002435"
+                ],
+                "end": 132,
+                "id": "PMID:11319941:UBERON:UBERON_Instance_30130",
+                "start": 124,
+                "text": "striatum",
+                "type": "CRAFT_UNSUPPORTED:UBERON"
+              },
+              "predicted": null
+            }
+          ],
+          "schema-unscored / unsupported predicted category": [
+            {
+              "category": "schema-unscored / unsupported predicted category",
+              "context": {
+                "end": 659,
+                "start": 496,
+                "text": "ted bilaterally using unbiased stereological procedures in five inbred strains (A/J, C57BL/6J, DBA/2J, BALB/cJ, and BXD5) and an F2 intercross between A/J and BXD5"
+              },
+              "document_id": "PMID:11319941",
+              "gold": null,
+              "predicted": {
+                "canonical_type": "CellLine",
+                "end": 579,
+                "id": "E3",
+                "score": 0.8289005160331726,
+                "start": 576,
+                "text": "A/J",
+                "type": "CellLine"
+              }
+            },
+            {
+              "category": "schema-unscored / unsupported predicted category",
+              "context": {
+                "end": 669,
+                "start": 501,
+                "text": "ilaterally using unbiased stereological procedures in five inbred strains (A/J, C57BL/6J, DBA/2J, BALB/cJ, and BXD5) and an F2 intercross between A/J and BXD5. Striatal"
+              },
+              "document_id": "PMID:11319941",
+              "gold": null,
+              "predicted": {
+                "canonical_type": "CellLine",
+                "end": 589,
+                "id": "E4",
+                "score": 0.8888629674911499,
+                "start": 581,
+                "text": "C57BL/6J",
+                "type": "CellLine"
+              }
+            },
+            {
+              "category": "schema-unscored / unsupported predicted category",
+              "context": {
+                "end": 677,
+                "start": 511,
+                "text": " using unbiased stereological procedures in five inbred strains (A/J, C57BL/6J, DBA/2J, BALB/cJ, and BXD5) and an F2 intercross between A/J and BXD5. Striatal volume "
+              },
+              "document_id": "PMID:11319941",
+              "gold": null,
+              "predicted": {
+                "canonical_type": "CellLine",
+                "end": 597,
+                "id": "E5",
+                "score": 0.8603229522705078,
+                "start": 591,
+                "text": "DBA/2J",
+                "type": "CellLine"
+              }
+            },
+            {
+              "category": "schema-unscored / unsupported predicted category",
+              "context": {
+                "end": 686,
+                "start": 519,
+                "text": "nbiased stereological procedures in five inbred strains (A/J, C57BL/6J, DBA/2J, BALB/cJ, and BXD5) and an F2 intercross between A/J and BXD5. Striatal volume ranged fr"
+              },
+              "document_id": "PMID:11319941",
+              "gold": null,
+              "predicted": {
+                "canonical_type": "CellLine",
+                "end": 606,
+                "id": "E6",
+                "score": 0.8878557880719503,
+                "start": 599,
+                "text": "BALB/cJ",
+                "type": "CellLine"
+              }
+            },
+            {
+              "category": "schema-unscored / unsupported predicted category",
+              "context": {
+                "end": 730,
+                "start": 567,
+                "text": "strains (A/J, C57BL/6J, DBA/2J, BALB/cJ, and BXD5) and an F2 intercross between A/J and BXD5. Striatal volume ranged from 20 to 37 mm3. Neuron-packing density rang"
+              },
+              "document_id": "PMID:11319941",
+              "gold": null,
+              "predicted": {
+                "canonical_type": "CellLine",
+                "end": 650,
+                "id": "E7",
+                "score": 0.8217212160428365,
+                "start": 647,
+                "text": "A/J",
+                "type": "CellLine"
+              }
+            }
+          ],
+          "span mismatch": [
+            {
+              "category": "span mismatch",
+              "context": {
+                "end": 22489,
+                "start": 22307,
+                "text": "her forebrain structure including widespread neocortical ectopias [46, 47]. The MARCKS-related protein gene is expressed in the striatum during early brain development in the rat [48"
+              },
+              "document_id": "PMID:11319941",
+              "gold": {
+                "canonical_type": "GeneOrGeneProduct",
+                "concept_ids": [
+                  "PR:000010185"
+                ],
+                "end": 22409,
+                "id": "PMID:11319941:PR:PR_reasoned_2017_04_17_Instance_37889",
+                "start": 22387,
+                "text": "MARCKS-related protein",
+                "type": "Gene"
+              },
+              "predicted": {
+                "canonical_type": "GeneOrGeneProduct",
+                "end": 22393,
+                "id": "E100",
+                "score": 0.98270183801651,
+                "start": 22387,
+                "text": "MARCKS",
+                "type": "Gene"
+              }
+            },
+            {
+              "category": "span mismatch",
+              "context": {
+                "end": 26958,
+                "start": 26779,
+                "text": "ice were anesthetized deeply with Avertin (1.25% 2,2,2-tribromoethanol and 0.8% tert-pentyl alcohol in water, 0.5-1.0 ml ip) and perfused through the left ventricle with 0.9% sodi"
+              },
+              "document_id": "PMID:11319941",
+              "gold": {
+                "canonical_type": "ChemicalEntity",
+                "concept_ids": [
+                  "CHEBI:30879"
+                ],
+                "end": 26878,
+                "id": "PMID:11319941:CHEBI:CHEBI_2015_08_26_Instance_70051",
+                "start": 26871,
+                "text": "alcohol",
+                "type": "Chemical"
+              },
+              "predicted": {
+                "canonical_type": "ChemicalEntity",
+                "end": 26878,
+                "id": "E140",
+                "score": 0.9999953806400299,
+                "start": 26859,
+                "text": "tert-pentyl alcohol",
+                "type": "Chemical"
+              }
+            },
+            {
+              "category": "span mismatch",
+              "context": {
+                "end": 7015,
+                "start": 6839,
+                "text": "Previously described retinal degeneration [[81]] caused by homozygosity for the Pde6brd1mutation was noted in strains SB/Le, ST/bJ, BUB/BnJ, CBA/J, C3H/HeJ, SJL/J and SWR/J.\n\nS"
+              },
+              "document_id": "PMID:11532192",
+              "gold": {
+                "canonical_type": "GeneOrGeneProduct",
+                "concept_ids": [
+                  "PR:000012479"
+                ],
+                "end": 6924,
+                "id": "PMID:11532192:PR:PR_reasoned_2017_04_17_Instance_6",
+                "start": 6919,
+                "text": "Pde6b",
+                "type": "Gene"
+              },
+              "predicted": {
+                "canonical_type": "GeneOrGeneProduct",
+                "end": 6935,
+                "id": "E70",
+                "score": 0.9999849796295166,
+                "start": 6919,
+                "text": "Pde6brd1mutation",
+                "type": "Gene"
+              }
+            },
+            {
+              "category": "span mismatch",
+              "context": {
+                "end": 31049,
+                "start": 30881,
+                "text": "eceptors since these cells degenerate in SWR/J mice due to homozygosity for the Pde6brd1 mutation. In agreement with this finding, circadian regulation of wheel running"
+              },
+              "document_id": "PMID:11532192",
+              "gold": {
+                "canonical_type": "GeneOrGeneProduct",
+                "concept_ids": [
+                  "PR:000012479"
+                ],
+                "end": 30966,
+                "id": "PMID:11532192:PR:PR_reasoned_2017_04_17_Instance_8",
+                "start": 30961,
+                "text": "Pde6b",
+                "type": "Gene"
+              },
+              "predicted": {
+                "canonical_type": "GeneOrGeneProduct",
+                "end": 30969,
+                "id": "E331",
+                "score": 0.9999876022338867,
+                "start": 30961,
+                "text": "Pde6brd1",
+                "type": "Gene"
+              }
+            },
+            {
+              "category": "span mismatch",
+              "context": {
+                "end": 38409,
+                "start": 38236,
+                "text": "s from at least 2 mice of the listed strains were fixed (4% paraformaldehyde or Fekete's acid-alcohol-formalin fixative) processed, paraffin embedded and sectioned as previo"
+              },
+              "document_id": "PMID:11532192",
+              "gold": {
+                "canonical_type": "ChemicalEntity",
+                "concept_ids": [
+                  "CHEBI:37527"
+                ],
+                "end": 38329,
+                "id": "PMID:11532192:CHEBI:CHEBI_2015_08_26_Instance_16215",
+                "start": 38325,
+                "text": "acid",
+                "type": "Chemical"
+              },
+              "predicted": {
+                "canonical_type": "ChemicalEntity",
+                "end": 38329,
+                "id": "E406",
+                "score": 0.9875154495239258,
+                "start": 38316,
+                "text": "Fekete's acid",
+                "type": "Chemical"
+              }
+            }
+          ],
+          "spurious entity": [
+            {
+              "category": "spurious entity",
+              "context": {
+                "end": 1287,
+                "start": 1121,
+                "text": "quantitative trait loci (QTLs) with selective effects on striatal architecture. Bsc10a maps to the central region of Chr 10 (LRS of 17.5 near D10Mit186) and has inten"
+              },
+              "document_id": "PMID:11319941",
+              "gold": null,
+              "predicted": {
+                "canonical_type": "GeneOrGeneProduct",
+                "end": 1207,
+                "id": "E8",
+                "score": 0.9842556118965149,
+                "start": 1201,
+                "text": "Bsc10a",
+                "type": "Gene"
+              }
+            },
+            {
+              "category": "spurious entity",
+              "context": {
+                "end": 1442,
+                "start": 1275,
+                "text": "nd has intense effects on striatal volume and moderate effects on brain volume. Stnn19a maps to distal Chr 19 (LRS of 15 at D19Mit123) and is associated with differenc"
+              },
+              "document_id": "PMID:11319941",
+              "gold": null,
+              "predicted": {
+                "canonical_type": "GeneOrGeneProduct",
+                "end": 1362,
+                "id": "E9",
+                "score": 0.7938271164894104,
+                "start": 1355,
+                "text": "Stnn19a",
+                "type": "Gene"
+              }
+            },
+            {
+              "category": "spurious entity",
+              "context": {
+                "end": 11773,
+                "start": 11612,
+                "text": "in contribute to a significantly larger striatum than do alleles inherited from A/J. Mean bilateral volume corrected for shrinkage for the AA genotype at D10Mit1"
+              },
+              "document_id": "PMID:11319941",
+              "gold": null,
+              "predicted": {
+                "canonical_type": "OrganismTaxon",
+                "end": 11693,
+                "id": "E52",
+                "score": 0.4687040448188782,
+                "start": 11692,
+                "text": "A",
+                "type": "Species"
+              }
+            },
+            {
+              "category": "spurious entity",
+              "context": {
+                "end": 13242,
+                "start": 13060,
+                "text": "t the scope of effects, we have opted to give this Chr 10 locus a generic name, Brain size control 10a (Bsc10a). The specific striatal component of the Bsc10a was analyzed by mapping"
+              },
+              "document_id": "PMID:11319941",
+              "gold": null,
+              "predicted": {
+                "canonical_type": "GeneOrGeneProduct",
+                "end": 13162,
+                "id": "E61",
+                "score": 0.9899826049804688,
+                "start": 13140,
+                "text": "Brain size control 10a",
+                "type": "Gene"
+              }
+            },
+            {
+              "category": "spurious entity",
+              "context": {
+                "end": 13250,
+                "start": 13084,
+                "text": "we have opted to give this Chr 10 locus a generic name, Brain size control 10a (Bsc10a). The specific striatal component of the Bsc10a was analyzed by mapping the res"
+              },
+              "document_id": "PMID:11319941",
+              "gold": null,
+              "predicted": {
+                "canonical_type": "GeneOrGeneProduct",
+                "end": 13170,
+                "id": "E62",
+                "score": 0.6092988848686218,
+                "start": 13164,
+                "text": "Bsc10a",
+                "type": "Gene"
+              }
+            }
+          ],
+          "wrong type": [
+            {
+              "category": "wrong type",
+              "context": {
+                "end": 11552,
+                "start": 11386,
+                "text": "the posterior subcapsular regions (Figure 1B see arrowheads). By 54 wks of age, alphaA/BKO lenses exhibited dense cortical and nuclear cataracts (Figure 1C). No poste"
+              },
+              "document_id": "PMID:12546709",
+              "gold": {
+                "canonical_type": "GeneOrGeneProduct",
+                "concept_ids": [
+                  "PR:000005907"
+                ],
+                "end": 11472,
+                "id": "PMID:12546709:PR:PR_reasoned_2017_04_17_Instance_46427",
+                "start": 11466,
+                "text": "alphaA",
+                "type": "Gene"
+              },
+              "predicted": {
+                "canonical_type": "ChemicalEntity",
+                "end": 11472,
+                "id": "E127",
+                "score": 0.9192200303077698,
+                "start": 11466,
+                "text": "alphaA",
+                "type": "Chemical"
+              }
+            },
+            {
+              "category": "wrong type",
+              "context": {
+                "end": 11679,
+                "start": 11513,
+                "text": "nuclear cataracts (Figure 1C). No posterior sutures were observed in any of the alphaA/BKO lenses examined. All wild type lenses were transparent upon removal from th"
+              },
+              "document_id": "PMID:12546709",
+              "gold": {
+                "canonical_type": "GeneOrGeneProduct",
+                "concept_ids": [
+                  "PR:000005907"
+                ],
+                "end": 11599,
+                "id": "PMID:12546709:PR:PR_reasoned_2017_04_17_Instance_46449",
+                "start": 11593,
+                "text": "alphaA",
+                "type": "Gene"
+              },
+              "predicted": {
+                "canonical_type": "ChemicalEntity",
+                "end": 11599,
+                "id": "E130",
+                "score": 0.8243573307991028,
+                "start": 11593,
+                "text": "alphaA",
+                "type": "Chemical"
+              }
+            },
+            {
+              "category": "wrong type",
+              "context": {
+                "end": 16864,
+                "start": 16698,
+                "text": "3D,3F and 3I) and wild type lenses (Figure 3K,3N,3P and 3S). In 5 and 54 wk old alphaA/BKO lenses, superficial and deep anterior cortical regions, stained for lipid m"
+              },
+              "document_id": "PMID:12546709",
+              "gold": {
+                "canonical_type": "GeneOrGeneProduct",
+                "concept_ids": [
+                  "PR:000005907"
+                ],
+                "end": 16784,
+                "id": "PMID:12546709:PR:PR_reasoned_2017_04_17_Instance_46503",
+                "start": 16778,
+                "text": "alphaA",
+                "type": "Gene"
+              },
+              "predicted": {
+                "canonical_type": "ChemicalEntity",
+                "end": 16784,
+                "id": "E163",
+                "score": 0.964992880821228,
+                "start": 16778,
+                "text": "alphaA",
+                "type": "Chemical"
+              }
+            },
+            {
+              "category": "wrong type",
+              "context": {
+                "end": 17065,
+                "start": 16899,
+                "text": "ns typical of fiber cells cut in cross-section or longitudinal section. In 5 wk alphaA/BKO lenses there was a high density of stained membranes per unit area througho"
+              },
+              "document_id": "PMID:12546709",
+              "gold": {
+                "canonical_type": "GeneOrGeneProduct",
+                "concept_ids": [
+                  "PR:000005907"
+                ],
+                "end": 16985,
+                "id": "PMID:12546709:PR:PR_reasoned_2017_04_17_Instance_46505",
+                "start": 16979,
+                "text": "alphaA",
+                "type": "Gene"
+              },
+              "predicted": {
+                "canonical_type": "ChemicalEntity",
+                "end": 16985,
+                "id": "E166",
+                "score": 0.8546456694602966,
+                "start": 16979,
+                "text": "alphaA",
+                "type": "Chemical"
+              }
+            },
+            {
+              "category": "wrong type",
+              "context": {
+                "end": 17223,
+                "start": 17057,
+                "text": "throughout the cortex, with no nucleic acid staining in these regions. In 54 wk alphaA/BKO lenses, large, irregularly shaped cells were observed, interspersed among r"
+              },
+              "document_id": "PMID:12546709",
+              "gold": {
+                "canonical_type": "GeneOrGeneProduct",
+                "concept_ids": [
+                  "PR:000005907"
+                ],
+                "end": 17143,
+                "id": "PMID:12546709:PR:PR_reasoned_2017_04_17_Instance_46507",
+                "start": 17137,
+                "text": "alphaA",
+                "type": "Gene"
+              },
+              "predicted": {
+                "canonical_type": "ChemicalEntity",
+                "end": 17143,
+                "id": "E168",
+                "score": 0.9999568462371826,
+                "start": 17137,
+                "text": "alphaA",
+                "type": "Chemical"
+              }
+            }
+          ]
+        }
+      },
+      "metrics": {
+        "macro_f1": 0.689386990529396,
+        "matching": "exact half-open character span and canonical evaluation type",
+        "micro": {
+          "f1": 0.6733901515151515,
+          "fn": 12052,
+          "fp": 15540,
+          "precision": 0.646689705347399,
+          "predicted": 43984,
+          "recall": 0.7023903595416832,
+          "support": 40496,
+          "tp": 28444
+        },
+        "per_type": {
+          "ChemicalEntity": {
+            "f1": 0.5791951404707669,
+            "fn": 2902,
+            "fp": 2640,
+            "precision": 0.5909513480012395,
+            "predicted": 6454,
+            "recall": 0.56789755807028,
+            "support": 6716,
+            "tp": 3814
+          },
+          "GeneOrGeneProduct": {
+            "f1": 0.6293157864534517,
+            "fn": 6869,
+            "fp": 12510,
+            "precision": 0.568024861878453,
+            "predicted": 28960,
+            "recall": 0.7054333376216819,
+            "support": 23319,
+            "tp": 16450
+          },
+          "OrganismTaxon": {
+            "f1": 0.8596500446639693,
+            "fn": 2281,
+            "fp": 390,
+            "precision": 0.9544924154025671,
+            "predicted": 8570,
+            "recall": 0.7819520122359239,
+            "support": 10461,
+            "tp": 8180
+          }
+        },
+        "scored_types": [
+          "GeneOrGeneProduct",
+          "ChemicalEntity",
+          "OrganismTaxon"
+        ]
+      },
+      "predictor": {
+        "adapter": "HunFlair2BioMedExtractor",
+        "document_count": 97,
+        "inference_duration_seconds": 2715.9465084999974,
+        "inference_scope": "All supplied document text; SciSpacy sentence segmentation; Flair long-sentence striding when required; no truncation.",
+        "model": "hunflair/hunflair2-ner",
+        "model_artifact_sha256": "245a099b660c1e2b682e0a1216feac140d5be36c4c6ca8c715af682efa685de6",
+        "predicted_entity_count": 49197,
+        "prediction_file": ".cache\\ner_cross_corpus\\craft\\hunflair2_predictions.json",
+        "prediction_file_sha256": "5e1a5bf0cb3f85cb12f52134a5a4a66f7ddfa4d87a214d2144268ac6cc5b0ac2",
+        "runtime": {
+          "allow_long_sentences": true,
+          "device": "cpu",
+          "en_core_sci_sm": "0.5.1",
+          "flair": "0.15.1",
+          "label_type": "ner",
+          "model_max_length": 512,
+          "offset_mechanics": "Flair span text is resolved against the model sentence; that sentence is located in the untouched source and the lifted span is validated before serialization.",
+          "python": "3.11.16",
+          "python_implementation": "CPython",
+          "pytorch": "2.14.0+cpu",
+          "scispacy": "0.5.1",
+          "sentence_splitter": "SciSpacySentenceSplitter(en_core_sci_sm)",
+          "spacy": "3.4.4",
+          "stride": 256,
+          "tagger_class": "PrefixedSequenceTagger",
+          "transformer_model": "michiyasunaga/BioLinkBERT-base",
+          "transformers": "4.57.6",
+          "truncate": true
+        }
+      },
+      "schema_coverage": {
+        "gold": {
+          "ambiguous": 2015,
+          "scored": 40496,
+          "scored_fraction": 0.4064924766369212,
+          "total": 99623,
+          "unsupported": 57112
+        },
+        "predicted": {
+          "scored": 43984,
+          "scored_fraction": 0.8940382543651035,
+          "total": 49197,
+          "unsupported": 5213
+        }
+      }
+    }
+  },
+  "report_date": "2026-09-19",
+  "source_offset_validation": {
+    "all_contiguous_annotation_spans_match_source_text": true,
+    "all_discontinuous_annotation_fragments_match_source_text": true,
+    "canonical_source": "articles/txt/*.txt",
+    "discontinuous_and_zero_length_annotations_excluded_as_ambiguous": true
+  }
+}

@@ -89,6 +89,47 @@ def _load_runner_output(path: Path, model: str) -> RunnerOutput:
     return RunnerOutput(model, path, dict(metadata), records)
 
 
+def load_cached_runner_output(
+    path: Path,
+    model: str,
+    documents: Sequence[Mapping[str, str]],
+    *,
+    expected_model_artifact_sha256: str | None = None,
+) -> RunnerOutput:
+    """Load cached predictions only when input and artifact identity still match.
+
+    The isolated runtimes write a checksum for every supplied source document.
+    Comparing those checksums, coverage, and the cached model artifact digest is
+    sufficient to reuse a prediction file without rerunning inference.
+    """
+
+    run = _load_runner_output(path, model)
+    expected = {
+        str(document["id"]): hashlib.sha256(
+            str(document["text"]).encode("utf-8")
+        ).hexdigest()
+        for document in documents
+    }
+    if set(run.records) != set(expected):
+        raise ValueError(f"{model} cached predictions do not cover the supplied documents")
+    raw_payload = json.loads(path.read_text(encoding="utf-8"))
+    raw_documents = raw_payload.get("documents", ())
+    by_id = {str(item.get("id")): item for item in raw_documents}
+    for document_id, expected_digest in expected.items():
+        actual_digest = by_id[document_id].get("text_sha256")
+        if actual_digest != expected_digest:
+            raise ValueError(
+                f"{model} cached prediction input checksum mismatch for {document_id}"
+            )
+    if (
+        expected_model_artifact_sha256 is not None
+        and run.metadata.get("model_artifact_sha256")
+        != expected_model_artifact_sha256
+    ):
+        raise ValueError(f"{model} cached prediction artifact checksum mismatch")
+    return run
+
+
 def _run_command(
     command: Sequence[str],
     *,
@@ -278,6 +319,7 @@ def normalize_runner_predictions(
 
 __all__ = [
     "RunnerOutput",
+    "load_cached_runner_output",
     "normalize_runner_predictions",
     "run_aioner",
     "run_hunflair2",

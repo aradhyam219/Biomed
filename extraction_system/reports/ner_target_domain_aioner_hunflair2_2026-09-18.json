@@ -978,7 +978,7 @@
         "model": "PubmedBERT-CRF-AIONER.h5",
         "model_artifact_sha256": "78ed76db6355b50002dbf5b51dc6ad9d2ca7dee0abe830f51c4e6329033a23c7",
         "predicted_entity_count": 2126,
-        "prediction_file": "C:\\Projects\\Biomed\\extraction_system\\.cache\\ner_target_domain\\aioner_predictions.json",
+        "prediction_file": ".cache\\ner_target_domain\\aioner_predictions.json",
         "prediction_file_sha256": "045aa99907593489e71b71d718250b3dac6ee3d46c8ffc74a5e9f5706f12eb7e",
         "runtime": {
           "decoder": "crf",
@@ -1045,7 +1045,7 @@
         "model": "hunflair/hunflair2-ner",
         "model_artifact_sha256": "245a099b660c1e2b682e0a1216feac140d5be36c4c6ca8c715af682efa685de6",
         "predicted_entity_count": 2502,
-        "prediction_file": "C:\\Projects\\Biomed\\extraction_system\\.cache\\ner_target_domain\\hunflair2_predictions.json",
+        "prediction_file": ".cache\\ner_target_domain\\hunflair2_predictions.json",
         "prediction_file_sha256": "a0337a85562fbea9daa5aef801e095477b7feef10de00943b0aa72ed408b3860",
         "runtime": {
           "allow_long_sentences": true,

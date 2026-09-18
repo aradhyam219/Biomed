@@ -88,6 +88,12 @@ class CrossCorpusTests(unittest.TestCase):
         validate_medmentions_report_arithmetic(report)
 
         self.assertEqual(
+            report["evidence_role"],
+            "exploratory cross-schema stress test using explicit UMLS semantic-type mappings",
+        )
+        self.assertFalse(report["clean_model_selection_evidence"])
+
+        self.assertEqual(
             report["models"]["AIONER"]["metrics"]["micro"]["tp"],
             2,
         )

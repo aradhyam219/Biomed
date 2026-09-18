@@ -53,10 +53,13 @@ boundary.
   official NCBI/PubMed/PMC acquisition, identical canonical text, AIONER and
   HunFlair2 agreement diagnostics, sentence-level entity co-occurrence only, and
   a deterministic human-review packet;
-- an independent exact-span MedMentions ST21pv test evaluation with an explicit
-  semantic-type mapping to the defensible shared ChemicalEntity and
+- an exploratory exact-span MedMentions ST21pv cross-schema stress test with an
+  explicit UMLS semantic-type mapping to the shared ChemicalEntity and
   DiseaseOrPhenotypicFeature classes, including unsupported/ambiguous counts,
-  failure categories, and a descriptive BioRED comparison.
+  failure categories, and a descriptive BioRED comparison;
+- the primary clean independent CRAFT v5.0.2 full-text benchmark, evaluating
+  AIONER and HunFlair2 on identical canonical article text while scoring only
+  Protein Ontology, ChEBI, and NCBI Taxonomy mappings to the current schema.
 
 ### Deferred or out of scope
 
@@ -189,13 +192,22 @@ diagnostic; no edge, predicate, or relation score is produced. The report keeps
 SequenceVariant as an AIONER-only schema observation and retains CellLine in the
 shared view.
 
-The MedMentions evaluation is independent under the documented training recipes
-checked for the cached AIONER and HunFlair2 artifacts. UMLS identifiers are
-retained as source metadata but are not used for linking or scoring. Only explicit
-semantic types mapped to ChemicalEntity or DiseaseOrPhenotypicFeature receive
-primary exact NER metrics; unsupported and ambiguous gold annotations and
-unsupported predictions are counted separately. MedMentions and BioRED scores are
-descriptive cross-corpus evidence, not interchangeable quality claims.
+The MedMentions experiment is an exploratory cross-schema stress test using
+explicit UMLS semantic-type mappings. UMLS identifiers are retained as source
+metadata but are not used for linking or scoring. Only explicit semantic types
+mapped to ChemicalEntity or DiseaseOrPhenotypicFeature receive primary exact NER
+metrics; unsupported and ambiguous gold annotations and unsupported predictions
+are counted separately. It is not clean model-selection evidence comparable to
+BioRED or CRAFT.
+
+CRAFT is the primary clean independent cross-corpus benchmark for the current NER
+decision. The evaluation uses the official CRAFT v5.0.2 full-text release and
+identical canonical article text for AIONER and HunFlair2. Only Protein Ontology,
+ChEBI, and NCBI Taxonomy annotations map to GeneOrGeneProduct, ChemicalEntity,
+and OrganismTaxon respectively. Cell Ontology is not mapped to CellLine,
+Sequence Ontology is not mapped to SequenceVariant, and GO annotations remain
+out of scope. Unsupported and ambiguous CRAFT annotations remain explicit in
+machine-readable reports and are excluded from primary metrics.
 
 Relation-specific and end-to-end evaluation infrastructure is preserved as
 deferred work; it is not an active acceptance target for the current NER phase.

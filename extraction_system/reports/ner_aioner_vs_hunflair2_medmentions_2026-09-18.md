@@ -1,6 +1,6 @@
-# AIONER versus HunFlair2 on MedMentions ST21pv
+# Exploratory MedMentions cross-schema stress test
 
-This is an independent cross-corpus exact-span NER evaluation. UMLS normalization is intentionally out of scope.
+This is an exploratory cross-schema stress test using explicit UMLS semantic-type mappings. It is not clean model-selection evidence comparable to BioRED or CRAFT. UMLS normalization is intentionally out of scope.
 
 ## Dataset identity
 

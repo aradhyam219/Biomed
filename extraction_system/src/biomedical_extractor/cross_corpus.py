@@ -670,7 +670,15 @@ def evaluate_medmentions(
             "failure_examples": dict(failure_examples),
         }
     report = {
-        "evaluation_name": "AIONER versus HunFlair2 on MedMentions ST21pv",
+        "evaluation_name": (
+            "Exploratory AIONER versus HunFlair2 MedMentions ST21pv "
+            "cross-schema stress test"
+        ),
+        "evidence_role": (
+            "exploratory cross-schema stress test using explicit UMLS "
+            "semantic-type mappings"
+        ),
+        "clean_model_selection_evidence": False,
         "report_date": "2026-09-18",
         "dataset": dataset.to_dict(include_documents=False),
         "mapping": {
@@ -734,7 +742,8 @@ def evaluate_medmentions(
             "Only explicit, unambiguous semantic-type mappings are scored; unsupported and ambiguous gold mentions are reported separately.",
             "Exact character span and canonical type are required for a true positive.",
             "The default run uses the official MedMentions test PMID split; the split identity and checksums are recorded.",
-            "Annotation conventions differ from BioRED, so cross-corpus scores are not directly interchangeable with BioRED scores.",
+            "This exploratory cross-schema stress test is not clean model-selection evidence comparable to BioRED or CRAFT.",
+            "Annotation conventions differ from BioRED and CRAFT, so cross-corpus scores are not directly interchangeable.",
         ],
     }
     report["comparison"] = _comparison_to_biored(report)
@@ -863,10 +872,12 @@ def render_medmentions_markdown(report: Mapping[str, Any]) -> str:
 
     dataset = report["dataset"]
     lines = [
-        "# AIONER versus HunFlair2 on MedMentions ST21pv",
+        "# Exploratory MedMentions cross-schema stress test",
         "",
-        "This is an independent cross-corpus exact-span NER evaluation. "
-        "UMLS normalization is intentionally out of scope.",
+        "This is an exploratory cross-schema stress test using explicit UMLS "
+        "semantic-type mappings. It is not clean model-selection evidence "
+        "comparable to BioRED or CRAFT. UMLS normalization is intentionally out "
+        "of scope.",
         "",
         "## Dataset identity",
         "",

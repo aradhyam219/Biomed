@@ -2,6 +2,444 @@
   "examples": [
     {
       "aioner_prediction": {
+        "canonical_type": "DiseaseOrPhenotypicFeature",
+        "end": 3715,
+        "id": "E62",
+        "score": null,
+        "start": 3691,
+        "text": "microtubule disturbances",
+        "type": "Disease"
+      },
+      "category": "aioner_only",
+      "entity_class": "DiseaseOrPhenotypicFeature",
+      "hunflair2_prediction": null,
+      "paper_id": "PMCID:PMC11824863",
+      "pmcid": "PMC11824863",
+      "pmid": "39949834",
+      "section": "1. Introduction",
+      "sentence": {
+        "end": 3904,
+        "start": 3652,
+        "text": "Moreover, hyperphosphorylation of Tau, microtubule disturbances, and Tau accumulation have been observed to promote ROS production [10], while oxidative stress also contributes to the formation of phosphorylated-Tau (p-Tau) and neurofibrillary tangles."
+      },
+      "source_span": {
+        "end": 3715,
+        "start": 3691,
+        "text": "microtubule disturbances"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "GeneOrGeneProduct",
+        "end": 33045,
+        "id": "E509",
+        "score": null,
+        "start": 33038,
+        "text": "STAT4-1",
+        "type": "Gene"
+      },
+      "category": "boundary_disagreement",
+      "entity_class": "GeneOrGeneProduct",
+      "hunflair2_prediction": {
+        "canonical_type": "GeneOrGeneProduct",
+        "end": 33044,
+        "id": "E592",
+        "score": 0.8217463791370392,
+        "start": 33038,
+        "text": "STAT4-",
+        "type": "Gene"
+      },
+      "paper_id": "PMCID:PMC8605525",
+      "pmcid": "PMC8605525",
+      "pmid": "34798872",
+      "section": "Results / STAT4 promotes the expression of Runx3 by regulating the H3K4me3 level in the promoter region of Runx3",
+      "sentence": {
+        "end": 33068,
+        "start": 32923,
+        "text": "G ChIP-qPCR of relative H3K4me3 and STAT4 recruitment level in HUVECs under Con treatment and transfection with sh-STAT4-1, oe-STAT4 or controls."
+      },
+      "source_span": {
+        "end": 33045,
+        "start": 33038,
+        "text": "STAT4-1"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "OrganismTaxon",
+        "end": 12374,
+        "id": "E186",
+        "score": null,
+        "start": 12352,
+        "text": "horseradish peroxidase",
+        "type": "Species"
+      },
+      "category": "cross_type_overlap",
+      "entity_class": "OrganismTaxon",
+      "hunflair2_prediction": {
+        "canonical_type": "GeneOrGeneProduct",
+        "end": 12374,
+        "id": "E222",
+        "score": 0.9998020132382711,
+        "start": 12364,
+        "text": "peroxidase",
+        "type": "Gene"
+      },
+      "paper_id": "PMCID:PMC11824863",
+      "pmcid": "PMC11824863",
+      "pmid": "39949834",
+      "section": "2. Materials and Methods / 2.5. Western Blotting",
+      "sentence": {
+        "end": 12491,
+        "start": 12214,
+        "text": "The membrane was washed three times with TBST (Tris-buffered saline with 0.1% Tween 20) for 15 min each time, followed by incubation with horseradish peroxidase (HRP)-labeled goat antirabbit/antimouse IgG (1:5000), HRP-linked antibody (CST, 1:2000) at room temperature for 2 h."
+      },
+      "source_span": {
+        "end": 12374,
+        "start": 12352,
+        "text": "horseradish peroxidase"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "OrganismTaxon",
+        "end": 21258,
+        "id": "E299",
+        "score": null,
+        "start": 21255,
+        "text": "rat",
+        "type": "Species"
+      },
+      "category": "exact_agreement",
+      "entity_class": "OrganismTaxon",
+      "hunflair2_prediction": {
+        "canonical_type": "OrganismTaxon",
+        "end": 21258,
+        "id": "E354",
+        "score": 0.9999626874923706,
+        "start": 21255,
+        "text": "rat",
+        "type": "Species"
+      },
+      "paper_id": "PMCID:PMC8605525",
+      "pmcid": "PMC8605525",
+      "pmid": "34798872",
+      "section": "Results / Cbl is poorly expressed in aortic tissues of DM rats and HG-induced cell model",
+      "sentence": {
+        "end": 21293,
+        "start": 21196,
+        "text": "1Differential expression of Cbl in the microarray data, DM rat model, and HG-induced HUVEC model."
+      },
+      "source_span": {
+        "end": 21258,
+        "start": 21255,
+        "text": "rat"
+      }
+    },
+    {
+      "aioner_prediction": null,
+      "category": "hunflair2_only",
+      "entity_class": "OrganismTaxon",
+      "hunflair2_prediction": {
+        "canonical_type": "OrganismTaxon",
+        "end": 8785,
+        "id": "E164",
+        "score": 0.9989411979913712,
+        "start": 8763,
+        "text": "adeno-associated virus",
+        "type": "Species"
+      },
+      "paper_id": "PMCID:PMC11824863",
+      "pmcid": "PMC11824863",
+      "pmid": "39949834",
+      "section": "2. Materials and Methods / 2.1. Animals",
+      "sentence": {
+        "end": 8933,
+        "start": 8749,
+        "text": "Following the adeno-associated virus (AAV) injection, three mice in the control group and three in the experimental group expired prior to the repetition of the behavioral experiments."
+      },
+      "source_span": {
+        "end": 8785,
+        "start": 8763,
+        "text": "adeno-associated virus"
+      }
+    },
+    {
+      "aioner_prediction": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 12537,
+          "id": "E184",
+          "score": null,
+          "start": 12531,
+          "text": "Amylin",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 12559,
+          "id": "E185",
+          "score": null,
+          "start": 12548,
+          "text": "C-Peptide 2",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 12564,
+          "id": "E186",
+          "score": null,
+          "start": 12561,
+          "text": "GIP",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 12579,
+          "id": "E187",
+          "score": null,
+          "start": 12574,
+          "text": "GLP-1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 12597,
+          "id": "E188",
+          "score": null,
+          "start": 12590,
+          "text": "Ghrelin",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 12616,
+          "id": "E189",
+          "score": null,
+          "start": 12608,
+          "text": "Glucagon",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 12625,
+          "id": "E190",
+          "score": null,
+          "start": 12618,
+          "text": "Insulin",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 12633,
+          "id": "E191",
+          "score": null,
+          "start": 12627,
+          "text": "Leptin",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 12637,
+          "id": "E192",
+          "score": null,
+          "start": 12635,
+          "text": "PP",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 12642,
+          "id": "E193",
+          "score": null,
+          "start": 12639,
+          "text": "PYY",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 12652,
+          "id": "E194",
+          "score": null,
+          "start": 12644,
+          "text": "Resistin",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 12666,
+          "id": "E195",
+          "score": null,
+          "start": 12658,
+          "text": "Secretin",
+          "type": "Gene"
+        }
+      ],
+      "category": "multi_entity_sentence",
+      "entity_class": "multiple",
+      "hunflair2_prediction": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 12537,
+          "id": "E217",
+          "score": 0.9999877214431763,
+          "start": 12531,
+          "text": "Amylin",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 12559,
+          "id": "E218",
+          "score": 0.9999805092811584,
+          "start": 12548,
+          "text": "C-Peptide 2",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 12564,
+          "id": "E219",
+          "score": 0.9999901056289673,
+          "start": 12561,
+          "text": "GIP",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 12579,
+          "id": "E220",
+          "score": 0.9999902248382568,
+          "start": 12574,
+          "text": "GLP-1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 12597,
+          "id": "E221",
+          "score": 0.9999896287918091,
+          "start": 12590,
+          "text": "Ghrelin",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 12616,
+          "id": "E222",
+          "score": 0.99998939037323,
+          "start": 12608,
+          "text": "Glucagon",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 12625,
+          "id": "E223",
+          "score": 0.9999881982803345,
+          "start": 12618,
+          "text": "Insulin",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 12633,
+          "id": "E224",
+          "score": 0.9999897480010986,
+          "start": 12627,
+          "text": "Leptin",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 12637,
+          "id": "E225",
+          "score": 0.9999871253967285,
+          "start": 12635,
+          "text": "PP",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 12642,
+          "id": "E226",
+          "score": 0.9999892711639404,
+          "start": 12639,
+          "text": "PYY",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 12652,
+          "id": "E227",
+          "score": 0.9999885559082031,
+          "start": 12644,
+          "text": "Resistin",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 12666,
+          "id": "E228",
+          "score": 0.9999896287918091,
+          "start": 12658,
+          "text": "Secretin",
+          "type": "Gene"
+        }
+      ],
+      "paper_id": "PMCID:PMC10770459",
+      "pmcid": "PMC10770459",
+      "pmid": "38187339",
+      "section": "Materials and methods / Mouse/Rat metabolic discovery Assay\u00ae Array (MRDMET12)",
+      "sentence": {
+        "end": 12667,
+        "start": 12484,
+        "text": "A range of biomarkers were analyzed, including Amylin (active), C-Peptide 2, GIP (total), GLP-1 (active), Ghrelin (active), Glucagon, Insulin, Leptin, PP, PYY, Resistin, and Secretin."
+      },
+      "source_span": {
+        "end": 12667,
+        "start": 12484,
+        "text": "A range of biomarkers were analyzed, including Amylin (active), C-Peptide 2, GIP (total), GLP-1 (active), Ghrelin (active), Glucagon, Insulin, Leptin, PP, PYY, Resistin, and Secretin."
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "ChemicalEntity",
+        "end": 885,
+        "id": "E17",
+        "score": null,
+        "start": 882,
+        "text": "GLS",
+        "type": "Chemical"
+      },
+      "category": "type_disagreement",
+      "entity_class": "ChemicalEntity",
+      "hunflair2_prediction": {
+        "canonical_type": "GeneOrGeneProduct",
+        "end": 885,
+        "id": "E28",
+        "score": 0.9999527931213379,
+        "start": 882,
+        "text": "GLS",
+        "type": "Gene"
+      },
+      "paper_id": "PMID:31324362",
+      "pmcid": null,
+      "pmid": "31324362",
+      "section": "abstract / METHODS",
+      "sentence": {
+        "end": 903,
+        "start": 740,
+        "text": "The expressions of E-cadherin and N-cadherin were determined by immunofluorescence assays in KB cells overexpressing c-Myc in the presence of GLS or GS inhibitors."
+      },
+      "source_span": {
+        "end": 885,
+        "start": 882,
+        "text": "GLS"
+      }
+    },
+    {
+      "aioner_prediction": {
         "canonical_type": "ChemicalEntity",
         "end": 21355,
         "id": "E322",
@@ -115,11 +553,11 @@
     {
       "aioner_prediction": {
         "canonical_type": "DiseaseOrPhenotypicFeature",
-        "end": 3715,
-        "id": "E62",
+        "end": 3903,
+        "id": "E67",
         "score": null,
-        "start": 3691,
-        "text": "microtubule disturbances",
+        "start": 3880,
+        "text": "neurofibrillary tangles",
         "type": "Disease"
       },
       "category": "aioner_only",
@@ -135,9 +573,9 @@
         "text": "Moreover, hyperphosphorylation of Tau, microtubule disturbances, and Tau accumulation have been observed to promote ROS production [10], while oxidative stress also contributes to the formation of phosphorylated-Tau (p-Tau) and neurofibrillary tangles."
       },
       "source_span": {
-        "end": 3715,
-        "start": 3691,
-        "text": "microtubule disturbances"
+        "end": 3903,
+        "start": 3880,
+        "text": "neurofibrillary tangles"
       }
     },
     {
@@ -683,10 +1121,10 @@
     {
       "aioner_prediction": {
         "canonical_type": "GeneOrGeneProduct",
-        "end": 33045,
-        "id": "E509",
+        "end": 31650,
+        "id": "E482",
         "score": null,
-        "start": 33038,
+        "start": 31643,
         "text": "STAT4-1",
         "type": "Gene"
       },
@@ -694,11 +1132,11 @@
       "entity_class": "GeneOrGeneProduct",
       "hunflair2_prediction": {
         "canonical_type": "GeneOrGeneProduct",
-        "end": 33044,
-        "id": "E592",
-        "score": 0.8217463791370392,
-        "start": 33038,
-        "text": "STAT4-",
+        "end": 31648,
+        "id": "E564",
+        "score": 0.9993269443511963,
+        "start": 31643,
+        "text": "STAT4",
         "type": "Gene"
       },
       "paper_id": "PMCID:PMC8605525",
@@ -706,13 +1144,13 @@
       "pmid": "34798872",
       "section": "Results / STAT4 promotes the expression of Runx3 by regulating the H3K4me3 level in the promoter region of Runx3",
       "sentence": {
-        "end": 33068,
-        "start": 32923,
-        "text": "G ChIP-qPCR of relative H3K4me3 and STAT4 recruitment level in HUVECs under Con treatment and transfection with sh-STAT4-1, oe-STAT4 or controls."
+        "end": 31698,
+        "start": 31636,
+        "text": "The sh-STAT4-1 was selected for following ChIP-qPCR on HUVECs."
       },
       "source_span": {
-        "end": 33045,
-        "start": 33038,
+        "end": 31650,
+        "start": 31643,
         "text": "STAT4-1"
       }
     },
@@ -858,42 +1296,6 @@
         "end": 6261,
         "start": 6244,
         "text": "glucose tolerance"
-      }
-    },
-    {
-      "aioner_prediction": {
-        "canonical_type": "OrganismTaxon",
-        "end": 12374,
-        "id": "E186",
-        "score": null,
-        "start": 12352,
-        "text": "horseradish peroxidase",
-        "type": "Species"
-      },
-      "category": "cross_type_overlap",
-      "entity_class": "OrganismTaxon",
-      "hunflair2_prediction": {
-        "canonical_type": "GeneOrGeneProduct",
-        "end": 12374,
-        "id": "E222",
-        "score": 0.9998020132382711,
-        "start": 12364,
-        "text": "peroxidase",
-        "type": "Gene"
-      },
-      "paper_id": "PMCID:PMC11824863",
-      "pmcid": "PMC11824863",
-      "pmid": "39949834",
-      "section": "2. Materials and Methods / 2.5. Western Blotting",
-      "sentence": {
-        "end": 12491,
-        "start": 12214,
-        "text": "The membrane was washed three times with TBST (Tris-buffered saline with 0.1% Tween 20) for 15 min each time, followed by incubation with horseradish peroxidase (HRP)-labeled goat antirabbit/antimouse IgG (1:5000), HRP-linked antibody (CST, 1:2000) at room temperature for 2 h."
-      },
-      "source_span": {
-        "end": 12374,
-        "start": 12352,
-        "text": "horseradish peroxidase"
       }
     },
     {
@@ -1511,37 +1913,37 @@
     {
       "aioner_prediction": {
         "canonical_type": "OrganismTaxon",
-        "end": 21258,
-        "id": "E299",
+        "end": 9601,
+        "id": "E163",
         "score": null,
-        "start": 21255,
-        "text": "rat",
+        "start": 9597,
+        "text": "rats",
         "type": "Species"
       },
       "category": "exact_agreement",
       "entity_class": "OrganismTaxon",
       "hunflair2_prediction": {
         "canonical_type": "OrganismTaxon",
-        "end": 21258,
-        "id": "E354",
-        "score": 0.9999626874923706,
-        "start": 21255,
-        "text": "rat",
+        "end": 9601,
+        "id": "E196",
+        "score": 0.9999868869781494,
+        "start": 9597,
+        "text": "rats",
         "type": "Species"
       },
       "paper_id": "PMCID:PMC8605525",
       "pmcid": "PMC8605525",
       "pmid": "34798872",
-      "section": "Results / Cbl is poorly expressed in aortic tissues of DM rats and HG-induced cell model",
+      "section": "Materials and methods / Mouse model of DM",
       "sentence": {
-        "end": 21293,
-        "start": 21196,
-        "text": "1Differential expression of Cbl in the microarray data, DM rat model, and HG-induced HUVEC model."
+        "end": 9670,
+        "start": 9586,
+        "text": "Six normal rats were taken as controls (Con) and 6 DM rats did not accept injection."
       },
       "source_span": {
-        "end": 21258,
-        "start": 21255,
-        "text": "rat"
+        "end": 9601,
+        "start": 9597,
+        "text": "rats"
       }
     },
     {
@@ -2339,180 +2741,30 @@
         "start": 12777,
         "text": "hyperglycemia"
       }
-    },
-    {
-      "aioner_prediction": null,
-      "category": "hunflair2_only",
-      "entity_class": "GeneOrGeneProduct",
-      "hunflair2_prediction": {
-        "canonical_type": "GeneOrGeneProduct",
-        "end": 14371,
-        "id": "E255",
-        "score": 0.8918871283531189,
-        "start": 14368,
-        "text": "BSA",
-        "type": "Gene"
-      },
-      "paper_id": "PMCID:PMC10770459",
-      "pmcid": "PMC10770459",
-      "pmid": "38187339",
-      "section": "Materials and methods / Immunoblot",
-      "sentence": {
-        "end": 14388,
-        "start": 14303,
-        "text": "Subsequently, the membranes were blocked using a solution of 5 % BSA in TBST for 1 h."
-      },
-      "source_span": {
-        "end": 14371,
-        "start": 14368,
-        "text": "BSA"
-      }
-    },
-    {
-      "aioner_prediction": null,
-      "category": "hunflair2_only",
-      "entity_class": "OrganismTaxon",
-      "hunflair2_prediction": {
-        "canonical_type": "OrganismTaxon",
-        "end": 38391,
-        "id": "E741",
-        "score": 0.9999878406524658,
-        "start": 38387,
-        "text": "mice",
-        "type": "Species"
-      },
-      "paper_id": "PMCID:PMC10770459",
-      "pmcid": "PMC10770459",
-      "pmid": "38187339",
-      "section": "Discussion",
-      "sentence": {
-        "end": 38450,
-        "start": 38271,
-        "text": "Moreover, it is worth highlighting that our study found a nearly 34 % reduction in hyperglycemia in HMGB1 knockdown mice compared to hyperglycemia mice with fully expressed HMGB1."
-      },
-      "source_span": {
-        "end": 38391,
-        "start": 38387,
-        "text": "mice"
-      }
-    },
-    {
-      "aioner_prediction": null,
-      "category": "hunflair2_only",
-      "entity_class": "CellLine",
-      "hunflair2_prediction": {
-        "canonical_type": "CellLine",
-        "end": 8536,
-        "id": "E160",
-        "score": 0.9278271595637003,
-        "start": 8528,
-        "text": "C57BL/6J",
-        "type": "CellLine"
-      },
-      "paper_id": "PMCID:PMC11824863",
-      "pmcid": "PMC11824863",
-      "pmid": "39949834",
-      "section": "2. Materials and Methods / 2.1. Animals",
-      "sentence": {
-        "end": 8638,
-        "start": 8470,
-        "text": "This study utilized 55 specific pathogen-free (SPF) grade C57BL/6J female mice, aged 10 weeks and weighing 20 \u00b1 2 g, procured from SPF (Beijing) Biotechnology Co., Ltd."
-      },
-      "source_span": {
-        "end": 8536,
-        "start": 8528,
-        "text": "C57BL/6J"
-      }
-    },
-    {
-      "aioner_prediction": null,
-      "category": "hunflair2_only",
-      "entity_class": "ChemicalEntity",
-      "hunflair2_prediction": {
-        "canonical_type": "ChemicalEntity",
-        "end": 20800,
-        "id": "E317",
-        "score": 0.9999959468841553,
-        "start": 20796,
-        "text": "SFPQ",
-        "type": "Chemical"
-      },
-      "paper_id": "PMCID:PMC11824863",
-      "pmcid": "PMC11824863",
-      "pmid": "39949834",
-      "section": "3. Results / 3.4. Overexpression of SFPQ Enhanced Antioxidant and Antiapoptotic Capacities in Hippocampal Cells of the AD Mouse Model",
-      "sentence": {
-        "end": 20898,
-        "start": 20763,
-        "text": "Previous studies have associated SFPQ with antioxidants, which may be related to behavioral improvements following SFPQ overexpression."
-      },
-      "source_span": {
-        "end": 20800,
-        "start": 20796,
-        "text": "SFPQ"
-      }
-    },
-    {
-      "aioner_prediction": null,
-      "category": "hunflair2_only",
-      "entity_class": "DiseaseOrPhenotypicFeature",
-      "hunflair2_prediction": {
-        "canonical_type": "DiseaseOrPhenotypicFeature",
-        "end": 9724,
-        "id": "E169",
-        "score": 0.9999858140945435,
-        "start": 9722,
-        "text": "AD",
-        "type": "Disease"
-      },
-      "paper_id": "PMCID:PMC11824863",
-      "pmcid": "PMC11824863",
-      "pmid": "39949834",
-      "section": "2. Materials and Methods / 2.2. Brain Stereotaxic Instrument Injection",
-      "sentence": {
-        "end": 9931,
-        "start": 9692,
-        "text": "To develop an animal model of AD, we referred to the stereotaxic atlas of the mouse brain and selected the right lateral ventricle (coordinates: anterior/posterior: \u22120.94 mm, medial/lateral: \u22121.5 mm, dorsal/ventral: \u22122.1 mm) for injection."
-      },
-      "source_span": {
-        "end": 9724,
-        "start": 9722,
-        "text": "AD"
-      }
-    },
-    {
-      "aioner_prediction": null,
-      "category": "hunflair2_only",
-      "entity_class": "GeneOrGeneProduct",
-      "hunflair2_prediction": {
-        "canonical_type": "GeneOrGeneProduct",
-        "end": 18567,
-        "id": "E283",
-        "score": 0.9999505281448364,
-        "start": 18563,
-        "text": "SFPQ",
-        "type": "Gene"
-      },
-      "paper_id": "PMCID:PMC11824863",
-      "pmcid": "PMC11824863",
-      "pmid": "39949834",
-      "section": "3. Results / 3.2. Overexpressed SFPQ Colocalized With CA1 Neurons and Improved the Arrangement of Hippocampal Cells in AD Mice",
-      "sentence": {
-        "end": 18659,
-        "start": 18438,
-        "text": "HE staining results revealed that, compared to the Vector group, the hippocampal cells in the CA3 and CA4 regions of the AAV-SFPQ group exhibited a more organized, compact, uniform, and morphologically intact arrangement."
-      },
-      "source_span": {
-        "end": 18567,
-        "start": 18563,
-        "text": "SFPQ"
-      }
     }
   ],
   "schema_version": 1,
   "selection": {
+    "available_categories": [
+      "aioner_only",
+      "boundary_disagreement",
+      "cross_type_overlap",
+      "exact_agreement",
+      "hunflair2_only",
+      "multi_entity_sentence",
+      "type_disagreement"
+    ],
     "candidate_count": 3260,
-    "method": "sha256-sorted round-robin over category/paper/entity-class buckets",
+    "method": "category coverage, then sha256-sorted round-robin over category/paper/entity-class buckets",
+    "selected_categories": [
+      "aioner_only",
+      "boundary_disagreement",
+      "cross_type_overlap",
+      "exact_agreement",
+      "hunflair2_only",
+      "multi_entity_sentence",
+      "type_disagreement"
+    ],
     "selected_count": 75,
     "target_count": 75
   }
