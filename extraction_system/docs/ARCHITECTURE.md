@@ -57,9 +57,12 @@ Invalid offsets, schema labels, duplicate token spans, or relation references ar
 For the default GLiNER-BioMed path, one loaded model serves two sequential
 label passes: the core biomedical schema and `biological process`. The adapter
 normalizes both outputs, removes duplicate source span/text/type detections,
-orders the merged entities deterministically, and assigns their final IDs only
-after merging. Explicitly supplied labels remain a single-pass diagnostic or
-custom-label path; `perturbation` is not included by default.
+suppresses a core-pass entity when the dedicated process pass returns
+`biological process` at the same source span and text, orders the merged
+entities deterministically, and assigns their final IDs only after merging.
+This is the only cross-pass type precedence rule; same-pass core-label
+ambiguities remain distinct. Explicitly supplied labels remain a single-pass
+diagnostic or custom-label path; `perturbation` is not included by default.
 
 The controlled LLM handoff sends the original text and serialized normalized
 entities to `RelationExtractor`. The harness requires structured relation

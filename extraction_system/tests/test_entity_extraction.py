@@ -45,7 +45,14 @@ class PassAwareGLiNERModel:
                     "start": 0,
                     "end": 3,
                     "score": 0.9,
-                }
+                },
+                {
+                    "text": "apoptosis",
+                    "label": "disease",
+                    "start": 11,
+                    "end": 20,
+                    "score": 0.99,
+                },
             ]
         if labels == DEFAULT_PROCESS_ENTITY_LABELS:
             return [
@@ -102,6 +109,39 @@ class EntityExtractionTests(unittest.TestCase):
         load.assert_called_once_with(DEFAULT_ENTITY_MODEL, map_location="cpu")
         self.assertEqual(model.eval_calls, 1)
         self.assertEqual(len(model.calls), 2)
+
+    def test_explicit_same_pass_core_ambiguities_are_preserved(self):
+        model = FakeGLiNERModel(
+            [
+                {
+                    "text": "BRCA1",
+                    "label": "gene",
+                    "start": 0,
+                    "end": 5,
+                    "score": 0.7,
+                },
+                {
+                    "text": "BRCA1",
+                    "label": "protein",
+                    "start": 0,
+                    "end": 5,
+                    "score": 0.9,
+                },
+            ]
+        )
+
+        entities = GLiNERBioMedExtractor(
+            model, labels=("gene", "protein")
+        ).extract_entities(TEXT)
+
+        self.assertEqual(
+            entities,
+            (
+                Entity("E1", "BRCA1", "gene", 0, 5, 0.7),
+                Entity("E2", "BRCA1", "protein", 0, 5, 0.9),
+            ),
+        )
+        self.assertEqual(model.calls, [(TEXT, ("gene", "protein"), 0.5)])
 
     def test_gliner_adapter_returns_standard_entities_with_source_spans(self):
         model = FakeGLiNERModel(

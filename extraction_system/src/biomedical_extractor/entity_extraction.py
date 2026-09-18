@@ -112,12 +112,16 @@ class GLiNERBioMedExtractor:
         if not text.strip():
             return ()
 
-        entities: list[Entity] = []
+        entities: list[tuple[bool, Entity]] = []
         for labels in self._label_passes:
             predictions = self._model.predict_entities(
                 text, labels, threshold=self._threshold
             )
-            entities.extend(_normalize_predictions(text, predictions, labels))
+            is_process_pass = labels == DEFAULT_PROCESS_ENTITY_LABELS
+            entities.extend(
+                (is_process_pass, entity)
+                for entity in _normalize_predictions(text, predictions, labels)
+            )
         return _merge_entities(entities)
 
 
@@ -183,11 +187,27 @@ def _normalize_predictions(
     return tuple(entities)
 
 
-def _merge_entities(entities: Sequence[Entity]) -> tuple[Entity, ...]:
-    """Deduplicate, order, and reassign IDs for merged model detections."""
+def _merge_entities(
+    detections: Sequence[tuple[bool, Entity]],
+) -> tuple[Entity, ...]:
+    """Resolve the configured pass conflict, then deduplicate and order entities.
+
+    The dedicated process pass wins only when it returns a biological-process
+    entity at the exact same source span and text as a detection from the other
+    pass. Explicit single-pass calls do not receive this precedence rule.
+    """
+
+    process_spans = {
+        (entity.start, entity.end, entity.text)
+        for is_process_pass, entity in detections
+        if is_process_pass and entity.type == "biological process"
+    }
 
     unique: dict[tuple[int, int, str, str], Entity] = {}
-    for entity in entities:
+    for is_process_pass, entity in detections:
+        span = (entity.start, entity.end, entity.text)
+        if not is_process_pass and span in process_spans:
+            continue
         key = (entity.start, entity.end, entity.type, entity.text)
         # The first pass occurrence is deterministic and its model score is kept
         # without synthesizing or reconciling a new confidence value.

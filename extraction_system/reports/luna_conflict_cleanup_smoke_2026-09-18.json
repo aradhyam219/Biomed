@@ -1,0 +1,94 @@
+{
+  "report_type": "exact_span_core_process_cleanup_luna_smoke",
+  "report_date": "2026-09-18",
+  "branch": "extraction_system_v2",
+  "base_commit": "2b74f34",
+  "scope": {
+    "successful_live_extractions": 1,
+    "additional_provider_run": false,
+    "prompt_changed": false,
+    "relation_schema_changed": false,
+    "threshold_changed": false,
+    "manual_entities_added": false,
+    "perturbation_included": false,
+    "secret_value_printed": false,
+    "secret_value_in_report": false
+  },
+  "cleanup": {
+    "architecture": "existing two-pass GLiNER path",
+    "core_labels": ["gene", "protein", "disease", "chemical", "species", "cell line", "DNA", "RNA"],
+    "process_labels": ["biological process"],
+    "cross_pass_conflict_rule": "If a dedicated process-pass biological-process entity and a non-process-pass entity have identical start, end, and source text, retain the process entity and suppress the other entity.",
+    "score_precedence": "none; retained process score is its original GLiNER score",
+    "exact_duplicate_key": ["start", "end", "type", "text"],
+    "ordering_key": ["start", "end", "type", "text"],
+    "id_policy": "assign E1-style IDs after conflict suppression, deduplication, and ordering",
+    "same_pass_core_ambiguities": "preserved"
+  },
+  "verification": {
+    "focused_entity_tests": {"passed": 8, "total": 8},
+    "full_test_suite": {"passed": 51, "total": 51},
+    "live_validator": {"accepted_relations": 5, "total_relations": 5, "evidence_grounded": true},
+    "env_git_ignored": true,
+    "transport_note": "Initial sandboxed socket attempt failed with WinError 10013 before an API response; approved network-enabled execution completed the single successful smoke.",
+    "provider_retry_observed": false
+  },
+  "live_rerun": {
+    "command": "uv --cache-dir C:/Projects/Biomed/.uv-cache run --env-file .env biomedical-extract-llm --text <supplied passage>",
+    "input_text": "We observed that inhibiting the expression of p53 decreased the proliferation ability and induced apoptosis/autophagy in SSC-4 cells. Moreover, we observed that this has decreased migration and has blocked the expression of VEGF.",
+    "status": "PASS",
+    "exit_code": 0,
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "high",
+    "max_completion_tokens": 8192,
+    "wall_clock_seconds": 26.229,
+    "token_usage": {
+      "available": false,
+      "input_tokens": null,
+      "output_tokens": null,
+      "reasoning_tokens": null,
+      "total_tokens": null,
+      "reason": "Usage metadata is not exposed at the current LangChain/CLI boundary."
+    },
+    "entities": [
+      {"id":"E1","text":"p53","type":"gene","start":46,"end":49,"score":0.9957374334335327},
+      {"id":"E2","text":"proliferation ability","type":"biological process","start":64,"end":85,"score":0.5634341239929199},
+      {"id":"E3","text":"apoptosis","type":"biological process","start":98,"end":107,"score":0.9412609338760376},
+      {"id":"E4","text":"autophagy","type":"biological process","start":108,"end":117,"score":0.9079713225364685},
+      {"id":"E5","text":"SSC-4 cells","type":"cell line","start":121,"end":132,"score":0.9944570064544678},
+      {"id":"E6","text":"migration","type":"biological process","start":180,"end":189,"score":0.8534796237945557},
+      {"id":"E7","text":"VEGF","type":"protein","start":224,"end":228,"score":0.986096203327179}
+    ],
+    "relations": [
+      {"source":"E1","target":"E2","predicate":"inhibition of expression decreased proliferation ability","evidence":"inhibiting the expression of p53 decreased the proliferation ability","negated":false,"surface_form":"decreased the proliferation ability","score":null},
+      {"source":"E1","target":"E3","predicate":"inhibition of expression induced apoptosis","evidence":"inhibiting the expression of p53 decreased the proliferation ability and induced apoptosis/autophagy in SSC-4 cells","negated":false,"surface_form":"induced apoptosis","score":null},
+      {"source":"E1","target":"E4","predicate":"inhibition of expression induced autophagy","evidence":"inhibiting the expression of p53 decreased the proliferation ability and induced apoptosis/autophagy in SSC-4 cells","negated":false,"surface_form":"induced apoptosis/autophagy","score":null},
+      {"source":"E1","target":"E6","predicate":"inhibition of expression decreased migration","evidence":"this has decreased migration","negated":false,"surface_form":"decreased migration","score":null},
+      {"source":"E1","target":"E7","predicate":"inhibition of expression blocked VEGF expression","evidence":"this has decreased migration and has blocked the expression of VEGF","negated":false,"surface_form":"blocked the expression of VEGF","score":null}
+    ],
+    "validation": {
+      "entity_span_checks": {"checked": 7, "total": 7, "status": "PASS"},
+      "relation_endpoint_checks": {"checked": 5, "total": 5, "status": "PASS"},
+      "relation_evidence_checks": {"checked": 5, "total": 5, "status": "PASS"},
+      "relation_validator_acceptance": {"accepted": 5, "total": 5, "status": "PASS"},
+      "process_relation_targets": ["E2", "E3", "E4", "E6"],
+      "ssc4_relation_targets": [],
+      "apoptosis_entities": [{"id":"E3","type":"biological process","start":98,"end":107}],
+      "secret_value_printed": false
+    }
+  },
+  "comparison": {
+    "previous_two_pass_entity_count": 8,
+    "previous_two_pass_relation_count": 5,
+    "cleaned_entity_count": 7,
+    "cleaned_relation_count": 5,
+    "apoptosis_disease_duplicate_removed": true,
+    "apoptosis_process_retained": true,
+    "proliferation_retained": true,
+    "autophagy_retained": true,
+    "migration_retained": true,
+    "five_semantic_relations_remain": true,
+    "process_relation_targets_ssc4": false,
+    "remaining_issue": "VEGF remains a protein detection; no unrelated core-label type arbitration was added."
+  }
+}

@@ -90,12 +90,14 @@ GLiNER-specific prediction dictionaries remain inside the GLiNER-BioMed adapter.
 
 When labels are omitted from the normal composed GLiNER-BioMed path, it loads
 one model and runs two focused passes: core biomedical labels (`gene`, `protein`,
-`chemical`, `species`, `cell line`, `DNA`, and `RNA`), followed by
+`disease`, `chemical`, `species`, `cell line`, `DNA`, and `RNA`), followed by
 `biological process`. The normalized detections are merged by exact source
-span/text/type, ordered deterministically by source position and label, and
-assigned stable `E1`-style IDs after deduplication. Callers that explicitly
-provide labels retain single-pass behavior; `perturbation` is not part of the
-default passes.
+span/text/type, with a core-pass detection suppressed only when the dedicated
+process pass returns `biological process` at that exact source span and text.
+The merged entities are ordered deterministically by source position and label,
+and assigned stable `E1`-style IDs after deduplication. Same-pass core-label
+ambiguities remain distinct. Callers that explicitly provide labels retain
+single-pass behavior; `perturbation` is not part of the default passes.
 
 The initial schema should stay bounded to the entities needed for the current extraction/evaluation work. Do not enlarge it pre-emptively to cover hypothetical future multi-omics requirements.
 
