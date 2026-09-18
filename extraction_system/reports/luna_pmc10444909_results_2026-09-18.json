@@ -1,0 +1,706 @@
+{
+  "report_type": "full_paper_results_luna_evaluation",
+  "report_date": "2026-09-18",
+  "evaluation_status": "INCOMPLETE_NO_SUCCESSFUL_LUNA_EXTRACTION",
+  "project": "C:/Projects/Biomed/extraction_system",
+  "branch": "extraction_system_v2",
+  "base_commit": "88ea62fbc32515e6d3e54b7afc9386becc24faa6",
+  "source": {
+    "pmcid": "PMC10444909",
+    "title": "KNTC1 knockdown inhibits proliferation and metastases of liver cancer",
+    "full_text_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10444909/",
+    "results_location": "Full-text Results body; selected source paragraphs are p#Par19 in section#Sec18, p#Par20 in section#Sec19, and p#Par21 in section#Sec20.",
+    "paragraphs": [
+      {
+        "section_id": "Sec18",
+        "paragraph_id": "Par19",
+        "beginning": "To investigate the mechanisms by which KNTC1 affects hepatocellular carcinoma..."
+      },
+      {
+        "section_id": "Sec19",
+        "paragraph_id": "Par20",
+        "beginning": "To investigate the role of CDK1 in HCC..."
+      },
+      {
+        "section_id": "Sec20",
+        "paragraph_id": "Par21",
+        "beginning": "Through scratch assays..."
+      }
+    ],
+    "passage_character_count": 2121,
+    "passage_word_count": 326,
+    "passage_sha256": "aacd57ae2f253a69d01ebfe4269e4c1b3ca8cb21c8d7d585bad370767b2cfca5",
+    "paragraph_separator": "\\n\\n",
+    "abstract_used": false,
+    "body_only": true,
+    "excluded": [
+      "subsection headings",
+      "figure captions",
+      "figure legends",
+      "references",
+      "abstract"
+    ]
+  },
+  "execution": {
+    "production_path": "text -> GLiNER core pass + biological-process pass -> merge/conflict cleanup -> GPT-5.6 Luna relation extraction -> deterministic validation",
+    "successful_paid_luna_extractions": 0,
+    "requested_successful_paid_luna_extractions": 1,
+    "paid_luna_invocations_started": 2,
+    "exact_input_paid_invocations": 1,
+    "no_further_paid_invocations_after_exact_input_failure": true,
+    "attempts": [
+      {
+        "ordinal": 1,
+        "status": "FAILED_INVALID_INPUT_TRANSPORT",
+        "input_exact": false,
+        "transport": "PowerShell native argument to the production CLI",
+        "wall_clock_seconds": 91.752,
+        "provider_response_received": true,
+        "provider_retry_observed": false,
+        "error_type": "openai.LengthFinishReasonError",
+        "error": "Could not parse response content as the length limit was reached; the provider response exhausted the configured completion ceiling in reasoning before structured relation content was available.",
+        "usage": {
+          "prompt_tokens": 4474,
+          "completion_tokens": 8192,
+          "total_tokens": 12666,
+          "reasoning_tokens": 8192,
+          "accepted_prediction_tokens": 0,
+          "text_tokens": null,
+          "audio_tokens": 0,
+          "cached_tokens": 0,
+          "usage_available_only_from_failure_response": true,
+          "cache_write_tokens": 4471
+        },
+        "note": "The native Windows argument path converted the nine source U+00A0 figure spaces to U+FFFD replacement characters; no CLI JSON was emitted. This attempt is not treated as the valid evaluation input."
+      },
+      {
+        "ordinal": 2,
+        "status": "FAILED_NO_STRUCTURED_OUTPUT",
+        "input_exact": true,
+        "transport": "Exact UTF-8 cache passage read in-process through the unchanged biomedical-extract-llm main entry point",
+        "wall_clock_seconds": 91.908,
+        "provider_response_received": true,
+        "provider_retry_observed": false,
+        "error_type": "openai.LengthFinishReasonError",
+        "error": "Could not parse response content as the length limit was reached; the provider response exhausted the configured completion ceiling in reasoning before structured relation content was available.",
+        "usage": {
+          "prompt_tokens": 4474,
+          "completion_tokens": 8192,
+          "total_tokens": 12666,
+          "reasoning_tokens": 8192,
+          "accepted_prediction_tokens": 0,
+          "text_tokens": null,
+          "audio_tokens": 0,
+          "cached_tokens": 4471,
+          "usage_available_only_from_failure_response": true
+        },
+        "note": "This was the only exact-input paid invocation. The CLI emitted no normalized entity/relation JSON because relation extraction raised before result serialization."
+      }
+    ]
+  },
+  "configuration": {
+    "entity_model": "Ihor/gliner-biomed-base-v1.0",
+    "entity_threshold": 0.5,
+    "device": "auto",
+    "entity_passes": [
+      {
+        "name": "core",
+        "labels": [
+          "gene",
+          "protein",
+          "disease",
+          "chemical",
+          "species",
+          "cell line",
+          "DNA",
+          "RNA"
+        ]
+      },
+      {
+        "name": "biological_process",
+        "labels": [
+          "biological process"
+        ]
+      }
+    ],
+    "merge_rules_unchanged": true,
+    "relation_prompt_unchanged": true,
+    "relation_schema_unchanged": true,
+    "relation_model": "gpt-5.6-luna",
+    "reasoning_effort": "high",
+    "max_completion_tokens": 8192,
+    "max_retries": 2
+  },
+  "entities": [
+    {
+      "id": "E1",
+      "text": "KNTC1",
+      "type": "gene",
+      "start": 39,
+      "end": 44,
+      "score": 0.9981846213340759
+    },
+    {
+      "id": "E2",
+      "text": "hepatocellular carcinoma",
+      "type": "disease",
+      "start": 53,
+      "end": 77,
+      "score": 0.996576726436615
+    },
+    {
+      "id": "E3",
+      "text": "KNTC1",
+      "type": "gene",
+      "start": 138,
+      "end": 143,
+      "score": 0.9984434247016907
+    },
+    {
+      "id": "E4",
+      "text": "CDK1",
+      "type": "gene",
+      "start": 198,
+      "end": 202,
+      "score": 0.9940715432167053
+    },
+    {
+      "id": "E5",
+      "text": "KNTC1",
+      "type": "gene",
+      "start": 224,
+      "end": 229,
+      "score": 0.9983335137367249
+    },
+    {
+      "id": "E6",
+      "text": "KNTC1",
+      "type": "gene",
+      "start": 269,
+      "end": 274,
+      "score": 0.9988889098167419
+    },
+    {
+      "id": "E7",
+      "text": "SK-Hep-1",
+      "type": "cell line",
+      "start": 278,
+      "end": 286,
+      "score": 0.9729693531990051
+    },
+    {
+      "id": "E8",
+      "text": "Huh7",
+      "type": "cell line",
+      "start": 291,
+      "end": 295,
+      "score": 0.9839651584625244
+    },
+    {
+      "id": "E9",
+      "text": "mRNA",
+      "type": "RNA",
+      "start": 347,
+      "end": 351,
+      "score": 0.9562953114509583
+    },
+    {
+      "id": "E10",
+      "text": "CDK1",
+      "type": "gene",
+      "start": 362,
+      "end": 366,
+      "score": 0.9962297081947327
+    },
+    {
+      "id": "E11",
+      "text": "KNTC1",
+      "type": "gene",
+      "start": 388,
+      "end": 393,
+      "score": 0.9983344674110413
+    },
+    {
+      "id": "E12",
+      "text": "CDK1",
+      "type": "gene",
+      "start": 438,
+      "end": 442,
+      "score": 0.9948909282684326
+    },
+    {
+      "id": "E13",
+      "text": "CDK1",
+      "type": "gene",
+      "start": 472,
+      "end": 476,
+      "score": 0.9951618313789368
+    },
+    {
+      "id": "E14",
+      "text": "hepatoma cell lines",
+      "type": "cell line",
+      "start": 495,
+      "end": 514,
+      "score": 0.7968217730522156
+    },
+    {
+      "id": "E15",
+      "text": "SK-Hep-1",
+      "type": "cell line",
+      "start": 518,
+      "end": 526,
+      "score": 0.950793445110321
+    },
+    {
+      "id": "E16",
+      "text": "Huh7",
+      "type": "cell line",
+      "start": 528,
+      "end": 532,
+      "score": 0.9663220643997192
+    },
+    {
+      "id": "E17",
+      "text": "HepG2",
+      "type": "cell line",
+      "start": 534,
+      "end": 539,
+      "score": 0.9319846034049988
+    },
+    {
+      "id": "E18",
+      "text": "SNU449",
+      "type": "cell line",
+      "start": 544,
+      "end": 550,
+      "score": 0.9328595399856567
+    },
+    {
+      "id": "E19",
+      "text": "mRNA",
+      "type": "RNA",
+      "start": 590,
+      "end": 594,
+      "score": 0.9479410648345947
+    },
+    {
+      "id": "E20",
+      "text": "CDK1",
+      "type": "gene",
+      "start": 605,
+      "end": 609,
+      "score": 0.9959632158279419
+    },
+    {
+      "id": "E21",
+      "text": "normal hepatocytes",
+      "type": "species",
+      "start": 651,
+      "end": 669,
+      "score": 0.8407660722732544
+    },
+    {
+      "id": "E22",
+      "text": "KNTC1",
+      "type": "gene",
+      "start": 706,
+      "end": 711,
+      "score": 0.99861741065979
+    },
+    {
+      "id": "E23",
+      "text": "CDK1",
+      "type": "gene",
+      "start": 727,
+      "end": 731,
+      "score": 0.9939159750938416
+    },
+    {
+      "id": "E24",
+      "text": "HCC",
+      "type": "disease",
+      "start": 742,
+      "end": 745,
+      "score": 0.9809296131134033
+    },
+    {
+      "id": "E25",
+      "text": "KNTC1",
+      "type": "gene",
+      "start": 815,
+      "end": 820,
+      "score": 0.9991039633750916
+    },
+    {
+      "id": "E26",
+      "text": "CDK1",
+      "type": "gene",
+      "start": 859,
+      "end": 863,
+      "score": 0.9963334798812866
+    },
+    {
+      "id": "E27",
+      "text": "hepatocellular carcinoma",
+      "type": "disease",
+      "start": 867,
+      "end": 891,
+      "score": 0.9940239787101746
+    },
+    {
+      "id": "E28",
+      "text": "CDK1",
+      "type": "gene",
+      "start": 967,
+      "end": 971,
+      "score": 0.9971238970756531
+    },
+    {
+      "id": "E29",
+      "text": "HCC",
+      "type": "disease",
+      "start": 975,
+      "end": 978,
+      "score": 0.9818336367607117
+    },
+    {
+      "id": "E30",
+      "text": "KNTC1",
+      "type": "gene",
+      "start": 996,
+      "end": 1001,
+      "score": 0.9987627267837524
+    },
+    {
+      "id": "E31",
+      "text": "CDK1",
+      "type": "gene",
+      "start": 1023,
+      "end": 1027,
+      "score": 0.9947614073753357
+    },
+    {
+      "id": "E32",
+      "text": "SK-Hep-1",
+      "type": "cell line",
+      "start": 1031,
+      "end": 1039,
+      "score": 0.94734787940979
+    },
+    {
+      "id": "E33",
+      "text": "Huh7",
+      "type": "cell line",
+      "start": 1044,
+      "end": 1048,
+      "score": 0.9796625971794128
+    },
+    {
+      "id": "E34",
+      "text": "CDK1",
+      "type": "gene",
+      "start": 1088,
+      "end": 1092,
+      "score": 0.9974564909934998
+    },
+    {
+      "id": "E35",
+      "text": "KNTC1",
+      "type": "gene",
+      "start": 1133,
+      "end": 1138,
+      "score": 0.9983548521995544
+    },
+    {
+      "id": "E36",
+      "text": "CDK1",
+      "type": "gene",
+      "start": 1150,
+      "end": 1154,
+      "score": 0.9950734972953796
+    },
+    {
+      "id": "E37",
+      "text": "mRNA",
+      "type": "RNA",
+      "start": 1167,
+      "end": 1171,
+      "score": 0.9429190754890442
+    },
+    {
+      "id": "E38",
+      "text": "CDK1",
+      "type": "gene",
+      "start": 1220,
+      "end": 1224,
+      "score": 0.9972468614578247
+    },
+    {
+      "id": "E39",
+      "text": "KNTC1",
+      "type": "gene",
+      "start": 1323,
+      "end": 1328,
+      "score": 0.9982238411903381
+    },
+    {
+      "id": "E40",
+      "text": "CDK1",
+      "type": "gene",
+      "start": 1377,
+      "end": 1381,
+      "score": 0.9970821738243103
+    },
+    {
+      "id": "E41",
+      "text": "KNTC1",
+      "type": "gene",
+      "start": 1437,
+      "end": 1442,
+      "score": 0.9980629086494446
+    },
+    {
+      "id": "E42",
+      "text": "CDK1",
+      "type": "gene",
+      "start": 1489,
+      "end": 1493,
+      "score": 0.9980120658874512
+    },
+    {
+      "id": "E43",
+      "text": "hepatocellular carcinoma",
+      "type": "disease",
+      "start": 1535,
+      "end": 1559,
+      "score": 0.9940758943557739
+    },
+    {
+      "id": "E44",
+      "text": "KNTC1",
+      "type": "gene",
+      "start": 1576,
+      "end": 1581,
+      "score": 0.9980227947235107
+    },
+    {
+      "id": "E45",
+      "text": "CDK1",
+      "type": "gene",
+      "start": 1632,
+      "end": 1636,
+      "score": 0.9976206421852112
+    },
+    {
+      "id": "E46",
+      "text": "SK-Hep-1",
+      "type": "cell line",
+      "start": 1717,
+      "end": 1725,
+      "score": 0.9423521757125854
+    },
+    {
+      "id": "E47",
+      "text": "Huh7",
+      "type": "cell line",
+      "start": 1730,
+      "end": 1734,
+      "score": 0.9833269715309143
+    },
+    {
+      "id": "E48",
+      "text": "KNTC1",
+      "type": "gene",
+      "start": 1772,
+      "end": 1777,
+      "score": 0.9986867308616638
+    },
+    {
+      "id": "E49",
+      "text": "KNTC1",
+      "type": "gene",
+      "start": 1795,
+      "end": 1800,
+      "score": 0.9992223978042603
+    },
+    {
+      "id": "E50",
+      "text": "SK-Hep-1",
+      "type": "cell line",
+      "start": 1859,
+      "end": 1867,
+      "score": 0.9527612924575806
+    },
+    {
+      "id": "E51",
+      "text": "Huh7",
+      "type": "cell line",
+      "start": 1872,
+      "end": 1876,
+      "score": 0.9826777577400208
+    },
+    {
+      "id": "E52",
+      "text": "CDK1",
+      "type": "gene",
+      "start": 1884,
+      "end": 1888,
+      "score": 0.9971941709518433
+    },
+    {
+      "id": "E53",
+      "text": "SK-Hep-1",
+      "type": "cell line",
+      "start": 1938,
+      "end": 1946,
+      "score": 0.9622951745986938
+    },
+    {
+      "id": "E54",
+      "text": "Huh7",
+      "type": "cell line",
+      "start": 1951,
+      "end": 1955,
+      "score": 0.9872297644615173
+    },
+    {
+      "id": "E55",
+      "text": "KNTC1",
+      "type": "gene",
+      "start": 1978,
+      "end": 1983,
+      "score": 0.9987565279006958
+    },
+    {
+      "id": "E56",
+      "text": "KNTC1",
+      "type": "gene",
+      "start": 2046,
+      "end": 2051,
+      "score": 0.9988898634910583
+    },
+    {
+      "id": "E57",
+      "text": "hepatocellular carcinoma",
+      "type": "disease",
+      "start": 2073,
+      "end": 2097,
+      "score": 0.9924813508987427
+    },
+    {
+      "id": "E58",
+      "text": "CDK1",
+      "type": "gene",
+      "start": 2116,
+      "end": 2120,
+      "score": 0.9947282671928406
+    }
+  ],
+  "entity_capture": {
+    "status": "PASS",
+    "method": "Unpaid exact-input replay of the existing biomedical-ner CLI after the provider failure; no entities were manually added, removed, relabeled, or corrected.",
+    "count": 58,
+    "type_counts": {
+      "gene": 33,
+      "disease": 6,
+      "cell line": 15,
+      "RNA": 3,
+      "species": 1
+    },
+    "exact_text_counts": {
+      "KNTC1": 16,
+      "CDK1": 17,
+      "SK-Hep-1": 6,
+      "Huh7": 6,
+      "HepG2": 1,
+      "SNU449": 1,
+      "expression": 0,
+      "viability": 0,
+      "proliferative capacity": 0,
+      "cell cycle arrest": 0,
+      "migration": 0,
+      "invasive ability": 0
+    },
+    "biological_process_entity_count": 0
+  },
+  "relations": [],
+  "relation_output": {
+    "status": "NOT_RETURNED",
+    "schema": [
+      "source",
+      "target",
+      "predicate",
+      "evidence",
+      "negated",
+      "surface_form",
+      "score"
+    ],
+    "reason": "The exact-input provider response exhausted the 8192-token completion ceiling in reasoning and raised before normalized structured relations were returned."
+  },
+  "validation": {
+    "input_hash_check": {
+      "status": "PASS",
+      "sha256": "aacd57ae2f253a69d01ebfe4269e4c1b3ca8cb21c8d7d585bad370767b2cfca5",
+      "characters": 2121,
+      "words": 326
+    },
+    "entity_span_check": {
+      "status": "PASS",
+      "checked": 58,
+      "total": 58
+    },
+    "relation_endpoint_check": {
+      "status": "PASS",
+      "checked": 0,
+      "total": 0,
+      "note": "No normalized relation output was returned."
+    },
+    "relation_evidence_check": {
+      "status": "PASS",
+      "checked": 0,
+      "total": 0,
+      "note": "No normalized relation output was returned."
+    },
+    "relation_surface_form_check": {
+      "status": "PASS",
+      "checked": 0,
+      "total": 0,
+      "note": "No normalized relation output was returned."
+    },
+    "relation_validator_acceptance": {
+      "status": "PASS",
+      "accepted": 0,
+      "total": 0,
+      "note": "Existing validate_relations accepted the empty relation list against the captured entities and exact source text."
+    },
+    "secret_value_in_reports_or_captured_outputs": false
+  },
+  "semantic_review": {
+    "status": "BLOCKED_NO_RELATION_OUTPUT",
+    "material_successes": [
+      "The exact full-text Results passage was verified and hashed before evaluation.",
+      "The entity stage returned all requested named cell lines: SK-Hep-1, Huh7, HepG2, and SNU449.",
+      "KNTC1 and CDK1 mentions were detected as gene entities across the passage."
+    ],
+    "material_misses_or_errors": [
+      "No relation output was returned, so KNTC1/CDK1 expression, knockdown, overexpression, rescue, migration, invasion, direction, endpoint, and conditional-context behavior cannot be semantically evaluated from this run.",
+      "The entity stage returned zero biological-process entities; exact terms including expression, viability, proliferative capacity, cell cycle arrest, migration, and invasive ability were not returned as process entities."
+    ],
+    "relation_level_categories": [],
+    "entity_level_categories": [
+      "entity miss/type ambiguity"
+    ],
+    "cross_sentence_or_rescue_handling": "NOT ASSESSABLE"
+  },
+  "summary": {
+    "larger_passage_exposes_limitation": true,
+    "limitation": "Under the unchanged high-reasoning gpt-5.6-luna configuration with an 8192-token completion ceiling, this 326-word passage and its 58 supplied entities exhausted the completion budget before structured relations were available.",
+    "next_architectural_decision": "This is evidence that longer-passage handling or relation-budget strategy may need a separate design decision; no fix or architecture change was made in this task."
+  },
+  "secrets": {
+    "api_key_printed": false,
+    "api_key_logged": false,
+    "api_key_reported": false
+  }
+}
