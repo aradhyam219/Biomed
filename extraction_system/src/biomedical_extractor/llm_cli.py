@@ -6,7 +6,6 @@ import argparse
 import json
 from collections.abc import Sequence
 
-from .entity_extraction import DEFAULT_ENTITY_LABELS
 from .llm_pipeline import LLMExtractionPipeline
 from .relation_cli import add_llm_arguments, openai_config_from_args
 
@@ -34,8 +33,9 @@ def main(argv: Sequence[str] | None = None) -> int:
     """Parse options, run NER followed by LLM RE, and print JSON."""
 
     args = _parser().parse_args(argv)
+    entity_labels = tuple(args.entity_labels) if args.entity_labels else None
     extractor = LLMExtractionPipeline.from_pretrained(
-        entity_labels=tuple(args.entity_labels or DEFAULT_ENTITY_LABELS),
+        entity_labels=entity_labels,
         entity_threshold=args.entity_threshold,
         device=args.device,
         llm_config=openai_config_from_args(args),

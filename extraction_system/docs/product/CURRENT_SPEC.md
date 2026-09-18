@@ -88,6 +88,15 @@ Each returned entity contains an `id`, source `text`, `type`, half-open characte
 offsets (`start`, `end`), and `score` when supplied by the underlying model.
 GLiNER-specific prediction dictionaries remain inside the GLiNER-BioMed adapter.
 
+When labels are omitted from the normal composed GLiNER-BioMed path, it loads
+one model and runs two focused passes: core biomedical labels (`gene`, `protein`,
+`chemical`, `species`, `cell line`, `DNA`, and `RNA`), followed by
+`biological process`. The normalized detections are merged by exact source
+span/text/type, ordered deterministically by source position and label, and
+assigned stable `E1`-style IDs after deduplication. Callers that explicitly
+provide labels retain single-pass behavior; `perturbation` is not part of the
+default passes.
+
 The initial schema should stay bounded to the entities needed for the current extraction/evaluation work. Do not enlarge it pre-emptively to cover hypothetical future multi-omics requirements.
 
 ## Relation behavior

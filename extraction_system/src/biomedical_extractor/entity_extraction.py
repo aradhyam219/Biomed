@@ -21,6 +21,21 @@ DEFAULT_ENTITY_LABELS = (
     "DNA",
     "RNA",
 )
+DEFAULT_CORE_ENTITY_LABELS = (
+    "gene",
+    "protein",
+    "disease",
+    "chemical",
+    "species",
+    "cell line",
+    "DNA",
+    "RNA",
+)
+DEFAULT_PROCESS_ENTITY_LABELS = ("biological process",)
+DEFAULT_ENTITY_LABEL_PASSES = (
+    DEFAULT_CORE_ENTITY_LABELS,
+    DEFAULT_PROCESS_ENTITY_LABELS,
+)
 
 
 class EntityExtractor(Protocol):
@@ -61,24 +76,25 @@ class GLiNERBioMedExtractor:
     def __init__(
         self,
         model: _GLiNERModel,
-        labels: Sequence[str] = DEFAULT_ENTITY_LABELS,
+        labels: Sequence[str] | None = None,
         threshold: float = 0.5,
     ) -> None:
         self._model = model
-        self._labels = tuple(labels)
+        self._label_passes = _resolve_label_passes(labels)
         self._threshold = threshold
-        _validate_labels(self._labels)
+        for label_pass in self._label_passes:
+            _validate_labels(label_pass)
         _validate_threshold(threshold)
 
     @classmethod
     def from_pretrained(
         cls,
         model_name: str = DEFAULT_ENTITY_MODEL,
-        labels: Sequence[str] = DEFAULT_ENTITY_LABELS,
+        labels: Sequence[str] | None = None,
         threshold: float = 0.5,
         device: str | None = None,
     ) -> GLiNERBioMedExtractor:
-        """Load a GLiNER-BioMed checkpoint without loading relation models."""
+        """Load one GLiNER-BioMed model for the configured label passes."""
 
         from gliner import GLiNER
         import torch
@@ -96,10 +112,23 @@ class GLiNERBioMedExtractor:
         if not text.strip():
             return ()
 
-        predictions = self._model.predict_entities(
-            text, self._labels, threshold=self._threshold
-        )
-        return _normalize_predictions(text, predictions, self._labels)
+        entities: list[Entity] = []
+        for labels in self._label_passes:
+            predictions = self._model.predict_entities(
+                text, labels, threshold=self._threshold
+            )
+            entities.extend(_normalize_predictions(text, predictions, labels))
+        return _merge_entities(entities)
+
+
+def _resolve_label_passes(
+    labels: Sequence[str] | None,
+) -> tuple[tuple[str, ...], ...]:
+    """Resolve omitted labels to the default core-plus-process passes."""
+
+    if labels is None:
+        return DEFAULT_ENTITY_LABEL_PASSES
+    return (tuple(labels),)
 
 
 def _validate_labels(labels: Sequence[str]) -> None:
@@ -152,3 +181,30 @@ def _normalize_predictions(
             )
         )
     return tuple(entities)
+
+
+def _merge_entities(entities: Sequence[Entity]) -> tuple[Entity, ...]:
+    """Deduplicate, order, and reassign IDs for merged model detections."""
+
+    unique: dict[tuple[int, int, str, str], Entity] = {}
+    for entity in entities:
+        key = (entity.start, entity.end, entity.type, entity.text)
+        # The first pass occurrence is deterministic and its model score is kept
+        # without synthesizing or reconciling a new confidence value.
+        unique.setdefault(key, entity)
+
+    ordered = sorted(
+        unique.values(),
+        key=lambda entity: (entity.start, entity.end, entity.type, entity.text),
+    )
+    return tuple(
+        Entity(
+            id=f"E{index}",
+            text=entity.text,
+            type=entity.type,
+            start=entity.start,
+            end=entity.end,
+            score=entity.score,
+        )
+        for index, entity in enumerate(ordered, start=1)
+    )

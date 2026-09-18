@@ -54,6 +54,13 @@ source-to-target direction.
 
 Invalid offsets, schema labels, duplicate token spans, or relation references are rejected rather than silently remapped.
 
+For the default GLiNER-BioMed path, one loaded model serves two sequential
+label passes: the core biomedical schema and `biological process`. The adapter
+normalizes both outputs, removes duplicate source span/text/type detections,
+orders the merged entities deterministically, and assigns their final IDs only
+after merging. Explicitly supplied labels remain a single-pass diagnostic or
+custom-label path; `perturbation` is not included by default.
+
 The controlled LLM handoff sends the original text and serialized normalized
 entities to `RelationExtractor`. The harness requires structured relation
 fields, then the local validator checks supplied endpoint IDs, concise

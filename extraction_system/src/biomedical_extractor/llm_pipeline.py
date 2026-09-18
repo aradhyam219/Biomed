@@ -6,7 +6,6 @@ from dataclasses import dataclass
 from typing import Any, Sequence
 
 from .entity_extraction import (
-    DEFAULT_ENTITY_LABELS,
     DEFAULT_ENTITY_MODEL,
     Entity,
     EntityExtractor,
@@ -59,7 +58,7 @@ class LLMExtractionPipeline:
         cls,
         *,
         entity_model: str = DEFAULT_ENTITY_MODEL,
-        entity_labels: Sequence[str] = DEFAULT_ENTITY_LABELS,
+        entity_labels: Sequence[str] | None = None,
         entity_threshold: float = 0.5,
         device: str | None = None,
         llm_config: OpenAIConfig | None = None,
