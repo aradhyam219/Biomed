@@ -1,7 +1,9 @@
 # Biomedical Extractor
 
-Minimal biomedical extraction pipeline using GLiNER-BioMed for entities, a
-controlled OpenAI/LLM relation path, and the preserved GLiREL evaluation path.
+The active path is core biomedical named-entity recognition (NER) using the
+model-independent `EntityExtractor` contract. Relation implementations remain
+preserved for later work, but relation extraction is deferred until the NER layer
+passes an explicit quality gate.
 
 ## Setup
 
@@ -12,6 +14,18 @@ uv sync
 ```
 
 The first run downloads model weights. Model caches, local runtimes, and virtual environments are ignored by Git.
+
+## Current focus
+
+```text
+biomedical text -> core biomedical NER -> NER evaluation / model selection
+                 -> future biomedical entity normalization -> STOP
+```
+
+The default GLiNER path runs one core-label pass. Biological-process extraction,
+biomedical identity linking, relation changes, and live LLM calls are not part of
+the current NER workstream. See [`docs/product/CURRENT_SPEC.md`](docs/product/CURRENT_SPEC.md)
+and [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) for the current contracts.
 
 ## Demo
 
@@ -43,7 +57,11 @@ entities = extractor.extract_entities("BRCA1 mutations are associated with breas
 Each returned entity exposes `id`, `text`, `type`, half-open `start`/`end`
 character offsets, and `score` when the model supplies one.
 
-## Controlled LLM relation extraction
+## Deferred relation paths
+
+The following relation paths are preserved and remain callable for existing
+consumers, but they are not the active quality target and are not changed by the
+current NER refocus.
 
 The LLM relation path accepts the normalized entities above and returns directed
 relations with source/target IDs, a concise predicate, verbatim source evidence,
@@ -87,7 +105,7 @@ Programmatic composition uses `LLMExtractionPipeline`; relation-only callers
 can instantiate `LLMRelationExtractor` with their own `Entity` values. The
 normal test suite uses fake model responses and never requires an API key.
 
-## BioRED relation evaluation
+## Preserved BioRED relation evaluation
 
 Download the official NCBI BioRED archive, extract it locally, and run the
 gold-entity development baseline with an explicit dataset path:

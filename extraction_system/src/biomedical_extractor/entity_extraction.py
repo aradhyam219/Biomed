@@ -12,15 +12,6 @@ from dataclasses import asdict, dataclass
 from typing import Any, Mapping, Protocol, Sequence
 
 DEFAULT_ENTITY_MODEL = "Ihor/gliner-biomed-base-v1.0"
-DEFAULT_ENTITY_LABELS = (
-    "gene",
-    "disease",
-    "chemical",
-    "species",
-    "cell line",
-    "DNA",
-    "RNA",
-)
 DEFAULT_CORE_ENTITY_LABELS = (
     "gene",
     "protein",
@@ -31,11 +22,9 @@ DEFAULT_CORE_ENTITY_LABELS = (
     "DNA",
     "RNA",
 )
-DEFAULT_PROCESS_ENTITY_LABELS = ("biological process",)
-DEFAULT_ENTITY_LABEL_PASSES = (
-    DEFAULT_CORE_ENTITY_LABELS,
-    DEFAULT_PROCESS_ENTITY_LABELS,
-)
+# Keep the established public name while making the core schema the ordinary
+# default for every GLiNER entry point.
+DEFAULT_ENTITY_LABELS = DEFAULT_CORE_ENTITY_LABELS
 
 
 class EntityExtractor(Protocol):
@@ -80,10 +69,11 @@ class GLiNERBioMedExtractor:
         threshold: float = 0.5,
     ) -> None:
         self._model = model
-        self._label_passes = _resolve_label_passes(labels)
+        self._labels = tuple(
+            DEFAULT_CORE_ENTITY_LABELS if labels is None else labels
+        )
         self._threshold = threshold
-        for label_pass in self._label_passes:
-            _validate_labels(label_pass)
+        _validate_labels(self._labels)
         _validate_threshold(threshold)
 
     @classmethod
@@ -94,7 +84,7 @@ class GLiNERBioMedExtractor:
         threshold: float = 0.5,
         device: str | None = None,
     ) -> GLiNERBioMedExtractor:
-        """Load one GLiNER-BioMed model for the configured label passes."""
+        """Load one GLiNER-BioMed model for the configured label schema."""
 
         from gliner import GLiNER
         import torch
@@ -112,27 +102,10 @@ class GLiNERBioMedExtractor:
         if not text.strip():
             return ()
 
-        entities: list[tuple[bool, Entity]] = []
-        for labels in self._label_passes:
-            predictions = self._model.predict_entities(
-                text, labels, threshold=self._threshold
-            )
-            is_process_pass = labels == DEFAULT_PROCESS_ENTITY_LABELS
-            entities.extend(
-                (is_process_pass, entity)
-                for entity in _normalize_predictions(text, predictions, labels)
-            )
-        return _merge_entities(entities)
-
-
-def _resolve_label_passes(
-    labels: Sequence[str] | None,
-) -> tuple[tuple[str, ...], ...]:
-    """Resolve omitted labels to the default core-plus-process passes."""
-
-    if labels is None:
-        return DEFAULT_ENTITY_LABEL_PASSES
-    return (tuple(labels),)
+        predictions = self._model.predict_entities(
+            text, self._labels, threshold=self._threshold
+        )
+        return _normalize_predictions(text, predictions, self._labels)
 
 
 def _validate_labels(labels: Sequence[str]) -> None:
@@ -185,46 +158,3 @@ def _normalize_predictions(
             )
         )
     return tuple(entities)
-
-
-def _merge_entities(
-    detections: Sequence[tuple[bool, Entity]],
-) -> tuple[Entity, ...]:
-    """Resolve the configured pass conflict, then deduplicate and order entities.
-
-    The dedicated process pass wins only when it returns a biological-process
-    entity at the exact same source span and text as a detection from the other
-    pass. Explicit single-pass calls do not receive this precedence rule.
-    """
-
-    process_spans = {
-        (entity.start, entity.end, entity.text)
-        for is_process_pass, entity in detections
-        if is_process_pass and entity.type == "biological process"
-    }
-
-    unique: dict[tuple[int, int, str, str], Entity] = {}
-    for is_process_pass, entity in detections:
-        span = (entity.start, entity.end, entity.text)
-        if not is_process_pass and span in process_spans:
-            continue
-        key = (entity.start, entity.end, entity.type, entity.text)
-        # The first pass occurrence is deterministic and its model score is kept
-        # without synthesizing or reconciling a new confidence value.
-        unique.setdefault(key, entity)
-
-    ordered = sorted(
-        unique.values(),
-        key=lambda entity: (entity.start, entity.end, entity.type, entity.text),
-    )
-    return tuple(
-        Entity(
-            id=f"E{index}",
-            text=entity.text,
-            type=entity.type,
-            start=entity.start,
-            end=entity.end,
-            score=entity.score,
-        )
-        for index, entity in enumerate(ordered, start=1)
-    )

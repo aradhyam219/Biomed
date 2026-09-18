@@ -1,290 +1,209 @@
-# Biomedical Entity and Relation Extraction: Current Specification
+# Biomedical Named-Entity Extraction: Current Specification
 
-> This document contains the current product/domain truth for the biomedical extraction subsystem.
-> It is not a roadmap, phase report, or history log. When accepted behavior changes, replace obsolete statements with the new current truth.
+> This document contains the current product/domain truth for the extraction
+> subsystem. It is not a roadmap, phase report, or history log. Replace stale
+> behavior here when an accepted product decision changes it.
 
 ## Purpose
 
-Given unstructured biomedical text, produce a clean structured representation of:
+Given unstructured biomedical text, produce a clean, machine-consumable set of
+core biomedical entity mentions with source spans, types, stable IDs, and model
+confidence when available.
 
-1. biomedical entities present in the text; and
-2. biomedical relationships inferred between those entities.
+The active objective is a credible, measurable named-entity recognition (NER)
+baseline. Relation extraction and biomedical entity normalization/linking are
+downstream capabilities, not the current quality target.
 
-The result is intended to be machine-consumable by a larger system.
+## Active product flow
 
-The immediate product objective is a credible, measurable extraction baseline rather than a claim of production-grade biomedical accuracy.
+```text
+biomedical text
+    ↓
+core biomedical NER
+    ↓
+NER evaluation / model selection
+    ↓
+future biomedical entity normalization
+    ↓
+STOP
+```
+
+The next entity model has not been selected. The current GLiNER-BioMed adapter is
+the baseline; AIONER / PubTator-style NER and HunFlair2 are evaluation candidates,
+not preselected winners. The model-independent entity interface is intentionally
+preserved so those candidates can be compared or substituted behind the same
+boundary.
 
 ## Scope
 
-### In scope
+### Active now
 
-- biomedical named-entity extraction;
-- biomedical relation extraction over detected or supplied entities;
-- normalized structured output connecting relations to entity identities;
-- entity and relation confidence scores where provided by the models;
-- configurable entity schemas and provider-specific relation schemas where needed;
-- configurable confidence thresholds;
-- independent evaluation of entity extraction;
-- independent evaluation of relation extraction using gold entities;
-- end-to-end extraction evaluation;
-- BioRED as the initial annotated evaluation sandbox;
-- precision, recall, F1, and representative failure inspection where applicable.
+- core biomedical named-entity extraction from ordinary biomedical text;
+- the model-independent `EntityExtractor` / `Entity` contract;
+- source-span, schema, stable-ID, and confidence validation;
+- configurable core labels and entity confidence thresholds;
+- NER evaluation and evidence-based model selection;
+- adapter/output normalization into the stable local entity representation.
 
-### Out of scope
+### Deferred or out of scope
 
-Unless a later accepted task explicitly changes this specification, the subsystem does **not** include:
+Unless a later accepted task changes this specification, the active NER workstream
+does not include:
 
-- a graph database or knowledge-graph platform;
-- pathway reconstruction or pathway reasoning;
-- a frontend;
-- PubMed/search/ingestion infrastructure;
-- an entity-linking or canonical biomedical identifier platform;
-- downstream recommendation or retrieval systems;
-- a large speculative multi-omics ontology;
-- unrelated platform refactors;
-- fine-tuning performed merely because it is possible rather than because evaluation evidence justifies it.
+- biological-process extraction, process/event nodes, or process-specific conflict
+  rules; it will be treated separately if required;
+- relation extraction changes, relation evaluation, or live LLM calls;
+- biomedical entity normalization/linking, meaning resolution of a mention to a
+  canonical biomedical identity or identifier;
+- a new NER model or dependency;
+- fine-tuning, a final ontology redesign, graph infrastructure, or unrelated
+  platform capabilities.
 
-## Current extraction behavior
+Existing LLM and legacy GLiREL relation implementations remain preserved and
+callable, but relation extraction is deferred until core NER passes an explicit
+quality gate. Existing historical diagnostic reports remain available.
 
-The current extraction path is:
+## Current entity behavior
 
-```text
-Biomedical text
-      ↓
-EntityExtractor contract
-(currently GLiNER-BioMed)
-      ↓
-Biomedical entities
-      ↓
-RelationExtractor contract
-(controlled LLM path; GLiREL remains an evaluation-compatible path)
-      ↓
-Biomedical relations
-      ↓
-Normalized structured output
-```
-
-The public behavior should remain conceptually simple: one unit of biomedical text in, one normalized extraction result out.
-
-Implementation mechanics, module boundaries, caching, loading strategy, batching, and helper structure are repository-level engineering decisions unless a later contract makes one of them externally significant.
-
-## Entity behavior
-
-The entity stage must:
-
-- operate on the supplied biomedical text;
-- return detected entity text and type;
-- preserve location/span information needed to identify the entity occurrence;
-- preserve model confidence where available;
-- use a finite configured biomedical entity schema rather than attempting unrestricted ontology generation.
-
-The entity stage exposes a small model-independent contract:
+The production entity boundary is:
 
 ```python
 entities = entity_extractor.extract_entities(text)
 ```
 
-Each returned entity contains an `id`, source `text`, `type`, half-open character
-offsets (`start`, `end`), and `score` when supplied by the underlying model.
-GLiNER-specific prediction dictionaries remain inside the GLiNER-BioMed adapter.
+When labels are omitted, the default GLiNER-BioMed path runs one model pass over
+the existing core schema:
 
-When labels are omitted from the normal composed GLiNER-BioMed path, it loads
-one model and runs two focused passes: core biomedical labels (`gene`, `protein`,
-`disease`, `chemical`, `species`, `cell line`, `DNA`, and `RNA`), followed by
-`biological process`. The normalized detections are merged by exact source
-span/text/type, with a core-pass detection suppressed only when the dedicated
-process pass returns `biological process` at that exact source span and text.
-The merged entities are ordered deterministically by source position and label,
-and assigned stable `E1`-style IDs after deduplication. Same-pass core-label
-ambiguities remain distinct. Callers that explicitly provide labels retain
-single-pass behavior; `perturbation` is not part of the default passes.
-
-The initial schema should stay bounded to the entities needed for the current extraction/evaluation work. Do not enlarge it pre-emptively to cover hypothetical future multi-omics requirements.
-
-## Relation behavior
-
-The relation stage must:
-
-- operate on biomedical text together with known/detected entities;
-- extract only relationships asserted by the supplied text;
-- not introduce biological facts from model knowledge;
-- for the initial controlled LLM path, emit a concise normalized predicate that
-  faithfully describes the asserted relation without requiring a finite ontology;
-- identify the directed source and target entity IDs unambiguously;
-- include verbatim source-text evidence for every emitted relation;
-- preserve explicit negation rather than converting a negated claim to a positive relation;
-- preserve relation confidence where available;
-- preserve provider-independent optional predicate restrictions for implementations
-  that need them; the initial controlled LLM path does not apply one.
-
-The relation extractor must also be usable with externally supplied/gold entities so that relation quality can be evaluated independently from entity-extraction quality.
-
-## Normalized output contract
-
-The result must expose entities and relations in a machine-consumable structure with equivalent semantics to:
-
-```json
-{
-  "entities": [
-    {
-      "id": "E1",
-      "text": "BRCA1",
-      "type": "Gene",
-      "start": 0,
-      "end": 5,
-      "score": 0.97
-    },
-    {
-      "id": "E2",
-      "text": "breast cancer",
-      "type": "Disease",
-      "start": 57,
-      "end": 70,
-      "score": 0.96
-    }
-  ],
-  "relations": [
-    {
-      "source": "E1",
-      "target": "E2",
-      "predicate": "association",
-      "evidence": "BRCA1 mutations are associated with breast cancer",
-      "negated": false,
-      "surface_form": "associated with",
-      "score": 0.91
-    }
-  ]
-}
+```text
+gene, protein, disease, chemical, species, cell line, DNA, RNA
 ```
 
-The example represents the text `BRCA1 mutations are associated with an increased risk of breast cancer.`; production offsets must always reflect the actual input text.
+There is no default `biological process` pass and no process-over-core arbitration.
+Callers may explicitly supply a custom label set through the generic adapter
+contract; that does not alter the normal default schema or create a second pass.
 
-The implementation may use typed objects internally, but it must be possible to obtain an equivalent normalized serializable representation.
+The entity stage must:
 
-The controlled relation boundary is provider-independent. LangChain/OpenAI
-objects may be used by the initial LLM implementation but must not appear in
-this output or be required by downstream consumers. Deterministic validation
-rejects missing fields, dangling entity IDs, unsupported evidence, and malformed
-relations; exact duplicate records are emitted once.
-The provider-independent relation value may retain an optional score for
-implementations that supply one, but the initial LLM structured-output schema
-does not request or fabricate a relation confidence score.
+- operate on the supplied biomedical text;
+- return the detected mention text and configured type;
+- preserve exact half-open character offsets into the source text;
+- assign stable IDs within one extraction result;
+- preserve model confidence where available; and
+- keep model-specific prediction dictionaries inside the adapter.
 
-## Confidence thresholds
+The core schema remains bounded for this task. It must not be expanded or
+redesigned before the NER evaluation and model-selection work provides evidence.
 
-Entity and relation confidence thresholds are part of the extraction configuration.
+## Stable entity contract
 
-They should not be treated as arbitrary permanent constants. Where practical, thresholds should be chosen or revised using evaluation evidence, initially from BioRED development data or the closest appropriate evaluation split.
+Each returned entity contains exactly this conceptual data:
 
-Threshold tuning must remain small and evidence-driven. It is not permission to overfit the demo set.
+```text
+id
+text
+type
+start
+end
+score
+```
 
-## BioRED's role
+`start` is inclusive and `end` is exclusive. The source slice
+`text[start:end]` must equal the entity's `text`. `score` is optional and may be
+`None` when the underlying implementation does not provide confidence.
 
-BioRED is an **evaluation resource**, not a production subsystem.
+The `EntityExtractor` boundary is model-independent. GLiNER-specific output,
+loading details, and prediction dictionaries must not leak to downstream callers;
+an alternative implementation must be able to return the same `Entity` values.
 
-Production extraction must continue to work on ordinary biomedical text without BioRED annotations.
+## Normalization terminology
 
-BioRED is used to provide:
+Two different operations are intentionally distinguished:
 
-- realistic biomedical text;
-- human-annotated entities;
-- human-annotated relationships;
-- quantitative comparison against known truth;
-- failure examples for deciding where future improvement effort should go.
+- **Adapter/output normalization:** model-specific prediction → stable local
+  `Entity` object. This is implemented now.
+- **Biomedical entity normalization/linking:** mention → canonical biomedical
+  identity or identifier. This is not implemented. It becomes active only after
+  the core NER model and schema are selected and validated.
 
-Dataset adapters/readers must remain outside the production extraction dependency chain.
+Stable local `Entity` output must not be described as biomedical identity linking.
 
-## Required evaluation modes
+## NER evaluation
 
-### 1. Entity extraction evaluation
+BioRED is evaluation infrastructure, not a production dependency. The active
+evaluation mode is:
 
 ```text
 BioRED text
     ↓
-Entity extractor
+EntityExtractor
     ↓
-Predicted entities
+Predicted core entities
     ↕
 BioRED gold entities
+    ↓
+NER quality / model selection
 ```
 
-Purpose: measure whether the entity stage recognizes the relevant biomedical entities.
+Evaluation must report the relevant coverage and span/type behavior without
+silently changing, truncating, or discarding production inputs. Dataset-specific
+assumptions remain in evaluation code rather than the production entity path.
 
-### 2. Relation extraction evaluation with gold entities
+Relation-specific and end-to-end evaluation infrastructure is preserved as
+deferred work; it is not an active acceptance target for the current NER phase.
 
-```text
-BioRED text + BioRED gold entities
-              ↓
-       Relation extractor
-              ↓
-      Predicted relations
-              ↕
-      BioRED gold relations
-```
+## Quality gate and replacement seam
 
-Purpose: measure relation extraction itself without conflating its errors with upstream NER errors.
+The next NER phase may compare the current GLiNER-BioMed baseline with AIONER /
+PubTator-style NER and HunFlair2 behind the same `EntityExtractor` boundary.
+These candidates are not a model-selection decision. The quality gate must be
+explicitly passed using the agreed NER evaluation evidence before biomedical
+entity normalization/linking or relation work becomes active.
 
-### 3. End-to-end evaluation
-
-```text
-BioRED text
-    ↓
-Entity extractor
-    ↓
-Relation extractor
-    ↓
-Predicted structured result
-    ↕
-BioRED truth
-```
-
-Purpose: measure the actual text-to-relations system.
-
-Where the dataset/schema alignment makes the metric meaningful, report precision, recall, and F1 for the relevant evaluation unit. Also retain representative failure examples because aggregate metrics alone will not identify the responsible stage.
-
-## Current quality strategy
-
-The order of work is:
-
-1. establish a working end-to-end zero-shot extraction path;
-2. evaluate entity extraction independently;
-3. evaluate relation extraction independently with gold entities;
-4. evaluate the full pipeline;
-5. inspect failures;
-6. adjust only schemas, thresholds, or similarly bounded configuration when evidence supports it;
-7. consider fine-tuning or more substantial model changes only after the baseline identifies a real need.
-
-Do not fine-tune by default.
+No replacement model, dependency, training run, or linking implementation is
+introduced by this specification.
 
 ## Product invariants
 
-- The subsystem's core product remains **biomedical text → structured entities and relations**.
-- Production extraction is dataset-independent.
-- BioRED remains an evaluation resource unless a later explicit product decision changes that role.
-- Entity-stage and relation-stage performance must remain independently diagnosable.
-- Output must remain usable by another software component without requiring model-specific internal objects.
-- Improvements should target demonstrated extraction weaknesses rather than expand product scope.
+- Production input is ordinary biomedical text, independent of BioRED metadata.
+- The active quality workstream is core biomedical NER only.
+- Default extraction does not run biological-process extraction or process
+  precedence logic.
+- Entity and relation code may remain separately callable, but relation extraction
+  is deferred until the NER quality gate.
+- The `EntityExtractor` / `Entity` contract remains model-independent.
+- Adapter/output normalization is distinct from biomedical identity normalization.
+- Biomedical entity normalization/linking is not implemented in this task.
+- Output is machine-consumable and does not require model-specific objects.
+- No new model, dependency, ontology, graph, or fine-tuning path is added for this
+  refocus.
 
 ## Acceptance examples
 
-### Basic extraction
+### Core NER extraction
 
-Given biomedical text containing a gene and disease relationship, the system should be able to return the detected entities and a permitted relation between them in normalized structured form when the models support that prediction.
+Given text containing a gene and disease mention, the entity extractor returns
+stable entity values whose spans resolve exactly to the source mentions. The
+default GLiNER path makes one core-label pass.
 
-### Relation-isolation evaluation
+### Model-independent replacement
 
-Given BioRED text and its gold entity annotations, the relation extractor can be evaluated against BioRED gold relations without first running the production entity extractor.
+An alternative NER implementation can be evaluated by satisfying
+`EntityExtractor.extract_entities(text)` and returning the same stable entity
+fields, without exposing its model-specific prediction format.
 
-### Dataset independence
+### Deferred downstream work
 
-Given biomedical text that did not originate from BioRED, the production extraction path still accepts and processes it without requiring BioRED metadata.
+Relation implementations remain available to existing callers, but no relation
+change or live provider request is required or performed before the explicit NER
+quality gate.
 
 ## Related architecture
 
-See `../ARCHITECTURE.md`.
+See [`../ARCHITECTURE.md`](../ARCHITECTURE.md).
 
 ## Maintenance rule
 
-Codex should update this file in the same task whenever an accepted change materially alters the current product/domain behavior described here.
-
-Do not append phase history or preserve obsolete behavior alongside current behavior. Replace stale truth. Use version control or an ADR for historical rationale when that rationale genuinely needs to survive.
+Update this file in the same task whenever an accepted change materially alters the
+current product/domain behavior. Do not append phase history or preserve obsolete
+behavior beside current truth; use version control or an ADR for rationale that
+genuinely needs to survive.

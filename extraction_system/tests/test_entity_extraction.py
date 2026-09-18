@@ -6,7 +6,6 @@ from unittest.mock import patch
 from biomedical_extractor.entity_extraction import (
     DEFAULT_CORE_ENTITY_LABELS,
     DEFAULT_ENTITY_MODEL,
-    DEFAULT_PROCESS_ENTITY_LABELS,
     Entity,
     GLiNERBioMedExtractor,
 )
@@ -25,7 +24,7 @@ class FakeGLiNERModel:
         return self.predictions
 
 
-class PassAwareGLiNERModel:
+class CoreAwareGLiNERModel:
     def __init__(self):
         self.calls = []
         self.eval_calls = 0
@@ -54,51 +53,28 @@ class PassAwareGLiNERModel:
                     "score": 0.99,
                 },
             ]
-        if labels == DEFAULT_PROCESS_ENTITY_LABELS:
-            return [
-                {
-                    "text": "apoptosis",
-                    "label": "biological process",
-                    "start": 11,
-                    "end": 20,
-                    "score": 0.8,
-                },
-                {
-                    "text": "apoptosis",
-                    "label": "biological process",
-                    "start": 11,
-                    "end": 20,
-                    "score": 0.8,
-                },
-            ]
         raise AssertionError(f"Unexpected label pass: {labels!r}")
 
 
 class EntityExtractionTests(unittest.TestCase):
-    def test_default_path_runs_two_passes_and_merges_deterministically(self):
+    def test_default_path_runs_only_the_core_label_pass(self):
         text = "p53 causes apoptosis"
-        model = PassAwareGLiNERModel()
+        model = CoreAwareGLiNERModel()
 
         entities = GLiNERBioMedExtractor(model).extract_entities(text)
 
-        self.assertEqual(
-            model.calls,
-            [
-                (text, DEFAULT_CORE_ENTITY_LABELS, 0.5),
-                (text, DEFAULT_PROCESS_ENTITY_LABELS, 0.5),
-            ],
-        )
+        self.assertEqual(model.calls, [(text, DEFAULT_CORE_ENTITY_LABELS, 0.5)])
         self.assertEqual(
             entities,
             (
                 Entity("E1", "p53", "gene", 0, 3, 0.9),
-                Entity("E2", "apoptosis", "biological process", 11, 20, 0.8),
+                Entity("E2", "apoptosis", "disease", 11, 20, 0.99),
             ),
         )
 
-    def test_default_loader_reuses_one_model_for_both_passes(self):
+    def test_default_loader_runs_one_core_pass(self):
         text = "p53 causes apoptosis"
-        model = PassAwareGLiNERModel()
+        model = CoreAwareGLiNERModel()
 
         with patch(
             "gliner.GLiNER.from_pretrained", return_value=model
@@ -108,7 +84,7 @@ class EntityExtractionTests(unittest.TestCase):
 
         load.assert_called_once_with(DEFAULT_ENTITY_MODEL, map_location="cpu")
         self.assertEqual(model.eval_calls, 1)
-        self.assertEqual(len(model.calls), 2)
+        self.assertEqual(model.calls, [(text, DEFAULT_CORE_ENTITY_LABELS, 0.5)])
 
     def test_explicit_same_pass_core_ambiguities_are_preserved(self):
         model = FakeGLiNERModel(

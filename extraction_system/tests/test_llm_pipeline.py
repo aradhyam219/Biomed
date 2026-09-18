@@ -46,7 +46,7 @@ class _FakeRelationExtractor:
 
 
 class LLMPipelineTests(unittest.TestCase):
-    def test_default_pretrained_path_uses_adapter_default_label_passes(self):
+    def test_default_pretrained_path_uses_adapter_default_schema(self):
         entity_extractor = _FakeEntityExtractor()
         relation_extractor = _FakeRelationExtractor()
 
