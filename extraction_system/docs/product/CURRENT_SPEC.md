@@ -49,6 +49,14 @@ boundary.
 - a frozen, evaluation-only challenger run of the official HunFlair2 five-class
   model on that same BioRED Test split, compared with AIONER without changing
   the production adapter or dependency graph.
+- target-domain reconnaissance on the nine specified science-team papers using
+  official NCBI/PubMed/PMC acquisition, identical canonical text, AIONER and
+  HunFlair2 agreement diagnostics, sentence-level entity co-occurrence only, and
+  a deterministic human-review packet;
+- an independent exact-span MedMentions ST21pv test evaluation with an explicit
+  semantic-type mapping to the defensible shared ChemicalEntity and
+  DiseaseOrPhenotypicFeature classes, including unsupported/ambiguous counts,
+  failure categories, and a descriptive BioRED comparison.
 
 ### Deferred or out of scope
 
@@ -171,6 +179,24 @@ lack of that class, are reported rather than silently remapped or discarded.
 The official AIONER and HunFlair2 runtimes and model artifacts are isolated
 evaluation inputs; they do not change the production GLiNER default.
 
+The target-domain reconnaissance command uses the same source text for both
+challengers and records PMID/PMCID, title, source URL, acquisition mode, section
+boundaries, character count, and checksums. Its exact-span/type agreement
+categories are deterministic diagnostics: exact agreement, same-span type
+disagreement, same-type boundary overlap, cross-type overlap, and model-only
+mentions. Sentence-level entity co-occurrence is reported only as a graph-candidate
+diagnostic; no edge, predicate, or relation score is produced. The report keeps
+SequenceVariant as an AIONER-only schema observation and retains CellLine in the
+shared view.
+
+The MedMentions evaluation is independent under the documented training recipes
+checked for the cached AIONER and HunFlair2 artifacts. UMLS identifiers are
+retained as source metadata but are not used for linking or scoring. Only explicit
+semantic types mapped to ChemicalEntity or DiseaseOrPhenotypicFeature receive
+primary exact NER metrics; unsupported and ambiguous gold annotations and
+unsupported predictions are counted separately. MedMentions and BioRED scores are
+descriptive cross-corpus evidence, not interchangeable quality claims.
+
 Relation-specific and end-to-end evaluation infrastructure is preserved as
 deferred work; it is not an active acceptance target for the current NER phase.
 
@@ -202,6 +228,11 @@ comparisons.
 - No challenger model is installed as the production default, and no new
   production dependency, ontology, graph, or fine-tuning path is added for this
   refocus.
+- Target-domain reports cannot claim correctness or a production model winner
+  without target-domain gold labels.
+- Sentence co-occurrence diagnostics cannot create relation outputs.
+- Official corpus fallbacks and unsupported cross-corpus mappings must remain
+  explicit in machine-readable reports.
 
 ## Acceptance examples
 

@@ -1,0 +1,1710 @@
+{
+  "biored_reference": {
+    "AIONER": {
+      "micro_f1": 0.9157064887810794,
+      "per_type_f1": {
+        "CellLine": 0.9263157894736842,
+        "ChemicalEntity": 0.9188464118041583,
+        "DiseaseOrPhenotypicFeature": 0.8749323226854359,
+        "GeneOrGeneProduct": 0.9250317662007624,
+        "OrganismTaxon": 0.9750623441396509
+      }
+    },
+    "HunFlair2": {
+      "micro_f1": 0.9491576870541812,
+      "per_type_f1": {
+        "CellLine": 0.8514851485148515,
+        "ChemicalEntity": 0.9721485411140584,
+        "DiseaseOrPhenotypicFeature": 0.9243243243243243,
+        "GeneOrGeneProduct": 0.9436860068259386,
+        "OrganismTaxon": 0.9923664122137404
+      }
+    },
+    "available": true
+  },
+  "comparison": {
+    "biored_micro_f1_order": [
+      "HunFlair2",
+      "AIONER"
+    ],
+    "medmentions_micro_f1_order": [
+      "HunFlair2",
+      "AIONER"
+    ],
+    "models": {
+      "AIONER": {
+        "biored_shared_micro_f1": 0.9157064887810794,
+        "medmentions_micro_f1": 0.3321678321678322,
+        "micro_f1_drop": 0.5835386566132472,
+        "substantial_micro_drop": true
+      },
+      "HunFlair2": {
+        "biored_shared_micro_f1": 0.9491576870541812,
+        "medmentions_micro_f1": 0.3405262874670398,
+        "micro_f1_drop": 0.6086313995871415,
+        "substantial_micro_drop": true
+      }
+    },
+    "ordering_differs": false,
+    "substantial_drop_threshold": 0.1
+  },
+  "dataset": {
+    "corpus_sha256": "66c89275ec6f68ad402f1289167126e1cd5fc1e024c256a201255d60b961c271",
+    "corpus_url": "https://raw.githubusercontent.com/chanzuckerberg/MedMentions/master/st21pv/data/corpus_pubtator.txt.gz",
+    "document_count": 879,
+    "name": "MedMentions ST21pv",
+    "source_repository": "https://github.com/chanzuckerberg/MedMentions",
+    "split": "test",
+    "split_sha256": "fece5bcb8c61edf8de73884980b80daf274132ef6d69f0d195c0114acbfdd4ab",
+    "split_url": "https://raw.githubusercontent.com/chanzuckerberg/MedMentions/master/full/data/corpus_pubtator_pmids_test.txt"
+  },
+  "evaluation_name": "AIONER versus HunFlair2 on MedMentions ST21pv",
+  "independence_verification": {
+    "AIONER": {
+      "documented_training_corpora_checked": [
+        "BioRED",
+        "NLM-Gene",
+        "GNormPlus",
+        "NCBI Disease",
+        "NLM-Chem",
+        "BC5CDR",
+        "Linnaeus",
+        "Species-800",
+        "tmVar3",
+        "BioID"
+      ],
+      "evidence": "Official AIONER paper Table 1 and released upstream data manifest",
+      "evidence_urls": [
+        "https://doi.org/10.1093/bioinformatics/btad310",
+        "https://github.com/ncbi/AIONER"
+      ],
+      "medmentions_listed_in_training_recipe": false
+    },
+    "HunFlair2": {
+      "documented_training_corpora_checked": [
+        "BioRED",
+        "NLM Gene",
+        "GNormPlus",
+        "Linnaeus",
+        "S800",
+        "NLM Chem",
+        "SCAI Chemical",
+        "NCBI Disease",
+        "SCAI disease"
+      ],
+      "evidence": "HunFlair2 paper Section 3 and cross-corpus protocol",
+      "evidence_urls": [
+        "https://arxiv.org/html/2402.12372",
+        "https://github.com/flairNLP/flair"
+      ],
+      "medmentions_listed_in_training_recipe": false
+    },
+    "independent_under_documented_recipes": true,
+    "qualification": "This verifies absence from the documented supervised training recipes checked for the cached artifacts; it is not a claim about every possible pretraining source."
+  },
+  "limitations": [
+    "MedMentions UMLS identifiers are not normalized or used for scoring.",
+    "Only explicit, unambiguous semantic-type mappings are scored; unsupported and ambiguous gold mentions are reported separately.",
+    "Exact character span and canonical type are required for a true positive.",
+    "The default run uses the official MedMentions test PMID split; the split identity and checksums are recorded.",
+    "Annotation conventions differ from BioRED, so cross-corpus scores are not directly interchangeable with BioRED scores."
+  ],
+  "mapping": {
+    "descriptions": {
+      "T033": "Finding; retained as a phenotypic/disease-style mention",
+      "T037": "Injury or Poisoning; retained as a disease/phenotypic mention",
+      "T047": "Disease or Syndrome",
+      "T103": "Chemical",
+      "T184": "Sign or Symptom",
+      "T190": "Anatomical Abnormality",
+      "T191": "Neoplastic Process"
+    },
+    "scored_types": [
+      "ChemicalEntity",
+      "DiseaseOrPhenotypicFeature"
+    ],
+    "semantic_type_to_canonical": {
+      "T033": "DiseaseOrPhenotypicFeature",
+      "T037": "DiseaseOrPhenotypicFeature",
+      "T047": "DiseaseOrPhenotypicFeature",
+      "T103": "ChemicalEntity",
+      "T184": "DiseaseOrPhenotypicFeature",
+      "T190": "DiseaseOrPhenotypicFeature",
+      "T191": "DiseaseOrPhenotypicFeature"
+    },
+    "umls_normalization_scored": false,
+    "unsupported_and_ambiguous_are_excluded_from_primary_metrics": true
+  },
+  "models": {
+    "AIONER": {
+      "counts": {
+        "gold_ambiguous_mentions": 0,
+        "gold_mentions": 40157,
+        "gold_scored_mentions": 10980,
+        "gold_unsupported_mentions": 29177,
+        "predicted_mentions": 14986,
+        "predicted_scored_mentions": 8552,
+        "predicted_unsupported_mentions": 6434
+      },
+      "failure_counts": {
+        "ambiguous_gold_semantic_type": 0,
+        "missed_scored_gold": 7326,
+        "overlapping_different_type": 81,
+        "overlapping_same_type_boundary": 521,
+        "same_span_different_type": 12,
+        "spurious_scored_prediction": 4898,
+        "unsupported_gold_semantic_type": 29177,
+        "unsupported_predicted_type": 6434
+      },
+      "failure_examples": {
+        "missed_scored_gold": [
+          {
+            "context": "12 cells Nonylphenol and short-chain nonylphenol ethoxylates such as NP2 EO are present in aquatic environment as wastewater contaminants, and their toxic effects on a",
+            "document_id": "25847295",
+            "gold": {
+              "canonical_type": "DiseaseOrPhenotypicFeature",
+              "cui": "UMLS:C0150312",
+              "end": 144,
+              "id": "25847295:M3",
+              "mapping_status": "scored",
+              "semantic_types": [
+                "T033"
+              ],
+              "start": 137,
+              "text": "present"
+            },
+            "predicted": null
+          },
+          {
+            "context": "NP2 EO are present in aquatic environment as wastewater contaminants, and their toxic effects on aquatic species have been reported. Apoptosis has been shown to be induced b",
+            "document_id": "25847295",
+            "gold": {
+              "canonical_type": "DiseaseOrPhenotypicFeature",
+              "cui": "UMLS:C0600688",
+              "end": 219,
+              "id": "25847295:M4",
+              "mapping_status": "scored",
+              "semantic_types": [
+                "T037"
+              ],
+              "start": 206,
+              "text": "toxic effects"
+            },
+            "predicted": null
+          },
+          {
+            "context": " after treating apoptotic PC12 cells with nonylphenol diethoxylate, whereas the cytochrome c release into the cytosol decreased as compared to that in apoptotic cells not t",
+            "document_id": "25847295",
+            "gold": {
+              "canonical_type": "ChemicalEntity",
+              "cui": "UMLS:C0010749",
+              "end": 832,
+              "id": "25847295:M18",
+              "mapping_status": "scored",
+              "semantic_types": [
+                "T103"
+              ],
+              "start": 820,
+              "text": "cytochrome c"
+            },
+            "predicted": null
+          },
+          {
+            "context": "at in apoptotic cells not treated with nonylphenol diethoxylate s. Furthermore, Bax contents in apoptotic cells were reduced after exposure to nonylphenol diethoxy",
+            "document_id": "25847295",
+            "gold": {
+              "canonical_type": "ChemicalEntity",
+              "cui": "UMLS:C0219474",
+              "end": 968,
+              "id": "25847295:M21",
+              "mapping_status": "scored",
+              "semantic_types": [
+                "T103"
+              ],
+              "start": 965,
+              "text": "Bax"
+            },
+            "predicted": null
+          },
+          {
+            "context": " apoptosis induced by serum deprivation. The difference in structure of the two compounds is hypothesized to be responsible for this phenomenon. These results indicated ",
+            "document_id": "25847295",
+            "gold": {
+              "canonical_type": "ChemicalEntity",
+              "cui": "UMLS:C0220806",
+              "end": 1264,
+              "id": "25847295:M28",
+              "mapping_status": "scored",
+              "semantic_types": [
+                "T103"
+              ],
+              "start": 1255,
+              "text": "compounds"
+            },
+            "predicted": null
+          }
+        ],
+        "overlapping_different_type": [
+          {
+            "context": " coli however, had no effect on antibiotic production. In all cases, growth and glucose consumption of S. coelicolor remained almost the same as those observed in the pure culture",
+            "document_id": "27241291",
+            "gold": {
+              "canonical_type": "DiseaseOrPhenotypicFeature",
+              "cui": "UMLS:C0556133",
+              "end": 1284,
+              "id": "27241291:M36",
+              "mapping_status": "scored",
+              "semantic_types": [
+                "T033"
+              ],
+              "start": 1265,
+              "text": "glucose consumption"
+            },
+            "predicted": {
+              "canonical_type": "ChemicalEntity",
+              "end": 1272,
+              "id": "E21",
+              "score": null,
+              "start": 1265,
+              "text": "glucose",
+              "type": "Chemical"
+            }
+          },
+          {
+            "context": "dvanced glycation end products (AGE), activation of protein kinase c (PKC), and lipid accumulation. These pathways activate one another mutually leading to oxidative stress, incr",
+            "document_id": "27261587",
+            "gold": {
+              "canonical_type": "DiseaseOrPhenotypicFeature",
+              "cui": "UMLS:C0333574",
+              "end": 445,
+              "id": "27261587:M21",
+              "mapping_status": "scored",
+              "semantic_types": [
+                "T033"
+              ],
+              "start": 427,
+              "text": "lipid accumulation"
+            },
+            "predicted": {
+              "canonical_type": "ChemicalEntity",
+              "end": 432,
+              "id": "E13",
+              "score": null,
+              "start": 427,
+              "text": "lipid",
+              "type": "Chemical"
+            }
+          },
+          {
+            "context": "The sensitivity and specifity of DR-70 immunoassay as a tumor marker for non-small cell lung cancer Lung cancer is the most important causes of the ",
+            "document_id": "27266283",
+            "gold": {
+              "canonical_type": "ChemicalEntity",
+              "cui": "UMLS:C0041365",
+              "end": 68,
+              "id": "27266283:M3",
+              "mapping_status": "scored",
+              "semantic_types": [
+                "T103"
+              ],
+              "start": 56,
+              "text": "tumor marker"
+            },
+            "predicted": {
+              "canonical_type": "DiseaseOrPhenotypicFeature",
+              "end": 61,
+              "id": "E2",
+              "score": null,
+              "start": 56,
+              "text": "tumor",
+              "type": "Disease"
+            }
+          },
+          {
+            "context": "lung cancer some methods are emphasized such as low-dose computed tomography or tumor biomarkers. In this study we aimed to evaluate DR-70 sensitivity and specificity as a tumo",
+            "document_id": "27266283",
+            "gold": {
+              "canonical_type": "ChemicalEntity",
+              "cui": "UMLS:C0041366",
+              "end": 446,
+              "id": "27266283:M15",
+              "mapping_status": "scored",
+              "semantic_types": [
+                "T103"
+              ],
+              "start": 430,
+              "text": "tumor biomarkers"
+            },
+            "predicted": {
+              "canonical_type": "DiseaseOrPhenotypicFeature",
+              "end": 435,
+              "id": "E9",
+              "score": null,
+              "start": 430,
+              "text": "tumor",
+              "type": "Disease"
+            }
+          },
+          {
+            "context": "kers. In this study we aimed to evaluate DR-70 sensitivity and specificity as a tumor marker in detection of non-small cell lung cancers. Between May 2013 and April 2014, t",
+            "document_id": "27266283",
+            "gold": {
+              "canonical_type": "ChemicalEntity",
+              "cui": "UMLS:C0041365",
+              "end": 534,
+              "id": "27266283:M18",
+              "mapping_status": "scored",
+              "semantic_types": [
+                "T103"
+              ],
+              "start": 522,
+              "text": "tumor marker"
+            },
+            "predicted": {
+              "canonical_type": "DiseaseOrPhenotypicFeature",
+              "end": 527,
+              "id": "E11",
+              "score": null,
+              "start": 522,
+              "text": "tumor",
+              "type": "Disease"
+            }
+          }
+        ],
+        "overlapping_same_type_boundary": [
+          {
+            "context": "erior to 5 days of oral prednisone in treatment of adults with mild to moderate asthma exacerbations to prevent relapse defined as an unscheduled return visit for additional treatm",
+            "document_id": "27117874",
+            "gold": {
+              "canonical_type": "DiseaseOrPhenotypicFeature",
+              "cui": "UMLS:C0349790",
+              "end": 437,
+              "id": "27117874:M7",
+              "mapping_status": "scored",
+              "semantic_types": [
+                "T033"
+              ],
+              "start": 417,
+              "text": "asthma exacerbations"
+            },
+            "predicted": {
+              "canonical_type": "DiseaseOrPhenotypicFeature",
+              "end": 423,
+              "id": "E8",
+              "score": null,
+              "start": 417,
+              "text": "asthma",
+              "type": "Disease"
+            }
+          },
+          {
+            "context": "for 5 days by a very small margin for treatment of adults with mild to moderate asthma exacerbations. Enhanced compliance and convenience may support the use of dexamethasone regar",
+            "document_id": "27117874",
+            "gold": {
+              "canonical_type": "DiseaseOrPhenotypicFeature",
+              "cui": "UMLS:C0349790",
+              "end": 1646,
+              "id": "27117874:M25",
+              "mapping_status": "scored",
+              "semantic_types": [
+                "T033"
+              ],
+              "start": 1626,
+              "text": "asthma exacerbations"
+            },
+            "predicted": {
+              "canonical_type": "DiseaseOrPhenotypicFeature",
+              "end": 1632,
+              "id": "E20",
+              "score": null,
+              "start": 1626,
+              "text": "asthma",
+              "type": "Disease"
+            }
+          },
+          {
+            "context": "raphical, clinical, and biochemical findings. In overall, 427 patients with 449 AUS / FLUS nodules who had undergone surgery, the rate of malignancy was 23.4 % (105/449).",
+            "document_id": "27172917",
+            "gold": {
+              "canonical_type": "DiseaseOrPhenotypicFeature",
+              "cui": "UMLS:C1272585",
+              "end": 925,
+              "id": "27172917:M35",
+              "mapping_status": "scored",
+              "semantic_types": [
+                "T033"
+              ],
+              "start": 921,
+              "text": "FLUS"
+            },
+            "predicted": {
+              "canonical_type": "DiseaseOrPhenotypicFeature",
+              "end": 925,
+              "id": "E11",
+              "score": null,
+              "start": 915,
+              "text": "AUS / FLUS",
+              "type": "Disease"
+            }
+          },
+          {
+            "context": " mediating this inter-species interaction. The antibiotics of interest were the red-pigmented undecylprodigiosin and blue-pigmented actinorhodin. Pure cultures of S. coelicolor in a defined me",
+            "document_id": "27241291",
+            "gold": {
+              "canonical_type": "ChemicalEntity",
+              "cui": "UMLS:C0526040",
+              "end": 442,
+              "id": "27241291:M10",
+              "mapping_status": "scored",
+              "semantic_types": [
+                "T103"
+              ],
+              "start": 410,
+              "text": "red-pigmented undecylprodigiosin"
+            },
+            "predicted": {
+              "canonical_type": "ChemicalEntity",
+              "end": 442,
+              "id": "E7",
+              "score": null,
+              "start": 424,
+              "text": "undecylprodigiosin",
+              "type": "Chemical"
+            }
+          },
+          {
+            "context": "bolites were determine d using liquid and gas chromatography-mass spectrometry. Quadriceps fatigue was quantified by pre - to post - exercise changes in potentiated quadriceps tw",
+            "document_id": "27241818",
+            "gold": {
+              "canonical_type": "DiseaseOrPhenotypicFeature",
+              "cui": "UMLS:C0015672",
+              "end": 1804,
+              "id": "27241818:M78",
+              "mapping_status": "scored",
+              "semantic_types": [
+                "T033"
+              ],
+              "start": 1797,
+              "text": "fatigue"
+            },
+            "predicted": {
+              "canonical_type": "DiseaseOrPhenotypicFeature",
+              "end": 1804,
+              "id": "E7",
+              "score": null,
+              "start": 1786,
+              "text": "Quadriceps fatigue",
+              "type": "Disease"
+            }
+          }
+        ],
+        "same_span_different_type": [
+          {
+            "context": "O group exhibited improved metabolic profiles including those of blood glucose, triglyceride, and total cholesterol levels. The 12- week voglibose administration decreased ",
+            "document_id": "27349182",
+            "gold": {
+              "canonical_type": "DiseaseOrPhenotypicFeature",
+              "cui": "UMLS:C0428475",
+              "end": 1006,
+              "id": "27349182:M25",
+              "mapping_status": "scored",
+              "semantic_types": [
+                "T033"
+              ],
+              "start": 994,
+              "text": "triglyceride"
+            },
+            "predicted": {
+              "canonical_type": "ChemicalEntity",
+              "end": 1006,
+              "id": "E19",
+              "score": null,
+              "start": 994,
+              "text": "triglyceride",
+              "type": "Chemical"
+            }
+          },
+          {
+            "context": "nued to have bicytopenia. Further investigation showed elevated serum ferritin, triglycerides and LDH. With a clinical suspicion of infection and haemophagocytic lymphohisti",
+            "document_id": "27408381",
+            "gold": {
+              "canonical_type": "DiseaseOrPhenotypicFeature",
+              "cui": "UMLS:C0813230",
+              "end": 877,
+              "id": "27408381:M33",
+              "mapping_status": "scored",
+              "semantic_types": [
+                "T033"
+              ],
+              "start": 864,
+              "text": "triglycerides"
+            },
+            "predicted": {
+              "canonical_type": "ChemicalEntity",
+              "end": 877,
+              "id": "E19",
+              "score": null,
+              "start": 864,
+              "text": "triglycerides",
+              "type": "Chemical"
+            }
+          },
+          {
+            "context": " of CYP703A2 could be partially restored by the elevated levels of MS188 in the ams mutant. Therefore, our data reveal that MS188 coordinates with AMS to activate ",
+            "document_id": "27460657",
+            "gold": {
+              "canonical_type": "ChemicalEntity",
+              "cui": "UMLS:C1434242",
+              "end": 1297,
+              "id": "27460657:M62",
+              "mapping_status": "scored",
+              "semantic_types": [
+                "T103"
+              ],
+              "start": 1294,
+              "text": "ams"
+            },
+            "predicted": {
+              "canonical_type": "DiseaseOrPhenotypicFeature",
+              "end": 1297,
+              "id": "E32",
+              "score": null,
+              "start": 1294,
+              "text": "ams",
+              "type": "Disease"
+            }
+          },
+          {
+            "context": "d detection were optimized. Under the optimum conditions, the linear ranges for AML was 0.008-5.0\u03bcg/mL with a detection limit of 2.8ng/mL (S/N=3). The method displ",
+            "document_id": "27474969",
+            "gold": {
+              "canonical_type": "ChemicalEntity",
+              "cui": "UMLS:C0354468",
+              "end": 1148,
+              "id": "27474969:M43",
+              "mapping_status": "scored",
+              "semantic_types": [
+                "T103"
+              ],
+              "start": 1145,
+              "text": "AML"
+            },
+            "predicted": {
+              "canonical_type": "DiseaseOrPhenotypicFeature",
+              "end": 1148,
+              "id": "E18",
+              "score": null,
+              "start": 1145,
+              "text": "AML",
+              "type": "Disease"
+            }
+          },
+          {
+            "context": "ar range, low detection limit and fine reproducibility, and was used to analyze AML in mice plasma with a satisfactory result, which holds a great potential in the",
+            "document_id": "27474969",
+            "gold": {
+              "canonical_type": "ChemicalEntity",
+              "cui": "UMLS:C0354468",
+              "end": 1379,
+              "id": "27474969:M45",
+              "mapping_status": "scored",
+              "semantic_types": [
+                "T103"
+              ],
+              "start": 1376,
+              "text": "AML"
+            },
+            "predicted": {
+              "canonical_type": "DiseaseOrPhenotypicFeature",
+              "end": 1379,
+              "id": "E19",
+              "score": null,
+              "start": 1376,
+              "text": "AML",
+              "type": "Disease"
+            }
+          }
+        ],
+        "spurious_scored_prediction": [
+          {
+            "context": "Nonylphenol diethoxylate inhibits apoptosis induced in PC12 cells Nonylphenol and short-chain nonylpheno",
+            "document_id": "25847295",
+            "gold": null,
+            "predicted": {
+              "canonical_type": "ChemicalEntity",
+              "end": 24,
+              "id": "E1",
+              "score": null,
+              "start": 0,
+              "text": "Nonylphenol diethoxylate",
+              "type": "Chemical"
+            }
+          },
+          {
+            "context": "Nonylphenol diethoxylate inhibits apoptosis induced in PC12 cells Nonylphenol and short-chain nonylphenol ethoxylates such as NP2 EO are present in aquatic e",
+            "document_id": "25847295",
+            "gold": null,
+            "predicted": {
+              "canonical_type": "ChemicalEntity",
+              "end": 77,
+              "id": "E3",
+              "score": null,
+              "start": 66,
+              "text": "Nonylphenol",
+              "type": "Chemical"
+            }
+          },
+          {
+            "context": "ethoxylate inhibits apoptosis induced in PC12 cells Nonylphenol and short-chain nonylphenol ethoxylates such as NP2 EO are present in aquatic environment as wastewater contaminants, a",
+            "document_id": "25847295",
+            "gold": null,
+            "predicted": {
+              "canonical_type": "ChemicalEntity",
+              "end": 117,
+              "id": "E4",
+              "score": null,
+              "start": 94,
+              "text": "nonylphenol ethoxylates",
+              "type": "Chemical"
+            }
+          },
+          {
+            "context": "duced in PC12 cells Nonylphenol and short-chain nonylphenol ethoxylates such as NP2 EO are present in aquatic environment as wastewater contaminants, and their toxic ",
+            "document_id": "25847295",
+            "gold": null,
+            "predicted": {
+              "canonical_type": "ChemicalEntity",
+              "end": 132,
+              "id": "E5",
+              "score": null,
+              "start": 126,
+              "text": "NP2 EO",
+              "type": "Chemical"
+            }
+          },
+          {
+            "context": "shown to be induced by serum deprivation or copper treatment. To understand the toxicity of nonylphenol diethoxylate, we investigated the effects of NP2 EO on apoptosis",
+            "document_id": "25847295",
+            "gold": null,
+            "predicted": {
+              "canonical_type": "DiseaseOrPhenotypicFeature",
+              "end": 366,
+              "id": "E7",
+              "score": null,
+              "start": 358,
+              "text": "toxicity",
+              "type": "Disease"
+            }
+          }
+        ],
+        "unsupported_gold_semantic_type": [
+          {
+            "context": "Nonylphenol diethoxylate inhibits apoptosis induced in PC12 cells Nonylphenol and short-chain nonylphenol ethoxylates such ",
+            "document_id": "25847295",
+            "gold": {
+              "canonical_type": null,
+              "cui": "UMLS:C0162638",
+              "end": 43,
+              "id": "25847295:M1",
+              "mapping_status": "unsupported",
+              "semantic_types": [
+                "T038"
+              ],
+              "start": 34,
+              "text": "apoptosis"
+            },
+            "predicted": null
+          },
+          {
+            "context": "Nonylphenol diethoxylate inhibits apoptosis induced in PC12 cells Nonylphenol and short-chain nonylphenol ethoxylates such as NP2 EO are present ",
+            "document_id": "25847295",
+            "gold": {
+              "canonical_type": null,
+              "cui": "UMLS:C0085262",
+              "end": 65,
+              "id": "25847295:M2",
+              "mapping_status": "unsupported",
+              "semantic_types": [
+                "T017"
+              ],
+              "start": 55,
+              "text": "PC12 cells"
+            },
+            "predicted": null
+          },
+          {
+            "context": "er contaminants, and their toxic effects on aquatic species have been reported. Apoptosis has been shown to be induced by serum deprivation or copper treatment. To under",
+            "document_id": "25847295",
+            "gold": {
+              "canonical_type": null,
+              "cui": "UMLS:C0162638",
+              "end": 268,
+              "id": "25847295:M5",
+              "mapping_status": "unsupported",
+              "semantic_types": [
+                "T038"
+              ],
+              "start": 259,
+              "text": "Apoptosis"
+            },
+            "predicted": null
+          },
+          {
+            "context": "n aquatic species have been reported. Apoptosis has been shown to be induced by serum deprivation or copper treatment. To understand the toxicity of nonylphenol diet",
+            "document_id": "25847295",
+            "gold": {
+              "canonical_type": null,
+              "cui": "UMLS:C0229671",
+              "end": 306,
+              "id": "25847295:M6",
+              "mapping_status": "unsupported",
+              "semantic_types": [
+                "T031"
+              ],
+              "start": 301,
+              "text": "serum"
+            },
+            "predicted": null
+          },
+          {
+            "context": " toxicity of nonylphenol diethoxylate, we investigated the effects of NP2 EO on apoptosis induced by serum deprivation and copper by using PC12 cell system. Nonylphenol ",
+            "document_id": "25847295",
+            "gold": {
+              "canonical_type": null,
+              "cui": "UMLS:C0162638",
+              "end": 446,
+              "id": "25847295:M8",
+              "mapping_status": "unsupported",
+              "semantic_types": [
+                "T038"
+              ],
+              "start": 437,
+              "text": "apoptosis"
+            },
+            "predicted": null
+          }
+        ],
+        "unsupported_predicted_type": [
+          {
+            "context": "Nonylphenol diethoxylate inhibits apoptosis induced in PC12 cells Nonylphenol and short-chain nonylphenol ethoxylates such as NP2 EO are pr",
+            "document_id": "25847295",
+            "gold": null,
+            "predicted": {
+              "canonical_type": null,
+              "end": 59,
+              "id": "E2",
+              "score": null,
+              "start": 55,
+              "text": "PC12",
+              "type": "CellLine"
+            }
+          },
+          {
+            "context": "effects of NP2 EO on apoptosis induced by serum deprivation and copper by using PC12 cell system. Nonylphenol diethoxylate itself showed no toxicity and recovered c",
+            "document_id": "25847295",
+            "gold": null,
+            "predicted": {
+              "canonical_type": null,
+              "end": 500,
+              "id": "E11",
+              "score": null,
+              "start": 496,
+              "text": "PC12",
+              "type": "CellLine"
+            }
+          },
+          {
+            "context": "on, nonylphenol diethoxylate decreased DNA fragmentation caused by apoptosis in PC12 cells. This phenomenon was confirmed after treating apoptotic PC12 cells with n",
+            "document_id": "25847295",
+            "gold": null,
+            "predicted": {
+              "canonical_type": null,
+              "end": 703,
+              "id": "E15",
+              "score": null,
+              "start": 699,
+              "text": "PC12",
+              "type": "CellLine"
+            }
+          },
+          {
+            "context": "apoptosis in PC12 cells. This phenomenon was confirmed after treating apoptotic PC12 cells with nonylphenol diethoxylate, whereas the cytochrome c release into the ",
+            "document_id": "25847295",
+            "gold": null,
+            "predicted": {
+              "canonical_type": null,
+              "end": 770,
+              "id": "E16",
+              "score": null,
+              "start": 766,
+              "text": "PC12",
+              "type": "CellLine"
+            }
+          },
+          {
+            "context": " after treating apoptotic PC12 cells with nonylphenol diethoxylate, whereas the cytochrome c release into the cytosol decreased as compared to that in apoptotic cells not t",
+            "document_id": "25847295",
+            "gold": null,
+            "predicted": {
+              "canonical_type": null,
+              "end": 832,
+              "id": "E18",
+              "score": null,
+              "start": 820,
+              "text": "cytochrome c",
+              "type": "Gene"
+            }
+          }
+        ]
+      },
+      "metrics": {
+        "macro_f1": 0.31188667030121303,
+        "micro": {
+          "f1": 0.3321678321678322,
+          "fn": 7326,
+          "fp": 4898,
+          "gold": 10980,
+          "precision": 0.3829680020156211,
+          "predicted": 8552,
+          "recall": 0.293266448003087,
+          "tp": 3040
+        },
+        "per_type": {
+          "ChemicalEntity": {
+            "f1": 0.4876567398119122,
+            "fn": 4601,
+            "fp": 629,
+            "gold": 7409,
+            "precision": 0.7982681205901219,
+            "predicted": 3454,
+            "recall": 0.35105782792665724,
+            "tp": 2489
+          },
+          "DiseaseOrPhenotypicFeature": {
+            "f1": 0.13611660079051383,
+            "fn": 2725,
+            "fp": 4269,
+            "gold": 3571,
+            "precision": 0.11431535269709543,
+            "predicted": 5098,
+            "recall": 0.1681929181929182,
+            "tp": 551
+          }
+        }
+      },
+      "predictor": {
+        "adapter": "AIONERBioMedExtractor",
+        "document_count": 879,
+        "inference_duration_seconds": 1456.3128686999999,
+        "inference_scope": "All supplied canonical document text through the official AIONER preprocessing/model path; repository-owned offset lifting only, with no manual correction or threshold change.",
+        "model": "PubmedBERT-CRF-AIONER.h5",
+        "model_artifact_sha256": "78ed76db6355b50002dbf5b51dc6ad9d2ca7dee0abe830f51c4e6329033a23c7",
+        "predicted_entity_count": 14986,
+        "prediction_file": ".cache\\ner_cross_corpus\\medmentions\\aioner_predictions.json",
+        "prediction_file_sha256": "df597249c93af5f9309abe9bfca0d0c0642d99f8be5da76e38ef0927a6111e0b",
+        "runtime": {
+          "decoder": "crf",
+          "entity_scope": "ALL",
+          "max_batch_characters": 200000,
+          "max_batch_documents": 128,
+          "max_sentence_tokens": 256,
+          "offset_mechanics": "Official AIONER token/BIO output is lifted sequentially onto the untouched document text and validated; the upstream mutable-remainder offset restorer is not used.",
+          "python": "3.8.20",
+          "python_implementation": "CPython",
+          "stanza": "1.4.0",
+          "tensorflow": "2.3.0",
+          "transformers": "4.18.0"
+        }
+      }
+    },
+    "HunFlair2": {
+      "counts": {
+        "gold_ambiguous_mentions": 0,
+        "gold_mentions": 40157,
+        "gold_scored_mentions": 10980,
+        "gold_unsupported_mentions": 29177,
+        "predicted_mentions": 15097,
+        "predicted_scored_mentions": 8767,
+        "predicted_unsupported_mentions": 6330
+      },
+      "failure_counts": {
+        "ambiguous_gold_semantic_type": 0,
+        "missed_scored_gold": 7234,
+        "overlapping_different_type": 88,
+        "overlapping_same_type_boundary": 483,
+        "same_span_different_type": 11,
+        "spurious_scored_prediction": 5021,
+        "unsupported_gold_semantic_type": 29177,
+        "unsupported_predicted_type": 6330
+      },
+      "failure_examples": {
+        "missed_scored_gold": [
+          {
+            "context": "12 cells Nonylphenol and short-chain nonylphenol ethoxylates such as NP2 EO are present in aquatic environment as wastewater contaminants, and their toxic effects on a",
+            "document_id": "25847295",
+            "gold": {
+              "canonical_type": "DiseaseOrPhenotypicFeature",
+              "cui": "UMLS:C0150312",
+              "end": 144,
+              "id": "25847295:M3",
+              "mapping_status": "scored",
+              "semantic_types": [
+                "T033"
+              ],
+              "start": 137,
+              "text": "present"
+            },
+            "predicted": null
+          },
+          {
+            "context": "NP2 EO are present in aquatic environment as wastewater contaminants, and their toxic effects on aquatic species have been reported. Apoptosis has been shown to be induced b",
+            "document_id": "25847295",
+            "gold": {
+              "canonical_type": "DiseaseOrPhenotypicFeature",
+              "cui": "UMLS:C0600688",
+              "end": 219,
+              "id": "25847295:M4",
+              "mapping_status": "scored",
+              "semantic_types": [
+                "T037"
+              ],
+              "start": 206,
+              "text": "toxic effects"
+            },
+            "predicted": null
+          },
+          {
+            "context": " after treating apoptotic PC12 cells with nonylphenol diethoxylate, whereas the cytochrome c release into the cytosol decreased as compared to that in apoptotic cells not t",
+            "document_id": "25847295",
+            "gold": {
+              "canonical_type": "ChemicalEntity",
+              "cui": "UMLS:C0010749",
+              "end": 832,
+              "id": "25847295:M18",
+              "mapping_status": "scored",
+              "semantic_types": [
+                "T103"
+              ],
+              "start": 820,
+              "text": "cytochrome c"
+            },
+            "predicted": null
+          },
+          {
+            "context": "at in apoptotic cells not treated with nonylphenol diethoxylate s. Furthermore, Bax contents in apoptotic cells were reduced after exposure to nonylphenol diethoxy",
+            "document_id": "25847295",
+            "gold": {
+              "canonical_type": "ChemicalEntity",
+              "cui": "UMLS:C0219474",
+              "end": 968,
+              "id": "25847295:M21",
+              "mapping_status": "scored",
+              "semantic_types": [
+                "T103"
+              ],
+              "start": 965,
+              "text": "Bax"
+            },
+            "predicted": null
+          },
+          {
+            "context": " apoptosis induced by serum deprivation. The difference in structure of the two compounds is hypothesized to be responsible for this phenomenon. These results indicated ",
+            "document_id": "25847295",
+            "gold": {
+              "canonical_type": "ChemicalEntity",
+              "cui": "UMLS:C0220806",
+              "end": 1264,
+              "id": "25847295:M28",
+              "mapping_status": "scored",
+              "semantic_types": [
+                "T103"
+              ],
+              "start": 1255,
+              "text": "compounds"
+            },
+            "predicted": null
+          }
+        ],
+        "overlapping_different_type": [
+          {
+            "context": " coli however, had no effect on antibiotic production. In all cases, growth and glucose consumption of S. coelicolor remained almost the same as those observed in the pure culture",
+            "document_id": "27241291",
+            "gold": {
+              "canonical_type": "DiseaseOrPhenotypicFeature",
+              "cui": "UMLS:C0556133",
+              "end": 1284,
+              "id": "27241291:M36",
+              "mapping_status": "scored",
+              "semantic_types": [
+                "T033"
+              ],
+              "start": 1265,
+              "text": "glucose consumption"
+            },
+            "predicted": {
+              "canonical_type": "ChemicalEntity",
+              "end": 1272,
+              "id": "E21",
+              "score": 0.9999916553497314,
+              "start": 1265,
+              "text": "glucose",
+              "type": "Chemical"
+            }
+          },
+          {
+            "context": "dvanced glycation end products (AGE), activation of protein kinase c (PKC), and lipid accumulation. These pathways activate one another mutually leading to oxidative stress, incr",
+            "document_id": "27261587",
+            "gold": {
+              "canonical_type": "DiseaseOrPhenotypicFeature",
+              "cui": "UMLS:C0333574",
+              "end": 445,
+              "id": "27261587:M21",
+              "mapping_status": "scored",
+              "semantic_types": [
+                "T033"
+              ],
+              "start": 427,
+              "text": "lipid accumulation"
+            },
+            "predicted": {
+              "canonical_type": "ChemicalEntity",
+              "end": 432,
+              "id": "E15",
+              "score": 0.9999779462814331,
+              "start": 427,
+              "text": "lipid",
+              "type": "Chemical"
+            }
+          },
+          {
+            "context": "The sensitivity and specifity of DR-70 immunoassay as a tumor marker for non-small cell lung cancer Lung cancer is the most important causes of the ",
+            "document_id": "27266283",
+            "gold": {
+              "canonical_type": "ChemicalEntity",
+              "cui": "UMLS:C0041365",
+              "end": 68,
+              "id": "27266283:M3",
+              "mapping_status": "scored",
+              "semantic_types": [
+                "T103"
+              ],
+              "start": 56,
+              "text": "tumor marker"
+            },
+            "predicted": {
+              "canonical_type": "DiseaseOrPhenotypicFeature",
+              "end": 61,
+              "id": "E2",
+              "score": 0.9999469518661499,
+              "start": 56,
+              "text": "tumor",
+              "type": "Disease"
+            }
+          },
+          {
+            "context": "lung cancer some methods are emphasized such as low-dose computed tomography or tumor biomarkers. In this study we aimed to evaluate DR-70 sensitivity and specificity as a tumo",
+            "document_id": "27266283",
+            "gold": {
+              "canonical_type": "ChemicalEntity",
+              "cui": "UMLS:C0041366",
+              "end": 446,
+              "id": "27266283:M15",
+              "mapping_status": "scored",
+              "semantic_types": [
+                "T103"
+              ],
+              "start": 430,
+              "text": "tumor biomarkers"
+            },
+            "predicted": {
+              "canonical_type": "DiseaseOrPhenotypicFeature",
+              "end": 435,
+              "id": "E10",
+              "score": 0.9993783235549927,
+              "start": 430,
+              "text": "tumor",
+              "type": "Disease"
+            }
+          },
+          {
+            "context": "kers. In this study we aimed to evaluate DR-70 sensitivity and specificity as a tumor marker in detection of non-small cell lung cancers. Between May 2013 and April 2014, t",
+            "document_id": "27266283",
+            "gold": {
+              "canonical_type": "ChemicalEntity",
+              "cui": "UMLS:C0041365",
+              "end": 534,
+              "id": "27266283:M18",
+              "mapping_status": "scored",
+              "semantic_types": [
+                "T103"
+              ],
+              "start": 522,
+              "text": "tumor marker"
+            },
+            "predicted": {
+              "canonical_type": "DiseaseOrPhenotypicFeature",
+              "end": 527,
+              "id": "E12",
+              "score": 0.9999752044677734,
+              "start": 522,
+              "text": "tumor",
+              "type": "Disease"
+            }
+          }
+        ],
+        "overlapping_same_type_boundary": [
+          {
+            "context": " mediating this inter-species interaction. The antibiotics of interest were the red-pigmented undecylprodigiosin and blue-pigmented actinorhodin. Pure cultures of S. coelicolor in a defined me",
+            "document_id": "27241291",
+            "gold": {
+              "canonical_type": "ChemicalEntity",
+              "cui": "UMLS:C0526040",
+              "end": 442,
+              "id": "27241291:M10",
+              "mapping_status": "scored",
+              "semantic_types": [
+                "T103"
+              ],
+              "start": 410,
+              "text": "red-pigmented undecylprodigiosin"
+            },
+            "predicted": {
+              "canonical_type": "ChemicalEntity",
+              "end": 442,
+              "id": "E7",
+              "score": 0.9999973773956299,
+              "start": 424,
+              "text": "undecylprodigiosin",
+              "type": "Chemical"
+            }
+          },
+          {
+            "context": "bolites were determine d using liquid and gas chromatography-mass spectrometry. Quadriceps fatigue was quantified by pre - to post - exercise changes in potentiated quadriceps tw",
+            "document_id": "27241818",
+            "gold": {
+              "canonical_type": "DiseaseOrPhenotypicFeature",
+              "cui": "UMLS:C0015672",
+              "end": 1804,
+              "id": "27241818:M78",
+              "mapping_status": "scored",
+              "semantic_types": [
+                "T033"
+              ],
+              "start": 1797,
+              "text": "fatigue"
+            },
+            "predicted": {
+              "canonical_type": "DiseaseOrPhenotypicFeature",
+              "end": 1804,
+              "id": "E12",
+              "score": 0.9999727010726929,
+              "start": 1786,
+              "text": "Quadriceps fatigue",
+              "type": "Disease"
+            }
+          },
+          {
+            "context": "abolic perturbation, preventing an abnormal homeostatic challenge and excessive peripheral fatigue.",
+            "document_id": "27241818",
+            "gold": {
+              "canonical_type": "DiseaseOrPhenotypicFeature",
+              "cui": "UMLS:C0015672",
+              "end": 3072,
+              "id": "27241818:M112",
+              "mapping_status": "scored",
+              "semantic_types": [
+                "T033"
+              ],
+              "start": 3065,
+              "text": "fatigue"
+            },
+            "predicted": {
+              "canonical_type": "DiseaseOrPhenotypicFeature",
+              "end": 3072,
+              "id": "E20",
+              "score": 0.9999419450759888,
+              "start": 3054,
+              "text": "peripheral fatigue",
+              "type": "Disease"
+            }
+          },
+          {
+            "context": "nd a high suspicion. Here we report a case of 26 year old man with a history of sever epigastric pain followed by nausea, vomiting since a few days before admission with final diagn",
+            "document_id": "27274524",
+            "gold": {
+              "canonical_type": "DiseaseOrPhenotypicFeature",
+              "cui": "UMLS:C0232493",
+              "end": 473,
+              "id": "27274524:M16",
+              "mapping_status": "scored",
+              "semantic_types": [
+                "T033"
+              ],
+              "start": 452,
+              "text": "sever epigastric pain"
+            },
+            "predicted": {
+              "canonical_type": "DiseaseOrPhenotypicFeature",
+              "end": 473,
+              "id": "E8",
+              "score": 0.9999918937683105,
+              "start": 458,
+              "text": "epigastric pain",
+              "type": "Disease"
+            }
+          },
+          {
+            "context": "e in Newcastle upon Tyne, 1961-2009 Aims and method To ascertain differences in patterns of suicide in young men over three decades (1960s, 1990s and 2000s) and discuss implicatio",
+            "document_id": "27280034",
+            "gold": {
+              "canonical_type": "DiseaseOrPhenotypicFeature",
+              "cui": "UMLS:C0038661",
+              "end": 144,
+              "id": "27280034:M5",
+              "mapping_status": "scored",
+              "semantic_types": [
+                "T033"
+              ],
+              "start": 125,
+              "text": "patterns of suicide"
+            },
+            "predicted": {
+              "canonical_type": "DiseaseOrPhenotypicFeature",
+              "end": 144,
+              "id": "E2",
+              "score": 0.943234920501709,
+              "start": 137,
+              "text": "suicide",
+              "type": "Disease"
+            }
+          }
+        ],
+        "same_span_different_type": [
+          {
+            "context": "O group exhibited improved metabolic profiles including those of blood glucose, triglyceride, and total cholesterol levels. The 12- week voglibose administration decreased ",
+            "document_id": "27349182",
+            "gold": {
+              "canonical_type": "DiseaseOrPhenotypicFeature",
+              "cui": "UMLS:C0428475",
+              "end": 1006,
+              "id": "27349182:M25",
+              "mapping_status": "scored",
+              "semantic_types": [
+                "T033"
+              ],
+              "start": 994,
+              "text": "triglyceride"
+            },
+            "predicted": {
+              "canonical_type": "ChemicalEntity",
+              "end": 1006,
+              "id": "E20",
+              "score": 0.9999973773956299,
+              "start": 994,
+              "text": "triglyceride",
+              "type": "Chemical"
+            }
+          },
+          {
+            "context": "nued to have bicytopenia. Further investigation showed elevated serum ferritin, triglycerides and LDH. With a clinical suspicion of infection and haemophagocytic lymphohisti",
+            "document_id": "27408381",
+            "gold": {
+              "canonical_type": "DiseaseOrPhenotypicFeature",
+              "cui": "UMLS:C0813230",
+              "end": 877,
+              "id": "27408381:M33",
+              "mapping_status": "scored",
+              "semantic_types": [
+                "T033"
+              ],
+              "start": 864,
+              "text": "triglycerides"
+            },
+            "predicted": {
+              "canonical_type": "ChemicalEntity",
+              "end": 877,
+              "id": "E19",
+              "score": 0.9999926090240479,
+              "start": 864,
+              "text": "triglycerides",
+              "type": "Chemical"
+            }
+          },
+          {
+            "context": "openia. Further investigation showed elevated serum ferritin, triglycerides and LDH. With a clinical suspicion of infection and haemophagocytic lymphohistiocytosis",
+            "document_id": "27408381",
+            "gold": {
+              "canonical_type": "DiseaseOrPhenotypicFeature",
+              "cui": "UMLS:C1275604",
+              "end": 885,
+              "id": "27408381:M34",
+              "mapping_status": "scored",
+              "semantic_types": [
+                "T033"
+              ],
+              "start": 882,
+              "text": "LDH"
+            },
+            "predicted": {
+              "canonical_type": "ChemicalEntity",
+              "end": 885,
+              "id": "E20",
+              "score": 0.9995935559272766,
+              "start": 882,
+              "text": "LDH",
+              "type": "Chemical"
+            }
+          },
+          {
+            "context": "ssues except neural. We hypothesized then, that different NOXs may have role in HG - induced neural cell injury. Furthermore, we postulate that Atorvastatin as a ",
+            "document_id": "27476541",
+            "gold": {
+              "canonical_type": "DiseaseOrPhenotypicFeature",
+              "cui": "UMLS:C0860803",
+              "end": 809,
+              "id": "27476541:M32",
+              "mapping_status": "scored",
+              "semantic_types": [
+                "T033"
+              ],
+              "start": 807,
+              "text": "HG"
+            },
+            "predicted": {
+              "canonical_type": "ChemicalEntity",
+              "end": 809,
+              "id": "E16",
+              "score": 0.9997312426567078,
+              "start": 807,
+              "text": "HG",
+              "type": "Chemical"
+            }
+          },
+          {
+            "context": "activity to protect neural cells. Undifferentiated PC12 cells were treated with HG (140 mM/ 24 h) in the presence and absence of Atorvastatin (1 \u03bcM/ 96 h). The ce",
+            "document_id": "27476541",
+            "gold": {
+              "canonical_type": "DiseaseOrPhenotypicFeature",
+              "cui": "UMLS:C0860803",
+              "end": 1009,
+              "id": "27476541:M40",
+              "mapping_status": "scored",
+              "semantic_types": [
+                "T033"
+              ],
+              "start": 1007,
+              "text": "HG"
+            },
+            "predicted": {
+              "canonical_type": "ChemicalEntity",
+              "end": 1009,
+              "id": "E21",
+              "score": 0.9999212026596069,
+              "start": 1007,
+              "text": "HG",
+              "type": "Chemical"
+            }
+          }
+        ],
+        "spurious_scored_prediction": [
+          {
+            "context": "Nonylphenol diethoxylate inhibits apoptosis induced in PC12 cells Nonylphenol and short-chain nonylpheno",
+            "document_id": "25847295",
+            "gold": null,
+            "predicted": {
+              "canonical_type": "ChemicalEntity",
+              "end": 24,
+              "id": "E1",
+              "score": 0.9999972879886627,
+              "start": 0,
+              "text": "Nonylphenol diethoxylate",
+              "type": "Chemical"
+            }
+          },
+          {
+            "context": "Nonylphenol diethoxylate inhibits apoptosis induced in PC12 cells Nonylphenol and short-chain nonylphenol ethoxylates such as NP2 EO are present in aquatic e",
+            "document_id": "25847295",
+            "gold": null,
+            "predicted": {
+              "canonical_type": "ChemicalEntity",
+              "end": 77,
+              "id": "E3",
+              "score": 0.9999953508377075,
+              "start": 66,
+              "text": "Nonylphenol",
+              "type": "Chemical"
+            }
+          },
+          {
+            "context": "ethoxylate inhibits apoptosis induced in PC12 cells Nonylphenol and short-chain nonylphenol ethoxylates such as NP2 EO are present in aquatic environment as wastewater contaminants, a",
+            "document_id": "25847295",
+            "gold": null,
+            "predicted": {
+              "canonical_type": "ChemicalEntity",
+              "end": 117,
+              "id": "E4",
+              "score": 0.999994158744812,
+              "start": 94,
+              "text": "nonylphenol ethoxylates",
+              "type": "Chemical"
+            }
+          },
+          {
+            "context": "duced in PC12 cells Nonylphenol and short-chain nonylphenol ethoxylates such as NP2 EO are present in aquatic environment as wastewater contaminants, and their toxic ",
+            "document_id": "25847295",
+            "gold": null,
+            "predicted": {
+              "canonical_type": "ChemicalEntity",
+              "end": 132,
+              "id": "E5",
+              "score": 0.9999972581863403,
+              "start": 126,
+              "text": "NP2 EO",
+              "type": "Chemical"
+            }
+          },
+          {
+            "context": "shown to be induced by serum deprivation or copper treatment. To understand the toxicity of nonylphenol diethoxylate, we investigated the effects of NP2 EO on apoptosis",
+            "document_id": "25847295",
+            "gold": null,
+            "predicted": {
+              "canonical_type": "DiseaseOrPhenotypicFeature",
+              "end": 366,
+              "id": "E7",
+              "score": 0.9990546504656473,
+              "start": 358,
+              "text": "toxicity",
+              "type": "Disease"
+            }
+          }
+        ],
+        "unsupported_gold_semantic_type": [
+          {
+            "context": "Nonylphenol diethoxylate inhibits apoptosis induced in PC12 cells Nonylphenol and short-chain nonylphenol ethoxylates such ",
+            "document_id": "25847295",
+            "gold": {
+              "canonical_type": null,
+              "cui": "UMLS:C0162638",
+              "end": 43,
+              "id": "25847295:M1",
+              "mapping_status": "unsupported",
+              "semantic_types": [
+                "T038"
+              ],
+              "start": 34,
+              "text": "apoptosis"
+            },
+            "predicted": null
+          },
+          {
+            "context": "Nonylphenol diethoxylate inhibits apoptosis induced in PC12 cells Nonylphenol and short-chain nonylphenol ethoxylates such as NP2 EO are present ",
+            "document_id": "25847295",
+            "gold": {
+              "canonical_type": null,
+              "cui": "UMLS:C0085262",
+              "end": 65,
+              "id": "25847295:M2",
+              "mapping_status": "unsupported",
+              "semantic_types": [
+                "T017"
+              ],
+              "start": 55,
+              "text": "PC12 cells"
+            },
+            "predicted": null
+          },
+          {
+            "context": "er contaminants, and their toxic effects on aquatic species have been reported. Apoptosis has been shown to be induced by serum deprivation or copper treatment. To under",
+            "document_id": "25847295",
+            "gold": {
+              "canonical_type": null,
+              "cui": "UMLS:C0162638",
+              "end": 268,
+              "id": "25847295:M5",
+              "mapping_status": "unsupported",
+              "semantic_types": [
+                "T038"
+              ],
+              "start": 259,
+              "text": "Apoptosis"
+            },
+            "predicted": null
+          },
+          {
+            "context": "n aquatic species have been reported. Apoptosis has been shown to be induced by serum deprivation or copper treatment. To understand the toxicity of nonylphenol diet",
+            "document_id": "25847295",
+            "gold": {
+              "canonical_type": null,
+              "cui": "UMLS:C0229671",
+              "end": 306,
+              "id": "25847295:M6",
+              "mapping_status": "unsupported",
+              "semantic_types": [
+                "T031"
+              ],
+              "start": 301,
+              "text": "serum"
+            },
+            "predicted": null
+          },
+          {
+            "context": " toxicity of nonylphenol diethoxylate, we investigated the effects of NP2 EO on apoptosis induced by serum deprivation and copper by using PC12 cell system. Nonylphenol ",
+            "document_id": "25847295",
+            "gold": {
+              "canonical_type": null,
+              "cui": "UMLS:C0162638",
+              "end": 446,
+              "id": "25847295:M8",
+              "mapping_status": "unsupported",
+              "semantic_types": [
+                "T038"
+              ],
+              "start": 437,
+              "text": "apoptosis"
+            },
+            "predicted": null
+          }
+        ],
+        "unsupported_predicted_type": [
+          {
+            "context": "Nonylphenol diethoxylate inhibits apoptosis induced in PC12 cells Nonylphenol and short-chain nonylphenol ethoxylates such as NP2 EO are pr",
+            "document_id": "25847295",
+            "gold": null,
+            "predicted": {
+              "canonical_type": null,
+              "end": 59,
+              "id": "E2",
+              "score": 0.9910596013069153,
+              "start": 55,
+              "text": "PC12",
+              "type": "CellLine"
+            }
+          },
+          {
+            "context": "effects of NP2 EO on apoptosis induced by serum deprivation and copper by using PC12 cell system. Nonylphenol diethoxylate itself showed no toxicity and recovered c",
+            "document_id": "25847295",
+            "gold": null,
+            "predicted": {
+              "canonical_type": null,
+              "end": 500,
+              "id": "E12",
+              "score": 0.9943011999130249,
+              "start": 496,
+              "text": "PC12",
+              "type": "CellLine"
+            }
+          },
+          {
+            "context": "on, nonylphenol diethoxylate decreased DNA fragmentation caused by apoptosis in PC12 cells. This phenomenon was confirmed after treating apoptotic PC12 cells with n",
+            "document_id": "25847295",
+            "gold": null,
+            "predicted": {
+              "canonical_type": null,
+              "end": 703,
+              "id": "E16",
+              "score": 0.9943892359733582,
+              "start": 699,
+              "text": "PC12",
+              "type": "CellLine"
+            }
+          },
+          {
+            "context": "apoptosis in PC12 cells. This phenomenon was confirmed after treating apoptotic PC12 cells with nonylphenol diethoxylate, whereas the cytochrome c release into the ",
+            "document_id": "25847295",
+            "gold": null,
+            "predicted": {
+              "canonical_type": null,
+              "end": 770,
+              "id": "E17",
+              "score": 0.9941595792770386,
+              "start": 766,
+              "text": "PC12",
+              "type": "CellLine"
+            }
+          },
+          {
+            "context": " after treating apoptotic PC12 cells with nonylphenol diethoxylate, whereas the cytochrome c release into the cytosol decreased as compared to that in apoptotic cells not t",
+            "document_id": "25847295",
+            "gold": null,
+            "predicted": {
+              "canonical_type": null,
+              "end": 832,
+              "id": "E19",
+              "score": 0.9999728202819824,
+              "start": 820,
+              "text": "cytochrome c",
+              "type": "Gene"
+            }
+          }
+        ]
+      },
+      "metrics": {
+        "macro_f1": 0.31641108124628947,
+        "micro": {
+          "f1": 0.3405262874670398,
+          "fn": 7234,
+          "fp": 5021,
+          "gold": 10980,
+          "precision": 0.38656078191814297,
+          "predicted": 8767,
+          "recall": 0.304289286401231,
+          "tp": 3164
+        },
+        "per_type": {
+          "ChemicalEntity": {
+            "f1": 0.5016665079516237,
+            "fn": 4473,
+            "fp": 760,
+            "gold": 7409,
+            "precision": 0.7760754272245138,
+            "predicted": 3737,
+            "recall": 0.37062051498522586,
+            "tp": 2634
+          },
+          "DiseaseOrPhenotypicFeature": {
+            "f1": 0.1311556545409552,
+            "fn": 2761,
+            "fp": 4261,
+            "gold": 3571,
+            "precision": 0.11062408682947193,
+            "predicted": 5030,
+            "recall": 0.16104527499240354,
+            "tp": 530
+          }
+        }
+      },
+      "predictor": {
+        "adapter": "HunFlair2BioMedExtractor",
+        "document_count": 879,
+        "inference_duration_seconds": 620.4647134999977,
+        "inference_scope": "All supplied document text; SciSpacy sentence segmentation; Flair long-sentence striding when required; no truncation.",
+        "model": "hunflair/hunflair2-ner",
+        "model_artifact_sha256": "245a099b660c1e2b682e0a1216feac140d5be36c4c6ca8c715af682efa685de6",
+        "predicted_entity_count": 15097,
+        "prediction_file": ".cache\\ner_cross_corpus\\medmentions\\hunflair2_predictions.json",
+        "prediction_file_sha256": "7c4e4c423d447459deffc4011d149c4a394e51965b47e884088045c1dbb8f2d3",
+        "runtime": {
+          "allow_long_sentences": true,
+          "device": "cpu",
+          "en_core_sci_sm": "0.5.1",
+          "flair": "0.15.1",
+          "label_type": "ner",
+          "model_max_length": 512,
+          "offset_mechanics": "Flair span text is resolved against the model sentence; that sentence is located in the untouched source and the lifted span is validated before serialization.",
+          "python": "3.11.16",
+          "python_implementation": "CPython",
+          "pytorch": "2.14.0+cpu",
+          "scispacy": "0.5.1",
+          "sentence_splitter": "SciSpacySentenceSplitter(en_core_sci_sm)",
+          "spacy": "3.4.4",
+          "stride": 256,
+          "tagger_class": "PrefixedSequenceTagger",
+          "transformer_model": "michiyasunaga/BioLinkBERT-base",
+          "transformers": "4.57.6",
+          "truncate": true
+        }
+      }
+    }
+  },
+  "report_date": "2026-09-18"
+}

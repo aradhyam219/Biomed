@@ -30,6 +30,8 @@ Canonical commands:
 - active NER inspection: `uv run biomedical-ner --text "..."`
 - BioRED NER evaluation: `uv run biomedical-ner-evaluate --dataset C:\path\to\BioRED`
 - HunFlair2 challenger evaluation: `uv run biomedical-ner-hunflair2-evaluate --dataset C:\path\to\BioRED --offline`
+- target-domain reconnaissance: `uv run biomedical-ner-target-domain --report-date 2026-09-18`
+- MedMentions cross-corpus evaluation: `uv run biomedical-ner-medmentions --split test --report-date 2026-09-18`
 
 The preserved `demo.py` console command (`uv run python demo.py`) is a deferred
 GLiNER-to-GLiREL relation-pipeline demo, not the current human-facing NER path.

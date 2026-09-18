@@ -106,26 +106,62 @@ def _sha256_file(path: Path) -> str:
 def _prediction_for_span(sentence: Any, span: Any, label_type: str, source_text: str) -> dict[str, Any]:
     """Convert and validate one Flair span into a plain document record."""
 
-    relative_start = int(span.start_position)
-    relative_end = int(span.end_position)
+    reported_start = int(span.start_position)
+    reported_end = int(span.end_position)
     span_text = str(span.text)
+    if not 0 <= reported_start < reported_end:
+        raise ValueError(
+            "Flair returned invalid sentence span: "
+            f"[{reported_start}, {reported_end}) sentence_len={len(sentence.text)}"
+        )
+    relative_start = reported_start
+    relative_end = reported_end
+    if sentence.text[relative_start:relative_end] != span_text:
+        # Older Flair/SciSpaCy combinations can report a character position
+        # shifted by tokenizer metadata while retaining the exact span text.
+        # Resolve that discrepancy against the sentence text, preferring the
+        # occurrence nearest the model-reported position, and still fail
+        # closed if the text cannot be resolved unambiguously.
+        candidates: list[int] = []
+        search_from = 0
+        while True:
+            candidate = sentence.text.find(span_text, search_from)
+            if candidate < 0:
+                break
+            candidates.append(candidate)
+            search_from = candidate + 1
+        if not candidates:
+            raise ValueError(
+                "Flair sentence span does not resolve to its reported text: "
+                f"positions=[{reported_start}, {reported_end}) span={span_text!r} "
+                f"sentence={sentence.text!r}"
+            )
+        relative_start = min(candidates, key=lambda value: abs(value - reported_start))
+        relative_end = relative_start + len(span_text)
     if not 0 <= relative_start < relative_end <= len(sentence.text):
         raise ValueError(
-            f"Flair returned invalid sentence span: [{relative_start}, {relative_end})"
+            "Resolved Flair sentence span is outside sentence bounds: "
+            f"[{relative_start}, {relative_end}) sentence_len={len(sentence.text)}"
         )
-    if sentence.text[relative_start:relative_end] != span_text:
+    reported_sentence_start = int(sentence.start_position)
+    source_sentence_start = source_text.find(sentence.text, reported_sentence_start)
+    if source_sentence_start < 0:
         raise ValueError(
-            "Flair sentence span does not resolve to its reported text"
+            "Flair sentence text does not resolve to the untouched source text: "
+            f"reported_start={reported_sentence_start} sentence={sentence.text!r}"
         )
-    document_start = int(sentence.start_position) + relative_start
-    document_end = int(sentence.start_position) + relative_end
+    document_start = source_sentence_start + relative_start
+    document_end = source_sentence_start + relative_end
     if not 0 <= document_start < document_end <= len(source_text):
         raise ValueError(
             f"Invalid lifted HunFlair2 span: [{document_start}, {document_end})"
         )
     if source_text[document_start:document_end] != span_text:
         raise ValueError(
-            "Lifted HunFlair2 span does not resolve to the untouched source text"
+            "Lifted HunFlair2 span does not resolve to the untouched source text: "
+            f"sentence_start={source_sentence_start} relative=[{relative_start}, "
+            f"{relative_end}) document=[{document_start}, {document_end}) "
+            f"span={span_text!r} slice={source_text[document_start:document_end]!r}"
         )
     label = span.get_label(label_type)
     score = getattr(label, "score", None)
@@ -163,9 +199,9 @@ def _tagger_runtime_details(tagger: Any, flair: Any) -> dict[str, Any]:
         "truncate": getattr(embeddings, "truncate", None),
         "sentence_splitter": SCISPACY_SENTENCE_SPLITTER,
         "offset_mechanics": (
-            "SciSpaCy sentence boundaries retain each sentence.start_position; "
-            "Flair span offsets are lifted to the untouched document text and "
-            "validated before serialization."
+            "Flair span text is resolved against the model sentence; that "
+            "sentence is located in the untouched source and the lifted span "
+            "is validated before serialization."
         ),
     }
 

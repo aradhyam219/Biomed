@@ -155,6 +155,20 @@ so Flair does not enter the production dependency graph.
 Optional graph-critical recall is derived from BioRED relation participation and
 is strictly an NER diagnostic; no relation model is invoked.
 
+Target-domain reconnaissance is a separate evaluation flow. The
+`biomedical-ner-target-domain` command acquires the nine specified science-team
+papers from official NCBI/PubMed/PMC sources, records full-text versus
+abstract-only coverage and source checksums, runs the isolated AIONER and
+HunFlair2 challengers on identical canonical text, and writes deterministic
+agreement, sentence-level entity co-occurrence, and human-review artifacts under
+`reports/`. It has no target gold labels and therefore cannot establish model
+correctness or select a production winner. The `biomedical-ner-medmentions`
+command independently evaluates the same challengers on the official MedMentions
+ST21pv test split using an explicit, limited semantic-type mapping to the two
+defensible shared classes; unsupported and ambiguous annotations remain visible
+in the report and are excluded from primary metrics. Neither flow invokes a
+relation model or infers relations from entity co-occurrence.
+
 ## Deferred downstream paths
 
 The repository still contains both the controlled LLM relation implementation and
@@ -174,7 +188,7 @@ treated as a separate decision rather than added to the default core-NER pass.
 | Adapter/output normalization | Convert one model's predictions into the local `Entity` value | Span integrity, schema validation, and stable output fields | Canonical biomedical identity linking or downstream reasoning |
 | Biomedical entity normalization/linking | Future mention-to-identity resolution | Not implemented in the current path | Model selection before the NER quality gate |
 | Relation extraction (deferred) | Existing relation implementations over supplied normalized entities | Preserved downstream relation contracts | Active quality priority or changes in this refocus |
-| Evaluation | Measure core NER against annotated data | Dataset adaptation, metrics, challenger adapters, and model comparison | Production extraction semantics or model training |
+| Evaluation | Measure core NER against annotated data and controlled cross-domain evidence | Dataset adaptation, metrics, challenger adapters, model comparison, target-domain review packets, and cross-corpus reports | Production extraction semantics, target-gold claims, or model training |
 
 ## Hard architectural invariants
 
@@ -191,6 +205,16 @@ treated as a separate decision rather than added to the default core-NER pass.
   the production dependency graph.
 - The official HunFlair2 runtime, SciSpaCy splitter, and model artifact remain
   evaluation-only and isolated from the production dependency graph.
+- Target-domain source acquisition must preserve canonical text offsets and make
+  full-text/abstract-only fallback explicit; raw sources and prediction caches
+  remain ignored under `.cache/`, while reviewer-facing summaries are tracked
+  under `reports/`.
+- Target-domain agreement and sentence co-occurrence are descriptive NER
+  diagnostics only; they must not be promoted to relation extraction or target
+  correctness claims.
+- Cross-corpus MedMentions scoring uses only the documented explicit mapping and
+  exact source spans; unsupported and ambiguous annotations cannot silently enter
+  the primary metrics.
 - The architecture must not grow speculative ontology, graph, relation, or model
   infrastructure before the NER quality gate.
 

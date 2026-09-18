@@ -1,0 +1,2519 @@
+{
+  "examples": [
+    {
+      "aioner_prediction": {
+        "canonical_type": "ChemicalEntity",
+        "end": 21355,
+        "id": "E322",
+        "score": null,
+        "start": 21352,
+        "text": "TMX",
+        "type": "Chemical"
+      },
+      "category": "aioner_only",
+      "entity_class": "ChemicalEntity",
+      "hunflair2_prediction": null,
+      "paper_id": "PMCID:PMC10770459",
+      "pmcid": "PMC10770459",
+      "pmid": "38187339",
+      "section": "Results / HMGB1 knockdown and hyperglycemia model characterization",
+      "sentence": {
+        "end": 21366,
+        "start": 21162,
+        "text": "3Impact of HMGB1 Knockdown on Hyperglycemia Development and Glucose Tolerance(A) Glucose levels in iHMGB1 KO TMX STZ and HMGB1 Flox TMX STZ mice show no significant difference pre- and post-TMX injection."
+      },
+      "source_span": {
+        "end": 21355,
+        "start": 21352,
+        "text": "TMX"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "DiseaseOrPhenotypicFeature",
+        "end": 7213,
+        "id": "E111",
+        "score": null,
+        "start": 7205,
+        "text": "overdose",
+        "type": "Disease"
+      },
+      "category": "aioner_only",
+      "entity_class": "DiseaseOrPhenotypicFeature",
+      "hunflair2_prediction": null,
+      "paper_id": "PMCID:PMC10770459",
+      "pmcid": "PMC10770459",
+      "pmid": "38187339",
+      "section": "Materials and methods / Animal model",
+      "sentence": {
+        "end": 7214,
+        "start": 7091,
+        "text": "At the end of the dietary intervention and experimental protocol, the animals were euthanized using an isoflurane overdose."
+      },
+      "source_span": {
+        "end": 7213,
+        "start": 7205,
+        "text": "overdose"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "GeneOrGeneProduct",
+        "end": 20230,
+        "id": "E287",
+        "score": null,
+        "start": 20224,
+        "text": "iHMGB1",
+        "type": "Gene"
+      },
+      "category": "aioner_only",
+      "entity_class": "GeneOrGeneProduct",
+      "hunflair2_prediction": null,
+      "paper_id": "PMCID:PMC10770459",
+      "pmcid": "PMC10770459",
+      "pmid": "38187339",
+      "section": "Results / HMGB1 knockdown and hyperglycemia model characterization",
+      "sentence": {
+        "end": 20267,
+        "start": 20166,
+        "text": "Our results showed that the HMGB1 gene was absent only in iHMGB1 KO mice that received TMX injection."
+      },
+      "source_span": {
+        "end": 20230,
+        "start": 20224,
+        "text": "iHMGB1"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "ChemicalEntity",
+        "end": 12542,
+        "id": "E190",
+        "score": null,
+        "start": 12538,
+        "text": "TBST",
+        "type": "Chemical"
+      },
+      "category": "aioner_only",
+      "entity_class": "ChemicalEntity",
+      "hunflair2_prediction": null,
+      "paper_id": "PMCID:PMC11824863",
+      "pmcid": "PMC11824863",
+      "pmid": "39949834",
+      "section": "2. Materials and Methods / 2.5. Western Blotting",
+      "sentence": {
+        "end": 12564,
+        "start": 12492,
+        "text": "The membrane was then washed three times with TBST for 15 min each time."
+      },
+      "source_span": {
+        "end": 12542,
+        "start": 12538,
+        "text": "TBST"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "DiseaseOrPhenotypicFeature",
+        "end": 3715,
+        "id": "E62",
+        "score": null,
+        "start": 3691,
+        "text": "microtubule disturbances",
+        "type": "Disease"
+      },
+      "category": "aioner_only",
+      "entity_class": "DiseaseOrPhenotypicFeature",
+      "hunflair2_prediction": null,
+      "paper_id": "PMCID:PMC11824863",
+      "pmcid": "PMC11824863",
+      "pmid": "39949834",
+      "section": "1. Introduction",
+      "sentence": {
+        "end": 3904,
+        "start": 3652,
+        "text": "Moreover, hyperphosphorylation of Tau, microtubule disturbances, and Tau accumulation have been observed to promote ROS production [10], while oxidative stress also contributes to the formation of phosphorylated-Tau (p-Tau) and neurofibrillary tangles."
+      },
+      "source_span": {
+        "end": 3715,
+        "start": 3691,
+        "text": "microtubule disturbances"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "GeneOrGeneProduct",
+        "end": 17432,
+        "id": "E215",
+        "score": null,
+        "start": 17428,
+        "text": "SFPQ",
+        "type": "Gene"
+      },
+      "category": "aioner_only",
+      "entity_class": "GeneOrGeneProduct",
+      "hunflair2_prediction": null,
+      "paper_id": "PMCID:PMC11824863",
+      "pmcid": "PMC11824863",
+      "pmid": "39949834",
+      "section": "3. Results / 3.1. Successful Establishment of the AD Model and Improved Memory and Cognition in AD Mice Following SFPQ Overexpression",
+      "sentence": {
+        "end": 17480,
+        "start": 17335,
+        "text": "Western blotting analysis revealed a higher expression of SFPQ in the hippocampus of the AAV-SFPQ group compared to the Vector group (Figure 1E)."
+      },
+      "source_span": {
+        "end": 17432,
+        "start": 17428,
+        "text": "SFPQ"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "OrganismTaxon",
+        "end": 5009,
+        "id": "E76",
+        "score": null,
+        "start": 5003,
+        "text": "murine",
+        "type": "Species"
+      },
+      "category": "aioner_only",
+      "entity_class": "OrganismTaxon",
+      "hunflair2_prediction": null,
+      "paper_id": "PMCID:PMC11824863",
+      "pmcid": "PMC11824863",
+      "pmid": "39949834",
+      "section": "1. Introduction",
+      "sentence": {
+        "end": 5016,
+        "start": 4856,
+        "text": "Additionally, SFPQ has been found to affect the transcriptional elongation of particularly long genes, those over 100 kilobases, in the developing murine brain."
+      },
+      "source_span": {
+        "end": 5009,
+        "start": 5003,
+        "text": "murine"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "ChemicalEntity",
+        "end": 11905,
+        "id": "E206",
+        "score": null,
+        "start": 11897,
+        "text": "ab135248",
+        "type": "Chemical"
+      },
+      "category": "aioner_only",
+      "entity_class": "ChemicalEntity",
+      "hunflair2_prediction": null,
+      "paper_id": "PMCID:PMC8605525",
+      "pmcid": "PMC8605525",
+      "pmid": "34798872",
+      "section": "Materials and methods / Immunohistochemistry (IHC)",
+      "sentence": {
+        "end": 11932,
+        "start": 11602,
+        "text": "After blocked with goat serum (Solarbio, Beijing, China) for 20 min, the sections were incubated with anti-rabbit Cbl (1: 200, PA5-8292, Invitrogen, Carlsbad, CA, USA), anti-rabbit p-JAK2 (1: 2000, ab32101, Abcam, UK), anti-rabbit p-STAT4 (1: 100, ab28815, Abcam), and anti-mouse Runx3 (1: 500, ab135248, Abcam) overnight at 4 \u00b0C."
+      },
+      "source_span": {
+        "end": 11905,
+        "start": 11897,
+        "text": "ab135248"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "DiseaseOrPhenotypicFeature",
+        "end": 41593,
+        "id": "E691",
+        "score": null,
+        "start": 41580,
+        "text": "microthrombus",
+        "type": "Disease"
+      },
+      "category": "aioner_only",
+      "entity_class": "DiseaseOrPhenotypicFeature",
+      "hunflair2_prediction": null,
+      "paper_id": "PMCID:PMC8605525",
+      "pmcid": "PMC8605525",
+      "pmid": "34798872",
+      "section": "Discussion",
+      "sentence": {
+        "end": 41609,
+        "start": 41371,
+        "text": "Vascular endothelial cells normally perform several key homeostatic functions, but upon injury or cell death, dysfunction of endothelial cells predisposes diabetic patients to cardiovascular complications and microthrombus formation [26]."
+      },
+      "source_span": {
+        "end": 41593,
+        "start": 41580,
+        "text": "microthrombus"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "GeneOrGeneProduct",
+        "end": 40159,
+        "id": "E662",
+        "score": null,
+        "start": 40155,
+        "text": "7Cbl",
+        "type": "Gene"
+      },
+      "category": "aioner_only",
+      "entity_class": "GeneOrGeneProduct",
+      "hunflair2_prediction": null,
+      "paper_id": "PMCID:PMC8605525",
+      "pmcid": "PMC8605525",
+      "pmid": "34798872",
+      "section": "Results / Cbl alleviates HUVEC dysfunction in DM rats by inhibiting the activation of the JAK2/STAT4 pathway through reducing Runx3 expression",
+      "sentence": {
+        "end": 40254,
+        "start": 40155,
+        "text": "7Cbl improves HUVEC dysfunction by inhibiting Runx3 expression and inactivating JAK2/STAT4 pathway."
+      },
+      "source_span": {
+        "end": 40159,
+        "start": 40155,
+        "text": "7Cbl"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "SequenceVariant",
+        "end": 15398,
+        "id": "E250",
+        "score": null,
+        "start": 15391,
+        "text": "ab28815",
+        "type": "Variant"
+      },
+      "category": "aioner_only",
+      "entity_class": "SequenceVariant",
+      "hunflair2_prediction": null,
+      "paper_id": "PMCID:PMC8605525",
+      "pmcid": "PMC8605525",
+      "pmid": "34798872",
+      "section": "Materials and methods / Western blot analysis",
+      "sentence": {
+        "end": 15501,
+        "start": 15055,
+        "text": "The primary antibodies used in the experiment included: anti-rabbit Cbl (1: 2000, ab32027, Abcam), anti-rabbit endothelial NO synthase (eNOS) (1: 1000, ab76198, Abcam), anti-rabbit JAK2 (1: 5000, ab108596, Abcam), anti-rabbit p-JAK2 (1: 2000, ab32101, Abcam), anti-rabbit STAT4 (1: 2000, ab235946, Abcam), anti-rabbit p-STAT4 (1: 1000, ab28815, Abcam), anti-mouse Runx3 (1: 2000, ab135248, Abcam), and anti-mouse \u03b2-actin (1: 5000, ab8225, Abcam)."
+      },
+      "source_span": {
+        "end": 15398,
+        "start": 15391,
+        "text": "ab28815"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "GeneOrGeneProduct",
+        "end": 82,
+        "id": "E4",
+        "score": null,
+        "start": 79,
+        "text": "Wnt",
+        "type": "Gene"
+      },
+      "category": "aioner_only",
+      "entity_class": "GeneOrGeneProduct",
+      "hunflair2_prediction": null,
+      "paper_id": "PMID:27172794",
+      "pmcid": null,
+      "pmid": "27172794",
+      "section": "title",
+      "sentence": {
+        "end": 103,
+        "start": 0,
+        "text": "EZH2 promotes colorectal cancer stem-like cell expansion by activating p21cip1-Wnt/\u03b2-catenin signaling."
+      },
+      "source_span": {
+        "end": 82,
+        "start": 79,
+        "text": "Wnt"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "ChemicalEntity",
+        "end": 682,
+        "id": "E13",
+        "score": null,
+        "start": 677,
+        "text": "CCK-8",
+        "type": "Chemical"
+      },
+      "category": "aioner_only",
+      "entity_class": "ChemicalEntity",
+      "hunflair2_prediction": null,
+      "paper_id": "PMID:33652126",
+      "pmcid": null,
+      "pmid": "33652126",
+      "section": "abstract",
+      "sentence": {
+        "end": 683,
+        "start": 644,
+        "text": "Cell viability was determined by CCK-8."
+      },
+      "source_span": {
+        "end": 682,
+        "start": 677,
+        "text": "CCK-8"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "DiseaseOrPhenotypicFeature",
+        "end": 456,
+        "id": "E5",
+        "score": null,
+        "start": 444,
+        "text": "inflammatory",
+        "type": "Disease"
+      },
+      "category": "aioner_only",
+      "entity_class": "DiseaseOrPhenotypicFeature",
+      "hunflair2_prediction": null,
+      "paper_id": "PMID:38569671",
+      "pmcid": null,
+      "pmid": "38569671",
+      "section": "abstract / METHOD",
+      "sentence": {
+        "end": 476,
+        "start": 375,
+        "text": "H&E staining, immunohistochemistry and ELISA were used to detect the inflammatory response in asthma."
+      },
+      "source_span": {
+        "end": 456,
+        "start": 444,
+        "text": "inflammatory"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "ChemicalEntity",
+        "end": 38580,
+        "id": "E654",
+        "score": null,
+        "start": 38573,
+        "text": "glucose",
+        "type": "Chemical"
+      },
+      "category": "boundary_disagreement",
+      "entity_class": "ChemicalEntity",
+      "hunflair2_prediction": {
+        "canonical_type": "ChemicalEntity",
+        "end": 38580,
+        "id": "E745",
+        "score": 0.9999764561653137,
+        "start": 38567,
+        "text": "blood glucose",
+        "type": "Chemical"
+      },
+      "paper_id": "PMCID:PMC10770459",
+      "pmcid": "PMC10770459",
+      "pmid": "38187339",
+      "section": "Discussion",
+      "sentence": {
+        "end": 38704,
+        "start": 38451,
+        "text": "This discovery carries substantial relevance, as numerous investigations have substantiated that the attenuation of blood glucose concentrations can markedly diminish the incidence of diabetes-related complications observed in clinical contexts [58,59]."
+      },
+      "source_span": {
+        "end": 38580,
+        "start": 38567,
+        "text": "blood glucose"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "DiseaseOrPhenotypicFeature",
+        "end": 3162,
+        "id": "E54",
+        "score": null,
+        "start": 3154,
+        "text": "diabetes",
+        "type": "Disease"
+      },
+      "category": "boundary_disagreement",
+      "entity_class": "DiseaseOrPhenotypicFeature",
+      "hunflair2_prediction": {
+        "canonical_type": "DiseaseOrPhenotypicFeature",
+        "end": 3184,
+        "id": "E62",
+        "score": 0.967808872461319,
+        "start": 3154,
+        "text": "diabetes-related complications",
+        "type": "Disease"
+      },
+      "paper_id": "PMCID:PMC10770459",
+      "pmcid": "PMC10770459",
+      "pmid": "38187339",
+      "section": "Introduction",
+      "sentence": {
+        "end": 3204,
+        "start": 3007,
+        "text": "Consequently, achieving normoglycemia constitutes the most efficacious therapeutic outcome for individuals with DM, aiming to prevent the onset of diabetes-related complications [[12], [13], [14]]."
+      },
+      "source_span": {
+        "end": 3184,
+        "start": 3154,
+        "text": "diabetes-related complications"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "GeneOrGeneProduct",
+        "end": 41448,
+        "id": "E700",
+        "score": null,
+        "start": 41444,
+        "text": "NRF2",
+        "type": "Gene"
+      },
+      "category": "boundary_disagreement",
+      "entity_class": "GeneOrGeneProduct",
+      "hunflair2_prediction": {
+        "canonical_type": "GeneOrGeneProduct",
+        "end": 41457,
+        "id": "E794",
+        "score": 0.9999892711639404,
+        "start": 41444,
+        "text": "NRF2-mediated",
+        "type": "Gene"
+      },
+      "paper_id": "PMCID:PMC10770459",
+      "pmcid": "PMC10770459",
+      "pmid": "38187339",
+      "section": "Discussion",
+      "sentence": {
+        "end": 41643,
+        "start": 41411,
+        "text": "It is important to note that the NRF2-mediated oxidative stress pathway has not only been strongly associated with liver diseases and injury [73], but also implicated in the onset, progression, and cytokine regulation of DM [74,75]."
+      },
+      "source_span": {
+        "end": 41457,
+        "start": 41444,
+        "text": "NRF2-mediated"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "ChemicalEntity",
+        "end": 12281,
+        "id": "E184",
+        "score": null,
+        "start": 12261,
+        "text": "Tris-buffered saline",
+        "type": "Chemical"
+      },
+      "category": "boundary_disagreement",
+      "entity_class": "ChemicalEntity",
+      "hunflair2_prediction": {
+        "canonical_type": "ChemicalEntity",
+        "end": 12265,
+        "id": "E218",
+        "score": 0.9724130630493164,
+        "start": 12261,
+        "text": "Tris",
+        "type": "Chemical"
+      },
+      "paper_id": "PMCID:PMC11824863",
+      "pmcid": "PMC11824863",
+      "pmid": "39949834",
+      "section": "2. Materials and Methods / 2.5. Western Blotting",
+      "sentence": {
+        "end": 12491,
+        "start": 12214,
+        "text": "The membrane was washed three times with TBST (Tris-buffered saline with 0.1% Tween 20) for 15 min each time, followed by incubation with horseradish peroxidase (HRP)-labeled goat antirabbit/antimouse IgG (1:5000), HRP-linked antibody (CST, 1:2000) at room temperature for 2 h."
+      },
+      "source_span": {
+        "end": 12281,
+        "start": 12261,
+        "text": "Tris-buffered saline"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "DiseaseOrPhenotypicFeature",
+        "end": 25829,
+        "id": "E325",
+        "score": null,
+        "start": 25816,
+        "text": "synaptic loss",
+        "type": "Disease"
+      },
+      "category": "boundary_disagreement",
+      "entity_class": "DiseaseOrPhenotypicFeature",
+      "hunflair2_prediction": {
+        "canonical_type": "DiseaseOrPhenotypicFeature",
+        "end": 25824,
+        "id": "E395",
+        "score": 0.9047836065292358,
+        "start": 25816,
+        "text": "synaptic",
+        "type": "Disease"
+      },
+      "paper_id": "PMCID:PMC11824863",
+      "pmcid": "PMC11824863",
+      "pmid": "39949834",
+      "section": "4. Discussion",
+      "sentence": {
+        "end": 25900,
+        "start": 25735,
+        "text": "Taken together, SFPQ may have decreased damage to synaptic membranes and lowered synaptic loss by alleviating oxidative stress and reducing A\u03b2 deposition in AD mice."
+      },
+      "source_span": {
+        "end": 25829,
+        "start": 25816,
+        "text": "synaptic loss"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "GeneOrGeneProduct",
+        "end": 12130,
+        "id": "E180",
+        "score": null,
+        "start": 12126,
+        "text": "PI3K",
+        "type": "Gene"
+      },
+      "category": "boundary_disagreement",
+      "entity_class": "GeneOrGeneProduct",
+      "hunflair2_prediction": {
+        "canonical_type": "GeneOrGeneProduct",
+        "end": 12130,
+        "id": "E211",
+        "score": 0.9999307096004486,
+        "start": 12124,
+        "text": "p-PI3K",
+        "type": "Gene"
+      },
+      "paper_id": "PMCID:PMC11824863",
+      "pmcid": "PMC11824863",
+      "pmid": "39949834",
+      "section": "2. Materials and Methods / 2.5. Western Blotting",
+      "sentence": {
+        "end": 12213,
+        "start": 11644,
+        "text": "The primary antibodies used were those raised against SFPQ (Abcam, 1:10,000), APP (Proteintech, 1:1000), Tau (CST, 1:1000), GST (glutathione S-transferase) (Abcam, 1:5000), HO-1 (heme oxygenase-1) (Abcam, 1:2000), Bcl-2 (Abcam, 1:2000), Bax (Abcam, 1:2,000), PSD95 (Abcam, 1:2000), p-CREB (cAMP response element-binding) (Abcam, 1:5000), AKT (Abcam, 1:1000), phosphorylated protein kinase B (p-AKT) (Abcam, 1:1000), PI3K (Abcam, 1:1000), phosphorylated phosphoinositide 3-kinase (p-PI3K) (Abcam, 1:1000), \u03b2-tubulin (Abcam, 1:1000), and GAPDH (Abcam, 1:10,000) proteins."
+      },
+      "source_span": {
+        "end": 12130,
+        "start": 12124,
+        "text": "p-PI3K"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "ChemicalEntity",
+        "end": 22077,
+        "id": "E306",
+        "score": null,
+        "start": 22070,
+        "text": "glucose",
+        "type": "Chemical"
+      },
+      "category": "boundary_disagreement",
+      "entity_class": "ChemicalEntity",
+      "hunflair2_prediction": {
+        "canonical_type": "ChemicalEntity",
+        "end": 22077,
+        "id": "E362",
+        "score": 0.999820739030838,
+        "start": 22064,
+        "text": "blood glucose",
+        "type": "Chemical"
+      },
+      "paper_id": "PMCID:PMC8605525",
+      "pmcid": "PMC8605525",
+      "pmid": "34798872",
+      "section": "Results / Cbl is poorly expressed in aortic tissues of DM rats and HG-induced cell model",
+      "sentence": {
+        "end": 22127,
+        "start": 22036,
+        "text": "F Quantification of fasting blood glucose and body weight of rat before and after modeling."
+      },
+      "source_span": {
+        "end": 22077,
+        "start": 22064,
+        "text": "blood glucose"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "DiseaseOrPhenotypicFeature",
+        "end": 76,
+        "id": "E3",
+        "score": null,
+        "start": 65,
+        "text": "dysfunction",
+        "type": "Disease"
+      },
+      "category": "boundary_disagreement",
+      "entity_class": "DiseaseOrPhenotypicFeature",
+      "hunflair2_prediction": {
+        "canonical_type": "DiseaseOrPhenotypicFeature",
+        "end": 76,
+        "id": "E3",
+        "score": 0.999871551990509,
+        "start": 53,
+        "text": "endothelial dysfunction",
+        "type": "Disease"
+      },
+      "paper_id": "PMCID:PMC8605525",
+      "pmcid": "PMC8605525",
+      "pmid": "34798872",
+      "section": "title",
+      "sentence": {
+        "end": 429,
+        "start": 0,
+        "text": "Overexpression of E3 ubiquitin ligase Cbl attenuates endothelial dysfunction in diabetes mellitus by inhibiting the JAK2/STAT4 signaling and Runx3-mediated H3K4me3\n\nBackgroundDiabetes mellitus (DM), a most common chronic disease, is featured with impaired endothelial function and bioavailability of nitric oxide (NO), while E3 ubiquitin ligase appears to alleviate endothelial dysfunction as a promising option for DM treatment."
+      },
+      "source_span": {
+        "end": 76,
+        "start": 53,
+        "text": "endothelial dysfunction"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "GeneOrGeneProduct",
+        "end": 33045,
+        "id": "E509",
+        "score": null,
+        "start": 33038,
+        "text": "STAT4-1",
+        "type": "Gene"
+      },
+      "category": "boundary_disagreement",
+      "entity_class": "GeneOrGeneProduct",
+      "hunflair2_prediction": {
+        "canonical_type": "GeneOrGeneProduct",
+        "end": 33044,
+        "id": "E592",
+        "score": 0.8217463791370392,
+        "start": 33038,
+        "text": "STAT4-",
+        "type": "Gene"
+      },
+      "paper_id": "PMCID:PMC8605525",
+      "pmcid": "PMC8605525",
+      "pmid": "34798872",
+      "section": "Results / STAT4 promotes the expression of Runx3 by regulating the H3K4me3 level in the promoter region of Runx3",
+      "sentence": {
+        "end": 33068,
+        "start": 32923,
+        "text": "G ChIP-qPCR of relative H3K4me3 and STAT4 recruitment level in HUVECs under Con treatment and transfection with sh-STAT4-1, oe-STAT4 or controls."
+      },
+      "source_span": {
+        "end": 33045,
+        "start": 33038,
+        "text": "STAT4-1"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "OrganismTaxon",
+        "end": 14664,
+        "id": "E231",
+        "score": null,
+        "start": 14642,
+        "text": "horseradish peroxidase",
+        "type": "Species"
+      },
+      "category": "boundary_disagreement",
+      "entity_class": "OrganismTaxon",
+      "hunflair2_prediction": {
+        "canonical_type": "OrganismTaxon",
+        "end": 14653,
+        "id": "E277",
+        "score": 0.9835841059684753,
+        "start": 14642,
+        "text": "horseradish",
+        "type": "Species"
+      },
+      "paper_id": "PMCID:PMC8605525",
+      "pmcid": "PMC8605525",
+      "pmid": "34798872",
+      "section": "Materials and methods / Western blot analysis",
+      "sentence": {
+        "end": 14780,
+        "start": 14512,
+        "text": "After blocked with skim milk powder for 1 h, the membranes were incubated with primary antibodies at 4 \u00b0C overnight and then with horseradish peroxidase-labeled goat anti-rabbit or goat anti-mouse secondary antibodies (1: 10,000, Jackson, West Grove, PA, USA) for 1 h."
+      },
+      "source_span": {
+        "end": 14664,
+        "start": 14642,
+        "text": "horseradish peroxidase"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "GeneOrGeneProduct",
+        "end": 1226,
+        "id": "E27",
+        "score": null,
+        "start": 1219,
+        "text": "p21cip1",
+        "type": "Gene"
+      },
+      "category": "boundary_disagreement",
+      "entity_class": "GeneOrGeneProduct",
+      "hunflair2_prediction": {
+        "canonical_type": "GeneOrGeneProduct",
+        "end": 1235,
+        "id": "E32",
+        "score": 0.9999902248382568,
+        "start": 1219,
+        "text": "p21cip1-mediated",
+        "type": "Gene"
+      },
+      "paper_id": "PMID:27172794",
+      "pmcid": null,
+      "pmid": "27172794",
+      "section": "abstract",
+      "sentence": {
+        "end": 1336,
+        "start": 1194,
+        "text": "We further revealed that p21cip1-mediated arrest of the cell cycle at G1/S phase is required for EZH2 activation of the Wnt/\u03b2-catenin pathway."
+      },
+      "source_span": {
+        "end": 1235,
+        "start": 1219,
+        "text": "p21cip1-mediated"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "GeneOrGeneProduct",
+        "end": 845,
+        "id": "E10",
+        "score": null,
+        "start": 840,
+        "text": "KIF23",
+        "type": "Gene"
+      },
+      "category": "boundary_disagreement",
+      "entity_class": "GeneOrGeneProduct",
+      "hunflair2_prediction": {
+        "canonical_type": "GeneOrGeneProduct",
+        "end": 853,
+        "id": "E14",
+        "score": 0.9999902248382568,
+        "start": 840,
+        "text": "KIF23-related",
+        "type": "Gene"
+      },
+      "paper_id": "PMID:38569671",
+      "pmcid": null,
+      "pmid": "38569671",
+      "section": "abstract / METHOD",
+      "sentence": {
+        "end": 950,
+        "start": 824,
+        "text": "After screening KIF23-related signalling pathways, the effect of KIF23 on p53 signalling pathway was explored by western blot."
+      },
+      "source_span": {
+        "end": 853,
+        "start": 840,
+        "text": "KIF23-related"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "ChemicalEntity",
+        "end": 6251,
+        "id": "E102",
+        "score": null,
+        "start": 6244,
+        "text": "glucose",
+        "type": "Chemical"
+      },
+      "category": "cross_type_overlap",
+      "entity_class": "ChemicalEntity",
+      "hunflair2_prediction": {
+        "canonical_type": "DiseaseOrPhenotypicFeature",
+        "end": 6261,
+        "id": "E116",
+        "score": 0.8569060564041138,
+        "start": 6244,
+        "text": "glucose tolerance",
+        "type": "Disease"
+      },
+      "paper_id": "PMCID:PMC10770459",
+      "pmcid": "PMC10770459",
+      "pmid": "38187339",
+      "section": "Introduction",
+      "sentence": {
+        "end": 6262,
+        "start": 6083,
+        "text": "Our hypothesis postulates that systemic conditional knockdown of HMGB1 in hyperglycemic mice will lead to a significant reduction in glucose levels and enhanced glucose tolerance."
+      },
+      "source_span": {
+        "end": 6261,
+        "start": 6244,
+        "text": "glucose tolerance"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "OrganismTaxon",
+        "end": 12374,
+        "id": "E186",
+        "score": null,
+        "start": 12352,
+        "text": "horseradish peroxidase",
+        "type": "Species"
+      },
+      "category": "cross_type_overlap",
+      "entity_class": "OrganismTaxon",
+      "hunflair2_prediction": {
+        "canonical_type": "GeneOrGeneProduct",
+        "end": 12374,
+        "id": "E222",
+        "score": 0.9998020132382711,
+        "start": 12364,
+        "text": "peroxidase",
+        "type": "Gene"
+      },
+      "paper_id": "PMCID:PMC11824863",
+      "pmcid": "PMC11824863",
+      "pmid": "39949834",
+      "section": "2. Materials and Methods / 2.5. Western Blotting",
+      "sentence": {
+        "end": 12491,
+        "start": 12214,
+        "text": "The membrane was washed three times with TBST (Tris-buffered saline with 0.1% Tween 20) for 15 min each time, followed by incubation with horseradish peroxidase (HRP)-labeled goat antirabbit/antimouse IgG (1:5000), HRP-linked antibody (CST, 1:2000) at room temperature for 2 h."
+      },
+      "source_span": {
+        "end": 12374,
+        "start": 12352,
+        "text": "horseradish peroxidase"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "CellLine",
+        "end": 847,
+        "id": "E22",
+        "score": null,
+        "start": 842,
+        "text": "HepG2",
+        "type": "CellLine"
+      },
+      "category": "exact_agreement",
+      "entity_class": "CellLine",
+      "hunflair2_prediction": {
+        "canonical_type": "CellLine",
+        "end": 847,
+        "id": "E25",
+        "score": 0.9940900206565857,
+        "start": 842,
+        "text": "HepG2",
+        "type": "CellLine"
+      },
+      "paper_id": "PMCID:PMC10444909",
+      "pmcid": "PMC10444909",
+      "pmid": "37621322",
+      "section": "abstract",
+      "sentence": {
+        "end": 924,
+        "start": 763,
+        "text": "The expression of KNTC1 in hepatocellular carcinoma cell lines SK-Hep-1, Huh7, HepG2 and SNU449 was significantly higher than that in normal hepatocyte line L02."
+      },
+      "source_span": {
+        "end": 847,
+        "start": 842,
+        "text": "HepG2"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "DiseaseOrPhenotypicFeature",
+        "end": 1662,
+        "id": "E43",
+        "score": null,
+        "start": 1657,
+        "text": "tumor",
+        "type": "Disease"
+      },
+      "category": "exact_agreement",
+      "entity_class": "DiseaseOrPhenotypicFeature",
+      "hunflair2_prediction": {
+        "canonical_type": "DiseaseOrPhenotypicFeature",
+        "end": 1662,
+        "id": "E46",
+        "score": 0.9999856948852539,
+        "start": 1657,
+        "text": "tumor",
+        "type": "Disease"
+      },
+      "paper_id": "PMCID:PMC10444909",
+      "pmcid": "PMC10444909",
+      "pmid": "37621322",
+      "section": "abstract",
+      "sentence": {
+        "end": 1670,
+        "start": 1576,
+        "text": "Moreover, knockdown of KNTC1 in mouse transplanted tumors significantly inhibits tumor growth."
+      },
+      "source_span": {
+        "end": 1662,
+        "start": 1657,
+        "text": "tumor"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "GeneOrGeneProduct",
+        "end": 1709,
+        "id": "E44",
+        "score": null,
+        "start": 1704,
+        "text": "KNTC1",
+        "type": "Gene"
+      },
+      "category": "exact_agreement",
+      "entity_class": "GeneOrGeneProduct",
+      "hunflair2_prediction": {
+        "canonical_type": "GeneOrGeneProduct",
+        "end": 1709,
+        "id": "E47",
+        "score": 0.9999898672103882,
+        "start": 1704,
+        "text": "KNTC1",
+        "type": "Gene"
+      },
+      "paper_id": "PMCID:PMC10444909",
+      "pmcid": "PMC10444909",
+      "pmid": "37621322",
+      "section": "abstract",
+      "sentence": {
+        "end": 1833,
+        "start": 1671,
+        "text": "Inhibition of high expression of KNTC1 in hepatocellular carcinoma was effective in suppressing the progression of hepatocellular carcinoma cells after knockdown."
+      },
+      "source_span": {
+        "end": 1709,
+        "start": 1704,
+        "text": "KNTC1"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "OrganismTaxon",
+        "end": 1613,
+        "id": "E41",
+        "score": null,
+        "start": 1608,
+        "text": "mouse",
+        "type": "Species"
+      },
+      "category": "exact_agreement",
+      "entity_class": "OrganismTaxon",
+      "hunflair2_prediction": {
+        "canonical_type": "OrganismTaxon",
+        "end": 1613,
+        "id": "E44",
+        "score": 0.999984622001648,
+        "start": 1608,
+        "text": "mouse",
+        "type": "Species"
+      },
+      "paper_id": "PMCID:PMC10444909",
+      "pmcid": "PMC10444909",
+      "pmid": "37621322",
+      "section": "abstract",
+      "sentence": {
+        "end": 1670,
+        "start": 1576,
+        "text": "Moreover, knockdown of KNTC1 in mouse transplanted tumors significantly inhibits tumor growth."
+      },
+      "source_span": {
+        "end": 1613,
+        "start": 1608,
+        "text": "mouse"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "CellLine",
+        "end": 15077,
+        "id": "E217",
+        "score": null,
+        "start": 15070,
+        "text": "C57/BL6",
+        "type": "CellLine"
+      },
+      "category": "exact_agreement",
+      "entity_class": "CellLine",
+      "hunflair2_prediction": {
+        "canonical_type": "CellLine",
+        "end": 15077,
+        "id": "E270",
+        "score": 0.9008734027544657,
+        "start": 15070,
+        "text": "C57/BL6",
+        "type": "CellLine"
+      },
+      "paper_id": "PMCID:PMC10770459",
+      "pmcid": "PMC10770459",
+      "pmid": "38187339",
+      "section": "Materials and methods / Polymerase Chain Reaction (PCR)",
+      "sentence": {
+        "end": 15115,
+        "start": 15027,
+        "text": "For comparative purposes, control Flox and C57/BL6 mice were also included in the study."
+      },
+      "source_span": {
+        "end": 15077,
+        "start": 15070,
+        "text": "C57/BL6"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "ChemicalEntity",
+        "end": 20739,
+        "id": "E308",
+        "score": null,
+        "start": 20736,
+        "text": "STZ",
+        "type": "Chemical"
+      },
+      "category": "exact_agreement",
+      "entity_class": "ChemicalEntity",
+      "hunflair2_prediction": {
+        "canonical_type": "ChemicalEntity",
+        "end": 20739,
+        "id": "E366",
+        "score": 0.999995231628418,
+        "start": 20736,
+        "text": "STZ",
+        "type": "Chemical"
+      },
+      "paper_id": "PMCID:PMC10770459",
+      "pmcid": "PMC10770459",
+      "pmid": "38187339",
+      "section": "Results / HMGB1 knockdown and hyperglycemia model characterization",
+      "sentence": {
+        "end": 20745,
+        "start": 20479,
+        "text": "(C) Representative Western blot images and quantification of HMGB1 levels in different tissues (liver, kidney, heart, and lung) harvested from iHMGB1 KO TMX STZ and HMGB1 Flox TMX STZ mice showing a significant decrease in HMGB1 expression in iHMGB1 KO TMX STZ mice."
+      },
+      "source_span": {
+        "end": 20739,
+        "start": 20736,
+        "text": "STZ"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "DiseaseOrPhenotypicFeature",
+        "end": 6170,
+        "id": "E99",
+        "score": null,
+        "start": 6157,
+        "text": "hyperglycemic",
+        "type": "Disease"
+      },
+      "category": "exact_agreement",
+      "entity_class": "DiseaseOrPhenotypicFeature",
+      "hunflair2_prediction": {
+        "canonical_type": "DiseaseOrPhenotypicFeature",
+        "end": 6170,
+        "id": "E113",
+        "score": 0.9999799728393555,
+        "start": 6157,
+        "text": "hyperglycemic",
+        "type": "Disease"
+      },
+      "paper_id": "PMCID:PMC10770459",
+      "pmcid": "PMC10770459",
+      "pmid": "38187339",
+      "section": "Introduction",
+      "sentence": {
+        "end": 6262,
+        "start": 6083,
+        "text": "Our hypothesis postulates that systemic conditional knockdown of HMGB1 in hyperglycemic mice will lead to a significant reduction in glucose levels and enhanced glucose tolerance."
+      },
+      "source_span": {
+        "end": 6170,
+        "start": 6157,
+        "text": "hyperglycemic"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "GeneOrGeneProduct",
+        "end": 21708,
+        "id": "E337",
+        "score": null,
+        "start": 21703,
+        "text": "HMGB1",
+        "type": "Gene"
+      },
+      "category": "exact_agreement",
+      "entity_class": "GeneOrGeneProduct",
+      "hunflair2_prediction": {
+        "canonical_type": "GeneOrGeneProduct",
+        "end": 21708,
+        "id": "E391",
+        "score": 0.999984860420227,
+        "start": 21703,
+        "text": "HMGB1",
+        "type": "Gene"
+      },
+      "paper_id": "PMCID:PMC10770459",
+      "pmcid": "PMC10770459",
+      "pmid": "38187339",
+      "section": "Results / HMGB1 knockdown and hyperglycemia model characterization",
+      "sentence": {
+        "end": 21814,
+        "start": 21641,
+        "text": "(D) Percent decrease in blood glucose levels compared between HMGB1 KO TMX STZ and HMGB1 Flox TMX STZ mice at various time points during hyperglycemia phenotype development."
+      },
+      "source_span": {
+        "end": 21708,
+        "start": 21703,
+        "text": "HMGB1"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "OrganismTaxon",
+        "end": 18334,
+        "id": "E244",
+        "score": null,
+        "start": 18330,
+        "text": "mice",
+        "type": "Species"
+      },
+      "category": "exact_agreement",
+      "entity_class": "OrganismTaxon",
+      "hunflair2_prediction": {
+        "canonical_type": "OrganismTaxon",
+        "end": 18334,
+        "id": "E307",
+        "score": 0.9999877214431763,
+        "start": 18330,
+        "text": "mice",
+        "type": "Species"
+      },
+      "paper_id": "PMCID:PMC10770459",
+      "pmcid": "PMC10770459",
+      "pmid": "38187339",
+      "section": "Results / HMGB1 knockdown and hyperglycemia model characterization",
+      "sentence": {
+        "end": 18340,
+        "start": 18251,
+        "text": "The results indicated a pronounced reduction of HMGB1 in the iHMGB1 KO TMX STZ mice (Fig."
+      },
+      "source_span": {
+        "end": 18334,
+        "start": 18330,
+        "text": "mice"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "ChemicalEntity",
+        "end": 22050,
+        "id": "E268",
+        "score": null,
+        "start": 22046,
+        "text": "SFPQ",
+        "type": "Chemical"
+      },
+      "category": "exact_agreement",
+      "entity_class": "ChemicalEntity",
+      "hunflair2_prediction": {
+        "canonical_type": "ChemicalEntity",
+        "end": 22050,
+        "id": "E334",
+        "score": 0.9999953508377075,
+        "start": 22046,
+        "text": "SFPQ",
+        "type": "Chemical"
+      },
+      "paper_id": "PMCID:PMC11824863",
+      "pmcid": "PMC11824863",
+      "pmid": "39949834",
+      "section": "3. Results / 3.5. Overexpression of SFPQ Activated the PI3K/AKT Pathway",
+      "sentence": {
+        "end": 22076,
+        "start": 21897,
+        "text": "Furthermore, SFPQ has demonstrated antioxidant and antiapoptotic properties in other diseases, suggesting a potential intrinsic relationship between SFPQ and the PI3K/AKT pathway."
+      },
+      "source_span": {
+        "end": 22050,
+        "start": 22046,
+        "text": "SFPQ"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "DiseaseOrPhenotypicFeature",
+        "end": 1680,
+        "id": "E38",
+        "score": null,
+        "start": 1661,
+        "text": "Alzheimer's disease",
+        "type": "Disease"
+      },
+      "category": "exact_agreement",
+      "entity_class": "DiseaseOrPhenotypicFeature",
+      "hunflair2_prediction": {
+        "canonical_type": "DiseaseOrPhenotypicFeature",
+        "end": 1680,
+        "id": "E43",
+        "score": 0.9999918142954508,
+        "start": 1661,
+        "text": "Alzheimer's disease",
+        "type": "Disease"
+      },
+      "paper_id": "PMCID:PMC11824863",
+      "pmcid": "PMC11824863",
+      "pmid": "39949834",
+      "section": "1. Introduction",
+      "sentence": {
+        "end": 1750,
+        "start": 1641,
+        "text": "Over a century ago, Alzheimer's disease (AD) was identified as a degenerative disorder of the nervous system."
+      },
+      "source_span": {
+        "end": 1680,
+        "start": 1661,
+        "text": "Alzheimer's disease"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "GeneOrGeneProduct",
+        "end": 3627,
+        "id": "E60",
+        "score": null,
+        "start": 3624,
+        "text": "Tau",
+        "type": "Gene"
+      },
+      "category": "exact_agreement",
+      "entity_class": "GeneOrGeneProduct",
+      "hunflair2_prediction": {
+        "canonical_type": "GeneOrGeneProduct",
+        "end": 3627,
+        "id": "E70",
+        "score": 0.9990159273147583,
+        "start": 3624,
+        "text": "Tau",
+        "type": "Gene"
+      },
+      "paper_id": "PMCID:PMC11824863",
+      "pmcid": "PMC11824863",
+      "pmid": "39949834",
+      "section": "1. Introduction",
+      "sentence": {
+        "end": 3651,
+        "start": 3368,
+        "text": "Immunohistochemistry and immunofluorescence techniques were employed to ascertain that the end products of advanced glycation in the brains of AD patients were augmented, which can facilitate the generation of oxygen radicals and aggregates at the site of Tau protein deposition [9]."
+      },
+      "source_span": {
+        "end": 3627,
+        "start": 3624,
+        "text": "Tau"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "OrganismTaxon",
+        "end": 16039,
+        "id": "E205",
+        "score": null,
+        "start": 16034,
+        "text": "mouse",
+        "type": "Species"
+      },
+      "category": "exact_agreement",
+      "entity_class": "OrganismTaxon",
+      "hunflair2_prediction": {
+        "canonical_type": "OrganismTaxon",
+        "end": 16039,
+        "id": "E250",
+        "score": 0.9999880790710449,
+        "start": 16034,
+        "text": "mouse",
+        "type": "Species"
+      },
+      "paper_id": "PMCID:PMC11824863",
+      "pmcid": "PMC11824863",
+      "pmid": "39949834",
+      "section": "2. Materials and Methods / 2.9. Y-Maze Test",
+      "sentence": {
+        "end": 16074,
+        "start": 16000,
+        "text": "The novel arm was opened, and the mouse was again placed in the start arm."
+      },
+      "source_span": {
+        "end": 16039,
+        "start": 16034,
+        "text": "mouse"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "CellLine",
+        "end": 5803,
+        "id": "E129",
+        "score": null,
+        "start": 5798,
+        "text": "293 T",
+        "type": "CellLine"
+      },
+      "category": "exact_agreement",
+      "entity_class": "CellLine",
+      "hunflair2_prediction": {
+        "canonical_type": "CellLine",
+        "end": 5803,
+        "id": "E143",
+        "score": 0.926903486251831,
+        "start": 5798,
+        "text": "293 T",
+        "type": "CellLine"
+      },
+      "paper_id": "PMCID:PMC8605525",
+      "pmcid": "PMC8605525",
+      "pmid": "34798872",
+      "section": "Background",
+      "sentence": {
+        "end": 5815,
+        "start": 5712,
+        "text": "Also, p-JAK level has been detected to be diminished by knocking out Cbl in activated 293 T cells [18]."
+      },
+      "source_span": {
+        "end": 5803,
+        "start": 5798,
+        "text": "293 T"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "ChemicalEntity",
+        "end": 13635,
+        "id": "E218",
+        "score": null,
+        "start": 13631,
+        "text": "DMEM",
+        "type": "Chemical"
+      },
+      "category": "exact_agreement",
+      "entity_class": "ChemicalEntity",
+      "hunflair2_prediction": {
+        "canonical_type": "ChemicalEntity",
+        "end": 13635,
+        "id": "E263",
+        "score": 0.9999676942825317,
+        "start": 13631,
+        "text": "DMEM",
+        "type": "Chemical"
+      },
+      "paper_id": "PMCID:PMC8605525",
+      "pmcid": "PMC8605525",
+      "pmid": "34798872",
+      "section": "Materials and methods / Cell culture and infection",
+      "sentence": {
+        "end": 13670,
+        "start": 13573,
+        "text": "Then, the HUVECs were seeded into 6-well plates with 2 mL DMEM for 1-day culture in an incubator."
+      },
+      "source_span": {
+        "end": 13635,
+        "start": 13631,
+        "text": "DMEM"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "DiseaseOrPhenotypicFeature",
+        "end": 1272,
+        "id": "E37",
+        "score": null,
+        "start": 1249,
+        "text": "endothelial dysfunction",
+        "type": "Disease"
+      },
+      "category": "exact_agreement",
+      "entity_class": "DiseaseOrPhenotypicFeature",
+      "hunflair2_prediction": {
+        "canonical_type": "DiseaseOrPhenotypicFeature",
+        "end": 1272,
+        "id": "E47",
+        "score": 0.999987781047821,
+        "start": 1249,
+        "text": "endothelial dysfunction",
+        "type": "Disease"
+      },
+      "paper_id": "PMCID:PMC8605525",
+      "pmcid": "PMC8605525",
+      "pmid": "34798872",
+      "section": "abstract",
+      "sentence": {
+        "end": 1364,
+        "start": 1198,
+        "text": "It was found that overexpression of Cbl alleviated endothelial dysfunction by increasing NO production and restoring vasodilation and suppressing apoptosis of HUVECs."
+      },
+      "source_span": {
+        "end": 1272,
+        "start": 1249,
+        "text": "endothelial dysfunction"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "GeneOrGeneProduct",
+        "end": 37395,
+        "id": "E611",
+        "score": null,
+        "start": 37390,
+        "text": "Runx3",
+        "type": "Gene"
+      },
+      "category": "exact_agreement",
+      "entity_class": "GeneOrGeneProduct",
+      "hunflair2_prediction": {
+        "canonical_type": "GeneOrGeneProduct",
+        "end": 37395,
+        "id": "E718",
+        "score": 0.998380164305369,
+        "start": 37390,
+        "text": "Runx3",
+        "type": "Gene"
+      },
+      "paper_id": "PMCID:PMC8605525",
+      "pmcid": "PMC8605525",
+      "pmid": "34798872",
+      "section": "Results / Cbl inhibits HUVEC apoptosis by inhibiting the activation of the JAK2/STAT4 pathway through reducing Runx3 expression",
+      "sentence": {
+        "end": 37396,
+        "start": 37244,
+        "text": "D Flow cytometry of apoptosis of HUVECs and corresponding quantification upon treatment with HG + oe-NC, HG + oe-Cbl + oe-NC, or HG + oe-Cb1 + oe-Runx3."
+      },
+      "source_span": {
+        "end": 37395,
+        "start": 37390,
+        "text": "Runx3"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "OrganismTaxon",
+        "end": 21258,
+        "id": "E299",
+        "score": null,
+        "start": 21255,
+        "text": "rat",
+        "type": "Species"
+      },
+      "category": "exact_agreement",
+      "entity_class": "OrganismTaxon",
+      "hunflair2_prediction": {
+        "canonical_type": "OrganismTaxon",
+        "end": 21258,
+        "id": "E354",
+        "score": 0.9999626874923706,
+        "start": 21255,
+        "text": "rat",
+        "type": "Species"
+      },
+      "paper_id": "PMCID:PMC8605525",
+      "pmcid": "PMC8605525",
+      "pmid": "34798872",
+      "section": "Results / Cbl is poorly expressed in aortic tissues of DM rats and HG-induced cell model",
+      "sentence": {
+        "end": 21293,
+        "start": 21196,
+        "text": "1Differential expression of Cbl in the microarray data, DM rat model, and HG-induced HUVEC model."
+      },
+      "source_span": {
+        "end": 21258,
+        "start": 21255,
+        "text": "rat"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "ChemicalEntity",
+        "end": 1383,
+        "id": "E32",
+        "score": null,
+        "start": 1375,
+        "text": "EPZ-6438",
+        "type": "Chemical"
+      },
+      "category": "exact_agreement",
+      "entity_class": "ChemicalEntity",
+      "hunflair2_prediction": {
+        "canonical_type": "ChemicalEntity",
+        "end": 1383,
+        "id": "E37",
+        "score": 0.9999954700469971,
+        "start": 1375,
+        "text": "EPZ-6438",
+        "type": "Chemical"
+      },
+      "paper_id": "PMID:27172794",
+      "pmcid": null,
+      "pmid": "27172794",
+      "section": "abstract",
+      "sentence": {
+        "end": 1434,
+        "start": 1337,
+        "text": "Moreover, the specific EZH2 inhibitor EPZ-6438, a clinical trial drug, prevented CRC progression."
+      },
+      "source_span": {
+        "end": 1383,
+        "start": 1375,
+        "text": "EPZ-6438"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "DiseaseOrPhenotypicFeature",
+        "end": 1421,
+        "id": "E33",
+        "score": null,
+        "start": 1418,
+        "text": "CRC",
+        "type": "Disease"
+      },
+      "category": "exact_agreement",
+      "entity_class": "DiseaseOrPhenotypicFeature",
+      "hunflair2_prediction": {
+        "canonical_type": "DiseaseOrPhenotypicFeature",
+        "end": 1421,
+        "id": "E38",
+        "score": 0.9999815225601196,
+        "start": 1418,
+        "text": "CRC",
+        "type": "Disease"
+      },
+      "paper_id": "PMID:27172794",
+      "pmcid": null,
+      "pmid": "27172794",
+      "section": "abstract",
+      "sentence": {
+        "end": 1434,
+        "start": 1337,
+        "text": "Moreover, the specific EZH2 inhibitor EPZ-6438, a clinical trial drug, prevented CRC progression."
+      },
+      "source_span": {
+        "end": 1421,
+        "start": 1418,
+        "text": "CRC"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "GeneOrGeneProduct",
+        "end": 1327,
+        "id": "E30",
+        "score": null,
+        "start": 1318,
+        "text": "\u03b2-catenin",
+        "type": "Gene"
+      },
+      "category": "exact_agreement",
+      "entity_class": "GeneOrGeneProduct",
+      "hunflair2_prediction": {
+        "canonical_type": "GeneOrGeneProduct",
+        "end": 1327,
+        "id": "E35",
+        "score": 0.9999796946843466,
+        "start": 1318,
+        "text": "\u03b2-catenin",
+        "type": "Gene"
+      },
+      "paper_id": "PMID:27172794",
+      "pmcid": null,
+      "pmid": "27172794",
+      "section": "abstract",
+      "sentence": {
+        "end": 1336,
+        "start": 1194,
+        "text": "We further revealed that p21cip1-mediated arrest of the cell cycle at G1/S phase is required for EZH2 activation of the Wnt/\u03b2-catenin pathway."
+      },
+      "source_span": {
+        "end": 1327,
+        "start": 1318,
+        "text": "\u03b2-catenin"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "OrganismTaxon",
+        "end": 383,
+        "id": "E6",
+        "score": null,
+        "start": 375,
+        "text": "patients",
+        "type": "Species"
+      },
+      "category": "exact_agreement",
+      "entity_class": "OrganismTaxon",
+      "hunflair2_prediction": {
+        "canonical_type": "OrganismTaxon",
+        "end": 383,
+        "id": "E9",
+        "score": 0.9999865293502808,
+        "start": 375,
+        "text": "patients",
+        "type": "Species"
+      },
+      "paper_id": "PMID:27172794",
+      "pmcid": null,
+      "pmid": "27172794",
+      "section": "abstract",
+      "sentence": {
+        "end": 493,
+        "start": 355,
+        "text": "Here, we found that patients with advanced stage CRC expressed high levels of polycomb group protein enhancer of zeste homologue 2 (EZH2)."
+      },
+      "source_span": {
+        "end": 383,
+        "start": 375,
+        "text": "patients"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "CellLine",
+        "end": 892,
+        "id": "E10",
+        "score": null,
+        "start": 887,
+        "text": "SSC-4",
+        "type": "CellLine"
+      },
+      "category": "exact_agreement",
+      "entity_class": "CellLine",
+      "hunflair2_prediction": {
+        "canonical_type": "CellLine",
+        "end": 892,
+        "id": "E14",
+        "score": 0.9927547574043274,
+        "start": 887,
+        "text": "SSC-4",
+        "type": "CellLine"
+      },
+      "paper_id": "PMID:27370646",
+      "pmcid": null,
+      "pmid": "27370646",
+      "section": "abstract",
+      "sentence": {
+        "end": 899,
+        "start": 766,
+        "text": "We observed that inhibiting the expression of p53 decreased the proliferation ability and induced apoptosis/autophagy in SSC-4 cells."
+      },
+      "source_span": {
+        "end": 892,
+        "start": 887,
+        "text": "SSC-4"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "DiseaseOrPhenotypicFeature",
+        "end": 505,
+        "id": "E7",
+        "score": null,
+        "start": 501,
+        "text": "OSCC",
+        "type": "Disease"
+      },
+      "category": "exact_agreement",
+      "entity_class": "DiseaseOrPhenotypicFeature",
+      "hunflair2_prediction": {
+        "canonical_type": "DiseaseOrPhenotypicFeature",
+        "end": 505,
+        "id": "E11",
+        "score": 0.999985933303833,
+        "start": 501,
+        "text": "OSCC",
+        "type": "Disease"
+      },
+      "paper_id": "PMID:27370646",
+      "pmcid": null,
+      "pmid": "27370646",
+      "section": "abstract",
+      "sentence": {
+        "end": 557,
+        "start": 437,
+        "text": "The impact of mutated p53 on the development and progression of OSCC is unclear and might have therapeutic implications."
+      },
+      "source_span": {
+        "end": 505,
+        "start": 501,
+        "text": "OSCC"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "GeneOrGeneProduct",
+        "end": 318,
+        "id": "E4",
+        "score": null,
+        "start": 315,
+        "text": "p53",
+        "type": "Gene"
+      },
+      "category": "exact_agreement",
+      "entity_class": "GeneOrGeneProduct",
+      "hunflair2_prediction": {
+        "canonical_type": "GeneOrGeneProduct",
+        "end": 318,
+        "id": "E8",
+        "score": 0.9999889135360718,
+        "start": 315,
+        "text": "p53",
+        "type": "Gene"
+      },
+      "paper_id": "PMID:27370646",
+      "pmcid": null,
+      "pmid": "27370646",
+      "section": "abstract",
+      "sentence": {
+        "end": 436,
+        "start": 315,
+        "text": "p53 has a crucial role in proliferation and apoptosis during the occurrence and development of numerous malignant tumors."
+      },
+      "source_span": {
+        "end": 318,
+        "start": 315,
+        "text": "p53"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "CellLine",
+        "end": 1264,
+        "id": "E23",
+        "score": null,
+        "start": 1262,
+        "text": "KB",
+        "type": "CellLine"
+      },
+      "category": "exact_agreement",
+      "entity_class": "CellLine",
+      "hunflair2_prediction": {
+        "canonical_type": "CellLine",
+        "end": 1264,
+        "id": "E37",
+        "score": 0.9948225021362305,
+        "start": 1262,
+        "text": "KB",
+        "type": "CellLine"
+      },
+      "paper_id": "PMID:31324362",
+      "pmcid": null,
+      "pmid": "31324362",
+      "section": "abstract / RESULTS",
+      "sentence": {
+        "end": 1346,
+        "start": 1239,
+        "text": "The migratory speed of KB cells was promoted by overexpression of c-Myc compared to the mock-vehicle group."
+      },
+      "source_span": {
+        "end": 1264,
+        "start": 1262,
+        "text": "KB"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "ChemicalEntity",
+        "end": 1418,
+        "id": "E25",
+        "score": null,
+        "start": 1415,
+        "text": "GLS",
+        "type": "Chemical"
+      },
+      "category": "exact_agreement",
+      "entity_class": "ChemicalEntity",
+      "hunflair2_prediction": {
+        "canonical_type": "ChemicalEntity",
+        "end": 1418,
+        "id": "E39",
+        "score": 0.9999001026153564,
+        "start": 1415,
+        "text": "GLS",
+        "type": "Chemical"
+      },
+      "paper_id": "PMID:31324362",
+      "pmcid": null,
+      "pmid": "31324362",
+      "section": "abstract / RESULTS",
+      "sentence": {
+        "end": 1435,
+        "start": 1347,
+        "text": "However, these effects were effectively reversed in the presence of GLS or GS inhibitor."
+      },
+      "source_span": {
+        "end": 1418,
+        "start": 1415,
+        "text": "GLS"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "DiseaseOrPhenotypicFeature",
+        "end": 1155,
+        "id": "E22",
+        "score": null,
+        "start": 1144,
+        "text": "oral cancer",
+        "type": "Disease"
+      },
+      "category": "exact_agreement",
+      "entity_class": "DiseaseOrPhenotypicFeature",
+      "hunflair2_prediction": {
+        "canonical_type": "DiseaseOrPhenotypicFeature",
+        "end": 1155,
+        "id": "E36",
+        "score": 0.9999905824661255,
+        "start": 1144,
+        "text": "oral cancer",
+        "type": "Disease"
+      },
+      "paper_id": "PMID:31324362",
+      "pmcid": null,
+      "pmid": "31324362",
+      "section": "abstract / RESULTS",
+      "sentence": {
+        "end": 1238,
+        "start": 1084,
+        "text": "Overexpression of c-Myc increased the colonies derived from oral cancer cells and caused more cells to be in S phase compared with the mock-vehicle group."
+      },
+      "source_span": {
+        "end": 1155,
+        "start": 1144,
+        "text": "oral cancer"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "GeneOrGeneProduct",
+        "end": 1107,
+        "id": "E21",
+        "score": null,
+        "start": 1102,
+        "text": "c-Myc",
+        "type": "Gene"
+      },
+      "category": "exact_agreement",
+      "entity_class": "GeneOrGeneProduct",
+      "hunflair2_prediction": {
+        "canonical_type": "GeneOrGeneProduct",
+        "end": 1107,
+        "id": "E35",
+        "score": 0.9999793370564779,
+        "start": 1102,
+        "text": "c-Myc",
+        "type": "Gene"
+      },
+      "paper_id": "PMID:31324362",
+      "pmcid": null,
+      "pmid": "31324362",
+      "section": "abstract / RESULTS",
+      "sentence": {
+        "end": 1238,
+        "start": 1084,
+        "text": "Overexpression of c-Myc increased the colonies derived from oral cancer cells and caused more cells to be in S phase compared with the mock-vehicle group."
+      },
+      "source_span": {
+        "end": 1107,
+        "start": 1102,
+        "text": "c-Myc"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "CellLine",
+        "end": 458,
+        "id": "E9",
+        "score": null,
+        "start": 454,
+        "text": "H9c2",
+        "type": "CellLine"
+      },
+      "category": "exact_agreement",
+      "entity_class": "CellLine",
+      "hunflair2_prediction": {
+        "canonical_type": "CellLine",
+        "end": 458,
+        "id": "E12",
+        "score": 0.9949002861976624,
+        "start": 454,
+        "text": "H9c2",
+        "type": "CellLine"
+      },
+      "paper_id": "PMID:33652126",
+      "pmcid": null,
+      "pmid": "33652126",
+      "section": "abstract",
+      "sentence": {
+        "end": 557,
+        "start": 431,
+        "text": "In this study, we used H9c2 cells cultured under serum deprivation to simulate the apoptosis process of myocardial infarction."
+      },
+      "source_span": {
+        "end": 458,
+        "start": 454,
+        "text": "H9c2"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "ChemicalEntity",
+        "end": 829,
+        "id": "E14",
+        "score": null,
+        "start": 826,
+        "text": "ROS",
+        "type": "Chemical"
+      },
+      "category": "exact_agreement",
+      "entity_class": "ChemicalEntity",
+      "hunflair2_prediction": {
+        "canonical_type": "ChemicalEntity",
+        "end": 829,
+        "id": "E17",
+        "score": 0.9999953508377075,
+        "start": 826,
+        "text": "ROS",
+        "type": "Chemical"
+      },
+      "paper_id": "PMID:33652126",
+      "pmcid": null,
+      "pmid": "33652126",
+      "section": "abstract",
+      "sentence": {
+        "end": 907,
+        "start": 790,
+        "text": "We also evaluated the generation of ROS, the degree of DNA damage, and cell apoptosis using immunofluorescence assay."
+      },
+      "source_span": {
+        "end": 829,
+        "start": 826,
+        "text": "ROS"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "DiseaseOrPhenotypicFeature",
+        "end": 1385,
+        "id": "E25",
+        "score": null,
+        "start": 1369,
+        "text": "serum deficiency",
+        "type": "Disease"
+      },
+      "category": "exact_agreement",
+      "entity_class": "DiseaseOrPhenotypicFeature",
+      "hunflair2_prediction": {
+        "canonical_type": "DiseaseOrPhenotypicFeature",
+        "end": 1385,
+        "id": "E28",
+        "score": 0.9951925277709961,
+        "start": 1369,
+        "text": "serum deficiency",
+        "type": "Disease"
+      },
+      "paper_id": "PMID:33652126",
+      "pmcid": null,
+      "pmid": "33652126",
+      "section": "abstract",
+      "sentence": {
+        "end": 1386,
+        "start": 1175,
+        "text": "All these effects could be reversed by phosphatidylinositol 3-kinase (PI3K) inhibitor, which indicated the PI3K/protein kinase B (AKT) might be the critical component of the PTEN effects during serum deficiency."
+      },
+      "source_span": {
+        "end": 1385,
+        "start": 1369,
+        "text": "serum deficiency"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "GeneOrGeneProduct",
+        "end": 1249,
+        "id": "E20",
+        "score": null,
+        "start": 1245,
+        "text": "PI3K",
+        "type": "Gene"
+      },
+      "category": "exact_agreement",
+      "entity_class": "GeneOrGeneProduct",
+      "hunflair2_prediction": {
+        "canonical_type": "GeneOrGeneProduct",
+        "end": 1249,
+        "id": "E23",
+        "score": 0.9999762177467346,
+        "start": 1245,
+        "text": "PI3K",
+        "type": "Gene"
+      },
+      "paper_id": "PMID:33652126",
+      "pmcid": null,
+      "pmid": "33652126",
+      "section": "abstract",
+      "sentence": {
+        "end": 1386,
+        "start": 1175,
+        "text": "All these effects could be reversed by phosphatidylinositol 3-kinase (PI3K) inhibitor, which indicated the PI3K/protein kinase B (AKT) might be the critical component of the PTEN effects during serum deficiency."
+      },
+      "source_span": {
+        "end": 1249,
+        "start": 1245,
+        "text": "PI3K"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "CellLine",
+        "end": 1393,
+        "id": "E17",
+        "score": null,
+        "start": 1386,
+        "text": "BEAS-2B",
+        "type": "CellLine"
+      },
+      "category": "exact_agreement",
+      "entity_class": "CellLine",
+      "hunflair2_prediction": {
+        "canonical_type": "CellLine",
+        "end": 1393,
+        "id": "E28",
+        "score": 0.986404538154602,
+        "start": 1386,
+        "text": "BEAS-2B",
+        "type": "CellLine"
+      },
+      "paper_id": "PMID:38569671",
+      "pmcid": null,
+      "pmid": "38569671",
+      "section": "abstract / RESULTS",
+      "sentence": {
+        "end": 1426,
+        "start": 1282,
+        "text": "Knockdown of KIF23 increased cell proliferation and inhibited apoptosis, inflammation and pyroptosis of BEAS-2B cells induced by IL-13 in vitro."
+      },
+      "source_span": {
+        "end": 1393,
+        "start": 1386,
+        "text": "BEAS-2B"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "DiseaseOrPhenotypicFeature",
+        "end": 315,
+        "id": "E4",
+        "score": null,
+        "start": 309,
+        "text": "asthma",
+        "type": "Disease"
+      },
+      "category": "exact_agreement",
+      "entity_class": "DiseaseOrPhenotypicFeature",
+      "hunflair2_prediction": {
+        "canonical_type": "DiseaseOrPhenotypicFeature",
+        "end": 315,
+        "id": "E5",
+        "score": 0.9999861717224121,
+        "start": 309,
+        "text": "asthma",
+        "type": "Disease"
+      },
+      "paper_id": "PMID:38569671",
+      "pmcid": null,
+      "pmid": "38569671",
+      "section": "abstract / BACKGROUND",
+      "sentence": {
+        "end": 316,
+        "start": 191,
+        "text": "The cause of asthma is not fully known, so exploring its potential mechanism is necessary for the targeted therapy of asthma."
+      },
+      "source_span": {
+        "end": 315,
+        "start": 309,
+        "text": "asthma"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "GeneOrGeneProduct",
+        "end": 901,
+        "id": "E12",
+        "score": null,
+        "start": 898,
+        "text": "p53",
+        "type": "Gene"
+      },
+      "category": "exact_agreement",
+      "entity_class": "GeneOrGeneProduct",
+      "hunflair2_prediction": {
+        "canonical_type": "GeneOrGeneProduct",
+        "end": 901,
+        "id": "E16",
+        "score": 0.9999897480010986,
+        "start": 898,
+        "text": "p53",
+        "type": "Gene"
+      },
+      "paper_id": "PMID:38569671",
+      "pmcid": null,
+      "pmid": "38569671",
+      "section": "abstract / METHOD",
+      "sentence": {
+        "end": 950,
+        "start": 824,
+        "text": "After screening KIF23-related signalling pathways, the effect of KIF23 on p53 signalling pathway was explored by western blot."
+      },
+      "source_span": {
+        "end": 901,
+        "start": 898,
+        "text": "p53"
+      }
+    },
+    {
+      "aioner_prediction": {
+        "canonical_type": "OrganismTaxon",
+        "end": 1572,
+        "id": "E23",
+        "score": null,
+        "start": 1568,
+        "text": "mice",
+        "type": "Species"
+      },
+      "category": "exact_agreement",
+      "entity_class": "OrganismTaxon",
+      "hunflair2_prediction": {
+        "canonical_type": "OrganismTaxon",
+        "end": 1572,
+        "id": "E34",
+        "score": 0.9999865293502808,
+        "start": 1568,
+        "text": "mice",
+        "type": "Species"
+      },
+      "paper_id": "PMID:38569671",
+      "pmcid": null,
+      "pmid": "38569671",
+      "section": "abstract / RESULTS",
+      "sentence": {
+        "end": 1573,
+        "start": 1427,
+        "text": "In vivo experiments verified that knockdown of KIF23 inhibited oxidative stress, inflammation and pyroptosis to alleviate OVA-induced asthma mice."
+      },
+      "source_span": {
+        "end": 1572,
+        "start": 1568,
+        "text": "mice"
+      }
+    },
+    {
+      "aioner_prediction": null,
+      "category": "hunflair2_only",
+      "entity_class": "DiseaseOrPhenotypicFeature",
+      "hunflair2_prediction": {
+        "canonical_type": "DiseaseOrPhenotypicFeature",
+        "end": 172,
+        "id": "E5",
+        "score": 0.9999920129776001,
+        "start": 148,
+        "text": "hepatocellular carcinoma",
+        "type": "Disease"
+      },
+      "paper_id": "PMCID:PMC10444909",
+      "pmcid": "PMC10444909",
+      "pmid": "37621322",
+      "section": "abstract",
+      "sentence": {
+        "end": 173,
+        "start": 72,
+        "text": "To investigate the mechanism of kinetochore-associated protein 1 (KNTC1) in hepatocellular carcinoma."
+      },
+      "source_span": {
+        "end": 172,
+        "start": 148,
+        "text": "hepatocellular carcinoma"
+      }
+    },
+    {
+      "aioner_prediction": null,
+      "category": "hunflair2_only",
+      "entity_class": "GeneOrGeneProduct",
+      "hunflair2_prediction": {
+        "canonical_type": "GeneOrGeneProduct",
+        "end": 143,
+        "id": "E4",
+        "score": 0.9999899864196777,
+        "start": 138,
+        "text": "KNTC1",
+        "type": "Gene"
+      },
+      "paper_id": "PMCID:PMC10444909",
+      "pmcid": "PMC10444909",
+      "pmid": "37621322",
+      "section": "abstract",
+      "sentence": {
+        "end": 173,
+        "start": 72,
+        "text": "To investigate the mechanism of kinetochore-associated protein 1 (KNTC1) in hepatocellular carcinoma."
+      },
+      "source_span": {
+        "end": 143,
+        "start": 138,
+        "text": "KNTC1"
+      }
+    },
+    {
+      "aioner_prediction": null,
+      "category": "hunflair2_only",
+      "entity_class": "ChemicalEntity",
+      "hunflair2_prediction": {
+        "canonical_type": "ChemicalEntity",
+        "end": 28083,
+        "id": "E580",
+        "score": 0.9999970197677612,
+        "start": 28080,
+        "text": "STZ",
+        "type": "Chemical"
+      },
+      "paper_id": "PMCID:PMC10770459",
+      "pmcid": "PMC10770459",
+      "pmid": "38187339",
+      "section": "Results / Liver RNA sequencing identified significant changes in oxidative stress, lipid metabolism and autophagy related pathways",
+      "sentence": {
+        "end": 28118,
+        "start": 27830,
+        "text": "Given the observed compelling in vivo phenotype and the liver's central role in metabolism, we aimed to understand the potential mechanism at play in the liver by conducting RNA sequencing on liver harvested from HMGB1 Flox TMX STZ and iHMGB1 KO TMX STZ mice 10 weeks post last injection."
+      },
+      "source_span": {
+        "end": 28083,
+        "start": 28080,
+        "text": "STZ"
+      }
+    },
+    {
+      "aioner_prediction": null,
+      "category": "hunflair2_only",
+      "entity_class": "DiseaseOrPhenotypicFeature",
+      "hunflair2_prediction": {
+        "canonical_type": "DiseaseOrPhenotypicFeature",
+        "end": 12790,
+        "id": "E234",
+        "score": 0.9999853372573853,
+        "start": 12777,
+        "text": "hyperglycemia",
+        "type": "Disease"
+      },
+      "paper_id": "PMCID:PMC10770459",
+      "pmcid": "PMC10770459",
+      "pmid": "38187339",
+      "section": "Materials and methods / Histological staining",
+      "sentence": {
+        "end": 12834,
+        "start": 12669,
+        "text": "Liver samples were obtained from the same cohort of HMGB1 Flox TMX STZ and iHMGB1 KO TMX STZ mice that have hyperglycemia developed for 10 weeks post last injection."
+      },
+      "source_span": {
+        "end": 12790,
+        "start": 12777,
+        "text": "hyperglycemia"
+      }
+    },
+    {
+      "aioner_prediction": null,
+      "category": "hunflair2_only",
+      "entity_class": "GeneOrGeneProduct",
+      "hunflair2_prediction": {
+        "canonical_type": "GeneOrGeneProduct",
+        "end": 14371,
+        "id": "E255",
+        "score": 0.8918871283531189,
+        "start": 14368,
+        "text": "BSA",
+        "type": "Gene"
+      },
+      "paper_id": "PMCID:PMC10770459",
+      "pmcid": "PMC10770459",
+      "pmid": "38187339",
+      "section": "Materials and methods / Immunoblot",
+      "sentence": {
+        "end": 14388,
+        "start": 14303,
+        "text": "Subsequently, the membranes were blocked using a solution of 5 % BSA in TBST for 1 h."
+      },
+      "source_span": {
+        "end": 14371,
+        "start": 14368,
+        "text": "BSA"
+      }
+    },
+    {
+      "aioner_prediction": null,
+      "category": "hunflair2_only",
+      "entity_class": "OrganismTaxon",
+      "hunflair2_prediction": {
+        "canonical_type": "OrganismTaxon",
+        "end": 38391,
+        "id": "E741",
+        "score": 0.9999878406524658,
+        "start": 38387,
+        "text": "mice",
+        "type": "Species"
+      },
+      "paper_id": "PMCID:PMC10770459",
+      "pmcid": "PMC10770459",
+      "pmid": "38187339",
+      "section": "Discussion",
+      "sentence": {
+        "end": 38450,
+        "start": 38271,
+        "text": "Moreover, it is worth highlighting that our study found a nearly 34 % reduction in hyperglycemia in HMGB1 knockdown mice compared to hyperglycemia mice with fully expressed HMGB1."
+      },
+      "source_span": {
+        "end": 38391,
+        "start": 38387,
+        "text": "mice"
+      }
+    },
+    {
+      "aioner_prediction": null,
+      "category": "hunflair2_only",
+      "entity_class": "CellLine",
+      "hunflair2_prediction": {
+        "canonical_type": "CellLine",
+        "end": 8536,
+        "id": "E160",
+        "score": 0.9278271595637003,
+        "start": 8528,
+        "text": "C57BL/6J",
+        "type": "CellLine"
+      },
+      "paper_id": "PMCID:PMC11824863",
+      "pmcid": "PMC11824863",
+      "pmid": "39949834",
+      "section": "2. Materials and Methods / 2.1. Animals",
+      "sentence": {
+        "end": 8638,
+        "start": 8470,
+        "text": "This study utilized 55 specific pathogen-free (SPF) grade C57BL/6J female mice, aged 10 weeks and weighing 20 \u00b1 2 g, procured from SPF (Beijing) Biotechnology Co., Ltd."
+      },
+      "source_span": {
+        "end": 8536,
+        "start": 8528,
+        "text": "C57BL/6J"
+      }
+    },
+    {
+      "aioner_prediction": null,
+      "category": "hunflair2_only",
+      "entity_class": "ChemicalEntity",
+      "hunflair2_prediction": {
+        "canonical_type": "ChemicalEntity",
+        "end": 20800,
+        "id": "E317",
+        "score": 0.9999959468841553,
+        "start": 20796,
+        "text": "SFPQ",
+        "type": "Chemical"
+      },
+      "paper_id": "PMCID:PMC11824863",
+      "pmcid": "PMC11824863",
+      "pmid": "39949834",
+      "section": "3. Results / 3.4. Overexpression of SFPQ Enhanced Antioxidant and Antiapoptotic Capacities in Hippocampal Cells of the AD Mouse Model",
+      "sentence": {
+        "end": 20898,
+        "start": 20763,
+        "text": "Previous studies have associated SFPQ with antioxidants, which may be related to behavioral improvements following SFPQ overexpression."
+      },
+      "source_span": {
+        "end": 20800,
+        "start": 20796,
+        "text": "SFPQ"
+      }
+    },
+    {
+      "aioner_prediction": null,
+      "category": "hunflair2_only",
+      "entity_class": "DiseaseOrPhenotypicFeature",
+      "hunflair2_prediction": {
+        "canonical_type": "DiseaseOrPhenotypicFeature",
+        "end": 9724,
+        "id": "E169",
+        "score": 0.9999858140945435,
+        "start": 9722,
+        "text": "AD",
+        "type": "Disease"
+      },
+      "paper_id": "PMCID:PMC11824863",
+      "pmcid": "PMC11824863",
+      "pmid": "39949834",
+      "section": "2. Materials and Methods / 2.2. Brain Stereotaxic Instrument Injection",
+      "sentence": {
+        "end": 9931,
+        "start": 9692,
+        "text": "To develop an animal model of AD, we referred to the stereotaxic atlas of the mouse brain and selected the right lateral ventricle (coordinates: anterior/posterior: \u22120.94 mm, medial/lateral: \u22121.5 mm, dorsal/ventral: \u22122.1 mm) for injection."
+      },
+      "source_span": {
+        "end": 9724,
+        "start": 9722,
+        "text": "AD"
+      }
+    },
+    {
+      "aioner_prediction": null,
+      "category": "hunflair2_only",
+      "entity_class": "GeneOrGeneProduct",
+      "hunflair2_prediction": {
+        "canonical_type": "GeneOrGeneProduct",
+        "end": 18567,
+        "id": "E283",
+        "score": 0.9999505281448364,
+        "start": 18563,
+        "text": "SFPQ",
+        "type": "Gene"
+      },
+      "paper_id": "PMCID:PMC11824863",
+      "pmcid": "PMC11824863",
+      "pmid": "39949834",
+      "section": "3. Results / 3.2. Overexpressed SFPQ Colocalized With CA1 Neurons and Improved the Arrangement of Hippocampal Cells in AD Mice",
+      "sentence": {
+        "end": 18659,
+        "start": 18438,
+        "text": "HE staining results revealed that, compared to the Vector group, the hippocampal cells in the CA3 and CA4 regions of the AAV-SFPQ group exhibited a more organized, compact, uniform, and morphologically intact arrangement."
+      },
+      "source_span": {
+        "end": 18567,
+        "start": 18563,
+        "text": "SFPQ"
+      }
+    }
+  ],
+  "schema_version": 1,
+  "selection": {
+    "candidate_count": 3260,
+    "method": "sha256-sorted round-robin over category/paper/entity-class buckets",
+    "selected_count": 75,
+    "target_count": 75
+  }
+}
