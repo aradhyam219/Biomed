@@ -27,25 +27,14 @@ biomedical identity linking, relation changes, and live LLM calls are not part o
 the current NER workstream. See [`docs/product/CURRENT_SPEC.md`](docs/product/CURRENT_SPEC.md)
 and [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) for the current contracts.
 
-## Demo
-
-```powershell
-uv run python demo.py
-```
-
-Paste or type biomedical text, then enter `END` on a new line to run extraction.
-
-For scripted use, `uv run biomedical-extract --text "..."` remains available. Entity/relation labels and confidence thresholds can be supplied with `--entity-label`, `--relation-label`, `--entity-threshold`, and `--relation-threshold`.
-
-## Entity-only inspection
-
-NER can be run without loading GLiREL:
+## Active NER inspection
 
 ```powershell
 uv run biomedical-ner --text "BRCA1 mutations are associated with breast cancer." --entity-label gene --entity-label disease
 ```
 
-Programmatic callers use the model-independent entity contract:
+This entity-only command does not load GLiREL. Programmatic callers use the
+model-independent entity contract:
 
 ```python
 from biomedical_extractor import GLiNERBioMedExtractor
@@ -57,11 +46,24 @@ entities = extractor.extract_entities("BRCA1 mutations are associated with breas
 Each returned entity exposes `id`, `text`, `type`, half-open `start`/`end`
 character offsets, and `score` when the model supplies one.
 
-## Deferred relation paths
+## Preserved/deferred relation paths
 
 The following relation paths are preserved and remain callable for existing
 consumers, but they are not the active quality target and are not changed by the
 current NER refocus.
+
+The old interactive `demo.py` command is retained as a deferred GLiNER-to-GLiREL
+relation-pipeline demo. It loads relation tooling and prints entities plus
+relations; it is not the active NER demo:
+
+```powershell
+uv run python demo.py
+```
+
+For scripted use, the preserved `biomedical-extract` command remains available.
+Entity/relation labels and confidence thresholds can be supplied with
+`--entity-label`, `--relation-label`, `--entity-threshold`, and
+`--relation-threshold`.
 
 The LLM relation path accepts the normalized entities above and returns directed
 relations with source/target IDs, a concise predicate, verbatim source evidence,

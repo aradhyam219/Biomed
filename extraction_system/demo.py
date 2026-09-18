@@ -1,7 +1,9 @@
-"""Interactive console demo for the production extraction pipeline.
+"""Preserved interactive demo for the deferred relation pipeline.
 
-The demo collects multiline biomedical text, runs the same GLiNER-to-GLiREL data
-flow as the package CLI, and presents both readable tables and normalized JSON.
+The demo collects multiline biomedical text, runs the legacy GLiNER-to-GLiREL
+flow, and presents readable tables plus normalized JSON. It remains available for
+relation-tooling consumers but is not the active NER path; use ``biomedical-ner``
+for current core biomedical entity inspection.
 """
 
 from __future__ import annotations

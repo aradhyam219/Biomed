@@ -5,7 +5,10 @@
 
 ## Project purpose
 
-This repository contains a biomedical entity-and-relation extraction component intended to turn unstructured biomedical text into clean, machine-consumable structured entities and relationships.
+This repository contains a biomedical entity extraction component intended to turn
+unstructured biomedical text into clean, machine-consumable entity output. The
+relation implementations remain preserved for later work but are not the active
+quality target.
 
 The current system is deliberately narrow. It is one component inside a larger system, not a general biomedical knowledge platform.
 
@@ -24,14 +27,23 @@ Canonical commands:
 
 - install/sync: `uv sync`
 - focused tests: `uv run python -m unittest discover -s tests -v`
-- human-facing demo: `uv run python demo.py`
+- active NER inspection: `uv run biomedical-ner --text "..."`
+
+The preserved `demo.py` console command (`uv run python demo.py`) is a deferred
+GLiNER-to-GLiREL relation-pipeline demo, not the current human-facing NER path.
 
 ## Hard repository invariants
 
 - Production extraction must accept ordinary biomedical text. It must not depend on BioRED-specific input structures.
 - BioRED is evaluation infrastructure, not a production dependency.
-- Entity extraction and relation extraction remain independently evaluable.
-- The production path must produce normalized, machine-consumable structured output.
+- Core biomedical NER is the sole active quality workstream; preserved relation
+  implementations remain independently evaluable but deferred.
+- The active production path must produce normalized, machine-consumable entity
+  output.
+- Biomedical entity normalization/linking is a later stage after NER evaluation
+  and model selection.
+- Biological-process extraction is deferred and is not part of the default NER
+  path.
 - Evaluation code must not leak dataset-specific assumptions into the production extraction path.
 - Machine-readable final evaluation reports intended for review must be written to
   `reports/` and committed with the evaluation; raw predictions, incremental caches,
@@ -40,14 +52,18 @@ Canonical commands:
 
 ## Architectural boundaries
 
-The current production responsibility is:
+The current active responsibility is:
 
 ```text
 biomedical text
-    -> entity extraction
-    -> relation extraction
-    -> normalized structured result
+    -> core biomedical NER
+    -> NER evaluation / model selection
+    -> future biomedical entity normalization/linking
+    -> STOP
 ```
+
+Relation extraction implementations are preserved but deferred until the core NER
+layer passes an explicit quality gate.
 
 Evaluation is a separate concern and is described in `docs/ARCHITECTURE.md`.
 
