@@ -1,0 +1,1077 @@
+{
+  "counts": {
+    "documents_evaluated": 100,
+    "gold_entities": 3535,
+    "gold_entities_by_type": {
+      "CellLine": 50,
+      "Chemical": 754,
+      "Disease": 917,
+      "Gene": 1180,
+      "Species": 393,
+      "Variant": 241
+    },
+    "gold_entities_scored": 3535,
+    "predicted_entities": 3540,
+    "predicted_entities_scored": 3540
+  },
+  "dataset": {
+    "date": "2021-11-30",
+    "documents_evaluated": 100,
+    "documents_in_source": 100,
+    "key": "BioC.key",
+    "path": "C:\\Projects\\Biomed\\extraction_system\\.cache\\BIORED\\BioRED\\Test.BioC.JSON",
+    "sha256": "35ec8aad0c62032689b4a957220c7532eb067dc7e159d70cc42e6d40e6c447c6",
+    "source": "PubTator",
+    "split": "test"
+  },
+  "evaluation_name": "BioRED exact-match biomedical NER evaluation",
+  "failure_analysis": {
+    "counts": {
+      "missed entity": 109,
+      "overlapping prediction": 9,
+      "schema-unscored / unsupported gold category": 0,
+      "schema-unscored / unsupported predicted category": 0,
+      "span mismatch": 131,
+      "spurious entity": 114,
+      "wrong type": 54
+    },
+    "example_limit_per_category": 5,
+    "examples": {
+      "missed entity": [
+        {
+          "category": "missed entity",
+          "context": {
+            "end": 870,
+            "start": 704,
+            "text": " identified in the transmembrane segment 6 of domain IV of the Na(v)1.5 cardiac sodium channel, with a G-->A substitution at codon 1763, which changed a valine (GTG) "
+          },
+          "document_id": "15485686",
+          "gold": {
+            "canonical_type": "ChemicalEntity",
+            "concept_ids": [
+              "D012964"
+            ],
+            "end": 790,
+            "id": "16",
+            "start": 784,
+            "text": "sodium",
+            "type": "Chemical"
+          },
+          "predicted": null
+        },
+        {
+          "category": "missed entity",
+          "context": {
+            "end": 828,
+            "start": 645,
+            "text": "n the literature. Interestingly, we found subtentorial abnormal myelination and moderate hyperintensity in the bilateral pallidi in our patients. This new mutation creates a cryptic s"
+          },
+          "document_id": "19394258",
+          "gold": {
+            "canonical_type": "DiseaseOrPhenotypicFeature",
+            "concept_ids": [
+              "D006973"
+            ],
+            "end": 748,
+            "id": "15",
+            "start": 725,
+            "text": "moderate hyperintensity",
+            "type": "Disease"
+          },
+          "predicted": null
+        },
+        {
+          "category": "missed entity",
+          "context": {
+            "end": 1294,
+            "start": 1124,
+            "text": "ing rtV173L mutation was found in four patients. Three patients with the triple polymerase substitution pattern (rtV173L + rtL180M + rtM204V) had associated changes in th"
+          },
+          "document_id": "20648600",
+          "gold": {
+            "canonical_type": "GeneOrGeneProduct",
+            "concept_ids": [
+              "944565"
+            ],
+            "end": 1214,
+            "id": "36",
+            "start": 1204,
+            "text": "polymerase",
+            "type": "Gene"
+          },
+          "predicted": null
+        },
+        {
+          "category": "missed entity",
+          "context": {
+            "end": 1384,
+            "start": 1216,
+            "text": "ubstitution pattern (rtV173L + rtL180M + rtM204V) had associated changes in the envelope gene (sE164D + sI195M). Mutations in the BCP region (A1762T, G1764A) and in the"
+          },
+          "document_id": "20648600",
+          "gold": {
+            "canonical_type": "GeneOrGeneProduct",
+            "concept_ids": [
+              "944569"
+            ],
+            "end": 1304,
+            "id": "40",
+            "start": 1296,
+            "text": "envelope",
+            "type": "Gene"
+          },
+          "predicted": null
+        },
+        {
+          "category": "missed entity",
+          "context": {
+            "end": 1472,
+            "start": 1305,
+            "text": "gene (sE164D + sI195M). Mutations in the BCP region (A1762T, G1764A) and in the precore region (G1896A, G1899A) were also found. No putative TDF resistance substitutio"
+          },
+          "document_id": "20648600",
+          "gold": {
+            "canonical_type": "GeneOrGeneProduct",
+            "concept_ids": [
+              "944568"
+            ],
+            "end": 1392,
+            "id": "45",
+            "start": 1385,
+            "text": "precore",
+            "type": "Gene"
+          },
+          "predicted": null
+        }
+      ],
+      "overlapping prediction": [
+        {
+          "category": "overlapping prediction",
+          "context": {
+            "end": 801,
+            "start": 620,
+            "text": "A allele was 1.5-2.5-fold more abundant than the G118 allele. Transfection into Chinese hamster ovary cells of a cDNA representing only the coding region of OPRM1, carrying adenosin"
+          },
+          "document_id": "16046395",
+          "gold": {
+            "canonical_type": "OrganismTaxon",
+            "concept_ids": [
+              "10029"
+            ],
+            "end": 715,
+            "id": "16",
+            "start": 700,
+            "text": "Chinese hamster",
+            "type": "Species"
+          },
+          "predicted": {
+            "canonical_type": "CellLine",
+            "end": 721,
+            "id": "E19",
+            "score": null,
+            "start": 700,
+            "text": "Chinese hamster ovary",
+            "type": "CellLine"
+          }
+        },
+        {
+          "category": "overlapping prediction",
+          "context": {
+            "end": 218,
+            "start": 20,
+            "text": "ypic analysis of patients with deletions within the deletion-rich region of the Duchenne muscular dystrophy (DMD) gene. Eighty unrelated individuals with Duchenne muscular dystrophy (DMD)or Becker m"
+          },
+          "document_id": "2491010",
+          "gold": {
+            "canonical_type": "GeneOrGeneProduct",
+            "concept_ids": [
+              "1756"
+            ],
+            "end": 138,
+            "id": "1",
+            "start": 100,
+            "text": "Duchenne muscular dystrophy (DMD) gene",
+            "type": "Gene"
+          },
+          "predicted": {
+            "canonical_type": "DiseaseOrPhenotypicFeature",
+            "end": 127,
+            "id": "E2",
+            "score": null,
+            "start": 100,
+            "text": "Duchenne muscular dystrophy",
+            "type": "Disease"
+          }
+        },
+        {
+          "category": "overlapping prediction",
+          "context": {
+            "end": 261,
+            "start": 57,
+            "text": "oterenol-induced myocardial infarction in rats. Tincture of Crataegus (TCR), an alcoholic extract of the berries of hawthorn (Crataegus oxycantha), is used in herbal and homeopathic medicine. The present "
+          },
+          "document_id": "15233872",
+          "gold": {
+            "canonical_type": "ChemicalEntity",
+            "concept_ids": [
+              "C007145"
+            ],
+            "end": 181,
+            "id": "6",
+            "start": 137,
+            "text": "alcoholic extract of the berries of hawthorn",
+            "type": "Chemical"
+          },
+          "predicted": {
+            "canonical_type": "OrganismTaxon",
+            "end": 181,
+            "id": "E7",
+            "score": null,
+            "start": 173,
+            "text": "hawthorn",
+            "type": "Species"
+          }
+        },
+        {
+          "category": "overlapping prediction",
+          "context": {
+            "end": 585,
+            "start": 400,
+            "text": "hetamine-induced hyperactivity in rats is corrected with the use of a selective 5-HT6 receptor antagonist. In addition, the disrupted prepulse inhibition induced by d-amphetamine or phe"
+          },
+          "document_id": "20705401",
+          "gold": {
+            "canonical_type": "ChemicalEntity",
+            "concept_ids": [
+              "D012702"
+            ],
+            "end": 505,
+            "id": "12",
+            "start": 480,
+            "text": "5-HT6 receptor antagonist",
+            "type": "Chemical"
+          },
+          "predicted": {
+            "canonical_type": "GeneOrGeneProduct",
+            "end": 494,
+            "id": "E12",
+            "score": null,
+            "start": 480,
+            "text": "5-HT6 receptor",
+            "type": "Gene"
+          }
+        },
+        {
+          "category": "overlapping prediction",
+          "context": {
+            "end": 717,
+            "start": 532,
+            "text": "d prepulse inhibition induced by d-amphetamine or phencyclidine was restored by 5-HT6 receptor antagonist in an animal study using rats. These animal models were considered to reflect t"
+          },
+          "document_id": "20705401",
+          "gold": {
+            "canonical_type": "ChemicalEntity",
+            "concept_ids": [
+              "D012702"
+            ],
+            "end": 637,
+            "id": "15",
+            "start": 612,
+            "text": "5-HT6 receptor antagonist",
+            "type": "Chemical"
+          },
+          "predicted": {
+            "canonical_type": "GeneOrGeneProduct",
+            "end": 626,
+            "id": "E15",
+            "score": null,
+            "start": 612,
+            "text": "5-HT6 receptor",
+            "type": "Gene"
+          }
+        }
+      ],
+      "schema-unscored / unsupported gold category": [],
+      "schema-unscored / unsupported predicted category": [],
+      "span mismatch": [
+        {
+          "category": "span mismatch",
+          "context": {
+            "end": 189,
+            "start": 17,
+            "text": "ation manifests as a malignant form of long QT syndrome with perinatal onset of tachycardia/bradycardia. OBJECTIVE: Congenital long QT syndrome (LQTS) with in utero onset o"
+          },
+          "document_id": "15485686",
+          "gold": {
+            "canonical_type": "DiseaseOrPhenotypicFeature",
+            "concept_ids": [
+              "D013610"
+            ],
+            "end": 108,
+            "id": "2",
+            "start": 97,
+            "text": "tachycardia",
+            "type": "Disease"
+          },
+          "predicted": {
+            "canonical_type": "DiseaseOrPhenotypicFeature",
+            "end": 109,
+            "id": "E3",
+            "score": null,
+            "start": 97,
+            "text": "tachycardia/",
+            "type": "Disease"
+          }
+        },
+        {
+          "category": "span mismatch",
+          "context": {
+            "end": 402,
+            "start": 225,
+            "text": "ted with a poor prognosis. In this study we investigated a newborn patient with fetal bradycardia, 2:1 atrioventricular block and ventricular tachycardia soon after birth. METHO"
+          },
+          "document_id": "15485686",
+          "gold": {
+            "canonical_type": "DiseaseOrPhenotypicFeature",
+            "concept_ids": [
+              "D001919"
+            ],
+            "end": 322,
+            "id": "7",
+            "start": 311,
+            "text": "bradycardia",
+            "type": "Disease"
+          },
+          "predicted": {
+            "canonical_type": "DiseaseOrPhenotypicFeature",
+            "end": 322,
+            "id": "E8",
+            "score": null,
+            "start": 305,
+            "text": "fetal bradycardia",
+            "type": "Disease"
+          }
+        },
+        {
+          "category": "span mismatch",
+          "context": {
+            "end": 771,
+            "start": 605,
+            "text": "hich also controlled the ventricular tachycardia. RESULTS: A novel, spontaneous LQTS-3 mutation was identified in the transmembrane segment 6 of domain IV of the Na(v"
+          },
+          "document_id": "15485686",
+          "gold": {
+            "canonical_type": "DiseaseOrPhenotypicFeature",
+            "concept_ids": [
+              "D008133"
+            ],
+            "end": 689,
+            "id": "14",
+            "start": 685,
+            "text": "LQTS",
+            "type": "Disease"
+          },
+          "predicted": {
+            "canonical_type": "DiseaseOrPhenotypicFeature",
+            "end": 691,
+            "id": "E15",
+            "score": null,
+            "start": 685,
+            "text": "LQTS-3",
+            "type": "Disease"
+          }
+        },
+        {
+          "category": "span mismatch",
+          "context": {
+            "end": 878,
+            "start": 687,
+            "text": "TS-3 mutation was identified in the transmembrane segment 6 of domain IV of the Na(v)1.5 cardiac sodium channel, with a G-->A substitution at codon 1763, which changed a valine (GTG) to a met"
+          },
+          "document_id": "15485686",
+          "gold": {
+            "canonical_type": "GeneOrGeneProduct",
+            "concept_ids": [
+              "6331"
+            ],
+            "end": 775,
+            "id": "15",
+            "start": 767,
+            "text": "Na(v)1.5",
+            "type": "Gene"
+          },
+          "predicted": {
+            "canonical_type": "GeneOrGeneProduct",
+            "end": 798,
+            "id": "E16",
+            "score": null,
+            "start": 767,
+            "text": "Na(v)1.5 cardiac sodium channel",
+            "type": "Gene"
+          }
+        },
+        {
+          "category": "span mismatch",
+          "context": {
+            "end": 169,
+            "start": 3,
+            "text": "elic expression imbalance of human mu opioid receptor (OPRM1) caused by variant A118G. As a primary target for opioid drugs and peptides, the mu opioid receptor (OPRM"
+          },
+          "document_id": "16046395",
+          "gold": {
+            "canonical_type": "SequenceVariant",
+            "concept_ids": [
+              "rs1799971"
+            ],
+            "end": 88,
+            "id": "3",
+            "start": 83,
+            "text": "A118G",
+            "type": "Variant"
+          },
+          "predicted": {
+            "canonical_type": "SequenceVariant",
+            "end": 89,
+            "id": "E4",
+            "score": null,
+            "start": 83,
+            "text": "A118G.",
+            "type": "Variant"
+          }
+        }
+      ],
+      "spurious entity": [
+        {
+          "category": "spurious entity",
+          "context": {
+            "end": 206,
+            "start": 34,
+            "text": "man mu opioid receptor (OPRM1) caused by variant A118G. As a primary target for opioid drugs and peptides, the mu opioid receptor (OPRM1) plays a key role in pain perceptio"
+          },
+          "document_id": "16046395",
+          "gold": null,
+          "predicted": {
+            "canonical_type": "ChemicalEntity",
+            "end": 126,
+            "id": "E5",
+            "score": null,
+            "start": 114,
+            "text": "opioid drugs",
+            "type": "Chemical"
+          }
+        },
+        {
+          "category": "spurious entity",
+          "context": {
+            "end": 301,
+            "start": 132,
+            "text": "eptides, the mu opioid receptor (OPRM1) plays a key role in pain perception and addiction. Genetic variants of OPRM1 have been implicated in predisposition to drug addic"
+          },
+          "document_id": "16046395",
+          "gold": null,
+          "predicted": {
+            "canonical_type": "DiseaseOrPhenotypicFeature",
+            "end": 221,
+            "id": "E9",
+            "score": null,
+            "start": 212,
+            "text": "addiction",
+            "type": "Disease"
+          }
+        },
+        {
+          "category": "spurious entity",
+          "context": {
+            "end": 934,
+            "start": 749,
+            "text": "g only the coding region of OPRM1, carrying adenosine, guanosine, cytidine, and thymidine in position 118, resulted in 1.5-fold lower mRNA levels only for OPRM1-G118, and more than 10-f"
+          },
+          "document_id": "16046395",
+          "gold": null,
+          "predicted": {
+            "canonical_type": "SequenceVariant",
+            "end": 854,
+            "id": "E22",
+            "score": null,
+            "start": 829,
+            "text": "thymidine in position 118",
+            "type": "Variant"
+          }
+        },
+        {
+          "category": "spurious entity",
+          "context": {
+            "end": 976,
+            "start": 810,
+            "text": " study was conducted within a cohort of 1979 patients enrolled in the Childhood Cancer Survivor Study who received treatment with anthracyclines and had available DNA"
+          },
+          "document_id": "18457324",
+          "gold": null,
+          "predicted": {
+            "canonical_type": "DiseaseOrPhenotypicFeature",
+            "end": 896,
+            "id": "E23",
+            "score": null,
+            "start": 890,
+            "text": "Cancer",
+            "type": "Disease"
+          }
+        },
+        {
+          "category": "spurious entity",
+          "context": {
+            "end": 2397,
+            "start": 2241,
+            "text": "survivors by modulating the intracardiac formation of cardiotoxic anthracycline alcohol metabolites. Larger confirmatory case-control studies are warranted."
+          },
+          "document_id": "18457324",
+          "gold": null,
+          "predicted": {
+            "canonical_type": "ChemicalEntity",
+            "end": 2328,
+            "id": "E69",
+            "score": null,
+            "start": 2321,
+            "text": "alcohol",
+            "type": "Chemical"
+          }
+        }
+      ],
+      "wrong type": [
+        {
+          "category": "wrong type",
+          "context": {
+            "end": 220,
+            "start": 22,
+            "text": "K mutation associated with hepatocerebral mitochondrial DNA depletion syndrome. Deoxyguanosine kinase (dGK) deficiency is a frequent cause of mitochondrial DNA depletion associated with a hepatocere"
+          },
+          "document_id": "19394258",
+          "gold": {
+            "canonical_type": "DiseaseOrPhenotypicFeature",
+            "concept_ids": [
+              "C580039"
+            ],
+            "end": 140,
+            "id": "2",
+            "start": 102,
+            "text": "Deoxyguanosine kinase (dGK) deficiency",
+            "type": "Disease"
+          },
+          "predicted": {
+            "canonical_type": "GeneOrGeneProduct",
+            "end": 140,
+            "id": "E3",
+            "score": null,
+            "start": 102,
+            "text": "Deoxyguanosine kinase (dGK) deficiency",
+            "type": "Gene"
+          }
+        },
+        {
+          "category": "wrong type",
+          "context": {
+            "end": 453,
+            "start": 288,
+            "text": "n in the DGUOK gene and the clinical, radiologic, and genetic features of these DGUOK patients. This new DGUOK homozygous mutation (c.444-62C>A) was identified in th"
+          },
+          "document_id": "19394258",
+          "gold": {
+            "canonical_type": "GeneOrGeneProduct",
+            "concept_ids": [
+              "1716"
+            ],
+            "end": 373,
+            "id": "5",
+            "start": 368,
+            "text": "DGUOK",
+            "type": "Gene"
+          },
+          "predicted": {
+            "canonical_type": "DiseaseOrPhenotypicFeature",
+            "end": 373,
+            "id": "E7",
+            "score": null,
+            "start": 368,
+            "text": "DGUOK",
+            "type": "Disease"
+          }
+        },
+        {
+          "category": "wrong type",
+          "context": {
+            "end": 714,
+            "start": 549,
+            "text": "ciencies and mitochondrial DNA depletion in the liver. Brain MRIs are normal in DGUOK patients in the literature. Interestingly, we found subtentorial abnormal myeli"
+          },
+          "document_id": "19394258",
+          "gold": {
+            "canonical_type": "GeneOrGeneProduct",
+            "concept_ids": [
+              "1716"
+            ],
+            "end": 634,
+            "id": "12",
+            "start": 629,
+            "text": "DGUOK",
+            "type": "Gene"
+          },
+          "predicted": {
+            "canonical_type": "DiseaseOrPhenotypicFeature",
+            "end": 634,
+            "id": "E14",
+            "score": null,
+            "start": 629,
+            "text": "DGUOK",
+            "type": "Disease"
+          }
+        },
+        {
+          "category": "wrong type",
+          "context": {
+            "end": 395,
+            "start": 232,
+            "text": "phy (BMD) were found to have deletions in the major deletion-rich region of the DMD locus. This region includes the last five exons detected by cDNA5b-7, all exons"
+          },
+          "document_id": "2491010",
+          "gold": {
+            "canonical_type": "GeneOrGeneProduct",
+            "concept_ids": [
+              "1756"
+            ],
+            "end": 315,
+            "id": "6",
+            "start": 312,
+            "text": "DMD",
+            "type": "Gene"
+          },
+          "predicted": {
+            "canonical_type": "DiseaseOrPhenotypicFeature",
+            "end": 315,
+            "id": "E8",
+            "score": null,
+            "start": 312,
+            "text": "DMD",
+            "type": "Disease"
+          }
+        },
+        {
+          "category": "wrong type",
+          "context": {
+            "end": 948,
+            "start": 768,
+            "text": "glucosaminidase (NAG, a marker of renal tubular injury) excretion but decreased superoxide dismutase (SOD) and catalase (CAT) activities. Erdosteine administration with VCM injecti"
+          },
+          "document_id": "16112787",
+          "gold": {
+            "canonical_type": "ChemicalEntity",
+            "concept_ids": [
+              "D013482"
+            ],
+            "end": 868,
+            "id": "25",
+            "start": 848,
+            "text": "superoxide dismutase",
+            "type": "Chemical"
+          },
+          "predicted": {
+            "canonical_type": "GeneOrGeneProduct",
+            "end": 868,
+            "id": "E24",
+            "score": null,
+            "start": 848,
+            "text": "superoxide dismutase",
+            "type": "Gene"
+          }
+        }
+      ]
+    }
+  },
+  "graph_critical_entity_recall": {
+    "concept_level": {
+      "comparable_class": {
+        "denominator": "relation-participating gold concepts with shared-class mentions",
+        "gold": 751,
+        "recall": 0.9360852197070573,
+        "recognized": 703
+      },
+      "denominator": "all relation-participating gold concepts",
+      "gold": 871,
+      "overall": {
+        "denominator": "all relation-participating gold concepts",
+        "gold": 871,
+        "recall": 0.9334098737083811,
+        "recognized": 813
+      },
+      "recall": 0.9334098737083811,
+      "recognized": 813
+    },
+    "definition": "Gold BioRED entity mentions/concepts participating in at least one annotated relation, recognized by exact span and canonical type; this is an NER diagnostic, not relation evaluation.",
+    "documents_with_relations": 100,
+    "mention_level": {
+      "comparable_class": {
+        "denominator": "relation-participating gold mentions in shared taxonomy",
+        "gold": 2502,
+        "recall": 0.9136690647482014,
+        "recognized": 2286,
+        "unscored_gold_type": 0
+      },
+      "denominator": "all relation-participating gold mentions",
+      "gold": 2722,
+      "overall": {
+        "denominator": "all relation-participating gold mentions",
+        "gold": 2722,
+        "recall": 0.9125642909625276,
+        "recognized": 2484,
+        "unscored_gold_type": 220
+      },
+      "recall": 0.9125642909625276,
+      "recognized": 2484,
+      "unscored_gold_type": 220
+    }
+  },
+  "limitations": [
+    "Primary metrics use exact half-open character spans and canonical type only; no fuzzy matching is applied.",
+    "Unsupported schema labels are reported separately and excluded from primary comparable-class metrics.",
+    "Failure categories are deterministic diagnostics and do not change the primary counts.",
+    "Graph-critical recall uses BioRED relation concept participation only as an NER diagnostic; no relation model is invoked.",
+    "This report is baseline evidence and does not establish production readiness or rank a candidate model."
+  ],
+  "metrics": {
+    "exact_match": {
+      "macro_f1": 0.9240377268607384,
+      "macro_scored_types": [
+        "CellLine",
+        "ChemicalEntity",
+        "DiseaseOrPhenotypicFeature",
+        "GeneOrGeneProduct",
+        "OrganismTaxon"
+      ],
+      "matching": "exact half-open character span and canonical evaluation type",
+      "micro": {
+        "f1": 0.9157064887810794,
+        "fn": 274,
+        "fp": 282,
+        "precision": 0.9145972138098122,
+        "recall": 0.9168184578020644,
+        "tp": 3020
+      },
+      "per_type": {
+        "CellLine": {
+          "f1": 0.9263157894736842,
+          "fn": 6,
+          "fp": 1,
+          "precision": 0.9777777777777777,
+          "predicted": 45,
+          "recall": 0.88,
+          "support": 50,
+          "tp": 44
+        },
+        "ChemicalEntity": {
+          "f1": 0.9188464118041583,
+          "fn": 69,
+          "fp": 52,
+          "precision": 0.9294436906377205,
+          "predicted": 737,
+          "recall": 0.9084880636604774,
+          "support": 754,
+          "tp": 685
+        },
+        "DiseaseOrPhenotypicFeature": {
+          "f1": 0.8749323226854359,
+          "fn": 109,
+          "fp": 122,
+          "precision": 0.8688172043010752,
+          "predicted": 930,
+          "recall": 0.88113413304253,
+          "support": 917,
+          "tp": 808
+        },
+        "GeneOrGeneProduct": {
+          "f1": 0.9250317662007624,
+          "fn": 88,
+          "fp": 89,
+          "precision": 0.9246401354784082,
+          "predicted": 1181,
+          "recall": 0.9254237288135593,
+          "support": 1180,
+          "tp": 1092
+        },
+        "OrganismTaxon": {
+          "f1": 0.9750623441396509,
+          "fn": 2,
+          "fp": 18,
+          "precision": 0.9559902200488998,
+          "predicted": 409,
+          "recall": 0.9949109414758269,
+          "support": 393,
+          "tp": 391
+        }
+      },
+      "supported_canonical_types": [
+        "CellLine",
+        "ChemicalEntity",
+        "DiseaseOrPhenotypicFeature",
+        "GeneOrGeneProduct",
+        "OrganismTaxon"
+      ]
+    },
+    "full_schema": {
+      "macro_f1": 0.9175610145551386,
+      "macro_scored_types": [
+        "CellLine",
+        "ChemicalEntity",
+        "DiseaseOrPhenotypicFeature",
+        "GeneOrGeneProduct",
+        "OrganismTaxon",
+        "SequenceVariant"
+      ],
+      "matching": "exact half-open character span and canonical evaluation type",
+      "micro": {
+        "f1": 0.9136395759717314,
+        "fn": 303,
+        "fp": 308,
+        "precision": 0.9129943502824859,
+        "recall": 0.9142857142857143,
+        "tp": 3232
+      },
+      "per_type": {
+        "CellLine": {
+          "f1": 0.9263157894736842,
+          "fn": 6,
+          "fp": 1,
+          "precision": 0.9777777777777777,
+          "predicted": 45,
+          "recall": 0.88,
+          "support": 50,
+          "tp": 44
+        },
+        "ChemicalEntity": {
+          "f1": 0.9188464118041583,
+          "fn": 69,
+          "fp": 52,
+          "precision": 0.9294436906377205,
+          "predicted": 737,
+          "recall": 0.9084880636604774,
+          "support": 754,
+          "tp": 685
+        },
+        "DiseaseOrPhenotypicFeature": {
+          "f1": 0.8749323226854359,
+          "fn": 109,
+          "fp": 122,
+          "precision": 0.8688172043010752,
+          "predicted": 930,
+          "recall": 0.88113413304253,
+          "support": 917,
+          "tp": 808
+        },
+        "GeneOrGeneProduct": {
+          "f1": 0.9250317662007624,
+          "fn": 88,
+          "fp": 89,
+          "precision": 0.9246401354784082,
+          "predicted": 1181,
+          "recall": 0.9254237288135593,
+          "support": 1180,
+          "tp": 1092
+        },
+        "OrganismTaxon": {
+          "f1": 0.9750623441396509,
+          "fn": 2,
+          "fp": 18,
+          "precision": 0.9559902200488998,
+          "predicted": 409,
+          "recall": 0.9949109414758269,
+          "support": 393,
+          "tp": 391
+        },
+        "SequenceVariant": {
+          "f1": 0.8851774530271399,
+          "fn": 29,
+          "fp": 26,
+          "precision": 0.8907563025210085,
+          "predicted": 238,
+          "recall": 0.8796680497925311,
+          "support": 241,
+          "tp": 212
+        }
+      },
+      "supported_canonical_types": [
+        "CellLine",
+        "ChemicalEntity",
+        "DiseaseOrPhenotypicFeature",
+        "GeneOrGeneProduct",
+        "OrganismTaxon",
+        "SequenceVariant"
+      ],
+      "unsupported_canonical_types": []
+    },
+    "primary": "shared_class",
+    "shared_class": {
+      "macro_f1": 0.9240377268607384,
+      "macro_scored_types": [
+        "CellLine",
+        "ChemicalEntity",
+        "DiseaseOrPhenotypicFeature",
+        "GeneOrGeneProduct",
+        "OrganismTaxon"
+      ],
+      "matching": "exact half-open character span and canonical evaluation type",
+      "micro": {
+        "f1": 0.9157064887810794,
+        "fn": 274,
+        "fp": 282,
+        "precision": 0.9145972138098122,
+        "recall": 0.9168184578020644,
+        "tp": 3020
+      },
+      "per_type": {
+        "CellLine": {
+          "f1": 0.9263157894736842,
+          "fn": 6,
+          "fp": 1,
+          "precision": 0.9777777777777777,
+          "predicted": 45,
+          "recall": 0.88,
+          "support": 50,
+          "tp": 44
+        },
+        "ChemicalEntity": {
+          "f1": 0.9188464118041583,
+          "fn": 69,
+          "fp": 52,
+          "precision": 0.9294436906377205,
+          "predicted": 737,
+          "recall": 0.9084880636604774,
+          "support": 754,
+          "tp": 685
+        },
+        "DiseaseOrPhenotypicFeature": {
+          "f1": 0.8749323226854359,
+          "fn": 109,
+          "fp": 122,
+          "precision": 0.8688172043010752,
+          "predicted": 930,
+          "recall": 0.88113413304253,
+          "support": 917,
+          "tp": 808
+        },
+        "GeneOrGeneProduct": {
+          "f1": 0.9250317662007624,
+          "fn": 88,
+          "fp": 89,
+          "precision": 0.9246401354784082,
+          "predicted": 1181,
+          "recall": 0.9254237288135593,
+          "support": 1180,
+          "tp": 1092
+        },
+        "OrganismTaxon": {
+          "f1": 0.9750623441396509,
+          "fn": 2,
+          "fp": 18,
+          "precision": 0.9559902200488998,
+          "predicted": 409,
+          "recall": 0.9949109414758269,
+          "support": 393,
+          "tp": 391
+        }
+      },
+      "supported_canonical_types": [
+        "CellLine",
+        "ChemicalEntity",
+        "DiseaseOrPhenotypicFeature",
+        "GeneOrGeneProduct",
+        "OrganismTaxon"
+      ]
+    }
+  },
+  "predictor": {
+    "adapter": "AIONERBioMedExtractor",
+    "device": "cpu",
+    "model": "PubmedBERT-CRF-AIONER.h5",
+    "model_artifact_sha256": "78ED76DB6355B50002DBF5B51DC6AD9D2CA7DEE0ABE830F51C4E6329033A23C7",
+    "name": "AIONER PubMedBERT-CRF",
+    "prediction_file": "C:\\Projects\\Biomed\\extraction_system\\.cache\\aioner\\test-output\\BioRED_Test.PubTator",
+    "prediction_file_sha256": "9bef3c70d7db666f0e505488b1fa968dc0603e52df399863375ce8f16041cd68",
+    "runtime": {
+      "python": "3.8.20",
+      "stanza": "1.4.0",
+      "tensorflow": "2.3.0",
+      "transformers": "4.18.0"
+    },
+    "supported_canonical_types": [
+      "CellLine",
+      "ChemicalEntity",
+      "DiseaseOrPhenotypicFeature",
+      "GeneOrGeneProduct",
+      "OrganismTaxon",
+      "SequenceVariant"
+    ],
+    "upstream_repository": "https://github.com/ncbi/AIONER",
+    "upstream_revision": "b8fa941dc8f49e1c99756832da0c61e9c58dcef8"
+  },
+  "schema_coverage": {
+    "gold": {
+      "scored": 3535,
+      "scored_fraction": 1.0,
+      "total": 3535,
+      "unscored": 0,
+      "unscored_by_type": {}
+    },
+    "predicted": {
+      "scored": 3540,
+      "scored_fraction": 1.0,
+      "total": 3540,
+      "unscored": 0,
+      "unscored_by_type": {}
+    }
+  },
+  "taxonomy": {
+    "all_canonical_types": [
+      "CellLine",
+      "ChemicalEntity",
+      "DiseaseOrPhenotypicFeature",
+      "GeneOrGeneProduct",
+      "OrganismTaxon",
+      "SequenceVariant"
+    ],
+    "comparable_canonical_types": [
+      "CellLine",
+      "ChemicalEntity",
+      "DiseaseOrPhenotypicFeature",
+      "GeneOrGeneProduct",
+      "OrganismTaxon"
+    ],
+    "gold_internal_type_to_canonical": {
+      "CellLine": "CellLine",
+      "Chemical": "ChemicalEntity",
+      "Disease": "DiseaseOrPhenotypicFeature",
+      "Gene": "GeneOrGeneProduct",
+      "Species": "OrganismTaxon",
+      "Variant": "SequenceVariant"
+    },
+    "policy": "Shared-class metrics compare only exact span plus canonical type for classes represented by both systems. Full-schema metrics use the explicit supported taxonomy supplied by the predictor. Unsupported gold/prediction labels are reported as schema coverage gaps and are not silently remapped.",
+    "predicted_type_to_canonical": {
+      "CellLine": "CellLine",
+      "Chemical": "ChemicalEntity",
+      "Disease": "DiseaseOrPhenotypicFeature",
+      "Gene": "GeneOrGeneProduct",
+      "Species": "OrganismTaxon",
+      "Variant": "SequenceVariant",
+      "cell line": "CellLine",
+      "chemical": "ChemicalEntity",
+      "disease": "DiseaseOrPhenotypicFeature",
+      "gene": "GeneOrGeneProduct",
+      "protein": "GeneOrGeneProduct",
+      "species": "OrganismTaxon"
+    },
+    "unscored_gold_canonical_types": [
+      "SequenceVariant"
+    ],
+    "unscored_predicted_types": [
+      "DNA",
+      "RNA"
+    ]
+  }
+}

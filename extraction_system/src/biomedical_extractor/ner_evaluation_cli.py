@@ -16,6 +16,7 @@ from .entity_extraction import (
     GLiNERBioMedExtractor,
 )
 from .ner_evaluation import evaluate_biored
+from .ner_evaluation import COMPARABLE_CANONICAL_TYPES
 
 
 def _parser() -> argparse.ArgumentParser:
@@ -27,9 +28,9 @@ def _parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--dataset",
         required=True,
-        help="Path to official Dev.BioC.JSON or its containing directory.",
+        help="Path to official BioRED Dev/Test.BioC.JSON or its containing directory.",
     )
-    parser.add_argument("--split", default="dev", choices=("dev",))
+    parser.add_argument("--split", default="dev", choices=("dev", "test"))
     parser.add_argument(
         "--limit",
         type=int,
@@ -61,12 +62,17 @@ def _parser() -> argparse.ArgumentParser:
     return parser
 
 
-def _default_output(limit: int | None, today: date | None = None) -> Path:
+def _default_output(
+    limit: int | None,
+    today: date | None = None,
+    split: str = "dev",
+) -> Path:
     """Keep the full baseline tracked and subset diagnostics disposable."""
 
     stamp = (today or date.today()).isoformat()
     if limit is None:
-        return Path(f"reports/ner_gliner_biored_baseline_{stamp}.json")
+        suffix = "baseline" if split == "dev" else split
+        return Path(f"reports/ner_gliner_biored_{suffix}_{stamp}.json")
     return Path(f".cache/ner_gliner_biored_subset_{stamp}.json")
 
 
@@ -112,16 +118,17 @@ def render_markdown_report(report: Mapping[str, Any]) -> str:
     predictor = report.get("predictor", {})
     counts = report["counts"]
     exact = report["metrics"]["exact_match"]
-    micro = exact["micro"]
+    shared = report["metrics"].get("shared_class", exact)
+    full_schema = report["metrics"].get("full_schema", exact)
     taxonomy = report["taxonomy"]
     coverage = report["schema_coverage"]
     graph = report["graph_critical_entity_recall"]
     failures = report["failure_analysis"]["counts"]
 
     lines = [
-        "# GLiNER BioRED NER Baseline",
+        f"# {predictor.get('name', 'Biomedical NER')} BioRED NER Evaluation",
         "",
-        "This is baseline evidence from the model-independent NER evaluator. It is",
+        "This is evidence from the model-independent NER evaluator. It is",
         "not a production-readiness claim and does not rank future candidate models.",
         "",
         "## Method",
@@ -129,6 +136,7 @@ def render_markdown_report(report: Mapping[str, Any]) -> str:
         f"- Dataset: `{dataset['path']}` ({dataset['split']})",
         f"- Dataset SHA-256: `{dataset['sha256']}`",
         f"- Documents: {counts['documents_evaluated']} / {dataset['documents_in_source']}",
+        f"- Gold entities by BioRED type: `{counts['gold_entities_by_type']}`",
         f"- Predictor: `{predictor.get('model', 'unspecified')}`",
         f"- Threshold: `{predictor.get('threshold', 'unspecified')}`",
         "- Primary matching: exact half-open character span plus canonical type",
@@ -157,20 +165,21 @@ def render_markdown_report(report: Mapping[str, Any]) -> str:
     lines.extend(
         [
             "",
-            "SequenceVariant is currently unscored because the production schema has",
-            "no explicit variant label. DNA/RNA are also not force-mapped to unrelated",
-            "BioRED classes.",
+            f"- Shared-class taxonomy: `{shared['supported_canonical_types']}`",
+            f"- Full-schema supported taxonomy: `{full_schema['supported_canonical_types']}`",
+            f"- Full-schema unsupported taxonomy: `{full_schema.get('unsupported_canonical_types', [])}`",
+            "DNA/RNA are not force-mapped to unrelated BioRED classes.",
             "",
-            "## Exact-match metrics",
+            "## Shared-class exact-match metrics",
             "",
             "| Scope | TP | FP | FN | Precision | Recall | F1 |",
             "| --- | ---: | ---: | ---: | ---: | ---: | ---: |",
-            f"| Micro | {micro['tp']} | {micro['fp']} | {micro['fn']} | "
-            f"{_format_metric(micro['precision'])} | {_format_metric(micro['recall'])} | "
-            f"{_format_metric(micro['f1'])} |",
+            f"| Micro | {shared['micro']['tp']} | {shared['micro']['fp']} | {shared['micro']['fn']} | "
+            f"{_format_metric(shared['micro']['precision'])} | {_format_metric(shared['micro']['recall'])} | "
+            f"{_format_metric(shared['micro']['f1'])} |",
         ]
     )
-    for canonical_type, metric in exact["per_type"].items():
+    for canonical_type, metric in shared["per_type"].items():
         lines.append(
             f"| `{canonical_type}` | {metric['tp']} | {metric['fp']} | "
             f"{metric['fn']} | {_format_metric(metric['precision'])} | "
@@ -179,7 +188,27 @@ def render_markdown_report(report: Mapping[str, Any]) -> str:
     lines.extend(
         [
             "",
-            f"Macro F1: **{_format_metric(exact['macro_f1'])}**",
+            f"Macro F1: **{_format_metric(shared['macro_f1'])}**",
+            "",
+            "## Full-schema exact-match metrics",
+            "",
+            "| Scope | TP | FP | FN | Precision | Recall | F1 |",
+            "| --- | ---: | ---: | ---: | ---: | ---: | ---: |",
+            f"| Micro | {full_schema['micro']['tp']} | {full_schema['micro']['fp']} | {full_schema['micro']['fn']} | "
+            f"{_format_metric(full_schema['micro']['precision'])} | {_format_metric(full_schema['micro']['recall'])} | "
+            f"{_format_metric(full_schema['micro']['f1'])} |",
+        ]
+    )
+    for canonical_type, metric in full_schema["per_type"].items():
+        lines.append(
+            f"| `{canonical_type}` | {metric['tp']} | {metric['fp']} | "
+            f"{metric['fn']} | {_format_metric(metric['precision'])} | "
+            f"{_format_metric(metric['recall'])} | {_format_metric(metric['f1'])} |"
+        )
+    lines.extend(
+        [
+            "",
+            f"Macro F1: **{_format_metric(full_schema['macro_f1'])}**",
             "",
             "## Schema coverage",
             "",
@@ -205,10 +234,14 @@ def render_markdown_report(report: Mapping[str, Any]) -> str:
             "",
             "## Graph-critical NER diagnostic",
             "",
-            f"- Mention recall: `{_format_metric(graph['mention_level']['recall'])}` "
-            f"({graph['mention_level']['recognized']} / {graph['mention_level']['gold']})",
-            f"- Concept recall: `{_format_metric(graph['concept_level']['recall'])}` "
-            f"({graph['concept_level']['recognized']} / {graph['concept_level']['gold']})",
+            f"- Overall mention recall: `{_format_metric(graph['mention_level']['overall']['recall'])}` "
+            f"({graph['mention_level']['overall']['recognized']} / {graph['mention_level']['overall']['gold']})",
+            f"- Comparable-class mention recall: `{_format_metric(graph['mention_level']['comparable_class']['recall'])}` "
+            f"({graph['mention_level']['comparable_class']['recognized']} / {graph['mention_level']['comparable_class']['gold']})",
+            f"- Overall concept recall: `{_format_metric(graph['concept_level']['overall']['recall'])}` "
+            f"({graph['concept_level']['overall']['recognized']} / {graph['concept_level']['overall']['gold']})",
+            f"- Comparable-class concept recall: `{_format_metric(graph['concept_level']['comparable_class']['recall'])}` "
+            f"({graph['concept_level']['comparable_class']['recognized']} / {graph['concept_level']['comparable_class']['gold']})",
             "- This uses relation participation annotations only; it is not relation evaluation.",
             "",
             "## Limitations",
@@ -260,7 +293,7 @@ def main(argv: Sequence[str] | None = None) -> int:
 
     dataset = load_biored(args.dataset, args.split)
     documents = dataset.documents[: args.limit]
-    output_path = args.output or _default_output(args.limit)
+    output_path = args.output or _default_output(args.limit, split=args.split)
     markdown_path = args.markdown_output or _default_markdown_output(output_path)
 
     print(
@@ -278,10 +311,12 @@ def main(argv: Sequence[str] | None = None) -> int:
         dataset,
         extractor,
         documents=documents,
+        supported_types=COMPARABLE_CANONICAL_TYPES,
         failure_example_limit=args.failure_example_limit,
     )
     report["predictor"] = {
         "adapter": "GLiNERBioMedExtractor",
+        "name": "GLiNER BioRED",
         "model": DEFAULT_ENTITY_MODEL,
         "threshold": args.entity_threshold,
         "labels": list(DEFAULT_CORE_ENTITY_LABELS),

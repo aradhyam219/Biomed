@@ -43,7 +43,9 @@ boundary.
 - source-span, schema, stable-ID, and confidence validation;
 - configurable core labels and entity confidence thresholds;
 - NER evaluation and evidence-based model selection;
-- adapter/output normalization into the stable local entity representation.
+- adapter/output normalization into the stable local entity representation;
+- a frozen, evaluation-only comparison of the current GLiNER baseline with the
+  official AIONER PubMedBERT-CRF artifact on the official BioRED Test split.
 
 ### Deferred or out of scope
 
@@ -55,7 +57,8 @@ does not include:
 - relation extraction changes, relation evaluation, or live LLM calls;
 - biomedical entity normalization/linking, meaning resolution of a mention to a
   canonical biomedical identity or identifier;
-- a new NER model or dependency;
+- replacing the production NER model or adding its legacy runtime to the
+  production dependency graph;
 - fine-tuning, a final ontology redesign, graph infrastructure, or unrelated
   platform capabilities.
 
@@ -159,7 +162,11 @@ variant label; DNA and RNA are not force-mapped to an unrelated gold class.
 The evaluator also preserves bounded machine-readable failure examples and may
 report graph-critical entity recall from BioRED relation participation without
 invoking or evaluating a relation model. Its primary metrics do not use fuzzy
-matching.
+matching. The current challenger comparison uses a shared five-class view and a
+full-schema view so AIONER's explicit SequenceVariant support is reported rather
+than silently remapped or discarded. The official AIONER runtime and model
+artifact are isolated evaluation inputs; they do not change the production
+GLiNER default.
 
 Relation-specific and end-to-end evaluation infrastructure is preserved as
 deferred work; it is not an active acceptance target for the current NER phase.
@@ -172,8 +179,9 @@ These candidates are not a model-selection decision. The quality gate must be
 explicitly passed using the agreed NER evaluation evidence before biomedical
 entity normalization/linking or relation work becomes active.
 
-No replacement model, dependency, training run, or linking implementation is
-introduced by this specification.
+No production replacement model, production dependency, training run, or linking
+implementation is introduced by this specification. The AIONER runtime is kept
+outside the production dependency graph for the controlled Test comparison.
 
 ## Product invariants
 
@@ -187,7 +195,8 @@ introduced by this specification.
 - Adapter/output normalization is distinct from biomedical identity normalization.
 - Biomedical entity normalization/linking is not implemented in this task.
 - Output is machine-consumable and does not require model-specific objects.
-- No new model, dependency, ontology, graph, or fine-tuning path is added for this
+- No challenger model is installed as the production default, and no new
+  production dependency, ontology, graph, or fine-tuning path is added for this
   refocus.
 
 ## Acceptance examples

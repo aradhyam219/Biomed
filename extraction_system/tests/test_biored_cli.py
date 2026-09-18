@@ -30,6 +30,10 @@ class BioREDCLITests(unittest.TestCase):
         with self.assertRaises(SystemExit):
             _parser().parse_args(["--dataset", "dev.json", "--model", "other"])
 
+    def test_relation_evaluation_cli_remains_dev_only(self):
+        with self.assertRaises(SystemExit):
+            _parser().parse_args(["--dataset", "test.json", "--split", "test"])
+
     def test_complete_fit_exclusion_and_coverage_are_prediction_independent(self):
         kept = BioREDDocument(
             id="kept",

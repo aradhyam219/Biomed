@@ -11,6 +11,8 @@ from biomedical_extractor.biored import (
 )
 from biomedical_extractor.entity_extraction import Entity
 from biomedical_extractor.ner_evaluation import (
+    ALL_CANONICAL_TYPES,
+    COMPARABLE_CANONICAL_TYPES,
     FAILURE_MISSED_ENTITY,
     FAILURE_OVERLAPPING_PREDICTION,
     FAILURE_SPAN_MISMATCH,
@@ -204,6 +206,60 @@ class NEREvaluationTests(unittest.TestCase):
         self.assertEqual(graph["concept_level"]["recognized"], 1)
         self.assertEqual(graph["concept_level"]["gold"], 2)
         self.assertEqual(graph["concept_level"]["recall"], 0.5)
+
+    def test_shared_and_full_schema_views_separate_variant_support(self):
+        document = BioREDDocument(
+            id="D1",
+            text="BRCA1 rs123 cancer",
+            mentions=(
+                _gold("M1", "BRCA1", "Gene", 0, "G1"),
+                _gold("M2", "rs123", "Variant", 6, "V1"),
+                _gold("M3", "cancer", "Disease", 12, "D1"),
+            ),
+            relations=(
+                TypedRelation("D1", "G1", "V1", "Association"),
+                TypedRelation("D1", "G1", "D1", "Association"),
+            ),
+        )
+        dataset = BioREDDataset(
+            path=Path("Test.BioC.JSON"),
+            split="test",
+            sha256="sha",
+            source="BioC",
+            date="date",
+            key="key",
+            documents=(document,),
+        )
+
+        class AIONERExtractor:
+            def extract_entities(self, text: str) -> tuple[Entity, ...]:
+                return (
+                    _pred("E1", "BRCA1", "Gene", 0),
+                    _pred("E2", "rs123", "Variant", 6),
+                    _pred("E3", "cancer", "Disease", 12),
+                )
+
+        report = evaluate_biored(
+            dataset,
+            AIONERExtractor(),
+            supported_types=ALL_CANONICAL_TYPES,
+        )
+        shared = report["metrics"]["shared_class"]
+        full = report["metrics"]["full_schema"]
+        graph = report["graph_critical_entity_recall"]
+
+        self.assertEqual(shared["supported_canonical_types"], list(COMPARABLE_CANONICAL_TYPES))
+        self.assertEqual(shared["micro"]["tp"], 2)
+        self.assertEqual(full["micro"]["tp"], 3)
+        self.assertEqual(full["per_type"]["SequenceVariant"]["f1"], 1.0)
+        self.assertEqual(
+            report["counts"]["gold_entities_by_type"],
+            {"Disease": 1, "Gene": 1, "Variant": 1},
+        )
+        self.assertEqual(graph["mention_level"]["overall"]["gold"], 3)
+        self.assertEqual(graph["mention_level"]["comparable_class"]["gold"], 2)
+        self.assertEqual(graph["mention_level"]["overall"]["recall"], 1.0)
+        self.assertEqual(graph["concept_level"]["comparable_class"]["gold"], 2)
 
 
 if __name__ == "__main__":

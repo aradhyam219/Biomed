@@ -46,6 +46,13 @@ The current production path stops after stable entity output. Biomedical entity
 normalization/linking is not implemented. It becomes active only after the core
 NER model and schema have been selected and validated.
 
+The repository also contains an evaluation-only `AIONERBioMedExtractor` and a
+Test-only report command. It adapts the official AIONER PubMedBERT-CRF output to
+the same `EntityExtractor` boundary, preserving exact source offsets and optional
+confidence values. Its legacy TensorFlow runtime, model artifact, and prediction
+cache remain isolated under `.cache/`; AIONER is not the production default and
+does not add a production dependency or replace GLiNER.
+
 The production implementation lives in `src/biomedical_extractor/`. The
 `entity_extraction` module owns the model-independent `EntityExtractor` contract,
 the stable `Entity` value, and the current GLiNER-BioMed adapter. Raw GLiNER
@@ -130,8 +137,11 @@ and computes exact-span/type metrics plus bounded failure diagnostics. The
 `biomedical-ner-evaluate` command runs the current default GLiNER adapter and
 writes a machine-readable report with a Markdown companion under `reports/`.
 The evaluator can accept another adapter at the same `EntityExtractor` boundary;
-model internals do not cross into scoring. Its optional graph-critical recall is
-derived from BioRED relation participation and is strictly an NER diagnostic.
+model internals do not cross into scoring. The frozen GLiNER Test report and the
+official AIONER Test report expose shared five-class and full-schema views, while
+`biomedical-ner-compare` produces the deterministic head-to-head comparison.
+Optional graph-critical recall is derived from BioRED relation participation and
+is strictly an NER diagnostic; no relation model is invoked.
 
 ## Deferred downstream paths
 
@@ -152,7 +162,7 @@ treated as a separate decision rather than added to the default core-NER pass.
 | Adapter/output normalization | Convert one model's predictions into the local `Entity` value | Span integrity, schema validation, and stable output fields | Canonical biomedical identity linking or downstream reasoning |
 | Biomedical entity normalization/linking | Future mention-to-identity resolution | Not implemented in the current path | Model selection before the NER quality gate |
 | Relation extraction (deferred) | Existing relation implementations over supplied normalized entities | Preserved downstream relation contracts | Active quality priority or changes in this refocus |
-| Evaluation | Measure core NER against annotated data | Dataset adaptation, metrics, and model comparison | Production extraction semantics or model training |
+| Evaluation | Measure core NER against annotated data | Dataset adaptation, metrics, challenger adapters, and model comparison | Production extraction semantics or model training |
 
 ## Hard architectural invariants
 
@@ -165,6 +175,8 @@ treated as a separate decision rather than added to the default core-NER pass.
   process-specific conflict rule.
 - Biomedical entity normalization/linking is not implemented in this task.
 - Existing relation paths remain preserved but are outside the active workstream.
+- The official AIONER runtime and artifact remain evaluation-only and isolated from
+  the production dependency graph.
 - The architecture must not grow speculative ontology, graph, relation, or model
   infrastructure before the NER quality gate.
 

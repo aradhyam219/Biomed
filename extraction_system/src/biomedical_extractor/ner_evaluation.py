@@ -12,6 +12,7 @@ from collections import Counter, defaultdict
 from dataclasses import dataclass
 from typing import Any, Mapping, Sequence
 
+from .aioner import AIONER_LABEL_TO_CANONICAL
 from .biored import BioREDDataset, BioREDDocument, BioREDMention
 from .entity_extraction import Entity, EntityExtractor
 
@@ -38,11 +39,22 @@ PREDICTED_TYPE_TO_CANONICAL: Mapping[str, str] = {
     "chemical": "ChemicalEntity",
     "species": "OrganismTaxon",
     "cell line": "CellLine",
+    # Official AIONER labels are kept explicit at the evaluation boundary.  The
+    # adapter preserves these source labels; this table is the only taxonomy
+    # normalization applied before exact-match scoring.
+    **AIONER_LABEL_TO_CANONICAL,
 }
 
-COMPARABLE_CANONICAL_TYPES = tuple(
-    sorted(set(PREDICTED_TYPE_TO_CANONICAL.values()))
+# The shared-class view is deliberately fixed to the five classes supported by
+# both the production GLiNER schema and the official AIONER challenger.
+COMPARABLE_CANONICAL_TYPES = (
+    "CellLine",
+    "ChemicalEntity",
+    "DiseaseOrPhenotypicFeature",
+    "GeneOrGeneProduct",
+    "OrganismTaxon",
 )
+ALL_CANONICAL_TYPES = tuple(sorted(set(BIORED_INTERNAL_TYPE_TO_CANONICAL.values())))
 
 FAILURE_MISSED_ENTITY = "missed entity"
 FAILURE_SPURIOUS_ENTITY = "spurious entity"
@@ -128,6 +140,22 @@ def canonical_predicted_type(entity_type: str) -> str | None:
     """Map one normalized predictor label to the explicit evaluation taxonomy."""
 
     return PREDICTED_TYPE_TO_CANONICAL.get(entity_type)
+
+
+def _normalize_scored_types(
+    scored_types: Sequence[str] | None,
+) -> tuple[str, ...]:
+    """Validate and deterministically order one model's supported taxonomy."""
+
+    selected = tuple(
+        COMPARABLE_CANONICAL_TYPES if scored_types is None else scored_types
+    )
+    if not selected or len(set(selected)) != len(selected):
+        raise ValueError("scored types must contain unique non-empty classes")
+    unknown = set(selected) - set(ALL_CANONICAL_TYPES)
+    if unknown:
+        raise ValueError(f"Unsupported canonical scored type(s): {sorted(unknown)}")
+    return tuple(sorted(selected))
 
 
 def _metric_counts(
@@ -282,6 +310,7 @@ def score_entity_mentions(
     gold_mentions: Sequence[BioREDMention],
     predicted_entities: Sequence[Entity],
     *,
+    scored_types: Sequence[str] | None = None,
     context_window: int = 80,
     failure_example_limit: int = 5,
 ) -> EntityScore:
@@ -296,12 +325,13 @@ def score_entity_mentions(
 
     if context_window < 0:
         raise ValueError("context window must not be negative")
+    scored_type_set = set(_normalize_scored_types(scored_types))
     collector = _FailureCollector(failure_example_limit)
     gold_scored: list[tuple[BioREDMention, str]] = []
     gold_unscored_counts: Counter[str] = Counter()
     for mention in gold_mentions:
         canonical_type = canonical_gold_type(mention.type)
-        if canonical_type is None or canonical_type not in COMPARABLE_CANONICAL_TYPES:
+        if canonical_type is None or canonical_type not in scored_type_set:
             gold_unscored_counts[mention.type] += 1
             collector.add(
                 _failure_record(
@@ -321,7 +351,7 @@ def score_entity_mentions(
     for entity in predicted_entities:
         _validate_prediction(document_id, text, entity)
         canonical_type = canonical_predicted_type(entity.type)
-        if canonical_type is None or canonical_type not in COMPARABLE_CANONICAL_TYPES:
+        if canonical_type is None or canonical_type not in scored_type_set:
             predicted_unscored_counts[entity.type] += 1
             collector.add(
                 _failure_record(
@@ -473,13 +503,15 @@ def score_entity_mentions(
     )
     per_type = {
         canonical_type: _metric_counts(
-            item["tp"],
-            item["predicted"] - item["tp"],
-            item["gold"] - item["tp"],
-            gold=item["gold"],
-            predicted=item["predicted"],
+            per_type_counts[canonical_type]["tp"],
+            per_type_counts[canonical_type]["predicted"]
+            - per_type_counts[canonical_type]["tp"],
+            per_type_counts[canonical_type]["gold"]
+            - per_type_counts[canonical_type]["tp"],
+            gold=per_type_counts[canonical_type]["gold"],
+            predicted=per_type_counts[canonical_type]["predicted"],
         )
-        for canonical_type, item in sorted(per_type_counts.items())
+        for canonical_type in _normalize_scored_types(scored_types)
     }
     macro_values = [
         metric["f1"] for metric in per_type.values() if metric["f1"] is not None
@@ -533,13 +565,18 @@ def _graph_critical_recall(
     documents: Sequence[BioREDDocument],
     matched_gold_ids_by_document: Mapping[str, frozenset[str]],
 ) -> dict[str, Any]:
-    """Measure recognition of mentions/concepts participating in gold relations."""
+    """Measure graph-critical recognition with overall and shared-class views.
 
-    total_mentions = 0
-    recognized_mentions = 0
-    unsupported_mentions = 0
-    total_concepts = 0
-    recognized_concepts = 0
+    The overall denominator intentionally includes relation-participating variant
+    mentions even when a model does not support that class.  The comparable view
+    removes those unsupported classes so it measures recognition quality on the
+    shared taxonomy rather than schema coverage.
+    """
+
+    overall_mentions = {"gold": 0, "recognized": 0, "unsupported": 0}
+    comparable_mentions = {"gold": 0, "recognized": 0, "unsupported": 0}
+    overall_concepts = {"gold": 0, "recognized": 0}
+    comparable_concepts = {"gold": 0, "recognized": 0}
     documents_with_relations = 0
     for document in documents:
         participating_concepts = {
@@ -555,14 +592,24 @@ def _graph_critical_recall(
             for mention in document.mentions
             if participating_concepts.intersection(mention.concept_ids)
         ]
-        total_mentions += len(critical_mentions)
-        recognized_mentions += sum(
-            mention.id in matched_gold_ids_by_document.get(document.id, frozenset())
-            for mention in critical_mentions
+        matched_ids = matched_gold_ids_by_document.get(document.id, frozenset())
+        overall_mentions["gold"] += len(critical_mentions)
+        overall_mentions["recognized"] += sum(
+            mention.id in matched_ids for mention in critical_mentions
         )
-        unsupported_mentions += sum(
+        overall_mentions["unsupported"] += sum(
             canonical_gold_type(mention.type) not in COMPARABLE_CANONICAL_TYPES
             for mention in critical_mentions
+        )
+
+        comparable_critical_mentions = [
+            mention
+            for mention in critical_mentions
+            if canonical_gold_type(mention.type) in COMPARABLE_CANONICAL_TYPES
+        ]
+        comparable_mentions["gold"] += len(comparable_critical_mentions)
+        comparable_mentions["recognized"] += sum(
+            mention.id in matched_ids for mention in comparable_critical_mentions
         )
 
         critical_concepts = {
@@ -574,12 +621,59 @@ def _graph_critical_recall(
         recognized_concept_ids = {
             concept_id
             for mention in critical_mentions
-            if mention.id in matched_gold_ids_by_document.get(document.id, frozenset())
+            if mention.id in matched_ids
             for concept_id in mention.concept_ids
             if concept_id in participating_concepts
         }
-        total_concepts += len(critical_concepts)
-        recognized_concepts += len(recognized_concept_ids)
+        overall_concepts["gold"] += len(critical_concepts)
+        overall_concepts["recognized"] += len(recognized_concept_ids)
+
+        comparable_concepts_for_document = {
+            concept_id
+            for mention in comparable_critical_mentions
+            for concept_id in mention.concept_ids
+            if concept_id in participating_concepts
+        }
+        recognized_comparable_concepts = {
+            concept_id
+            for mention in comparable_critical_mentions
+            if mention.id in matched_ids
+            for concept_id in mention.concept_ids
+            if concept_id in participating_concepts
+        }
+        comparable_concepts["gold"] += len(comparable_concepts_for_document)
+        comparable_concepts["recognized"] += len(recognized_comparable_concepts)
+
+    overall_mention_view = {
+        "recognized": overall_mentions["recognized"],
+        "gold": overall_mentions["gold"],
+        "recall": _ratio(overall_mentions["recognized"], overall_mentions["gold"]),
+        "unscored_gold_type": overall_mentions["unsupported"],
+        "denominator": "all relation-participating gold mentions",
+    }
+    comparable_mention_view = {
+        "recognized": comparable_mentions["recognized"],
+        "gold": comparable_mentions["gold"],
+        "recall": _ratio(
+            comparable_mentions["recognized"], comparable_mentions["gold"]
+        ),
+        "unscored_gold_type": comparable_mentions["unsupported"],
+        "denominator": "relation-participating gold mentions in shared taxonomy",
+    }
+    overall_concept_view = {
+        "recognized": overall_concepts["recognized"],
+        "gold": overall_concepts["gold"],
+        "recall": _ratio(overall_concepts["recognized"], overall_concepts["gold"]),
+        "denominator": "all relation-participating gold concepts",
+    }
+    comparable_concept_view = {
+        "recognized": comparable_concepts["recognized"],
+        "gold": comparable_concepts["gold"],
+        "recall": _ratio(
+            comparable_concepts["recognized"], comparable_concepts["gold"]
+        ),
+        "denominator": "relation-participating gold concepts with shared-class mentions",
+    }
 
     return {
         "definition": (
@@ -589,15 +683,16 @@ def _graph_critical_recall(
         ),
         "documents_with_relations": documents_with_relations,
         "mention_level": {
-            "recognized": recognized_mentions,
-            "gold": total_mentions,
-            "recall": _ratio(recognized_mentions, total_mentions),
-            "unscored_gold_type": unsupported_mentions,
+            # These aliases preserve the original report contract as overall
+            # recall while the nested views make the denominator explicit.
+            **overall_mention_view,
+            "overall": overall_mention_view,
+            "comparable_class": comparable_mention_view,
         },
         "concept_level": {
-            "recognized": recognized_concepts,
-            "gold": total_concepts,
-            "recall": _ratio(recognized_concepts, total_concepts),
+            **overall_concept_view,
+            "overall": overall_concept_view,
+            "comparable_class": comparable_concept_view,
         },
     }
 
@@ -613,6 +708,7 @@ def _taxonomy_report() -> dict[str, Any]:
             sorted(PREDICTED_TYPE_TO_CANONICAL.items())
         ),
         "comparable_canonical_types": list(COMPARABLE_CANONICAL_TYPES),
+        "all_canonical_types": list(ALL_CANONICAL_TYPES),
         "unscored_gold_canonical_types": [
             canonical_type
             for canonical_type in sorted(set(BIORED_INTERNAL_TYPE_TO_CANONICAL.values()))
@@ -623,76 +719,41 @@ def _taxonomy_report() -> dict[str, Any]:
             "RNA",
         ],
         "policy": (
-            "Primary metrics compare only exact span plus canonical type for "
-            "classes represented by both the BioRED gold mapping and the current "
-            "production label mapping. Unsupported gold/prediction labels are "
-            "reported as schema coverage gaps and are not silently remapped."
+            "Shared-class metrics compare only exact span plus canonical type for "
+            "classes represented by both systems. Full-schema metrics use the "
+            "explicit supported taxonomy supplied by the predictor. Unsupported "
+            "gold/prediction labels are reported as schema coverage gaps and are "
+            "not silently remapped."
         ),
     }
 
 
-def evaluate_biored(
-    dataset: BioREDDataset,
-    extractor: EntityExtractor,
-    *,
-    documents: Sequence[BioREDDocument] | None = None,
-    context_window: int = 80,
-    failure_example_limit: int = 5,
+def _aggregate_entity_scores(
+    scores: Sequence[EntityScore],
+    scored_types: Sequence[str],
 ) -> dict[str, Any]:
-    """Evaluate any normalized entity extractor on BioRED documents.
+    """Aggregate per-document exact-match scores for one taxonomy view."""
 
-    The returned mapping is deliberately model-independent.  A caller may add
-    predictor metadata such as model identifier and threshold before serializing
-    it, as the CLI does for the current GLiNER baseline.
-    """
-
-    selected_documents = tuple(dataset.documents if documents is None else documents)
-    if failure_example_limit < 0:
-        raise ValueError("failure example limit must not be negative")
-
-    aggregate_per_type: dict[str, dict[str, int]] = defaultdict(
-        lambda: {"tp": 0, "fp": 0, "fn": 0, "gold": 0, "predicted": 0}
-    )
-    matched_gold_ids_by_document: dict[str, frozenset[str]] = {}
-    failure_counts: Counter[str] = Counter()
-    failure_examples: dict[str, list[FailureRecord]] = defaultdict(list)
-    gold_total = 0
-    predicted_total = 0
-    gold_scored_total = 0
-    predicted_scored_total = 0
-    gold_unscored_counts: Counter[str] = Counter()
-    predicted_unscored_counts: Counter[str] = Counter()
-
-    for document in selected_documents:
-        predictions = tuple(extractor.extract_entities(document.text))
-        score = score_entity_mentions(
-            document.id,
-            document.text,
-            document.mentions,
-            predictions,
-            context_window=context_window,
-            failure_example_limit=failure_example_limit,
-        )
-        gold_total += len(document.mentions)
-        predicted_total += len(predictions)
-        gold_scored_total += score.gold_scored_count
-        predicted_scored_total += score.predicted_scored_count
-        gold_unscored_counts.update(score.gold_unscored_counts)
-        predicted_unscored_counts.update(score.predicted_unscored_counts)
-        matched_gold_ids_by_document[document.id] = score.matched_gold_ids
-        for canonical_type, metric in score.metrics["per_type"].items():
-            counts = aggregate_per_type[canonical_type]
+    selected_types = _normalize_scored_types(scored_types)
+    aggregate: dict[str, dict[str, int]] = {
+        canonical_type: {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "gold": 0,
+            "predicted": 0,
+        }
+        for canonical_type in selected_types
+    }
+    for score in scores:
+        for canonical_type in selected_types:
+            metric = score.metrics["per_type"][canonical_type]
+            counts = aggregate[canonical_type]
             counts["tp"] += metric["tp"]
             counts["fp"] += metric["fp"]
             counts["fn"] += metric["fn"]
             counts["gold"] += metric["support"]
             counts["predicted"] += metric["predicted"]
-        for category, count in score.failure_counts.items():
-            failure_counts[category] += count
-        for category, records in score.failure_examples.items():
-            room = failure_example_limit - len(failure_examples[category])
-            if room > 0:
-                failure_examples[category].extend(records[:room])
 
     per_type = {
         canonical_type: _metric_counts(
@@ -702,15 +763,15 @@ def evaluate_biored(
             gold=counts["gold"],
             predicted=counts["predicted"],
         )
-        for canonical_type, counts in sorted(aggregate_per_type.items())
+        for canonical_type, counts in aggregate.items()
     }
-    true_positive = sum(counts["tp"] for counts in aggregate_per_type.values())
-    false_positive = sum(counts["fp"] for counts in aggregate_per_type.values())
-    false_negative = sum(counts["fn"] for counts in aggregate_per_type.values())
+    true_positive = sum(counts["tp"] for counts in aggregate.values())
+    false_positive = sum(counts["fp"] for counts in aggregate.values())
+    false_negative = sum(counts["fn"] for counts in aggregate.values())
     macro_values = [
         metric["f1"] for metric in per_type.values() if metric["f1"] is not None
     ]
-    exact_match = {
+    return {
         "matching": "exact half-open character span and canonical evaluation type",
         "micro": _metric_counts(true_positive, false_positive, false_negative),
         "per_type": per_type,
@@ -722,6 +783,103 @@ def evaluate_biored(
             for canonical_type, metric in per_type.items()
             if metric["f1"] is not None
         ],
+    }
+
+
+def evaluate_biored(
+    dataset: BioREDDataset,
+    extractor: EntityExtractor,
+    *,
+    documents: Sequence[BioREDDocument] | None = None,
+    supported_types: Sequence[str] | None = None,
+    context_window: int = 80,
+    failure_example_limit: int = 5,
+) -> dict[str, Any]:
+    """Evaluate any normalized entity extractor on BioRED documents.
+
+    The returned mapping is deliberately model-independent.  A caller may add
+    predictor metadata such as model identifier and threshold before serializing
+    it, as the CLIs do for the current GLiNER baseline and AIONER challenger.
+
+    ``supported_types`` describes the predictor's full canonical capability.  The
+    evaluator always computes a separate five-class shared view and a full-schema
+    view over those supported classes.
+    """
+
+    selected_documents = tuple(dataset.documents if documents is None else documents)
+    if failure_example_limit < 0:
+        raise ValueError("failure example limit must not be negative")
+    full_supported_types = _normalize_scored_types(supported_types)
+
+    shared_scores: list[EntityScore] = []
+    full_scores: list[EntityScore] = []
+    matched_gold_ids_by_document: dict[str, frozenset[str]] = {}
+    failure_counts: Counter[str] = Counter()
+    failure_examples: dict[str, list[FailureRecord]] = defaultdict(list)
+    gold_total = 0
+    predicted_total = 0
+    gold_scored_total = 0
+    predicted_scored_total = 0
+    gold_entity_type_counts: Counter[str] = Counter(
+        mention.type
+        for document in selected_documents
+        for mention in document.mentions
+    )
+    gold_unscored_counts: Counter[str] = Counter()
+    predicted_unscored_counts: Counter[str] = Counter()
+
+    for document in selected_documents:
+        predictions = tuple(extractor.extract_entities(document.text))
+        shared_score = score_entity_mentions(
+            document.id,
+            document.text,
+            document.mentions,
+            predictions,
+            scored_types=COMPARABLE_CANONICAL_TYPES,
+            context_window=context_window,
+            failure_example_limit=0,
+        )
+        full_score = score_entity_mentions(
+            document.id,
+            document.text,
+            document.mentions,
+            predictions,
+            scored_types=full_supported_types,
+            context_window=context_window,
+            failure_example_limit=failure_example_limit,
+        )
+        shared_scores.append(shared_score)
+        full_scores.append(full_score)
+        gold_total += len(document.mentions)
+        predicted_total += len(predictions)
+        gold_scored_total += full_score.gold_scored_count
+        predicted_scored_total += full_score.predicted_scored_count
+        gold_unscored_counts.update(full_score.gold_unscored_counts)
+        predicted_unscored_counts.update(full_score.predicted_unscored_counts)
+        matched_gold_ids_by_document[document.id] = full_score.matched_gold_ids
+        for category, count in full_score.failure_counts.items():
+            failure_counts[category] += count
+        for category, records in full_score.failure_examples.items():
+            room = failure_example_limit - len(failure_examples[category])
+            if room > 0:
+                failure_examples[category].extend(records[:room])
+
+    shared_exact_match = _aggregate_entity_scores(
+        shared_scores, COMPARABLE_CANONICAL_TYPES
+    )
+    full_exact_match = _aggregate_entity_scores(full_scores, full_supported_types)
+    shared_view = {
+        "supported_canonical_types": list(COMPARABLE_CANONICAL_TYPES),
+        **shared_exact_match,
+    }
+    full_view = {
+        "supported_canonical_types": list(full_supported_types),
+        "unsupported_canonical_types": [
+            canonical_type
+            for canonical_type in ALL_CANONICAL_TYPES
+            if canonical_type not in full_supported_types
+        ],
+        **full_exact_match,
     }
     failure_report = {
         "counts": {
@@ -752,6 +910,7 @@ def evaluate_biored(
         "counts": {
             "documents_evaluated": len(selected_documents),
             "gold_entities": gold_total,
+            "gold_entities_by_type": dict(sorted(gold_entity_type_counts.items())),
             "gold_entities_scored": gold_scored_total,
             "predicted_entities": predicted_total,
             "predicted_entities_scored": predicted_scored_total,
@@ -773,8 +932,12 @@ def evaluate_biored(
             },
         },
         "metrics": {
-            "primary": "exact_match",
-            "exact_match": exact_match,
+            "primary": "shared_class",
+            # ``exact_match`` remains an alias for callers of the original
+            # five-class report contract.
+            "exact_match": shared_view,
+            "shared_class": shared_view,
+            "full_schema": full_view,
         },
         "graph_critical_entity_recall": _graph_critical_recall(
             selected_documents, matched_gold_ids_by_document
@@ -791,6 +954,7 @@ def evaluate_biored(
 
 
 __all__ = [
+    "ALL_CANONICAL_TYPES",
     "BIORED_INTERNAL_TYPE_TO_CANONICAL",
     "COMPARABLE_CANONICAL_TYPES",
     "FAILURE_CATEGORIES",

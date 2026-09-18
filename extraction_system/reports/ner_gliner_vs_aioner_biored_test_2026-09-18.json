@@ -1,0 +1,1064 @@
+{
+  "dataset": {
+    "date": "2021-11-30",
+    "documents_evaluated": 100,
+    "documents_in_source": 100,
+    "gold_entities": 3535,
+    "gold_entities_by_type": {
+      "CellLine": 50,
+      "Chemical": 754,
+      "Disease": 917,
+      "Gene": 1180,
+      "Species": 393,
+      "Variant": 241
+    },
+    "key": "BioC.key",
+    "path": "C:\\Projects\\Biomed\\extraction_system\\.cache\\BIORED\\BioRED\\Test.BioC.JSON",
+    "sha256": "35ec8aad0c62032689b4a957220c7532eb067dc7e159d70cc42e6d40e6c447c6",
+    "source": "PubTator",
+    "split": "test"
+  },
+  "evaluation_name": "BioRED Test GLiNER versus AIONER NER comparison",
+  "failure_summary": {
+    "categories": {
+      "missed entity": {
+        "AIONER": 109,
+        "AIONER_only_count_difference": 0,
+        "GLiNER": 856,
+        "GLiNER_only_count_difference": 747,
+        "both_count_upper_bound": 109,
+        "shared_representative_examples": []
+      },
+      "overlapping prediction": {
+        "AIONER": 9,
+        "AIONER_only_count_difference": 0,
+        "GLiNER": 65,
+        "GLiNER_only_count_difference": 56,
+        "both_count_upper_bound": 9,
+        "shared_representative_examples": []
+      },
+      "schema-unscored / unsupported gold category": {
+        "AIONER": 0,
+        "AIONER_only_count_difference": 0,
+        "GLiNER": 241,
+        "GLiNER_only_count_difference": 241,
+        "both_count_upper_bound": 0,
+        "shared_representative_examples": []
+      },
+      "schema-unscored / unsupported predicted category": {
+        "AIONER": 0,
+        "AIONER_only_count_difference": 0,
+        "GLiNER": 144,
+        "GLiNER_only_count_difference": 144,
+        "both_count_upper_bound": 0,
+        "shared_representative_examples": []
+      },
+      "span mismatch": {
+        "AIONER": 131,
+        "AIONER_only_count_difference": 0,
+        "GLiNER": 396,
+        "GLiNER_only_count_difference": 265,
+        "both_count_upper_bound": 131,
+        "shared_representative_examples": []
+      },
+      "spurious entity": {
+        "AIONER": 114,
+        "AIONER_only_count_difference": 0,
+        "GLiNER": 261,
+        "GLiNER_only_count_difference": 147,
+        "both_count_upper_bound": 114,
+        "shared_representative_examples": []
+      },
+      "wrong type": {
+        "AIONER": 54,
+        "AIONER_only_count_difference": 0,
+        "GLiNER": 140,
+        "GLiNER_only_count_difference": 86,
+        "both_count_upper_bound": 54,
+        "shared_representative_examples": []
+      }
+    },
+    "note": "Both aggregate fields are upper bounds and only fields are count differences; representative overlap uses bounded retained examples."
+  },
+  "full_schema_coverage": {
+    "models": {
+      "AIONER": {
+        "macro_f1": 0.9175610145551386,
+        "macro_scored_types": [
+          "CellLine",
+          "ChemicalEntity",
+          "DiseaseOrPhenotypicFeature",
+          "GeneOrGeneProduct",
+          "OrganismTaxon",
+          "SequenceVariant"
+        ],
+        "matching": "exact half-open character span and canonical evaluation type",
+        "micro": {
+          "f1": 0.9136395759717314,
+          "fn": 303,
+          "fp": 308,
+          "precision": 0.9129943502824859,
+          "recall": 0.9142857142857143,
+          "tp": 3232
+        },
+        "per_type": {
+          "CellLine": {
+            "f1": 0.9263157894736842,
+            "fn": 6,
+            "fp": 1,
+            "precision": 0.9777777777777777,
+            "predicted": 45,
+            "recall": 0.88,
+            "support": 50,
+            "tp": 44
+          },
+          "ChemicalEntity": {
+            "f1": 0.9188464118041583,
+            "fn": 69,
+            "fp": 52,
+            "precision": 0.9294436906377205,
+            "predicted": 737,
+            "recall": 0.9084880636604774,
+            "support": 754,
+            "tp": 685
+          },
+          "DiseaseOrPhenotypicFeature": {
+            "f1": 0.8749323226854359,
+            "fn": 109,
+            "fp": 122,
+            "precision": 0.8688172043010752,
+            "predicted": 930,
+            "recall": 0.88113413304253,
+            "support": 917,
+            "tp": 808
+          },
+          "GeneOrGeneProduct": {
+            "f1": 0.9250317662007624,
+            "fn": 88,
+            "fp": 89,
+            "precision": 0.9246401354784082,
+            "predicted": 1181,
+            "recall": 0.9254237288135593,
+            "support": 1180,
+            "tp": 1092
+          },
+          "OrganismTaxon": {
+            "f1": 0.9750623441396509,
+            "fn": 2,
+            "fp": 18,
+            "precision": 0.9559902200488998,
+            "predicted": 409,
+            "recall": 0.9949109414758269,
+            "support": 393,
+            "tp": 391
+          },
+          "SequenceVariant": {
+            "f1": 0.8851774530271399,
+            "fn": 29,
+            "fp": 26,
+            "precision": 0.8907563025210085,
+            "predicted": 238,
+            "recall": 0.8796680497925311,
+            "support": 241,
+            "tp": 212
+          }
+        },
+        "predictor": {
+          "adapter": "AIONERBioMedExtractor",
+          "device": "cpu",
+          "model": "PubmedBERT-CRF-AIONER.h5",
+          "model_artifact_sha256": "78ED76DB6355B50002DBF5B51DC6AD9D2CA7DEE0ABE830F51C4E6329033A23C7",
+          "name": "AIONER PubMedBERT-CRF",
+          "prediction_file": "C:\\Projects\\Biomed\\extraction_system\\.cache\\aioner\\test-output\\BioRED_Test.PubTator",
+          "prediction_file_sha256": "9bef3c70d7db666f0e505488b1fa968dc0603e52df399863375ce8f16041cd68",
+          "runtime": {
+            "python": "3.8.20",
+            "stanza": "1.4.0",
+            "tensorflow": "2.3.0",
+            "transformers": "4.18.0"
+          },
+          "supported_canonical_types": [
+            "CellLine",
+            "ChemicalEntity",
+            "DiseaseOrPhenotypicFeature",
+            "GeneOrGeneProduct",
+            "OrganismTaxon",
+            "SequenceVariant"
+          ],
+          "upstream_repository": "https://github.com/ncbi/AIONER",
+          "upstream_revision": "b8fa941dc8f49e1c99756832da0c61e9c58dcef8"
+        },
+        "supported_canonical_types": [
+          "CellLine",
+          "ChemicalEntity",
+          "DiseaseOrPhenotypicFeature",
+          "GeneOrGeneProduct",
+          "OrganismTaxon",
+          "SequenceVariant"
+        ],
+        "unsupported_canonical_types": []
+      },
+      "GLiNER": {
+        "macro_f1": 0.5128579916232362,
+        "macro_scored_types": [
+          "CellLine",
+          "ChemicalEntity",
+          "DiseaseOrPhenotypicFeature",
+          "GeneOrGeneProduct",
+          "OrganismTaxon"
+        ],
+        "matching": "exact half-open character span and canonical evaluation type",
+        "micro": {
+          "f1": 0.6130485566494244,
+          "fn": 1457,
+          "fp": 862,
+          "precision": 0.6806224527602815,
+          "recall": 0.5576806314511232,
+          "tp": 1837
+        },
+        "per_type": {
+          "CellLine": {
+            "f1": 0.25125628140703515,
+            "fn": 25,
+            "fp": 124,
+            "precision": 0.16778523489932887,
+            "predicted": 149,
+            "recall": 0.5,
+            "support": 50,
+            "tp": 25
+          },
+          "ChemicalEntity": {
+            "f1": 0.6698369565217391,
+            "fn": 261,
+            "fp": 225,
+            "precision": 0.6866295264623955,
+            "predicted": 718,
+            "recall": 0.6538461538461539,
+            "support": 754,
+            "tp": 493
+          },
+          "DiseaseOrPhenotypicFeature": {
+            "f1": 0.6327974276527332,
+            "fn": 425,
+            "fp": 146,
+            "precision": 0.7711598746081505,
+            "predicted": 638,
+            "recall": 0.5365321701199564,
+            "support": 917,
+            "tp": 492
+          },
+          "GeneOrGeneProduct": {
+            "f1": 0.6624203821656051,
+            "fn": 452,
+            "fp": 290,
+            "precision": 0.7151277013752456,
+            "predicted": 1018,
+            "recall": 0.6169491525423729,
+            "support": 1180,
+            "tp": 728
+          },
+          "OrganismTaxon": {
+            "f1": 0.34797891036906853,
+            "fn": 294,
+            "fp": 77,
+            "precision": 0.5625,
+            "predicted": 176,
+            "recall": 0.25190839694656486,
+            "support": 393,
+            "tp": 99
+          }
+        },
+        "predictor": {
+          "adapter": "GLiNERBioMedExtractor",
+          "device": "cpu",
+          "labels": [
+            "gene",
+            "protein",
+            "disease",
+            "chemical",
+            "species",
+            "cell line",
+            "DNA",
+            "RNA"
+          ],
+          "model": "Ihor/gliner-biomed-base-v1.0",
+          "name": "GLiNER BioRED",
+          "threshold": 0.5
+        },
+        "supported_canonical_types": [
+          "CellLine",
+          "ChemicalEntity",
+          "DiseaseOrPhenotypicFeature",
+          "GeneOrGeneProduct",
+          "OrganismTaxon"
+        ],
+        "unsupported_canonical_types": [
+          "SequenceVariant"
+        ]
+      }
+    },
+    "per_type": {
+      "CellLine": {
+        "AIONER": {
+          "f1": 0.9263157894736842,
+          "fn": 6,
+          "fp": 1,
+          "precision": 0.9777777777777777,
+          "predicted": 45,
+          "recall": 0.88,
+          "support": 50,
+          "tp": 44
+        },
+        "GLiNER": {
+          "f1": 0.25125628140703515,
+          "fn": 25,
+          "fp": 124,
+          "precision": 0.16778523489932887,
+          "predicted": 149,
+          "recall": 0.5,
+          "support": 50,
+          "tp": 25
+        },
+        "f1_delta": 0.675059508066649
+      },
+      "ChemicalEntity": {
+        "AIONER": {
+          "f1": 0.9188464118041583,
+          "fn": 69,
+          "fp": 52,
+          "precision": 0.9294436906377205,
+          "predicted": 737,
+          "recall": 0.9084880636604774,
+          "support": 754,
+          "tp": 685
+        },
+        "GLiNER": {
+          "f1": 0.6698369565217391,
+          "fn": 261,
+          "fp": 225,
+          "precision": 0.6866295264623955,
+          "predicted": 718,
+          "recall": 0.6538461538461539,
+          "support": 754,
+          "tp": 493
+        },
+        "f1_delta": 0.24900945528241913
+      },
+      "DiseaseOrPhenotypicFeature": {
+        "AIONER": {
+          "f1": 0.8749323226854359,
+          "fn": 109,
+          "fp": 122,
+          "precision": 0.8688172043010752,
+          "predicted": 930,
+          "recall": 0.88113413304253,
+          "support": 917,
+          "tp": 808
+        },
+        "GLiNER": {
+          "f1": 0.6327974276527332,
+          "fn": 425,
+          "fp": 146,
+          "precision": 0.7711598746081505,
+          "predicted": 638,
+          "recall": 0.5365321701199564,
+          "support": 917,
+          "tp": 492
+        },
+        "f1_delta": 0.2421348950327027
+      },
+      "GeneOrGeneProduct": {
+        "AIONER": {
+          "f1": 0.9250317662007624,
+          "fn": 88,
+          "fp": 89,
+          "precision": 0.9246401354784082,
+          "predicted": 1181,
+          "recall": 0.9254237288135593,
+          "support": 1180,
+          "tp": 1092
+        },
+        "GLiNER": {
+          "f1": 0.6624203821656051,
+          "fn": 452,
+          "fp": 290,
+          "precision": 0.7151277013752456,
+          "predicted": 1018,
+          "recall": 0.6169491525423729,
+          "support": 1180,
+          "tp": 728
+        },
+        "f1_delta": 0.2626113840351574
+      },
+      "OrganismTaxon": {
+        "AIONER": {
+          "f1": 0.9750623441396509,
+          "fn": 2,
+          "fp": 18,
+          "precision": 0.9559902200488998,
+          "predicted": 409,
+          "recall": 0.9949109414758269,
+          "support": 393,
+          "tp": 391
+        },
+        "GLiNER": {
+          "f1": 0.34797891036906853,
+          "fn": 294,
+          "fp": 77,
+          "precision": 0.5625,
+          "predicted": 176,
+          "recall": 0.25190839694656486,
+          "support": 393,
+          "tp": 99
+        },
+        "f1_delta": 0.6270834337705824
+      },
+      "SequenceVariant": {
+        "AIONER": {
+          "f1": 0.8851774530271399,
+          "fn": 29,
+          "fp": 26,
+          "precision": 0.8907563025210085,
+          "predicted": 238,
+          "recall": 0.8796680497925311,
+          "support": 241,
+          "tp": 212
+        },
+        "GLiNER": null,
+        "f1_delta": null
+      }
+    },
+    "schema": [
+      "CellLine",
+      "ChemicalEntity",
+      "DiseaseOrPhenotypicFeature",
+      "GeneOrGeneProduct",
+      "OrganismTaxon",
+      "SequenceVariant"
+    ],
+    "variant": {
+      "aioner_metric": {
+        "f1": 0.8851774530271399,
+        "fn": 29,
+        "fp": 26,
+        "precision": 0.8907563025210085,
+        "predicted": 238,
+        "recall": 0.8796680497925311,
+        "support": 241,
+        "tp": 212
+      },
+      "aioner_supported": true,
+      "gliner_metric": null,
+      "gliner_supported": false,
+      "gold_mentions": 241
+    }
+  },
+  "graph_critical_recall": {
+    "concept_level": {
+      "AIONER": {
+        "comparable_class": {
+          "denominator": "relation-participating gold concepts with shared-class mentions",
+          "gold": 751,
+          "recall": 0.9360852197070573,
+          "recognized": 703
+        },
+        "denominator": "all relation-participating gold concepts",
+        "gold": 871,
+        "overall": {
+          "denominator": "all relation-participating gold concepts",
+          "gold": 871,
+          "recall": 0.9334098737083811,
+          "recognized": 813
+        },
+        "recall": 0.9334098737083811,
+        "recognized": 813
+      },
+      "GLiNER": {
+        "comparable_class": {
+          "denominator": "relation-participating gold concepts with shared-class mentions",
+          "gold": 751,
+          "recall": 0.6724367509986684,
+          "recognized": 505
+        },
+        "denominator": "all relation-participating gold concepts",
+        "gold": 871,
+        "overall": {
+          "denominator": "all relation-participating gold concepts",
+          "gold": 871,
+          "recall": 0.5797933409873708,
+          "recognized": 505
+        },
+        "recall": 0.5797933409873708,
+        "recognized": 505
+      }
+    },
+    "mention_level": {
+      "AIONER": {
+        "comparable_class": {
+          "denominator": "relation-participating gold mentions in shared taxonomy",
+          "gold": 2502,
+          "recall": 0.9136690647482014,
+          "recognized": 2286,
+          "unscored_gold_type": 0
+        },
+        "denominator": "all relation-participating gold mentions",
+        "gold": 2722,
+        "overall": {
+          "denominator": "all relation-participating gold mentions",
+          "gold": 2722,
+          "recall": 0.9125642909625276,
+          "recognized": 2484,
+          "unscored_gold_type": 220
+        },
+        "recall": 0.9125642909625276,
+        "recognized": 2484,
+        "unscored_gold_type": 220
+      },
+      "GLiNER": {
+        "comparable_class": {
+          "denominator": "relation-participating gold mentions in shared taxonomy",
+          "gold": 2502,
+          "recall": 0.6219024780175859,
+          "recognized": 1556,
+          "unscored_gold_type": 0
+        },
+        "denominator": "all relation-participating gold mentions",
+        "gold": 2722,
+        "overall": {
+          "denominator": "all relation-participating gold mentions",
+          "gold": 2722,
+          "recall": 0.5716385011021308,
+          "recognized": 1556,
+          "unscored_gold_type": 220
+        },
+        "recall": 0.5716385011021308,
+        "recognized": 1556,
+        "unscored_gold_type": 220
+      }
+    }
+  },
+  "limitations": [
+    "This comparison uses exact half-open source spans and canonical types; no fuzzy matching is applied.",
+    "Shared-class metrics use the five classes supported by both adapters.",
+    "Full-schema views retain the explicit SequenceVariant capability gap for GLiNER.",
+    "Graph-critical recall uses BioRED relation participation only as an NER diagnostic; no relation model is invoked.",
+    "Published AIONER scores are context only; this report does not declare a production winner or rank HunFlair2.",
+    "Failure overlap is exact only for retained representative examples; aggregate both fields are upper bounds and only fields are count differences.",
+    "Inference wall-clock is not compared because the isolated official AIONER run and GLiNER evaluation were not timed with identical scopes; AIONER was run on CPU."
+  ],
+  "models": {
+    "AIONER": {
+      "failure_counts": {
+        "missed entity": 109,
+        "overlapping prediction": 9,
+        "schema-unscored / unsupported gold category": 0,
+        "schema-unscored / unsupported predicted category": 0,
+        "span mismatch": 131,
+        "spurious entity": 114,
+        "wrong type": 54
+      },
+      "graph_critical_entity_recall": {
+        "concept_level": {
+          "comparable_class": {
+            "denominator": "relation-participating gold concepts with shared-class mentions",
+            "gold": 751,
+            "recall": 0.9360852197070573,
+            "recognized": 703
+          },
+          "denominator": "all relation-participating gold concepts",
+          "gold": 871,
+          "overall": {
+            "denominator": "all relation-participating gold concepts",
+            "gold": 871,
+            "recall": 0.9334098737083811,
+            "recognized": 813
+          },
+          "recall": 0.9334098737083811,
+          "recognized": 813
+        },
+        "definition": "Gold BioRED entity mentions/concepts participating in at least one annotated relation, recognized by exact span and canonical type; this is an NER diagnostic, not relation evaluation.",
+        "documents_with_relations": 100,
+        "mention_level": {
+          "comparable_class": {
+            "denominator": "relation-participating gold mentions in shared taxonomy",
+            "gold": 2502,
+            "recall": 0.9136690647482014,
+            "recognized": 2286,
+            "unscored_gold_type": 0
+          },
+          "denominator": "all relation-participating gold mentions",
+          "gold": 2722,
+          "overall": {
+            "denominator": "all relation-participating gold mentions",
+            "gold": 2722,
+            "recall": 0.9125642909625276,
+            "recognized": 2484,
+            "unscored_gold_type": 220
+          },
+          "recall": 0.9125642909625276,
+          "recognized": 2484,
+          "unscored_gold_type": 220
+        }
+      },
+      "predictor": {
+        "adapter": "AIONERBioMedExtractor",
+        "device": "cpu",
+        "model": "PubmedBERT-CRF-AIONER.h5",
+        "model_artifact_sha256": "78ED76DB6355B50002DBF5B51DC6AD9D2CA7DEE0ABE830F51C4E6329033A23C7",
+        "name": "AIONER PubMedBERT-CRF",
+        "prediction_file": "C:\\Projects\\Biomed\\extraction_system\\.cache\\aioner\\test-output\\BioRED_Test.PubTator",
+        "prediction_file_sha256": "9bef3c70d7db666f0e505488b1fa968dc0603e52df399863375ce8f16041cd68",
+        "runtime": {
+          "python": "3.8.20",
+          "stanza": "1.4.0",
+          "tensorflow": "2.3.0",
+          "transformers": "4.18.0"
+        },
+        "supported_canonical_types": [
+          "CellLine",
+          "ChemicalEntity",
+          "DiseaseOrPhenotypicFeature",
+          "GeneOrGeneProduct",
+          "OrganismTaxon",
+          "SequenceVariant"
+        ],
+        "upstream_repository": "https://github.com/ncbi/AIONER",
+        "upstream_revision": "b8fa941dc8f49e1c99756832da0c61e9c58dcef8"
+      },
+      "schema_coverage": {
+        "gold": {
+          "scored": 3535,
+          "scored_fraction": 1.0,
+          "total": 3535,
+          "unscored": 0,
+          "unscored_by_type": {}
+        },
+        "predicted": {
+          "scored": 3540,
+          "scored_fraction": 1.0,
+          "total": 3540,
+          "unscored": 0,
+          "unscored_by_type": {}
+        }
+      }
+    },
+    "GLiNER": {
+      "failure_counts": {
+        "missed entity": 856,
+        "overlapping prediction": 65,
+        "schema-unscored / unsupported gold category": 241,
+        "schema-unscored / unsupported predicted category": 144,
+        "span mismatch": 396,
+        "spurious entity": 261,
+        "wrong type": 140
+      },
+      "graph_critical_entity_recall": {
+        "concept_level": {
+          "comparable_class": {
+            "denominator": "relation-participating gold concepts with shared-class mentions",
+            "gold": 751,
+            "recall": 0.6724367509986684,
+            "recognized": 505
+          },
+          "denominator": "all relation-participating gold concepts",
+          "gold": 871,
+          "overall": {
+            "denominator": "all relation-participating gold concepts",
+            "gold": 871,
+            "recall": 0.5797933409873708,
+            "recognized": 505
+          },
+          "recall": 0.5797933409873708,
+          "recognized": 505
+        },
+        "definition": "Gold BioRED entity mentions/concepts participating in at least one annotated relation, recognized by exact span and canonical type; this is an NER diagnostic, not relation evaluation.",
+        "documents_with_relations": 100,
+        "mention_level": {
+          "comparable_class": {
+            "denominator": "relation-participating gold mentions in shared taxonomy",
+            "gold": 2502,
+            "recall": 0.6219024780175859,
+            "recognized": 1556,
+            "unscored_gold_type": 0
+          },
+          "denominator": "all relation-participating gold mentions",
+          "gold": 2722,
+          "overall": {
+            "denominator": "all relation-participating gold mentions",
+            "gold": 2722,
+            "recall": 0.5716385011021308,
+            "recognized": 1556,
+            "unscored_gold_type": 220
+          },
+          "recall": 0.5716385011021308,
+          "recognized": 1556,
+          "unscored_gold_type": 220
+        }
+      },
+      "predictor": {
+        "adapter": "GLiNERBioMedExtractor",
+        "device": "cpu",
+        "labels": [
+          "gene",
+          "protein",
+          "disease",
+          "chemical",
+          "species",
+          "cell line",
+          "DNA",
+          "RNA"
+        ],
+        "model": "Ihor/gliner-biomed-base-v1.0",
+        "name": "GLiNER BioRED",
+        "threshold": 0.5
+      },
+      "schema_coverage": {
+        "gold": {
+          "scored": 3294,
+          "scored_fraction": 0.9318246110325318,
+          "total": 3535,
+          "unscored": 241,
+          "unscored_by_type": {
+            "Variant": 241
+          }
+        },
+        "predicted": {
+          "scored": 2699,
+          "scored_fraction": 0.949349278930707,
+          "total": 2843,
+          "unscored": 144,
+          "unscored_by_type": {
+            "DNA": 91,
+            "RNA": 53
+          }
+        }
+      }
+    }
+  },
+  "shared_class_head_to_head": {
+    "models": {
+      "AIONER": {
+        "macro_f1": 0.9240377268607384,
+        "macro_scored_types": [
+          "CellLine",
+          "ChemicalEntity",
+          "DiseaseOrPhenotypicFeature",
+          "GeneOrGeneProduct",
+          "OrganismTaxon"
+        ],
+        "matching": "exact half-open character span and canonical evaluation type",
+        "micro": {
+          "f1": 0.9157064887810794,
+          "fn": 274,
+          "fp": 282,
+          "precision": 0.9145972138098122,
+          "recall": 0.9168184578020644,
+          "tp": 3020
+        },
+        "per_type": {
+          "CellLine": {
+            "f1": 0.9263157894736842,
+            "fn": 6,
+            "fp": 1,
+            "precision": 0.9777777777777777,
+            "predicted": 45,
+            "recall": 0.88,
+            "support": 50,
+            "tp": 44
+          },
+          "ChemicalEntity": {
+            "f1": 0.9188464118041583,
+            "fn": 69,
+            "fp": 52,
+            "precision": 0.9294436906377205,
+            "predicted": 737,
+            "recall": 0.9084880636604774,
+            "support": 754,
+            "tp": 685
+          },
+          "DiseaseOrPhenotypicFeature": {
+            "f1": 0.8749323226854359,
+            "fn": 109,
+            "fp": 122,
+            "precision": 0.8688172043010752,
+            "predicted": 930,
+            "recall": 0.88113413304253,
+            "support": 917,
+            "tp": 808
+          },
+          "GeneOrGeneProduct": {
+            "f1": 0.9250317662007624,
+            "fn": 88,
+            "fp": 89,
+            "precision": 0.9246401354784082,
+            "predicted": 1181,
+            "recall": 0.9254237288135593,
+            "support": 1180,
+            "tp": 1092
+          },
+          "OrganismTaxon": {
+            "f1": 0.9750623441396509,
+            "fn": 2,
+            "fp": 18,
+            "precision": 0.9559902200488998,
+            "predicted": 409,
+            "recall": 0.9949109414758269,
+            "support": 393,
+            "tp": 391
+          }
+        },
+        "predictor": {
+          "adapter": "AIONERBioMedExtractor",
+          "device": "cpu",
+          "model": "PubmedBERT-CRF-AIONER.h5",
+          "model_artifact_sha256": "78ED76DB6355B50002DBF5B51DC6AD9D2CA7DEE0ABE830F51C4E6329033A23C7",
+          "name": "AIONER PubMedBERT-CRF",
+          "prediction_file": "C:\\Projects\\Biomed\\extraction_system\\.cache\\aioner\\test-output\\BioRED_Test.PubTator",
+          "prediction_file_sha256": "9bef3c70d7db666f0e505488b1fa968dc0603e52df399863375ce8f16041cd68",
+          "runtime": {
+            "python": "3.8.20",
+            "stanza": "1.4.0",
+            "tensorflow": "2.3.0",
+            "transformers": "4.18.0"
+          },
+          "supported_canonical_types": [
+            "CellLine",
+            "ChemicalEntity",
+            "DiseaseOrPhenotypicFeature",
+            "GeneOrGeneProduct",
+            "OrganismTaxon",
+            "SequenceVariant"
+          ],
+          "upstream_repository": "https://github.com/ncbi/AIONER",
+          "upstream_revision": "b8fa941dc8f49e1c99756832da0c61e9c58dcef8"
+        },
+        "supported_canonical_types": [
+          "CellLine",
+          "ChemicalEntity",
+          "DiseaseOrPhenotypicFeature",
+          "GeneOrGeneProduct",
+          "OrganismTaxon"
+        ]
+      },
+      "GLiNER": {
+        "macro_f1": 0.5128579916232362,
+        "macro_scored_types": [
+          "CellLine",
+          "ChemicalEntity",
+          "DiseaseOrPhenotypicFeature",
+          "GeneOrGeneProduct",
+          "OrganismTaxon"
+        ],
+        "matching": "exact half-open character span and canonical evaluation type",
+        "micro": {
+          "f1": 0.6130485566494244,
+          "fn": 1457,
+          "fp": 862,
+          "precision": 0.6806224527602815,
+          "recall": 0.5576806314511232,
+          "tp": 1837
+        },
+        "per_type": {
+          "CellLine": {
+            "f1": 0.25125628140703515,
+            "fn": 25,
+            "fp": 124,
+            "precision": 0.16778523489932887,
+            "predicted": 149,
+            "recall": 0.5,
+            "support": 50,
+            "tp": 25
+          },
+          "ChemicalEntity": {
+            "f1": 0.6698369565217391,
+            "fn": 261,
+            "fp": 225,
+            "precision": 0.6866295264623955,
+            "predicted": 718,
+            "recall": 0.6538461538461539,
+            "support": 754,
+            "tp": 493
+          },
+          "DiseaseOrPhenotypicFeature": {
+            "f1": 0.6327974276527332,
+            "fn": 425,
+            "fp": 146,
+            "precision": 0.7711598746081505,
+            "predicted": 638,
+            "recall": 0.5365321701199564,
+            "support": 917,
+            "tp": 492
+          },
+          "GeneOrGeneProduct": {
+            "f1": 0.6624203821656051,
+            "fn": 452,
+            "fp": 290,
+            "precision": 0.7151277013752456,
+            "predicted": 1018,
+            "recall": 0.6169491525423729,
+            "support": 1180,
+            "tp": 728
+          },
+          "OrganismTaxon": {
+            "f1": 0.34797891036906853,
+            "fn": 294,
+            "fp": 77,
+            "precision": 0.5625,
+            "predicted": 176,
+            "recall": 0.25190839694656486,
+            "support": 393,
+            "tp": 99
+          }
+        },
+        "predictor": {
+          "adapter": "GLiNERBioMedExtractor",
+          "device": "cpu",
+          "labels": [
+            "gene",
+            "protein",
+            "disease",
+            "chemical",
+            "species",
+            "cell line",
+            "DNA",
+            "RNA"
+          ],
+          "model": "Ihor/gliner-biomed-base-v1.0",
+          "name": "GLiNER BioRED",
+          "threshold": 0.5
+        },
+        "supported_canonical_types": [
+          "CellLine",
+          "ChemicalEntity",
+          "DiseaseOrPhenotypicFeature",
+          "GeneOrGeneProduct",
+          "OrganismTaxon"
+        ]
+      }
+    },
+    "per_type": {
+      "CellLine": {
+        "AIONER": {
+          "f1": 0.9263157894736842,
+          "fn": 6,
+          "fp": 1,
+          "precision": 0.9777777777777777,
+          "predicted": 45,
+          "recall": 0.88,
+          "support": 50,
+          "tp": 44
+        },
+        "GLiNER": {
+          "f1": 0.25125628140703515,
+          "fn": 25,
+          "fp": 124,
+          "precision": 0.16778523489932887,
+          "predicted": 149,
+          "recall": 0.5,
+          "support": 50,
+          "tp": 25
+        },
+        "f1_delta": 0.675059508066649
+      },
+      "ChemicalEntity": {
+        "AIONER": {
+          "f1": 0.9188464118041583,
+          "fn": 69,
+          "fp": 52,
+          "precision": 0.9294436906377205,
+          "predicted": 737,
+          "recall": 0.9084880636604774,
+          "support": 754,
+          "tp": 685
+        },
+        "GLiNER": {
+          "f1": 0.6698369565217391,
+          "fn": 261,
+          "fp": 225,
+          "precision": 0.6866295264623955,
+          "predicted": 718,
+          "recall": 0.6538461538461539,
+          "support": 754,
+          "tp": 493
+        },
+        "f1_delta": 0.24900945528241913
+      },
+      "DiseaseOrPhenotypicFeature": {
+        "AIONER": {
+          "f1": 0.8749323226854359,
+          "fn": 109,
+          "fp": 122,
+          "precision": 0.8688172043010752,
+          "predicted": 930,
+          "recall": 0.88113413304253,
+          "support": 917,
+          "tp": 808
+        },
+        "GLiNER": {
+          "f1": 0.6327974276527332,
+          "fn": 425,
+          "fp": 146,
+          "precision": 0.7711598746081505,
+          "predicted": 638,
+          "recall": 0.5365321701199564,
+          "support": 917,
+          "tp": 492
+        },
+        "f1_delta": 0.2421348950327027
+      },
+      "GeneOrGeneProduct": {
+        "AIONER": {
+          "f1": 0.9250317662007624,
+          "fn": 88,
+          "fp": 89,
+          "precision": 0.9246401354784082,
+          "predicted": 1181,
+          "recall": 0.9254237288135593,
+          "support": 1180,
+          "tp": 1092
+        },
+        "GLiNER": {
+          "f1": 0.6624203821656051,
+          "fn": 452,
+          "fp": 290,
+          "precision": 0.7151277013752456,
+          "predicted": 1018,
+          "recall": 0.6169491525423729,
+          "support": 1180,
+          "tp": 728
+        },
+        "f1_delta": 0.2626113840351574
+      },
+      "OrganismTaxon": {
+        "AIONER": {
+          "f1": 0.9750623441396509,
+          "fn": 2,
+          "fp": 18,
+          "precision": 0.9559902200488998,
+          "predicted": 409,
+          "recall": 0.9949109414758269,
+          "support": 393,
+          "tp": 391
+        },
+        "GLiNER": {
+          "f1": 0.34797891036906853,
+          "fn": 294,
+          "fp": 77,
+          "precision": 0.5625,
+          "predicted": 176,
+          "recall": 0.25190839694656486,
+          "support": 393,
+          "tp": 99
+        },
+        "f1_delta": 0.6270834337705824
+      }
+    },
+    "supported_types": [
+      "CellLine",
+      "ChemicalEntity",
+      "DiseaseOrPhenotypicFeature",
+      "GeneOrGeneProduct",
+      "OrganismTaxon"
+    ]
+  }
+}

@@ -1,0 +1,1266 @@
+{
+  "counts": {
+    "documents_evaluated": 100,
+    "gold_entities": 3535,
+    "gold_entities_by_type": {
+      "CellLine": 50,
+      "Chemical": 754,
+      "Disease": 917,
+      "Gene": 1180,
+      "Species": 393,
+      "Variant": 241
+    },
+    "gold_entities_scored": 3294,
+    "predicted_entities": 2843,
+    "predicted_entities_scored": 2699
+  },
+  "dataset": {
+    "date": "2021-11-30",
+    "documents_evaluated": 100,
+    "documents_in_source": 100,
+    "key": "BioC.key",
+    "path": "C:\\Projects\\Biomed\\extraction_system\\.cache\\BIORED\\BioRED\\Test.BioC.JSON",
+    "sha256": "35ec8aad0c62032689b4a957220c7532eb067dc7e159d70cc42e6d40e6c447c6",
+    "source": "PubTator",
+    "split": "test"
+  },
+  "evaluation_name": "BioRED exact-match biomedical NER evaluation",
+  "failure_analysis": {
+    "counts": {
+      "missed entity": 856,
+      "overlapping prediction": 65,
+      "schema-unscored / unsupported gold category": 241,
+      "schema-unscored / unsupported predicted category": 144,
+      "span mismatch": 396,
+      "spurious entity": 261,
+      "wrong type": 140
+    },
+    "example_limit_per_category": 5,
+    "examples": {
+      "missed entity": [
+        {
+          "category": "missed entity",
+          "context": {
+            "end": 188,
+            "start": 17,
+            "text": "ation manifests as a malignant form of long QT syndrome with perinatal onset of tachycardia/bradycardia. OBJECTIVE: Congenital long QT syndrome (LQTS) with in utero onset "
+          },
+          "document_id": "15485686",
+          "gold": {
+            "canonical_type": "DiseaseOrPhenotypicFeature",
+            "concept_ids": [
+              "D013610"
+            ],
+            "end": 108,
+            "id": "2",
+            "start": 97,
+            "text": "tachycardia",
+            "type": "Disease"
+          },
+          "predicted": null
+        },
+        {
+          "category": "missed entity",
+          "context": {
+            "end": 200,
+            "start": 29,
+            "text": "sts as a malignant form of long QT syndrome with perinatal onset of tachycardia/bradycardia. OBJECTIVE: Congenital long QT syndrome (LQTS) with in utero onset of the rhyth"
+          },
+          "document_id": "15485686",
+          "gold": {
+            "canonical_type": "DiseaseOrPhenotypicFeature",
+            "concept_ids": [
+              "D001919"
+            ],
+            "end": 120,
+            "id": "3",
+            "start": 109,
+            "text": "bradycardia",
+            "type": "Disease"
+          },
+          "predicted": null
+        },
+        {
+          "category": "missed entity",
+          "context": {
+            "end": 402,
+            "start": 231,
+            "text": "th a poor prognosis. In this study we investigated a newborn patient with fetal bradycardia, 2:1 atrioventricular block and ventricular tachycardia soon after birth. METHO"
+          },
+          "document_id": "15485686",
+          "gold": {
+            "canonical_type": "DiseaseOrPhenotypicFeature",
+            "concept_ids": [
+              "D001919"
+            ],
+            "end": 322,
+            "id": "7",
+            "start": 311,
+            "text": "bradycardia",
+            "type": "Disease"
+          },
+          "predicted": null
+        },
+        {
+          "category": "missed entity",
+          "context": {
+            "end": 430,
+            "start": 248,
+            "text": "is. In this study we investigated a newborn patient with fetal bradycardia, 2:1 atrioventricular block and ventricular tachycardia soon after birth. METHODS: Mutational analysis and "
+          },
+          "document_id": "15485686",
+          "gold": {
+            "canonical_type": "DiseaseOrPhenotypicFeature",
+            "concept_ids": [
+              "D054537"
+            ],
+            "end": 350,
+            "id": "8",
+            "start": 328,
+            "text": "atrioventricular block",
+            "type": "Disease"
+          },
+          "predicted": null
+        },
+        {
+          "category": "missed entity",
+          "context": {
+            "end": 584,
+            "start": 402,
+            "text": "DS: Mutational analysis and DNA sequencing were conducted in a newborn. The 2:1 atrioventricular block improved to 1:1 conduction only after intravenous lidocaine infusion or a high "
+          },
+          "document_id": "15485686",
+          "gold": {
+            "canonical_type": "DiseaseOrPhenotypicFeature",
+            "concept_ids": [
+              "D054537"
+            ],
+            "end": 504,
+            "id": "10",
+            "start": 482,
+            "text": "atrioventricular block",
+            "type": "Disease"
+          },
+          "predicted": null
+        }
+      ],
+      "overlapping prediction": [
+        {
+          "category": "overlapping prediction",
+          "context": {
+            "end": 807,
+            "start": 620,
+            "text": "A allele was 1.5-2.5-fold more abundant than the G118 allele. Transfection into Chinese hamster ovary cells of a cDNA representing only the coding region of OPRM1, carrying adenosine, gua"
+          },
+          "document_id": "16046395",
+          "gold": {
+            "canonical_type": "OrganismTaxon",
+            "concept_ids": [
+              "10029"
+            ],
+            "end": 715,
+            "id": "16",
+            "start": 700,
+            "text": "Chinese hamster",
+            "type": "Species"
+          },
+          "predicted": {
+            "canonical_type": "CellLine",
+            "end": 727,
+            "id": "E18",
+            "score": 0.9974343180656433,
+            "start": 700,
+            "text": "Chinese hamster ovary cells",
+            "type": "cell line"
+          }
+        },
+        {
+          "category": "overlapping prediction",
+          "context": {
+            "end": 218,
+            "start": 20,
+            "text": "ypic analysis of patients with deletions within the deletion-rich region of the Duchenne muscular dystrophy (DMD) gene. Eighty unrelated individuals with Duchenne muscular dystrophy (DMD)or Becker m"
+          },
+          "document_id": "2491010",
+          "gold": {
+            "canonical_type": "GeneOrGeneProduct",
+            "concept_ids": [
+              "1756"
+            ],
+            "end": 138,
+            "id": "1",
+            "start": 100,
+            "text": "Duchenne muscular dystrophy (DMD) gene",
+            "type": "Gene"
+          },
+          "predicted": {
+            "canonical_type": "DiseaseOrPhenotypicFeature",
+            "end": 127,
+            "id": "E1",
+            "score": 0.986517071723938,
+            "start": 100,
+            "text": "Duchenne muscular dystrophy",
+            "type": "disease"
+          }
+        },
+        {
+          "category": "overlapping prediction",
+          "context": {
+            "end": 645,
+            "start": 478,
+            "text": " an effective method of treating lithium-induced polyuria. PKC-alpha null mice (PKCa KO) and strain-matched wild type (WT) controls were treated with lithium for 0, 3 "
+          },
+          "document_id": "25006961",
+          "gold": {
+            "canonical_type": "GeneOrGeneProduct",
+            "concept_ids": [
+              "18750"
+            ],
+            "end": 562,
+            "id": "17",
+            "start": 558,
+            "text": "PKCa",
+            "type": "Gene"
+          },
+          "predicted": {
+            "canonical_type": "CellLine",
+            "end": 565,
+            "id": "E16",
+            "score": 0.8595089316368103,
+            "start": 558,
+            "text": "PKCa KO",
+            "type": "cell line"
+          }
+        },
+        {
+          "category": "overlapping prediction",
+          "context": {
+            "end": 847,
+            "start": 680,
+            "text": "ine output and lowered urine osmolality after 3 and 5 days of treatment whereas PKCa KO mice had no change in urine output or concentration. Western blot analysis reve"
+          },
+          "document_id": "25006961",
+          "gold": {
+            "canonical_type": "GeneOrGeneProduct",
+            "concept_ids": [
+              "18750"
+            ],
+            "end": 764,
+            "id": "20",
+            "start": 760,
+            "text": "PKCa",
+            "type": "Gene"
+          },
+          "predicted": {
+            "canonical_type": "CellLine",
+            "end": 767,
+            "id": "E20",
+            "score": 0.5931419730186462,
+            "start": 760,
+            "text": "PKCa KO",
+            "type": "cell line"
+          }
+        },
+        {
+          "category": "overlapping prediction",
+          "context": {
+            "end": 1055,
+            "start": 888,
+            "text": "ssues was lowered after 3 and 5 days in WT mice; however, AQP2 was unchanged in PKCa KO. Similar results were observed with UT-A1 expression. Animals were also treated"
+          },
+          "document_id": "25006961",
+          "gold": {
+            "canonical_type": "GeneOrGeneProduct",
+            "concept_ids": [
+              "18750"
+            ],
+            "end": 972,
+            "id": "25",
+            "start": 968,
+            "text": "PKCa",
+            "type": "Gene"
+          },
+          "predicted": {
+            "canonical_type": "CellLine",
+            "end": 975,
+            "id": "E25",
+            "score": 0.8124769926071167,
+            "start": 968,
+            "text": "PKCa KO",
+            "type": "cell line"
+          }
+        }
+      ],
+      "schema-unscored / unsupported gold category": [
+        {
+          "category": "schema-unscored / unsupported gold category",
+          "context": {
+            "end": 919,
+            "start": 727,
+            "text": "smembrane segment 6 of domain IV of the Na(v)1.5 cardiac sodium channel, with a G-->A substitution at codon 1763, which changed a valine (GTG) to a methionine (ATG). The proband was heterozygo"
+          },
+          "document_id": "15485686",
+          "gold": {
+            "canonical_type": "SequenceVariant",
+            "concept_ids": [
+              "c|SUB|G|CODON1763|A"
+            ],
+            "end": 839,
+            "id": "17",
+            "start": 807,
+            "text": "G-->A substitution at codon 1763",
+            "type": "Variant"
+          },
+          "predicted": null
+        },
+        {
+          "category": "schema-unscored / unsupported gold category",
+          "context": {
+            "end": 971,
+            "start": 777,
+            "text": "ardiac sodium channel, with a G-->A substitution at codon 1763, which changed a valine (GTG) to a methionine (ATG). The proband was heterozygous but the mutation was absent in the parents and th"
+          },
+          "document_id": "15485686",
+          "gold": {
+            "canonical_type": "SequenceVariant",
+            "concept_ids": [
+              "p|SUB|V||M"
+            ],
+            "end": 891,
+            "id": "18",
+            "start": 857,
+            "text": "valine (GTG) to a methionine (ATG)",
+            "type": "Variant"
+          },
+          "predicted": null
+        },
+        {
+          "category": "schema-unscored / unsupported gold category",
+          "context": {
+            "end": 1452,
+            "start": 1286,
+            "text": "ation. We also found a similar electrophysiological profile for the neighboring V1764M mutant. But, the other neighboring I1762A mutant had no persistent current and "
+          },
+          "document_id": "15485686",
+          "gold": {
+            "canonical_type": "SequenceVariant",
+            "concept_ids": [
+              "p|SUB|V|1764|M"
+            ],
+            "end": 1372,
+            "id": "22",
+            "start": 1366,
+            "text": "V1764M",
+            "type": "Variant"
+          },
+          "predicted": null
+        },
+        {
+          "category": "schema-unscored / unsupported gold category",
+          "context": {
+            "end": 1494,
+            "start": 1328,
+            "text": "iological profile for the neighboring V1764M mutant. But, the other neighboring I1762A mutant had no persistent current and was still associated with a positive shift"
+          },
+          "document_id": "15485686",
+          "gold": {
+            "canonical_type": "SequenceVariant",
+            "concept_ids": [
+              "p|SUB|I|1762|A"
+            ],
+            "end": 1414,
+            "id": "23",
+            "start": 1408,
+            "text": "I1762A",
+            "type": "Variant"
+          },
+          "predicted": null
+        },
+        {
+          "category": "schema-unscored / unsupported gold category",
+          "context": {
+            "end": 1652,
+            "start": 1486,
+            "text": "ve shift of inactivation. CONCLUSIONS: These findings suggest that the Na(v)1.5/V1763M channel dysfunction and possible neighboring mutants contribute to a persistent"
+          },
+          "document_id": "15485686",
+          "gold": {
+            "canonical_type": "SequenceVariant",
+            "concept_ids": [
+              "p|SUB|V|1763|M"
+            ],
+            "end": 1572,
+            "id": "25",
+            "start": 1566,
+            "text": "V1763M",
+            "type": "Variant"
+          },
+          "predicted": null
+        }
+      ],
+      "schema-unscored / unsupported predicted category": [
+        {
+          "category": "schema-unscored / unsupported predicted category",
+          "context": {
+            "end": 513,
+            "start": 350,
+            "text": " and ventricular tachycardia soon after birth. METHODS: Mutational analysis and DNA sequencing were conducted in a newborn. The 2:1 atrioventricular block improved"
+          },
+          "document_id": "15485686",
+          "gold": null,
+          "predicted": {
+            "canonical_type": null,
+            "end": 433,
+            "id": "E7",
+            "score": 0.8152161240577698,
+            "start": 430,
+            "text": "DNA",
+            "type": "DNA"
+          }
+        },
+        {
+          "category": "schema-unscored / unsupported predicted category",
+          "context": {
+            "end": 168,
+            "start": 3,
+            "text": "elic expression imbalance of human mu opioid receptor (OPRM1) caused by variant A118G. As a primary target for opioid drugs and peptides, the mu opioid receptor (OPR"
+          },
+          "document_id": "16046395",
+          "gold": null,
+          "predicted": {
+            "canonical_type": null,
+            "end": 88,
+            "id": "E4",
+            "score": 0.6642363667488098,
+            "start": 83,
+            "text": "A118G",
+            "type": "DNA"
+          }
+        },
+        {
+          "category": "schema-unscored / unsupported predicted category",
+          "context": {
+            "end": 441,
+            "start": 276,
+            "text": "disposition to drug addiction, in particular the single nucleotide polymorphism A118G, leading to an N40D substitution, with an allele frequency of 10-32%, and uncer"
+          },
+          "document_id": "16046395",
+          "gold": null,
+          "predicted": {
+            "canonical_type": null,
+            "end": 361,
+            "id": "E12",
+            "score": 0.7591486573219299,
+            "start": 356,
+            "text": "A118G",
+            "type": "DNA"
+          }
+        },
+        {
+          "category": "schema-unscored / unsupported predicted category",
+          "context": {
+            "end": 574,
+            "start": 410,
+            "text": " frequency of 10-32%, and uncertain functions. We have measured allele-specific mRNA expression of OPRM1 in human autopsy brain tissues, using A118G as a marker. In"
+          },
+          "document_id": "16046395",
+          "gold": null,
+          "predicted": {
+            "canonical_type": null,
+            "end": 494,
+            "id": "E13",
+            "score": 0.6880714893341064,
+            "start": 490,
+            "text": "mRNA",
+            "type": "RNA"
+          }
+        },
+        {
+          "category": "schema-unscored / unsupported predicted category",
+          "context": {
+            "end": 638,
+            "start": 473,
+            "text": " allele-specific mRNA expression of OPRM1 in human autopsy brain tissues, using A118G as a marker. In 8 heterozygous samples measured, the A118 mRNA allele was 1.5-2"
+          },
+          "document_id": "16046395",
+          "gold": null,
+          "predicted": {
+            "canonical_type": null,
+            "end": 558,
+            "id": "E16",
+            "score": 0.8247861266136169,
+            "start": 553,
+            "text": "A118G",
+            "type": "DNA"
+          }
+        }
+      ],
+      "span mismatch": [
+        {
+          "category": "span mismatch",
+          "context": {
+            "end": 379,
+            "start": 204,
+            "text": "sturbances is associated with a poor prognosis. In this study we investigated a newborn patient with fetal bradycardia, 2:1 atrioventricular block and ventricular tachycardia "
+          },
+          "document_id": "15485686",
+          "gold": {
+            "canonical_type": "OrganismTaxon",
+            "concept_ids": [
+              "9606"
+            ],
+            "end": 299,
+            "id": "6",
+            "start": 292,
+            "text": "patient",
+            "type": "Species"
+          },
+          "predicted": {
+            "canonical_type": "OrganismTaxon",
+            "end": 299,
+            "id": "E5",
+            "score": 0.7728868722915649,
+            "start": 284,
+            "text": "newborn patient",
+            "type": "species"
+          }
+        },
+        {
+          "category": "span mismatch",
+          "context": {
+            "end": 771,
+            "start": 605,
+            "text": "hich also controlled the ventricular tachycardia. RESULTS: A novel, spontaneous LQTS-3 mutation was identified in the transmembrane segment 6 of domain IV of the Na(v"
+          },
+          "document_id": "15485686",
+          "gold": {
+            "canonical_type": "DiseaseOrPhenotypicFeature",
+            "concept_ids": [
+              "D008133"
+            ],
+            "end": 689,
+            "id": "14",
+            "start": 685,
+            "text": "LQTS",
+            "type": "Disease"
+          },
+          "predicted": {
+            "canonical_type": "DiseaseOrPhenotypicFeature",
+            "end": 691,
+            "id": "E11",
+            "score": 0.518268883228302,
+            "start": 685,
+            "text": "LQTS-3",
+            "type": "disease"
+          }
+        },
+        {
+          "category": "span mismatch",
+          "context": {
+            "end": 878,
+            "start": 687,
+            "text": "TS-3 mutation was identified in the transmembrane segment 6 of domain IV of the Na(v)1.5 cardiac sodium channel, with a G-->A substitution at codon 1763, which changed a valine (GTG) to a met"
+          },
+          "document_id": "15485686",
+          "gold": {
+            "canonical_type": "GeneOrGeneProduct",
+            "concept_ids": [
+              "6331"
+            ],
+            "end": 775,
+            "id": "15",
+            "start": 767,
+            "text": "Na(v)1.5",
+            "type": "Gene"
+          },
+          "predicted": {
+            "canonical_type": "GeneOrGeneProduct",
+            "end": 798,
+            "id": "E12",
+            "score": 0.9196705222129822,
+            "start": 767,
+            "text": "Na(v)1.5 cardiac sodium channel",
+            "type": "protein"
+          }
+        },
+        {
+          "category": "span mismatch",
+          "context": {
+            "end": 1120,
+            "start": 938,
+            "text": " was absent in the parents and the sister. Expression of this mutant channel in tsA201 mammalian cells by site-directed mutagenesis revealed a persistent tetrodotoxin-sensitive but l"
+          },
+          "document_id": "15485686",
+          "gold": {
+            "canonical_type": "CellLine",
+            "concept_ids": [
+              "CVCL_2737"
+            ],
+            "end": 1024,
+            "id": "19",
+            "start": 1018,
+            "text": "tsA201",
+            "type": "CellLine"
+          },
+          "predicted": {
+            "canonical_type": "CellLine",
+            "end": 1040,
+            "id": "E16",
+            "score": 0.9861750602722168,
+            "start": 1018,
+            "text": "tsA201 mammalian cells",
+            "type": "cell line"
+          }
+        },
+        {
+          "category": "span mismatch",
+          "context": {
+            "end": 1194,
+            "start": 1012,
+            "text": "el in tsA201 mammalian cells by site-directed mutagenesis revealed a persistent tetrodotoxin-sensitive but lidocaine-resistant current that was associated with a positive shift of th"
+          },
+          "document_id": "15485686",
+          "gold": {
+            "canonical_type": "ChemicalEntity",
+            "concept_ids": [
+              "D013779"
+            ],
+            "end": 1104,
+            "id": "20",
+            "start": 1092,
+            "text": "tetrodotoxin",
+            "type": "Chemical"
+          },
+          "predicted": {
+            "canonical_type": "ChemicalEntity",
+            "end": 1114,
+            "id": "E17",
+            "score": 0.9747597575187683,
+            "start": 1092,
+            "text": "tetrodotoxin-sensitive",
+            "type": "chemical"
+          }
+        }
+      ],
+      "spurious entity": [
+        {
+          "category": "spurious entity",
+          "context": {
+            "end": 984,
+            "start": 817,
+            "text": "titution at codon 1763, which changed a valine (GTG) to a methionine (ATG). The proband was heterozygous but the mutation was absent in the parents and the sister. Exp"
+          },
+          "document_id": "15485686",
+          "gold": null,
+          "predicted": {
+            "canonical_type": "OrganismTaxon",
+            "end": 904,
+            "id": "E13",
+            "score": 0.6897169351577759,
+            "start": 897,
+            "text": "proband",
+            "type": "species"
+          }
+        },
+        {
+          "category": "spurious entity",
+          "context": {
+            "end": 1044,
+            "start": 877,
+            "text": "thionine (ATG). The proband was heterozygous but the mutation was absent in the parents and the sister. Expression of this mutant channel in tsA201 mammalian cells by "
+          },
+          "document_id": "15485686",
+          "gold": null,
+          "predicted": {
+            "canonical_type": "OrganismTaxon",
+            "end": 964,
+            "id": "E14",
+            "score": 0.6907806396484375,
+            "start": 957,
+            "text": "parents",
+            "type": "species"
+          }
+        },
+        {
+          "category": "spurious entity",
+          "context": {
+            "end": 1059,
+            "start": 893,
+            "text": "The proband was heterozygous but the mutation was absent in the parents and the sister. Expression of this mutant channel in tsA201 mammalian cells by site-directed m"
+          },
+          "document_id": "15485686",
+          "gold": null,
+          "predicted": {
+            "canonical_type": "OrganismTaxon",
+            "end": 979,
+            "id": "E15",
+            "score": 0.7422974109649658,
+            "start": 973,
+            "text": "sister",
+            "type": "species"
+          }
+        },
+        {
+          "category": "spurious entity",
+          "context": {
+            "end": 1452,
+            "start": 1286,
+            "text": "ation. We also found a similar electrophysiological profile for the neighboring V1764M mutant. But, the other neighboring I1762A mutant had no persistent current and "
+          },
+          "document_id": "15485686",
+          "gold": null,
+          "predicted": {
+            "canonical_type": "GeneOrGeneProduct",
+            "end": 1372,
+            "id": "E19",
+            "score": 0.6389963030815125,
+            "start": 1366,
+            "text": "V1764M",
+            "type": "gene"
+          }
+        },
+        {
+          "category": "spurious entity",
+          "context": {
+            "end": 1494,
+            "start": 1328,
+            "text": "iological profile for the neighboring V1764M mutant. But, the other neighboring I1762A mutant had no persistent current and was still associated with a positive shift"
+          },
+          "document_id": "15485686",
+          "gold": null,
+          "predicted": {
+            "canonical_type": "GeneOrGeneProduct",
+            "end": 1414,
+            "id": "E20",
+            "score": 0.8052079677581787,
+            "start": 1408,
+            "text": "I1762A",
+            "type": "gene"
+          }
+        }
+      ],
+      "wrong type": [
+        {
+          "category": "wrong type",
+          "context": {
+            "end": 432,
+            "start": 269,
+            "text": "h HIV and hepatitis B virus (HBV). A cross-sectional study of 847 patients with HIV was conducted. Patients provided blood samples for HBsAg detection. The load of"
+          },
+          "document_id": "20648600",
+          "gold": {
+            "canonical_type": "OrganismTaxon",
+            "concept_ids": [
+              "11676"
+            ],
+            "end": 352,
+            "id": "11",
+            "start": 349,
+            "text": "HIV",
+            "type": "Species"
+          },
+          "predicted": {
+            "canonical_type": "DiseaseOrPhenotypicFeature",
+            "end": 352,
+            "id": "E11",
+            "score": 0.9862215518951416,
+            "start": 349,
+            "text": "HIV",
+            "type": "disease"
+          }
+        },
+        {
+          "category": "wrong type",
+          "context": {
+            "end": 801,
+            "start": 638,
+            "text": "g. Twenty-eight patients with co-infection were identified. The distribution of HBV genotypes among these patients was A (n = 9; 50%), D (n = 4; 22.2%), G (n = 3; "
+          },
+          "document_id": "20648600",
+          "gold": {
+            "canonical_type": "OrganismTaxon",
+            "concept_ids": [
+              "10407"
+            ],
+            "end": 721,
+            "id": "19",
+            "start": 718,
+            "text": "HBV",
+            "type": "Species"
+          },
+          "predicted": {
+            "canonical_type": "DiseaseOrPhenotypicFeature",
+            "end": 721,
+            "id": "E17",
+            "score": 0.6401386260986328,
+            "start": 718,
+            "text": "HBV",
+            "type": "disease"
+          }
+        },
+        {
+          "category": "wrong type",
+          "context": {
+            "end": 1673,
+            "start": 1510,
+            "text": "prolonged LAM use is associated with the emergence of particular changes in the HBV genome, including substitutions that may elicit a vaccine escape phenotype. No "
+          },
+          "document_id": "20648600",
+          "gold": {
+            "canonical_type": "OrganismTaxon",
+            "concept_ids": [
+              "10407"
+            ],
+            "end": 1593,
+            "id": "50",
+            "start": 1590,
+            "text": "HBV",
+            "type": "Species"
+          },
+          "predicted": {
+            "canonical_type": "DiseaseOrPhenotypicFeature",
+            "end": 1593,
+            "id": "E32",
+            "score": 0.7291901707649231,
+            "start": 1590,
+            "text": "HBV",
+            "type": "disease"
+          }
+        },
+        {
+          "category": "wrong type",
+          "context": {
+            "end": 863,
+            "start": 672,
+            "text": "to control rats significantly increased renal malondialdehyde (MDA) and urinary N-acetyl-beta-d-glucosaminidase (NAG, a marker of renal tubular injury) excretion but decreased superoxide dism"
+          },
+          "document_id": "16112787",
+          "gold": {
+            "canonical_type": "GeneOrGeneProduct",
+            "concept_ids": [
+              "154968"
+            ],
+            "end": 783,
+            "id": "22",
+            "start": 752,
+            "text": "N-acetyl-beta-d-glucosaminidase",
+            "type": "Gene"
+          },
+          "predicted": {
+            "canonical_type": "ChemicalEntity",
+            "end": 783,
+            "id": "E16",
+            "score": 0.8354030847549438,
+            "start": 752,
+            "text": "N-acetyl-beta-d-glucosaminidase",
+            "type": "chemical"
+          }
+        },
+        {
+          "category": "wrong type",
+          "context": {
+            "end": 868,
+            "start": 705,
+            "text": "reased renal malondialdehyde (MDA) and urinary N-acetyl-beta-d-glucosaminidase (NAG, a marker of renal tubular injury) excretion but decreased superoxide dismutase"
+          },
+          "document_id": "16112787",
+          "gold": {
+            "canonical_type": "GeneOrGeneProduct",
+            "concept_ids": [
+              "154968"
+            ],
+            "end": 788,
+            "id": "23",
+            "start": 785,
+            "text": "NAG",
+            "type": "Gene"
+          },
+          "predicted": {
+            "canonical_type": "ChemicalEntity",
+            "end": 788,
+            "id": "E17",
+            "score": 0.8714463710784912,
+            "start": 785,
+            "text": "NAG",
+            "type": "chemical"
+          }
+        }
+      ]
+    }
+  },
+  "graph_critical_entity_recall": {
+    "concept_level": {
+      "comparable_class": {
+        "denominator": "relation-participating gold concepts with shared-class mentions",
+        "gold": 751,
+        "recall": 0.6724367509986684,
+        "recognized": 505
+      },
+      "denominator": "all relation-participating gold concepts",
+      "gold": 871,
+      "overall": {
+        "denominator": "all relation-participating gold concepts",
+        "gold": 871,
+        "recall": 0.5797933409873708,
+        "recognized": 505
+      },
+      "recall": 0.5797933409873708,
+      "recognized": 505
+    },
+    "definition": "Gold BioRED entity mentions/concepts participating in at least one annotated relation, recognized by exact span and canonical type; this is an NER diagnostic, not relation evaluation.",
+    "documents_with_relations": 100,
+    "mention_level": {
+      "comparable_class": {
+        "denominator": "relation-participating gold mentions in shared taxonomy",
+        "gold": 2502,
+        "recall": 0.6219024780175859,
+        "recognized": 1556,
+        "unscored_gold_type": 0
+      },
+      "denominator": "all relation-participating gold mentions",
+      "gold": 2722,
+      "overall": {
+        "denominator": "all relation-participating gold mentions",
+        "gold": 2722,
+        "recall": 0.5716385011021308,
+        "recognized": 1556,
+        "unscored_gold_type": 220
+      },
+      "recall": 0.5716385011021308,
+      "recognized": 1556,
+      "unscored_gold_type": 220
+    }
+  },
+  "limitations": [
+    "Primary metrics use exact half-open character spans and canonical type only; no fuzzy matching is applied.",
+    "Unsupported schema labels are reported separately and excluded from primary comparable-class metrics.",
+    "Failure categories are deterministic diagnostics and do not change the primary counts.",
+    "Graph-critical recall uses BioRED relation concept participation only as an NER diagnostic; no relation model is invoked.",
+    "This report is baseline evidence and does not establish production readiness or rank a candidate model."
+  ],
+  "metrics": {
+    "exact_match": {
+      "macro_f1": 0.5128579916232362,
+      "macro_scored_types": [
+        "CellLine",
+        "ChemicalEntity",
+        "DiseaseOrPhenotypicFeature",
+        "GeneOrGeneProduct",
+        "OrganismTaxon"
+      ],
+      "matching": "exact half-open character span and canonical evaluation type",
+      "micro": {
+        "f1": 0.6130485566494244,
+        "fn": 1457,
+        "fp": 862,
+        "precision": 0.6806224527602815,
+        "recall": 0.5576806314511232,
+        "tp": 1837
+      },
+      "per_type": {
+        "CellLine": {
+          "f1": 0.25125628140703515,
+          "fn": 25,
+          "fp": 124,
+          "precision": 0.16778523489932887,
+          "predicted": 149,
+          "recall": 0.5,
+          "support": 50,
+          "tp": 25
+        },
+        "ChemicalEntity": {
+          "f1": 0.6698369565217391,
+          "fn": 261,
+          "fp": 225,
+          "precision": 0.6866295264623955,
+          "predicted": 718,
+          "recall": 0.6538461538461539,
+          "support": 754,
+          "tp": 493
+        },
+        "DiseaseOrPhenotypicFeature": {
+          "f1": 0.6327974276527332,
+          "fn": 425,
+          "fp": 146,
+          "precision": 0.7711598746081505,
+          "predicted": 638,
+          "recall": 0.5365321701199564,
+          "support": 917,
+          "tp": 492
+        },
+        "GeneOrGeneProduct": {
+          "f1": 0.6624203821656051,
+          "fn": 452,
+          "fp": 290,
+          "precision": 0.7151277013752456,
+          "predicted": 1018,
+          "recall": 0.6169491525423729,
+          "support": 1180,
+          "tp": 728
+        },
+        "OrganismTaxon": {
+          "f1": 0.34797891036906853,
+          "fn": 294,
+          "fp": 77,
+          "precision": 0.5625,
+          "predicted": 176,
+          "recall": 0.25190839694656486,
+          "support": 393,
+          "tp": 99
+        }
+      },
+      "supported_canonical_types": [
+        "CellLine",
+        "ChemicalEntity",
+        "DiseaseOrPhenotypicFeature",
+        "GeneOrGeneProduct",
+        "OrganismTaxon"
+      ]
+    },
+    "full_schema": {
+      "macro_f1": 0.5128579916232362,
+      "macro_scored_types": [
+        "CellLine",
+        "ChemicalEntity",
+        "DiseaseOrPhenotypicFeature",
+        "GeneOrGeneProduct",
+        "OrganismTaxon"
+      ],
+      "matching": "exact half-open character span and canonical evaluation type",
+      "micro": {
+        "f1": 0.6130485566494244,
+        "fn": 1457,
+        "fp": 862,
+        "precision": 0.6806224527602815,
+        "recall": 0.5576806314511232,
+        "tp": 1837
+      },
+      "per_type": {
+        "CellLine": {
+          "f1": 0.25125628140703515,
+          "fn": 25,
+          "fp": 124,
+          "precision": 0.16778523489932887,
+          "predicted": 149,
+          "recall": 0.5,
+          "support": 50,
+          "tp": 25
+        },
+        "ChemicalEntity": {
+          "f1": 0.6698369565217391,
+          "fn": 261,
+          "fp": 225,
+          "precision": 0.6866295264623955,
+          "predicted": 718,
+          "recall": 0.6538461538461539,
+          "support": 754,
+          "tp": 493
+        },
+        "DiseaseOrPhenotypicFeature": {
+          "f1": 0.6327974276527332,
+          "fn": 425,
+          "fp": 146,
+          "precision": 0.7711598746081505,
+          "predicted": 638,
+          "recall": 0.5365321701199564,
+          "support": 917,
+          "tp": 492
+        },
+        "GeneOrGeneProduct": {
+          "f1": 0.6624203821656051,
+          "fn": 452,
+          "fp": 290,
+          "precision": 0.7151277013752456,
+          "predicted": 1018,
+          "recall": 0.6169491525423729,
+          "support": 1180,
+          "tp": 728
+        },
+        "OrganismTaxon": {
+          "f1": 0.34797891036906853,
+          "fn": 294,
+          "fp": 77,
+          "precision": 0.5625,
+          "predicted": 176,
+          "recall": 0.25190839694656486,
+          "support": 393,
+          "tp": 99
+        }
+      },
+      "supported_canonical_types": [
+        "CellLine",
+        "ChemicalEntity",
+        "DiseaseOrPhenotypicFeature",
+        "GeneOrGeneProduct",
+        "OrganismTaxon"
+      ],
+      "unsupported_canonical_types": [
+        "SequenceVariant"
+      ]
+    },
+    "primary": "shared_class",
+    "shared_class": {
+      "macro_f1": 0.5128579916232362,
+      "macro_scored_types": [
+        "CellLine",
+        "ChemicalEntity",
+        "DiseaseOrPhenotypicFeature",
+        "GeneOrGeneProduct",
+        "OrganismTaxon"
+      ],
+      "matching": "exact half-open character span and canonical evaluation type",
+      "micro": {
+        "f1": 0.6130485566494244,
+        "fn": 1457,
+        "fp": 862,
+        "precision": 0.6806224527602815,
+        "recall": 0.5576806314511232,
+        "tp": 1837
+      },
+      "per_type": {
+        "CellLine": {
+          "f1": 0.25125628140703515,
+          "fn": 25,
+          "fp": 124,
+          "precision": 0.16778523489932887,
+          "predicted": 149,
+          "recall": 0.5,
+          "support": 50,
+          "tp": 25
+        },
+        "ChemicalEntity": {
+          "f1": 0.6698369565217391,
+          "fn": 261,
+          "fp": 225,
+          "precision": 0.6866295264623955,
+          "predicted": 718,
+          "recall": 0.6538461538461539,
+          "support": 754,
+          "tp": 493
+        },
+        "DiseaseOrPhenotypicFeature": {
+          "f1": 0.6327974276527332,
+          "fn": 425,
+          "fp": 146,
+          "precision": 0.7711598746081505,
+          "predicted": 638,
+          "recall": 0.5365321701199564,
+          "support": 917,
+          "tp": 492
+        },
+        "GeneOrGeneProduct": {
+          "f1": 0.6624203821656051,
+          "fn": 452,
+          "fp": 290,
+          "precision": 0.7151277013752456,
+          "predicted": 1018,
+          "recall": 0.6169491525423729,
+          "support": 1180,
+          "tp": 728
+        },
+        "OrganismTaxon": {
+          "f1": 0.34797891036906853,
+          "fn": 294,
+          "fp": 77,
+          "precision": 0.5625,
+          "predicted": 176,
+          "recall": 0.25190839694656486,
+          "support": 393,
+          "tp": 99
+        }
+      },
+      "supported_canonical_types": [
+        "CellLine",
+        "ChemicalEntity",
+        "DiseaseOrPhenotypicFeature",
+        "GeneOrGeneProduct",
+        "OrganismTaxon"
+      ]
+    }
+  },
+  "predictor": {
+    "adapter": "GLiNERBioMedExtractor",
+    "device": "cpu",
+    "labels": [
+      "gene",
+      "protein",
+      "disease",
+      "chemical",
+      "species",
+      "cell line",
+      "DNA",
+      "RNA"
+    ],
+    "model": "Ihor/gliner-biomed-base-v1.0",
+    "name": "GLiNER BioRED",
+    "threshold": 0.5
+  },
+  "schema_coverage": {
+    "gold": {
+      "scored": 3294,
+      "scored_fraction": 0.9318246110325318,
+      "total": 3535,
+      "unscored": 241,
+      "unscored_by_type": {
+        "Variant": 241
+      }
+    },
+    "predicted": {
+      "scored": 2699,
+      "scored_fraction": 0.949349278930707,
+      "total": 2843,
+      "unscored": 144,
+      "unscored_by_type": {
+        "DNA": 91,
+        "RNA": 53
+      }
+    }
+  },
+  "taxonomy": {
+    "all_canonical_types": [
+      "CellLine",
+      "ChemicalEntity",
+      "DiseaseOrPhenotypicFeature",
+      "GeneOrGeneProduct",
+      "OrganismTaxon",
+      "SequenceVariant"
+    ],
+    "comparable_canonical_types": [
+      "CellLine",
+      "ChemicalEntity",
+      "DiseaseOrPhenotypicFeature",
+      "GeneOrGeneProduct",
+      "OrganismTaxon"
+    ],
+    "gold_internal_type_to_canonical": {
+      "CellLine": "CellLine",
+      "Chemical": "ChemicalEntity",
+      "Disease": "DiseaseOrPhenotypicFeature",
+      "Gene": "GeneOrGeneProduct",
+      "Species": "OrganismTaxon",
+      "Variant": "SequenceVariant"
+    },
+    "policy": "Shared-class metrics compare only exact span plus canonical type for classes represented by both systems. Full-schema metrics use the explicit supported taxonomy supplied by the predictor. Unsupported gold/prediction labels are reported as schema coverage gaps and are not silently remapped.",
+    "predicted_type_to_canonical": {
+      "CellLine": "CellLine",
+      "Chemical": "ChemicalEntity",
+      "Disease": "DiseaseOrPhenotypicFeature",
+      "Gene": "GeneOrGeneProduct",
+      "Species": "OrganismTaxon",
+      "Variant": "SequenceVariant",
+      "cell line": "CellLine",
+      "chemical": "ChemicalEntity",
+      "disease": "DiseaseOrPhenotypicFeature",
+      "gene": "GeneOrGeneProduct",
+      "protein": "GeneOrGeneProduct",
+      "species": "OrganismTaxon"
+    },
+    "unscored_gold_canonical_types": [
+      "SequenceVariant"
+    ],
+    "unscored_predicted_types": [
+      "DNA",
+      "RNA"
+    ]
+  }
+}

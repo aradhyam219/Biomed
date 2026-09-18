@@ -1,3 +1,11 @@
+from .aioner import (
+    AIONERBioMedExtractor,
+    AIONER_LABEL_TO_CANONICAL,
+    AIONERPredictionRuntime,
+    AIONERRawPrediction,
+    AIONER_SUPPORTED_CANONICAL_TYPES,
+    normalize_aioner_predictions,
+)
 from .entity_extraction import (
     DEFAULT_CORE_ENTITY_LABELS,
     DEFAULT_ENTITY_LABELS,
@@ -34,6 +42,11 @@ __all__ = [
     "BiomedicalExtractor",
     "BiomedicalLLMExtractor",
     "ComposedExtractionResult",
+    "AIONERBioMedExtractor",
+    "AIONER_LABEL_TO_CANONICAL",
+    "AIONERPredictionRuntime",
+    "AIONERRawPrediction",
+    "AIONER_SUPPORTED_CANONICAL_TYPES",
     "DEFAULT_CORE_ENTITY_LABELS",
     "DEFAULT_ENTITY_LABELS",
     "DEFAULT_ENTITY_MODEL",
@@ -57,4 +70,5 @@ __all__ = [
     "RelationValidationError",
     "RELATION_EXTRACTION_SYSTEM_PROMPT",
     "validate_relations",
+    "normalize_aioner_predictions",
 ]

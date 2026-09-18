@@ -175,16 +175,29 @@ def resolve_biored_path(dataset_path: str | Path, split: str = "dev") -> Path:
     """Resolve an explicit BioC JSON file or directory for the requested split."""
 
     normalized_split = split.lower()
-    if normalized_split != "dev":
-        raise ValueError("V0-B permits only the original BioRED development split")
+    filenames = {
+        "dev": "Dev.BioC.JSON",
+        "test": "Test.BioC.JSON",
+    }
+    try:
+        expected_filename = filenames[normalized_split]
+    except KeyError as error:
+        raise ValueError(
+            f"Unsupported BioRED split {split!r}; expected 'dev' or 'test'"
+        ) from error
     path = Path(dataset_path).expanduser().resolve()
     if path.is_dir():
-        candidates = (path / "Dev.BioC.JSON", path / "BioRED" / "Dev.BioC.JSON")
+        candidates = (path / expected_filename, path / "BioRED" / expected_filename)
         path = next((candidate for candidate in candidates if candidate.is_file()), path)
     if not path.is_file():
-        raise FileNotFoundError(f"BioRED development BioC JSON not found: {path}")
-    if path.name.lower() != "dev.bioc.json":
-        raise ValueError("V0-B dataset file must be the official Dev.BioC.JSON split")
+        raise FileNotFoundError(
+            f"BioRED {normalized_split} BioC JSON not found: {path}"
+        )
+    if path.name.lower() != expected_filename.lower():
+        raise ValueError(
+            f"BioRED {normalized_split} dataset file must be the official "
+            f"{expected_filename} split"
+        )
     return path
 
 

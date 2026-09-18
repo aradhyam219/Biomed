@@ -91,6 +91,27 @@ class BioREDTests(unittest.TestCase):
             (TypedRelation("PM1", "1", "D1", "Association"),),
         )
 
+    def test_ner_loader_accepts_official_test_filename(self):
+        root = {
+            "source": "BioC",
+            "date": "2022",
+            "key": "collection.key",
+            "documents": [
+                {
+                    "id": "TEST1",
+                    "passages": [{"offset": 0, "text": "BRCA1", "annotations": []}],
+                    "relations": [],
+                }
+            ],
+        }
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "Test.BioC.JSON"
+            path.write_text(json.dumps(root), encoding="utf-8")
+            dataset = load_biored(path, "test")
+
+        self.assertEqual(dataset.split, "test")
+        self.assertEqual(dataset.documents[0].id, "TEST1")
+
     def test_concept_pair_is_non_directional(self):
         self.assertEqual(canonical_pair("Z", "A"), ("A", "Z"))
         self.assertEqual(canonical_pair("A", "A"), ("A", "A"))
