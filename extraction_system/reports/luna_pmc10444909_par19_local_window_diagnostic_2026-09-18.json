@@ -1,0 +1,885 @@
+{
+  "report_type": "par19_local_window_diagnostic",
+  "report_date": "2026-09-18",
+  "evaluation_status": "COMPLETED_TWO_LOCAL_WINDOWS",
+  "branch": "extraction_system_v2",
+  "base_commit_before_artifacts": "41cb1a84ef6c64a393b12cc7419cc7f6a6e05d34",
+  "scope": {
+    "intent": "Determine whether the prior exact Par19 Luna length failure resolves for smaller natural discourse windows while the extraction pipeline remains unchanged.",
+    "diagnostic_only": true,
+    "production_windowing_implemented": false
+  },
+  "source": {
+    "pmcid": "PMC10444909",
+    "section_id": "Sec18",
+    "paragraph_id": "Par19",
+    "sha256": "0ae2a28512767a31fba398a935041e55dca2bcc743ded4ad8cfc498abf0e2e98",
+    "characters": 938,
+    "words": 145,
+    "text": "To investigate the mechanisms by which KNTC1 affects hepatocellular carcinoma, we performed predictions of proteins that interrelate with KNTC1 by using the STRING database. The results showed that CDK1 has interaction with KNTC1 (Fig.\u00a04A). We showed that knockdown of KNTC1 in SK-Hep-1 and Huh7 cells significantly reduced the protein as well as mRNA levels of CDK1. This indicates that KNTC1 positive correlation with the expression of CDK1 (Fig.\u00a04B). Next, we examined CDK1 expression in the hepatoma cell lines of SK-Hep-1, Huh7, HepG2 and SNU449 and found that both protein levels and mRNA levels of CDK1 were significantly increased compared to normal hepatocytes (Fig.\u00a04C). Meanwhile, we found that KNTC1 was regulating CDK1 levels in HCC through TCGA database analysis (Fig.\u00a04D). These results suggest that KNTC1 may positively regulate the levels of CDK1 in hepatocellular carcinoma cells, and both proteins are highly expressed.",
+    "sentence_boundaries": [
+      {
+        "sentence": 1,
+        "start": 0,
+        "end": 173,
+        "text": "To investigate the mechanisms by which KNTC1 affects hepatocellular carcinoma, we performed predictions of proteins that interrelate with KNTC1 by using the STRING database."
+      },
+      {
+        "sentence": 2,
+        "start": 174,
+        "end": 240,
+        "text": "The results showed that CDK1 has interaction with KNTC1 (Fig.\u00a04A)."
+      },
+      {
+        "sentence": 3,
+        "start": 241,
+        "end": 367,
+        "text": "We showed that knockdown of KNTC1 in SK-Hep-1 and Huh7 cells significantly reduced the protein as well as mRNA levels of CDK1."
+      },
+      {
+        "sentence": 4,
+        "start": 368,
+        "end": 453,
+        "text": "This indicates that KNTC1 positive correlation with the expression of CDK1 (Fig.\u00a04B)."
+      },
+      {
+        "sentence": 5,
+        "start": 454,
+        "end": 680,
+        "text": "Next, we examined CDK1 expression in the hepatoma cell lines of SK-Hep-1, Huh7, HepG2 and SNU449 and found that both protein levels and mRNA levels of CDK1 were significantly increased compared to normal hepatocytes (Fig.\u00a04C)."
+      },
+      {
+        "sentence": 6,
+        "start": 681,
+        "end": 787,
+        "text": "Meanwhile, we found that KNTC1 was regulating CDK1 levels in HCC through TCGA database analysis (Fig.\u00a04D)."
+      },
+      {
+        "sentence": 7,
+        "start": 788,
+        "end": 938,
+        "text": "These results suggest that KNTC1 may positively regulate the levels of CDK1 in hepatocellular carcinoma cells, and both proteins are highly expressed."
+      }
+    ],
+    "window_boundary": {
+      "split_after_sentence": 4,
+      "offset": 454,
+      "contiguous_spans": [
+        [
+          0,
+          454
+        ],
+        [
+          454,
+          938
+        ]
+      ],
+      "reconstructed_from_windows": true
+    },
+    "window_order": [
+      "Par19-W1",
+      "Par19-W2"
+    ]
+  },
+  "baseline": {
+    "source": "Existing exact Par19 diagnostic report; not rerun in this experiment.",
+    "entity_count": 27,
+    "type_counts": {
+      "gene": 14,
+      "disease": 3,
+      "cell line": 7,
+      "RNA": 2,
+      "species": 1
+    },
+    "biological_process_entity_count": 0,
+    "luna": {
+      "status": "FAILED_NO_STRUCTURED_OUTPUT",
+      "error_type": "openai.LengthFinishReasonError",
+      "provider_response_received": true,
+      "usage": {
+        "prompt_tokens": 2248,
+        "completion_tokens": 8192,
+        "reasoning_tokens": 8192,
+        "total_tokens": 10440,
+        "available_only_from_failure_response": true
+      },
+      "wall_clock_seconds": 104.3,
+      "provider_retry_observed": false,
+      "structured_relations_returned": 0
+    }
+  },
+  "configuration": {
+    "entity_model": "Ihor/gliner-biomed-base-v1.0",
+    "entity_threshold": 0.5,
+    "device": "auto",
+    "core_labels": [
+      "gene",
+      "protein",
+      "disease",
+      "chemical",
+      "species",
+      "cell line",
+      "DNA",
+      "RNA"
+    ],
+    "process_labels": [
+      "biological process"
+    ],
+    "entity_passes": [
+      "core",
+      "biological_process"
+    ],
+    "relation_model": "gpt-5.6-luna",
+    "reasoning_effort": "high",
+    "max_completion_tokens": 8192,
+    "harness_max_retries": 2,
+    "provider_max_retries_configured": 0,
+    "prompt_unchanged": true,
+    "merge_rules_unchanged": true,
+    "relation_contract_unchanged": true,
+    "validator_unchanged": true
+  },
+  "execution": {
+    "paid_window_invocations_started": 2,
+    "structured_output_completions": 2,
+    "provider_responses_received": 2,
+    "local_window_retries": 0,
+    "valid_provider_result_reruns": 0,
+    "source_text_transport": "The exact cached UTF-8 Par19 text was read in-process; no source text was passed through a native Windows argument.",
+    "preflight_ner_replay_non_paid": true
+  },
+  "windows": [
+    {
+      "window_id": "Par19-W1",
+      "sentence_numbers": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "source_span": {
+        "start": 0,
+        "end": 454,
+        "full_source_offset_basis": "Par19 exact text"
+      },
+      "text": "To investigate the mechanisms by which KNTC1 affects hepatocellular carcinoma, we performed predictions of proteins that interrelate with KNTC1 by using the STRING database. The results showed that CDK1 has interaction with KNTC1 (Fig.\u00a04A). We showed that knockdown of KNTC1 in SK-Hep-1 and Huh7 cells significantly reduced the protein as well as mRNA levels of CDK1. This indicates that KNTC1 positive correlation with the expression of CDK1 (Fig.\u00a04B). ",
+      "sha256": "a61bfc11749f8b08f2a4ea6baa847251ad1fdcd69222698ea7eb13bdb29ba54a",
+      "characters": 454,
+      "words": 70,
+      "ner": {
+        "status": "PASS",
+        "entity_count": 12,
+        "type_counts": {
+          "RNA": 1,
+          "biological process": 9,
+          "cell line": 2
+        },
+        "biological_process_detections": [
+          {
+            "id": "E1",
+            "text": "KNTC1",
+            "type": "biological process",
+            "start": 39,
+            "end": 44,
+            "score": 0.7635626792907715
+          },
+          {
+            "id": "E2",
+            "text": "hepatocellular carcinoma",
+            "type": "biological process",
+            "start": 53,
+            "end": 77,
+            "score": 0.6635268926620483
+          },
+          {
+            "id": "E3",
+            "text": "KNTC1",
+            "type": "biological process",
+            "start": 138,
+            "end": 143,
+            "score": 0.750923216342926
+          },
+          {
+            "id": "E4",
+            "text": "CDK1",
+            "type": "biological process",
+            "start": 198,
+            "end": 202,
+            "score": 0.6911320686340332
+          },
+          {
+            "id": "E5",
+            "text": "KNTC1",
+            "type": "biological process",
+            "start": 224,
+            "end": 229,
+            "score": 0.7416909337043762
+          },
+          {
+            "id": "E6",
+            "text": "KNTC1",
+            "type": "biological process",
+            "start": 269,
+            "end": 274,
+            "score": 0.600197434425354
+          },
+          {
+            "id": "E10",
+            "text": "CDK1",
+            "type": "biological process",
+            "start": 362,
+            "end": 366,
+            "score": 0.7129055261611938
+          },
+          {
+            "id": "E11",
+            "text": "KNTC1",
+            "type": "biological process",
+            "start": 388,
+            "end": 393,
+            "score": 0.6487419009208679
+          },
+          {
+            "id": "E12",
+            "text": "CDK1",
+            "type": "biological process",
+            "start": 438,
+            "end": 442,
+            "score": 0.7243840098381042
+          }
+        ],
+        "entities": [
+          {
+            "id": "E1",
+            "text": "KNTC1",
+            "type": "biological process",
+            "start": 39,
+            "end": 44,
+            "score": 0.7635626792907715
+          },
+          {
+            "id": "E2",
+            "text": "hepatocellular carcinoma",
+            "type": "biological process",
+            "start": 53,
+            "end": 77,
+            "score": 0.6635268926620483
+          },
+          {
+            "id": "E3",
+            "text": "KNTC1",
+            "type": "biological process",
+            "start": 138,
+            "end": 143,
+            "score": 0.750923216342926
+          },
+          {
+            "id": "E4",
+            "text": "CDK1",
+            "type": "biological process",
+            "start": 198,
+            "end": 202,
+            "score": 0.6911320686340332
+          },
+          {
+            "id": "E5",
+            "text": "KNTC1",
+            "type": "biological process",
+            "start": 224,
+            "end": 229,
+            "score": 0.7416909337043762
+          },
+          {
+            "id": "E6",
+            "text": "KNTC1",
+            "type": "biological process",
+            "start": 269,
+            "end": 274,
+            "score": 0.600197434425354
+          },
+          {
+            "id": "E7",
+            "text": "SK-Hep-1",
+            "type": "cell line",
+            "start": 278,
+            "end": 286,
+            "score": 0.9737917184829712
+          },
+          {
+            "id": "E8",
+            "text": "Huh7 cells",
+            "type": "cell line",
+            "start": 291,
+            "end": 301,
+            "score": 0.9767966866493225
+          },
+          {
+            "id": "E9",
+            "text": "mRNA",
+            "type": "RNA",
+            "start": 347,
+            "end": 351,
+            "score": 0.9965417981147766
+          },
+          {
+            "id": "E10",
+            "text": "CDK1",
+            "type": "biological process",
+            "start": 362,
+            "end": 366,
+            "score": 0.7129055261611938
+          },
+          {
+            "id": "E11",
+            "text": "KNTC1",
+            "type": "biological process",
+            "start": 388,
+            "end": 393,
+            "score": 0.6487419009208679
+          },
+          {
+            "id": "E12",
+            "text": "CDK1",
+            "type": "biological process",
+            "start": 438,
+            "end": 442,
+            "score": 0.7243840098381042
+          }
+        ],
+        "capture_method": "Entities are the unchanged current two-pass GLiNER output used for the corresponding Luna call; no entities were manually added, removed, relabeled, deduplicated, or consolidated."
+      },
+      "luna": {
+        "status": "COMPLETED_STRUCTURED_OUTPUT",
+        "structured_extraction_completed": true,
+        "relations": [
+          {
+            "source": "E1",
+            "target": "E2",
+            "predicate": "affects",
+            "evidence": "KNTC1 affects hepatocellular carcinoma",
+            "negated": false,
+            "surface_form": "affects",
+            "score": null
+          },
+          {
+            "source": "E4",
+            "target": "E5",
+            "predicate": "interacts with",
+            "evidence": "CDK1 has interaction with KNTC1",
+            "negated": false,
+            "surface_form": "has interaction with",
+            "score": null
+          },
+          {
+            "source": "E6",
+            "target": "E7",
+            "predicate": "is knocked down in",
+            "evidence": "knockdown of KNTC1 in SK-Hep-1",
+            "negated": false,
+            "surface_form": "knockdown of KNTC1 in",
+            "score": null
+          },
+          {
+            "source": "E6",
+            "target": "E8",
+            "predicate": "is knocked down in",
+            "evidence": "knockdown of KNTC1 in SK-Hep-1 and Huh7 cells",
+            "negated": false,
+            "surface_form": "knockdown of KNTC1 in",
+            "score": null
+          },
+          {
+            "source": "E6",
+            "target": "E10",
+            "predicate": "knockdown reduces levels of",
+            "evidence": "knockdown of KNTC1 in SK-Hep-1 and Huh7 cells significantly reduced the protein as well as mRNA levels of CDK1",
+            "negated": false,
+            "surface_form": "significantly reduced the protein as well as mRNA levels of CDK1",
+            "score": null
+          },
+          {
+            "source": "E11",
+            "target": "E12",
+            "predicate": "positively correlates with expression of",
+            "evidence": "KNTC1 positive correlation with the expression of CDK1",
+            "negated": false,
+            "surface_form": "positive correlation with the expression of",
+            "score": null
+          }
+        ],
+        "failure": null,
+        "usage": {
+          "available": false,
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "reasoning_tokens": null,
+          "total_tokens": null,
+          "reason": "The current successful-call harness boundary did not expose provider usage metadata."
+        },
+        "latency": {
+          "ner_seconds": 0.384,
+          "luna_seconds": 21.277,
+          "wall_clock_seconds": 21.661,
+          "scope": "One in-process production-path window execution, including the local NER pass and Luna call."
+        },
+        "retry": {
+          "harness_max_retries": 2,
+          "provider_max_retries_configured": 0,
+          "provider_attempt_count": null,
+          "provider_retry_observed": false,
+          "reason": "The current harness/runtime exposes no provider attempt counter; no generated-output repair retry or provider retry was observed."
+        }
+      },
+      "validation": {
+        "entity_span_check": {
+          "status": "PASS",
+          "checked": 12,
+          "total": 12
+        },
+        "relation_endpoint_check": {
+          "status": "PASS",
+          "checked": 6,
+          "total": 6
+        },
+        "relation_evidence_check": {
+          "status": "PASS",
+          "checked": 6,
+          "total": 6
+        },
+        "relation_surface_form_check": {
+          "status": "PASS",
+          "checked": 6,
+          "total": 6
+        },
+        "existing_deterministic_validator": {
+          "status": "PASS",
+          "accepted": 6,
+          "total": 6
+        }
+      },
+      "semantic_assessment": {
+        "returned_claims": [
+          {
+            "relation_ids": [
+              "E4->E5"
+            ],
+            "assessment": "The emitted CDK1 -> KNTC1 interaction direction matches the sentence evidence."
+          },
+          {
+            "relation_ids": [
+              "E6->E7",
+              "E6->E8",
+              "E6->E10"
+            ],
+            "assessment": "The KNTC1 knockdown intervention direction and reduction-of-CDK1 wording are preserved; the output uses process-labeled endpoints and does not emit separate protein and mRNA target relations."
+          },
+          {
+            "relation_ids": [
+              "E11->E12"
+            ],
+            "assessment": "The KNTC1 -> CDK1 positive-correlation/expression direction and wording are preserved for the emitted relation."
+          }
+        ],
+        "limitations": [
+          "The local NER output contains no gene-labeled entity; nine biological-process detections include exact KNTC1, CDK1, and disease strings.",
+          "Semantic assessment is limited to emitted claims; structural validation does not establish entity-type correctness or relation completeness."
+        ]
+      }
+    },
+    {
+      "window_id": "Par19-W2",
+      "sentence_numbers": [
+        5,
+        6,
+        7
+      ],
+      "source_span": {
+        "start": 454,
+        "end": 938,
+        "full_source_offset_basis": "Par19 exact text"
+      },
+      "text": "Next, we examined CDK1 expression in the hepatoma cell lines of SK-Hep-1, Huh7, HepG2 and SNU449 and found that both protein levels and mRNA levels of CDK1 were significantly increased compared to normal hepatocytes (Fig.\u00a04C). Meanwhile, we found that KNTC1 was regulating CDK1 levels in HCC through TCGA database analysis (Fig.\u00a04D). These results suggest that KNTC1 may positively regulate the levels of CDK1 in hepatocellular carcinoma cells, and both proteins are highly expressed.",
+      "sha256": "5df0394d6d3889b193121470b80b697bc83a9e993b4cfca0cf00c903a6f4e9f2",
+      "characters": 484,
+      "words": 75,
+      "ner": {
+        "status": "PASS",
+        "entity_count": 17,
+        "type_counts": {
+          "RNA": 1,
+          "biological process": 5,
+          "cell line": 5,
+          "disease": 2,
+          "gene": 3,
+          "species": 1
+        },
+        "biological_process_detections": [
+          {
+            "id": "E2",
+            "text": "CDK1 expression",
+            "type": "biological process",
+            "start": 18,
+            "end": 33,
+            "score": 0.7173507809638977
+          },
+          {
+            "id": "E9",
+            "text": "CDK1",
+            "type": "biological process",
+            "start": 151,
+            "end": 155,
+            "score": 0.5312967300415039
+          },
+          {
+            "id": "E11",
+            "text": "KNTC1",
+            "type": "biological process",
+            "start": 252,
+            "end": 257,
+            "score": 0.6228898763656616
+          },
+          {
+            "id": "E14",
+            "text": "TCGA database analysis",
+            "type": "biological process",
+            "start": 300,
+            "end": 322,
+            "score": 0.521888792514801
+          },
+          {
+            "id": "E15",
+            "text": "KNTC1",
+            "type": "biological process",
+            "start": 361,
+            "end": 366,
+            "score": 0.5133873820304871
+          }
+        ],
+        "entities": [
+          {
+            "id": "E1",
+            "text": "CDK1",
+            "type": "gene",
+            "start": 18,
+            "end": 22,
+            "score": 0.9922423362731934
+          },
+          {
+            "id": "E2",
+            "text": "CDK1 expression",
+            "type": "biological process",
+            "start": 18,
+            "end": 33,
+            "score": 0.7173507809638977
+          },
+          {
+            "id": "E3",
+            "text": "hepatoma cell lines",
+            "type": "cell line",
+            "start": 41,
+            "end": 60,
+            "score": 0.6811172962188721
+          },
+          {
+            "id": "E4",
+            "text": "SK-Hep-1",
+            "type": "cell line",
+            "start": 64,
+            "end": 72,
+            "score": 0.985054075717926
+          },
+          {
+            "id": "E5",
+            "text": "Huh7",
+            "type": "cell line",
+            "start": 74,
+            "end": 78,
+            "score": 0.9787458181381226
+          },
+          {
+            "id": "E6",
+            "text": "HepG2",
+            "type": "cell line",
+            "start": 80,
+            "end": 85,
+            "score": 0.9694442749023438
+          },
+          {
+            "id": "E7",
+            "text": "SNU449",
+            "type": "cell line",
+            "start": 90,
+            "end": 96,
+            "score": 0.9708985090255737
+          },
+          {
+            "id": "E8",
+            "text": "mRNA",
+            "type": "RNA",
+            "start": 136,
+            "end": 140,
+            "score": 0.9939570426940918
+          },
+          {
+            "id": "E9",
+            "text": "CDK1",
+            "type": "biological process",
+            "start": 151,
+            "end": 155,
+            "score": 0.5312967300415039
+          },
+          {
+            "id": "E10",
+            "text": "normal hepatocytes",
+            "type": "species",
+            "start": 197,
+            "end": 215,
+            "score": 0.9056666493415833
+          },
+          {
+            "id": "E11",
+            "text": "KNTC1",
+            "type": "biological process",
+            "start": 252,
+            "end": 257,
+            "score": 0.6228898763656616
+          },
+          {
+            "id": "E12",
+            "text": "CDK1",
+            "type": "gene",
+            "start": 273,
+            "end": 277,
+            "score": 0.9791138768196106
+          },
+          {
+            "id": "E13",
+            "text": "HCC",
+            "type": "disease",
+            "start": 288,
+            "end": 291,
+            "score": 0.9938680529594421
+          },
+          {
+            "id": "E14",
+            "text": "TCGA database analysis",
+            "type": "biological process",
+            "start": 300,
+            "end": 322,
+            "score": 0.521888792514801
+          },
+          {
+            "id": "E15",
+            "text": "KNTC1",
+            "type": "biological process",
+            "start": 361,
+            "end": 366,
+            "score": 0.5133873820304871
+          },
+          {
+            "id": "E16",
+            "text": "CDK1",
+            "type": "gene",
+            "start": 405,
+            "end": 409,
+            "score": 0.9840977787971497
+          },
+          {
+            "id": "E17",
+            "text": "hepatocellular carcinoma",
+            "type": "disease",
+            "start": 413,
+            "end": 437,
+            "score": 0.9075233936309814
+          }
+        ],
+        "capture_method": "Entities are the unchanged current two-pass GLiNER output used for the corresponding Luna call; no entities were manually added, removed, relabeled, deduplicated, or consolidated."
+      },
+      "luna": {
+        "status": "COMPLETED_STRUCTURED_OUTPUT",
+        "structured_extraction_completed": true,
+        "relations": [
+          {
+            "source": "E2",
+            "target": "E3",
+            "predicate": "was examined in",
+            "evidence": "we examined CDK1 expression in the hepatoma cell lines",
+            "negated": false,
+            "surface_form": "examined CDK1 expression in",
+            "score": null
+          },
+          {
+            "source": "E2",
+            "target": "E4",
+            "predicate": "was examined in",
+            "evidence": "we examined CDK1 expression in the hepatoma cell lines of SK-Hep-1, Huh7, HepG2 and SNU449",
+            "negated": false,
+            "surface_form": "examined CDK1 expression in",
+            "score": null
+          },
+          {
+            "source": "E2",
+            "target": "E5",
+            "predicate": "was examined in",
+            "evidence": "we examined CDK1 expression in the hepatoma cell lines of SK-Hep-1, Huh7, HepG2 and SNU449",
+            "negated": false,
+            "surface_form": "examined CDK1 expression in",
+            "score": null
+          },
+          {
+            "source": "E2",
+            "target": "E6",
+            "predicate": "was examined in",
+            "evidence": "we examined CDK1 expression in the hepatoma cell lines of SK-Hep-1, Huh7, HepG2 and SNU449",
+            "negated": false,
+            "surface_form": "examined CDK1 expression in",
+            "score": null
+          },
+          {
+            "source": "E2",
+            "target": "E7",
+            "predicate": "was examined in",
+            "evidence": "we examined CDK1 expression in the hepatoma cell lines of SK-Hep-1, Huh7, HepG2 and SNU449",
+            "negated": false,
+            "surface_form": "examined CDK1 expression in",
+            "score": null
+          },
+          {
+            "source": "E9",
+            "target": "E10",
+            "predicate": "had significantly increased levels compared to",
+            "evidence": "both protein levels and mRNA levels of CDK1 were significantly increased compared to normal hepatocytes",
+            "negated": false,
+            "surface_form": "were significantly increased compared to",
+            "score": null
+          },
+          {
+            "source": "E11",
+            "target": "E12",
+            "predicate": "regulates CDK1 levels",
+            "evidence": "KNTC1 was regulating CDK1 levels in HCC",
+            "negated": false,
+            "surface_form": "was regulating",
+            "score": null
+          },
+          {
+            "source": "E15",
+            "target": "E16",
+            "predicate": "may positively regulate CDK1 levels",
+            "evidence": "KNTC1 may positively regulate the levels of CDK1 in hepatocellular carcinoma cells",
+            "negated": false,
+            "surface_form": "may positively regulate",
+            "score": null
+          }
+        ],
+        "failure": null,
+        "usage": {
+          "available": false,
+          "prompt_tokens": null,
+          "completion_tokens": null,
+          "reasoning_tokens": null,
+          "total_tokens": null,
+          "reason": "The current successful-call harness boundary did not expose provider usage metadata."
+        },
+        "latency": {
+          "ner_seconds": 0.234,
+          "luna_seconds": 59.751,
+          "wall_clock_seconds": 59.985,
+          "scope": "One in-process production-path window execution, including the local NER pass and Luna call."
+        },
+        "retry": {
+          "harness_max_retries": 2,
+          "provider_max_retries_configured": 0,
+          "provider_attempt_count": null,
+          "provider_retry_observed": false,
+          "reason": "The current harness/runtime exposes no provider attempt counter; no generated-output repair retry or provider retry was observed."
+        }
+      },
+      "validation": {
+        "entity_span_check": {
+          "status": "PASS",
+          "checked": 17,
+          "total": 17
+        },
+        "relation_endpoint_check": {
+          "status": "PASS",
+          "checked": 8,
+          "total": 8
+        },
+        "relation_evidence_check": {
+          "status": "PASS",
+          "checked": 8,
+          "total": 8
+        },
+        "relation_surface_form_check": {
+          "status": "PASS",
+          "checked": 8,
+          "total": 8
+        },
+        "existing_deterministic_validator": {
+          "status": "PASS",
+          "accepted": 8,
+          "total": 8
+        }
+      },
+      "semantic_assessment": {
+        "returned_claims": [
+          {
+            "relation_ids": [
+              "E2->E3",
+              "E2->E4",
+              "E2->E5",
+              "E2->E6",
+              "E2->E7"
+            ],
+            "assessment": "The CDK1-expression examination context is emitted toward the listed hepatoma cell lines."
+          },
+          {
+            "relation_ids": [
+              "E9->E10"
+            ],
+            "assessment": "The increased-CDK1-levels-versus-normal-hepatocytes direction and comparison wording are preserved."
+          },
+          {
+            "relation_ids": [
+              "E11->E12"
+            ],
+            "assessment": "The KNTC1 -> CDK1 regulation direction and intervention wording are preserved."
+          },
+          {
+            "relation_ids": [
+              "E15->E16"
+            ],
+            "assessment": "The KNTC1 -> CDK1 direction and modal 'may positively regulate' wording are preserved."
+          }
+        ],
+        "limitations": [
+          "The process pass returned five detections, including exact CDK1 and KNTC1 strings plus 'TCGA database analysis'; these are recorded as returned and were not corrected.",
+          "The output does not establish complete coverage of every protein/mRNA relation in the source."
+        ]
+      }
+    }
+  ],
+  "interpretation": {
+    "luna_completion": "Yes. Both exact sentence-boundary windows completed with structured output under the unchanged gpt-5.6-luna/high/8192 configuration; the prior full-Par19 length failure did not recur in either local window.",
+    "key_kntc1_cdk1_claims": "For emitted relations, both windows preserve correct source-to-target direction for interaction, KNTC1 knockdown/reduction, expression comparison, and KNTC1 regulation, including intervention/modal language. This is a bounded semantic assessment of returned relations, not a completeness claim; W1's endpoint types are largely biological-process labels.",
+    "biological_process_detections": "The full-paragraph zero did not persist at smaller scale: W1 returned 9 and W2 returned 5 biological-process detections. Their presence is an observed label output, not proof that all detections are semantically valid process entities.",
+    "process_node_effect": "The full run produced no relation output, so it cannot isolate whether zero process nodes caused the failure. The local runs show that structured gene/expression-related relations were emitted when the local entity sets were smaller and process detections were present; they do not establish that process nodes were necessary.",
+    "local_failure": "No local discourse window failed: both provider responses completed, no generated-output repair was observed, and no provider retry was observed.",
+    "bounded_conclusion": "This experiment establishes only that this exact two-window Par19 split reduced the supplied entity sets to 12 and 17 and allowed two unchanged local calls to complete with 6 and 8 structurally validated relations. It does not establish relation completeness, causal necessity of process nodes, or a production window policy."
+  },
+  "repository_changes": {
+    "production_code_changed": false,
+    "models_changed": false,
+    "prompt_changed": false,
+    "configuration_changed": false,
+    "validator_changed": false,
+    "production_windowing_added": false,
+    "report_only": true
+  },
+  "secrets": {
+    "api_key_printed": false,
+    "api_key_logged": false,
+    "api_key_reported": false
+  }
+}
