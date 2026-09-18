@@ -107,6 +107,22 @@ Programmatic composition uses `LLMExtractionPipeline`; relation-only callers
 can instantiate `LLMRelationExtractor` with their own `Entity` values. The
 normal test suite uses fake model responses and never requires an API key.
 
+## BioRED core NER evaluation
+
+The model-independent evaluator compares any normalized `EntityExtractor` output
+with BioRED gold mentions using exact half-open character spans and an explicit
+taxonomy mapping. The current GLiNER-BioMed baseline can be run with:
+
+```powershell
+uv run biomedical-ner-evaluate --dataset C:\path\to\BioRED --device cpu
+```
+
+The command uses the existing default labels and threshold, reports comparable
+micro/per-type metrics, keeps sequence-variant and unsupported predictor labels as
+schema-coverage diagnostics, and writes JSON plus Markdown reports under
+`reports/` for a full run. It does not invoke GLiREL or an LLM. See the committed
+baseline report for the evaluated split and limitations.
+
 ## Preserved BioRED relation evaluation
 
 Download the official NCBI BioRED archive, extract it locally, and run the

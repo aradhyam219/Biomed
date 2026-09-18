@@ -28,6 +28,7 @@ Canonical commands:
 - install/sync: `uv sync`
 - focused tests: `uv run python -m unittest discover -s tests -v`
 - active NER inspection: `uv run biomedical-ner --text "..."`
+- BioRED NER evaluation: `uv run biomedical-ner-evaluate --dataset C:\path\to\BioRED`
 
 The preserved `demo.py` console command (`uv run python demo.py`) is a deferred
 GLiNER-to-GLiREL relation-pipeline demo, not the current human-facing NER path.

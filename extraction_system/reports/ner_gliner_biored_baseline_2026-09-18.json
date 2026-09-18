@@ -1,0 +1,1886 @@
+{
+  "counts": {
+    "documents_evaluated": 100,
+    "gold_entities": 3533,
+    "gold_entities_scored": 3283,
+    "predicted_entities": 2892,
+    "predicted_entities_scored": 2731
+  },
+  "dataset": {
+    "date": "2021-11-30",
+    "documents_evaluated": 100,
+    "documents_in_source": 100,
+    "key": "BioC.key",
+    "path": "C:\\Projects\\Biomed\\extraction_system\\.cache\\BIORED\\BioRED\\Dev.BioC.JSON",
+    "sha256": "d5ab4d05673ac46fb5e3b2904d2820462dec2c4c50dfcdd8678635ff1b8ce1f5",
+    "source": "PubTator",
+    "split": "dev"
+  },
+  "evaluation_name": "BioRED exact-match biomedical NER evaluation",
+  "failure_analysis": {
+    "counts": {
+      "missed entity": 812,
+      "overlapping prediction": 78,
+      "schema-unscored / unsupported gold category": 250,
+      "schema-unscored / unsupported predicted category": 161,
+      "span mismatch": 395,
+      "spurious entity": 260,
+      "wrong type": 91
+    },
+    "example_limit_per_category": 10,
+    "examples": {
+      "missed entity": [
+        {
+          "category": "missed entity",
+          "context": {
+            "end": 272,
+            "start": 88,
+            "text": "OBJECTIVE: Iodide transport defect (ITD) is a rare disorder characterised by an inability of the thyroid to maintain an iodide gradient across the basolateral membrane of thyroid folli"
+          },
+          "document_id": "14510914",
+          "gold": {
+            "canonical_type": "DiseaseOrPhenotypicFeature",
+            "concept_ids": [
+              "D050033"
+            ],
+            "end": 192,
+            "id": "4",
+            "start": 168,
+            "text": "inability of the thyroid",
+            "type": "Disease"
+          },
+          "predicted": null
+        },
+        {
+          "category": "missed entity",
+          "context": {
+            "end": 589,
+            "start": 422,
+            "text": "as been shown to arise from abnormalities of the sodium/iodide symporter (NIS). PATIENT: We describe a woman with hypothyroidism identified at the 3rd month of life. T"
+          },
+          "document_id": "14510914",
+          "gold": {
+            "canonical_type": "OrganismTaxon",
+            "concept_ids": [
+              "9606"
+            ],
+            "end": 509,
+            "id": "9",
+            "start": 502,
+            "text": "PATIENT",
+            "type": "Species"
+          },
+          "predicted": null
+        },
+        {
+          "category": "missed entity",
+          "context": {
+            "end": 610,
+            "start": 445,
+            "text": "from abnormalities of the sodium/iodide symporter (NIS). PATIENT: We describe a woman with hypothyroidism identified at the 3rd month of life. The diagnosis of ITD w"
+          },
+          "document_id": "14510914",
+          "gold": {
+            "canonical_type": "OrganismTaxon",
+            "concept_ids": [
+              "9606"
+            ],
+            "end": 530,
+            "id": "10",
+            "start": 525,
+            "text": "woman",
+            "type": "Species"
+          },
+          "predicted": null
+        },
+        {
+          "category": "missed entity",
+          "context": {
+            "end": 728,
+            "start": 554,
+            "text": "ntified at the 3rd month of life. The diagnosis of ITD was suspected because of nodular goitre, and little if any iodide uptake by the thyroid and salivary glands. Treatment "
+          },
+          "document_id": "14510914",
+          "gold": {
+            "canonical_type": "DiseaseOrPhenotypicFeature",
+            "concept_ids": [
+              "D020518"
+            ],
+            "end": 648,
+            "id": "13",
+            "start": 634,
+            "text": "nodular goitre",
+            "type": "Disease"
+          },
+          "predicted": null
+        },
+        {
+          "category": "missed entity",
+          "context": {
+            "end": 1053,
+            "start": 888,
+            "text": "ke was only 1.4% and 0.3% at 1 and 24 h after the administration of recombinant human TSH. The saliva to plasma I- ratio was 1.1 indicating that the inability of the"
+          },
+          "document_id": "14510914",
+          "gold": {
+            "canonical_type": "OrganismTaxon",
+            "concept_ids": [
+              "9606"
+            ],
+            "end": 973,
+            "id": "19",
+            "start": 968,
+            "text": "human",
+            "type": "Species"
+          },
+          "predicted": null
+        },
+        {
+          "category": "missed entity",
+          "context": {
+            "end": 1165,
+            "start": 1003,
+            "text": "ratio was 1.1 indicating that the inability of the thyroid gland to concentrate I- was also present in the salivary glands. RESULTS: Analysis of the patient's NIS"
+          },
+          "document_id": "14510914",
+          "gold": {
+            "canonical_type": "ChemicalEntity",
+            "concept_ids": [
+              "D007454"
+            ],
+            "end": 1085,
+            "id": "22",
+            "start": 1083,
+            "text": "I-",
+            "type": "Chemical"
+          },
+          "predicted": null
+        },
+        {
+          "category": "missed entity",
+          "context": {
+            "end": 1239,
+            "start": 1072,
+            "text": "oncentrate I- was also present in the salivary glands. RESULTS: Analysis of the patient's NIS gene revealed a 15 nucleotide (nt) deletion of the coding sequence (nt 13"
+          },
+          "document_id": "14510914",
+          "gold": {
+            "canonical_type": "OrganismTaxon",
+            "concept_ids": [
+              "9606"
+            ],
+            "end": 1159,
+            "id": "23",
+            "start": 1152,
+            "text": "patient",
+            "type": "Species"
+          },
+          "predicted": null
+        },
+        {
+          "category": "missed entity",
+          "context": {
+            "end": 1429,
+            "start": 1262,
+            "text": " the insertion of 15 nt duplicating the first 15 nt of the adjacent intron. The patient was homozygous for this insertion/deletion, while both consanguineous parents w"
+          },
+          "document_id": "14510914",
+          "gold": {
+            "canonical_type": "OrganismTaxon",
+            "concept_ids": [
+              "9606"
+            ],
+            "end": 1349,
+            "id": "27",
+            "start": 1342,
+            "text": "patient",
+            "type": "Species"
+          },
+          "predicted": null
+        },
+        {
+          "category": "missed entity",
+          "context": {
+            "end": 1870,
+            "start": 1703,
+            "text": "te iodide, suggesting that the mutation was the direct cause of the ITD in this patient. CONCLUSION: In conclusion we describe the first Italian case of congenital hyp"
+          },
+          "document_id": "14510914",
+          "gold": {
+            "canonical_type": "OrganismTaxon",
+            "concept_ids": [
+              "9606"
+            ],
+            "end": 1790,
+            "id": "34",
+            "start": 1783,
+            "text": "patient",
+            "type": "Species"
+          },
+          "predicted": null
+        },
+        {
+          "category": "missed entity",
+          "context": {
+            "end": 769,
+            "start": 598,
+            "text": "cording to the literature pallidotomy improves the \"on\" symptoms of PD, such as dyskinesias, as well as the \"off\" symptoms, such as rigidity, bradykinesia, and on-off fluc"
+          },
+          "document_id": "15096016",
+          "gold": {
+            "canonical_type": "DiseaseOrPhenotypicFeature",
+            "concept_ids": [
+              "D004409"
+            ],
+            "end": 689,
+            "id": "4",
+            "start": 678,
+            "text": "dyskinesias",
+            "type": "Disease"
+          },
+          "predicted": null
+        }
+      ],
+      "overlapping prediction": [
+        {
+          "category": "overlapping prediction",
+          "context": {
+            "end": 158,
+            "start": 0,
+            "text": "Congenital hypothyroidism due to a new deletion in the sodium/iodide symporter protein. OBJECTIVE: Iodide transport defect (ITD) is a rare disorder characteri"
+          },
+          "document_id": "14510914",
+          "gold": {
+            "canonical_type": "GeneOrGeneProduct",
+            "concept_ids": [
+              "6528"
+            ],
+            "end": 78,
+            "id": "1",
+            "start": 55,
+            "text": "sodium/iodide symporter",
+            "type": "Gene"
+          },
+          "predicted": {
+            "canonical_type": "ChemicalEntity",
+            "end": 68,
+            "id": "E2",
+            "score": 0.94800865650177,
+            "start": 62,
+            "text": "iodide",
+            "type": "chemical"
+          }
+        },
+        {
+          "category": "overlapping prediction",
+          "context": {
+            "end": 202,
+            "start": 19,
+            "text": "oidism due to a new deletion in the sodium/iodide symporter protein. OBJECTIVE: Iodide transport defect (ITD) is a rare disorder characterised by an inability of the thyroid to mainta"
+          },
+          "document_id": "14510914",
+          "gold": {
+            "canonical_type": "DiseaseOrPhenotypicFeature",
+            "concept_ids": [
+              "C564766"
+            ],
+            "end": 122,
+            "id": "2",
+            "start": 99,
+            "text": "Iodide transport defect",
+            "type": "Disease"
+          },
+          "predicted": {
+            "canonical_type": "ChemicalEntity",
+            "end": 105,
+            "id": "E3",
+            "score": 0.9531750082969666,
+            "start": 99,
+            "text": "Iodide",
+            "type": "chemical"
+          }
+        },
+        {
+          "category": "overlapping prediction",
+          "context": {
+            "end": 574,
+            "start": 391,
+            "text": "nds and gastric mucosa and it has been shown to arise from abnormalities of the sodium/iodide symporter (NIS). PATIENT: We describe a woman with hypothyroidism identified at the 3rd m"
+          },
+          "document_id": "14510914",
+          "gold": {
+            "canonical_type": "GeneOrGeneProduct",
+            "concept_ids": [
+              "6528"
+            ],
+            "end": 494,
+            "id": "7",
+            "start": 471,
+            "text": "sodium/iodide symporter",
+            "type": "Gene"
+          },
+          "predicted": {
+            "canonical_type": "ChemicalEntity",
+            "end": 484,
+            "id": "E8",
+            "score": 0.9292874336242676,
+            "start": 478,
+            "text": "iodide",
+            "type": "chemical"
+          }
+        },
+        {
+          "category": "overlapping prediction",
+          "context": {
+            "end": 265,
+            "start": 58,
+            "text": "onuria. Classical phenylketonuria is an autosomal recessive disease caused by a deficiency of hepatic phenylalanine hydroxylase (PAH). The abolition of an invariant BamHI site located in the coding sequence "
+          },
+          "document_id": "1671881",
+          "gold": {
+            "canonical_type": "DiseaseOrPhenotypicFeature",
+            "concept_ids": [
+              "OMIM:261600"
+            ],
+            "end": 185,
+            "id": "3",
+            "start": 138,
+            "text": "deficiency of hepatic phenylalanine hydroxylase",
+            "type": "Disease"
+          },
+          "predicted": {
+            "canonical_type": "GeneOrGeneProduct",
+            "end": 185,
+            "id": "E4",
+            "score": 0.8362172842025757,
+            "start": 152,
+            "text": "hepatic phenylalanine hydroxylase",
+            "type": "protein"
+          }
+        },
+        {
+          "category": "overlapping prediction",
+          "context": {
+            "end": 703,
+            "start": 604,
+            "text": "n PKU is accounted for by the large variety of mutant genotypes associated with PAH deficiencies.. "
+          },
+          "document_id": "1671881",
+          "gold": {
+            "canonical_type": "DiseaseOrPhenotypicFeature",
+            "concept_ids": [
+              "OMIM:261600"
+            ],
+            "end": 700,
+            "id": "9",
+            "start": 684,
+            "text": "PAH deficiencies",
+            "type": "Disease"
+          },
+          "predicted": {
+            "canonical_type": "GeneOrGeneProduct",
+            "end": 687,
+            "id": "E10",
+            "score": 0.8819104433059692,
+            "start": 684,
+            "text": "PAH",
+            "type": "protein"
+          }
+        },
+        {
+          "category": "overlapping prediction",
+          "context": {
+            "end": 316,
+            "start": 132,
+            "text": "ROUND/AIMS: Lipoprotein glomerulopathy (LPG) is a rare disease characterized by thrombus-like substances in markedly dilated glomerular capillaries and elevated plasma levels of apolip"
+          },
+          "document_id": "18046082",
+          "gold": {
+            "canonical_type": "DiseaseOrPhenotypicFeature",
+            "concept_ids": [
+              "D013927"
+            ],
+            "end": 220,
+            "id": "5",
+            "start": 212,
+            "text": "thrombus",
+            "type": "Disease"
+          },
+          "predicted": {
+            "canonical_type": "ChemicalEntity",
+            "end": 236,
+            "id": "E6",
+            "score": 0.8868353962898254,
+            "start": 212,
+            "text": "thrombus-like substances",
+            "type": "chemical"
+          }
+        },
+        {
+          "category": "overlapping prediction",
+          "context": {
+            "end": 832,
+            "start": 652,
+            "text": "ible in Traf2DN-tg B cells compared with wild-type mice. This was the result of proteasome-dependent degradation, and rendered TRAF2DN B cells as bona fide TRAF2-deficient B cells."
+          },
+          "document_id": "22711886",
+          "gold": {
+            "canonical_type": "GeneOrGeneProduct",
+            "concept_ids": [
+              "16912"
+            ],
+            "end": 742,
+            "id": "14",
+            "start": 732,
+            "text": "proteasome",
+            "type": "Gene"
+          },
+          "predicted": {
+            "canonical_type": "ChemicalEntity",
+            "end": 752,
+            "id": "E21",
+            "score": 0.5015125870704651,
+            "start": 732,
+            "text": "proteasome-dependent",
+            "type": "chemical"
+          }
+        },
+        {
+          "category": "overlapping prediction",
+          "context": {
+            "end": 142,
+            "start": 0,
+            "text": "CTR9/PAF1c regulates molecular lineage identity, histone H3K36 trimethylation and genomic imprinting during preimplantation development. Genom"
+          },
+          "document_id": "24036311",
+          "gold": {
+            "canonical_type": "GeneOrGeneProduct",
+            "concept_ids": [
+              "260423"
+            ],
+            "end": 59,
+            "id": "2",
+            "start": 49,
+            "text": "histone H3",
+            "type": "Gene"
+          },
+          "predicted": {
+            "canonical_type": "ChemicalEntity",
+            "end": 62,
+            "id": "E3",
+            "score": 0.6467331647872925,
+            "start": 49,
+            "text": "histone H3K36",
+            "type": "chemical"
+          }
+        },
+        {
+          "category": "overlapping prediction",
+          "context": {
+            "end": 587,
+            "start": 348,
+            "text": "inting, compromising normal development. Here we report that two members of the RNA polymerase II associated factor, homolog (Saccharomyces cerevisiae) complex (PAF1 complex) components, Ctr9 and Rtf1, are required during mammalian preimpl"
+          },
+          "document_id": "24036311",
+          "gold": {
+            "canonical_type": "GeneOrGeneProduct",
+            "concept_ids": [
+              "22083",
+              "54624",
+              "76246"
+            ],
+            "end": 507,
+            "id": "3",
+            "start": 428,
+            "text": "RNA polymerase II associated factor, homolog (Saccharomyces cerevisiae) complex",
+            "type": "Gene"
+          },
+          "predicted": {
+            "canonical_type": "ChemicalEntity",
+            "end": 445,
+            "id": "E4",
+            "score": 0.5947110056877136,
+            "start": 428,
+            "text": "RNA polymerase II",
+            "type": "chemical"
+          }
+        },
+        {
+          "category": "overlapping prediction",
+          "context": {
+            "end": 1191,
+            "start": 1011,
+            "text": " although allele specific DNA methylation is not altered. We document a loss of histone H3 lysine 36 trimethylation (H3K36me3) in Ctr9-deficient embryos and confirm that knockdown "
+          },
+          "document_id": "24036311",
+          "gold": {
+            "canonical_type": "GeneOrGeneProduct",
+            "concept_ids": [
+              "260423"
+            ],
+            "end": 1101,
+            "id": "21",
+            "start": 1091,
+            "text": "histone H3",
+            "type": "Gene"
+          },
+          "predicted": {
+            "canonical_type": "ChemicalEntity",
+            "end": 1111,
+            "id": "E24",
+            "score": 0.653430700302124,
+            "start": 1091,
+            "text": "histone H3 lysine 36",
+            "type": "chemical"
+          }
+        }
+      ],
+      "schema-unscored / unsupported gold category": [
+        {
+          "category": "schema-unscored / unsupported gold category",
+          "context": {
+            "end": 1338,
+            "start": 1121,
+            "text": "ands. RESULTS: Analysis of the patient's NIS gene revealed a 15 nucleotide (nt) deletion of the coding sequence (nt 1314 through nt 1328) and the insertion of 15 nt duplicating the first 15 nt of the adjacent intron. "
+          },
+          "document_id": "14510914",
+          "gold": {
+            "canonical_type": "SequenceVariant",
+            "concept_ids": [
+              "c|DEL|1314_1328|"
+            ],
+            "end": 1258,
+            "id": "25",
+            "start": 1201,
+            "text": "deletion of the coding sequence (nt 1314 through nt 1328)",
+            "type": "Variant"
+          },
+          "predicted": null
+        },
+        {
+          "category": "schema-unscored / unsupported gold category",
+          "context": {
+            "end": 1390,
+            "start": 1187,
+            "text": "cleotide (nt) deletion of the coding sequence (nt 1314 through nt 1328) and the insertion of 15 nt duplicating the first 15 nt of the adjacent intron. The patient was homozygous for this insertion/deleti"
+          },
+          "document_id": "14510914",
+          "gold": {
+            "canonical_type": "SequenceVariant",
+            "concept_ids": [
+              "c|DUP||15"
+            ],
+            "end": 1310,
+            "id": "26",
+            "start": 1267,
+            "text": "insertion of 15 nt duplicating the first 15",
+            "type": "Variant"
+          },
+          "predicted": null
+        },
+        {
+          "category": "schema-unscored / unsupported gold category",
+          "context": {
+            "end": 1636,
+            "start": 1418,
+            "text": "s parents were heterozygous. This deletion predicts the production of a protein lacking the five terminal amino acids of exon XI (439-443) which are located in the 6th intracellular loop. COS-7 cells transfected with a"
+          },
+          "document_id": "14510914",
+          "gold": {
+            "canonical_type": "SequenceVariant",
+            "concept_ids": [
+              "p|DEL|439_443|"
+            ],
+            "end": 1556,
+            "id": "28",
+            "start": 1498,
+            "text": "lacking the five terminal amino acids of exon XI (439-443)",
+            "type": "Variant"
+          },
+          "predicted": null
+        },
+        {
+          "category": "schema-unscored / unsupported gold category",
+          "context": {
+            "end": 1759,
+            "start": 1586,
+            "text": "intracellular loop. COS-7 cells transfected with a vector expressing the mutant del-(439-443) NIS failed to concentrate iodide, suggesting that the mutation was the direct c"
+          },
+          "document_id": "14510914",
+          "gold": {
+            "canonical_type": "SequenceVariant",
+            "concept_ids": [
+              "p|DEL|439_443|"
+            ],
+            "end": 1679,
+            "id": "30",
+            "start": 1666,
+            "text": "del-(439-443)",
+            "type": "Variant"
+          },
+          "predicted": null
+        },
+        {
+          "category": "schema-unscored / unsupported gold category",
+          "context": {
+            "end": 117,
+            "start": 0,
+            "text": "Carrier frequency of mutation 657del5 in the NBS1 gene in a population of Polish pediatric patients with sporadic lym"
+          },
+          "document_id": "16152606",
+          "gold": {
+            "canonical_type": "SequenceVariant",
+            "concept_ids": [
+              "c|DEL|657|5"
+            ],
+            "end": 37,
+            "id": "0",
+            "start": 30,
+            "text": "657del5",
+            "type": "Variant"
+          },
+          "predicted": null
+        },
+        {
+          "category": "schema-unscored / unsupported gold category",
+          "context": {
+            "end": 514,
+            "start": 347,
+            "text": "igher frequencies of heterozygous carriers of the Slavic founder NBS1 mutation, 657del5, were found in Russian children with sporadic lymphoid malignancies, and in Pol"
+          },
+          "document_id": "16152606",
+          "gold": {
+            "canonical_type": "SequenceVariant",
+            "concept_ids": [
+              "c|DEL|657|5"
+            ],
+            "end": 434,
+            "id": "12",
+            "start": 427,
+            "text": "657del5",
+            "type": "Variant"
+          },
+          "predicted": null
+        },
+        {
+          "category": "schema-unscored / unsupported gold category",
+          "context": {
+            "end": 674,
+            "start": 508,
+            "text": "in Polish adults with non-Hodgkin lymphoma (NHL). In addition, the substitution 643C>T (R215W) has also been found in excess among children with acute lymphoblastic l"
+          },
+          "document_id": "16152606",
+          "gold": {
+            "canonical_type": "SequenceVariant",
+            "concept_ids": [
+              "c|SUB|C|643|T"
+            ],
+            "end": 594,
+            "id": "16",
+            "start": 588,
+            "text": "643C>T",
+            "type": "Variant"
+          },
+          "predicted": null
+        },
+        {
+          "category": "schema-unscored / unsupported gold category",
+          "context": {
+            "end": 681,
+            "start": 516,
+            "text": "h adults with non-Hodgkin lymphoma (NHL). In addition, the substitution 643C>T (R215W) has also been found in excess among children with acute lymphoblastic leukemia"
+          },
+          "document_id": "16152606",
+          "gold": {
+            "canonical_type": "SequenceVariant",
+            "concept_ids": [
+              "p|SUB|R|215|W"
+            ],
+            "end": 601,
+            "id": "17",
+            "start": 596,
+            "text": "R215W",
+            "type": "Variant"
+          },
+          "predicted": null
+        },
+        {
+          "category": "schema-unscored / unsupported gold category",
+          "context": {
+            "end": 979,
+            "start": 812,
+            "text": " DNA samples from a large group of Polish pediatric patients. The NBS1 mutation 657del5 on one allele was found in 3 of 270 patients with ALL and 2 of 212 children and"
+          },
+          "document_id": "16152606",
+          "gold": {
+            "canonical_type": "SequenceVariant",
+            "concept_ids": [
+              "c|DEL|657|5"
+            ],
+            "end": 899,
+            "id": "23",
+            "start": 892,
+            "text": "657del5",
+            "type": "Variant"
+          },
+          "predicted": null
+        },
+        {
+          "category": "schema-unscored / unsupported gold category",
+          "context": {
+            "end": 1181,
+            "start": 1016,
+            "text": " found among 63 patients with Hodgkin lymphoma (HL). No carriers of the variant R215W were detected in any studied group. The relative frequency of the 657del5 mutat"
+          },
+          "document_id": "16152606",
+          "gold": {
+            "canonical_type": "SequenceVariant",
+            "concept_ids": [
+              "p|SUB|R|215|W"
+            ],
+            "end": 1101,
+            "id": "30",
+            "start": 1096,
+            "text": "R215W",
+            "type": "Variant"
+          },
+          "predicted": null
+        }
+      ],
+      "schema-unscored / unsupported predicted category": [
+        {
+          "category": "schema-unscored / unsupported predicted category",
+          "context": {
+            "end": 896,
+            "start": 733,
+            "text": "oth mutations to the development of sporadic lymphoid malignancies, we analyzed DNA samples from a large group of Polish pediatric patients. The NBS1 mutation 657d"
+          },
+          "document_id": "16152606",
+          "gold": null,
+          "predicted": {
+            "canonical_type": null,
+            "end": 816,
+            "id": "E17",
+            "score": 0.811569094657898,
+            "start": 813,
+            "text": "DNA",
+            "type": "DNA"
+          }
+        },
+        {
+          "category": "schema-unscored / unsupported predicted category",
+          "context": {
+            "end": 846,
+            "start": 683,
+            "text": "DB phenotype and provided the identification of six asymptomatic gene carriers. DNA for mutational analysis of the exon 8 coding sequence was obtained from 22 subj"
+          },
+          "document_id": "16277682",
+          "gold": null,
+          "predicted": {
+            "canonical_type": null,
+            "end": 766,
+            "id": "E16",
+            "score": 0.9311066269874573,
+            "start": 763,
+            "text": "DNA",
+            "type": "DNA"
+          }
+        },
+        {
+          "category": "schema-unscored / unsupported predicted category",
+          "context": {
+            "end": 884,
+            "start": 718,
+            "text": "ification of six asymptomatic gene carriers. DNA for mutational analysis of the exon 8 coding sequence was obtained from 22 subjects, 4 PDB patients and 18 clinically"
+          },
+          "document_id": "16277682",
+          "gold": null,
+          "predicted": {
+            "canonical_type": null,
+            "end": 804,
+            "id": "E17",
+            "score": 0.6236030459403992,
+            "start": 798,
+            "text": "exon 8",
+            "type": "RNA"
+          }
+        },
+        {
+          "category": "schema-unscored / unsupported predicted category",
+          "context": {
+            "end": 1275,
+            "start": 1112,
+            "text": "zation and one with a polyostotic disease who had died several years before the DNA analysis. By both reconstitution and mutational analysis of the pedigree, six u"
+          },
+          "document_id": "16277682",
+          "gold": null,
+          "predicted": {
+            "canonical_type": null,
+            "end": 1195,
+            "id": "E21",
+            "score": 0.9449470639228821,
+            "start": 1192,
+            "text": "DNA",
+            "type": "DNA"
+          }
+        },
+        {
+          "category": "schema-unscored / unsupported predicted category",
+          "context": {
+            "end": 368,
+            "start": 202,
+            "text": "tion of an invariant BamHI site located in the coding sequence of the PAH gene (exon 7) led to the recognition of two new point mutations at codon 272 and 273 (272gly"
+          },
+          "document_id": "1671881",
+          "gold": null,
+          "predicted": {
+            "canonical_type": null,
+            "end": 288,
+            "id": "E8",
+            "score": 0.7440165877342224,
+            "start": 282,
+            "text": "exon 7",
+            "type": "RNA"
+          }
+        },
+        {
+          "category": "schema-unscored / unsupported predicted category",
+          "context": {
+            "end": 742,
+            "start": 579,
+            "text": "orpromazine-induced EPS in schizophrenic patients. METHODS: We identified seven SNP(single nucleotide polymorphism) (-141Cins>del, TaqIB, TaqID, Ser311Cys, rs6275,"
+          },
+          "document_id": "16867246",
+          "gold": null,
+          "predicted": {
+            "canonical_type": null,
+            "end": 662,
+            "id": "E13",
+            "score": 0.6390451788902283,
+            "start": 659,
+            "text": "SNP",
+            "type": "DNA"
+          }
+        },
+        {
+          "category": "schema-unscored / unsupported predicted category",
+          "context": {
+            "end": 795,
+            "start": 630,
+            "text": "METHODS: We identified seven SNP(single nucleotide polymorphism) (-141Cins>del, TaqIB, TaqID, Ser311Cys, rs6275, rs6277 and TaqIA) in the DRD2 gene in 146 schizophre"
+          },
+          "document_id": "16867246",
+          "gold": null,
+          "predicted": {
+            "canonical_type": null,
+            "end": 715,
+            "id": "E14",
+            "score": 0.657342791557312,
+            "start": 710,
+            "text": "TaqIB",
+            "type": "DNA"
+          }
+        },
+        {
+          "category": "schema-unscored / unsupported predicted category",
+          "context": {
+            "end": 802,
+            "start": 637,
+            "text": ": We identified seven SNP(single nucleotide polymorphism) (-141Cins>del, TaqIB, TaqID, Ser311Cys, rs6275, rs6277 and TaqIA) in the DRD2 gene in 146 schizophrenic inp"
+          },
+          "document_id": "16867246",
+          "gold": null,
+          "predicted": {
+            "canonical_type": null,
+            "end": 722,
+            "id": "E15",
+            "score": 0.6914845108985901,
+            "start": 717,
+            "text": "TaqID",
+            "type": "DNA"
+          }
+        },
+        {
+          "category": "schema-unscored / unsupported predicted category",
+          "context": {
+            "end": 813,
+            "start": 644,
+            "text": "entified seven SNP(single nucleotide polymorphism) (-141Cins>del, TaqIB, TaqID, Ser311Cys, rs6275, rs6277 and TaqIA) in the DRD2 gene in 146 schizophrenic inpatients (59"
+          },
+          "document_id": "16867246",
+          "gold": null,
+          "predicted": {
+            "canonical_type": null,
+            "end": 733,
+            "id": "E16",
+            "score": 0.5731315612792969,
+            "start": 724,
+            "text": "Ser311Cys",
+            "type": "DNA"
+          }
+        },
+        {
+          "category": "schema-unscored / unsupported predicted category",
+          "context": {
+            "end": 821,
+            "start": 655,
+            "text": "ven SNP(single nucleotide polymorphism) (-141Cins>del, TaqIB, TaqID, Ser311Cys, rs6275, rs6277 and TaqIA) in the DRD2 gene in 146 schizophrenic inpatients (59 with EP"
+          },
+          "document_id": "16867246",
+          "gold": null,
+          "predicted": {
+            "canonical_type": null,
+            "end": 741,
+            "id": "E17",
+            "score": 0.7084740996360779,
+            "start": 735,
+            "text": "rs6275",
+            "type": "DNA"
+          }
+        }
+      ],
+      "span mismatch": [
+        {
+          "category": "span mismatch",
+          "context": {
+            "end": 1697,
+            "start": 1526,
+            "text": "ino acids of exon XI (439-443) which are located in the 6th intracellular loop. COS-7 cells transfected with a vector expressing the mutant del-(439-443) NIS failed to con"
+          },
+          "document_id": "14510914",
+          "gold": {
+            "canonical_type": "CellLine",
+            "concept_ids": [
+              "CVCL_0224"
+            ],
+            "end": 1611,
+            "id": "29",
+            "start": 1606,
+            "text": "COS-7",
+            "type": "CellLine"
+          },
+          "predicted": {
+            "canonical_type": "CellLine",
+            "end": 1617,
+            "id": "E20",
+            "score": 0.9891418218612671,
+            "start": 1606,
+            "text": "COS-7 cells",
+            "type": "cell line"
+          }
+        },
+        {
+          "category": "span mismatch",
+          "context": {
+            "end": 997,
+            "start": 821,
+            "text": " and rigidity to a minor extent; however, its strength seems to be in improving levodopa-induced dyskinesias. Stimulation often produces an improvement in the hyper- or dyskine"
+          },
+          "document_id": "15096016",
+          "gold": {
+            "canonical_type": "ChemicalEntity",
+            "concept_ids": [
+              "D007980"
+            ],
+            "end": 909,
+            "id": "9",
+            "start": 901,
+            "text": "levodopa",
+            "type": "Chemical"
+          },
+          "predicted": {
+            "canonical_type": "ChemicalEntity",
+            "end": 917,
+            "id": "E6",
+            "score": 0.9333314895629883,
+            "start": 901,
+            "text": "levodopa-induced",
+            "type": "chemical"
+          }
+        },
+        {
+          "category": "span mismatch",
+          "context": {
+            "end": 134,
+            "start": 0,
+            "text": "Carrier frequency of mutation 657del5 in the NBS1 gene in a population of Polish pediatric patients with sporadic lymphoid malignancie"
+          },
+          "document_id": "16152606",
+          "gold": {
+            "canonical_type": "GeneOrGeneProduct",
+            "concept_ids": [
+              "4683"
+            ],
+            "end": 49,
+            "id": "1",
+            "start": 45,
+            "text": "NBS1",
+            "type": "Gene"
+          },
+          "predicted": {
+            "canonical_type": "GeneOrGeneProduct",
+            "end": 54,
+            "id": "E1",
+            "score": 0.9904338121414185,
+            "start": 45,
+            "text": "NBS1 gene",
+            "type": "gene"
+          }
+        },
+        {
+          "category": "span mismatch",
+          "context": {
+            "end": 630,
+            "start": 450,
+            "text": "Russian children with sporadic lymphoid malignancies, and in Polish adults with non-Hodgkin lymphoma (NHL). In addition, the substitution 643C>T (R215W) has also been found in exce"
+          },
+          "document_id": "16152606",
+          "gold": {
+            "canonical_type": "DiseaseOrPhenotypicFeature",
+            "concept_ids": [
+              "D008228"
+            ],
+            "end": 550,
+            "id": "14",
+            "start": 530,
+            "text": "non-Hodgkin lymphoma",
+            "type": "Disease"
+          },
+          "predicted": {
+            "canonical_type": "DiseaseOrPhenotypicFeature",
+            "end": 550,
+            "id": "E12",
+            "score": 0.9684933423995972,
+            "start": 542,
+            "text": "lymphoma",
+            "type": "disease"
+          }
+        },
+        {
+          "category": "span mismatch",
+          "context": {
+            "end": 761,
+            "start": 573,
+            "text": "e substitution 643C>T (R215W) has also been found in excess among children with acute lymphoblastic leukemia (ALL). In an attempt to asses the contribution of both mutations to the develop"
+          },
+          "document_id": "16152606",
+          "gold": {
+            "canonical_type": "DiseaseOrPhenotypicFeature",
+            "concept_ids": [
+              "D054198"
+            ],
+            "end": 681,
+            "id": "18",
+            "start": 653,
+            "text": "acute lymphoblastic leukemia",
+            "type": "Disease"
+          },
+          "predicted": {
+            "canonical_type": "DiseaseOrPhenotypicFeature",
+            "end": 681,
+            "id": "E14",
+            "score": 0.9581789970397949,
+            "start": 673,
+            "text": "leukemia",
+            "type": "disease"
+          }
+        },
+        {
+          "category": "span mismatch",
+          "context": {
+            "end": 952,
+            "start": 767,
+            "text": "f sporadic lymphoid malignancies, we analyzed DNA samples from a large group of Polish pediatric patients. The NBS1 mutation 657del5 on one allele was found in 3 of 270 patients with AL"
+          },
+          "document_id": "16152606",
+          "gold": {
+            "canonical_type": "OrganismTaxon",
+            "concept_ids": [
+              "9606"
+            ],
+            "end": 872,
+            "id": "21",
+            "start": 864,
+            "text": "patients",
+            "type": "Species"
+          },
+          "predicted": {
+            "canonical_type": "OrganismTaxon",
+            "end": 872,
+            "id": "E18",
+            "score": 0.6808375716209412,
+            "start": 847,
+            "text": "Polish pediatric patients",
+            "type": "species"
+          }
+        },
+        {
+          "category": "span mismatch",
+          "context": {
+            "end": 1142,
+            "start": 966,
+            "text": " children and adolescents with NHL; no carrier was found among 63 patients with Hodgkin lymphoma (HL). No carriers of the variant R215W were detected in any studied group. The "
+          },
+          "document_id": "16152606",
+          "gold": {
+            "canonical_type": "DiseaseOrPhenotypicFeature",
+            "concept_ids": [
+              "D006689"
+            ],
+            "end": 1062,
+            "id": "28",
+            "start": 1046,
+            "text": "Hodgkin lymphoma",
+            "type": "Disease"
+          },
+          "predicted": {
+            "canonical_type": "DiseaseOrPhenotypicFeature",
+            "end": 1062,
+            "id": "E22",
+            "score": 0.9561148881912231,
+            "start": 1054,
+            "text": "lymphoma",
+            "type": "disease"
+          }
+        },
+        {
+          "category": "span mismatch",
+          "context": {
+            "end": 1784,
+            "start": 1615,
+            "text": "iers was indeed increased in patients with ALL and NHL (p < 0.05). Nonetheless, NBS1 gene heterozygosity is not a major risk factor for lymphoid malignancies in childhoo"
+          },
+          "document_id": "16152606",
+          "gold": {
+            "canonical_type": "GeneOrGeneProduct",
+            "concept_ids": [
+              "4683"
+            ],
+            "end": 1699,
+            "id": "38",
+            "start": 1695,
+            "text": "NBS1",
+            "type": "Gene"
+          },
+          "predicted": {
+            "canonical_type": "GeneOrGeneProduct",
+            "end": 1704,
+            "id": "E27",
+            "score": 0.9886214137077332,
+            "start": 1695,
+            "text": "NBS1 gene",
+            "type": "gene"
+          }
+        },
+        {
+          "category": "span mismatch",
+          "context": {
+            "end": 137,
+            "start": 0,
+            "text": "Segregation of a M404V mutation of the p62/sequestosome 1 (p62/SQSTM1) gene with polyostotic Paget's disease of bone in an Italian family"
+          },
+          "document_id": "16277682",
+          "gold": {
+            "canonical_type": "GeneOrGeneProduct",
+            "concept_ids": [
+              "8878"
+            ],
+            "end": 42,
+            "id": "1",
+            "start": 39,
+            "text": "p62",
+            "type": "Gene"
+          },
+          "predicted": {
+            "canonical_type": "GeneOrGeneProduct",
+            "end": 57,
+            "id": "E1",
+            "score": 0.9318110942840576,
+            "start": 39,
+            "text": "p62/sequestosome 1",
+            "type": "gene"
+          }
+        },
+        {
+          "category": "span mismatch",
+          "context": {
+            "end": 149,
+            "start": 0,
+            "text": "Segregation of a M404V mutation of the p62/sequestosome 1 (p62/SQSTM1) gene with polyostotic Paget's disease of bone in an Italian family. Mutations "
+          },
+          "document_id": "16277682",
+          "gold": {
+            "canonical_type": "GeneOrGeneProduct",
+            "concept_ids": [
+              "8878"
+            ],
+            "end": 62,
+            "id": "3",
+            "start": 59,
+            "text": "p62",
+            "type": "Gene"
+          },
+          "predicted": {
+            "canonical_type": "GeneOrGeneProduct",
+            "end": 69,
+            "id": "E2",
+            "score": 0.8660563826560974,
+            "start": 59,
+            "text": "p62/SQSTM1",
+            "type": "gene"
+          }
+        }
+      ],
+      "spurious entity": [
+        {
+          "category": "spurious entity",
+          "context": {
+            "end": 363,
+            "start": 179,
+            "text": "f the thyroid to maintain an iodide gradient across the basolateral membrane of thyroid follicular cells, that often results in congenital hypothyroidism. When present the defect is al"
+          },
+          "document_id": "14510914",
+          "gold": null,
+          "predicted": {
+            "canonical_type": "CellLine",
+            "end": 283,
+            "id": "E6",
+            "score": 0.9251683950424194,
+            "start": 259,
+            "text": "thyroid follicular cells",
+            "type": "cell line"
+          }
+        },
+        {
+          "category": "spurious entity",
+          "context": {
+            "end": 554,
+            "start": 365,
+            "text": ", ventrolateral thalamotomy, has become a powerful alternative to stimulate the nucleus ventralis intermedius, producing high long-term success rates and low morbidity rates. Pallidal stimu"
+          },
+          "document_id": "15096016",
+          "gold": null,
+          "predicted": {
+            "canonical_type": "GeneOrGeneProduct",
+            "end": 474,
+            "id": "E4",
+            "score": 0.5951291918754578,
+            "start": 445,
+            "text": "nucleus ventralis intermedius",
+            "type": "gene"
+          }
+        },
+        {
+          "category": "spurious entity",
+          "context": {
+            "end": 160,
+            "start": 0,
+            "text": "Carrier frequency of mutation 657del5 in the NBS1 gene in a population of Polish pediatric patients with sporadic lymphoid malignancies. Nijmegen breakage syndr"
+          },
+          "document_id": "16152606",
+          "gold": null,
+          "predicted": {
+            "canonical_type": "OrganismTaxon",
+            "end": 80,
+            "id": "E2",
+            "score": 0.6630839109420776,
+            "start": 74,
+            "text": "Polish",
+            "type": "species"
+          }
+        },
+        {
+          "category": "spurious entity",
+          "context": {
+            "end": 597,
+            "start": 431,
+            "text": "el5, were found in Russian children with sporadic lymphoid malignancies, and in Polish adults with non-Hodgkin lymphoma (NHL). In addition, the substitution 643C>T (R"
+          },
+          "document_id": "16152606",
+          "gold": null,
+          "predicted": {
+            "canonical_type": "OrganismTaxon",
+            "end": 517,
+            "id": "E11",
+            "score": 0.7934163808822632,
+            "start": 511,
+            "text": "Polish",
+            "type": "species"
+          }
+        },
+        {
+          "category": "spurious entity",
+          "context": {
+            "end": 1564,
+            "start": 1398,
+            "text": "for the occurrence of mutation 657del5 was found in comparison with the control Polish population (OR range 1.48-1.85, 95% confidence interval 1.18-2.65). This findin"
+          },
+          "document_id": "16152606",
+          "gold": null,
+          "predicted": {
+            "canonical_type": "OrganismTaxon",
+            "end": 1484,
+            "id": "E24",
+            "score": 0.7372101545333862,
+            "start": 1478,
+            "text": "Polish",
+            "type": "species"
+          }
+        },
+        {
+          "category": "spurious entity",
+          "context": {
+            "end": 217,
+            "start": 43,
+            "text": "sequestosome 1 (p62/SQSTM1) gene with polyostotic Paget's disease of bone in an Italian family. Mutations of the p62/Sequestosome 1 gene (p62/SQSTM1) account for both sporadi"
+          },
+          "document_id": "16277682",
+          "gold": null,
+          "predicted": {
+            "canonical_type": "OrganismTaxon",
+            "end": 137,
+            "id": "E4",
+            "score": 0.8462227582931519,
+            "start": 123,
+            "text": "Italian family",
+            "type": "species"
+          }
+        },
+        {
+          "category": "spurious entity",
+          "context": {
+            "end": 388,
+            "start": 218,
+            "text": " and familial forms of Paget's disease of bone (PDB). We originally described a methionine-->valine substitution at codon 404 (M404V) of exon 8, in the ubiquitin protein-"
+          },
+          "document_id": "16277682",
+          "gold": null,
+          "predicted": {
+            "canonical_type": "ChemicalEntity",
+            "end": 308,
+            "id": "E9",
+            "score": 0.5431262850761414,
+            "start": 298,
+            "text": "methionine",
+            "type": "chemical"
+          }
+        },
+        {
+          "category": "spurious entity",
+          "context": {
+            "end": 482,
+            "start": 290,
+            "text": "ribed a methionine-->valine substitution at codon 404 (M404V) of exon 8, in the ubiquitin protein-binding domain of p62/SQSTM1 gene in an Italian PDB patient. The collection of data from the p"
+          },
+          "document_id": "16277682",
+          "gold": null,
+          "predicted": {
+            "canonical_type": "GeneOrGeneProduct",
+            "end": 402,
+            "id": "E10",
+            "score": 0.8135311007499695,
+            "start": 370,
+            "text": "ubiquitin protein-binding domain",
+            "type": "protein"
+          }
+        },
+        {
+          "category": "spurious entity",
+          "context": {
+            "end": 515,
+            "start": 348,
+            "text": "4V) of exon 8, in the ubiquitin protein-binding domain of p62/SQSTM1 gene in an Italian PDB patient. The collection of data from the patient's pedigree provided eviden"
+          },
+          "document_id": "16277682",
+          "gold": null,
+          "predicted": {
+            "canonical_type": "OrganismTaxon",
+            "end": 435,
+            "id": "E12",
+            "score": 0.5136922597885132,
+            "start": 428,
+            "text": "Italian",
+            "type": "species"
+          }
+        },
+        {
+          "category": "spurious entity",
+          "context": {
+            "end": 120,
+            "start": 0,
+            "text": "Two distinct mutations at a single BamHI site in phenylketonuria. Classical phenylketonuria is an autosomal recessive di"
+          },
+          "document_id": "1671881",
+          "gold": null,
+          "predicted": {
+            "canonical_type": "ChemicalEntity",
+            "end": 40,
+            "id": "E1",
+            "score": 0.5542302131652832,
+            "start": 35,
+            "text": "BamHI",
+            "type": "chemical"
+          }
+        }
+      ],
+      "wrong type": [
+        {
+          "category": "wrong type",
+          "context": {
+            "end": 1057,
+            "start": 894,
+            "text": " only 1.4% and 0.3% at 1 and 24 h after the administration of recombinant human TSH. The saliva to plasma I- ratio was 1.1 indicating that the inability of the thy"
+          },
+          "document_id": "14510914",
+          "gold": {
+            "canonical_type": "GeneOrGeneProduct",
+            "concept_ids": [
+              "7200"
+            ],
+            "end": 977,
+            "id": "20",
+            "start": 974,
+            "text": "TSH",
+            "type": "Gene"
+          },
+          "predicted": {
+            "canonical_type": "ChemicalEntity",
+            "end": 977,
+            "id": "E17",
+            "score": 0.7153152823448181,
+            "start": 974,
+            "text": "TSH",
+            "type": "chemical"
+          }
+        },
+        {
+          "category": "wrong type",
+          "context": {
+            "end": 972,
+            "start": 802,
+            "text": " fide TRAF2-deficient B cells. Similar to B cells with targeted Traf2 deletion, Traf2DN-tg mice show expanded marginal zone B cell population and have constitutive p100 N"
+          },
+          "document_id": "22711886",
+          "gold": {
+            "canonical_type": "CellLine",
+            "concept_ids": [
+              "CVCL_TT54"
+            ],
+            "end": 892,
+            "id": "17",
+            "start": 882,
+            "text": "Traf2DN-tg",
+            "type": "CellLine"
+          },
+          "predicted": {
+            "canonical_type": "GeneOrGeneProduct",
+            "end": 892,
+            "id": "E25",
+            "score": 0.6437271237373352,
+            "start": 882,
+            "text": "Traf2DN-tg",
+            "type": "gene"
+          }
+        },
+        {
+          "category": "wrong type",
+          "context": {
+            "end": 1118,
+            "start": 927,
+            "text": " cell population and have constitutive p100 NF-kappaB2 processing. Also, TRAF3, X-linked inhibitor of apoptosis, and Bcl-X(L) expression levels were increased, whereas cellular inhibitors of "
+          },
+          "document_id": "22711886",
+          "gold": {
+            "canonical_type": "GeneOrGeneProduct",
+            "concept_ids": [
+              "11798"
+            ],
+            "end": 1038,
+            "id": "21",
+            "start": 1007,
+            "text": "X-linked inhibitor of apoptosis",
+            "type": "Gene"
+          },
+          "predicted": {
+            "canonical_type": "ChemicalEntity",
+            "end": 1038,
+            "id": "E29",
+            "score": 0.7700378894805908,
+            "start": 1007,
+            "text": "X-linked inhibitor of apoptosis",
+            "type": "chemical"
+          }
+        },
+        {
+          "category": "wrong type",
+          "context": {
+            "end": 2098,
+            "start": 1907,
+            "text": "ossibly by specifically enforcing marginal zone B cell accumulation, increasing X-linked inhibitor of apoptosis expression, and rendering B cells independent of B cell activating factor for s"
+          },
+          "document_id": "22711886",
+          "gold": {
+            "canonical_type": "GeneOrGeneProduct",
+            "concept_ids": [
+              "11798"
+            ],
+            "end": 2018,
+            "id": "43",
+            "start": 1987,
+            "text": "X-linked inhibitor of apoptosis",
+            "type": "Gene"
+          },
+          "predicted": {
+            "canonical_type": "ChemicalEntity",
+            "end": 2018,
+            "id": "E48",
+            "score": 0.7930530905723572,
+            "start": 1987,
+            "text": "X-linked inhibitor of apoptosis",
+            "type": "chemical"
+          }
+        },
+        {
+          "category": "wrong type",
+          "context": {
+            "end": 689,
+            "start": 502,
+            "text": "intron boundaries of the PHEX gene were directly sequenced. The levels of serum fibroblast growth factor 23 (FGF23) were measured as well. Sequencing analysis detected 17 different PHEX g"
+          },
+          "document_id": "27840894",
+          "gold": {
+            "canonical_type": "GeneOrGeneProduct",
+            "concept_ids": [
+              "8074"
+            ],
+            "end": 609,
+            "id": "11",
+            "start": 582,
+            "text": "fibroblast growth factor 23",
+            "type": "Gene"
+          },
+          "predicted": {
+            "canonical_type": "ChemicalEntity",
+            "end": 609,
+            "id": "E12",
+            "score": 0.9610205292701721,
+            "start": 582,
+            "text": "fibroblast growth factor 23",
+            "type": "chemical"
+          }
+        },
+        {
+          "category": "wrong type",
+          "context": {
+            "end": 696,
+            "start": 531,
+            "text": " gene were directly sequenced. The levels of serum fibroblast growth factor 23 (FGF23) were measured as well. Sequencing analysis detected 17 different PHEX gene mut"
+          },
+          "document_id": "27840894",
+          "gold": {
+            "canonical_type": "GeneOrGeneProduct",
+            "concept_ids": [
+              "8074"
+            ],
+            "end": 616,
+            "id": "12",
+            "start": 611,
+            "text": "FGF23",
+            "type": "Gene"
+          },
+          "predicted": {
+            "canonical_type": "ChemicalEntity",
+            "end": 616,
+            "id": "E13",
+            "score": 0.9656675457954407,
+            "start": 611,
+            "text": "FGF23",
+            "type": "chemical"
+          }
+        },
+        {
+          "category": "wrong type",
+          "context": {
+            "end": 1417,
+            "start": 1252,
+            "text": "males. No mutations were found in the 250 healthy controls. The serum levels of FGF23 varied widely among the patients with XLH, and no significant difference was fo"
+          },
+          "document_id": "27840894",
+          "gold": {
+            "canonical_type": "GeneOrGeneProduct",
+            "concept_ids": [
+              "8074"
+            ],
+            "end": 1337,
+            "id": "26",
+            "start": 1332,
+            "text": "FGF23",
+            "type": "Gene"
+          },
+          "predicted": {
+            "canonical_type": "ChemicalEntity",
+            "end": 1337,
+            "id": "E15",
+            "score": 0.9784608483314514,
+            "start": 1332,
+            "text": "FGF23",
+            "type": "chemical"
+          }
+        },
+        {
+          "category": "wrong type",
+          "context": {
+            "end": 1774,
+            "start": 1609,
+            "text": "cal domain in PHEX protein. In addition, the finding of an overlap of the serum FGF23 levels between the patients with XLH and the healthy controls indicates its lim"
+          },
+          "document_id": "27840894",
+          "gold": {
+            "canonical_type": "GeneOrGeneProduct",
+            "concept_ids": [
+              "8074"
+            ],
+            "end": 1694,
+            "id": "31",
+            "start": 1689,
+            "text": "FGF23",
+            "type": "Gene"
+          },
+          "predicted": {
+            "canonical_type": "ChemicalEntity",
+            "end": 1694,
+            "id": "E19",
+            "score": 0.9705027937889099,
+            "start": 1689,
+            "text": "FGF23",
+            "type": "chemical"
+          }
+        },
+        {
+          "category": "wrong type",
+          "context": {
+            "end": 256,
+            "start": 93,
+            "text": "nkage to cloned DNA sequences. A linkage study in 30 Becker muscular dystrophy (BMD) kindreds using three cloned DNA sequences from the X chromosome which demonstr"
+          },
+          "document_id": "6086495",
+          "gold": {
+            "canonical_type": "DiseaseOrPhenotypicFeature",
+            "concept_ids": [
+              "D020388"
+            ],
+            "end": 176,
+            "id": "2",
+            "start": 173,
+            "text": "BMD",
+            "type": "Disease"
+          },
+          "predicted": {
+            "canonical_type": "CellLine",
+            "end": 176,
+            "id": "E4",
+            "score": 0.7111946940422058,
+            "start": 173,
+            "text": "BMD",
+            "type": "cell line"
+          }
+        },
+        {
+          "category": "wrong type",
+          "context": {
+            "end": 1203,
+            "start": 1035,
+            "text": "rain and liver iron overload, where hepatic mRNA expression of the iron hormone hepcidin was increased, corresponding to the degree of iron overload. Hepatic iron conce"
+          },
+          "document_id": "20801540",
+          "gold": {
+            "canonical_type": "GeneOrGeneProduct",
+            "concept_ids": [
+              "57817"
+            ],
+            "end": 1123,
+            "id": "24",
+            "start": 1115,
+            "text": "hepcidin",
+            "type": "Gene"
+          },
+          "predicted": {
+            "canonical_type": "ChemicalEntity",
+            "end": 1123,
+            "id": "E19",
+            "score": 0.5461551547050476,
+            "start": 1115,
+            "text": "hepcidin",
+            "type": "chemical"
+          }
+        }
+      ]
+    }
+  },
+  "graph_critical_entity_recall": {
+    "concept_level": {
+      "gold": 873,
+      "recall": 0.6357388316151202,
+      "recognized": 555
+    },
+    "definition": "Gold BioRED entity mentions/concepts participating in at least one annotated relation, recognized by exact span and canonical type; this is an NER diagnostic, not relation evaluation.",
+    "documents_with_relations": 98,
+    "mention_level": {
+      "gold": 2752,
+      "recall": 0.5803052325581395,
+      "recognized": 1597,
+      "unscored_gold_type": 216
+    }
+  },
+  "limitations": [
+    "Primary metrics use exact half-open character spans and canonical type only; no fuzzy matching is applied.",
+    "Unsupported schema labels are reported separately and excluded from primary comparable-class metrics.",
+    "Failure categories are deterministic diagnostics and do not change the primary counts.",
+    "Graph-critical recall uses BioRED relation concept participation only as an NER diagnostic; no relation model is invoked.",
+    "This report is baseline evidence and does not establish production readiness or rank a candidate model."
+  ],
+  "metrics": {
+    "exact_match": {
+      "macro_f1": 0.5040954615503163,
+      "macro_scored_types": [
+        "CellLine",
+        "ChemicalEntity",
+        "DiseaseOrPhenotypicFeature",
+        "GeneOrGeneProduct",
+        "OrganismTaxon"
+      ],
+      "matching": "exact half-open character span and canonical evaluation type",
+      "micro": {
+        "f1": 0.6341868972397737,
+        "fn": 1376,
+        "fp": 824,
+        "precision": 0.6982790186744782,
+        "recall": 0.580871154431922,
+        "tp": 1907
+      },
+      "per_type": {
+        "CellLine": {
+          "f1": 0.10218978102189781,
+          "fn": 15,
+          "fp": 108,
+          "precision": 0.06086956521739131,
+          "predicted": 115,
+          "recall": 0.3181818181818182,
+          "support": 22,
+          "tp": 7
+        },
+        "ChemicalEntity": {
+          "f1": 0.6772959183673469,
+          "fn": 291,
+          "fp": 215,
+          "precision": 0.7117962466487936,
+          "predicted": 746,
+          "recall": 0.6459854014598541,
+          "support": 822,
+          "tp": 531
+        },
+        "DiseaseOrPhenotypicFeature": {
+          "f1": 0.6526835286859963,
+          "fn": 453,
+          "fp": 110,
+          "precision": 0.8278560250391236,
+          "predicted": 639,
+          "recall": 0.5386965376782077,
+          "support": 982,
+          "tp": 529
+        },
+        "GeneOrGeneProduct": {
+          "f1": 0.686935866983373,
+          "fn": 364,
+          "fp": 295,
+          "precision": 0.7102161100196464,
+          "predicted": 1018,
+          "recall": 0.6651333946642134,
+          "support": 1087,
+          "tp": 723
+        },
+        "OrganismTaxon": {
+          "f1": 0.4013722126929674,
+          "fn": 253,
+          "fp": 96,
+          "precision": 0.5492957746478874,
+          "predicted": 213,
+          "recall": 0.3162162162162162,
+          "support": 370,
+          "tp": 117
+        }
+      }
+    },
+    "primary": "exact_match"
+  },
+  "predictor": {
+    "adapter": "GLiNERBioMedExtractor",
+    "device": "cpu",
+    "labels": [
+      "gene",
+      "protein",
+      "disease",
+      "chemical",
+      "species",
+      "cell line",
+      "DNA",
+      "RNA"
+    ],
+    "model": "Ihor/gliner-biomed-base-v1.0",
+    "threshold": 0.5
+  },
+  "schema_coverage": {
+    "gold": {
+      "scored": 3283,
+      "scored_fraction": 0.9292386074157939,
+      "total": 3533,
+      "unscored": 250,
+      "unscored_by_type": {
+        "Variant": 250
+      }
+    },
+    "predicted": {
+      "scored": 2731,
+      "scored_fraction": 0.94432918395574,
+      "total": 2892,
+      "unscored": 161,
+      "unscored_by_type": {
+        "DNA": 107,
+        "RNA": 54
+      }
+    }
+  },
+  "taxonomy": {
+    "comparable_canonical_types": [
+      "CellLine",
+      "ChemicalEntity",
+      "DiseaseOrPhenotypicFeature",
+      "GeneOrGeneProduct",
+      "OrganismTaxon"
+    ],
+    "gold_internal_type_to_canonical": {
+      "CellLine": "CellLine",
+      "Chemical": "ChemicalEntity",
+      "Disease": "DiseaseOrPhenotypicFeature",
+      "Gene": "GeneOrGeneProduct",
+      "Species": "OrganismTaxon",
+      "Variant": "SequenceVariant"
+    },
+    "policy": "Primary metrics compare only exact span plus canonical type for classes represented by both the BioRED gold mapping and the current production label mapping. Unsupported gold/prediction labels are reported as schema coverage gaps and are not silently remapped.",
+    "predicted_type_to_canonical": {
+      "cell line": "CellLine",
+      "chemical": "ChemicalEntity",
+      "disease": "DiseaseOrPhenotypicFeature",
+      "gene": "GeneOrGeneProduct",
+      "protein": "GeneOrGeneProduct",
+      "species": "OrganismTaxon"
+    },
+    "unscored_gold_canonical_types": [
+      "SequenceVariant"
+    ],
+    "unscored_predicted_types": [
+      "DNA",
+      "RNA"
+    ]
+  }
+}

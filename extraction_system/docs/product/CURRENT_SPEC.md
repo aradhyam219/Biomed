@@ -148,6 +148,19 @@ Evaluation must report the relevant coverage and span/type behavior without
 silently changing, truncating, or discarding production inputs. Dataset-specific
 assumptions remain in evaluation code rather than the production entity path.
 
+The current BioRED NER evaluator accepts any implementation of
+`EntityExtractor.extract_entities(text)`, maps predictor labels and BioRED gold
+types through an explicit evaluation taxonomy, and reports deterministic exact
+half-open-span/type micro and per-type metrics. Gene and protein predictions share
+the `GeneOrGeneProduct` evaluation class. BioRED sequence variants remain a
+reported schema-coverage gap because the current production schema has no explicit
+variant label; DNA and RNA are not force-mapped to an unrelated gold class.
+
+The evaluator also preserves bounded machine-readable failure examples and may
+report graph-critical entity recall from BioRED relation participation without
+invoking or evaluating a relation model. Its primary metrics do not use fuzzy
+matching.
+
 Relation-specific and end-to-end evaluation infrastructure is preserved as
 deferred work; it is not an active acceptance target for the current NER phase.
 

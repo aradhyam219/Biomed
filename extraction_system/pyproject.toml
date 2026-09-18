@@ -24,6 +24,7 @@ biomedical-ner = "biomedical_extractor.ner_cli:main"
 biomedical-re = "biomedical_extractor.relation_cli:main"
 biomedical-extract-llm = "biomedical_extractor.llm_cli:main"
 biored-evaluate = "biomedical_extractor.biored_cli:main"
+biomedical-ner-evaluate = "biomedical_extractor.ner_evaluation_cli:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/biomedical_extractor"]

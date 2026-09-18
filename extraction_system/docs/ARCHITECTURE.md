@@ -124,6 +124,15 @@ BioRED biomedical text
 Evaluation code remains separate from production extraction and must not leak
 BioRED-specific input assumptions into the entity adapter.
 
+The active implementation is `ner_evaluation.py`, which consumes normalized
+`Entity` values and BioRED's parsed mentions, applies an explicit taxonomy mapping,
+and computes exact-span/type metrics plus bounded failure diagnostics. The
+`biomedical-ner-evaluate` command runs the current default GLiNER adapter and
+writes a machine-readable report with a Markdown companion under `reports/`.
+The evaluator can accept another adapter at the same `EntityExtractor` boundary;
+model internals do not cross into scoring. Its optional graph-critical recall is
+derived from BioRED relation participation and is strictly an NER diagnostic.
+
 ## Deferred downstream paths
 
 The repository still contains both the controlled LLM relation implementation and
