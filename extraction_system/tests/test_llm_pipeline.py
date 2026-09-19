@@ -4,6 +4,7 @@ import unittest
 from unittest.mock import patch
 
 from biomedical_extractor.entity_extraction import DEFAULT_ENTITY_MODEL, Entity
+from biomedical_extractor.hunflair2 import HunFlair2BioMedExtractor
 from biomedical_extractor.llm_pipeline import ComposedExtractionResult, LLMExtractionPipeline
 from biomedical_extractor.relation_extraction import (
     Relation,
@@ -45,6 +46,20 @@ class _FakeRelationExtractor:
         return self.result
 
 
+class _FakeHunFlair2Runtime:
+    def predict_entities(self, text):
+        return (
+            {"start": 0, "end": 5, "text": "BRCA1", "label": "Gene", "score": 0.91},
+            {
+                "start": 14,
+                "end": 20,
+                "text": "cancer",
+                "label": "Disease",
+                "score": 0.87,
+            },
+        )
+
+
 class LLMPipelineTests(unittest.TestCase):
     def test_default_pretrained_path_uses_adapter_default_schema(self):
         entity_extractor = _FakeEntityExtractor()
@@ -72,6 +87,37 @@ class LLMPipelineTests(unittest.TestCase):
         )
         load_relations.assert_called_once_with(None)
 
+    def test_hunflair2_factory_uses_the_same_grounded_relation_pipeline(self):
+        entity_extractor = _FakeEntityExtractor()
+        relation_extractor = _FakeRelationExtractor()
+        with (
+            patch(
+                "biomedical_extractor.llm_pipeline.HunFlair2BioMedExtractor.from_pretrained",
+                return_value=entity_extractor,
+            ) as load_entities,
+            patch(
+                "biomedical_extractor.llm_pipeline.LLMRelationExtractor.from_openai",
+                return_value=relation_extractor,
+            ) as load_relations,
+        ):
+            pipeline = LLMExtractionPipeline.from_hunflair2(
+                runtime_python="runtime-python",
+                runtime_cache="runtime-cache",
+                device="cpu",
+            )
+
+        self.assertIs(pipeline.entity_extractor, entity_extractor)
+        self.assertIs(pipeline.relation_extractor, relation_extractor)
+        load_entities.assert_called_once_with(
+            model_identifier="hunflair/hunflair2-ner",
+            runtime_python="runtime-python",
+            runtime_script=None,
+            runtime_cache="runtime-cache",
+            device="cpu",
+            offline=False,
+        )
+        load_relations.assert_called_once_with(None)
+
     def test_composed_path_runs_ner_then_relation_extraction(self):
         entity_extractor = _FakeEntityExtractor()
         relation_extractor = _FakeRelationExtractor()
@@ -85,6 +131,31 @@ class LLMPipelineTests(unittest.TestCase):
         self.assertEqual(entity_extractor.calls, [TEXT])
         self.assertEqual(relation_extractor.calls, [(TEXT, ENTITIES)])
         self.assertEqual(result.to_dict()["relations"][0]["evidence"], RELATION.evidence)
+
+    def test_hunflair2_entities_compose_with_grounded_relations(self):
+        text = "BRCA1 affects cancer."
+        entity_extractor = HunFlair2BioMedExtractor(_FakeHunFlair2Runtime())
+        relation = Relation(
+            "E1",
+            "E2",
+            "affects",
+            "BRCA1 affects cancer",
+            True,
+            surface_form="affects",
+        )
+        relation_extractor = _FakeRelationExtractor(
+            RelationExtractionResult((relation,))
+        )
+
+        result = LLMExtractionPipeline(entity_extractor, relation_extractor).extract(text)
+
+        self.assertEqual(tuple(entity.type for entity in result.entities), ("Gene", "Disease"))
+        self.assertEqual(result.entities[0].id, "E1")
+        self.assertEqual(result.entities[1].id, "E2")
+        self.assertEqual(result.relations, (relation,))
+        self.assertIn(result.relations[0].source, {entity.id for entity in result.entities})
+        self.assertIn(result.relations[0].target, {entity.id for entity in result.entities})
+        self.assertTrue(result.relations[0].negated)
 
     def test_composed_path_accepts_merged_process_entities(self):
         text = "p53 decreased proliferation ability in SSC-4 cells."

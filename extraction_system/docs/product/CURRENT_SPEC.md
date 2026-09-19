@@ -8,59 +8,53 @@
 
 Given unstructured biomedical text, produce a clean, machine-consumable set of
 core biomedical entity mentions with source spans, types, stable IDs, and model
-confidence when available.
+confidence when available, followed by grounded relations when the composed
+prototype path is selected.
 
-The active objective is a credible, measurable named-entity recognition (NER)
-baseline. Relation extraction and biomedical entity normalization/linking are
-downstream capabilities, not the current quality target.
+The active prototype uses pretrained HunFlair2 for NER and the existing grounded
+LLM relation extractor downstream. Target-domain NER evaluation and fine-tuning
+remain postponed; biomedical entity normalization/linking remains a later stage.
 
 ## Active product flow
 
 ```text
 biomedical text
     ↓
-core biomedical NER
+isolated pretrained HunFlair2 runtime
     ↓
-NER evaluation / model selection
+validated Entity mentions
     ↓
-future biomedical entity normalization
+grounded LLM relation extraction
+    ↓
+ComposedExtractionResult
+    ↓
+future biomedical entity normalization/linking
     ↓
 STOP
 ```
 
-The current GLiNER-BioMed adapter remains the production default. HunFlair2 is the
-selected base NER model for further target-domain development; AIONER / PubTator-
-style NER remains preserved as evaluation/history evidence and is not an equal
-active development candidate. HunFlair2 adaptation is non-production work until
-human target-domain gold passes validation and the resulting candidate passes the
-agreed regression gates.
+The model-independent `EntityExtractor` seam remains the stable NER boundary.
+HunFlair2 is the active prototype foundation through its isolated runtime bridge;
+the existing GLiNER adapter remains available for compatibility and evaluation.
+AIONER / PubTator-style NER remains preserved as evaluation/history evidence.
 
 ## Scope
 
 ### Active now
 
 - core biomedical named-entity extraction from ordinary biomedical text;
+- the pretrained HunFlair2 single-document runtime bridge;
 - the model-independent `EntityExtractor` / `Entity` contract;
 - source-span, schema, stable-ID, and confidence validation;
-- configurable core labels and entity confidence thresholds;
-- NER evaluation and evidence-based model selection;
+- the existing grounded LLM relation extractor over supplied entities;
+- NER evaluation artifacts as preserved evidence, without reopening target-domain
+  model selection;
 - adapter/output normalization into the stable local entity representation;
 - a frozen, evaluation-only comparison of the current GLiNER baseline with the
   official AIONER PubMedBERT-CRF artifact on the official BioRED Test split;
 - a frozen, evaluation-only challenger run of the official HunFlair2 five-class
   model on that same BioRED Test split, compared with AIONER without changing
-  the production adapter or dependency graph.
-- target-domain reconnaissance on the nine specified science-team papers using
-  official NCBI/PubMed/PMC acquisition, identical canonical text, AIONER and
-  HunFlair2 agreement diagnostics, sentence-level entity co-occurrence only, and
-  a deterministic human-review packet;
-- a deterministic target-domain gold pilot over complete canonical sentences from
-  the nine science-team papers, with a frozen 6-paper train / 1-paper development /
-  2-paper held-out test split, explicit six-type gold schema, provenance validator,
-  reviewer packet, and frozen pretrained HunFlair2 sentence predictions;
-- a repository-owned isolated Flair training lane and NVIDIA L4 plumbing smoke
-  test for HunFlair2. The smoke fixture is synthetic and produces no target model
-  or target-domain quality claim.
+  the main runtime dependency graph.
 - an exploratory exact-span MedMentions ST21pv cross-schema stress test with an
   explicit UMLS semantic-type mapping to the shared ChemicalEntity and
   DiseaseOrPhenotypicFeature classes, including unsupported/ambiguous counts,
@@ -71,34 +65,44 @@ agreed regression gates.
 
 ### Deferred or out of scope
 
-Unless a later accepted task changes this specification, the active NER workstream
-does not include:
+Unless a later accepted task changes this specification, the active prototype does
+not include:
 
 - biological-process extraction, process/event nodes, or process-specific conflict
   rules; it will be treated separately if required;
-- relation extraction changes, relation evaluation, or live LLM calls;
+- target-domain NER evaluation, model selection, or fine-tuning; the existing
+  reconnaissance, pilot, validator, and training-readiness assets remain
+  preserved for later use;
+- relation-model quality evaluation, graph assembly, visualization, or live
+  external-provider smoke beyond the existing grounded extraction seam;
 - biomedical entity normalization/linking, meaning resolution of a mention to a
   canonical biomedical identity or identifier;
-- replacing the production NER model or adding its legacy runtime to the
-  production dependency graph;
-- actual target-domain fine-tuning before the pilot has human-complete gold;
+- collapsing the isolated HunFlair2 runtime into the production dependency graph;
+- entity grouping, alias resolution, or external biomedical normalization;
 - a final ontology redesign, graph infrastructure, or unrelated platform
   capabilities.
 
-Existing LLM and legacy GLiREL relation implementations remain preserved and
-callable, but relation extraction is deferred until core NER passes an explicit
-quality gate. Existing historical diagnostic reports remain available.
+The existing LLM relation path is an active downstream capability only when
+called through the composed pipeline. Legacy GLiREL relation implementations and
+historical diagnostic reports remain preserved separately.
 
 ## Current entity behavior
 
-The production entity boundary is:
+The entity boundary used by both the entity-only and composed paths is:
 
 ```python
 entities = entity_extractor.extract_entities(text)
 ```
 
-When labels are omitted, the default GLiNER-BioMed path runs one model pass over
-the existing core schema:
+The active composed prototype is constructed with
+`LLMExtractionPipeline.from_hunflair2()` or with
+`biomedical-extract-llm --entity-backend hunflair2`. It runs the isolated
+pretrained HunFlair2 model over the supplied document and passes the normalized
+entities directly to the existing grounded relation extractor. HunFlair2's
+official labels are retained unchanged in `Entity.type`.
+
+The existing GLiNER-BioMed path remains available for compatibility and runs one
+model pass over its core schema when selected:
 
 ```text
 gene, protein, disease, chemical, species, cell line, DNA, RNA
@@ -137,7 +141,7 @@ score
 `text[start:end]` must equal the entity's `text`. `score` is optional and may be
 `None` when the underlying implementation does not provide confidence.
 
-The `EntityExtractor` boundary is model-independent. GLiNER-specific output,
+The `EntityExtractor` boundary is model-independent. Model-specific output,
 loading details, and prediction dictionaries must not leak to downstream callers;
 an alternative implementation must be able to return the same `Entity` values.
 
@@ -188,8 +192,10 @@ invoking or evaluating a relation model. Its primary metrics do not use fuzzy
 matching. The current challenger comparison uses a shared five-class view and a
 full-schema view so AIONER's explicit SequenceVariant support, and HunFlair2's
 lack of that class, are reported rather than silently remapped or discarded.
-The official AIONER and HunFlair2 runtimes and model artifacts are isolated
-evaluation inputs; they do not change the production GLiNER default.
+The official AIONER runtime remains evaluation-only. HunFlair2's model artifact
+and Flair/SciSpaCy dependencies remain isolated behind the production-facing
+single-document bridge; the bridge does not add those dependencies to the main
+environment.
 
 The target-domain reconnaissance command uses the same source text for both
 challengers and records PMID/PMCID, title, source URL, acquisition mode, section
@@ -236,38 +242,35 @@ Sequence Ontology is not mapped to SequenceVariant, and GO annotations remain
 out of scope. Unsupported and ambiguous CRAFT annotations remain explicit in
 machine-readable reports and are excluded from primary metrics.
 
-Relation-specific and end-to-end evaluation infrastructure is preserved as
-deferred work; it is not an active acceptance target for the current NER phase.
+The grounded relation path is an active composition capability. Relation-specific
+quality evaluation, graph assembly, and visualization remain deferred; existing
+relation diagnostics are preserved and are not silently promoted to production
+claims.
 
 ## Quality gate and replacement seam
 
-The current production boundary remains model-independent GLiNER extraction. The
-selected HunFlair2 base is developed in the isolated adaptation lane using the
-target pilot and exact-span evaluation contract; it is not installed as the
-production default. The quality gate must be explicitly passed using human
-target-domain gold and the agreed BioRED/CRAFT regression evidence before a
-production replacement, biomedical entity normalization/linking, or relation
-work becomes active.
-
-No production replacement model, production dependency, completed target-domain
-fine-tuning run, or linking implementation is introduced by this specification.
-The AIONER and HunFlair2 runtimes plus the training lane remain outside the
-production dependency graph for controlled development and evaluation.
+The current prototype boundary remains model-independent at `EntityExtractor`.
+The selected HunFlair2 base is callable through the isolated runtime bridge and
+feeds the existing grounded relation path. Target-domain gold, NER evaluation,
+and fine-tuning remain postponed; no fine-tuned replacement model or biomedical
+identity-linking implementation is introduced here. AIONER and the HunFlair2
+runtime dependencies remain isolated from the main production environment.
 
 ## Product invariants
 
 - Production input is ordinary biomedical text, independent of BioRED metadata.
-- The active quality workstream is core biomedical NER only.
+- The active prototype workstream is core biomedical NER followed by grounded
+  relation composition.
 - Default extraction does not run biological-process extraction or process
   precedence logic.
-- Entity and relation code may remain separately callable, but relation extraction
-  is deferred until the NER quality gate.
+- Relations may be extracted only from supplied normalized entities and verbatim
+  source evidence through the existing validation path.
 - The `EntityExtractor` / `Entity` contract remains model-independent.
 - Adapter/output normalization is distinct from biomedical identity normalization.
 - Biomedical entity normalization/linking is not implemented in this task.
 - Output is machine-consumable and does not require model-specific objects.
-- HunFlair2 is not installed as the production default; its isolated target
-  adaptation lane cannot consume incomplete gold or model-generated pseudo-labels.
+- HunFlair2 is the active prototype NER foundation, while its Flair/SciSpaCy
+  runtime remains isolated and target-domain fine-tuning remains postponed.
 - Target-domain reports cannot claim correctness or a production model winner
   without target-domain gold labels.
 - Sentence co-occurrence diagnostics cannot create relation outputs.
@@ -280,7 +283,13 @@ production dependency graph for controlled development and evaluation.
 
 Given text containing a gene and disease mention, the entity extractor returns
 stable entity values whose spans resolve exactly to the source mentions. The
-default GLiNER path makes one core-label pass.
+HunFlair2 prototype path preserves official labels and model scores.
+
+### Composed extraction
+
+`LLMExtractionPipeline.from_hunflair2()` accepts ordinary biomedical text and
+returns a `ComposedExtractionResult` containing those entities plus only
+source-grounded relations whose endpoints reference the extracted entity IDs.
 
 ### Model-independent replacement
 
@@ -290,9 +299,8 @@ fields, without exposing its model-specific prediction format.
 
 ### Deferred downstream work
 
-Relation implementations remain available to existing callers, but no relation
-change or live provider request is required or performed before the explicit NER
-quality gate.
+Entity normalization/linking, grouping, graph assembly, visualization, target
+domain NER evaluation, and fine-tuning remain outside this prototype milestone.
 
 ## Related architecture
 

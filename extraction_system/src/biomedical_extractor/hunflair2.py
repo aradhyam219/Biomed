@@ -1,8 +1,8 @@
-"""Evaluation-only adapter for the official HunFlair2 biomedical NER model.
+"""Adapter and isolated runtime bridge for the official HunFlair2 NER model.
 
 The Flair runtime is intentionally not imported by this module.  The isolated
-evaluation runner converts Flair spans into plain prediction mappings before
-they cross into this adapter, keeping the production dependency graph and the
+runner converts Flair spans into plain prediction mappings before they cross into
+this adapter, keeping the main dependency graph isolated and the
 ``EntityExtractor`` boundary model-independent.
 """
 
@@ -10,6 +10,8 @@ from __future__ import annotations
 
 import hashlib
 from dataclasses import dataclass
+from pathlib import Path
+from tempfile import TemporaryDirectory
 from typing import Any, Mapping, Protocol, Sequence
 
 from .entity_extraction import Entity, EntityExtractor
@@ -47,11 +49,103 @@ class HunFlair2Runtime(Protocol):
         """Return document-relative HunFlair2 predictions for one source text."""
 
 
+class HunFlair2IsolatedRuntime:
+    """Call the existing isolated HunFlair2 runner for one source document.
+
+    The subprocess owns Flair, SciSpaCy sentence splitting, and document-offset
+    lifting.  This bridge returns its plain prediction records to the existing
+    adapter, so the production package still does not import the isolated
+    runtime's dependencies.
+    """
+
+    _DOCUMENT_ID = "single-document"
+
+    def __init__(
+        self,
+        *,
+        model_identifier: str = HUNFLAIR2_MODEL_IDENTIFIER,
+        runtime_python: Path | str | None = None,
+        runtime_script: Path | str | None = None,
+        runtime_cache: Path | str = Path(".cache/hunflair2"),
+        device: str | None = None,
+        offline: bool = False,
+    ) -> None:
+        if not isinstance(model_identifier, str) or not model_identifier.strip():
+            raise ValueError("HunFlair2 model identifier must be a non-empty string")
+        self._model_identifier = model_identifier
+        self._runtime_python = (
+            None if runtime_python is None else Path(runtime_python)
+        )
+        self._runtime_script = (
+            Path(__file__).with_name("hunflair2_runtime.py")
+            if runtime_script is None
+            else Path(runtime_script)
+        )
+        self._runtime_cache = Path(runtime_cache)
+        self._device = device or "cpu"
+        self._offline = offline
+
+    def predict_entities(self, text: str) -> Sequence[object]:
+        """Run one source text through the shared isolated runner."""
+
+        if not isinstance(text, str):
+            raise TypeError("text must be a string")
+
+        # Import lazily to keep the adapter import-safe and avoid a module
+        # cycle: ner_runners uses this module's normalization function.
+        from .ner_runners import run_hunflair2
+
+        with TemporaryDirectory(prefix="hunflair2-single-") as temporary_directory:
+            temporary_root = Path(temporary_directory)
+            run = run_hunflair2(
+                ({"id": self._DOCUMENT_ID, "text": text},),
+                input_path=temporary_root / "input.json",
+                output_path=temporary_root / "output.json",
+                python_path=self._runtime_python,
+                runtime_script=self._runtime_script,
+                runtime_cache=self._runtime_cache,
+                model_identifier=self._model_identifier,
+                device=self._device,
+                offline=self._offline,
+            )
+
+        try:
+            return tuple(run.records[self._DOCUMENT_ID])
+        except KeyError as error:
+            raise RuntimeError(
+                "HunFlair2 isolated runtime returned no single-document record"
+            ) from error
+
+
 class HunFlair2BioMedExtractor:
     """Adapt official HunFlair2 predictions to normalized local entities."""
 
     def __init__(self, runtime: HunFlair2Runtime) -> None:
         self._runtime = runtime
+
+    @classmethod
+    def from_pretrained(
+        cls,
+        model_identifier: str = HUNFLAIR2_MODEL_IDENTIFIER,
+        *,
+        runtime_python: Path | str | None = None,
+        runtime_script: Path | str | None = None,
+        runtime_cache: Path | str = Path(".cache/hunflair2"),
+        device: str | None = None,
+        offline: bool = False,
+    ) -> "HunFlair2BioMedExtractor":
+        """Construct an adapter backed by the isolated pretrained runtime."""
+
+        return cls(
+            HunFlair2IsolatedRuntime(
+                model_identifier=model_identifier,
+                runtime_python=runtime_python,
+                runtime_script=runtime_script,
+                runtime_cache=runtime_cache,
+                device=device,
+                offline=offline,
+            )
+        )
 
     def extract_entities(self, text: str) -> tuple[Entity, ...]:
         """Run the isolated runtime and validate every source-relative span."""
@@ -231,6 +325,7 @@ __all__ = [
     "HUNFLAIR2_OFFICIAL_REPOSITORY",
     "HUNFLAIR2_SUPPORTED_CANONICAL_TYPES",
     "HunFlair2BioMedExtractor",
+    "HunFlair2IsolatedRuntime",
     "HunFlair2PredictionRuntime",
     "HunFlair2RawPrediction",
     "normalize_hunflair2_predictions",

@@ -1,4 +1,4 @@
-"""Evaluation-only orchestration for the cached AIONER and HunFlair2 runners."""
+"""Isolated orchestration for the cached AIONER and HunFlair2 runners."""
 
 from __future__ import annotations
 
@@ -260,8 +260,9 @@ def run_hunflair2(
     runtime_cache: Path = Path(".cache/hunflair2"),
     model_identifier: str = "hunflair/hunflair2-ner",
     device: str = "cpu",
+    offline: bool = False,
 ) -> RunnerOutput:
-    """Run the exact cached official HunFlair2 artifact and splitter."""
+    """Run the isolated official HunFlair2 artifact and splitter."""
 
     write_runner_input(documents, input_path)
     input_path = input_path.resolve()
@@ -280,6 +281,11 @@ def run_hunflair2(
     python_path = Path(python_path)
     runtime_script = runtime_script.resolve()
     runtime_cache = runtime_cache.resolve()
+    if not python_path.is_file():
+        raise FileNotFoundError(f"HunFlair2 runtime Python not found: {python_path}")
+    if not runtime_script.is_file():
+        raise FileNotFoundError(f"HunFlair2 runtime script not found: {runtime_script}")
+    runtime_cache.mkdir(parents=True, exist_ok=True)
     artifact, revision = _hunflair2_artifact(runtime_cache, model_identifier)
     model_input = str(artifact) if artifact is not None else model_identifier
     command = [
@@ -310,6 +316,8 @@ def run_hunflair2(
             "PYTHONIOENCODING": "utf-8",
         }
     )
+    if offline:
+        environment["HF_HUB_OFFLINE"] = "1"
     _run_command(
         command,
         cwd=Path.cwd(),

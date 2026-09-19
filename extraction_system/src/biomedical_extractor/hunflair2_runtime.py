@@ -1,4 +1,4 @@
-"""Standalone Flair subprocess for the evaluation-only HunFlair2 run.
+"""Standalone Flair subprocess for the isolated HunFlair2 inference run.
 
 This file is executed by the dedicated ignored HunFlair2 virtual environment,
 not imported by the production package.  It accepts source texts as JSON,

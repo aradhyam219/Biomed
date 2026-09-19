@@ -53,6 +53,34 @@ class LLMCLITests(unittest.TestCase):
         payload = json.loads(output.getvalue())
         self.assertEqual(payload["relations"][0]["target"], "E1")
 
+    def test_composed_command_can_select_the_hunflair2_prototype_backend(self):
+        output = StringIO()
+        with patch(
+            "biomedical_extractor.llm_cli.LLMExtractionPipeline.from_pretrained",
+            return_value=_FakePipeline(),
+        ) as load, redirect_stdout(output):
+            result = main(
+                [
+                    "--text",
+                    "BRCA1",
+                    "--entity-backend",
+                    "hunflair2",
+                    "--hunflair2-runtime-python",
+                    "runtime-python",
+                    "--hunflair2-runtime-cache",
+                    "runtime-cache",
+                    "--max-retries",
+                    "0",
+                ]
+            )
+
+        self.assertEqual(result, 0)
+        kwargs = load.call_args.kwargs
+        self.assertEqual(kwargs["entity_backend"], "hunflair2")
+        self.assertEqual(kwargs["hunflair2_model"], "hunflair/hunflair2-ner")
+        self.assertEqual(kwargs["hunflair2_runtime_python"].name, "runtime-python")
+        self.assertEqual(kwargs["hunflair2_runtime_cache"].name, "runtime-cache")
+
 
 if __name__ == "__main__":
     unittest.main()

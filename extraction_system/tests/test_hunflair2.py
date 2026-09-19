@@ -3,12 +3,14 @@ from __future__ import annotations
 import sys
 import unittest
 from pathlib import Path
+from unittest import mock
 
 from biomedical_extractor.biored import BioREDDataset, BioREDDocument
 from biomedical_extractor.hunflair2 import (
     HUNFLAIR2_LABEL_TO_CANONICAL,
     HUNFLAIR2_SUPPORTED_CANONICAL_TYPES,
     HunFlair2BioMedExtractor,
+    HunFlair2IsolatedRuntime,
     HunFlair2PredictionRuntime,
     normalize_hunflair2_predictions,
 )
@@ -17,6 +19,7 @@ from biomedical_extractor.hunflair2_evaluation_cli import (
     _validate_dataset_identity,
 )
 from biomedical_extractor.hunflair2_runtime import _prediction_for_span
+from biomedical_extractor.ner_runners import RunnerOutput
 
 
 class _FakeRuntime:
@@ -121,6 +124,64 @@ class HunFlair2AdapterTests(unittest.TestCase):
         )
         with self.assertRaisesRegex(ValueError, "no entry"):
             extractor.extract_entities("source")
+
+    def test_pretrained_factory_binds_the_isolated_runtime_configuration(self):
+        with mock.patch(
+            "biomedical_extractor.hunflair2.HunFlair2IsolatedRuntime"
+        ) as runtime:
+            extractor = HunFlair2BioMedExtractor.from_pretrained(
+                "hunflair/hunflair2-ner",
+                runtime_python=Path("runtime-python"),
+                runtime_script=Path("runtime-script.py"),
+                runtime_cache=Path("runtime-cache"),
+                device="cuda",
+                offline=True,
+            )
+
+        self.assertIsInstance(extractor, HunFlair2BioMedExtractor)
+        runtime.assert_called_once_with(
+            model_identifier="hunflair/hunflair2-ner",
+            runtime_python=Path("runtime-python"),
+            runtime_script=Path("runtime-script.py"),
+            runtime_cache=Path("runtime-cache"),
+            device="cuda",
+            offline=True,
+        )
+
+    def test_isolated_runtime_delegates_to_the_shared_runner(self):
+        runtime = HunFlair2IsolatedRuntime(
+            runtime_python=Path("runtime-python"),
+            runtime_script=Path("runtime-script.py"),
+            runtime_cache=Path("runtime-cache"),
+            device="cpu",
+        )
+        runner_output = RunnerOutput(
+            model="HunFlair2",
+            prediction_path=Path("predictions.json"),
+            metadata={},
+            records={
+                "single-document": (
+                    {"start": 0, "end": 5, "text": "BRCA1", "label": "Gene"},
+                )
+            },
+        )
+        with mock.patch(
+            "biomedical_extractor.ner_runners.run_hunflair2",
+            return_value=runner_output,
+        ) as run:
+            predictions = runtime.predict_entities("BRCA1")
+
+        self.assertEqual(predictions, runner_output.records["single-document"])
+        kwargs = run.call_args.kwargs
+        self.assertEqual(kwargs["python_path"], Path("runtime-python"))
+        self.assertEqual(kwargs["runtime_script"], Path("runtime-script.py"))
+        self.assertEqual(kwargs["runtime_cache"], Path("runtime-cache"))
+        self.assertEqual(kwargs["device"], "cpu")
+        self.assertEqual(kwargs["model_identifier"], "hunflair/hunflair2-ner")
+        self.assertEqual(
+            run.call_args.args[0],
+            ({"id": "single-document", "text": "BRCA1"},),
+        )
 
     def test_evaluation_runtime_module_does_not_load_flair_at_import(self):
         self.assertNotIn("flair", sys.modules)
