@@ -196,6 +196,33 @@ class LLMPipelineTests(unittest.TestCase):
         self.assertEqual(result.relations, (relation,))
         self.assertEqual(relation_extractor.calls, [(text, entities)])
 
+    def test_composed_path_exposes_graph_result_without_a_second_extraction(self):
+        valid_entities = (
+            Entity("E1", "BRCA1", "gene", 0, 5, 0.9),
+            Entity("E2", "breast cancer", "disease", 25, 38, 0.8),
+        )
+
+        class ValidEntityExtractor:
+            def __init__(self):
+                self.calls = []
+
+            def extract_entities(self, text):
+                self.calls.append(text)
+                return valid_entities
+
+        entity_extractor = ValidEntityExtractor()
+        relation_extractor = _FakeRelationExtractor()
+        pipeline = LLMExtractionPipeline(entity_extractor, relation_extractor)
+
+        result = pipeline.extract_graph(TEXT, document_id="paper-1")
+
+        self.assertEqual(result.document.id, "paper-1")
+        self.assertEqual(tuple(node.id for node in result.nodes), ("doc_e_001", "doc_e_002"))
+        self.assertEqual(result.edges[0].source, "doc_e_001")
+        self.assertEqual(result.edges[0].target, "doc_e_002")
+        self.assertEqual(entity_extractor.calls, [TEXT])
+        self.assertEqual(len(relation_extractor.calls), 1)
+
     def test_composed_path_rechecks_custom_relation_output(self):
         invalid = Relation(
             "E1", "E99", "association", "BRCA1 is associated with breast cancer", False

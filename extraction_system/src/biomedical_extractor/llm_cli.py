@@ -23,6 +23,17 @@ def _parser() -> argparse.ArgumentParser:
     )
     parser.add_argument("--text", required=True, help="Biomedical text to process")
     parser.add_argument(
+        "--output-format",
+        choices=("composed", "graph"),
+        default="composed",
+        help="Structured output contract; graph emits assembled nodes and grounded edges.",
+    )
+    parser.add_argument(
+        "--document-id",
+        default="input",
+        help="Stable source document ID used by graph output.",
+    )
+    parser.add_argument(
         "--entity-backend",
         "--ner-backend",
         choices=("gliner", "hunflair2"),
@@ -84,8 +95,17 @@ def main(argv: Sequence[str] | None = None) -> int:
         hunflair2_runtime_cache=args.hunflair2_runtime_cache,
         hunflair2_offline=args.hunflair2_offline,
     )
-    result = extractor.extract(args.text)
-    print(json.dumps({"input": args.text, **result.to_dict()}, indent=2, ensure_ascii=False))
+    if args.output_format == "graph":
+        print(extractor.extract_graph(args.text, document_id=args.document_id).to_json())
+    else:
+        result = extractor.extract(args.text)
+        print(
+            json.dumps(
+                {"input": args.text, **result.to_dict()},
+                indent=2,
+                ensure_ascii=False,
+            )
+        )
     return 0
 
 

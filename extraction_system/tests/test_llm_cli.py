@@ -7,6 +7,8 @@ from io import StringIO
 from unittest.mock import patch
 
 from biomedical_extractor.entity_extraction import Entity
+from biomedical_extractor.entity_assembly import assemble_document_entities
+from biomedical_extractor.graph import build_graph_result
 from biomedical_extractor.llm_pipeline import ComposedExtractionResult
 from biomedical_extractor.llm_relation_extraction import OpenAIConfig
 from biomedical_extractor.llm_cli import main
@@ -21,6 +23,11 @@ class _FakePipeline:
                 Relation("E1", "E1", "association", text, False),
             ),
         )
+
+    def extract_graph(self, text, *, document_id):
+        entity = Entity("E1", text, "gene", 0, len(text), None)
+        assembly = assemble_document_entities((entity,), text)
+        return build_graph_result(document_id, assembly, ())
 
 
 class LLMCLITests(unittest.TestCase):
@@ -80,6 +87,31 @@ class LLMCLITests(unittest.TestCase):
         self.assertEqual(kwargs["hunflair2_model"], "hunflair/hunflair2-ner")
         self.assertEqual(kwargs["hunflair2_runtime_python"].name, "runtime-python")
         self.assertEqual(kwargs["hunflair2_runtime_cache"].name, "runtime-cache")
+
+    def test_composed_command_can_emit_graph_json(self):
+        output = StringIO()
+        with patch(
+            "biomedical_extractor.llm_cli.LLMExtractionPipeline.from_pretrained",
+            return_value=_FakePipeline(),
+        ), redirect_stdout(output):
+            result = main(
+                [
+                    "--text",
+                    "BRCA1",
+                    "--output-format",
+                    "graph",
+                    "--document-id",
+                    "paper-1",
+                    "--max-retries",
+                    "0",
+                ]
+            )
+
+        self.assertEqual(result, 0)
+        payload = json.loads(output.getvalue())
+        self.assertEqual(payload["document"], {"id": "paper-1"})
+        self.assertEqual(payload["nodes"][0]["id"], "doc_e_001")
+        self.assertEqual(payload["edges"], [])
 
 
 if __name__ == "__main__":

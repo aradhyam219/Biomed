@@ -30,6 +30,15 @@ from .entity_assembly import (
     DocumentEntityAssembly,
     assemble_document_entities,
 )
+from .graph import (
+    GraphConstructionError,
+    GraphDocument,
+    GraphEdge,
+    GraphEvidence,
+    GraphNode,
+    GraphResult,
+    build_graph_result,
+)
 from .pipeline import BiomedicalExtractor, ExtractionConfig, ExtractionResult, Relation
 from .llm_pipeline import (
     BiomedicalLLMExtractor,
@@ -76,6 +85,12 @@ __all__ = [
     "EntityExtractor",
     "DocumentEntity",
     "DocumentEntityAssembly",
+    "GraphConstructionError",
+    "GraphDocument",
+    "GraphEdge",
+    "GraphEvidence",
+    "GraphNode",
+    "GraphResult",
     "ExtractionConfig",
     "ExtractionResult",
     "GroundedRelation",
@@ -97,6 +112,7 @@ __all__ = [
     "RELATION_EXTRACTION_SYSTEM_PROMPT",
     "validate_relations",
     "assemble_document_entities",
+    "build_graph_result",
     "normalize_aioner_predictions",
     "normalize_hunflair2_predictions",
 ]

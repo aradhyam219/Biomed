@@ -7,16 +7,16 @@
 ## System purpose
 
 This subsystem converts unstructured biomedical text into stable, machine-consumable
-biomedical entity mentions and, on the composed prototype path, source-grounded
-relations. Its active foundation is pretrained HunFlair2 NER behind the existing
-model-independent entity seam, followed by the existing grounded LLM relation
-implementation.
+biomedical entity mentions, source-grounded relations, and a frontend-neutral
+graph-ready JSON representation. Its active foundation is pretrained HunFlair2 NER
+behind the existing model-independent entity seam, followed by the existing
+grounded LLM relation implementation.
 
-Target-domain NER evaluation and fine-tuning remain postponed. Full graph
-assembly, graph serialization, visualization, and biomedical identity
-normalization are also outside this architecture. A separate conservative
-document-local assembly layer is available for grouping safe mention identities
-without changing the mention-level contract.
+Target-domain NER evaluation and fine-tuning remain postponed. Browser
+visualization and biomedical identity normalization remain outside this
+architecture. A separate conservative document-local assembly layer groups safe
+mention identities without changing the mention-level contract, and the graph
+boundary combines its output with grounded relations.
 
 ## Active production flow
 
@@ -43,8 +43,12 @@ Validated Entity mentions
       v                              v
 Grounded LLM relation extraction    Document-local entity assembly
       |                              (assembled nodes + mention map)
-      v
-ComposedExtractionResult
+      v                              |
+ComposedExtractionResult             |
+      |                              |
+      +---------------+--------------+
+                      v
+             GraphResult / graph JSON
       |
       v
 Future biomedical entity normalization/linking
@@ -54,11 +58,12 @@ Future biomedical entity normalization/linking
 STOP
 ```
 
-The composed prototype path returns after validated entities and grounded
-relations. The separate document-local assembly function can consume the same
-ordered mentions and source text when downstream graph construction needs
-document-local nodes; it does not change relation endpoints or the composed
-result. Biomedical entity normalization/linking is not implemented.
+The composed prototype path can return validated entities and grounded relations
+or expose them through ``extract_graph`` as a deterministic ``GraphResult``. The
+graph boundary consumes the same ordered mentions and source text for
+document-local nodes, remaps relation endpoints through the assembly map, and
+retains verbatim relation evidence. It does not perform model inference,
+biomedical identity normalization, or frontend styling.
 
 The postponed target-domain evaluation and adaptation path is separate from the
 prototype:
@@ -109,8 +114,10 @@ HunFlair2 output normalization. `entity_assembly` owns conservative
 document-local grouping, assembled node values, and the mention-ID endpoint map.
 `llm_pipeline` composes the selected entity adapter with
 `llm_relation_extraction`, while `relation_extraction` owns the
-provider-independent grounded relation value and validation. Raw model/provider
-objects do not cross these seams. The existing GLiNER adapter and legacy
+provider-independent grounded relation value and validation. `graph` owns the
+typed graph result, endpoint remapping, conservative edge aggregation, and
+JSON serialization. Raw model/provider objects do not cross these seams. The
+existing GLiNER adapter and legacy
 `BiomedicalExtractor` path remain available for compatibility.
 
 ### GLiNER compatibility behavior
@@ -244,9 +251,10 @@ negation validation. The legacy GLiREL-compatible relation/evaluation path and
 its historical diagnostics remain preserved separately.
 
 Target-domain NER evaluation, model selection, and fine-tuning remain postponed.
-Full graph assembly, graph serialization, visualization, and external biomedical
-normalization are not part of this path. The separate document-local assembly
-layer is limited to deterministic mention grouping and endpoint mapping.
+Browser visualization and external biomedical normalization are not part of this
+path. The graph boundary is limited to deterministic mention grouping, endpoint
+mapping, exact-key edge aggregation, evidence preservation, and JSON
+serialization.
 
 Biological-process extraction is likewise deferred and, if required later, will be
 treated as a separate decision rather than added to the default core-NER pass.
@@ -258,6 +266,7 @@ treated as a separate decision rather than added to the default core-NER pass.
 | Entity extraction | `entity_extraction.EntityExtractor` runs the configured entity adapter on input text | Stable entity IDs, source spans/types, and model confidence | GLiNER-specific output outside the adapter, BioRED assumptions, or relation logic |
 | Adapter/output normalization | Convert one model's predictions into the local `Entity` value | Span integrity, schema validation, and stable output fields | Canonical biomedical identity linking or downstream reasoning |
 | Document-local entity assembly | Group safe same-document mentions and expose assembled nodes plus a mention-ID map | Deterministic node IDs, mention preservation, and type-compatible identity evidence | Biomedical normalization, cross-document identity, graph serialization, or relation rewriting |
+| Graph boundary | Convert assembled nodes and grounded mention relations into a stable graph result | Document ID, node identity reuse, endpoint remapping, edge aggregation, evidence, and JSON serialization | Model inference, semantic predicate rewriting, graph-database state, or frontend styling |
 | Biomedical entity normalization/linking | Future mention-to-identity resolution | Not implemented in the current path | Model selection before the NER quality gate |
 | Relation extraction | Existing grounded LLM relation implementation over supplied normalized entities | Source-grounded relation fields, endpoint integrity, evidence, negation, and validation | Entity discovery, graph assembly, or unsupported biological inference |
 | Evaluation and adaptation readiness | Measure core NER and prepare controlled target adaptation | Dataset adaptation, metrics, challenger adapters, model comparison, target-domain pilot/validator, frozen baseline, and isolated training readiness | Production extraction semantics, pseudo-gold, incomplete-gold training, or production model replacement |
@@ -296,9 +305,10 @@ treated as a separate decision rather than added to the default core-NER pass.
   predictions, AIONER output, or model agreement as gold.
 - Document-local assembly is deterministic, preserves every original mention,
   and never silently merges incompatible entity types.
-- The architecture must not grow speculative ontology, full-graph, or external
-  normalization infrastructure beyond the grounded relation and document-local
-  assembly contracts.
+- The graph boundary must not emit dangling endpoints, discard relation evidence,
+  rewrite predicates, or introduce frontend-specific styling.
+- The architecture must not grow speculative ontology, graph-database, or
+  external normalization infrastructure beyond the graph-ready JSON boundary.
 
 ## Current supported extension points
 

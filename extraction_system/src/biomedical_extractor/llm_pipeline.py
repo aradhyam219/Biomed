@@ -12,6 +12,8 @@ from .entity_extraction import (
     EntityExtractor,
     GLiNERBioMedExtractor,
 )
+from .entity_assembly import assemble_document_entities
+from .graph import GraphResult, build_graph_result
 from .hunflair2 import HUNFLAIR2_MODEL_IDENTIFIER, HunFlair2BioMedExtractor
 from .llm_relation_extraction import LLMRelationExtractor, OpenAIConfig
 from .relation_extraction import (
@@ -163,6 +165,18 @@ class LLMExtractionPipeline:
         # A custom implementation must honor the same local contract as the LLM
         # harness; this recheck prevents invalid values from escaping composition.
         return validate_relations(text, entities, result.relations)
+
+    def extract_graph(self, text: str, *, document_id: str = "input") -> GraphResult:
+        """Extract, assemble, and serialize-ready graph data for one document.
+
+        This is one orchestration call over the existing NER and grounded
+        relation stages.  Graph construction itself performs no model or LLM
+        inference.
+        """
+
+        result = self.extract(text)
+        assembly = assemble_document_entities(result.entities, text)
+        return build_graph_result(document_id, assembly, result.relations)
 
 
 BiomedicalLLMExtractor = LLMExtractionPipeline

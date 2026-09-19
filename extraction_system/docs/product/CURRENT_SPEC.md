@@ -8,9 +8,9 @@
 
 Given unstructured biomedical text, produce a clean, machine-consumable set of
 core biomedical entity mentions with source spans, types, stable IDs, and model
-confidence when available. A separate conservative transformation may assemble
-safe mentions into document-local entities for later graph construction, while
-grounded relations remain available when the composed prototype path is selected.
+confidence when available. A separate conservative transformation assembles safe
+mentions into document-local entities, and the composed prototype can expose
+those nodes with grounded relations as deterministic graph-ready JSON.
 
 The active prototype uses pretrained HunFlair2 for NER and the existing grounded
 LLM relation extractor downstream. Target-domain NER evaluation and fine-tuning
@@ -24,11 +24,11 @@ biomedical text
 isolated pretrained HunFlair2 runtime
     ↓
 validated Entity mentions
-    ├──────────────→ grounded LLM relation extraction
-    │                         ↓
-    │                  ComposedExtractionResult
-    └──────────────→ document-local entity assembly
-                       (assembled nodes + mention map)
+    ├──────────────→ grounded LLM relation extraction ───┐
+    │                                                     │
+    └──────────────→ document-local entity assembly ──────┤
+                       (assembled nodes + mention map)   ↓
+                                      graph-ready result / JSON
 ```
 
 The model-independent `EntityExtractor` seam remains the stable NER boundary.
@@ -50,6 +50,9 @@ AIONER / PubTator-style NER remains preserved as evaluation/history evidence.
 - adapter/output normalization into the stable local entity representation;
 - conservative document-local assembly with deterministic IDs, preserved
   mentions, and a complete mention-to-assembled-entity map;
+- a frontend-neutral graph-ready JSON boundary that remaps grounded relation
+  endpoints to assembled node IDs, preserves direction, negation, and evidence,
+  and deterministically aggregates equivalent edges;
 - a frozen, evaluation-only comparison of the current GLiNER baseline with the
   official AIONER PubMedBERT-CRF artifact on the official BioRED Test split;
 - a frozen, evaluation-only challenger run of the official HunFlair2 five-class
@@ -73,7 +76,7 @@ not include:
 - target-domain NER evaluation, model selection, or fine-tuning; the existing
   reconnaissance, pilot, validator, and training-readiness assets remain
   preserved for later use;
-- relation-model quality evaluation, full graph assembly, visualization, or live
+- relation-model quality evaluation, browser visualization, or live
   external-provider smoke beyond the existing grounded extraction seam;
 - biomedical entity normalization/linking, meaning resolution of a mention to a
   canonical biomedical identity or identifier;
@@ -151,9 +154,10 @@ an alternative implementation must be able to return the same `Entity` values.
 The production package also exposes `assemble_document_entities(entities, text)`
 as a separate transformation over an ordered mention result. It returns
 document-local entities and a deterministic map from every original mention ID
-to exactly one assembled entity ID. It does not change `Entity`, rewrite
-grounded relation endpoints, or run automatically inside the composed relation
-pipeline.
+to exactly one assembled entity ID. It does not change `Entity` or rewrite
+grounded relation endpoints. `LLMExtractionPipeline.extract_graph()` is the
+explicit orchestration seam that combines this assembly result with grounded
+relations through the graph boundary.
 
 The identity rules are intentionally conservative:
 
@@ -169,8 +173,8 @@ The identity rules are intentionally conservative:
   and confidence values.
 
 This is document-local identity evidence, not biomedical normalization or
-cross-document linking. Full graph construction and graph serialization remain
-out of scope.
+cross-document linking. The graph boundary reuses these IDs and preserves all
+constituent mentions; it does not create a second node identity system.
 
 ## Normalization terminology
 
@@ -270,9 +274,8 @@ out of scope. Unsupported and ambiguous CRAFT annotations remain explicit in
 machine-readable reports and are excluded from primary metrics.
 
 The grounded relation path is an active composition capability. Relation-specific
-quality evaluation, graph assembly, and visualization remain deferred; existing
-relation diagnostics are preserved and are not silently promoted to production
-claims.
+quality evaluation and browser visualization remain deferred; the graph boundary
+is a deterministic serialization seam over already validated relation output.
 
 ## Quality gate and replacement seam
 
@@ -298,6 +301,11 @@ runtime dependencies remain isolated from the main production environment.
   never changes the `Entity` or grounded relation contracts.
 - Assembly preserves every mention and maps each mention ID to exactly one
   document-local entity ID.
+- Graph output reuses assembled node IDs, rejects dangling relation endpoints,
+  preserves direction, negation, and verbatim evidence, and does not rewrite
+  predicates.
+- Assembly-induced self-edges are suppressed unless the relation explicitly uses
+  the same mention as both endpoints.
 - Biomedical entity normalization/linking is not implemented in this task.
 - Output is machine-consumable and does not require model-specific objects.
 - HunFlair2 is the active prototype NER foundation, while its Flair/SciSpaCy
@@ -337,11 +345,19 @@ mentions may share one node with `KNTC1` as the display label. Unsupported alias
 patterns and incompatible types remain separate, and the mention endpoint map is
 complete.
 
+### Graph-ready output
+
+`LLMExtractionPipeline.extract_graph(text, document_id=...)` returns one node for
+each assembled document entity and remaps grounded relation endpoints to those
+node IDs. Equivalent endpoint/predicate/negation claims share one edge with all
+source-evidence records retained; assembly-induced self-edges are suppressed.
+The result exposes `to_dict()` and deterministic `to_json()` serialization and
+contains no frontend styling.
+
 ### Deferred downstream work
 
-Entity normalization/linking, full graph assembly, graph serialization,
-visualization, target domain NER evaluation, and fine-tuning remain outside this
-prototype milestone.
+Entity normalization/linking, browser visualization, target domain NER
+evaluation, and fine-tuning remain outside this prototype milestone.
 
 ## Related architecture
 
