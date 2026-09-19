@@ -226,11 +226,28 @@ def _hunflair2_artifact(
         / "models--hunflair--hunflair2-ner"
     )
     ref_path = model_root / "refs" / "main"
-    if not ref_path.is_file():
-        return None, None
-    revision = ref_path.read_text(encoding="utf-8").strip()
-    artifact = model_root / "snapshots" / revision / "pytorch_model.bin"
-    return (artifact if artifact.is_file() else None), revision
+    revision = ref_path.read_text(encoding="utf-8").strip() if ref_path.is_file() else None
+    candidates: list[Path] = []
+    if revision:
+        snapshot = model_root / "snapshots" / revision
+        candidates.extend(
+            path
+            for path in (
+                snapshot / "pytorch_model.bin",
+                snapshot / "model.safetensors",
+                snapshot / "hunflair2-ner.pt",
+            )
+            if path.is_file()
+        )
+    if not candidates and runtime_cache.is_dir():
+        candidates.extend(
+            path
+            for path in runtime_cache.rglob("*")
+            if path.is_file()
+            and path.name in {"pytorch_model.bin", "model.safetensors", "hunflair2-ner.pt"}
+        )
+    artifact = sorted(candidates, key=lambda path: str(path))[0] if candidates else None
+    return artifact, revision
 
 
 def run_hunflair2(
@@ -238,7 +255,7 @@ def run_hunflair2(
     *,
     input_path: Path,
     output_path: Path,
-    python_path: Path = Path(".cache/hunflair2/runtime/Scripts/python.exe"),
+    python_path: Path | None = None,
     runtime_script: Path = Path("src/biomedical_extractor/hunflair2_runtime.py"),
     runtime_cache: Path = Path(".cache/hunflair2"),
     model_identifier: str = "hunflair/hunflair2-ner",
@@ -249,7 +266,18 @@ def run_hunflair2(
     write_runner_input(documents, input_path)
     input_path = input_path.resolve()
     output_path = output_path.resolve()
-    python_path = python_path.resolve()
+    if python_path is None:
+        candidates = (
+            Path(".cache/hunflair2/runtime/bin/python"),
+            Path(".cache/hunflair2/runtime/Scripts/python.exe"),
+        )
+        python_path = next(
+            (candidate for candidate in candidates if candidate.is_file()), candidates[0]
+        )
+    # Keep the virtualenv launcher symlink intact. Resolving
+    # ``runtime/bin/python`` turns it into the underlying uv interpreter and
+    # loses the isolated runtime's site-packages.
+    python_path = Path(python_path)
     runtime_script = runtime_script.resolve()
     runtime_cache = runtime_cache.resolve()
     artifact, revision = _hunflair2_artifact(runtime_cache, model_identifier)

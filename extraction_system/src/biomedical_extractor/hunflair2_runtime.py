@@ -179,6 +179,8 @@ def _tagger_runtime_details(tagger: Any, flair: Any) -> dict[str, Any]:
 
     embeddings = getattr(tagger, "embeddings", None)
     tokenizer = getattr(embeddings, "tokenizer", None)
+    torch = importlib.import_module("torch")
+    cuda_available = bool(torch.cuda.is_available())
     return {
         "flair": getattr(flair, "__version__", None),
         "python": platform.python_version(),
@@ -190,6 +192,9 @@ def _tagger_runtime_details(tagger: Any, flair: Any) -> dict[str, Any]:
         "spacy": _package_version("spacy"),
         "en_core_sci_sm": _package_version("en-core-sci-sm"),
         "device": str(getattr(flair, "device", "cpu")),
+        "cuda_available": cuda_available,
+        "cuda_device": torch.cuda.get_device_name(0) if cuda_available else None,
+        "cuda_version": getattr(torch.version, "cuda", None),
         "tagger_class": type(tagger).__name__,
         "label_type": str(getattr(tagger, "label_type", "ner")),
         "transformer_model": getattr(embeddings, "base_model_name", None),
@@ -211,7 +216,10 @@ def run(payload: Mapping[str, Any], args: argparse.Namespace) -> dict[str, Any]:
 
     documents = _documents(payload)
     if args.device:
-        os.environ["FLAIR_DEVICE"] = args.device
+        # Flair 0.15 interprets FLAIR_DEVICE as a CUDA index, not the string
+        # ``cuda``.  Passing ``cuda`` would construct the invalid device
+        # string ``cuda:cuda`` inside Flair.
+        os.environ["FLAIR_DEVICE"] = "0" if args.device == "cuda" else args.device
 
     import flair
     from flair.nn import Classifier

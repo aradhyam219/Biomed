@@ -1,0 +1,69 @@
+{
+  "backward": {
+    "finite_gradients": true,
+    "global_gradient_norm": 0.0022965262178331614,
+    "non_zero_gradient": true
+  },
+  "base_model": {
+    "artifact_sha256": null,
+    "configured_artifact_sha256": "245a099b660c1e2b682e0a1216feac140d5be36c4c6ca8c715af682efa685de6",
+    "identifier": "hunflair/hunflair2-ner",
+    "local_artifact": null,
+    "revision": "3af2b8972f7af2910ce8d9ae724da09b3d7a166c"
+  },
+  "checkpoint": {
+    "inference_after_reload": true,
+    "path": ".cache/hunflair2/smoke/hunflair2-smoke.pt",
+    "reloaded": true,
+    "sha256": "1e621f9fb694f7c23629b01de2751c94fed6f900fb2c7d4fd81ca6068d1e62a7"
+  },
+  "config": {
+    "base_model": "hunflair/hunflair2-ner",
+    "base_model_artifact_sha256": "245a099b660c1e2b682e0a1216feac140d5be36c4c6ca8c715af682efa685de6",
+    "base_model_revision": "3af2b8972f7af2910ce8d9ae724da09b3d7a166c",
+    "canonical_corpus": ".cache/ner_target_domain/target_corpus.json",
+    "checkpoint_location": ".cache/hunflair2/training/target-domain",
+    "dev_manifest": "reports/target_domain_pilot_2026-09-19.json",
+    "device": "cuda",
+    "gradient_accumulation_steps": 1,
+    "learning_rate": 5e-05,
+    "max_epochs": 10,
+    "mini_batch_size": 4,
+    "mixed_precision": false,
+    "output_model_location": ".cache/hunflair2/training/target-domain/final-model.pt",
+    "random_seed": 17,
+    "test_manifest": "reports/target_domain_pilot_2026-09-19.json",
+    "train_manifest": "reports/target_domain_pilot_2026-09-19.json"
+  },
+  "disposable": true,
+  "fixture": {
+    "evaluative_target_gold_used": false,
+    "sentence_count": 2,
+    "synthetic": true
+  },
+  "forward": {
+    "finite_loss": true,
+    "loss": 9.226580004906282e-05,
+    "token_count": 14
+  },
+  "model_selection_candidate": false,
+  "optimizer": {
+    "parameter_changed": true
+  },
+  "peak_cuda_memory_mib": 2493.05029296875,
+  "runtime": {
+    "actual_device": "cuda",
+    "cuda_available": true,
+    "cuda_device": "NVIDIA L4",
+    "cuda_version": "13.0",
+    "flair": "0.15.1",
+    "python": "3.11.16",
+    "python_implementation": "CPython",
+    "requested_device": "cuda",
+    "scispacy": "0.5.1",
+    "torch": "2.14.0+cu130",
+    "transformers": "4.57.6"
+  },
+  "schema_version": 1,
+  "smoke_kind": "hunflair2_training_plumbing"
+}

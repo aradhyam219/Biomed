@@ -1,0 +1,18 @@
+{
+  "base_model": "hunflair/hunflair2-ner",
+  "base_model_revision": "3af2b8972f7af2910ce8d9ae724da09b3d7a166c",
+  "base_model_artifact_sha256": "245a099b660c1e2b682e0a1216feac140d5be36c4c6ca8c715af682efa685de6",
+  "random_seed": 17,
+  "max_epochs": 10,
+  "learning_rate": 0.00005,
+  "mini_batch_size": 4,
+  "gradient_accumulation_steps": 1,
+  "mixed_precision": false,
+  "device": "cuda",
+  "checkpoint_location": ".cache/hunflair2/training/target-domain",
+  "output_model_location": ".cache/hunflair2/training/target-domain/final-model.pt",
+  "train_manifest": "reports/target_domain_pilot_2026-09-19.json",
+  "dev_manifest": "reports/target_domain_pilot_2026-09-19.json",
+  "test_manifest": "reports/target_domain_pilot_2026-09-19.json",
+  "canonical_corpus": ".cache/ner_target_domain/target_corpus.json"
+}

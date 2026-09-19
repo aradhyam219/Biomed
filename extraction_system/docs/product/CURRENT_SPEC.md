@@ -28,11 +28,12 @@ future biomedical entity normalization
 STOP
 ```
 
-The next entity model has not been selected. The current GLiNER-BioMed adapter is
-the baseline; AIONER / PubTator-style NER and HunFlair2 are evaluation candidates,
-not preselected winners. The model-independent entity interface is intentionally
-preserved so those candidates can be compared or substituted behind the same
-boundary.
+The current GLiNER-BioMed adapter remains the production default. HunFlair2 is the
+selected base NER model for further target-domain development; AIONER / PubTator-
+style NER remains preserved as evaluation/history evidence and is not an equal
+active development candidate. HunFlair2 adaptation is non-production work until
+human target-domain gold passes validation and the resulting candidate passes the
+agreed regression gates.
 
 ## Scope
 
@@ -53,6 +54,13 @@ boundary.
   official NCBI/PubMed/PMC acquisition, identical canonical text, AIONER and
   HunFlair2 agreement diagnostics, sentence-level entity co-occurrence only, and
   a deterministic human-review packet;
+- a deterministic target-domain gold pilot over complete canonical sentences from
+  the nine science-team papers, with a frozen 6-paper train / 1-paper development /
+  2-paper held-out test split, explicit six-type gold schema, provenance validator,
+  reviewer packet, and frozen pretrained HunFlair2 sentence predictions;
+- a repository-owned isolated Flair training lane and NVIDIA L4 plumbing smoke
+  test for HunFlair2. The smoke fixture is synthetic and produces no target model
+  or target-domain quality claim.
 - an exploratory exact-span MedMentions ST21pv cross-schema stress test with an
   explicit UMLS semantic-type mapping to the shared ChemicalEntity and
   DiseaseOrPhenotypicFeature classes, including unsupported/ambiguous counts,
@@ -73,8 +81,9 @@ does not include:
   canonical biomedical identity or identifier;
 - replacing the production NER model or adding its legacy runtime to the
   production dependency graph;
-- fine-tuning, a final ontology redesign, graph infrastructure, or unrelated
-  platform capabilities.
+- actual target-domain fine-tuning before the pilot has human-complete gold;
+- a final ontology redesign, graph infrastructure, or unrelated platform
+  capabilities.
 
 Existing LLM and legacy GLiREL relation implementations remain preserved and
 callable, but relation extraction is deferred until core NER passes an explicit
@@ -192,6 +201,24 @@ diagnostic; no edge, predicate, or relation score is produced. The report keeps
 SequenceVariant as an AIONER-only schema observation and retains CellLine in the
 shared view.
 
+The target-domain pilot command selects approximately 20 complete sentences per
+paper using deterministic per-paper hard-case, stable entity-rich, and general
+coverage groups. It preserves canonical source offsets, section/provenance
+checksums, and a paper-level 6/1/2 split. Its ``entities`` arrays are empty until
+a human reviewer supplies exhaustive annotations; HunFlair2 and prior AIONER
+outputs remain separate reviewer suggestions. The validator rejects malformed
+spans, unsupported types, and exact duplicates, reports overlap/nesting without
+rewriting gold, and requires explicit completion before training or scoring.
+The frozen pretrained HunFlair2 artifact is prediction-only evidence and does not
+claim target-domain metrics while gold is incomplete.
+
+The target training entry point consumes only validated, complete pilot gold and
+uses Flair's development split for model selection while keeping the paper-level
+test split out of training. The released HunFlair2 head is flat five-class Flair
+NER; a human ``SequenceVariant`` annotation remains valid pilot gold but stops
+training explicitly until a compatible representation is authorized. No gold is
+auto-filled or inferred from model agreement.
+
 The MedMentions experiment is an exploratory cross-schema stress test using
 explicit UMLS semantic-type mappings. UMLS identifiers are retained as source
 metadata but are not used for linking or scoring. Only explicit semantic types
@@ -214,16 +241,18 @@ deferred work; it is not an active acceptance target for the current NER phase.
 
 ## Quality gate and replacement seam
 
-The current and next NER phases may compare the current GLiNER-BioMed baseline
-with AIONER / PubTator-style NER and HunFlair2 behind the same `EntityExtractor`
-boundary. These challenger runs are not a model-selection decision. The quality
-gate must be explicitly passed using the agreed NER evaluation evidence before
-biomedical entity normalization/linking or relation work becomes active.
+The current production boundary remains model-independent GLiNER extraction. The
+selected HunFlair2 base is developed in the isolated adaptation lane using the
+target pilot and exact-span evaluation contract; it is not installed as the
+production default. The quality gate must be explicitly passed using human
+target-domain gold and the agreed BioRED/CRAFT regression evidence before a
+production replacement, biomedical entity normalization/linking, or relation
+work becomes active.
 
-No production replacement model, production dependency, training run, or linking
-implementation is introduced by this specification. The AIONER and HunFlair2
-runtimes are kept outside the production dependency graph for controlled Test
-comparisons.
+No production replacement model, production dependency, completed target-domain
+fine-tuning run, or linking implementation is introduced by this specification.
+The AIONER and HunFlair2 runtimes plus the training lane remain outside the
+production dependency graph for controlled development and evaluation.
 
 ## Product invariants
 
@@ -237,9 +266,8 @@ comparisons.
 - Adapter/output normalization is distinct from biomedical identity normalization.
 - Biomedical entity normalization/linking is not implemented in this task.
 - Output is machine-consumable and does not require model-specific objects.
-- No challenger model is installed as the production default, and no new
-  production dependency, ontology, graph, or fine-tuning path is added for this
-  refocus.
+- HunFlair2 is not installed as the production default; its isolated target
+  adaptation lane cannot consume incomplete gold or model-generated pseudo-labels.
 - Target-domain reports cannot claim correctness or a production model winner
   without target-domain gold labels.
 - Sentence co-occurrence diagnostics cannot create relation outputs.

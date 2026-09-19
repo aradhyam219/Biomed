@@ -30,6 +30,9 @@ biomedical-ner-hunflair2-evaluate = "biomedical_extractor.hunflair2_evaluation_c
 biomedical-ner-compare = "biomedical_extractor.ner_comparison_cli:main"
 biomedical-ner-compare-aioner-hunflair2 = "biomedical_extractor.hunflair2_comparison_cli:main"
 biomedical-ner-target-domain = "biomedical_extractor.target_domain_cli:main"
+biomedical-ner-target-domain-pilot = "biomedical_extractor.target_domain_pilot_cli:main"
+biomedical-ner-target-domain-validate = "biomedical_extractor.target_domain_validation_cli:main"
+biomedical-ner-hunflair2-train = "biomedical_extractor.hunflair2_training_cli:main"
 biomedical-ner-medmentions = "biomedical_extractor.medmentions_cli:main"
 biomedical-ner-craft = "biomedical_extractor.craft_cli:main"
 

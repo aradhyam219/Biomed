@@ -46,6 +46,28 @@ The current production path stops after stable entity output. Biomedical entity
 normalization/linking is not implemented. It becomes active only after the core
 NER model and schema have been selected and validated.
 
+The selected-development path is separate from production:
+
+```text
+canonical nine-paper target corpus
+          |
+          v
+deterministic sentence pilot + frozen paper split
+          |
+          v
+human-complete six-type gold
+          |
+          v
+validated Flair/HunFlair2 fine-tuning lane
+          |
+          v
+exact-span target test + BioRED/CRAFT regression
+```
+
+The pilot and training lane never change production defaults. Its gold validator
+rejects incomplete data at the training boundary, preserves overlap diagnostics,
+and keeps model predictions separate from human annotations.
+
 The repository also contains an evaluation-only `AIONERBioMedExtractor` and a
 Test-only report command. It adapts the official AIONER PubMedBERT-CRF output to
 the same `EntityExtractor` boundary, preserving exact source offsets and optional
@@ -59,8 +81,10 @@ model through Flair, splits complete documents with SciSpaCy, lifts sentence-
 relative spans back to the original source text, and preserves exposed scores.
 The Flair/SciSpaCy environment, model artifact, and prediction cache remain
 under `.cache/hunflair2/`; HunFlair2 is not a production dependency or default
-replacement. Its supported schema is the shared five-class view and it does not
-claim BioRED SequenceVariant coverage.
+replacement. HunFlair2 is the selected base for non-production target-domain
+development. Its released flat head supports five shared labels; the pilot still
+permits `SequenceVariant` gold and surfaces that incompatibility before training
+instead of remapping it.
 
 The production implementation lives in `src/biomedical_extractor/`. The
 `entity_extraction` module owns the model-independent `EntityExtractor` contract,
@@ -99,9 +123,10 @@ id, text, type, start, end, score
 adapter validates that the source slice exactly matches `Entity.text`.
 
 Alternative entity implementations must be able to satisfy this same boundary.
-The next model has not been selected. Current evaluation inputs include the
-GLiNER-BioMed baseline, AIONER / PubTator-style NER, and HunFlair2; these are
-comparison candidates, not a preselected winner.
+The GLiNER-BioMed adapter remains the production default. HunFlair2 is the
+selected base for non-production target-domain development, while AIONER /
+PubTator-style NER remains preserved evaluation/history evidence. Neither the
+pilot nor the training lane changes the production replacement seam.
 
 ## Normalization terminology
 
@@ -173,6 +198,20 @@ current schema, validates canonical source offsets, and writes tracked JSON and
 Markdown evidence. Neither flow invokes a relation model or infers relations
 from entity co-occurrence.
 
+The `biomedical-ner-target-domain-pilot` command reuses that canonical cache and
+selects complete sentences from all nine papers with deterministic per-paper
+hard-case, entity-rich, and general-coverage groups. It writes a tracked
+machine-readable annotation template and reviewer Markdown packet with exact
+canonical offsets, paper-level train/dev/test assignment, provenance checksums,
+and prediction context that is never copied into gold. The
+`biomedical-ner-target-domain-validate` command validates spans, types,
+duplicates, completion state, provenance, and explicit overlap diagnostics. The
+`biomedical-ner-hunflair2-train` launcher delegates to the prepared Flair 0.15.1
+runtime: `--smoke` performs one synthetic CUDA forward/backward/update/checkpoint
+cycle, while `--train` is an explicit future operation that requires complete
+human gold and uses only train data for optimization, dev for selection, and test
+for final evaluation.
+
 ## Deferred downstream paths
 
 The repository still contains both the controlled LLM relation implementation and
@@ -192,7 +231,7 @@ treated as a separate decision rather than added to the default core-NER pass.
 | Adapter/output normalization | Convert one model's predictions into the local `Entity` value | Span integrity, schema validation, and stable output fields | Canonical biomedical identity linking or downstream reasoning |
 | Biomedical entity normalization/linking | Future mention-to-identity resolution | Not implemented in the current path | Model selection before the NER quality gate |
 | Relation extraction (deferred) | Existing relation implementations over supplied normalized entities | Preserved downstream relation contracts | Active quality priority or changes in this refocus |
-| Evaluation | Measure core NER against annotated data and controlled cross-domain evidence | Dataset adaptation, metrics, challenger adapters, model comparison, target-domain review packets, and cross-corpus reports | Production extraction semantics, target-gold claims, or model training |
+| Evaluation and adaptation readiness | Measure core NER and prepare controlled target adaptation | Dataset adaptation, metrics, challenger adapters, model comparison, target-domain pilot/validator, frozen baseline, and isolated training readiness | Production extraction semantics, pseudo-gold, incomplete-gold training, or production model replacement |
 
 ## Hard architectural invariants
 
@@ -207,8 +246,8 @@ treated as a separate decision rather than added to the default core-NER pass.
 - Existing relation paths remain preserved but are outside the active workstream.
 - The official AIONER runtime and artifact remain evaluation-only and isolated from
   the production dependency graph.
-- The official HunFlair2 runtime, SciSpaCy splitter, and model artifact remain
-  evaluation-only and isolated from the production dependency graph.
+- The official HunFlair2 runtime, SciSpaCy splitter, model artifact, and
+  target-adaptation lane remain isolated from the production dependency graph.
 - Target-domain source acquisition must preserve canonical text offsets and make
   full-text/abstract-only fallback explicit; raw sources and prediction caches
   remain ignored under `.cache/`, while reviewer-facing summaries are tracked
@@ -222,6 +261,8 @@ treated as a separate decision rather than added to the default core-NER pass.
 - CRAFT is the primary clean independent cross-corpus benchmark. Its source
   release, article text, annotation manifests, exact offset checks, and isolated
   model artifact identities are recorded in the reviewer-facing report.
+- The selected HunFlair2 adaptation lane is non-production and must not use
+  target-paper model predictions, AIONER output, or model agreement as gold.
 - The architecture must not grow speculative ontology, graph, relation, or model
   infrastructure before the NER quality gate.
 
@@ -232,11 +273,13 @@ These are legitimate next steps because they belong to the active NER problem:
 - core entity label/schema configuration;
 - entity confidence thresholding;
 - comparison or replacement of the entity model behind `EntityExtractor`;
-- NER evaluation datasets and metrics that improve confidence in model selection.
+- NER evaluation datasets and metrics that improve confidence in model selection;
+- validated target-domain gold and non-production HunFlair2 adaptation after the
+  explicit human-annotation gate.
 
-The current candidates are evaluation inputs only. No replacement model,
-dependency, fine-tuning path, or biomedical linking implementation is selected by
-this architecture.
+HunFlair2 is selected for this development lane only. It is not the production
+default, and no target-domain fine-tuned model exists until the human gold gate is
+completed.
 
 ## Documentation maintenance rule
 

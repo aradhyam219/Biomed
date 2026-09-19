@@ -31,6 +31,9 @@ Canonical commands:
 - BioRED NER evaluation: `uv run biomedical-ner-evaluate --dataset C:\path\to\BioRED`
 - HunFlair2 challenger evaluation: `uv run biomedical-ner-hunflair2-evaluate --dataset C:\path\to\BioRED --offline`
 - target-domain reconnaissance: `uv run biomedical-ner-target-domain --report-date 2026-09-18`
+- target-domain pilot and frozen HunFlair2 baseline: `uv run biomedical-ner-target-domain-pilot --device cuda --report-date 2026-09-19`
+- target-domain gold validation: `uv run biomedical-ner-target-domain-validate --canonical-corpus .cache/ner_target_domain/target_corpus.json --require-complete`
+- HunFlair2 training readiness smoke: `uv run biomedical-ner-hunflair2-train --config configs/hunflair2_target_domain_training.json --smoke`
 - MedMentions cross-corpus evaluation: `uv run biomedical-ner-medmentions --split test --report-date 2026-09-18`
 - CRAFT cross-corpus evaluation: `uv run biomedical-ner-craft --source C:\path\to\CRAFT-v5.0.2 --report-date 2026-09-19`
 

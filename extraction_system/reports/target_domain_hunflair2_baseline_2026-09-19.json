@@ -1,0 +1,5336 @@
+{
+  "artifact_kind": "frozen_pretrained_hunflair2_target_pilot_baseline",
+  "documents": [
+    {
+      "example_id": "targetpilot-ef7273c16b444984",
+      "paper_id": "PMCID:PMC10444909",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 5,
+          "score": 0.99998939037323,
+          "start": 0,
+          "text": "KNTC1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 69,
+          "score": 0.9999917149543762,
+          "start": 43,
+          "text": "metastases of liver cancer",
+          "type": "Disease"
+        }
+      ],
+      "sentence_end": 70,
+      "sentence_start": 0,
+      "split": "dev",
+      "text_sha256": "433bc44f09b6b72e457783b0332cf7e3527ed9c32b5c0c20f5a1d4f35c565d78"
+    },
+    {
+      "example_id": "targetpilot-0bd486919f1bb9c1",
+      "paper_id": "PMCID:PMC10444909",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 64,
+          "score": 0.9999819993972778,
+          "start": 32,
+          "text": "kinetochore-associated protein 1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 71,
+          "score": 0.9999898672103882,
+          "start": 66,
+          "text": "KNTC1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 100,
+          "score": 0.9999920725822449,
+          "start": 76,
+          "text": "hepatocellular carcinoma",
+          "type": "Disease"
+        }
+      ],
+      "sentence_end": 173,
+      "sentence_start": 72,
+      "split": "dev",
+      "text_sha256": "de2be46a2909801b248dce5da345f3945305bac0b43f27278de8564807ebf044"
+    },
+    {
+      "example_id": "targetpilot-d5b05be56ea5a2bf",
+      "paper_id": "PMCID:PMC10444909",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 36,
+          "score": 0.9999892711639404,
+          "start": 31,
+          "text": "KNTC1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 75,
+          "score": 0.9999919533729553,
+          "start": 51,
+          "text": "hepatocellular carcinoma",
+          "type": "Disease"
+        }
+      ],
+      "sentence_end": 250,
+      "sentence_start": 174,
+      "split": "dev",
+      "text_sha256": "4b00a04b31c6b8e15086ef8c1823953c80705a7d3d564f47987468a5344d2836"
+    },
+    {
+      "example_id": "targetpilot-3938eb63a5e6d7a7",
+      "paper_id": "PMCID:PMC10444909",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 45,
+          "score": 0.9999890327453613,
+          "start": 40,
+          "text": "KNTC1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 73,
+          "score": 0.9999883770942688,
+          "start": 49,
+          "text": "hepatocellular carcinoma",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "CellLine",
+          "end": 93,
+          "score": 0.9217759966850281,
+          "start": 85,
+          "text": "SK-Hep-1",
+          "type": "CellLine"
+        },
+        {
+          "canonical_type": "CellLine",
+          "end": 99,
+          "score": 0.9953851103782654,
+          "start": 95,
+          "text": "Huh7",
+          "type": "CellLine"
+        },
+        {
+          "canonical_type": "CellLine",
+          "end": 106,
+          "score": 0.9944557547569275,
+          "start": 101,
+          "text": "HepG2",
+          "type": "CellLine"
+        },
+        {
+          "canonical_type": "CellLine",
+          "end": 117,
+          "score": 0.995587944984436,
+          "start": 111,
+          "text": "SNU449",
+          "type": "CellLine"
+        }
+      ],
+      "sentence_end": 369,
+      "sentence_start": 251,
+      "split": "dev",
+      "text_sha256": "2637a2921fbf9f7fd6ee179217f006fdbe8c41a7d9c41c4b12fc3822cd509762"
+    },
+    {
+      "example_id": "targetpilot-1db5e578a7c2fbf1",
+      "paper_id": "PMCID:PMC10444909",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 76,
+          "score": 0.9999889135360718,
+          "start": 71,
+          "text": "KNTC1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "CellLine",
+          "end": 98,
+          "score": 0.921561578909556,
+          "start": 90,
+          "text": "SK-Hep-1",
+          "type": "CellLine"
+        },
+        {
+          "canonical_type": "CellLine",
+          "end": 107,
+          "score": 0.9946921467781067,
+          "start": 103,
+          "text": "Huh7",
+          "type": "CellLine"
+        }
+      ],
+      "sentence_end": 478,
+      "sentence_start": 370,
+      "split": "dev",
+      "text_sha256": "33028aa20f39c52077f60466904726eb7d5e8a5faa5283e435941da697f2fd6f"
+    },
+    {
+      "example_id": "targetpilot-b39ed8ce2ba76e6f",
+      "paper_id": "PMCID:PMC10444909",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 25,
+          "score": 0.9999892711639404,
+          "start": 20,
+          "text": "KNTC1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 117,
+          "score": 0.9999905824661255,
+          "start": 93,
+          "text": "hepatocellular carcinoma",
+          "type": "Disease"
+        }
+      ],
+      "sentence_end": 614,
+      "sentence_start": 479,
+      "split": "dev",
+      "text_sha256": "16015cb1115055a761215e07314a8aba945c629a35936518699bab7b9ce085c3"
+    },
+    {
+      "example_id": "targetpilot-bb06e130ef29a669",
+      "paper_id": "PMCID:PMC10444909",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 29,
+          "score": 0.9999895095825195,
+          "start": 24,
+          "text": "KNTC1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 87,
+          "score": 0.9999919533729553,
+          "start": 63,
+          "text": "hepatocellular carcinoma",
+          "type": "Disease"
+        }
+      ],
+      "sentence_end": 762,
+      "sentence_start": 615,
+      "split": "dev",
+      "text_sha256": "56f99c488e577defdd8481cf507fedd9a06321bfb12d9c5a92dd432f7675fafb"
+    },
+    {
+      "example_id": "targetpilot-386eb829a946e1bd",
+      "paper_id": "PMCID:PMC10444909",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 23,
+          "score": 0.9999885559082031,
+          "start": 18,
+          "text": "KNTC1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 51,
+          "score": 0.9999886155128479,
+          "start": 27,
+          "text": "hepatocellular carcinoma",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "CellLine",
+          "end": 71,
+          "score": 0.9221926132837931,
+          "start": 63,
+          "text": "SK-Hep-1",
+          "type": "CellLine"
+        },
+        {
+          "canonical_type": "CellLine",
+          "end": 77,
+          "score": 0.9954143762588501,
+          "start": 73,
+          "text": "Huh7",
+          "type": "CellLine"
+        },
+        {
+          "canonical_type": "CellLine",
+          "end": 84,
+          "score": 0.9945597052574158,
+          "start": 79,
+          "text": "HepG2",
+          "type": "CellLine"
+        },
+        {
+          "canonical_type": "CellLine",
+          "end": 95,
+          "score": 0.9956258535385132,
+          "start": 89,
+          "text": "SNU449",
+          "type": "CellLine"
+        },
+        {
+          "canonical_type": "CellLine",
+          "end": 160,
+          "score": 0.9953513145446777,
+          "start": 157,
+          "text": "L02",
+          "type": "CellLine"
+        }
+      ],
+      "sentence_end": 924,
+      "sentence_start": 763,
+      "split": "dev",
+      "text_sha256": "ff16227006e429407b33ecb395461fae082a523e0a2b3b9c2e7cc9bcb00d9d2d"
+    },
+    {
+      "example_id": "targetpilot-2a1616e7ce0fad78",
+      "paper_id": "PMCID:PMC10444909",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 18,
+          "score": 0.9999890327453613,
+          "start": 13,
+          "text": "KNTC1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "CellLine",
+          "end": 30,
+          "score": 0.9188894828160604,
+          "start": 22,
+          "text": "SK-Hep-1",
+          "type": "CellLine"
+        },
+        {
+          "canonical_type": "CellLine",
+          "end": 39,
+          "score": 0.9947757720947266,
+          "start": 35,
+          "text": "Huh7",
+          "type": "CellLine"
+        }
+      ],
+      "sentence_end": 1044,
+      "sentence_start": 925,
+      "split": "dev",
+      "text_sha256": "e5a60d07162a93cd5623b8f18659bec595065fa186358beb566bfd233888e293"
+    },
+    {
+      "example_id": "targetpilot-551bcefd77293e04",
+      "paper_id": "PMCID:PMC10444909",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 5,
+          "score": 0.9999898672103882,
+          "start": 0,
+          "text": "KNTC1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 63,
+          "score": 0.9999918341636658,
+          "start": 39,
+          "text": "hepatocellular carcinoma",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 118,
+          "score": 0.9999796628952027,
+          "start": 93,
+          "text": "cyclin-dependent kinase 1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 124,
+          "score": 0.9999901056289673,
+          "start": 120,
+          "text": "CDK1",
+          "type": "Gene"
+        }
+      ],
+      "sentence_end": 1171,
+      "sentence_start": 1045,
+      "split": "dev",
+      "text_sha256": "c3777bdde9a8cccd94c394a26f8d4c918c8b705f2983c79d406a5d527a2b890f"
+    },
+    {
+      "example_id": "targetpilot-e620e1bfc02d0de2",
+      "paper_id": "PMCID:PMC10444909",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 18,
+          "score": 0.9999898672103882,
+          "start": 13,
+          "text": "KNTC1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 33,
+          "score": 0.9999899864196777,
+          "start": 29,
+          "text": "CDK1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 56,
+          "score": 0.9999889135360718,
+          "start": 52,
+          "text": "CDK1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 114,
+          "score": 0.9999897480010986,
+          "start": 109,
+          "text": "KNTC1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 191,
+          "score": 0.9999919533729553,
+          "start": 167,
+          "text": "hepatocellular carcinoma",
+          "type": "Disease"
+        }
+      ],
+      "sentence_end": 1375,
+      "sentence_start": 1172,
+      "split": "dev",
+      "text_sha256": "a7795b159527533531fbc3da1bb67b6f3661bee6ed2ccf196acd41d4666a6e4d"
+    },
+    {
+      "example_id": "targetpilot-ad97870a43b740d9",
+      "paper_id": "PMCID:PMC10444909",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 18,
+          "score": 0.99998939037323,
+          "start": 13,
+          "text": "KNTC1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 119,
+          "score": 0.9999892711639404,
+          "start": 115,
+          "text": "CDK1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 192,
+          "score": 0.9999918341636658,
+          "start": 168,
+          "text": "hepatocellular carcinoma",
+          "type": "Disease"
+        }
+      ],
+      "sentence_end": 1575,
+      "sentence_start": 1376,
+      "split": "dev",
+      "text_sha256": "432b943dbce6679baa14e264bd533b4a72fe7e781b2d24234682fefc2866c9c5"
+    },
+    {
+      "example_id": "targetpilot-68e25a15488931a2",
+      "paper_id": "PMCID:PMC10444909",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 28,
+          "score": 0.99998939037323,
+          "start": 23,
+          "text": "KNTC1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "OrganismTaxon",
+          "end": 37,
+          "score": 0.9999699592590332,
+          "start": 32,
+          "text": "mouse",
+          "type": "Species"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 57,
+          "score": 0.9999856948852539,
+          "start": 51,
+          "text": "tumors",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 86,
+          "score": 0.999985933303833,
+          "start": 81,
+          "text": "tumor",
+          "type": "Disease"
+        }
+      ],
+      "sentence_end": 1670,
+      "sentence_start": 1576,
+      "split": "dev",
+      "text_sha256": "5a1237a14672c9520346eef9e5bc78335021293d44208eaf139618324cf42422"
+    },
+    {
+      "example_id": "targetpilot-bae6c80e3e59b89b",
+      "paper_id": "PMCID:PMC10444909",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 38,
+          "score": 0.99998939037323,
+          "start": 33,
+          "text": "KNTC1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 66,
+          "score": 0.9999916553497314,
+          "start": 42,
+          "text": "hepatocellular carcinoma",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 139,
+          "score": 0.9999917149543762,
+          "start": 115,
+          "text": "hepatocellular carcinoma",
+          "type": "Disease"
+        }
+      ],
+      "sentence_end": 1833,
+      "sentence_start": 1671,
+      "split": "dev",
+      "text_sha256": "7f0fe1d4c761f308b1e1d8d14ccc2d67ee8bdab866803312faa40e4ceec2535a"
+    },
+    {
+      "example_id": "targetpilot-673701bbec16460f",
+      "paper_id": "PMCID:PMC10444909",
+      "predictions": [
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 74,
+          "score": 0.9999920725822449,
+          "start": 50,
+          "text": "hepatocellular carcinoma",
+          "type": "Disease"
+        }
+      ],
+      "sentence_end": 1909,
+      "sentence_start": 1834,
+      "split": "dev",
+      "text_sha256": "2d8ca88ed60f39a0cd11b5f2406d6e1cb2439a678be0fb80e07ae9cab813899c"
+    },
+    {
+      "example_id": "targetpilot-cb502b16715ed40a",
+      "paper_id": "PMCID:PMC10770459",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 64,
+          "score": 0.9999808669090271,
+          "start": 39,
+          "text": "high mobility group box 1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 71,
+          "score": 0.9999892711639404,
+          "start": 66,
+          "text": "HMGB1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 89,
+          "score": 0.9999856948852539,
+          "start": 76,
+          "text": "hyperglycemia",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 138,
+          "score": 0.9999861717224121,
+          "start": 126,
+          "text": "inflammation",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 170,
+          "score": 0.9999861717224121,
+          "start": 168,
+          "text": "DM",
+          "type": "Disease"
+        }
+      ],
+      "sentence_end": 606,
+      "sentence_start": 413,
+      "split": "train",
+      "text_sha256": "f9ebc83ad730a6bc48173c258b3ab9627822c73b9737711f5c7fb0e2425c5efc"
+    },
+    {
+      "example_id": "targetpilot-6cf97f8125a92159",
+      "paper_id": "PMCID:PMC10770459",
+      "predictions": [
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 114,
+          "score": 0.999985933303833,
+          "start": 112,
+          "text": "DM",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 177,
+          "score": 0.9309448897838593,
+          "start": 147,
+          "text": "diabetes-related complications",
+          "type": "Disease"
+        }
+      ],
+      "sentence_end": 3204,
+      "sentence_start": 3007,
+      "split": "train",
+      "text_sha256": "a267f5c7c201e47c1674b7cad59b319f0f432f511929b638b98ce9857e949157"
+    },
+    {
+      "example_id": "targetpilot-2b5026569bd20f63",
+      "paper_id": "PMCID:PMC10770459",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 49,
+          "score": 0.9999891519546509,
+          "start": 44,
+          "text": "HMGB1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 76,
+          "score": 0.9999852180480957,
+          "start": 69,
+          "text": "insulin",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 115,
+          "score": 0.9999769926071167,
+          "start": 99,
+          "text": "insulin receptor",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 119,
+          "score": 0.9999897480010986,
+          "start": 116,
+          "text": "AKT",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 160,
+          "score": 0.9999884366989136,
+          "start": 142,
+          "text": "insulin resistance",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 202,
+          "score": 0.9999957084655762,
+          "start": 195,
+          "text": "glucose",
+          "type": "Chemical"
+        }
+      ],
+      "sentence_end": 5045,
+      "sentence_start": 4826,
+      "split": "train",
+      "text_sha256": "95944af88deb70af8c3cf80fa28c9bd12bc57df4dc8a0465e3867af928b83be2"
+    },
+    {
+      "example_id": "targetpilot-5e4cb1d2b0d63b63",
+      "paper_id": "PMCID:PMC10770459",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 70,
+          "score": 0.9999895095825195,
+          "start": 65,
+          "text": "HMGB1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 87,
+          "score": 0.9999759197235107,
+          "start": 74,
+          "text": "hyperglycemic",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "OrganismTaxon",
+          "end": 92,
+          "score": 0.9999862909317017,
+          "start": 88,
+          "text": "mice",
+          "type": "Species"
+        },
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 140,
+          "score": 0.9999966621398926,
+          "start": 133,
+          "text": "glucose",
+          "type": "Chemical"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 178,
+          "score": 0.7857491075992584,
+          "start": 161,
+          "text": "glucose tolerance",
+          "type": "Disease"
+        }
+      ],
+      "sentence_end": 6262,
+      "sentence_start": 6083,
+      "split": "train",
+      "text_sha256": "37eb40240116c0e903c90e533f12169463884e7c41cd969e861aa82dfe8ce0c9"
+    },
+    {
+      "example_id": "targetpilot-d98791452ffbe7a5",
+      "paper_id": "PMCID:PMC10770459",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 204,
+          "score": 0.9999880790710449,
+          "start": 199,
+          "text": "HMGB1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 215,
+          "score": 0.9999966621398926,
+          "start": 208,
+          "text": "glucose",
+          "type": "Chemical"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 232,
+          "score": 0.999985933303833,
+          "start": 230,
+          "text": "DM",
+          "type": "Disease"
+        }
+      ],
+      "sentence_end": 6496,
+      "sentence_start": 6263,
+      "split": "train",
+      "text_sha256": "453dab40074d22f3897fcfee2f0d2211446c690c53de74f27e0be04ca1d4f44c"
+    },
+    {
+      "example_id": "targetpilot-33061626488cf2cc",
+      "paper_id": "PMCID:PMC10770459",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 57,
+          "score": 0.999988317489624,
+          "start": 52,
+          "text": "HMGB1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 70,
+          "score": 0.9999973773956299,
+          "start": 67,
+          "text": "STZ",
+          "type": "Chemical"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 81,
+          "score": 0.9999819993972778,
+          "start": 75,
+          "text": "iHMGB1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 92,
+          "score": 0.9999974966049194,
+          "start": 89,
+          "text": "STZ",
+          "type": "Chemical"
+        },
+        {
+          "canonical_type": "OrganismTaxon",
+          "end": 97,
+          "score": 0.9999874830245972,
+          "start": 93,
+          "text": "mice",
+          "type": "Species"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 121,
+          "score": 0.9999855756759644,
+          "start": 108,
+          "text": "hyperglycemia",
+          "type": "Disease"
+        }
+      ],
+      "sentence_end": 12834,
+      "sentence_start": 12669,
+      "split": "train",
+      "text_sha256": "efc6014685366adc5d6055512b6c6acab5b31353e355bd355d36726becd0ea51"
+    },
+    {
+      "example_id": "targetpilot-b7bd7b744523fc66",
+      "paper_id": "PMCID:PMC10770459",
+      "predictions": [
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 27,
+          "score": 0.9999976456165314,
+          "start": 13,
+          "text": "carbon dioxide",
+          "type": "Chemical"
+        },
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 56,
+          "score": 0.9999974966049194,
+          "start": 50,
+          "text": "oxygen",
+          "type": "Chemical"
+        },
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 155,
+          "score": 0.999997615814209,
+          "start": 152,
+          "text": "STZ",
+          "type": "Chemical"
+        },
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 204,
+          "score": 0.9999953508377075,
+          "start": 199,
+          "text": "lipid",
+          "type": "Chemical"
+        },
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 246,
+          "score": 0.999997615814209,
+          "start": 243,
+          "text": "STZ",
+          "type": "Chemical"
+        }
+      ],
+      "sentence_end": 19715,
+      "sentence_start": 19461,
+      "split": "train",
+      "text_sha256": "c4261efecf6cb0083cdeb719bdbfe1def459ca604f3a85eb5dadd66c7a6ce1d3"
+    },
+    {
+      "example_id": "targetpilot-0fa0d10872f1db65",
+      "paper_id": "PMCID:PMC10770459",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 33,
+          "score": 0.9999895095825195,
+          "start": 28,
+          "text": "HMGB1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 64,
+          "score": 0.9999672174453735,
+          "start": 58,
+          "text": "iHMGB1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "OrganismTaxon",
+          "end": 72,
+          "score": 0.9999873638153076,
+          "start": 68,
+          "text": "mice",
+          "type": "Species"
+        },
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 90,
+          "score": 0.9999971389770508,
+          "start": 87,
+          "text": "TMX",
+          "type": "Chemical"
+        }
+      ],
+      "sentence_end": 20267,
+      "sentence_start": 20166,
+      "split": "train",
+      "text_sha256": "3878e3e19c09fb03a00a310125aa6d89ca0fb244ba96ae6d633f2c14301dbf48"
+    },
+    {
+      "example_id": "targetpilot-6be02629521c80da",
+      "paper_id": "PMCID:PMC10770459",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 66,
+          "score": 0.9999886751174927,
+          "start": 61,
+          "text": "HMGB1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 149,
+          "score": 0.7007899284362793,
+          "start": 143,
+          "text": "iHMGB1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 160,
+          "score": 0.9999961853027344,
+          "start": 157,
+          "text": "STZ",
+          "type": "Chemical"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 170,
+          "score": 0.9999852180480957,
+          "start": 165,
+          "text": "HMGB1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 183,
+          "score": 0.9999961853027344,
+          "start": 180,
+          "text": "STZ",
+          "type": "Chemical"
+        },
+        {
+          "canonical_type": "OrganismTaxon",
+          "end": 188,
+          "score": 0.9999876022338867,
+          "start": 184,
+          "text": "mice",
+          "type": "Species"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 228,
+          "score": 0.9999887943267822,
+          "start": 223,
+          "text": "HMGB1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 249,
+          "score": 0.9016974568367004,
+          "start": 243,
+          "text": "iHMGB1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 260,
+          "score": 0.999996542930603,
+          "start": 257,
+          "text": "STZ",
+          "type": "Chemical"
+        },
+        {
+          "canonical_type": "OrganismTaxon",
+          "end": 265,
+          "score": 0.9999877214431763,
+          "start": 261,
+          "text": "mice",
+          "type": "Species"
+        }
+      ],
+      "sentence_end": 20745,
+      "sentence_start": 20479,
+      "split": "train",
+      "text_sha256": "517f88c582d0d48944cf16fcb57806f5c387c9d9829e5c3c970676fcf5980750"
+    },
+    {
+      "example_id": "targetpilot-3c894fd3a3b35fff",
+      "paper_id": "PMCID:PMC10770459",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 16,
+          "score": 0.9999891519546509,
+          "start": 11,
+          "text": "HMGB1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 43,
+          "score": 0.9999853372573853,
+          "start": 30,
+          "text": "Hyperglycemia",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 77,
+          "score": 0.9821382462978363,
+          "start": 60,
+          "text": "Glucose Tolerance",
+          "type": "Chemical"
+        },
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 88,
+          "score": 0.9999909400939941,
+          "start": 81,
+          "text": "Glucose",
+          "type": "Chemical"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 105,
+          "score": 0.9999477863311768,
+          "start": 99,
+          "text": "iHMGB1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 116,
+          "score": 0.9999938011169434,
+          "start": 113,
+          "text": "STZ",
+          "type": "Chemical"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 126,
+          "score": 0.9999872446060181,
+          "start": 121,
+          "text": "HMGB1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 139,
+          "score": 0.999993085861206,
+          "start": 136,
+          "text": "STZ",
+          "type": "Chemical"
+        },
+        {
+          "canonical_type": "OrganismTaxon",
+          "end": 144,
+          "score": 0.9999873638153076,
+          "start": 140,
+          "text": "mice",
+          "type": "Species"
+        }
+      ],
+      "sentence_end": 21366,
+      "sentence_start": 21162,
+      "split": "train",
+      "text_sha256": "fe578d71314ae248b1dfa8a958064fb363cd03e81ec89ec69a2476c1507bd0bc"
+    },
+    {
+      "example_id": "targetpilot-a686ae4e0f955c2f",
+      "paper_id": "PMCID:PMC10770459",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 57,
+          "score": 0.9999852180480957,
+          "start": 52,
+          "text": "HMGB1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 70,
+          "score": 0.9999974966049194,
+          "start": 67,
+          "text": "STZ",
+          "type": "Chemical"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 81,
+          "score": 0.9998759031295776,
+          "start": 75,
+          "text": "iHMGB1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 92,
+          "score": 0.9999974966049194,
+          "start": 89,
+          "text": "STZ",
+          "type": "Chemical"
+        },
+        {
+          "canonical_type": "OrganismTaxon",
+          "end": 97,
+          "score": 0.999987006187439,
+          "start": 93,
+          "text": "mice",
+          "type": "Species"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 163,
+          "score": 0.9999821186065674,
+          "start": 160,
+          "text": "ALT",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 216,
+          "score": 0.9999858140945435,
+          "start": 211,
+          "text": "HMGB1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 229,
+          "score": 0.999997615814209,
+          "start": 226,
+          "text": "STZ",
+          "type": "Chemical"
+        },
+        {
+          "canonical_type": "OrganismTaxon",
+          "end": 234,
+          "score": 0.999987006187439,
+          "start": 230,
+          "text": "mice",
+          "type": "Species"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 281,
+          "score": 0.9999845027923584,
+          "start": 278,
+          "text": "AST",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 311,
+          "score": 0.9999918341636658,
+          "start": 299,
+          "text": "liver damage",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 331,
+          "score": 0.9998311996459961,
+          "start": 325,
+          "text": "iHMGB1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 342,
+          "score": 0.999997615814209,
+          "start": 339,
+          "text": "STZ",
+          "type": "Chemical"
+        },
+        {
+          "canonical_type": "OrganismTaxon",
+          "end": 347,
+          "score": 0.999987006187439,
+          "start": 343,
+          "text": "mice",
+          "type": "Species"
+        }
+      ],
+      "sentence_end": 26443,
+      "sentence_start": 26076,
+      "split": "train",
+      "text_sha256": "f1cd9f0cd48a5f2cc796297579c20b559704ec2653c16992e8f6d141aabf9518"
+    },
+    {
+      "example_id": "targetpilot-b471da77e5cdfcda",
+      "paper_id": "PMCID:PMC10770459",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 78,
+          "score": 0.999970555305481,
+          "start": 72,
+          "text": "iHMGB1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 89,
+          "score": 0.9997579455375671,
+          "start": 86,
+          "text": "STZ",
+          "type": "Chemical"
+        },
+        {
+          "canonical_type": "OrganismTaxon",
+          "end": 94,
+          "score": 0.999987006187439,
+          "start": 90,
+          "text": "mice",
+          "type": "Species"
+        }
+      ],
+      "sentence_end": 31576,
+      "sentence_start": 31425,
+      "split": "train",
+      "text_sha256": "3aa88789a8f38ef8357ce5d233536604abe7188998d689e7b2629b937010db2f"
+    },
+    {
+      "example_id": "targetpilot-01d6fe15d4c1a98b",
+      "paper_id": "PMCID:PMC10770459",
+      "predictions": [
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 5,
+          "score": 0.9999849796295166,
+          "start": 3,
+          "text": "DM",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 67,
+          "score": 0.9999909996986389,
+          "start": 46,
+          "text": "metabolic dysfunction",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 84,
+          "score": 0.9999860525131226,
+          "start": 72,
+          "text": "inflammation",
+          "type": "Disease"
+        }
+      ],
+      "sentence_end": 34256,
+      "sentence_start": 34166,
+      "split": "train",
+      "text_sha256": "55352e028b9bc53a8b1f788a62e9ad723c7590cfaa8deac269cf5b981a2c538e"
+    },
+    {
+      "example_id": "targetpilot-2d9327b0cff747a3",
+      "paper_id": "PMCID:PMC10770459",
+      "predictions": [
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 129,
+          "score": 0.9998293817043304,
+          "start": 116,
+          "text": "blood glucose",
+          "type": "Chemical"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 192,
+          "score": 0.9999207258224487,
+          "start": 184,
+          "text": "diabetes",
+          "type": "Disease"
+        }
+      ],
+      "sentence_end": 38704,
+      "sentence_start": 38451,
+      "split": "train",
+      "text_sha256": "0cc10318fa5e75de67afb4d7e695d62bafc24a1077c5985f74646d68e4f05252"
+    },
+    {
+      "example_id": "targetpilot-c2d67dc0709aacc9",
+      "paper_id": "PMCID:PMC10770459",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 78,
+          "score": 0.99998939037323,
+          "start": 73,
+          "text": "HMGB1",
+          "type": "Gene"
+        }
+      ],
+      "sentence_end": 45674,
+      "sentence_start": 45535,
+      "split": "train",
+      "text_sha256": "f55f7f5c3cccd1e8b5425a7d4d1ecfca7b58cdb88ec60954e3349213a7e2cd22"
+    },
+    {
+      "example_id": "targetpilot-d6b298b40113097a",
+      "paper_id": "PMCID:PMC10770459",
+      "predictions": [
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 138,
+          "score": 0.9999966621398926,
+          "start": 131,
+          "text": "Glucose",
+          "type": "Chemical"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 165,
+          "score": 0.9999896287918091,
+          "start": 160,
+          "text": "HMGB1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 199,
+          "score": 0.9999856948852539,
+          "start": 186,
+          "text": "Hyperglycemia",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 219,
+          "score": 0.999997615814209,
+          "start": 205,
+          "text": "Streptozotocin",
+          "type": "Chemical"
+        },
+        {
+          "canonical_type": "OrganismTaxon",
+          "end": 233,
+          "score": 0.9999872446060181,
+          "start": 228,
+          "text": "Mouse",
+          "type": "Species"
+        }
+      ],
+      "sentence_end": 46541,
+      "sentence_start": 46242,
+      "split": "train",
+      "text_sha256": "60d32e7e56afd9bb0eaa78a3c12d9d7ba6b2bcadbaa24f0a0ee79dbdfd68ea05"
+    },
+    {
+      "example_id": "targetpilot-786dc70e012a4f00",
+      "paper_id": "PMCID:PMC10770459",
+      "predictions": [],
+      "sentence_end": 46828,
+      "sentence_start": 46543,
+      "split": "train",
+      "text_sha256": "d65f82908e4d34275322dc4feefbe88fa1ce55f0e44f93d766bbfbac68f2f1c7"
+    },
+    {
+      "example_id": "targetpilot-1b6bcb4b5b6bd7de",
+      "paper_id": "PMCID:PMC10770459",
+      "predictions": [],
+      "sentence_end": 47024,
+      "sentence_start": 46830,
+      "split": "train",
+      "text_sha256": "e3095db372e50b34be512df3820553e2c380c4a1ac8bb1eb8b72cde1a1a21fb8"
+    },
+    {
+      "example_id": "targetpilot-95717cc839f1aecc",
+      "paper_id": "PMCID:PMC10770459",
+      "predictions": [],
+      "sentence_end": 47252,
+      "sentence_start": 47160,
+      "split": "train",
+      "text_sha256": "0f553f0db7025d1aff6c7df67a0ada5c015653b171bc8d30d3a5e0144ee0f780"
+    },
+    {
+      "example_id": "targetpilot-19dc21baee43d529",
+      "paper_id": "PMCID:PMC10770459",
+      "predictions": [],
+      "sentence_end": 48203,
+      "sentence_start": 48089,
+      "split": "train",
+      "text_sha256": "edf165f8b3857cdbe18cce465e914051538a056fbcfc2f46c9000f7b355822eb"
+    },
+    {
+      "example_id": "targetpilot-145086f5c3e42891",
+      "paper_id": "PMCID:PMC11824863",
+      "predictions": [
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 20,
+          "score": 0.9999853372573853,
+          "start": 18,
+          "text": "AD",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "OrganismTaxon",
+          "end": 26,
+          "score": 0.9999868869781494,
+          "start": 21,
+          "text": "mouse",
+          "type": "Species"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 106,
+          "score": 0.9999815225601196,
+          "start": 90,
+          "text": "amyloid-beta1–42",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 114,
+          "score": 0.9999575614929199,
+          "start": 108,
+          "text": "Aβ1–42",
+          "type": "Gene"
+        }
+      ],
+      "sentence_end": 641,
+      "sentence_start": 525,
+      "split": "train",
+      "text_sha256": "f1b6e9b808fbdaca97a9bf006bd9e72d38245d599286ca5317638f776f49216b"
+    },
+    {
+      "example_id": "targetpilot-455b4eb4c26f6da9",
+      "paper_id": "PMCID:PMC11824863",
+      "predictions": [
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 90,
+          "score": 0.9999975363413492,
+          "start": 84,
+          "text": "oxygen",
+          "type": "Chemical"
+        },
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 149,
+          "score": 0.9999974966049194,
+          "start": 122,
+          "text": "polyunsaturated fatty acids",
+          "type": "Chemical"
+        }
+      ],
+      "sentence_end": 2887,
+      "sentence_start": 2574,
+      "split": "train",
+      "text_sha256": "ca6c8802ae70e319a31780d9d4c71d80c0a1826ada2c54d34f14efa6d33b7862"
+    },
+    {
+      "example_id": "targetpilot-8e5f71a3513bee67",
+      "paper_id": "PMCID:PMC11824863",
+      "predictions": [
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 119,
+          "score": 0.9999839067459106,
+          "start": 116,
+          "text": "ROS",
+          "type": "Chemical"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 215,
+          "score": 0.5880325436592102,
+          "start": 212,
+          "text": "Tau",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 222,
+          "score": 0.5137574076652527,
+          "start": 219,
+          "text": "Tau",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 251,
+          "score": 0.739074319601059,
+          "start": 228,
+          "text": "neurofibrillary tangles",
+          "type": "Disease"
+        }
+      ],
+      "sentence_end": 3904,
+      "sentence_start": 3652,
+      "split": "train",
+      "text_sha256": "1d9c85898bec0060c695aba8385ca6aef5a39a072c716c6e05ec6b7ef1891bf0"
+    },
+    {
+      "example_id": "targetpilot-0c27136b96e54f49",
+      "paper_id": "PMCID:PMC11824863",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 18,
+          "score": 0.99997878074646,
+          "start": 14,
+          "text": "SFPQ",
+          "type": "Gene"
+        }
+      ],
+      "sentence_end": 5016,
+      "sentence_start": 4856,
+      "split": "train",
+      "text_sha256": "85291b50e2cbbb73b22ab3f23ba3b3052f083979cf97fc65c9eae732ce24b031"
+    },
+    {
+      "example_id": "targetpilot-2d83611b1c61d63f",
+      "paper_id": "PMCID:PMC11824863",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 4,
+          "score": 0.999433696269989,
+          "start": 0,
+          "text": "SFPQ",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "OrganismTaxon",
+          "end": 75,
+          "score": 0.9999850988388062,
+          "start": 67,
+          "text": "patients",
+          "type": "Species"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 103,
+          "score": 0.999985933303833,
+          "start": 101,
+          "text": "AD",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 109,
+          "score": 0.9999737739562988,
+          "start": 105,
+          "text": "rpAD",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 146,
+          "score": 0.9999922275543213,
+          "start": 112,
+          "text": "sporadic Creutzfeldt–Jakob disease",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 152,
+          "score": 0.999983549118042,
+          "start": 148,
+          "text": "sCJD",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 192,
+          "score": 0.9999864101409912,
+          "start": 184,
+          "text": "dementia",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 233,
+          "score": 0.9999751647313436,
+          "start": 208,
+          "text": "amyloid precursor protein",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 238,
+          "score": 0.9999868869781494,
+          "start": 235,
+          "text": "APP",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 243,
+          "score": 0.9999895095825195,
+          "start": 240,
+          "text": "PS1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 247,
+          "score": 0.9999868869781494,
+          "start": 244,
+          "text": "Tau",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "OrganismTaxon",
+          "end": 253,
+          "score": 0.9999852180480957,
+          "start": 249,
+          "text": "mice",
+          "type": "Species"
+        }
+      ],
+      "sentence_end": 6187,
+      "sentence_start": 5933,
+      "split": "train",
+      "text_sha256": "32a9eac39e95b4c0677ae77ed1189574797be55646138ac75c750e67f868a108"
+    },
+    {
+      "example_id": "targetpilot-bd0273fecd8d70ec",
+      "paper_id": "PMCID:PMC11824863",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 56,
+          "score": 0.9999874830245972,
+          "start": 52,
+          "text": "SFPQ",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 67,
+          "score": 0.9999685287475586,
+          "start": 62,
+          "text": "p-Tau",
+          "type": "Gene"
+        }
+      ],
+      "sentence_end": 6615,
+      "sentence_start": 6521,
+      "split": "train",
+      "text_sha256": "87f3585c96b21e818fe3e78fb18ec1dc4c33e6459c018df1410118809a8ad5df"
+    },
+    {
+      "example_id": "targetpilot-904a13a4e0fd11dc",
+      "paper_id": "PMCID:PMC11824863",
+      "predictions": [],
+      "sentence_end": 8682,
+      "sentence_start": 8639,
+      "split": "train",
+      "text_sha256": "4271e08da5876b037d6e5371d1baff25d24a43760dc5566c6402f42435c8e966"
+    },
+    {
+      "example_id": "targetpilot-731d27e572faca32",
+      "paper_id": "PMCID:PMC11824863",
+      "predictions": [
+        {
+          "canonical_type": "OrganismTaxon",
+          "end": 36,
+          "score": 0.9999220669269562,
+          "start": 14,
+          "text": "adeno-associated virus",
+          "type": "Species"
+        },
+        {
+          "canonical_type": "OrganismTaxon",
+          "end": 41,
+          "score": 0.9999828338623047,
+          "start": 38,
+          "text": "AAV",
+          "type": "Species"
+        },
+        {
+          "canonical_type": "OrganismTaxon",
+          "end": 64,
+          "score": 0.9999873638153076,
+          "start": 60,
+          "text": "mice",
+          "type": "Species"
+        }
+      ],
+      "sentence_end": 8933,
+      "sentence_start": 8749,
+      "split": "train",
+      "text_sha256": "28aa3a70169775fef22633eca3d9da9f2b470227579d1bbb10fc64ccddecb04e"
+    },
+    {
+      "example_id": "targetpilot-c4186d65df653391",
+      "paper_id": "PMCID:PMC11824863",
+      "predictions": [
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 32,
+          "score": 0.999985933303833,
+          "start": 30,
+          "text": "AD",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "OrganismTaxon",
+          "end": 83,
+          "score": 0.999987006187439,
+          "start": 78,
+          "text": "mouse",
+          "type": "Species"
+        }
+      ],
+      "sentence_end": 9931,
+      "sentence_start": 9692,
+      "split": "train",
+      "text_sha256": "4a42ffbb093f8063cfe7010485b68b72a4fb6bd54e4411e4ed045e5abb7f15ed"
+    },
+    {
+      "example_id": "targetpilot-de2734fed0c53c00",
+      "paper_id": "PMCID:PMC11824863",
+      "predictions": [],
+      "sentence_end": 10334,
+      "sentence_start": 10227,
+      "split": "train",
+      "text_sha256": "ed6708dc5a0d61f6e3076579c3477ce1963e862c534d25fc607c0169404c7ca5"
+    },
+    {
+      "example_id": "targetpilot-7b1ab0597a157566",
+      "paper_id": "PMCID:PMC11824863",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 69,
+          "score": 0.9998117089271545,
+          "start": 65,
+          "text": "SFPQ",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "OrganismTaxon",
+          "end": 147,
+          "score": 0.999982476234436,
+          "start": 142,
+          "text": "mouse",
+          "type": "Species"
+        }
+      ],
+      "sentence_end": 10725,
+      "sentence_start": 10492,
+      "split": "train",
+      "text_sha256": "044ed28ddedb0d5246a12bcfa2c449282f79ccccbf77909ab9c9574790ccd27d"
+    },
+    {
+      "example_id": "targetpilot-9639fc4aa161068d",
+      "paper_id": "PMCID:PMC11824863",
+      "predictions": [
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 57,
+          "score": 0.9999959468841553,
+          "start": 53,
+          "text": "PVDF",
+          "type": "Chemical"
+        }
+      ],
+      "sentence_end": 11643,
+      "sentence_start": 11425,
+      "split": "train",
+      "text_sha256": "407bc0d82eb0de257d476a084eff50ec5706916369f79d1b3087e4ec1c63d859"
+    },
+    {
+      "example_id": "targetpilot-6809e7c22e0fea83",
+      "paper_id": "PMCID:PMC11824863",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 58,
+          "score": 0.9999351501464844,
+          "start": 54,
+          "text": "SFPQ",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 65,
+          "score": 0.9997549653053284,
+          "start": 60,
+          "text": "Abcam",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 81,
+          "score": 0.9999771118164062,
+          "start": 78,
+          "text": "APP",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 108,
+          "score": 0.999764621257782,
+          "start": 105,
+          "text": "Tau",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 113,
+          "score": 0.999751627445221,
+          "start": 110,
+          "text": "CST",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 127,
+          "score": 0.999977707862854,
+          "start": 124,
+          "text": "GST",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 154,
+          "score": 0.9999754726886749,
+          "start": 129,
+          "text": "glutathione S-transferase",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 162,
+          "score": 0.9999278783798218,
+          "start": 157,
+          "text": "Abcam",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 177,
+          "score": 0.9999830722808838,
+          "start": 173,
+          "text": "HO-1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 195,
+          "score": 0.9999779462814331,
+          "start": 179,
+          "text": "heme oxygenase-1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 203,
+          "score": 0.9998103976249695,
+          "start": 198,
+          "text": "Abcam",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 219,
+          "score": 0.9999809265136719,
+          "start": 214,
+          "text": "Bcl-2",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 226,
+          "score": 0.999895453453064,
+          "start": 221,
+          "text": "Abcam",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 240,
+          "score": 0.999976396560669,
+          "start": 237,
+          "text": "Bax",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 247,
+          "score": 0.9999243021011353,
+          "start": 242,
+          "text": "Abcam",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 264,
+          "score": 0.9999829530715942,
+          "start": 259,
+          "text": "PSD95",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 271,
+          "score": 0.9998325109481812,
+          "start": 266,
+          "text": "Abcam",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 288,
+          "score": 0.9999287128448486,
+          "start": 284,
+          "text": "CREB",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 319,
+          "score": 0.9999683618545532,
+          "start": 290,
+          "text": "cAMP response element-binding",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 327,
+          "score": 0.9999008178710938,
+          "start": 322,
+          "text": "Abcam",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 341,
+          "score": 0.9999773502349854,
+          "start": 338,
+          "text": "AKT",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 348,
+          "score": 0.9995878338813782,
+          "start": 343,
+          "text": "Abcam",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 390,
+          "score": 0.9999781449635824,
+          "start": 374,
+          "text": "protein kinase B",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 397,
+          "score": 0.9999779462814331,
+          "start": 394,
+          "text": "AKT",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 405,
+          "score": 0.997990608215332,
+          "start": 400,
+          "text": "Abcam",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 420,
+          "score": 0.999977707862854,
+          "start": 416,
+          "text": "PI3K",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 427,
+          "score": 0.9994482398033142,
+          "start": 422,
+          "text": "Abcam",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 478,
+          "score": 0.999978244304657,
+          "start": 453,
+          "text": "phosphoinositide 3-kinase",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 486,
+          "score": 0.9999778270721436,
+          "start": 482,
+          "text": "PI3K",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 494,
+          "score": 0.9961795806884766,
+          "start": 489,
+          "text": "Abcam",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 514,
+          "score": 0.9999788999557495,
+          "start": 505,
+          "text": "β-tubulin",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 521,
+          "score": 0.999819815158844,
+          "start": 516,
+          "text": "Abcam",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 541,
+          "score": 0.9999443292617798,
+          "start": 536,
+          "text": "GAPDH",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 548,
+          "score": 0.9995229244232178,
+          "start": 543,
+          "text": "Abcam",
+          "type": "Gene"
+        }
+      ],
+      "sentence_end": 12213,
+      "sentence_start": 11644,
+      "split": "train",
+      "text_sha256": "3706fdc6a8f5d408f67d67ce69a85255717b3c7f743e8c1c8f2c336f80738fa4"
+    },
+    {
+      "example_id": "targetpilot-c90a81de99d35af5",
+      "paper_id": "PMCID:PMC11824863",
+      "predictions": [
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 45,
+          "score": 0.9999570846557617,
+          "start": 41,
+          "text": "TBST",
+          "type": "Chemical"
+        },
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 67,
+          "score": 0.9997212737798691,
+          "start": 47,
+          "text": "Tris-buffered saline",
+          "type": "Chemical"
+        },
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 86,
+          "score": 0.9999932646751404,
+          "start": 78,
+          "text": "Tween 20",
+          "type": "Chemical"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 160,
+          "score": 0.6652684807777405,
+          "start": 154,
+          "text": "xidase",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 165,
+          "score": 0.9724421501159668,
+          "start": 162,
+          "text": "HRP",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "OrganismTaxon",
+          "end": 179,
+          "score": 0.9999713897705078,
+          "start": 175,
+          "text": "goat",
+          "type": "Species"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 204,
+          "score": 0.6458663940429688,
+          "start": 201,
+          "text": "IgG",
+          "type": "Gene"
+        }
+      ],
+      "sentence_end": 12491,
+      "sentence_start": 12214,
+      "split": "train",
+      "text_sha256": "ec786c1976b8c4190fc3b5830d807e6ffce6be0adb61d413a90ec9adfbf284b3"
+    },
+    {
+      "example_id": "targetpilot-ffe77a826e991cf3",
+      "paper_id": "PMCID:PMC11824863",
+      "predictions": [
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 50,
+          "score": 0.6346713900566101,
+          "start": 46,
+          "text": "TBST",
+          "type": "Chemical"
+        }
+      ],
+      "sentence_end": 12564,
+      "sentence_start": 12492,
+      "split": "train",
+      "text_sha256": "5f92945deab4f744f9280a7159d28ce32ca606d5e1c0a6af2882dcdffdca60c9"
+    },
+    {
+      "example_id": "targetpilot-3a449de8d8e5f047",
+      "paper_id": "PMCID:PMC11824863",
+      "predictions": [],
+      "sentence_end": 16708,
+      "sentence_start": 16474,
+      "split": "train",
+      "text_sha256": "8a468c77165d0568025916fcadd011c81bba83efce8a199fe34c184629d9f66a"
+    },
+    {
+      "example_id": "targetpilot-169f965bd3cabb06",
+      "paper_id": "PMCID:PMC11824863",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 38,
+          "score": 0.999354898929596,
+          "start": 34,
+          "text": "SFPQ",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 98,
+          "score": 0.9999780654907227,
+          "start": 94,
+          "text": "PI3K",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 106,
+          "score": 0.9999780654907227,
+          "start": 102,
+          "text": "PI3K",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 127,
+          "score": 0.9999836683273315,
+          "start": 123,
+          "text": "PI3K",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 132,
+          "score": 0.9999771118164062,
+          "start": 128,
+          "text": "PI3K",
+          "type": "Gene"
+        }
+      ],
+      "sentence_end": 22228,
+      "sentence_start": 22077,
+      "split": "train",
+      "text_sha256": "20f9d4a82e26f91f47b6da8ba77edaa92f154a15f79f697cc9def6b503628e2c"
+    },
+    {
+      "example_id": "targetpilot-fd64574b73378c34",
+      "paper_id": "PMCID:PMC11824863",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 36,
+          "score": 0.9999877214431763,
+          "start": 33,
+          "text": "AKT",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 43,
+          "score": 0.9999885559082031,
+          "start": 40,
+          "text": "AKT",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 54,
+          "score": 0.9999885559082031,
+          "start": 51,
+          "text": "AKT",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 58,
+          "score": 0.9999880790710449,
+          "start": 55,
+          "text": "AKT",
+          "type": "Gene"
+        }
+      ],
+      "sentence_end": 22320,
+      "sentence_start": 22229,
+      "split": "train",
+      "text_sha256": "100b6f6feec6392ff59897ae7fe9639a1b1cfb00b229dc0f529fffd86c0b37a0"
+    },
+    {
+      "example_id": "targetpilot-df02ded961bf0cb7",
+      "paper_id": "PMCID:PMC11824863",
+      "predictions": [
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 55,
+          "score": 0.9999955892562866,
+          "start": 51,
+          "text": "SFPQ",
+          "type": "Chemical"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 80,
+          "score": 0.9999765157699585,
+          "start": 78,
+          "text": "AD",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "OrganismTaxon",
+          "end": 85,
+          "score": 0.9999861717224121,
+          "start": 81,
+          "text": "mice",
+          "type": "Species"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 146,
+          "score": 0.9999878406524658,
+          "start": 143,
+          "text": "GST",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 155,
+          "score": 0.9999895095825195,
+          "start": 151,
+          "text": "HO-1",
+          "type": "Gene"
+        }
+      ],
+      "sentence_end": 24246,
+      "sentence_start": 24090,
+      "split": "train",
+      "text_sha256": "6d728e373511b94ce27b792997a7b5a92cdf290c49dc1b720e5daeb99e0148f2"
+    },
+    {
+      "example_id": "targetpilot-5d8e4124a75aac7a",
+      "paper_id": "PMCID:PMC11824863",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 65,
+          "score": 0.9999868869781494,
+          "start": 61,
+          "text": "SFPQ",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 116,
+          "score": 0.9986011385917664,
+          "start": 113,
+          "text": "Tau",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 131,
+          "score": 0.9999864101409912,
+          "start": 127,
+          "text": "SFPQ",
+          "type": "Gene"
+        }
+      ],
+      "sentence_end": 26705,
+      "sentence_start": 26513,
+      "split": "train",
+      "text_sha256": "c9f82a42585bf7da65b5584528a8ddb6a900fd9080be376d609b75436c811767"
+    },
+    {
+      "example_id": "targetpilot-66bd3ca868888788",
+      "paper_id": "PMCID:PMC8605525",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 34,
+          "score": 0.9999802907307943,
+          "start": 15,
+          "text": "E3 ubiquitin ligase",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 39,
+          "score": 0.9999880790710449,
+          "start": 36,
+          "text": "Cbl",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 89,
+          "score": 0.9999803304672241,
+          "start": 65,
+          "text": "receptor tyrosine kinase",
+          "type": "Gene"
+        }
+      ],
+      "sentence_end": 4663,
+      "sentence_start": 4507,
+      "split": "test",
+      "text_sha256": "8e9988f2bf827b4b8ed248c9c5abba50fb2b0e4a5e516c25ee08850917be9963"
+    },
+    {
+      "example_id": "targetpilot-5e72e9c2113c20dc",
+      "paper_id": "PMCID:PMC8605525",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 11,
+          "score": 0.9999868869781494,
+          "start": 8,
+          "text": "JAK",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 72,
+          "score": 0.9999860525131226,
+          "start": 69,
+          "text": "Cbl",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "CellLine",
+          "end": 91,
+          "score": 0.7137086987495422,
+          "start": 86,
+          "text": "293 T",
+          "type": "CellLine"
+        }
+      ],
+      "sentence_end": 5815,
+      "sentence_start": 5712,
+      "split": "test",
+      "text_sha256": "a8905114d8e5d8edd8afafa6bbe24942770cda89f6ed6cc022f507075ff0a3ca"
+    },
+    {
+      "example_id": "targetpilot-535c4bc51d6b53f3",
+      "paper_id": "PMCID:PMC8605525",
+      "predictions": [],
+      "sentence_end": 6954,
+      "sentence_start": 6780,
+      "split": "test",
+      "text_sha256": "eb46490777fa94afe50756ffe4fcfd9a5aa4736928acb0d6b15287ebe1bee641"
+    },
+    {
+      "example_id": "targetpilot-bcee42e4957c74c6",
+      "paper_id": "PMCID:PMC8605525",
+      "predictions": [],
+      "sentence_end": 7940,
+      "sentence_start": 7720,
+      "split": "test",
+      "text_sha256": "9eca2962445f2c2ef4725208578d4f0451d073065a32e623cbae0bb57275851a"
+    },
+    {
+      "example_id": "targetpilot-c7911e0cd350889a",
+      "paper_id": "PMCID:PMC8605525",
+      "predictions": [
+        {
+          "canonical_type": "OrganismTaxon",
+          "end": 10,
+          "score": 0.999985933303833,
+          "start": 6,
+          "text": "rats",
+          "type": "Species"
+        },
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 84,
+          "score": 0.9984127283096313,
+          "start": 77,
+          "text": "glucose",
+          "type": "Chemical"
+        }
+      ],
+      "sentence_end": 9348,
+      "sentence_start": 9221,
+      "split": "test",
+      "text_sha256": "36692a0edf16e79912f77b947f09adfae42b1ed20fece10ba5f581e53c868911"
+    },
+    {
+      "example_id": "targetpilot-c249fbb51e2eceb2",
+      "paper_id": "PMCID:PMC8605525",
+      "predictions": [
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 12,
+          "score": 0.999992847442627,
+          "start": 4,
+          "text": "paraffin",
+          "type": "Chemical"
+        },
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 62,
+          "score": 0.999707043170929,
+          "start": 56,
+          "text": "xylene",
+          "type": "Chemical"
+        },
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 87,
+          "score": 0.9999927282333374,
+          "start": 80,
+          "text": "ethanol",
+          "type": "Chemical"
+        },
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 144,
+          "score": 0.9999973376592001,
+          "start": 133,
+          "text": "hematoxylin",
+          "type": "Chemical"
+        },
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 221,
+          "score": 0.9999889135360718,
+          "start": 216,
+          "text": "eosin",
+          "type": "Chemical"
+        }
+      ],
+      "sentence_end": 10061,
+      "sentence_start": 9818,
+      "split": "test",
+      "text_sha256": "8744463b24215698b5176b728cf990e31808cab61cdecdad8bafd7523f2cc047"
+    },
+    {
+      "example_id": "targetpilot-b204fd25bad6d92c",
+      "paper_id": "PMCID:PMC8605525",
+      "predictions": [
+        {
+          "canonical_type": "OrganismTaxon",
+          "end": 23,
+          "score": 0.9999755620956421,
+          "start": 19,
+          "text": "goat",
+          "type": "Species"
+        },
+        {
+          "canonical_type": "OrganismTaxon",
+          "end": 113,
+          "score": 0.9999668598175049,
+          "start": 107,
+          "text": "rabbit",
+          "type": "Species"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 117,
+          "score": 0.9999837875366211,
+          "start": 114,
+          "text": "Cbl",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "OrganismTaxon",
+          "end": 180,
+          "score": 0.9999656677246094,
+          "start": 174,
+          "text": "rabbit",
+          "type": "Species"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 187,
+          "score": 0.9999877214431763,
+          "start": 183,
+          "text": "JAK2",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "OrganismTaxon",
+          "end": 230,
+          "score": 0.9999666213989258,
+          "start": 224,
+          "text": "rabbit",
+          "type": "Species"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 238,
+          "score": 0.9999885559082031,
+          "start": 233,
+          "text": "STAT4",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "OrganismTaxon",
+          "end": 279,
+          "score": 0.9999723434448242,
+          "start": 274,
+          "text": "mouse",
+          "type": "Species"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 285,
+          "score": 0.9999759991963705,
+          "start": 280,
+          "text": "Runx3",
+          "type": "Gene"
+        }
+      ],
+      "sentence_end": 11932,
+      "sentence_start": 11602,
+      "split": "test",
+      "text_sha256": "7f711d8bf1c61bfa96277d3410d37d601a85609b99723c6a26111c2d769fcbb5"
+    },
+    {
+      "example_id": "targetpilot-7697dcd30f971ea2",
+      "paper_id": "PMCID:PMC8605525",
+      "predictions": [
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 64,
+          "score": 0.9999969959259033,
+          "start": 32,
+          "text": "Dulbecco’s Modified Eagle Medium",
+          "type": "Chemical"
+        },
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 70,
+          "score": 0.9999936819076538,
+          "start": 66,
+          "text": "DMEM",
+          "type": "Chemical"
+        },
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 118,
+          "score": 0.9999786019325256,
+          "start": 109,
+          "text": "HG medium",
+          "type": "Chemical"
+        },
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 147,
+          "score": 0.9999898672103882,
+          "start": 144,
+          "text": "CO2",
+          "type": "Chemical"
+        }
+      ],
+      "sentence_end": 13572,
+      "sentence_start": 13424,
+      "split": "test",
+      "text_sha256": "422ff237d62b9880c1c862301dcac43ef44db1cfb0a9a3b59f93ec24d4b94f8d"
+    },
+    {
+      "example_id": "targetpilot-8b4808d4707e6f8d",
+      "paper_id": "PMCID:PMC8605525",
+      "predictions": [
+        {
+          "canonical_type": "OrganismTaxon",
+          "end": 67,
+          "score": 0.9998059868812561,
+          "start": 61,
+          "text": "rabbit",
+          "type": "Species"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 71,
+          "score": 0.9999866485595703,
+          "start": 68,
+          "text": "Cbl",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "OrganismTaxon",
+          "end": 110,
+          "score": 0.999900221824646,
+          "start": 104,
+          "text": "rabbit",
+          "type": "Species"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 134,
+          "score": 0.9999744494756063,
+          "start": 111,
+          "text": "endothelial NO synthase",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 140,
+          "score": 0.9999886751174927,
+          "start": 136,
+          "text": "eNOS",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "OrganismTaxon",
+          "end": 180,
+          "score": 0.9993855953216553,
+          "start": 174,
+          "text": "rabbit",
+          "type": "Species"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 185,
+          "score": 0.9999891519546509,
+          "start": 181,
+          "text": "JAK2",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "OrganismTaxon",
+          "end": 225,
+          "score": 0.9993717074394226,
+          "start": 219,
+          "text": "rabbit",
+          "type": "Species"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 232,
+          "score": 0.9999892711639404,
+          "start": 228,
+          "text": "JAK2",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "OrganismTaxon",
+          "end": 271,
+          "score": 0.9996324777603149,
+          "start": 265,
+          "text": "rabbit",
+          "type": "Species"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 277,
+          "score": 0.9999898672103882,
+          "start": 272,
+          "text": "STAT4",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "OrganismTaxon",
+          "end": 317,
+          "score": 0.9996129870414734,
+          "start": 311,
+          "text": "rabbit",
+          "type": "Species"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 325,
+          "score": 0.9999896287918091,
+          "start": 320,
+          "text": "STAT4",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "OrganismTaxon",
+          "end": 363,
+          "score": 0.9999181032180786,
+          "start": 358,
+          "text": "mouse",
+          "type": "Species"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 369,
+          "score": 0.9999744494756063,
+          "start": 364,
+          "text": "Runx3",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "OrganismTaxon",
+          "end": 412,
+          "score": 0.9998763799667358,
+          "start": 407,
+          "text": "mouse",
+          "type": "Species"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 420,
+          "score": 0.9999414285024008,
+          "start": 413,
+          "text": "β-actin",
+          "type": "Gene"
+        }
+      ],
+      "sentence_end": 15501,
+      "sentence_start": 15055,
+      "split": "test",
+      "text_sha256": "267ec98d98ff22adcf656545e84f091ed4c59771d1f5ce03acf98e98b4135f22"
+    },
+    {
+      "example_id": "targetpilot-df5d0f6e2f8cecda",
+      "paper_id": "PMCID:PMC8605525",
+      "predictions": [],
+      "sentence_end": 19234,
+      "sentence_start": 19169,
+      "split": "test",
+      "text_sha256": "782b771cf5ab338ae4d92db14217ca621569baf06faa816c69e39dccdcf4ae19"
+    },
+    {
+      "example_id": "targetpilot-1dc4ef75321c8338",
+      "paper_id": "PMCID:PMC8605525",
+      "predictions": [
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 41,
+          "score": 0.9739838540554047,
+          "start": 28,
+          "text": "blood glucose",
+          "type": "Chemical"
+        },
+        {
+          "canonical_type": "OrganismTaxon",
+          "end": 64,
+          "score": 0.9999856948852539,
+          "start": 61,
+          "text": "rat",
+          "type": "Species"
+        }
+      ],
+      "sentence_end": 22127,
+      "sentence_start": 22036,
+      "split": "test",
+      "text_sha256": "384066eaa1abbcd61755bb7ce0985799cd8d6e3f79e21bf55cac909b1bc75bff"
+    },
+    {
+      "example_id": "targetpilot-0e4a05b9dbfad4f1",
+      "paper_id": "PMCID:PMC8605525",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 37,
+          "score": 0.9999887943267822,
+          "start": 33,
+          "text": "eNOS",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 71,
+          "score": 0.9999934434890747,
+          "start": 69,
+          "text": "HG",
+          "type": "Chemical"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 118,
+          "score": 0.9999897480010986,
+          "start": 114,
+          "text": "eNOS",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 159,
+          "score": 0.9999886751174927,
+          "start": 156,
+          "text": "Cbl",
+          "type": "Gene"
+        }
+      ],
+      "sentence_end": 27835,
+      "sentence_start": 27670,
+      "split": "test",
+      "text_sha256": "198b930216a27e552c443d58c26e70a7418eb6bd160766892738fa5e7d5a65fb"
+    },
+    {
+      "example_id": "targetpilot-4251e00e101f0733",
+      "paper_id": "PMCID:PMC8605525",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 12,
+          "score": 0.999872088432312,
+          "start": 7,
+          "text": "STAT4",
+          "type": "Gene"
+        }
+      ],
+      "sentence_end": 31698,
+      "sentence_start": 31636,
+      "split": "test",
+      "text_sha256": "ed25a4cdf18e36cbfd05cd40c9929c6aef21c7328935708488b542442c911693"
+    },
+    {
+      "example_id": "targetpilot-ee5d73806122f5fd",
+      "paper_id": "PMCID:PMC8605525",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 31,
+          "score": 0.9999769926071167,
+          "start": 24,
+          "text": "H3K4me3",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 41,
+          "score": 0.9999798536300659,
+          "start": 36,
+          "text": "STAT4",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 122,
+          "score": 0.9990509152412415,
+          "start": 115,
+          "text": "STAT4-1",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 132,
+          "score": 0.9999760389328003,
+          "start": 127,
+          "text": "STAT4",
+          "type": "Gene"
+        }
+      ],
+      "sentence_end": 33068,
+      "sentence_start": 32923,
+      "split": "test",
+      "text_sha256": "dbb710befd8535bee80e394f718257421cad9cd02a4f9819491fcdc8e32e26d0"
+    },
+    {
+      "example_id": "targetpilot-bbcaffd6418f0984",
+      "paper_id": "PMCID:PMC8605525",
+      "predictions": [
+        {
+          "canonical_type": "OrganismTaxon",
+          "end": 44,
+          "score": 0.9999873638153076,
+          "start": 40,
+          "text": "rats",
+          "type": "Species"
+        },
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 58,
+          "score": 0.9999064207077026,
+          "start": 56,
+          "text": "NO",
+          "type": "Chemical"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 80,
+          "score": 0.9999676942825317,
+          "start": 77,
+          "text": "Cbl",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "OrganismTaxon",
+          "end": 101,
+          "score": 0.9999871253967285,
+          "start": 97,
+          "text": "rats",
+          "type": "Species"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 143,
+          "score": 0.9994407494862875,
+          "start": 138,
+          "text": "Runx3",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 184,
+          "score": 0.999974250793457,
+          "start": 181,
+          "text": "Cbl",
+          "type": "Gene"
+        }
+      ],
+      "sentence_end": 39705,
+      "sentence_start": 39515,
+      "split": "test",
+      "text_sha256": "fe6365b194637ed3fb2250213397e7fc19c5bff386cd676b67e13afc8a763a29"
+    },
+    {
+      "example_id": "targetpilot-4b2e0eda41a70f22",
+      "paper_id": "PMCID:PMC8605525",
+      "predictions": [
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 4,
+          "score": 0.999996542930603,
+          "start": 0,
+          "text": "7Cbl",
+          "type": "Chemical"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 51,
+          "score": 0.9999798536300659,
+          "start": 46,
+          "text": "Runx3",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 84,
+          "score": 0.9999896287918091,
+          "start": 80,
+          "text": "JAK2",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 90,
+          "score": 0.9999903440475464,
+          "start": 85,
+          "text": "STAT4",
+          "type": "Gene"
+        }
+      ],
+      "sentence_end": 40254,
+      "sentence_start": 40155,
+      "split": "test",
+      "text_sha256": "e5217228495da47453dcfcdfb2b3ae31737dddd982ed21689dc47499fd38661c"
+    },
+    {
+      "example_id": "targetpilot-ab3e6b166ec45189",
+      "paper_id": "PMCID:PMC8605525",
+      "predictions": [
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 17,
+          "score": 0.9999972581863403,
+          "start": 15,
+          "text": "NO",
+          "type": "Chemical"
+        }
+      ],
+      "sentence_end": 42527,
+      "sentence_start": 42425,
+      "split": "test",
+      "text_sha256": "5ccb5cb998b938ad9e5bcd1170b8c4c53f809c602245642b1be0b6b2808859b6"
+    },
+    {
+      "example_id": "targetpilot-b00521e590e2c485",
+      "paper_id": "PMCID:PMC8605525",
+      "predictions": [
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 16,
+          "score": 0.9999969005584717,
+          "start": 0,
+          "text": "Cryptotanshinone",
+          "type": "Chemical"
+        },
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 50,
+          "score": 0.9999966621398926,
+          "start": 30,
+          "text": "phenanthrene quinone",
+          "type": "Chemical"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 92,
+          "score": 0.9999857544898987,
+          "start": 81,
+          "text": "lung tumors",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 110,
+          "score": 0.9998416900634766,
+          "start": 107,
+          "text": "CD4",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 127,
+          "score": 0.9999841054280599,
+          "start": 119,
+          "text": "toxicity",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 158,
+          "score": 0.9999877214431763,
+          "start": 154,
+          "text": "JAK2",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 164,
+          "score": 0.9999884366989136,
+          "start": 159,
+          "text": "STAT4",
+          "type": "Gene"
+        }
+      ],
+      "sentence_end": 45444,
+      "sentence_start": 45266,
+      "split": "test",
+      "text_sha256": "a6954b7ef902fb403c1582c4335117e05dc4f34b0d1ad1bdd352b9d8d811326a"
+    },
+    {
+      "example_id": "targetpilot-1d425a1985959ac5",
+      "paper_id": "PMCID:PMC8605525",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 46,
+          "score": 0.9999884366989136,
+          "start": 41,
+          "text": "STAT4",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 78,
+          "score": 0.9939040541648865,
+          "start": 76,
+          "text": "NO",
+          "type": "Chemical"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 159,
+          "score": 0.999980092048645,
+          "start": 154,
+          "text": "Runx3",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 194,
+          "score": 0.999980092048645,
+          "start": 189,
+          "text": "Runx3",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 234,
+          "score": 0.9999786615371704,
+          "start": 231,
+          "text": "Cbl",
+          "type": "Gene"
+        }
+      ],
+      "sentence_end": 46284,
+      "sentence_start": 46026,
+      "split": "test",
+      "text_sha256": "bd2fc4104dae7e74bce466a5441c083e87b4085e2ab910e4c843a7f0adc58df4"
+    },
+    {
+      "example_id": "targetpilot-95753a6e9fade835",
+      "paper_id": "PMCID:PMC8605525",
+      "predictions": [
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 59,
+          "score": 0.999997615814209,
+          "start": 56,
+          "text": "Cbl",
+          "type": "Chemical"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 94,
+          "score": 0.9999751448631287,
+          "start": 71,
+          "text": "endothelial dysfunction",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 100,
+          "score": 0.9999853372573853,
+          "start": 98,
+          "text": "DM",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 128,
+          "score": 0.9999896287918091,
+          "start": 124,
+          "text": "JAK2",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 134,
+          "score": 0.9999899864196777,
+          "start": 129,
+          "text": "STAT4",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 152,
+          "score": 0.9999790191650391,
+          "start": 147,
+          "text": "Runx3",
+          "type": "Gene"
+        }
+      ],
+      "sentence_end": 46801,
+      "sentence_start": 46632,
+      "split": "test",
+      "text_sha256": "014633996dc7a2edbf6a0aec787f56a99c60ccf219901c70903fc095f2905656"
+    },
+    {
+      "example_id": "targetpilot-4e3ca758e2609754",
+      "paper_id": "PMID:27172794",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 4,
+          "score": 0.9999901056289673,
+          "start": 0,
+          "text": "EZH2",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 31,
+          "score": 0.999991238117218,
+          "start": 14,
+          "text": "colorectal cancer",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 82,
+          "score": 0.9999901056289673,
+          "start": 71,
+          "text": "p21cip1-Wnt",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 92,
+          "score": 0.9999787410100301,
+          "start": 83,
+          "text": "β-catenin",
+          "type": "Gene"
+        }
+      ],
+      "sentence_end": 103,
+      "sentence_start": 0,
+      "split": "train",
+      "text_sha256": "413978decffe5253fd2a4f3462d9d0c3c0142708245c383d25ea39c54725755e"
+    },
+    {
+      "example_id": "targetpilot-1a15180e1e5e6e4c",
+      "paper_id": "PMID:27172794",
+      "predictions": [
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 25,
+          "score": 0.9999918341636658,
+          "start": 8,
+          "text": "colorectal cancer",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 30,
+          "score": 0.9999827146530151,
+          "start": 27,
+          "text": "CRC",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "OrganismTaxon",
+          "end": 91,
+          "score": 0.9999730587005615,
+          "start": 84,
+          "text": "patient",
+          "type": "Species"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 145,
+          "score": 0.999984860420227,
+          "start": 142,
+          "text": "CRC",
+          "type": "Disease"
+        }
+      ],
+      "sentence_end": 259,
+      "sentence_start": 105,
+      "split": "train",
+      "text_sha256": "9b3dd574c85d18b693a5977753444827b3fcdf57ec9322ce798956125c1b8d7b"
+    },
+    {
+      "example_id": "targetpilot-0f46c4f054dd3fd4",
+      "paper_id": "PMID:27172794",
+      "predictions": [],
+      "sentence_end": 354,
+      "sentence_start": 260,
+      "split": "train",
+      "text_sha256": "a11805df4a3bc534ec50eefb46c361eab15e0873d1fde4aad5295fbcd99c6b6e"
+    },
+    {
+      "example_id": "targetpilot-20376b03421895c7",
+      "paper_id": "PMID:27172794",
+      "predictions": [
+        {
+          "canonical_type": "OrganismTaxon",
+          "end": 28,
+          "score": 0.999987006187439,
+          "start": 20,
+          "text": "patients",
+          "type": "Species"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 52,
+          "score": 0.9999860525131226,
+          "start": 49,
+          "text": "CRC",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 100,
+          "score": 0.9999399979909261,
+          "start": 78,
+          "text": "polycomb group protein",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 130,
+          "score": 0.9999659299850464,
+          "start": 101,
+          "text": "enhancer of zeste homologue 2",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 136,
+          "score": 0.9999887943267822,
+          "start": 132,
+          "text": "EZH2",
+          "type": "Gene"
+        }
+      ],
+      "sentence_end": 493,
+      "sentence_start": 355,
+      "split": "train",
+      "text_sha256": "3f0f7c3457ffb50e84f821812210da41d41e709be24ea64829affac61389799c"
+    },
+    {
+      "example_id": "targetpilot-ac29f268f37aa250",
+      "paper_id": "PMID:27172794",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 23,
+          "score": 0.9999898672103882,
+          "start": 19,
+          "text": "EZH2",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 32,
+          "score": 0.9999860525131226,
+          "start": 27,
+          "text": "tumor",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "OrganismTaxon",
+          "end": 69,
+          "score": 0.999982476234436,
+          "start": 62,
+          "text": "patient",
+          "type": "Species"
+        }
+      ],
+      "sentence_end": 574,
+      "sentence_start": 494,
+      "split": "train",
+      "text_sha256": "10c1ef30d50382343791a41e82cc984c5a0d233c58bb91c6a8ad5f19ec86edd7"
+    },
+    {
+      "example_id": "targetpilot-20f792c3269715d1",
+      "paper_id": "PMID:27172794",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 26,
+          "score": 0.9999901056289673,
+          "start": 22,
+          "text": "EZH2",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 38,
+          "score": 0.9999853372573853,
+          "start": 35,
+          "text": "CRC",
+          "type": "Disease"
+        }
+      ],
+      "sentence_end": 633,
+      "sentence_start": 575,
+      "split": "train",
+      "text_sha256": "1096357f5b5ec4bd1dbac75d4520458b58bc7975e2149ef06690dbb5039d0b52"
+    },
+    {
+      "example_id": "targetpilot-e504b22a4d3cf300",
+      "paper_id": "PMID:27172794",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 18,
+          "score": 0.9999837875366211,
+          "start": 14,
+          "text": "EZH2",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 55,
+          "score": 0.9994080066680908,
+          "start": 52,
+          "text": "CCS",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 99,
+          "score": 0.9966061115264893,
+          "start": 96,
+          "text": "CCS",
+          "type": "Disease"
+        }
+      ],
+      "sentence_end": 758,
+      "sentence_start": 634,
+      "split": "train",
+      "text_sha256": "6c007593462280b98bcea19a0e88d8c43008818cab72572d886d52001d8812fa"
+    },
+    {
+      "example_id": "targetpilot-0012569b6d4a915f",
+      "paper_id": "PMID:27172794",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 4,
+          "score": 0.9999897480010986,
+          "start": 0,
+          "text": "EZH2",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 47,
+          "score": 0.9999880790710449,
+          "start": 41,
+          "text": "CD133+",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 52,
+          "score": 0.9999886751174927,
+          "start": 48,
+          "text": "CD44",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 189,
+          "score": 0.999984860420227,
+          "start": 184,
+          "text": "tumor",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "OrganismTaxon",
+          "end": 236,
+          "score": 0.9999696016311646,
+          "start": 231,
+          "text": "mouse",
+          "type": "Species"
+        }
+      ],
+      "sentence_end": 1002,
+      "sentence_start": 759,
+      "split": "train",
+      "text_sha256": "3b900fd558f5f1bfccc18ee8d6476cc30e6bac2968025566cb23a5fce7ebfa8d"
+    },
+    {
+      "example_id": "targetpilot-b933104b6c21da71",
+      "paper_id": "PMID:27172794",
+      "predictions": [
+        {
+          "canonical_type": "OrganismTaxon",
+          "end": 35,
+          "score": 0.9994788765907288,
+          "start": 30,
+          "text": "human",
+          "type": "Species"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 39,
+          "score": 0.9999696016311646,
+          "start": 36,
+          "text": "CRC",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 108,
+          "score": 0.99998939037323,
+          "start": 104,
+          "text": "EZH2",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 128,
+          "score": 0.9977139234542847,
+          "start": 125,
+          "text": "CCS",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 171,
+          "score": 0.9999843835830688,
+          "start": 168,
+          "text": "Wnt",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 181,
+          "score": 0.9999797741572062,
+          "start": 172,
+          "text": "β-catenin",
+          "type": "Gene"
+        }
+      ],
+      "sentence_end": 1193,
+      "sentence_start": 1003,
+      "split": "train",
+      "text_sha256": "ab110665f0fea72aaf844415ab5c5fc4efcea1fe460331b5e143a3d205ad42b8"
+    },
+    {
+      "example_id": "targetpilot-d15580a6d6df876e",
+      "paper_id": "PMID:27172794",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 41,
+          "score": 0.9999901056289673,
+          "start": 25,
+          "text": "p21cip1-mediated",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 101,
+          "score": 0.9999901056289673,
+          "start": 97,
+          "text": "EZH2",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 123,
+          "score": 0.9999865293502808,
+          "start": 120,
+          "text": "Wnt",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 133,
+          "score": 0.9999798536300659,
+          "start": 124,
+          "text": "β-catenin",
+          "type": "Gene"
+        }
+      ],
+      "sentence_end": 1336,
+      "sentence_start": 1194,
+      "split": "train",
+      "text_sha256": "d24c7f1dab0530291e5c8054b23388866c7c1f158763077dec4233f161e2a9a3"
+    },
+    {
+      "example_id": "targetpilot-a182c59a63b1d123",
+      "paper_id": "PMID:27172794",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 27,
+          "score": 0.9999901056289673,
+          "start": 23,
+          "text": "EZH2",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 46,
+          "score": 0.9999959468841553,
+          "start": 38,
+          "text": "EPZ-6438",
+          "type": "Chemical"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 84,
+          "score": 0.9999784231185913,
+          "start": 81,
+          "text": "CRC",
+          "type": "Disease"
+        }
+      ],
+      "sentence_end": 1434,
+      "sentence_start": 1337,
+      "split": "train",
+      "text_sha256": "0bf96e8dc65d6dae4d22fa60bb7bbd0a321a050e52c723b49787b1bc687302df"
+    },
+    {
+      "example_id": "targetpilot-1b0389ecafe85c51",
+      "paper_id": "PMID:27172794",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 42,
+          "score": 0.9999895095825195,
+          "start": 38,
+          "text": "EZH2",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 58,
+          "score": 0.9999302625656128,
+          "start": 55,
+          "text": "CCS",
+          "type": "Disease"
+        }
+      ],
+      "sentence_end": 1566,
+      "sentence_start": 1435,
+      "split": "train",
+      "text_sha256": "525026de32739ea0f2ebb09fb46edc7cb69810a7e86edf203c5a0e41f2091c82"
+    },
+    {
+      "example_id": "targetpilot-879385abbccf6abf",
+      "paper_id": "PMID:27172794",
+      "predictions": [
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 44,
+          "score": 0.9999847412109375,
+          "start": 41,
+          "text": "CRC",
+          "type": "Disease"
+        }
+      ],
+      "sentence_end": 1620,
+      "sentence_start": 1567,
+      "split": "train",
+      "text_sha256": "121de47848930d18db7806c064b20bee1407256db6d5ad23370467e5b0ee4dbc"
+    },
+    {
+      "example_id": "targetpilot-83686e1ec716208d",
+      "paper_id": "PMID:27370646",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 20,
+          "score": 0.9999889135360718,
+          "start": 17,
+          "text": "p53",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "CellLine",
+          "end": 106,
+          "score": 0.9919112324714661,
+          "start": 101,
+          "text": "SSC-4",
+          "type": "CellLine"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 130,
+          "score": 0.9999796549479166,
+          "start": 107,
+          "text": "oral squamous carcinoma",
+          "type": "Disease"
+        }
+      ],
+      "sentence_end": 137,
+      "sentence_start": 0,
+      "split": "train",
+      "text_sha256": "74a23c7e821e19c8a5ab6ea357b14a5a57c00be508b1706c246671c3b8c58260"
+    },
+    {
+      "example_id": "targetpilot-bac8e19d90e292dc",
+      "paper_id": "PMID:27370646",
+      "predictions": [
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 28,
+          "score": 0.9999931752681732,
+          "start": 0,
+          "text": "Oral squamous cell carcinoma",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 34,
+          "score": 0.9999858140945435,
+          "start": 30,
+          "text": "OSCC",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 51,
+          "score": 0.9999841451644897,
+          "start": 41,
+          "text": "malignancy",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "OrganismTaxon",
+          "end": 139,
+          "score": 0.9999808073043823,
+          "start": 131,
+          "text": "patients",
+          "type": "Species"
+        }
+      ],
+      "sentence_end": 314,
+      "sentence_start": 139,
+      "split": "train",
+      "text_sha256": "a97c4315f38af06513314c1b8139c66e40cde0b60a81beab8c93ec4d0e041d01"
+    },
+    {
+      "example_id": "targetpilot-5fdc2f1676532da5",
+      "paper_id": "PMID:27370646",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 3,
+          "score": 0.9999874830245972,
+          "start": 0,
+          "text": "p53",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 120,
+          "score": 0.9999520182609558,
+          "start": 104,
+          "text": "malignant tumors",
+          "type": "Disease"
+        }
+      ],
+      "sentence_end": 436,
+      "sentence_start": 315,
+      "split": "train",
+      "text_sha256": "5b2d61fb81331aef988c7bd810fa91d4e700f194239048ed60b3ebf45d24cd39"
+    },
+    {
+      "example_id": "targetpilot-d2c5f6c330df722b",
+      "paper_id": "PMID:27370646",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 25,
+          "score": 0.9999892711639404,
+          "start": 22,
+          "text": "p53",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 68,
+          "score": 0.999985933303833,
+          "start": 64,
+          "text": "OSCC",
+          "type": "Disease"
+        }
+      ],
+      "sentence_end": 557,
+      "sentence_start": 437,
+      "split": "train",
+      "text_sha256": "19faddfce9dea5d55ebff9c05669a8eaa734b9127bd2ff9b6735dc96f9791443"
+    },
+    {
+      "example_id": "targetpilot-75f4b12b77feca72",
+      "paper_id": "PMID:27370646",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 82,
+          "score": 0.9999886751174927,
+          "start": 79,
+          "text": "p53",
+          "type": "Gene"
+        }
+      ],
+      "sentence_end": 765,
+      "sentence_start": 558,
+      "split": "train",
+      "text_sha256": "a92c28a12761b83f9cde6115cc00f5952fcb5d9b5e41202309197394215dd639"
+    },
+    {
+      "example_id": "targetpilot-e3149c6545474829",
+      "paper_id": "PMID:27370646",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 49,
+          "score": 0.999988317489624,
+          "start": 46,
+          "text": "p53",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "CellLine",
+          "end": 126,
+          "score": 0.9926431775093079,
+          "start": 121,
+          "text": "SSC-4",
+          "type": "CellLine"
+        }
+      ],
+      "sentence_end": 899,
+      "sentence_start": 766,
+      "split": "train",
+      "text_sha256": "6a4e1900ea1d92e7ccc2a4b04615585aa6b6fe641db7f6ea16d5547b8b9599fa"
+    },
+    {
+      "example_id": "targetpilot-2089aea1c9f60957",
+      "paper_id": "PMID:27370646",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 94,
+          "score": 0.9999823570251465,
+          "start": 90,
+          "text": "VEGF",
+          "type": "Gene"
+        }
+      ],
+      "sentence_end": 995,
+      "sentence_start": 900,
+      "split": "train",
+      "text_sha256": "8d13f94f0085c17c3acaf38f4d585e5a8fb6e0a585a48ff465a6778d1db34384"
+    },
+    {
+      "example_id": "targetpilot-ebd97c2212d062cc",
+      "paper_id": "PMID:27370646",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 81,
+          "score": 0.9999886751174927,
+          "start": 78,
+          "text": "p53",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 100,
+          "score": 0.9999840259552002,
+          "start": 96,
+          "text": "OSCC",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 182,
+          "score": 0.9999842643737793,
+          "start": 178,
+          "text": "OSCC",
+          "type": "Disease"
+        }
+      ],
+      "sentence_end": 1217,
+      "sentence_start": 996,
+      "split": "train",
+      "text_sha256": "b39f9975231b2c911896b7358fc66ab94759a64b51e322b09e0cd89c1b830994"
+    },
+    {
+      "example_id": "targetpilot-84f6c0dff983f226",
+      "paper_id": "PMID:31324362",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 5,
+          "score": 0.999979297320048,
+          "start": 0,
+          "text": "c-Myc",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 41,
+          "score": 0.999989926815033,
+          "start": 30,
+          "text": "Oral Cancer",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 99,
+          "score": 0.9999804496765137,
+          "start": 88,
+          "text": "Glutaminase",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 124,
+          "score": 0.9999741315841675,
+          "start": 104,
+          "text": "Glutamine Synthetase",
+          "type": "Gene"
+        }
+      ],
+      "sentence_end": 134,
+      "sentence_start": 0,
+      "split": "train",
+      "text_sha256": "8f33578ad0fad3e353bf7cc8273913aff96662abfc3d7888e99699b5a1779178"
+    },
+    {
+      "example_id": "targetpilot-27b668215986ee2b",
+      "paper_id": "PMID:31324362",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 51,
+          "score": 0.9999860525131226,
+          "start": 40,
+          "text": "glutaminase",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 56,
+          "score": 0.999988317489624,
+          "start": 53,
+          "text": "GLS",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 82,
+          "score": 0.9999760985374451,
+          "start": 62,
+          "text": "glutamine synthetase",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 86,
+          "score": 0.9999880790710449,
+          "start": 84,
+          "text": "GS",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 109,
+          "score": 0.9999798138936361,
+          "start": 104,
+          "text": "c-Myc",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 124,
+          "score": 0.999985933303833,
+          "start": 119,
+          "text": "tumor",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 151,
+          "score": 0.9999911189079285,
+          "start": 140,
+          "text": "oral cancer",
+          "type": "Disease"
+        }
+      ],
+      "sentence_end": 288,
+      "sentence_start": 136,
+      "split": "train",
+      "text_sha256": "e1ffd9edf32408798d9cc3baf101b248a7d6e4c759b2c299438cb76d3befdb0f"
+    },
+    {
+      "example_id": "targetpilot-ceb9d21fbcd048ed",
+      "paper_id": "PMID:31324362",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 48,
+          "score": 0.9999800125757853,
+          "start": 43,
+          "text": "c-Myc",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 53,
+          "score": 0.9999878406524658,
+          "start": 50,
+          "text": "GLS",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 61,
+          "score": 0.9999600648880005,
+          "start": 59,
+          "text": "GS",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 131,
+          "score": 0.9999916553497314,
+          "start": 120,
+          "text": "oral cancer",
+          "type": "Disease"
+        }
+      ],
+      "sentence_end": 516,
+      "sentence_start": 290,
+      "split": "train",
+      "text_sha256": "cc8f6b6bb3cb0e9d2d752871f4fb874a6e982b763f8837ffe35ee1e328b7bb80"
+    },
+    {
+      "example_id": "targetpilot-b2de2c6441bc4f0e",
+      "paper_id": "PMID:31324362",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 30,
+          "score": 0.9999801715215048,
+          "start": 25,
+          "text": "c-Myc",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 65,
+          "score": 0.9999852180480957,
+          "start": 62,
+          "text": "GLS",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 71,
+          "score": 0.9999614953994751,
+          "start": 69,
+          "text": "GS",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 142,
+          "score": 0.9999802907307943,
+          "start": 137,
+          "text": "c-Myc",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 147,
+          "score": 0.9999855756759644,
+          "start": 144,
+          "text": "GLS",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 154,
+          "score": 0.9999744892120361,
+          "start": 152,
+          "text": "GS",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "CellLine",
+          "end": 203,
+          "score": 0.9936362504959106,
+          "start": 201,
+          "text": "KB",
+          "type": "CellLine"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 215,
+          "score": 0.9999787211418152,
+          "start": 204,
+          "text": "oral cancer",
+          "type": "Disease"
+        }
+      ],
+      "sentence_end": 739,
+      "sentence_start": 517,
+      "split": "train",
+      "text_sha256": "ef9efbeea8911ecb568cdebb7093ac805909065718a6442b825ed28ab9df8caf"
+    },
+    {
+      "example_id": "targetpilot-e505d22e5d9defaa",
+      "paper_id": "PMID:31324362",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 29,
+          "score": 0.9999803304672241,
+          "start": 19,
+          "text": "E-cadherin",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 44,
+          "score": 0.9999800125757853,
+          "start": 34,
+          "text": "N-cadherin",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "CellLine",
+          "end": 95,
+          "score": 0.9936206936836243,
+          "start": 93,
+          "text": "KB",
+          "type": "CellLine"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 122,
+          "score": 0.9999800523122152,
+          "start": 117,
+          "text": "c-Myc",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 145,
+          "score": 0.9999827146530151,
+          "start": 142,
+          "text": "GLS",
+          "type": "Chemical"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 151,
+          "score": 0.9996942281723022,
+          "start": 149,
+          "text": "GS",
+          "type": "Gene"
+        }
+      ],
+      "sentence_end": 903,
+      "sentence_start": 740,
+      "split": "train",
+      "text_sha256": "e81ec24b94ee2b204f82458f22c0f33438c628b8bc57fc76e74cf839fa059609"
+    },
+    {
+      "example_id": "targetpilot-3dcdc75ac43dca73",
+      "paper_id": "PMID:31324362",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 28,
+          "score": 0.9999767541885376,
+          "start": 26,
+          "text": "GS",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 58,
+          "score": 0.9999513626098633,
+          "start": 53,
+          "text": "Tumor",
+          "type": "Disease"
+        }
+      ],
+      "sentence_end": 1004,
+      "sentence_start": 905,
+      "split": "train",
+      "text_sha256": "e009351e6fdbda327a4f5bd6fb17dcb28c1536f93e61ea342e3d83d52f57324a"
+    },
+    {
+      "example_id": "targetpilot-7aae56cfdbf236ff",
+      "paper_id": "PMID:31324362",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 18,
+          "score": 0.9999798933664957,
+          "start": 13,
+          "text": "c-Myc",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 65,
+          "score": 0.9999816417694092,
+          "start": 63,
+          "text": "GS",
+          "type": "Gene"
+        }
+      ],
+      "sentence_end": 1083,
+      "sentence_start": 1005,
+      "split": "train",
+      "text_sha256": "976c618dd5cc0eae90513ed46cb27b5e929e91d9d9c0860c07172988c4f95300"
+    },
+    {
+      "example_id": "targetpilot-b7acdc5015fae58e",
+      "paper_id": "PMID:31324362",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 23,
+          "score": 0.9999790986378988,
+          "start": 18,
+          "text": "c-Myc",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 71,
+          "score": 0.999990701675415,
+          "start": 60,
+          "text": "oral cancer",
+          "type": "Disease"
+        }
+      ],
+      "sentence_end": 1238,
+      "sentence_start": 1084,
+      "split": "train",
+      "text_sha256": "0a5c2a5bee790a2808ca5fbece81c4abf78250deb813a021e302ad74e3c73856"
+    },
+    {
+      "example_id": "targetpilot-7de08f48e9b06cff",
+      "paper_id": "PMID:31324362",
+      "predictions": [
+        {
+          "canonical_type": "CellLine",
+          "end": 25,
+          "score": 0.9947545528411865,
+          "start": 23,
+          "text": "KB",
+          "type": "CellLine"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 71,
+          "score": 0.9999801317850748,
+          "start": 66,
+          "text": "c-Myc",
+          "type": "Gene"
+        }
+      ],
+      "sentence_end": 1346,
+      "sentence_start": 1239,
+      "split": "train",
+      "text_sha256": "b3c0acb17b7ec1cd42463481932b6b4cc8f1fb441d2eb75096ca96b019b442eb"
+    },
+    {
+      "example_id": "targetpilot-f962a68a0e658980",
+      "paper_id": "PMID:31324362",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 71,
+          "score": 0.9999814033508301,
+          "start": 68,
+          "text": "GLS",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 77,
+          "score": 0.9999823570251465,
+          "start": 75,
+          "text": "GS",
+          "type": "Gene"
+        }
+      ],
+      "sentence_end": 1435,
+      "sentence_start": 1347,
+      "split": "train",
+      "text_sha256": "f1ed233ee35e889227e1a48393f2da21226d5bcecdc5fa6619698309977c38d6"
+    },
+    {
+      "example_id": "targetpilot-2eaa3d413a62d35e",
+      "paper_id": "PMID:31324362",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 18,
+          "score": 0.999980608622233,
+          "start": 13,
+          "text": "c-Myc",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 43,
+          "score": 0.9999808073043823,
+          "start": 33,
+          "text": "E-cadherin",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 89,
+          "score": 0.999980608622233,
+          "start": 79,
+          "text": "N-cadherin",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 133,
+          "score": 0.9243709444999695,
+          "start": 130,
+          "text": "GLS",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 140,
+          "score": 0.5583536624908447,
+          "start": 138,
+          "text": "GS",
+          "type": "Gene"
+        }
+      ],
+      "sentence_end": 1577,
+      "sentence_start": 1436,
+      "split": "train",
+      "text_sha256": "c6ec7b600fe19f18e2008c33c0042b4c8406448892745983426bce8f8c652c8e"
+    },
+    {
+      "example_id": "targetpilot-85f27d53c80c129a",
+      "paper_id": "PMID:31324362",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 5,
+          "score": 0.9999795357386271,
+          "start": 0,
+          "text": "c-Myc",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 41,
+          "score": 0.9999889731407166,
+          "start": 30,
+          "text": "oral cancer",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 91,
+          "score": 0.9988797307014465,
+          "start": 88,
+          "text": "GLS",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 98,
+          "score": 0.9998199343681335,
+          "start": 96,
+          "text": "GS",
+          "type": "Gene"
+        }
+      ],
+      "sentence_end": 1687,
+      "sentence_start": 1579,
+      "split": "train",
+      "text_sha256": "7b03695e3bea0867477139b9c9fdfc4953633866cffd3030bc92cf5f4629d914"
+    },
+    {
+      "example_id": "targetpilot-d3ebde837dd0786f",
+      "paper_id": "PMID:31324362",
+      "predictions": [
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 125,
+          "score": 0.999991774559021,
+          "start": 114,
+          "text": "oral cancer",
+          "type": "Disease"
+        }
+      ],
+      "sentence_end": 1814,
+      "sentence_start": 1688,
+      "split": "train",
+      "text_sha256": "12716475d64fdeab59797e9ea6baa8397672b60b4c1bd08d0c4e1664d7a08ca8"
+    },
+    {
+      "example_id": "targetpilot-1382b8be3fb4c048",
+      "paper_id": "PMID:33652126",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 4,
+          "score": 0.9999891519546509,
+          "start": 0,
+          "text": "PTEN",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 52,
+          "score": 0.9999914566675822,
+          "start": 40,
+          "text": "cytotoxicity",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "CellLine",
+          "end": 60,
+          "score": 0.9943627119064331,
+          "start": 56,
+          "text": "H9c2",
+          "type": "CellLine"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 79,
+          "score": 0.9999885559082031,
+          "start": 75,
+          "text": "PI3K",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 83,
+          "score": 0.9999895095825195,
+          "start": 80,
+          "text": "AKT",
+          "type": "Gene"
+        }
+      ],
+      "sentence_end": 102,
+      "sentence_start": 0,
+      "split": "train",
+      "text_sha256": "8822c578c6a4121f8c29b8d619aa0dceef4b49398d30682a37147270382e26ad"
+    },
+    {
+      "example_id": "targetpilot-453cd78f419fef15",
+      "paper_id": "PMID:33652126",
+      "predictions": [
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 47,
+          "score": 0.9999926090240479,
+          "start": 20,
+          "text": "acute myocardial infarction",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 52,
+          "score": 0.9999843835830688,
+          "start": 49,
+          "text": "AMI",
+          "type": "Disease"
+        }
+      ],
+      "sentence_end": 214,
+      "sentence_start": 104,
+      "split": "train",
+      "text_sha256": "3cc5d7835b5c4db9ea6cc7bf1b1c93d52bd2265eb35dfc3fe19f640f73696855"
+    },
+    {
+      "example_id": "targetpilot-75c236f31ab7390a",
+      "paper_id": "PMID:33652126",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 89,
+          "score": 0.9999806582927704,
+          "start": 59,
+          "text": "Phosphatase and tensin homolog",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 95,
+          "score": 0.9999892711639404,
+          "start": 91,
+          "text": "PTEN",
+          "type": "Gene"
+        }
+      ],
+      "sentence_end": 365,
+      "sentence_start": 215,
+      "split": "train",
+      "text_sha256": "691bf7f1e2c7dff623d7598610ffb967f75454536114d6556f4269e80450d00f"
+    },
+    {
+      "example_id": "targetpilot-594d189f1f0be387",
+      "paper_id": "PMID:33652126",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 35,
+          "score": 0.9999881982803345,
+          "start": 31,
+          "text": "PTEN",
+          "type": "Gene"
+        }
+      ],
+      "sentence_end": 430,
+      "sentence_start": 366,
+      "split": "train",
+      "text_sha256": "f7818efb1867bc706acc7559817ba007a7978af6a0c8ed95bb578a06b2cdda72"
+    },
+    {
+      "example_id": "targetpilot-9fc2a556c896c547",
+      "paper_id": "PMID:33652126",
+      "predictions": [
+        {
+          "canonical_type": "CellLine",
+          "end": 27,
+          "score": 0.9948845505714417,
+          "start": 23,
+          "text": "H9c2",
+          "type": "CellLine"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 125,
+          "score": 0.9999918937683105,
+          "start": 104,
+          "text": "myocardial infarction",
+          "type": "Disease"
+        }
+      ],
+      "sentence_end": 557,
+      "sentence_start": 431,
+      "split": "train",
+      "text_sha256": "e70ee6d4293515510570a7e65dfdf9dc54a19c7811c6d0e163a0bf856ece6e41"
+    },
+    {
+      "example_id": "targetpilot-c1a2c6afc9140f8a",
+      "paper_id": "PMID:33652126",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 38,
+          "score": 0.9999886751174927,
+          "start": 34,
+          "text": "PTEN",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 84,
+          "score": 0.9999886751174927,
+          "start": 80,
+          "text": "PTEN",
+          "type": "Gene"
+        }
+      ],
+      "sentence_end": 643,
+      "sentence_start": 558,
+      "split": "train",
+      "text_sha256": "c9703e55d70eda6c0d3091946cd8efae95197b265827d04ad3e17ff10c76af74"
+    },
+    {
+      "example_id": "targetpilot-b6ecd052d6532285",
+      "paper_id": "PMID:33652126",
+      "predictions": [
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 38,
+          "score": 0.9999392032623291,
+          "start": 33,
+          "text": "CCK-8",
+          "type": "Chemical"
+        }
+      ],
+      "sentence_end": 683,
+      "sentence_start": 644,
+      "split": "train",
+      "text_sha256": "0ef50902d8351c443970dc8d9eaf052daf6117e78ef4525ac0e95110d9379606"
+    },
+    {
+      "example_id": "targetpilot-860f11ae1196189b",
+      "paper_id": "PMID:33652126",
+      "predictions": [],
+      "sentence_end": 789,
+      "sentence_start": 684,
+      "split": "train",
+      "text_sha256": "d277562602aa980de64bbc28d54e1bd9d93c15da45df9a5d980ffcd515cd60c2"
+    },
+    {
+      "example_id": "targetpilot-101102d68aa54ae6",
+      "paper_id": "PMID:33652126",
+      "predictions": [
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 39,
+          "score": 0.9999964237213135,
+          "start": 36,
+          "text": "ROS",
+          "type": "Chemical"
+        }
+      ],
+      "sentence_end": 907,
+      "sentence_start": 790,
+      "split": "train",
+      "text_sha256": "b7f31139d009fd9d94ec4c199152d44499b9d11f27aeccc0f5e80e8e9a1aa3a2"
+    },
+    {
+      "example_id": "targetpilot-75819ab393af98c8",
+      "paper_id": "PMID:33652126",
+      "predictions": [
+        {
+          "canonical_type": "CellLine",
+          "end": 55,
+          "score": 0.9947170615196228,
+          "start": 51,
+          "text": "H9c2",
+          "type": "CellLine"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 76,
+          "score": 0.9999891519546509,
+          "start": 72,
+          "text": "PTEN",
+          "type": "Gene"
+        }
+      ],
+      "sentence_end": 996,
+      "sentence_start": 908,
+      "split": "train",
+      "text_sha256": "1e7cbc7ae58580b98af6b37eb83d4e23cc1b010bce8c7e76d337d012e26c6a8c"
+    },
+    {
+      "example_id": "targetpilot-9c2c6b81b6703ede",
+      "paper_id": "PMID:33652126",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 22,
+          "score": 0.9999884366989136,
+          "start": 18,
+          "text": "PTEN",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 111,
+          "score": 0.9999940395355225,
+          "start": 108,
+          "text": "ROS",
+          "type": "Chemical"
+        }
+      ],
+      "sentence_end": 1174,
+      "sentence_start": 997,
+      "split": "train",
+      "text_sha256": "9e894b07e7e3e72ffa74782ad99dc2635a915163e3aa679a3e83c8767801bdf3"
+    },
+    {
+      "example_id": "targetpilot-4df95724d3ece230",
+      "paper_id": "PMID:33652126",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 68,
+          "score": 0.9999775290489197,
+          "start": 39,
+          "text": "phosphatidylinositol 3-kinase",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 74,
+          "score": 0.9999744296073914,
+          "start": 70,
+          "text": "PI3K",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 111,
+          "score": 0.9999885559082031,
+          "start": 107,
+          "text": "PI3K",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 128,
+          "score": 0.9999757210413615,
+          "start": 112,
+          "text": "protein kinase B",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 133,
+          "score": 0.9999892711639404,
+          "start": 130,
+          "text": "AKT",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 178,
+          "score": 0.9999889135360718,
+          "start": 174,
+          "text": "PTEN",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 210,
+          "score": 0.9999175667762756,
+          "start": 194,
+          "text": "serum deficiency",
+          "type": "Disease"
+        }
+      ],
+      "sentence_end": 1386,
+      "sentence_start": 1175,
+      "split": "train",
+      "text_sha256": "3b17977d20e296e4a561094e7334d1642697c45f830ae52208cc305ea02e7f9e"
+    },
+    {
+      "example_id": "targetpilot-119d9baadaab8c3f",
+      "paper_id": "PMID:33652126",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 55,
+          "score": 0.99998939037323,
+          "start": 51,
+          "text": "PTEN",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 60,
+          "score": 0.9999897480010986,
+          "start": 56,
+          "text": "PI3K",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 64,
+          "score": 0.9999898672103882,
+          "start": 61,
+          "text": "AKT",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 114,
+          "score": 0.9999919335047404,
+          "start": 102,
+          "text": "cytotoxicity",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "CellLine",
+          "end": 122,
+          "score": 0.9940699934959412,
+          "start": 118,
+          "text": "H9c2",
+          "type": "CellLine"
+        }
+      ],
+      "sentence_end": 1516,
+      "sentence_start": 1387,
+      "split": "train",
+      "text_sha256": "b27b6b97adc39cbb5c3a63c75ff76259444cb10b0a15cff44f2d96271f312ed0"
+    },
+    {
+      "example_id": "targetpilot-703f21749ae69267",
+      "paper_id": "PMID:38569671",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 18,
+          "score": 0.9999898672103882,
+          "start": 13,
+          "text": "KIF23",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 55,
+          "score": 0.999985933303833,
+          "start": 49,
+          "text": "asthma",
+          "type": "Disease"
+        }
+      ],
+      "sentence_end": 81,
+      "sentence_start": 0,
+      "split": "test",
+      "text_sha256": "329ab33dc629b7ddddc04ca4758509a13eb19696637a7c50451d77d3dc7db45d"
+    },
+    {
+      "example_id": "targetpilot-f0c78206df668f3a",
+      "paper_id": "PMID:38569671",
+      "predictions": [
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 6,
+          "score": 0.9999862909317017,
+          "start": 0,
+          "text": "Asthma",
+          "type": "Disease"
+        }
+      ],
+      "sentence_end": 190,
+      "sentence_start": 83,
+      "split": "test",
+      "text_sha256": "573b26023852fec0b11f481cbfe56c575cfc340ed0c34429098fdfd8a60e3b70"
+    },
+    {
+      "example_id": "targetpilot-93de8e8142b668a8",
+      "paper_id": "PMID:38569671",
+      "predictions": [
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 19,
+          "score": 0.9999858140945435,
+          "start": 13,
+          "text": "asthma",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 124,
+          "score": 0.9999858140945435,
+          "start": 118,
+          "text": "asthma",
+          "type": "Disease"
+        }
+      ],
+      "sentence_end": 316,
+      "sentence_start": 191,
+      "split": "test",
+      "text_sha256": "425d13af3cea134e522ae583f1d97353ba8137facc8fafbe7421bcebdcbe6489"
+    },
+    {
+      "example_id": "targetpilot-8a6cfccb00c6f74d",
+      "paper_id": "PMID:38569671",
+      "predictions": [
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 6,
+          "score": 0.9999860525131226,
+          "start": 0,
+          "text": "Asthma",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "OrganismTaxon",
+          "end": 12,
+          "score": 0.9999865293502808,
+          "start": 7,
+          "text": "mouse",
+          "type": "Species"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 49,
+          "score": 0.9985156655311584,
+          "start": 40,
+          "text": "ovalbumin",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 54,
+          "score": 0.999572217464447,
+          "start": 51,
+          "text": "OVA",
+          "type": "Gene"
+        }
+      ],
+      "sentence_end": 374,
+      "sentence_start": 318,
+      "split": "test",
+      "text_sha256": "c8855edba78991dbfd5b838243bd8857c503dc6e385718e110c3e40c65e46041"
+    },
+    {
+      "example_id": "targetpilot-aa0325a8b1155793",
+      "paper_id": "PMID:38569671",
+      "predictions": [
+        {
+          "canonical_type": "ChemicalEntity",
+          "end": 3,
+          "score": 0.782168447971344,
+          "start": 0,
+          "text": "H&E",
+          "type": "Chemical"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 81,
+          "score": 0.8800789713859558,
+          "start": 69,
+          "text": "inflammatory",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 100,
+          "score": 0.9999860525131226,
+          "start": 94,
+          "text": "asthma",
+          "type": "Disease"
+        }
+      ],
+      "sentence_end": 476,
+      "sentence_start": 375,
+      "split": "test",
+      "text_sha256": "d594224c3c6780f2cb6082b0528bf5ba48662d634f72bb1096b1bb2f9274432b"
+    },
+    {
+      "example_id": "targetpilot-427d088c40f63d45",
+      "paper_id": "PMID:38569671",
+      "predictions": [],
+      "sentence_end": 564,
+      "sentence_start": 477,
+      "split": "test",
+      "text_sha256": "61451a52c63d3e06bd94f7e8dc3ba2fc65b030a647345010206187c020ec73ab"
+    },
+    {
+      "example_id": "targetpilot-e5e6d105e14770b0",
+      "paper_id": "PMID:38569671",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 17,
+          "score": 0.9999898672103882,
+          "start": 12,
+          "text": "KIF23",
+          "type": "Gene"
+        }
+      ],
+      "sentence_end": 706,
+      "sentence_start": 565,
+      "split": "test",
+      "text_sha256": "72858b162d1f20441b9f562cf3f175244a429fc865f435b01348e035e2efbd13"
+    },
+    {
+      "example_id": "targetpilot-532114a18d554ffc",
+      "paper_id": "PMID:38569671",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 16,
+          "score": 0.9999898672103882,
+          "start": 11,
+          "text": "KIF23",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 42,
+          "score": 0.999985933303833,
+          "start": 30,
+          "text": "inflammation",
+          "type": "Disease"
+        }
+      ],
+      "sentence_end": 823,
+      "sentence_start": 707,
+      "split": "test",
+      "text_sha256": "2b63e12c2f4025a152bc52f509327be597b5680c5bb58217c1d0f33a6b96034e"
+    },
+    {
+      "example_id": "targetpilot-320c7d930396c64a",
+      "paper_id": "PMID:38569671",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 29,
+          "score": 0.9999898672103882,
+          "start": 16,
+          "text": "KIF23-related",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 70,
+          "score": 0.9999899864196777,
+          "start": 65,
+          "text": "KIF23",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 77,
+          "score": 0.9999901056289673,
+          "start": 74,
+          "text": "p53",
+          "type": "Gene"
+        }
+      ],
+      "sentence_end": 950,
+      "sentence_start": 824,
+      "split": "test",
+      "text_sha256": "70f330f846c9ff1a118947c993463bb09f6dc7f5335dcd6ef9bdc93c79dc432c"
+    },
+    {
+      "example_id": "targetpilot-8012b8f84244d200",
+      "paper_id": "PMID:38569671",
+      "predictions": [
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 13,
+          "score": 0.9999858140945435,
+          "start": 7,
+          "text": "asthma",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 44,
+          "score": 0.9999880790710449,
+          "start": 35,
+          "text": "caspase-3",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 49,
+          "score": 0.9999227523803711,
+          "start": 46,
+          "text": "IgG",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 75,
+          "score": 0.9999744892120361,
+          "start": 63,
+          "text": "inflammatory",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 104,
+          "score": 0.9999811887741089,
+          "start": 85,
+          "text": "interleukin (IL)-1β",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 108,
+          "score": 0.9999840259552002,
+          "start": 106,
+          "text": "KC",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 143,
+          "score": 0.999978848866054,
+          "start": 113,
+          "text": "tumour necrosis factor (TNF)-α",
+          "type": "Gene"
+        }
+      ],
+      "sentence_end": 1154,
+      "sentence_start": 952,
+      "split": "test",
+      "text_sha256": "2025d7c9a6b4d83a9917ea86a90844c0580595da098e92a541a1001a73d1bfde"
+    },
+    {
+      "example_id": "targetpilot-51c095255a500004",
+      "paper_id": "PMID:38569671",
+      "predictions": [
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 70,
+          "score": 0.9999860525131226,
+          "start": 64,
+          "text": "asthma",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 109,
+          "score": 0.9999854564666748,
+          "start": 104,
+          "text": "KIF23",
+          "type": "Gene"
+        }
+      ],
+      "sentence_end": 1281,
+      "sentence_start": 1155,
+      "split": "test",
+      "text_sha256": "5212c32bfc33568819a42050c7bc230adac3cb087568f76163b9ebe2e425cc91"
+    },
+    {
+      "example_id": "targetpilot-01a2670f85a93b43",
+      "paper_id": "PMID:38569671",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 18,
+          "score": 0.9999899864196777,
+          "start": 13,
+          "text": "KIF23",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 85,
+          "score": 0.9999856948852539,
+          "start": 73,
+          "text": "inflammation",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "CellLine",
+          "end": 111,
+          "score": 0.8968507051467896,
+          "start": 104,
+          "text": "BEAS-2B",
+          "type": "CellLine"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 134,
+          "score": 0.9999895095825195,
+          "start": 129,
+          "text": "IL-13",
+          "type": "Gene"
+        }
+      ],
+      "sentence_end": 1426,
+      "sentence_start": 1282,
+      "split": "test",
+      "text_sha256": "eec083359770bf96086437d652fa584642a32bdb90811b2fb0f40b42fcc8794d"
+    },
+    {
+      "example_id": "targetpilot-43342dbd0616a81a",
+      "paper_id": "PMID:38569671",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 52,
+          "score": 0.9999901056289673,
+          "start": 47,
+          "text": "KIF23",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 93,
+          "score": 0.9999836683273315,
+          "start": 81,
+          "text": "inflammation",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 125,
+          "score": 0.999988317489624,
+          "start": 122,
+          "text": "OVA",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 140,
+          "score": 0.9999861717224121,
+          "start": 134,
+          "text": "asthma",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "OrganismTaxon",
+          "end": 145,
+          "score": 0.9999873638153076,
+          "start": 141,
+          "text": "mice",
+          "type": "Species"
+        }
+      ],
+      "sentence_end": 1573,
+      "sentence_start": 1427,
+      "split": "test",
+      "text_sha256": "0b147fbf59cbb490ce059955d8eb7a482f19b459aefd0348c83d3bba87e3631c"
+    },
+    {
+      "example_id": "targetpilot-9045f672150be31c",
+      "paper_id": "PMID:38569671",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 16,
+          "score": 0.9999895095825195,
+          "start": 13,
+          "text": "p53",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 59,
+          "score": 0.9999901056289673,
+          "start": 54,
+          "text": "KIF23",
+          "type": "Gene"
+        }
+      ],
+      "sentence_end": 1644,
+      "sentence_start": 1574,
+      "split": "test",
+      "text_sha256": "7065c8065a25351b279a75775e54dec494590123b672b5c8e8cb99ae5c82af3d"
+    },
+    {
+      "example_id": "targetpilot-568ce27163e9a7fc",
+      "paper_id": "PMID:38569671",
+      "predictions": [
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 18,
+          "score": 0.9999899864196777,
+          "start": 13,
+          "text": "KIF23",
+          "type": "Gene"
+        },
+        {
+          "canonical_type": "DiseaseOrPhenotypicFeature",
+          "end": 55,
+          "score": 0.9999860525131226,
+          "start": 49,
+          "text": "asthma",
+          "type": "Disease"
+        },
+        {
+          "canonical_type": "GeneOrGeneProduct",
+          "end": 99,
+          "score": 0.9999889135360718,
+          "start": 96,
+          "text": "p53",
+          "type": "Gene"
+        }
+      ],
+      "sentence_end": 1765,
+      "sentence_start": 1646,
+      "split": "test",
+      "text_sha256": "f8fb90ae598add4e3d6bebbd718c38d88732bde5f82b10cd742823f0b3073410"
+    }
+  ],
+  "gold_status": "empty_template_not_used_for_inference",
+  "inference": {
+    "document_count": 137,
+    "duration_seconds": 2.546735611999793,
+    "predicted_entity_count": 490,
+    "scope": "All supplied document text; SciSpacy sentence segmentation; Flair long-sentence striding when required; no truncation.",
+    "sentence_count": 137
+  },
+  "inference_configuration": {
+    "device": "cuda:0",
+    "sentence_input": true,
+    "sentence_splitter": "SciSpacySentenceSplitter(en_core_sci_sm)",
+    "threshold": null
+  },
+  "input": {
+    "example_count": 137,
+    "manifest_sha256": "7d41f14e73870ff56987e6dece866381b7af1cfb9aa87e23cce700518bf56247",
+    "pilot_package": "reports/target_domain_pilot_2026-09-19.json",
+    "pilot_package_sha256": "e1cb930c54a65470d0c6fcf248a642b2b53882ed6679c1b5c54a6b717dfeb64c",
+    "text_identity": "Each input is the exact selected sentence text."
+  },
+  "model": {
+    "artifact_sha256": "245a099b660c1e2b682e0a1216feac140d5be36c4c6ca8c715af682efa685de6",
+    "identifier": "hunflair/hunflair2-ner",
+    "input": "/home/ubuntu/Biomed/extraction_system/.cache/hunflair2/flair/models/hunflair2-ner/models--hunflair--hunflair2-ner/snapshots/3af2b8972f7af2910ce8d9ae724da09b3d7a166c/pytorch_model.bin",
+    "revision": "3af2b8972f7af2910ce8d9ae724da09b3d7a166c"
+  },
+  "model_selection_candidate": false,
+  "prediction_count": 490,
+  "prediction_payload_sha256": "30fb420a6232a39921d4f134e5c412e9c7c978b246717bd9d327dcf3397e4feb",
+  "runtime": {
+    "allow_long_sentences": true,
+    "cuda_available": true,
+    "cuda_device": "NVIDIA L4",
+    "cuda_version": "13.0",
+    "device": "cuda:0",
+    "en_core_sci_sm": "0.5.1",
+    "flair": "0.15.1",
+    "label_type": "ner",
+    "model_max_length": 512,
+    "offset_mechanics": "Flair span text is resolved against the model sentence; that sentence is located in the untouched source and the lifted span is validated before serialization.",
+    "python": "3.11.16",
+    "python_implementation": "CPython",
+    "pytorch": "2.14.0+cu130",
+    "scispacy": "0.5.1",
+    "sentence_splitter": "SciSpacySentenceSplitter(en_core_sci_sm)",
+    "spacy": "3.4.4",
+    "stride": 256,
+    "tagger_class": "PrefixedSequenceTagger",
+    "transformer_model": "michiyasunaga/BioLinkBERT-base",
+    "transformers": "4.57.6",
+    "truncate": true
+  },
+  "schema_version": 1
+}
