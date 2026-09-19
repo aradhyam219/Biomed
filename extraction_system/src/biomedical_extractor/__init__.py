@@ -25,6 +25,11 @@ from .entity_extraction import (
     EntityExtractor,
     GLiNERBioMedExtractor,
 )
+from .entity_assembly import (
+    DocumentEntity,
+    DocumentEntityAssembly,
+    assemble_document_entities,
+)
 from .pipeline import BiomedicalExtractor, ExtractionConfig, ExtractionResult, Relation
 from .llm_pipeline import (
     BiomedicalLLMExtractor,
@@ -69,6 +74,8 @@ __all__ = [
     "DEFAULT_LLM_REASONING_EFFORT",
     "Entity",
     "EntityExtractor",
+    "DocumentEntity",
+    "DocumentEntityAssembly",
     "ExtractionConfig",
     "ExtractionResult",
     "GroundedRelation",
@@ -89,6 +96,7 @@ __all__ = [
     "RelationValidationError",
     "RELATION_EXTRACTION_SYSTEM_PROMPT",
     "validate_relations",
+    "assemble_document_entities",
     "normalize_aioner_predictions",
     "normalize_hunflair2_predictions",
 ]

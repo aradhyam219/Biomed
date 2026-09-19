@@ -8,8 +8,9 @@
 
 Given unstructured biomedical text, produce a clean, machine-consumable set of
 core biomedical entity mentions with source spans, types, stable IDs, and model
-confidence when available, followed by grounded relations when the composed
-prototype path is selected.
+confidence when available. A separate conservative transformation may assemble
+safe mentions into document-local entities for later graph construction, while
+grounded relations remain available when the composed prototype path is selected.
 
 The active prototype uses pretrained HunFlair2 for NER and the existing grounded
 LLM relation extractor downstream. Target-domain NER evaluation and fine-tuning
@@ -23,14 +24,11 @@ biomedical text
 isolated pretrained HunFlair2 runtime
     ↓
 validated Entity mentions
-    ↓
-grounded LLM relation extraction
-    ↓
-ComposedExtractionResult
-    ↓
-future biomedical entity normalization/linking
-    ↓
-STOP
+    ├──────────────→ grounded LLM relation extraction
+    │                         ↓
+    │                  ComposedExtractionResult
+    └──────────────→ document-local entity assembly
+                       (assembled nodes + mention map)
 ```
 
 The model-independent `EntityExtractor` seam remains the stable NER boundary.
@@ -50,6 +48,8 @@ AIONER / PubTator-style NER remains preserved as evaluation/history evidence.
 - NER evaluation artifacts as preserved evidence, without reopening target-domain
   model selection;
 - adapter/output normalization into the stable local entity representation;
+- conservative document-local assembly with deterministic IDs, preserved
+  mentions, and a complete mention-to-assembled-entity map;
 - a frozen, evaluation-only comparison of the current GLiNER baseline with the
   official AIONER PubMedBERT-CRF artifact on the official BioRED Test split;
 - a frozen, evaluation-only challenger run of the official HunFlair2 five-class
@@ -73,12 +73,13 @@ not include:
 - target-domain NER evaluation, model selection, or fine-tuning; the existing
   reconnaissance, pilot, validator, and training-readiness assets remain
   preserved for later use;
-- relation-model quality evaluation, graph assembly, visualization, or live
+- relation-model quality evaluation, full graph assembly, visualization, or live
   external-provider smoke beyond the existing grounded extraction seam;
 - biomedical entity normalization/linking, meaning resolution of a mention to a
   canonical biomedical identity or identifier;
 - collapsing the isolated HunFlair2 runtime into the production dependency graph;
-- entity grouping, alias resolution, or external biomedical normalization;
+- general or inferred alias resolution, cross-document identity, or external
+  biomedical normalization;
 - a final ontology redesign, graph infrastructure, or unrelated platform
   capabilities.
 
@@ -144,6 +145,32 @@ score
 The `EntityExtractor` boundary is model-independent. Model-specific output,
 loading details, and prediction dictionaries must not leak to downstream callers;
 an alternative implementation must be able to return the same `Entity` values.
+
+## Document-local entity assembly
+
+The production package also exposes `assemble_document_entities(entities, text)`
+as a separate transformation over an ordered mention result. It returns
+document-local entities and a deterministic map from every original mention ID
+to exactly one assembled entity ID. It does not change `Entity`, rewrite
+grounded relation endpoints, or run automatically inside the composed relation
+pipeline.
+
+The identity rules are intentionally conservative:
+
+- repeated mentions merge only after superficial whitespace/case normalization
+  and compatible type comparison;
+- a full-form mention and abbreviation merge only for an unambiguous source
+  pattern of the form `full form (ABBR)` with compatible types;
+- incompatible types, unsupported alias patterns, and uncertain candidates stay
+  separate;
+- assembled IDs are assigned in first-input-mention order as `doc_e_001`,
+  `doc_e_002`, and so on;
+- every assembled entity retains the original mention values, spans, IDs, types,
+  and confidence values.
+
+This is document-local identity evidence, not biomedical normalization or
+cross-document linking. Full graph construction and graph serialization remain
+out of scope.
 
 ## Normalization terminology
 
@@ -267,6 +294,10 @@ runtime dependencies remain isolated from the main production environment.
   source evidence through the existing validation path.
 - The `EntityExtractor` / `Entity` contract remains model-independent.
 - Adapter/output normalization is distinct from biomedical identity normalization.
+- Document-local assembly is a separate deterministic layer over mentions and
+  never changes the `Entity` or grounded relation contracts.
+- Assembly preserves every mention and maps each mention ID to exactly one
+  document-local entity ID.
 - Biomedical entity normalization/linking is not implemented in this task.
 - Output is machine-consumable and does not require model-specific objects.
 - HunFlair2 is the active prototype NER foundation, while its Flair/SciSpaCy
@@ -297,10 +328,20 @@ An alternative NER implementation can be evaluated by satisfying
 `EntityExtractor.extract_entities(text)` and returning the same stable entity
 fields, without exposing its model-specific prediction format.
 
+### Document-local assembly
+
+Given repeated compatible mentions, assembly returns one deterministic node while
+retaining all mention values. Given an explicit source phrase such as
+`kinetochore-associated protein 1 (KNTC1)`, compatible full-form and abbreviation
+mentions may share one node with `KNTC1` as the display label. Unsupported alias
+patterns and incompatible types remain separate, and the mention endpoint map is
+complete.
+
 ### Deferred downstream work
 
-Entity normalization/linking, grouping, graph assembly, visualization, target
-domain NER evaluation, and fine-tuning remain outside this prototype milestone.
+Entity normalization/linking, full graph assembly, graph serialization,
+visualization, target domain NER evaluation, and fine-tuning remain outside this
+prototype milestone.
 
 ## Related architecture
 
