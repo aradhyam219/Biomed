@@ -15,7 +15,7 @@
   ],
   "source_artifact": {
     "path": "extraction_system/reports/target_domain_pilot_2026-09-19.json",
-    "sha256": "785bbdd10dd171907597f145fa5100d96a1a19cd9345bf14e8362c6928b8cc28"
+    "sha256": "e1cb930c54a65470d0c6fcf248a642b2b53882ed6679c1b5c54a6b717dfeb64c"
   },
   "derivation": "Deterministic projection of the frozen source artifact retaining sentence identity, provenance, text, and paper split while excluding per-example model and sampling metadata.",
   "canonical_source": {
