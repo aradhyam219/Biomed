@@ -230,17 +230,40 @@ class RelationContractTests(unittest.TestCase):
 
         self.assertEqual(OpenAIConfig().model, DEFAULT_LLM_RELATION_MODEL)
         self.assertEqual(captured["model"], "gpt-5.6-luna")
-        self.assertEqual(captured["reasoning_effort"], "high")
-        self.assertEqual(captured["max_completion_tokens"], 8192)
+        self.assertTrue(captured["use_responses_api"])
+        self.assertEqual(captured["reasoning"], {"effort": "max"})
+        self.assertNotIn("reasoning_effort", captured)
+        self.assertEqual(captured["max_completion_tokens"], 128000)
         self.assertNotIn("temperature", captured)
         self.assertNotIn("max_tokens", captured)
+
+    def test_responses_payload_maps_compatibility_settings(self):
+        from langchain_openai import ChatOpenAI
+
+        model = ChatOpenAI(
+            model="gpt-5.6-luna",
+            api_key="test-key",
+            use_responses_api=True,
+            reasoning={"effort": "max"},
+            max_completion_tokens=128000,
+        )
+
+        payload = model._get_request_payload("Return a structured response.")
+
+        self.assertEqual(payload["model"], "gpt-5.6-luna")
+        self.assertEqual(payload["reasoning"], {"effort": "max"})
+        self.assertEqual(payload["max_output_tokens"], 128000)
+        self.assertNotIn("max_completion_tokens", payload)
+        self.assertNotIn("reasoning_effort", payload)
+        self.assertIn("input", payload)
+        self.assertNotIn("messages", payload)
 
     def test_environment_defaults_match_luna_live_smoke_configuration(self):
         with patch.dict(os.environ, {}, clear=True):
             config = OpenAIConfig.from_environment()
 
-        self.assertEqual(config.reasoning_effort, "high")
-        self.assertEqual(config.max_completion_tokens, 8192)
+        self.assertEqual(config.reasoning_effort, "max")
+        self.assertEqual(config.max_completion_tokens, 128000)
 
     def test_environment_overrides_luna_reasoning_and_completion_budget(self):
         with patch.dict(

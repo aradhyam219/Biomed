@@ -2,7 +2,9 @@
 
 The harness owns prompt construction, OpenAI model creation, structured-output
 binding, and a small repair budget.  It returns only the local relation contract
-from :mod:`biomedical_extractor.relation_extraction`.
+from :mod:`biomedical_extractor.relation_extraction`.  The active OpenAI path
+uses LangChain's explicit Responses API integration; provider-specific response
+objects remain inside this module.
 """
 
 from __future__ import annotations
@@ -21,7 +23,8 @@ from .relation_extraction import (
 )
 
 DEFAULT_LLM_RELATION_MODEL = "gpt-5.6-luna"
-DEFAULT_LLM_REASONING_EFFORT = "high"
+DEFAULT_LLM_REASONING_EFFORT = "max"
+DEFAULT_LLM_MAX_COMPLETION_TOKENS = 128000
 SUPPORTED_LLM_REASONING_EFFORTS = (
     "none",
     "low",
@@ -57,7 +60,7 @@ class OpenAIConfig:
     api_key: str | None = field(default=None, repr=False)
     base_url: str | None = None
     reasoning_effort: str = DEFAULT_LLM_REASONING_EFFORT
-    max_completion_tokens: int | None = 8192
+    max_completion_tokens: int | None = DEFAULT_LLM_MAX_COMPLETION_TOKENS
     max_retries: int = 2
 
     def __post_init__(self) -> None:
@@ -92,7 +95,9 @@ class OpenAIConfig:
                 DEFAULT_LLM_REASONING_EFFORT,
             ),
             max_completion_tokens=(
-                int(max_completion_tokens) if max_completion_tokens else 8192
+                int(max_completion_tokens)
+                if max_completion_tokens
+                else DEFAULT_LLM_MAX_COMPLETION_TOKENS
             ),
             max_retries=int(os.getenv("BIOMEDICAL_RELATION_MAX_RETRIES", "2")),
         )
@@ -161,7 +166,8 @@ class LLMRelationExtractor:
         kwargs: dict[str, Any] = {
             "model": config.model,
             "api_key": api_key,
-            "reasoning_effort": config.reasoning_effort,
+            "use_responses_api": True,
+            "reasoning": {"effort": config.reasoning_effort},
             # Output repair is deliberately owned by this harness.  Provider
             # retries, when desired, should be configured separately by callers.
             "max_retries": 0,

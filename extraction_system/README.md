@@ -106,6 +106,11 @@ normalized descriptions faithful to the source text; the initial LLM path does
 not apply a finite ontology or request a confidence score. The provider-independent
 relation contract can still preserve a score supplied by another implementation.
 LangChain/OpenAI objects stay inside the relation harness.
+The active OpenAI relation harness uses LangChain's explicit Responses API path
+with `gpt-5.6-luna`, standard/default reasoning mode, `max` reasoning effort,
+and a `128000` output-token ceiling. The compatibility
+`BIOMEDICAL_RELATION_MAX_COMPLETION_TOKENS` setting is mapped to the Responses
+API output-token field inside that provider seam.
 
 For local configuration, copy `.env.example` to `.env` and add the key when the
 live smoke is authorized. The documented command uses uv's existing env-file

@@ -276,8 +276,14 @@ for final evaluation.
 The controlled LLM relation implementation is an active downstream capability of
 the composed HunFlair2 path. It accepts only the normalized entities returned by
 the entity seam and returns relations after the existing evidence, endpoint, and
-negation validation. The legacy GLiREL-compatible relation/evaluation path and
-its historical diagnostics remain preserved separately.
+negation validation. Its active OpenAI provider path uses LangChain's explicit
+Responses API integration with `gpt-5.6-luna`, standard/default reasoning mode,
+`reasoning.effort=max`, and a `128000` output-token ceiling. The public
+`max_completion_tokens` configuration name remains for compatibility and is
+mapped to the Responses API output-token field below this provider-independent
+seam; structured output and bounded repair also remain inside the harness. The
+legacy GLiREL-compatible relation/evaluation path and its historical diagnostics
+remain preserved separately.
 
 Target-domain NER evaluation, model selection, and fine-tuning remain postponed.
 External biomedical normalization remains outside this path. The graph boundary
