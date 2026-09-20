@@ -73,7 +73,7 @@ GraphResult / graph JSON
         |
         v
 viewer/adapter.js
-(domain values -> Cytoscape elements)
+(graph values -> display model -> Cytoscape elements)
         |
         v
 Cytoscape.js interactive graph
@@ -83,9 +83,12 @@ node/edge detail panels with source evidence
 ```
 
 The viewer owns presentation-only Cytoscape classes and layout metadata. It
-does not run extraction, infer relations, rewrite predicates, or require a
-specific NER or relation provider. The checked-in fixture is a smoke/demo input;
-the same adapter can receive serialized backend output later.
+groups relations only by identical source and target direction, retains the
+underlying relation objects for inspection, and assigns pair-aware routing
+metadata for display. It does not run extraction, infer relations, rewrite
+predicates, or require a specific NER or relation provider. The checked-in
+fixture is a smoke/demo input; the same adapter can receive serialized backend
+output later.
 
 The postponed target-domain evaluation and adaptation path is separate from the
 prototype:

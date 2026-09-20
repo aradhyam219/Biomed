@@ -63,11 +63,16 @@ Open <http://127.0.0.1:8765/>. The viewer loads the tracked
 can enter through the same adapter without exposing model/provider internals to
 the browser.
 
-Click a node to inspect its document-local ID, display label, entity type,
-aliases, and source mentions. Click an edge to inspect source/target direction,
-predicate, negation, and all retained evidence records. Node types use distinct
-shapes; negated edges use dashed lines and are explicitly labeled in the detail
-panel. Pan, zoom, and node dragging are provided by Cytoscape.js.
+The summary distinguishes the underlying directed relation count from displayed
+connections. A single relation remains a directly inspectable edge; multiple
+relations with the same source and target direction become one count-labeled
+bundle. Reverse-direction relations remain separate. Click a bundle to choose an
+underlying predicate, then use the back control to return to the bundle list;
+the relation detail view still exposes negation and every retained evidence
+record. Node types use distinct shapes, selected elements focus their local
+neighborhood, and pan, zoom, and node dragging are provided by Cytoscape.js.
+Bundling and routing are presentation-only: the supplied graph JSON and its
+scientific relations are not rewritten.
 
 Run the focused adapter tests with:
 

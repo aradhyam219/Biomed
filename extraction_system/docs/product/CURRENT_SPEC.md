@@ -390,12 +390,20 @@ through `viewer/adapter.js`, and renders them with Cytoscape.js. Replacing that
 fixture with serialized `GraphResult.to_json()` output does not require a
 backend contract change.
 
-Select a node to inspect its ID, display label, type, aliases, and every source
-mention with mention ID, text, half-open offsets, and score when available.
-Select an edge to inspect source and target direction, the complete predicate,
-explicit negation state, and every retained evidence record with surface form
-and score when available. Negated edges use a dashed line and remain explicitly
-marked in the detail panel. The viewer also preserves valid self-edges.
+The summary distinguishes underlying directed relations from displayed
+connections. A single relation is rendered as a directly inspectable edge;
+multiple relations sharing the same source and target direction are rendered as
+one count-labeled bundle, while the reverse direction remains separate. Select
+a node to inspect its ID, display label, type, aliases, and every source mention
+with mention ID, text, half-open offsets, and score when available. Select a
+bundle to choose an underlying relation, then use the back control to return to
+the bundle list. Relation details continue to show source and target direction,
+the complete predicate, explicit negation state, and every retained evidence
+record with surface form and score when available. Mixed-negation bundles stay
+neutral on the canvas and mark negation on the individual relation. Selected
+elements focus their local neighborhood, reverse directions use separate
+presentation lanes, and valid self-edges remain supported. These display
+bundles and routes are presentation-only and do not alter graph JSON semantics.
 
 ## Related architecture
 

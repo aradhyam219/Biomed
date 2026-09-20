@@ -215,6 +215,66 @@ h2 {
   line-height: 1.5;
 }
 
+.bundle-note {
+  margin: 0 0 12px;
+  padding: 10px 12px;
+  border-left: 3px solid #f59e0b;
+  background: rgba(120, 75, 12, 0.18);
+  color: #fcd58a;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.back-button,
+.relation-choice {
+  border: 1px solid #3b5875;
+  border-radius: 8px;
+  color: #e8f2fc;
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.back-button {
+  margin-bottom: 16px;
+  padding: 7px 10px;
+  background: rgba(59, 130, 246, 0.13);
+  font-size: 12px;
+}
+
+.back-button:hover,
+.back-button:focus-visible,
+.relation-choice:hover,
+.relation-choice:focus-visible {
+  border-color: #8fc4f5;
+  outline: none;
+}
+
+.relation-list {
+  display: grid;
+  gap: 8px;
+}
+
+.relation-choice {
+  display: grid;
+  gap: 4px;
+  padding: 11px 12px;
+  background: rgba(25, 42, 63, 0.72);
+}
+
+.relation-choice-predicate {
+  color: #f8fafc;
+  font-size: 13px;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.relation-choice-id,
+.relation-choice-meta {
+  color: #9fb4cb;
+  font-size: 11px;
+}
+
 .detail-field {
   display: grid;
   grid-template-columns: minmax(88px, 0.8fr) minmax(0, 1.5fr);

@@ -1,7 +1,8 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import test from "node:test";
 
-import { entityTypeKey, toCytoscapeElements } from "../adapter.js";
+import { buildDisplayModel, entityTypeKey, toCytoscapeElements } from "../adapter.js";
 
 function nodeElements(elements) {
   return elements.filter((element) => element.group === "nodes");
@@ -9,6 +10,10 @@ function nodeElements(elements) {
 
 function edgeElements(elements) {
   return elements.filter((element) => element.group === "edges");
+}
+
+function authenticFixture() {
+  return JSON.parse(readFileSync(new URL("../graph-fixture.json", import.meta.url), "utf8"));
 }
 
 test("adapts graph nodes and edges without changing domain direction", () => {
@@ -124,6 +129,116 @@ test("retains valid self-edges as Cytoscape edges", () => {
   assert.equal(edge.data.source, "doc_e_001");
   assert.equal(edge.data.target, "doc_e_001");
   assert.equal(edge.data.curveDistance, 0);
+});
+
+test("bundles same-direction relations while preserving reverse direction", () => {
+  const first = {
+    id: "doc_r_001",
+    source: "A",
+    target: "B",
+    predicate: "interacts with",
+    negated: false,
+    evidence: [{ text: "A interacts with B" }],
+  };
+  const second = {
+    id: "doc_r_002",
+    source: "A",
+    target: "B",
+    predicate: "inhibits expression of",
+    negated: true,
+    evidence: [{ text: "A does not inhibit B" }, { text: "A inhibits B" }],
+  };
+  const reverse = {
+    id: "doc_r_003",
+    source: "B",
+    target: "A",
+    predicate: "rescues regulation of",
+    negated: false,
+    evidence: [{ text: "B rescues A" }],
+  };
+
+  const model = buildDisplayModel({ nodes: [], edges: [first, second, reverse] });
+  assert.equal(model.relationCount, 3);
+  assert.equal(model.edges.length, 2);
+
+  const forward = model.edges.find((edge) => edge.source === "A" && edge.target === "B");
+  const backward = model.edges.find((edge) => edge.source === "B" && edge.target === "A");
+  assert.equal(forward.isBundle, true);
+  assert.equal(forward.predicateLabel, "2 relations");
+  assert.equal(forward.relationCount, 2);
+  assert.equal(forward.relations[0], first);
+  assert.equal(forward.relations[1], second);
+  assert.equal(forward.relations[1].evidence.length, 2);
+  assert.equal(forward.negated, null);
+  assert.equal(forward.negationState, "mixed");
+
+  assert.equal(backward.isBundle, false);
+  assert.equal(backward.relationCount, 1);
+  assert.equal(backward.relations[0], reverse);
+  assert.equal(backward.predicateLabel, "rescues regulation of");
+  assert.equal(forward.pairKey, backward.pairKey);
+  assert.notEqual(forward.curveDistance, backward.curveDistance);
+  assert.equal(forward.pairLaneCount, 2);
+  assert.equal(backward.pairLaneCount, 2);
+});
+
+test("multi-relation self-edges form a readable bundle", () => {
+  const first = {
+    id: "doc_r_001",
+    source: "A",
+    target: "A",
+    predicate: "binds",
+    negated: false,
+    evidence: [{ text: "A binds A" }],
+  };
+  const second = {
+    id: "doc_r_002",
+    source: "A",
+    target: "A",
+    predicate: "regulates",
+    negated: false,
+    evidence: [{ text: "A regulates A" }],
+  };
+
+  const [edge] = edgeElements(toCytoscapeElements({ nodes: [{ id: "A" }], edges: [first, second] }));
+  assert.equal(edge.data.isBundle, true);
+  assert.equal(edge.data.relations[0], first);
+  assert.equal(edge.data.relations[1], second);
+  assert.equal(edge.data.curveDistance, 0);
+  assert.match(edge.classes, /(?:^| )self-edge(?: |$)/);
+});
+
+test("authentic Contract 05R fixture preserves domain and display counts", () => {
+  const graph = authenticFixture();
+  const model = buildDisplayModel(graph);
+  const elements = toCytoscapeElements(graph);
+  const displayEdges = edgeElements(elements);
+
+  assert.equal(model.nodes.length, 5);
+  assert.equal(model.relationCount, 7);
+  assert.equal(model.edges.length, 5);
+  assert.equal(displayEdges.length, 5);
+  assert.equal(
+    model.edges.reduce((total, edge) => total + edge.relationCount, 0),
+    7,
+  );
+
+  const forwardCdk1 = model.edges.find(
+    (edge) => edge.source === "doc_e_001" && edge.target === "doc_e_005",
+  );
+  const reverseCdk1 = model.edges.find(
+    (edge) => edge.source === "doc_e_005" && edge.target === "doc_e_001",
+  );
+  const hepatocellularCarcinoma = model.edges.find(
+    (edge) => edge.source === "doc_e_001" && edge.target === "doc_e_004",
+  );
+  assert.equal(forwardCdk1.predicateLabel, "2 relations");
+  assert.equal(forwardCdk1.relationCount, 2);
+  assert.equal(reverseCdk1.isBundle, false);
+  assert.equal(reverseCdk1.predicate, "overexpression rescues regulation of");
+  assert.equal(reverseCdk1.predicateLabel, "overexpression rescues re…");
+  assert.equal(hepatocellularCarcinoma.predicateLabel, "2 relations");
+  assert.equal(hepatocellularCarcinoma.relationCount, 2);
 });
 
 test("empty or partially absent graph arrays produce no elements", () => {

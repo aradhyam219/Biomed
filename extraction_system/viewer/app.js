@@ -98,7 +98,7 @@ const cytoscapeStyle = [
     selector: "edge",
     style: {
       "curve-style": "unbundled-bezier",
-      "control-point-distances": "data(curveDistance)",
+      "control-point-distances": "data(controlPointDistance)",
       "control-point-weights": 0.5,
       "font-family": "Inter, Segoe UI, sans-serif",
       "font-size": 10,
@@ -106,6 +106,7 @@ const cytoscapeStyle = [
       "target-arrow-color": "#91a4bd",
       "target-arrow-shape": "triangle",
       label: "data(predicateLabel)",
+      "text-margin-y": "data(labelOffset)",
       color: "#f8fafc",
       "text-background-color": "#202d42",
       "text-background-opacity": 0.92,
@@ -125,6 +126,14 @@ const cytoscapeStyle = [
     },
   },
   {
+    selector: "edge.bundle-edge",
+    style: {
+      "line-color": "#b8d4ee",
+      "target-arrow-color": "#b8d4ee",
+      width: 3,
+    },
+  },
+  {
     selector: "edge.negated",
     style: {
       "line-style": "dashed",
@@ -132,6 +141,18 @@ const cytoscapeStyle = [
       "line-color": "#f59e0b",
       "target-arrow-color": "#f59e0b",
       width: 3,
+    },
+  },
+  {
+    selector: ".is-dimmed",
+    style: {
+      opacity: 0.22,
+    },
+  },
+  {
+    selector: ".is-focused",
+    style: {
+      opacity: 1,
     },
   },
   {
@@ -248,37 +269,96 @@ function renderNode(node) {
   detailsPanel.append(mentionList);
 }
 
-function renderEdge(edge) {
-  detailsPanel.replaceChildren();
-  appendHeading(detailsPanel, edge.predicate, "RELATIONSHIP");
-  appendField(detailsPanel, "Edge ID", String(edge.id));
-  appendField(detailsPanel, "Source node", displayNode(edge.source));
-  appendField(detailsPanel, "Target node", displayNode(edge.target));
-  appendField(detailsPanel, "Predicate", String(edge.predicate));
-  appendField(detailsPanel, "Negated", edge.negated ? "Yes" : "No");
+function evidenceRecords(relation) {
+  return Array.isArray(relation?.evidence) ? relation.evidence : [];
+}
 
-  appendSection(detailsPanel, `Evidence (${edge.evidence.length})`);
-  if (edge.evidence.length === 0) {
+function pluralize(count, singular, plural = `${singular}s`) {
+  return `${count} ${count === 1 ? singular : plural}`;
+}
+
+function renderRelation(relation, bundle = null) {
+  detailsPanel.replaceChildren();
+  if (bundle) {
+    const backButton = document.createElement("button");
+    backButton.type = "button";
+    backButton.className = "back-button";
+    backButton.textContent = `← Back to ${pluralize(bundle.relationCount, "relation")}`;
+    backButton.addEventListener("click", () => renderBundle(bundle));
+    detailsPanel.append(backButton);
+  }
+
+  appendHeading(detailsPanel, String(relation?.predicate ?? "Relationship"), "RELATIONSHIP");
+  appendField(detailsPanel, "Relation ID", String(relation?.id ?? "—"));
+  appendField(detailsPanel, "Source node", displayNode(relation?.source));
+  appendField(detailsPanel, "Target node", displayNode(relation?.target));
+  appendField(detailsPanel, "Predicate", String(relation?.predicate ?? ""));
+  appendField(detailsPanel, "Negated", relation?.negated === true ? "Yes" : "No");
+
+  const evidence = evidenceRecords(relation);
+  appendSection(detailsPanel, `Evidence (${evidence.length})`);
+  if (evidence.length === 0) {
     appendText(detailsPanel, "No evidence records recorded.", "detail-empty");
     return;
   }
 
   const evidenceList = document.createElement("div");
   evidenceList.className = "evidence-list";
-  edge.evidence.forEach((evidence, index) => {
+  evidence.forEach((record, index) => {
     const card = document.createElement("article");
     card.className = "evidence-record";
     appendText(card, `Evidence ${index + 1}`, "evidence-label");
-    appendText(card, `“${evidence.text ?? ""}”`, "evidence-text");
-    if (evidence.surface_form) {
-      appendField(card, "Surface form", String(evidence.surface_form));
+    appendText(card, `“${record.text ?? ""}”`, "evidence-text");
+    if (record.surface_form) {
+      appendField(card, "Surface form", String(record.surface_form));
     }
-    if (evidence.score !== null && evidence.score !== undefined) {
-      appendField(card, "Score", String(evidence.score));
+    if (record.score !== null && record.score !== undefined) {
+      appendField(card, "Score", String(record.score));
     }
     evidenceList.append(card);
   });
   detailsPanel.append(evidenceList);
+}
+
+function renderBundle(bundle) {
+  detailsPanel.replaceChildren();
+  appendHeading(
+    detailsPanel,
+    `${displayNode(bundle.source)} → ${displayNode(bundle.target)}`,
+    "RELATIONSHIP BUNDLE",
+  );
+  appendField(detailsPanel, "Connections", pluralize(bundle.relationCount, "relation"));
+  if (bundle.negationState === "mixed") {
+    appendText(
+      detailsPanel,
+      "This bundle contains both affirmed and negated relations; inspect each relation for its state.",
+      "bundle-note",
+    );
+  }
+
+  appendSection(detailsPanel, "Underlying relations");
+  const relationList = document.createElement("div");
+  relationList.className = "relation-list";
+  for (const relation of bundle.relations) {
+    const evidence = evidenceRecords(relation);
+    const choice = document.createElement("button");
+    choice.type = "button";
+    choice.className = "relation-choice";
+    choice.setAttribute(
+      "aria-label",
+      `Inspect ${String(relation?.predicate ?? "relation")} ${String(relation?.id ?? "")}`,
+    );
+    appendText(choice, String(relation?.predicate ?? "Relationship"), "relation-choice-predicate");
+    appendText(choice, `Relation ${String(relation?.id ?? "—")}`, "relation-choice-id");
+    appendText(
+      choice,
+      `${relation?.negated === true ? "Negated · " : ""}${pluralize(evidence.length, "evidence record")}`,
+      "relation-choice-meta",
+    );
+    choice.addEventListener("click", () => renderRelation(relation, bundle));
+    relationList.append(choice);
+  }
+  detailsPanel.append(relationList);
 }
 
 function renderLegend(nodes) {
@@ -305,43 +385,87 @@ function renderLegend(nodes) {
   legend.append(negatedItem);
 }
 
+function clearGraphFocus() {
+  if (!cy) return;
+  cy.elements().removeClass("is-dimmed is-focused");
+}
+
+function focusElements(elements) {
+  if (!cy) return;
+  const all = cy.elements();
+  all.removeClass("is-focused").addClass("is-dimmed");
+  elements.removeClass("is-dimmed").addClass("is-focused");
+}
+
+function focusNode(node) {
+  focusElements(node.union(node.neighborhood()));
+}
+
+function focusEdge(edge) {
+  focusElements(edge.union(edge.source()).union(edge.target()));
+}
+
 function renderGraph(graph) {
   graphData = graph;
   const nodes = Array.isArray(graph?.nodes) ? graph.nodes : [];
-  const edges = Array.isArray(graph?.edges) ? graph.edges : [];
-  graphSummary.textContent = `${nodes.length} nodes · ${edges.length} directed edges`;
+  const relations = Array.isArray(graph?.edges) ? graph.edges : [];
   renderLegend(nodes);
   renderIntro();
 
   if (cy) cy.destroy();
+  const elements = toCytoscapeElements(graph);
+  const displayConnectionCount = elements.filter((element) => element.group === "edges").length;
+  graphSummary.textContent = `${nodes.length} nodes · ${relations.length} directed relations · ${displayConnectionCount} displayed connections`;
   cy = globalThis.cytoscape({
     container: graphContainer,
-    elements: toCytoscapeElements(graph),
+    elements,
     style: cytoscapeStyle,
     minZoom: 0.35,
     maxZoom: 3,
     layout: {
-      name: "circle",
+      name: "cose",
       animate: false,
       fit: true,
+      idealEdgeLength: 150,
       avoidOverlap: true,
       avoidOverlapPadding: 12,
+      minNodeSpacing: 48,
       nodeDimensionsIncludeLabels: true,
+      nodeRepulsion: 6000,
+      numIter: 500,
       padding: 28,
-      spacingFactor: 1,
     },
   });
 
-  cy.on("tap", "node", (event) => renderNode(event.target.data()));
-  cy.on("tap", "edge", (event) => renderEdge(event.target.data()));
+  cy.on("tap", "node", (event) => {
+    cy.elements().unselect();
+    event.target.select();
+    focusNode(event.target);
+    renderNode(event.target.data());
+  });
+  cy.on("tap", "edge", (event) => {
+    cy.elements().unselect();
+    event.target.select();
+    focusEdge(event.target);
+    const edge = event.target.data();
+    if (edge.isBundle) {
+      renderBundle(edge);
+    } else {
+      renderRelation(edge.relations?.[0] ?? edge);
+    }
+  });
   cy.on("tap", (event) => {
-    if (event.target === cy) renderIntro();
+    if (event.target === cy) {
+      cy.elements().unselect();
+      clearGraphFocus();
+      renderIntro();
+    }
   });
 
-  if (nodes.length === 0 && edges.length === 0) {
+  if (nodes.length === 0 && relations.length === 0) {
     graphStatus.textContent = "Empty graph: no nodes or relationships to display.";
   } else {
-    graphStatus.textContent = `Loaded ${nodes.length} nodes and ${edges.length} directed edges.`;
+    graphStatus.textContent = `Loaded ${nodes.length} nodes, ${relations.length} directed relations, and ${displayConnectionCount} displayed connections.`;
   }
 }
 
