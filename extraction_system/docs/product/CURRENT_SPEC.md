@@ -312,6 +312,10 @@ runtime dependencies remain isolated from the main production environment.
   precedence logic.
 - Relations may be extracted only from supplied normalized entities and verbatim
   source evidence through the existing validation path.
+- Each grounded relation retains a concise graph-friendly predicate plus a
+  required source-grounded assertion and optional explicit intervention,
+  effects, and contextual qualifiers. These semantic qualifiers remain on the
+  relation contract; they do not create process or event endpoints.
 - The `EntityExtractor` / `Entity` contract remains model-independent.
 - Adapter/output normalization is distinct from biomedical identity normalization.
 - Document-local assembly is a separate deterministic layer over mentions and

@@ -140,7 +140,11 @@ document-local grouping, assembled node values, and the mention-ID endpoint map.
 `llm_pipeline` defaults the composed path to HunFlair2 while composing the
 selected entity adapter with
 `llm_relation_extraction`, while `relation_extraction` owns the
-provider-independent grounded relation value and validation. `graph` owns the
+provider-independent grounded relation value and validation. The relation value
+keeps a concise predicate alongside a complete source-grounded assertion,
+optional intervention/effects/context qualifiers, and verbatim evidence;
+validation checks structure and traceability but does not claim to prove the
+semantic summary. `graph` owns the
 typed graph result, endpoint remapping, deterministic edge aggregation,
 including self-edges produced by remapping grounded relations, and JSON
 serialization. Raw model/provider objects do not cross these seams. The
@@ -304,7 +308,7 @@ treated as a separate decision rather than added to the default core-NER pass.
 | Graph boundary | Convert assembled nodes and grounded mention relations into a stable graph result | Document ID, node identity reuse, endpoint remapping, edge aggregation, evidence, and JSON serialization | Model inference, semantic predicate rewriting, graph-database state, or frontend styling |
 | Graph viewer | Render graph JSON as an inspectable directed Cytoscape.js graph | Presentation mapping, pan/zoom, node/edge selection, aliases, mentions, negation styling, and all evidence display | Extraction, provider assumptions, relation inference, predicate rewriting, or graph persistence |
 | Biomedical entity normalization/linking | Future mention-to-identity resolution | Not implemented in the current path | Model selection before the NER quality gate |
-| Relation extraction | Existing grounded LLM relation implementation over supplied normalized entities | Source-grounded relation fields, endpoint integrity, evidence, negation, and validation | Entity discovery, graph assembly, or unsupported biological inference |
+| Relation extraction | Existing grounded LLM relation implementation over supplied normalized entities | Predicate, complete assertion, optional intervention/effects/context, verbatim evidence, endpoint integrity, negation, and validation | Entity discovery, graph assembly, graph propagation of rich semantics, or unsupported biological inference |
 | Evaluation and adaptation readiness | Measure core NER and prepare controlled target adaptation | Dataset adaptation, metrics, challenger adapters, model comparison, target-domain pilot/validator, frozen baseline, and isolated training readiness | Production extraction semantics, pseudo-gold, incomplete-gold training, or production model replacement |
 
 ## Hard architectural invariants

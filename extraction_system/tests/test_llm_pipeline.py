@@ -26,6 +26,7 @@ RELATION = Relation(
     "E1",
     "E2",
     "association",
+    "BRCA1 is associated with breast cancer.",
     "BRCA1 is associated with breast cancer",
     False,
 )
@@ -172,6 +173,7 @@ class LLMPipelineTests(unittest.TestCase):
             "E1",
             "E2",
             "affects",
+            "BRCA1 affects cancer.",
             "BRCA1 affects cancer",
             True,
             surface_form="affects",
@@ -208,6 +210,7 @@ class LLMPipelineTests(unittest.TestCase):
             "E1",
             "E2",
             "decreased",
+            "p53 decreased proliferation ability in SSC-4 cells.",
             "p53 decreased proliferation ability",
             False,
         )
@@ -258,7 +261,12 @@ class LLMPipelineTests(unittest.TestCase):
 
     def test_composed_path_rechecks_custom_relation_output(self):
         invalid = Relation(
-            "E1", "E99", "association", "BRCA1 is associated with breast cancer", False
+            "E1",
+            "E99",
+            "association",
+            "BRCA1 is associated with breast cancer.",
+            "BRCA1 is associated with breast cancer",
+            False,
         )
         pipeline = LLMExtractionPipeline(
             _FakeEntityExtractor(),

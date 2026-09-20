@@ -20,6 +20,7 @@ class _FakeRelationExtractor:
                     entities[1].id,
                     "association",
                     text,
+                    text,
                     False,
                 ),
             )

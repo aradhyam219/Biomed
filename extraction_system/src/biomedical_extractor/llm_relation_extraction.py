@@ -38,11 +38,21 @@ RELATION_EXTRACTION_SYSTEM_PROMPT = """You are a conservative biomedical relatio
 
 Extract only relationships explicitly asserted by the supplied source text. Do not add biological facts from model knowledge, common sense, or the entity types. Every relation must connect two IDs from the supplied entity list. Keep the source-to-target direction expressed by the text. Do not turn a negated claim into a positive relation: set negated=true for an explicitly negated claim. Every emitted relation must include evidence copied verbatim as a contiguous substring of the source text. If the text does not assert a relation between supplied entities, return an empty relations list.
 
-Use one concise normalized predicate that faithfully describes the relation
-asserted by the source text. Do not map it to a fixed ontology or choose from
-a predefined predicate list. Preserve the exact relation wording in
-surface_form when it is useful. Do not emit explanations outside the
-structured response.
+Use predicate as a concise, graph-friendly normalized relationship. Use assertion
+as a complete source-grounded restatement of the scientific meaning represented
+by that relation; it may be normalized rather than verbatim, but it must not add
+information absent from the evidence. When an explicit manipulation, treatment,
+perturbation, or comparable condition materially changes the meaning, record it
+in intervention. Record explicit outcomes that would otherwise be lost from a
+binary edge in effects, and explicit contextual qualifiers needed for
+interpretation in context. Preserve intervention, effects, and context in the
+assertion when they are material.
+
+Leave optional intervention, effects, and context empty or null when the source
+does not explicitly support them. Do not force a finite predicate ontology, add
+process or event endpoints, or infer effects and context from biomedical
+knowledge. Preserve the exact relation wording in surface_form when it is
+useful. Do not emit explanations outside the structured response.
 """
 
 
@@ -309,8 +319,35 @@ def _structured_payload_schema() -> type[Any]:
                 "Concise normalized predicate faithfully describing the asserted relation"
             )
         )
+        assertion: StrictStr = Field(
+            description=(
+                "Complete source-grounded restatement of the scientific meaning; "
+                "do not add information absent from the evidence"
+            )
+        )
         evidence: StrictStr = Field(description="Verbatim contiguous source-text evidence")
         negated: StrictBool = Field(description="Whether the asserted relation is explicitly negated")
+        intervention: StrictStr | None = Field(
+            default=None,
+            description=(
+                "Optional explicit intervention or perturbation material to the assertion; "
+                "leave null when not applicable"
+            ),
+        )
+        effects: list[StrictStr] = Field(
+            default_factory=list,
+            description=(
+                "Optional explicit effects or outcomes; do not infer them and use an "
+                "empty list when not applicable"
+            ),
+        )
+        context: list[StrictStr] = Field(
+            default_factory=list,
+            description=(
+                "Optional explicit contextual qualifiers needed for interpretation; "
+                "do not infer them and use an empty list when not applicable"
+            ),
+        )
         surface_form: StrictStr | None = Field(
             default=None, description="Optional verbatim relation wording"
         )

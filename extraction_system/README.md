@@ -100,12 +100,15 @@ Entity/relation labels and confidence thresholds can be supplied with
 `--relation-threshold`.
 
 The LLM relation path accepts the normalized entities above and returns directed
-relations with source/target IDs, a concise predicate, verbatim source evidence,
-an explicit `negated` flag, and optional exact relation wording. Predicates are
-normalized descriptions faithful to the source text; the initial LLM path does
-not apply a finite ontology or request a confidence score. The provider-independent
-relation contract can still preserve a score supplied by another implementation.
-LangChain/OpenAI objects stay inside the relation harness.
+relations with source/target IDs, a concise predicate, a required complete
+source-grounded `assertion`, verbatim source evidence, an explicit `negated`
+flag, and optional exact relation wording. Optional `intervention`, `effects`,
+and `context` fields preserve explicit semantic qualifiers without creating
+process or event endpoints. Predicates are normalized descriptions faithful to
+the source text; the initial LLM path does not apply a finite ontology or
+request a confidence score. The provider-independent relation contract can
+still preserve a score supplied by another implementation. LangChain/OpenAI
+objects stay inside the relation harness.
 The active OpenAI relation harness uses LangChain's explicit Responses API path
 with `gpt-5.6-luna`, standard/default reasoning mode, `max` reasoning effort,
 and a `128000` output-token ceiling. The compatibility

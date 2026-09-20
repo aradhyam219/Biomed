@@ -48,7 +48,14 @@ class GraphBoundaryTests(unittest.TestCase):
             Entity("E2", "KNTC1", "Gene", text.index("KNTC1"), text.index("KNTC1") + 5),
             Entity("E3", "disease", "Disease", text.index("disease"), text.index("disease") + 7),
         )
-        relation = Relation("E2", "E3", "affects", "KNTC1) affects disease", False)
+        relation = Relation(
+            "E2",
+            "E3",
+            "affects",
+            "KNTC1 affects disease.",
+            "KNTC1) affects disease",
+            False,
+        )
 
         graph = build_graph_result(
             "paper-1", assemble_document_entities(mentions, text), (relation,)
@@ -64,7 +71,14 @@ class GraphBoundaryTests(unittest.TestCase):
             Entity("E1", "BRCA1", "Gene", 0, 5),
             Entity("E2", "disease", "Disease", 14, 21),
         )
-        relation = Relation("E1", "E99", "affects", "BRCA1 affects disease", False)
+        relation = Relation(
+            "E1",
+            "E99",
+            "affects",
+            "BRCA1 affects disease.",
+            "BRCA1 affects disease",
+            False,
+        )
 
         with self.assertRaisesRegex(GraphConstructionError, "target mention ID 'E99'"):
             build_graph_result(
@@ -82,6 +96,7 @@ class GraphBoundaryTests(unittest.TestCase):
             "E1",
             "E2",
             "affects",
+            "BRCA1 does not affect disease.",
             "BRCA1 does not affect disease",
             True,
             surface_form="does not affect",
@@ -113,8 +128,24 @@ class GraphBoundaryTests(unittest.TestCase):
             Entity("E4", "cancer", "Disease", second_disease, second_disease + 6),
         )
         relations = (
-            Relation("E3", "E4", "inhibits", "BRCA1 inhibits cancer", False, score=0.8),
-            Relation("E1", "E2", "inhibits", "BRCA1 inhibits cancer", False, score=0.2),
+            Relation(
+                "E3",
+                "E4",
+                "inhibits",
+                "BRCA1 inhibits cancer.",
+                "BRCA1 inhibits cancer",
+                False,
+                score=0.8,
+            ),
+            Relation(
+                "E1",
+                "E2",
+                "inhibits",
+                "BRCA1 inhibits cancer.",
+                "BRCA1 inhibits cancer",
+                False,
+                score=0.2,
+            ),
         )
 
         graph = build_graph_result(
@@ -142,6 +173,7 @@ class GraphBoundaryTests(unittest.TestCase):
             "E1",
             "E2",
             "interacts",
+            "BRCA1 interacts with BRCA1.",
             "BRCA1 interacts with BRCA1",
             True,
             surface_form="interacts",
@@ -178,6 +210,7 @@ class GraphBoundaryTests(unittest.TestCase):
                 "E3",
                 "E4",
                 "interacts",
+                "BRCA1 interacts with BRCA1.",
                 "BRCA1 interacts with BRCA1",
                 False,
                 surface_form="interacts",
@@ -187,6 +220,7 @@ class GraphBoundaryTests(unittest.TestCase):
                 "E1",
                 "E2",
                 "interacts",
+                "BRCA1 interacts with BRCA1.",
                 "BRCA1 interacts with BRCA1",
                 False,
                 surface_form="interacts",
@@ -213,8 +247,22 @@ class GraphBoundaryTests(unittest.TestCase):
         )
         relations = RelationExtractionResult(
             (
-                Relation("E3", "E1", "affects", "drug affects BRCA1", False),
-                Relation("E1", "E2", "affects", "BRCA1 affects disease", False),
+                Relation(
+                    "E3",
+                    "E1",
+                    "affects",
+                    "drug affects BRCA1.",
+                    "drug affects BRCA1",
+                    False,
+                ),
+                Relation(
+                    "E1",
+                    "E2",
+                    "affects",
+                    "BRCA1 affects disease.",
+                    "BRCA1 affects disease",
+                    False,
+                ),
             )
         )
         assembly = assemble_document_entities(mentions, text)

@@ -1,0 +1,199 @@
+{
+  "report_type": "relation_contract_09a_live",
+  "report_date": "2026-09-20",
+  "contract": "09A",
+  "status": "PASS",
+  "source": {
+    "pmcid": "PMC10444909",
+    "sentence_ids": ["s0009", "s0010", "s0011"],
+    "sha256": "0b87e7eeab93f4d44f55e946aed3ac78a6d1610876f7a31aba74ba695302b8ee",
+    "text": "Knockdown of KNTC1 in SK-Hep-1 and Huh7 significantly inhibited cell viability, migration ability and invasion ability. KNTC1 is involved in the regulation of hepatocellular carcinoma through its interaction with cyclin-dependent kinase 1 (CDK1). Knockdown of KNTC1 inhibited CDK1 expression, while CDK1 overexpression was able to rescue the regulation of KNTC1 on the viability, migration and invasive ability of hepatocellular carcinoma cell lines."
+  },
+  "configuration": {
+    "path": [
+      "source text",
+      "HunFlair2 NER",
+      "OpenAI Responses API",
+      "gpt-5.6-luna",
+      "structured grounded relation output",
+      "deterministic validation"
+    ],
+    "entity_backend": "hunflair2",
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "max",
+    "max_completion_tokens": 128000,
+    "harness_max_retries": 2,
+    "finite_predicate_ontology": false,
+    "graph_changed": false,
+    "viewer_changed": false
+  },
+  "entities": [
+    {"id": "E1", "text": "KNTC1", "type": "Gene", "start": 13, "end": 18, "score": 0.9999899864196777},
+    {"id": "E2", "text": "SK-Hep-1", "type": "CellLine", "start": 22, "end": 30, "score": 0.9296561678250631},
+    {"id": "E3", "text": "Huh7", "type": "CellLine", "start": 35, "end": 39, "score": 0.9943056702613831},
+    {"id": "E4", "text": "KNTC1", "type": "Gene", "start": 120, "end": 125, "score": 0.9999901056289673},
+    {"id": "E5", "text": "hepatocellular carcinoma", "type": "Disease", "start": 159, "end": 183, "score": 0.9999911189079285},
+    {"id": "E6", "text": "cyclin-dependent kinase 1", "type": "Gene", "start": 213, "end": 238, "score": 0.9999799489974975},
+    {"id": "E7", "text": "CDK1", "type": "Gene", "start": 240, "end": 244, "score": 0.9999902248382568},
+    {"id": "E8", "text": "KNTC1", "type": "Gene", "start": 260, "end": 265, "score": 0.9999899864196777},
+    {"id": "E9", "text": "CDK1", "type": "Gene", "start": 276, "end": 280, "score": 0.9999901056289673},
+    {"id": "E10", "text": "CDK1", "type": "Gene", "start": 299, "end": 303, "score": 0.999988317489624},
+    {"id": "E11", "text": "KNTC1", "type": "Gene", "start": 356, "end": 361, "score": 0.9999901056289673},
+    {"id": "E12", "text": "hepatocellular carcinoma", "type": "Disease", "start": 414, "end": 438, "score": 0.9999894499778748}
+  ],
+  "relations": [
+    {
+      "source": "E1",
+      "target": "E2",
+      "predicate": "knockdown_in",
+      "assertion": "KNTC1 knockdown in SK-Hep-1 significantly inhibited cell viability, migration ability, and invasion ability.",
+      "evidence": "Knockdown of KNTC1 in SK-Hep-1 and Huh7 significantly inhibited cell viability, migration ability and invasion ability.",
+      "negated": false,
+      "intervention": "KNTC1 knockdown",
+      "effects": [
+        "Cell viability was significantly inhibited",
+        "Migration ability was significantly inhibited",
+        "Invasion ability was significantly inhibited"
+      ],
+      "context": [],
+      "surface_form": "Knockdown of KNTC1 in SK-Hep-1",
+      "score": null
+    },
+    {
+      "source": "E1",
+      "target": "E3",
+      "predicate": "knockdown_in",
+      "assertion": "KNTC1 knockdown in Huh7 significantly inhibited cell viability, migration ability, and invasion ability.",
+      "evidence": "Knockdown of KNTC1 in SK-Hep-1 and Huh7 significantly inhibited cell viability, migration ability and invasion ability.",
+      "negated": false,
+      "intervention": "KNTC1 knockdown",
+      "effects": [
+        "Cell viability was significantly inhibited",
+        "Migration ability was significantly inhibited",
+        "Invasion ability was significantly inhibited"
+      ],
+      "context": [],
+      "surface_form": "Knockdown of KNTC1 in SK-Hep-1 and Huh7",
+      "score": null
+    },
+    {
+      "source": "E4",
+      "target": "E5",
+      "predicate": "involved_in_regulation_of",
+      "assertion": "KNTC1 is involved in the regulation of hepatocellular carcinoma through its interaction with cyclin-dependent kinase 1 (CDK1).",
+      "evidence": "KNTC1 is involved in the regulation of hepatocellular carcinoma through its interaction with cyclin-dependent kinase 1 (CDK1).",
+      "negated": false,
+      "intervention": null,
+      "effects": [],
+      "context": [
+        "The regulation is described as occurring through interaction with cyclin-dependent kinase 1 (CDK1)."
+      ],
+      "surface_form": "involved in the regulation of hepatocellular carcinoma",
+      "score": null
+    },
+    {
+      "source": "E4",
+      "target": "E6",
+      "predicate": "interacts_with",
+      "assertion": "KNTC1 interacts with cyclin-dependent kinase 1 as the interaction through which KNTC1 is involved in the regulation of hepatocellular carcinoma.",
+      "evidence": "KNTC1 is involved in the regulation of hepatocellular carcinoma through its interaction with cyclin-dependent kinase 1 (CDK1).",
+      "negated": false,
+      "intervention": null,
+      "effects": [],
+      "context": [
+        "The interaction is described in the context of KNTC1 regulation of hepatocellular carcinoma."
+      ],
+      "surface_form": "its interaction with cyclin-dependent kinase 1",
+      "score": null
+    },
+    {
+      "source": "E4",
+      "target": "E7",
+      "predicate": "interacts_with",
+      "assertion": "KNTC1 interacts with CDK1 as the interaction through which KNTC1 is involved in the regulation of hepatocellular carcinoma.",
+      "evidence": "KNTC1 is involved in the regulation of hepatocellular carcinoma through its interaction with cyclin-dependent kinase 1 (CDK1).",
+      "negated": false,
+      "intervention": null,
+      "effects": [],
+      "context": [
+        "The interaction is described in the context of KNTC1 regulation of hepatocellular carcinoma."
+      ],
+      "surface_form": "its interaction with cyclin-dependent kinase 1 (CDK1)",
+      "score": null
+    },
+    {
+      "source": "E8",
+      "target": "E9",
+      "predicate": "inhibits_expression_of",
+      "assertion": "KNTC1 knockdown inhibited CDK1 expression.",
+      "evidence": "Knockdown of KNTC1 inhibited CDK1 expression",
+      "negated": false,
+      "intervention": "KNTC1 knockdown",
+      "effects": ["CDK1 expression was inhibited"],
+      "context": [],
+      "surface_form": "Knockdown of KNTC1 inhibited CDK1 expression",
+      "score": null
+    },
+    {
+      "source": "E10",
+      "target": "E11",
+      "predicate": "overexpression_rescues_regulation_by",
+      "assertion": "CDK1 overexpression was able to rescue the regulation of KNTC1 on the viability, migration, and invasive ability of hepatocellular carcinoma cell lines.",
+      "evidence": "CDK1 overexpression was able to rescue the regulation of KNTC1 on the viability, migration and invasive ability of hepatocellular carcinoma cell lines.",
+      "negated": false,
+      "intervention": "CDK1 overexpression",
+      "effects": [
+        "Rescued the regulation of KNTC1 on cell viability",
+        "Rescued the regulation of KNTC1 on migration ability",
+        "Rescued the regulation of KNTC1 on invasive ability"
+      ],
+      "context": ["Hepatocellular carcinoma cell lines"],
+      "surface_form": "CDK1 overexpression was able to rescue the regulation of KNTC1",
+      "score": null
+    },
+    {
+      "source": "E11",
+      "target": "E12",
+      "predicate": "regulates_cellular_abilities_in",
+      "assertion": "KNTC1 is described as regulating the viability, migration, and invasive ability of hepatocellular carcinoma cell lines; CDK1 overexpression was able to rescue this regulation.",
+      "evidence": "CDK1 overexpression was able to rescue the regulation of KNTC1 on the viability, migration and invasive ability of hepatocellular carcinoma cell lines.",
+      "negated": false,
+      "intervention": "CDK1 overexpression",
+      "effects": [
+        "The regulation of viability was rescued",
+        "The regulation of migration ability was rescued",
+        "The regulation of invasive ability was rescued"
+      ],
+      "context": ["Hepatocellular carcinoma cell lines"],
+      "surface_form": "regulation of KNTC1 on the viability, migration and invasive ability of hepatocellular carcinoma cell lines",
+      "score": null
+    }
+  ],
+  "validation": {
+    "entity_source_spans": {"status": "PASS", "checked": 12, "total": 12},
+    "relation_endpoints": {"status": "PASS", "checked": 8, "total": 8},
+    "relation_evidence": {"status": "PASS", "checked": 8, "total": 8},
+    "relation_surface_forms": {"status": "PASS", "checked": 8, "total": 8},
+    "local_relation_validator": {"status": "PASS", "accepted": 8, "total": 8},
+    "semantic_fidelity": "LLM-quality property; not mechanically proven by deterministic validation"
+  },
+  "semantic_observations": {
+    "preserved": [
+      "KNTC1 knockdown intervention",
+      "cell-line-specific context through grounded endpoints",
+      "inhibited viability, migration, and invasion effects",
+      "CDK1 expression inhibition",
+      "CDK1 overexpression rescue and its three rescued abilities",
+      "interaction context for the KNTC1/CDK1 relation"
+    ],
+    "simple_relations": "Interaction relations kept intervention null and effects empty; explicit disease-regulation context was retained where emitted.",
+    "unsupported_fields": [],
+    "caveat": "The deterministic validator establishes structure and grounding, not semantic completeness or truth of normalized assertion text."
+  },
+  "anti_overfit": {
+    "kntc1_specific_code": false,
+    "demo_specific_field": false,
+    "demo_derived_predicate_ontology": false,
+    "post_live_prompt_tuning": false
+  }
+}

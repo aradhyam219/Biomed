@@ -36,6 +36,7 @@ def valid_payload():
                 "source": "E1",
                 "target": "E2",
                 "predicate": "association",
+                "assertion": "BRCA1 is associated with breast cancer.",
                 "evidence": "BRCA1 is associated with breast cancer",
                 "negated": False,
                 "surface_form": "associated with",
@@ -83,6 +84,8 @@ class RelationContractTests(unittest.TestCase):
 
         self.assertEqual(result, RelationExtractionResult((Relation(**payload),)))
         self.assertEqual(result.to_dict()["relations"][0]["negated"], False)
+        self.assertEqual(result.relations[0].effects, ())
+        self.assertEqual(result.relations[0].context, ())
         self.assertEqual(result.relations[0].source_entity_id, "E1")
         self.assertEqual(result.relations[0].type, "association")
 
@@ -111,7 +114,7 @@ class RelationContractTests(unittest.TestCase):
             validate_relations(
                 TEXT,
                 ENTITIES,
-                [{key: value for key, value in payload.items() if key != "evidence"}],
+                [{key: value for key, value in payload.items() if key != "assertion"}],
             )
         with self.assertRaisesRegex(RelationValidationError, "boolean"):
             validate_relations(
@@ -119,6 +122,135 @@ class RelationContractTests(unittest.TestCase):
                 ENTITIES,
                 [{**payload, "negated": "false"}],
             )
+
+    def test_generic_semantic_shapes_are_grounded_without_a_finite_ontology(self):
+        cases = (
+            (
+                "GeneA interacts with GeneB.",
+                {
+                    "predicate": "interacts with",
+                    "assertion": "GeneA interacts with GeneB.",
+                    "evidence": "GeneA interacts with GeneB",
+                    "negated": False,
+                },
+            ),
+            (
+                "GeneA knockdown decreases GeneB expression in cells.",
+                {
+                    "predicate": "decreases expression of",
+                    "assertion": "GeneA knockdown decreases GeneB expression in cells.",
+                    "evidence": "GeneA knockdown decreases GeneB expression in cells",
+                    "negated": False,
+                    "intervention": "GeneA knockdown",
+                    "effects": ["decreased GeneB expression"],
+                    "context": ["cells"],
+                },
+            ),
+            (
+                "Drug X treatment reduced viability and migration of cells.",
+                {
+                    "predicate": "reduces",
+                    "assertion": "Drug X treatment reduced viability and migration of cells.",
+                    "evidence": "Drug X treatment reduced viability and migration of cells",
+                    "negated": False,
+                    "intervention": "Drug X treatment",
+                    "effects": ["reduced viability", "reduced migration"],
+                    "context": ["cells"],
+                },
+            ),
+            (
+                "GeneA associates with GeneB in liver tissue.",
+                {
+                    "predicate": "associates with",
+                    "assertion": "GeneA associates with GeneB in liver tissue.",
+                    "evidence": "GeneA associates with GeneB in liver tissue",
+                    "negated": False,
+                    "context": ["liver tissue"],
+                },
+            ),
+            (
+                "GeneA does not bind GeneB.",
+                {
+                    "predicate": "binds",
+                    "assertion": "GeneA does not bind GeneB.",
+                    "evidence": "GeneA does not bind GeneB",
+                    "negated": True,
+                },
+            ),
+            (
+                "GeneB overexpression rescued the effect of GeneA knockdown.",
+                {
+                    "predicate": "rescues",
+                    "assertion": "GeneB overexpression rescued the effect of GeneA knockdown.",
+                    "evidence": "GeneB overexpression rescued the effect of GeneA knockdown",
+                    "negated": False,
+                    "intervention": "GeneB overexpression",
+                    "effects": ["rescued the effect of GeneA knockdown"],
+                },
+            ),
+        )
+
+        for text, semantic_fields in cases:
+            payload = {
+                "source": "E1",
+                "target": "E2",
+                **semantic_fields,
+            }
+            result = validate_relations(text, ENTITIES, [payload])
+            relation = result.relations[0]
+            self.assertIsInstance(relation.effects, tuple)
+            self.assertIsInstance(relation.context, tuple)
+            self.assertEqual(relation.assertion, semantic_fields["assertion"])
+
+    def test_validation_rejects_malformed_semantic_fields(self):
+        payload = valid_payload()["relations"][0]
+
+        invalid_values = (
+            ("assertion", "", "assertion"),
+            ("intervention", "", "intervention"),
+            ("effects", [""], "effects"),
+            ("context", ["valid", 3], "context"),
+        )
+        for field_name, value, message in invalid_values:
+            with self.subTest(field_name=field_name):
+                with self.assertRaisesRegex(RelationValidationError, message):
+                    validate_relations(
+                        TEXT,
+                        ENTITIES,
+                        [{**payload, field_name: value}],
+                    )
+
+    def test_rich_fields_survive_structured_output_parser_validation_and_serialization(self):
+        text = "GeneA knockdown reduced GeneB expression in hepatoma cells."
+        payload = {
+            "relations": [
+                {
+                    "source": "E1",
+                    "target": "E2",
+                    "predicate": "reduces expression of",
+                    "assertion": "GeneA knockdown reduced GeneB expression in hepatoma cells.",
+                    "intervention": "GeneA knockdown",
+                    "effects": ["reduced GeneB expression"],
+                    "context": ["hepatoma cells"],
+                    "evidence": "GeneA knockdown reduced GeneB expression in hepatoma cells",
+                    "negated": False,
+                }
+            ]
+        }
+        runnable = _FakeRunnable([payload])
+
+        result = LLMRelationExtractor(runnable, max_retries=0).extract_relations(
+            text, ENTITIES
+        )
+
+        relation = result.relations[0]
+        self.assertEqual(relation.intervention, "GeneA knockdown")
+        self.assertEqual(relation.effects, ("reduced GeneB expression",))
+        self.assertEqual(relation.context, ("hepatoma cells",))
+        serialized = result.to_dict()["relations"][0]
+        self.assertEqual(serialized["assertion"], payload["relations"][0]["assertion"])
+        self.assertEqual(serialized["effects"], ("reduced GeneB expression",))
+        self.assertEqual(serialized["context"], ("hepatoma cells",))
 
     def test_llm_harness_builds_prompt_and_returns_local_contract(self):
         payload = valid_payload()
@@ -134,7 +266,8 @@ class RelationContractTests(unittest.TestCase):
         self.assertIsInstance(result, RelationExtractionResult)
         self.assertEqual(result.relations[0].predicate, "associated with")
         self.assertIn("Do not add biological facts", runnable.prompts[0])
-        self.assertIn("concise normalized predicate", runnable.prompts[0])
+        self.assertIn("graph-friendly normalized relationship", runnable.prompts[0])
+        self.assertIn("complete source-grounded restatement", runnable.prompts[0])
         self.assertNotIn("Allowed predicates", runnable.prompts[0])
         self.assertIn('"id": "E1"', runnable.prompts[0])
         self.assertIn(TEXT, runnable.prompts[0])
@@ -152,6 +285,7 @@ class RelationContractTests(unittest.TestCase):
                         "source": "E1",
                         "target": "E2",
                         "predicate": "associated with",
+                        "assertion": "BRCA1 is associated with breast cancer.",
                         "evidence": "BRCA1 is associated with breast cancer",
                         "negated": False,
                     }
@@ -164,6 +298,8 @@ class RelationContractTests(unittest.TestCase):
         self.assertEqual(result.relations[0].source, "E1")
         self.assertIn("relations", model.schema.model_fields)
         relation_model = get_args(model.schema.model_fields["relations"].annotation)[0]
+        for field_name in ("assertion", "intervention", "effects", "context"):
+            self.assertIn(field_name, relation_model.model_fields)
         self.assertNotIn("score", relation_model.model_fields)
 
     def test_llm_harness_repairs_malformed_output_with_bounded_retry(self):

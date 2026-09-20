@@ -20,7 +20,14 @@ class _FakePipeline:
         return ComposedExtractionResult(
             entities=(Entity("E1", text, "gene", 0, len(text), None),),
             relations=(
-                Relation("E1", "E1", "association", text, False),
+                Relation(
+                    "E1",
+                    "E1",
+                    "association",
+                    text,
+                    text,
+                    False,
+                ),
             ),
         )
 

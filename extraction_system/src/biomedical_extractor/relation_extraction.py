@@ -7,7 +7,7 @@ no LangChain or provider-specific object crosses this boundary.
 
 from __future__ import annotations
 
-from dataclasses import asdict, dataclass
+from dataclasses import asdict, dataclass, field
 from math import isfinite
 from typing import Any, Mapping, Protocol, Sequence
 
@@ -27,19 +27,34 @@ class RelationExtractor(Protocol):
 class Relation:
     """A directed, evidence-grounded relation between supplied entity IDs.
 
-    ``evidence`` is a verbatim substring of the source text.  ``surface_form``
-    optionally preserves the exact relation wording separately from the concise
-    normalized ``predicate``.  ``score`` is optional because not every provider
-    supplies a calibrated confidence value.
+    ``predicate`` is a concise graph-friendly relationship, while ``assertion``
+    preserves the complete source-grounded scientific meaning.  ``evidence`` is
+    a verbatim substring of the source text.  ``intervention``, ``effects``, and
+    ``context`` preserve optional explicit semantic qualifiers without creating
+    extra process or event nodes.  ``surface_form`` optionally preserves the
+    exact relation wording separately from ``predicate``.  ``score`` is optional
+    because not every provider supplies a calibrated confidence value.
     """
 
     source: str
     target: str
     predicate: str
+    assertion: str
     evidence: str
     negated: bool
+    intervention: str | None = None
+    effects: tuple[str, ...] = field(default_factory=tuple)
+    context: tuple[str, ...] = field(default_factory=tuple)
     surface_form: str | None = None
     score: float | None = None
+
+    def __post_init__(self) -> None:
+        """Normalize provider-friendly list values to immutable domain tuples."""
+
+        for field_name in ("effects", "context"):
+            value = getattr(self, field_name)
+            if isinstance(value, (list, tuple)):
+                object.__setattr__(self, field_name, tuple(value))
 
     @property
     def source_entity_id(self) -> str:
@@ -103,9 +118,10 @@ def validate_relations(
     """Validate and deduplicate generated relations without judging truth.
 
     Validation checks only structural and traceability invariants: endpoint IDs,
-    required fields, evidence occurrence, optional surface-form occurrence, an
-    optional provider-selected predicate schema, and optional score shape. It
-    deliberately does not decide whether a biologically plausible claim is true.
+    required field shapes, evidence occurrence, optional surface-form occurrence,
+    an optional provider-selected predicate schema, and optional score shape. It
+    deliberately does not decide whether a biologically plausible claim is true
+    or whether normalized semantic text faithfully summarizes the evidence.
     """
 
     if not isinstance(text, str):
@@ -180,13 +196,26 @@ def _coerce_relation(
             f"Relation at index {index} must be a mapping or Relation value"
         )
 
-    required = ("source", "target", "predicate", "evidence", "negated")
+    required = (
+        "source",
+        "target",
+        "predicate",
+        "assertion",
+        "evidence",
+        "negated",
+    )
     missing = [field for field in required if field not in raw_relation]
     if missing:
         raise RelationValidationError(
             f"Relation at index {index} is missing required field(s): {', '.join(missing)}"
         )
-    allowed = set(required) | {"surface_form", "score"}
+    allowed = set(required) | {
+        "intervention",
+        "effects",
+        "context",
+        "surface_form",
+        "score",
+    }
     unknown = set(raw_relation) - allowed
     if unknown:
         raise RelationValidationError(
@@ -197,8 +226,12 @@ def _coerce_relation(
         source=raw_relation["source"],
         target=raw_relation["target"],
         predicate=raw_relation["predicate"],
+        assertion=raw_relation["assertion"],
         evidence=raw_relation["evidence"],
         negated=raw_relation["negated"],
+        intervention=raw_relation.get("intervention"),
+        effects=raw_relation.get("effects", ()),
+        context=raw_relation.get("context", ()),
         surface_form=raw_relation.get("surface_form"),
         score=raw_relation.get("score"),
     )
@@ -213,7 +246,7 @@ def _validate_relation(
 ) -> None:
     """Validate one relation's structural and source-traceability invariants."""
 
-    for field_name in ("source", "target", "predicate", "evidence"):
+    for field_name in ("source", "target", "predicate", "assertion", "evidence"):
         value = getattr(relation, field_name)
         if not isinstance(value, str) or not value.strip():
             raise RelationValidationError(
@@ -238,6 +271,23 @@ def _validate_relation(
         )
     if not isinstance(relation.negated, bool):
         raise RelationValidationError("Relation negated field must be a boolean")
+    if relation.intervention is not None and (
+        not isinstance(relation.intervention, str)
+        or not relation.intervention.strip()
+    ):
+        raise RelationValidationError(
+            "Relation intervention must be a non-empty string when supplied"
+        )
+    for field_name in ("effects", "context"):
+        values = getattr(relation, field_name)
+        if not isinstance(values, tuple):
+            raise RelationValidationError(
+                f"Relation {field_name} must be an immutable tuple of strings"
+            )
+        if any(not isinstance(value, str) or not value.strip() for value in values):
+            raise RelationValidationError(
+                f"Relation {field_name} must contain only non-empty strings"
+            )
     if relation.surface_form is not None:
         if not isinstance(relation.surface_form, str) or not relation.surface_form.strip():
             raise RelationValidationError(
