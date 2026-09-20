@@ -322,10 +322,40 @@ h2 {
   background: rgba(25, 42, 63, 0.72);
 }
 
+.evidence-detail {
+  display: grid;
+  gap: 4px;
+  margin-top: 12px;
+}
+
+.evidence-detail-label {
+  color: #91a7c0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.evidence-assertion {
+  padding: 9px 10px;
+  border: 1px solid rgba(143, 196, 245, 0.28);
+  border-radius: 6px;
+  background: rgba(59, 130, 246, 0.12);
+  color: #f8fafc;
+  font-size: 13px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.evidence-detail-list {
+  margin: 0;
+  color: #edf4fb;
+  font-size: 12px;
+}
+
 .mention-text,
 .evidence-text {
   display: block;
-  margin-bottom: 8px;
   color: #f8fafc;
   font-size: 13px;
   line-height: 1.45;

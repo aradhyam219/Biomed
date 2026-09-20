@@ -69,8 +69,10 @@ relations with the same source and target direction become one count-labeled
 bundle. Reverse-direction relations remain separate. Click a bundle to choose an
 underlying predicate, then use the back control to return to the bundle list;
 the relation detail view still exposes negation and every retained evidence
-record. Node types use distinct shapes, selected elements focus their local
-neighborhood, and pan, zoom, and node dragging are provided by Cytoscape.js.
+record, with each record showing its assertion first and any present
+intervention, effects, context, verbatim evidence, surface form, and score.
+Node types use distinct shapes, selected elements focus their local neighborhood,
+and pan, zoom, and node dragging are provided by Cytoscape.js.
 Bundling and routing are presentation-only: the supplied graph JSON and its
 scientific relations are not rewritten.
 

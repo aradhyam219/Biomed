@@ -273,6 +273,30 @@ function evidenceRecords(relation) {
   return Array.isArray(relation?.evidence) ? relation.evidence : [];
 }
 
+function appendEvidenceValue(parent, label, value, className = "") {
+  const block = document.createElement("div");
+  block.className = "evidence-detail";
+  appendText(block, label, "evidence-detail-label");
+  appendText(block, String(value), className);
+  parent.append(block);
+}
+
+function appendEvidenceList(parent, label, values) {
+  if (!Array.isArray(values) || values.length === 0) return;
+  const block = document.createElement("div");
+  block.className = "evidence-detail";
+  appendText(block, label, "evidence-detail-label");
+  const list = document.createElement("ul");
+  list.className = "detail-list evidence-detail-list";
+  for (const value of values) {
+    const item = document.createElement("li");
+    item.textContent = String(value);
+    list.append(item);
+  }
+  block.append(list);
+  parent.append(block);
+}
+
 function pluralize(count, singular, plural = `${singular}s`) {
   return `${count} ${count === 1 ? singular : plural}`;
 }
@@ -308,7 +332,15 @@ function renderRelation(relation, bundle = null) {
     const card = document.createElement("article");
     card.className = "evidence-record";
     appendText(card, `Evidence ${index + 1}`, "evidence-label");
-    appendText(card, `“${record.text ?? ""}”`, "evidence-text");
+    if (record.assertion) {
+      appendEvidenceValue(card, "Assertion", record.assertion, "evidence-assertion");
+    }
+    if (record.intervention) {
+      appendEvidenceValue(card, "Intervention", record.intervention);
+    }
+    appendEvidenceList(card, "Effects", record.effects);
+    appendEvidenceList(card, "Context", record.context);
+    appendEvidenceValue(card, "Evidence", `“${record.text ?? ""}”`, "evidence-text");
     if (record.surface_form) {
       appendField(card, "Surface form", String(record.surface_form));
     }

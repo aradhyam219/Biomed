@@ -46,7 +46,20 @@ perturbation, or comparable condition materially changes the meaning, record it
 in intervention. Record explicit outcomes that would otherwise be lost from a
 binary edge in effects, and explicit contextual qualifiers needed for
 interpretation in context. Preserve intervention, effects, and context in the
-assertion when they are material.
+assertion when they are material. `intervention`, `effects`, and `context` must
+describe the relation represented by the supplied source and target endpoints.
+Do not use these structured qualifiers to hide another supplied named entity as
+a material third participant. If another supplied entity participates in a
+distinct explicitly asserted relationship, represent that relationship
+separately when supported by the text.
+
+Use context only for an explicit biological, experimental, clinical, organismal,
+tissue, cellular, disease-state, cohort, environmental, or comparable
+setting/condition needed to interpret where or under what conditions the
+relation holds. Do not use context for a mechanistic explanation, another
+relation, another entity interaction, or free-floating information that fits
+nowhere else; retain important explanatory wording in assertion or express a
+separate grounded relation when appropriate.
 
 Leave optional intervention, effects, and context empty or null when the source
 does not explicitly support them. Do not force a finite predicate ontology, add
@@ -344,8 +357,11 @@ def _structured_payload_schema() -> type[Any]:
         context: list[StrictStr] = Field(
             default_factory=list,
             description=(
-                "Optional explicit contextual qualifiers needed for interpretation; "
-                "do not infer them and use an empty list when not applicable"
+                "Optional explicit biological, experimental, clinical, organismal, "
+                "tissue, cellular, disease-state, cohort, environmental, or "
+                "comparable setting/condition needed to interpret where or under "
+                "what conditions the relation holds; do not use for mechanisms, "
+                "another relation, or another entity interaction"
             ),
         )
         surface_form: StrictStr | None = Field(

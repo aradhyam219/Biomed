@@ -325,7 +325,10 @@ runtime dependencies remain isolated from the main production environment.
 - Graph output reuses assembled node IDs, rejects dangling relation endpoints,
   preserves direction, negation, and verbatim evidence, does not rewrite
   predicates, and retains grounded relations when endpoint remapping produces a
-  self-edge.
+  self-edge. One conceptual edge is aggregated only by remapped source,
+  target, predicate, and negation; each evidence record independently retains
+  its assertion, intervention, ordered effects, context, surface form, and
+  score.
 - Biomedical entity normalization/linking is not implemented in this task.
 - Output is machine-consumable and does not require model-specific objects.
 - HunFlair2 is the active prototype NER foundation, while its Flair/SciSpaCy
@@ -403,11 +406,13 @@ with mention ID, text, half-open offsets, and score when available. Select a
 bundle to choose an underlying relation, then use the back control to return to
 the bundle list. Relation details continue to show source and target direction,
 the complete predicate, explicit negation state, and every retained evidence
-record with surface form and score when available. Mixed-negation bundles stay
-neutral on the canvas and mark negation on the individual relation. Selected
-elements focus their local neighborhood, reverse directions use separate
-presentation lanes, and valid self-edges remain supported. These display
-bundles and routes are presentation-only and do not alter graph JSON semantics.
+record with the complete assertion first, followed by present intervention,
+effects, context, verbatim evidence, surface form, and score. Empty optional
+sections are omitted. Mixed-negation bundles stay neutral on the canvas and
+mark negation on the individual relation. Selected elements focus their local
+neighborhood, reverse directions use separate presentation lanes, and valid
+self-edges remain supported. These display bundles and routes are
+presentation-only and do not alter graph JSON semantics.
 
 ## Related architecture
 

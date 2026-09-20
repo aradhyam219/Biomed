@@ -74,8 +74,24 @@ test("preserves aliases, mentions, and all evidence records", () => {
         predicate: "interacts with",
         negated: false,
         evidence: [
-          { text: "first evidence", surface_form: "interacts", score: 0.7 },
-          { text: "second evidence", surface_form: "interaction", score: null },
+          {
+            text: "first evidence",
+            assertion: "CDK1 interacts with BRCA1.",
+            intervention: "CDK1 activation",
+            effects: ["increased signaling"],
+            context: ["treated cells"],
+            surface_form: "interacts",
+            score: 0.7,
+          },
+          {
+            text: "second evidence",
+            assertion: "CDK1 interaction was observed.",
+            intervention: null,
+            effects: [],
+            context: [],
+            surface_form: "interaction",
+            score: null,
+          },
         ],
       },
     ],
@@ -86,6 +102,12 @@ test("preserves aliases, mentions, and all evidence records", () => {
   assert.deepEqual(nodeElements(elements)[0].data.mentions, graph.nodes[0].mentions);
   assert.deepEqual(edgeElements(elements)[0].data.evidence, graph.edges[0].evidence);
   assert.equal(edgeElements(elements)[0].data.evidence.length, 2);
+  assert.equal(
+    edgeElements(elements)[0].data.evidence[0].assertion,
+    "CDK1 interacts with BRCA1.",
+  );
+  assert.deepEqual(edgeElements(elements)[0].data.evidence[0].effects, ["increased signaling"]);
+  assert.deepEqual(edgeElements(elements)[0].data.evidence[0].context, ["treated cells"]);
 });
 
 test("marks negated relations for visual styling while retaining negated state", () => {
@@ -169,6 +191,7 @@ test("bundles same-direction relations while preserving reverse direction", () =
   assert.equal(forward.relations[0], first);
   assert.equal(forward.relations[1], second);
   assert.equal(forward.relations[1].evidence.length, 2);
+  assert.equal(forward.relations[1].evidence[0].context, undefined);
   assert.equal(forward.negated, null);
   assert.equal(forward.negationState, "mixed");
 

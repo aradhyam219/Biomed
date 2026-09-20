@@ -62,15 +62,44 @@ class GraphNode:
 
 @dataclass(frozen=True)
 class GraphEvidence:
-    """One verbatim source-evidence record contributed by a grounded relation."""
+    """One source-evidence record with the grounded relation semantics it carries."""
 
     text: str
+    assertion: str
+    intervention: str | None = None
+    effects: tuple[str, ...] = ()
+    context: tuple[str, ...] = ()
     surface_form: str | None = None
     score: float | None = None
 
     def __post_init__(self) -> None:
-        if not isinstance(self.text, str) or not self.text.strip():
-            raise ValueError("Graph evidence text must be a non-empty string")
+        for field_name in ("text", "assertion"):
+            value = getattr(self, field_name)
+            if not isinstance(value, str) or not value.strip():
+                raise ValueError(
+                    f"Graph evidence {field_name} must be a non-empty string"
+                )
+        if self.intervention is not None and (
+            not isinstance(self.intervention, str) or not self.intervention.strip()
+        ):
+            raise ValueError(
+                "Graph evidence intervention must be non-empty when supplied"
+            )
+        for field_name in ("effects", "context"):
+            values = getattr(self, field_name)
+            if not isinstance(values, (list, tuple)):
+                raise ValueError(
+                    f"Graph evidence {field_name} must be a sequence of strings"
+                )
+            normalized = tuple(values)
+            if any(
+                not isinstance(value, str) or not value.strip()
+                for value in normalized
+            ):
+                raise ValueError(
+                    f"Graph evidence {field_name} must contain non-empty strings"
+                )
+            object.__setattr__(self, field_name, normalized)
         if self.surface_form is not None and (
             not isinstance(self.surface_form, str) or not self.surface_form.strip()
         ):
@@ -88,6 +117,10 @@ class GraphEvidence:
 
         return {
             "text": self.text,
+            "assertion": self.assertion,
+            "intervention": self.intervention,
+            "effects": list(self.effects),
+            "context": list(self.context),
             "surface_form": self.surface_form,
             "score": self.score,
         }
@@ -197,6 +230,10 @@ def build_graph_result(
         aggregated.setdefault(key, []).append(
             GraphEvidence(
                 text=relation.evidence,
+                assertion=relation.assertion,
+                intervention=relation.intervention,
+                effects=relation.effects,
+                context=relation.context,
                 surface_form=relation.surface_form,
                 score=relation.score,
             )
@@ -312,7 +349,7 @@ def _validate_relation_shape(relation: Relation, index: int) -> None:
         raise GraphConstructionError(
             f"Relation at index {index} must be a grounded Relation value"
         )
-    for field_name in ("source", "target", "predicate", "evidence"):
+    for field_name in ("source", "target", "predicate", "assertion", "evidence"):
         value = getattr(relation, field_name)
         if not isinstance(value, str) or not value.strip():
             raise GraphConstructionError(
@@ -326,11 +363,15 @@ def _validate_relation_shape(relation: Relation, index: int) -> None:
 
 def _evidence_sort_key(
     evidence: GraphEvidence,
-) -> tuple[str, str, bool, float]:
+) -> tuple[str, str, str, tuple[str, ...], tuple[str, ...], str, bool, float]:
     """Order evidence independently of provider/list arrival order."""
 
     return (
         evidence.text,
+        evidence.assertion,
+        evidence.intervention or "",
+        evidence.effects,
+        evidence.context,
         evidence.surface_form or "",
         evidence.score is None,
         float(evidence.score) if evidence.score is not None else 0.0,

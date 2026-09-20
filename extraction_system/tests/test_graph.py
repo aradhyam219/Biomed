@@ -112,8 +112,95 @@ class GraphBoundaryTests(unittest.TestCase):
         self.assertEqual(edge.predicate, "affects")
         self.assertTrue(edge.negated)
         self.assertEqual(edge.evidence[0].text, relation.evidence)
+        self.assertEqual(edge.evidence[0].assertion, relation.assertion)
+        self.assertEqual(edge.evidence[0].intervention, relation.intervention)
+        self.assertEqual(edge.evidence[0].effects, relation.effects)
+        self.assertEqual(edge.evidence[0].context, relation.context)
         self.assertEqual(edge.evidence[0].surface_form, relation.surface_form)
         self.assertEqual(edge.evidence[0].score, relation.score)
+
+    def test_rich_evidence_serializes_with_ordered_optional_semantics(self):
+        text = "GeneA knockdown reduced GeneB expression in liver tissue."
+        gene_a = text.index("GeneA")
+        gene_b = text.index("GeneB")
+        mentions = (
+            Entity("E1", "GeneA", "Gene", gene_a, gene_a + 5),
+            Entity("E2", "GeneB", "Gene", gene_b, gene_b + 5),
+        )
+        relation = Relation(
+            "E1",
+            "E2",
+            "reduces_expression_of",
+            "GeneA knockdown reduced GeneB expression in liver tissue.",
+            "GeneA knockdown reduced GeneB expression in liver tissue",
+            False,
+            intervention="GeneA knockdown",
+            effects=("reduced GeneB expression", "reduced downstream signal"),
+            context=("liver tissue",),
+        )
+
+        graph = build_graph_result(
+            "paper-1", assemble_document_entities(mentions, text), (relation,)
+        )
+        evidence = graph.edges[0].evidence[0]
+
+        self.assertIsInstance(evidence.effects, tuple)
+        self.assertIsInstance(evidence.context, tuple)
+        self.assertEqual(evidence.assertion, relation.assertion)
+        self.assertEqual(evidence.intervention, relation.intervention)
+        self.assertEqual(evidence.effects, relation.effects)
+        self.assertEqual(evidence.context, relation.context)
+        payload = json.loads(graph.to_json())
+        serialized = payload["edges"][0]["evidence"][0]
+        self.assertEqual(serialized["assertion"], relation.assertion)
+        self.assertEqual(serialized["effects"], ["reduced GeneB expression", "reduced downstream signal"])
+        self.assertEqual(serialized["context"], ["liver tissue"])
+
+    def test_rich_evidence_aggregation_keeps_one_edge_and_independent_records(self):
+        text = "GeneA affects GeneB. GeneA affects GeneB."
+        first_gene = text.index("GeneA")
+        second_gene = text.rindex("GeneA")
+        first_target = text.index("GeneB")
+        second_target = text.rindex("GeneB")
+        mentions = (
+            Entity("E1", "GeneA", "Gene", first_gene, first_gene + 5),
+            Entity("E2", "GeneB", "Gene", first_target, first_target + 5),
+            Entity("E3", "GeneA", "Gene", second_gene, second_gene + 5),
+            Entity("E4", "GeneB", "Gene", second_target, second_target + 5),
+        )
+        relations = (
+            Relation(
+                "E1",
+                "E2",
+                "affects",
+                "GeneA affects GeneB in treated cells.",
+                "GeneA affects GeneB",
+                False,
+                intervention="GeneA treatment",
+                effects=("increased response",),
+                context=("treated cells",),
+            ),
+            Relation(
+                "E3",
+                "E4",
+                "affects",
+                "GeneA affects GeneB in control cells.",
+                "GeneA affects GeneB",
+                False,
+                context=("control cells",),
+            ),
+        )
+
+        graph = build_graph_result(
+            "paper-1", assemble_document_entities(mentions, text), relations
+        )
+
+        self.assertEqual(len(graph.edges), 1)
+        self.assertEqual((graph.edges[0].source, graph.edges[0].target), ("doc_e_001", "doc_e_002"))
+        records = {evidence.assertion: evidence for evidence in graph.edges[0].evidence}
+        self.assertEqual(len(records), 2)
+        self.assertEqual(records["GeneA affects GeneB in treated cells."].effects, ("increased response",))
+        self.assertEqual(records["GeneA affects GeneB in control cells."].context, ("control cells",))
 
     def test_duplicate_conceptual_edges_aggregate_all_evidence_deterministically(self):
         text = "BRCA1 inhibits cancer. BRCA1 inhibits cancer."
