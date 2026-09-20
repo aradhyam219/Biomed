@@ -1,10 +1,14 @@
 from __future__ import annotations
 
 import unittest
+from pathlib import Path
 from unittest.mock import patch
 
 from biomedical_extractor.entity_extraction import DEFAULT_ENTITY_MODEL, Entity
-from biomedical_extractor.hunflair2 import HunFlair2BioMedExtractor
+from biomedical_extractor.hunflair2 import (
+    HUNFLAIR2_MODEL_IDENTIFIER,
+    HunFlair2BioMedExtractor,
+)
 from biomedical_extractor.llm_pipeline import ComposedExtractionResult, LLMExtractionPipeline
 from biomedical_extractor.relation_extraction import (
     Relation,
@@ -61,13 +65,13 @@ class _FakeHunFlair2Runtime:
 
 
 class LLMPipelineTests(unittest.TestCase):
-    def test_default_pretrained_path_uses_adapter_default_schema(self):
+    def test_default_pretrained_path_uses_hunflair2(self):
         entity_extractor = _FakeEntityExtractor()
         relation_extractor = _FakeRelationExtractor()
 
         with (
             patch(
-                "biomedical_extractor.llm_pipeline.GLiNERBioMedExtractor.from_pretrained",
+                "biomedical_extractor.llm_pipeline.HunFlair2BioMedExtractor.from_pretrained",
                 return_value=entity_extractor,
             ) as load_entities,
             patch(
@@ -80,12 +84,41 @@ class LLMPipelineTests(unittest.TestCase):
         self.assertIs(pipeline.entity_extractor, entity_extractor)
         self.assertIs(pipeline.relation_extractor, relation_extractor)
         load_entities.assert_called_once_with(
+            model_identifier=HUNFLAIR2_MODEL_IDENTIFIER,
+            runtime_python=None,
+            runtime_script=None,
+            runtime_cache=Path(".cache/hunflair2"),
+            device=None,
+            offline=False,
+        )
+        load_relations.assert_called_once_with(None)
+
+    def test_explicit_gliner_backend_remains_available(self):
+        entity_extractor = _FakeEntityExtractor()
+        relation_extractor = _FakeRelationExtractor()
+
+        with (
+            patch(
+                "biomedical_extractor.llm_pipeline.GLiNERBioMedExtractor.from_pretrained",
+                return_value=entity_extractor,
+            ) as load_entities,
+            patch(
+                "biomedical_extractor.llm_pipeline.LLMRelationExtractor.from_openai",
+                return_value=relation_extractor,
+            ),
+        ):
+            pipeline = LLMExtractionPipeline.from_pretrained(
+                entity_backend="gliner",
+                entity_labels=("gene",),
+            )
+
+        self.assertIs(pipeline.entity_extractor, entity_extractor)
+        load_entities.assert_called_once_with(
             model_name=DEFAULT_ENTITY_MODEL,
-            labels=None,
+            labels=("gene",),
             threshold=0.5,
             device=None,
         )
-        load_relations.assert_called_once_with(None)
 
     def test_hunflair2_factory_uses_the_same_grounded_relation_pipeline(self):
         entity_extractor = _FakeEntityExtractor()

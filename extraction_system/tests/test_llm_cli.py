@@ -41,6 +41,8 @@ class LLMCLITests(unittest.TestCase):
                 [
                     "--text",
                     "BRCA1",
+                    "--entity-backend",
+                    "gliner",
                     "--entity-label",
                     "gene",
                     "--max-retries",
@@ -52,6 +54,7 @@ class LLMCLITests(unittest.TestCase):
 
         self.assertEqual(result, 0)
         kwargs = load.call_args.kwargs
+        self.assertEqual(kwargs["entity_backend"], "gliner")
         self.assertEqual(kwargs["entity_labels"], ("gene",))
         self.assertEqual(kwargs["entity_threshold"], 0.5)
         self.assertEqual(kwargs["device"], "cpu")
@@ -59,6 +62,17 @@ class LLMCLITests(unittest.TestCase):
         self.assertEqual(kwargs["llm_config"].model, "gpt-5.6-luna")
         payload = json.loads(output.getvalue())
         self.assertEqual(payload["relations"][0]["target"], "E1")
+
+    def test_composed_command_defaults_to_hunflair2(self):
+        output = StringIO()
+        with patch(
+            "biomedical_extractor.llm_cli.LLMExtractionPipeline.from_pretrained",
+            return_value=_FakePipeline(),
+        ) as load, redirect_stdout(output):
+            result = main(["--text", "BRCA1", "--max-retries", "0"])
+
+        self.assertEqual(result, 0)
+        self.assertEqual(load.call_args.kwargs["entity_backend"], "hunflair2")
 
     def test_composed_command_can_select_the_hunflair2_prototype_backend(self):
         output = StringIO()
@@ -93,7 +107,7 @@ class LLMCLITests(unittest.TestCase):
         with patch(
             "biomedical_extractor.llm_cli.LLMExtractionPipeline.from_pretrained",
             return_value=_FakePipeline(),
-        ), redirect_stdout(output):
+        ) as load, redirect_stdout(output):
             result = main(
                 [
                     "--text",
@@ -108,6 +122,7 @@ class LLMCLITests(unittest.TestCase):
             )
 
         self.assertEqual(result, 0)
+        self.assertEqual(load.call_args.kwargs["entity_backend"], "hunflair2")
         payload = json.loads(output.getvalue())
         self.assertEqual(payload["document"], {"id": "paper-1"})
         self.assertEqual(payload["nodes"][0]["id"], "doc_e_001")

@@ -112,11 +112,13 @@ The production implementation lives in `src/biomedical_extractor/`. The
 and stable `Entity` value. `hunflair2` owns the isolated-runtime bridge and
 HunFlair2 output normalization. `entity_assembly` owns conservative
 document-local grouping, assembled node values, and the mention-ID endpoint map.
-`llm_pipeline` composes the selected entity adapter with
+`llm_pipeline` defaults the composed path to HunFlair2 while composing the
+selected entity adapter with
 `llm_relation_extraction`, while `relation_extraction` owns the
 provider-independent grounded relation value and validation. `graph` owns the
-typed graph result, endpoint remapping, conservative edge aggregation, and
-JSON serialization. Raw model/provider objects do not cross these seams. The
+typed graph result, endpoint remapping, deterministic edge aggregation,
+including self-edges produced by remapping grounded relations, and JSON
+serialization. Raw model/provider objects do not cross these seams. The
 existing GLiNER adapter and legacy
 `BiomedicalExtractor` path remain available for compatibility.
 
@@ -149,11 +151,13 @@ id, text, type, start, end, score
 adapter validates that the source slice exactly matches `Entity.text`.
 
 Alternative entity implementations must be able to satisfy this same boundary.
-The active composed path selects HunFlair2 through
-`LLMExtractionPipeline.from_hunflair2()` or the
-`biomedical-extract-llm --entity-backend hunflair2` option. The GLiNER-BioMed
-adapter remains available for the entity-only and compatibility paths, while
-AIONER / PubTator-style NER remains preserved evaluation/history evidence.
+The active composed path defaults to HunFlair2 through
+`LLMExtractionPipeline.from_pretrained()` and the
+`biomedical-extract-llm` command. `LLMExtractionPipeline.from_hunflair2()` and
+the explicit `--entity-backend hunflair2` selection remain available. The
+GLiNER-BioMed adapter remains available through an explicit compatibility
+selection, while AIONER / PubTator-style NER remains preserved
+evaluation/history evidence.
 Neither the postponed pilot nor the training lane changes the composed runtime
 seam.
 
@@ -306,7 +310,8 @@ treated as a separate decision rather than added to the default core-NER pass.
 - Document-local assembly is deterministic, preserves every original mention,
   and never silently merges incompatible entity types.
 - The graph boundary must not emit dangling endpoints, discard relation evidence,
-  rewrite predicates, or introduce frontend-specific styling.
+  rewrite predicates, suppress grounded self-edges caused by endpoint remapping,
+  or introduce frontend-specific styling.
 - The architecture must not grow speculative ontology, graph-database, or
   external normalization infrastructure beyond the graph-ready JSON boundary.
 

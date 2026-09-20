@@ -169,10 +169,8 @@ def build_graph_result(
 
     Document-local node IDs come directly from ``assembly``.  Relations are
     grouped only by their exact remapped endpoints, predicate, and negation
-    state.  A relation between distinct mentions that assemble to one node is
-    suppressed because the current architecture provides no evidence that it
-    is a meaningful conceptual self-relation.  An explicit relation whose
-    source and target are the same mention is retained.
+    state.  Grounded relations are retained after endpoint remapping, including
+    relations whose distinct mention endpoints assemble to the same node.
     """
 
     document = GraphDocument(document_id)
@@ -195,9 +193,6 @@ def build_graph_result(
 
         source_node = mention_map[relation.source]
         target_node = mention_map[relation.target]
-        if source_node == target_node and relation.source != relation.target:
-            continue
-
         key = (source_node, target_node, relation.predicate, relation.negated)
         aggregated.setdefault(key, []).append(
             GraphEvidence(

@@ -1,4 +1,4 @@
-"""Run the composed GLiNER-to-controlled-LLM extraction path."""
+"""Run the composed HunFlair2-to-controlled-LLM extraction path."""
 
 from __future__ import annotations
 
@@ -37,14 +37,20 @@ def _parser() -> argparse.ArgumentParser:
         "--entity-backend",
         "--ner-backend",
         choices=("gliner", "hunflair2"),
-        default="gliner",
-        help="Entity model backend; use hunflair2 for the active prototype path.",
+        default="hunflair2",
+        help=(
+            "Entity model backend; defaults to pretrained HunFlair2. "
+            "Select gliner for the compatibility path."
+        ),
     )
     parser.add_argument(
         "--entity-label",
         action="append",
         dest="entity_labels",
-        help="Allowed entity label (repeatable)",
+        help=(
+            "Allowed GLiNER entity label (repeatable; requires "
+            "--entity-backend gliner)."
+        ),
     )
     parser.add_argument("--entity-threshold", type=float, default=0.5)
     parser.add_argument("--device", choices=("cpu", "cuda"))

@@ -128,7 +128,7 @@ class GraphBoundaryTests(unittest.TestCase):
         )
         self.assertEqual(len(graph.edges[0].evidence), 2)
 
-    def test_assembly_induced_self_edges_are_suppressed_but_explicit_self_is_retained(self):
+    def test_assembly_induced_self_edges_retain_grounded_evidence(self):
         text = "BRCA1 interacts with BRCA1."
         first = text.index("BRCA1")
         second = text.rindex("BRCA1")
@@ -138,15 +138,71 @@ class GraphBoundaryTests(unittest.TestCase):
         )
         assembly = assemble_document_entities(mentions, text)
 
-        assembly_induced = Relation("E1", "E2", "interacts", "BRCA1 interacts with BRCA1", False)
-        explicit_self = Relation("E1", "E1", "self-associates", "BRCA1 interacts with BRCA1", False)
+        assembly_induced = Relation(
+            "E1",
+            "E2",
+            "interacts",
+            "BRCA1 interacts with BRCA1",
+            True,
+            surface_form="interacts",
+            score=0.73,
+        )
 
-        suppressed = build_graph_result("paper-1", assembly, (assembly_induced,))
-        retained = build_graph_result("paper-1", assembly, (explicit_self,))
+        graph = build_graph_result("paper-1", assembly, (assembly_induced,))
 
-        self.assertEqual(suppressed.edges, ())
-        self.assertEqual(len(retained.edges), 1)
-        self.assertEqual(retained.edges[0].source, retained.edges[0].target)
+        self.assertNotEqual(assembly_induced.source, assembly_induced.target)
+        self.assertEqual(len(graph.edges), 1)
+        edge = graph.edges[0]
+        self.assertEqual((edge.source, edge.target), ("doc_e_001", "doc_e_001"))
+        self.assertEqual(edge.predicate, "interacts")
+        self.assertTrue(edge.negated)
+        self.assertEqual(edge.evidence[0].text, assembly_induced.evidence)
+        self.assertEqual(edge.evidence[0].surface_form, assembly_induced.surface_form)
+        self.assertEqual(edge.evidence[0].score, assembly_induced.score)
+
+    def test_duplicate_assembly_induced_self_edges_aggregate_all_evidence(self):
+        text = "BRCA1 interacts with BRCA1. BRCA1 interacts with BRCA1."
+        first = text.index("BRCA1")
+        second = text.index("BRCA1", first + 1)
+        third = text.index("BRCA1", second + 1)
+        fourth = text.rindex("BRCA1")
+        mentions = (
+            Entity("E1", "BRCA1", "Gene", first, first + 5),
+            Entity("E2", "BRCA1", "Gene", second, second + 5),
+            Entity("E3", "BRCA1", "Gene", third, third + 5),
+            Entity("E4", "BRCA1", "Gene", fourth, fourth + 5),
+        )
+        assembly = assemble_document_entities(mentions, text)
+        relations = (
+            Relation(
+                "E3",
+                "E4",
+                "interacts",
+                "BRCA1 interacts with BRCA1",
+                False,
+                surface_form="interacts",
+                score=0.8,
+            ),
+            Relation(
+                "E1",
+                "E2",
+                "interacts",
+                "BRCA1 interacts with BRCA1",
+                False,
+                surface_form="interacts",
+                score=0.2,
+            ),
+        )
+
+        graph = build_graph_result("paper-1", assembly, relations)
+
+        self.assertEqual(len(graph.edges), 1)
+        edge = graph.edges[0]
+        self.assertEqual((edge.source, edge.target), ("doc_e_001", "doc_e_001"))
+        self.assertEqual(
+            tuple(evidence.score for evidence in edge.evidence), (0.2, 0.8)
+        )
+        self.assertEqual(len(edge.evidence), 2)
 
     def test_result_and_json_are_deterministic_and_json_serializable(self):
         text = "BRCA1 affects disease; drug affects BRCA1."

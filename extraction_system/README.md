@@ -1,9 +1,10 @@
 # Biomedical Extractor
 
 The active path is core biomedical named-entity recognition (NER) using the
-model-independent `EntityExtractor` contract. Relation implementations remain
-preserved for later work, but relation extraction is deferred until the NER layer
-passes an explicit quality gate.
+model-independent `EntityExtractor` contract. Legacy relation implementations
+remain preserved for later work; the composed HunFlair2 plus grounded LLM
+relation prototype is available downstream but is not the active NER quality
+target.
 
 ## Setup
 
@@ -22,9 +23,10 @@ biomedical text -> core biomedical NER -> NER evaluation / model selection
                  -> future biomedical entity normalization -> STOP
 ```
 
-The default GLiNER path runs one core-label pass. Biological-process extraction,
-biomedical identity linking, relation changes, and live LLM calls are not part of
-the current NER workstream. See [`docs/product/CURRENT_SPEC.md`](docs/product/CURRENT_SPEC.md)
+The entity-only GLiNER path runs one core-label pass, while the composed
+`biomedical-extract-llm` path defaults to pretrained HunFlair2. Biological-process
+extraction, biomedical identity linking, and live LLM calls are not part of the
+current NER quality workstream. See [`docs/product/CURRENT_SPEC.md`](docs/product/CURRENT_SPEC.md)
 and [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) for the current contracts.
 
 ## Active NER inspection
@@ -93,15 +95,16 @@ uv run --env-file .env biomedical-re `
   --entities $entities
 ```
 
-Run the composed GLiNER → LLM relation path:
+Run the composed HunFlair2 → LLM relation path:
 
 ```powershell
 uv run --env-file .env biomedical-extract-llm `
   --text "BRCA1 is associated with breast cancer." `
-  --entity-label gene `
-  --entity-label disease `
   --device cpu
 ```
+
+The compatibility GLiNER path remains available with
+`--entity-backend gliner` and explicit `--entity-label` values.
 
 Programmatic composition uses `LLMExtractionPipeline`; relation-only callers
 can instantiate `LLMRelationExtractor` with their own `Entity` values. The

@@ -66,14 +66,14 @@ class LLMExtractionPipeline:
         entity_threshold: float = 0.5,
         device: str | None = None,
         llm_config: OpenAIConfig | None = None,
-        entity_backend: str = "gliner",
+        entity_backend: str = "hunflair2",
         hunflair2_model: str = HUNFLAIR2_MODEL_IDENTIFIER,
         hunflair2_runtime_python: Path | str | None = None,
         hunflair2_runtime_script: Path | str | None = None,
         hunflair2_runtime_cache: Path | str = Path(".cache/hunflair2"),
         hunflair2_offline: bool = False,
     ) -> LLMExtractionPipeline:
-        """Load the selected NER backend and the configured OpenAI harness."""
+        """Load the selected NER backend, HunFlair2 by default, and the LLM harness."""
 
         if entity_backend == "gliner":
             entity_extractor = GLiNERBioMedExtractor.from_pretrained(

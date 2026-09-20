@@ -99,11 +99,12 @@ entities = entity_extractor.extract_entities(text)
 ```
 
 The active composed prototype is constructed with
-`LLMExtractionPipeline.from_hunflair2()` or with
-`biomedical-extract-llm --entity-backend hunflair2`. It runs the isolated
-pretrained HunFlair2 model over the supplied document and passes the normalized
-entities directly to the existing grounded relation extractor. HunFlair2's
-official labels are retained unchanged in `Entity.type`.
+`LLMExtractionPipeline.from_pretrained()` (which defaults to HunFlair2), with
+the `LLMExtractionPipeline.from_hunflair2()` convenience factory, or with
+`biomedical-extract-llm` (which also defaults to HunFlair2). It runs the
+isolated pretrained HunFlair2 model over the supplied document and passes the
+normalized entities directly to the existing grounded relation extractor.
+HunFlair2's official labels are retained unchanged in `Entity.type`.
 
 The existing GLiNER-BioMed path remains available for compatibility and runs one
 model pass over its core schema when selected:
@@ -302,10 +303,9 @@ runtime dependencies remain isolated from the main production environment.
 - Assembly preserves every mention and maps each mention ID to exactly one
   document-local entity ID.
 - Graph output reuses assembled node IDs, rejects dangling relation endpoints,
-  preserves direction, negation, and verbatim evidence, and does not rewrite
-  predicates.
-- Assembly-induced self-edges are suppressed unless the relation explicitly uses
-  the same mention as both endpoints.
+  preserves direction, negation, and verbatim evidence, does not rewrite
+  predicates, and retains grounded relations when endpoint remapping produces a
+  self-edge.
 - Biomedical entity normalization/linking is not implemented in this task.
 - Output is machine-consumable and does not require model-specific objects.
 - HunFlair2 is the active prototype NER foundation, while its Flair/SciSpaCy
@@ -350,9 +350,9 @@ complete.
 `LLMExtractionPipeline.extract_graph(text, document_id=...)` returns one node for
 each assembled document entity and remaps grounded relation endpoints to those
 node IDs. Equivalent endpoint/predicate/negation claims share one edge with all
-source-evidence records retained; assembly-induced self-edges are suppressed.
-The result exposes `to_dict()` and deterministic `to_json()` serialization and
-contains no frontend styling.
+source-evidence records retained, including when the remapped edge is a
+self-edge. The result exposes `to_dict()` and deterministic `to_json()`
+serialization and contains no frontend styling.
 
 ### Deferred downstream work
 
