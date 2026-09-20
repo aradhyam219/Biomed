@@ -1,0 +1,260 @@
+{
+  "document": {
+    "id": "contract-05r-smoke-demo"
+  },
+  "nodes": [
+    {
+      "id": "doc_e_001",
+      "label": "KNTC1",
+      "type": "Gene",
+      "aliases": [
+        "kinetochore-associated protein 1",
+        "KNTC1"
+      ],
+      "mentions": [
+        {
+          "id": "E1",
+          "text": "KNTC1",
+          "type": "Gene",
+          "start": 0,
+          "end": 5,
+          "score": null
+        },
+        {
+          "id": "E2",
+          "text": "KNTC1",
+          "type": "Gene",
+          "start": 138,
+          "end": 143,
+          "score": null
+        },
+        {
+          "id": "E3",
+          "text": "KNTC1",
+          "type": "Gene",
+          "start": 1045,
+          "end": 1050,
+          "score": null
+        },
+        {
+          "id": "E4",
+          "text": "KNTC1",
+          "type": "Gene",
+          "start": 1185,
+          "end": 1190,
+          "score": null
+        }
+      ]
+    },
+    {
+      "id": "doc_e_002",
+      "label": "SK-Hep-1",
+      "type": "CellLine",
+      "aliases": [
+        "SK-Hep-1"
+      ],
+      "mentions": [
+        {
+          "id": "E5",
+          "text": "SK-Hep-1",
+          "type": "CellLine",
+          "start": 336,
+          "end": 344,
+          "score": null
+        }
+      ]
+    },
+    {
+      "id": "doc_e_003",
+      "label": "Huh7",
+      "type": "CellLine",
+      "aliases": [
+        "Huh7"
+      ],
+      "mentions": [
+        {
+          "id": "E6",
+          "text": "Huh7",
+          "type": "CellLine",
+          "start": 346,
+          "end": 350,
+          "score": null
+        }
+      ]
+    },
+    {
+      "id": "doc_e_004",
+      "label": "hepatocellular carcinoma",
+      "type": "Disease",
+      "aliases": [
+        "hepatocellular carcinoma"
+      ],
+      "mentions": [
+        {
+          "id": "E7",
+          "text": "hepatocellular carcinoma",
+          "type": "Disease",
+          "start": 148,
+          "end": 172,
+          "score": null
+        },
+        {
+          "id": "E8",
+          "text": "hepatocellular carcinoma",
+          "type": "Disease",
+          "start": 1084,
+          "end": 1108,
+          "score": null
+        }
+      ]
+    },
+    {
+      "id": "doc_e_005",
+      "label": "CDK1",
+      "type": "Gene",
+      "aliases": [
+        "cyclin-dependent kinase 1",
+        "CDK1"
+      ],
+      "mentions": [
+        {
+          "id": "E9",
+          "text": "cyclin-dependent kinase 1",
+          "type": "Gene",
+          "start": 1138,
+          "end": 1163,
+          "score": null
+        },
+        {
+          "id": "E10",
+          "text": "CDK1",
+          "type": "Gene",
+          "start": 1165,
+          "end": 1169,
+          "score": null
+        },
+        {
+          "id": "E11",
+          "text": "CDK1",
+          "type": "Gene",
+          "start": 1201,
+          "end": 1205,
+          "score": null
+        },
+        {
+          "id": "E12",
+          "text": "CDK1",
+          "type": "Gene",
+          "start": 1224,
+          "end": 1228,
+          "score": null
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "doc_r_001",
+      "source": "doc_e_001",
+      "target": "doc_e_004",
+      "predicate": "affects",
+      "negated": false,
+      "evidence": [
+        {
+          "text": "KNTC1 affects hepatocellular carcinoma",
+          "surface_form": "affects",
+          "score": null
+        }
+      ]
+    },
+    {
+      "id": "doc_r_002",
+      "source": "doc_e_001",
+      "target": "doc_e_005",
+      "predicate": "interacts with",
+      "negated": false,
+      "evidence": [
+        {
+          "text": "KNTC1 is involved in the regulation of hepatocellular carcinoma through its interaction with cyclin-dependent kinase 1 (CDK1).",
+          "surface_form": "its interaction with",
+          "score": null
+        },
+        {
+          "text": "CDK1 has interaction with KNTC1",
+          "surface_form": "has interaction with",
+          "score": null
+        }
+      ]
+    },
+    {
+      "id": "doc_r_003",
+      "source": "doc_e_001",
+      "target": "doc_e_002",
+      "predicate": "is knocked down in",
+      "negated": false,
+      "evidence": [
+        {
+          "text": "knockdown of KNTC1 in SK-Hep-1",
+          "surface_form": "knockdown of KNTC1 in",
+          "score": null
+        }
+      ]
+    },
+    {
+      "id": "doc_r_004",
+      "source": "doc_e_001",
+      "target": "doc_e_003",
+      "predicate": "is knocked down in",
+      "negated": false,
+      "evidence": [
+        {
+          "text": "knockdown of KNTC1 in SK-Hep-1 and Huh7 cells",
+          "surface_form": "knockdown of KNTC1 in",
+          "score": null
+        }
+      ]
+    },
+    {
+      "id": "doc_r_005",
+      "source": "doc_e_001",
+      "target": "doc_e_005",
+      "predicate": "knockdown reduces levels of",
+      "negated": false,
+      "evidence": [
+        {
+          "text": "knockdown of KNTC1 in SK-Hep-1 and Huh7 cells significantly reduced the protein as well as mRNA levels of CDK1",
+          "surface_form": "significantly reduced the protein as well as mRNA levels of CDK1",
+          "score": null
+        }
+      ]
+    },
+    {
+      "id": "doc_r_006",
+      "source": "doc_e_001",
+      "target": "doc_e_005",
+      "predicate": "positively correlates with expression of",
+      "negated": false,
+      "evidence": [
+        {
+          "text": "KNTC1 positive correlation with the expression of CDK1",
+          "surface_form": "positive correlation with the expression of",
+          "score": null
+        }
+      ]
+    },
+    {
+      "id": "doc_r_007",
+      "source": "doc_e_001",
+      "target": "doc_e_005",
+      "predicate": "regulates CDK1 levels",
+      "negated": false,
+      "evidence": [
+        {
+          "text": "KNTC1 was regulating CDK1 levels in HCC",
+          "surface_form": "was regulating",
+          "score": null
+        }
+      ]
+    }
+  ]
+}

@@ -48,6 +48,33 @@ entities = extractor.extract_entities("BRCA1 mutations are associated with breas
 Each returned entity exposes `id`, `text`, `type`, half-open `start`/`end`
 character offsets, and `score` when the model supplies one.
 
+## Graph JSON viewer
+
+The graph-ready JSON boundary has a small Cytoscape.js browser viewer. Launch it
+from the repository root after setup:
+
+```powershell
+.\.venv\Scripts\python.exe -m http.server 8765 --directory viewer
+```
+
+Open <http://127.0.0.1:8765/>. The viewer loads the tracked
+`viewer/graph-fixture.json` smoke/demo payload through the thin
+`viewer/adapter.js` layer. A future serialized `GraphResult.to_json()` payload
+can enter through the same adapter without exposing model/provider internals to
+the browser.
+
+Click a node to inspect its document-local ID, display label, entity type,
+aliases, and source mentions. Click an edge to inspect source/target direction,
+predicate, negation, and all retained evidence records. Node types use distinct
+shapes; negated edges use dashed lines and are explicitly labeled in the detail
+panel. Pan, zoom, and node dragging are provided by Cytoscape.js.
+
+Run the focused adapter tests with:
+
+```powershell
+npm test --prefix viewer
+```
+
 ## Preserved/deferred relation paths
 
 The following relation paths are preserved and remain callable for existing

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Biomedical Relationship Graph</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="https://unpkg.com/cytoscape@3.31.2/dist/cytoscape.min.js"></script>
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <main class="viewer-shell">
+      <header class="viewer-header">
+        <div>
+          <p class="eyebrow">Graph JSON viewer</p>
+          <h1>Biomedical Relationship Graph</h1>
+          <p class="subtitle">Inspect directed relationships back to the evidence that produced them.</p>
+        </div>
+        <div id="graph-summary" class="graph-summary" aria-live="polite">Loading graph…</div>
+      </header>
+
+      <div class="viewer-layout">
+        <section class="graph-section" aria-labelledby="graph-heading">
+          <div class="section-header">
+            <div>
+              <h2 id="graph-heading">Graph</h2>
+              <p class="section-note">Pan, zoom, drag nodes, or select a node/edge.</p>
+            </div>
+            <div id="entity-legend" class="entity-legend" aria-label="Entity type legend"></div>
+          </div>
+          <div id="cy" class="cy-container" role="img" aria-label="Interactive directed biomedical relationship graph"></div>
+          <p id="graph-status" class="graph-status" role="status" aria-live="polite">Loading graph fixture…</p>
+        </section>
+
+        <aside class="details-section" aria-labelledby="details-heading">
+          <div id="details" aria-live="polite">
+            <div class="detail-heading">
+              <span class="detail-eyebrow">INSPECTABLE GRAPH</span>
+              <span id="details-heading" class="detail-title">Details</span>
+            </div>
+            <p class="detail-intro">Select a node or relationship to inspect its evidence.</p>
+          </div>
+        </aside>
+      </div>
+
+      <footer class="viewer-footer">
+        Smoke/demo fixture · Cytoscape displays the supplied graph JSON and does not infer new relationships.
+      </footer>
+    </main>
+  </body>
+</html>

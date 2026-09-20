@@ -65,6 +65,28 @@ document-local nodes, remaps relation endpoints through the assembly map, and
 retains verbatim relation evidence. It does not perform model inference,
 biomedical identity normalization, or frontend styling.
 
+The tracked browser prototype is a separate downstream consumer of the same
+graph-ready JSON boundary:
+
+```text
+GraphResult / graph JSON
+        |
+        v
+viewer/adapter.js
+(domain values -> Cytoscape elements)
+        |
+        v
+Cytoscape.js interactive graph
+        |
+        v
+node/edge detail panels with source evidence
+```
+
+The viewer owns presentation-only Cytoscape classes and layout metadata. It
+does not run extraction, infer relations, rewrite predicates, or require a
+specific NER or relation provider. The checked-in fixture is a smoke/demo input;
+the same adapter can receive serialized backend output later.
+
 The postponed target-domain evaluation and adaptation path is separate from the
 prototype:
 
@@ -255,10 +277,10 @@ negation validation. The legacy GLiREL-compatible relation/evaluation path and
 its historical diagnostics remain preserved separately.
 
 Target-domain NER evaluation, model selection, and fine-tuning remain postponed.
-Browser visualization and external biomedical normalization are not part of this
-path. The graph boundary is limited to deterministic mention grouping, endpoint
-mapping, exact-key edge aggregation, evidence preservation, and JSON
-serialization.
+External biomedical normalization remains outside this path. The graph boundary
+is limited to deterministic mention grouping, endpoint mapping, exact-key edge
+aggregation, evidence preservation, and JSON serialization; the viewer consumes
+that boundary without adding graph semantics.
 
 Biological-process extraction is likewise deferred and, if required later, will be
 treated as a separate decision rather than added to the default core-NER pass.
@@ -271,6 +293,7 @@ treated as a separate decision rather than added to the default core-NER pass.
 | Adapter/output normalization | Convert one model's predictions into the local `Entity` value | Span integrity, schema validation, and stable output fields | Canonical biomedical identity linking or downstream reasoning |
 | Document-local entity assembly | Group safe same-document mentions and expose assembled nodes plus a mention-ID map | Deterministic node IDs, mention preservation, and type-compatible identity evidence | Biomedical normalization, cross-document identity, graph serialization, or relation rewriting |
 | Graph boundary | Convert assembled nodes and grounded mention relations into a stable graph result | Document ID, node identity reuse, endpoint remapping, edge aggregation, evidence, and JSON serialization | Model inference, semantic predicate rewriting, graph-database state, or frontend styling |
+| Graph viewer | Render graph JSON as an inspectable directed Cytoscape.js graph | Presentation mapping, pan/zoom, node/edge selection, aliases, mentions, negation styling, and all evidence display | Extraction, provider assumptions, relation inference, predicate rewriting, or graph persistence |
 | Biomedical entity normalization/linking | Future mention-to-identity resolution | Not implemented in the current path | Model selection before the NER quality gate |
 | Relation extraction | Existing grounded LLM relation implementation over supplied normalized entities | Source-grounded relation fields, endpoint integrity, evidence, negation, and validation | Entity discovery, graph assembly, or unsupported biological inference |
 | Evaluation and adaptation readiness | Measure core NER and prepare controlled target adaptation | Dataset adaptation, metrics, challenger adapters, model comparison, target-domain pilot/validator, frozen baseline, and isolated training readiness | Production extraction semantics, pseudo-gold, incomplete-gold training, or production model replacement |
@@ -312,6 +335,9 @@ treated as a separate decision rather than added to the default core-NER pass.
 - The graph boundary must not emit dangling endpoints, discard relation evidence,
   rewrite predicates, suppress grounded self-edges caused by endpoint remapping,
   or introduce frontend-specific styling.
+- The graph viewer must consume only graph-ready JSON and must not infer,
+  reverse, or semantically rewrite nodes, edges, predicates, negation, or
+  evidence.
 - The architecture must not grow speculative ontology, graph-database, or
   external normalization infrastructure beyond the graph-ready JSON boundary.
 

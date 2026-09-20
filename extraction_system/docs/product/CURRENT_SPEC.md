@@ -31,6 +31,18 @@ validated Entity mentions
                                       graph-ready result / JSON
 ```
 
+The graph-ready result can be inspected in the tracked plain browser viewer:
+
+```text
+GraphResult / graph JSON
+        ↓
+thin viewer adapter
+        ↓
+Cytoscape.js
+        ↓
+interactive evidence-backed graph
+```
+
 The model-independent `EntityExtractor` seam remains the stable NER boundary.
 HunFlair2 is the active prototype foundation through its isolated runtime bridge;
 the existing GLiNER adapter remains available for compatibility and evaluation.
@@ -53,6 +65,9 @@ AIONER / PubTator-style NER remains preserved as evaluation/history evidence.
 - a frontend-neutral graph-ready JSON boundary that remaps grounded relation
   endpoints to assembled node IDs, preserves direction, negation, and evidence,
   and deterministically aggregates equivalent edges;
+- a thin Cytoscape.js viewer that consumes graph JSON without provider coupling,
+  shows typed nodes and directed predicates, and exposes aliases, source
+  mentions, negation, and every retained evidence record through selection;
 - a frozen, evaluation-only comparison of the current GLiNER baseline with the
   official AIONER PubMedBERT-CRF artifact on the official BioRED Test split;
 - a frozen, evaluation-only challenger run of the official HunFlair2 five-class
@@ -76,8 +91,8 @@ not include:
 - target-domain NER evaluation, model selection, or fine-tuning; the existing
   reconnaissance, pilot, validator, and training-readiness assets remain
   preserved for later use;
-- relation-model quality evaluation, browser visualization, or live
-  external-provider smoke beyond the existing grounded extraction seam;
+- relation-model quality evaluation or live external-provider smoke beyond the
+  existing grounded extraction seam;
 - biomedical entity normalization/linking, meaning resolution of a mention to a
   canonical biomedical identity or identifier;
 - collapsing the isolated HunFlair2 runtime into the production dependency graph;
@@ -275,8 +290,9 @@ out of scope. Unsupported and ambiguous CRAFT annotations remain explicit in
 machine-readable reports and are excluded from primary metrics.
 
 The grounded relation path is an active composition capability. Relation-specific
-quality evaluation and browser visualization remain deferred; the graph boundary
-is a deterministic serialization seam over already validated relation output.
+quality evaluation remains deferred; the graph boundary is a deterministic
+serialization seam over already validated relation output, and the browser
+viewer is a presentation-only consumer of that seam.
 
 ## Quality gate and replacement seam
 
@@ -356,8 +372,30 @@ serialization and contains no frontend styling.
 
 ### Deferred downstream work
 
-Entity normalization/linking, browser visualization, target domain NER
-evaluation, and fine-tuning remain outside this prototype milestone.
+Entity normalization/linking, target domain NER evaluation, and fine-tuning remain
+outside this prototype milestone. The viewer does not change extraction semantics.
+
+### Graph JSON viewer
+
+Launch the local viewer from the repository root after the normal environment
+setup:
+
+```powershell
+.\.venv\Scripts\python.exe -m http.server 8765 --directory viewer
+```
+
+Open `http://127.0.0.1:8765/`. The page fetches the static
+`viewer/graph-fixture.json` smoke/demo payload, adapts its `nodes` and `edges`
+through `viewer/adapter.js`, and renders them with Cytoscape.js. Replacing that
+fixture with serialized `GraphResult.to_json()` output does not require a
+backend contract change.
+
+Select a node to inspect its ID, display label, type, aliases, and every source
+mention with mention ID, text, half-open offsets, and score when available.
+Select an edge to inspect source and target direction, the complete predicate,
+explicit negation state, and every retained evidence record with surface form
+and score when available. Negated edges use a dashed line and remain explicitly
+marked in the detail panel. The viewer also preserves valid self-edges.
 
 ## Related architecture
 
