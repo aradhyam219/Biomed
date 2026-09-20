@@ -1,260 +1,259 @@
 {
   "document": {
-    "id": "contract-05r-smoke-demo"
+    "id": "task-contract-05r-pmc10444909"
   },
-  "nodes": [
+  "edges": [
     {
-      "id": "doc_e_001",
-      "label": "KNTC1",
-      "type": "Gene",
-      "aliases": [
-        "kinetochore-associated protein 1",
-        "KNTC1"
-      ],
-      "mentions": [
+      "evidence": [
         {
-          "id": "E1",
-          "text": "KNTC1",
-          "type": "Gene",
-          "start": 0,
-          "end": 5,
-          "score": null
-        },
-        {
-          "id": "E2",
-          "text": "KNTC1",
-          "type": "Gene",
-          "start": 138,
-          "end": 143,
-          "score": null
-        },
-        {
-          "id": "E3",
-          "text": "KNTC1",
-          "type": "Gene",
-          "start": 1045,
-          "end": 1050,
-          "score": null
-        },
-        {
-          "id": "E4",
-          "text": "KNTC1",
-          "type": "Gene",
-          "start": 1185,
-          "end": 1190,
-          "score": null
+          "score": null,
+          "surface_form": "Knockdown of KNTC1 in SK-Hep-1",
+          "text": "Knockdown of KNTC1 in SK-Hep-1 and Huh7 significantly inhibited cell viability, migration ability and invasion ability."
         }
-      ]
+      ],
+      "id": "doc_r_001",
+      "negated": false,
+      "predicate": "knockdown occurs in",
+      "source": "doc_e_001",
+      "target": "doc_e_002"
     },
     {
-      "id": "doc_e_002",
-      "label": "SK-Hep-1",
-      "type": "CellLine",
+      "evidence": [
+        {
+          "score": null,
+          "surface_form": "Knockdown of KNTC1 in SK-Hep-1 and Huh7",
+          "text": "Knockdown of KNTC1 in SK-Hep-1 and Huh7 significantly inhibited cell viability, migration ability and invasion ability."
+        }
+      ],
+      "id": "doc_r_002",
+      "negated": false,
+      "predicate": "knockdown occurs in",
+      "source": "doc_e_001",
+      "target": "doc_e_003"
+    },
+    {
+      "evidence": [
+        {
+          "score": null,
+          "surface_form": "KNTC1 is involved in the regulation of hepatocellular carcinoma",
+          "text": "KNTC1 is involved in the regulation of hepatocellular carcinoma through its interaction with cyclin-dependent kinase 1 (CDK1)."
+        }
+      ],
+      "id": "doc_r_003",
+      "negated": false,
+      "predicate": "is involved in the regulation of",
+      "source": "doc_e_001",
+      "target": "doc_e_004"
+    },
+    {
+      "evidence": [
+        {
+          "score": null,
+          "surface_form": "regulation of KNTC1 on the viability, migration and invasive ability of hepatocellular carcinoma cell lines",
+          "text": "CDK1 overexpression was able to rescue the regulation of KNTC1 on the viability, migration and invasive ability of hepatocellular carcinoma cell lines."
+        }
+      ],
+      "id": "doc_r_004",
+      "negated": false,
+      "predicate": "regulates viability, migration and invasive ability of",
+      "source": "doc_e_001",
+      "target": "doc_e_004"
+    },
+    {
+      "evidence": [
+        {
+          "score": null,
+          "surface_form": "its interaction with cyclin-dependent kinase 1",
+          "text": "KNTC1 is involved in the regulation of hepatocellular carcinoma through its interaction with cyclin-dependent kinase 1 (CDK1)."
+        },
+        {
+          "score": null,
+          "surface_form": "its interaction with cyclin-dependent kinase 1 (CDK1)",
+          "text": "KNTC1 is involved in the regulation of hepatocellular carcinoma through its interaction with cyclin-dependent kinase 1 (CDK1)."
+        }
+      ],
+      "id": "doc_r_005",
+      "negated": false,
+      "predicate": "interacts with",
+      "source": "doc_e_001",
+      "target": "doc_e_005"
+    },
+    {
+      "evidence": [
+        {
+          "score": null,
+          "surface_form": "Knockdown of KNTC1 inhibited CDK1 expression",
+          "text": "Knockdown of KNTC1 inhibited CDK1 expression"
+        }
+      ],
+      "id": "doc_r_006",
+      "negated": false,
+      "predicate": "knockdown inhibits expression of",
+      "source": "doc_e_001",
+      "target": "doc_e_005"
+    },
+    {
+      "evidence": [
+        {
+          "score": null,
+          "surface_form": "CDK1 overexpression was able to rescue the regulation of KNTC1",
+          "text": "CDK1 overexpression was able to rescue the regulation of KNTC1 on the viability, migration and invasive ability of hepatocellular carcinoma cell lines."
+        }
+      ],
+      "id": "doc_r_007",
+      "negated": false,
+      "predicate": "overexpression rescues regulation of",
+      "source": "doc_e_005",
+      "target": "doc_e_001"
+    }
+  ],
+  "nodes": [
+    {
+      "aliases": [
+        "KNTC1"
+      ],
+      "id": "doc_e_001",
+      "label": "KNTC1",
+      "mentions": [
+        {
+          "end": 18,
+          "id": "E1",
+          "score": 0.9999899864196777,
+          "start": 13,
+          "text": "KNTC1",
+          "type": "Gene"
+        },
+        {
+          "end": 125,
+          "id": "E4",
+          "score": 0.9999901056289673,
+          "start": 120,
+          "text": "KNTC1",
+          "type": "Gene"
+        },
+        {
+          "end": 265,
+          "id": "E8",
+          "score": 0.9999899864196777,
+          "start": 260,
+          "text": "KNTC1",
+          "type": "Gene"
+        },
+        {
+          "end": 361,
+          "id": "E11",
+          "score": 0.9999901056289673,
+          "start": 356,
+          "text": "KNTC1",
+          "type": "Gene"
+        }
+      ],
+      "type": "Gene"
+    },
+    {
       "aliases": [
         "SK-Hep-1"
       ],
+      "id": "doc_e_002",
+      "label": "SK-Hep-1",
       "mentions": [
         {
-          "id": "E5",
+          "end": 30,
+          "id": "E2",
+          "score": 0.9296561678250631,
+          "start": 22,
           "text": "SK-Hep-1",
-          "type": "CellLine",
-          "start": 336,
-          "end": 344,
-          "score": null
+          "type": "CellLine"
         }
-      ]
+      ],
+      "type": "CellLine"
     },
     {
-      "id": "doc_e_003",
-      "label": "Huh7",
-      "type": "CellLine",
       "aliases": [
         "Huh7"
       ],
+      "id": "doc_e_003",
+      "label": "Huh7",
       "mentions": [
         {
-          "id": "E6",
+          "end": 39,
+          "id": "E3",
+          "score": 0.9943056702613831,
+          "start": 35,
           "text": "Huh7",
-          "type": "CellLine",
-          "start": 346,
-          "end": 350,
-          "score": null
+          "type": "CellLine"
         }
-      ]
+      ],
+      "type": "CellLine"
     },
     {
-      "id": "doc_e_004",
-      "label": "hepatocellular carcinoma",
-      "type": "Disease",
       "aliases": [
         "hepatocellular carcinoma"
       ],
+      "id": "doc_e_004",
+      "label": "hepatocellular carcinoma",
       "mentions": [
         {
-          "id": "E7",
+          "end": 183,
+          "id": "E5",
+          "score": 0.9999911189079285,
+          "start": 159,
           "text": "hepatocellular carcinoma",
-          "type": "Disease",
-          "start": 148,
-          "end": 172,
-          "score": null
+          "type": "Disease"
         },
         {
-          "id": "E8",
+          "end": 438,
+          "id": "E12",
+          "score": 0.9999894499778748,
+          "start": 414,
           "text": "hepatocellular carcinoma",
-          "type": "Disease",
-          "start": 1084,
-          "end": 1108,
-          "score": null
+          "type": "Disease"
         }
-      ]
+      ],
+      "type": "Disease"
     },
     {
-      "id": "doc_e_005",
-      "label": "CDK1",
-      "type": "Gene",
       "aliases": [
         "cyclin-dependent kinase 1",
         "CDK1"
       ],
+      "id": "doc_e_005",
+      "label": "CDK1",
       "mentions": [
         {
-          "id": "E9",
+          "end": 238,
+          "id": "E6",
+          "score": 0.9999799489974975,
+          "start": 213,
           "text": "cyclin-dependent kinase 1",
-          "type": "Gene",
-          "start": 1138,
-          "end": 1163,
-          "score": null
+          "type": "Gene"
         },
         {
+          "end": 244,
+          "id": "E7",
+          "score": 0.9999902248382568,
+          "start": 240,
+          "text": "CDK1",
+          "type": "Gene"
+        },
+        {
+          "end": 280,
+          "id": "E9",
+          "score": 0.9999901056289673,
+          "start": 276,
+          "text": "CDK1",
+          "type": "Gene"
+        },
+        {
+          "end": 303,
           "id": "E10",
+          "score": 0.999988317489624,
+          "start": 299,
           "text": "CDK1",
-          "type": "Gene",
-          "start": 1165,
-          "end": 1169,
-          "score": null
-        },
-        {
-          "id": "E11",
-          "text": "CDK1",
-          "type": "Gene",
-          "start": 1201,
-          "end": 1205,
-          "score": null
-        },
-        {
-          "id": "E12",
-          "text": "CDK1",
-          "type": "Gene",
-          "start": 1224,
-          "end": 1228,
-          "score": null
+          "type": "Gene"
         }
-      ]
-    }
-  ],
-  "edges": [
-    {
-      "id": "doc_r_001",
-      "source": "doc_e_001",
-      "target": "doc_e_004",
-      "predicate": "affects",
-      "negated": false,
-      "evidence": [
-        {
-          "text": "KNTC1 affects hepatocellular carcinoma",
-          "surface_form": "affects",
-          "score": null
-        }
-      ]
-    },
-    {
-      "id": "doc_r_002",
-      "source": "doc_e_001",
-      "target": "doc_e_005",
-      "predicate": "interacts with",
-      "negated": false,
-      "evidence": [
-        {
-          "text": "KNTC1 is involved in the regulation of hepatocellular carcinoma through its interaction with cyclin-dependent kinase 1 (CDK1).",
-          "surface_form": "its interaction with",
-          "score": null
-        },
-        {
-          "text": "CDK1 has interaction with KNTC1",
-          "surface_form": "has interaction with",
-          "score": null
-        }
-      ]
-    },
-    {
-      "id": "doc_r_003",
-      "source": "doc_e_001",
-      "target": "doc_e_002",
-      "predicate": "is knocked down in",
-      "negated": false,
-      "evidence": [
-        {
-          "text": "knockdown of KNTC1 in SK-Hep-1",
-          "surface_form": "knockdown of KNTC1 in",
-          "score": null
-        }
-      ]
-    },
-    {
-      "id": "doc_r_004",
-      "source": "doc_e_001",
-      "target": "doc_e_003",
-      "predicate": "is knocked down in",
-      "negated": false,
-      "evidence": [
-        {
-          "text": "knockdown of KNTC1 in SK-Hep-1 and Huh7 cells",
-          "surface_form": "knockdown of KNTC1 in",
-          "score": null
-        }
-      ]
-    },
-    {
-      "id": "doc_r_005",
-      "source": "doc_e_001",
-      "target": "doc_e_005",
-      "predicate": "knockdown reduces levels of",
-      "negated": false,
-      "evidence": [
-        {
-          "text": "knockdown of KNTC1 in SK-Hep-1 and Huh7 cells significantly reduced the protein as well as mRNA levels of CDK1",
-          "surface_form": "significantly reduced the protein as well as mRNA levels of CDK1",
-          "score": null
-        }
-      ]
-    },
-    {
-      "id": "doc_r_006",
-      "source": "doc_e_001",
-      "target": "doc_e_005",
-      "predicate": "positively correlates with expression of",
-      "negated": false,
-      "evidence": [
-        {
-          "text": "KNTC1 positive correlation with the expression of CDK1",
-          "surface_form": "positive correlation with the expression of",
-          "score": null
-        }
-      ]
-    },
-    {
-      "id": "doc_r_007",
-      "source": "doc_e_001",
-      "target": "doc_e_005",
-      "predicate": "regulates CDK1 levels",
-      "negated": false,
-      "evidence": [
-        {
-          "text": "KNTC1 was regulating CDK1 levels in HCC",
-          "surface_form": "was regulating",
-          "score": null
-        }
-      ]
+      ],
+      "type": "Gene"
     }
   ]
 }
