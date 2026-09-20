@@ -1,0 +1,2008 @@
+{
+  "assembled_entities": {
+    "document_entities": [
+      {
+        "aliases": [
+          "glucose"
+        ],
+        "id": "doc_e_001",
+        "label": "glucose",
+        "mentions": [
+          {
+            "end": 17,
+            "id": "E1",
+            "score": 0.9999959468841553,
+            "start": 10,
+            "text": "glucose",
+            "type": "Chemical"
+          },
+          {
+            "end": 315,
+            "id": "E9",
+            "score": 0.9999963045120239,
+            "start": 308,
+            "text": "glucose",
+            "type": "Chemical"
+          },
+          {
+            "end": 700,
+            "id": "E17",
+            "score": 0.9923303723335266,
+            "start": 693,
+            "text": "glucose",
+            "type": "Chemical"
+          },
+          {
+            "end": 959,
+            "id": "E26",
+            "score": 0.9999972581863403,
+            "start": 952,
+            "text": "glucose",
+            "type": "Chemical"
+          },
+          {
+            "end": 989,
+            "id": "E27",
+            "score": 0.9999971389770508,
+            "start": 982,
+            "text": "glucose",
+            "type": "Chemical"
+          },
+          {
+            "end": 1058,
+            "id": "E29",
+            "score": 0.9999969005584717,
+            "start": 1051,
+            "text": "glucose",
+            "type": "Chemical"
+          },
+          {
+            "end": 1125,
+            "id": "E30",
+            "score": 0.9999973773956299,
+            "start": 1118,
+            "text": "glucose",
+            "type": "Chemical"
+          },
+          {
+            "end": 1153,
+            "id": "E31",
+            "score": 0.999996542930603,
+            "start": 1146,
+            "text": "glucose",
+            "type": "Chemical"
+          }
+        ],
+        "type": "Chemical"
+      },
+      {
+        "aliases": [
+          "HMGB1",
+          "high mobility group box 1"
+        ],
+        "id": "doc_e_002",
+        "label": "HMGB1",
+        "mentions": [
+          {
+            "end": 44,
+            "id": "E2",
+            "score": 0.9999896287918091,
+            "start": 39,
+            "text": "HMGB1",
+            "type": "Gene"
+          },
+          {
+            "end": 477,
+            "id": "E10",
+            "score": 0.9999802708625793,
+            "start": 452,
+            "text": "high mobility group box 1",
+            "type": "Gene"
+          },
+          {
+            "end": 484,
+            "id": "E11",
+            "score": 0.9999892711639404,
+            "start": 479,
+            "text": "HMGB1",
+            "type": "Gene"
+          },
+          {
+            "end": 633,
+            "id": "E15",
+            "score": 0.9999890327453613,
+            "start": 628,
+            "text": "HMGB1",
+            "type": "Gene"
+          },
+          {
+            "end": 772,
+            "id": "E19",
+            "score": 0.9999886751174927,
+            "start": 767,
+            "text": "HMGB1",
+            "type": "Gene"
+          },
+          {
+            "end": 831,
+            "id": "E22",
+            "score": 0.9999892711639404,
+            "start": 826,
+            "text": "HMGB1",
+            "type": "Gene"
+          },
+          {
+            "end": 1037,
+            "id": "E28",
+            "score": 0.9999890327453613,
+            "start": 1032,
+            "text": "HMGB1",
+            "type": "Gene"
+          },
+          {
+            "end": 1172,
+            "id": "E32",
+            "score": 0.9999889135360718,
+            "start": 1167,
+            "text": "HMGB1",
+            "type": "Gene"
+          },
+          {
+            "end": 1455,
+            "id": "E36",
+            "score": 0.9999895095825195,
+            "start": 1450,
+            "text": "HMGB1",
+            "type": "Gene"
+          },
+          {
+            "end": 1582,
+            "id": "E37",
+            "score": 0.9999896287918091,
+            "start": 1577,
+            "text": "HMGB1",
+            "type": "Gene"
+          },
+          {
+            "end": 1718,
+            "id": "E39",
+            "score": 0.9999895095825195,
+            "start": 1713,
+            "text": "HMGB1",
+            "type": "Gene"
+          },
+          {
+            "end": 2084,
+            "id": "E42",
+            "score": 0.99998939037323,
+            "start": 2079,
+            "text": "HMGB1",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "hyperglycemia"
+        ],
+        "id": "doc_e_003",
+        "label": "hyperglycemia",
+        "mentions": [
+          {
+            "end": 78,
+            "id": "E3",
+            "score": 0.9999860525131226,
+            "start": 65,
+            "text": "hyperglycemia",
+            "type": "Disease"
+          },
+          {
+            "end": 203,
+            "id": "E8",
+            "score": 0.9999860525131226,
+            "start": 190,
+            "text": "hyperglycemia",
+            "type": "Disease"
+          },
+          {
+            "end": 502,
+            "id": "E12",
+            "score": 0.9999860525131226,
+            "start": 489,
+            "text": "hyperglycemia",
+            "type": "Disease"
+          },
+          {
+            "end": 671,
+            "id": "E16",
+            "score": 0.999985933303833,
+            "start": 658,
+            "text": "hyperglycemia",
+            "type": "Disease"
+          },
+          {
+            "end": 1610,
+            "id": "E38",
+            "score": 0.9999861717224121,
+            "start": 1597,
+            "text": "hyperglycemia",
+            "type": "Disease"
+          },
+          {
+            "end": 1805,
+            "id": "E40",
+            "score": 0.9999861717224121,
+            "start": 1792,
+            "text": "hyperglycemia",
+            "type": "Disease"
+          }
+        ],
+        "type": "Disease"
+      },
+      {
+        "aliases": [
+          "Streptozotocin",
+          "streptozotocin",
+          "STZ"
+        ],
+        "id": "doc_e_004",
+        "label": "STZ",
+        "mentions": [
+          {
+            "end": 98,
+            "id": "E4",
+            "score": 0.9999970197677612,
+            "start": 84,
+            "text": "Streptozotocin",
+            "type": "Chemical"
+          },
+          {
+            "end": 908,
+            "id": "E24",
+            "score": 0.9999972581863403,
+            "start": 894,
+            "text": "streptozotocin",
+            "type": "Chemical"
+          },
+          {
+            "end": 913,
+            "id": "E25",
+            "score": 0.9999974966049194,
+            "start": 910,
+            "text": "STZ",
+            "type": "Chemical"
+          }
+        ],
+        "type": "Chemical"
+      },
+      {
+        "aliases": [
+          "mouse"
+        ],
+        "id": "doc_e_005",
+        "label": "mouse",
+        "mentions": [
+          {
+            "end": 112,
+            "id": "E5",
+            "score": 0.9999873638153076,
+            "start": 107,
+            "text": "mouse",
+            "type": "Species"
+          },
+          {
+            "end": 799,
+            "id": "E21",
+            "score": 0.9999874830245972,
+            "start": 794,
+            "text": "mouse",
+            "type": "Species"
+          }
+        ],
+        "type": "Species"
+      },
+      {
+        "aliases": [
+          "Diabetes mellitus",
+          "DM"
+        ],
+        "id": "doc_e_006",
+        "label": "DM",
+        "mentions": [
+          {
+            "end": 137,
+            "id": "E6",
+            "score": 0.9999906420707703,
+            "start": 120,
+            "text": "Diabetes mellitus",
+            "type": "Disease"
+          },
+          {
+            "end": 141,
+            "id": "E7",
+            "score": 0.999985933303833,
+            "start": 139,
+            "text": "DM",
+            "type": "Disease"
+          },
+          {
+            "end": 583,
+            "id": "E14",
+            "score": 0.9999864101409912,
+            "start": 581,
+            "text": "DM",
+            "type": "Disease"
+          },
+          {
+            "end": 1831,
+            "id": "E41",
+            "score": 0.9999861717224121,
+            "start": 1829,
+            "text": "DM",
+            "type": "Disease"
+          },
+          {
+            "end": 2090,
+            "id": "E43",
+            "score": 0.9999861717224121,
+            "start": 2088,
+            "text": "DM",
+            "type": "Disease"
+          }
+        ],
+        "type": "Disease"
+      },
+      {
+        "aliases": [
+          "inflammation"
+        ],
+        "id": "doc_e_007",
+        "label": "inflammation",
+        "mentions": [
+          {
+            "end": 551,
+            "id": "E13",
+            "score": 0.9999861717224121,
+            "start": 539,
+            "text": "inflammation",
+            "type": "Disease"
+          }
+        ],
+        "type": "Disease"
+      },
+      {
+        "aliases": [
+          "tolerance"
+        ],
+        "id": "doc_e_008",
+        "label": "tolerance",
+        "mentions": [
+          {
+            "end": 710,
+            "id": "E18",
+            "score": 0.9684579968452454,
+            "start": 701,
+            "text": "tolerance",
+            "type": "Disease"
+          }
+        ],
+        "type": "Disease"
+      },
+      {
+        "aliases": [
+          "iHMGB1"
+        ],
+        "id": "doc_e_009",
+        "label": "iHMGB1",
+        "mentions": [
+          {
+            "end": 789,
+            "id": "E20",
+            "score": 0.9962314963340759,
+            "start": 783,
+            "text": "iHMGB1",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "Hyperglycemic",
+          "hyperglycemic"
+        ],
+        "id": "doc_e_010",
+        "label": "Hyperglycemic",
+        "mentions": [
+          {
+            "end": 856,
+            "id": "E23",
+            "score": 0.9999839067459106,
+            "start": 843,
+            "text": "Hyperglycemic",
+            "type": "Disease"
+          },
+          {
+            "end": 1434,
+            "id": "E34",
+            "score": 0.9999817609786987,
+            "start": 1421,
+            "text": "hyperglycemic",
+            "type": "Disease"
+          }
+        ],
+        "type": "Disease"
+      },
+      {
+        "aliases": [
+          "mice"
+        ],
+        "id": "doc_e_011",
+        "label": "mice",
+        "mentions": [
+          {
+            "end": 1187,
+            "id": "E33",
+            "score": 0.9999879598617554,
+            "start": 1183,
+            "text": "mice",
+            "type": "Species"
+          },
+          {
+            "end": 1439,
+            "id": "E35",
+            "score": 0.9999878406524658,
+            "start": 1435,
+            "text": "mice",
+            "type": "Species"
+          }
+        ],
+        "type": "Species"
+      }
+    ],
+    "mention_to_document_entity": {
+      "E1": "doc_e_001",
+      "E10": "doc_e_002",
+      "E11": "doc_e_002",
+      "E12": "doc_e_003",
+      "E13": "doc_e_007",
+      "E14": "doc_e_006",
+      "E15": "doc_e_002",
+      "E16": "doc_e_003",
+      "E17": "doc_e_001",
+      "E18": "doc_e_008",
+      "E19": "doc_e_002",
+      "E2": "doc_e_002",
+      "E20": "doc_e_009",
+      "E21": "doc_e_005",
+      "E22": "doc_e_002",
+      "E23": "doc_e_010",
+      "E24": "doc_e_004",
+      "E25": "doc_e_004",
+      "E26": "doc_e_001",
+      "E27": "doc_e_001",
+      "E28": "doc_e_002",
+      "E29": "doc_e_001",
+      "E3": "doc_e_003",
+      "E30": "doc_e_001",
+      "E31": "doc_e_001",
+      "E32": "doc_e_002",
+      "E33": "doc_e_011",
+      "E34": "doc_e_010",
+      "E35": "doc_e_011",
+      "E36": "doc_e_002",
+      "E37": "doc_e_002",
+      "E38": "doc_e_003",
+      "E39": "doc_e_002",
+      "E4": "doc_e_004",
+      "E40": "doc_e_003",
+      "E41": "doc_e_006",
+      "E42": "doc_e_002",
+      "E43": "doc_e_006",
+      "E5": "doc_e_005",
+      "E6": "doc_e_006",
+      "E7": "doc_e_006",
+      "E8": "doc_e_003",
+      "E9": "doc_e_001"
+    }
+  },
+  "completed_at_utc": "2026-09-20T13:03:04.211242+00:00",
+  "contract": "09B",
+  "entities": [
+    {
+      "end": 17,
+      "id": "E1",
+      "score": 0.9999959468841553,
+      "start": 10,
+      "text": "glucose",
+      "type": "Chemical"
+    },
+    {
+      "end": 44,
+      "id": "E2",
+      "score": 0.9999896287918091,
+      "start": 39,
+      "text": "HMGB1",
+      "type": "Gene"
+    },
+    {
+      "end": 78,
+      "id": "E3",
+      "score": 0.9999860525131226,
+      "start": 65,
+      "text": "hyperglycemia",
+      "type": "Disease"
+    },
+    {
+      "end": 98,
+      "id": "E4",
+      "score": 0.9999970197677612,
+      "start": 84,
+      "text": "Streptozotocin",
+      "type": "Chemical"
+    },
+    {
+      "end": 112,
+      "id": "E5",
+      "score": 0.9999873638153076,
+      "start": 107,
+      "text": "mouse",
+      "type": "Species"
+    },
+    {
+      "end": 137,
+      "id": "E6",
+      "score": 0.9999906420707703,
+      "start": 120,
+      "text": "Diabetes mellitus",
+      "type": "Disease"
+    },
+    {
+      "end": 141,
+      "id": "E7",
+      "score": 0.999985933303833,
+      "start": 139,
+      "text": "DM",
+      "type": "Disease"
+    },
+    {
+      "end": 203,
+      "id": "E8",
+      "score": 0.9999860525131226,
+      "start": 190,
+      "text": "hyperglycemia",
+      "type": "Disease"
+    },
+    {
+      "end": 315,
+      "id": "E9",
+      "score": 0.9999963045120239,
+      "start": 308,
+      "text": "glucose",
+      "type": "Chemical"
+    },
+    {
+      "end": 477,
+      "id": "E10",
+      "score": 0.9999802708625793,
+      "start": 452,
+      "text": "high mobility group box 1",
+      "type": "Gene"
+    },
+    {
+      "end": 484,
+      "id": "E11",
+      "score": 0.9999892711639404,
+      "start": 479,
+      "text": "HMGB1",
+      "type": "Gene"
+    },
+    {
+      "end": 502,
+      "id": "E12",
+      "score": 0.9999860525131226,
+      "start": 489,
+      "text": "hyperglycemia",
+      "type": "Disease"
+    },
+    {
+      "end": 551,
+      "id": "E13",
+      "score": 0.9999861717224121,
+      "start": 539,
+      "text": "inflammation",
+      "type": "Disease"
+    },
+    {
+      "end": 583,
+      "id": "E14",
+      "score": 0.9999864101409912,
+      "start": 581,
+      "text": "DM",
+      "type": "Disease"
+    },
+    {
+      "end": 633,
+      "id": "E15",
+      "score": 0.9999890327453613,
+      "start": 628,
+      "text": "HMGB1",
+      "type": "Gene"
+    },
+    {
+      "end": 671,
+      "id": "E16",
+      "score": 0.999985933303833,
+      "start": 658,
+      "text": "hyperglycemia",
+      "type": "Disease"
+    },
+    {
+      "end": 700,
+      "id": "E17",
+      "score": 0.9923303723335266,
+      "start": 693,
+      "text": "glucose",
+      "type": "Chemical"
+    },
+    {
+      "end": 710,
+      "id": "E18",
+      "score": 0.9684579968452454,
+      "start": 701,
+      "text": "tolerance",
+      "type": "Disease"
+    },
+    {
+      "end": 772,
+      "id": "E19",
+      "score": 0.9999886751174927,
+      "start": 767,
+      "text": "HMGB1",
+      "type": "Gene"
+    },
+    {
+      "end": 789,
+      "id": "E20",
+      "score": 0.9962314963340759,
+      "start": 783,
+      "text": "iHMGB1",
+      "type": "Gene"
+    },
+    {
+      "end": 799,
+      "id": "E21",
+      "score": 0.9999874830245972,
+      "start": 794,
+      "text": "mouse",
+      "type": "Species"
+    },
+    {
+      "end": 831,
+      "id": "E22",
+      "score": 0.9999892711639404,
+      "start": 826,
+      "text": "HMGB1",
+      "type": "Gene"
+    },
+    {
+      "end": 856,
+      "id": "E23",
+      "score": 0.9999839067459106,
+      "start": 843,
+      "text": "Hyperglycemic",
+      "type": "Disease"
+    },
+    {
+      "end": 908,
+      "id": "E24",
+      "score": 0.9999972581863403,
+      "start": 894,
+      "text": "streptozotocin",
+      "type": "Chemical"
+    },
+    {
+      "end": 913,
+      "id": "E25",
+      "score": 0.9999974966049194,
+      "start": 910,
+      "text": "STZ",
+      "type": "Chemical"
+    },
+    {
+      "end": 959,
+      "id": "E26",
+      "score": 0.9999972581863403,
+      "start": 952,
+      "text": "glucose",
+      "type": "Chemical"
+    },
+    {
+      "end": 989,
+      "id": "E27",
+      "score": 0.9999971389770508,
+      "start": 982,
+      "text": "glucose",
+      "type": "Chemical"
+    },
+    {
+      "end": 1037,
+      "id": "E28",
+      "score": 0.9999890327453613,
+      "start": 1032,
+      "text": "HMGB1",
+      "type": "Gene"
+    },
+    {
+      "end": 1058,
+      "id": "E29",
+      "score": 0.9999969005584717,
+      "start": 1051,
+      "text": "glucose",
+      "type": "Chemical"
+    },
+    {
+      "end": 1125,
+      "id": "E30",
+      "score": 0.9999973773956299,
+      "start": 1118,
+      "text": "glucose",
+      "type": "Chemical"
+    },
+    {
+      "end": 1153,
+      "id": "E31",
+      "score": 0.999996542930603,
+      "start": 1146,
+      "text": "glucose",
+      "type": "Chemical"
+    },
+    {
+      "end": 1172,
+      "id": "E32",
+      "score": 0.9999889135360718,
+      "start": 1167,
+      "text": "HMGB1",
+      "type": "Gene"
+    },
+    {
+      "end": 1187,
+      "id": "E33",
+      "score": 0.9999879598617554,
+      "start": 1183,
+      "text": "mice",
+      "type": "Species"
+    },
+    {
+      "end": 1434,
+      "id": "E34",
+      "score": 0.9999817609786987,
+      "start": 1421,
+      "text": "hyperglycemic",
+      "type": "Disease"
+    },
+    {
+      "end": 1439,
+      "id": "E35",
+      "score": 0.9999878406524658,
+      "start": 1435,
+      "text": "mice",
+      "type": "Species"
+    },
+    {
+      "end": 1455,
+      "id": "E36",
+      "score": 0.9999895095825195,
+      "start": 1450,
+      "text": "HMGB1",
+      "type": "Gene"
+    },
+    {
+      "end": 1582,
+      "id": "E37",
+      "score": 0.9999896287918091,
+      "start": 1577,
+      "text": "HMGB1",
+      "type": "Gene"
+    },
+    {
+      "end": 1610,
+      "id": "E38",
+      "score": 0.9999861717224121,
+      "start": 1597,
+      "text": "hyperglycemia",
+      "type": "Disease"
+    },
+    {
+      "end": 1718,
+      "id": "E39",
+      "score": 0.9999895095825195,
+      "start": 1713,
+      "text": "HMGB1",
+      "type": "Gene"
+    },
+    {
+      "end": 1805,
+      "id": "E40",
+      "score": 0.9999861717224121,
+      "start": 1792,
+      "text": "hyperglycemia",
+      "type": "Disease"
+    },
+    {
+      "end": 1831,
+      "id": "E41",
+      "score": 0.9999861717224121,
+      "start": 1829,
+      "text": "DM",
+      "type": "Disease"
+    },
+    {
+      "end": 2084,
+      "id": "E42",
+      "score": 0.99998939037323,
+      "start": 2079,
+      "text": "HMGB1",
+      "type": "Gene"
+    },
+    {
+      "end": 2090,
+      "id": "E43",
+      "score": 0.9999861717224121,
+      "start": 2088,
+      "text": "DM",
+      "type": "Disease"
+    }
+  ],
+  "graph": {
+    "document": {
+      "id": "PMCID:PMC10770459"
+    },
+    "edges": [
+      {
+        "evidence": [
+          {
+            "assertion": "Enhanced glucose tolerance was observed in HMGB1 knockdown mice.",
+            "context": [
+              "HMGB1 knockdown mice"
+            ],
+            "effects": [
+              "enhanced glucose tolerance"
+            ],
+            "intervention": "HMGB1 knockdown",
+            "score": null,
+            "surface_form": "enhanced glucose tolerance in HMGB1 knockdown mice",
+            "text": "Our findings showed a substantial reduction in glucose levels and enhanced glucose tolerance in HMGB1 knockdown mice."
+          }
+        ],
+        "id": "doc_r_001",
+        "negated": false,
+        "predicate": "associated_with_enhanced_glucose_tolerance",
+        "source": "doc_e_002",
+        "target": "doc_e_001"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "A substantial reduction in glucose levels was observed in HMGB1 knockdown mice.",
+            "context": [
+              "HMGB1 knockdown mice"
+            ],
+            "effects": [
+              "substantial reduction in glucose levels"
+            ],
+            "intervention": "HMGB1 knockdown",
+            "score": null,
+            "surface_form": "substantial reduction in glucose levels",
+            "text": "Our findings showed a substantial reduction in glucose levels and enhanced glucose tolerance in HMGB1 knockdown mice."
+          }
+        ],
+        "id": "doc_r_002",
+        "negated": false,
+        "predicate": "associated_with_reduced_glucose_levels",
+        "source": "doc_e_002",
+        "target": "doc_e_001"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "Longitudinal glucose measurements and oral glucose tolerance tests were used to evaluate the effect of HMGB1 knockdown on glucose metabolism.",
+            "context": [],
+            "effects": [],
+            "intervention": "HMGB1 knockdown",
+            "score": null,
+            "surface_form": "evaluate the effect of HMGB1 knockdown on glucose metabolism",
+            "text": "Hyperglycemic phenotype was induced using low dose streptozotocin (STZ) injections, followed by longitudinal glucose measurements and oral glucose tolerance tests to evaluate the effect of HMGB1 knockdown on glucose metabolism."
+          }
+        ],
+        "id": "doc_r_003",
+        "negated": false,
+        "predicate": "evaluated_for_effect_on",
+        "source": "doc_e_002",
+        "target": "doc_e_001"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "The study delivered the first direct evidence of a causal relationship between systemic HMGB1 knockdown and hyperglycemia in vivo; the association had remained unexamined prior to this research.",
+            "context": [
+              "in vivo"
+            ],
+            "effects": [],
+            "intervention": "systemic HMGB1 knockdown",
+            "score": null,
+            "surface_form": "causal relationship between systemic HMGB1 knockdown and hyperglycemia in vivo",
+            "text": "In conclusion, our present study delivers the first direct evidence of a causal relationship between systemic HMGB1 knockdown and hyperglycemia in vivo, an association that had remained unexamined prior to this research."
+          }
+        ],
+        "id": "doc_r_004",
+        "negated": false,
+        "predicate": "causal_relationship_with",
+        "source": "doc_e_002",
+        "target": "doc_e_003"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "The study explored the role of high mobility group box 1 (HMGB1) in hyperglycemia.",
+            "context": [],
+            "effects": [],
+            "intervention": null,
+            "score": null,
+            "surface_form": "role of high mobility group box 1 (HMGB1) in hyperglycemia",
+            "text": "In this study, we explored the role of high mobility group box 1 (HMGB1) in hyperglycemia, a protein implicated in initiating inflammation and strongly correlated with DM onset and progression."
+          }
+        ],
+        "id": "doc_r_005",
+        "negated": false,
+        "predicate": "explored_role_in",
+        "source": "doc_e_002",
+        "target": "doc_e_003"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "The study hypothesized that HMGB1 knockdown would mitigate hyperglycemia severity.",
+            "context": [],
+            "effects": [
+              "mitigation of hyperglycemia severity"
+            ],
+            "intervention": "HMGB1 knockdown",
+            "score": null,
+            "surface_form": "HMGB1 knockdown will mitigate hyperglycemia severity",
+            "text": "We hypothesized that HMGB1 knockdown will mitigate hyperglycemia severity and enhance glucose tolerance."
+          }
+        ],
+        "id": "doc_r_006",
+        "negated": false,
+        "predicate": "hypothesized_to_mitigate",
+        "source": "doc_e_002",
+        "target": "doc_e_003"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "Conditional HMGB1 knockdown mitigates hyperglycemia in a Streptozotocin induced mouse model.",
+            "context": [
+              "Streptozotocin induced mouse model"
+            ],
+            "effects": [
+              "mitigation of hyperglycemia"
+            ],
+            "intervention": "Conditional HMGB1 knockdown",
+            "score": null,
+            "surface_form": "Conditional HMGB1 knockdown mitigates hyperglycemia",
+            "text": "Restoring glucose balance: Conditional HMGB1 knockdown mitigates hyperglycemia in a Streptozotocin induced mouse model"
+          }
+        ],
+        "id": "doc_r_007",
+        "negated": false,
+        "predicate": "mitigates",
+        "source": "doc_e_002",
+        "target": "doc_e_003"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "This discovery positions HMGB1 knockdown as a potentially efficacious therapeutic target for addressing hyperglycemia.",
+            "context": [],
+            "effects": [],
+            "intervention": "HMGB1 knockdown",
+            "score": null,
+            "surface_form": "HMGB1 knockdown as a potentially efficacious therapeutic target for addressing hyperglycemia",
+            "text": "This discovery positions HMGB1 knockdown as a potentially efficacious therapeutic target for addressing hyperglycemia and, by extension, the DM epidemic."
+          }
+        ],
+        "id": "doc_r_008",
+        "negated": false,
+        "predicate": "potential_therapeutic_target_for",
+        "source": "doc_e_002",
+        "target": "doc_e_003"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "The study revealed the promising therapeutic potential of HMGB1 in DM management.",
+            "context": [],
+            "effects": [],
+            "intervention": null,
+            "score": null,
+            "surface_form": "promising therapeutic potential of HMGB1 in DM management",
+            "text": "Furthermore, we have revealed potential underlying mechanisms, establishing the essential groundwork for subsequent in-depth mechanistic investigations focused on further elucidating and harnessing the promising therapeutic potential of HMGB1 in DM management."
+          }
+        ],
+        "id": "doc_r_009",
+        "negated": false,
+        "predicate": "has_therapeutic_potential_in",
+        "source": "doc_e_002",
+        "target": "doc_e_006"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "By extension, HMGB1 knockdown is positioned as a potentially efficacious therapeutic target for the DM epidemic.",
+            "context": [],
+            "effects": [
+              "addressing the DM epidemic"
+            ],
+            "intervention": "HMGB1 knockdown",
+            "score": null,
+            "surface_form": "by extension, the DM epidemic",
+            "text": "This discovery positions HMGB1 knockdown as a potentially efficacious therapeutic target for addressing hyperglycemia and, by extension, the DM epidemic."
+          }
+        ],
+        "id": "doc_r_010",
+        "negated": false,
+        "predicate": "potential_therapeutic_target_for",
+        "source": "doc_e_002",
+        "target": "doc_e_006"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "HMGB1 is strongly correlated with DM onset and progression.",
+            "context": [],
+            "effects": [
+              "DM onset and progression"
+            ],
+            "intervention": null,
+            "score": null,
+            "surface_form": "strongly correlated with DM onset and progression",
+            "text": "In this study, we explored the role of high mobility group box 1 (HMGB1) in hyperglycemia, a protein implicated in initiating inflammation and strongly correlated with DM onset and progression."
+          }
+        ],
+        "id": "doc_r_011",
+        "negated": false,
+        "predicate": "strongly_correlated_with",
+        "source": "doc_e_002",
+        "target": "doc_e_006"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "HMGB1 is implicated in initiating inflammation.",
+            "context": [],
+            "effects": [],
+            "intervention": null,
+            "score": null,
+            "surface_form": "implicated in initiating inflammation",
+            "text": "In this study, we explored the role of high mobility group box 1 (HMGB1) in hyperglycemia, a protein implicated in initiating inflammation and strongly correlated with DM onset and progression."
+          }
+        ],
+        "id": "doc_r_012",
+        "negated": false,
+        "predicate": "implicated_in_initiating",
+        "source": "doc_e_002",
+        "target": "doc_e_007"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "The study hypothesized that HMGB1 knockdown would enhance glucose tolerance.",
+            "context": [],
+            "effects": [
+              "enhancement of glucose tolerance"
+            ],
+            "intervention": "HMGB1 knockdown",
+            "score": null,
+            "surface_form": "enhance glucose tolerance",
+            "text": "We hypothesized that HMGB1 knockdown will mitigate hyperglycemia severity and enhance glucose tolerance."
+          }
+        ],
+        "id": "doc_r_013",
+        "negated": false,
+        "predicate": "hypothesized_to_enhance",
+        "source": "doc_e_002",
+        "target": "doc_e_008"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "Low dose streptozotocin (STZ) injections induced the hyperglycemic phenotype.",
+            "context": [],
+            "effects": [
+              "induction of the hyperglycemic phenotype"
+            ],
+            "intervention": "low dose streptozotocin (STZ) injections",
+            "score": null,
+            "surface_form": "Hyperglycemic phenotype was induced using low dose streptozotocin (STZ) injections",
+            "text": "Hyperglycemic phenotype was induced using low dose streptozotocin (STZ) injections, followed by longitudinal glucose measurements and oral glucose tolerance tests to evaluate the effect of HMGB1 knockdown on glucose metabolism."
+          }
+        ],
+        "id": "doc_r_014",
+        "negated": false,
+        "predicate": "induces",
+        "source": "doc_e_004",
+        "target": "doc_e_010"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "The novel inducible HMGB1 knockout (iHMGB1 KO) mouse model exhibited systemic HMGB1 knockdown.",
+            "context": [
+              "mouse model"
+            ],
+            "effects": [
+              "systemic HMGB1 knockdown"
+            ],
+            "intervention": "inducible HMGB1 knockout (iHMGB1 KO)",
+            "score": null,
+            "surface_form": "mouse model exhibiting systemic HMGB1 knockdown",
+            "text": "To test this hypothesis, we utilized a novel inducible HMGB1 knockout (iHMGB1 KO) mouse model exhibiting systemic HMGB1 knockdown."
+          }
+        ],
+        "id": "doc_r_015",
+        "negated": false,
+        "predicate": "exhibits_knockdown_of",
+        "source": "doc_e_005",
+        "target": "doc_e_002"
+      }
+    ],
+    "nodes": [
+      {
+        "aliases": [
+          "glucose"
+        ],
+        "id": "doc_e_001",
+        "label": "glucose",
+        "mentions": [
+          {
+            "end": 17,
+            "id": "E1",
+            "score": 0.9999959468841553,
+            "start": 10,
+            "text": "glucose",
+            "type": "Chemical"
+          },
+          {
+            "end": 315,
+            "id": "E9",
+            "score": 0.9999963045120239,
+            "start": 308,
+            "text": "glucose",
+            "type": "Chemical"
+          },
+          {
+            "end": 700,
+            "id": "E17",
+            "score": 0.9923303723335266,
+            "start": 693,
+            "text": "glucose",
+            "type": "Chemical"
+          },
+          {
+            "end": 959,
+            "id": "E26",
+            "score": 0.9999972581863403,
+            "start": 952,
+            "text": "glucose",
+            "type": "Chemical"
+          },
+          {
+            "end": 989,
+            "id": "E27",
+            "score": 0.9999971389770508,
+            "start": 982,
+            "text": "glucose",
+            "type": "Chemical"
+          },
+          {
+            "end": 1058,
+            "id": "E29",
+            "score": 0.9999969005584717,
+            "start": 1051,
+            "text": "glucose",
+            "type": "Chemical"
+          },
+          {
+            "end": 1125,
+            "id": "E30",
+            "score": 0.9999973773956299,
+            "start": 1118,
+            "text": "glucose",
+            "type": "Chemical"
+          },
+          {
+            "end": 1153,
+            "id": "E31",
+            "score": 0.999996542930603,
+            "start": 1146,
+            "text": "glucose",
+            "type": "Chemical"
+          }
+        ],
+        "type": "Chemical"
+      },
+      {
+        "aliases": [
+          "HMGB1",
+          "high mobility group box 1"
+        ],
+        "id": "doc_e_002",
+        "label": "HMGB1",
+        "mentions": [
+          {
+            "end": 44,
+            "id": "E2",
+            "score": 0.9999896287918091,
+            "start": 39,
+            "text": "HMGB1",
+            "type": "Gene"
+          },
+          {
+            "end": 477,
+            "id": "E10",
+            "score": 0.9999802708625793,
+            "start": 452,
+            "text": "high mobility group box 1",
+            "type": "Gene"
+          },
+          {
+            "end": 484,
+            "id": "E11",
+            "score": 0.9999892711639404,
+            "start": 479,
+            "text": "HMGB1",
+            "type": "Gene"
+          },
+          {
+            "end": 633,
+            "id": "E15",
+            "score": 0.9999890327453613,
+            "start": 628,
+            "text": "HMGB1",
+            "type": "Gene"
+          },
+          {
+            "end": 772,
+            "id": "E19",
+            "score": 0.9999886751174927,
+            "start": 767,
+            "text": "HMGB1",
+            "type": "Gene"
+          },
+          {
+            "end": 831,
+            "id": "E22",
+            "score": 0.9999892711639404,
+            "start": 826,
+            "text": "HMGB1",
+            "type": "Gene"
+          },
+          {
+            "end": 1037,
+            "id": "E28",
+            "score": 0.9999890327453613,
+            "start": 1032,
+            "text": "HMGB1",
+            "type": "Gene"
+          },
+          {
+            "end": 1172,
+            "id": "E32",
+            "score": 0.9999889135360718,
+            "start": 1167,
+            "text": "HMGB1",
+            "type": "Gene"
+          },
+          {
+            "end": 1455,
+            "id": "E36",
+            "score": 0.9999895095825195,
+            "start": 1450,
+            "text": "HMGB1",
+            "type": "Gene"
+          },
+          {
+            "end": 1582,
+            "id": "E37",
+            "score": 0.9999896287918091,
+            "start": 1577,
+            "text": "HMGB1",
+            "type": "Gene"
+          },
+          {
+            "end": 1718,
+            "id": "E39",
+            "score": 0.9999895095825195,
+            "start": 1713,
+            "text": "HMGB1",
+            "type": "Gene"
+          },
+          {
+            "end": 2084,
+            "id": "E42",
+            "score": 0.99998939037323,
+            "start": 2079,
+            "text": "HMGB1",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "hyperglycemia"
+        ],
+        "id": "doc_e_003",
+        "label": "hyperglycemia",
+        "mentions": [
+          {
+            "end": 78,
+            "id": "E3",
+            "score": 0.9999860525131226,
+            "start": 65,
+            "text": "hyperglycemia",
+            "type": "Disease"
+          },
+          {
+            "end": 203,
+            "id": "E8",
+            "score": 0.9999860525131226,
+            "start": 190,
+            "text": "hyperglycemia",
+            "type": "Disease"
+          },
+          {
+            "end": 502,
+            "id": "E12",
+            "score": 0.9999860525131226,
+            "start": 489,
+            "text": "hyperglycemia",
+            "type": "Disease"
+          },
+          {
+            "end": 671,
+            "id": "E16",
+            "score": 0.999985933303833,
+            "start": 658,
+            "text": "hyperglycemia",
+            "type": "Disease"
+          },
+          {
+            "end": 1610,
+            "id": "E38",
+            "score": 0.9999861717224121,
+            "start": 1597,
+            "text": "hyperglycemia",
+            "type": "Disease"
+          },
+          {
+            "end": 1805,
+            "id": "E40",
+            "score": 0.9999861717224121,
+            "start": 1792,
+            "text": "hyperglycemia",
+            "type": "Disease"
+          }
+        ],
+        "type": "Disease"
+      },
+      {
+        "aliases": [
+          "Streptozotocin",
+          "streptozotocin",
+          "STZ"
+        ],
+        "id": "doc_e_004",
+        "label": "STZ",
+        "mentions": [
+          {
+            "end": 98,
+            "id": "E4",
+            "score": 0.9999970197677612,
+            "start": 84,
+            "text": "Streptozotocin",
+            "type": "Chemical"
+          },
+          {
+            "end": 908,
+            "id": "E24",
+            "score": 0.9999972581863403,
+            "start": 894,
+            "text": "streptozotocin",
+            "type": "Chemical"
+          },
+          {
+            "end": 913,
+            "id": "E25",
+            "score": 0.9999974966049194,
+            "start": 910,
+            "text": "STZ",
+            "type": "Chemical"
+          }
+        ],
+        "type": "Chemical"
+      },
+      {
+        "aliases": [
+          "mouse"
+        ],
+        "id": "doc_e_005",
+        "label": "mouse",
+        "mentions": [
+          {
+            "end": 112,
+            "id": "E5",
+            "score": 0.9999873638153076,
+            "start": 107,
+            "text": "mouse",
+            "type": "Species"
+          },
+          {
+            "end": 799,
+            "id": "E21",
+            "score": 0.9999874830245972,
+            "start": 794,
+            "text": "mouse",
+            "type": "Species"
+          }
+        ],
+        "type": "Species"
+      },
+      {
+        "aliases": [
+          "Diabetes mellitus",
+          "DM"
+        ],
+        "id": "doc_e_006",
+        "label": "DM",
+        "mentions": [
+          {
+            "end": 137,
+            "id": "E6",
+            "score": 0.9999906420707703,
+            "start": 120,
+            "text": "Diabetes mellitus",
+            "type": "Disease"
+          },
+          {
+            "end": 141,
+            "id": "E7",
+            "score": 0.999985933303833,
+            "start": 139,
+            "text": "DM",
+            "type": "Disease"
+          },
+          {
+            "end": 583,
+            "id": "E14",
+            "score": 0.9999864101409912,
+            "start": 581,
+            "text": "DM",
+            "type": "Disease"
+          },
+          {
+            "end": 1831,
+            "id": "E41",
+            "score": 0.9999861717224121,
+            "start": 1829,
+            "text": "DM",
+            "type": "Disease"
+          },
+          {
+            "end": 2090,
+            "id": "E43",
+            "score": 0.9999861717224121,
+            "start": 2088,
+            "text": "DM",
+            "type": "Disease"
+          }
+        ],
+        "type": "Disease"
+      },
+      {
+        "aliases": [
+          "inflammation"
+        ],
+        "id": "doc_e_007",
+        "label": "inflammation",
+        "mentions": [
+          {
+            "end": 551,
+            "id": "E13",
+            "score": 0.9999861717224121,
+            "start": 539,
+            "text": "inflammation",
+            "type": "Disease"
+          }
+        ],
+        "type": "Disease"
+      },
+      {
+        "aliases": [
+          "tolerance"
+        ],
+        "id": "doc_e_008",
+        "label": "tolerance",
+        "mentions": [
+          {
+            "end": 710,
+            "id": "E18",
+            "score": 0.9684579968452454,
+            "start": 701,
+            "text": "tolerance",
+            "type": "Disease"
+          }
+        ],
+        "type": "Disease"
+      },
+      {
+        "aliases": [
+          "iHMGB1"
+        ],
+        "id": "doc_e_009",
+        "label": "iHMGB1",
+        "mentions": [
+          {
+            "end": 789,
+            "id": "E20",
+            "score": 0.9962314963340759,
+            "start": 783,
+            "text": "iHMGB1",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "Hyperglycemic",
+          "hyperglycemic"
+        ],
+        "id": "doc_e_010",
+        "label": "Hyperglycemic",
+        "mentions": [
+          {
+            "end": 856,
+            "id": "E23",
+            "score": 0.9999839067459106,
+            "start": 843,
+            "text": "Hyperglycemic",
+            "type": "Disease"
+          },
+          {
+            "end": 1434,
+            "id": "E34",
+            "score": 0.9999817609786987,
+            "start": 1421,
+            "text": "hyperglycemic",
+            "type": "Disease"
+          }
+        ],
+        "type": "Disease"
+      },
+      {
+        "aliases": [
+          "mice"
+        ],
+        "id": "doc_e_011",
+        "label": "mice",
+        "mentions": [
+          {
+            "end": 1187,
+            "id": "E33",
+            "score": 0.9999879598617554,
+            "start": 1183,
+            "text": "mice",
+            "type": "Species"
+          },
+          {
+            "end": 1439,
+            "id": "E35",
+            "score": 0.9999878406524658,
+            "start": 1435,
+            "text": "mice",
+            "type": "Species"
+          }
+        ],
+        "type": "Species"
+      }
+    ]
+  },
+  "graph_json_path": "graphs/pmcid_pmc10770459.json",
+  "mention_level_rich_relations": [
+    {
+      "assertion": "Conditional HMGB1 knockdown mitigates hyperglycemia in a Streptozotocin induced mouse model.",
+      "context": [
+        "Streptozotocin induced mouse model"
+      ],
+      "effects": [
+        "mitigation of hyperglycemia"
+      ],
+      "evidence": "Restoring glucose balance: Conditional HMGB1 knockdown mitigates hyperglycemia in a Streptozotocin induced mouse model",
+      "intervention": "Conditional HMGB1 knockdown",
+      "negated": false,
+      "predicate": "mitigates",
+      "score": null,
+      "source": "E2",
+      "surface_form": "Conditional HMGB1 knockdown mitigates hyperglycemia",
+      "target": "E3"
+    },
+    {
+      "assertion": "The study explored the role of high mobility group box 1 (HMGB1) in hyperglycemia.",
+      "context": [],
+      "effects": [],
+      "evidence": "In this study, we explored the role of high mobility group box 1 (HMGB1) in hyperglycemia, a protein implicated in initiating inflammation and strongly correlated with DM onset and progression.",
+      "intervention": null,
+      "negated": false,
+      "predicate": "explored_role_in",
+      "score": null,
+      "source": "E10",
+      "surface_form": "role of high mobility group box 1 (HMGB1) in hyperglycemia",
+      "target": "E12"
+    },
+    {
+      "assertion": "HMGB1 is implicated in initiating inflammation.",
+      "context": [],
+      "effects": [],
+      "evidence": "In this study, we explored the role of high mobility group box 1 (HMGB1) in hyperglycemia, a protein implicated in initiating inflammation and strongly correlated with DM onset and progression.",
+      "intervention": null,
+      "negated": false,
+      "predicate": "implicated_in_initiating",
+      "score": null,
+      "source": "E11",
+      "surface_form": "implicated in initiating inflammation",
+      "target": "E13"
+    },
+    {
+      "assertion": "HMGB1 is strongly correlated with DM onset and progression.",
+      "context": [],
+      "effects": [
+        "DM onset and progression"
+      ],
+      "evidence": "In this study, we explored the role of high mobility group box 1 (HMGB1) in hyperglycemia, a protein implicated in initiating inflammation and strongly correlated with DM onset and progression.",
+      "intervention": null,
+      "negated": false,
+      "predicate": "strongly_correlated_with",
+      "score": null,
+      "source": "E11",
+      "surface_form": "strongly correlated with DM onset and progression",
+      "target": "E14"
+    },
+    {
+      "assertion": "The study hypothesized that HMGB1 knockdown would mitigate hyperglycemia severity.",
+      "context": [],
+      "effects": [
+        "mitigation of hyperglycemia severity"
+      ],
+      "evidence": "We hypothesized that HMGB1 knockdown will mitigate hyperglycemia severity and enhance glucose tolerance.",
+      "intervention": "HMGB1 knockdown",
+      "negated": false,
+      "predicate": "hypothesized_to_mitigate",
+      "score": null,
+      "source": "E15",
+      "surface_form": "HMGB1 knockdown will mitigate hyperglycemia severity",
+      "target": "E16"
+    },
+    {
+      "assertion": "The study hypothesized that HMGB1 knockdown would enhance glucose tolerance.",
+      "context": [],
+      "effects": [
+        "enhancement of glucose tolerance"
+      ],
+      "evidence": "We hypothesized that HMGB1 knockdown will mitigate hyperglycemia severity and enhance glucose tolerance.",
+      "intervention": "HMGB1 knockdown",
+      "negated": false,
+      "predicate": "hypothesized_to_enhance",
+      "score": null,
+      "source": "E15",
+      "surface_form": "enhance glucose tolerance",
+      "target": "E18"
+    },
+    {
+      "assertion": "The novel inducible HMGB1 knockout (iHMGB1 KO) mouse model exhibited systemic HMGB1 knockdown.",
+      "context": [
+        "mouse model"
+      ],
+      "effects": [
+        "systemic HMGB1 knockdown"
+      ],
+      "evidence": "To test this hypothesis, we utilized a novel inducible HMGB1 knockout (iHMGB1 KO) mouse model exhibiting systemic HMGB1 knockdown.",
+      "intervention": "inducible HMGB1 knockout (iHMGB1 KO)",
+      "negated": false,
+      "predicate": "exhibits_knockdown_of",
+      "score": null,
+      "source": "E21",
+      "surface_form": "mouse model exhibiting systemic HMGB1 knockdown",
+      "target": "E22"
+    },
+    {
+      "assertion": "Low dose streptozotocin (STZ) injections induced the hyperglycemic phenotype.",
+      "context": [],
+      "effects": [
+        "induction of the hyperglycemic phenotype"
+      ],
+      "evidence": "Hyperglycemic phenotype was induced using low dose streptozotocin (STZ) injections, followed by longitudinal glucose measurements and oral glucose tolerance tests to evaluate the effect of HMGB1 knockdown on glucose metabolism.",
+      "intervention": "low dose streptozotocin (STZ) injections",
+      "negated": false,
+      "predicate": "induces",
+      "score": null,
+      "source": "E24",
+      "surface_form": "Hyperglycemic phenotype was induced using low dose streptozotocin (STZ) injections",
+      "target": "E23"
+    },
+    {
+      "assertion": "Longitudinal glucose measurements and oral glucose tolerance tests were used to evaluate the effect of HMGB1 knockdown on glucose metabolism.",
+      "context": [],
+      "effects": [],
+      "evidence": "Hyperglycemic phenotype was induced using low dose streptozotocin (STZ) injections, followed by longitudinal glucose measurements and oral glucose tolerance tests to evaluate the effect of HMGB1 knockdown on glucose metabolism.",
+      "intervention": "HMGB1 knockdown",
+      "negated": false,
+      "predicate": "evaluated_for_effect_on",
+      "score": null,
+      "source": "E28",
+      "surface_form": "evaluate the effect of HMGB1 knockdown on glucose metabolism",
+      "target": "E29"
+    },
+    {
+      "assertion": "A substantial reduction in glucose levels was observed in HMGB1 knockdown mice.",
+      "context": [
+        "HMGB1 knockdown mice"
+      ],
+      "effects": [
+        "substantial reduction in glucose levels"
+      ],
+      "evidence": "Our findings showed a substantial reduction in glucose levels and enhanced glucose tolerance in HMGB1 knockdown mice.",
+      "intervention": "HMGB1 knockdown",
+      "negated": false,
+      "predicate": "associated_with_reduced_glucose_levels",
+      "score": null,
+      "source": "E32",
+      "surface_form": "substantial reduction in glucose levels",
+      "target": "E30"
+    },
+    {
+      "assertion": "Enhanced glucose tolerance was observed in HMGB1 knockdown mice.",
+      "context": [
+        "HMGB1 knockdown mice"
+      ],
+      "effects": [
+        "enhanced glucose tolerance"
+      ],
+      "evidence": "Our findings showed a substantial reduction in glucose levels and enhanced glucose tolerance in HMGB1 knockdown mice.",
+      "intervention": "HMGB1 knockdown",
+      "negated": false,
+      "predicate": "associated_with_enhanced_glucose_tolerance",
+      "score": null,
+      "source": "E32",
+      "surface_form": "enhanced glucose tolerance in HMGB1 knockdown mice",
+      "target": "E31"
+    },
+    {
+      "assertion": "The study delivered the first direct evidence of a causal relationship between systemic HMGB1 knockdown and hyperglycemia in vivo; the association had remained unexamined prior to this research.",
+      "context": [
+        "in vivo"
+      ],
+      "effects": [],
+      "evidence": "In conclusion, our present study delivers the first direct evidence of a causal relationship between systemic HMGB1 knockdown and hyperglycemia in vivo, an association that had remained unexamined prior to this research.",
+      "intervention": "systemic HMGB1 knockdown",
+      "negated": false,
+      "predicate": "causal_relationship_with",
+      "score": null,
+      "source": "E37",
+      "surface_form": "causal relationship between systemic HMGB1 knockdown and hyperglycemia in vivo",
+      "target": "E38"
+    },
+    {
+      "assertion": "This discovery positions HMGB1 knockdown as a potentially efficacious therapeutic target for addressing hyperglycemia.",
+      "context": [],
+      "effects": [],
+      "evidence": "This discovery positions HMGB1 knockdown as a potentially efficacious therapeutic target for addressing hyperglycemia and, by extension, the DM epidemic.",
+      "intervention": "HMGB1 knockdown",
+      "negated": false,
+      "predicate": "potential_therapeutic_target_for",
+      "score": null,
+      "source": "E39",
+      "surface_form": "HMGB1 knockdown as a potentially efficacious therapeutic target for addressing hyperglycemia",
+      "target": "E40"
+    },
+    {
+      "assertion": "By extension, HMGB1 knockdown is positioned as a potentially efficacious therapeutic target for the DM epidemic.",
+      "context": [],
+      "effects": [
+        "addressing the DM epidemic"
+      ],
+      "evidence": "This discovery positions HMGB1 knockdown as a potentially efficacious therapeutic target for addressing hyperglycemia and, by extension, the DM epidemic.",
+      "intervention": "HMGB1 knockdown",
+      "negated": false,
+      "predicate": "potential_therapeutic_target_for",
+      "score": null,
+      "source": "E39",
+      "surface_form": "by extension, the DM epidemic",
+      "target": "E41"
+    },
+    {
+      "assertion": "The study revealed the promising therapeutic potential of HMGB1 in DM management.",
+      "context": [],
+      "effects": [],
+      "evidence": "Furthermore, we have revealed potential underlying mechanisms, establishing the essential groundwork for subsequent in-depth mechanistic investigations focused on further elucidating and harnessing the promising therapeutic potential of HMGB1 in DM management.",
+      "intervention": null,
+      "negated": false,
+      "predicate": "has_therapeutic_potential_in",
+      "score": null,
+      "source": "E42",
+      "surface_form": "promising therapeutic potential of HMGB1 in DM management",
+      "target": "E43"
+    }
+  ],
+  "paper_id": "PMCID:PMC10770459",
+  "pmcid": "PMC10770459",
+  "pmid": "38187339",
+  "provider_attempts": 1,
+  "provider_failures": 0,
+  "repair_attempts": 0,
+  "runtime": {
+    "entity_backend": "hunflair2",
+    "graph_topology_changed": false,
+    "harness_max_retries": 2,
+    "hunflair2_device": "cpu",
+    "hunflair2_model": "hunflair/hunflair2-ner",
+    "implementation_commit": "0330923166a6b85584c1206c7bb21ae4721b99f3",
+    "max_completion_tokens": 128000,
+    "prompt_frozen_before_first_paper": true,
+    "reasoning_effort": "max",
+    "relation_model": "gpt-5.6-luna",
+    "relation_provider": "OpenAI Responses API",
+    "scope": "title plus complete abstract only"
+  },
+  "runtime_seconds": 375.86,
+  "semantic_audit": {
+    "counts": {
+      "bundles": 3,
+      "displayed_connections": 7,
+      "multi_evidence_graph_edges": 0,
+      "negated_relations": 0,
+      "relations_with_context": 5,
+      "relations_with_effects": 9,
+      "relations_with_intervention": 11,
+      "relations_with_no_optional_semantic_fields": 3,
+      "self_edges": 0
+    },
+    "flags": {
+      "apparently_duplicated_semantic_relation": [],
+      "context_used_as_mechanism": [],
+      "possible_third_participant_leakage": [
+        {
+          "entity_texts": [
+            "HMGB1",
+            "Streptozotocin",
+            "hyperglycemia",
+            "mouse",
+            "streptozotocin"
+          ],
+          "relation_index": 1
+        },
+        {
+          "entity_texts": [
+            "DM"
+          ],
+          "relation_index": 4
+        },
+        {
+          "entity_texts": [
+            "HMGB1",
+            "hyperglycemia"
+          ],
+          "relation_index": 5
+        },
+        {
+          "entity_texts": [
+            "HMGB1",
+            "glucose"
+          ],
+          "relation_index": 6
+        },
+        {
+          "entity_texts": [
+            "HMGB1",
+            "iHMGB1",
+            "mouse"
+          ],
+          "relation_index": 7
+        },
+        {
+          "entity_texts": [
+            "STZ",
+            "Streptozotocin",
+            "hyperglycemic"
+          ],
+          "relation_index": 8
+        },
+        {
+          "entity_texts": [
+            "HMGB1"
+          ],
+          "relation_index": 9
+        },
+        {
+          "entity_texts": [
+            "HMGB1",
+            "glucose",
+            "mice"
+          ],
+          "relation_index": 10
+        },
+        {
+          "entity_texts": [
+            "HMGB1",
+            "glucose",
+            "mice",
+            "tolerance"
+          ],
+          "relation_index": 11
+        },
+        {
+          "entity_texts": [
+            "HMGB1"
+          ],
+          "relation_index": 12
+        },
+        {
+          "entity_texts": [
+            "HMGB1"
+          ],
+          "relation_index": 13
+        },
+        {
+          "entity_texts": [
+            "DM",
+            "HMGB1"
+          ],
+          "relation_index": 14
+        }
+      ],
+      "unusually_dense_graph": [],
+      "very_broad_assertion": []
+    },
+    "note": "Signals are descriptive review prompts, not formal semantic accuracy metrics or automatic failures."
+  },
+  "source": {
+    "acquisition_mode": "full_text",
+    "canonical_full_text_sha256": "5b58cb81f2add5f1295313b08c07e575bffffa8c1a871f32436d278735b209a4",
+    "canonical_source_checksum": "54b50737cc0396039b9e747d9fcaebf43c686239de29e634c0b51b5cf496afbb",
+    "corpus_path": ".cache/ner_target_domain/target_corpus.json",
+    "scope": "title plus complete abstract",
+    "segments": [
+      {
+        "canonical_end": 118,
+        "canonical_start": 0,
+        "section": "title",
+        "text": "Restoring glucose balance: Conditional HMGB1 knockdown mitigates hyperglycemia in a Streptozotocin induced mouse model"
+      },
+      {
+        "canonical_end": 2102,
+        "canonical_start": 120,
+        "section": "abstract",
+        "text": "Diabetes mellitus (DM) poses a significant global health burden, with hyperglycemia being a primary contributor to complications and high morbidity associated with this disorder. Existing glucose management strategies have shown suboptimal effectiveness, necessitating alternative approaches. In this study, we explored the role of high mobility group box 1 (HMGB1) in hyperglycemia, a protein implicated in initiating inflammation and strongly correlated with DM onset and progression. We hypothesized that HMGB1 knockdown will mitigate hyperglycemia severity and enhance glucose tolerance. To test this hypothesis, we utilized a novel inducible HMGB1 knockout (iHMGB1 KO) mouse model exhibiting systemic HMGB1 knockdown. Hyperglycemic phenotype was induced using low dose streptozotocin (STZ) injections, followed by longitudinal glucose measurements and oral glucose tolerance tests to evaluate the effect of HMGB1 knockdown on glucose metabolism. Our findings showed a substantial reduction in glucose levels and enhanced glucose tolerance in HMGB1 knockdown mice. Additionally, we performed RNA sequencing analyses, which identified potential alternations in genes and molecular pathways within the liver and skeletal muscle tissue that may account for the in vivo phenotypic changes observed in hyperglycemic mice following HMGB1 knockdown. In conclusion, our present study delivers the first direct evidence of a causal relationship between systemic HMGB1 knockdown and hyperglycemia in vivo, an association that had remained unexamined prior to this research. This discovery positions HMGB1 knockdown as a potentially efficacious therapeutic target for addressing hyperglycemia and, by extension, the DM epidemic. Furthermore, we have revealed potential underlying mechanisms, establishing the essential groundwork for subsequent in-depth mechanistic investigations focused on further elucidating and harnessing the promising therapeutic potential of HMGB1 in DM management."
+      }
+    ],
+    "selected_source_sha256": "aa7359e710f0da93c17f1c8276d16ea6b725de1ba124b6d05eb722148147de29",
+    "source_format": "pmc_xml",
+    "text": "Restoring glucose balance: Conditional HMGB1 knockdown mitigates hyperglycemia in a Streptozotocin induced mouse model\n\nDiabetes mellitus (DM) poses a significant global health burden, with hyperglycemia being a primary contributor to complications and high morbidity associated with this disorder. Existing glucose management strategies have shown suboptimal effectiveness, necessitating alternative approaches. In this study, we explored the role of high mobility group box 1 (HMGB1) in hyperglycemia, a protein implicated in initiating inflammation and strongly correlated with DM onset and progression. We hypothesized that HMGB1 knockdown will mitigate hyperglycemia severity and enhance glucose tolerance. To test this hypothesis, we utilized a novel inducible HMGB1 knockout (iHMGB1 KO) mouse model exhibiting systemic HMGB1 knockdown. Hyperglycemic phenotype was induced using low dose streptozotocin (STZ) injections, followed by longitudinal glucose measurements and oral glucose tolerance tests to evaluate the effect of HMGB1 knockdown on glucose metabolism. Our findings showed a substantial reduction in glucose levels and enhanced glucose tolerance in HMGB1 knockdown mice. Additionally, we performed RNA sequencing analyses, which identified potential alternations in genes and molecular pathways within the liver and skeletal muscle tissue that may account for the in vivo phenotypic changes observed in hyperglycemic mice following HMGB1 knockdown. In conclusion, our present study delivers the first direct evidence of a causal relationship between systemic HMGB1 knockdown and hyperglycemia in vivo, an association that had remained unexamined prior to this research. This discovery positions HMGB1 knockdown as a potentially efficacious therapeutic target for addressing hyperglycemia and, by extension, the DM epidemic. Furthermore, we have revealed potential underlying mechanisms, establishing the essential groundwork for subsequent in-depth mechanistic investigations focused on further elucidating and harnessing the promising therapeutic potential of HMGB1 in DM management."
+  },
+  "started_at_utc": "2026-09-20T12:56:48.353714+00:00",
+  "status": "success",
+  "title": "Restoring glucose balance: Conditional HMGB1 knockdown mitigates hyperglycemia in a Streptozotocin induced mouse model"
+}

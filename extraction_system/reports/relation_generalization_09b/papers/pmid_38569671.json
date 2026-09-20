@@ -1,0 +1,2266 @@
+{
+  "assembled_entities": {
+    "document_entities": [
+      {
+        "aliases": [
+          "KIF23"
+        ],
+        "id": "doc_e_001",
+        "label": "KIF23",
+        "mentions": [
+          {
+            "end": 18,
+            "id": "E1",
+            "score": 0.99998939037323,
+            "start": 13,
+            "text": "KIF23",
+            "type": "Gene"
+          },
+          {
+            "end": 582,
+            "id": "E11",
+            "score": 0.9999898672103882,
+            "start": 577,
+            "text": "KIF23",
+            "type": "Gene"
+          },
+          {
+            "end": 723,
+            "id": "E12",
+            "score": 0.9999902248382568,
+            "start": 718,
+            "text": "KIF23",
+            "type": "Gene"
+          },
+          {
+            "end": 894,
+            "id": "E15",
+            "score": 0.9999901056289673,
+            "start": 889,
+            "text": "KIF23",
+            "type": "Gene"
+          },
+          {
+            "end": 1264,
+            "id": "E25",
+            "score": 0.9999903440475464,
+            "start": 1259,
+            "text": "KIF23",
+            "type": "Gene"
+          },
+          {
+            "end": 1300,
+            "id": "E26",
+            "score": 0.9999904632568359,
+            "start": 1295,
+            "text": "KIF23",
+            "type": "Gene"
+          },
+          {
+            "end": 1479,
+            "id": "E30",
+            "score": 0.9999903440475464,
+            "start": 1474,
+            "text": "KIF23",
+            "type": "Gene"
+          },
+          {
+            "end": 1633,
+            "id": "E36",
+            "score": 0.9999901056289673,
+            "start": 1628,
+            "text": "KIF23",
+            "type": "Gene"
+          },
+          {
+            "end": 1664,
+            "id": "E37",
+            "score": 0.9999901056289673,
+            "start": 1659,
+            "text": "KIF23",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "asthma",
+          "Asthma"
+        ],
+        "id": "doc_e_002",
+        "label": "asthma",
+        "mentions": [
+          {
+            "end": 55,
+            "id": "E2",
+            "score": 0.9999860525131226,
+            "start": 49,
+            "text": "asthma",
+            "type": "Disease"
+          },
+          {
+            "end": 89,
+            "id": "E3",
+            "score": 0.9999861717224121,
+            "start": 83,
+            "text": "Asthma",
+            "type": "Disease"
+          },
+          {
+            "end": 210,
+            "id": "E4",
+            "score": 0.9999861717224121,
+            "start": 204,
+            "text": "asthma",
+            "type": "Disease"
+          },
+          {
+            "end": 315,
+            "id": "E5",
+            "score": 0.9999861717224121,
+            "start": 309,
+            "text": "asthma",
+            "type": "Disease"
+          },
+          {
+            "end": 324,
+            "id": "E6",
+            "score": 0.9999861717224121,
+            "start": 318,
+            "text": "Asthma",
+            "type": "Disease"
+          },
+          {
+            "end": 475,
+            "id": "E10",
+            "score": 0.9999861717224121,
+            "start": 469,
+            "text": "asthma",
+            "type": "Disease"
+          },
+          {
+            "end": 965,
+            "id": "E17",
+            "score": 0.9999858140945435,
+            "start": 959,
+            "text": "asthma",
+            "type": "Disease"
+          },
+          {
+            "end": 1225,
+            "id": "E24",
+            "score": 0.9999862909317017,
+            "start": 1219,
+            "text": "asthma",
+            "type": "Disease"
+          },
+          {
+            "end": 1567,
+            "id": "E33",
+            "score": 0.9999861717224121,
+            "start": 1561,
+            "text": "asthma",
+            "type": "Disease"
+          },
+          {
+            "end": 1701,
+            "id": "E38",
+            "score": 0.9999864101409912,
+            "start": 1695,
+            "text": "asthma",
+            "type": "Disease"
+          }
+        ],
+        "type": "Disease"
+      },
+      {
+        "aliases": [
+          "mouse"
+        ],
+        "id": "doc_e_003",
+        "label": "mouse",
+        "mentions": [
+          {
+            "end": 330,
+            "id": "E7",
+            "score": 0.9999872446060181,
+            "start": 325,
+            "text": "mouse",
+            "type": "Species"
+          }
+        ],
+        "type": "Species"
+      },
+      {
+        "aliases": [
+          "ovalbumin",
+          "OVA"
+        ],
+        "id": "doc_e_004",
+        "label": "OVA",
+        "mentions": [
+          {
+            "end": 367,
+            "id": "E8",
+            "score": 0.9924644231796265,
+            "start": 358,
+            "text": "ovalbumin",
+            "type": "Gene"
+          },
+          {
+            "end": 372,
+            "id": "E9",
+            "score": 0.9567826390266418,
+            "start": 369,
+            "text": "OVA",
+            "type": "Gene"
+          },
+          {
+            "end": 1552,
+            "id": "E32",
+            "score": 0.9999891519546509,
+            "start": 1549,
+            "text": "OVA",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "inflammation"
+        ],
+        "id": "doc_e_005",
+        "label": "inflammation",
+        "mentions": [
+          {
+            "end": 749,
+            "id": "E13",
+            "score": 0.9999862909317017,
+            "start": 737,
+            "text": "inflammation",
+            "type": "Disease"
+          },
+          {
+            "end": 1367,
+            "id": "E27",
+            "score": 0.9999860525131226,
+            "start": 1355,
+            "text": "inflammation",
+            "type": "Disease"
+          },
+          {
+            "end": 1520,
+            "id": "E31",
+            "score": 0.9999861717224121,
+            "start": 1508,
+            "text": "inflammation",
+            "type": "Disease"
+          }
+        ],
+        "type": "Disease"
+      },
+      {
+        "aliases": [
+          "KIF23-related"
+        ],
+        "id": "doc_e_006",
+        "label": "KIF23-related",
+        "mentions": [
+          {
+            "end": 853,
+            "id": "E14",
+            "score": 0.9999902248382568,
+            "start": 840,
+            "text": "KIF23-related",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "p53"
+        ],
+        "id": "doc_e_007",
+        "label": "p53",
+        "mentions": [
+          {
+            "end": 901,
+            "id": "E16",
+            "score": 0.9999897480010986,
+            "start": 898,
+            "text": "p53",
+            "type": "Gene"
+          },
+          {
+            "end": 1590,
+            "id": "E35",
+            "score": 0.9999903440475464,
+            "start": 1587,
+            "text": "p53",
+            "type": "Gene"
+          },
+          {
+            "end": 1745,
+            "id": "E39",
+            "score": 0.9999898672103882,
+            "start": 1742,
+            "text": "p53",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "caspase-3"
+        ],
+        "id": "doc_e_008",
+        "label": "caspase-3",
+        "mentions": [
+          {
+            "end": 996,
+            "id": "E18",
+            "score": 0.9999899864196777,
+            "start": 987,
+            "text": "caspase-3",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "IgG"
+        ],
+        "id": "doc_e_009",
+        "label": "IgG",
+        "mentions": [
+          {
+            "end": 1001,
+            "id": "E19",
+            "score": 0.9997655749320984,
+            "start": 998,
+            "text": "IgG",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "inflammatory"
+        ],
+        "id": "doc_e_010",
+        "label": "inflammatory",
+        "mentions": [
+          {
+            "end": 1027,
+            "id": "E20",
+            "score": 0.9999814033508301,
+            "start": 1015,
+            "text": "inflammatory",
+            "type": "Disease"
+          }
+        ],
+        "type": "Disease"
+      },
+      {
+        "aliases": [
+          "interleukin (IL)-1β"
+        ],
+        "id": "doc_e_011",
+        "label": "interleukin (IL)-1β",
+        "mentions": [
+          {
+            "end": 1056,
+            "id": "E21",
+            "score": 0.9999801635742187,
+            "start": 1037,
+            "text": "interleukin (IL)-1β",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "KC"
+        ],
+        "id": "doc_e_012",
+        "label": "KC",
+        "mentions": [
+          {
+            "end": 1060,
+            "id": "E22",
+            "score": 0.9999871253967285,
+            "start": 1058,
+            "text": "KC",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "tumour necrosis factor (TNF)-α"
+        ],
+        "id": "doc_e_013",
+        "label": "tumour necrosis factor (TNF)-α",
+        "mentions": [
+          {
+            "end": 1095,
+            "id": "E23",
+            "score": 0.9999761581420898,
+            "start": 1065,
+            "text": "tumour necrosis factor (TNF)-α",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "BEAS-2B"
+        ],
+        "id": "doc_e_014",
+        "label": "BEAS-2B",
+        "mentions": [
+          {
+            "end": 1393,
+            "id": "E28",
+            "score": 0.986404538154602,
+            "start": 1386,
+            "text": "BEAS-2B",
+            "type": "CellLine"
+          }
+        ],
+        "type": "CellLine"
+      },
+      {
+        "aliases": [
+          "IL-13"
+        ],
+        "id": "doc_e_015",
+        "label": "IL-13",
+        "mentions": [
+          {
+            "end": 1416,
+            "id": "E29",
+            "score": 0.9999901056289673,
+            "start": 1411,
+            "text": "IL-13",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "mice"
+        ],
+        "id": "doc_e_016",
+        "label": "mice",
+        "mentions": [
+          {
+            "end": 1572,
+            "id": "E34",
+            "score": 0.9999865293502808,
+            "start": 1568,
+            "text": "mice",
+            "type": "Species"
+          }
+        ],
+        "type": "Species"
+      }
+    ],
+    "mention_to_document_entity": {
+      "E1": "doc_e_001",
+      "E10": "doc_e_002",
+      "E11": "doc_e_001",
+      "E12": "doc_e_001",
+      "E13": "doc_e_005",
+      "E14": "doc_e_006",
+      "E15": "doc_e_001",
+      "E16": "doc_e_007",
+      "E17": "doc_e_002",
+      "E18": "doc_e_008",
+      "E19": "doc_e_009",
+      "E2": "doc_e_002",
+      "E20": "doc_e_010",
+      "E21": "doc_e_011",
+      "E22": "doc_e_012",
+      "E23": "doc_e_013",
+      "E24": "doc_e_002",
+      "E25": "doc_e_001",
+      "E26": "doc_e_001",
+      "E27": "doc_e_005",
+      "E28": "doc_e_014",
+      "E29": "doc_e_015",
+      "E3": "doc_e_002",
+      "E30": "doc_e_001",
+      "E31": "doc_e_005",
+      "E32": "doc_e_004",
+      "E33": "doc_e_002",
+      "E34": "doc_e_016",
+      "E35": "doc_e_007",
+      "E36": "doc_e_001",
+      "E37": "doc_e_001",
+      "E38": "doc_e_002",
+      "E39": "doc_e_007",
+      "E4": "doc_e_002",
+      "E5": "doc_e_002",
+      "E6": "doc_e_002",
+      "E7": "doc_e_003",
+      "E8": "doc_e_004",
+      "E9": "doc_e_004"
+    }
+  },
+  "completed_at_utc": "2026-09-20T13:52:06.986399+00:00",
+  "contract": "09B",
+  "entities": [
+    {
+      "end": 18,
+      "id": "E1",
+      "score": 0.99998939037323,
+      "start": 13,
+      "text": "KIF23",
+      "type": "Gene"
+    },
+    {
+      "end": 55,
+      "id": "E2",
+      "score": 0.9999860525131226,
+      "start": 49,
+      "text": "asthma",
+      "type": "Disease"
+    },
+    {
+      "end": 89,
+      "id": "E3",
+      "score": 0.9999861717224121,
+      "start": 83,
+      "text": "Asthma",
+      "type": "Disease"
+    },
+    {
+      "end": 210,
+      "id": "E4",
+      "score": 0.9999861717224121,
+      "start": 204,
+      "text": "asthma",
+      "type": "Disease"
+    },
+    {
+      "end": 315,
+      "id": "E5",
+      "score": 0.9999861717224121,
+      "start": 309,
+      "text": "asthma",
+      "type": "Disease"
+    },
+    {
+      "end": 324,
+      "id": "E6",
+      "score": 0.9999861717224121,
+      "start": 318,
+      "text": "Asthma",
+      "type": "Disease"
+    },
+    {
+      "end": 330,
+      "id": "E7",
+      "score": 0.9999872446060181,
+      "start": 325,
+      "text": "mouse",
+      "type": "Species"
+    },
+    {
+      "end": 367,
+      "id": "E8",
+      "score": 0.9924644231796265,
+      "start": 358,
+      "text": "ovalbumin",
+      "type": "Gene"
+    },
+    {
+      "end": 372,
+      "id": "E9",
+      "score": 0.9567826390266418,
+      "start": 369,
+      "text": "OVA",
+      "type": "Gene"
+    },
+    {
+      "end": 475,
+      "id": "E10",
+      "score": 0.9999861717224121,
+      "start": 469,
+      "text": "asthma",
+      "type": "Disease"
+    },
+    {
+      "end": 582,
+      "id": "E11",
+      "score": 0.9999898672103882,
+      "start": 577,
+      "text": "KIF23",
+      "type": "Gene"
+    },
+    {
+      "end": 723,
+      "id": "E12",
+      "score": 0.9999902248382568,
+      "start": 718,
+      "text": "KIF23",
+      "type": "Gene"
+    },
+    {
+      "end": 749,
+      "id": "E13",
+      "score": 0.9999862909317017,
+      "start": 737,
+      "text": "inflammation",
+      "type": "Disease"
+    },
+    {
+      "end": 853,
+      "id": "E14",
+      "score": 0.9999902248382568,
+      "start": 840,
+      "text": "KIF23-related",
+      "type": "Gene"
+    },
+    {
+      "end": 894,
+      "id": "E15",
+      "score": 0.9999901056289673,
+      "start": 889,
+      "text": "KIF23",
+      "type": "Gene"
+    },
+    {
+      "end": 901,
+      "id": "E16",
+      "score": 0.9999897480010986,
+      "start": 898,
+      "text": "p53",
+      "type": "Gene"
+    },
+    {
+      "end": 965,
+      "id": "E17",
+      "score": 0.9999858140945435,
+      "start": 959,
+      "text": "asthma",
+      "type": "Disease"
+    },
+    {
+      "end": 996,
+      "id": "E18",
+      "score": 0.9999899864196777,
+      "start": 987,
+      "text": "caspase-3",
+      "type": "Gene"
+    },
+    {
+      "end": 1001,
+      "id": "E19",
+      "score": 0.9997655749320984,
+      "start": 998,
+      "text": "IgG",
+      "type": "Gene"
+    },
+    {
+      "end": 1027,
+      "id": "E20",
+      "score": 0.9999814033508301,
+      "start": 1015,
+      "text": "inflammatory",
+      "type": "Disease"
+    },
+    {
+      "end": 1056,
+      "id": "E21",
+      "score": 0.9999801635742187,
+      "start": 1037,
+      "text": "interleukin (IL)-1β",
+      "type": "Gene"
+    },
+    {
+      "end": 1060,
+      "id": "E22",
+      "score": 0.9999871253967285,
+      "start": 1058,
+      "text": "KC",
+      "type": "Gene"
+    },
+    {
+      "end": 1095,
+      "id": "E23",
+      "score": 0.9999761581420898,
+      "start": 1065,
+      "text": "tumour necrosis factor (TNF)-α",
+      "type": "Gene"
+    },
+    {
+      "end": 1225,
+      "id": "E24",
+      "score": 0.9999862909317017,
+      "start": 1219,
+      "text": "asthma",
+      "type": "Disease"
+    },
+    {
+      "end": 1264,
+      "id": "E25",
+      "score": 0.9999903440475464,
+      "start": 1259,
+      "text": "KIF23",
+      "type": "Gene"
+    },
+    {
+      "end": 1300,
+      "id": "E26",
+      "score": 0.9999904632568359,
+      "start": 1295,
+      "text": "KIF23",
+      "type": "Gene"
+    },
+    {
+      "end": 1367,
+      "id": "E27",
+      "score": 0.9999860525131226,
+      "start": 1355,
+      "text": "inflammation",
+      "type": "Disease"
+    },
+    {
+      "end": 1393,
+      "id": "E28",
+      "score": 0.986404538154602,
+      "start": 1386,
+      "text": "BEAS-2B",
+      "type": "CellLine"
+    },
+    {
+      "end": 1416,
+      "id": "E29",
+      "score": 0.9999901056289673,
+      "start": 1411,
+      "text": "IL-13",
+      "type": "Gene"
+    },
+    {
+      "end": 1479,
+      "id": "E30",
+      "score": 0.9999903440475464,
+      "start": 1474,
+      "text": "KIF23",
+      "type": "Gene"
+    },
+    {
+      "end": 1520,
+      "id": "E31",
+      "score": 0.9999861717224121,
+      "start": 1508,
+      "text": "inflammation",
+      "type": "Disease"
+    },
+    {
+      "end": 1552,
+      "id": "E32",
+      "score": 0.9999891519546509,
+      "start": 1549,
+      "text": "OVA",
+      "type": "Gene"
+    },
+    {
+      "end": 1567,
+      "id": "E33",
+      "score": 0.9999861717224121,
+      "start": 1561,
+      "text": "asthma",
+      "type": "Disease"
+    },
+    {
+      "end": 1572,
+      "id": "E34",
+      "score": 0.9999865293502808,
+      "start": 1568,
+      "text": "mice",
+      "type": "Species"
+    },
+    {
+      "end": 1590,
+      "id": "E35",
+      "score": 0.9999903440475464,
+      "start": 1587,
+      "text": "p53",
+      "type": "Gene"
+    },
+    {
+      "end": 1633,
+      "id": "E36",
+      "score": 0.9999901056289673,
+      "start": 1628,
+      "text": "KIF23",
+      "type": "Gene"
+    },
+    {
+      "end": 1664,
+      "id": "E37",
+      "score": 0.9999901056289673,
+      "start": 1659,
+      "text": "KIF23",
+      "type": "Gene"
+    },
+    {
+      "end": 1701,
+      "id": "E38",
+      "score": 0.9999864101409912,
+      "start": 1695,
+      "text": "asthma",
+      "type": "Disease"
+    },
+    {
+      "end": 1745,
+      "id": "E39",
+      "score": 0.9999898672103882,
+      "start": 1742,
+      "text": "p53",
+      "type": "Gene"
+    }
+  ],
+  "graph": {
+    "document": {
+      "id": "PMID:38569671"
+    },
+    "edges": [
+      {
+        "evidence": [
+          {
+            "assertion": "KIF23 was identified as one of seven hub genes in the asthma model.",
+            "context": [
+              "asthma model"
+            ],
+            "effects": [
+              "identified as one of seven hub genes"
+            ],
+            "intervention": null,
+            "score": null,
+            "surface_form": "7 hub genes including KIF23 were identified",
+            "text": "Transcriptome sequencing showed that there were 352 DEGs in the asthma model, and 7 hub genes including KIF23 were identified."
+          }
+        ],
+        "id": "doc_r_001",
+        "negated": false,
+        "predicate": "identified as a hub gene in",
+        "source": "doc_e_001",
+        "target": "doc_e_002"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "In vivo, knockdown of KIF23 inhibited oxidative stress, inflammation and pyroptosis to alleviate OVA-induced asthma in mice.",
+            "context": [
+              "in vivo",
+              "OVA-induced asthma mice"
+            ],
+            "effects": [
+              "inhibited oxidative stress",
+              "inhibited inflammation",
+              "inhibited pyroptosis",
+              "alleviated OVA-induced asthma"
+            ],
+            "intervention": "KIF23 knockdown",
+            "score": null,
+            "surface_form": "to alleviate OVA-induced asthma mice",
+            "text": "In vivo experiments verified that knockdown of KIF23 inhibited oxidative stress, inflammation and pyroptosis to alleviate OVA-induced asthma mice."
+          }
+        ],
+        "id": "doc_r_002",
+        "negated": false,
+        "predicate": "knockdown alleviates",
+        "source": "doc_e_001",
+        "target": "doc_e_002"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "Knockdown of KIF23 alleviated the progression of asthma by suppressing pyroptosis.",
+            "context": [],
+            "effects": [
+              "suppressed pyroptosis"
+            ],
+            "intervention": "KIF23 knockdown",
+            "score": null,
+            "surface_form": "alleviated the progression of asthma by suppressing pyroptosis",
+            "text": "Knockdown of KIF23 alleviated the progression of asthma by suppressing pyroptosis and inhibited p53 signalling pathway."
+          },
+          {
+            "assertion": "Knockdown of KIF23 alleviates the progression of asthma by inhibiting pyroptosis.",
+            "context": [],
+            "effects": [
+              "inhibited pyroptosis"
+            ],
+            "intervention": "KIF23 knockdown",
+            "score": null,
+            "surface_form": "alleviates the progression of asthma by inhibiting pyroptosis",
+            "text": "Knockdown of KIF23 alleviates the progression of asthma by inhibiting pyroptosis."
+          }
+        ],
+        "id": "doc_r_003",
+        "negated": false,
+        "predicate": "knockdown alleviates progression of",
+        "source": "doc_e_001",
+        "target": "doc_e_002"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "Effects of KIF23 knockdown on inflammation were detected.",
+            "context": [],
+            "effects": [],
+            "intervention": "KIF23 knockdown",
+            "score": null,
+            "surface_form": "Effects of KIF23 knockdown on inflammation",
+            "text": "Effects of KIF23 knockdown on inflammation, oxidative stress and pyroptosis were detected by ELISA and western blot."
+          }
+        ],
+        "id": "doc_r_004",
+        "negated": false,
+        "predicate": "knockdown has effects on",
+        "source": "doc_e_001",
+        "target": "doc_e_005"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "In vivo, knockdown of KIF23 inhibited inflammation in OVA-induced asthma mice.",
+            "context": [
+              "in vivo",
+              "OVA-induced asthma mice"
+            ],
+            "effects": [
+              "inhibited inflammation"
+            ],
+            "intervention": "KIF23 knockdown",
+            "score": null,
+            "surface_form": "inhibited oxidative stress, inflammation and pyroptosis",
+            "text": "In vivo experiments verified that knockdown of KIF23 inhibited oxidative stress, inflammation and pyroptosis to alleviate OVA-induced asthma mice."
+          },
+          {
+            "assertion": "In vitro, knockdown of KIF23 inhibited inflammation in BEAS-2B cells induced by IL-13.",
+            "context": [
+              "BEAS-2B cells induced by IL-13",
+              "in vitro"
+            ],
+            "effects": [
+              "inhibited inflammation"
+            ],
+            "intervention": "KIF23 knockdown",
+            "score": null,
+            "surface_form": "inhibited apoptosis, inflammation and pyroptosis",
+            "text": "Knockdown of KIF23 increased cell proliferation and inhibited apoptosis, inflammation and pyroptosis of BEAS-2B cells induced by IL-13 in vitro."
+          }
+        ],
+        "id": "doc_r_005",
+        "negated": false,
+        "predicate": "knockdown inhibits",
+        "source": "doc_e_001",
+        "target": "doc_e_005"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "The effect of KIF23 on p53 signalling pathway was explored.",
+            "context": [],
+            "effects": [],
+            "intervention": null,
+            "score": null,
+            "surface_form": "effect of KIF23 on p53 signalling pathway was explored",
+            "text": "After screening KIF23-related signalling pathways, the effect of KIF23 on p53 signalling pathway was explored by western blot."
+          }
+        ],
+        "id": "doc_r_006",
+        "negated": false,
+        "predicate": "effect investigated on",
+        "source": "doc_e_001",
+        "target": "doc_e_007"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "Knockdown of KIF23 inhibited p53 signalling pathway.",
+            "context": [],
+            "effects": [
+              "inhibited p53 signalling pathway"
+            ],
+            "intervention": "KIF23 knockdown",
+            "score": null,
+            "surface_form": "inhibited p53 signalling pathway",
+            "text": "Knockdown of KIF23 alleviated the progression of asthma by suppressing pyroptosis and inhibited p53 signalling pathway."
+          }
+        ],
+        "id": "doc_r_007",
+        "negated": false,
+        "predicate": "knockdown inhibits",
+        "source": "doc_e_001",
+        "target": "doc_e_007"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "The p53 signalling pathway was suppressed by KIF23 knockdown.",
+            "context": [],
+            "effects": [
+              "suppressed p53 signalling pathway"
+            ],
+            "intervention": "KIF23 knockdown",
+            "score": null,
+            "surface_form": "was suppressed by KIF23 knockdown",
+            "text": "In addition, p53 signalling pathway was suppressed by KIF23 knockdown."
+          }
+        ],
+        "id": "doc_r_008",
+        "negated": false,
+        "predicate": "knockdown suppresses",
+        "source": "doc_e_001",
+        "target": "doc_e_007"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "In vitro, knockdown of KIF23 increased cell proliferation and inhibited apoptosis of BEAS-2B cells induced by IL-13.",
+            "context": [
+              "BEAS-2B cells induced by IL-13",
+              "in vitro"
+            ],
+            "effects": [
+              "increased cell proliferation",
+              "inhibited apoptosis"
+            ],
+            "intervention": "KIF23 knockdown",
+            "score": null,
+            "surface_form": "increased cell proliferation and inhibited apoptosis",
+            "text": "Knockdown of KIF23 increased cell proliferation and inhibited apoptosis, inflammation and pyroptosis of BEAS-2B cells induced by IL-13 in vitro."
+          }
+        ],
+        "id": "doc_r_009",
+        "negated": false,
+        "predicate": "knockdown affects",
+        "source": "doc_e_001",
+        "target": "doc_e_014"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "Ovalbumin was used to establish the asthma mouse model.",
+            "context": [
+              "mouse model"
+            ],
+            "effects": [
+              "established the asthma mouse model"
+            ],
+            "intervention": "ovalbumin",
+            "score": null,
+            "surface_form": "established with ovalbumin (OVA)",
+            "text": "Asthma mouse model was established with ovalbumin (OVA)."
+          }
+        ],
+        "id": "doc_r_010",
+        "negated": false,
+        "predicate": "establishes mouse model of",
+        "source": "doc_e_004",
+        "target": "doc_e_002"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "OVA induced asthma in mice.",
+            "context": [
+              "in vivo",
+              "mice"
+            ],
+            "effects": [
+              "induced asthma"
+            ],
+            "intervention": "OVA",
+            "score": null,
+            "surface_form": "OVA-induced asthma mice",
+            "text": "In vivo experiments verified that knockdown of KIF23 inhibited oxidative stress, inflammation and pyroptosis to alleviate OVA-induced asthma mice."
+          }
+        ],
+        "id": "doc_r_011",
+        "negated": false,
+        "predicate": "induces",
+        "source": "doc_e_004",
+        "target": "doc_e_002"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "Caspase-3 levels were increased in the asthma model.",
+            "context": [
+              "asthma model"
+            ],
+            "effects": [
+              "increased caspase-3 levels"
+            ],
+            "intervention": null,
+            "score": null,
+            "surface_form": "were increased",
+            "text": "In the asthma model, the levels of caspase-3, IgG in serum and inflammatory factors (interleukin (IL)-1β, KC and tumour necrosis factor (TNF)-α) in serum and bronchoalveolar lavage fluid were increased."
+          }
+        ],
+        "id": "doc_r_012",
+        "negated": false,
+        "predicate": "increased in",
+        "source": "doc_e_008",
+        "target": "doc_e_002"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "IgG levels in serum were increased in the asthma model.",
+            "context": [
+              "asthma model",
+              "serum"
+            ],
+            "effects": [
+              "increased IgG levels"
+            ],
+            "intervention": null,
+            "score": null,
+            "surface_form": "were increased",
+            "text": "In the asthma model, the levels of caspase-3, IgG in serum and inflammatory factors (interleukin (IL)-1β, KC and tumour necrosis factor (TNF)-α) in serum and bronchoalveolar lavage fluid were increased."
+          }
+        ],
+        "id": "doc_r_013",
+        "negated": false,
+        "predicate": "increased in",
+        "source": "doc_e_009",
+        "target": "doc_e_002"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "Interleukin (IL)-1β levels in serum and bronchoalveolar lavage fluid were increased in the asthma model.",
+            "context": [
+              "asthma model",
+              "serum",
+              "bronchoalveolar lavage fluid"
+            ],
+            "effects": [
+              "increased IL-1β levels"
+            ],
+            "intervention": null,
+            "score": null,
+            "surface_form": "were increased",
+            "text": "In the asthma model, the levels of caspase-3, IgG in serum and inflammatory factors (interleukin (IL)-1β, KC and tumour necrosis factor (TNF)-α) in serum and bronchoalveolar lavage fluid were increased."
+          }
+        ],
+        "id": "doc_r_014",
+        "negated": false,
+        "predicate": "increased in",
+        "source": "doc_e_011",
+        "target": "doc_e_002"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "KC levels in serum and bronchoalveolar lavage fluid were increased in the asthma model.",
+            "context": [
+              "asthma model",
+              "serum",
+              "bronchoalveolar lavage fluid"
+            ],
+            "effects": [
+              "increased KC levels"
+            ],
+            "intervention": null,
+            "score": null,
+            "surface_form": "were increased",
+            "text": "In the asthma model, the levels of caspase-3, IgG in serum and inflammatory factors (interleukin (IL)-1β, KC and tumour necrosis factor (TNF)-α) in serum and bronchoalveolar lavage fluid were increased."
+          }
+        ],
+        "id": "doc_r_015",
+        "negated": false,
+        "predicate": "increased in",
+        "source": "doc_e_012",
+        "target": "doc_e_002"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "Tumour necrosis factor (TNF)-α levels in serum and bronchoalveolar lavage fluid were increased in the asthma model.",
+            "context": [
+              "asthma model",
+              "serum",
+              "bronchoalveolar lavage fluid"
+            ],
+            "effects": [
+              "increased TNF-α levels"
+            ],
+            "intervention": null,
+            "score": null,
+            "surface_form": "were increased",
+            "text": "In the asthma model, the levels of caspase-3, IgG in serum and inflammatory factors (interleukin (IL)-1β, KC and tumour necrosis factor (TNF)-α) in serum and bronchoalveolar lavage fluid were increased."
+          }
+        ],
+        "id": "doc_r_016",
+        "negated": false,
+        "predicate": "increased in",
+        "source": "doc_e_013",
+        "target": "doc_e_002"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "BEAS-2B cells were induced by IL-13 in vitro.",
+            "context": [
+              "in vitro"
+            ],
+            "effects": [],
+            "intervention": "IL-13",
+            "score": null,
+            "surface_form": "cells induced by IL-13",
+            "text": "Knockdown of KIF23 increased cell proliferation and inhibited apoptosis, inflammation and pyroptosis of BEAS-2B cells induced by IL-13 in vitro."
+          }
+        ],
+        "id": "doc_r_017",
+        "negated": false,
+        "predicate": "induces",
+        "source": "doc_e_015",
+        "target": "doc_e_014"
+      }
+    ],
+    "nodes": [
+      {
+        "aliases": [
+          "KIF23"
+        ],
+        "id": "doc_e_001",
+        "label": "KIF23",
+        "mentions": [
+          {
+            "end": 18,
+            "id": "E1",
+            "score": 0.99998939037323,
+            "start": 13,
+            "text": "KIF23",
+            "type": "Gene"
+          },
+          {
+            "end": 582,
+            "id": "E11",
+            "score": 0.9999898672103882,
+            "start": 577,
+            "text": "KIF23",
+            "type": "Gene"
+          },
+          {
+            "end": 723,
+            "id": "E12",
+            "score": 0.9999902248382568,
+            "start": 718,
+            "text": "KIF23",
+            "type": "Gene"
+          },
+          {
+            "end": 894,
+            "id": "E15",
+            "score": 0.9999901056289673,
+            "start": 889,
+            "text": "KIF23",
+            "type": "Gene"
+          },
+          {
+            "end": 1264,
+            "id": "E25",
+            "score": 0.9999903440475464,
+            "start": 1259,
+            "text": "KIF23",
+            "type": "Gene"
+          },
+          {
+            "end": 1300,
+            "id": "E26",
+            "score": 0.9999904632568359,
+            "start": 1295,
+            "text": "KIF23",
+            "type": "Gene"
+          },
+          {
+            "end": 1479,
+            "id": "E30",
+            "score": 0.9999903440475464,
+            "start": 1474,
+            "text": "KIF23",
+            "type": "Gene"
+          },
+          {
+            "end": 1633,
+            "id": "E36",
+            "score": 0.9999901056289673,
+            "start": 1628,
+            "text": "KIF23",
+            "type": "Gene"
+          },
+          {
+            "end": 1664,
+            "id": "E37",
+            "score": 0.9999901056289673,
+            "start": 1659,
+            "text": "KIF23",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "asthma",
+          "Asthma"
+        ],
+        "id": "doc_e_002",
+        "label": "asthma",
+        "mentions": [
+          {
+            "end": 55,
+            "id": "E2",
+            "score": 0.9999860525131226,
+            "start": 49,
+            "text": "asthma",
+            "type": "Disease"
+          },
+          {
+            "end": 89,
+            "id": "E3",
+            "score": 0.9999861717224121,
+            "start": 83,
+            "text": "Asthma",
+            "type": "Disease"
+          },
+          {
+            "end": 210,
+            "id": "E4",
+            "score": 0.9999861717224121,
+            "start": 204,
+            "text": "asthma",
+            "type": "Disease"
+          },
+          {
+            "end": 315,
+            "id": "E5",
+            "score": 0.9999861717224121,
+            "start": 309,
+            "text": "asthma",
+            "type": "Disease"
+          },
+          {
+            "end": 324,
+            "id": "E6",
+            "score": 0.9999861717224121,
+            "start": 318,
+            "text": "Asthma",
+            "type": "Disease"
+          },
+          {
+            "end": 475,
+            "id": "E10",
+            "score": 0.9999861717224121,
+            "start": 469,
+            "text": "asthma",
+            "type": "Disease"
+          },
+          {
+            "end": 965,
+            "id": "E17",
+            "score": 0.9999858140945435,
+            "start": 959,
+            "text": "asthma",
+            "type": "Disease"
+          },
+          {
+            "end": 1225,
+            "id": "E24",
+            "score": 0.9999862909317017,
+            "start": 1219,
+            "text": "asthma",
+            "type": "Disease"
+          },
+          {
+            "end": 1567,
+            "id": "E33",
+            "score": 0.9999861717224121,
+            "start": 1561,
+            "text": "asthma",
+            "type": "Disease"
+          },
+          {
+            "end": 1701,
+            "id": "E38",
+            "score": 0.9999864101409912,
+            "start": 1695,
+            "text": "asthma",
+            "type": "Disease"
+          }
+        ],
+        "type": "Disease"
+      },
+      {
+        "aliases": [
+          "mouse"
+        ],
+        "id": "doc_e_003",
+        "label": "mouse",
+        "mentions": [
+          {
+            "end": 330,
+            "id": "E7",
+            "score": 0.9999872446060181,
+            "start": 325,
+            "text": "mouse",
+            "type": "Species"
+          }
+        ],
+        "type": "Species"
+      },
+      {
+        "aliases": [
+          "ovalbumin",
+          "OVA"
+        ],
+        "id": "doc_e_004",
+        "label": "OVA",
+        "mentions": [
+          {
+            "end": 367,
+            "id": "E8",
+            "score": 0.9924644231796265,
+            "start": 358,
+            "text": "ovalbumin",
+            "type": "Gene"
+          },
+          {
+            "end": 372,
+            "id": "E9",
+            "score": 0.9567826390266418,
+            "start": 369,
+            "text": "OVA",
+            "type": "Gene"
+          },
+          {
+            "end": 1552,
+            "id": "E32",
+            "score": 0.9999891519546509,
+            "start": 1549,
+            "text": "OVA",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "inflammation"
+        ],
+        "id": "doc_e_005",
+        "label": "inflammation",
+        "mentions": [
+          {
+            "end": 749,
+            "id": "E13",
+            "score": 0.9999862909317017,
+            "start": 737,
+            "text": "inflammation",
+            "type": "Disease"
+          },
+          {
+            "end": 1367,
+            "id": "E27",
+            "score": 0.9999860525131226,
+            "start": 1355,
+            "text": "inflammation",
+            "type": "Disease"
+          },
+          {
+            "end": 1520,
+            "id": "E31",
+            "score": 0.9999861717224121,
+            "start": 1508,
+            "text": "inflammation",
+            "type": "Disease"
+          }
+        ],
+        "type": "Disease"
+      },
+      {
+        "aliases": [
+          "KIF23-related"
+        ],
+        "id": "doc_e_006",
+        "label": "KIF23-related",
+        "mentions": [
+          {
+            "end": 853,
+            "id": "E14",
+            "score": 0.9999902248382568,
+            "start": 840,
+            "text": "KIF23-related",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "p53"
+        ],
+        "id": "doc_e_007",
+        "label": "p53",
+        "mentions": [
+          {
+            "end": 901,
+            "id": "E16",
+            "score": 0.9999897480010986,
+            "start": 898,
+            "text": "p53",
+            "type": "Gene"
+          },
+          {
+            "end": 1590,
+            "id": "E35",
+            "score": 0.9999903440475464,
+            "start": 1587,
+            "text": "p53",
+            "type": "Gene"
+          },
+          {
+            "end": 1745,
+            "id": "E39",
+            "score": 0.9999898672103882,
+            "start": 1742,
+            "text": "p53",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "caspase-3"
+        ],
+        "id": "doc_e_008",
+        "label": "caspase-3",
+        "mentions": [
+          {
+            "end": 996,
+            "id": "E18",
+            "score": 0.9999899864196777,
+            "start": 987,
+            "text": "caspase-3",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "IgG"
+        ],
+        "id": "doc_e_009",
+        "label": "IgG",
+        "mentions": [
+          {
+            "end": 1001,
+            "id": "E19",
+            "score": 0.9997655749320984,
+            "start": 998,
+            "text": "IgG",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "inflammatory"
+        ],
+        "id": "doc_e_010",
+        "label": "inflammatory",
+        "mentions": [
+          {
+            "end": 1027,
+            "id": "E20",
+            "score": 0.9999814033508301,
+            "start": 1015,
+            "text": "inflammatory",
+            "type": "Disease"
+          }
+        ],
+        "type": "Disease"
+      },
+      {
+        "aliases": [
+          "interleukin (IL)-1β"
+        ],
+        "id": "doc_e_011",
+        "label": "interleukin (IL)-1β",
+        "mentions": [
+          {
+            "end": 1056,
+            "id": "E21",
+            "score": 0.9999801635742187,
+            "start": 1037,
+            "text": "interleukin (IL)-1β",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "KC"
+        ],
+        "id": "doc_e_012",
+        "label": "KC",
+        "mentions": [
+          {
+            "end": 1060,
+            "id": "E22",
+            "score": 0.9999871253967285,
+            "start": 1058,
+            "text": "KC",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "tumour necrosis factor (TNF)-α"
+        ],
+        "id": "doc_e_013",
+        "label": "tumour necrosis factor (TNF)-α",
+        "mentions": [
+          {
+            "end": 1095,
+            "id": "E23",
+            "score": 0.9999761581420898,
+            "start": 1065,
+            "text": "tumour necrosis factor (TNF)-α",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "BEAS-2B"
+        ],
+        "id": "doc_e_014",
+        "label": "BEAS-2B",
+        "mentions": [
+          {
+            "end": 1393,
+            "id": "E28",
+            "score": 0.986404538154602,
+            "start": 1386,
+            "text": "BEAS-2B",
+            "type": "CellLine"
+          }
+        ],
+        "type": "CellLine"
+      },
+      {
+        "aliases": [
+          "IL-13"
+        ],
+        "id": "doc_e_015",
+        "label": "IL-13",
+        "mentions": [
+          {
+            "end": 1416,
+            "id": "E29",
+            "score": 0.9999901056289673,
+            "start": 1411,
+            "text": "IL-13",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "mice"
+        ],
+        "id": "doc_e_016",
+        "label": "mice",
+        "mentions": [
+          {
+            "end": 1572,
+            "id": "E34",
+            "score": 0.9999865293502808,
+            "start": 1568,
+            "text": "mice",
+            "type": "Species"
+          }
+        ],
+        "type": "Species"
+      }
+    ]
+  },
+  "graph_json_path": "graphs/pmid_38569671.json",
+  "mention_level_rich_relations": [
+    {
+      "assertion": "Knockdown of KIF23 alleviates the progression of asthma by inhibiting pyroptosis.",
+      "context": [],
+      "effects": [
+        "inhibited pyroptosis"
+      ],
+      "evidence": "Knockdown of KIF23 alleviates the progression of asthma by inhibiting pyroptosis.",
+      "intervention": "KIF23 knockdown",
+      "negated": false,
+      "predicate": "knockdown alleviates progression of",
+      "score": null,
+      "source": "E1",
+      "surface_form": "alleviates the progression of asthma by inhibiting pyroptosis",
+      "target": "E2"
+    },
+    {
+      "assertion": "Ovalbumin was used to establish the asthma mouse model.",
+      "context": [
+        "mouse model"
+      ],
+      "effects": [
+        "established the asthma mouse model"
+      ],
+      "evidence": "Asthma mouse model was established with ovalbumin (OVA).",
+      "intervention": "ovalbumin",
+      "negated": false,
+      "predicate": "establishes mouse model of",
+      "score": null,
+      "source": "E8",
+      "surface_form": "established with ovalbumin (OVA)",
+      "target": "E6"
+    },
+    {
+      "assertion": "Effects of KIF23 knockdown on inflammation were detected.",
+      "context": [],
+      "effects": [],
+      "evidence": "Effects of KIF23 knockdown on inflammation, oxidative stress and pyroptosis were detected by ELISA and western blot.",
+      "intervention": "KIF23 knockdown",
+      "negated": false,
+      "predicate": "knockdown has effects on",
+      "score": null,
+      "source": "E12",
+      "surface_form": "Effects of KIF23 knockdown on inflammation",
+      "target": "E13"
+    },
+    {
+      "assertion": "The effect of KIF23 on p53 signalling pathway was explored.",
+      "context": [],
+      "effects": [],
+      "evidence": "After screening KIF23-related signalling pathways, the effect of KIF23 on p53 signalling pathway was explored by western blot.",
+      "intervention": null,
+      "negated": false,
+      "predicate": "effect investigated on",
+      "score": null,
+      "source": "E15",
+      "surface_form": "effect of KIF23 on p53 signalling pathway was explored",
+      "target": "E16"
+    },
+    {
+      "assertion": "Caspase-3 levels were increased in the asthma model.",
+      "context": [
+        "asthma model"
+      ],
+      "effects": [
+        "increased caspase-3 levels"
+      ],
+      "evidence": "In the asthma model, the levels of caspase-3, IgG in serum and inflammatory factors (interleukin (IL)-1β, KC and tumour necrosis factor (TNF)-α) in serum and bronchoalveolar lavage fluid were increased.",
+      "intervention": null,
+      "negated": false,
+      "predicate": "increased in",
+      "score": null,
+      "source": "E18",
+      "surface_form": "were increased",
+      "target": "E17"
+    },
+    {
+      "assertion": "IgG levels in serum were increased in the asthma model.",
+      "context": [
+        "asthma model",
+        "serum"
+      ],
+      "effects": [
+        "increased IgG levels"
+      ],
+      "evidence": "In the asthma model, the levels of caspase-3, IgG in serum and inflammatory factors (interleukin (IL)-1β, KC and tumour necrosis factor (TNF)-α) in serum and bronchoalveolar lavage fluid were increased.",
+      "intervention": null,
+      "negated": false,
+      "predicate": "increased in",
+      "score": null,
+      "source": "E19",
+      "surface_form": "were increased",
+      "target": "E17"
+    },
+    {
+      "assertion": "Interleukin (IL)-1β levels in serum and bronchoalveolar lavage fluid were increased in the asthma model.",
+      "context": [
+        "asthma model",
+        "serum",
+        "bronchoalveolar lavage fluid"
+      ],
+      "effects": [
+        "increased IL-1β levels"
+      ],
+      "evidence": "In the asthma model, the levels of caspase-3, IgG in serum and inflammatory factors (interleukin (IL)-1β, KC and tumour necrosis factor (TNF)-α) in serum and bronchoalveolar lavage fluid were increased.",
+      "intervention": null,
+      "negated": false,
+      "predicate": "increased in",
+      "score": null,
+      "source": "E21",
+      "surface_form": "were increased",
+      "target": "E17"
+    },
+    {
+      "assertion": "KC levels in serum and bronchoalveolar lavage fluid were increased in the asthma model.",
+      "context": [
+        "asthma model",
+        "serum",
+        "bronchoalveolar lavage fluid"
+      ],
+      "effects": [
+        "increased KC levels"
+      ],
+      "evidence": "In the asthma model, the levels of caspase-3, IgG in serum and inflammatory factors (interleukin (IL)-1β, KC and tumour necrosis factor (TNF)-α) in serum and bronchoalveolar lavage fluid were increased.",
+      "intervention": null,
+      "negated": false,
+      "predicate": "increased in",
+      "score": null,
+      "source": "E22",
+      "surface_form": "were increased",
+      "target": "E17"
+    },
+    {
+      "assertion": "Tumour necrosis factor (TNF)-α levels in serum and bronchoalveolar lavage fluid were increased in the asthma model.",
+      "context": [
+        "asthma model",
+        "serum",
+        "bronchoalveolar lavage fluid"
+      ],
+      "effects": [
+        "increased TNF-α levels"
+      ],
+      "evidence": "In the asthma model, the levels of caspase-3, IgG in serum and inflammatory factors (interleukin (IL)-1β, KC and tumour necrosis factor (TNF)-α) in serum and bronchoalveolar lavage fluid were increased.",
+      "intervention": null,
+      "negated": false,
+      "predicate": "increased in",
+      "score": null,
+      "source": "E23",
+      "surface_form": "were increased",
+      "target": "E17"
+    },
+    {
+      "assertion": "KIF23 was identified as one of seven hub genes in the asthma model.",
+      "context": [
+        "asthma model"
+      ],
+      "effects": [
+        "identified as one of seven hub genes"
+      ],
+      "evidence": "Transcriptome sequencing showed that there were 352 DEGs in the asthma model, and 7 hub genes including KIF23 were identified.",
+      "intervention": null,
+      "negated": false,
+      "predicate": "identified as a hub gene in",
+      "score": null,
+      "source": "E25",
+      "surface_form": "7 hub genes including KIF23 were identified",
+      "target": "E24"
+    },
+    {
+      "assertion": "In vitro, knockdown of KIF23 inhibited inflammation in BEAS-2B cells induced by IL-13.",
+      "context": [
+        "BEAS-2B cells induced by IL-13",
+        "in vitro"
+      ],
+      "effects": [
+        "inhibited inflammation"
+      ],
+      "evidence": "Knockdown of KIF23 increased cell proliferation and inhibited apoptosis, inflammation and pyroptosis of BEAS-2B cells induced by IL-13 in vitro.",
+      "intervention": "KIF23 knockdown",
+      "negated": false,
+      "predicate": "knockdown inhibits",
+      "score": null,
+      "source": "E26",
+      "surface_form": "inhibited apoptosis, inflammation and pyroptosis",
+      "target": "E27"
+    },
+    {
+      "assertion": "In vitro, knockdown of KIF23 increased cell proliferation and inhibited apoptosis of BEAS-2B cells induced by IL-13.",
+      "context": [
+        "BEAS-2B cells induced by IL-13",
+        "in vitro"
+      ],
+      "effects": [
+        "increased cell proliferation",
+        "inhibited apoptosis"
+      ],
+      "evidence": "Knockdown of KIF23 increased cell proliferation and inhibited apoptosis, inflammation and pyroptosis of BEAS-2B cells induced by IL-13 in vitro.",
+      "intervention": "KIF23 knockdown",
+      "negated": false,
+      "predicate": "knockdown affects",
+      "score": null,
+      "source": "E26",
+      "surface_form": "increased cell proliferation and inhibited apoptosis",
+      "target": "E28"
+    },
+    {
+      "assertion": "BEAS-2B cells were induced by IL-13 in vitro.",
+      "context": [
+        "in vitro"
+      ],
+      "effects": [],
+      "evidence": "Knockdown of KIF23 increased cell proliferation and inhibited apoptosis, inflammation and pyroptosis of BEAS-2B cells induced by IL-13 in vitro.",
+      "intervention": "IL-13",
+      "negated": false,
+      "predicate": "induces",
+      "score": null,
+      "source": "E29",
+      "surface_form": "cells induced by IL-13",
+      "target": "E28"
+    },
+    {
+      "assertion": "In vivo, knockdown of KIF23 inhibited inflammation in OVA-induced asthma mice.",
+      "context": [
+        "in vivo",
+        "OVA-induced asthma mice"
+      ],
+      "effects": [
+        "inhibited inflammation"
+      ],
+      "evidence": "In vivo experiments verified that knockdown of KIF23 inhibited oxidative stress, inflammation and pyroptosis to alleviate OVA-induced asthma mice.",
+      "intervention": "KIF23 knockdown",
+      "negated": false,
+      "predicate": "knockdown inhibits",
+      "score": null,
+      "source": "E30",
+      "surface_form": "inhibited oxidative stress, inflammation and pyroptosis",
+      "target": "E31"
+    },
+    {
+      "assertion": "In vivo, knockdown of KIF23 inhibited oxidative stress, inflammation and pyroptosis to alleviate OVA-induced asthma in mice.",
+      "context": [
+        "in vivo",
+        "OVA-induced asthma mice"
+      ],
+      "effects": [
+        "inhibited oxidative stress",
+        "inhibited inflammation",
+        "inhibited pyroptosis",
+        "alleviated OVA-induced asthma"
+      ],
+      "evidence": "In vivo experiments verified that knockdown of KIF23 inhibited oxidative stress, inflammation and pyroptosis to alleviate OVA-induced asthma mice.",
+      "intervention": "KIF23 knockdown",
+      "negated": false,
+      "predicate": "knockdown alleviates",
+      "score": null,
+      "source": "E30",
+      "surface_form": "to alleviate OVA-induced asthma mice",
+      "target": "E33"
+    },
+    {
+      "assertion": "OVA induced asthma in mice.",
+      "context": [
+        "in vivo",
+        "mice"
+      ],
+      "effects": [
+        "induced asthma"
+      ],
+      "evidence": "In vivo experiments verified that knockdown of KIF23 inhibited oxidative stress, inflammation and pyroptosis to alleviate OVA-induced asthma mice.",
+      "intervention": "OVA",
+      "negated": false,
+      "predicate": "induces",
+      "score": null,
+      "source": "E32",
+      "surface_form": "OVA-induced asthma mice",
+      "target": "E33"
+    },
+    {
+      "assertion": "The p53 signalling pathway was suppressed by KIF23 knockdown.",
+      "context": [],
+      "effects": [
+        "suppressed p53 signalling pathway"
+      ],
+      "evidence": "In addition, p53 signalling pathway was suppressed by KIF23 knockdown.",
+      "intervention": "KIF23 knockdown",
+      "negated": false,
+      "predicate": "knockdown suppresses",
+      "score": null,
+      "source": "E36",
+      "surface_form": "was suppressed by KIF23 knockdown",
+      "target": "E35"
+    },
+    {
+      "assertion": "Knockdown of KIF23 alleviated the progression of asthma by suppressing pyroptosis.",
+      "context": [],
+      "effects": [
+        "suppressed pyroptosis"
+      ],
+      "evidence": "Knockdown of KIF23 alleviated the progression of asthma by suppressing pyroptosis and inhibited p53 signalling pathway.",
+      "intervention": "KIF23 knockdown",
+      "negated": false,
+      "predicate": "knockdown alleviates progression of",
+      "score": null,
+      "source": "E37",
+      "surface_form": "alleviated the progression of asthma by suppressing pyroptosis",
+      "target": "E38"
+    },
+    {
+      "assertion": "Knockdown of KIF23 inhibited p53 signalling pathway.",
+      "context": [],
+      "effects": [
+        "inhibited p53 signalling pathway"
+      ],
+      "evidence": "Knockdown of KIF23 alleviated the progression of asthma by suppressing pyroptosis and inhibited p53 signalling pathway.",
+      "intervention": "KIF23 knockdown",
+      "negated": false,
+      "predicate": "knockdown inhibits",
+      "score": null,
+      "source": "E37",
+      "surface_form": "inhibited p53 signalling pathway",
+      "target": "E39"
+    }
+  ],
+  "paper_id": "PMID:38569671",
+  "pmcid": null,
+  "pmid": "38569671",
+  "provider_attempts": 1,
+  "provider_failures": 0,
+  "repair_attempts": 0,
+  "runtime": {
+    "entity_backend": "hunflair2",
+    "graph_topology_changed": false,
+    "harness_max_retries": 2,
+    "hunflair2_device": "cpu",
+    "hunflair2_model": "hunflair/hunflair2-ner",
+    "implementation_commit": "0330923166a6b85584c1206c7bb21ae4721b99f3",
+    "max_completion_tokens": 128000,
+    "prompt_frozen_before_first_paper": true,
+    "reasoning_effort": "max",
+    "relation_model": "gpt-5.6-luna",
+    "relation_provider": "OpenAI Responses API",
+    "scope": "title plus complete abstract only"
+  },
+  "runtime_seconds": 371.363,
+  "semantic_audit": {
+    "counts": {
+      "bundles": 4,
+      "displayed_connections": 11,
+      "multi_evidence_graph_edges": 2,
+      "negated_relations": 0,
+      "relations_with_context": 13,
+      "relations_with_effects": 16,
+      "relations_with_intervention": 12,
+      "relations_with_no_optional_semantic_fields": 1,
+      "self_edges": 0
+    },
+    "flags": {
+      "apparently_duplicated_semantic_relation": [],
+      "context_used_as_mechanism": [],
+      "possible_third_participant_leakage": [
+        {
+          "entity_texts": [
+            "KIF23"
+          ],
+          "relation_index": 1
+        },
+        {
+          "entity_texts": [
+            "Asthma",
+            "OVA",
+            "asthma",
+            "mouse"
+          ],
+          "relation_index": 2
+        },
+        {
+          "entity_texts": [
+            "KIF23"
+          ],
+          "relation_index": 3
+        },
+        {
+          "entity_texts": [
+            "Asthma",
+            "asthma"
+          ],
+          "relation_index": 5
+        },
+        {
+          "entity_texts": [
+            "Asthma",
+            "asthma"
+          ],
+          "relation_index": 6
+        },
+        {
+          "entity_texts": [
+            "Asthma",
+            "asthma"
+          ],
+          "relation_index": 7
+        },
+        {
+          "entity_texts": [
+            "Asthma",
+            "asthma"
+          ],
+          "relation_index": 8
+        },
+        {
+          "entity_texts": [
+            "Asthma",
+            "asthma"
+          ],
+          "relation_index": 9
+        },
+        {
+          "entity_texts": [
+            "Asthma",
+            "asthma"
+          ],
+          "relation_index": 10
+        },
+        {
+          "entity_texts": [
+            "BEAS-2B",
+            "IL-13",
+            "KIF23",
+            "inflammation"
+          ],
+          "relation_index": 11
+        },
+        {
+          "entity_texts": [
+            "IL-13",
+            "KIF23"
+          ],
+          "relation_index": 12
+        },
+        {
+          "entity_texts": [
+            "Asthma",
+            "KIF23",
+            "OVA",
+            "asthma",
+            "inflammation",
+            "mice"
+          ],
+          "relation_index": 14
+        },
+        {
+          "entity_texts": [
+            "Asthma",
+            "KIF23",
+            "OVA",
+            "asthma",
+            "inflammation",
+            "mice"
+          ],
+          "relation_index": 15
+        },
+        {
+          "entity_texts": [
+            "Asthma",
+            "OVA",
+            "asthma",
+            "mice"
+          ],
+          "relation_index": 16
+        },
+        {
+          "entity_texts": [
+            "KIF23",
+            "p53"
+          ],
+          "relation_index": 17
+        },
+        {
+          "entity_texts": [
+            "KIF23"
+          ],
+          "relation_index": 18
+        },
+        {
+          "entity_texts": [
+            "KIF23",
+            "p53"
+          ],
+          "relation_index": 19
+        }
+      ],
+      "unusually_dense_graph": [
+        {
+          "edge_count": 17,
+          "node_count": 16,
+          "threshold": "15 nodes or 20 edges"
+        }
+      ],
+      "very_broad_assertion": []
+    },
+    "note": "Signals are descriptive review prompts, not formal semantic accuracy metrics or automatic failures."
+  },
+  "source": {
+    "acquisition_mode": "abstract_only",
+    "canonical_full_text_sha256": "39058e36f1b50e00fd7a154996f0fef4f82509c3b699d845fefad35742fa49e6",
+    "canonical_source_checksum": "8069f98a5af43633ec3e9713247f8f26c26740cbce814838858743d453b3ca19",
+    "corpus_path": ".cache/ner_target_domain/target_corpus.json",
+    "scope": "title plus complete abstract",
+    "segments": [
+      {
+        "canonical_end": 81,
+        "canonical_start": 0,
+        "section": "title",
+        "text": "Knockdown of KIF23 alleviates the progression of asthma by inhibiting pyroptosis."
+      },
+      {
+        "canonical_end": 316,
+        "canonical_start": 83,
+        "section": "abstract / BACKGROUND",
+        "text": "Asthma is a chronic disease affecting the lower respiratory tract, which can lead to death in severe cases. The cause of asthma is not fully known, so exploring its potential mechanism is necessary for the targeted therapy of asthma."
+      },
+      {
+        "canonical_end": 950,
+        "canonical_start": 318,
+        "section": "abstract / METHOD",
+        "text": "Asthma mouse model was established with ovalbumin (OVA). H&E staining, immunohistochemistry and ELISA were used to detect the inflammatory response in asthma. Transcriptome sequencing was performed to screen differentially expressed genes (DEGs). The role of KIF23 silencing in cell viability, proliferation and apoptosis was explored by cell counting kit-8, EdU assay and flow cytometry. Effects of KIF23 knockdown on inflammation, oxidative stress and pyroptosis were detected by ELISA and western blot. After screening KIF23-related signalling pathways, the effect of KIF23 on p53 signalling pathway was explored by western blot."
+      },
+      {
+        "canonical_end": 1644,
+        "canonical_start": 952,
+        "section": "abstract / RESULTS",
+        "text": "In the asthma model, the levels of caspase-3, IgG in serum and inflammatory factors (interleukin (IL)-1β, KC and tumour necrosis factor (TNF)-α) in serum and bronchoalveolar lavage fluid were increased. Transcriptome sequencing showed that there were 352 DEGs in the asthma model, and 7 hub genes including KIF23 were identified. Knockdown of KIF23 increased cell proliferation and inhibited apoptosis, inflammation and pyroptosis of BEAS-2B cells induced by IL-13 in vitro. In vivo experiments verified that knockdown of KIF23 inhibited oxidative stress, inflammation and pyroptosis to alleviate OVA-induced asthma mice. In addition, p53 signalling pathway was suppressed by KIF23 knockdown."
+      },
+      {
+        "canonical_end": 1765,
+        "canonical_start": 1646,
+        "section": "abstract / CONCLUSION",
+        "text": "Knockdown of KIF23 alleviated the progression of asthma by suppressing pyroptosis and inhibited p53 signalling pathway."
+      }
+    ],
+    "selected_source_sha256": "39058e36f1b50e00fd7a154996f0fef4f82509c3b699d845fefad35742fa49e6",
+    "source_format": "pubmed_xml",
+    "text": "Knockdown of KIF23 alleviates the progression of asthma by inhibiting pyroptosis.\n\nAsthma is a chronic disease affecting the lower respiratory tract, which can lead to death in severe cases. The cause of asthma is not fully known, so exploring its potential mechanism is necessary for the targeted therapy of asthma.\n\nAsthma mouse model was established with ovalbumin (OVA). H&E staining, immunohistochemistry and ELISA were used to detect the inflammatory response in asthma. Transcriptome sequencing was performed to screen differentially expressed genes (DEGs). The role of KIF23 silencing in cell viability, proliferation and apoptosis was explored by cell counting kit-8, EdU assay and flow cytometry. Effects of KIF23 knockdown on inflammation, oxidative stress and pyroptosis were detected by ELISA and western blot. After screening KIF23-related signalling pathways, the effect of KIF23 on p53 signalling pathway was explored by western blot.\n\nIn the asthma model, the levels of caspase-3, IgG in serum and inflammatory factors (interleukin (IL)-1β, KC and tumour necrosis factor (TNF)-α) in serum and bronchoalveolar lavage fluid were increased. Transcriptome sequencing showed that there were 352 DEGs in the asthma model, and 7 hub genes including KIF23 were identified. Knockdown of KIF23 increased cell proliferation and inhibited apoptosis, inflammation and pyroptosis of BEAS-2B cells induced by IL-13 in vitro. In vivo experiments verified that knockdown of KIF23 inhibited oxidative stress, inflammation and pyroptosis to alleviate OVA-induced asthma mice. In addition, p53 signalling pathway was suppressed by KIF23 knockdown.\n\nKnockdown of KIF23 alleviated the progression of asthma by suppressing pyroptosis and inhibited p53 signalling pathway."
+  },
+  "started_at_utc": "2026-09-20T13:45:55.617477+00:00",
+  "status": "success",
+  "title": "Knockdown of KIF23 alleviates the progression of asthma by inhibiting pyroptosis."
+}

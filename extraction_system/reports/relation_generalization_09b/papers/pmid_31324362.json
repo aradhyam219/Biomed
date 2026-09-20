@@ -1,0 +1,2225 @@
+{
+  "assembled_entities": {
+    "document_entities": [
+      {
+        "aliases": [
+          "c-Myc"
+        ],
+        "id": "doc_e_001",
+        "label": "c-Myc",
+        "mentions": [
+          {
+            "end": 5,
+            "id": "E1",
+            "score": 0.9999794960021973,
+            "start": 0,
+            "text": "c-Myc",
+            "type": "Gene"
+          },
+          {
+            "end": 245,
+            "id": "E9",
+            "score": 0.9999796152114868,
+            "start": 240,
+            "text": "c-Myc",
+            "type": "Gene"
+          },
+          {
+            "end": 338,
+            "id": "E12",
+            "score": 0.9999798138936361,
+            "start": 333,
+            "text": "c-Myc",
+            "type": "Gene"
+          },
+          {
+            "end": 547,
+            "id": "E16",
+            "score": 0.9999801715215048,
+            "start": 542,
+            "text": "c-Myc",
+            "type": "Gene"
+          },
+          {
+            "end": 659,
+            "id": "E19",
+            "score": 0.9999801715215048,
+            "start": 654,
+            "text": "c-Myc",
+            "type": "Gene"
+          },
+          {
+            "end": 862,
+            "id": "E27",
+            "score": 0.9999796549479166,
+            "start": 857,
+            "text": "c-Myc",
+            "type": "Gene"
+          },
+          {
+            "end": 1023,
+            "id": "E33",
+            "score": 0.9999793370564779,
+            "start": 1018,
+            "text": "c-Myc",
+            "type": "Gene"
+          },
+          {
+            "end": 1107,
+            "id": "E35",
+            "score": 0.9999793370564779,
+            "start": 1102,
+            "text": "c-Myc",
+            "type": "Gene"
+          },
+          {
+            "end": 1310,
+            "id": "E38",
+            "score": 0.9999797741572062,
+            "start": 1305,
+            "text": "c-Myc",
+            "type": "Gene"
+          },
+          {
+            "end": 1454,
+            "id": "E41",
+            "score": 0.9999800125757853,
+            "start": 1449,
+            "text": "c-Myc",
+            "type": "Gene"
+          },
+          {
+            "end": 1584,
+            "id": "E46",
+            "score": 0.9999800523122152,
+            "start": 1579,
+            "text": "c-Myc",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "Oral Cancer",
+          "oral cancer"
+        ],
+        "id": "doc_e_002",
+        "label": "Oral Cancer",
+        "mentions": [
+          {
+            "end": 41,
+            "id": "E2",
+            "score": 0.9999911189079285,
+            "start": 30,
+            "text": "Oral Cancer",
+            "type": "Disease"
+          },
+          {
+            "end": 287,
+            "id": "E11",
+            "score": 0.999991774559021,
+            "start": 276,
+            "text": "oral cancer",
+            "type": "Disease"
+          },
+          {
+            "end": 421,
+            "id": "E15",
+            "score": 0.9999919533729553,
+            "start": 410,
+            "text": "oral cancer",
+            "type": "Disease"
+          },
+          {
+            "end": 732,
+            "id": "E23",
+            "score": 0.9999887347221375,
+            "start": 721,
+            "text": "oral cancer",
+            "type": "Disease"
+          },
+          {
+            "end": 1155,
+            "id": "E36",
+            "score": 0.9999905824661255,
+            "start": 1144,
+            "text": "oral cancer",
+            "type": "Disease"
+          },
+          {
+            "end": 1620,
+            "id": "E47",
+            "score": 0.9999918937683105,
+            "start": 1609,
+            "text": "oral cancer",
+            "type": "Disease"
+          },
+          {
+            "end": 1813,
+            "id": "E50",
+            "score": 0.9999915361404419,
+            "start": 1802,
+            "text": "oral cancer",
+            "type": "Disease"
+          }
+        ],
+        "type": "Disease"
+      },
+      {
+        "aliases": [
+          "Glutaminase",
+          "glutaminase",
+          "GLS"
+        ],
+        "id": "doc_e_003",
+        "label": "GLS",
+        "mentions": [
+          {
+            "end": 99,
+            "id": "E3",
+            "score": 0.9999858140945435,
+            "start": 88,
+            "text": "Glutaminase",
+            "type": "Gene"
+          },
+          {
+            "end": 187,
+            "id": "E5",
+            "score": 0.9999864101409912,
+            "start": 176,
+            "text": "glutaminase",
+            "type": "Gene"
+          },
+          {
+            "end": 192,
+            "id": "E6",
+            "score": 0.9999871253967285,
+            "start": 189,
+            "text": "GLS",
+            "type": "Gene"
+          },
+          {
+            "end": 343,
+            "id": "E13",
+            "score": 0.9999877214431763,
+            "start": 340,
+            "text": "GLS",
+            "type": "Gene"
+          },
+          {
+            "end": 582,
+            "id": "E17",
+            "score": 0.9999123811721802,
+            "start": 579,
+            "text": "GLS",
+            "type": "Gene"
+          },
+          {
+            "end": 664,
+            "id": "E20",
+            "score": 0.9999644756317139,
+            "start": 661,
+            "text": "GLS",
+            "type": "Gene"
+          },
+          {
+            "end": 885,
+            "id": "E28",
+            "score": 0.9999527931213379,
+            "start": 882,
+            "text": "GLS",
+            "type": "Gene"
+          },
+          {
+            "end": 1569,
+            "id": "E44",
+            "score": 0.997153639793396,
+            "start": 1566,
+            "text": "GLS",
+            "type": "Gene"
+          },
+          {
+            "end": 1670,
+            "id": "E48",
+            "score": 0.9999727010726929,
+            "start": 1667,
+            "text": "GLS",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "Glutamine Synthetase",
+          "glutamine synthetase",
+          "GS"
+        ],
+        "id": "doc_e_004",
+        "label": "GS",
+        "mentions": [
+          {
+            "end": 124,
+            "id": "E4",
+            "score": 0.9999759793281555,
+            "start": 104,
+            "text": "Glutamine Synthetase",
+            "type": "Gene"
+          },
+          {
+            "end": 218,
+            "id": "E7",
+            "score": 0.9999759793281555,
+            "start": 198,
+            "text": "glutamine synthetase",
+            "type": "Gene"
+          },
+          {
+            "end": 222,
+            "id": "E8",
+            "score": 0.9999866485595703,
+            "start": 220,
+            "text": "GS",
+            "type": "Gene"
+          },
+          {
+            "end": 351,
+            "id": "E14",
+            "score": 0.9999856948852539,
+            "start": 349,
+            "text": "GS",
+            "type": "Gene"
+          },
+          {
+            "end": 588,
+            "id": "E18",
+            "score": 0.9996700286865234,
+            "start": 586,
+            "text": "GS",
+            "type": "Gene"
+          },
+          {
+            "end": 671,
+            "id": "E21",
+            "score": 0.9999558925628662,
+            "start": 669,
+            "text": "GS",
+            "type": "Gene"
+          },
+          {
+            "end": 891,
+            "id": "E29",
+            "score": 0.9999830722808838,
+            "start": 889,
+            "text": "GS",
+            "type": "Gene"
+          },
+          {
+            "end": 933,
+            "id": "E30",
+            "score": 0.9999818801879883,
+            "start": 931,
+            "text": "GS",
+            "type": "Gene"
+          },
+          {
+            "end": 1070,
+            "id": "E34",
+            "score": 0.9999816417694092,
+            "start": 1068,
+            "text": "GS",
+            "type": "Gene"
+          },
+          {
+            "end": 1424,
+            "id": "E40",
+            "score": 0.9998883008956909,
+            "start": 1422,
+            "text": "GS",
+            "type": "Gene"
+          },
+          {
+            "end": 1576,
+            "id": "E45",
+            "score": 0.9983605742454529,
+            "start": 1574,
+            "text": "GS",
+            "type": "Gene"
+          },
+          {
+            "end": 1677,
+            "id": "E49",
+            "score": 0.9999792575836182,
+            "start": 1675,
+            "text": "GS",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "tumor"
+        ],
+        "id": "doc_e_005",
+        "label": "tumor",
+        "mentions": [
+          {
+            "end": 260,
+            "id": "E10",
+            "score": 0.9999855756759644,
+            "start": 255,
+            "text": "tumor",
+            "type": "Disease"
+          }
+        ],
+        "type": "Disease"
+      },
+      {
+        "aliases": [
+          "KB"
+        ],
+        "id": "doc_e_006",
+        "label": "KB",
+        "mentions": [
+          {
+            "end": 720,
+            "id": "E22",
+            "score": 0.9940422177314758,
+            "start": 718,
+            "text": "KB",
+            "type": "CellLine"
+          },
+          {
+            "end": 835,
+            "id": "E26",
+            "score": 0.9942399263381958,
+            "start": 833,
+            "text": "KB",
+            "type": "CellLine"
+          },
+          {
+            "end": 1264,
+            "id": "E37",
+            "score": 0.9948225021362305,
+            "start": 1262,
+            "text": "KB",
+            "type": "CellLine"
+          }
+        ],
+        "type": "CellLine"
+      },
+      {
+        "aliases": [
+          "E-cadherin"
+        ],
+        "id": "doc_e_007",
+        "label": "E-cadherin",
+        "mentions": [
+          {
+            "end": 769,
+            "id": "E24",
+            "score": 0.9999803304672241,
+            "start": 759,
+            "text": "E-cadherin",
+            "type": "Gene"
+          },
+          {
+            "end": 1479,
+            "id": "E42",
+            "score": 0.9999802907307943,
+            "start": 1469,
+            "text": "E-cadherin",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "N-cadherin"
+        ],
+        "id": "doc_e_008",
+        "label": "N-cadherin",
+        "mentions": [
+          {
+            "end": 784,
+            "id": "E25",
+            "score": 0.9999800125757853,
+            "start": 774,
+            "text": "N-cadherin",
+            "type": "Gene"
+          },
+          {
+            "end": 1525,
+            "id": "E43",
+            "score": 0.9999801715215048,
+            "start": 1515,
+            "text": "N-cadherin",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "Tumor, Lymph Node, and Metastasis",
+          "TNM"
+        ],
+        "id": "doc_e_009",
+        "label": "TNM",
+        "mentions": [
+          {
+            "end": 991,
+            "id": "E31",
+            "score": 0.9822818722043719,
+            "start": 958,
+            "text": "Tumor, Lymph Node, and Metastasis",
+            "type": "Disease"
+          },
+          {
+            "end": 996,
+            "id": "E32",
+            "score": 0.9839352369308472,
+            "start": 993,
+            "text": "TNM",
+            "type": "Disease"
+          }
+        ],
+        "type": "Disease"
+      },
+      {
+        "aliases": [
+          "GLS"
+        ],
+        "id": "doc_e_010",
+        "label": "GLS",
+        "mentions": [
+          {
+            "end": 1418,
+            "id": "E39",
+            "score": 0.9999001026153564,
+            "start": 1415,
+            "text": "GLS",
+            "type": "Chemical"
+          }
+        ],
+        "type": "Chemical"
+      }
+    ],
+    "mention_to_document_entity": {
+      "E1": "doc_e_001",
+      "E10": "doc_e_005",
+      "E11": "doc_e_002",
+      "E12": "doc_e_001",
+      "E13": "doc_e_003",
+      "E14": "doc_e_004",
+      "E15": "doc_e_002",
+      "E16": "doc_e_001",
+      "E17": "doc_e_003",
+      "E18": "doc_e_004",
+      "E19": "doc_e_001",
+      "E2": "doc_e_002",
+      "E20": "doc_e_003",
+      "E21": "doc_e_004",
+      "E22": "doc_e_006",
+      "E23": "doc_e_002",
+      "E24": "doc_e_007",
+      "E25": "doc_e_008",
+      "E26": "doc_e_006",
+      "E27": "doc_e_001",
+      "E28": "doc_e_003",
+      "E29": "doc_e_004",
+      "E3": "doc_e_003",
+      "E30": "doc_e_004",
+      "E31": "doc_e_009",
+      "E32": "doc_e_009",
+      "E33": "doc_e_001",
+      "E34": "doc_e_004",
+      "E35": "doc_e_001",
+      "E36": "doc_e_002",
+      "E37": "doc_e_006",
+      "E38": "doc_e_001",
+      "E39": "doc_e_010",
+      "E4": "doc_e_004",
+      "E40": "doc_e_004",
+      "E41": "doc_e_001",
+      "E42": "doc_e_007",
+      "E43": "doc_e_008",
+      "E44": "doc_e_003",
+      "E45": "doc_e_004",
+      "E46": "doc_e_001",
+      "E47": "doc_e_002",
+      "E48": "doc_e_003",
+      "E49": "doc_e_004",
+      "E5": "doc_e_003",
+      "E50": "doc_e_002",
+      "E6": "doc_e_003",
+      "E7": "doc_e_004",
+      "E8": "doc_e_004",
+      "E9": "doc_e_001"
+    }
+  },
+  "completed_at_utc": "2026-09-20T13:37:25.806139+00:00",
+  "contract": "09B",
+  "entities": [
+    {
+      "end": 5,
+      "id": "E1",
+      "score": 0.9999794960021973,
+      "start": 0,
+      "text": "c-Myc",
+      "type": "Gene"
+    },
+    {
+      "end": 41,
+      "id": "E2",
+      "score": 0.9999911189079285,
+      "start": 30,
+      "text": "Oral Cancer",
+      "type": "Disease"
+    },
+    {
+      "end": 99,
+      "id": "E3",
+      "score": 0.9999858140945435,
+      "start": 88,
+      "text": "Glutaminase",
+      "type": "Gene"
+    },
+    {
+      "end": 124,
+      "id": "E4",
+      "score": 0.9999759793281555,
+      "start": 104,
+      "text": "Glutamine Synthetase",
+      "type": "Gene"
+    },
+    {
+      "end": 187,
+      "id": "E5",
+      "score": 0.9999864101409912,
+      "start": 176,
+      "text": "glutaminase",
+      "type": "Gene"
+    },
+    {
+      "end": 192,
+      "id": "E6",
+      "score": 0.9999871253967285,
+      "start": 189,
+      "text": "GLS",
+      "type": "Gene"
+    },
+    {
+      "end": 218,
+      "id": "E7",
+      "score": 0.9999759793281555,
+      "start": 198,
+      "text": "glutamine synthetase",
+      "type": "Gene"
+    },
+    {
+      "end": 222,
+      "id": "E8",
+      "score": 0.9999866485595703,
+      "start": 220,
+      "text": "GS",
+      "type": "Gene"
+    },
+    {
+      "end": 245,
+      "id": "E9",
+      "score": 0.9999796152114868,
+      "start": 240,
+      "text": "c-Myc",
+      "type": "Gene"
+    },
+    {
+      "end": 260,
+      "id": "E10",
+      "score": 0.9999855756759644,
+      "start": 255,
+      "text": "tumor",
+      "type": "Disease"
+    },
+    {
+      "end": 287,
+      "id": "E11",
+      "score": 0.999991774559021,
+      "start": 276,
+      "text": "oral cancer",
+      "type": "Disease"
+    },
+    {
+      "end": 338,
+      "id": "E12",
+      "score": 0.9999798138936361,
+      "start": 333,
+      "text": "c-Myc",
+      "type": "Gene"
+    },
+    {
+      "end": 343,
+      "id": "E13",
+      "score": 0.9999877214431763,
+      "start": 340,
+      "text": "GLS",
+      "type": "Gene"
+    },
+    {
+      "end": 351,
+      "id": "E14",
+      "score": 0.9999856948852539,
+      "start": 349,
+      "text": "GS",
+      "type": "Gene"
+    },
+    {
+      "end": 421,
+      "id": "E15",
+      "score": 0.9999919533729553,
+      "start": 410,
+      "text": "oral cancer",
+      "type": "Disease"
+    },
+    {
+      "end": 547,
+      "id": "E16",
+      "score": 0.9999801715215048,
+      "start": 542,
+      "text": "c-Myc",
+      "type": "Gene"
+    },
+    {
+      "end": 582,
+      "id": "E17",
+      "score": 0.9999123811721802,
+      "start": 579,
+      "text": "GLS",
+      "type": "Gene"
+    },
+    {
+      "end": 588,
+      "id": "E18",
+      "score": 0.9996700286865234,
+      "start": 586,
+      "text": "GS",
+      "type": "Gene"
+    },
+    {
+      "end": 659,
+      "id": "E19",
+      "score": 0.9999801715215048,
+      "start": 654,
+      "text": "c-Myc",
+      "type": "Gene"
+    },
+    {
+      "end": 664,
+      "id": "E20",
+      "score": 0.9999644756317139,
+      "start": 661,
+      "text": "GLS",
+      "type": "Gene"
+    },
+    {
+      "end": 671,
+      "id": "E21",
+      "score": 0.9999558925628662,
+      "start": 669,
+      "text": "GS",
+      "type": "Gene"
+    },
+    {
+      "end": 720,
+      "id": "E22",
+      "score": 0.9940422177314758,
+      "start": 718,
+      "text": "KB",
+      "type": "CellLine"
+    },
+    {
+      "end": 732,
+      "id": "E23",
+      "score": 0.9999887347221375,
+      "start": 721,
+      "text": "oral cancer",
+      "type": "Disease"
+    },
+    {
+      "end": 769,
+      "id": "E24",
+      "score": 0.9999803304672241,
+      "start": 759,
+      "text": "E-cadherin",
+      "type": "Gene"
+    },
+    {
+      "end": 784,
+      "id": "E25",
+      "score": 0.9999800125757853,
+      "start": 774,
+      "text": "N-cadherin",
+      "type": "Gene"
+    },
+    {
+      "end": 835,
+      "id": "E26",
+      "score": 0.9942399263381958,
+      "start": 833,
+      "text": "KB",
+      "type": "CellLine"
+    },
+    {
+      "end": 862,
+      "id": "E27",
+      "score": 0.9999796549479166,
+      "start": 857,
+      "text": "c-Myc",
+      "type": "Gene"
+    },
+    {
+      "end": 885,
+      "id": "E28",
+      "score": 0.9999527931213379,
+      "start": 882,
+      "text": "GLS",
+      "type": "Gene"
+    },
+    {
+      "end": 891,
+      "id": "E29",
+      "score": 0.9999830722808838,
+      "start": 889,
+      "text": "GS",
+      "type": "Gene"
+    },
+    {
+      "end": 933,
+      "id": "E30",
+      "score": 0.9999818801879883,
+      "start": 931,
+      "text": "GS",
+      "type": "Gene"
+    },
+    {
+      "end": 991,
+      "id": "E31",
+      "score": 0.9822818722043719,
+      "start": 958,
+      "text": "Tumor, Lymph Node, and Metastasis",
+      "type": "Disease"
+    },
+    {
+      "end": 996,
+      "id": "E32",
+      "score": 0.9839352369308472,
+      "start": 993,
+      "text": "TNM",
+      "type": "Disease"
+    },
+    {
+      "end": 1023,
+      "id": "E33",
+      "score": 0.9999793370564779,
+      "start": 1018,
+      "text": "c-Myc",
+      "type": "Gene"
+    },
+    {
+      "end": 1070,
+      "id": "E34",
+      "score": 0.9999816417694092,
+      "start": 1068,
+      "text": "GS",
+      "type": "Gene"
+    },
+    {
+      "end": 1107,
+      "id": "E35",
+      "score": 0.9999793370564779,
+      "start": 1102,
+      "text": "c-Myc",
+      "type": "Gene"
+    },
+    {
+      "end": 1155,
+      "id": "E36",
+      "score": 0.9999905824661255,
+      "start": 1144,
+      "text": "oral cancer",
+      "type": "Disease"
+    },
+    {
+      "end": 1264,
+      "id": "E37",
+      "score": 0.9948225021362305,
+      "start": 1262,
+      "text": "KB",
+      "type": "CellLine"
+    },
+    {
+      "end": 1310,
+      "id": "E38",
+      "score": 0.9999797741572062,
+      "start": 1305,
+      "text": "c-Myc",
+      "type": "Gene"
+    },
+    {
+      "end": 1418,
+      "id": "E39",
+      "score": 0.9999001026153564,
+      "start": 1415,
+      "text": "GLS",
+      "type": "Chemical"
+    },
+    {
+      "end": 1424,
+      "id": "E40",
+      "score": 0.9998883008956909,
+      "start": 1422,
+      "text": "GS",
+      "type": "Gene"
+    },
+    {
+      "end": 1454,
+      "id": "E41",
+      "score": 0.9999800125757853,
+      "start": 1449,
+      "text": "c-Myc",
+      "type": "Gene"
+    },
+    {
+      "end": 1479,
+      "id": "E42",
+      "score": 0.9999802907307943,
+      "start": 1469,
+      "text": "E-cadherin",
+      "type": "Gene"
+    },
+    {
+      "end": 1525,
+      "id": "E43",
+      "score": 0.9999801715215048,
+      "start": 1515,
+      "text": "N-cadherin",
+      "type": "Gene"
+    },
+    {
+      "end": 1569,
+      "id": "E44",
+      "score": 0.997153639793396,
+      "start": 1566,
+      "text": "GLS",
+      "type": "Gene"
+    },
+    {
+      "end": 1576,
+      "id": "E45",
+      "score": 0.9983605742454529,
+      "start": 1574,
+      "text": "GS",
+      "type": "Gene"
+    },
+    {
+      "end": 1584,
+      "id": "E46",
+      "score": 0.9999800523122152,
+      "start": 1579,
+      "text": "c-Myc",
+      "type": "Gene"
+    },
+    {
+      "end": 1620,
+      "id": "E47",
+      "score": 0.9999918937683105,
+      "start": 1609,
+      "text": "oral cancer",
+      "type": "Disease"
+    },
+    {
+      "end": 1670,
+      "id": "E48",
+      "score": 0.9999727010726929,
+      "start": 1667,
+      "text": "GLS",
+      "type": "Gene"
+    },
+    {
+      "end": 1677,
+      "id": "E49",
+      "score": 0.9999792575836182,
+      "start": 1675,
+      "text": "GS",
+      "type": "Gene"
+    },
+    {
+      "end": 1813,
+      "id": "E50",
+      "score": 0.9999915361404419,
+      "start": 1802,
+      "text": "oral cancer",
+      "type": "Disease"
+    }
+  ],
+  "graph": {
+    "document": {
+      "id": "PMID:31324362"
+    },
+    "edges": [
+      {
+        "evidence": [
+          {
+            "assertion": "Overexpression of c-Myc increased the colonies derived from oral cancer cells and caused more cells to be in S phase compared with the mock-vehicle group.",
+            "context": [
+              "compared with the mock-vehicle group"
+            ],
+            "effects": [
+              "increased the colonies derived from oral cancer cells",
+              "caused more cells to be in S phase"
+            ],
+            "intervention": "overexpression of c-Myc",
+            "score": null,
+            "surface_form": "increased the colonies derived from oral cancer cells and caused more cells to be in S phase",
+            "text": "Overexpression of c-Myc increased the colonies derived from oral cancer cells and caused more cells to be in S phase compared with the mock-vehicle group."
+          }
+        ],
+        "id": "doc_r_001",
+        "negated": false,
+        "predicate": "increases colonies and S-phase cells in",
+        "source": "doc_e_001",
+        "target": "doc_e_002"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "c-Myc overexpression promotes oral cancer cell proliferation and migration by enhancing glutaminase and glutamine synthetase activity.",
+            "context": [
+              "oral cancer cells"
+            ],
+            "effects": [
+              "oral cancer cell proliferation",
+              "oral cancer cell migration"
+            ],
+            "intervention": "c-Myc overexpression",
+            "score": null,
+            "surface_form": "Overexpression Promotes Oral Cancer Cell Proliferation and Migration",
+            "text": "c-Myc Overexpression Promotes Oral Cancer Cell Proliferation and Migration by Enhancing Glutaminase and Glutamine Synthetase Activity."
+          },
+          {
+            "assertion": "c-Myc overexpression promotes oral cancer cell proliferation and migration by enhancing GLS and GS activity.",
+            "context": [
+              "oral cancer cells"
+            ],
+            "effects": [
+              "oral cancer cell proliferation",
+              "oral cancer cell migration"
+            ],
+            "intervention": "c-Myc overexpression",
+            "score": null,
+            "surface_form": "promotes oral cancer cell proliferation and migration",
+            "text": "c-Myc overexpression promotes oral cancer cell proliferation and migration by enhancing GLS and GS activity."
+          }
+        ],
+        "id": "doc_r_002",
+        "negated": false,
+        "predicate": "promotes proliferation and migration in",
+        "source": "doc_e_001",
+        "target": "doc_e_002"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "c-Myc could enhance GLS activity, with GLS and GS activity given as the basis for c-Myc's inhibition of E-cadherin and promotion of N-cadherin expression.",
+            "context": [],
+            "effects": [],
+            "intervention": null,
+            "score": null,
+            "surface_form": "enhancing the activity of GLS and GS",
+            "text": "Furthermore, c-Myc could inhibit E-cadherin protein expression while promoting N-cadherin expression by enhancing the activity of GLS and GS."
+          },
+          {
+            "assertion": "c-Myc overexpression enhances glutaminase activity.",
+            "context": [
+              "oral cancer cells"
+            ],
+            "effects": [],
+            "intervention": "c-Myc overexpression",
+            "score": null,
+            "surface_form": "Enhancing Glutaminase and Glutamine Synthetase Activity",
+            "text": "c-Myc Overexpression Promotes Oral Cancer Cell Proliferation and Migration by Enhancing Glutaminase and Glutamine Synthetase Activity."
+          },
+          {
+            "assertion": "c-Myc overexpression enhances GLS activity.",
+            "context": [
+              "oral cancer cells"
+            ],
+            "effects": [],
+            "intervention": "c-Myc overexpression",
+            "score": null,
+            "surface_form": "enhancing GLS and GS activity",
+            "text": "c-Myc overexpression promotes oral cancer cell proliferation and migration by enhancing GLS and GS activity."
+          }
+        ],
+        "id": "doc_r_003",
+        "negated": false,
+        "predicate": "enhances activity of",
+        "source": "doc_e_001",
+        "target": "doc_e_003"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "c-Myc could enhance GS activity, with GLS and GS activity given as the basis for c-Myc's inhibition of E-cadherin and promotion of N-cadherin expression.",
+            "context": [],
+            "effects": [],
+            "intervention": null,
+            "score": null,
+            "surface_form": "enhancing the activity of GLS and GS",
+            "text": "Furthermore, c-Myc could inhibit E-cadherin protein expression while promoting N-cadherin expression by enhancing the activity of GLS and GS."
+          },
+          {
+            "assertion": "c-Myc overexpression enhances glutamine synthetase activity.",
+            "context": [
+              "oral cancer cells"
+            ],
+            "effects": [],
+            "intervention": "c-Myc overexpression",
+            "score": null,
+            "surface_form": "Enhancing Glutaminase and Glutamine Synthetase Activity",
+            "text": "c-Myc Overexpression Promotes Oral Cancer Cell Proliferation and Migration by Enhancing Glutaminase and Glutamine Synthetase Activity."
+          },
+          {
+            "assertion": "c-Myc overexpression enhances GS activity.",
+            "context": [
+              "oral cancer cells"
+            ],
+            "effects": [],
+            "intervention": "c-Myc overexpression",
+            "score": null,
+            "surface_form": "enhancing GLS and GS activity",
+            "text": "c-Myc overexpression promotes oral cancer cell proliferation and migration by enhancing GLS and GS activity."
+          }
+        ],
+        "id": "doc_r_004",
+        "negated": false,
+        "predicate": "enhances activity of",
+        "source": "doc_e_001",
+        "target": "doc_e_004"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "c-Myc mRNA levels were positively correlated with GS mRNA levels.",
+            "context": [],
+            "effects": [],
+            "intervention": null,
+            "score": null,
+            "surface_form": "positively correlated with",
+            "text": "In addition, c-Myc mRNA levels were positively correlated with GS mRNA levels."
+          }
+        ],
+        "id": "doc_r_005",
+        "negated": false,
+        "predicate": "positively correlates with",
+        "source": "doc_e_001",
+        "target": "doc_e_004"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "Overexpression of c-Myc promoted the migratory speed of KB cells compared to the mock-vehicle group.",
+            "context": [
+              "compared to the mock-vehicle group"
+            ],
+            "effects": [
+              "increased migratory speed of KB cells"
+            ],
+            "intervention": "overexpression of c-Myc",
+            "score": null,
+            "surface_form": "was promoted by overexpression of c-Myc",
+            "text": "The migratory speed of KB cells was promoted by overexpression of c-Myc compared to the mock-vehicle group."
+          }
+        ],
+        "id": "doc_r_006",
+        "negated": false,
+        "predicate": "promotes migration of",
+        "source": "doc_e_001",
+        "target": "doc_e_006"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "c-Myc could inhibit E-cadherin protein expression by enhancing the activity of GLS and GS.",
+            "context": [],
+            "effects": [
+              "potential inhibition of E-cadherin protein expression"
+            ],
+            "intervention": null,
+            "score": null,
+            "surface_form": "could inhibit E-cadherin protein expression",
+            "text": "Furthermore, c-Myc could inhibit E-cadherin protein expression while promoting N-cadherin expression by enhancing the activity of GLS and GS."
+          }
+        ],
+        "id": "doc_r_007",
+        "negated": false,
+        "predicate": "inhibits expression of",
+        "source": "doc_e_001",
+        "target": "doc_e_007"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "c-Myc could promote N-cadherin expression by enhancing the activity of GLS and GS.",
+            "context": [],
+            "effects": [
+              "potential promotion of N-cadherin expression"
+            ],
+            "intervention": null,
+            "score": null,
+            "surface_form": "promoting N-cadherin expression",
+            "text": "Furthermore, c-Myc could inhibit E-cadherin protein expression while promoting N-cadherin expression by enhancing the activity of GLS and GS."
+          }
+        ],
+        "id": "doc_r_008",
+        "negated": false,
+        "predicate": "promotes expression of",
+        "source": "doc_e_001",
+        "target": "doc_e_008"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "In the presence of an inhibitor of GS, the effects of c-Myc overexpression, including increased colonies derived from oral cancer cells, more cells in S phase, and promoted migratory speed of KB cells, were effectively reversed.",
+            "context": [
+              "comparison with the mock-vehicle group"
+            ],
+            "effects": [
+              "reversal of increased colonies derived from oral cancer cells",
+              "reversal of more cells being in S phase",
+              "reversal of promoted migratory speed of KB cells"
+            ],
+            "intervention": "presence of an inhibitor of GS",
+            "score": null,
+            "surface_form": "these effects were effectively reversed in the presence of GLS or GS inhibitor",
+            "text": "Overexpression of c-Myc increased the colonies derived from oral cancer cells and caused more cells to be in S phase compared with the mock-vehicle group. The migratory speed of KB cells was promoted by overexpression of c-Myc compared to the mock-vehicle group. However, these effects were effectively reversed in the presence of GLS or GS inhibitor."
+          }
+        ],
+        "id": "doc_r_009",
+        "negated": false,
+        "predicate": "reverses effects of",
+        "source": "doc_e_004",
+        "target": "doc_e_001"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "GS protein expression was correlated with TNM stage.",
+            "context": [],
+            "effects": [],
+            "intervention": null,
+            "score": null,
+            "surface_form": "was correlated with the Tumor, Lymph Node, and Metastasis (TNM) stage",
+            "text": "The protein expression of GS was correlated with the Tumor, Lymph Node, and Metastasis (TNM) stage."
+          },
+          {
+            "assertion": "GS protein expression was correlated with the Tumor, Lymph Node, and Metastasis stage.",
+            "context": [],
+            "effects": [],
+            "intervention": null,
+            "score": null,
+            "surface_form": "was correlated with the Tumor, Lymph Node, and Metastasis (TNM) stage",
+            "text": "The protein expression of GS was correlated with the Tumor, Lymph Node, and Metastasis (TNM) stage."
+          }
+        ],
+        "id": "doc_r_010",
+        "negated": false,
+        "predicate": "correlates with",
+        "source": "doc_e_004",
+        "target": "doc_e_009"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "In the presence of an inhibitor of GLS, the effects of c-Myc overexpression, including increased colonies derived from oral cancer cells, more cells in S phase, and promoted migratory speed of KB cells, were effectively reversed.",
+            "context": [
+              "comparison with the mock-vehicle group"
+            ],
+            "effects": [
+              "reversal of increased colonies derived from oral cancer cells",
+              "reversal of more cells being in S phase",
+              "reversal of promoted migratory speed of KB cells"
+            ],
+            "intervention": "presence of an inhibitor of GLS",
+            "score": null,
+            "surface_form": "these effects were effectively reversed in the presence of GLS or GS inhibitor",
+            "text": "Overexpression of c-Myc increased the colonies derived from oral cancer cells and caused more cells to be in S phase compared with the mock-vehicle group. The migratory speed of KB cells was promoted by overexpression of c-Myc compared to the mock-vehicle group. However, these effects were effectively reversed in the presence of GLS or GS inhibitor."
+          }
+        ],
+        "id": "doc_r_011",
+        "negated": false,
+        "predicate": "reverses effects of",
+        "source": "doc_e_010",
+        "target": "doc_e_001"
+      }
+    ],
+    "nodes": [
+      {
+        "aliases": [
+          "c-Myc"
+        ],
+        "id": "doc_e_001",
+        "label": "c-Myc",
+        "mentions": [
+          {
+            "end": 5,
+            "id": "E1",
+            "score": 0.9999794960021973,
+            "start": 0,
+            "text": "c-Myc",
+            "type": "Gene"
+          },
+          {
+            "end": 245,
+            "id": "E9",
+            "score": 0.9999796152114868,
+            "start": 240,
+            "text": "c-Myc",
+            "type": "Gene"
+          },
+          {
+            "end": 338,
+            "id": "E12",
+            "score": 0.9999798138936361,
+            "start": 333,
+            "text": "c-Myc",
+            "type": "Gene"
+          },
+          {
+            "end": 547,
+            "id": "E16",
+            "score": 0.9999801715215048,
+            "start": 542,
+            "text": "c-Myc",
+            "type": "Gene"
+          },
+          {
+            "end": 659,
+            "id": "E19",
+            "score": 0.9999801715215048,
+            "start": 654,
+            "text": "c-Myc",
+            "type": "Gene"
+          },
+          {
+            "end": 862,
+            "id": "E27",
+            "score": 0.9999796549479166,
+            "start": 857,
+            "text": "c-Myc",
+            "type": "Gene"
+          },
+          {
+            "end": 1023,
+            "id": "E33",
+            "score": 0.9999793370564779,
+            "start": 1018,
+            "text": "c-Myc",
+            "type": "Gene"
+          },
+          {
+            "end": 1107,
+            "id": "E35",
+            "score": 0.9999793370564779,
+            "start": 1102,
+            "text": "c-Myc",
+            "type": "Gene"
+          },
+          {
+            "end": 1310,
+            "id": "E38",
+            "score": 0.9999797741572062,
+            "start": 1305,
+            "text": "c-Myc",
+            "type": "Gene"
+          },
+          {
+            "end": 1454,
+            "id": "E41",
+            "score": 0.9999800125757853,
+            "start": 1449,
+            "text": "c-Myc",
+            "type": "Gene"
+          },
+          {
+            "end": 1584,
+            "id": "E46",
+            "score": 0.9999800523122152,
+            "start": 1579,
+            "text": "c-Myc",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "Oral Cancer",
+          "oral cancer"
+        ],
+        "id": "doc_e_002",
+        "label": "Oral Cancer",
+        "mentions": [
+          {
+            "end": 41,
+            "id": "E2",
+            "score": 0.9999911189079285,
+            "start": 30,
+            "text": "Oral Cancer",
+            "type": "Disease"
+          },
+          {
+            "end": 287,
+            "id": "E11",
+            "score": 0.999991774559021,
+            "start": 276,
+            "text": "oral cancer",
+            "type": "Disease"
+          },
+          {
+            "end": 421,
+            "id": "E15",
+            "score": 0.9999919533729553,
+            "start": 410,
+            "text": "oral cancer",
+            "type": "Disease"
+          },
+          {
+            "end": 732,
+            "id": "E23",
+            "score": 0.9999887347221375,
+            "start": 721,
+            "text": "oral cancer",
+            "type": "Disease"
+          },
+          {
+            "end": 1155,
+            "id": "E36",
+            "score": 0.9999905824661255,
+            "start": 1144,
+            "text": "oral cancer",
+            "type": "Disease"
+          },
+          {
+            "end": 1620,
+            "id": "E47",
+            "score": 0.9999918937683105,
+            "start": 1609,
+            "text": "oral cancer",
+            "type": "Disease"
+          },
+          {
+            "end": 1813,
+            "id": "E50",
+            "score": 0.9999915361404419,
+            "start": 1802,
+            "text": "oral cancer",
+            "type": "Disease"
+          }
+        ],
+        "type": "Disease"
+      },
+      {
+        "aliases": [
+          "Glutaminase",
+          "glutaminase",
+          "GLS"
+        ],
+        "id": "doc_e_003",
+        "label": "GLS",
+        "mentions": [
+          {
+            "end": 99,
+            "id": "E3",
+            "score": 0.9999858140945435,
+            "start": 88,
+            "text": "Glutaminase",
+            "type": "Gene"
+          },
+          {
+            "end": 187,
+            "id": "E5",
+            "score": 0.9999864101409912,
+            "start": 176,
+            "text": "glutaminase",
+            "type": "Gene"
+          },
+          {
+            "end": 192,
+            "id": "E6",
+            "score": 0.9999871253967285,
+            "start": 189,
+            "text": "GLS",
+            "type": "Gene"
+          },
+          {
+            "end": 343,
+            "id": "E13",
+            "score": 0.9999877214431763,
+            "start": 340,
+            "text": "GLS",
+            "type": "Gene"
+          },
+          {
+            "end": 582,
+            "id": "E17",
+            "score": 0.9999123811721802,
+            "start": 579,
+            "text": "GLS",
+            "type": "Gene"
+          },
+          {
+            "end": 664,
+            "id": "E20",
+            "score": 0.9999644756317139,
+            "start": 661,
+            "text": "GLS",
+            "type": "Gene"
+          },
+          {
+            "end": 885,
+            "id": "E28",
+            "score": 0.9999527931213379,
+            "start": 882,
+            "text": "GLS",
+            "type": "Gene"
+          },
+          {
+            "end": 1569,
+            "id": "E44",
+            "score": 0.997153639793396,
+            "start": 1566,
+            "text": "GLS",
+            "type": "Gene"
+          },
+          {
+            "end": 1670,
+            "id": "E48",
+            "score": 0.9999727010726929,
+            "start": 1667,
+            "text": "GLS",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "Glutamine Synthetase",
+          "glutamine synthetase",
+          "GS"
+        ],
+        "id": "doc_e_004",
+        "label": "GS",
+        "mentions": [
+          {
+            "end": 124,
+            "id": "E4",
+            "score": 0.9999759793281555,
+            "start": 104,
+            "text": "Glutamine Synthetase",
+            "type": "Gene"
+          },
+          {
+            "end": 218,
+            "id": "E7",
+            "score": 0.9999759793281555,
+            "start": 198,
+            "text": "glutamine synthetase",
+            "type": "Gene"
+          },
+          {
+            "end": 222,
+            "id": "E8",
+            "score": 0.9999866485595703,
+            "start": 220,
+            "text": "GS",
+            "type": "Gene"
+          },
+          {
+            "end": 351,
+            "id": "E14",
+            "score": 0.9999856948852539,
+            "start": 349,
+            "text": "GS",
+            "type": "Gene"
+          },
+          {
+            "end": 588,
+            "id": "E18",
+            "score": 0.9996700286865234,
+            "start": 586,
+            "text": "GS",
+            "type": "Gene"
+          },
+          {
+            "end": 671,
+            "id": "E21",
+            "score": 0.9999558925628662,
+            "start": 669,
+            "text": "GS",
+            "type": "Gene"
+          },
+          {
+            "end": 891,
+            "id": "E29",
+            "score": 0.9999830722808838,
+            "start": 889,
+            "text": "GS",
+            "type": "Gene"
+          },
+          {
+            "end": 933,
+            "id": "E30",
+            "score": 0.9999818801879883,
+            "start": 931,
+            "text": "GS",
+            "type": "Gene"
+          },
+          {
+            "end": 1070,
+            "id": "E34",
+            "score": 0.9999816417694092,
+            "start": 1068,
+            "text": "GS",
+            "type": "Gene"
+          },
+          {
+            "end": 1424,
+            "id": "E40",
+            "score": 0.9998883008956909,
+            "start": 1422,
+            "text": "GS",
+            "type": "Gene"
+          },
+          {
+            "end": 1576,
+            "id": "E45",
+            "score": 0.9983605742454529,
+            "start": 1574,
+            "text": "GS",
+            "type": "Gene"
+          },
+          {
+            "end": 1677,
+            "id": "E49",
+            "score": 0.9999792575836182,
+            "start": 1675,
+            "text": "GS",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "tumor"
+        ],
+        "id": "doc_e_005",
+        "label": "tumor",
+        "mentions": [
+          {
+            "end": 260,
+            "id": "E10",
+            "score": 0.9999855756759644,
+            "start": 255,
+            "text": "tumor",
+            "type": "Disease"
+          }
+        ],
+        "type": "Disease"
+      },
+      {
+        "aliases": [
+          "KB"
+        ],
+        "id": "doc_e_006",
+        "label": "KB",
+        "mentions": [
+          {
+            "end": 720,
+            "id": "E22",
+            "score": 0.9940422177314758,
+            "start": 718,
+            "text": "KB",
+            "type": "CellLine"
+          },
+          {
+            "end": 835,
+            "id": "E26",
+            "score": 0.9942399263381958,
+            "start": 833,
+            "text": "KB",
+            "type": "CellLine"
+          },
+          {
+            "end": 1264,
+            "id": "E37",
+            "score": 0.9948225021362305,
+            "start": 1262,
+            "text": "KB",
+            "type": "CellLine"
+          }
+        ],
+        "type": "CellLine"
+      },
+      {
+        "aliases": [
+          "E-cadherin"
+        ],
+        "id": "doc_e_007",
+        "label": "E-cadherin",
+        "mentions": [
+          {
+            "end": 769,
+            "id": "E24",
+            "score": 0.9999803304672241,
+            "start": 759,
+            "text": "E-cadherin",
+            "type": "Gene"
+          },
+          {
+            "end": 1479,
+            "id": "E42",
+            "score": 0.9999802907307943,
+            "start": 1469,
+            "text": "E-cadherin",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "N-cadherin"
+        ],
+        "id": "doc_e_008",
+        "label": "N-cadherin",
+        "mentions": [
+          {
+            "end": 784,
+            "id": "E25",
+            "score": 0.9999800125757853,
+            "start": 774,
+            "text": "N-cadherin",
+            "type": "Gene"
+          },
+          {
+            "end": 1525,
+            "id": "E43",
+            "score": 0.9999801715215048,
+            "start": 1515,
+            "text": "N-cadherin",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "Tumor, Lymph Node, and Metastasis",
+          "TNM"
+        ],
+        "id": "doc_e_009",
+        "label": "TNM",
+        "mentions": [
+          {
+            "end": 991,
+            "id": "E31",
+            "score": 0.9822818722043719,
+            "start": 958,
+            "text": "Tumor, Lymph Node, and Metastasis",
+            "type": "Disease"
+          },
+          {
+            "end": 996,
+            "id": "E32",
+            "score": 0.9839352369308472,
+            "start": 993,
+            "text": "TNM",
+            "type": "Disease"
+          }
+        ],
+        "type": "Disease"
+      },
+      {
+        "aliases": [
+          "GLS"
+        ],
+        "id": "doc_e_010",
+        "label": "GLS",
+        "mentions": [
+          {
+            "end": 1418,
+            "id": "E39",
+            "score": 0.9999001026153564,
+            "start": 1415,
+            "text": "GLS",
+            "type": "Chemical"
+          }
+        ],
+        "type": "Chemical"
+      }
+    ]
+  },
+  "graph_json_path": "graphs/pmid_31324362.json",
+  "mention_level_rich_relations": [
+    {
+      "assertion": "c-Myc overexpression promotes oral cancer cell proliferation and migration by enhancing glutaminase and glutamine synthetase activity.",
+      "context": [
+        "oral cancer cells"
+      ],
+      "effects": [
+        "oral cancer cell proliferation",
+        "oral cancer cell migration"
+      ],
+      "evidence": "c-Myc Overexpression Promotes Oral Cancer Cell Proliferation and Migration by Enhancing Glutaminase and Glutamine Synthetase Activity.",
+      "intervention": "c-Myc overexpression",
+      "negated": false,
+      "predicate": "promotes proliferation and migration in",
+      "score": null,
+      "source": "E1",
+      "surface_form": "Overexpression Promotes Oral Cancer Cell Proliferation and Migration",
+      "target": "E2"
+    },
+    {
+      "assertion": "c-Myc overexpression enhances glutaminase activity.",
+      "context": [
+        "oral cancer cells"
+      ],
+      "effects": [],
+      "evidence": "c-Myc Overexpression Promotes Oral Cancer Cell Proliferation and Migration by Enhancing Glutaminase and Glutamine Synthetase Activity.",
+      "intervention": "c-Myc overexpression",
+      "negated": false,
+      "predicate": "enhances activity of",
+      "score": null,
+      "source": "E1",
+      "surface_form": "Enhancing Glutaminase and Glutamine Synthetase Activity",
+      "target": "E3"
+    },
+    {
+      "assertion": "c-Myc overexpression enhances glutamine synthetase activity.",
+      "context": [
+        "oral cancer cells"
+      ],
+      "effects": [],
+      "evidence": "c-Myc Overexpression Promotes Oral Cancer Cell Proliferation and Migration by Enhancing Glutaminase and Glutamine Synthetase Activity.",
+      "intervention": "c-Myc overexpression",
+      "negated": false,
+      "predicate": "enhances activity of",
+      "score": null,
+      "source": "E1",
+      "surface_form": "Enhancing Glutaminase and Glutamine Synthetase Activity",
+      "target": "E4"
+    },
+    {
+      "assertion": "GS protein expression was correlated with the Tumor, Lymph Node, and Metastasis stage.",
+      "context": [],
+      "effects": [],
+      "evidence": "The protein expression of GS was correlated with the Tumor, Lymph Node, and Metastasis (TNM) stage.",
+      "intervention": null,
+      "negated": false,
+      "predicate": "correlates with",
+      "score": null,
+      "source": "E30",
+      "surface_form": "was correlated with the Tumor, Lymph Node, and Metastasis (TNM) stage",
+      "target": "E31"
+    },
+    {
+      "assertion": "GS protein expression was correlated with TNM stage.",
+      "context": [],
+      "effects": [],
+      "evidence": "The protein expression of GS was correlated with the Tumor, Lymph Node, and Metastasis (TNM) stage.",
+      "intervention": null,
+      "negated": false,
+      "predicate": "correlates with",
+      "score": null,
+      "source": "E30",
+      "surface_form": "was correlated with the Tumor, Lymph Node, and Metastasis (TNM) stage",
+      "target": "E32"
+    },
+    {
+      "assertion": "c-Myc mRNA levels were positively correlated with GS mRNA levels.",
+      "context": [],
+      "effects": [],
+      "evidence": "In addition, c-Myc mRNA levels were positively correlated with GS mRNA levels.",
+      "intervention": null,
+      "negated": false,
+      "predicate": "positively correlates with",
+      "score": null,
+      "source": "E33",
+      "surface_form": "positively correlated with",
+      "target": "E34"
+    },
+    {
+      "assertion": "Overexpression of c-Myc increased the colonies derived from oral cancer cells and caused more cells to be in S phase compared with the mock-vehicle group.",
+      "context": [
+        "compared with the mock-vehicle group"
+      ],
+      "effects": [
+        "increased the colonies derived from oral cancer cells",
+        "caused more cells to be in S phase"
+      ],
+      "evidence": "Overexpression of c-Myc increased the colonies derived from oral cancer cells and caused more cells to be in S phase compared with the mock-vehicle group.",
+      "intervention": "overexpression of c-Myc",
+      "negated": false,
+      "predicate": "increases colonies and S-phase cells in",
+      "score": null,
+      "source": "E35",
+      "surface_form": "increased the colonies derived from oral cancer cells and caused more cells to be in S phase",
+      "target": "E36"
+    },
+    {
+      "assertion": "Overexpression of c-Myc promoted the migratory speed of KB cells compared to the mock-vehicle group.",
+      "context": [
+        "compared to the mock-vehicle group"
+      ],
+      "effects": [
+        "increased migratory speed of KB cells"
+      ],
+      "evidence": "The migratory speed of KB cells was promoted by overexpression of c-Myc compared to the mock-vehicle group.",
+      "intervention": "overexpression of c-Myc",
+      "negated": false,
+      "predicate": "promotes migration of",
+      "score": null,
+      "source": "E38",
+      "surface_form": "was promoted by overexpression of c-Myc",
+      "target": "E37"
+    },
+    {
+      "assertion": "In the presence of an inhibitor of GLS, the effects of c-Myc overexpression, including increased colonies derived from oral cancer cells, more cells in S phase, and promoted migratory speed of KB cells, were effectively reversed.",
+      "context": [
+        "comparison with the mock-vehicle group"
+      ],
+      "effects": [
+        "reversal of increased colonies derived from oral cancer cells",
+        "reversal of more cells being in S phase",
+        "reversal of promoted migratory speed of KB cells"
+      ],
+      "evidence": "Overexpression of c-Myc increased the colonies derived from oral cancer cells and caused more cells to be in S phase compared with the mock-vehicle group. The migratory speed of KB cells was promoted by overexpression of c-Myc compared to the mock-vehicle group. However, these effects were effectively reversed in the presence of GLS or GS inhibitor.",
+      "intervention": "presence of an inhibitor of GLS",
+      "negated": false,
+      "predicate": "reverses effects of",
+      "score": null,
+      "source": "E39",
+      "surface_form": "these effects were effectively reversed in the presence of GLS or GS inhibitor",
+      "target": "E38"
+    },
+    {
+      "assertion": "In the presence of an inhibitor of GS, the effects of c-Myc overexpression, including increased colonies derived from oral cancer cells, more cells in S phase, and promoted migratory speed of KB cells, were effectively reversed.",
+      "context": [
+        "comparison with the mock-vehicle group"
+      ],
+      "effects": [
+        "reversal of increased colonies derived from oral cancer cells",
+        "reversal of more cells being in S phase",
+        "reversal of promoted migratory speed of KB cells"
+      ],
+      "evidence": "Overexpression of c-Myc increased the colonies derived from oral cancer cells and caused more cells to be in S phase compared with the mock-vehicle group. The migratory speed of KB cells was promoted by overexpression of c-Myc compared to the mock-vehicle group. However, these effects were effectively reversed in the presence of GLS or GS inhibitor.",
+      "intervention": "presence of an inhibitor of GS",
+      "negated": false,
+      "predicate": "reverses effects of",
+      "score": null,
+      "source": "E40",
+      "surface_form": "these effects were effectively reversed in the presence of GLS or GS inhibitor",
+      "target": "E38"
+    },
+    {
+      "assertion": "c-Myc could inhibit E-cadherin protein expression by enhancing the activity of GLS and GS.",
+      "context": [],
+      "effects": [
+        "potential inhibition of E-cadherin protein expression"
+      ],
+      "evidence": "Furthermore, c-Myc could inhibit E-cadherin protein expression while promoting N-cadherin expression by enhancing the activity of GLS and GS.",
+      "intervention": null,
+      "negated": false,
+      "predicate": "inhibits expression of",
+      "score": null,
+      "source": "E41",
+      "surface_form": "could inhibit E-cadherin protein expression",
+      "target": "E42"
+    },
+    {
+      "assertion": "c-Myc could promote N-cadherin expression by enhancing the activity of GLS and GS.",
+      "context": [],
+      "effects": [
+        "potential promotion of N-cadherin expression"
+      ],
+      "evidence": "Furthermore, c-Myc could inhibit E-cadherin protein expression while promoting N-cadherin expression by enhancing the activity of GLS and GS.",
+      "intervention": null,
+      "negated": false,
+      "predicate": "promotes expression of",
+      "score": null,
+      "source": "E41",
+      "surface_form": "promoting N-cadherin expression",
+      "target": "E43"
+    },
+    {
+      "assertion": "c-Myc could enhance GLS activity, with GLS and GS activity given as the basis for c-Myc's inhibition of E-cadherin and promotion of N-cadherin expression.",
+      "context": [],
+      "effects": [],
+      "evidence": "Furthermore, c-Myc could inhibit E-cadherin protein expression while promoting N-cadherin expression by enhancing the activity of GLS and GS.",
+      "intervention": null,
+      "negated": false,
+      "predicate": "enhances activity of",
+      "score": null,
+      "source": "E41",
+      "surface_form": "enhancing the activity of GLS and GS",
+      "target": "E44"
+    },
+    {
+      "assertion": "c-Myc could enhance GS activity, with GLS and GS activity given as the basis for c-Myc's inhibition of E-cadherin and promotion of N-cadherin expression.",
+      "context": [],
+      "effects": [],
+      "evidence": "Furthermore, c-Myc could inhibit E-cadherin protein expression while promoting N-cadherin expression by enhancing the activity of GLS and GS.",
+      "intervention": null,
+      "negated": false,
+      "predicate": "enhances activity of",
+      "score": null,
+      "source": "E41",
+      "surface_form": "enhancing the activity of GLS and GS",
+      "target": "E45"
+    },
+    {
+      "assertion": "c-Myc overexpression promotes oral cancer cell proliferation and migration by enhancing GLS and GS activity.",
+      "context": [
+        "oral cancer cells"
+      ],
+      "effects": [
+        "oral cancer cell proliferation",
+        "oral cancer cell migration"
+      ],
+      "evidence": "c-Myc overexpression promotes oral cancer cell proliferation and migration by enhancing GLS and GS activity.",
+      "intervention": "c-Myc overexpression",
+      "negated": false,
+      "predicate": "promotes proliferation and migration in",
+      "score": null,
+      "source": "E46",
+      "surface_form": "promotes oral cancer cell proliferation and migration",
+      "target": "E47"
+    },
+    {
+      "assertion": "c-Myc overexpression enhances GLS activity.",
+      "context": [
+        "oral cancer cells"
+      ],
+      "effects": [],
+      "evidence": "c-Myc overexpression promotes oral cancer cell proliferation and migration by enhancing GLS and GS activity.",
+      "intervention": "c-Myc overexpression",
+      "negated": false,
+      "predicate": "enhances activity of",
+      "score": null,
+      "source": "E46",
+      "surface_form": "enhancing GLS and GS activity",
+      "target": "E48"
+    },
+    {
+      "assertion": "c-Myc overexpression enhances GS activity.",
+      "context": [
+        "oral cancer cells"
+      ],
+      "effects": [],
+      "evidence": "c-Myc overexpression promotes oral cancer cell proliferation and migration by enhancing GLS and GS activity.",
+      "intervention": "c-Myc overexpression",
+      "negated": false,
+      "predicate": "enhances activity of",
+      "score": null,
+      "source": "E46",
+      "surface_form": "enhancing GLS and GS activity",
+      "target": "E49"
+    }
+  ],
+  "paper_id": "PMID:31324362",
+  "pmcid": null,
+  "pmid": "31324362",
+  "provider_attempts": 1,
+  "provider_failures": 0,
+  "repair_attempts": 0,
+  "runtime": {
+    "entity_backend": "hunflair2",
+    "graph_topology_changed": false,
+    "harness_max_retries": 2,
+    "hunflair2_device": "cpu",
+    "hunflair2_model": "hunflair/hunflair2-ner",
+    "implementation_commit": "0330923166a6b85584c1206c7bb21ae4721b99f3",
+    "max_completion_tokens": 128000,
+    "prompt_frozen_before_first_paper": true,
+    "reasoning_effort": "max",
+    "relation_model": "gpt-5.6-luna",
+    "relation_provider": "OpenAI Responses API",
+    "scope": "title plus complete abstract only"
+  },
+  "runtime_seconds": 418.89,
+  "semantic_audit": {
+    "counts": {
+      "bundles": 2,
+      "displayed_connections": 9,
+      "multi_evidence_graph_edges": 4,
+      "negated_relations": 0,
+      "relations_with_context": 10,
+      "relations_with_effects": 8,
+      "relations_with_intervention": 10,
+      "relations_with_no_optional_semantic_fields": 5,
+      "self_edges": 0
+    },
+    "flags": {
+      "apparently_duplicated_semantic_relation": [],
+      "context_used_as_mechanism": [],
+      "possible_third_participant_leakage": [
+        {
+          "entity_texts": [
+            "c-Myc",
+            "oral cancer"
+          ],
+          "relation_index": 1
+        },
+        {
+          "entity_texts": [
+            "Oral Cancer",
+            "c-Myc",
+            "oral cancer"
+          ],
+          "relation_index": 2
+        },
+        {
+          "entity_texts": [
+            "Oral Cancer",
+            "c-Myc",
+            "oral cancer"
+          ],
+          "relation_index": 3
+        },
+        {
+          "entity_texts": [
+            "Oral Cancer",
+            "c-Myc",
+            "oral cancer"
+          ],
+          "relation_index": 7
+        },
+        {
+          "entity_texts": [
+            "KB",
+            "c-Myc"
+          ],
+          "relation_index": 8
+        },
+        {
+          "entity_texts": [
+            "GLS",
+            "KB",
+            "Oral Cancer",
+            "oral cancer"
+          ],
+          "relation_index": 9
+        },
+        {
+          "entity_texts": [
+            "GS",
+            "KB",
+            "Oral Cancer",
+            "oral cancer"
+          ],
+          "relation_index": 10
+        },
+        {
+          "entity_texts": [
+            "E-cadherin"
+          ],
+          "relation_index": 11
+        },
+        {
+          "entity_texts": [
+            "N-cadherin"
+          ],
+          "relation_index": 12
+        },
+        {
+          "entity_texts": [
+            "Oral Cancer",
+            "c-Myc",
+            "oral cancer"
+          ],
+          "relation_index": 15
+        },
+        {
+          "entity_texts": [
+            "Oral Cancer",
+            "c-Myc",
+            "oral cancer"
+          ],
+          "relation_index": 16
+        },
+        {
+          "entity_texts": [
+            "Oral Cancer",
+            "c-Myc",
+            "oral cancer"
+          ],
+          "relation_index": 17
+        }
+      ],
+      "unusually_dense_graph": [],
+      "very_broad_assertion": []
+    },
+    "note": "Signals are descriptive review prompts, not formal semantic accuracy metrics or automatic failures."
+  },
+  "source": {
+    "acquisition_mode": "abstract_only",
+    "canonical_full_text_sha256": "75c352846198e57b5bf66f031a22f88885df2892fd35d56366ba4cff14cc1d50",
+    "canonical_source_checksum": "401d20cb31fba469f3daa61f526e4c36bd9a1f7b0f7a8d81adc44c3d6e555b31",
+    "corpus_path": ".cache/ner_target_domain/target_corpus.json",
+    "scope": "title plus complete abstract",
+    "segments": [
+      {
+        "canonical_end": 134,
+        "canonical_start": 0,
+        "section": "title",
+        "text": "c-Myc Overexpression Promotes Oral Cancer Cell Proliferation and Migration by Enhancing Glutaminase and Glutamine Synthetase Activity."
+      },
+      {
+        "canonical_end": 288,
+        "canonical_start": 136,
+        "section": "abstract / BACKGROUND",
+        "text": "This study aimed to investigate whether glutaminase (GLS) and glutamine synthetase (GS) are involved in c-Myc-mediated tumor development in oral cancer."
+      },
+      {
+        "canonical_end": 903,
+        "canonical_start": 290,
+        "section": "abstract / METHODS",
+        "text": "The correlation between the expressions of c-Myc, GLS, and GS in clinical samples and the clinicopathologic features of oral cancer were examined using immunohistochemistry and quantitative real-time polymerase chain reaction. After overexpressing the c-Myc gene and using an inhibitor of GLS or GS, functional experiments were performed to confirm the effects of c-Myc, GLS and GS on proliferation, cell cycle and migration in KB oral cancer cells. The expressions of E-cadherin and N-cadherin were determined by immunofluorescence assays in KB cells overexpressing c-Myc in the presence of GLS or GS inhibitors."
+      },
+      {
+        "canonical_end": 1577,
+        "canonical_start": 905,
+        "section": "abstract / RESULTS",
+        "text": "The protein expression of GS was correlated with the Tumor, Lymph Node, and Metastasis (TNM) stage. In addition, c-Myc mRNA levels were positively correlated with GS mRNA levels. Overexpression of c-Myc increased the colonies derived from oral cancer cells and caused more cells to be in S phase compared with the mock-vehicle group. The migratory speed of KB cells was promoted by overexpression of c-Myc compared to the mock-vehicle group. However, these effects were effectively reversed in the presence of GLS or GS inhibitor. Furthermore, c-Myc could inhibit E-cadherin protein expression while promoting N-cadherin expression by enhancing the activity of GLS and GS."
+      },
+      {
+        "canonical_end": 1814,
+        "canonical_start": 1579,
+        "section": "abstract / CONCLUSIONS",
+        "text": "c-Myc overexpression promotes oral cancer cell proliferation and migration by enhancing GLS and GS activity. Our findings are beneficial for the identification of novel molecular targets for the prevention and treatment of oral cancer."
+      }
+    ],
+    "selected_source_sha256": "75c352846198e57b5bf66f031a22f88885df2892fd35d56366ba4cff14cc1d50",
+    "source_format": "pubmed_xml",
+    "text": "c-Myc Overexpression Promotes Oral Cancer Cell Proliferation and Migration by Enhancing Glutaminase and Glutamine Synthetase Activity.\n\nThis study aimed to investigate whether glutaminase (GLS) and glutamine synthetase (GS) are involved in c-Myc-mediated tumor development in oral cancer.\n\nThe correlation between the expressions of c-Myc, GLS, and GS in clinical samples and the clinicopathologic features of oral cancer were examined using immunohistochemistry and quantitative real-time polymerase chain reaction. After overexpressing the c-Myc gene and using an inhibitor of GLS or GS, functional experiments were performed to confirm the effects of c-Myc, GLS and GS on proliferation, cell cycle and migration in KB oral cancer cells. The expressions of E-cadherin and N-cadherin were determined by immunofluorescence assays in KB cells overexpressing c-Myc in the presence of GLS or GS inhibitors.\n\nThe protein expression of GS was correlated with the Tumor, Lymph Node, and Metastasis (TNM) stage. In addition, c-Myc mRNA levels were positively correlated with GS mRNA levels. Overexpression of c-Myc increased the colonies derived from oral cancer cells and caused more cells to be in S phase compared with the mock-vehicle group. The migratory speed of KB cells was promoted by overexpression of c-Myc compared to the mock-vehicle group. However, these effects were effectively reversed in the presence of GLS or GS inhibitor. Furthermore, c-Myc could inhibit E-cadherin protein expression while promoting N-cadherin expression by enhancing the activity of GLS and GS.\n\nc-Myc overexpression promotes oral cancer cell proliferation and migration by enhancing GLS and GS activity. Our findings are beneficial for the identification of novel molecular targets for the prevention and treatment of oral cancer."
+  },
+  "started_at_utc": "2026-09-20T13:30:26.903715+00:00",
+  "status": "success",
+  "title": "c-Myc Overexpression Promotes Oral Cancer Cell Proliferation and Migration by Enhancing Glutaminase and Glutamine Synthetase Activity."
+}

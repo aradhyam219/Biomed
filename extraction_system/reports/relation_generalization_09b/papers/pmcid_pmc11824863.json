@@ -1,0 +1,2548 @@
+{
+  "assembled_entities": {
+    "document_entities": [
+      {
+        "aliases": [
+          "SFPQ",
+          "proline and glutamine rich"
+        ],
+        "id": "doc_e_001",
+        "label": "SFPQ",
+        "mentions": [
+          {
+            "end": 22,
+            "id": "E1",
+            "score": 0.9999493360519409,
+            "start": 18,
+            "text": "SFPQ",
+            "type": "Gene"
+          },
+          {
+            "end": 286,
+            "id": "E7",
+            "score": 0.9998663514852524,
+            "start": 260,
+            "text": "proline and glutamine rich",
+            "type": "Gene"
+          },
+          {
+            "end": 292,
+            "id": "E8",
+            "score": 0.999971866607666,
+            "start": 288,
+            "text": "SFPQ",
+            "type": "Gene"
+          },
+          {
+            "end": 484,
+            "id": "E10",
+            "score": 0.9999781847000122,
+            "start": 480,
+            "text": "SFPQ",
+            "type": "Gene"
+          },
+          {
+            "end": 715,
+            "id": "E16",
+            "score": 0.7522382140159607,
+            "start": 711,
+            "text": "SFPQ",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "AD",
+          "Alzheimer's disease"
+        ],
+        "id": "doc_e_002",
+        "label": "AD",
+        "mentions": [
+          {
+            "end": 58,
+            "id": "E2",
+            "score": 0.9999332427978516,
+            "start": 56,
+            "text": "AD",
+            "type": "Disease"
+          },
+          {
+            "end": 84,
+            "id": "E4",
+            "score": 0.9999909003575643,
+            "start": 65,
+            "text": "Alzheimer's disease",
+            "type": "Disease"
+          },
+          {
+            "end": 88,
+            "id": "E5",
+            "score": 0.999977707862854,
+            "start": 86,
+            "text": "AD",
+            "type": "Disease"
+          },
+          {
+            "end": 490,
+            "id": "E11",
+            "score": 0.9999853372573853,
+            "start": 488,
+            "text": "AD",
+            "type": "Disease"
+          },
+          {
+            "end": 545,
+            "id": "E12",
+            "score": 0.9999839067459106,
+            "start": 543,
+            "text": "AD",
+            "type": "Disease"
+          },
+          {
+            "end": 740,
+            "id": "E17",
+            "score": 0.9999804496765137,
+            "start": 738,
+            "text": "AD",
+            "type": "Disease"
+          },
+          {
+            "end": 833,
+            "id": "E20",
+            "score": 0.9999840259552002,
+            "start": 831,
+            "text": "AD",
+            "type": "Disease"
+          },
+          {
+            "end": 857,
+            "id": "E22",
+            "score": 0.999984860420227,
+            "start": 855,
+            "text": "AD",
+            "type": "Disease"
+          },
+          {
+            "end": 1495,
+            "id": "E41",
+            "score": 0.9999860525131226,
+            "start": 1493,
+            "text": "AD",
+            "type": "Disease"
+          }
+        ],
+        "type": "Disease"
+      },
+      {
+        "aliases": [
+          "Mice",
+          "mice"
+        ],
+        "id": "doc_e_003",
+        "label": "Mice",
+        "mentions": [
+          {
+            "end": 63,
+            "id": "E3",
+            "score": 0.9999854564666748,
+            "start": 59,
+            "text": "Mice",
+            "type": "Species"
+          },
+          {
+            "end": 745,
+            "id": "E18",
+            "score": 0.9999850988388062,
+            "start": 741,
+            "text": "mice",
+            "type": "Species"
+          },
+          {
+            "end": 838,
+            "id": "E21",
+            "score": 0.9999866485595703,
+            "start": 834,
+            "text": "mice",
+            "type": "Species"
+          }
+        ],
+        "type": "Species"
+      },
+      {
+        "aliases": [
+          "neurodegenerative disorder"
+        ],
+        "id": "doc_e_004",
+        "label": "neurodegenerative disorder",
+        "mentions": [
+          {
+            "end": 129,
+            "id": "E6",
+            "score": 0.9999899864196777,
+            "start": 103,
+            "text": "neurodegenerative disorder",
+            "type": "Disease"
+          }
+        ],
+        "type": "Disease"
+      },
+      {
+        "aliases": [
+          "neurodegenerative diseases"
+        ],
+        "id": "doc_e_005",
+        "label": "neurodegenerative diseases",
+        "mentions": [
+          {
+            "end": 355,
+            "id": "E9",
+            "score": 0.9999862909317017,
+            "start": 329,
+            "text": "neurodegenerative diseases",
+            "type": "Disease"
+          }
+        ],
+        "type": "Disease"
+      },
+      {
+        "aliases": [
+          "mouse"
+        ],
+        "id": "doc_e_006",
+        "label": "mouse",
+        "mentions": [
+          {
+            "end": 551,
+            "id": "E13",
+            "score": 0.9999865293502808,
+            "start": 546,
+            "text": "mouse",
+            "type": "Species"
+          }
+        ],
+        "type": "Species"
+      },
+      {
+        "aliases": [
+          "amyloid-beta1–42"
+        ],
+        "id": "doc_e_007",
+        "label": "amyloid-beta1–42",
+        "mentions": [
+          {
+            "end": 631,
+            "id": "E14",
+            "score": 0.9999810854593912,
+            "start": 615,
+            "text": "amyloid-beta1–42",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "Aβ1–42"
+        ],
+        "id": "doc_e_008",
+        "label": "Aβ1–42",
+        "mentions": [
+          {
+            "end": 639,
+            "id": "E15",
+            "score": 0.9999725818634033,
+            "start": 633,
+            "text": "Aβ1–42",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "SFPQ"
+        ],
+        "id": "doc_e_009",
+        "label": "SFPQ",
+        "mentions": [
+          {
+            "end": 780,
+            "id": "E19",
+            "score": 0.9999947547912598,
+            "start": 776,
+            "text": "SFPQ",
+            "type": "Chemical"
+          },
+          {
+            "end": 1414,
+            "id": "E40",
+            "score": 0.9999440908432007,
+            "start": 1410,
+            "text": "SFPQ",
+            "type": "Chemical"
+          }
+        ],
+        "type": "Chemical"
+      },
+      {
+        "aliases": [
+          "amyloid precursor protein",
+          "APP"
+        ],
+        "id": "doc_e_010",
+        "label": "APP",
+        "mentions": [
+          {
+            "end": 915,
+            "id": "E23",
+            "score": 0.9999803304672241,
+            "start": 890,
+            "text": "amyloid precursor protein",
+            "type": "Gene"
+          },
+          {
+            "end": 920,
+            "id": "E24",
+            "score": 0.9999890327453613,
+            "start": 917,
+            "text": "APP",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "Tau"
+        ],
+        "id": "doc_e_011",
+        "label": "Tau",
+        "mentions": [
+          {
+            "end": 929,
+            "id": "E25",
+            "score": 0.9999507665634155,
+            "start": 926,
+            "text": "Tau",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "glutathione S-transferase",
+          "GST"
+        ],
+        "id": "doc_e_012",
+        "label": "GST",
+        "mentions": [
+          {
+            "end": 1048,
+            "id": "E26",
+            "score": 0.9999809861183167,
+            "start": 1023,
+            "text": "glutathione S-transferase",
+            "type": "Gene"
+          },
+          {
+            "end": 1053,
+            "id": "E27",
+            "score": 0.9999890327453613,
+            "start": 1050,
+            "text": "GST",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "heme oxygenase-1",
+          "HO-1"
+        ],
+        "id": "doc_e_013",
+        "label": "HO-1",
+        "mentions": [
+          {
+            "end": 1075,
+            "id": "E28",
+            "score": 0.9999811947345734,
+            "start": 1059,
+            "text": "heme oxygenase-1",
+            "type": "Gene"
+          },
+          {
+            "end": 1081,
+            "id": "E29",
+            "score": 0.9999898672103882,
+            "start": 1077,
+            "text": "HO-1",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "Bcl-2"
+        ],
+        "id": "doc_e_014",
+        "label": "Bcl-2",
+        "mentions": [
+          {
+            "end": 1142,
+            "id": "E30",
+            "score": 0.99998939037323,
+            "start": 1137,
+            "text": "Bcl-2",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "Bax"
+        ],
+        "id": "doc_e_015",
+        "label": "Bax",
+        "mentions": [
+          {
+            "end": 1170,
+            "id": "E31",
+            "score": 0.9999777674674988,
+            "start": 1167,
+            "text": "Bax",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "phosphoinositide 3-kinase"
+        ],
+        "id": "doc_e_016",
+        "label": "phosphoinositide 3-kinase",
+        "mentions": [
+          {
+            "end": 1240,
+            "id": "E32",
+            "score": 0.9999774694442749,
+            "start": 1215,
+            "text": "phosphoinositide 3-kinase",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "PI3K"
+        ],
+        "id": "doc_e_017",
+        "label": "PI3K",
+        "mentions": [
+          {
+            "end": 1248,
+            "id": "E33",
+            "score": 0.9999898672103882,
+            "start": 1244,
+            "text": "PI3K",
+            "type": "Gene"
+          },
+          {
+            "end": 1254,
+            "id": "E34",
+            "score": 0.9999769926071167,
+            "start": 1250,
+            "text": "PI3K",
+            "type": "Gene"
+          },
+          {
+            "end": 1358,
+            "id": "E38",
+            "score": 0.9999901056289673,
+            "start": 1354,
+            "text": "PI3K",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "protein kinase B"
+        ],
+        "id": "doc_e_018",
+        "label": "protein kinase B",
+        "mentions": [
+          {
+            "end": 1290,
+            "id": "E35",
+            "score": 0.9999801317850748,
+            "start": 1274,
+            "text": "protein kinase B",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "AKT"
+        ],
+        "id": "doc_e_019",
+        "label": "AKT",
+        "mentions": [
+          {
+            "end": 1297,
+            "id": "E36",
+            "score": 0.9999902248382568,
+            "start": 1294,
+            "text": "AKT",
+            "type": "Gene"
+          },
+          {
+            "end": 1302,
+            "id": "E37",
+            "score": 0.9999898672103882,
+            "start": 1299,
+            "text": "AKT",
+            "type": "Gene"
+          },
+          {
+            "end": 1362,
+            "id": "E39",
+            "score": 0.9999903440475464,
+            "start": 1359,
+            "text": "AKT",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      }
+    ],
+    "mention_to_document_entity": {
+      "E1": "doc_e_001",
+      "E10": "doc_e_001",
+      "E11": "doc_e_002",
+      "E12": "doc_e_002",
+      "E13": "doc_e_006",
+      "E14": "doc_e_007",
+      "E15": "doc_e_008",
+      "E16": "doc_e_001",
+      "E17": "doc_e_002",
+      "E18": "doc_e_003",
+      "E19": "doc_e_009",
+      "E2": "doc_e_002",
+      "E20": "doc_e_002",
+      "E21": "doc_e_003",
+      "E22": "doc_e_002",
+      "E23": "doc_e_010",
+      "E24": "doc_e_010",
+      "E25": "doc_e_011",
+      "E26": "doc_e_012",
+      "E27": "doc_e_012",
+      "E28": "doc_e_013",
+      "E29": "doc_e_013",
+      "E3": "doc_e_003",
+      "E30": "doc_e_014",
+      "E31": "doc_e_015",
+      "E32": "doc_e_016",
+      "E33": "doc_e_017",
+      "E34": "doc_e_017",
+      "E35": "doc_e_018",
+      "E36": "doc_e_019",
+      "E37": "doc_e_019",
+      "E38": "doc_e_017",
+      "E39": "doc_e_019",
+      "E4": "doc_e_002",
+      "E40": "doc_e_009",
+      "E41": "doc_e_002",
+      "E5": "doc_e_002",
+      "E6": "doc_e_004",
+      "E7": "doc_e_001",
+      "E8": "doc_e_001",
+      "E9": "doc_e_005"
+    }
+  },
+  "completed_at_utc": "2026-09-20T13:11:40.468746+00:00",
+  "contract": "09B",
+  "entities": [
+    {
+      "end": 22,
+      "id": "E1",
+      "score": 0.9999493360519409,
+      "start": 18,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 58,
+      "id": "E2",
+      "score": 0.9999332427978516,
+      "start": 56,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 63,
+      "id": "E3",
+      "score": 0.9999854564666748,
+      "start": 59,
+      "text": "Mice",
+      "type": "Species"
+    },
+    {
+      "end": 84,
+      "id": "E4",
+      "score": 0.9999909003575643,
+      "start": 65,
+      "text": "Alzheimer's disease",
+      "type": "Disease"
+    },
+    {
+      "end": 88,
+      "id": "E5",
+      "score": 0.999977707862854,
+      "start": 86,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 129,
+      "id": "E6",
+      "score": 0.9999899864196777,
+      "start": 103,
+      "text": "neurodegenerative disorder",
+      "type": "Disease"
+    },
+    {
+      "end": 286,
+      "id": "E7",
+      "score": 0.9998663514852524,
+      "start": 260,
+      "text": "proline and glutamine rich",
+      "type": "Gene"
+    },
+    {
+      "end": 292,
+      "id": "E8",
+      "score": 0.999971866607666,
+      "start": 288,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 355,
+      "id": "E9",
+      "score": 0.9999862909317017,
+      "start": 329,
+      "text": "neurodegenerative diseases",
+      "type": "Disease"
+    },
+    {
+      "end": 484,
+      "id": "E10",
+      "score": 0.9999781847000122,
+      "start": 480,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 490,
+      "id": "E11",
+      "score": 0.9999853372573853,
+      "start": 488,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 545,
+      "id": "E12",
+      "score": 0.9999839067459106,
+      "start": 543,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 551,
+      "id": "E13",
+      "score": 0.9999865293502808,
+      "start": 546,
+      "text": "mouse",
+      "type": "Species"
+    },
+    {
+      "end": 631,
+      "id": "E14",
+      "score": 0.9999810854593912,
+      "start": 615,
+      "text": "amyloid-beta1–42",
+      "type": "Gene"
+    },
+    {
+      "end": 639,
+      "id": "E15",
+      "score": 0.9999725818634033,
+      "start": 633,
+      "text": "Aβ1–42",
+      "type": "Gene"
+    },
+    {
+      "end": 715,
+      "id": "E16",
+      "score": 0.7522382140159607,
+      "start": 711,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 740,
+      "id": "E17",
+      "score": 0.9999804496765137,
+      "start": 738,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 745,
+      "id": "E18",
+      "score": 0.9999850988388062,
+      "start": 741,
+      "text": "mice",
+      "type": "Species"
+    },
+    {
+      "end": 780,
+      "id": "E19",
+      "score": 0.9999947547912598,
+      "start": 776,
+      "text": "SFPQ",
+      "type": "Chemical"
+    },
+    {
+      "end": 833,
+      "id": "E20",
+      "score": 0.9999840259552002,
+      "start": 831,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 838,
+      "id": "E21",
+      "score": 0.9999866485595703,
+      "start": 834,
+      "text": "mice",
+      "type": "Species"
+    },
+    {
+      "end": 857,
+      "id": "E22",
+      "score": 0.999984860420227,
+      "start": 855,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 915,
+      "id": "E23",
+      "score": 0.9999803304672241,
+      "start": 890,
+      "text": "amyloid precursor protein",
+      "type": "Gene"
+    },
+    {
+      "end": 920,
+      "id": "E24",
+      "score": 0.9999890327453613,
+      "start": 917,
+      "text": "APP",
+      "type": "Gene"
+    },
+    {
+      "end": 929,
+      "id": "E25",
+      "score": 0.9999507665634155,
+      "start": 926,
+      "text": "Tau",
+      "type": "Gene"
+    },
+    {
+      "end": 1048,
+      "id": "E26",
+      "score": 0.9999809861183167,
+      "start": 1023,
+      "text": "glutathione S-transferase",
+      "type": "Gene"
+    },
+    {
+      "end": 1053,
+      "id": "E27",
+      "score": 0.9999890327453613,
+      "start": 1050,
+      "text": "GST",
+      "type": "Gene"
+    },
+    {
+      "end": 1075,
+      "id": "E28",
+      "score": 0.9999811947345734,
+      "start": 1059,
+      "text": "heme oxygenase-1",
+      "type": "Gene"
+    },
+    {
+      "end": 1081,
+      "id": "E29",
+      "score": 0.9999898672103882,
+      "start": 1077,
+      "text": "HO-1",
+      "type": "Gene"
+    },
+    {
+      "end": 1142,
+      "id": "E30",
+      "score": 0.99998939037323,
+      "start": 1137,
+      "text": "Bcl-2",
+      "type": "Gene"
+    },
+    {
+      "end": 1170,
+      "id": "E31",
+      "score": 0.9999777674674988,
+      "start": 1167,
+      "text": "Bax",
+      "type": "Gene"
+    },
+    {
+      "end": 1240,
+      "id": "E32",
+      "score": 0.9999774694442749,
+      "start": 1215,
+      "text": "phosphoinositide 3-kinase",
+      "type": "Gene"
+    },
+    {
+      "end": 1248,
+      "id": "E33",
+      "score": 0.9999898672103882,
+      "start": 1244,
+      "text": "PI3K",
+      "type": "Gene"
+    },
+    {
+      "end": 1254,
+      "id": "E34",
+      "score": 0.9999769926071167,
+      "start": 1250,
+      "text": "PI3K",
+      "type": "Gene"
+    },
+    {
+      "end": 1290,
+      "id": "E35",
+      "score": 0.9999801317850748,
+      "start": 1274,
+      "text": "protein kinase B",
+      "type": "Gene"
+    },
+    {
+      "end": 1297,
+      "id": "E36",
+      "score": 0.9999902248382568,
+      "start": 1294,
+      "text": "AKT",
+      "type": "Gene"
+    },
+    {
+      "end": 1302,
+      "id": "E37",
+      "score": 0.9999898672103882,
+      "start": 1299,
+      "text": "AKT",
+      "type": "Gene"
+    },
+    {
+      "end": 1358,
+      "id": "E38",
+      "score": 0.9999901056289673,
+      "start": 1354,
+      "text": "PI3K",
+      "type": "Gene"
+    },
+    {
+      "end": 1362,
+      "id": "E39",
+      "score": 0.9999903440475464,
+      "start": 1359,
+      "text": "AKT",
+      "type": "Gene"
+    },
+    {
+      "end": 1414,
+      "id": "E40",
+      "score": 0.9999440908432007,
+      "start": 1410,
+      "text": "SFPQ",
+      "type": "Chemical"
+    },
+    {
+      "end": 1495,
+      "id": "E41",
+      "score": 0.9999860525131226,
+      "start": 1493,
+      "text": "AD",
+      "type": "Disease"
+    }
+  ],
+  "graph": {
+    "document": {
+      "id": "PMCID:PMC11824863"
+    },
+    "edges": [
+      {
+        "evidence": [
+          {
+            "assertion": "Splicing factor proline and glutamine rich is abbreviated as SFPQ.",
+            "context": [],
+            "effects": [],
+            "intervention": null,
+            "score": null,
+            "surface_form": "Splicing factor proline and glutamine rich (SFPQ)",
+            "text": "Splicing factor proline and glutamine rich (SFPQ)"
+          }
+        ],
+        "id": "doc_r_001",
+        "negated": false,
+        "predicate": "abbreviated_as",
+        "source": "doc_e_001",
+        "target": "doc_e_001"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "Overexpression of SFPQ improves cognition and memory in AD mice.",
+            "context": [
+              "AD mice"
+            ],
+            "effects": [
+              "improved cognition",
+              "improved memory"
+            ],
+            "intervention": "overexpression of SFPQ",
+            "score": null,
+            "surface_form": "Improves Cognition and Memory in AD Mice",
+            "text": "Overexpression of SFPQ Improves Cognition and Memory in AD Mice"
+          }
+        ],
+        "id": "doc_r_002",
+        "negated": false,
+        "predicate": "improves cognition and memory in",
+        "source": "doc_e_001",
+        "target": "doc_e_002"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "Adeno-associated virus was administered to overexpress SFPQ in the hippocampus of AD mice.",
+            "context": [
+              "hippocampus",
+              "AD mice"
+            ],
+            "effects": [],
+            "intervention": "adeno-associated virus administration",
+            "score": null,
+            "surface_form": "administered to overexpress SFPQ in the hippocampus of AD mice",
+            "text": "Subsequently, adeno-associated virus was administered to overexpress SFPQ in the hippocampus of AD mice."
+          }
+        ],
+        "id": "doc_r_003",
+        "negated": false,
+        "predicate": "is_overexpressed_in",
+        "source": "doc_e_001",
+        "target": "doc_e_002"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "The specific role of SFPQ in AD pathology is not well understood.",
+            "context": [
+              "AD pathology"
+            ],
+            "effects": [],
+            "intervention": null,
+            "score": null,
+            "surface_form": "role of SFPQ in AD pathology is not well understood",
+            "text": "However, the specific role of SFPQ in AD pathology is not well understood."
+          }
+        ],
+        "id": "doc_r_004",
+        "negated": true,
+        "predicate": "role_in_is_well_understood",
+        "source": "doc_e_001",
+        "target": "doc_e_002"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "SFPQ is known to play a crucial role in neurodegenerative diseases, including antioxidant-related functions and regulating gene expression within brain neurons.",
+            "context": [
+              "brain neurons"
+            ],
+            "effects": [],
+            "intervention": null,
+            "score": null,
+            "surface_form": "play a crucial role in neurodegenerative diseases",
+            "text": "Splicing factor proline and glutamine rich (SFPQ) is known to play a crucial role in neurodegenerative diseases, including antioxidant-related functions and regulating gene expression within brain neurons."
+          }
+        ],
+        "id": "doc_r_005",
+        "negated": false,
+        "predicate": "plays_a_crucial_role_in",
+        "source": "doc_e_001",
+        "target": "doc_e_005"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "Alzheimer's disease is abbreviated as AD.",
+            "context": [],
+            "effects": [],
+            "intervention": null,
+            "score": null,
+            "surface_form": "Alzheimer's disease (AD)",
+            "text": "Alzheimer's disease (AD)"
+          }
+        ],
+        "id": "doc_r_006",
+        "negated": false,
+        "predicate": "abbreviated_as",
+        "source": "doc_e_002",
+        "target": "doc_e_002"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "Alzheimer's disease is a complex neurodegenerative disorder.",
+            "context": [],
+            "effects": [],
+            "intervention": null,
+            "score": null,
+            "surface_form": "is a complex neurodegenerative disorder",
+            "text": "Alzheimer's disease (AD) is a complex neurodegenerative disorder with multifaceted pathogenesis, which has been extensively investigated, yet effective treatments remain lacking."
+          }
+        ],
+        "id": "doc_r_007",
+        "negated": false,
+        "predicate": "is_a",
+        "source": "doc_e_002",
+        "target": "doc_e_004"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "The study established a mouse model of AD.",
+            "context": [],
+            "effects": [
+              "AD mouse model established"
+            ],
+            "intervention": null,
+            "score": null,
+            "surface_form": "AD mouse model",
+            "text": "In this study, an AD mouse model was established through lateral ventricular injection of amyloid-beta1–42 (Aβ1–42)."
+          }
+        ],
+        "id": "doc_r_008",
+        "negated": false,
+        "predicate": "is_modeled_in",
+        "source": "doc_e_002",
+        "target": "doc_e_006"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "Lateral ventricular injection of amyloid-beta1–42 established an AD mouse model.",
+            "context": [
+              "mouse model"
+            ],
+            "effects": [
+              "AD mouse model established"
+            ],
+            "intervention": "lateral ventricular injection",
+            "score": null,
+            "surface_form": "was established through lateral ventricular injection of",
+            "text": "In this study, an AD mouse model was established through lateral ventricular injection of amyloid-beta1–42 (Aβ1–42)."
+          }
+        ],
+        "id": "doc_r_009",
+        "negated": false,
+        "predicate": "establishes_model_of",
+        "source": "doc_e_007",
+        "target": "doc_e_002"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "Amyloid-beta1–42 is also denoted as Aβ1–42.",
+            "context": [],
+            "effects": [],
+            "intervention": null,
+            "score": null,
+            "surface_form": "amyloid-beta1–42 (Aβ1–42)",
+            "text": "amyloid-beta1–42 (Aβ1–42)"
+          }
+        ],
+        "id": "doc_r_010",
+        "negated": false,
+        "predicate": "also_denoted_as",
+        "source": "doc_e_007",
+        "target": "doc_e_008"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "SFPQ overexpression improves recognition and memory in AD mice.",
+            "context": [
+              "AD mice"
+            ],
+            "effects": [
+              "improved recognition",
+              "improved memory"
+            ],
+            "intervention": "SFPQ overexpression",
+            "score": null,
+            "surface_form": "improves recognition and memory in AD mice",
+            "text": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau."
+          }
+        ],
+        "id": "doc_r_011",
+        "negated": false,
+        "predicate": "improves_recognition_and_memory_in",
+        "source": "doc_e_009",
+        "target": "doc_e_002"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "The findings suggest that SFPQ may serve as a promising molecular target for the prevention and treatment of AD.",
+            "context": [],
+            "effects": [],
+            "intervention": null,
+            "score": null,
+            "surface_form": "may serve as a promising molecular target for the prevention and treatment of AD",
+            "text": "These findings suggest that SFPQ may serve as a promising molecular target for the prevention and treatment of AD."
+          }
+        ],
+        "id": "doc_r_012",
+        "negated": false,
+        "predicate": "is_a_potential_molecular_target_for_prevention_and_treatment_of",
+        "source": "doc_e_009",
+        "target": "doc_e_002"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "SFPQ overexpression reduces amyloid precursor protein as an AD-related marker protein in AD mice.",
+            "context": [
+              "AD mice"
+            ],
+            "effects": [
+              "reduced amyloid precursor protein"
+            ],
+            "intervention": "SFPQ overexpression",
+            "score": null,
+            "surface_form": "reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau",
+            "text": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau."
+          }
+        ],
+        "id": "doc_r_013",
+        "negated": false,
+        "predicate": "reduces",
+        "source": "doc_e_009",
+        "target": "doc_e_010"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "SFPQ overexpression reduces Tau as an AD-related marker protein in AD mice.",
+            "context": [
+              "AD mice"
+            ],
+            "effects": [
+              "reduced Tau"
+            ],
+            "intervention": "SFPQ overexpression",
+            "score": null,
+            "surface_form": "reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau",
+            "text": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau."
+          }
+        ],
+        "id": "doc_r_014",
+        "negated": false,
+        "predicate": "reduces",
+        "source": "doc_e_009",
+        "target": "doc_e_011"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "In the reported AD-mouse results, SFPQ overexpression was associated with upregulation of glutathione S-transferase.",
+            "context": [
+              "AD mice"
+            ],
+            "effects": [
+              "upregulation of glutathione S-transferase"
+            ],
+            "intervention": "SFPQ overexpression",
+            "score": null,
+            "surface_form": "were upregulated",
+            "text": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated."
+          }
+        ],
+        "id": "doc_r_015",
+        "negated": false,
+        "predicate": "associated_with_upregulation_of",
+        "source": "doc_e_009",
+        "target": "doc_e_012"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "In the reported AD-mouse results, SFPQ overexpression was associated with upregulation of heme oxygenase-1.",
+            "context": [
+              "AD mice"
+            ],
+            "effects": [
+              "upregulation of heme oxygenase-1"
+            ],
+            "intervention": "SFPQ overexpression",
+            "score": null,
+            "surface_form": "were upregulated",
+            "text": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated."
+          }
+        ],
+        "id": "doc_r_016",
+        "negated": false,
+        "predicate": "associated_with_upregulation_of",
+        "source": "doc_e_009",
+        "target": "doc_e_013"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "Amyloid precursor protein is cited as an example of an AD-related marker protein.",
+            "context": [],
+            "effects": [],
+            "intervention": null,
+            "score": null,
+            "surface_form": "AD-related marker proteins such as",
+            "text": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau."
+          }
+        ],
+        "id": "doc_r_017",
+        "negated": false,
+        "predicate": "is_an_AD_related_marker_protein",
+        "source": "doc_e_010",
+        "target": "doc_e_002"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "Amyloid precursor protein is abbreviated as APP.",
+            "context": [],
+            "effects": [],
+            "intervention": null,
+            "score": null,
+            "surface_form": "amyloid precursor protein (APP)",
+            "text": "amyloid precursor protein (APP)"
+          }
+        ],
+        "id": "doc_r_018",
+        "negated": false,
+        "predicate": "abbreviated_as",
+        "source": "doc_e_010",
+        "target": "doc_e_010"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "Tau is cited as an example of an AD-related marker protein.",
+            "context": [],
+            "effects": [],
+            "intervention": null,
+            "score": null,
+            "surface_form": "AD-related marker proteins such as",
+            "text": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau."
+          }
+        ],
+        "id": "doc_r_019",
+        "negated": false,
+        "predicate": "is_an_AD_related_marker_protein",
+        "source": "doc_e_011",
+        "target": "doc_e_002"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "Glutathione S-transferase is abbreviated as GST.",
+            "context": [],
+            "effects": [],
+            "intervention": null,
+            "score": null,
+            "surface_form": "glutathione S-transferase (GST)",
+            "text": "glutathione S-transferase (GST)"
+          }
+        ],
+        "id": "doc_r_020",
+        "negated": false,
+        "predicate": "abbreviated_as",
+        "source": "doc_e_012",
+        "target": "doc_e_012"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "Heme oxygenase-1 is abbreviated as HO-1.",
+            "context": [],
+            "effects": [],
+            "intervention": null,
+            "score": null,
+            "surface_form": "heme oxygenase-1 (HO-1)",
+            "text": "heme oxygenase-1 (HO-1)"
+          }
+        ],
+        "id": "doc_r_021",
+        "negated": false,
+        "predicate": "abbreviated_as",
+        "source": "doc_e_013",
+        "target": "doc_e_013"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax increased.",
+            "context": [],
+            "effects": [
+              "increased Bcl-2-to-Bax ratio"
+            ],
+            "intervention": null,
+            "score": null,
+            "surface_form": "ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax also increased",
+            "text": "The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax also increased."
+          }
+        ],
+        "id": "doc_r_022",
+        "negated": false,
+        "predicate": "has_increased_ratio_to",
+        "source": "doc_e_014",
+        "target": "doc_e_015"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "The phosphorylated form of phosphoinositide 3-kinase is denoted p-PI3K.",
+            "context": [],
+            "effects": [],
+            "intervention": null,
+            "score": null,
+            "surface_form": "phosphoinositide 3-kinase (p-PI3K)",
+            "text": "phosphoinositide 3-kinase (p-PI3K)"
+          }
+        ],
+        "id": "doc_r_023",
+        "negated": false,
+        "predicate": "is_denoted_in_phosphorylated_form_as",
+        "source": "doc_e_016",
+        "target": "doc_e_017"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "The p-PI3K-to-PI3K ratio was elevated.",
+            "context": [],
+            "effects": [
+              "elevated p-PI3K/PI3K ratio"
+            ],
+            "intervention": null,
+            "score": null,
+            "surface_form": "(p-PI3K)/PI3K",
+            "text": "Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway."
+          }
+        ],
+        "id": "doc_r_024",
+        "negated": false,
+        "predicate": "phosphorylated_to_total_ratio_is_elevated",
+        "source": "doc_e_017",
+        "target": "doc_e_017"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "The elevated phosphorylated PI3K/PI3K and phosphorylated AKT/AKT ratios indicated activation of the PI3K/AKT signaling pathway.",
+            "context": [],
+            "effects": [
+              "activation of the PI3K/AKT signaling pathway indicated"
+            ],
+            "intervention": null,
+            "score": null,
+            "surface_form": "PI3K/AKT signaling pathway",
+            "text": "Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway."
+          }
+        ],
+        "id": "doc_r_025",
+        "negated": false,
+        "predicate": "co_participates_in_PI3K_AKT_signaling_pathway",
+        "source": "doc_e_017",
+        "target": "doc_e_019"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "The phosphorylated form of protein kinase B is denoted p-AKT.",
+            "context": [],
+            "effects": [],
+            "intervention": null,
+            "score": null,
+            "surface_form": "protein kinase B (p-AKT)",
+            "text": "protein kinase B (p-AKT)"
+          }
+        ],
+        "id": "doc_r_026",
+        "negated": false,
+        "predicate": "is_denoted_in_phosphorylated_form_as",
+        "source": "doc_e_018",
+        "target": "doc_e_019"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "The p-AKT-to-AKT ratio was elevated.",
+            "context": [],
+            "effects": [
+              "elevated p-AKT/AKT ratio"
+            ],
+            "intervention": null,
+            "score": null,
+            "surface_form": "(p-AKT)/AKT",
+            "text": "Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway."
+          }
+        ],
+        "id": "doc_r_027",
+        "negated": false,
+        "predicate": "phosphorylated_to_total_ratio_is_elevated",
+        "source": "doc_e_019",
+        "target": "doc_e_019"
+      }
+    ],
+    "nodes": [
+      {
+        "aliases": [
+          "SFPQ",
+          "proline and glutamine rich"
+        ],
+        "id": "doc_e_001",
+        "label": "SFPQ",
+        "mentions": [
+          {
+            "end": 22,
+            "id": "E1",
+            "score": 0.9999493360519409,
+            "start": 18,
+            "text": "SFPQ",
+            "type": "Gene"
+          },
+          {
+            "end": 286,
+            "id": "E7",
+            "score": 0.9998663514852524,
+            "start": 260,
+            "text": "proline and glutamine rich",
+            "type": "Gene"
+          },
+          {
+            "end": 292,
+            "id": "E8",
+            "score": 0.999971866607666,
+            "start": 288,
+            "text": "SFPQ",
+            "type": "Gene"
+          },
+          {
+            "end": 484,
+            "id": "E10",
+            "score": 0.9999781847000122,
+            "start": 480,
+            "text": "SFPQ",
+            "type": "Gene"
+          },
+          {
+            "end": 715,
+            "id": "E16",
+            "score": 0.7522382140159607,
+            "start": 711,
+            "text": "SFPQ",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "AD",
+          "Alzheimer's disease"
+        ],
+        "id": "doc_e_002",
+        "label": "AD",
+        "mentions": [
+          {
+            "end": 58,
+            "id": "E2",
+            "score": 0.9999332427978516,
+            "start": 56,
+            "text": "AD",
+            "type": "Disease"
+          },
+          {
+            "end": 84,
+            "id": "E4",
+            "score": 0.9999909003575643,
+            "start": 65,
+            "text": "Alzheimer's disease",
+            "type": "Disease"
+          },
+          {
+            "end": 88,
+            "id": "E5",
+            "score": 0.999977707862854,
+            "start": 86,
+            "text": "AD",
+            "type": "Disease"
+          },
+          {
+            "end": 490,
+            "id": "E11",
+            "score": 0.9999853372573853,
+            "start": 488,
+            "text": "AD",
+            "type": "Disease"
+          },
+          {
+            "end": 545,
+            "id": "E12",
+            "score": 0.9999839067459106,
+            "start": 543,
+            "text": "AD",
+            "type": "Disease"
+          },
+          {
+            "end": 740,
+            "id": "E17",
+            "score": 0.9999804496765137,
+            "start": 738,
+            "text": "AD",
+            "type": "Disease"
+          },
+          {
+            "end": 833,
+            "id": "E20",
+            "score": 0.9999840259552002,
+            "start": 831,
+            "text": "AD",
+            "type": "Disease"
+          },
+          {
+            "end": 857,
+            "id": "E22",
+            "score": 0.999984860420227,
+            "start": 855,
+            "text": "AD",
+            "type": "Disease"
+          },
+          {
+            "end": 1495,
+            "id": "E41",
+            "score": 0.9999860525131226,
+            "start": 1493,
+            "text": "AD",
+            "type": "Disease"
+          }
+        ],
+        "type": "Disease"
+      },
+      {
+        "aliases": [
+          "Mice",
+          "mice"
+        ],
+        "id": "doc_e_003",
+        "label": "Mice",
+        "mentions": [
+          {
+            "end": 63,
+            "id": "E3",
+            "score": 0.9999854564666748,
+            "start": 59,
+            "text": "Mice",
+            "type": "Species"
+          },
+          {
+            "end": 745,
+            "id": "E18",
+            "score": 0.9999850988388062,
+            "start": 741,
+            "text": "mice",
+            "type": "Species"
+          },
+          {
+            "end": 838,
+            "id": "E21",
+            "score": 0.9999866485595703,
+            "start": 834,
+            "text": "mice",
+            "type": "Species"
+          }
+        ],
+        "type": "Species"
+      },
+      {
+        "aliases": [
+          "neurodegenerative disorder"
+        ],
+        "id": "doc_e_004",
+        "label": "neurodegenerative disorder",
+        "mentions": [
+          {
+            "end": 129,
+            "id": "E6",
+            "score": 0.9999899864196777,
+            "start": 103,
+            "text": "neurodegenerative disorder",
+            "type": "Disease"
+          }
+        ],
+        "type": "Disease"
+      },
+      {
+        "aliases": [
+          "neurodegenerative diseases"
+        ],
+        "id": "doc_e_005",
+        "label": "neurodegenerative diseases",
+        "mentions": [
+          {
+            "end": 355,
+            "id": "E9",
+            "score": 0.9999862909317017,
+            "start": 329,
+            "text": "neurodegenerative diseases",
+            "type": "Disease"
+          }
+        ],
+        "type": "Disease"
+      },
+      {
+        "aliases": [
+          "mouse"
+        ],
+        "id": "doc_e_006",
+        "label": "mouse",
+        "mentions": [
+          {
+            "end": 551,
+            "id": "E13",
+            "score": 0.9999865293502808,
+            "start": 546,
+            "text": "mouse",
+            "type": "Species"
+          }
+        ],
+        "type": "Species"
+      },
+      {
+        "aliases": [
+          "amyloid-beta1–42"
+        ],
+        "id": "doc_e_007",
+        "label": "amyloid-beta1–42",
+        "mentions": [
+          {
+            "end": 631,
+            "id": "E14",
+            "score": 0.9999810854593912,
+            "start": 615,
+            "text": "amyloid-beta1–42",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "Aβ1–42"
+        ],
+        "id": "doc_e_008",
+        "label": "Aβ1–42",
+        "mentions": [
+          {
+            "end": 639,
+            "id": "E15",
+            "score": 0.9999725818634033,
+            "start": 633,
+            "text": "Aβ1–42",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "SFPQ"
+        ],
+        "id": "doc_e_009",
+        "label": "SFPQ",
+        "mentions": [
+          {
+            "end": 780,
+            "id": "E19",
+            "score": 0.9999947547912598,
+            "start": 776,
+            "text": "SFPQ",
+            "type": "Chemical"
+          },
+          {
+            "end": 1414,
+            "id": "E40",
+            "score": 0.9999440908432007,
+            "start": 1410,
+            "text": "SFPQ",
+            "type": "Chemical"
+          }
+        ],
+        "type": "Chemical"
+      },
+      {
+        "aliases": [
+          "amyloid precursor protein",
+          "APP"
+        ],
+        "id": "doc_e_010",
+        "label": "APP",
+        "mentions": [
+          {
+            "end": 915,
+            "id": "E23",
+            "score": 0.9999803304672241,
+            "start": 890,
+            "text": "amyloid precursor protein",
+            "type": "Gene"
+          },
+          {
+            "end": 920,
+            "id": "E24",
+            "score": 0.9999890327453613,
+            "start": 917,
+            "text": "APP",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "Tau"
+        ],
+        "id": "doc_e_011",
+        "label": "Tau",
+        "mentions": [
+          {
+            "end": 929,
+            "id": "E25",
+            "score": 0.9999507665634155,
+            "start": 926,
+            "text": "Tau",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "glutathione S-transferase",
+          "GST"
+        ],
+        "id": "doc_e_012",
+        "label": "GST",
+        "mentions": [
+          {
+            "end": 1048,
+            "id": "E26",
+            "score": 0.9999809861183167,
+            "start": 1023,
+            "text": "glutathione S-transferase",
+            "type": "Gene"
+          },
+          {
+            "end": 1053,
+            "id": "E27",
+            "score": 0.9999890327453613,
+            "start": 1050,
+            "text": "GST",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "heme oxygenase-1",
+          "HO-1"
+        ],
+        "id": "doc_e_013",
+        "label": "HO-1",
+        "mentions": [
+          {
+            "end": 1075,
+            "id": "E28",
+            "score": 0.9999811947345734,
+            "start": 1059,
+            "text": "heme oxygenase-1",
+            "type": "Gene"
+          },
+          {
+            "end": 1081,
+            "id": "E29",
+            "score": 0.9999898672103882,
+            "start": 1077,
+            "text": "HO-1",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "Bcl-2"
+        ],
+        "id": "doc_e_014",
+        "label": "Bcl-2",
+        "mentions": [
+          {
+            "end": 1142,
+            "id": "E30",
+            "score": 0.99998939037323,
+            "start": 1137,
+            "text": "Bcl-2",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "Bax"
+        ],
+        "id": "doc_e_015",
+        "label": "Bax",
+        "mentions": [
+          {
+            "end": 1170,
+            "id": "E31",
+            "score": 0.9999777674674988,
+            "start": 1167,
+            "text": "Bax",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "phosphoinositide 3-kinase"
+        ],
+        "id": "doc_e_016",
+        "label": "phosphoinositide 3-kinase",
+        "mentions": [
+          {
+            "end": 1240,
+            "id": "E32",
+            "score": 0.9999774694442749,
+            "start": 1215,
+            "text": "phosphoinositide 3-kinase",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "PI3K"
+        ],
+        "id": "doc_e_017",
+        "label": "PI3K",
+        "mentions": [
+          {
+            "end": 1248,
+            "id": "E33",
+            "score": 0.9999898672103882,
+            "start": 1244,
+            "text": "PI3K",
+            "type": "Gene"
+          },
+          {
+            "end": 1254,
+            "id": "E34",
+            "score": 0.9999769926071167,
+            "start": 1250,
+            "text": "PI3K",
+            "type": "Gene"
+          },
+          {
+            "end": 1358,
+            "id": "E38",
+            "score": 0.9999901056289673,
+            "start": 1354,
+            "text": "PI3K",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "protein kinase B"
+        ],
+        "id": "doc_e_018",
+        "label": "protein kinase B",
+        "mentions": [
+          {
+            "end": 1290,
+            "id": "E35",
+            "score": 0.9999801317850748,
+            "start": 1274,
+            "text": "protein kinase B",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "AKT"
+        ],
+        "id": "doc_e_019",
+        "label": "AKT",
+        "mentions": [
+          {
+            "end": 1297,
+            "id": "E36",
+            "score": 0.9999902248382568,
+            "start": 1294,
+            "text": "AKT",
+            "type": "Gene"
+          },
+          {
+            "end": 1302,
+            "id": "E37",
+            "score": 0.9999898672103882,
+            "start": 1299,
+            "text": "AKT",
+            "type": "Gene"
+          },
+          {
+            "end": 1362,
+            "id": "E39",
+            "score": 0.9999903440475464,
+            "start": 1359,
+            "text": "AKT",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      }
+    ]
+  },
+  "graph_json_path": "graphs/pmcid_pmc11824863.json",
+  "mention_level_rich_relations": [
+    {
+      "assertion": "Overexpression of SFPQ improves cognition and memory in AD mice.",
+      "context": [
+        "AD mice"
+      ],
+      "effects": [
+        "improved cognition",
+        "improved memory"
+      ],
+      "evidence": "Overexpression of SFPQ Improves Cognition and Memory in AD Mice",
+      "intervention": "overexpression of SFPQ",
+      "negated": false,
+      "predicate": "improves cognition and memory in",
+      "score": null,
+      "source": "E1",
+      "surface_form": "Improves Cognition and Memory in AD Mice",
+      "target": "E2"
+    },
+    {
+      "assertion": "Alzheimer's disease is abbreviated as AD.",
+      "context": [],
+      "effects": [],
+      "evidence": "Alzheimer's disease (AD)",
+      "intervention": null,
+      "negated": false,
+      "predicate": "abbreviated_as",
+      "score": null,
+      "source": "E4",
+      "surface_form": "Alzheimer's disease (AD)",
+      "target": "E5"
+    },
+    {
+      "assertion": "Alzheimer's disease is a complex neurodegenerative disorder.",
+      "context": [],
+      "effects": [],
+      "evidence": "Alzheimer's disease (AD) is a complex neurodegenerative disorder with multifaceted pathogenesis, which has been extensively investigated, yet effective treatments remain lacking.",
+      "intervention": null,
+      "negated": false,
+      "predicate": "is_a",
+      "score": null,
+      "source": "E4",
+      "surface_form": "is a complex neurodegenerative disorder",
+      "target": "E6"
+    },
+    {
+      "assertion": "Splicing factor proline and glutamine rich is abbreviated as SFPQ.",
+      "context": [],
+      "effects": [],
+      "evidence": "Splicing factor proline and glutamine rich (SFPQ)",
+      "intervention": null,
+      "negated": false,
+      "predicate": "abbreviated_as",
+      "score": null,
+      "source": "E7",
+      "surface_form": "Splicing factor proline and glutamine rich (SFPQ)",
+      "target": "E8"
+    },
+    {
+      "assertion": "SFPQ is known to play a crucial role in neurodegenerative diseases, including antioxidant-related functions and regulating gene expression within brain neurons.",
+      "context": [
+        "brain neurons"
+      ],
+      "effects": [],
+      "evidence": "Splicing factor proline and glutamine rich (SFPQ) is known to play a crucial role in neurodegenerative diseases, including antioxidant-related functions and regulating gene expression within brain neurons.",
+      "intervention": null,
+      "negated": false,
+      "predicate": "plays_a_crucial_role_in",
+      "score": null,
+      "source": "E8",
+      "surface_form": "play a crucial role in neurodegenerative diseases",
+      "target": "E9"
+    },
+    {
+      "assertion": "The specific role of SFPQ in AD pathology is not well understood.",
+      "context": [
+        "AD pathology"
+      ],
+      "effects": [],
+      "evidence": "However, the specific role of SFPQ in AD pathology is not well understood.",
+      "intervention": null,
+      "negated": true,
+      "predicate": "role_in_is_well_understood",
+      "score": null,
+      "source": "E10",
+      "surface_form": "role of SFPQ in AD pathology is not well understood",
+      "target": "E11"
+    },
+    {
+      "assertion": "Amyloid-beta1–42 is also denoted as Aβ1–42.",
+      "context": [],
+      "effects": [],
+      "evidence": "amyloid-beta1–42 (Aβ1–42)",
+      "intervention": null,
+      "negated": false,
+      "predicate": "also_denoted_as",
+      "score": null,
+      "source": "E14",
+      "surface_form": "amyloid-beta1–42 (Aβ1–42)",
+      "target": "E15"
+    },
+    {
+      "assertion": "Lateral ventricular injection of amyloid-beta1–42 established an AD mouse model.",
+      "context": [
+        "mouse model"
+      ],
+      "effects": [
+        "AD mouse model established"
+      ],
+      "evidence": "In this study, an AD mouse model was established through lateral ventricular injection of amyloid-beta1–42 (Aβ1–42).",
+      "intervention": "lateral ventricular injection",
+      "negated": false,
+      "predicate": "establishes_model_of",
+      "score": null,
+      "source": "E14",
+      "surface_form": "was established through lateral ventricular injection of",
+      "target": "E12"
+    },
+    {
+      "assertion": "The study established a mouse model of AD.",
+      "context": [],
+      "effects": [
+        "AD mouse model established"
+      ],
+      "evidence": "In this study, an AD mouse model was established through lateral ventricular injection of amyloid-beta1–42 (Aβ1–42).",
+      "intervention": null,
+      "negated": false,
+      "predicate": "is_modeled_in",
+      "score": null,
+      "source": "E12",
+      "surface_form": "AD mouse model",
+      "target": "E13"
+    },
+    {
+      "assertion": "Adeno-associated virus was administered to overexpress SFPQ in the hippocampus of AD mice.",
+      "context": [
+        "hippocampus",
+        "AD mice"
+      ],
+      "effects": [],
+      "evidence": "Subsequently, adeno-associated virus was administered to overexpress SFPQ in the hippocampus of AD mice.",
+      "intervention": "adeno-associated virus administration",
+      "negated": false,
+      "predicate": "is_overexpressed_in",
+      "score": null,
+      "source": "E16",
+      "surface_form": "administered to overexpress SFPQ in the hippocampus of AD mice",
+      "target": "E17"
+    },
+    {
+      "assertion": "SFPQ overexpression improves recognition and memory in AD mice.",
+      "context": [
+        "AD mice"
+      ],
+      "effects": [
+        "improved recognition",
+        "improved memory"
+      ],
+      "evidence": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau.",
+      "intervention": "SFPQ overexpression",
+      "negated": false,
+      "predicate": "improves_recognition_and_memory_in",
+      "score": null,
+      "source": "E19",
+      "surface_form": "improves recognition and memory in AD mice",
+      "target": "E20"
+    },
+    {
+      "assertion": "SFPQ overexpression reduces amyloid precursor protein as an AD-related marker protein in AD mice.",
+      "context": [
+        "AD mice"
+      ],
+      "effects": [
+        "reduced amyloid precursor protein"
+      ],
+      "evidence": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau.",
+      "intervention": "SFPQ overexpression",
+      "negated": false,
+      "predicate": "reduces",
+      "score": null,
+      "source": "E19",
+      "surface_form": "reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau",
+      "target": "E23"
+    },
+    {
+      "assertion": "SFPQ overexpression reduces Tau as an AD-related marker protein in AD mice.",
+      "context": [
+        "AD mice"
+      ],
+      "effects": [
+        "reduced Tau"
+      ],
+      "evidence": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau.",
+      "intervention": "SFPQ overexpression",
+      "negated": false,
+      "predicate": "reduces",
+      "score": null,
+      "source": "E19",
+      "surface_form": "reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau",
+      "target": "E25"
+    },
+    {
+      "assertion": "Amyloid precursor protein is cited as an example of an AD-related marker protein.",
+      "context": [],
+      "effects": [],
+      "evidence": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau.",
+      "intervention": null,
+      "negated": false,
+      "predicate": "is_an_AD_related_marker_protein",
+      "score": null,
+      "source": "E23",
+      "surface_form": "AD-related marker proteins such as",
+      "target": "E22"
+    },
+    {
+      "assertion": "Tau is cited as an example of an AD-related marker protein.",
+      "context": [],
+      "effects": [],
+      "evidence": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau.",
+      "intervention": null,
+      "negated": false,
+      "predicate": "is_an_AD_related_marker_protein",
+      "score": null,
+      "source": "E25",
+      "surface_form": "AD-related marker proteins such as",
+      "target": "E22"
+    },
+    {
+      "assertion": "Amyloid precursor protein is abbreviated as APP.",
+      "context": [],
+      "effects": [],
+      "evidence": "amyloid precursor protein (APP)",
+      "intervention": null,
+      "negated": false,
+      "predicate": "abbreviated_as",
+      "score": null,
+      "source": "E23",
+      "surface_form": "amyloid precursor protein (APP)",
+      "target": "E24"
+    },
+    {
+      "assertion": "Glutathione S-transferase is abbreviated as GST.",
+      "context": [],
+      "effects": [],
+      "evidence": "glutathione S-transferase (GST)",
+      "intervention": null,
+      "negated": false,
+      "predicate": "abbreviated_as",
+      "score": null,
+      "source": "E26",
+      "surface_form": "glutathione S-transferase (GST)",
+      "target": "E27"
+    },
+    {
+      "assertion": "Heme oxygenase-1 is abbreviated as HO-1.",
+      "context": [],
+      "effects": [],
+      "evidence": "heme oxygenase-1 (HO-1)",
+      "intervention": null,
+      "negated": false,
+      "predicate": "abbreviated_as",
+      "score": null,
+      "source": "E28",
+      "surface_form": "heme oxygenase-1 (HO-1)",
+      "target": "E29"
+    },
+    {
+      "assertion": "In the reported AD-mouse results, SFPQ overexpression was associated with upregulation of glutathione S-transferase.",
+      "context": [
+        "AD mice"
+      ],
+      "effects": [
+        "upregulation of glutathione S-transferase"
+      ],
+      "evidence": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated.",
+      "intervention": "SFPQ overexpression",
+      "negated": false,
+      "predicate": "associated_with_upregulation_of",
+      "score": null,
+      "source": "E19",
+      "surface_form": "were upregulated",
+      "target": "E26"
+    },
+    {
+      "assertion": "In the reported AD-mouse results, SFPQ overexpression was associated with upregulation of heme oxygenase-1.",
+      "context": [
+        "AD mice"
+      ],
+      "effects": [
+        "upregulation of heme oxygenase-1"
+      ],
+      "evidence": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated.",
+      "intervention": "SFPQ overexpression",
+      "negated": false,
+      "predicate": "associated_with_upregulation_of",
+      "score": null,
+      "source": "E19",
+      "surface_form": "were upregulated",
+      "target": "E28"
+    },
+    {
+      "assertion": "The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax increased.",
+      "context": [],
+      "effects": [
+        "increased Bcl-2-to-Bax ratio"
+      ],
+      "evidence": "The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax also increased.",
+      "intervention": null,
+      "negated": false,
+      "predicate": "has_increased_ratio_to",
+      "score": null,
+      "source": "E30",
+      "surface_form": "ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax also increased",
+      "target": "E31"
+    },
+    {
+      "assertion": "The phosphorylated form of phosphoinositide 3-kinase is denoted p-PI3K.",
+      "context": [],
+      "effects": [],
+      "evidence": "phosphoinositide 3-kinase (p-PI3K)",
+      "intervention": null,
+      "negated": false,
+      "predicate": "is_denoted_in_phosphorylated_form_as",
+      "score": null,
+      "source": "E32",
+      "surface_form": "phosphoinositide 3-kinase (p-PI3K)",
+      "target": "E33"
+    },
+    {
+      "assertion": "The p-PI3K-to-PI3K ratio was elevated.",
+      "context": [],
+      "effects": [
+        "elevated p-PI3K/PI3K ratio"
+      ],
+      "evidence": "Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway.",
+      "intervention": null,
+      "negated": false,
+      "predicate": "phosphorylated_to_total_ratio_is_elevated",
+      "score": null,
+      "source": "E33",
+      "surface_form": "(p-PI3K)/PI3K",
+      "target": "E34"
+    },
+    {
+      "assertion": "The phosphorylated form of protein kinase B is denoted p-AKT.",
+      "context": [],
+      "effects": [],
+      "evidence": "protein kinase B (p-AKT)",
+      "intervention": null,
+      "negated": false,
+      "predicate": "is_denoted_in_phosphorylated_form_as",
+      "score": null,
+      "source": "E35",
+      "surface_form": "protein kinase B (p-AKT)",
+      "target": "E36"
+    },
+    {
+      "assertion": "The p-AKT-to-AKT ratio was elevated.",
+      "context": [],
+      "effects": [
+        "elevated p-AKT/AKT ratio"
+      ],
+      "evidence": "Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway.",
+      "intervention": null,
+      "negated": false,
+      "predicate": "phosphorylated_to_total_ratio_is_elevated",
+      "score": null,
+      "source": "E36",
+      "surface_form": "(p-AKT)/AKT",
+      "target": "E37"
+    },
+    {
+      "assertion": "The elevated phosphorylated PI3K/PI3K and phosphorylated AKT/AKT ratios indicated activation of the PI3K/AKT signaling pathway.",
+      "context": [],
+      "effects": [
+        "activation of the PI3K/AKT signaling pathway indicated"
+      ],
+      "evidence": "Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway.",
+      "intervention": null,
+      "negated": false,
+      "predicate": "co_participates_in_PI3K_AKT_signaling_pathway",
+      "score": null,
+      "source": "E38",
+      "surface_form": "PI3K/AKT signaling pathway",
+      "target": "E39"
+    },
+    {
+      "assertion": "The findings suggest that SFPQ may serve as a promising molecular target for the prevention and treatment of AD.",
+      "context": [],
+      "effects": [],
+      "evidence": "These findings suggest that SFPQ may serve as a promising molecular target for the prevention and treatment of AD.",
+      "intervention": null,
+      "negated": false,
+      "predicate": "is_a_potential_molecular_target_for_prevention_and_treatment_of",
+      "score": null,
+      "source": "E40",
+      "surface_form": "may serve as a promising molecular target for the prevention and treatment of AD",
+      "target": "E41"
+    }
+  ],
+  "paper_id": "PMCID:PMC11824863",
+  "pmcid": "PMC11824863",
+  "pmid": "39949834",
+  "provider_attempts": 1,
+  "provider_failures": 0,
+  "repair_attempts": 0,
+  "runtime": {
+    "entity_backend": "hunflair2",
+    "graph_topology_changed": false,
+    "harness_max_retries": 2,
+    "hunflair2_device": "cpu",
+    "hunflair2_model": "hunflair/hunflair2-ner",
+    "implementation_commit": "0330923166a6b85584c1206c7bb21ae4721b99f3",
+    "max_completion_tokens": 128000,
+    "prompt_frozen_before_first_paper": true,
+    "reasoning_effort": "max",
+    "relation_model": "gpt-5.6-luna",
+    "relation_provider": "OpenAI Responses API",
+    "scope": "title plus complete abstract only"
+  },
+  "runtime_seconds": 516.25,
+  "semantic_audit": {
+    "counts": {
+      "bundles": 2,
+      "displayed_connections": 24,
+      "multi_evidence_graph_edges": 0,
+      "negated_relations": 1,
+      "relations_with_context": 10,
+      "relations_with_effects": 12,
+      "relations_with_intervention": 8,
+      "relations_with_no_optional_semantic_fields": 12,
+      "self_edges": 7
+    },
+    "flags": {
+      "apparently_duplicated_semantic_relation": [],
+      "context_used_as_mechanism": [],
+      "possible_third_participant_leakage": [
+        {
+          "entity_texts": [
+            "AD",
+            "Mice",
+            "SFPQ",
+            "mice"
+          ],
+          "relation_index": 1
+        },
+        {
+          "entity_texts": [
+            "AD"
+          ],
+          "relation_index": 6
+        },
+        {
+          "entity_texts": [
+            "AD",
+            "mouse"
+          ],
+          "relation_index": 8
+        },
+        {
+          "entity_texts": [
+            "AD"
+          ],
+          "relation_index": 9
+        },
+        {
+          "entity_texts": [
+            "AD",
+            "Mice",
+            "mice"
+          ],
+          "relation_index": 10
+        },
+        {
+          "entity_texts": [
+            "AD",
+            "Mice",
+            "SFPQ",
+            "mice"
+          ],
+          "relation_index": 11
+        },
+        {
+          "entity_texts": [
+            "AD",
+            "Mice",
+            "SFPQ",
+            "mice"
+          ],
+          "relation_index": 12
+        },
+        {
+          "entity_texts": [
+            "AD",
+            "Mice",
+            "SFPQ",
+            "mice"
+          ],
+          "relation_index": 13
+        },
+        {
+          "entity_texts": [
+            "AD",
+            "Mice",
+            "SFPQ",
+            "mice"
+          ],
+          "relation_index": 19
+        },
+        {
+          "entity_texts": [
+            "AD",
+            "Mice",
+            "SFPQ",
+            "mice"
+          ],
+          "relation_index": 20
+        },
+        {
+          "entity_texts": [
+            "PI3K"
+          ],
+          "relation_index": 23
+        },
+        {
+          "entity_texts": [
+            "AKT"
+          ],
+          "relation_index": 25
+        },
+        {
+          "entity_texts": [
+            "AKT",
+            "PI3K"
+          ],
+          "relation_index": 26
+        }
+      ],
+      "unusually_dense_graph": [
+        {
+          "edge_count": 27,
+          "node_count": 19,
+          "threshold": "15 nodes or 20 edges"
+        }
+      ],
+      "very_broad_assertion": []
+    },
+    "note": "Signals are descriptive review prompts, not formal semantic accuracy metrics or automatic failures."
+  },
+  "source": {
+    "acquisition_mode": "full_text",
+    "canonical_full_text_sha256": "8a43f612139aa84939933831a5bc7f5420122549fd69081d635b7becb80d2a15",
+    "canonical_source_checksum": "7d67a720ddc0b04f5cd9dbae443b094df08120ff01f8c19fbcbd421933f91b75",
+    "corpus_path": ".cache/ner_target_domain/target_corpus.json",
+    "scope": "title plus complete abstract",
+    "segments": [
+      {
+        "canonical_end": 63,
+        "canonical_start": 0,
+        "section": "title",
+        "text": "Overexpression of SFPQ Improves Cognition and Memory in AD Mice"
+      },
+      {
+        "canonical_end": 1496,
+        "canonical_start": 65,
+        "section": "abstract",
+        "text": "Alzheimer's disease (AD) is a complex neurodegenerative disorder with multifaceted pathogenesis, which has been extensively investigated, yet effective treatments remain lacking. Splicing factor proline and glutamine rich (SFPQ) is known to play a crucial role in neurodegenerative diseases, including antioxidant-related functions and regulating gene expression within brain neurons. However, the specific role of SFPQ in AD pathology is not well understood. In this study, an AD mouse model was established through lateral ventricular injection of amyloid-beta1–42 (Aβ1–42). Subsequently, adeno-associated virus was administered to overexpress SFPQ in the hippocampus of AD mice. The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated. The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax also increased. Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway. These findings suggest that SFPQ may serve as a promising molecular target for the prevention and treatment of AD."
+      }
+    ],
+    "selected_source_sha256": "604ce7f15b0ca00853cfc4cc07039d51059792e907d3da07c08be40730fb1b5b",
+    "source_format": "pmc_xml",
+    "text": "Overexpression of SFPQ Improves Cognition and Memory in AD Mice\n\nAlzheimer's disease (AD) is a complex neurodegenerative disorder with multifaceted pathogenesis, which has been extensively investigated, yet effective treatments remain lacking. Splicing factor proline and glutamine rich (SFPQ) is known to play a crucial role in neurodegenerative diseases, including antioxidant-related functions and regulating gene expression within brain neurons. However, the specific role of SFPQ in AD pathology is not well understood. In this study, an AD mouse model was established through lateral ventricular injection of amyloid-beta1–42 (Aβ1–42). Subsequently, adeno-associated virus was administered to overexpress SFPQ in the hippocampus of AD mice. The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated. The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax also increased. Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway. These findings suggest that SFPQ may serve as a promising molecular target for the prevention and treatment of AD."
+  },
+  "started_at_utc": "2026-09-20T13:03:04.211242+00:00",
+  "status": "success",
+  "title": "Overexpression of SFPQ Improves Cognition and Memory in AD Mice"
+}

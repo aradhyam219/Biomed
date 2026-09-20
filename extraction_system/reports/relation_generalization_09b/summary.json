@@ -1,0 +1,202 @@
+{
+  "artifacts": {
+    "graph_json_directory": "graphs/",
+    "paper_results_directory": "papers/",
+    "screenshots_directory": ".cache/relation_generalization_09b/screenshots/",
+    "summary_json": "summary.json",
+    "summary_markdown": "summary.md"
+  },
+  "configuration": {
+    "entity_backend": "hunflair2",
+    "graph_topology_changed": false,
+    "harness_max_retries": 2,
+    "hunflair2_device": "cpu",
+    "hunflair2_model": "hunflair/hunflair2-ner",
+    "implementation_commit": "0330923166a6b85584c1206c7bb21ae4721b99f3",
+    "max_completion_tokens": 128000,
+    "prompt_frozen_before_first_paper": true,
+    "reasoning_effort": "max",
+    "relation_model": "gpt-5.6-luna",
+    "relation_provider": "OpenAI Responses API",
+    "scope": "title plus complete abstract only"
+  },
+  "contract": "09B",
+  "metrics_policy": {
+    "accuracy": "not_reported: no adjudicated gold",
+    "relation_f1": "not_reported: no adjudicated gold",
+    "relation_precision": "not_reported: no adjudicated gold",
+    "relation_recall": "not_reported: no adjudicated gold"
+  },
+  "papers": [
+    {
+      "assembled_graph_nodes": 11,
+      "bundles": 3,
+      "displayed_connections": 7,
+      "entity_mentions": 43,
+      "graph_edges": 15,
+      "paper_id": "PMCID:PMC10770459",
+      "provider_attempts": 1,
+      "repair_attempts": 0,
+      "semantic_signal_summary": "intervention=11, effects=9, context=5, plain=3, negated=0, multi_evidence_edges=0, self_edges=0",
+      "status": "success",
+      "validated_relations": 15
+    },
+    {
+      "assembled_graph_nodes": 19,
+      "bundles": 2,
+      "displayed_connections": 24,
+      "entity_mentions": 41,
+      "graph_edges": 27,
+      "paper_id": "PMCID:PMC11824863",
+      "provider_attempts": 1,
+      "repair_attempts": 0,
+      "semantic_signal_summary": "intervention=8, effects=12, context=10, plain=12, negated=1, multi_evidence_edges=0, self_edges=7",
+      "status": "success",
+      "validated_relations": 27
+    },
+    {
+      "assembled_graph_nodes": 20,
+      "bundles": 4,
+      "displayed_connections": 29,
+      "entity_mentions": 66,
+      "graph_edges": 33,
+      "paper_id": "PMCID:PMC8605525",
+      "provider_attempts": 1,
+      "repair_attempts": 0,
+      "semantic_signal_summary": "intervention=11, effects=4, context=19, plain=16, negated=0, multi_evidence_edges=2, self_edges=3",
+      "status": "success",
+      "validated_relations": 35
+    },
+    {
+      "assembled_graph_nodes": 16,
+      "bundles": 4,
+      "displayed_connections": 14,
+      "entity_mentions": 41,
+      "graph_edges": 19,
+      "paper_id": "PMID:27172794",
+      "provider_attempts": 1,
+      "repair_attempts": 0,
+      "semantic_signal_summary": "intervention=5, effects=10, context=3, plain=10, negated=0, multi_evidence_edges=2, self_edges=0",
+      "status": "success",
+      "validated_relations": 21
+    },
+    {
+      "assembled_graph_nodes": 8,
+      "bundles": 1,
+      "displayed_connections": 6,
+      "entity_mentions": 18,
+      "graph_edges": 8,
+      "paper_id": "PMID:27370646",
+      "provider_attempts": 1,
+      "repair_attempts": 0,
+      "semantic_signal_summary": "intervention=5, effects=6, context=3, plain=3, negated=0, multi_evidence_edges=1, self_edges=1",
+      "status": "success",
+      "validated_relations": 9
+    },
+    {
+      "assembled_graph_nodes": 10,
+      "bundles": 2,
+      "displayed_connections": 9,
+      "entity_mentions": 50,
+      "graph_edges": 11,
+      "paper_id": "PMID:31324362",
+      "provider_attempts": 1,
+      "repair_attempts": 0,
+      "semantic_signal_summary": "intervention=10, effects=8, context=10, plain=5, negated=0, multi_evidence_edges=4, self_edges=0",
+      "status": "success",
+      "validated_relations": 17
+    },
+    {
+      "assembled_graph_nodes": 11,
+      "bundles": 1,
+      "displayed_connections": 9,
+      "entity_mentions": 33,
+      "graph_edges": 10,
+      "paper_id": "PMID:33652126",
+      "provider_attempts": 1,
+      "repair_attempts": 0,
+      "semantic_signal_summary": "intervention=7, effects=2, context=8, plain=1, negated=0, multi_evidence_edges=0, self_edges=0",
+      "status": "success",
+      "validated_relations": 10
+    },
+    {
+      "assembled_graph_nodes": 16,
+      "bundles": 4,
+      "displayed_connections": 11,
+      "entity_mentions": 39,
+      "graph_edges": 17,
+      "paper_id": "PMID:38569671",
+      "provider_attempts": 1,
+      "repair_attempts": 0,
+      "semantic_signal_summary": "intervention=12, effects=16, context=13, plain=1, negated=0, multi_evidence_edges=2, self_edges=0",
+      "status": "success",
+      "validated_relations": 19
+    }
+  ],
+  "report_type": "relation_generalization_09b",
+  "source": {
+    "corpus_path": ".cache/ner_target_domain/target_corpus.json",
+    "corpus_schema_version": 1,
+    "excluded_paper": "PMCID:PMC10444909",
+    "selected_papers": [
+      "PMCID:PMC10770459",
+      "PMCID:PMC11824863",
+      "PMCID:PMC8605525",
+      "PMID:27172794",
+      "PMID:27370646",
+      "PMID:31324362",
+      "PMID:33652126",
+      "PMID:38569671"
+    ],
+    "selection_frozen_before_inference": true,
+    "source_scope": "title plus complete abstract"
+  },
+  "status": "complete",
+  "visual_inspection": {
+    "viewer": "existing Cytoscape viewer",
+    "rendered_papers": 8,
+    "all_eight_loaded": true,
+    "console_errors": 0,
+    "graph_summary_counts_verified": true,
+    "layout_or_bundling_tuning_after_live_start": false,
+    "screenshots_directory": ".cache/relation_generalization_09b/screenshots/",
+    "graph_screenshots": {
+      "PMCID:PMC10770459": ".cache/relation_generalization_09b/screenshots/graph_pmcid_pmc10770459.png",
+      "PMCID:PMC11824863": ".cache/relation_generalization_09b/screenshots/graph_pmcid_pmc11824863.png",
+      "PMCID:PMC8605525": ".cache/relation_generalization_09b/screenshots/graph_pmcid_pmc8605525.png",
+      "PMID:27172794": ".cache/relation_generalization_09b/screenshots/graph_pmid_27172794.png",
+      "PMID:27370646": ".cache/relation_generalization_09b/screenshots/graph_pmid_27370646.png",
+      "PMID:31324362": ".cache/relation_generalization_09b/screenshots/graph_pmid_31324362.png",
+      "PMID:33652126": ".cache/relation_generalization_09b/screenshots/graph_pmid_33652126.png",
+      "PMID:38569671": ".cache/relation_generalization_09b/screenshots/graph_pmid_38569671.png"
+    },
+    "detail_screenshots": {
+      "simple_relation_optional_fields_omitted": ".cache/relation_generalization_09b/screenshots/detail_simple.png",
+      "rich_intervention_effect_assertion_first": ".cache/relation_generalization_09b/screenshots/detail_rich_intervention_effect.png",
+      "relation_bundle_underlying_relations": ".cache/relation_generalization_09b/screenshots/detail_bundle.png"
+    },
+    "screenshot_sha256": {
+      ".cache/relation_generalization_09b/screenshots/graph_pmcid_pmc10770459.png": "1c10c72b493f31477a75a0c794b9e3096f7baf1129819764eb0805d8454c5af0",
+      ".cache/relation_generalization_09b/screenshots/graph_pmcid_pmc11824863.png": "960d288f4f58a70a7f7aac45c6f9681f0058bfcb85f0bf36a0f2a6c96df894a0",
+      ".cache/relation_generalization_09b/screenshots/graph_pmcid_pmc8605525.png": "afa9ac21503d458a3218db531a7f5fcce4ece98f7e7c7d902b618c136ec9ba8d",
+      ".cache/relation_generalization_09b/screenshots/graph_pmid_27172794.png": "b292e54855cf0b0bcaae10025b9074c568602a89adb1a0b6844d99b66ec77ed2",
+      ".cache/relation_generalization_09b/screenshots/graph_pmid_27370646.png": "0490d9356d5e7b1a8a00f1388dc2cf36ec141e81c8aa15116a8748f51ec10e7c",
+      ".cache/relation_generalization_09b/screenshots/graph_pmid_31324362.png": "8d88bf3741ff191416d9b6f7881f5100b1c42e79bf8cb3efe33f6c7c1be5f1f8",
+      ".cache/relation_generalization_09b/screenshots/graph_pmid_33652126.png": "7565d6a927531cda7c840854073104a4cbc57af7e56b65a00028bd71b1723583",
+      ".cache/relation_generalization_09b/screenshots/graph_pmid_38569671.png": "5c94a67a6cb99f934db3bad43c630809003d91b48bd7f50e6118932f5edc288f",
+      ".cache/relation_generalization_09b/screenshots/detail_simple.png": "16e182ff82b6f5d1b7af1a7cec29169d9a8a8a2546007db9994a114e7d362a1b",
+      ".cache/relation_generalization_09b/screenshots/detail_rich_intervention_effect.png": "eb3b068ccd4ab3fd5fc45099bdd045ed036154fc3c5ea6e991cd15a2b5a2afeb",
+      ".cache/relation_generalization_09b/screenshots/detail_bundle.png": "d20e0a1c9c5014fdc17918b1c4762915c274cd51b0d4ff6e45fe59fb34db7588"
+    },
+    "observations": {
+      "PMCID:PMC10770459": "Sparse mixed-type graph; bundle labels are readable and the rich evidence panel is legible.",
+      "PMCID:PMC11824863": "Larger graph with a dense central cluster and isolated components; all nodes and connections render, with some central labels visually close.",
+      "PMCID:PMC8605525": "Densest graph in the set; central labels and edges are crowded but remain rendered without clipping or viewer errors.",
+      "PMID:27172794": "Several parallel connections around the central entities; bundle counts and directed arrows remain visible.",
+      "PMID:27370646": "Small sparse graph with readable node labels and six displayed connections.",
+      "PMID:31324362": "Compact central c-Myc graph with parallel relations; labels and arrows remain inspectable.",
+      "PMID:33652126": "Compact AKT/PTEN-centered graph; the nine displayed connections render without clipping.",
+      "PMID:38569671": "Asthma-centered graph with lower isolated nodes; directed connections and type legend render clearly."
+    }
+  }
+}
