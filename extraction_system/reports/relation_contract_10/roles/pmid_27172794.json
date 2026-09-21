@@ -1,0 +1,53 @@
+{
+  "paper_id": "PMID:27172794",
+  "quality": [
+    {
+      "category": "contextual",
+      "evidence_count": 1,
+      "grounded_evidence_present": true,
+      "label": "mouse",
+      "node": "doc_e_011",
+      "obvious_unnecessary_padding": false,
+      "obvious_unsupported_claim": false,
+      "paragraph_count": 1,
+      "type": "Species"
+    },
+    {
+      "category": "contextual",
+      "evidence_count": 1,
+      "grounded_evidence_present": true,
+      "label": "human",
+      "node": "doc_e_012",
+      "obvious_unnecessary_padding": false,
+      "obvious_unsupported_claim": false,
+      "paragraph_count": 1,
+      "type": "Species"
+    }
+  ],
+  "records": [
+    {
+      "node_id": "doc_e_011",
+      "paper_role": {
+        "category": "contextual",
+        "evidence": [
+          "strongly impaired tumor-initiating capacity in a re-implantation mouse model"
+        ],
+        "paragraphs": [
+          "Mouse provides the experimental model context for re-implantation testing of tumor-initiating capacity after EZH2 knockdown."
+        ]
+      }
+    },
+    {
+      "node_id": "doc_e_012",
+      "paper_role": {
+        "category": "contextual",
+        "evidence": [
+          "Gene expression data from 433 human CRC specimens from TCGA database and in vitro results revealed that EZH2 helped maintain CCS-like cell properties by activating the Wnt/β-catenin pathway."
+        ],
+        "paragraphs": [
+          "Human provides the specimen context for the analysis of 433 colorectal cancer samples from the TCGA database. These human specimen data were combined with in vitro results to examine EZH2-related activation of the Wnt/β-catenin pathway."
+        ]
+      }
+    }
+  ]
+}

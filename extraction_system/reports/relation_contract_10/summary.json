@@ -1,0 +1,191 @@
+{
+  "artifacts": {
+    "graph_json_directory": "reports/relation_contract_10/graphs/",
+    "raw_paper_results": ".cache/relation_contract_10/papers/",
+    "role_output_directory": "reports/relation_contract_10/roles/",
+    "screenshots_directory": ".cache/relation_contract_10/screenshots/",
+    "summary_json": "reports/relation_contract_10/summary.json",
+    "summary_markdown": "reports/relation_contract_10/summary.md"
+  },
+  "configuration": {
+    "deterministic_structural_repair_after_live": true,
+    "entity_backend": "hunflair2",
+    "hunflair2_device": "cpu",
+    "hunflair2_model": "hunflair/hunflair2-ner",
+    "max_completion_tokens": 128000,
+    "prompt_frozen_before_first_paper": true,
+    "reasoning_effort": "max",
+    "relation_model": "gpt-5.6-luna",
+    "relation_provider": "OpenAI Responses API",
+    "repair_or_tuning_between_papers": false,
+    "repair_scope": "Generic CamelCase and adjacent same-type prefix-fragment abbreviation alignment plus deterministic artifact rebuild; no prompt change and no provider rerun.",
+    "role_model": "gpt-5.6-luna",
+    "role_provider": "OpenAI Responses API",
+    "selection_frozen_before_first_inference": true
+  },
+  "contract": "10",
+  "metrics_policy": {
+    "role_review": "grounded evidence, paragraph count, category, and inspection flags only",
+    "semantic_accuracy": "not reported: no adjudicated role or relation gold"
+  },
+  "papers": [
+    {
+      "alias_naming_candidates_collapsed": 0,
+      "canonical_entities": 20,
+      "deterministic_structural_repair": true,
+      "displayed_by_default": 17,
+      "genuine_self_edges": 0,
+      "graph_edges": 19,
+      "paper_id": "PMCID:PMC11824863",
+      "relation_provider_attempts": 1,
+      "relation_repair_attempts": 0,
+      "role_provider_attempts": 1,
+      "role_records": 3,
+      "role_repair_attempts": 0,
+      "status": "success",
+      "unconnected": 3,
+      "validated_relations": 19
+    },
+    {
+      "alias_naming_candidates_collapsed": 0,
+      "canonical_entities": 20,
+      "deterministic_structural_repair": true,
+      "displayed_by_default": 14,
+      "genuine_self_edges": 0,
+      "graph_edges": 29,
+      "paper_id": "PMCID:PMC8605525",
+      "relation_provider_attempts": 1,
+      "relation_repair_attempts": 0,
+      "role_provider_attempts": 1,
+      "role_records": 6,
+      "role_repair_attempts": 0,
+      "status": "success",
+      "unconnected": 6,
+      "validated_relations": 30
+    },
+    {
+      "alias_naming_candidates_collapsed": 0,
+      "canonical_entities": 15,
+      "deterministic_structural_repair": true,
+      "displayed_by_default": 13,
+      "genuine_self_edges": 0,
+      "graph_edges": 19,
+      "paper_id": "PMID:27172794",
+      "relation_provider_attempts": 1,
+      "relation_repair_attempts": 0,
+      "role_provider_attempts": 1,
+      "role_records": 2,
+      "role_repair_attempts": 0,
+      "status": "success",
+      "unconnected": 2,
+      "validated_relations": 22
+    },
+    {
+      "alias_naming_candidates_collapsed": 0,
+      "canonical_entities": 10,
+      "deterministic_structural_repair": true,
+      "displayed_by_default": 8,
+      "genuine_self_edges": 1,
+      "graph_edges": 10,
+      "paper_id": "PMID:33652126",
+      "relation_provider_attempts": 1,
+      "relation_repair_attempts": 0,
+      "role_provider_attempts": 1,
+      "role_records": 2,
+      "role_repair_attempts": 0,
+      "status": "success",
+      "unconnected": 2,
+      "validated_relations": 12
+    }
+  ],
+  "regression_observations": {
+    "PMCID:PMC11824863": {
+      "contract_09b": {
+        "assembled_graph_nodes": 19,
+        "graph_edges": 27,
+        "self_edges": 7
+      },
+      "contract_10": {
+        "canonical_nodes": 20,
+        "graph_edges": 19,
+        "self_edges": 0,
+        "unconnected": 3
+      },
+      "observation": "The frozen Contract 10 graph has no alias-induced self-edge output; the live SFPQ-to-AD mixed-negation bundle remains inspectable and the biological edge data is retained."
+    },
+    "PMCID:PMC8605525": {
+      "contract_09b": {
+        "assembled_graph_nodes": 20,
+        "graph_edges": 33,
+        "self_edges": 3
+      },
+      "contract_10": {
+        "canonical_nodes": 20,
+        "graph_edges": 29,
+        "self_edges": 0,
+        "unconnected": 6
+      },
+      "observation": "The explicit casitas B-lineage lymphoma (Cbl) construction now groups the adjacent same-type fragment and abbreviation; rat/rats remain separate because this contract does not add morphology or general species coreference."
+    },
+    "PMID:27172794": {
+      "contract_09b": {
+        "assembled_graph_nodes": 16,
+        "graph_edges": 19,
+        "self_edges": 0
+      },
+      "contract_10": {
+        "canonical_nodes": 15,
+        "graph_edges": 19,
+        "self_edges": 0,
+        "unconnected": 2
+      },
+      "observation": "The explicit parenthetical construction groups polycomb group protein, enhancer of zeste homologue 2, and EZH2 under one canonical node; no EZH2-specific rule exists."
+    },
+    "PMID:33652126": {
+      "contract_09b": {
+        "assembled_graph_nodes": 11,
+        "graph_edges": 10,
+        "self_edges": 0
+      },
+      "contract_10": {
+        "canonical_nodes": 10,
+        "graph_edges": 10,
+        "self_edges": 1,
+        "unconnected": 2
+      },
+      "observation": "Two isolated substantive entities receive short grounded roles, while the PTEN biological self-relation knocks_down_expression_of remains in the graph."
+    },
+    "attribution_boundary": "Contract 09B counts are historical comparison points; the Contract 10 live run also uses the frozen Contract 10 relation prompt and provider outputs, so count differences are observations, not isolated causal measurements of one code change."
+  },
+  "report_type": "relation_contract_10_four_paper_regression",
+  "self_edge_behavior": {
+    "alias_naming_only": "Suppressed only after endpoint identity collapse; focused tests cover alias and abbreviation predicates.",
+    "genuine_biological": "Retained; focused tests and PMID:33652126 preserve a PTEN knocks_down_expression_of self-edge."
+  },
+  "source": {
+    "corpus_path": ".cache/ner_target_domain/target_corpus.json",
+    "scope": "title plus complete abstract",
+    "selected_papers": [
+      "PMCID:PMC11824863",
+      "PMCID:PMC8605525",
+      "PMID:27172794",
+      "PMID:33652126"
+    ]
+  },
+  "status": "complete",
+  "visual_inspection": {
+    "contextual_species_role_expanded": true,
+    "default_hidden_graphs": [
+      "PMCID:PMC11824863",
+      "PMCID:PMC8605525",
+      "PMID:27172794",
+      "PMID:33652126"
+    ],
+    "global_reveal": true,
+    "mixed_negation_warning": true,
+    "screenshot_directory": ".cache/relation_contract_10/screenshots/",
+    "screenshot_note": "Inline captures were made during the live viewer smoke; local binary persistence is intentionally ignored.",
+    "substantive_role_expanded": true,
+    "viewer": "Codex in-app browser against the local HTTP viewer"
+  }
+}

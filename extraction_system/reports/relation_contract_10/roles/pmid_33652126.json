@@ -1,0 +1,56 @@
+{
+  "paper_id": "PMID:33652126",
+  "quality": [
+    {
+      "category": "substantive",
+      "evidence_count": 2,
+      "grounded_evidence_present": true,
+      "label": "Edu",
+      "node": "doc_e_008",
+      "obvious_unnecessary_padding": false,
+      "obvious_unsupported_claim": false,
+      "paragraph_count": 1,
+      "type": "Chemical"
+    },
+    {
+      "category": "substantive",
+      "evidence_count": 3,
+      "grounded_evidence_present": true,
+      "label": "serum deficiency",
+      "node": "doc_e_010",
+      "obvious_unnecessary_padding": false,
+      "obvious_unsupported_claim": false,
+      "paragraph_count": 1,
+      "type": "Disease"
+    }
+  ],
+  "records": [
+    {
+      "node_id": "doc_e_008",
+      "paper_role": {
+        "category": "substantive",
+        "evidence": [
+          "Cell proliferation was examined by Edu staining",
+          "whereas increased cell proliferation"
+        ],
+        "paragraphs": [
+          "Edu is used as the staining-based assay for examining cell proliferation in H9c2 cells under serum deprivation. The study assesses proliferation as part of its analysis of PTEN-related effects; PTEN knockdown was reported to increase cell proliferation."
+        ]
+      }
+    },
+    {
+      "node_id": "doc_e_010",
+      "paper_role": {
+        "category": "substantive",
+        "evidence": [
+          "In this study, we used H9c2 cells cultured under serum deprivation to simulate the apoptosis process of myocardial infarction.",
+          "As a result, we observed that serum deprivation in H9c2 cells increased PTEN expression.",
+          "PTEN knockdown experiment using siRNA inhibited serum deprivation-induced cell apoptosis, ROS production, and DNA damage"
+        ],
+        "paragraphs": [
+          "Serum deficiency is used as the experimental serum-deprivation condition in H9c2 cells to simulate the apoptosis process associated with myocardial infarction. Under this condition, the authors investigate PTEN-related cytotoxicity and report increased PTEN expression, along with apoptosis, ROS production, and DNA damage that were reduced by PTEN knockdown."
+        ]
+      }
+    }
+  ]
+}

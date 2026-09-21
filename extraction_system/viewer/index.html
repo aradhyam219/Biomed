@@ -4,9 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Biomedical Relationship Graph</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./styles.css?contract=10" />
     <script src="https://unpkg.com/cytoscape@3.31.2/dist/cytoscape.min.js"></script>
-    <script type="module" src="./app.js"></script>
+    <script type="module" src="./app.js?contract=10"></script>
   </head>
   <body>
     <main class="viewer-shell">
@@ -42,6 +42,21 @@
           </div>
         </aside>
       </div>
+
+      <section class="unconnected-section" aria-labelledby="unconnected-heading">
+        <div class="unconnected-header">
+          <div>
+            <p class="eyebrow">Context outside the edge graph</p>
+            <h2 id="unconnected-heading">Unconnected entities</h2>
+            <p class="section-note">These canonical entities remain available with grounded role explanations, even when hidden from the default canvas.</p>
+          </div>
+          <label class="toggle-control" for="show-unconnected">
+            <input id="show-unconnected" type="checkbox" />
+            <span>Show unconnected entities on graph</span>
+          </label>
+        </div>
+        <div id="unconnected-list" class="unconnected-list" aria-live="polite"></div>
+      </section>
 
       <footer class="viewer-footer">
         Smoke/demo fixture · Cytoscape displays the supplied graph JSON and does not infer new relationships.

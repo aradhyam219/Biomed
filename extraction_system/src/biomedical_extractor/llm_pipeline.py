@@ -16,6 +16,11 @@ from .entity_assembly import assemble_document_entities
 from .graph import GraphResult, build_graph_result
 from .hunflair2 import HUNFLAIR2_MODEL_IDENTIFIER, HunFlair2BioMedExtractor
 from .llm_relation_extraction import LLMRelationExtractor, OpenAIConfig
+from .paper_roles import (
+    PaperRoleExtractor,
+    PaperRoleTarget,
+    apply_paper_roles,
+)
 from .relation_extraction import (
     Relation,
     RelationExtractionResult,
@@ -51,11 +56,13 @@ class LLMExtractionPipeline:
         self,
         entity_extractor: EntityExtractor,
         relation_extractor: RelationExtractor,
+        paper_role_extractor: PaperRoleExtractor | None = None,
     ) -> None:
         """Bind independently replaceable entity and relation implementations."""
 
         self.entity_extractor = entity_extractor
         self.relation_extractor = relation_extractor
+        self.paper_role_extractor = paper_role_extractor
 
     @classmethod
     def from_pretrained(
@@ -72,6 +79,7 @@ class LLMExtractionPipeline:
         hunflair2_runtime_script: Path | str | None = None,
         hunflair2_runtime_cache: Path | str = Path(".cache/hunflair2"),
         hunflair2_offline: bool = False,
+        paper_role_extractor: PaperRoleExtractor | None = None,
     ) -> LLMExtractionPipeline:
         """Load the selected NER backend, HunFlair2 by default, and the LLM harness."""
 
@@ -102,7 +110,7 @@ class LLMExtractionPipeline:
                 "'gliner' or 'hunflair2'"
             )
         relation_extractor = LLMRelationExtractor.from_openai(llm_config)
-        return cls(entity_extractor, relation_extractor)
+        return cls(entity_extractor, relation_extractor, paper_role_extractor)
 
     @classmethod
     def from_hunflair2(
@@ -115,6 +123,7 @@ class LLMExtractionPipeline:
         device: str | None = None,
         offline: bool = False,
         llm_config: OpenAIConfig | None = None,
+        paper_role_extractor: PaperRoleExtractor | None = None,
     ) -> "LLMExtractionPipeline":
         """Load pretrained HunFlair2 and the existing grounded RE harness."""
 
@@ -127,6 +136,7 @@ class LLMExtractionPipeline:
             hunflair2_offline=offline,
             device=device,
             llm_config=llm_config,
+            paper_role_extractor=paper_role_extractor,
         )
 
     from_openai = from_pretrained
@@ -166,17 +176,51 @@ class LLMExtractionPipeline:
         # harness; this recheck prevents invalid values from escaping composition.
         return validate_relations(text, entities, result.relations)
 
-    def extract_graph(self, text: str, *, document_id: str = "input") -> GraphResult:
+    def extract_graph(
+        self,
+        text: str,
+        *,
+        document_id: str = "input",
+        paper_title: str = "",
+        paper_role_extractor: PaperRoleExtractor | None = None,
+    ) -> GraphResult:
         """Extract, assemble, and serialize-ready graph data for one document.
 
-        This is one orchestration call over the existing NER and grounded
-        relation stages.  Graph construction itself performs no model or LLM
-        inference.
+        Assembly is completed before relation extraction so both the mention
+        endpoint map and final graph use the same deterministic identity view.
+        Paper-role enrichment, when configured, runs once after graph cleanup
+        for all genuinely unconnected nodes and never changes edge topology.
         """
 
-        result = self.extract(text)
-        assembly = assemble_document_entities(result.entities, text)
-        return build_graph_result(document_id, assembly, result.relations)
+        if not isinstance(text, str):
+            raise TypeError("text must be a string")
+        if not text.strip():
+            return build_graph_result(document_id, assemble_document_entities((), text), ())
+
+        entities = tuple(self.entity_extractor.extract_entities(text))
+        assembly = assemble_document_entities(entities, text)
+        relation_result = self.extract_relations(text, entities)
+        graph = build_graph_result(document_id, assembly, relation_result)
+
+        role_extractor = (
+            paper_role_extractor
+            if paper_role_extractor is not None
+            else self.paper_role_extractor
+        )
+        if role_extractor is None or not graph.unconnected_nodes:
+            return graph
+
+        targets = tuple(
+            PaperRoleTarget(
+                node_id=node.id,
+                label=node.label,
+                type=node.type,
+                mentions=node.mentions,
+            )
+            for node in graph.unconnected_nodes
+        )
+        roles = role_extractor.extract_roles(paper_title, text, targets)
+        return apply_paper_roles(graph, text, roles)
 
 
 BiomedicalLLMExtractor = LLMExtractionPipeline

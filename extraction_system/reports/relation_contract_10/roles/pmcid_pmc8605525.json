@@ -1,0 +1,152 @@
+{
+  "paper_id": "PMCID:PMC8605525",
+  "quality": [
+    {
+      "category": "substantive",
+      "evidence_count": 4,
+      "grounded_evidence_present": true,
+      "label": "diabetes mellitus",
+      "node": "doc_e_003",
+      "obvious_unnecessary_padding": false,
+      "obvious_unsupported_claim": false,
+      "paragraph_count": 1,
+      "type": "Disease"
+    },
+    {
+      "category": "substantive",
+      "evidence_count": 1,
+      "grounded_evidence_present": true,
+      "label": "impaired",
+      "node": "doc_e_010",
+      "obvious_unnecessary_padding": false,
+      "obvious_unsupported_claim": false,
+      "paragraph_count": 1,
+      "type": "Disease"
+    },
+    {
+      "category": "contextual",
+      "evidence_count": 1,
+      "grounded_evidence_present": true,
+      "label": "rats",
+      "node": "doc_e_013",
+      "obvious_unnecessary_padding": false,
+      "obvious_unsupported_claim": false,
+      "paragraph_count": 1,
+      "type": "Species"
+    },
+    {
+      "category": "contextual",
+      "evidence_count": 2,
+      "grounded_evidence_present": true,
+      "label": "rat",
+      "node": "doc_e_014",
+      "obvious_unnecessary_padding": false,
+      "obvious_unsupported_claim": false,
+      "paragraph_count": 1,
+      "type": "Species"
+    },
+    {
+      "category": "substantive",
+      "evidence_count": 4,
+      "grounded_evidence_present": true,
+      "label": "runt-related transcription factor 3",
+      "node": "doc_e_016",
+      "obvious_unnecessary_padding": false,
+      "obvious_unsupported_claim": false,
+      "paragraph_count": 1,
+      "type": "Gene"
+    },
+    {
+      "category": "contextual",
+      "evidence_count": 1,
+      "grounded_evidence_present": true,
+      "label": "Human",
+      "node": "doc_e_018",
+      "obvious_unnecessary_padding": false,
+      "obvious_unsupported_claim": false,
+      "paragraph_count": 1,
+      "type": "Species"
+    }
+  ],
+  "records": [
+    {
+      "node_id": "doc_e_003",
+      "paper_role": {
+        "category": "substantive",
+        "evidence": [
+          "Diabetes mellitus (DM), a most common chronic disease",
+          "Herein, we aimed to determine whether E3 ubiquitin ligase casitas B-lineage lymphoma (Cbl) alleviates endothelial dysfunction in DM rats by JAK2/STAT4 pathway.",
+          "A rat model of DM was developed through intraperitoneal injection of streptozotocin",
+          "Human umbilical vein endothelial cells (HUVECs) were cultured in high glucose (HG) condition to induce DM as an in vitro model."
+        ],
+        "paragraphs": [
+          "The paper uses diabetes mellitus as the disease context for studying endothelial dysfunction. It models DM in rats and in high-glucose HUVECs, then evaluates whether Cbl alleviates the dysfunction."
+        ]
+      }
+    },
+    {
+      "node_id": "doc_e_010",
+      "paper_role": {
+        "category": "substantive",
+        "evidence": [
+          "Diabetes mellitus (DM), a most common chronic disease, is featured with impaired endothelial function and bioavailability of nitric oxide (NO)"
+        ],
+        "paragraphs": [
+          "The term impaired is used to characterize endothelial function and nitric oxide bioavailability associated with DM. It supplies the background phenotype for the paper's focus on endothelial dysfunction."
+        ]
+      }
+    },
+    {
+      "node_id": "doc_e_013",
+      "paper_role": {
+        "category": "contextual",
+        "evidence": [
+          "A rat model of DM was developed through intraperitoneal injection of streptozotocin, followed by collection of aortic tissues to determine the expression of Cbl, JAK2, runt-related transcription factor 3 (Runx3) and STAT4."
+        ],
+        "paragraphs": [
+          "Rats provide the in vivo experimental model for DM. The authors induce the model with intraperitoneal streptozotocin and collect aortic tissues to measure Cbl, JAK2, Runx3 and STAT4 expression."
+        ]
+      }
+    },
+    {
+      "node_id": "doc_e_014",
+      "paper_role": {
+        "category": "contextual",
+        "evidence": [
+          "A rat model of DM was developed through intraperitoneal injection of streptozotocin",
+          "Cbl was reduced in DM rat tissues and HG-induced HUVECs, where JAK2, Runx3 and STAT4 were elevated."
+        ],
+        "paragraphs": [
+          "The singular rat mention identifies the same in vivo model and tissue context. The paper develops a rat DM model and uses DM rat tissues for the reported expression findings."
+        ]
+      }
+    },
+    {
+      "node_id": "doc_e_016",
+      "paper_role": {
+        "category": "substantive",
+        "evidence": [
+          "followed by collection of aortic tissues to determine the expression of Cbl, JAK2, runt-related transcription factor 3 (Runx3) and STAT4.",
+          "where JAK2, Runx3 and STAT4 were elevated.",
+          "where STAT4 improved Runx3 expression by regulating histone H3 lysine 4 trimethylation level.",
+          "Overexpression of JAK2 and STAT4, or Runx3 increased apoptosis of HUVECs"
+        ],
+        "paragraphs": [
+          "Runx3 is examined as a molecular component of the endothelial-dysfunction mechanism. It is included among the measured factors and is reported elevated in DM models; the authors relate STAT4 to Runx3 expression through histone H3 lysine 4 trimethylation and report increased HUVEC apoptosis with Runx3 overexpression."
+        ]
+      }
+    },
+    {
+      "node_id": "doc_e_018",
+      "paper_role": {
+        "category": "contextual",
+        "evidence": [
+          "Human umbilical vein endothelial cells (HUVECs) were cultured in high glucose (HG) condition to induce DM as an in vitro model."
+        ],
+        "paragraphs": [
+          "Human supplies the species context for the HUVEC in vitro model. The study cultures human umbilical vein endothelial cells in high glucose to induce DM as an in vitro model."
+        ]
+      }
+    }
+  ]
+}

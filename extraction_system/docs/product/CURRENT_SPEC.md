@@ -24,11 +24,19 @@ biomedical text
 isolated pretrained HunFlair2 runtime
     ↓
 validated Entity mentions
-    ├──────────────→ grounded LLM relation extraction ───┐
-    │                                                     │
-    └──────────────→ document-local entity assembly ──────┤
-                       (assembled nodes + mention map)   ↓
-                                      graph-ready result / JSON
+    ↓
+document-local entity assembly
+    (assembled nodes + mention map; mentions remain unchanged)
+    ↓
+grounded LLM relation extraction over supplied mentions
+    ↓
+graph construction and alias/naming-only self-edge cleanup
+    ↓
+genuinely unconnected-node detection
+    ↓
+optional paper-role enrichment
+    ↓
+graph-ready result / JSON
 ```
 
 The graph-ready result can be inspected in the tracked plain browser viewer:
@@ -64,10 +72,15 @@ AIONER / PubTator-style NER remains preserved as evaluation/history evidence.
   mentions, and a complete mention-to-assembled-entity map;
 - a frontend-neutral graph-ready JSON boundary that remaps grounded relation
   endpoints to assembled node IDs, preserves direction, negation, and evidence,
-  and deterministically aggregates equivalent edges;
+  deterministically aggregates equivalent edges, suppresses only alias/naming
+  self-relations after endpoint collapse, and retains canonical unconnected nodes;
+- an optional provider-independent paper-role contract for genuinely unconnected
+  nodes, with one or two grounded paragraphs, exact source evidence, and only
+  `substantive` or `contextual` categories;
 - a thin Cytoscape.js viewer that consumes graph JSON without provider coupling,
   shows typed nodes and directed predicates, and exposes aliases, source
-  mentions, negation, and every retained evidence record through selection;
+  mentions, negation, every retained evidence record, and optional paper roles
+  through selection;
 - a frozen, evaluation-only comparison of the current GLiNER baseline with the
   official AIONER PubMedBERT-CRF artifact on the official BioRED Test split;
 - a frozen, evaluation-only challenger run of the official HunFlair2 five-class
@@ -180,7 +193,9 @@ The identity rules are intentionally conservative:
 - repeated mentions merge only after superficial whitespace/case normalization
   and compatible type comparison;
 - a full-form mention and abbreviation merge only for an unambiguous source
-  pattern of the form `full form (ABBR)` with compatible types;
+  pattern of the form `full form (ABBR)` with compatible types; a bounded
+  Schwartz-Hearst-style alignment can recover a long-form source span and join
+  several same-type mentions contained within that span;
 - incompatible types, unsupported alias patterns, and uncertain candidates stay
   separate;
 - assembled IDs are assigned in first-input-mention order as `doc_e_001`,
@@ -191,6 +206,17 @@ The identity rules are intentionally conservative:
 This is document-local identity evidence, not biomedical normalization or
 cross-document linking. The graph boundary reuses these IDs and preserves all
 constituent mentions; it does not create a second node identity system.
+
+## Unconnected nodes and paper roles
+
+After assembly, relation extraction, graph remapping, and alias/naming-only
+self-edge cleanup, a node has degree zero when it is genuinely unconnected.
+Canonical graph JSON retains every such node. An optional paper-role extractor
+may enrich all requested unconnected nodes in one bounded paper-level call using
+the paper title, complete supplied text, and every source mention for each node.
+Role output is limited to `substantive` and `contextual`, contains one or two
+concise paragraphs, and retains exact verbatim source evidence. Role prose is
+node metadata only: it never creates, modifies, or implies a graph edge.
 
 ## Normalization terminology
 
@@ -373,8 +399,10 @@ complete.
 `LLMExtractionPipeline.extract_graph(text, document_id=...)` returns one node for
 each assembled document entity and remaps grounded relation endpoints to those
 node IDs. Equivalent endpoint/predicate/negation claims share one edge with all
-source-evidence records retained, including when the remapped edge is a
-self-edge. The result exposes `to_dict()` and deterministic `to_json()`
+source-evidence records retained. Alias/naming-only self-relations are removed
+after endpoint identity collapse, while genuine biological self-relations remain.
+Unconnected nodes remain in the result and may carry optional `paper_role`
+metadata. The result exposes `to_dict()` and deterministic `to_json()`
 serialization and contains no frontend styling.
 
 ### Deferred downstream work
@@ -397,8 +425,15 @@ through `viewer/adapter.js`, and renders them with Cytoscape.js. Replacing that
 fixture with serialized `GraphResult.to_json()` output does not require a
 backend contract change.
 
-The summary distinguishes underlying directed relations from displayed
-connections. A single relation is rendered as a directly inspectable edge;
+The summary distinguishes canonical entities from displayed entities, hidden
+unconnected entities, underlying directed relations, and displayed connections.
+Genuinely unconnected nodes are hidden from the default canvas but remain in the
+dedicated `Unconnected entities` panel, grouped into substantive and contextual
+counts. The global reveal control and each card's `Show on graph` control expose
+them without fabricating edges; selecting a revealed node shows its role and
+source evidence. Species is explicitly rendered as a green hexagon.
+
+A single relation is rendered as a directly inspectable edge;
 multiple relations sharing the same source and target direction are rendered as
 one count-labeled bundle, while the reverse direction remains separate. Select
 a node to inspect its ID, display label, type, aliases, and every source mention
@@ -409,8 +444,9 @@ the complete predicate, explicit negation state, and every retained evidence
 record with the complete assertion first, followed by present intervention,
 effects, context, verbatim evidence, surface form, and score. Empty optional
 sections are omitted. Mixed-negation bundles stay neutral on the canvas and
-mark negation on the individual relation. Selected elements focus their local
-neighborhood, reverse directions use separate presentation lanes, and valid
+mark negation on the individual relation. The mixed-negation warning is a
+single wrapping block. Selected elements focus their local neighborhood,
+reverse directions use separate presentation lanes, and valid biological
 self-edges remain supported. These display bundles and routes are
 presentation-only and do not alter graph JSON semantics.
 

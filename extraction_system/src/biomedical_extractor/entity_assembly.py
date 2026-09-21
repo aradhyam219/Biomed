@@ -18,8 +18,11 @@ from .entity_extraction import Entity
 
 
 _PARENTHETICAL_PATTERN = re.compile(r"\((?P<content>[^()\r\n]{1,80})\)")
-_ABBREVIATION_PATTERN = re.compile(r"[A-Za-z0-9][A-Za-z0-9./+'-]*\Z")
+_ABBREVIATION_PATTERN = re.compile(r"[\w][\w./+'’–—-]*\Z", re.UNICODE)
+_LONG_FORM_TOKEN_PATTERN = re.compile(r"\b[\w][\w’'./+–—-]*", re.UNICODE)
+_LONG_FORM_BOUNDARY_PATTERN = re.compile(r"[.!?;:]\s")
 _MAX_ABBREVIATION_LENGTH = 32
+_MAX_LONG_FORM_WORDS = 12
 
 
 @dataclass(frozen=True)
@@ -257,7 +260,13 @@ def _validate_mentions(mentions: Sequence[Entity], text: str) -> None:
 def _explicit_alias_pairs(
     text: str, mentions: Sequence[Entity]
 ) -> tuple[tuple[int, int], ...]:
-    """Find unambiguous source-defined full-form/abbreviation mention pairs."""
+    """Find source-defined pairs with deterministic long-form recovery.
+
+    The parenthetical abbreviation is matched against a bounded suffix of the
+    source text immediately before the opening parenthesis.  That suffix may
+    contain several same-type NER mentions, which lets a fragmented long form
+    participate in one identity group without manufacturing a new mention.
+    """
 
     pairs: list[tuple[int, int]] = []
     for match in _PARENTHETICAL_PATTERN.finditer(text):
@@ -274,10 +283,14 @@ def _explicit_alias_pairs(
             and mention.end <= close_index
             and _surface_key(mention.text) == _surface_key(content)
         ]
+        unique_abbreviation_spans = {
+            (mentions[index].start, mentions[index].end)
+            for index in abbreviation_candidates
+        }
         abbreviation_types = {
             _type_key(mentions[index].type) for index in abbreviation_candidates
         }
-        if len(abbreviation_types) != 1:
+        if len(unique_abbreviation_spans) != 1 or len(abbreviation_types) != 1:
             continue
         abbreviation_index = min(
             abbreviation_candidates,
@@ -287,47 +300,162 @@ def _explicit_alias_pairs(
         if abbreviation_index is None:
             continue
 
+        long_form_span = _recover_long_form_span(text, open_index, content)
+        if long_form_span is None:
+            continue
+        long_form_start, long_form_end = _expand_long_form_start(
+            text,
+            long_form_span[0],
+            long_form_span[1],
+            mentions,
+            abbreviation_types,
+        )
         full_form_candidates = [
             index
             for index, mention in enumerate(mentions)
-            if mention.end <= open_index
-            and not text[mention.end : open_index].strip()
+            if long_form_start <= mention.start
+            and mention.end <= long_form_end
+            and _type_key(mention.type) in abbreviation_types
         ]
-        if not full_form_candidates:
-            continue
-        nearest_end = max(mentions[index].end for index in full_form_candidates)
-        full_form_candidates = [
-            index
-            for index in full_form_candidates
-            if mentions[index].end == nearest_end
-        ]
-        full_form_types = {
-            _type_key(mentions[index].type) for index in full_form_candidates
-        }
-        if full_form_types != abbreviation_types or len(full_form_types) != 1:
-            continue
-        unique_full_spans = {
-            (mentions[index].start, mentions[index].end)
-            for index in full_form_candidates
-        }
-        if len(unique_full_spans) != 1:
-            continue
-        full_form_index = min(full_form_candidates)
-        pairs.append((full_form_index, abbreviation_index))
+        for full_form_index in full_form_candidates:
+            pairs.append((full_form_index, abbreviation_index))
     return tuple(pairs)
 
 
+def _expand_long_form_start(
+    text: str,
+    long_form_start: int,
+    long_form_end: int,
+    mentions: Sequence[Entity],
+    compatible_types: set[str],
+) -> tuple[int, int]:
+    """Include only adjacent same-type NER fragments before an aligned suffix."""
+
+    current_start = long_form_start
+    while True:
+        candidates = [
+            mention
+            for mention in mentions
+            if _type_key(mention.type) in compatible_types
+            and mention.end <= current_start
+            and not text[mention.end:current_start].strip()
+        ]
+        if not candidates:
+            return current_start, long_form_end
+        preceding = max(candidates, key=lambda mention: (mention.end, mention.start))
+        current_start = preceding.start
+
+
 def _looks_like_abbreviation(value: str) -> bool:
-    """Accept only a compact, conventional-looking parenthetical token."""
+    """Accept only a compact, conventional-looking parenthetical token.
+
+    Requiring either a digit or multiple uppercase letters prevents ordinary
+    parenthetical prose such as ``(control)`` or ``(Mice)`` from becoming an
+    alias candidate.  The source alignment below supplies the stronger guard.
+    """
 
     if not 2 <= len(value) <= _MAX_ABBREVIATION_LENGTH:
         return False
     if _ABBREVIATION_PATTERN.fullmatch(value) is None:
         return False
+    if not any(character.isalpha() for character in value):
+        return False
+    if any(character.isdigit() for character in value) or sum(
+        character.isupper() for character in value
+    ) >= 2:
+        return True
+    # Compact CamelCase forms such as Cbl are conventional abbreviations even
+    # when only their initial is uppercase.  Alignment still has to validate
+    # the source construction, so ordinary capitalized prose is not enough.
     return (
-        any(character.isalpha() for character in value)
-        and any(character.isupper() or character.isdigit() for character in value)
+        len(value) <= 6
+        and value[0].isupper()
+        and any(character.islower() for character in value[1:])
     )
+
+
+def _recover_long_form_span(
+    text: str, abbreviation_start: int, abbreviation: str
+) -> tuple[int, int] | None:
+    """Recover one high-confidence long-form source span before ``(ABBR)``."""
+
+    source_before_parenthesis = text[:abbreviation_start]
+    long_form_end = len(source_before_parenthesis.rstrip())
+    tokens = list(_LONG_FORM_TOKEN_PATTERN.finditer(source_before_parenthesis))
+    if not tokens or tokens[-1].end() != long_form_end:
+        return None
+
+    max_words = min(
+        _MAX_LONG_FORM_WORDS,
+        max(3, len([character for character in abbreviation if character.isalnum()]) + 5),
+    )
+    candidates: list[tuple[int, int, int]] = []
+    first_token_index = max(0, len(tokens) - max_words)
+    for token_index in range(first_token_index, len(tokens)):
+        start = tokens[token_index].start()
+        candidate = text[start:long_form_end]
+        if _LONG_FORM_BOUNDARY_PATTERN.search(candidate):
+            continue
+        if _is_superficial_single_word_match(abbreviation, candidate):
+            continue
+        if _abbreviation_aligns(abbreviation, candidate):
+            candidates.append((start, long_form_end, len(tokens) - token_index))
+
+    if not candidates:
+        return None
+
+    # Prefer the longest aligned phrase, but refuse a tie that would make the
+    # source construction ambiguous.  This keeps false-negative merging safer
+    # than choosing one of several plausible preceding phrases.
+    longest_word_count = max(candidate[2] for candidate in candidates)
+    longest = [candidate for candidate in candidates if candidate[2] == longest_word_count]
+    if len(longest) != 1:
+        return None
+    return longest[0][0], longest[0][1]
+
+
+def _abbreviation_aligns(abbreviation: str, long_form: str) -> bool:
+    """Return whether abbreviation characters align in order with the phrase."""
+
+    short = [character.casefold() for character in abbreviation if character.isalnum()]
+    long = [character.casefold() for character in long_form]
+    if len(short) < 2 or len(short) > len(long):
+        return False
+
+    matched_positions: list[int] = []
+    long_index = len(long) - 1
+    for short_character in reversed(short):
+        while long_index >= 0 and long[long_index] != short_character:
+            long_index -= 1
+        if long_index < 0:
+            return False
+        matched_positions.append(long_index)
+        long_index -= 1
+    matched_positions.reverse()
+
+    # The first aligned character must occur in the first recovered word.
+    # Subsequent characters may occur inside hyphenated or ordinary words (for
+    # example, KNTC1 aligns with kinetochore-associated protein 1), which is
+    # part of the compact Schwartz-Hearst-style signal rather than synonym
+    # knowledge.
+    if _surface_key(abbreviation) == _surface_key(long_form):
+        return True
+    first_word_end = next(
+        (index for index, character in enumerate(long_form) if character.isspace()),
+        len(long_form),
+    )
+    return matched_positions[0] < first_word_end
+
+
+def _is_superficial_single_word_match(abbreviation: str, long_form: str) -> bool:
+    """Reject a capitalized parenthetical copy of one ordinary source word."""
+
+    words = long_form.split()
+    short = "".join(character for character in abbreviation.casefold() if character.isalnum())
+    if len(words) != 1 or not short:
+        return False
+    word = "".join(character for character in words[0].casefold() if character.isalnum())
+    return word.startswith(short) and len(word) - len(short) <= 2
 
 
 def _surface_key(value: str) -> str:

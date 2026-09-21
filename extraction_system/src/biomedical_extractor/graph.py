@@ -9,13 +9,24 @@ endpoints to assembled document-local node IDs and preserving source evidence.
 from __future__ import annotations
 
 import json
+import re
 from dataclasses import dataclass
 from math import isfinite
 from typing import Any, Sequence
 
 from .entity_assembly import DocumentEntity, DocumentEntityAssembly
 from .entity_extraction import Entity
+from .paper_roles import PaperRole
 from .relation_extraction import Relation, RelationExtractionResult
+
+
+_NAMING_ONLY_PATTERN = re.compile(
+    r"(?:abbreviat(?:e|ed|ion)|acronym|alias|synonym|"
+    r"alternative\s+(?:name|label|term)|(?:also\s+)?known\s+as|"
+    r"same\s+(?:entity|name|thing)|full\s+form|short\s+form|"
+    r"refers?\s+to|denot(?:e|es)|called|named)",
+    re.IGNORECASE,
+)
 
 
 @dataclass(frozen=True)
@@ -43,6 +54,7 @@ class GraphNode:
     type: str
     mentions: tuple[Entity, ...]
     aliases: tuple[str, ...] = ()
+    paper_role: PaperRole | None = None
 
     def __post_init__(self) -> None:
         object.__setattr__(self, "mentions", tuple(self.mentions))
@@ -57,6 +69,11 @@ class GraphNode:
             "type": self.type,
             "aliases": list(self.aliases),
             "mentions": [mention.to_dict() for mention in self.mentions],
+            **(
+                {"paper_role": self.paper_role.to_dict()}
+                if self.paper_role is not None
+                else {}
+            ),
         }
 
 
@@ -188,6 +205,17 @@ class GraphResult:
             sort_keys=True,
         )
 
+    @property
+    def unconnected_nodes(self) -> tuple[GraphNode, ...]:
+        """Return nodes with degree zero after final edge cleanup."""
+
+        connected_ids = {
+            endpoint
+            for edge in self.edges
+            for endpoint in (edge.source, edge.target)
+        }
+        return tuple(node for node in self.nodes if node.id not in connected_ids)
+
 
 class GraphConstructionError(ValueError):
     """Raised when graph conversion would violate endpoint or evidence integrity."""
@@ -226,6 +254,11 @@ def build_graph_result(
 
         source_node = mention_map[relation.source]
         target_node = mention_map[relation.target]
+        if (
+            source_node == target_node
+            and _is_alias_or_naming_only_relation(relation)
+        ):
+            continue
         key = (source_node, target_node, relation.predicate, relation.negated)
         aggregated.setdefault(key, []).append(
             GraphEvidence(
@@ -359,6 +392,15 @@ def _validate_relation_shape(relation: Relation, index: int) -> None:
         raise GraphConstructionError(
             f"Relation at index {index} negated field must be boolean"
         )
+
+
+def _is_alias_or_naming_only_relation(relation: Relation) -> bool:
+    """Identify naming-only predicates without suppressing biological self-edges."""
+
+    # The predicate is the safest semantic signal: evidence or assertion prose
+    # can mention an alias while carrying a separate biological claim.  Only a
+    # naming predicate is suppressed, and only after endpoint identity collapse.
+    return bool(_NAMING_ONLY_PATTERN.search(relation.predicate))
 
 
 def _evidence_sort_key(

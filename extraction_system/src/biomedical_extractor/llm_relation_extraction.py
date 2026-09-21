@@ -38,6 +38,11 @@ RELATION_EXTRACTION_SYSTEM_PROMPT = """You are a conservative biomedical relatio
 
 Extract only relationships explicitly asserted by the supplied source text. Do not add biological facts from model knowledge, common sense, or the entity types. Every relation must connect two IDs from the supplied entity list. Keep the source-to-target direction expressed by the text. Do not turn a negated claim into a positive relation: set negated=true for an explicitly negated claim. Every emitted relation must include evidence copied verbatim as a contiguous substring of the source text. If the text does not assert a relation between supplied entities, return an empty relations list.
 
+Do not emit a relation whose sole meaning is that two supplied mentions are
+alternative names, abbreviations, aliases, or textual labels for the same
+biomedical entity. Identity and abbreviation resolution are handled separately
+by document-local entity assembly.
+
 Use predicate as a concise, graph-friendly normalized relationship. Use assertion
 as a complete source-grounded restatement of the scientific meaning represented
 by that relation; it may be normalized rather than verbatim, but it must not add

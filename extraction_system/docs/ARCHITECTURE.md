@@ -38,17 +38,25 @@ Adapter/output normalization
       v
 Validated Entity mentions
       |
-      +------------------------------+
-      |                              |
-      v                              v
-Grounded LLM relation extraction    Document-local entity assembly
-      |                              (assembled nodes + mention map)
-      v                              |
-ComposedExtractionResult             |
-      |                              |
-      +---------------+--------------+
-                      v
-             GraphResult / graph JSON
+      v
+Document-local entity assembly
+(assembled nodes + mention map; original mentions preserved)
+      |
+      v
+Grounded LLM relation extraction
+(over the supplied mention IDs)
+      |
+      v
+Graph construction and alias/naming-only self-edge cleanup
+      |
+      v
+Genuinely unconnected-node detection
+      |
+      v
+Optional paper-role enrichment
+      |
+      v
+GraphResult / graph JSON
       |
       v
 Future biomedical entity normalization/linking
@@ -62,8 +70,11 @@ The composed prototype path can return validated entities and grounded relations
 or expose them through ``extract_graph`` as a deterministic ``GraphResult``. The
 graph boundary consumes the same ordered mentions and source text for
 document-local nodes, remaps relation endpoints through the assembly map, and
-retains verbatim relation evidence. It does not perform model inference,
-biomedical identity normalization, or frontend styling.
+retains verbatim relation evidence. After remapping it suppresses only naming-
+or alias-only self-relations; genuine biological self-relations remain. The
+pipeline then exposes degree-zero nodes for optional paper-role enrichment. It
+does not perform model inference, biomedical identity normalization, or
+frontend styling.
 
 The tracked browser prototype is a separate downstream consumer of the same
 graph-ready JSON boundary:
@@ -145,12 +156,14 @@ keeps a concise predicate alongside a complete source-grounded assertion,
 optional intervention/effects/context qualifiers, and verbatim evidence;
 validation checks structure and traceability but does not claim to prove the
 semantic summary. `graph` owns the typed graph result, endpoint remapping,
-deterministic edge aggregation, including self-edges produced by remapping
-grounded relations, and JSON serialization. Graph edge identity uses only the
-remapped source and target, predicate, and negation state; each contributing
+deterministic edge aggregation, alias/naming-only self-edge cleanup, degree-zero
+detection, and JSON serialization. Graph edge identity uses only the remapped
+source and target, predicate, and negation state; each contributing
 `GraphEvidence` record retains its own assertion, intervention, effects,
-context, verbatim text, surface form, and score. Raw model/provider objects do
-not cross these seams. The
+context, verbatim text, surface form, and score. `paper_roles` owns the
+provider-independent role value, target contract, exact-evidence validation,
+and node-only enrichment; `llm_paper_roles` owns the separate Responses API
+structured-output harness. Raw model/provider objects do not cross these seams. The
 existing GLiNER adapter and legacy
 `BiomedicalExtractor` path remain available for compatibility.
 
@@ -295,7 +308,8 @@ remain preserved separately.
 Target-domain NER evaluation, model selection, and fine-tuning remain postponed.
 External biomedical normalization remains outside this path. The graph boundary
 is limited to deterministic mention grouping, endpoint mapping, exact-key edge
-aggregation, evidence preservation, and JSON serialization; the viewer consumes
+aggregation, naming-only self-edge cleanup, degree-zero detection, evidence
+preservation, optional node roles, and JSON serialization; the viewer consumes
 that boundary without adding graph semantics.
 
 Biological-process extraction is likewise deferred and, if required later, will be
@@ -307,9 +321,10 @@ treated as a separate decision rather than added to the default core-NER pass.
 |---|---|---|---|
 | Entity extraction | `entity_extraction.EntityExtractor` runs the configured entity adapter on input text | Stable entity IDs, source spans/types, and model confidence | GLiNER-specific output outside the adapter, BioRED assumptions, or relation logic |
 | Adapter/output normalization | Convert one model's predictions into the local `Entity` value | Span integrity, schema validation, and stable output fields | Canonical biomedical identity linking or downstream reasoning |
-| Document-local entity assembly | Group safe same-document mentions and expose assembled nodes plus a mention-ID map | Deterministic node IDs, mention preservation, and type-compatible identity evidence | Biomedical normalization, cross-document identity, graph serialization, or relation rewriting |
-| Graph boundary | Convert assembled nodes and grounded mention relations into a stable graph result | Document ID, node identity reuse, endpoint remapping, source/target/predicate/negation edge aggregation, per-evidence rich semantics, and JSON serialization | Model inference, semantic predicate rewriting, graph-database state, or frontend styling |
-| Graph viewer | Render graph JSON as an inspectable directed Cytoscape.js graph | Presentation mapping, pan/zoom, node/edge selection, aliases, mentions, negation styling, and per-evidence assertion/metadata display | Extraction, provider assumptions, relation inference, predicate rewriting, or graph persistence |
+| Document-local entity assembly | Group safe same-document mentions and expose assembled nodes plus a mention-ID map | Deterministic node IDs, mention preservation, bounded explicit abbreviation alignment, and type-compatible identity evidence | Biomedical normalization, cross-document identity, graph serialization, or relation rewriting |
+| Graph boundary | Convert assembled nodes and grounded mention relations into a stable graph result | Document ID, node identity reuse, endpoint remapping, alias/naming-only self-edge cleanup, degree-zero detection, source/target/predicate/negation edge aggregation, per-evidence rich semantics, and JSON serialization | Model inference, semantic predicate rewriting, graph-database state, or frontend styling |
+| Paper-role domain seam | Validate and attach grounded explanations for degree-zero nodes | Minimal category, one/two paragraphs, exact source evidence, and unchanged edge topology | Provider SDK objects, graph inference, ontology assertions, or roles for connected nodes |
+| Graph viewer | Render graph JSON as an inspectable directed Cytoscape.js graph | Presentation mapping, hidden/revealed unconnected nodes, role panel, species styling, pan/zoom, node/edge selection, aliases, mentions, negation styling, and per-evidence assertion/metadata display | Extraction, provider assumptions, relation inference, predicate rewriting, or graph persistence |
 | Biomedical entity normalization/linking | Future mention-to-identity resolution | Not implemented in the current path | Model selection before the NER quality gate |
 | Relation extraction | Existing grounded LLM relation implementation over supplied normalized entities | Predicate, complete assertion, optional intervention/effects/context, verbatim evidence, endpoint integrity, negation, and validation | Entity discovery, graph assembly, graph propagation of rich semantics, or unsupported biological inference |
 | Evaluation and adaptation readiness | Measure core NER and prepare controlled target adaptation | Dataset adaptation, metrics, challenger adapters, model comparison, target-domain pilot/validator, frozen baseline, and isolated training readiness | Production extraction semantics, pseudo-gold, incomplete-gold training, or production model replacement |
@@ -349,14 +364,20 @@ treated as a separate decision rather than added to the default core-NER pass.
 - Document-local assembly is deterministic, preserves every original mention,
   and never silently merges incompatible entity types.
 - The graph boundary must not emit dangling endpoints, discard relation evidence,
-  rewrite predicates, suppress grounded self-edges caused by endpoint remapping,
-  or introduce frontend-specific styling. Edge aggregation must not use rich
+  rewrite predicates, or introduce frontend-specific styling. It suppresses only
+  alias/naming-only self-relations after endpoint identity collapse; genuine
+  grounded biological self-edges remain. Edge aggregation must not use rich
   assertion, intervention, effects, or context fields as identity keys; those
   values remain independent on each contributing evidence record.
+- Degree-zero nodes remain canonical graph nodes. Optional paper-role metadata is
+  source-grounded, limited to `substantive`/`contextual`, contains one or two
+  paragraphs, and never changes edge topology.
 - The graph viewer must consume only graph-ready JSON and must not infer,
   reverse, or semantically rewrite nodes, edges, predicates, negation, or
-  evidence. It omits absent optional semantic fields while exposing present
-  assertion, intervention, effects, context, surface form, and score values.
+  evidence. It hides degree-zero nodes only by default presentation state and
+  retains global/per-node reveal controls. It omits absent optional semantic
+  fields while exposing present assertion, intervention, effects, context,
+  surface form, score, and paper-role values.
 - The architecture must not grow speculative ontology, graph-database, or
   external normalization infrastructure beyond the graph-ready JSON boundary.
 

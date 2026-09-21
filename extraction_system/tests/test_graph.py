@@ -325,6 +325,76 @@ class GraphBoundaryTests(unittest.TestCase):
         )
         self.assertEqual(len(edge.evidence), 2)
 
+    def test_alias_self_edges_are_suppressed_after_identity_collapse(self):
+        text = "amyloid precursor protein (APP) was measured."
+        full = "amyloid precursor protein"
+        full_start = text.index(full)
+        abbreviation_start = text.index("APP")
+        mentions = (
+            Entity("E1", full, "Gene", full_start, full_start + len(full)),
+            Entity("E2", "APP", "Gene", abbreviation_start, abbreviation_start + 3),
+        )
+        relation = Relation(
+            "E1",
+            "E2",
+            "abbreviated_as",
+            "amyloid precursor protein (APP)",
+            "amyloid precursor protein (APP)",
+            False,
+        )
+
+        graph = build_graph_result(
+            "paper-1", assemble_document_entities(mentions, text), (relation,)
+        )
+
+        self.assertEqual(len(graph.nodes), 1)
+        self.assertEqual(graph.edges, ())
+        self.assertEqual(len(graph.unconnected_nodes), 1)
+
+    def test_has_abbreviation_self_edges_are_suppressed_but_biological_self_edges_remain(self):
+        text = "PI3K has abbreviation PI3K; PI3K phosphorylated to total ratio is elevated in PI3K."
+        first = text.index("PI3K")
+        second = text.index("PI3K", first + 1)
+        third = text.index("PI3K", second + 1)
+        fourth = text.index("PI3K", third + 1)
+        mentions = (
+            Entity("E1", "PI3K", "Gene", first, first + 4),
+            Entity("E2", "PI3K", "Gene", second, second + 4),
+            Entity("E3", "PI3K", "Gene", third, third + 4),
+            Entity("E4", "PI3K", "Gene", fourth, fourth + 4),
+        )
+        relations = (
+            Relation(
+                "E1", "E2", "has_abbreviation", "PI3K has abbreviation PI3K", "PI3K has abbreviation PI3K", False
+            ),
+            Relation(
+                "E3", "E4", "phosphorylated_to_total_ratio_is_elevated", "PI3K phosphorylated to total ratio is elevated", "PI3K phosphorylated to total ratio is elevated", False
+            ),
+        )
+
+        graph = build_graph_result("paper-1", assemble_document_entities(mentions, text), relations)
+
+        self.assertEqual(len(graph.edges), 1)
+        self.assertEqual(graph.edges[0].predicate, "phosphorylated_to_total_ratio_is_elevated")
+        self.assertEqual((graph.edges[0].source, graph.edges[0].target), ("doc_e_001", "doc_e_001"))
+
+    def test_unrelated_normal_relation_is_unchanged(self):
+        text = "GeneA affects disease."
+        gene = text.index("GeneA")
+        disease = text.index("disease")
+        mentions = (
+            Entity("E1", "GeneA", "Gene", gene, gene + 5),
+            Entity("E2", "disease", "Disease", disease, disease + 7),
+        )
+        relation = Relation(
+            "E1", "E2", "affects", "GeneA affects disease.", "GeneA affects disease", False
+        )
+
+        graph = build_graph_result("paper-1", assemble_document_entities(mentions, text), (relation,))
+
+        self.assertEqual(len(graph.edges), 1)
+        self.assertEqual(graph.edges[0].predicate, "affects")
+
     def test_result_and_json_are_deterministic_and_json_serializable(self):
         text = "BRCA1 affects disease; drug affects BRCA1."
         mentions = (

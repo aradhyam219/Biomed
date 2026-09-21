@@ -1,0 +1,80 @@
+{
+  "paper_id": "PMCID:PMC11824863",
+  "quality": [
+    {
+      "category": "contextual",
+      "evidence_count": 3,
+      "grounded_evidence_present": true,
+      "label": "Mice",
+      "node": "doc_e_003",
+      "obvious_unnecessary_padding": false,
+      "obvious_unsupported_claim": false,
+      "paragraph_count": 1,
+      "type": "Species"
+    },
+    {
+      "category": "substantive",
+      "evidence_count": 3,
+      "grounded_evidence_present": true,
+      "label": "proline and glutamine rich",
+      "node": "doc_e_005",
+      "obvious_unnecessary_padding": false,
+      "obvious_unsupported_claim": false,
+      "paragraph_count": 1,
+      "type": "Gene"
+    },
+    {
+      "category": "substantive",
+      "evidence_count": 1,
+      "grounded_evidence_present": true,
+      "label": "Aβ1–42",
+      "node": "doc_e_009",
+      "obvious_unnecessary_padding": false,
+      "obvious_unsupported_claim": false,
+      "paragraph_count": 1,
+      "type": "Gene"
+    }
+  ],
+  "records": [
+    {
+      "node_id": "doc_e_003",
+      "paper_role": {
+        "category": "contextual",
+        "evidence": [
+          "an AD mouse model was established through lateral ventricular injection of amyloid-beta1–42 (Aβ1–42).",
+          "Subsequently, adeno-associated virus was administered to overexpress SFPQ in the hippocampus of AD mice.",
+          "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice"
+        ],
+        "paragraphs": [
+          "Mice provide the experimental model context: the study establishes an AD mouse model, overexpresses SFPQ in the hippocampus using an adeno-associated virus, and reports recognition, memory, and molecular outcomes in AD mice."
+        ]
+      }
+    },
+    {
+      "node_id": "doc_e_005",
+      "paper_role": {
+        "category": "substantive",
+        "evidence": [
+          "Splicing factor proline and glutamine rich (SFPQ) is known to play a crucial role in neurodegenerative diseases",
+          "Subsequently, adeno-associated virus was administered to overexpress SFPQ in the hippocampus of AD mice.",
+          "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau."
+        ],
+        "paragraphs": [
+          "The paper investigates SFPQ, identified as splicing factor proline and glutamine rich, by overexpressing it in the hippocampus of AD mice. It reports that SFPQ overexpression improves recognition and memory, reduces APP and Tau, increases antioxidant and synaptic or memory-associated proteins, raises the Bcl-2/Bax ratio, and elevates PI3K/AKT signaling ratios."
+        ]
+      }
+    },
+    {
+      "node_id": "doc_e_009",
+      "paper_role": {
+        "category": "substantive",
+        "evidence": [
+          "an AD mouse model was established through lateral ventricular injection of amyloid-beta1–42 (Aβ1–42)."
+        ],
+        "paragraphs": [
+          "Aβ1–42 is used to establish the AD mouse model through lateral ventricular injection."
+        ]
+      }
+    }
+  ]
+}

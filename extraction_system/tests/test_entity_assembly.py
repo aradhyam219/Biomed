@@ -111,6 +111,98 @@ class DocumentEntityAssemblyTests(unittest.TestCase):
             {"E1": "doc_e_001", "E2": "doc_e_002"},
         )
 
+    def test_fragmented_long_form_mentions_join_only_with_explicit_abbreviation(self):
+        text = "enhancer of zeste homologue 2 (EZH2) was measured."
+        first = text.index("enhancer of zeste")
+        second = text.index("homologue 2")
+        abbreviation = text.index("EZH2")
+        mentions = (
+            Entity("E1", "enhancer of zeste", "Gene", first, first + len("enhancer of zeste")),
+            Entity("E2", "homologue 2", "Gene", second, second + len("homologue 2")),
+            Entity("E3", "EZH2", "Gene", abbreviation, abbreviation + 4),
+        )
+
+        result = assemble_document_entities(mentions, text)
+
+        self.assertEqual(len(result.document_entities), 1)
+        self.assertEqual(result.document_entities[0].label, "EZH2")
+        self.assertEqual(result.document_entities[0].mention_ids, ("E1", "E2", "E3"))
+        for mention in result.document_entities[0].mentions:
+            self.assertEqual(text[mention.start : mention.end], mention.text)
+
+    def test_adjacent_prefix_fragment_joins_to_an_aligned_long_form_suffix(self):
+        text = "chromatin group factor enhancer of silencing 2 (ES2) was measured."
+        prefix = "chromatin group factor"
+        suffix = "enhancer of silencing 2"
+        prefix_start = text.index(prefix)
+        suffix_start = text.index(suffix)
+        abbreviation_start = text.index("ES2")
+        mentions = (
+            Entity("E1", prefix, "Gene", prefix_start, prefix_start + len(prefix)),
+            Entity("E2", suffix, "Gene", suffix_start, suffix_start + len(suffix)),
+            Entity("E3", "ES2", "Gene", abbreviation_start, abbreviation_start + 3),
+        )
+
+        result = assemble_document_entities(mentions, text)
+
+        self.assertEqual(len(result.document_entities), 1)
+        self.assertEqual(result.document_entities[0].mention_ids, ("E1", "E2", "E3"))
+
+    def test_camel_case_abbreviation_aligns_without_entity_specific_logic(self):
+        text = "cell lineage binder (Clb) was measured."
+        full = "cell lineage binder"
+        full_start = text.index(full)
+        abbreviation_start = text.index("Clb")
+        mentions = (
+            Entity("E1", full, "Gene", full_start, full_start + len(full)),
+            Entity("E2", "Clb", "Gene", abbreviation_start, abbreviation_start + 3),
+        )
+
+        result = assemble_document_entities(mentions, text)
+
+        self.assertEqual(len(result.document_entities), 1)
+        self.assertEqual(result.document_entities[0].aliases, (full, "Clb"))
+
+    def test_ambiguous_parenthetical_text_does_not_create_an_alias(self):
+        text = "samples (AB) were compared with controls."
+        sample_start = text.index("samples")
+        abbreviation_start = text.index("AB")
+        mentions = (
+            Entity("E1", "samples", "Disease", sample_start, sample_start + len("samples")),
+            Entity("E2", "AB", "Disease", abbreviation_start, abbreviation_start + 2),
+        )
+
+        result = assemble_document_entities(mentions, text)
+
+        self.assertEqual(len(result.document_entities), 2)
+        self.assertEqual(result.mention_to_document_entity, {"E1": "doc_e_001", "E2": "doc_e_002"})
+
+    def test_no_general_synonym_guessing_without_source_naming_evidence(self):
+        text = "myocardial infarction was compared with heart attack records."
+        first = text.index("myocardial infarction")
+        second = text.index("heart attack")
+        mentions = (
+            Entity("E1", "myocardial infarction", "Disease", first, first + len("myocardial infarction")),
+            Entity("E2", "heart attack", "Disease", second, second + len("heart attack")),
+        )
+
+        result = assemble_document_entities(mentions, text)
+
+        self.assertEqual(len(result.document_entities), 2)
+
+    def test_parenthetical_prose_with_one_capital_does_not_merge(self):
+        text = "samples (Sample) were used as a model."
+        first = text.index("samples")
+        second = text.index("Sample")
+        mentions = (
+            Entity("E1", "samples", "Disease", first, first + len("samples")),
+            Entity("E2", "Sample", "Disease", second, second + len("Sample")),
+        )
+
+        result = assemble_document_entities(mentions, text)
+
+        self.assertEqual(len(result.document_entities), 2)
+
     def test_ids_and_mapping_are_deterministic_and_spans_are_unchanged(self):
         text = "Aspirin treats disease; aspirin helps."
         first_start = text.index("Aspirin")

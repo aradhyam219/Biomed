@@ -274,3 +274,77 @@ test("entity type keys remain presentation-only and extensible", () => {
   assert.equal(entityTypeKey("Gene or Gene Product"), "gene-or-gene-product");
   assert.equal(entityTypeKey(""), "unknown");
 });
+
+test("hides unconnected nodes by default while retaining truthful canonical counts", () => {
+  const graph = {
+    nodes: [
+      { id: "A", label: "GeneA", type: "Gene" },
+      { id: "B", label: "Disease", type: "Disease" },
+      {
+        id: "C",
+        label: "mice",
+        type: "Species",
+        paper_role: { category: "contextual", paragraphs: ["The model was mice."], evidence: ["mice"] },
+      },
+      { id: "D", label: "GeneX", type: "Gene" },
+    ],
+    edges: [{ id: "R", source: "A", target: "B", predicate: "affects", negated: false }],
+  };
+
+  const model = buildDisplayModel(graph);
+  assert.equal(model.canonicalNodeCount, 4);
+  assert.equal(model.displayedNodeCount, 2);
+  assert.equal(model.unconnectedNodeCount, 2);
+  assert.equal(model.hiddenUnconnectedCount, 2);
+  assert.equal(model.relationCount, 1);
+  assert.equal(model.edges.length, 1);
+
+  const oneRevealed = buildDisplayModel(graph, { revealedNodeIds: ["C"] });
+  assert.equal(oneRevealed.displayedNodeCount, 3);
+  assert.equal(oneRevealed.hiddenUnconnectedCount, 1);
+
+  const allRevealed = buildDisplayModel(graph, { showUnconnected: true });
+  assert.equal(allRevealed.displayedNodeCount, 4);
+  assert.equal(allRevealed.hiddenUnconnectedCount, 0);
+});
+
+test("preserves role metadata and gives Species an explicit presentation class", () => {
+  const [species] = toCytoscapeElements({
+    nodes: [
+      {
+        id: "S",
+        label: "mice",
+        type: "Species",
+        paper_role: {
+          category: "contextual",
+          paragraphs: ["Mice supplied the model context."],
+          evidence: ["mice supplied the model context."],
+        },
+      },
+    ],
+    edges: [],
+  }, { showUnconnected: true });
+
+  assert.match(species.classes, /entity-type-species/);
+  assert.equal(species.data.paper_role.category, "contextual");
+  assert.deepEqual(species.data.paper_role.evidence, ["mice supplied the model context."]);
+});
+
+test("bundle warning CSS is a single wrapping block", () => {
+  const styles = readFileSync(new URL("../styles.css", import.meta.url), "utf8");
+  const warning = styles.slice(styles.indexOf(".bundle-note"), styles.indexOf(".back-button"));
+  assert.match(warning, /display:\s*block/);
+  assert.match(warning, /overflow-wrap:\s*anywhere/);
+  assert.match(warning, /white-space:\s*normal/);
+});
+
+test("viewer exposes unconnected role and reveal controls", () => {
+  const html = readFileSync(new URL("../index.html", import.meta.url), "utf8");
+  const app = readFileSync(new URL("../app.js", import.meta.url), "utf8");
+
+  assert.match(html, /Unconnected entities/);
+  assert.match(html, /show-unconnected/);
+  assert.match(app, /View role in paper/);
+  assert.match(app, /ROLE IN PAPER/);
+  assert.match(app, /SOURCE EVIDENCE/);
+});

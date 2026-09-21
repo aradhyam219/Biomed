@@ -29,6 +29,55 @@ function arrayOrEmpty(value) {
   return Array.isArray(value) ? value : [];
 }
 
+function unconnectedNodeIds(nodes, relations) {
+  const connectedIds = new Set();
+  for (const relation of relations) {
+    connectedIds.add(String(relation?.source ?? ""));
+    connectedIds.add(String(relation?.target ?? ""));
+  }
+  return new Set(
+    nodes
+      .filter((node) => !connectedIds.has(String(node?.id ?? "")))
+      .map((node) => String(node?.id ?? "")),
+  );
+}
+
+function displayNodeSelection(nodes, relations, options = {}) {
+  const canonicalUnconnectedIds = unconnectedNodeIds(nodes, relations);
+  const revealedNodeIds = new Set(
+    arrayOrEmpty(options?.revealedNodeIds).map((nodeId) => String(nodeId)),
+  );
+  const showUnconnected = options?.showUnconnected === true;
+  const displayedUnconnectedIds = showUnconnected
+    ? canonicalUnconnectedIds
+    : new Set(
+        [...canonicalUnconnectedIds].filter((nodeId) => revealedNodeIds.has(nodeId)),
+      );
+  const displayedNodeIds = new Set(
+    nodes
+      .map((node) => String(node?.id ?? ""))
+      .filter((nodeId) => !canonicalUnconnectedIds.has(nodeId) || displayedUnconnectedIds.has(nodeId)),
+  );
+  const canonicalNodeIds = new Set(
+    nodes.map((node) => String(node?.id ?? "")),
+  );
+  const displayedNodes = nodes.filter((node) => displayedNodeIds.has(String(node?.id ?? "")));
+  const displayedRelations = relations.filter(
+    (relation) =>
+      (!canonicalNodeIds.has(String(relation?.source ?? "")) ||
+        displayedNodeIds.has(String(relation?.source ?? ""))) &&
+      (!canonicalNodeIds.has(String(relation?.target ?? "")) ||
+        displayedNodeIds.has(String(relation?.target ?? ""))),
+  );
+  return {
+    canonicalUnconnectedIds,
+    displayedUnconnectedIds,
+    displayedNodes,
+    displayedRelations,
+    hiddenUnconnectedCount: canonicalUnconnectedIds.size - displayedUnconnectedIds.size,
+  };
+}
+
 function compactPredicate(value) {
   const predicate = String(value ?? "");
   return predicate.length > 28 ? `${predicate.slice(0, 25).trimEnd()}…` : predicate;
@@ -107,9 +156,12 @@ function edgeRoutingMetadata(edges) {
  * @param {object | null | undefined} graph
  * @returns {{nodes: Array<object>, edges: Array<object>, relationCount: number}}
  */
-export function buildDisplayModel(graph) {
-  const nodes = arrayOrEmpty(graph?.nodes);
-  const relations = arrayOrEmpty(graph?.edges);
+export function buildDisplayModel(graph, options = {}) {
+  const canonicalNodes = arrayOrEmpty(graph?.nodes);
+  const canonicalRelations = arrayOrEmpty(graph?.edges);
+  const selection = displayNodeSelection(canonicalNodes, canonicalRelations, options);
+  const nodes = selection.displayedNodes;
+  const relations = selection.displayedRelations;
   const groups = groupDirectionalRelations(relations);
   const displayEdges = groups.map((group, index) => {
     const groupRelations = group.relations;
@@ -142,7 +194,13 @@ export function buildDisplayModel(graph) {
   return {
     nodes,
     edges: displayEdges.map((edge, index) => ({ ...edge, ...routing[index] })),
-    relationCount: relations.length,
+    relationCount: canonicalRelations.length,
+    displayedRelationCount: relations.length,
+    canonicalNodeCount: canonicalNodes.length,
+    displayedNodeCount: nodes.length,
+    unconnectedNodeCount: selection.canonicalUnconnectedIds.size,
+    hiddenUnconnectedCount: selection.hiddenUnconnectedCount,
+    displayedUnconnectedIds: [...selection.displayedUnconnectedIds],
   };
 }
 
@@ -156,8 +214,8 @@ export function buildDisplayModel(graph) {
  * @param {object | null | undefined} graph
  * @returns {Array<object>}
  */
-export function toCytoscapeElements(graph) {
-  const { nodes, edges } = buildDisplayModel(graph);
+export function toCytoscapeElements(graph, options = {}) {
+  const { nodes, edges } = buildDisplayModel(graph, options);
 
   const nodeElements = nodes.map((node) => {
     const type = String(node?.type ?? DEFAULT_TYPE);
