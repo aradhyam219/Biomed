@@ -183,30 +183,8 @@ class LLMRelationExtractor:
         """Construct the initial OpenAI provider path from external config."""
 
         config = config or OpenAIConfig.from_environment()
-        api_key = config.resolved_api_key()
-        try:
-            from langchain_openai import ChatOpenAI
-        except ImportError as error:  # pragma: no cover - exercised in bad installs
-            raise RuntimeError(
-                "The OpenAI relation path requires the langchain-openai dependency"
-            ) from error
-
-        kwargs: dict[str, Any] = {
-            "model": config.model,
-            "api_key": api_key,
-            "use_responses_api": True,
-            "reasoning": {"effort": config.reasoning_effort},
-            # Output repair is deliberately owned by this harness.  Provider
-            # retries, when desired, should be configured separately by callers.
-            "max_retries": 0,
-        }
-        if config.max_completion_tokens is not None:
-            kwargs["max_completion_tokens"] = config.max_completion_tokens
-        if config.base_url is not None:
-            kwargs["base_url"] = config.base_url
-
         return cls(
-            ChatOpenAI(**kwargs),
+            _create_openai_chat_model(config),
             max_retries=config.max_retries,
         )
 
@@ -284,6 +262,32 @@ def _build_prompt(
     if repair:
         prompt = f"{prompt}\n\nREPAIR INSTRUCTION:\n{repair}"
     return prompt
+
+
+def _create_openai_chat_model(config: OpenAIConfig) -> Any:
+    """Create the shared OpenAI Responses API chat model for a local harness."""
+
+    api_key = config.resolved_api_key()
+    try:
+        from langchain_openai import ChatOpenAI
+    except ImportError as error:  # pragma: no cover - exercised in bad installs
+        raise RuntimeError(
+            "The OpenAI extraction path requires the langchain-openai dependency"
+        ) from error
+
+    kwargs: dict[str, Any] = {
+        "model": config.model,
+        "api_key": api_key,
+        "use_responses_api": True,
+        "reasoning": {"effort": config.reasoning_effort},
+        # Each harness owns its own bounded structured-output repair loop.
+        "max_retries": 0,
+    }
+    if config.max_completion_tokens is not None:
+        kwargs["max_completion_tokens"] = config.max_completion_tokens
+    if config.base_url is not None:
+        kwargs["base_url"] = config.base_url
+    return ChatOpenAI(**kwargs)
 
 
 def _is_generated_output_error(error: Exception) -> bool:

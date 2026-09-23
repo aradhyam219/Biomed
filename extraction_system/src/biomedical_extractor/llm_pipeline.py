@@ -12,9 +12,15 @@ from .entity_extraction import (
     EntityExtractor,
     GLiNERBioMedExtractor,
 )
-from .entity_assembly import assemble_document_entities
+from .entity_assembly import _assemble_document_entities, assemble_document_entities
 from .graph import GraphResult, build_graph_result
 from .hunflair2 import HUNFLAIR2_MODEL_IDENTIFIER, HunFlair2BioMedExtractor
+from .identity_resolution import (
+    ExplicitIdentityVerifier,
+    find_unresolved_explicit_identity_candidates,
+    validate_explicit_identity_result,
+)
+from .llm_identity_resolution import LLMExplicitIdentityVerifier
 from .llm_relation_extraction import LLMRelationExtractor, OpenAIConfig
 from .paper_roles import (
     PaperRoleExtractor,
@@ -50,19 +56,21 @@ class ComposedExtractionResult:
 
 
 class LLMExtractionPipeline:
-    """Run NER, then grounded LLM relation extraction over those entities."""
+    """Compose NER, explicit local identity resolution, and grounded relations."""
 
     def __init__(
         self,
         entity_extractor: EntityExtractor,
         relation_extractor: RelationExtractor,
         paper_role_extractor: PaperRoleExtractor | None = None,
+        identity_verifier: ExplicitIdentityVerifier | None = None,
     ) -> None:
-        """Bind independently replaceable entity and relation implementations."""
+        """Bind independently replaceable extraction and enrichment seams."""
 
         self.entity_extractor = entity_extractor
         self.relation_extractor = relation_extractor
         self.paper_role_extractor = paper_role_extractor
+        self.identity_verifier = identity_verifier
 
     @classmethod
     def from_pretrained(
@@ -80,8 +88,9 @@ class LLMExtractionPipeline:
         hunflair2_runtime_cache: Path | str = Path(".cache/hunflair2"),
         hunflair2_offline: bool = False,
         paper_role_extractor: PaperRoleExtractor | None = None,
+        identity_verifier: ExplicitIdentityVerifier | None = None,
     ) -> LLMExtractionPipeline:
-        """Load the selected NER backend, HunFlair2 by default, and the LLM harness."""
+        """Load the selected NER backend and shared OpenAI relation/identity harnesses."""
 
         if entity_backend == "gliner":
             entity_extractor = GLiNERBioMedExtractor.from_pretrained(
@@ -110,7 +119,17 @@ class LLMExtractionPipeline:
                 "'gliner' or 'hunflair2'"
             )
         relation_extractor = LLMRelationExtractor.from_openai(llm_config)
-        return cls(entity_extractor, relation_extractor, paper_role_extractor)
+        verifier = (
+            identity_verifier
+            if identity_verifier is not None
+            else LLMExplicitIdentityVerifier.from_openai(llm_config)
+        )
+        return cls(
+            entity_extractor,
+            relation_extractor,
+            paper_role_extractor,
+            verifier,
+        )
 
     @classmethod
     def from_hunflair2(
@@ -124,6 +143,7 @@ class LLMExtractionPipeline:
         offline: bool = False,
         llm_config: OpenAIConfig | None = None,
         paper_role_extractor: PaperRoleExtractor | None = None,
+        identity_verifier: ExplicitIdentityVerifier | None = None,
     ) -> "LLMExtractionPipeline":
         """Load pretrained HunFlair2 and the existing grounded RE harness."""
 
@@ -137,6 +157,7 @@ class LLMExtractionPipeline:
             device=device,
             llm_config=llm_config,
             paper_role_extractor=paper_role_extractor,
+            identity_verifier=identity_verifier,
         )
 
     from_openai = from_pretrained
@@ -186,10 +207,10 @@ class LLMExtractionPipeline:
     ) -> GraphResult:
         """Extract, assemble, and serialize-ready graph data for one document.
 
-        Assembly is completed before relation extraction so both the mention
-        endpoint map and final graph use the same deterministic identity view.
-        Paper-role enrichment, when configured, runs once after graph cleanup
-        for all genuinely unconnected nodes and never changes edge topology.
+        Deterministic and eligible verified identities are finalized before
+        relation extraction, graph construction, unconnected-node detection,
+        and paper-role enrichment. Mentions passed to the relation extractor
+        remain unchanged.
         """
 
         if not isinstance(text, str):
@@ -199,6 +220,22 @@ class LLMExtractionPipeline:
 
         entities = tuple(self.entity_extractor.extract_entities(text))
         assembly = assemble_document_entities(entities, text)
+        verifier = self.identity_verifier
+        if verifier is not None:
+            candidates = find_unresolved_explicit_identity_candidates(
+                entities, text, assembly
+            )
+            if candidates:
+                verification = verifier.verify_explicit_identities(text, candidates)
+                verified_pairs = validate_explicit_identity_result(
+                    text, candidates, verification
+                )
+                if verified_pairs:
+                    assembly = _assemble_document_entities(
+                        entities,
+                        text,
+                        verified_identity_pairs=verified_pairs,
+                    )
         relation_result = self.extract_relations(text, entities)
         graph = build_graph_result(document_id, assembly, relation_result)
 

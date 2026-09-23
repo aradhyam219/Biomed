@@ -2,10 +2,11 @@
 
 This module adds a graph-ready document-local layer over the existing
 mention-level :class:`~biomedical_extractor.entity_extraction.Entity` values.
-It never changes or replaces those values.  Assembly is deliberately limited
-to exact surface repetition and explicit ``full form (ABBR)`` evidence in the
-supplied source document; biomedical normalization and cross-document identity
-remain outside this boundary.
+It never changes or replaces those values. Assembly is deliberately limited
+to exact surface repetition and explicit ``full form (ABBR)`` source evidence,
+including a same-document exact full-form mention when NER fragments the
+construction; biomedical normalization and cross-document identity remain
+outside this boundary.
 """
 
 from __future__ import annotations
@@ -21,6 +22,9 @@ _PARENTHETICAL_PATTERN = re.compile(r"\((?P<content>[^()\r\n]{1,80})\)")
 _ABBREVIATION_PATTERN = re.compile(r"[\w][\w./+'’–—-]*\Z", re.UNICODE)
 _LONG_FORM_TOKEN_PATTERN = re.compile(r"\b[\w][\w’'./+–—-]*", re.UNICODE)
 _LONG_FORM_BOUNDARY_PATTERN = re.compile(r"[.!?;:]\s")
+_SINGLE_LETTER_ALTERNATIVES_PATTERN = re.compile(
+    r"\b[A-Za-z0-9]\s+(?:and|or)\s+[A-Za-z0-9]\b", re.IGNORECASE
+)
 _MAX_ABBREVIATION_LENGTH = 32
 _MAX_LONG_FORM_WORDS = 12
 
@@ -121,15 +125,32 @@ def assemble_document_entities(
 ) -> DocumentEntityAssembly:
     """Assemble safe same-document mention identities without normalization.
 
-    Mentions merge when they have the same deterministic surface/type key, or
-    when the source contains a reliable ``full form (ABBR)`` pattern and the
-    two corresponding mentions have compatible types.  Surface keys strip and
-    collapse whitespace and use Unicode case-folding; no fuzzy matching,
-    biomedical synonym knowledge, embeddings, or model calls are used.
+    Mentions merge when they have the same deterministic surface/type key, when
+    the source contains a reliable ``full form (ABBR)`` alignment, or when the
+    literal source long form has an exact compatible mention elsewhere in the
+    same document. Surface keys strip and collapse whitespace and use Unicode
+    case-folding; no fuzzy matching, biomedical synonym knowledge, embeddings,
+    or model calls are used.
 
     The returned nodes are ordered by the first mention in ``entities`` and
     receive IDs ``doc_e_001``, ``doc_e_002``, and so on.  Every supplied
     mention ID appears exactly once in ``mention_to_document_entity``.
+    """
+
+    return _assemble_document_entities(entities, text)
+
+
+def _assemble_document_entities(
+    entities: Sequence[Entity],
+    text: str,
+    *,
+    verified_identity_pairs: Sequence[tuple[str, str]] = (),
+) -> DocumentEntityAssembly:
+    """Assemble mentions, optionally applying validated verifier decisions.
+
+    ``verified_identity_pairs`` is an internal pipeline input produced only
+    after :func:`validate_explicit_identity_result` accepts grounded decisions.
+    The public assembly function remains deterministic and provider-independent.
     """
 
     if not isinstance(text, str):
@@ -197,6 +218,31 @@ def assemble_document_entities(
             abbreviation_index,
             abbreviation_index=abbreviation_index,
             abbreviation_text=mentions[abbreviation_index].text,
+        )
+
+    for full_index, abbreviation_index in _explicit_same_document_recovery_pairs(
+        text, mentions
+    ):
+        merge(
+            full_index,
+            abbreviation_index,
+            abbreviation_index=abbreviation_index,
+            abbreviation_text=mentions[abbreviation_index].text,
+        )
+
+    mention_index_by_id = {mention.id: index for index, mention in enumerate(mentions)}
+    for pair in verified_identity_pairs:
+        if len(pair) != 2 or pair[0] not in mention_index_by_id or pair[1] not in mention_index_by_id:
+            raise ValueError("Verified identity pairs must reference supplied mention IDs")
+        left = mention_index_by_id[pair[0]]
+        right = mention_index_by_id[pair[1]]
+        if _type_key(mentions[left].type) != _type_key(mentions[right].type):
+            raise ValueError("Verified identity pairs cannot combine incompatible types")
+        merge(
+            left,
+            right,
+            abbreviation_index=right,
+            abbreviation_text=mentions[right].text,
         )
 
     grouped: dict[int, list[Entity]] = {}
@@ -269,38 +315,19 @@ def _explicit_alias_pairs(
     """
 
     pairs: list[tuple[int, int]] = []
-    for match in _PARENTHETICAL_PATTERN.finditer(text):
-        content = match.group("content").strip()
-        if not _looks_like_abbreviation(content):
+    for match, content, abbreviation_groups in _explicit_abbreviation_occurrences(
+        text, mentions
+    ):
+        if len(abbreviation_groups) != 1:
             continue
-
-        open_index = match.start()
-        close_index = match.end() - 1
-        abbreviation_candidates = [
-            index
-            for index, mention in enumerate(mentions)
-            if open_index < mention.start
-            and mention.end <= close_index
-            and _surface_key(mention.text) == _surface_key(content)
-        ]
-        unique_abbreviation_spans = {
-            (mentions[index].start, mentions[index].end)
-            for index in abbreviation_candidates
-        }
-        abbreviation_types = {
-            _type_key(mentions[index].type) for index in abbreviation_candidates
-        }
-        if len(unique_abbreviation_spans) != 1 or len(abbreviation_types) != 1:
-            continue
-        abbreviation_index = min(
-            abbreviation_candidates,
-            key=lambda index: (mentions[index].start, index),
-            default=None,
+        abbreviation_type, abbreviation_candidates = next(
+            iter(abbreviation_groups.items())
         )
-        if abbreviation_index is None:
-            continue
+        abbreviation_index = min(
+            abbreviation_candidates, key=lambda index: (mentions[index].start, index)
+        )
 
-        long_form_span = _recover_long_form_span(text, open_index, content)
+        long_form_span = _recover_long_form_span(text, match.start(), content)
         if long_form_span is None:
             continue
         long_form_start, long_form_end = _expand_long_form_start(
@@ -308,18 +335,102 @@ def _explicit_alias_pairs(
             long_form_span[0],
             long_form_span[1],
             mentions,
-            abbreviation_types,
+            {abbreviation_type},
         )
         full_form_candidates = [
             index
             for index, mention in enumerate(mentions)
             if long_form_start <= mention.start
             and mention.end <= long_form_end
-            and _type_key(mention.type) in abbreviation_types
+            and _type_key(mention.type) == abbreviation_type
         ]
         for full_form_index in full_form_candidates:
             pairs.append((full_form_index, abbreviation_index))
     return tuple(pairs)
+
+
+def _explicit_same_document_recovery_pairs(
+    text: str, mentions: Sequence[Entity]
+) -> tuple[tuple[int, int], ...]:
+    """Attach a parenthetical abbreviation to an exact full form mentioned elsewhere.
+
+    The source abbreviation must lexically align to one unambiguous literal
+    long form, and the complete same-type surface form must already exist as a
+    normalized mention. This never manufactures or edits a mention.
+    """
+
+    pairs: list[tuple[int, int]] = []
+    for match, content, abbreviation_groups in _explicit_abbreviation_occurrences(
+        text, mentions
+    ):
+        if len(abbreviation_groups) != 1:
+            continue
+        abbreviation_type, abbreviation_indices = next(
+            iter(abbreviation_groups.items())
+        )
+        source_end = len(text[: match.start()].rstrip())
+        if _SINGLE_LETTER_ALTERNATIVES_PATTERN.search(
+            text[max(0, source_end - 16) : source_end]
+        ):
+            continue
+        exact_mentions = [
+            index
+            for index, mention in enumerate(mentions)
+            if _type_key(mention.type) == abbreviation_type
+            and source_end >= len(mention.text)
+            and _surface_key(
+                text[source_end - len(mention.text) : source_end]
+            )
+            == _surface_key(mention.text)
+            and _abbreviation_aligns(
+                content,
+                text[source_end - len(mention.text) : source_end],
+            )
+            and not _is_superficial_single_word_match(
+                content,
+                text[source_end - len(mention.text) : source_end],
+            )
+        ]
+        if not exact_mentions:
+            continue
+        abbreviation_index = min(
+            abbreviation_indices,
+            key=lambda index: (mentions[index].start, index),
+        )
+        pairs.extend((index, abbreviation_index) for index in exact_mentions)
+    return tuple(pairs)
+
+
+def _explicit_abbreviation_occurrences(
+    text: str, mentions: Sequence[Entity]
+) -> tuple[tuple[re.Match[str], str, dict[str, tuple[int, ...]]], ...]:
+    """Return type-specific normalized mentions of explicit parenthetical tokens."""
+
+    occurrences: list[tuple[re.Match[str], str, dict[str, tuple[int, ...]]]] = []
+    for match in _PARENTHETICAL_PATTERN.finditer(text):
+        content = match.group("content").strip()
+        if not _looks_like_abbreviation(content):
+            continue
+        open_index = match.start()
+        close_index = match.end() - 1
+        candidates = [
+            index
+            for index, mention in enumerate(mentions)
+            if open_index < mention.start
+            and mention.end <= close_index
+            and _surface_key(mention.text) == _surface_key(content)
+        ]
+        by_type: dict[str, list[int]] = {}
+        for index in candidates:
+            by_type.setdefault(_type_key(mentions[index].type), []).append(index)
+        groups: dict[str, tuple[int, ...]] = {}
+        for entity_type, indices in by_type.items():
+            spans = {(mentions[index].start, mentions[index].end) for index in indices}
+            if len(spans) == 1:
+                groups[entity_type] = tuple(indices)
+        if groups:
+            occurrences.append((match, content, groups))
+    return tuple(occurrences)
 
 
 def _expand_long_form_start(
@@ -396,6 +507,8 @@ def _recover_long_form_span(
         candidate = text[start:long_form_end]
         if _LONG_FORM_BOUNDARY_PATTERN.search(candidate):
             continue
+        if _SINGLE_LETTER_ALTERNATIVES_PATTERN.search(candidate):
+            continue
         if _is_superficial_single_word_match(abbreviation, candidate):
             continue
         if _abbreviation_aligns(abbreviation, candidate):
@@ -410,6 +523,10 @@ def _recover_long_form_span(
     longest_word_count = max(candidate[2] for candidate in candidates)
     longest = [candidate for candidate in candidates if candidate[2] == longest_word_count]
     if len(longest) != 1:
+        return None
+    if _SINGLE_LETTER_ALTERNATIVES_PATTERN.search(
+        text[max(0, longest[0][0] - 16) : long_form_end]
+    ):
         return None
     return longest[0][0], longest[0][1]
 

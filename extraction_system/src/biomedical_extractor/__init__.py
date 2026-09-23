@@ -30,6 +30,15 @@ from .entity_assembly import (
     DocumentEntityAssembly,
     assemble_document_entities,
 )
+from .identity_resolution import (
+    ExplicitIdentityCandidate,
+    ExplicitIdentityDecision,
+    ExplicitIdentityResult,
+    ExplicitIdentityValidationError,
+    ExplicitIdentityVerifier,
+    find_unresolved_explicit_identity_candidates,
+    validate_explicit_identity_result,
+)
 from .graph import (
     GraphConstructionError,
     GraphDocument,
@@ -53,6 +62,11 @@ from .llm_relation_extraction import (
     OpenAIConfig,
     OpenAIRelationExtractor,
     RELATION_EXTRACTION_SYSTEM_PROMPT,
+)
+from .llm_identity_resolution import (
+    EXPLICIT_IDENTITY_SYSTEM_PROMPT,
+    ExplicitIdentityVerificationError,
+    LLMExplicitIdentityVerifier,
 )
 from .llm_paper_roles import (
     DEFAULT_PAPER_ROLE_MODEL,
@@ -105,6 +119,13 @@ __all__ = [
     "EntityExtractor",
     "DocumentEntity",
     "DocumentEntityAssembly",
+    "ExplicitIdentityCandidate",
+    "ExplicitIdentityDecision",
+    "ExplicitIdentityResult",
+    "ExplicitIdentityValidationError",
+    "ExplicitIdentityVerificationError",
+    "ExplicitIdentityVerifier",
+    "EXPLICIT_IDENTITY_SYSTEM_PROMPT",
     "GraphConstructionError",
     "GraphDocument",
     "GraphEdge",
@@ -120,6 +141,7 @@ __all__ = [
     "HunFlair2PredictionRuntime",
     "HunFlair2RawPrediction",
     "LLMExtractionPipeline",
+    "LLMExplicitIdentityVerifier",
     "LLMRelationExtractor",
     "LLMPaperRoleExtractor",
     "LangChainRelationExtractor",
@@ -142,6 +164,8 @@ __all__ = [
     "RELATION_EXTRACTION_SYSTEM_PROMPT",
     "validate_relations",
     "assemble_document_entities",
+    "find_unresolved_explicit_identity_candidates",
+    "validate_explicit_identity_result",
     "apply_paper_roles",
     "build_graph_result",
     "validate_paper_role_result",
