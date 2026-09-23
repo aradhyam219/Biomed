@@ -22,7 +22,7 @@ from .relation_extraction import (
     validate_relations,
 )
 
-DEFAULT_LLM_RELATION_MODEL = "gpt-5.6-luna"
+DEFAULT_LLM_RELATION_MODEL = "gpt-6-luna"
 DEFAULT_LLM_REASONING_EFFORT = "max"
 DEFAULT_LLM_MAX_COMPLETION_TOKENS = 128000
 SUPPORTED_LLM_REASONING_EFFORTS = (

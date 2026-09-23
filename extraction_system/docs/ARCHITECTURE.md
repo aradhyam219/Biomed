@@ -297,7 +297,7 @@ The controlled LLM relation implementation is an active downstream capability of
 the composed HunFlair2 path. It accepts only the normalized entities returned by
 the entity seam and returns relations after the existing evidence, endpoint, and
 negation validation. Its active OpenAI provider path uses LangChain's explicit
-Responses API integration with `gpt-5.6-luna`, standard/default reasoning mode,
+Responses API integration with `gpt-6-luna`, standard/default reasoning mode,
 `reasoning.effort=max`, and a `128000` output-token ceiling. The public
 `max_completion_tokens` configuration name remains for compatibility and is
 mapped to the Responses API output-token field below this provider-independent
