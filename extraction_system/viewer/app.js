@@ -1,4 +1,8 @@
-import { entityTypeKey, toCytoscapeElements } from "./adapter.js";
+import {
+  entityTypeKey,
+  paperRoleAffordance,
+  toCytoscapeElements,
+} from "./adapter.js?contract=10r-d";
 
 const graphContainer = document.querySelector("#cy");
 const graphStatus = document.querySelector("#graph-status");
@@ -253,17 +257,15 @@ function renderIntro(message = "Select a node or relationship to inspect its evi
 }
 
 function roleCategory(node) {
-  if (node?.paper_role?.category === "contextual") return "contextual";
-  if (node?.paper_role?.category === "substantive") return "substantive";
-  return entityTypeKey(node?.type) === "species" ? "contextual" : "substantive";
+  return paperRoleAffordance(node).category ?? "unavailable";
 }
 
 function appendPaperRole(parent, node, options = {}) {
   const includeHeading = options.includeHeading !== false;
   const role = node?.paper_role;
   if (includeHeading) appendSection(parent, "Role in paper");
-  if (!role) {
-    appendText(parent, "No grounded role overview is available for this node.", "role-unavailable");
+  if (!paperRoleAffordance(node).available) {
+    appendText(parent, "Role enrichment unavailable", "role-unavailable");
     return;
   }
 
@@ -302,7 +304,16 @@ function renderNode(node) {
   appendHeading(detailsPanel, node.label, "NODE");
   appendField(detailsPanel, "Node ID", String(node.id));
   appendField(detailsPanel, "Entity type", String(node.type));
-  if (node.paper_role) appendPaperRole(detailsPanel, node);
+  if (paperRoleAffordance(node).available) {
+    appendPaperRole(detailsPanel, node);
+  } else if (
+    canonicalUnconnectedNodes().some(
+      (unconnected) => String(unconnected.id) === String(node.id),
+    )
+  ) {
+    appendSection(detailsPanel, "Role in paper");
+    appendText(detailsPanel, "Role enrichment unavailable", "role-unavailable");
+  }
 
   appendSection(detailsPanel, "Aliases");
   appendList(detailsPanel, node.aliases, "No aliases recorded.");
@@ -499,6 +510,7 @@ function renderUnconnectedPanel() {
   const groups = new Map([
     ["substantive", []],
     ["contextual", []],
+    ["unavailable", []],
   ]);
   for (const node of nodes) groups.get(roleCategory(node)).push(node);
   for (const [category, values] of groups) {
@@ -506,7 +518,12 @@ function renderUnconnectedPanel() {
     const group = document.createElement("section");
     group.className = "unconnected-group";
     const heading = document.createElement("h3");
-    heading.textContent = category === "substantive" ? "Substantive entities" : "Contextual entities";
+    heading.textContent =
+      category === "substantive"
+        ? "Substantive entities"
+        : category === "contextual"
+          ? "Contextual entities"
+          : "Role enrichment unavailable";
     const count = document.createElement("span");
     count.className = "unconnected-group-count";
     count.textContent = ` · ${values.length}`;
@@ -527,7 +544,8 @@ function renderUnconnectedPanel() {
       meta.textContent = `${String(node?.type ?? "Unknown")} · ${category}`;
       const roleHint = document.createElement("span");
       roleHint.className = "unconnected-card-role-hint";
-      roleHint.textContent = "View role in paper";
+      const affordance = paperRoleAffordance(node);
+      roleHint.textContent = affordance.label;
       summary.append(title, meta, roleHint);
       card.append(summary);
 
@@ -548,13 +566,17 @@ function renderUnconnectedPanel() {
       revealLabel.append(reveal, document.createTextNode("Show on graph"));
       body.append(revealLabel);
 
-      const roleDetails = document.createElement("details");
-      roleDetails.className = "role-details";
-      const roleSummary = document.createElement("summary");
-      roleSummary.textContent = "View role in paper";
-      roleDetails.append(roleSummary);
-      appendPaperRole(roleDetails, node, { includeHeading: false });
-      body.append(roleDetails);
+      if (affordance.available) {
+        const roleDetails = document.createElement("details");
+        roleDetails.className = "role-details";
+        const roleSummary = document.createElement("summary");
+        roleSummary.textContent = affordance.label;
+        roleDetails.append(roleSummary);
+        appendPaperRole(roleDetails, node, { includeHeading: false });
+        body.append(roleDetails);
+      } else {
+        appendText(body, affordance.label, "role-unavailable");
+      }
       card.append(body);
       cards.append(card);
     }

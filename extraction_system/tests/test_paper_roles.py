@@ -115,6 +115,23 @@ class PaperRoleContractTests(unittest.TestCase):
         self.assertIsNone(enriched.nodes[0].paper_role)
         self.assertEqual(enriched.edges, graph.edges)
         self.assertEqual(enriched.to_dict()["nodes"][2]["paper_role"]["category"], "substantive")
+        self.assertEqual(
+            {node.id for node in enriched.unconnected_nodes},
+            {node.id for node in graph.unconnected_nodes},
+        )
+        role_ids = {node.id for node in enriched.nodes if node.paper_role is not None}
+        self.assertEqual(role_ids, {node.id for node in graph.unconnected_nodes})
+
+        def without_role_metadata(value):
+            return {
+                **value,
+                "nodes": [
+                    {key: field for key, field in node.items() if key != "paper_role"}
+                    for node in value["nodes"]
+                ],
+            }
+
+        self.assertEqual(without_role_metadata(enriched.to_dict()), graph.to_dict())
 
     def test_species_role_must_be_contextual_and_evidence_is_verbatim(self):
         text, graph = self._graph_with_unconnected_nodes()
@@ -157,6 +174,25 @@ class PaperRoleContractTests(unittest.TestCase):
 
         with self.assertRaises(PaperRoleValidationError):
             validate_paper_role_result(text, targets, {"roles": []})
+
+    def test_missing_role_record_fails_completeness_validation(self):
+        text, graph = self._graph_with_unconnected_nodes()
+        first_target = graph.unconnected_nodes[0]
+        incomplete = PaperRoleExtractionResult(
+            (
+                PaperRoleRecord(
+                    first_target.id,
+                    PaperRole(
+                        "substantive",
+                        ("GeneX was studied in mice.",),
+                        ("GeneX",),
+                    ),
+                ),
+            )
+        )
+
+        with self.assertRaisesRegex(PaperRoleValidationError, "missing node ID"):
+            apply_paper_roles(graph, text, incomplete)
 
     def test_thin_source_support_allows_one_short_paragraph(self):
         role = PaperRole("substantive", ("GeneX was measured.",), ("GeneX was measured.",))

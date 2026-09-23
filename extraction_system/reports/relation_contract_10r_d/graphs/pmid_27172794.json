@@ -1,0 +1,905 @@
+{
+  "document": {
+    "id": "PMID:27172794"
+  },
+  "edges": [
+    {
+      "evidence": [
+        {
+          "assertion": "EZH2 promotes colorectal cancer stem-like cell expansion by activating p21cip1-Wnt/β-catenin signaling.",
+          "context": [],
+          "effects": [
+            "colorectal cancer stem-like cell expansion"
+          ],
+          "intervention": null,
+          "score": null,
+          "surface_form": "promotes colorectal cancer stem-like cell expansion",
+          "text": "EZH2 promotes colorectal cancer stem-like cell expansion by activating p21cip1-Wnt/β-catenin signaling."
+        }
+      ],
+      "id": "doc_r_001",
+      "negated": false,
+      "predicate": "promotes expansion",
+      "source": "doc_e_001",
+      "target": "doc_e_002"
+    },
+    {
+      "evidence": [
+        {
+          "assertion": "Silencing EZH2 reduced CRC cell proliferation.",
+          "context": [],
+          "effects": [
+            "reduced CRC cell proliferation"
+          ],
+          "intervention": "silencing EZH2",
+          "score": null,
+          "surface_form": "silencing EZH2 reduced CRC cell proliferation",
+          "text": "Conversely, silencing EZH2 reduced CRC cell proliferation."
+        }
+      ],
+      "id": "doc_r_002",
+      "negated": false,
+      "predicate": "silencing reduces proliferation",
+      "source": "doc_e_001",
+      "target": "doc_e_002"
+    },
+    {
+      "evidence": [
+        {
+          "assertion": "EZH2 activates p21cip1-Wnt/β-catenin signaling.",
+          "context": [],
+          "effects": [],
+          "intervention": null,
+          "score": null,
+          "surface_form": "activating p21cip1-Wnt/β-catenin signaling",
+          "text": "EZH2 promotes colorectal cancer stem-like cell expansion by activating p21cip1-Wnt/β-catenin signaling."
+        }
+      ],
+      "id": "doc_r_003",
+      "negated": false,
+      "predicate": "activates",
+      "source": "doc_e_001",
+      "target": "doc_e_003"
+    },
+    {
+      "evidence": [
+        {
+          "assertion": "EZH2 activates p21cip1-Wnt/β-catenin signaling.",
+          "context": [],
+          "effects": [],
+          "intervention": null,
+          "score": null,
+          "surface_form": "activating p21cip1-Wnt/β-catenin signaling",
+          "text": "EZH2 promotes colorectal cancer stem-like cell expansion by activating p21cip1-Wnt/β-catenin signaling."
+        },
+        {
+          "assertion": "EZH2 helped maintain CCS-like cell properties by activating the Wnt/β-catenin pathway.",
+          "context": [
+            "human CRC specimens from TCGA database",
+            "in vitro results"
+          ],
+          "effects": [],
+          "intervention": null,
+          "score": null,
+          "surface_form": "activating the Wnt/β-catenin pathway",
+          "text": "Gene expression data from 433 human CRC specimens from TCGA database and in vitro results revealed that EZH2 helped maintain CCS-like cell properties by activating the Wnt/β-catenin pathway."
+        },
+        {
+          "assertion": "p21cip1-mediated arrest of the cell cycle at G1/S phase is required for EZH2 activation of the Wnt/β-catenin pathway.",
+          "context": [],
+          "effects": [],
+          "intervention": null,
+          "score": null,
+          "surface_form": "EZH2 activation of the Wnt/β-catenin pathway",
+          "text": "We further revealed that p21cip1-mediated arrest of the cell cycle at G1/S phase is required for EZH2 activation of the Wnt/β-catenin pathway."
+        }
+      ],
+      "id": "doc_r_004",
+      "negated": false,
+      "predicate": "activates",
+      "source": "doc_e_001",
+      "target": "doc_e_004"
+    },
+    {
+      "evidence": [
+        {
+          "assertion": "High expression of EZH2 in tumor tissues correlated with poor patient prognosis.",
+          "context": [
+            "tumor tissues"
+          ],
+          "effects": [
+            "poor patient prognosis"
+          ],
+          "intervention": null,
+          "score": null,
+          "surface_form": "correlated with poor patient prognosis",
+          "text": "High expression of EZH2 in tumor tissues correlated with poor patient prognosis."
+        }
+      ],
+      "id": "doc_r_005",
+      "negated": false,
+      "predicate": "correlates with poor prognosis",
+      "source": "doc_e_001",
+      "target": "doc_e_005"
+    },
+    {
+      "evidence": [
+        {
+          "assertion": "EZH2 has high expression in tumor tissues.",
+          "context": [],
+          "effects": [],
+          "intervention": null,
+          "score": null,
+          "surface_form": "High expression of EZH2 in tumor tissues",
+          "text": "High expression of EZH2 in tumor tissues correlated with poor patient prognosis."
+        }
+      ],
+      "id": "doc_r_006",
+      "negated": false,
+      "predicate": "is highly expressed in",
+      "source": "doc_e_001",
+      "target": "doc_e_007"
+    },
+    {
+      "evidence": [
+        {
+          "assertion": "EZH2 knockdown strongly impaired tumor-initiating capacity in a re-implantation mouse model.",
+          "context": [
+            "re-implantation mouse model"
+          ],
+          "effects": [
+            "strongly impaired tumor-initiating capacity"
+          ],
+          "intervention": "EZH2 knockdown",
+          "score": null,
+          "surface_form": "strongly impaired tumor-initiating capacity in a re-implantation mouse model",
+          "text": "EZH2 knockdown significantly reduced the CD133+/CD44+ subpopulation, suppressed mammosphere formation, and decreased the expression of self-renewal-related genes and strongly impaired tumor-initiating capacity in a re-implantation mouse model."
+        }
+      ],
+      "id": "doc_r_007",
+      "negated": false,
+      "predicate": "knockdown impairs tumor-initiating capacity",
+      "source": "doc_e_001",
+      "target": "doc_e_007"
+    },
+    {
+      "evidence": [
+        {
+          "assertion": "EZH2 was more highly expressed in the CCS-like cell subpopulation than in the non-CCS-like cell subpopulation.",
+          "context": [],
+          "effects": [],
+          "intervention": null,
+          "score": null,
+          "surface_form": "was more highly expressed in the CCS-like cell subpopulation than in the non-CCS-like cell subpopulation",
+          "text": "Surprisingly, EZH2 was more highly expressed in the CCS-like cell subpopulation than in the non-CCS-like cell subpopulation."
+        }
+      ],
+      "id": "doc_r_008",
+      "negated": false,
+      "predicate": "has higher expression in",
+      "source": "doc_e_001",
+      "target": "doc_e_008"
+    },
+    {
+      "evidence": [
+        {
+          "assertion": "EZH2 had lower expression in the non-CCS-like cell subpopulation than in the CCS-like cell subpopulation.",
+          "context": [],
+          "effects": [],
+          "intervention": null,
+          "score": null,
+          "surface_form": "was more highly expressed in the CCS-like cell subpopulation than in the non-CCS-like cell subpopulation",
+          "text": "Surprisingly, EZH2 was more highly expressed in the CCS-like cell subpopulation than in the non-CCS-like cell subpopulation."
+        }
+      ],
+      "id": "doc_r_009",
+      "negated": false,
+      "predicate": "has lower expression in",
+      "source": "doc_e_001",
+      "target": "doc_e_008"
+    },
+    {
+      "evidence": [
+        {
+          "assertion": "EZH2 maintains CCS-like cell characteristics by arresting the cell cycle at the G1/S phase.",
+          "context": [],
+          "effects": [],
+          "intervention": null,
+          "score": null,
+          "surface_form": "EZH2 maintaining CCS-like cell characteristics",
+          "text": "Collectively, these findings revealed EZH2 maintaining CCS-like cell characteristics by arresting the cell cycle at the G1/S phase."
+        }
+      ],
+      "id": "doc_r_010",
+      "negated": false,
+      "predicate": "maintains",
+      "source": "doc_e_001",
+      "target": "doc_e_008"
+    },
+    {
+      "evidence": [
+        {
+          "assertion": "EZH2 knockdown significantly reduced the CD133+/CD44+ subpopulation.",
+          "context": [],
+          "effects": [
+            "significantly reduced the CD133+/CD44+ subpopulation"
+          ],
+          "intervention": "EZH2 knockdown",
+          "score": null,
+          "surface_form": "EZH2 knockdown significantly reduced the CD133+/CD44+ subpopulation",
+          "text": "EZH2 knockdown significantly reduced the CD133+/CD44+ subpopulation, suppressed mammosphere formation, and decreased the expression of self-renewal-related genes and strongly impaired tumor-initiating capacity in a re-implantation mouse model."
+        }
+      ],
+      "id": "doc_r_011",
+      "negated": false,
+      "predicate": "knockdown reduces subpopulation",
+      "source": "doc_e_001",
+      "target": "doc_e_009"
+    },
+    {
+      "evidence": [
+        {
+          "assertion": "EZH2 knockdown significantly reduced the CD133+/CD44+ subpopulation.",
+          "context": [],
+          "effects": [
+            "significantly reduced the CD133+/CD44+ subpopulation"
+          ],
+          "intervention": "EZH2 knockdown",
+          "score": null,
+          "surface_form": "EZH2 knockdown significantly reduced the CD133+/CD44+ subpopulation",
+          "text": "EZH2 knockdown significantly reduced the CD133+/CD44+ subpopulation, suppressed mammosphere formation, and decreased the expression of self-renewal-related genes and strongly impaired tumor-initiating capacity in a re-implantation mouse model."
+        }
+      ],
+      "id": "doc_r_012",
+      "negated": false,
+      "predicate": "knockdown reduces subpopulation",
+      "source": "doc_e_001",
+      "target": "doc_e_010"
+    },
+    {
+      "evidence": [
+        {
+          "assertion": "EZH2 helped maintain CCS-like cell properties by activating the Wnt/β-catenin pathway.",
+          "context": [
+            "human CRC specimens from TCGA database",
+            "in vitro results"
+          ],
+          "effects": [],
+          "intervention": null,
+          "score": null,
+          "surface_form": "activating the Wnt/β-catenin pathway",
+          "text": "Gene expression data from 433 human CRC specimens from TCGA database and in vitro results revealed that EZH2 helped maintain CCS-like cell properties by activating the Wnt/β-catenin pathway."
+        },
+        {
+          "assertion": "p21cip1-mediated arrest of the cell cycle at G1/S phase is required for EZH2 activation of the Wnt/β-catenin pathway.",
+          "context": [],
+          "effects": [],
+          "intervention": null,
+          "score": null,
+          "surface_form": "EZH2 activation of the Wnt/β-catenin pathway",
+          "text": "We further revealed that p21cip1-mediated arrest of the cell cycle at G1/S phase is required for EZH2 activation of the Wnt/β-catenin pathway."
+        }
+      ],
+      "id": "doc_r_013",
+      "negated": false,
+      "predicate": "activates",
+      "source": "doc_e_001",
+      "target": "doc_e_013"
+    },
+    {
+      "evidence": [
+        {
+          "assertion": "Colorectal cancer stem-like cells contribute to poor patient prognosis.",
+          "context": [],
+          "effects": [
+            "poor patient prognosis"
+          ],
+          "intervention": null,
+          "score": null,
+          "surface_form": "contribute to poor patient prognosis",
+          "text": "Because colorectal cancer (CRC) stem-like cells (CCS-like cells) contribute to poor patient prognosis, these cells are a potential target for CRC therapy."
+        }
+      ],
+      "id": "doc_r_014",
+      "negated": false,
+      "predicate": "contributes to poor prognosis",
+      "source": "doc_e_002",
+      "target": "doc_e_005"
+    },
+    {
+      "evidence": [
+        {
+          "assertion": "Patients with advanced stage CRC expressed high levels of EZH2.",
+          "context": [
+            "advanced stage CRC"
+          ],
+          "effects": [],
+          "intervention": null,
+          "score": null,
+          "surface_form": "expressed high levels of",
+          "text": "Here, we found that patients with advanced stage CRC expressed high levels of polycomb group protein enhancer of zeste homologue 2 (EZH2)."
+        }
+      ],
+      "id": "doc_r_015",
+      "negated": false,
+      "predicate": "expresses high levels of",
+      "source": "doc_e_006",
+      "target": "doc_e_001"
+    },
+    {
+      "evidence": [
+        {
+          "assertion": "p21cip1-mediated arrest of the cell cycle at G1/S phase is required for EZH2 activation of the Wnt/β-catenin pathway.",
+          "context": [],
+          "effects": [],
+          "intervention": null,
+          "score": null,
+          "surface_form": "is required for EZH2 activation of the Wnt/β-catenin pathway",
+          "text": "We further revealed that p21cip1-mediated arrest of the cell cycle at G1/S phase is required for EZH2 activation of the Wnt/β-catenin pathway."
+        }
+      ],
+      "id": "doc_r_016",
+      "negated": false,
+      "predicate": "is required for activation of",
+      "source": "doc_e_014",
+      "target": "doc_e_004"
+    },
+    {
+      "evidence": [
+        {
+          "assertion": "p21cip1-mediated arrest of the cell cycle at G1/S phase is required for EZH2 activation of the Wnt/β-catenin pathway.",
+          "context": [],
+          "effects": [],
+          "intervention": null,
+          "score": null,
+          "surface_form": "is required for EZH2 activation of the Wnt/β-catenin pathway",
+          "text": "We further revealed that p21cip1-mediated arrest of the cell cycle at G1/S phase is required for EZH2 activation of the Wnt/β-catenin pathway."
+        }
+      ],
+      "id": "doc_r_017",
+      "negated": false,
+      "predicate": "is required for activation of",
+      "source": "doc_e_014",
+      "target": "doc_e_013"
+    },
+    {
+      "evidence": [
+        {
+          "assertion": "EPZ-6438 is a specific inhibitor of EZH2.",
+          "context": [],
+          "effects": [],
+          "intervention": null,
+          "score": null,
+          "surface_form": "specific EZH2 inhibitor EPZ-6438",
+          "text": "Moreover, the specific EZH2 inhibitor EPZ-6438, a clinical trial drug, prevented CRC progression."
+        }
+      ],
+      "id": "doc_r_018",
+      "negated": false,
+      "predicate": "inhibits",
+      "source": "doc_e_015",
+      "target": "doc_e_001"
+    },
+    {
+      "evidence": [
+        {
+          "assertion": "The specific EZH2 inhibitor EPZ-6438, a clinical trial drug, prevented CRC progression.",
+          "context": [],
+          "effects": [
+            "prevented CRC progression"
+          ],
+          "intervention": "EPZ-6438",
+          "score": null,
+          "surface_form": "prevented CRC progression",
+          "text": "Moreover, the specific EZH2 inhibitor EPZ-6438, a clinical trial drug, prevented CRC progression."
+        }
+      ],
+      "id": "doc_r_019",
+      "negated": false,
+      "predicate": "prevents progression of",
+      "source": "doc_e_015",
+      "target": "doc_e_002"
+    }
+  ],
+  "nodes": [
+    {
+      "aliases": [
+        "EZH2",
+        "enhancer of zeste homologue 2",
+        "polycomb group protein"
+      ],
+      "id": "doc_e_001",
+      "label": "EZH2",
+      "mentions": [
+        {
+          "end": 4,
+          "id": "E1",
+          "score": 0.9999901056289673,
+          "start": 0,
+          "text": "EZH2",
+          "type": "Gene"
+        },
+        {
+          "end": 485,
+          "id": "E12",
+          "score": 0.999967384338379,
+          "start": 456,
+          "text": "enhancer of zeste homologue 2",
+          "type": "Gene"
+        },
+        {
+          "end": 491,
+          "id": "E13",
+          "score": 0.9999867677688599,
+          "start": 487,
+          "text": "EZH2",
+          "type": "Gene"
+        },
+        {
+          "end": 517,
+          "id": "E14",
+          "score": 0.9999895095825195,
+          "start": 513,
+          "text": "EZH2",
+          "type": "Gene"
+        },
+        {
+          "end": 601,
+          "id": "E17",
+          "score": 0.9999901056289673,
+          "start": 597,
+          "text": "EZH2",
+          "type": "Gene"
+        },
+        {
+          "end": 652,
+          "id": "E19",
+          "score": 0.9999902248382568,
+          "start": 648,
+          "text": "EZH2",
+          "type": "Gene"
+        },
+        {
+          "end": 763,
+          "id": "E22",
+          "score": 0.9999899864196777,
+          "start": 759,
+          "text": "EZH2",
+          "type": "Gene"
+        },
+        {
+          "end": 1111,
+          "id": "E29",
+          "score": 0.9999903440475464,
+          "start": 1107,
+          "text": "EZH2",
+          "type": "Gene"
+        },
+        {
+          "end": 1295,
+          "id": "E33",
+          "score": 0.9999903440475464,
+          "start": 1291,
+          "text": "EZH2",
+          "type": "Gene"
+        },
+        {
+          "end": 1364,
+          "id": "E36",
+          "score": 0.9999903440475464,
+          "start": 1360,
+          "text": "EZH2",
+          "type": "Gene"
+        },
+        {
+          "end": 1477,
+          "id": "E39",
+          "score": 0.9999902248382568,
+          "start": 1473,
+          "text": "EZH2",
+          "type": "Gene"
+        },
+        {
+          "end": 455,
+          "id": "E11",
+          "score": 0.9594087799390157,
+          "start": 433,
+          "text": "polycomb group protein",
+          "type": "Gene"
+        }
+      ],
+      "type": "Gene"
+    },
+    {
+      "aliases": [
+        "colorectal cancer",
+        "CRC"
+      ],
+      "id": "doc_e_002",
+      "label": "CRC",
+      "mentions": [
+        {
+          "end": 31,
+          "id": "E2",
+          "score": 0.9999909996986389,
+          "start": 14,
+          "text": "colorectal cancer",
+          "type": "Disease"
+        },
+        {
+          "end": 130,
+          "id": "E5",
+          "score": 0.9999921321868896,
+          "start": 113,
+          "text": "colorectal cancer",
+          "type": "Disease"
+        },
+        {
+          "end": 135,
+          "id": "E6",
+          "score": 0.9999843835830688,
+          "start": 132,
+          "text": "CRC",
+          "type": "Disease"
+        },
+        {
+          "end": 250,
+          "id": "E8",
+          "score": 0.9999853372573853,
+          "start": 247,
+          "text": "CRC",
+          "type": "Disease"
+        },
+        {
+          "end": 407,
+          "id": "E10",
+          "score": 0.9999854564666748,
+          "start": 404,
+          "text": "CRC",
+          "type": "Disease"
+        },
+        {
+          "end": 613,
+          "id": "E18",
+          "score": 0.9999842643737793,
+          "start": 610,
+          "text": "CRC",
+          "type": "Disease"
+        },
+        {
+          "end": 1042,
+          "id": "E28",
+          "score": 0.999983549118042,
+          "start": 1039,
+          "text": "CRC",
+          "type": "Disease"
+        },
+        {
+          "end": 1421,
+          "id": "E38",
+          "score": 0.9999815225601196,
+          "start": 1418,
+          "text": "CRC",
+          "type": "Disease"
+        },
+        {
+          "end": 1611,
+          "id": "E41",
+          "score": 0.9999825954437256,
+          "start": 1608,
+          "text": "CRC",
+          "type": "Disease"
+        }
+      ],
+      "type": "Disease"
+    },
+    {
+      "aliases": [
+        "p21cip1-Wnt"
+      ],
+      "id": "doc_e_003",
+      "label": "p21cip1-Wnt",
+      "mentions": [
+        {
+          "end": 82,
+          "id": "E3",
+          "score": 0.9999901056289673,
+          "start": 71,
+          "text": "p21cip1-Wnt",
+          "type": "Gene"
+        }
+      ],
+      "type": "Gene"
+    },
+    {
+      "aliases": [
+        "β-catenin"
+      ],
+      "id": "doc_e_004",
+      "label": "β-catenin",
+      "mentions": [
+        {
+          "end": 92,
+          "id": "E4",
+          "score": 0.9999783039093018,
+          "start": 83,
+          "text": "β-catenin",
+          "type": "Gene"
+        },
+        {
+          "end": 1184,
+          "id": "E31",
+          "score": 0.9999792575836182,
+          "start": 1175,
+          "text": "β-catenin",
+          "type": "Gene"
+        },
+        {
+          "end": 1327,
+          "id": "E35",
+          "score": 0.9999796946843466,
+          "start": 1318,
+          "text": "β-catenin",
+          "type": "Gene"
+        }
+      ],
+      "type": "Gene"
+    },
+    {
+      "aliases": [
+        "patient"
+      ],
+      "id": "doc_e_005",
+      "label": "patient",
+      "mentions": [
+        {
+          "end": 196,
+          "id": "E7",
+          "score": 0.9999843835830688,
+          "start": 189,
+          "text": "patient",
+          "type": "Species"
+        },
+        {
+          "end": 563,
+          "id": "E16",
+          "score": 0.9999852180480957,
+          "start": 556,
+          "text": "patient",
+          "type": "Species"
+        }
+      ],
+      "type": "Species"
+    },
+    {
+      "aliases": [
+        "patients"
+      ],
+      "id": "doc_e_006",
+      "label": "patients",
+      "mentions": [
+        {
+          "end": 383,
+          "id": "E9",
+          "score": 0.9999865293502808,
+          "start": 375,
+          "text": "patients",
+          "type": "Species"
+        }
+      ],
+      "type": "Species"
+    },
+    {
+      "aliases": [
+        "tumor"
+      ],
+      "id": "doc_e_007",
+      "label": "tumor",
+      "mentions": [
+        {
+          "end": 526,
+          "id": "E15",
+          "score": 0.9999829530715942,
+          "start": 521,
+          "text": "tumor",
+          "type": "Disease"
+        },
+        {
+          "end": 948,
+          "id": "E25",
+          "score": 0.9999836683273315,
+          "start": 943,
+          "text": "tumor",
+          "type": "Disease"
+        }
+      ],
+      "type": "Disease"
+    },
+    {
+      "aliases": [
+        "CCS"
+      ],
+      "id": "doc_e_008",
+      "label": "CCS",
+      "mentions": [
+        {
+          "end": 689,
+          "id": "E20",
+          "score": 0.9984031319618225,
+          "start": 686,
+          "text": "CCS",
+          "type": "Disease"
+        },
+        {
+          "end": 733,
+          "id": "E21",
+          "score": 0.91731858253479,
+          "start": 730,
+          "text": "CCS",
+          "type": "Disease"
+        },
+        {
+          "end": 1493,
+          "id": "E40",
+          "score": 0.9999706745147705,
+          "start": 1490,
+          "text": "CCS",
+          "type": "Disease"
+        }
+      ],
+      "type": "Disease"
+    },
+    {
+      "aliases": [
+        "CD133+"
+      ],
+      "id": "doc_e_009",
+      "label": "CD133+",
+      "mentions": [
+        {
+          "end": 806,
+          "id": "E23",
+          "score": 0.9999890327453613,
+          "start": 800,
+          "text": "CD133+",
+          "type": "Gene"
+        }
+      ],
+      "type": "Gene"
+    },
+    {
+      "aliases": [
+        "CD44"
+      ],
+      "id": "doc_e_010",
+      "label": "CD44",
+      "mentions": [
+        {
+          "end": 811,
+          "id": "E24",
+          "score": 0.9999896287918091,
+          "start": 807,
+          "text": "CD44",
+          "type": "Gene"
+        }
+      ],
+      "type": "Gene"
+    },
+    {
+      "aliases": [
+        "mouse"
+      ],
+      "id": "doc_e_011",
+      "label": "mouse",
+      "mentions": [
+        {
+          "end": 995,
+          "id": "E26",
+          "score": 0.9999837875366211,
+          "start": 990,
+          "text": "mouse",
+          "type": "Species"
+        }
+      ],
+      "paper_role": {
+        "category": "contextual",
+        "evidence": [
+          "strongly impaired tumor-initiating capacity in a re-implantation mouse model"
+        ],
+        "paragraphs": [
+          "The mouse is the in vivo model context for assessing tumor-initiating capacity; the abstract reports this capacity in a re-implantation mouse model."
+        ]
+      },
+      "type": "Species"
+    },
+    {
+      "aliases": [
+        "human"
+      ],
+      "id": "doc_e_012",
+      "label": "human",
+      "mentions": [
+        {
+          "end": 1038,
+          "id": "E27",
+          "score": 0.9999767541885376,
+          "start": 1033,
+          "text": "human",
+          "type": "Species"
+        }
+      ],
+      "paper_role": {
+        "category": "contextual",
+        "evidence": [
+          "Gene expression data from 433 human CRC specimens from TCGA database and in vitro results revealed that EZH2 helped maintain CCS-like cell properties by activating the Wnt/β-catenin pathway."
+        ],
+        "paragraphs": [
+          "Human CRC specimens provide the source for gene-expression data used in the study's analysis of EZH2 and CCS-like cell properties."
+        ]
+      },
+      "type": "Species"
+    },
+    {
+      "aliases": [
+        "Wnt"
+      ],
+      "id": "doc_e_013",
+      "label": "Wnt",
+      "mentions": [
+        {
+          "end": 1174,
+          "id": "E30",
+          "score": 0.999988317489624,
+          "start": 1171,
+          "text": "Wnt",
+          "type": "Gene"
+        },
+        {
+          "end": 1317,
+          "id": "E34",
+          "score": 0.9999891519546509,
+          "start": 1314,
+          "text": "Wnt",
+          "type": "Gene"
+        }
+      ],
+      "type": "Gene"
+    },
+    {
+      "aliases": [
+        "p21cip1-mediated"
+      ],
+      "id": "doc_e_014",
+      "label": "p21cip1-mediated",
+      "mentions": [
+        {
+          "end": 1235,
+          "id": "E32",
+          "score": 0.9999902248382568,
+          "start": 1219,
+          "text": "p21cip1-mediated",
+          "type": "Gene"
+        }
+      ],
+      "type": "Gene"
+    },
+    {
+      "aliases": [
+        "EPZ-6438"
+      ],
+      "id": "doc_e_015",
+      "label": "EPZ-6438",
+      "mentions": [
+        {
+          "end": 1383,
+          "id": "E37",
+          "score": 0.9999954700469971,
+          "start": 1375,
+          "text": "EPZ-6438",
+          "type": "Chemical"
+        }
+      ],
+      "type": "Chemical"
+    }
+  ]
+}

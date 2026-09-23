@@ -40,9 +40,11 @@ grounded LLM relation extraction over supplied mentions
     ↓
 graph construction and alias/naming-only self-edge cleanup
     ↓
-genuinely unconnected-node detection
+genuine unconnected-node detection
     ↓
-optional paper-role enrichment
+one batched grounded role-enrichment call when unconnected nodes exist
+    ↓
+validated complete role coverage or visible graph-generation failure
     ↓
 graph-ready result / JSON
 ```
@@ -86,13 +88,14 @@ AIONER / PubTator-style NER remains preserved as evaluation/history evidence.
   endpoints to assembled node IDs, preserves direction, negation, and evidence,
   deterministically aggregates equivalent edges, suppresses only alias/naming
   self-relations after endpoint collapse, and retains canonical unconnected nodes;
-- an optional provider-independent paper-role contract for genuinely unconnected
-  nodes, with one or two grounded paragraphs, exact source evidence, and only
-  `substantive` or `contextual` categories;
+- a provider-independent paper-role contract for genuinely unconnected nodes,
+  with one or two grounded paragraphs, exact source evidence, and only
+  `substantive` or `contextual` categories; the standard OpenAI graph factory
+  guarantees complete role coverage while direct low-level pipelines may omit it;
 - a thin Cytoscape.js viewer that consumes graph JSON without provider coupling,
   shows typed nodes and directed predicates, and exposes aliases, source
-  mentions, negation, every retained evidence record, and optional paper roles
-  through selection;
+  mentions, negation, every retained evidence record, and paper roles through
+  selection;
 - a frozen, evaluation-only comparison of the current GLiNER baseline with the
   official AIONER PubMedBERT-CRF artifact on the official BioRED Test split;
 - a frozen, evaluation-only challenger run of the official HunFlair2 five-class
@@ -240,12 +243,19 @@ system.
 
 After assembly, relation extraction, graph remapping, and alias/naming-only
 self-edge cleanup, a node has degree zero when it is genuinely unconnected.
-Canonical graph JSON retains every such node. An optional paper-role extractor
-may enrich all requested unconnected nodes in one bounded paper-level call using
-the paper title, complete supplied text, and every source mention for each node.
+Canonical graph JSON retains every such node. The standard OpenAI
+`LLMExtractionPipeline` factory creates a paper-role extractor lazily when the
+final graph has unconnected nodes, then enriches all of them in one bounded call
+using the paper title, complete supplied text, and every source mention for each
+node. It validates complete one-to-one role coverage before returning the graph;
+missing or invalid role output fails visibly. No provider is created when there
+are no unconnected nodes. Directly constructed low-level pipelines retain the
+optional role-extractor seam for tests, offline composition, and custom callers.
+
 Role output is limited to `substantive` and `contextual`, contains one or two
-concise paragraphs, and retains exact verbatim source evidence. Role prose is
-node metadata only: it never creates, modifies, or implies a graph edge.
+concise paragraphs, and retains exact verbatim source evidence. Species roles
+are contextual. Role prose is node metadata only: it never creates, modifies,
+or implies a graph edge.
 
 ## Normalization terminology
 
@@ -469,9 +479,11 @@ backend contract change.
 The summary distinguishes canonical entities from displayed entities, hidden
 unconnected entities, underlying directed relations, and displayed connections.
 Genuinely unconnected nodes are hidden from the default canvas but remain in the
-dedicated `Unconnected entities` panel, grouped into substantive and contextual
-counts. The global reveal control and each card's `Show on graph` control expose
-them without fabricating edges; selecting a revealed node shows its role and
+dedicated `Unconnected entities` panel, grouped by grounded substantive and
+contextual roles. If role metadata is absent or invalid, the viewer shows
+`Role enrichment unavailable` without a role-expansion affordance or fallback
+prose. The global reveal control and each card's `Show on graph` control expose
+nodes without fabricating edges; selecting a revealed node shows its role and
 source evidence. Species is explicitly rendered as a green hexagon.
 
 A single relation is rendered as a directly inspectable edge;

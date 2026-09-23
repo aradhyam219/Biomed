@@ -1,0 +1,389 @@
+{
+  "baseline": {
+    "accepted_graph_directory": ".cache/contract_10r/final_10rc/graphs",
+    "branch": "extraction_system_v2",
+    "commit": "ca8a196c49b45827933788f6aec532809a14bc79"
+  },
+  "browser_smoke": {
+    "console_errors": [],
+    "console_warnings": [],
+    "graphs": [
+      {
+        "canonical_nodes": 19,
+        "default_hidden": true,
+        "displayed_nodes": 17,
+        "graph_edges": 19,
+        "loaded": true,
+        "missing_role_diagnostics": 0,
+        "paper_id": "PMCID:PMC11824863",
+        "role_affordances": 2,
+        "unconnected_hidden": 2
+      },
+      {
+        "canonical_nodes": 19,
+        "default_hidden": true,
+        "displayed_nodes": 14,
+        "graph_edges": 29,
+        "loaded": true,
+        "missing_role_diagnostics": 0,
+        "paper_id": "PMCID:PMC8605525",
+        "role_affordances": 5,
+        "unconnected_hidden": 5
+      },
+      {
+        "canonical_nodes": 15,
+        "default_hidden": true,
+        "displayed_nodes": 13,
+        "graph_edges": 19,
+        "loaded": true,
+        "missing_role_diagnostics": 0,
+        "paper_id": "PMID:27172794",
+        "role_affordances": 2,
+        "unconnected_hidden": 2
+      },
+      {
+        "canonical_nodes": 10,
+        "default_hidden": true,
+        "displayed_nodes": 8,
+        "graph_edges": 10,
+        "loaded": true,
+        "missing_role_diagnostics": 0,
+        "paper_id": "PMID:33652126",
+        "role_affordances": 2,
+        "unconnected_hidden": 2
+      }
+    ],
+    "interactions": {
+      "global_unconnected_reveal": "passed",
+      "mixed_negation_bundle": "passed for SFPQ to AD bundle in PMCID:PMC11824863",
+      "per_node_reveal": "passed",
+      "relation_bundle_drilldown": "passed; underlying relation and evidence opened",
+      "species_marker": "green hexagon, verified in graphs with Species nodes"
+    },
+    "status": "passed"
+  },
+  "contract": "10R-D role restoration and demo freeze",
+  "identity_regressions": {
+    "diabetes_mellitus_and_dm_consolidated": true,
+    "ezh2_grouping_preserved": true,
+    "only_frozen_pten_self_edge_present": true,
+    "pten_genuine_self_edge_preserved": true,
+    "pten_grouping_preserved": true,
+    "rat_and_rats_remain_separate": true,
+    "sfpq_chemical_remains_separate": true,
+    "sfpq_gene_form_consolidated": true
+  },
+  "papers": [
+    {
+      "canonical_nodes": 19,
+      "connected_nodes_with_roles": [],
+      "graph_edges": 19,
+      "mention_span_mismatches_in_accepted_input": [],
+      "missing_roles": 0,
+      "output_graph": {
+        "path": "reports/relation_contract_10r_d/graphs/pmcid_pmc11824863.json",
+        "sha256": "8b9e039af7e293dbf7ea82d649a35ed6918c959ff0ba301487df5b4806e8966a"
+      },
+      "relation_evidence_records": 19,
+      "relations": 19,
+      "role_coverage": [
+        {
+          "category": "contextual",
+          "evidence": [
+            "In this study, an AD mouse model was established through lateral ventricular injection of amyloid-beta1–42 (Aβ1–42).",
+            "Subsequently, adeno-associated virus was administered to overexpress SFPQ in the hippocampus of AD mice.",
+            "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice"
+          ],
+          "evidence_count": 3,
+          "label": "Mice",
+          "node_id": "doc_e_003",
+          "paragraph_count": 1,
+          "paragraphs": [
+            "Mice provide the experimental setting: the authors establish an AD mouse model and use it to assess hippocampal SFPQ overexpression and cognitive and memory outcomes. The abstract reports improved recognition and memory in AD mice."
+          ]
+        },
+        {
+          "category": "substantive",
+          "evidence": [
+            "In this study, an AD mouse model was established through lateral ventricular injection of amyloid-beta1–42 (Aβ1–42)."
+          ],
+          "evidence_count": 1,
+          "label": "Aβ1–42",
+          "node_id": "doc_e_008",
+          "paragraph_count": 1,
+          "paragraphs": [
+            "Aβ1–42 is used to establish the AD mouse model, administered by lateral ventricular injection."
+          ]
+        }
+      ],
+      "role_provider_calls": 1,
+      "role_records": 2,
+      "role_repair_attempts": 0,
+      "semantic_immutability": {
+        "all_edges_and_evidence_unchanged": true,
+        "all_non_role_node_fields_unchanged": true,
+        "document_unchanged": true,
+        "role_metadata_added_only_to_final_unconnected_nodes": true
+      },
+      "source": {
+        "canonical_text_sha256": "8a43f612139aa84939933831a5bc7f5420122549fd69081d635b7becb80d2a15",
+        "input_graph": ".cache/contract_10r/final_10rc/graphs/pmcid_pmc11824863.json",
+        "input_graph_sha256": "c86b630a1227c5f47ed01da02efb5b3eae6f0b674055430d1aabb7bebe5a2b1b",
+        "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11824863/"
+      },
+      "unconnected_nodes": 2
+    },
+    {
+      "canonical_nodes": 19,
+      "connected_nodes_with_roles": [],
+      "graph_edges": 29,
+      "mention_span_mismatches_in_accepted_input": [],
+      "missing_roles": 0,
+      "output_graph": {
+        "path": "reports/relation_contract_10r_d/graphs/pmcid_pmc8605525.json",
+        "sha256": "c0200e5c606e462b50dea5afe33d79dd85d405a5eb6a21a04af789205f132430"
+      },
+      "relation_evidence_records": 30,
+      "relations": 30,
+      "role_coverage": [
+        {
+          "category": "substantive",
+          "evidence": [
+            "Diabetes mellitus (DM), a most common chronic disease, is featured with impaired endothelial function and bioavailability of nitric oxide (NO)",
+            "Herein, we aimed to determine whether E3 ubiquitin ligase casitas B-lineage lymphoma (Cbl) alleviates endothelial dysfunction in DM rats by JAK2/STAT4 pathway."
+          ],
+          "evidence_count": 2,
+          "label": "impaired",
+          "node_id": "doc_e_009",
+          "paragraph_count": 1,
+          "paragraphs": [
+            "“Impaired” describes endothelial function in diabetes mellitus, framing the endothelial dysfunction the authors investigate in relation to Cbl."
+          ]
+        },
+        {
+          "category": "contextual",
+          "evidence": [
+            "Herein, we aimed to determine whether E3 ubiquitin ligase casitas B-lineage lymphoma (Cbl) alleviates endothelial dysfunction in DM rats by JAK2/STAT4 pathway."
+          ],
+          "evidence_count": 1,
+          "label": "rats",
+          "node_id": "doc_e_012",
+          "paragraph_count": 1,
+          "paragraphs": [
+            "The mention of rats identifies the animal-model context for the study’s question of whether Cbl alleviates endothelial dysfunction in DM through the JAK2/STAT4 pathway."
+          ]
+        },
+        {
+          "category": "contextual",
+          "evidence": [
+            "A rat model of DM was developed through intraperitoneal injection of streptozotocin, followed by collection of aortic tissues to determine the expression of Cbl, JAK2, runt-related transcription factor 3 (Runx3) and STAT4.",
+            "Cbl was reduced in DM rat tissues and HG-induced HUVECs, where JAK2, Runx3 and STAT4 were elevated."
+          ],
+          "evidence_count": 2,
+          "label": "rat",
+          "node_id": "doc_e_013",
+          "paragraph_count": 1,
+          "paragraphs": [
+            "The rat is the in vivo DM model used for aortic-tissue expression measurements; the abstract also reports findings in DM rat tissues."
+          ]
+        },
+        {
+          "category": "substantive",
+          "evidence": [
+            "Mechanistically, Cb1 enhanced JAK2 ubiquitination and decreased JAK2 and STAT4 expression, where STAT4 improved Runx3 expression by regulating histone H3 lysine 4 trimethylation level.",
+            "Overexpression of JAK2 and STAT4, or Runx3 increased apoptosis of HUVECs, abrogating the effect of Cb1 on endothelial function.",
+            "In conclusion, Cbl alleviates endothelial dysfunction by inactivation of the JAK2/STAT4 pathway and inhibition of Runx3 expression in DM."
+          ],
+          "evidence_count": 3,
+          "label": "runt-related transcription factor 3",
+          "node_id": "doc_e_015",
+          "paragraph_count": 1,
+          "paragraphs": [
+            "Runx3 is examined as part of the proposed mechanism: the authors report that STAT4 increased Runx3 expression by regulating histone H3 lysine 4 trimethylation and conclude that Cbl inhibits Runx3 expression. They also report that Runx3 overexpression increased HUVEC apoptosis and abrogated Cbl’s effect on endothelial function."
+          ]
+        },
+        {
+          "category": "contextual",
+          "evidence": [
+            "Human umbilical vein endothelial cells (HUVECs) were cultured in high glucose (HG) condition to induce DM as an in vitro model."
+          ],
+          "evidence_count": 1,
+          "label": "Human",
+          "node_id": "doc_e_017",
+          "paragraph_count": 1,
+          "paragraphs": [
+            "“Human” supplies the species context for the in vitro model: the authors cultured human umbilical vein endothelial cells under high glucose to induce DM in vitro."
+          ]
+        }
+      ],
+      "role_provider_calls": 1,
+      "role_records": 5,
+      "role_repair_attempts": 0,
+      "semantic_immutability": {
+        "all_edges_and_evidence_unchanged": true,
+        "all_non_role_node_fields_unchanged": true,
+        "document_unchanged": true,
+        "role_metadata_added_only_to_final_unconnected_nodes": true
+      },
+      "source": {
+        "canonical_text_sha256": "99355676f17885e8920e1f56447b8c6aff219cb6be09d76777084e339261a39b",
+        "input_graph": ".cache/contract_10r/final_10rc/graphs/pmcid_pmc8605525.json",
+        "input_graph_sha256": "0b67a48c7940fa258c0875ce4ac5c2bdbb5917f5008ef78f23e02b5e9f2062b4",
+        "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8605525/"
+      },
+      "unconnected_nodes": 5
+    },
+    {
+      "canonical_nodes": 15,
+      "connected_nodes_with_roles": [],
+      "graph_edges": 19,
+      "mention_span_mismatches_in_accepted_input": [],
+      "missing_roles": 0,
+      "output_graph": {
+        "path": "reports/relation_contract_10r_d/graphs/pmid_27172794.json",
+        "sha256": "d27f9b1368506a00a01bc54e7122a0d425ca66863300e6a486d0e094b7f2acd4"
+      },
+      "relation_evidence_records": 22,
+      "relations": 22,
+      "role_coverage": [
+        {
+          "category": "contextual",
+          "evidence": [
+            "strongly impaired tumor-initiating capacity in a re-implantation mouse model"
+          ],
+          "evidence_count": 1,
+          "label": "mouse",
+          "node_id": "doc_e_011",
+          "paragraph_count": 1,
+          "paragraphs": [
+            "The mouse is the in vivo model context for assessing tumor-initiating capacity; the abstract reports this capacity in a re-implantation mouse model."
+          ]
+        },
+        {
+          "category": "contextual",
+          "evidence": [
+            "Gene expression data from 433 human CRC specimens from TCGA database and in vitro results revealed that EZH2 helped maintain CCS-like cell properties by activating the Wnt/β-catenin pathway."
+          ],
+          "evidence_count": 1,
+          "label": "human",
+          "node_id": "doc_e_012",
+          "paragraph_count": 1,
+          "paragraphs": [
+            "Human CRC specimens provide the source for gene-expression data used in the study's analysis of EZH2 and CCS-like cell properties."
+          ]
+        }
+      ],
+      "role_provider_calls": 1,
+      "role_records": 2,
+      "role_repair_attempts": 0,
+      "semantic_immutability": {
+        "all_edges_and_evidence_unchanged": true,
+        "all_non_role_node_fields_unchanged": true,
+        "document_unchanged": true,
+        "role_metadata_added_only_to_final_unconnected_nodes": true
+      },
+      "source": {
+        "canonical_text_sha256": "50d58062a480653e0f414aad9e62aca434898fa3fcc6f372722454bd75407a0c",
+        "input_graph": ".cache/contract_10r/final_10rc/graphs/pmid_27172794.json",
+        "input_graph_sha256": "d2ba87bf85905181c8aebd3567738de487e830248c473456775348d0290d335f",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/27172794/"
+      },
+      "unconnected_nodes": 2
+    },
+    {
+      "canonical_nodes": 10,
+      "connected_nodes_with_roles": [],
+      "graph_edges": 10,
+      "mention_span_mismatches_in_accepted_input": [],
+      "missing_roles": 0,
+      "output_graph": {
+        "path": "reports/relation_contract_10r_d/graphs/pmid_33652126.json",
+        "sha256": "ba2fe085f0cb0bfcb4d5377d7cecbc41e884b0784dfda341f1c7accb2b8c9761"
+      },
+      "relation_evidence_records": 12,
+      "relations": 12,
+      "role_coverage": [
+        {
+          "category": "substantive",
+          "evidence": [
+            "Cell proliferation was examined by Edu staining"
+          ],
+          "evidence_count": 1,
+          "label": "Edu",
+          "node_id": "doc_e_008",
+          "paragraph_count": 1,
+          "paragraphs": [
+            "Edu is used as a staining-based readout of cell proliferation; the authors examined proliferation by Edu staining."
+          ]
+        },
+        {
+          "category": "substantive",
+          "evidence": [
+            "we used H9c2 cells cultured under serum deprivation to simulate the apoptosis process of myocardial infarction.",
+            "which indicated the PI3K/protein kinase B (AKT) might be the critical component of the PTEN effects during serum deficiency."
+          ],
+          "evidence_count": 2,
+          "label": "serum deficiency",
+          "node_id": "doc_e_010",
+          "paragraph_count": 1,
+          "paragraphs": [
+            "The authors investigate serum deprivation in H9c2 cells as a condition for modeling myocardial-infarction apoptosis. They report PTEN effects during serum deficiency and identify PI3K/AKT as a possible critical component."
+          ]
+        }
+      ],
+      "role_provider_calls": 2,
+      "role_records": 2,
+      "role_repair_attempts": 1,
+      "semantic_immutability": {
+        "all_edges_and_evidence_unchanged": true,
+        "all_non_role_node_fields_unchanged": true,
+        "document_unchanged": true,
+        "role_metadata_added_only_to_final_unconnected_nodes": true
+      },
+      "source": {
+        "canonical_text_sha256": "44ee744a2e60c788db16927b63cda446174733d38c5e1cdb13e112af30f295e6",
+        "input_graph": ".cache/contract_10r/final_10rc/graphs/pmid_33652126.json",
+        "input_graph_sha256": "a9571b3f378b0d3c6f0b76c919cc9c79e15e86ab77585d6c89a2d96f7851b9f0",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/33652126/"
+      },
+      "unconnected_nodes": 2
+    }
+  ],
+  "pmc11824863_required_roles": {
+    "category": "substantive",
+    "checks": {
+      "abeta_role_has_paragraph_and_evidence": true,
+      "abeta_role_substantive": true,
+      "mice_role_contextual": true,
+      "mice_role_has_paragraph_and_evidence": true,
+      "source_identified_abeta_node": true
+    },
+    "evidence": [
+      "In this study, an AD mouse model was established through lateral ventricular injection of amyloid-beta1–42 (Aβ1–42)."
+    ],
+    "graph_label_preserved": "Aβ1–42",
+    "mice_category": "contextual",
+    "mice_evidence": [
+      "In this study, an AD mouse model was established through lateral ventricular injection of amyloid-beta1–42 (Aβ1–42).",
+      "Subsequently, adeno-associated virus was administered to overexpress SFPQ in the hippocampus of AD mice.",
+      "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice"
+    ],
+    "mice_node_id": "doc_e_003",
+    "mice_paragraphs": [
+      "Mice provide the experimental setting: the authors establish an AD mouse model and use it to assess hippocampal SFPQ overexpression and cognitive and memory outcomes. The abstract reports improved recognition and memory in AD mice."
+    ],
+    "paragraphs": [
+      "Aβ1–42 is used to establish the AD mouse model, administered by lateral ventricular injection."
+    ],
+    "source_node_id": "doc_e_008",
+    "source_spelling_at_mention": "Aβ1–42"
+  },
+  "role_provider": {
+    "model": "gpt-6-luna",
+    "paper_level_calls": 5,
+    "provider": "OpenAI Responses API",
+    "reasoning_effort": "max",
+    "repair_attempts": 1,
+    "structured_output": true
+  }
+}

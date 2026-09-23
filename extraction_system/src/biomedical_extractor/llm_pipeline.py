@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Sequence
+from typing import Any, Callable, Sequence
 
 from .entity_extraction import (
     DEFAULT_ENTITY_MODEL,
@@ -21,6 +21,7 @@ from .identity_resolution import (
     validate_explicit_identity_result,
 )
 from .llm_identity_resolution import LLMExplicitIdentityVerifier
+from .llm_paper_roles import LLMPaperRoleExtractor
 from .llm_relation_extraction import LLMRelationExtractor, OpenAIConfig
 from .paper_roles import (
     PaperRoleExtractor,
@@ -64,13 +65,20 @@ class LLMExtractionPipeline:
         relation_extractor: RelationExtractor,
         paper_role_extractor: PaperRoleExtractor | None = None,
         identity_verifier: ExplicitIdentityVerifier | None = None,
+        *,
+        _paper_role_extractor_factory: Callable[[], PaperRoleExtractor] | None = None,
     ) -> None:
-        """Bind independently replaceable extraction and enrichment seams."""
+        """Bind low-level seams; product factories may add lazy role enrichment.
+
+        Direct construction intentionally keeps paper-role enrichment optional
+        for internal, offline, and caller-composed workflows.
+        """
 
         self.entity_extractor = entity_extractor
         self.relation_extractor = relation_extractor
         self.paper_role_extractor = paper_role_extractor
         self.identity_verifier = identity_verifier
+        self._paper_role_extractor_factory = _paper_role_extractor_factory
 
     @classmethod
     def from_pretrained(
@@ -90,7 +98,12 @@ class LLMExtractionPipeline:
         paper_role_extractor: PaperRoleExtractor | None = None,
         identity_verifier: ExplicitIdentityVerifier | None = None,
     ) -> LLMExtractionPipeline:
-        """Load the selected NER backend and shared OpenAI relation/identity harnesses."""
+        """Load the product extraction path with lazy graph-role enrichment.
+
+        The default role provider is not constructed for entity/relation-only
+        calls. A graph request creates it only if final graph nodes are
+        unconnected and need enrichment.
+        """
 
         if entity_backend == "gliner":
             entity_extractor = GLiNERBioMedExtractor.from_pretrained(
@@ -124,11 +137,17 @@ class LLMExtractionPipeline:
             if identity_verifier is not None
             else LLMExplicitIdentityVerifier.from_openai(llm_config)
         )
+        role_factory = (
+            None
+            if paper_role_extractor is not None
+            else lambda: LLMPaperRoleExtractor.from_openai(llm_config)
+        )
         return cls(
             entity_extractor,
             relation_extractor,
             paper_role_extractor,
             verifier,
+            _paper_role_extractor_factory=role_factory,
         )
 
     @classmethod
@@ -209,8 +228,10 @@ class LLMExtractionPipeline:
 
         Deterministic and eligible verified identities are finalized before
         relation extraction, graph construction, unconnected-node detection,
-        and paper-role enrichment. Mentions passed to the relation extractor
-        remain unchanged.
+        and paper-role enrichment. Factory-created product pipelines guarantee
+        roles for every final unconnected node; direct low-level construction
+        retains its optional enrichment seam. Mentions passed to the relation
+        extractor remain unchanged.
         """
 
         if not isinstance(text, str):
@@ -244,7 +265,15 @@ class LLMExtractionPipeline:
             if paper_role_extractor is not None
             else self.paper_role_extractor
         )
-        if role_extractor is None or not graph.unconnected_nodes:
+        if not graph.unconnected_nodes:
+            return graph
+        if role_extractor is None and self._paper_role_extractor_factory is not None:
+            role_extractor = self._paper_role_extractor_factory()
+            self.paper_role_extractor = role_extractor
+            self._paper_role_extractor_factory = None
+        if role_extractor is None:
+            # Directly constructed low-level pipelines deliberately permit
+            # unenriched graphs; the product factory always supplies a factory.
             return graph
 
         targets = tuple(

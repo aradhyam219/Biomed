@@ -62,7 +62,8 @@ Graph construction and alias/naming-only self-edge cleanup
 Genuinely unconnected-node detection
       |
       v
-Optional paper-role enrichment
+Batched grounded paper-role enrichment for every final degree-zero node
+(only when degree-zero nodes exist)
       |
       v
 GraphResult / graph JSON
@@ -83,8 +84,10 @@ mention IDs, while the relation extractor still receives the unchanged mention
 values. The graph boundary consumes the final assembly map, remaps relation
 endpoints, and retains verbatim relation evidence. After remapping it suppresses
 only naming- or alias-only self-relations; genuine biological self-relations
-remain. The pipeline then exposes degree-zero nodes for optional paper-role
-enrichment. The graph boundary itself does not perform inference, generalized
+remain. The product factory then enriches every final degree-zero node in one
+bounded paper-level call and fails visibly if role output is incomplete or
+invalid. Direct low-level pipeline construction retains the optional enrichment
+seam. The graph boundary itself does not perform inference, generalized
 biomedical identity normalization, or frontend styling.
 
 The tracked browser prototype is a separate downstream consumer of the same
@@ -328,7 +331,7 @@ Target-domain NER evaluation, model selection, and fine-tuning remain postponed.
 External biomedical normalization remains outside this path. The graph boundary
 consumes final mention grouping and is limited to endpoint mapping, exact-key
 edge aggregation, naming-only self-edge cleanup, degree-zero detection, evidence
-preservation, optional node roles, and JSON serialization; the viewer consumes
+preservation, validated node roles, and JSON serialization; the viewer consumes
 that boundary without adding graph semantics.
 
 Biological-process extraction is likewise deferred and, if required later, will be
@@ -392,9 +395,12 @@ treated as a separate decision rather than added to the default core-NER pass.
   grounded biological self-edges remain. Edge aggregation must not use rich
   assertion, intervention, effects, or context fields as identity keys; those
   values remain independent on each contributing evidence record.
-- Degree-zero nodes remain canonical graph nodes. Optional paper-role metadata is
-  source-grounded, limited to `substantive`/`contextual`, contains one or two
-  paragraphs, and never changes edge topology.
+- Degree-zero nodes remain canonical graph nodes. The standard OpenAI graph
+  factory enriches every degree-zero node in one bounded paper-level call and
+  validates exact coverage before returning. Direct low-level pipelines may
+  omit role enrichment. Roles are source-grounded, limited to
+  `substantive`/`contextual`, contain one or two paragraphs, and never change
+  edge topology.
 - The graph viewer must consume only graph-ready JSON and must not infer,
   reverse, or semantically rewrite nodes, edges, predicates, negation, or
   evidence. It hides degree-zero nodes only by default presentation state and
