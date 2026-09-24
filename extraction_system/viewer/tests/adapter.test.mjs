@@ -2,12 +2,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 
-import {
-  buildDisplayModel,
-  entityTypeKey,
-  paperRoleAffordance,
-  toCytoscapeElements,
-} from "../adapter.js";
+import { buildDisplayModel, entityTypeKey, toCytoscapeElements } from "../adapter.js";
 
 function nodeElements(elements) {
   return elements.filter((element) => element.group === "nodes");
@@ -335,23 +330,6 @@ test("preserves role metadata and gives Species an explicit presentation class",
   assert.deepEqual(species.data.paper_role.evidence, ["mice supplied the model context."]);
 });
 
-test("a missing role exposes only a non-interactive diagnostic state", () => {
-  const state = paperRoleAffordance({
-    id: "unconnected",
-    label: "GeneX",
-    type: "Gene",
-  });
-
-  assert.deepEqual(state, {
-    available: false,
-    category: null,
-    label: "Role enrichment unavailable",
-  });
-
-  const app = readFileSync(new URL("../app.js", import.meta.url), "utf8");
-  assert.match(app, /if \(affordance\.available\)/);
-});
-
 test("bundle warning CSS is a single wrapping block", () => {
   const styles = readFileSync(new URL("../styles.css", import.meta.url), "utf8");
   const warning = styles.slice(styles.indexOf(".bundle-note"), styles.indexOf(".back-button"));
@@ -366,10 +344,7 @@ test("viewer exposes unconnected role and reveal controls", () => {
 
   assert.match(html, /Unconnected entities/);
   assert.match(html, /show-unconnected/);
-  assert.match(app, /paperRoleAffordance/);
-  assert.match(app, /if \(affordance\.available\)/);
+  assert.match(app, /View role in paper/);
   assert.match(app, /ROLE IN PAPER/);
   assert.match(app, /SOURCE EVIDENCE/);
-  const adapter = readFileSync(new URL("../adapter.js", import.meta.url), "utf8");
-  assert.match(adapter, /View role in paper/);
 });

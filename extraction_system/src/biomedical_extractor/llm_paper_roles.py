@@ -21,7 +21,7 @@ from .paper_roles import (
 )
 
 
-DEFAULT_PAPER_ROLE_MODEL = "gpt-6-luna"
+DEFAULT_PAPER_ROLE_MODEL = "gpt-5.6-luna"
 DEFAULT_PAPER_ROLE_REASONING_EFFORT = "max"
 
 PAPER_ROLE_EXTRACTION_SYSTEM_PROMPT = """You are a conservative biomedical paper-role explainer.

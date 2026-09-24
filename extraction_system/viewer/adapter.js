@@ -8,30 +8,6 @@
 
 const DEFAULT_TYPE = "Unknown";
 const PAIR_LANE_SPACING = 96;
-const PAPER_ROLE_CATEGORIES = new Set(["substantive", "contextual"]);
-
-/**
- * Describe the role affordance without inferring missing role content.
- *
- * @param {object | null | undefined} node
- * @returns {{available: boolean, category: string | null, label: string}}
- */
-export function paperRoleAffordance(node) {
-  const role = node?.paper_role;
-  const paragraphs = arrayOrEmpty(role?.paragraphs);
-  const evidence = arrayOrEmpty(role?.evidence);
-  const available =
-    PAPER_ROLE_CATEGORIES.has(String(role?.category ?? "")) &&
-    paragraphs.length > 0 &&
-    paragraphs.every((value) => typeof value === "string" && value.trim().length > 0) &&
-    evidence.length > 0 &&
-    evidence.every((value) => typeof value === "string" && value.trim().length > 0);
-  return {
-    available,
-    category: available ? String(role.category) : null,
-    label: available ? "View role in paper" : "Role enrichment unavailable",
-  };
-}
 
 /**
  * Return a stable CSS-safe key for an entity type without changing its label.

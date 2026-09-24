@@ -12,12 +12,11 @@ graph-ready JSON representation. Its active foundation is pretrained HunFlair2 N
 behind the existing model-independent entity seam, followed by the existing
 grounded LLM relation implementation.
 
-Target-domain NER evaluation and fine-tuning remain postponed. The graph viewer
-consumes this architecture's JSON boundary, while external biomedical identity
-normalization remains outside the active path. A conservative document-local
-identity layer groups only exact, compatible, source-explicit mentions without
-changing the mention-level contract, and the graph boundary combines its output
-with grounded relations.
+Target-domain NER evaluation and fine-tuning remain postponed. Browser
+visualization and biomedical identity normalization remain outside this
+architecture. A separate conservative document-local assembly layer groups safe
+mention identities without changing the mention-level contract, and the graph
+boundary combines its output with grounded relations.
 
 ## Active production flow
 
@@ -40,16 +39,8 @@ Adapter/output normalization
 Validated Entity mentions
       |
       v
-Deterministic document-local identity assembly
-(exact repeats, aligned explicit abbreviations, exact same-document recovery)
-      |
-      v
-Bounded verifier for remaining eligible explicit parentheticals
-(one structured batch only when candidates exist)
-      |
-      v
-Final document-local nodes + mention map
-(original mentions preserved)
+Document-local entity assembly
+(assembled nodes + mention map; original mentions preserved)
       |
       v
 Grounded LLM relation extraction
@@ -62,8 +53,7 @@ Graph construction and alias/naming-only self-edge cleanup
 Genuinely unconnected-node detection
       |
       v
-Batched grounded paper-role enrichment for every final degree-zero node
-(only when degree-zero nodes exist)
+Optional paper-role enrichment
       |
       v
 GraphResult / graph JSON
@@ -78,17 +68,13 @@ STOP
 
 The composed prototype path can return validated entities and grounded relations
 or expose them through ``extract_graph`` as a deterministic ``GraphResult``. The
-pipeline performs only eligible explicit-identity verification before relation
-extraction; the verifier sees bounded source constructions and compatible
-mention IDs, while the relation extractor still receives the unchanged mention
-values. The graph boundary consumes the final assembly map, remaps relation
-endpoints, and retains verbatim relation evidence. After remapping it suppresses
-only naming- or alias-only self-relations; genuine biological self-relations
-remain. The product factory then enriches every final degree-zero node in one
-bounded paper-level call and fails visibly if role output is incomplete or
-invalid. Direct low-level pipeline construction retains the optional enrichment
-seam. The graph boundary itself does not perform inference, generalized
-biomedical identity normalization, or frontend styling.
+graph boundary consumes the same ordered mentions and source text for
+document-local nodes, remaps relation endpoints through the assembly map, and
+retains verbatim relation evidence. After remapping it suppresses only naming-
+or alias-only self-relations; genuine biological self-relations remain. The
+pipeline then exposes degree-zero nodes for optional paper-role enrichment. It
+does not perform model inference, biomedical identity normalization, or
+frontend styling.
 
 The tracked browser prototype is a separate downstream consumer of the same
 graph-ready JSON boundary:
@@ -160,16 +146,10 @@ before training instead of remapping it.
 The production implementation lives in `src/biomedical_extractor/`. The
 `entity_extraction` module owns the model-independent `EntityExtractor` contract
 and stable `Entity` value. `hunflair2` owns the isolated-runtime bridge and
-HunFlair2 output normalization. `entity_assembly` owns conservative deterministic
+HunFlair2 output normalization. `entity_assembly` owns conservative
 document-local grouping, assembled node values, and the mention-ID endpoint map.
-It recovers a complete literal source form when an existing compatible mention
-has the same superficially normalized text. `identity_resolution` defines
-eligible unresolved parenthetical candidates and validates exact-evidence
-decisions; `llm_identity_resolution` owns the bounded structured Responses API
-harness using the shared OpenAI configuration. No verifier request occurs for
-an empty candidate set. `llm_pipeline` defaults the composed path to HunFlair2
-and completes identity resolution before relation extraction and role selection
-while composing the selected entity adapter with
+`llm_pipeline` defaults the composed path to HunFlair2 while composing the
+selected entity adapter with
 `llm_relation_extraction`, while `relation_extraction` owns the
 provider-independent grounded relation value and validation. The relation value
 keeps a concise predicate alongside a complete source-grounded assertion,
@@ -232,11 +212,9 @@ The repository uses two distinct meanings of normalization:
 
 - **Adapter/output normalization** converts a model-specific prediction into the
   stable local `Entity` object. This is implemented in the current adapter.
-- **External biomedical entity normalization/linking** resolves a mention to an
-  ontology identifier or an identity not explicitly established in the supplied
-  document. This is not implemented and is deferred until NER selection and
-  validation are complete. Local source-explicit identity assembly remains a
-  separate, bounded operation.
+- **Biomedical entity normalization/linking** resolves a mention to a canonical
+  biomedical identity or identifier. This is not implemented and is deferred
+  until NER selection and validation are complete.
 
 The second capability must not be inferred from the first, and no model-specific
 prediction object crosses the `EntityExtractor` boundary.
@@ -319,7 +297,7 @@ The controlled LLM relation implementation is an active downstream capability of
 the composed HunFlair2 path. It accepts only the normalized entities returned by
 the entity seam and returns relations after the existing evidence, endpoint, and
 negation validation. Its active OpenAI provider path uses LangChain's explicit
-Responses API integration with `gpt-6-luna`, standard/default reasoning mode,
+Responses API integration with `gpt-5.6-luna`, standard/default reasoning mode,
 `reasoning.effort=max`, and a `128000` output-token ceiling. The public
 `max_completion_tokens` configuration name remains for compatibility and is
 mapped to the Responses API output-token field below this provider-independent
@@ -329,9 +307,9 @@ remain preserved separately.
 
 Target-domain NER evaluation, model selection, and fine-tuning remain postponed.
 External biomedical normalization remains outside this path. The graph boundary
-consumes final mention grouping and is limited to endpoint mapping, exact-key
-edge aggregation, naming-only self-edge cleanup, degree-zero detection, evidence
-preservation, validated node roles, and JSON serialization; the viewer consumes
+is limited to deterministic mention grouping, endpoint mapping, exact-key edge
+aggregation, naming-only self-edge cleanup, degree-zero detection, evidence
+preservation, optional node roles, and JSON serialization; the viewer consumes
 that boundary without adding graph semantics.
 
 Biological-process extraction is likewise deferred and, if required later, will be
@@ -343,13 +321,11 @@ treated as a separate decision rather than added to the default core-NER pass.
 |---|---|---|---|
 | Entity extraction | `entity_extraction.EntityExtractor` runs the configured entity adapter on input text | Stable entity IDs, source spans/types, and model confidence | GLiNER-specific output outside the adapter, BioRED assumptions, or relation logic |
 | Adapter/output normalization | Convert one model's predictions into the local `Entity` value | Span integrity, schema validation, and stable output fields | Canonical biomedical identity linking or downstream reasoning |
-| Document-local entity assembly | Group safe same-document mentions and expose assembled nodes plus a mention-ID map | Deterministic node IDs, mention preservation, bounded abbreviation alignment, exact same-document full-form recovery, and type-compatible source evidence | External normalization, cross-document identity, graph serialization, or relation rewriting |
-| Explicit identity verification | Decide whether an eligible source construction explicitly introduces its parenthetical as a name or abbreviation for the preceding long-form phrase | Bounded candidates, finite construction decisions, exact source evidence, and compatible contained mention IDs for deterministic assembly | Judging isolated NER fragments as synonyms, synonym discovery, morphology, outside knowledge, type repair, or cross-document identity |
-| Pipeline orchestration | Run final identity mapping before downstream relation and role stages | Conditional verifier invocation, unchanged mention values, and ordered graph composition | Provider response parsing or graph presentation semantics |
+| Document-local entity assembly | Group safe same-document mentions and expose assembled nodes plus a mention-ID map | Deterministic node IDs, mention preservation, bounded explicit abbreviation alignment, and type-compatible identity evidence | Biomedical normalization, cross-document identity, graph serialization, or relation rewriting |
 | Graph boundary | Convert assembled nodes and grounded mention relations into a stable graph result | Document ID, node identity reuse, endpoint remapping, alias/naming-only self-edge cleanup, degree-zero detection, source/target/predicate/negation edge aggregation, per-evidence rich semantics, and JSON serialization | Model inference, semantic predicate rewriting, graph-database state, or frontend styling |
 | Paper-role domain seam | Validate and attach grounded explanations for degree-zero nodes | Minimal category, one/two paragraphs, exact source evidence, and unchanged edge topology | Provider SDK objects, graph inference, ontology assertions, or roles for connected nodes |
 | Graph viewer | Render graph JSON as an inspectable directed Cytoscape.js graph | Presentation mapping, hidden/revealed unconnected nodes, role panel, species styling, pan/zoom, node/edge selection, aliases, mentions, negation styling, and per-evidence assertion/metadata display | Extraction, provider assumptions, relation inference, predicate rewriting, or graph persistence |
-| External biomedical entity normalization/linking | Resolve mentions beyond source-explicit document-local constructions | Not implemented in the current path | Model selection before the NER quality gate |
+| Biomedical entity normalization/linking | Future mention-to-identity resolution | Not implemented in the current path | Model selection before the NER quality gate |
 | Relation extraction | Existing grounded LLM relation implementation over supplied normalized entities | Predicate, complete assertion, optional intervention/effects/context, verbatim evidence, endpoint integrity, negation, and validation | Entity discovery, graph assembly, graph propagation of rich semantics, or unsupported biological inference |
 | Evaluation and adaptation readiness | Measure core NER and prepare controlled target adaptation | Dataset adaptation, metrics, challenger adapters, model comparison, target-domain pilot/validator, frozen baseline, and isolated training readiness | Production extraction semantics, pseudo-gold, incomplete-gold training, or production model replacement |
 
@@ -362,7 +338,7 @@ treated as a separate decision rather than added to the default core-NER pass.
 - Entity spans always refer to the original source text.
 - The entity stage is core NER only; it has no biological-process pass or
   process-specific conflict rule.
-- External biomedical entity normalization/linking is not implemented.
+- Biomedical entity normalization/linking is not implemented in this task.
 - The grounded LLM relation path consumes only supplied normalized entities and
   remains evidence- and endpoint-validated.
 - The official AIONER runtime and artifact remain evaluation-only and isolated from
@@ -385,22 +361,17 @@ treated as a separate decision rather than added to the default core-NER pass.
   model artifact identities are recorded in the reviewer-facing report.
 - The postponed HunFlair2 adaptation lane must not use target-paper model
   predictions, AIONER output, or model agreement as gold.
-- Deterministic local assembly and accepted verifier decisions preserve every
-  original mention and never merge incompatible entity types. Identity is
-  finalized before relation endpoint remapping, degree-zero detection, and
-  paper-role generation; uncertain candidates remain separate.
+- Document-local assembly is deterministic, preserves every original mention,
+  and never silently merges incompatible entity types.
 - The graph boundary must not emit dangling endpoints, discard relation evidence,
   rewrite predicates, or introduce frontend-specific styling. It suppresses only
   alias/naming-only self-relations after endpoint identity collapse; genuine
   grounded biological self-edges remain. Edge aggregation must not use rich
   assertion, intervention, effects, or context fields as identity keys; those
   values remain independent on each contributing evidence record.
-- Degree-zero nodes remain canonical graph nodes. The standard OpenAI graph
-  factory enriches every degree-zero node in one bounded paper-level call and
-  validates exact coverage before returning. Direct low-level pipelines may
-  omit role enrichment. Roles are source-grounded, limited to
-  `substantive`/`contextual`, contain one or two paragraphs, and never change
-  edge topology.
+- Degree-zero nodes remain canonical graph nodes. Optional paper-role metadata is
+  source-grounded, limited to `substantive`/`contextual`, contains one or two
+  paragraphs, and never changes edge topology.
 - The graph viewer must consume only graph-ready JSON and must not infer,
   reverse, or semantically rewrite nodes, edges, predicates, negation, or
   evidence. It hides degree-zero nodes only by default presentation state and

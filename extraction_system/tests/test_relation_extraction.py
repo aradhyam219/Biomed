@@ -371,7 +371,7 @@ class RelationContractTests(unittest.TestCase):
             LLMRelationExtractor.from_openai(OpenAIConfig(api_key="test-key"))
 
         self.assertEqual(OpenAIConfig().model, DEFAULT_LLM_RELATION_MODEL)
-        self.assertEqual(captured["model"], "gpt-6-luna")
+        self.assertEqual(captured["model"], "gpt-5.6-luna")
         self.assertTrue(captured["use_responses_api"])
         self.assertEqual(captured["reasoning"], {"effort": "max"})
         self.assertNotIn("reasoning_effort", captured)
@@ -383,7 +383,7 @@ class RelationContractTests(unittest.TestCase):
         from langchain_openai import ChatOpenAI
 
         model = ChatOpenAI(
-            model="gpt-6-luna",
+            model="gpt-5.6-luna",
             api_key="test-key",
             use_responses_api=True,
             reasoning={"effort": "max"},
@@ -392,7 +392,7 @@ class RelationContractTests(unittest.TestCase):
 
         payload = model._get_request_payload("Return a structured response.")
 
-        self.assertEqual(payload["model"], "gpt-6-luna")
+        self.assertEqual(payload["model"], "gpt-5.6-luna")
         self.assertEqual(payload["reasoning"], {"effort": "max"})
         self.assertEqual(payload["max_output_tokens"], 128000)
         self.assertNotIn("max_completion_tokens", payload)

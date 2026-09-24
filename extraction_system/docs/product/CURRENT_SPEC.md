@@ -12,11 +12,9 @@ confidence when available. A separate conservative transformation assembles safe
 mentions into document-local entities, and the composed prototype can expose
 those nodes with grounded relations as deterministic graph-ready JSON.
 
-The active prototype uses pretrained HunFlair2 for NER, conservative
-document-local identity assembly, and the existing grounded LLM relation
-extractor downstream. Target-domain NER evaluation and fine-tuning remain
-postponed; external biomedical entity normalization/linking remains a later
-stage.
+The active prototype uses pretrained HunFlair2 for NER and the existing grounded
+LLM relation extractor downstream. Target-domain NER evaluation and fine-tuning
+remain postponed; biomedical entity normalization/linking remains a later stage.
 
 ## Active product flow
 
@@ -27,24 +25,16 @@ isolated pretrained HunFlair2 runtime
     ↓
 validated Entity mentions
     ↓
-deterministic document-local identity assembly
-    (exact repeats, explicit abbreviation alignment, and exact same-document
-     full-form recovery; original mentions remain unchanged)
-    ↓
-bounded grounded verification of remaining eligible explicit parentheticals
-    (one structured batch only when candidates exist)
-    ↓
-final assembled nodes + mention map
+document-local entity assembly
+    (assembled nodes + mention map; mentions remain unchanged)
     ↓
 grounded LLM relation extraction over supplied mentions
     ↓
 graph construction and alias/naming-only self-edge cleanup
     ↓
-genuine unconnected-node detection
+genuinely unconnected-node detection
     ↓
-one batched grounded role-enrichment call when unconnected nodes exist
-    ↓
-validated complete role coverage or visible graph-generation failure
+optional paper-role enrichment
     ↓
 graph-ready result / JSON
 ```
@@ -80,22 +70,17 @@ AIONER / PubTator-style NER remains preserved as evaluation/history evidence.
 - adapter/output normalization into the stable local entity representation;
 - conservative document-local assembly with deterministic IDs, preserved
   mentions, and a complete mention-to-assembled-entity map;
-- bounded provider-independent verification of unresolved, explicit
-  parenthetical naming constructions, using the shared OpenAI Responses API
-  configuration and only exact source evidence; ambiguity and type conflicts
-  stay separate;
 - a frontend-neutral graph-ready JSON boundary that remaps grounded relation
   endpoints to assembled node IDs, preserves direction, negation, and evidence,
   deterministically aggregates equivalent edges, suppresses only alias/naming
   self-relations after endpoint collapse, and retains canonical unconnected nodes;
-- a provider-independent paper-role contract for genuinely unconnected nodes,
-  with one or two grounded paragraphs, exact source evidence, and only
-  `substantive` or `contextual` categories; the standard OpenAI graph factory
-  guarantees complete role coverage while direct low-level pipelines may omit it;
+- an optional provider-independent paper-role contract for genuinely unconnected
+  nodes, with one or two grounded paragraphs, exact source evidence, and only
+  `substantive` or `contextual` categories;
 - a thin Cytoscape.js viewer that consumes graph JSON without provider coupling,
   shows typed nodes and directed predicates, and exposes aliases, source
-  mentions, negation, every retained evidence record, and paper roles through
-  selection;
+  mentions, negation, every retained evidence record, and optional paper roles
+  through selection;
 - a frozen, evaluation-only comparison of the current GLiNER baseline with the
   official AIONER PubMedBERT-CRF artifact on the official BioRED Test split;
 - a frozen, evaluation-only challenger run of the official HunFlair2 five-class
@@ -121,9 +106,8 @@ not include:
   preserved for later use;
 - relation-model quality evaluation or live external-provider smoke beyond the
   existing grounded extraction seam;
-- external biomedical entity normalization/linking, meaning resolution to
-  ontology identifiers or identities beyond explicit source-defined local
-  constructions;
+- biomedical entity normalization/linking, meaning resolution of a mention to a
+  canonical biomedical identity or identifier;
 - collapsing the isolated HunFlair2 runtime into the production dependency graph;
 - general or inferred alias resolution, cross-document identity, or external
   biomedical normalization;
@@ -212,20 +196,6 @@ The identity rules are intentionally conservative:
   pattern of the form `full form (ABBR)` with compatible types; a bounded
   Schwartz-Hearst-style alignment can recover a long-form source span and join
   several same-type mentions contained within that span;
-- when alignment recovers the literal source long form but NER only marked
-  fragments at the construction, an existing same-type mention with that exact
-  full-form surface elsewhere in the document may ground the abbreviation
-  merge;
-- unresolved candidates are limited to bounded explicit parenthetical
-  constructions with one unambiguous compatible mention group. A structured
-  verifier judges whether the complete source construction explicitly
-  introduces the parenthetical as a name or abbreviation for the immediately
-  preceding long-form source phrase; it does not judge whether any one NER
-  fragment is independently synonymous with the abbreviation. Only
-  `same_identity_construction` with the complete construction copied verbatim
-  permits deterministic assembly of existing compatible mentions contained in
-  that source span. `not_identity_construction`, `uncertain`, malformed output,
-  and ambiguous candidates never merge;
 - incompatible types, unsupported alias patterns, and uncertain candidates stay
   separate;
 - assembled IDs are assigned in first-input-mention order as `doc_e_001`,
@@ -233,29 +203,20 @@ The identity rules are intentionally conservative:
 - every assembled entity retains the original mention values, spans, IDs, types,
   and confidence values.
 
-This is document-local identity evidence, not ontology normalization or
-cross-document linking. Verification occurs before relation extraction and
-unconnected-node detection; the graph boundary reuses the resulting IDs and
-preserves all constituent mentions without creating a second node identity
-system.
+This is document-local identity evidence, not biomedical normalization or
+cross-document linking. The graph boundary reuses these IDs and preserves all
+constituent mentions; it does not create a second node identity system.
 
 ## Unconnected nodes and paper roles
 
 After assembly, relation extraction, graph remapping, and alias/naming-only
 self-edge cleanup, a node has degree zero when it is genuinely unconnected.
-Canonical graph JSON retains every such node. The standard OpenAI
-`LLMExtractionPipeline` factory creates a paper-role extractor lazily when the
-final graph has unconnected nodes, then enriches all of them in one bounded call
-using the paper title, complete supplied text, and every source mention for each
-node. It validates complete one-to-one role coverage before returning the graph;
-missing or invalid role output fails visibly. No provider is created when there
-are no unconnected nodes. Directly constructed low-level pipelines retain the
-optional role-extractor seam for tests, offline composition, and custom callers.
-
+Canonical graph JSON retains every such node. An optional paper-role extractor
+may enrich all requested unconnected nodes in one bounded paper-level call using
+the paper title, complete supplied text, and every source mention for each node.
 Role output is limited to `substantive` and `contextual`, contains one or two
-concise paragraphs, and retains exact verbatim source evidence. Species roles
-are contextual. Role prose is node metadata only: it never creates, modifies,
-or implies a graph edge.
+concise paragraphs, and retains exact verbatim source evidence. Role prose is
+node metadata only: it never creates, modifies, or implies a graph edge.
 
 ## Normalization terminology
 
@@ -263,10 +224,9 @@ Two different operations are intentionally distinguished:
 
 - **Adapter/output normalization:** model-specific prediction → stable local
   `Entity` object. This is implemented now.
-- **External biomedical entity normalization/linking:** mention → ontology
-  identifier or identity that is not explicitly established in the supplied
-  document. This is not implemented and remains deferred until the core NER
-  model and schema are selected and validated.
+- **Biomedical entity normalization/linking:** mention → canonical biomedical
+  identity or identifier. This is not implemented. It becomes active only after
+  the core NER model and schema are selected and validated.
 
 Stable local `Entity` output must not be described as biomedical identity linking.
 
@@ -395,10 +355,7 @@ runtime dependencies remain isolated from the main production environment.
   target, predicate, and negation; each evidence record independently retains
   its assertion, intervention, ordered effects, context, surface form, and
   score.
-- External biomedical entity normalization/linking is not implemented.
-- Local identity resolution is limited to superficial exact repetition and
-  compatible source-explicit parenthetical constructions; it must preserve
-  mentions and run before relation endpoint remapping and orphan-role selection.
+- Biomedical entity normalization/linking is not implemented in this task.
 - Output is machine-consumable and does not require model-specific objects.
 - HunFlair2 is the active prototype NER foundation, while its Flair/SciSpaCy
   runtime remains isolated and target-domain fine-tuning remains postponed.
@@ -437,13 +394,6 @@ mentions may share one node with `KNTC1` as the display label. Unsupported alias
 patterns and incompatible types remain separate, and the mention endpoint map is
 complete.
 
-If a source parenthetical contains an aligned abbreviation but NER fragmented
-the long form, an exact same-type full-form mention elsewhere in the document
-may support recovery. If lexical alignment is insufficient, only a locally
-bounded explicit construction with compatible extracted mentions can reach the
-verifier; a merge requires its exact construction as evidence. Cross-type and
-ambiguous candidates stay separate.
-
 ### Graph-ready output
 
 `LLMExtractionPipeline.extract_graph(text, document_id=...)` returns one node for
@@ -457,9 +407,8 @@ serialization and contains no frontend styling.
 
 ### Deferred downstream work
 
-External entity normalization/linking, target-domain NER evaluation, and
-fine-tuning remain outside this prototype milestone. The viewer does not change
-extraction semantics.
+Entity normalization/linking, target domain NER evaluation, and fine-tuning remain
+outside this prototype milestone. The viewer does not change extraction semantics.
 
 ### Graph JSON viewer
 
@@ -479,11 +428,9 @@ backend contract change.
 The summary distinguishes canonical entities from displayed entities, hidden
 unconnected entities, underlying directed relations, and displayed connections.
 Genuinely unconnected nodes are hidden from the default canvas but remain in the
-dedicated `Unconnected entities` panel, grouped by grounded substantive and
-contextual roles. If role metadata is absent or invalid, the viewer shows
-`Role enrichment unavailable` without a role-expansion affordance or fallback
-prose. The global reveal control and each card's `Show on graph` control expose
-nodes without fabricating edges; selecting a revealed node shows its role and
+dedicated `Unconnected entities` panel, grouped into substantive and contextual
+counts. The global reveal control and each card's `Show on graph` control expose
+them without fabricating edges; selecting a revealed node shows its role and
 source evidence. Species is explicitly rendered as a green hexagon.
 
 A single relation is rendered as a directly inspectable edge;

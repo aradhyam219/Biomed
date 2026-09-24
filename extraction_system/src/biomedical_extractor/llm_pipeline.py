@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Callable, Sequence
+from typing import Any, Sequence
 
 from .entity_extraction import (
     DEFAULT_ENTITY_MODEL,
@@ -12,16 +12,9 @@ from .entity_extraction import (
     EntityExtractor,
     GLiNERBioMedExtractor,
 )
-from .entity_assembly import _assemble_document_entities, assemble_document_entities
+from .entity_assembly import assemble_document_entities
 from .graph import GraphResult, build_graph_result
 from .hunflair2 import HUNFLAIR2_MODEL_IDENTIFIER, HunFlair2BioMedExtractor
-from .identity_resolution import (
-    ExplicitIdentityVerifier,
-    find_unresolved_explicit_identity_candidates,
-    validate_explicit_identity_result,
-)
-from .llm_identity_resolution import LLMExplicitIdentityVerifier
-from .llm_paper_roles import LLMPaperRoleExtractor
 from .llm_relation_extraction import LLMRelationExtractor, OpenAIConfig
 from .paper_roles import (
     PaperRoleExtractor,
@@ -57,28 +50,19 @@ class ComposedExtractionResult:
 
 
 class LLMExtractionPipeline:
-    """Compose NER, explicit local identity resolution, and grounded relations."""
+    """Run NER, then grounded LLM relation extraction over those entities."""
 
     def __init__(
         self,
         entity_extractor: EntityExtractor,
         relation_extractor: RelationExtractor,
         paper_role_extractor: PaperRoleExtractor | None = None,
-        identity_verifier: ExplicitIdentityVerifier | None = None,
-        *,
-        _paper_role_extractor_factory: Callable[[], PaperRoleExtractor] | None = None,
     ) -> None:
-        """Bind low-level seams; product factories may add lazy role enrichment.
-
-        Direct construction intentionally keeps paper-role enrichment optional
-        for internal, offline, and caller-composed workflows.
-        """
+        """Bind independently replaceable entity and relation implementations."""
 
         self.entity_extractor = entity_extractor
         self.relation_extractor = relation_extractor
         self.paper_role_extractor = paper_role_extractor
-        self.identity_verifier = identity_verifier
-        self._paper_role_extractor_factory = _paper_role_extractor_factory
 
     @classmethod
     def from_pretrained(
@@ -96,14 +80,8 @@ class LLMExtractionPipeline:
         hunflair2_runtime_cache: Path | str = Path(".cache/hunflair2"),
         hunflair2_offline: bool = False,
         paper_role_extractor: PaperRoleExtractor | None = None,
-        identity_verifier: ExplicitIdentityVerifier | None = None,
     ) -> LLMExtractionPipeline:
-        """Load the product extraction path with lazy graph-role enrichment.
-
-        The default role provider is not constructed for entity/relation-only
-        calls. A graph request creates it only if final graph nodes are
-        unconnected and need enrichment.
-        """
+        """Load the selected NER backend, HunFlair2 by default, and the LLM harness."""
 
         if entity_backend == "gliner":
             entity_extractor = GLiNERBioMedExtractor.from_pretrained(
@@ -132,23 +110,7 @@ class LLMExtractionPipeline:
                 "'gliner' or 'hunflair2'"
             )
         relation_extractor = LLMRelationExtractor.from_openai(llm_config)
-        verifier = (
-            identity_verifier
-            if identity_verifier is not None
-            else LLMExplicitIdentityVerifier.from_openai(llm_config)
-        )
-        role_factory = (
-            None
-            if paper_role_extractor is not None
-            else lambda: LLMPaperRoleExtractor.from_openai(llm_config)
-        )
-        return cls(
-            entity_extractor,
-            relation_extractor,
-            paper_role_extractor,
-            verifier,
-            _paper_role_extractor_factory=role_factory,
-        )
+        return cls(entity_extractor, relation_extractor, paper_role_extractor)
 
     @classmethod
     def from_hunflair2(
@@ -162,7 +124,6 @@ class LLMExtractionPipeline:
         offline: bool = False,
         llm_config: OpenAIConfig | None = None,
         paper_role_extractor: PaperRoleExtractor | None = None,
-        identity_verifier: ExplicitIdentityVerifier | None = None,
     ) -> "LLMExtractionPipeline":
         """Load pretrained HunFlair2 and the existing grounded RE harness."""
 
@@ -176,7 +137,6 @@ class LLMExtractionPipeline:
             device=device,
             llm_config=llm_config,
             paper_role_extractor=paper_role_extractor,
-            identity_verifier=identity_verifier,
         )
 
     from_openai = from_pretrained
@@ -226,12 +186,10 @@ class LLMExtractionPipeline:
     ) -> GraphResult:
         """Extract, assemble, and serialize-ready graph data for one document.
 
-        Deterministic and eligible verified identities are finalized before
-        relation extraction, graph construction, unconnected-node detection,
-        and paper-role enrichment. Factory-created product pipelines guarantee
-        roles for every final unconnected node; direct low-level construction
-        retains its optional enrichment seam. Mentions passed to the relation
-        extractor remain unchanged.
+        Assembly is completed before relation extraction so both the mention
+        endpoint map and final graph use the same deterministic identity view.
+        Paper-role enrichment, when configured, runs once after graph cleanup
+        for all genuinely unconnected nodes and never changes edge topology.
         """
 
         if not isinstance(text, str):
@@ -241,22 +199,6 @@ class LLMExtractionPipeline:
 
         entities = tuple(self.entity_extractor.extract_entities(text))
         assembly = assemble_document_entities(entities, text)
-        verifier = self.identity_verifier
-        if verifier is not None:
-            candidates = find_unresolved_explicit_identity_candidates(
-                entities, text, assembly
-            )
-            if candidates:
-                verification = verifier.verify_explicit_identities(text, candidates)
-                verified_pairs = validate_explicit_identity_result(
-                    text, candidates, verification
-                )
-                if verified_pairs:
-                    assembly = _assemble_document_entities(
-                        entities,
-                        text,
-                        verified_identity_pairs=verified_pairs,
-                    )
         relation_result = self.extract_relations(text, entities)
         graph = build_graph_result(document_id, assembly, relation_result)
 
@@ -265,15 +207,7 @@ class LLMExtractionPipeline:
             if paper_role_extractor is not None
             else self.paper_role_extractor
         )
-        if not graph.unconnected_nodes:
-            return graph
-        if role_extractor is None and self._paper_role_extractor_factory is not None:
-            role_extractor = self._paper_role_extractor_factory()
-            self.paper_role_extractor = role_extractor
-            self._paper_role_extractor_factory = None
-        if role_extractor is None:
-            # Directly constructed low-level pipelines deliberately permit
-            # unenriched graphs; the product factory always supplies a factory.
+        if role_extractor is None or not graph.unconnected_nodes:
             return graph
 
         targets = tuple(

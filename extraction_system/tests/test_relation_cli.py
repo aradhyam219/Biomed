@@ -59,7 +59,7 @@ class RelationCLITests(unittest.TestCase):
         self.assertEqual(result, 0)
         config = load.call_args.args[0]
         self.assertIsInstance(config, OpenAIConfig)
-        self.assertEqual(config.model, "gpt-6-luna")
+        self.assertEqual(config.model, "gpt-5.6-luna")
         payload = json.loads(output.getvalue())
         self.assertEqual(payload["entities"], [{**entity, "score": None} for entity in entities])
         self.assertEqual(payload["relations"][0]["source"], "E1")
