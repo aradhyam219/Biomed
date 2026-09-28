@@ -1,0 +1,8163 @@
+{
+  "document": {
+    "id": "PMCID:PMC10770459"
+  },
+  "nodes": [
+    {
+      "id": "doc_e_001",
+      "label": "glucose",
+      "type": "Chemical",
+      "aliases": [
+        "glucose",
+        "Glucose"
+      ],
+      "mentions": [
+        {
+          "id": "E1",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 10,
+          "end": 17,
+          "score": 0.9999959468841553
+        },
+        {
+          "id": "E9",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 308,
+          "end": 315,
+          "score": 0.9999963045120239
+        },
+        {
+          "id": "E17",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 693,
+          "end": 700,
+          "score": 0.9923302531242371
+        },
+        {
+          "id": "E26",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 952,
+          "end": 959,
+          "score": 0.9999972581863403
+        },
+        {
+          "id": "E27",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 982,
+          "end": 989,
+          "score": 0.9999971389770508
+        },
+        {
+          "id": "E29",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 1051,
+          "end": 1058,
+          "score": 0.9999969005584717
+        },
+        {
+          "id": "E30",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 1118,
+          "end": 1125,
+          "score": 0.9999973773956299
+        },
+        {
+          "id": "E31",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 1146,
+          "end": 1153,
+          "score": 0.999996542930603
+        },
+        {
+          "id": "E63",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 3321,
+          "end": 3328,
+          "score": 0.9999958276748657
+        },
+        {
+          "id": "E93",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 5021,
+          "end": 5028,
+          "score": 0.9999843835830688
+        },
+        {
+          "id": "E102",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 5425,
+          "end": 5432,
+          "score": 0.9999945163726807
+        },
+        {
+          "id": "E115",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 6216,
+          "end": 6223,
+          "score": 0.9999967813491821
+        },
+        {
+          "id": "E118",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 6471,
+          "end": 6478,
+          "score": 0.9999966621398926
+        },
+        {
+          "id": "E121",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 6600,
+          "end": 6607,
+          "score": 0.9999970197677612
+        },
+        {
+          "id": "E176",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 9677,
+          "end": 9684,
+          "score": 0.9999967813491821
+        },
+        {
+          "id": "E178",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 9805,
+          "end": 9812,
+          "score": 0.9999971389770508
+        },
+        {
+          "id": "E179",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 9857,
+          "end": 9864,
+          "score": 0.9999939203262329
+        },
+        {
+          "id": "E181",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 10044,
+          "end": 10051,
+          "score": 0.9999971389770508
+        },
+        {
+          "id": "E292",
+          "text": "Glucose",
+          "type": "Chemical",
+          "start": 17227,
+          "end": 17234,
+          "score": 0.9999964237213135
+        },
+        {
+          "id": "E311",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 18680,
+          "end": 18687,
+          "score": 0.9999973773956299
+        },
+        {
+          "id": "E313",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 18745,
+          "end": 18752,
+          "score": 0.9999974966049194
+        },
+        {
+          "id": "E326",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 19180,
+          "end": 19187,
+          "score": 0.9999969005584717
+        },
+        {
+          "id": "E331",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 19342,
+          "end": 19349,
+          "score": 0.9999971389770508
+        },
+        {
+          "id": "E374",
+          "text": "Glucose",
+          "type": "Chemical",
+          "start": 21243,
+          "end": 21250,
+          "score": 0.9999949932098389
+        },
+        {
+          "id": "E397",
+          "text": "Glucose",
+          "type": "Chemical",
+          "start": 21819,
+          "end": 21826,
+          "score": 0.9999973773956299
+        },
+        {
+          "id": "E403",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 21957,
+          "end": 21964,
+          "score": 0.9999971389770508
+        },
+        {
+          "id": "E404",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 22038,
+          "end": 22045,
+          "score": 0.9999973773956299
+        },
+        {
+          "id": "E419",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 22689,
+          "end": 22696,
+          "score": 0.9999972581863403
+        },
+        {
+          "id": "E428",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 22946,
+          "end": 22953,
+          "score": 0.9999971389770508
+        },
+        {
+          "id": "E470",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 24602,
+          "end": 24609,
+          "score": 0.9999970197677612
+        },
+        {
+          "id": "E477",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 24817,
+          "end": 24824,
+          "score": 0.9999971389770508
+        },
+        {
+          "id": "E495",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 25535,
+          "end": 25542,
+          "score": 0.7378107309341431
+        },
+        {
+          "id": "E496",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 25580,
+          "end": 25587,
+          "score": 0.9999964237213135
+        },
+        {
+          "id": "E506",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 25764,
+          "end": 25771,
+          "score": 0.999994158744812
+        },
+        {
+          "id": "E507",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 25813,
+          "end": 25820,
+          "score": 0.9998329877853394
+        },
+        {
+          "id": "E509",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 25869,
+          "end": 25876,
+          "score": 0.9999973773956299
+        },
+        {
+          "id": "E512",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 26031,
+          "end": 26038,
+          "score": 0.9999972581863403
+        },
+        {
+          "id": "E560",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 27470,
+          "end": 27477,
+          "score": 0.9999969005584717
+        },
+        {
+          "id": "E593",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 29077,
+          "end": 29084,
+          "score": 0.9999963045120239
+        },
+        {
+          "id": "E624",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 32166,
+          "end": 32173,
+          "score": 0.9999957084655762
+        },
+        {
+          "id": "E688",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 35834,
+          "end": 35841,
+          "score": 0.9999972581863403
+        },
+        {
+          "id": "E700",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 36549,
+          "end": 36556,
+          "score": 0.9999974966049194
+        },
+        {
+          "id": "E711",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 37090,
+          "end": 37097,
+          "score": 0.9999967813491821
+        },
+        {
+          "id": "E721",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 37450,
+          "end": 37457,
+          "score": 0.9999964237213135
+        },
+        {
+          "id": "E727",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 37890,
+          "end": 37897,
+          "score": 0.9999927282333374
+        },
+        {
+          "id": "E735",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 38203,
+          "end": 38210,
+          "score": 0.9999958276748657
+        },
+        {
+          "id": "E748",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 38745,
+          "end": 38752,
+          "score": 0.9999921321868896
+        },
+        {
+          "id": "E753",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 38943,
+          "end": 38950,
+          "score": 0.9999954700469971
+        },
+        {
+          "id": "E759",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 39388,
+          "end": 39395,
+          "score": 0.9999951124191284
+        },
+        {
+          "id": "E761",
+          "text": "Glucose",
+          "type": "Chemical",
+          "start": 39445,
+          "end": 39452,
+          "score": 0.99998939037323
+        },
+        {
+          "id": "E765",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 39595,
+          "end": 39602,
+          "score": 0.9999958276748657
+        },
+        {
+          "id": "E767",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 39753,
+          "end": 39760,
+          "score": 0.9999896287918091
+        },
+        {
+          "id": "E774",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 40112,
+          "end": 40119,
+          "score": 0.9999958276748657
+        },
+        {
+          "id": "E788",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 40972,
+          "end": 40979,
+          "score": 0.9999939203262329
+        },
+        {
+          "id": "E803",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 41967,
+          "end": 41974,
+          "score": 0.9999967813491821
+        },
+        {
+          "id": "E813",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 42335,
+          "end": 42342,
+          "score": 0.9999969005584717
+        },
+        {
+          "id": "E818",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 42904,
+          "end": 42911,
+          "score": 0.999996542930603
+        },
+        {
+          "id": "E819",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 42974,
+          "end": 42981,
+          "score": 0.9999967813491821
+        },
+        {
+          "id": "E823",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 43612,
+          "end": 43619,
+          "score": 0.9999964237213135
+        },
+        {
+          "id": "E825",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 43959,
+          "end": 43966,
+          "score": 0.9999969005584717
+        },
+        {
+          "id": "E826",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 44009,
+          "end": 44016,
+          "score": 0.9999967813491821
+        },
+        {
+          "id": "E842",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 44605,
+          "end": 44612,
+          "score": 0.9999973773956299
+        },
+        {
+          "id": "E861",
+          "text": "glucose",
+          "type": "Chemical",
+          "start": 45820,
+          "end": 45827,
+          "score": 0.9999961853027344
+        },
+        {
+          "id": "E870",
+          "text": "Glucose",
+          "type": "Chemical",
+          "start": 46373,
+          "end": 46380,
+          "score": 0.9999935626983643
+        }
+      ]
+    },
+    {
+      "id": "doc_e_002",
+      "label": "HMGB1",
+      "type": "Gene",
+      "aliases": [
+        "HMGB1",
+        "high mobility group box 1",
+        "High Mobility Group Box 1"
+      ],
+      "mentions": [
+        {
+          "id": "E2",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 39,
+          "end": 44,
+          "score": 0.9999896287918091
+        },
+        {
+          "id": "E10",
+          "text": "high mobility group box 1",
+          "type": "Gene",
+          "start": 452,
+          "end": 477,
+          "score": 0.9999802708625793
+        },
+        {
+          "id": "E11",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 479,
+          "end": 484,
+          "score": 0.9999892711639404
+        },
+        {
+          "id": "E15",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 628,
+          "end": 633,
+          "score": 0.9999890327453613
+        },
+        {
+          "id": "E19",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 767,
+          "end": 772,
+          "score": 0.9999886751174927
+        },
+        {
+          "id": "E22",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 826,
+          "end": 831,
+          "score": 0.9999892711639404
+        },
+        {
+          "id": "E28",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 1032,
+          "end": 1037,
+          "score": 0.9999890327453613
+        },
+        {
+          "id": "E32",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 1167,
+          "end": 1172,
+          "score": 0.9999889135360718
+        },
+        {
+          "id": "E36",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 1450,
+          "end": 1455,
+          "score": 0.9999895095825195
+        },
+        {
+          "id": "E37",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 1577,
+          "end": 1582,
+          "score": 0.9999896287918091
+        },
+        {
+          "id": "E39",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 1713,
+          "end": 1718,
+          "score": 0.9999896287918091
+        },
+        {
+          "id": "E42",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 2079,
+          "end": 2084,
+          "score": 0.9999889135360718
+        },
+        {
+          "id": "E78",
+          "text": "High Mobility Group Box 1",
+          "type": "Gene",
+          "start": 4288,
+          "end": 4313,
+          "score": 0.9999804894129435
+        },
+        {
+          "id": "E79",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 4315,
+          "end": 4320,
+          "score": 0.9999896287918091
+        },
+        {
+          "id": "E81",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 4523,
+          "end": 4528,
+          "score": 0.9999895095825195
+        },
+        {
+          "id": "E82",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 4571,
+          "end": 4576,
+          "score": 0.9999897480010986
+        },
+        {
+          "id": "E83",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 4698,
+          "end": 4703,
+          "score": 0.9999897480010986
+        },
+        {
+          "id": "E88",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 4870,
+          "end": 4875,
+          "score": 0.9999897480010986
+        },
+        {
+          "id": "E94",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 5085,
+          "end": 5090,
+          "score": 0.9999890327453613
+        },
+        {
+          "id": "E96",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 5182,
+          "end": 5187,
+          "score": 0.9999898672103882
+        },
+        {
+          "id": "E100",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 5349,
+          "end": 5354,
+          "score": 0.9999892711639404
+        },
+        {
+          "id": "E101",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 5405,
+          "end": 5410,
+          "score": 0.99998939037323
+        },
+        {
+          "id": "E103",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 5534,
+          "end": 5539,
+          "score": 0.9999896287918091
+        },
+        {
+          "id": "E105",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 5651,
+          "end": 5656,
+          "score": 0.9999890327453613
+        },
+        {
+          "id": "E107",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 5808,
+          "end": 5813,
+          "score": 0.99998939037323
+        },
+        {
+          "id": "E109",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 5928,
+          "end": 5933,
+          "score": 0.9999898672103882
+        },
+        {
+          "id": "E110",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 6069,
+          "end": 6074,
+          "score": 0.9999892711639404
+        },
+        {
+          "id": "E112",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 6148,
+          "end": 6153,
+          "score": 0.9999896287918091
+        },
+        {
+          "id": "E117",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 6462,
+          "end": 6467,
+          "score": 0.9999891519546509
+        },
+        {
+          "id": "E120",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 6567,
+          "end": 6572,
+          "score": 0.9999892711639404
+        },
+        {
+          "id": "E125",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 7313,
+          "end": 7318,
+          "score": 0.9999889135360718
+        },
+        {
+          "id": "E127",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 7456,
+          "end": 7461,
+          "score": 0.9999845027923584
+        },
+        {
+          "id": "E132",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 7798,
+          "end": 7803,
+          "score": 0.9999741315841675
+        },
+        {
+          "id": "E134",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 7861,
+          "end": 7866,
+          "score": 0.999981164932251
+        },
+        {
+          "id": "E139",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 8020,
+          "end": 8025,
+          "score": 0.9999878406524658
+        },
+        {
+          "id": "E143",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 8151,
+          "end": 8156,
+          "score": 0.9999889135360718
+        },
+        {
+          "id": "E147",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 8372,
+          "end": 8377,
+          "score": 0.9999878406524658
+        },
+        {
+          "id": "E149",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 8439,
+          "end": 8444,
+          "score": 0.9999892711639404
+        },
+        {
+          "id": "E151",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 8473,
+          "end": 8478,
+          "score": 0.9999890327453613
+        },
+        {
+          "id": "E154",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 8641,
+          "end": 8646,
+          "score": 0.9999891519546509
+        },
+        {
+          "id": "E156",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 8697,
+          "end": 8702,
+          "score": 0.9999898672103882
+        },
+        {
+          "id": "E168",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 9405,
+          "end": 9410,
+          "score": 0.9999886751174927
+        },
+        {
+          "id": "E173",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 9622,
+          "end": 9627,
+          "score": 0.9999871253967285
+        },
+        {
+          "id": "E188",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 10719,
+          "end": 10724,
+          "score": 0.9999876022338867
+        },
+        {
+          "id": "E194",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 11305,
+          "end": 11310,
+          "score": 0.9999855756759644
+        },
+        {
+          "id": "E207",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 11819,
+          "end": 11824,
+          "score": 0.9999896287918091
+        },
+        {
+          "id": "E210",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 11949,
+          "end": 11954,
+          "score": 0.9999899864196777
+        },
+        {
+          "id": "E229",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 12721,
+          "end": 12726,
+          "score": 0.9999889135360718
+        },
+        {
+          "id": "E248",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 13628,
+          "end": 13633,
+          "score": 0.9999864101409912
+        },
+        {
+          "id": "E259",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 14497,
+          "end": 14502,
+          "score": 0.9999778270721436
+        },
+        {
+          "id": "E264",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 14891,
+          "end": 14896,
+          "score": 0.9999850988388062
+        },
+        {
+          "id": "E273",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 15275,
+          "end": 15280,
+          "score": 0.9999889135360718
+        },
+        {
+          "id": "E275",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 15548,
+          "end": 15553,
+          "score": 0.9999884366989136
+        },
+        {
+          "id": "E289",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 16352,
+          "end": 16357,
+          "score": 0.9999880790710449
+        },
+        {
+          "id": "E294",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 17869,
+          "end": 17874,
+          "score": 0.9999885559082031
+        },
+        {
+          "id": "E296",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 17906,
+          "end": 17911,
+          "score": 0.9999886751174927
+        },
+        {
+          "id": "E298",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 17994,
+          "end": 17999,
+          "score": 0.9999886751174927
+        },
+        {
+          "id": "E300",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 18132,
+          "end": 18137,
+          "score": 0.9999886751174927
+        },
+        {
+          "id": "E302",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 18200,
+          "end": 18205,
+          "score": 0.9999814033508301
+        },
+        {
+          "id": "E305",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 18299,
+          "end": 18304,
+          "score": 0.9999884366989136
+        },
+        {
+          "id": "E309",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 18540,
+          "end": 18545,
+          "score": 0.999988317489624
+        },
+        {
+          "id": "E315",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 18799,
+          "end": 18804,
+          "score": 0.9999865293502808
+        },
+        {
+          "id": "E324",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 19155,
+          "end": 19160,
+          "score": 0.99998939037323
+        },
+        {
+          "id": "E342",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 20010,
+          "end": 20015,
+          "score": 0.9999890327453613
+        },
+        {
+          "id": "E344",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 20108,
+          "end": 20113,
+          "score": 0.9999878406524658
+        },
+        {
+          "id": "E349",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 20194,
+          "end": 20199,
+          "score": 0.9999890327453613
+        },
+        {
+          "id": "E353",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 20323,
+          "end": 20328,
+          "score": 0.9999828338623047
+        },
+        {
+          "id": "E356",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 20365,
+          "end": 20370,
+          "score": 0.9999887943267822
+        },
+        {
+          "id": "E357",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 20446,
+          "end": 20451,
+          "score": 0.9999895095825195
+        },
+        {
+          "id": "E360",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 20540,
+          "end": 20545,
+          "score": 0.9999892711639404
+        },
+        {
+          "id": "E362",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 20644,
+          "end": 20649,
+          "score": 0.9999865293502808
+        },
+        {
+          "id": "E365",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 20702,
+          "end": 20707,
+          "score": 0.9999890327453613
+        },
+        {
+          "id": "E368",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 20795,
+          "end": 20800,
+          "score": 0.9999898672103882
+        },
+        {
+          "id": "E369",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 20838,
+          "end": 20843,
+          "score": 0.9999898672103882
+        },
+        {
+          "id": "E371",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 21173,
+          "end": 21178,
+          "score": 0.9999874830245972
+        },
+        {
+          "id": "E376",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 21283,
+          "end": 21288,
+          "score": 0.9999814033508301
+        },
+        {
+          "id": "E382",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 21518,
+          "end": 21523,
+          "score": 0.9999842643737793
+        },
+        {
+          "id": "E388",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 21614,
+          "end": 21619,
+          "score": 0.999984622001648
+        },
+        {
+          "id": "E391",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 21703,
+          "end": 21708,
+          "score": 0.999984860420227
+        },
+        {
+          "id": "E393",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 21724,
+          "end": 21729,
+          "score": 0.9999856948852539
+        },
+        {
+          "id": "E398",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 21855,
+          "end": 21860,
+          "score": 0.999984860420227
+        },
+        {
+          "id": "E400",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 21876,
+          "end": 21881,
+          "score": 0.9999781847000122
+        },
+        {
+          "id": "E408",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 22322,
+          "end": 22327,
+          "score": 0.9999876022338867
+        },
+        {
+          "id": "E410",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 22424,
+          "end": 22429,
+          "score": 0.9999874830245972
+        },
+        {
+          "id": "E414",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 22579,
+          "end": 22584,
+          "score": 0.9999842643737793
+        },
+        {
+          "id": "E420",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 22722,
+          "end": 22727,
+          "score": 0.9999841451644897
+        },
+        {
+          "id": "E429",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 23004,
+          "end": 23009,
+          "score": 0.9999822378158569
+        },
+        {
+          "id": "E438",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 23211,
+          "end": 23216,
+          "score": 0.99998939037323
+        },
+        {
+          "id": "E446",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 23435,
+          "end": 23440,
+          "score": 0.999988317489624
+        },
+        {
+          "id": "E451",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 23741,
+          "end": 23746,
+          "score": 0.9999862909317017
+        },
+        {
+          "id": "E460",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 24063,
+          "end": 24068,
+          "score": 0.9999877214431763
+        },
+        {
+          "id": "E469",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 24518,
+          "end": 24523,
+          "score": 0.9999886751174927
+        },
+        {
+          "id": "E471",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 24693,
+          "end": 24698,
+          "score": 0.9999881982803345
+        },
+        {
+          "id": "E482",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 24948,
+          "end": 24953,
+          "score": 0.9999877214431763
+        },
+        {
+          "id": "E490",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 25313,
+          "end": 25318,
+          "score": 0.9999860525131226
+        },
+        {
+          "id": "E500",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 25692,
+          "end": 25697,
+          "score": 0.9999852180480957
+        },
+        {
+          "id": "E511",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 25953,
+          "end": 25958,
+          "score": 0.9999890327453613
+        },
+        {
+          "id": "E513",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 26128,
+          "end": 26133,
+          "score": 0.9999879598617554
+        },
+        {
+          "id": "E519",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 26287,
+          "end": 26292,
+          "score": 0.9999884366989136
+        },
+        {
+          "id": "E532",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 26612,
+          "end": 26617,
+          "score": 0.9999874830245972
+        },
+        {
+          "id": "E537",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 26728,
+          "end": 26733,
+          "score": 0.9999889135360718
+        },
+        {
+          "id": "E540",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 26864,
+          "end": 26869,
+          "score": 0.9999884366989136
+        },
+        {
+          "id": "E542",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 26927,
+          "end": 26932,
+          "score": 0.9999889135360718
+        },
+        {
+          "id": "E544",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 26985,
+          "end": 26990,
+          "score": 0.9999872446060181
+        },
+        {
+          "id": "E554",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 27237,
+          "end": 27242,
+          "score": 0.9999879598617554
+        },
+        {
+          "id": "E559",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 27386,
+          "end": 27391,
+          "score": 0.9999879598617554
+        },
+        {
+          "id": "E564",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 27580,
+          "end": 27585,
+          "score": 0.999987006187439
+        },
+        {
+          "id": "E574",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 27782,
+          "end": 27787,
+          "score": 0.999987006187439
+        },
+        {
+          "id": "E577",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 28043,
+          "end": 28048,
+          "score": 0.999987006187439
+        },
+        {
+          "id": "E584",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 28513,
+          "end": 28518,
+          "score": 0.9999890327453613
+        },
+        {
+          "id": "E587",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 28699,
+          "end": 28704,
+          "score": 0.9999896287918091
+        },
+        {
+          "id": "E589",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 28987,
+          "end": 28992,
+          "score": 0.9999898672103882
+        },
+        {
+          "id": "E602",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 29658,
+          "end": 29663,
+          "score": 0.9999856948852539
+        },
+        {
+          "id": "E608",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 30288,
+          "end": 30293,
+          "score": 0.9999898672103882
+        },
+        {
+          "id": "E611",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 30434,
+          "end": 30439,
+          "score": 0.9999895095825195
+        },
+        {
+          "id": "E612",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 30620,
+          "end": 30625,
+          "score": 0.9999895095825195
+        },
+        {
+          "id": "E623",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 32066,
+          "end": 32071,
+          "score": 0.9999887943267822
+        },
+        {
+          "id": "E636",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 32968,
+          "end": 32973,
+          "score": 0.9999899864196777
+        },
+        {
+          "id": "E640",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 33110,
+          "end": 33115,
+          "score": 0.9999902248382568
+        },
+        {
+          "id": "E645",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 33261,
+          "end": 33266,
+          "score": 0.9999903440475464
+        },
+        {
+          "id": "E650",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 33435,
+          "end": 33440,
+          "score": 0.9999899864196777
+        },
+        {
+          "id": "E651",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 33608,
+          "end": 33613,
+          "score": 0.9999901056289673
+        },
+        {
+          "id": "E654",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 33825,
+          "end": 33830,
+          "score": 0.9999892711639404
+        },
+        {
+          "id": "E655",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 34056,
+          "end": 34061,
+          "score": 0.9999897480010986
+        },
+        {
+          "id": "E659",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 34257,
+          "end": 34262,
+          "score": 0.9999847412109375
+        },
+        {
+          "id": "E664",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 34402,
+          "end": 34407,
+          "score": 0.9999827146530151
+        },
+        {
+          "id": "E666",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 34523,
+          "end": 34528,
+          "score": 0.9999867677688599
+        },
+        {
+          "id": "E668",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 34725,
+          "end": 34730,
+          "score": 0.9999889135360718
+        },
+        {
+          "id": "E670",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 34845,
+          "end": 34850,
+          "score": 0.9999889135360718
+        },
+        {
+          "id": "E674",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 34987,
+          "end": 34992,
+          "score": 0.9999887943267822
+        },
+        {
+          "id": "E678",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 35142,
+          "end": 35147,
+          "score": 0.9999898672103882
+        },
+        {
+          "id": "E680",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 35241,
+          "end": 35246,
+          "score": 0.9999898672103882
+        },
+        {
+          "id": "E681",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 35328,
+          "end": 35333,
+          "score": 0.9999898672103882
+        },
+        {
+          "id": "E682",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 35412,
+          "end": 35417,
+          "score": 0.9999897480010986
+        },
+        {
+          "id": "E689",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 35950,
+          "end": 35955,
+          "score": 0.9999873638153076
+        },
+        {
+          "id": "E698",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 36512,
+          "end": 36517,
+          "score": 0.9999880790710449
+        },
+        {
+          "id": "E705",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 36901,
+          "end": 36906,
+          "score": 0.9999897480010986
+        },
+        {
+          "id": "E708",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 37020,
+          "end": 37025,
+          "score": 0.9999887943267822
+        },
+        {
+          "id": "E713",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 37208,
+          "end": 37213,
+          "score": 0.9999871253967285
+        },
+        {
+          "id": "E718",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 37317,
+          "end": 37322,
+          "score": 0.9999895095825195
+        },
+        {
+          "id": "E720",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 37431,
+          "end": 37436,
+          "score": 0.9999891519546509
+        },
+        {
+          "id": "E723",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 37618,
+          "end": 37623,
+          "score": 0.9999887943267822
+        },
+        {
+          "id": "E726",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 37775,
+          "end": 37780,
+          "score": 0.9999895095825195
+        },
+        {
+          "id": "E733",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 38136,
+          "end": 38141,
+          "score": 0.9999891519546509
+        },
+        {
+          "id": "E736",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 38221,
+          "end": 38226,
+          "score": 0.99998939037323
+        },
+        {
+          "id": "E740",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 38371,
+          "end": 38376,
+          "score": 0.9999899864196777
+        },
+        {
+          "id": "E744",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 38444,
+          "end": 38449,
+          "score": 0.9999895095825195
+        },
+        {
+          "id": "E755",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 39065,
+          "end": 39070,
+          "score": 0.9999897480010986
+        },
+        {
+          "id": "E758",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 39320,
+          "end": 39325,
+          "score": 0.9999898672103882
+        },
+        {
+          "id": "E760",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 39411,
+          "end": 39416,
+          "score": 0.9999897480010986
+        },
+        {
+          "id": "E766",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 39738,
+          "end": 39743,
+          "score": 0.9999896287918091
+        },
+        {
+          "id": "E768",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 39825,
+          "end": 39830,
+          "score": 0.9999898672103882
+        },
+        {
+          "id": "E771",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 39919,
+          "end": 39924,
+          "score": 0.9999896287918091
+        },
+        {
+          "id": "E772",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 40046,
+          "end": 40051,
+          "score": 0.9999891519546509
+        },
+        {
+          "id": "E777",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 40412,
+          "end": 40417,
+          "score": 0.9999890327453613
+        },
+        {
+          "id": "E785",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 40899,
+          "end": 40904,
+          "score": 0.9999873638153076
+        },
+        {
+          "id": "E801",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 41869,
+          "end": 41874,
+          "score": 0.9999899864196777
+        },
+        {
+          "id": "E810",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 42230,
+          "end": 42235,
+          "score": 0.99998939037323
+        },
+        {
+          "id": "E816",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 42768,
+          "end": 42773,
+          "score": 0.9999891519546509
+        },
+        {
+          "id": "E820",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 43091,
+          "end": 43096,
+          "score": 0.9999896287918091
+        },
+        {
+          "id": "E821",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 43244,
+          "end": 43249,
+          "score": 0.9999897480010986
+        },
+        {
+          "id": "E829",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 44172,
+          "end": 44177,
+          "score": 0.9999895095825195
+        },
+        {
+          "id": "E833",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 44289,
+          "end": 44294,
+          "score": 0.9999898672103882
+        },
+        {
+          "id": "E844",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 44727,
+          "end": 44732,
+          "score": 0.9999885559082031
+        },
+        {
+          "id": "E850",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 45095,
+          "end": 45100,
+          "score": 0.9999892711639404
+        },
+        {
+          "id": "E852",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 45188,
+          "end": 45193,
+          "score": 0.9999895095825195
+        },
+        {
+          "id": "E854",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 45371,
+          "end": 45376,
+          "score": 0.9999896287918091
+        },
+        {
+          "id": "E857",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 45498,
+          "end": 45503,
+          "score": 0.9999895095825195
+        },
+        {
+          "id": "E859",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 45608,
+          "end": 45613,
+          "score": 0.9999896287918091
+        },
+        {
+          "id": "E860",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 45779,
+          "end": 45784,
+          "score": 0.9999899864196777
+        },
+        {
+          "id": "E862",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 45849,
+          "end": 45854,
+          "score": 0.9999899864196777
+        },
+        {
+          "id": "E864",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 46046,
+          "end": 46051,
+          "score": 0.9999896287918091
+        },
+        {
+          "id": "E867",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 46200,
+          "end": 46205,
+          "score": 0.9999889135360718
+        },
+        {
+          "id": "E871",
+          "text": "HMGB1",
+          "type": "Gene",
+          "start": 46402,
+          "end": 46407,
+          "score": 0.9999895095825195
+        }
+      ]
+    },
+    {
+      "id": "doc_e_003",
+      "label": "hyperglycemia",
+      "type": "Disease",
+      "aliases": [
+        "hyperglycemia",
+        "Hyperglycemia"
+      ],
+      "mentions": [
+        {
+          "id": "E3",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 65,
+          "end": 78,
+          "score": 0.9999860525131226
+        },
+        {
+          "id": "E8",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 190,
+          "end": 203,
+          "score": 0.9999860525131226
+        },
+        {
+          "id": "E12",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 489,
+          "end": 502,
+          "score": 0.9999860525131226
+        },
+        {
+          "id": "E16",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 658,
+          "end": 671,
+          "score": 0.999985933303833
+        },
+        {
+          "id": "E38",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 1597,
+          "end": 1610,
+          "score": 0.9999861717224121
+        },
+        {
+          "id": "E40",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 1792,
+          "end": 1805,
+          "score": 0.9999860525131226
+        },
+        {
+          "id": "E59",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 2915,
+          "end": 2928,
+          "score": 0.999985933303833
+        },
+        {
+          "id": "E72",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 3940,
+          "end": 3953,
+          "score": 0.9999856948852539
+        },
+        {
+          "id": "E104",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 5578,
+          "end": 5591,
+          "score": 0.9999860525131226
+        },
+        {
+          "id": "E122",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 6619,
+          "end": 6632,
+          "score": 0.9999854564666748
+        },
+        {
+          "id": "E163",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 8993,
+          "end": 9006,
+          "score": 0.9999856948852539
+        },
+        {
+          "id": "E199",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 11363,
+          "end": 11376,
+          "score": 0.9999849796295166
+        },
+        {
+          "id": "E234",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 12777,
+          "end": 12790,
+          "score": 0.9999853372573853
+        },
+        {
+          "id": "E318",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 18977,
+          "end": 18990,
+          "score": 0.9999856948852539
+        },
+        {
+          "id": "E327",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 19226,
+          "end": 19239,
+          "score": 0.9999858140945435
+        },
+        {
+          "id": "E330",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 19322,
+          "end": 19335,
+          "score": 0.9999858140945435
+        },
+        {
+          "id": "E372",
+          "text": "Hyperglycemia",
+          "type": "Disease",
+          "start": 21192,
+          "end": 21205,
+          "score": 0.9999856948852539
+        },
+        {
+          "id": "E380",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 21436,
+          "end": 21449,
+          "score": 0.9999855756759644
+        },
+        {
+          "id": "E396",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 21778,
+          "end": 21791,
+          "score": 0.9999856948852539
+        },
+        {
+          "id": "E412",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 22499,
+          "end": 22512,
+          "score": 0.999985933303833
+        },
+        {
+          "id": "E424",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 22868,
+          "end": 22881,
+          "score": 0.9999856948852539
+        },
+        {
+          "id": "E432",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 23046,
+          "end": 23059,
+          "score": 0.9999860525131226
+        },
+        {
+          "id": "E445",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 23409,
+          "end": 23422,
+          "score": 0.9999858140945435
+        },
+        {
+          "id": "E449",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 23522,
+          "end": 23535,
+          "score": 0.9999858140945435
+        },
+        {
+          "id": "E510",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 25924,
+          "end": 25937,
+          "score": 0.9999854564666748
+        },
+        {
+          "id": "E569",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 27640,
+          "end": 27653,
+          "score": 0.9999856948852539
+        },
+        {
+          "id": "E582",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 28296,
+          "end": 28309,
+          "score": 0.9999847412109375
+        },
+        {
+          "id": "E585",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 28545,
+          "end": 28558,
+          "score": 0.9999849796295166
+        },
+        {
+          "id": "E614",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 31331,
+          "end": 31344,
+          "score": 0.9999860525131226
+        },
+        {
+          "id": "E619",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 31662,
+          "end": 31675,
+          "score": 0.9999860525131226
+        },
+        {
+          "id": "E626",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 32524,
+          "end": 32537,
+          "score": 0.9999856948852539
+        },
+        {
+          "id": "E637",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 32987,
+          "end": 33000,
+          "score": 0.9999748468399048
+        },
+        {
+          "id": "E649",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 33400,
+          "end": 33413,
+          "score": 0.9999858140945435
+        },
+        {
+          "id": "E662",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 34321,
+          "end": 34334,
+          "score": 0.9999858140945435
+        },
+        {
+          "id": "E669",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 34745,
+          "end": 34758,
+          "score": 0.9999862909317017
+        },
+        {
+          "id": "E685",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 35622,
+          "end": 35635,
+          "score": 0.9999852180480957
+        },
+        {
+          "id": "E699",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 36531,
+          "end": 36544,
+          "score": 0.9999858140945435
+        },
+        {
+          "id": "E701",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 36593,
+          "end": 36606,
+          "score": 0.9999858140945435
+        },
+        {
+          "id": "E707",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 36939,
+          "end": 36952,
+          "score": 0.999985933303833
+        },
+        {
+          "id": "E725",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 37678,
+          "end": 37691,
+          "score": 0.9999856948852539
+        },
+        {
+          "id": "E734",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 38175,
+          "end": 38188,
+          "score": 0.9999862909317017
+        },
+        {
+          "id": "E739",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 38354,
+          "end": 38367,
+          "score": 0.9999861717224121
+        },
+        {
+          "id": "E742",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 38404,
+          "end": 38417,
+          "score": 0.999983549118042
+        },
+        {
+          "id": "E750",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 38874,
+          "end": 38887,
+          "score": 0.9999858140945435
+        },
+        {
+          "id": "E754",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 39027,
+          "end": 39040,
+          "score": 0.999985933303833
+        },
+        {
+          "id": "E756",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 39173,
+          "end": 39186,
+          "score": 0.9999862909317017
+        },
+        {
+          "id": "E780",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 40595,
+          "end": 40608,
+          "score": 0.9999855756759644
+        },
+        {
+          "id": "E840",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 44549,
+          "end": 44562,
+          "score": 0.999985933303833
+        },
+        {
+          "id": "E845",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 44736,
+          "end": 44749,
+          "score": 0.9999860525131226
+        },
+        {
+          "id": "E851",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 45131,
+          "end": 45144,
+          "score": 0.9999861717224121
+        },
+        {
+          "id": "E858",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 45510,
+          "end": 45523,
+          "score": 0.9999862909317017
+        },
+        {
+          "id": "E863",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 45908,
+          "end": 45921,
+          "score": 0.9999861717224121
+        },
+        {
+          "id": "E865",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 46063,
+          "end": 46076,
+          "score": 0.999985933303833
+        },
+        {
+          "id": "E868",
+          "text": "hyperglycemia",
+          "type": "Disease",
+          "start": 46219,
+          "end": 46232,
+          "score": 0.9999861717224121
+        },
+        {
+          "id": "E872",
+          "text": "Hyperglycemia",
+          "type": "Disease",
+          "start": 46428,
+          "end": 46441,
+          "score": 0.9999862909317017
+        }
+      ]
+    },
+    {
+      "id": "doc_e_004",
+      "label": "STZ",
+      "type": "Chemical",
+      "aliases": [
+        "Streptozotocin",
+        "streptozotocin",
+        "STZ"
+      ],
+      "mentions": [
+        {
+          "id": "E4",
+          "text": "Streptozotocin",
+          "type": "Chemical",
+          "start": 84,
+          "end": 98,
+          "score": 0.9999970197677612
+        },
+        {
+          "id": "E24",
+          "text": "streptozotocin",
+          "type": "Chemical",
+          "start": 894,
+          "end": 908,
+          "score": 0.9999972581863403
+        },
+        {
+          "id": "E25",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 910,
+          "end": 913,
+          "score": 0.9999974966049194
+        },
+        {
+          "id": "E160",
+          "text": "Streptozotocin",
+          "type": "Chemical",
+          "start": 8881,
+          "end": 8895,
+          "score": 0.9999977350234985
+        },
+        {
+          "id": "E161",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 8897,
+          "end": 8900,
+          "score": 0.9999977350234985
+        },
+        {
+          "id": "E162",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 8962,
+          "end": 8965,
+          "score": 0.9999974966049194
+        },
+        {
+          "id": "E164",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 9028,
+          "end": 9031,
+          "score": 0.9999973773956299
+        },
+        {
+          "id": "E172",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 9614,
+          "end": 9617,
+          "score": 0.9999973773956299
+        },
+        {
+          "id": "E174",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 9637,
+          "end": 9640,
+          "score": 0.9999973773956299
+        },
+        {
+          "id": "E183",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 10412,
+          "end": 10415,
+          "score": 0.9999974966049194
+        },
+        {
+          "id": "E190",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 10851,
+          "end": 10854,
+          "score": 0.999997615814209
+        },
+        {
+          "id": "E192",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 10881,
+          "end": 10884,
+          "score": 0.999997615814209
+        },
+        {
+          "id": "E195",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 11320,
+          "end": 11323,
+          "score": 0.9999967813491821
+        },
+        {
+          "id": "E197",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 11344,
+          "end": 11347,
+          "score": 0.9999966621398926
+        },
+        {
+          "id": "E230",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 12736,
+          "end": 12739,
+          "score": 0.9999967813491821
+        },
+        {
+          "id": "E232",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 12758,
+          "end": 12761,
+          "score": 0.9999969005584717
+        },
+        {
+          "id": "E249",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 13643,
+          "end": 13646,
+          "score": 0.9999949932098389
+        },
+        {
+          "id": "E252",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 13672,
+          "end": 13675,
+          "score": 0.9999945163726807
+        },
+        {
+          "id": "E265",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 14906,
+          "end": 14909,
+          "score": 0.9999876022338867
+        },
+        {
+          "id": "E267",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 14935,
+          "end": 14938,
+          "score": 0.9999904632568359
+        },
+        {
+          "id": "E276",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 15563,
+          "end": 15566,
+          "score": 0.9999960660934448
+        },
+        {
+          "id": "E279",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 15592,
+          "end": 15595,
+          "score": 0.9999961853027344
+        },
+        {
+          "id": "E282",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 15623,
+          "end": 15626,
+          "score": 0.9999969005584717
+        },
+        {
+          "id": "E287",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 16338,
+          "end": 16341,
+          "score": 0.9999948740005493
+        },
+        {
+          "id": "E290",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 16367,
+          "end": 16370,
+          "score": 0.9999943971633911
+        },
+        {
+          "id": "E301",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 18192,
+          "end": 18195,
+          "score": 0.9999904632568359
+        },
+        {
+          "id": "E303",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 18215,
+          "end": 18218,
+          "score": 0.9999901056289673
+        },
+        {
+          "id": "E306",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 18326,
+          "end": 18329,
+          "score": 0.9999884366989136
+        },
+        {
+          "id": "E320",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 19053,
+          "end": 19056,
+          "score": 0.999997615814209
+        },
+        {
+          "id": "E321",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 19101,
+          "end": 19104,
+          "score": 0.9999977350234985
+        },
+        {
+          "id": "E322",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 19136,
+          "end": 19139,
+          "score": 0.999997615814209
+        },
+        {
+          "id": "E323",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 19147,
+          "end": 19150,
+          "score": 0.999997615814209
+        },
+        {
+          "id": "E328",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 19263,
+          "end": 19266,
+          "score": 0.9999974966049194
+        },
+        {
+          "id": "E329",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 19277,
+          "end": 19280,
+          "score": 0.999997615814209
+        },
+        {
+          "id": "E332",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 19429,
+          "end": 19432,
+          "score": 0.999997615814209
+        },
+        {
+          "id": "E333",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 19449,
+          "end": 19452,
+          "score": 0.999997615814209
+        },
+        {
+          "id": "E336",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 19613,
+          "end": 19616,
+          "score": 0.999997615814209
+        },
+        {
+          "id": "E338",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 19704,
+          "end": 19707,
+          "score": 0.9999974966049194
+        },
+        {
+          "id": "E339",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 19788,
+          "end": 19791,
+          "score": 0.999997615814209
+        },
+        {
+          "id": "E340",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 19830,
+          "end": 19833,
+          "score": 0.999997615814209
+        },
+        {
+          "id": "E352",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 20315,
+          "end": 20318,
+          "score": 0.9999964237213135
+        },
+        {
+          "id": "E354",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 20338,
+          "end": 20341,
+          "score": 0.9999961853027344
+        },
+        {
+          "id": "E358",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 20469,
+          "end": 20472,
+          "score": 0.9999920129776001
+        },
+        {
+          "id": "E361",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 20636,
+          "end": 20639,
+          "score": 0.9999943971633911
+        },
+        {
+          "id": "E363",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 20659,
+          "end": 20662,
+          "score": 0.9999954700469971
+        },
+        {
+          "id": "E366",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 20736,
+          "end": 20739,
+          "score": 0.999995231628418
+        },
+        {
+          "id": "E375",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 21275,
+          "end": 21278,
+          "score": 0.9999955892562866
+        },
+        {
+          "id": "E377",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 21298,
+          "end": 21301,
+          "score": 0.999993085861206
+        },
+        {
+          "id": "E383",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 21533,
+          "end": 21536,
+          "score": 0.9999971389770508
+        },
+        {
+          "id": "E384",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 21555,
+          "end": 21558,
+          "score": 0.9999970197677612
+        },
+        {
+          "id": "E386",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 21574,
+          "end": 21577,
+          "score": 0.9999974966049194
+        },
+        {
+          "id": "E387",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 21603,
+          "end": 21606,
+          "score": 0.9999973773956299
+        },
+        {
+          "id": "E389",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 21629,
+          "end": 21632,
+          "score": 0.9999972581863403
+        },
+        {
+          "id": "E392",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 21716,
+          "end": 21719,
+          "score": 0.9999971389770508
+        },
+        {
+          "id": "E394",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 21739,
+          "end": 21742,
+          "score": 0.9999972581863403
+        },
+        {
+          "id": "E399",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 21868,
+          "end": 21871,
+          "score": 0.9999973773956299
+        },
+        {
+          "id": "E401",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 21891,
+          "end": 21894,
+          "score": 0.9999972581863403
+        },
+        {
+          "id": "E406",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 22260,
+          "end": 22263,
+          "score": 0.999997615814209
+        },
+        {
+          "id": "E418",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 22623,
+          "end": 22626,
+          "score": 0.9999974966049194
+        },
+        {
+          "id": "E421",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 22737,
+          "end": 22740,
+          "score": 0.9999972581863403
+        },
+        {
+          "id": "E422",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 22759,
+          "end": 22762,
+          "score": 0.9999973773956299
+        },
+        {
+          "id": "E423",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 22814,
+          "end": 22817,
+          "score": 0.9999974966049194
+        },
+        {
+          "id": "E426",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 22907,
+          "end": 22910,
+          "score": 0.9999971389770508
+        },
+        {
+          "id": "E430",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 23019,
+          "end": 23022,
+          "score": 0.9999969005584717
+        },
+        {
+          "id": "E435",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 23120,
+          "end": 23123,
+          "score": 0.9999969005584717
+        },
+        {
+          "id": "E437",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 23183,
+          "end": 23186,
+          "score": 0.9999971389770508
+        },
+        {
+          "id": "E439",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 23226,
+          "end": 23229,
+          "score": 0.9999969005584717
+        },
+        {
+          "id": "E443",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 23376,
+          "end": 23379,
+          "score": 0.9999971389770508
+        },
+        {
+          "id": "E447",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 23450,
+          "end": 23453,
+          "score": 0.9999970197677612
+        },
+        {
+          "id": "E452",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 23756,
+          "end": 23759,
+          "score": 0.9999973773956299
+        },
+        {
+          "id": "E454",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 23778,
+          "end": 23781,
+          "score": 0.9999973773956299
+        },
+        {
+          "id": "E459",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 23995,
+          "end": 23998,
+          "score": 0.999997615814209
+        },
+        {
+          "id": "E461",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 24073,
+          "end": 24076,
+          "score": 0.9999971389770508
+        },
+        {
+          "id": "E467",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 24457,
+          "end": 24460,
+          "score": 0.9999958276748657
+        },
+        {
+          "id": "E472",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 24708,
+          "end": 24711,
+          "score": 0.9999970197677612
+        },
+        {
+          "id": "E474",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 24730,
+          "end": 24733,
+          "score": 0.9999972581863403
+        },
+        {
+          "id": "E476",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 24757,
+          "end": 24760,
+          "score": 0.9999972581863403
+        },
+        {
+          "id": "E479",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 24854,
+          "end": 24857,
+          "score": 0.9999973773956299
+        },
+        {
+          "id": "E483",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 24963,
+          "end": 24966,
+          "score": 0.9999972581863403
+        },
+        {
+          "id": "E488",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 25227,
+          "end": 25230,
+          "score": 0.9999970197677612
+        },
+        {
+          "id": "E491",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 25328,
+          "end": 25331,
+          "score": 0.9999969005584717
+        },
+        {
+          "id": "E498",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 25671,
+          "end": 25674,
+          "score": 0.9999873638153076
+        },
+        {
+          "id": "E501",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 25707,
+          "end": 25710,
+          "score": 0.9999871253967285
+        },
+        {
+          "id": "E504",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 25747,
+          "end": 25750,
+          "score": 0.9999867677688599
+        },
+        {
+          "id": "E514",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 26143,
+          "end": 26146,
+          "score": 0.9999970197677612
+        },
+        {
+          "id": "E516",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 26165,
+          "end": 26168,
+          "score": 0.9999971389770508
+        },
+        {
+          "id": "E520",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 26302,
+          "end": 26305,
+          "score": 0.9999970197677612
+        },
+        {
+          "id": "E525",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 26415,
+          "end": 26418,
+          "score": 0.9999970197677612
+        },
+        {
+          "id": "E530",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 26563,
+          "end": 26566,
+          "score": 0.9999964237213135
+        },
+        {
+          "id": "E533",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 26627,
+          "end": 26630,
+          "score": 0.999996542930603
+        },
+        {
+          "id": "E545",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 27000,
+          "end": 27003,
+          "score": 0.9999960660934448
+        },
+        {
+          "id": "E550",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 27149,
+          "end": 27152,
+          "score": 0.9999957084655762
+        },
+        {
+          "id": "E555",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 27252,
+          "end": 27255,
+          "score": 0.9999964237213135
+        },
+        {
+          "id": "E565",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 27595,
+          "end": 27598,
+          "score": 0.9999969005584717
+        },
+        {
+          "id": "E567",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 27617,
+          "end": 27620,
+          "score": 0.9999969005584717
+        },
+        {
+          "id": "E571",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 27707,
+          "end": 27710,
+          "score": 0.9999970197677612
+        },
+        {
+          "id": "E575",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 27797,
+          "end": 27800,
+          "score": 0.9999970197677612
+        },
+        {
+          "id": "E578",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 28058,
+          "end": 28061,
+          "score": 0.9999970197677612
+        },
+        {
+          "id": "E580",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 28080,
+          "end": 28083,
+          "score": 0.9999970197677612
+        },
+        {
+          "id": "E606",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 29904,
+          "end": 29907,
+          "score": 0.9999793767929077
+        },
+        {
+          "id": "E616",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 31511,
+          "end": 31514,
+          "score": 0.9999947547912598
+        },
+        {
+          "id": "E687",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 35679,
+          "end": 35682,
+          "score": 0.9999972581863403
+        },
+        {
+          "id": "E692",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 36042,
+          "end": 36045,
+          "score": 0.9999973773956299
+        },
+        {
+          "id": "E694",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 36325,
+          "end": 36328,
+          "score": 0.9999974966049194
+        },
+        {
+          "id": "E697",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 36453,
+          "end": 36456,
+          "score": 0.9999974966049194
+        },
+        {
+          "id": "E704",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 36683,
+          "end": 36686,
+          "score": 0.9999974966049194
+        },
+        {
+          "id": "E712",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 37159,
+          "end": 37162,
+          "score": 0.9999971389770508
+        },
+        {
+          "id": "E714",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 37223,
+          "end": 37226,
+          "score": 0.9999966621398926
+        },
+        {
+          "id": "E716",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 37245,
+          "end": 37248,
+          "score": 0.9999966621398926
+        },
+        {
+          "id": "E730",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 38017,
+          "end": 38020,
+          "score": 0.9999966621398926
+        },
+        {
+          "id": "E737",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 38236,
+          "end": 38239,
+          "score": 0.9999966621398926
+        },
+        {
+          "id": "E786",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 40914,
+          "end": 40917,
+          "score": 0.9999954700469971
+        },
+        {
+          "id": "E790",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 41014,
+          "end": 41017,
+          "score": 0.9999961853027344
+        },
+        {
+          "id": "E839",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 44537,
+          "end": 44540,
+          "score": 0.9999973773956299
+        },
+        {
+          "id": "E848",
+          "text": "STZ",
+          "type": "Chemical",
+          "start": 44970,
+          "end": 44973,
+          "score": 0.999997615814209
+        },
+        {
+          "id": "E873",
+          "text": "Streptozotocin",
+          "type": "Chemical",
+          "start": 46447,
+          "end": 46461,
+          "score": 0.9999971389770508
+        }
+      ]
+    },
+    {
+      "id": "doc_e_005",
+      "label": "mouse",
+      "type": "Species",
+      "aliases": [
+        "mouse",
+        "Mouse"
+      ],
+      "mentions": [
+        {
+          "id": "E5",
+          "text": "mouse",
+          "type": "Species",
+          "start": 107,
+          "end": 112,
+          "score": 0.9999873638153076
+        },
+        {
+          "id": "E21",
+          "text": "mouse",
+          "type": "Species",
+          "start": 794,
+          "end": 799,
+          "score": 0.9999874830245972
+        },
+        {
+          "id": "E128",
+          "text": "mouse",
+          "type": "Species",
+          "start": 7467,
+          "end": 7472,
+          "score": 0.9999868869781494
+        },
+        {
+          "id": "E130",
+          "text": "mouse",
+          "type": "Species",
+          "start": 7639,
+          "end": 7644,
+          "score": 0.9999868869781494
+        },
+        {
+          "id": "E133",
+          "text": "mouse",
+          "type": "Species",
+          "start": 7809,
+          "end": 7814,
+          "score": 0.9999867677688599
+        },
+        {
+          "id": "E193",
+          "text": "mouse",
+          "type": "Species",
+          "start": 10897,
+          "end": 10902,
+          "score": 0.9999873638153076
+        },
+        {
+          "id": "E206",
+          "text": "Mouse",
+          "type": "Species",
+          "start": 11782,
+          "end": 11787,
+          "score": 0.9999868869781494
+        },
+        {
+          "id": "E284",
+          "text": "mouse",
+          "type": "Species",
+          "start": 15813,
+          "end": 15818,
+          "score": 0.9999878406524658
+        },
+        {
+          "id": "E285",
+          "text": "mouse",
+          "type": "Species",
+          "start": 16051,
+          "end": 16056,
+          "score": 0.9999877214431763
+        },
+        {
+          "id": "E675",
+          "text": "mouse",
+          "type": "Species",
+          "start": 34996,
+          "end": 35001,
+          "score": 0.9999877214431763
+        },
+        {
+          "id": "E677",
+          "text": "mouse",
+          "type": "Species",
+          "start": 35029,
+          "end": 35034,
+          "score": 0.9999876022338867
+        },
+        {
+          "id": "E781",
+          "text": "mouse",
+          "type": "Species",
+          "start": 40628,
+          "end": 40633,
+          "score": 0.9999879598617554
+        },
+        {
+          "id": "E841",
+          "text": "mouse",
+          "type": "Species",
+          "start": 44563,
+          "end": 44568,
+          "score": 0.9999878406524658
+        },
+        {
+          "id": "E874",
+          "text": "Mouse",
+          "type": "Species",
+          "start": 46470,
+          "end": 46475,
+          "score": 0.9999855756759644
+        }
+      ]
+    },
+    {
+      "id": "doc_e_006",
+      "label": "DM",
+      "type": "Disease",
+      "aliases": [
+        "Diabetes mellitus",
+        "DM"
+      ],
+      "mentions": [
+        {
+          "id": "E6",
+          "text": "Diabetes mellitus",
+          "type": "Disease",
+          "start": 120,
+          "end": 137,
+          "score": 0.9999906420707703
+        },
+        {
+          "id": "E7",
+          "text": "DM",
+          "type": "Disease",
+          "start": 139,
+          "end": 141,
+          "score": 0.999985933303833
+        },
+        {
+          "id": "E14",
+          "text": "DM",
+          "type": "Disease",
+          "start": 581,
+          "end": 583,
+          "score": 0.9999864101409912
+        },
+        {
+          "id": "E41",
+          "text": "DM",
+          "type": "Disease",
+          "start": 1829,
+          "end": 1831,
+          "score": 0.9999861717224121
+        },
+        {
+          "id": "E43",
+          "text": "DM",
+          "type": "Disease",
+          "start": 2088,
+          "end": 2090,
+          "score": 0.9999862909317017
+        },
+        {
+          "id": "E44",
+          "text": "Diabetes mellitus",
+          "type": "Disease",
+          "start": 2104,
+          "end": 2121,
+          "score": 0.9999911785125732
+        },
+        {
+          "id": "E45",
+          "text": "DM",
+          "type": "Disease",
+          "start": 2123,
+          "end": 2125,
+          "score": 0.9999862909317017
+        },
+        {
+          "id": "E47",
+          "text": "DM",
+          "type": "Disease",
+          "start": 2383,
+          "end": 2385,
+          "score": 0.9999862909317017
+        },
+        {
+          "id": "E48",
+          "text": "DM",
+          "type": "Disease",
+          "start": 2525,
+          "end": 2527,
+          "score": 0.9999864101409912
+        },
+        {
+          "id": "E52",
+          "text": "DM",
+          "type": "Disease",
+          "start": 2713,
+          "end": 2715,
+          "score": 0.9999864101409912
+        },
+        {
+          "id": "E61",
+          "text": "DM",
+          "type": "Disease",
+          "start": 3119,
+          "end": 3121,
+          "score": 0.9999860525131226
+        },
+        {
+          "id": "E64",
+          "text": "DM",
+          "type": "Disease",
+          "start": 3340,
+          "end": 3342,
+          "score": 0.9999860525131226
+        },
+        {
+          "id": "E66",
+          "text": "DM",
+          "type": "Disease",
+          "start": 3483,
+          "end": 3485,
+          "score": 0.9999860525131226
+        },
+        {
+          "id": "E68",
+          "text": "DM",
+          "type": "Disease",
+          "start": 3728,
+          "end": 3730,
+          "score": 0.9999862909317017
+        },
+        {
+          "id": "E69",
+          "text": "DM",
+          "type": "Disease",
+          "start": 3759,
+          "end": 3761,
+          "score": 0.9999862909317017
+        },
+        {
+          "id": "E73",
+          "text": "DM",
+          "type": "Disease",
+          "start": 3957,
+          "end": 3959,
+          "score": 0.9999861717224121
+        },
+        {
+          "id": "E75",
+          "text": "DM",
+          "type": "Disease",
+          "start": 4118,
+          "end": 4120,
+          "score": 0.9999856948852539
+        },
+        {
+          "id": "E80",
+          "text": "DM",
+          "type": "Disease",
+          "start": 4475,
+          "end": 4477,
+          "score": 0.9996035695075989
+        },
+        {
+          "id": "E95",
+          "text": "DM",
+          "type": "Disease",
+          "start": 5095,
+          "end": 5097,
+          "score": 0.9999860525131226
+        },
+        {
+          "id": "E111",
+          "text": "DM",
+          "type": "Disease",
+          "start": 6079,
+          "end": 6081,
+          "score": 0.9999860525131226
+        },
+        {
+          "id": "E119",
+          "text": "DM",
+          "type": "Disease",
+          "start": 6493,
+          "end": 6495,
+          "score": 0.9999860525131226
+        },
+        {
+          "id": "E123",
+          "text": "DM",
+          "type": "Disease",
+          "start": 6649,
+          "end": 6651,
+          "score": 0.9999864101409912
+        },
+        {
+          "id": "E561",
+          "text": "DM",
+          "type": "Disease",
+          "start": 27490,
+          "end": 27492,
+          "score": 0.999985933303833
+        },
+        {
+          "id": "E613",
+          "text": "DM",
+          "type": "Disease",
+          "start": 31324,
+          "end": 31326,
+          "score": 0.9999862909317017
+        },
+        {
+          "id": "E618",
+          "text": "DM",
+          "type": "Disease",
+          "start": 31655,
+          "end": 31657,
+          "score": 0.9999860525131226
+        },
+        {
+          "id": "E625",
+          "text": "DM",
+          "type": "Disease",
+          "start": 32517,
+          "end": 32519,
+          "score": 0.9999858140945435
+        },
+        {
+          "id": "E646",
+          "text": "DM",
+          "type": "Disease",
+          "start": 33277,
+          "end": 33279,
+          "score": 0.9999860525131226
+        },
+        {
+          "id": "E648",
+          "text": "DM",
+          "type": "Disease",
+          "start": 33393,
+          "end": 33395,
+          "score": 0.9999841451644897
+        },
+        {
+          "id": "E656",
+          "text": "DM",
+          "type": "Disease",
+          "start": 34169,
+          "end": 34171,
+          "score": 0.9999862909317017
+        },
+        {
+          "id": "E661",
+          "text": "DM",
+          "type": "Disease",
+          "start": 34307,
+          "end": 34309,
+          "score": 0.9999761581420898
+        },
+        {
+          "id": "E665",
+          "text": "DM",
+          "type": "Disease",
+          "start": 34412,
+          "end": 34414,
+          "score": 0.9999862909317017
+        },
+        {
+          "id": "E686",
+          "text": "DM",
+          "type": "Disease",
+          "start": 35640,
+          "end": 35642,
+          "score": 0.9999861717224121
+        },
+        {
+          "id": "E724",
+          "text": "DM",
+          "type": "Disease",
+          "start": 37671,
+          "end": 37673,
+          "score": 0.999985933303833
+        },
+        {
+          "id": "E762",
+          "text": "DM",
+          "type": "Disease",
+          "start": 39519,
+          "end": 39521,
+          "score": 0.999985933303833
+        },
+        {
+          "id": "E775",
+          "text": "DM",
+          "type": "Disease",
+          "start": 40135,
+          "end": 40137,
+          "score": 0.9999860525131226
+        },
+        {
+          "id": "E796",
+          "text": "DM",
+          "type": "Disease",
+          "start": 41632,
+          "end": 41634,
+          "score": 0.9999860525131226
+        },
+        {
+          "id": "E798",
+          "text": "DM",
+          "type": "Disease",
+          "start": 41703,
+          "end": 41705,
+          "score": 0.9999858140945435
+        },
+        {
+          "id": "E800",
+          "text": "DM",
+          "type": "Disease",
+          "start": 41786,
+          "end": 41788,
+          "score": 0.9999861717224121
+        },
+        {
+          "id": "E815",
+          "text": "DM",
+          "type": "Disease",
+          "start": 42462,
+          "end": 42464,
+          "score": 0.9999858140945435
+        },
+        {
+          "id": "E836",
+          "text": "DM",
+          "type": "Disease",
+          "start": 44368,
+          "end": 44370,
+          "score": 0.9999858140945435
+        },
+        {
+          "id": "E838",
+          "text": "DM",
+          "type": "Disease",
+          "start": 44421,
+          "end": 44423,
+          "score": 0.9999862909317017
+        },
+        {
+          "id": "E843",
+          "text": "DM",
+          "type": "Disease",
+          "start": 44663,
+          "end": 44665,
+          "score": 0.9999865293502808
+        },
+        {
+          "id": "E846",
+          "text": "DM",
+          "type": "Disease",
+          "start": 44800,
+          "end": 44802,
+          "score": 0.9999864101409912
+        },
+        {
+          "id": "E853",
+          "text": "DM",
+          "type": "Disease",
+          "start": 45233,
+          "end": 45235,
+          "score": 0.9999865293502808
+        },
+        {
+          "id": "E855",
+          "text": "DM",
+          "type": "Disease",
+          "start": 45406,
+          "end": 45408,
+          "score": 0.9999865293502808
+        },
+        {
+          "id": "E866",
+          "text": "DM",
+          "type": "Disease",
+          "start": 46085,
+          "end": 46087,
+          "score": 0.9999865293502808
+        },
+        {
+          "id": "E869",
+          "text": "DM",
+          "type": "Disease",
+          "start": 46237,
+          "end": 46239,
+          "score": 0.9999865293502808
+        }
+      ]
+    },
+    {
+      "id": "doc_e_007",
+      "label": "inflammation",
+      "type": "Disease",
+      "aliases": [
+        "inflammation"
+      ],
+      "mentions": [
+        {
+          "id": "E13",
+          "text": "inflammation",
+          "type": "Disease",
+          "start": 539,
+          "end": 551,
+          "score": 0.9999861717224121
+        },
+        {
+          "id": "E658",
+          "text": "inflammation",
+          "type": "Disease",
+          "start": 34238,
+          "end": 34250,
+          "score": 0.9999861717224121
+        },
+        {
+          "id": "E663",
+          "text": "inflammation",
+          "type": "Disease",
+          "start": 34339,
+          "end": 34351,
+          "score": 0.9999864101409912
+        },
+        {
+          "id": "E719",
+          "text": "inflammation",
+          "type": "Disease",
+          "start": 37336,
+          "end": 37348,
+          "score": 0.9999841451644897
+        }
+      ]
+    },
+    {
+      "id": "doc_e_008",
+      "label": "tolerance",
+      "type": "Disease",
+      "aliases": [
+        "tolerance"
+      ],
+      "mentions": [
+        {
+          "id": "E18",
+          "text": "tolerance",
+          "type": "Disease",
+          "start": 701,
+          "end": 710,
+          "score": 0.9684574604034424
+        },
+        {
+          "id": "E180",
+          "text": "tolerance",
+          "type": "Disease",
+          "start": 9865,
+          "end": 9874,
+          "score": 0.9986635446548462
+        },
+        {
+          "id": "E508",
+          "text": "tolerance",
+          "type": "Disease",
+          "start": 25821,
+          "end": 25830,
+          "score": 0.5191864371299744
+        }
+      ]
+    },
+    {
+      "id": "doc_e_009",
+      "label": "iHMGB1",
+      "type": "Gene",
+      "aliases": [
+        "iHMGB1"
+      ],
+      "mentions": [
+        {
+          "id": "E20",
+          "text": "iHMGB1",
+          "type": "Gene",
+          "start": 783,
+          "end": 789,
+          "score": 0.9962314963340759
+        },
+        {
+          "id": "E106",
+          "text": "iHMGB1",
+          "type": "Gene",
+          "start": 5667,
+          "end": 5673,
+          "score": 0.9011893272399902
+        },
+        {
+          "id": "E126",
+          "text": "iHMGB1",
+          "type": "Gene",
+          "start": 7328,
+          "end": 7334,
+          "score": 0.9999743700027466
+        },
+        {
+          "id": "E129",
+          "text": "iHMGB1",
+          "type": "Gene",
+          "start": 7629,
+          "end": 7635,
+          "score": 0.9994586110115051
+        },
+        {
+          "id": "E145",
+          "text": "iHMGB1",
+          "type": "Gene",
+          "start": 8351,
+          "end": 8357,
+          "score": 0.9996969699859619
+        },
+        {
+          "id": "E150",
+          "text": "iHMGB1",
+          "type": "Gene",
+          "start": 8459,
+          "end": 8465,
+          "score": 0.9999819993972778
+        },
+        {
+          "id": "E166",
+          "text": "iHMGB1",
+          "type": "Gene",
+          "start": 9384,
+          "end": 9390,
+          "score": 0.9999794960021973
+        },
+        {
+          "id": "E171",
+          "text": "iHMGB1",
+          "type": "Gene",
+          "start": 9600,
+          "end": 9606,
+          "score": 0.9999321699142456
+        },
+        {
+          "id": "E185",
+          "text": "iHMGB1",
+          "type": "Gene",
+          "start": 10599,
+          "end": 10605,
+          "score": 0.999985933303833
+        },
+        {
+          "id": "E196",
+          "text": "iHMGB1",
+          "type": "Gene",
+          "start": 11330,
+          "end": 11336,
+          "score": 0.9999771118164062
+        },
+        {
+          "id": "E231",
+          "text": "iHMGB1",
+          "type": "Gene",
+          "start": 12744,
+          "end": 12750,
+          "score": 0.9999853372573853
+        },
+        {
+          "id": "E251",
+          "text": "iHMGB1",
+          "type": "Gene",
+          "start": 13658,
+          "end": 13664,
+          "score": 0.9999406337738037
+        },
+        {
+          "id": "E278",
+          "text": "iHMGB1",
+          "type": "Gene",
+          "start": 15578,
+          "end": 15584,
+          "score": 0.9999655485153198
+        },
+        {
+          "id": "E286",
+          "text": "iHMGB1",
+          "type": "Gene",
+          "start": 16324,
+          "end": 16330,
+          "score": 0.9999736547470093
+        },
+        {
+          "id": "E316",
+          "text": "iHMGB1",
+          "type": "Gene",
+          "start": 18814,
+          "end": 18820,
+          "score": 0.9886218905448914
+        },
+        {
+          "id": "E415",
+          "text": "iHMGB1",
+          "type": "Gene",
+          "start": 22594,
+          "end": 22600,
+          "score": 0.977188229560852
+        },
+        {
+          "id": "E425",
+          "text": "iHMGB1",
+          "type": "Gene",
+          "start": 22893,
+          "end": 22899,
+          "score": 0.997340738773346
+        },
+        {
+          "id": "E434",
+          "text": "iHMGB1",
+          "type": "Gene",
+          "start": 23106,
+          "end": 23112,
+          "score": 0.9999483823776245
+        },
+        {
+          "id": "E442",
+          "text": "iHMGB1",
+          "type": "Gene",
+          "start": 23362,
+          "end": 23368,
+          "score": 0.9999655485153198
+        },
+        {
+          "id": "E453",
+          "text": "iHMGB1",
+          "type": "Gene",
+          "start": 23764,
+          "end": 23770,
+          "score": 0.8369482159614563
+        },
+        {
+          "id": "E466",
+          "text": "iHMGB1",
+          "type": "Gene",
+          "start": 24443,
+          "end": 24449,
+          "score": 0.986972987651825
+        },
+        {
+          "id": "E473",
+          "text": "iHMGB1",
+          "type": "Gene",
+          "start": 24716,
+          "end": 24722,
+          "score": 0.9999805688858032
+        },
+        {
+          "id": "E478",
+          "text": "iHMGB1",
+          "type": "Gene",
+          "start": 24840,
+          "end": 24846,
+          "score": 0.9999728202819824
+        },
+        {
+          "id": "E487",
+          "text": "iHMGB1",
+          "type": "Gene",
+          "start": 25213,
+          "end": 25219,
+          "score": 0.9975098371505737
+        },
+        {
+          "id": "E497",
+          "text": "iHMGB1",
+          "type": "Gene",
+          "start": 25657,
+          "end": 25663,
+          "score": 0.9917258024215698
+        },
+        {
+          "id": "E503",
+          "text": "iHMGB1",
+          "type": "Gene",
+          "start": 25733,
+          "end": 25739,
+          "score": 0.9992530941963196
+        },
+        {
+          "id": "E515",
+          "text": "iHMGB1",
+          "type": "Gene",
+          "start": 26151,
+          "end": 26157,
+          "score": 0.9997583031654358
+        },
+        {
+          "id": "E524",
+          "text": "iHMGB1",
+          "type": "Gene",
+          "start": 26401,
+          "end": 26407,
+          "score": 0.9998071789741516
+        },
+        {
+          "id": "E529",
+          "text": "iHMGB1",
+          "type": "Gene",
+          "start": 26549,
+          "end": 26555,
+          "score": 0.5616253614425659
+        },
+        {
+          "id": "E549",
+          "text": "iHMGB1",
+          "type": "Gene",
+          "start": 27135,
+          "end": 27141,
+          "score": 0.9974823594093323
+        },
+        {
+          "id": "E566",
+          "text": "iHMGB1",
+          "type": "Gene",
+          "start": 27603,
+          "end": 27609,
+          "score": 0.997413694858551
+        },
+        {
+          "id": "E570",
+          "text": "iHMGB1",
+          "type": "Gene",
+          "start": 27693,
+          "end": 27699,
+          "score": 0.9999324083328247
+        },
+        {
+          "id": "E579",
+          "text": "iHMGB1",
+          "type": "Gene",
+          "start": 28066,
+          "end": 28072,
+          "score": 0.999969482421875
+        },
+        {
+          "id": "E605",
+          "text": "iHMGB1",
+          "type": "Gene",
+          "start": 29890,
+          "end": 29896,
+          "score": 0.999969482421875
+        },
+        {
+          "id": "E615",
+          "text": "iHMGB1",
+          "type": "Gene",
+          "start": 31497,
+          "end": 31503,
+          "score": 0.9999792575836182
+        },
+        {
+          "id": "E676",
+          "text": "iHMGB1",
+          "type": "Gene",
+          "start": 35019,
+          "end": 35025,
+          "score": 0.9996615648269653
+        },
+        {
+          "id": "E715",
+          "text": "iHMGB1",
+          "type": "Gene",
+          "start": 37231,
+          "end": 37237,
+          "score": 0.8794642686843872
+        },
+        {
+          "id": "E729",
+          "text": "iHMGB1",
+          "type": "Gene",
+          "start": 38003,
+          "end": 38009,
+          "score": 0.9997265934944153
+        },
+        {
+          "id": "E789",
+          "text": "iHMGB1",
+          "type": "Gene",
+          "start": 41000,
+          "end": 41006,
+          "score": 0.9999768733978271
+        }
+      ]
+    },
+    {
+      "id": "doc_e_010",
+      "label": "Hyperglycemic",
+      "type": "Disease",
+      "aliases": [
+        "Hyperglycemic",
+        "hyperglycemic"
+      ],
+      "mentions": [
+        {
+          "id": "E23",
+          "text": "Hyperglycemic",
+          "type": "Disease",
+          "start": 843,
+          "end": 856,
+          "score": 0.9999839067459106
+        },
+        {
+          "id": "E34",
+          "text": "hyperglycemic",
+          "type": "Disease",
+          "start": 1421,
+          "end": 1434,
+          "score": 0.9999817609786987
+        },
+        {
+          "id": "E113",
+          "text": "hyperglycemic",
+          "type": "Disease",
+          "start": 6157,
+          "end": 6170,
+          "score": 0.9999799728393555
+        },
+        {
+          "id": "E165",
+          "text": "hyperglycemic",
+          "type": "Disease",
+          "start": 9047,
+          "end": 9060,
+          "score": 0.9999853372573853
+        },
+        {
+          "id": "E182",
+          "text": "hyperglycemic",
+          "type": "Disease",
+          "start": 10271,
+          "end": 10284,
+          "score": 0.9999854564666748
+        },
+        {
+          "id": "E539",
+          "text": "hyperglycemic",
+          "type": "Disease",
+          "start": 26780,
+          "end": 26793,
+          "score": 0.9999850988388062
+        },
+        {
+          "id": "E543",
+          "text": "hyperglycemic",
+          "type": "Disease",
+          "start": 26964,
+          "end": 26977,
+          "score": 0.9999843835830688
+        },
+        {
+          "id": "E609",
+          "text": "hyperglycemic",
+          "type": "Disease",
+          "start": 30320,
+          "end": 30333,
+          "score": 0.999984622001648
+        },
+        {
+          "id": "E652",
+          "text": "hyperglycemic",
+          "type": "Disease",
+          "start": 33627,
+          "end": 33640,
+          "score": 0.9999693632125854
+        },
+        {
+          "id": "E683",
+          "text": "hyperglycemic",
+          "type": "Disease",
+          "start": 35548,
+          "end": 35561,
+          "score": 0.9999858140945435
+        },
+        {
+          "id": "E732",
+          "text": "hyperglycemic",
+          "type": "Disease",
+          "start": 38080,
+          "end": 38093,
+          "score": 0.9999856948852539
+        },
+        {
+          "id": "E830",
+          "text": "hyperglycemic",
+          "type": "Disease",
+          "start": 44188,
+          "end": 44201,
+          "score": 0.9999827146530151
+        }
+      ]
+    },
+    {
+      "id": "doc_e_011",
+      "label": "mice",
+      "type": "Species",
+      "aliases": [
+        "mice",
+        "Mice"
+      ],
+      "mentions": [
+        {
+          "id": "E33",
+          "text": "mice",
+          "type": "Species",
+          "start": 1183,
+          "end": 1187,
+          "score": 0.9999879598617554
+        },
+        {
+          "id": "E35",
+          "text": "mice",
+          "type": "Species",
+          "start": 1435,
+          "end": 1439,
+          "score": 0.9999878406524658
+        },
+        {
+          "id": "E98",
+          "text": "mice",
+          "type": "Species",
+          "start": 5272,
+          "end": 5276,
+          "score": 0.9999872446060181
+        },
+        {
+          "id": "E108",
+          "text": "mice",
+          "type": "Species",
+          "start": 5817,
+          "end": 5821,
+          "score": 0.999987006187439
+        },
+        {
+          "id": "E114",
+          "text": "mice",
+          "type": "Species",
+          "start": 6171,
+          "end": 6175,
+          "score": 0.9999873638153076
+        },
+        {
+          "id": "E138",
+          "text": "mice",
+          "type": "Species",
+          "start": 7963,
+          "end": 7967,
+          "score": 0.9999877214431763
+        },
+        {
+          "id": "E140",
+          "text": "mice",
+          "type": "Species",
+          "start": 8031,
+          "end": 8035,
+          "score": 0.9999872446060181
+        },
+        {
+          "id": "E142",
+          "text": "mice",
+          "type": "Species",
+          "start": 8141,
+          "end": 8145,
+          "score": 0.9999879598617554
+        },
+        {
+          "id": "E144",
+          "text": "mice",
+          "type": "Species",
+          "start": 8292,
+          "end": 8296,
+          "score": 0.9999879598617554
+        },
+        {
+          "id": "E146",
+          "text": "mice",
+          "type": "Species",
+          "start": 8361,
+          "end": 8365,
+          "score": 0.9999877214431763
+        },
+        {
+          "id": "E148",
+          "text": "mice",
+          "type": "Species",
+          "start": 8383,
+          "end": 8387,
+          "score": 0.9999877214431763
+        },
+        {
+          "id": "E152",
+          "text": "mice",
+          "type": "Species",
+          "start": 8484,
+          "end": 8488,
+          "score": 0.9999879598617554
+        },
+        {
+          "id": "E155",
+          "text": "mice",
+          "type": "Species",
+          "start": 8652,
+          "end": 8656,
+          "score": 0.9999877214431763
+        },
+        {
+          "id": "E159",
+          "text": "mice",
+          "type": "Species",
+          "start": 8844,
+          "end": 8848,
+          "score": 0.9999881982803345
+        },
+        {
+          "id": "E167",
+          "text": "mice",
+          "type": "Species",
+          "start": 9394,
+          "end": 9398,
+          "score": 0.9999878406524658
+        },
+        {
+          "id": "E169",
+          "text": "mice",
+          "type": "Species",
+          "start": 9416,
+          "end": 9420,
+          "score": 0.9999877214431763
+        },
+        {
+          "id": "E175",
+          "text": "mice",
+          "type": "Species",
+          "start": 9641,
+          "end": 9645,
+          "score": 0.9999873638153076
+        },
+        {
+          "id": "E186",
+          "text": "mice",
+          "type": "Species",
+          "start": 10609,
+          "end": 10613,
+          "score": 0.9999879598617554
+        },
+        {
+          "id": "E187",
+          "text": "mice",
+          "type": "Species",
+          "start": 10683,
+          "end": 10687,
+          "score": 0.9999880790710449
+        },
+        {
+          "id": "E189",
+          "text": "mice",
+          "type": "Species",
+          "start": 10730,
+          "end": 10734,
+          "score": 0.9999879598617554
+        },
+        {
+          "id": "E198",
+          "text": "mice",
+          "type": "Species",
+          "start": 11348,
+          "end": 11352,
+          "score": 0.9999879598617554
+        },
+        {
+          "id": "E200",
+          "text": "mice",
+          "type": "Species",
+          "start": 11436,
+          "end": 11440,
+          "score": 0.9999881982803345
+        },
+        {
+          "id": "E233",
+          "text": "mice",
+          "type": "Species",
+          "start": 12762,
+          "end": 12766,
+          "score": 0.9999877214431763
+        },
+        {
+          "id": "E250",
+          "text": "mice",
+          "type": "Species",
+          "start": 13647,
+          "end": 13651,
+          "score": 0.9999878406524658
+        },
+        {
+          "id": "E253",
+          "text": "mice",
+          "type": "Species",
+          "start": 13676,
+          "end": 13680,
+          "score": 0.9999878406524658
+        },
+        {
+          "id": "E266",
+          "text": "mice",
+          "type": "Species",
+          "start": 14910,
+          "end": 14914,
+          "score": 0.9999874830245972
+        },
+        {
+          "id": "E268",
+          "text": "mice",
+          "type": "Species",
+          "start": 14939,
+          "end": 14943,
+          "score": 0.9999876022338867
+        },
+        {
+          "id": "E271",
+          "text": "mice",
+          "type": "Species",
+          "start": 15078,
+          "end": 15082,
+          "score": 0.9999872446060181
+        },
+        {
+          "id": "E277",
+          "text": "mice",
+          "type": "Species",
+          "start": 15567,
+          "end": 15571,
+          "score": 0.9999879598617554
+        },
+        {
+          "id": "E280",
+          "text": "mice",
+          "type": "Species",
+          "start": 15596,
+          "end": 15600,
+          "score": 0.9999879598617554
+        },
+        {
+          "id": "E288",
+          "text": "mice",
+          "type": "Species",
+          "start": 16342,
+          "end": 16346,
+          "score": 0.9999879598617554
+        },
+        {
+          "id": "E291",
+          "text": "mice",
+          "type": "Species",
+          "start": 16371,
+          "end": 16375,
+          "score": 0.9999878406524658
+        },
+        {
+          "id": "E295",
+          "text": "mice",
+          "type": "Species",
+          "start": 17897,
+          "end": 17901,
+          "score": 0.9999876022338867
+        },
+        {
+          "id": "E297",
+          "text": "mice",
+          "type": "Species",
+          "start": 17917,
+          "end": 17921,
+          "score": 0.9999871253967285
+        },
+        {
+          "id": "E304",
+          "text": "mice",
+          "type": "Species",
+          "start": 18219,
+          "end": 18223,
+          "score": 0.9999876022338867
+        },
+        {
+          "id": "E307",
+          "text": "mice",
+          "type": "Species",
+          "start": 18330,
+          "end": 18334,
+          "score": 0.9999877214431763
+        },
+        {
+          "id": "E308",
+          "text": "mice",
+          "type": "Species",
+          "start": 18420,
+          "end": 18424,
+          "score": 0.9999879598617554
+        },
+        {
+          "id": "E317",
+          "text": "mice",
+          "type": "Species",
+          "start": 18824,
+          "end": 18828,
+          "score": 0.9999876022338867
+        },
+        {
+          "id": "E325",
+          "text": "Mice",
+          "type": "Species",
+          "start": 19166,
+          "end": 19170,
+          "score": 0.9999879598617554
+        },
+        {
+          "id": "E343",
+          "text": "mice",
+          "type": "Species",
+          "start": 20102,
+          "end": 20106,
+          "score": 0.9999876022338867
+        },
+        {
+          "id": "E345",
+          "text": "mice",
+          "type": "Species",
+          "start": 20123,
+          "end": 20127,
+          "score": 0.9999877214431763
+        },
+        {
+          "id": "E346",
+          "text": "mice",
+          "type": "Species",
+          "start": 20142,
+          "end": 20146,
+          "score": 0.9999877214431763
+        },
+        {
+          "id": "E348",
+          "text": "mice",
+          "type": "Species",
+          "start": 20160,
+          "end": 20164,
+          "score": 0.9999874830245972
+        },
+        {
+          "id": "E350",
+          "text": "mice",
+          "type": "Species",
+          "start": 20234,
+          "end": 20238,
+          "score": 0.9999877214431763
+        },
+        {
+          "id": "E355",
+          "text": "mice",
+          "type": "Species",
+          "start": 20342,
+          "end": 20346,
+          "score": 0.9999874830245972
+        },
+        {
+          "id": "E359",
+          "text": "mice",
+          "type": "Species",
+          "start": 20473,
+          "end": 20477,
+          "score": 0.9999878406524658
+        },
+        {
+          "id": "E364",
+          "text": "mice",
+          "type": "Species",
+          "start": 20663,
+          "end": 20667,
+          "score": 0.9999878406524658
+        },
+        {
+          "id": "E367",
+          "text": "mice",
+          "type": "Species",
+          "start": 20740,
+          "end": 20744,
+          "score": 0.9999878406524658
+        },
+        {
+          "id": "E378",
+          "text": "mice",
+          "type": "Species",
+          "start": 21302,
+          "end": 21306,
+          "score": 0.9999879598617554
+        },
+        {
+          "id": "E379",
+          "text": "mice",
+          "type": "Species",
+          "start": 21399,
+          "end": 21403,
+          "score": 0.9999879598617554
+        },
+        {
+          "id": "E385",
+          "text": "mice",
+          "type": "Species",
+          "start": 21559,
+          "end": 21563,
+          "score": 0.9999879598617554
+        },
+        {
+          "id": "E395",
+          "text": "mice",
+          "type": "Species",
+          "start": 21743,
+          "end": 21747,
+          "score": 0.9999879598617554
+        },
+        {
+          "id": "E402",
+          "text": "mice",
+          "type": "Species",
+          "start": 21895,
+          "end": 21899,
+          "score": 0.9999879598617554
+        },
+        {
+          "id": "E407",
+          "text": "mice",
+          "type": "Species",
+          "start": 22311,
+          "end": 22315,
+          "score": 0.9999878406524658
+        },
+        {
+          "id": "E409",
+          "text": "mice",
+          "type": "Species",
+          "start": 22333,
+          "end": 22337,
+          "score": 0.9999877214431763
+        },
+        {
+          "id": "E416",
+          "text": "mice",
+          "type": "Species",
+          "start": 22604,
+          "end": 22608,
+          "score": 0.9999879598617554
+        },
+        {
+          "id": "E427",
+          "text": "mice",
+          "type": "Species",
+          "start": 22911,
+          "end": 22915,
+          "score": 0.9999876022338867
+        },
+        {
+          "id": "E431",
+          "text": "mice",
+          "type": "Species",
+          "start": 23023,
+          "end": 23027,
+          "score": 0.9999878406524658
+        },
+        {
+          "id": "E436",
+          "text": "mice",
+          "type": "Species",
+          "start": 23124,
+          "end": 23128,
+          "score": 0.9999878406524658
+        },
+        {
+          "id": "E440",
+          "text": "mice",
+          "type": "Species",
+          "start": 23230,
+          "end": 23234,
+          "score": 0.9999878406524658
+        },
+        {
+          "id": "E444",
+          "text": "mice",
+          "type": "Species",
+          "start": 23380,
+          "end": 23384,
+          "score": 0.9999878406524658
+        },
+        {
+          "id": "E448",
+          "text": "mice",
+          "type": "Species",
+          "start": 23454,
+          "end": 23458,
+          "score": 0.9999879598617554
+        },
+        {
+          "id": "E455",
+          "text": "mice",
+          "type": "Species",
+          "start": 23782,
+          "end": 23786,
+          "score": 0.9999879598617554
+        },
+        {
+          "id": "E456",
+          "text": "mice",
+          "type": "Species",
+          "start": 23930,
+          "end": 23934,
+          "score": 0.9999880790710449
+        },
+        {
+          "id": "E468",
+          "text": "mice",
+          "type": "Species",
+          "start": 24461,
+          "end": 24465,
+          "score": 0.9999877214431763
+        },
+        {
+          "id": "E475",
+          "text": "mice",
+          "type": "Species",
+          "start": 24734,
+          "end": 24738,
+          "score": 0.9999878406524658
+        },
+        {
+          "id": "E480",
+          "text": "mice",
+          "type": "Species",
+          "start": 24858,
+          "end": 24862,
+          "score": 0.9999878406524658
+        },
+        {
+          "id": "E484",
+          "text": "mice",
+          "type": "Species",
+          "start": 24967,
+          "end": 24971,
+          "score": 0.9999877214431763
+        },
+        {
+          "id": "E489",
+          "text": "mice",
+          "type": "Species",
+          "start": 25231,
+          "end": 25235,
+          "score": 0.9999877214431763
+        },
+        {
+          "id": "E492",
+          "text": "mice",
+          "type": "Species",
+          "start": 25332,
+          "end": 25336,
+          "score": 0.9999877214431763
+        },
+        {
+          "id": "E499",
+          "text": "mice",
+          "type": "Species",
+          "start": 25675,
+          "end": 25679,
+          "score": 0.9999878406524658
+        },
+        {
+          "id": "E502",
+          "text": "mice",
+          "type": "Species",
+          "start": 25711,
+          "end": 25715,
+          "score": 0.9999878406524658
+        },
+        {
+          "id": "E505",
+          "text": "mice",
+          "type": "Species",
+          "start": 25751,
+          "end": 25755,
+          "score": 0.9999876022338867
+        },
+        {
+          "id": "E517",
+          "text": "mice",
+          "type": "Species",
+          "start": 26169,
+          "end": 26173,
+          "score": 0.9999877214431763
+        },
+        {
+          "id": "E521",
+          "text": "mice",
+          "type": "Species",
+          "start": 26306,
+          "end": 26310,
+          "score": 0.9999876022338867
+        },
+        {
+          "id": "E526",
+          "text": "mice",
+          "type": "Species",
+          "start": 26419,
+          "end": 26423,
+          "score": 0.9999877214431763
+        },
+        {
+          "id": "E531",
+          "text": "mice",
+          "type": "Species",
+          "start": 26567,
+          "end": 26571,
+          "score": 0.9999874830245972
+        },
+        {
+          "id": "E534",
+          "text": "mice",
+          "type": "Species",
+          "start": 26631,
+          "end": 26635,
+          "score": 0.9999873638153076
+        },
+        {
+          "id": "E546",
+          "text": "mice",
+          "type": "Species",
+          "start": 27004,
+          "end": 27008,
+          "score": 0.9999877214431763
+        },
+        {
+          "id": "E551",
+          "text": "mice",
+          "type": "Species",
+          "start": 27153,
+          "end": 27157,
+          "score": 0.9999877214431763
+        },
+        {
+          "id": "E556",
+          "text": "mice",
+          "type": "Species",
+          "start": 27256,
+          "end": 27260,
+          "score": 0.9999876022338867
+        },
+        {
+          "id": "E568",
+          "text": "mice",
+          "type": "Species",
+          "start": 27621,
+          "end": 27625,
+          "score": 0.9999877214431763
+        },
+        {
+          "id": "E572",
+          "text": "mice",
+          "type": "Species",
+          "start": 27711,
+          "end": 27715,
+          "score": 0.9999876022338867
+        },
+        {
+          "id": "E576",
+          "text": "mice",
+          "type": "Species",
+          "start": 27801,
+          "end": 27805,
+          "score": 0.9999876022338867
+        },
+        {
+          "id": "E581",
+          "text": "mice",
+          "type": "Species",
+          "start": 28084,
+          "end": 28088,
+          "score": 0.9999877214431763
+        },
+        {
+          "id": "E586",
+          "text": "mice",
+          "type": "Species",
+          "start": 28559,
+          "end": 28563,
+          "score": 0.999987006187439
+        },
+        {
+          "id": "E607",
+          "text": "mice",
+          "type": "Species",
+          "start": 29908,
+          "end": 29912,
+          "score": 0.9999874830245972
+        },
+        {
+          "id": "E610",
+          "text": "mice",
+          "type": "Species",
+          "start": 30334,
+          "end": 30338,
+          "score": 0.9999873638153076
+        },
+        {
+          "id": "E617",
+          "text": "mice",
+          "type": "Species",
+          "start": 31515,
+          "end": 31519,
+          "score": 0.9999876022338867
+        },
+        {
+          "id": "E638",
+          "text": "mice",
+          "type": "Species",
+          "start": 33001,
+          "end": 33005,
+          "score": 0.999987006187439
+        },
+        {
+          "id": "E653",
+          "text": "mice",
+          "type": "Species",
+          "start": 33641,
+          "end": 33645,
+          "score": 0.9999861717224121
+        },
+        {
+          "id": "E671",
+          "text": "mice",
+          "type": "Species",
+          "start": 34860,
+          "end": 34864,
+          "score": 0.9999874830245972
+        },
+        {
+          "id": "E684",
+          "text": "mice",
+          "type": "Species",
+          "start": 35575,
+          "end": 35579,
+          "score": 0.9999879598617554
+        },
+        {
+          "id": "E690",
+          "text": "mice",
+          "type": "Species",
+          "start": 35961,
+          "end": 35965,
+          "score": 0.9999877214431763
+        },
+        {
+          "id": "E691",
+          "text": "mice",
+          "type": "Species",
+          "start": 36010,
+          "end": 36014,
+          "score": 0.9999878406524658
+        },
+        {
+          "id": "E693",
+          "text": "mice",
+          "type": "Species",
+          "start": 36302,
+          "end": 36306,
+          "score": 0.9999880790710449
+        },
+        {
+          "id": "E696",
+          "text": "mice",
+          "type": "Species",
+          "start": 36422,
+          "end": 36426,
+          "score": 0.9999881982803345
+        },
+        {
+          "id": "E706",
+          "text": "mice",
+          "type": "Species",
+          "start": 36910,
+          "end": 36914,
+          "score": 0.9999878406524658
+        },
+        {
+          "id": "E709",
+          "text": "mice",
+          "type": "Species",
+          "start": 37029,
+          "end": 37033,
+          "score": 0.9999878406524658
+        },
+        {
+          "id": "E717",
+          "text": "mice",
+          "type": "Species",
+          "start": 37249,
+          "end": 37253,
+          "score": 0.9999879598617554
+        },
+        {
+          "id": "E722",
+          "text": "mice",
+          "type": "Species",
+          "start": 37468,
+          "end": 37472,
+          "score": 0.9999877214431763
+        },
+        {
+          "id": "E731",
+          "text": "mice",
+          "type": "Species",
+          "start": 38021,
+          "end": 38025,
+          "score": 0.9999876022338867
+        },
+        {
+          "id": "E738",
+          "text": "mice",
+          "type": "Species",
+          "start": 38240,
+          "end": 38244,
+          "score": 0.9999878406524658
+        },
+        {
+          "id": "E741",
+          "text": "mice",
+          "type": "Species",
+          "start": 38387,
+          "end": 38391,
+          "score": 0.9999878406524658
+        },
+        {
+          "id": "E743",
+          "text": "mice",
+          "type": "Species",
+          "start": 38418,
+          "end": 38422,
+          "score": 0.9999878406524658
+        },
+        {
+          "id": "E782",
+          "text": "mice",
+          "type": "Species",
+          "start": 40664,
+          "end": 40668,
+          "score": 0.9999879598617554
+        },
+        {
+          "id": "E787",
+          "text": "mice",
+          "type": "Species",
+          "start": 40918,
+          "end": 40922,
+          "score": 0.9999877214431763
+        },
+        {
+          "id": "E791",
+          "text": "mice",
+          "type": "Species",
+          "start": 41018,
+          "end": 41022,
+          "score": 0.9999873638153076
+        },
+        {
+          "id": "E817",
+          "text": "mice",
+          "type": "Species",
+          "start": 42784,
+          "end": 42788,
+          "score": 0.9999876022338867
+        },
+        {
+          "id": "E831",
+          "text": "mice",
+          "type": "Species",
+          "start": 44202,
+          "end": 44206,
+          "score": 0.9999877214431763
+        },
+        {
+          "id": "E847",
+          "text": "mice",
+          "type": "Species",
+          "start": 44908,
+          "end": 44912,
+          "score": 0.9999879598617554
+        },
+        {
+          "id": "E849",
+          "text": "mice",
+          "type": "Species",
+          "start": 44994,
+          "end": 44998,
+          "score": 0.9999877214431763
+        },
+        {
+          "id": "E856",
+          "text": "mice",
+          "type": "Species",
+          "start": 45440,
+          "end": 45444,
+          "score": 0.9999878406524658
+        }
+      ]
+    },
+    {
+      "id": "doc_e_012",
+      "label": "obesity",
+      "type": "Disease",
+      "aliases": [
+        "obesity"
+      ],
+      "mentions": [
+        {
+          "id": "E46",
+          "text": "obesity",
+          "type": "Disease",
+          "start": 2267,
+          "end": 2274,
+          "score": 0.9999862909317017
+        },
+        {
+          "id": "E702",
+          "text": "obesity",
+          "type": "Disease",
+          "start": 36627,
+          "end": 36634,
+          "score": 0.999985933303833
+        }
+      ]
+    },
+    {
+      "id": "doc_e_013",
+      "label": "cardiovascular diseases",
+      "type": "Disease",
+      "aliases": [
+        "cardiovascular diseases"
+      ],
+      "mentions": [
+        {
+          "id": "E49",
+          "text": "cardiovascular diseases",
+          "type": "Disease",
+          "start": 2642,
+          "end": 2665,
+          "score": 0.9999920129776001
+        }
+      ]
+    },
+    {
+      "id": "doc_e_014",
+      "label": "stroke",
+      "type": "Disease",
+      "aliases": [
+        "stroke"
+      ],
+      "mentions": [
+        {
+          "id": "E50",
+          "text": "stroke",
+          "type": "Disease",
+          "start": 2671,
+          "end": 2677,
+          "score": 0.9999856948852539
+        }
+      ]
+    },
+    {
+      "id": "doc_e_015",
+      "label": "heart failure",
+      "type": "Disease",
+      "aliases": [
+        "heart failure"
+      ],
+      "mentions": [
+        {
+          "id": "E51",
+          "text": "heart failure",
+          "type": "Disease",
+          "start": 2682,
+          "end": 2695,
+          "score": 0.999992311000824
+        }
+      ]
+    },
+    {
+      "id": "doc_e_016",
+      "label": "T1D",
+      "type": "Disease",
+      "aliases": [
+        "Type 1 Diabetes",
+        "T1D"
+      ],
+      "mentions": [
+        {
+          "id": "E53",
+          "text": "Type 1 Diabetes",
+          "type": "Disease",
+          "start": 2797,
+          "end": 2812,
+          "score": 0.9999924898147583
+        },
+        {
+          "id": "E54",
+          "text": "T1D",
+          "type": "Disease",
+          "start": 2814,
+          "end": 2817,
+          "score": 0.9999856948852539
+        },
+        {
+          "id": "E57",
+          "text": "T1D",
+          "type": "Disease",
+          "start": 2890,
+          "end": 2893,
+          "score": 0.9999854564666748
+        }
+      ]
+    },
+    {
+      "id": "doc_e_017",
+      "label": "T2D",
+      "type": "Disease",
+      "aliases": [
+        "Type 2 Diabetes",
+        "T2D"
+      ],
+      "mentions": [
+        {
+          "id": "E55",
+          "text": "Type 2 Diabetes",
+          "type": "Disease",
+          "start": 2823,
+          "end": 2838,
+          "score": 0.9999925295511881
+        },
+        {
+          "id": "E56",
+          "text": "T2D",
+          "type": "Disease",
+          "start": 2840,
+          "end": 2843,
+          "score": 0.9999860525131226
+        },
+        {
+          "id": "E58",
+          "text": "T2D",
+          "type": "Disease",
+          "start": 2898,
+          "end": 2901,
+          "score": 0.9999861717224121
+        },
+        {
+          "id": "E752",
+          "text": "T2D",
+          "type": "Disease",
+          "start": 38915,
+          "end": 38918,
+          "score": 0.9999861717224121
+        }
+      ]
+    },
+    {
+      "id": "doc_e_018",
+      "label": "blood glucose",
+      "type": "Chemical",
+      "aliases": [
+        "blood glucose"
+      ],
+      "mentions": [
+        {
+          "id": "E60",
+          "text": "blood glucose",
+          "type": "Chemical",
+          "start": 2967,
+          "end": 2980,
+          "score": 0.9999912977218628
+        },
+        {
+          "id": "E67",
+          "text": "blood glucose",
+          "type": "Chemical",
+          "start": 3626,
+          "end": 3639,
+          "score": 0.9999893307685852
+        },
+        {
+          "id": "E170",
+          "text": "blood glucose",
+          "type": "Chemical",
+          "start": 9481,
+          "end": 9494,
+          "score": 0.9999896883964539
+        },
+        {
+          "id": "E177",
+          "text": "blood glucose",
+          "type": "Chemical",
+          "start": 9723,
+          "end": 9736,
+          "score": 0.9998849034309387
+        },
+        {
+          "id": "E312",
+          "text": "blood glucose",
+          "type": "Chemical",
+          "start": 18703,
+          "end": 18716,
+          "score": 0.9999896883964539
+        },
+        {
+          "id": "E381",
+          "text": "blood glucose",
+          "type": "Chemical",
+          "start": 21486,
+          "end": 21499,
+          "score": 0.9999945759773254
+        },
+        {
+          "id": "E390",
+          "text": "blood glucose",
+          "type": "Chemical",
+          "start": 21665,
+          "end": 21678,
+          "score": 0.9999959468841553
+        },
+        {
+          "id": "E411",
+          "text": "blood glucose",
+          "type": "Chemical",
+          "start": 22443,
+          "end": 22456,
+          "score": 0.9999964237213135
+        },
+        {
+          "id": "E413",
+          "text": "blood glucose",
+          "type": "Chemical",
+          "start": 22555,
+          "end": 22568,
+          "score": 0.9999956488609314
+        },
+        {
+          "id": "E433",
+          "text": "blood glucose",
+          "type": "Chemical",
+          "start": 23082,
+          "end": 23095,
+          "score": 0.9999955296516418
+        },
+        {
+          "id": "E441",
+          "text": "blood glucose",
+          "type": "Chemical",
+          "start": 23270,
+          "end": 23283,
+          "score": 0.9999961256980896
+        },
+        {
+          "id": "E450",
+          "text": "blood glucose",
+          "type": "Chemical",
+          "start": 23632,
+          "end": 23645,
+          "score": 0.9999973177909851
+        },
+        {
+          "id": "E481",
+          "text": "blood glucose",
+          "type": "Chemical",
+          "start": 24915,
+          "end": 24928,
+          "score": 0.999985933303833
+        },
+        {
+          "id": "E485",
+          "text": "blood glucose",
+          "type": "Chemical",
+          "start": 24979,
+          "end": 24992,
+          "score": 0.9999856948852539
+        },
+        {
+          "id": "E486",
+          "text": "blood glucose",
+          "type": "Chemical",
+          "start": 25189,
+          "end": 25202,
+          "score": 0.9999175667762756
+        },
+        {
+          "id": "E493",
+          "text": "blood glucose",
+          "type": "Chemical",
+          "start": 25369,
+          "end": 25382,
+          "score": 0.9999647736549377
+        },
+        {
+          "id": "E728",
+          "text": "blood glucose",
+          "type": "Chemical",
+          "start": 37979,
+          "end": 37992,
+          "score": 0.9999918937683105
+        },
+        {
+          "id": "E745",
+          "text": "blood glucose",
+          "type": "Chemical",
+          "start": 38567,
+          "end": 38580,
+          "score": 0.9999764561653137
+        }
+      ]
+    },
+    {
+      "id": "doc_e_019",
+      "label": "diabetes-related complications",
+      "type": "Disease",
+      "aliases": [
+        "diabetes-related complications"
+      ],
+      "mentions": [
+        {
+          "id": "E62",
+          "text": "diabetes-related complications",
+          "type": "Disease",
+          "start": 3154,
+          "end": 3184,
+          "score": 0.967808872461319
+        }
+      ]
+    },
+    {
+      "id": "doc_e_020",
+      "label": "patients",
+      "type": "Species",
+      "aliases": [
+        "patients"
+      ],
+      "mentions": [
+        {
+          "id": "E65",
+          "text": "patients",
+          "type": "Species",
+          "start": 3343,
+          "end": 3351,
+          "score": 0.9999852180480957
+        },
+        {
+          "id": "E562",
+          "text": "patients",
+          "type": "Species",
+          "start": 27493,
+          "end": 27501,
+          "score": 0.9999854564666748
+        },
+        {
+          "id": "E751",
+          "text": "patients",
+          "type": "Species",
+          "start": 38891,
+          "end": 38899,
+          "score": 0.9999874830245972
+        },
+        {
+          "id": "E763",
+          "text": "patients",
+          "type": "Species",
+          "start": 39522,
+          "end": 39530,
+          "score": 0.9999840259552002
+        },
+        {
+          "id": "E792",
+          "text": "patients",
+          "type": "Species",
+          "start": 41166,
+          "end": 41174,
+          "score": 0.9999855756759644
+        },
+        {
+          "id": "E837",
+          "text": "patients",
+          "type": "Species",
+          "start": 44371,
+          "end": 44379,
+          "score": 0.9999861717224121
+        }
+      ]
+    },
+    {
+      "id": "doc_e_021",
+      "label": "endocrine disorder",
+      "type": "Disease",
+      "aliases": [
+        "endocrine disorder"
+      ],
+      "mentions": [
+        {
+          "id": "E70",
+          "text": "endocrine disorder",
+          "type": "Disease",
+          "start": 3797,
+          "end": 3815,
+          "score": 0.9986860752105713
+        }
+      ]
+    },
+    {
+      "id": "doc_e_022",
+      "label": "inflammatory",
+      "type": "Disease",
+      "aliases": [
+        "inflammatory"
+      ],
+      "mentions": [
+        {
+          "id": "E71",
+          "text": "inflammatory",
+          "type": "Disease",
+          "start": 3838,
+          "end": 3850,
+          "score": 0.9983299374580383
+        },
+        {
+          "id": "E74",
+          "text": "inflammatory",
+          "type": "Disease",
+          "start": 4042,
+          "end": 4054,
+          "score": 0.9999434947967529
+        },
+        {
+          "id": "E76",
+          "text": "inflammatory",
+          "type": "Disease",
+          "start": 4218,
+          "end": 4230,
+          "score": 0.9999333620071411
+        },
+        {
+          "id": "E548",
+          "text": "inflammatory",
+          "type": "Disease",
+          "start": 27097,
+          "end": 27109,
+          "score": 0.9999804496765137
+        }
+      ]
+    },
+    {
+      "id": "doc_e_023",
+      "label": "diabetes",
+      "type": "Disease",
+      "aliases": [
+        "diabetes"
+      ],
+      "mentions": [
+        {
+          "id": "E77",
+          "text": "diabetes",
+          "type": "Disease",
+          "start": 4278,
+          "end": 4286,
+          "score": 0.9999855756759644
+        },
+        {
+          "id": "E583",
+          "text": "diabetes",
+          "type": "Disease",
+          "start": 28332,
+          "end": 28340,
+          "score": 0.9999858140945435
+        },
+        {
+          "id": "E667",
+          "text": "diabetes",
+          "type": "Disease",
+          "start": 34583,
+          "end": 34591,
+          "score": 0.9999852180480957
+        },
+        {
+          "id": "E746",
+          "text": "diabetes",
+          "type": "Disease",
+          "start": 38635,
+          "end": 38643,
+          "score": 0.9998766183853149
+        },
+        {
+          "id": "E783",
+          "text": "diabetes",
+          "type": "Disease",
+          "start": 40718,
+          "end": 40726,
+          "score": 0.9999856948852539
+        },
+        {
+          "id": "E784",
+          "text": "diabetes",
+          "type": "Disease",
+          "start": 40849,
+          "end": 40857,
+          "score": 0.9999855756759644
+        }
+      ]
+    },
+    {
+      "id": "doc_e_024",
+      "label": "Receptor for Advanced Glycation End-Products",
+      "type": "Gene",
+      "aliases": [
+        "Receptor for Advanced Glycation End-Products"
+      ],
+      "mentions": [
+        {
+          "id": "E84",
+          "text": "Receptor for Advanced Glycation End-Products",
+          "type": "Gene",
+          "start": 4716,
+          "end": 4760,
+          "score": 0.9999820164271763
+        }
+      ]
+    },
+    {
+      "id": "doc_e_025",
+      "label": "RAGE",
+      "type": "Gene",
+      "aliases": [
+        "RAGE"
+      ],
+      "mentions": [
+        {
+          "id": "E85",
+          "text": "RAGE",
+          "type": "Gene",
+          "start": 4762,
+          "end": 4766,
+          "score": 0.9999902248382568
+        },
+        {
+          "id": "E635",
+          "text": "RAGE",
+          "type": "Gene",
+          "start": 32888,
+          "end": 32892,
+          "score": 0.9999902248382568
+        },
+        {
+          "id": "E639",
+          "text": "RAGE",
+          "type": "Gene",
+          "start": 33050,
+          "end": 33054,
+          "score": 0.9999896287918091
+        },
+        {
+          "id": "E647",
+          "text": "RAGE",
+          "type": "Gene",
+          "start": 33298,
+          "end": 33302,
+          "score": 0.9999898672103882
+        },
+        {
+          "id": "E828",
+          "text": "RAGE",
+          "type": "Gene",
+          "start": 44091,
+          "end": 44095,
+          "score": 0.9999901056289673
+        },
+        {
+          "id": "E832",
+          "text": "RAGE",
+          "type": "Gene",
+          "start": 44248,
+          "end": 44252,
+          "score": 0.9999898672103882
+        },
+        {
+          "id": "E835",
+          "text": "RAGE",
+          "type": "Gene",
+          "start": 44349,
+          "end": 44353,
+          "score": 0.9999903440475464
+        }
+      ]
+    },
+    {
+      "id": "doc_e_026",
+      "label": "TLR4",
+      "type": "Gene",
+      "aliases": [
+        "Toll-Like Receptor 4",
+        "TLR4"
+      ],
+      "mentions": [
+        {
+          "id": "E86",
+          "text": "Toll-Like Receptor 4",
+          "type": "Gene",
+          "start": 4772,
+          "end": 4792,
+          "score": 0.999981427192688
+        },
+        {
+          "id": "E87",
+          "text": "TLR4",
+          "type": "Gene",
+          "start": 4794,
+          "end": 4798,
+          "score": 0.9999899864196777
+        }
+      ]
+    },
+    {
+      "id": "doc_e_027",
+      "label": "insulin",
+      "type": "Gene",
+      "aliases": [
+        "insulin",
+        "Insulin"
+      ],
+      "mentions": [
+        {
+          "id": "E89",
+          "text": "insulin",
+          "type": "Gene",
+          "start": 4895,
+          "end": 4902,
+          "score": 0.9999715089797974
+        },
+        {
+          "id": "E223",
+          "text": "Insulin",
+          "type": "Gene",
+          "start": 12618,
+          "end": 12625,
+          "score": 0.9999881982803345
+        },
+        {
+          "id": "E620",
+          "text": "insulin",
+          "type": "Gene",
+          "start": 31696,
+          "end": 31703,
+          "score": 0.9999853372573853
+        },
+        {
+          "id": "E824",
+          "text": "insulin",
+          "type": "Gene",
+          "start": 43635,
+          "end": 43642,
+          "score": 0.9999834299087524
+        }
+      ]
+    },
+    {
+      "id": "doc_e_028",
+      "label": "insulin receptor",
+      "type": "Gene",
+      "aliases": [
+        "insulin receptor"
+      ],
+      "mentions": [
+        {
+          "id": "E90",
+          "text": "insulin receptor",
+          "type": "Gene",
+          "start": 4925,
+          "end": 4941,
+          "score": 0.9999774694442749
+        }
+      ]
+    },
+    {
+      "id": "doc_e_029",
+      "label": "AKT",
+      "type": "Gene",
+      "aliases": [
+        "AKT"
+      ],
+      "mentions": [
+        {
+          "id": "E91",
+          "text": "AKT",
+          "type": "Gene",
+          "start": 4942,
+          "end": 4945,
+          "score": 0.9999899864196777
+        }
+      ]
+    },
+    {
+      "id": "doc_e_030",
+      "label": "insulin resistance",
+      "type": "Disease",
+      "aliases": [
+        "insulin resistance"
+      ],
+      "mentions": [
+        {
+          "id": "E92",
+          "text": "insulin resistance",
+          "type": "Disease",
+          "start": 4968,
+          "end": 4986,
+          "score": 0.9999831318855286
+        },
+        {
+          "id": "E769",
+          "text": "insulin resistance",
+          "type": "Disease",
+          "start": 39846,
+          "end": 39864,
+          "score": 0.9999901652336121
+        }
+      ]
+    },
+    {
+      "id": "doc_e_031",
+      "label": "hypoglycemia",
+      "type": "Disease",
+      "aliases": [
+        "hypoglycemia"
+      ],
+      "mentions": [
+        {
+          "id": "E97",
+          "text": "hypoglycemia",
+          "type": "Disease",
+          "start": 5203,
+          "end": 5215,
+          "score": 0.999985933303833
+        },
+        {
+          "id": "E99",
+          "text": "hypoglycemia",
+          "type": "Disease",
+          "start": 5301,
+          "end": 5313,
+          "score": 0.999985933303833
+        },
+        {
+          "id": "E672",
+          "text": "hypoglycemia",
+          "type": "Disease",
+          "start": 34885,
+          "end": 34897,
+          "score": 0.9999864101409912
+        },
+        {
+          "id": "E710",
+          "text": "hypoglycemia",
+          "type": "Disease",
+          "start": 37045,
+          "end": 37057,
+          "score": 0.9999855756759644
+        }
+      ]
+    },
+    {
+      "id": "doc_e_032",
+      "label": "glucose tolerance",
+      "type": "Disease",
+      "aliases": [
+        "glucose tolerance"
+      ],
+      "mentions": [
+        {
+          "id": "E116",
+          "text": "glucose tolerance",
+          "type": "Disease",
+          "start": 6244,
+          "end": 6261,
+          "score": 0.8569060564041138
+        }
+      ]
+    },
+    {
+      "id": "doc_e_033",
+      "label": "isoflurane",
+      "type": "Chemical",
+      "aliases": [
+        "isoflurane"
+      ],
+      "mentions": [
+        {
+          "id": "E124",
+          "text": "isoflurane",
+          "type": "Chemical",
+          "start": 7194,
+          "end": 7204,
+          "score": 0.9999970197677612
+        },
+        {
+          "id": "E201",
+          "text": "isoflurane",
+          "type": "Chemical",
+          "start": 11470,
+          "end": 11480,
+          "score": 0.999995231628418
+        }
+      ]
+    },
+    {
+      "id": "doc_e_034",
+      "label": "estrogen receptor",
+      "type": "Gene",
+      "aliases": [
+        "estrogen receptor"
+      ],
+      "mentions": [
+        {
+          "id": "E131",
+          "text": "estrogen receptor",
+          "type": "Gene",
+          "start": 7744,
+          "end": 7761,
+          "score": 0.9961853325366974
+        }
+      ]
+    },
+    {
+      "id": "doc_e_035",
+      "label": "estrogen",
+      "type": "Chemical",
+      "aliases": [
+        "estrogen"
+      ],
+      "mentions": [
+        {
+          "id": "E135",
+          "text": "estrogen",
+          "type": "Chemical",
+          "start": 7891,
+          "end": 7899,
+          "score": 0.9999856948852539
+        }
+      ]
+    },
+    {
+      "id": "doc_e_036",
+      "label": "TMX",
+      "type": "Chemical",
+      "aliases": [
+        "tamoxifen",
+        "TMX"
+      ],
+      "mentions": [
+        {
+          "id": "E136",
+          "text": "tamoxifen",
+          "type": "Chemical",
+          "start": 7916,
+          "end": 7925,
+          "score": 0.9999972979227701
+        },
+        {
+          "id": "E137",
+          "text": "TMX",
+          "type": "Chemical",
+          "start": 7927,
+          "end": 7930,
+          "score": 0.9999964237213135
+        },
+        {
+          "id": "E141",
+          "text": "TMX",
+          "type": "Chemical",
+          "start": 8102,
+          "end": 8105,
+          "score": 0.9999957084655762
+        },
+        {
+          "id": "E153",
+          "text": "TMX",
+          "type": "Chemical",
+          "start": 8556,
+          "end": 8559,
+          "score": 0.9999974966049194
+        },
+        {
+          "id": "E157",
+          "text": "TMX",
+          "type": "Chemical",
+          "start": 8775,
+          "end": 8778,
+          "score": 0.9999974966049194
+        },
+        {
+          "id": "E158",
+          "text": "TMX",
+          "type": "Chemical",
+          "start": 8818,
+          "end": 8821,
+          "score": 0.9999974966049194
+        },
+        {
+          "id": "E269",
+          "text": "TMX",
+          "type": "Chemical",
+          "start": 15012,
+          "end": 15015,
+          "score": 0.999993085861206
+        },
+        {
+          "id": "E281",
+          "text": "TMX",
+          "type": "Chemical",
+          "start": 15615,
+          "end": 15618,
+          "score": 0.99989914894104
+        },
+        {
+          "id": "E293",
+          "text": "TMX",
+          "type": "Chemical",
+          "start": 17843,
+          "end": 17846,
+          "score": 0.9999971389770508
+        },
+        {
+          "id": "E299",
+          "text": "TMX",
+          "type": "Chemical",
+          "start": 18054,
+          "end": 18057,
+          "score": 0.9999954700469971
+        },
+        {
+          "id": "E310",
+          "text": "TMX",
+          "type": "Chemical",
+          "start": 18663,
+          "end": 18666,
+          "score": 0.9999973773956299
+        },
+        {
+          "id": "E314",
+          "text": "TMX",
+          "type": "Chemical",
+          "start": 18777,
+          "end": 18780,
+          "score": 0.9999974966049194
+        },
+        {
+          "id": "E341",
+          "text": "TMX",
+          "type": "Chemical",
+          "start": 19973,
+          "end": 19976,
+          "score": 0.9999972581863403
+        },
+        {
+          "id": "E351",
+          "text": "TMX",
+          "type": "Chemical",
+          "start": 20253,
+          "end": 20256,
+          "score": 0.9999963045120239
+        },
+        {
+          "id": "E370",
+          "text": "TMX",
+          "type": "Chemical",
+          "start": 20883,
+          "end": 20886,
+          "score": 0.9999954700469971
+        },
+        {
+          "id": "E405",
+          "text": "TMX",
+          "type": "Chemical",
+          "start": 22234,
+          "end": 22237,
+          "score": 0.9999974966049194
+        },
+        {
+          "id": "E417",
+          "text": "TMX",
+          "type": "Chemical",
+          "start": 22615,
+          "end": 22618,
+          "score": 0.9999971389770508
+        },
+        {
+          "id": "E457",
+          "text": "TMX",
+          "type": "Chemical",
+          "start": 23954,
+          "end": 23957,
+          "score": 0.9999973773956299
+        },
+        {
+          "id": "E458",
+          "text": "TMX",
+          "type": "Chemical",
+          "start": 23987,
+          "end": 23990,
+          "score": 0.9999973773956299
+        },
+        {
+          "id": "E673",
+          "text": "TMX",
+          "type": "Chemical",
+          "start": 34975,
+          "end": 34978,
+          "score": 0.9999970197677612
+        },
+        {
+          "id": "E679",
+          "text": "TMX",
+          "type": "Chemical",
+          "start": 35196,
+          "end": 35199,
+          "score": 0.9999973773956299
+        }
+      ]
+    },
+    {
+      "id": "doc_e_037",
+      "label": "fat",
+      "type": "Chemical",
+      "aliases": [
+        "fat",
+        "Fat"
+      ],
+      "mentions": [
+        {
+          "id": "E184",
+          "text": "fat",
+          "type": "Chemical",
+          "start": 10475,
+          "end": 10478,
+          "score": 0.999996542930603
+        },
+        {
+          "id": "E191",
+          "text": "Fat",
+          "type": "Chemical",
+          "start": 10861,
+          "end": 10864,
+          "score": 0.9999967813491821
+        },
+        {
+          "id": "E319",
+          "text": "Fat",
+          "type": "Chemical",
+          "start": 19037,
+          "end": 19040,
+          "score": 0.9999964237213135
+        }
+      ]
+    },
+    {
+      "id": "doc_e_038",
+      "label": "citrate",
+      "type": "Chemical",
+      "aliases": [
+        "citrate"
+      ],
+      "mentions": [
+        {
+          "id": "E202",
+          "text": "citrate",
+          "type": "Chemical",
+          "start": 11582,
+          "end": 11589,
+          "score": 0.999985933303833
+        }
+      ]
+    },
+    {
+      "id": "doc_e_039",
+      "label": "sodium chloride",
+      "type": "Chemical",
+      "aliases": [
+        "sodium chloride"
+      ],
+      "mentions": [
+        {
+          "id": "E203",
+          "text": "sodium chloride",
+          "type": "Chemical",
+          "start": 11738,
+          "end": 11753,
+          "score": 0.999997079372406
+        }
+      ]
+    },
+    {
+      "id": "doc_e_040",
+      "label": "Cystatin C",
+      "type": "Gene",
+      "aliases": [
+        "Cystatin C"
+      ],
+      "mentions": [
+        {
+          "id": "E204",
+          "text": "Cystatin C",
+          "type": "Gene",
+          "start": 11764,
+          "end": 11774,
+          "score": 0.9999750852584839
+        },
+        {
+          "id": "E209",
+          "text": "Cystatin C",
+          "type": "Gene",
+          "start": 11934,
+          "end": 11944,
+          "score": 0.9999752044677734
+        },
+        {
+          "id": "E563",
+          "text": "Cystatin C",
+          "type": "Gene",
+          "start": 27537,
+          "end": 27547,
+          "score": 0.9999759793281555
+        },
+        {
+          "id": "E573",
+          "text": "Cystatin C",
+          "type": "Gene",
+          "start": 27759,
+          "end": 27769,
+          "score": 0.999976396560669
+        },
+        {
+          "id": "E776",
+          "text": "Cystatin C",
+          "type": "Gene",
+          "start": 40242,
+          "end": 40252,
+          "score": 0.9998844265937805
+        },
+        {
+          "id": "E778",
+          "text": "Cystatin C",
+          "type": "Gene",
+          "start": 40454,
+          "end": 40464,
+          "score": 0.9999349117279053
+        }
+      ]
+    },
+    {
+      "id": "doc_e_041",
+      "label": "CST3",
+      "type": "Gene",
+      "aliases": [
+        "CST3"
+      ],
+      "mentions": [
+        {
+          "id": "E205",
+          "text": "CST3",
+          "type": "Gene",
+          "start": 11776,
+          "end": 11780,
+          "score": 0.9999898672103882
+        }
+      ]
+    },
+    {
+      "id": "doc_e_042",
+      "label": "HMG-1",
+      "type": "Gene",
+      "aliases": [
+        "HMG-1"
+      ],
+      "mentions": [
+        {
+          "id": "E208",
+          "text": "HMG-1",
+          "type": "Gene",
+          "start": 11825,
+          "end": 11830,
+          "score": 0.9999898672103882
+        }
+      ]
+    },
+    {
+      "id": "doc_e_043",
+      "label": "AST",
+      "type": "Gene",
+      "aliases": [
+        "Aspartate aminotransferase",
+        "AST"
+      ],
+      "mentions": [
+        {
+          "id": "E211",
+          "text": "Aspartate aminotransferase",
+          "type": "Gene",
+          "start": 12084,
+          "end": 12110,
+          "score": 0.9999650716781616
+        },
+        {
+          "id": "E212",
+          "text": "AST",
+          "type": "Gene",
+          "start": 12112,
+          "end": 12115,
+          "score": 0.9999847412109375
+        },
+        {
+          "id": "E215",
+          "text": "AST",
+          "type": "Gene",
+          "start": 12259,
+          "end": 12262,
+          "score": 0.9997978806495667
+        },
+        {
+          "id": "E522",
+          "text": "AST",
+          "type": "Gene",
+          "start": 26354,
+          "end": 26357,
+          "score": 0.9999856948852539
+        },
+        {
+          "id": "E527",
+          "text": "AST",
+          "type": "Gene",
+          "start": 26516,
+          "end": 26519,
+          "score": 0.9999862909317017
+        },
+        {
+          "id": "E535",
+          "text": "AST",
+          "type": "Gene",
+          "start": 26669,
+          "end": 26672,
+          "score": 0.9999878406524658
+        }
+      ]
+    },
+    {
+      "id": "doc_e_044",
+      "label": "ALT",
+      "type": "Gene",
+      "aliases": [
+        "alanine aminotransferase",
+        "ALT"
+      ],
+      "mentions": [
+        {
+          "id": "E213",
+          "text": "alanine aminotransferase",
+          "type": "Gene",
+          "start": 12121,
+          "end": 12145,
+          "score": 0.9999486207962036
+        },
+        {
+          "id": "E214",
+          "text": "ALT",
+          "type": "Gene",
+          "start": 12147,
+          "end": 12150,
+          "score": 0.9999852180480957
+        },
+        {
+          "id": "E216",
+          "text": "ALT",
+          "type": "Gene",
+          "start": 12263,
+          "end": 12266,
+          "score": 0.9999080896377563
+        },
+        {
+          "id": "E518",
+          "text": "ALT",
+          "type": "Gene",
+          "start": 26236,
+          "end": 26239,
+          "score": 0.9999868869781494
+        },
+        {
+          "id": "E528",
+          "text": "ALT",
+          "type": "Gene",
+          "start": 26520,
+          "end": 26523,
+          "score": 0.9999879598617554
+        },
+        {
+          "id": "E536",
+          "text": "ALT",
+          "type": "Gene",
+          "start": 26673,
+          "end": 26676,
+          "score": 0.9999890327453613
+        }
+      ]
+    },
+    {
+      "id": "doc_e_045",
+      "label": "Amylin",
+      "type": "Gene",
+      "aliases": [
+        "Amylin"
+      ],
+      "mentions": [
+        {
+          "id": "E217",
+          "text": "Amylin",
+          "type": "Gene",
+          "start": 12531,
+          "end": 12537,
+          "score": 0.9999877214431763
+        }
+      ]
+    },
+    {
+      "id": "doc_e_046",
+      "label": "C-Peptide 2",
+      "type": "Gene",
+      "aliases": [
+        "C-Peptide 2"
+      ],
+      "mentions": [
+        {
+          "id": "E218",
+          "text": "C-Peptide 2",
+          "type": "Gene",
+          "start": 12548,
+          "end": 12559,
+          "score": 0.9999805092811584
+        }
+      ]
+    },
+    {
+      "id": "doc_e_047",
+      "label": "GIP",
+      "type": "Gene",
+      "aliases": [
+        "GIP",
+        "gastric inhibitory peptide"
+      ],
+      "mentions": [
+        {
+          "id": "E219",
+          "text": "GIP",
+          "type": "Gene",
+          "start": 12561,
+          "end": 12564,
+          "score": 0.9999901056289673
+        },
+        {
+          "id": "E462",
+          "text": "gastric inhibitory peptide",
+          "type": "Gene",
+          "start": 24378,
+          "end": 24404,
+          "score": 0.9999774694442749
+        },
+        {
+          "id": "E463",
+          "text": "GIP",
+          "type": "Gene",
+          "start": 24406,
+          "end": 24409,
+          "score": 0.9999865293502808
+        }
+      ]
+    },
+    {
+      "id": "doc_e_048",
+      "label": "GLP-1",
+      "type": "Gene",
+      "aliases": [
+        "GLP-1"
+      ],
+      "mentions": [
+        {
+          "id": "E220",
+          "text": "GLP-1",
+          "type": "Gene",
+          "start": 12574,
+          "end": 12579,
+          "score": 0.9999902248382568
+        }
+      ]
+    },
+    {
+      "id": "doc_e_049",
+      "label": "Ghrelin",
+      "type": "Gene",
+      "aliases": [
+        "Ghrelin"
+      ],
+      "mentions": [
+        {
+          "id": "E221",
+          "text": "Ghrelin",
+          "type": "Gene",
+          "start": 12590,
+          "end": 12597,
+          "score": 0.9999896287918091
+        }
+      ]
+    },
+    {
+      "id": "doc_e_050",
+      "label": "Glucagon",
+      "type": "Gene",
+      "aliases": [
+        "Glucagon"
+      ],
+      "mentions": [
+        {
+          "id": "E222",
+          "text": "Glucagon",
+          "type": "Gene",
+          "start": 12608,
+          "end": 12616,
+          "score": 0.99998939037323
+        }
+      ]
+    },
+    {
+      "id": "doc_e_051",
+      "label": "Leptin",
+      "type": "Gene",
+      "aliases": [
+        "Leptin"
+      ],
+      "mentions": [
+        {
+          "id": "E224",
+          "text": "Leptin",
+          "type": "Gene",
+          "start": 12627,
+          "end": 12633,
+          "score": 0.9999897480010986
+        }
+      ]
+    },
+    {
+      "id": "doc_e_052",
+      "label": "PP",
+      "type": "Gene",
+      "aliases": [
+        "PP"
+      ],
+      "mentions": [
+        {
+          "id": "E225",
+          "text": "PP",
+          "type": "Gene",
+          "start": 12635,
+          "end": 12637,
+          "score": 0.9999871253967285
+        },
+        {
+          "id": "E465",
+          "text": "PP",
+          "type": "Gene",
+          "start": 24435,
+          "end": 24437,
+          "score": 0.9999791383743286
+        }
+      ]
+    },
+    {
+      "id": "doc_e_053",
+      "label": "PYY",
+      "type": "Gene",
+      "aliases": [
+        "PYY"
+      ],
+      "mentions": [
+        {
+          "id": "E226",
+          "text": "PYY",
+          "type": "Gene",
+          "start": 12639,
+          "end": 12642,
+          "score": 0.9999892711639404
+        }
+      ]
+    },
+    {
+      "id": "doc_e_054",
+      "label": "Resistin",
+      "type": "Gene",
+      "aliases": [
+        "Resistin"
+      ],
+      "mentions": [
+        {
+          "id": "E227",
+          "text": "Resistin",
+          "type": "Gene",
+          "start": 12644,
+          "end": 12652,
+          "score": 0.9999885559082031
+        }
+      ]
+    },
+    {
+      "id": "doc_e_055",
+      "label": "Secretin",
+      "type": "Gene",
+      "aliases": [
+        "Secretin"
+      ],
+      "mentions": [
+        {
+          "id": "E228",
+          "text": "Secretin",
+          "type": "Gene",
+          "start": 12658,
+          "end": 12666,
+          "score": 0.9999896287918091
+        }
+      ]
+    },
+    {
+      "id": "doc_e_056",
+      "label": "PBS",
+      "type": "Chemical",
+      "aliases": [
+        "phosphate-buffered saline",
+        "PBS"
+      ],
+      "mentions": [
+        {
+          "id": "E235",
+          "text": "phosphate-buffered saline",
+          "type": "Chemical",
+          "start": 12882,
+          "end": 12907,
+          "score": 0.9999973177909851
+        },
+        {
+          "id": "E236",
+          "text": "PBS",
+          "type": "Chemical",
+          "start": 12909,
+          "end": 12912,
+          "score": 0.9999953508377075
+        }
+      ]
+    },
+    {
+      "id": "doc_e_057",
+      "label": "PFA",
+      "type": "Chemical",
+      "aliases": [
+        "paraformaldehyde",
+        "PFA"
+      ],
+      "mentions": [
+        {
+          "id": "E237",
+          "text": "paraformaldehyde",
+          "type": "Chemical",
+          "start": 12922,
+          "end": 12938,
+          "score": 0.9999947547912598
+        },
+        {
+          "id": "E238",
+          "text": "PFA",
+          "type": "Chemical",
+          "start": 12940,
+          "end": 12943,
+          "score": 0.9999948740005493
+        },
+        {
+          "id": "E239",
+          "text": "PFA",
+          "type": "Chemical",
+          "start": 13097,
+          "end": 13100,
+          "score": 0.999992847442627
+        }
+      ]
+    },
+    {
+      "id": "doc_e_058",
+      "label": "sucrose",
+      "type": "Chemical",
+      "aliases": [
+        "sucrose"
+      ],
+      "mentions": [
+        {
+          "id": "E240",
+          "text": "sucrose",
+          "type": "Chemical",
+          "start": 13153,
+          "end": 13160,
+          "score": 0.9999918937683105
+        }
+      ]
+    },
+    {
+      "id": "doc_e_059",
+      "label": "OCT",
+      "type": "Chemical",
+      "aliases": [
+        "OCT"
+      ],
+      "mentions": [
+        {
+          "id": "E241",
+          "text": "OCT",
+          "type": "Chemical",
+          "start": 13221,
+          "end": 13224,
+          "score": 0.9998427629470825
+        }
+      ]
+    },
+    {
+      "id": "doc_e_060",
+      "label": "Hematoxylin and eosin",
+      "type": "Chemical",
+      "aliases": [
+        "Hematoxylin and eosin"
+      ],
+      "mentions": [
+        {
+          "id": "E242",
+          "text": "Hematoxylin and eosin",
+          "type": "Chemical",
+          "start": 13279,
+          "end": 13300,
+          "score": 0.9999599695205689
+        }
+      ]
+    },
+    {
+      "id": "doc_e_061",
+      "label": "H&E",
+      "type": "Chemical",
+      "aliases": [
+        "H&E"
+      ],
+      "mentions": [
+        {
+          "id": "E243",
+          "text": "H&E",
+          "type": "Chemical",
+          "start": 13302,
+          "end": 13305,
+          "score": 0.99998939037323
+        }
+      ]
+    },
+    {
+      "id": "doc_e_062",
+      "label": "PAS",
+      "type": "Chemical",
+      "aliases": [
+        "Periodic Acid Schiff",
+        "PAS"
+      ],
+      "mentions": [
+        {
+          "id": "E244",
+          "text": "Periodic Acid Schiff",
+          "type": "Chemical",
+          "start": 13335,
+          "end": 13355,
+          "score": 0.9999861717224121
+        },
+        {
+          "id": "E245",
+          "text": "PAS",
+          "type": "Chemical",
+          "start": 13357,
+          "end": 13360,
+          "score": 0.9999041557312012
+        },
+        {
+          "id": "E552",
+          "text": "PAS",
+          "type": "Chemical",
+          "start": 27196,
+          "end": 27199,
+          "score": 0.9230425357818604
+        }
+      ]
+    },
+    {
+      "id": "doc_e_063",
+      "label": "Oil Red O",
+      "type": "Chemical",
+      "aliases": [
+        "Oil Red O"
+      ],
+      "mentions": [
+        {
+          "id": "E246",
+          "text": "Oil Red O",
+          "type": "Chemical",
+          "start": 13393,
+          "end": 13402,
+          "score": 0.9999914566675822
+        },
+        {
+          "id": "E553",
+          "text": "Oil Red O",
+          "type": "Chemical",
+          "start": 27204,
+          "end": 27213,
+          "score": 0.9998689293861389
+        }
+      ]
+    },
+    {
+      "id": "doc_e_064",
+      "label": "Lipid",
+      "type": "Chemical",
+      "aliases": [
+        "Lipid",
+        "lipid"
+      ],
+      "mentions": [
+        {
+          "id": "E247",
+          "text": "Lipid",
+          "type": "Chemical",
+          "start": 13404,
+          "end": 13409,
+          "score": 0.9927438497543335
+        },
+        {
+          "id": "E337",
+          "text": "lipid",
+          "type": "Chemical",
+          "start": 19660,
+          "end": 19665,
+          "score": 0.9999933242797852
+        },
+        {
+          "id": "E547",
+          "text": "lipid",
+          "type": "Chemical",
+          "start": 27049,
+          "end": 27054,
+          "score": 0.9119126796722412
+        },
+        {
+          "id": "E558",
+          "text": "lipid",
+          "type": "Chemical",
+          "start": 27302,
+          "end": 27307,
+          "score": 0.9999946355819702
+        },
+        {
+          "id": "E594",
+          "text": "lipid",
+          "type": "Chemical",
+          "start": 29089,
+          "end": 29094,
+          "score": 0.9999961853027344
+        },
+        {
+          "id": "E595",
+          "text": "lipid",
+          "type": "Chemical",
+          "start": 29292,
+          "end": 29297,
+          "score": 0.9999929666519165
+        },
+        {
+          "id": "E695",
+          "text": "lipid",
+          "type": "Chemical",
+          "start": 36365,
+          "end": 36370,
+          "score": 0.999995231628418
+        },
+        {
+          "id": "E814",
+          "text": "lipid",
+          "type": "Chemical",
+          "start": 42347,
+          "end": 42352,
+          "score": 0.9999971389770508
+        }
+      ]
+    },
+    {
+      "id": "doc_e_065",
+      "label": "Ponceau",
+      "type": "Chemical",
+      "aliases": [
+        "Ponceau"
+      ],
+      "mentions": [
+        {
+          "id": "E254",
+          "text": "Ponceau",
+          "type": "Chemical",
+          "start": 14102,
+          "end": 14109,
+          "score": 0.7460053563117981
+        }
+      ]
+    },
+    {
+      "id": "doc_e_066",
+      "label": "BSA",
+      "type": "Gene",
+      "aliases": [
+        "BSA"
+      ],
+      "mentions": [
+        {
+          "id": "E255",
+          "text": "BSA",
+          "type": "Gene",
+          "start": 14368,
+          "end": 14371,
+          "score": 0.8918871283531189
+        },
+        {
+          "id": "E258",
+          "text": "BSA",
+          "type": "Gene",
+          "start": 14492,
+          "end": 14495,
+          "score": 0.9998494386672974
+        },
+        {
+          "id": "E263",
+          "text": "BSA",
+          "type": "Gene",
+          "start": 14720,
+          "end": 14723,
+          "score": 0.9607917070388794
+        }
+      ]
+    },
+    {
+      "id": "doc_e_067",
+      "label": "TBST",
+      "type": "Chemical",
+      "aliases": [
+        "TBST"
+      ],
+      "mentions": [
+        {
+          "id": "E256",
+          "text": "TBST",
+          "type": "Chemical",
+          "start": 14375,
+          "end": 14379,
+          "score": 0.9999526739120483
+        },
+        {
+          "id": "E257",
+          "text": "TBST",
+          "type": "Chemical",
+          "start": 14420,
+          "end": 14424,
+          "score": 0.9999586343765259
+        },
+        {
+          "id": "E260",
+          "text": "TBST",
+          "type": "Chemical",
+          "start": 14616,
+          "end": 14620,
+          "score": 0.9999507665634155
+        }
+      ]
+    },
+    {
+      "id": "doc_e_068",
+      "label": "goat",
+      "type": "Species",
+      "aliases": [
+        "goat"
+      ],
+      "mentions": [
+        {
+          "id": "E261",
+          "text": "goat",
+          "type": "Species",
+          "start": 14658,
+          "end": 14662,
+          "score": 0.999987006187439
+        }
+      ]
+    },
+    {
+      "id": "doc_e_069",
+      "label": "rabbit",
+      "type": "Species",
+      "aliases": [
+        "rabbit"
+      ],
+      "mentions": [
+        {
+          "id": "E262",
+          "text": "rabbit",
+          "type": "Species",
+          "start": 14668,
+          "end": 14674,
+          "score": 0.9999867677688599
+        }
+      ]
+    },
+    {
+      "id": "doc_e_070",
+      "label": "C57/BL6",
+      "type": "CellLine",
+      "aliases": [
+        "C57/BL6"
+      ],
+      "mentions": [
+        {
+          "id": "E270",
+          "text": "C57/BL6",
+          "type": "CellLine",
+          "start": 15070,
+          "end": 15077,
+          "score": 0.9008734027544657
+        },
+        {
+          "id": "E347",
+          "text": "C57/BL6",
+          "type": "CellLine",
+          "start": 20152,
+          "end": 20159,
+          "score": 0.8654123544692993
+        }
+      ]
+    },
+    {
+      "id": "doc_e_071",
+      "label": "TRIzol",
+      "type": "Chemical",
+      "aliases": [
+        "TRIzol"
+      ],
+      "mentions": [
+        {
+          "id": "E272",
+          "text": "TRIzol",
+          "type": "Chemical",
+          "start": 15151,
+          "end": 15157,
+          "score": 0.9999959468841553
+        },
+        {
+          "id": "E283",
+          "text": "TRIzol",
+          "type": "Chemical",
+          "start": 15723,
+          "end": 15729,
+          "score": 0.999996542930603
+        }
+      ]
+    },
+    {
+      "id": "doc_e_072",
+      "label": "agarose",
+      "type": "Chemical",
+      "aliases": [
+        "agarose"
+      ],
+      "mentions": [
+        {
+          "id": "E274",
+          "text": "agarose",
+          "type": "Chemical",
+          "start": 15369,
+          "end": 15376,
+          "score": 0.9999938011169434
+        }
+      ]
+    },
+    {
+      "id": "doc_e_073",
+      "label": "carbon dioxide",
+      "type": "Chemical",
+      "aliases": [
+        "carbon dioxide"
+      ],
+      "mentions": [
+        {
+          "id": "E334",
+          "text": "carbon dioxide",
+          "type": "Chemical",
+          "start": 19474,
+          "end": 19488,
+          "score": 0.9999975264072418
+        }
+      ]
+    },
+    {
+      "id": "doc_e_074",
+      "label": "oxygen",
+      "type": "Chemical",
+      "aliases": [
+        "oxygen"
+      ],
+      "mentions": [
+        {
+          "id": "E335",
+          "text": "oxygen",
+          "type": "Chemical",
+          "start": 19511,
+          "end": 19517,
+          "score": 0.9999974966049194
+        }
+      ]
+    },
+    {
+      "id": "doc_e_075",
+      "label": "Glucose Tolerance",
+      "type": "Chemical",
+      "aliases": [
+        "Glucose Tolerance"
+      ],
+      "mentions": [
+        {
+          "id": "E373",
+          "text": "Glucose Tolerance",
+          "type": "Chemical",
+          "start": 21222,
+          "end": 21239,
+          "score": 0.7427413463592529
+        }
+      ]
+    },
+    {
+      "id": "doc_e_076",
+      "label": "pancreatic peptide",
+      "type": "Gene",
+      "aliases": [
+        "pancreatic peptide"
+      ],
+      "mentions": [
+        {
+          "id": "E464",
+          "text": "pancreatic peptide",
+          "type": "Gene",
+          "start": 24415,
+          "end": 24433,
+          "score": 0.9999534487724304
+        }
+      ]
+    },
+    {
+      "id": "doc_e_077",
+      "label": "blood",
+      "type": "Chemical",
+      "aliases": [
+        "blood"
+      ],
+      "mentions": [
+        {
+          "id": "E494",
+          "text": "blood",
+          "type": "Chemical",
+          "start": 25529,
+          "end": 25534,
+          "score": 0.8894771933555603
+        }
+      ]
+    },
+    {
+      "id": "doc_e_078",
+      "label": "liver damage",
+      "type": "Disease",
+      "aliases": [
+        "liver damage"
+      ],
+      "mentions": [
+        {
+          "id": "E523",
+          "text": "liver damage",
+          "type": "Disease",
+          "start": 26375,
+          "end": 26387,
+          "score": 0.9999902248382568
+        },
+        {
+          "id": "E538",
+          "text": "liver damage",
+          "type": "Disease",
+          "start": 26761,
+          "end": 26773,
+          "score": 0.9999919533729553
+        },
+        {
+          "id": "E541",
+          "text": "liver damage",
+          "type": "Disease",
+          "start": 26873,
+          "end": 26885,
+          "score": 0.9999905824661255
+        },
+        {
+          "id": "E773",
+          "text": "liver damage",
+          "type": "Disease",
+          "start": 40065,
+          "end": 40077,
+          "score": 0.99998939037323
+        }
+      ]
+    },
+    {
+      "id": "doc_e_079",
+      "label": "glycogen",
+      "type": "Chemical",
+      "aliases": [
+        "glycogen"
+      ],
+      "mentions": [
+        {
+          "id": "E557",
+          "text": "glycogen",
+          "type": "Chemical",
+          "start": 27281,
+          "end": 27289,
+          "score": 0.9999958276748657
+        }
+      ]
+    },
+    {
+      "id": "doc_e_080",
+      "label": "NRF2-mediated",
+      "type": "Gene",
+      "aliases": [
+        "NRF2-mediated"
+      ],
+      "mentions": [
+        {
+          "id": "E588",
+          "text": "NRF2-mediated",
+          "type": "Gene",
+          "start": 28830,
+          "end": 28843,
+          "score": 0.9999898672103882
+        },
+        {
+          "id": "E621",
+          "text": "NRF2-mediated",
+          "type": "Gene",
+          "start": 31860,
+          "end": 31873,
+          "score": 0.99998939037323
+        },
+        {
+          "id": "E793",
+          "text": "NRF2-mediated",
+          "type": "Gene",
+          "start": 41288,
+          "end": 41301,
+          "score": 0.9999892711639404
+        },
+        {
+          "id": "E794",
+          "text": "NRF2-mediated",
+          "type": "Gene",
+          "start": 41444,
+          "end": 41457,
+          "score": 0.9999892711639404
+        },
+        {
+          "id": "E804",
+          "text": "NRF2-mediated",
+          "type": "Gene",
+          "start": 42044,
+          "end": 42057,
+          "score": 0.9999901056289673
+        }
+      ]
+    },
+    {
+      "id": "doc_e_081",
+      "label": "FXR",
+      "type": "Gene",
+      "aliases": [
+        "FXR"
+      ],
+      "mentions": [
+        {
+          "id": "E590",
+          "text": "FXR",
+          "type": "Gene",
+          "start": 29008,
+          "end": 29011,
+          "score": 0.9999901056289673
+        },
+        {
+          "id": "E806",
+          "text": "FXR",
+          "type": "Gene",
+          "start": 42197,
+          "end": 42200,
+          "score": 0.9999901056289673
+        },
+        {
+          "id": "E811",
+          "text": "FXR",
+          "type": "Gene",
+          "start": 42260,
+          "end": 42263,
+          "score": 0.9999897480010986
+        }
+      ]
+    },
+    {
+      "id": "doc_e_082",
+      "label": "LXR",
+      "type": "Gene",
+      "aliases": [
+        "LXR"
+      ],
+      "mentions": [
+        {
+          "id": "E591",
+          "text": "LXR",
+          "type": "Gene",
+          "start": 29012,
+          "end": 29015,
+          "score": 0.9999896287918091
+        },
+        {
+          "id": "E807",
+          "text": "LXR",
+          "type": "Gene",
+          "start": 42201,
+          "end": 42204,
+          "score": 0.9999902248382568
+        },
+        {
+          "id": "E812",
+          "text": "LXR",
+          "type": "Gene",
+          "start": 42268,
+          "end": 42271,
+          "score": 0.9999895095825195
+        }
+      ]
+    },
+    {
+      "id": "doc_e_083",
+      "label": "RXR",
+      "type": "Gene",
+      "aliases": [
+        "RXR"
+      ],
+      "mentions": [
+        {
+          "id": "E592",
+          "text": "RXR",
+          "type": "Gene",
+          "start": 29016,
+          "end": 29019,
+          "score": 0.9999898672103882
+        },
+        {
+          "id": "E622",
+          "text": "RXR",
+          "type": "Gene",
+          "start": 31904,
+          "end": 31907,
+          "score": 0.9999886751174927
+        },
+        {
+          "id": "E809",
+          "text": "RXR",
+          "type": "Gene",
+          "start": 42209,
+          "end": 42212,
+          "score": 0.9999897480010986
+        }
+      ]
+    },
+    {
+      "id": "doc_e_084",
+      "label": "ABCG5/8",
+      "type": "Gene",
+      "aliases": [
+        "ABCG5/8"
+      ],
+      "mentions": [
+        {
+          "id": "E596",
+          "text": "ABCG5/8",
+          "type": "Gene",
+          "start": 29367,
+          "end": 29374,
+          "score": 0.999979297320048
+        }
+      ]
+    },
+    {
+      "id": "doc_e_085",
+      "label": "MLXIPL",
+      "type": "Gene",
+      "aliases": [
+        "MLXIPL"
+      ],
+      "mentions": [
+        {
+          "id": "E597",
+          "text": "MLXIPL",
+          "type": "Gene",
+          "start": 29376,
+          "end": 29382,
+          "score": 0.9999721050262451
+        }
+      ]
+    },
+    {
+      "id": "doc_e_086",
+      "label": "APOA4",
+      "type": "Gene",
+      "aliases": [
+        "APOA4"
+      ],
+      "mentions": [
+        {
+          "id": "E598",
+          "text": "APOA4",
+          "type": "Gene",
+          "start": 29384,
+          "end": 29389,
+          "score": 0.9999727010726929
+        }
+      ]
+    },
+    {
+      "id": "doc_e_087",
+      "label": "ULK1",
+      "type": "Gene",
+      "aliases": [
+        "ULK1"
+      ],
+      "mentions": [
+        {
+          "id": "E599",
+          "text": "ULK1",
+          "type": "Gene",
+          "start": 29467,
+          "end": 29471,
+          "score": 0.9999598264694214
+        }
+      ]
+    },
+    {
+      "id": "doc_e_088",
+      "label": "AYG2A",
+      "type": "Gene",
+      "aliases": [
+        "AYG2A"
+      ],
+      "mentions": [
+        {
+          "id": "E600",
+          "text": "AYG2A",
+          "type": "Gene",
+          "start": 29473,
+          "end": 29478,
+          "score": 0.9999525547027588
+        }
+      ]
+    },
+    {
+      "id": "doc_e_089",
+      "label": "WDR45",
+      "type": "Gene",
+      "aliases": [
+        "WDR45"
+      ],
+      "mentions": [
+        {
+          "id": "E601",
+          "text": "WDR45",
+          "type": "Gene",
+          "start": 29480,
+          "end": 29485,
+          "score": 0.9998835325241089
+        }
+      ]
+    },
+    {
+      "id": "doc_e_090",
+      "label": "liver lesion",
+      "type": "Disease",
+      "aliases": [
+        "liver lesion"
+      ],
+      "mentions": [
+        {
+          "id": "E603",
+          "text": "liver lesion",
+          "type": "Disease",
+          "start": 29855,
+          "end": 29867,
+          "score": 0.9999920129776001
+        }
+      ]
+    },
+    {
+      "id": "doc_e_091",
+      "label": "liver fibrosis",
+      "type": "Disease",
+      "aliases": [
+        "liver fibrosis"
+      ],
+      "mentions": [
+        {
+          "id": "E604",
+          "text": "liver fibrosis",
+          "type": "Disease",
+          "start": 29872,
+          "end": 29886,
+          "score": 0.9999918341636658
+        }
+      ]
+    },
+    {
+      "id": "doc_e_092",
+      "label": "GCK",
+      "type": "Gene",
+      "aliases": [
+        "GCK"
+      ],
+      "mentions": [
+        {
+          "id": "E627",
+          "text": "GCK",
+          "type": "Gene",
+          "start": 32615,
+          "end": 32618,
+          "score": 0.9999889135360718
+        }
+      ]
+    },
+    {
+      "id": "doc_e_093",
+      "label": "PRKCE",
+      "type": "Gene",
+      "aliases": [
+        "PRKCE"
+      ],
+      "mentions": [
+        {
+          "id": "E628",
+          "text": "PRKCE",
+          "type": "Gene",
+          "start": 32620,
+          "end": 32625,
+          "score": 0.99998939037323
+        },
+        {
+          "id": "E644",
+          "text": "PRKCE",
+          "type": "Gene",
+          "start": 33161,
+          "end": 33166,
+          "score": 0.9999899864196777
+        }
+      ]
+    },
+    {
+      "id": "doc_e_094",
+      "label": "MAFA",
+      "type": "Gene",
+      "aliases": [
+        "MAFA"
+      ],
+      "mentions": [
+        {
+          "id": "E629",
+          "text": "MAFA",
+          "type": "Gene",
+          "start": 32627,
+          "end": 32631,
+          "score": 0.9999895095825195
+        }
+      ]
+    },
+    {
+      "id": "doc_e_095",
+      "label": "Adipoq",
+      "type": "Gene",
+      "aliases": [
+        "Adipoq"
+      ],
+      "mentions": [
+        {
+          "id": "E630",
+          "text": "Adipoq",
+          "type": "Gene",
+          "start": 32637,
+          "end": 32643,
+          "score": 0.9999872446060181
+        }
+      ]
+    },
+    {
+      "id": "doc_e_096",
+      "label": "pyruvate",
+      "type": "Chemical",
+      "aliases": [
+        "pyruvate"
+      ],
+      "mentions": [
+        {
+          "id": "E631",
+          "text": "pyruvate",
+          "type": "Chemical",
+          "start": 32708,
+          "end": 32716,
+          "score": 0.999990701675415
+        }
+      ]
+    },
+    {
+      "id": "doc_e_097",
+      "label": "PDHA1",
+      "type": "Gene",
+      "aliases": [
+        "PDHA1"
+      ],
+      "mentions": [
+        {
+          "id": "E632",
+          "text": "PDHA1",
+          "type": "Gene",
+          "start": 32791,
+          "end": 32796,
+          "score": 0.9999897480010986
+        }
+      ]
+    },
+    {
+      "id": "doc_e_098",
+      "label": "ALDH2",
+      "type": "Gene",
+      "aliases": [
+        "ALDH2"
+      ],
+      "mentions": [
+        {
+          "id": "E633",
+          "text": "ALDH2",
+          "type": "Gene",
+          "start": 32801,
+          "end": 32806,
+          "score": 0.9999902248382568
+        }
+      ]
+    },
+    {
+      "id": "doc_e_099",
+      "label": "AGE",
+      "type": "Gene",
+      "aliases": [
+        "AGE"
+      ],
+      "mentions": [
+        {
+          "id": "E634",
+          "text": "AGE",
+          "type": "Gene",
+          "start": 32884,
+          "end": 32887,
+          "score": 0.99998939037323
+        },
+        {
+          "id": "E827",
+          "text": "AGE",
+          "type": "Gene",
+          "start": 44087,
+          "end": 44090,
+          "score": 0.9999895095825195
+        },
+        {
+          "id": "E834",
+          "text": "AGE",
+          "type": "Gene",
+          "start": 44345,
+          "end": 44348,
+          "score": 0.9999898672103882
+        }
+      ]
+    },
+    {
+      "id": "doc_e_100",
+      "label": "FN1",
+      "type": "Gene",
+      "aliases": [
+        "FN1"
+      ],
+      "mentions": [
+        {
+          "id": "E641",
+          "text": "FN1",
+          "type": "Gene",
+          "start": 33136,
+          "end": 33139,
+          "score": 0.9999901056289673
+        }
+      ]
+    },
+    {
+      "id": "doc_e_101",
+      "label": "COL3A1",
+      "type": "Gene",
+      "aliases": [
+        "COL3A1"
+      ],
+      "mentions": [
+        {
+          "id": "E642",
+          "text": "COL3A1",
+          "type": "Gene",
+          "start": 33141,
+          "end": 33147,
+          "score": 0.9999901056289673
+        }
+      ]
+    },
+    {
+      "id": "doc_e_102",
+      "label": "CDKN1B",
+      "type": "Gene",
+      "aliases": [
+        "CDKN1B"
+      ],
+      "mentions": [
+        {
+          "id": "E643",
+          "text": "CDKN1B",
+          "type": "Gene",
+          "start": 33149,
+          "end": 33155,
+          "score": 0.9999898672103882
+        }
+      ]
+    },
+    {
+      "id": "doc_e_103",
+      "label": "metabolic dysfunction",
+      "type": "Disease",
+      "aliases": [
+        "metabolic dysfunction"
+      ],
+      "mentions": [
+        {
+          "id": "E657",
+          "text": "metabolic dysfunction",
+          "type": "Disease",
+          "start": 34212,
+          "end": 34233,
+          "score": 0.999991238117218
+        }
+      ]
+    },
+    {
+      "id": "doc_e_104",
+      "label": "proinflammatory",
+      "type": "Gene",
+      "aliases": [
+        "proinflammatory"
+      ],
+      "mentions": [
+        {
+          "id": "E660",
+          "text": "proinflammatory",
+          "type": "Gene",
+          "start": 34266,
+          "end": 34281,
+          "score": 0.7924196720123291
+        }
+      ]
+    },
+    {
+      "id": "doc_e_105",
+      "label": "dyslipidemia",
+      "type": "Disease",
+      "aliases": [
+        "dyslipidemia"
+      ],
+      "mentions": [
+        {
+          "id": "E703",
+          "text": "dyslipidemia",
+          "type": "Disease",
+          "start": 36639,
+          "end": 36651,
+          "score": 0.9999856948852539
+        }
+      ]
+    },
+    {
+      "id": "doc_e_106",
+      "label": "related",
+      "type": "Disease",
+      "aliases": [
+        "related"
+      ],
+      "mentions": [
+        {
+          "id": "E747",
+          "text": "related",
+          "type": "Disease",
+          "start": 38644,
+          "end": 38651,
+          "score": 0.8595789670944214
+        }
+      ]
+    },
+    {
+      "id": "doc_e_107",
+      "label": "Metformin",
+      "type": "Chemical",
+      "aliases": [
+        "Metformin"
+      ],
+      "mentions": [
+        {
+          "id": "E749",
+          "text": "Metformin",
+          "type": "Chemical",
+          "start": 38815,
+          "end": 38824,
+          "score": 0.9999969005584717
+        }
+      ]
+    },
+    {
+      "id": "doc_e_108",
+      "label": "glycemia",
+      "type": "Chemical",
+      "aliases": [
+        "glycemia"
+      ],
+      "mentions": [
+        {
+          "id": "E757",
+          "text": "glycemia",
+          "type": "Chemical",
+          "start": 39255,
+          "end": 39263,
+          "score": 0.6654784679412842
+        }
+      ]
+    },
+    {
+      "id": "doc_e_109",
+      "label": "Impaired glucose tolerance",
+      "type": "Disease",
+      "aliases": [
+        "Impaired glucose tolerance"
+      ],
+      "mentions": [
+        {
+          "id": "E764",
+          "text": "Impaired glucose tolerance",
+          "type": "Disease",
+          "start": 39549,
+          "end": 39575,
+          "score": 0.9999899466832479
+        }
+      ]
+    },
+    {
+      "id": "doc_e_110",
+      "label": "glucose intolerance",
+      "type": "Disease",
+      "aliases": [
+        "glucose intolerance"
+      ],
+      "mentions": [
+        {
+          "id": "E770",
+          "text": "glucose intolerance",
+          "type": "Disease",
+          "start": 39889,
+          "end": 39908,
+          "score": 0.9999430179595947
+        }
+      ]
+    },
+    {
+      "id": "doc_e_111",
+      "label": "kidney damage",
+      "type": "Disease",
+      "aliases": [
+        "kidney damage"
+      ],
+      "mentions": [
+        {
+          "id": "E779",
+          "text": "kidney damage",
+          "type": "Disease",
+          "start": 40514,
+          "end": 40527,
+          "score": 0.9999911189079285
+        }
+      ]
+    },
+    {
+      "id": "doc_e_112",
+      "label": "liver diseases and injury",
+      "type": "Disease",
+      "aliases": [
+        "liver diseases and injury"
+      ],
+      "mentions": [
+        {
+          "id": "E795",
+          "text": "liver diseases and injury",
+          "type": "Disease",
+          "start": 41526,
+          "end": 41551,
+          "score": 0.9999927580356598
+        }
+      ]
+    },
+    {
+      "id": "doc_e_113",
+      "label": "NRF2",
+      "type": "Gene",
+      "aliases": [
+        "NRF2"
+      ],
+      "mentions": [
+        {
+          "id": "E797",
+          "text": "NRF2",
+          "type": "Gene",
+          "start": 41694,
+          "end": 41698,
+          "score": 0.9999897480010986
+        },
+        {
+          "id": "E799",
+          "text": "NRF2",
+          "type": "Gene",
+          "start": 41722,
+          "end": 41726,
+          "score": 0.9999899864196777
+        },
+        {
+          "id": "E802",
+          "text": "NRF2",
+          "type": "Gene",
+          "start": 41925,
+          "end": 41929,
+          "score": 0.9999901056289673
+        },
+        {
+          "id": "E805",
+          "text": "NRF2",
+          "type": "Gene",
+          "start": 42126,
+          "end": 42130,
+          "score": 0.9999896287918091
+        },
+        {
+          "id": "E822",
+          "text": "NRF2",
+          "type": "Gene",
+          "start": 43454,
+          "end": 43458,
+          "score": 0.9999898672103882
+        }
+      ]
+    },
+    {
+      "id": "doc_e_114",
+      "label": "PXR",
+      "type": "Gene",
+      "aliases": [
+        "PXR"
+      ],
+      "mentions": [
+        {
+          "id": "E808",
+          "text": "PXR",
+          "type": "Gene",
+          "start": 42205,
+          "end": 42208,
+          "score": 0.9999901056289673
+        }
+      ]
+    }
+  ],
+  "edges": []
+}

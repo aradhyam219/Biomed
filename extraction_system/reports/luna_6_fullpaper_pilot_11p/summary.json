@@ -1,0 +1,75 @@
+{
+  "contract": "Codex Contract 11P",
+  "baseline": {
+    "branch": "extraction_system_v2",
+    "repository_sha": "1f12923ce54ab6718a00b8d8e8126536285dc6a8",
+    "production_code_diff": "none in src/, viewer/, or tests/"
+  },
+  "paper": {
+    "paper_id": "PMCID:PMC10770459",
+    "source_characters": 48203,
+    "source_sha256": "5b58cb81f2add5f1295313b08c07e575bffffa8c1a871f32436d278735b209a4",
+    "frozen_entity_count": 874,
+    "chunk_count": 6
+  },
+  "execution": {
+    "total_chunks": 6,
+    "attempted_chunks": 1,
+    "successful_chunks": 0,
+    "validation_failures": 0,
+    "timeouts": 0,
+    "other_chunk_failures": 1,
+    "provider_attempts": 1,
+    "repair_attempts": 0,
+    "total_relations": 0,
+    "unique_evidence_spans": 0,
+    "evidence_span_method": "Count distinct exact occurrences of validated evidence strings within successful source chunks; repeated occurrences in a chunk are included as candidate spans.",
+    "relations_with_ambiguous_evidence_occurrence": 0,
+    "total_input_tokens": null,
+    "total_output_tokens": null,
+    "token_usage_attempts_with_input_count": 0,
+    "token_usage_attempts_with_output_count": 0,
+    "total_elapsed_seconds": 3.485,
+    "successful_source_characters": 0,
+    "source_coverage_percent": 0.0,
+    "graph_node_count": 114,
+    "graph_edge_count": 0,
+    "stop_reason": "failed_or_timed_out_fraction_exceeded_25_percent",
+    "viewer_smoke": "graph loaded; no console errors or warnings; node inspection passed; edge and bundle checks unavailable because the graph has zero edges",
+    "unattempted_chunks": 5,
+    "failure_fraction": 1.0
+  },
+  "failures": [
+    {
+      "chunk_id": "chunk_001",
+      "source_range": {
+        "start": 0,
+        "end": 9153
+      },
+      "exact_failure": "LLM relation provider invocation failed: Connection error.",
+      "attempt_count": 1,
+      "repair_count": 0,
+      "elapsed_seconds": 3.453
+    }
+  ],
+  "artifacts": {
+    "preflight": "reports/luna_6_fullpaper_pilot_11p/preflight.json",
+    "chunk_manifest": "reports/luna_6_fullpaper_pilot_11p/chunk_manifest.json",
+    "chunk_results": "reports/luna_6_fullpaper_pilot_11p/chunks",
+    "full_paper_relations": "reports/luna_6_fullpaper_pilot_11p/full_paper_relations.json",
+    "full_paper_graph": "reports/luna_6_fullpaper_pilot_11p/full_paper_graph.json",
+    "screenshot": null,
+    "summary_markdown": "reports/luna_6_fullpaper_pilot_11p/summary.md",
+    "summary_json": "reports/luna_6_fullpaper_pilot_11p/summary.json",
+    "screenshot_status": "captured in the CUA viewer and displayed during the smoke check; no local PNG was saved because browser security rejected the data-URL navigation needed to persist it and prohibited workarounds"
+  },
+  "production_code_modified": false,
+  "viewer_smoke_details": {
+    "graph_load": "passed; 114 nodes and 0 edges",
+    "console_errors_and_warnings": 0,
+    "node_inspection": "passed for glucose (doc_e_001); 2 aliases and 64 source mentions displayed",
+    "edge_inspection": "unavailable because there are no edges",
+    "relation_bundles": "unavailable because there are no edges",
+    "screenshot_status": "captured in the CUA viewer and displayed during the smoke check; no local PNG was saved because browser security rejected the data-URL navigation needed to persist it and prohibited workarounds"
+  }
+}

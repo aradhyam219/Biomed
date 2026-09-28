@@ -1,0 +1,116 @@
+{
+  "contract": "Codex Contract 11P",
+  "created_utc": "2026-09-28T11:04:48.907134+00:00",
+  "baseline": {
+    "branch": "extraction_system_v2",
+    "repository_sha": "1f12923ce54ab6718a00b8d8e8126536285dc6a8",
+    "production_code_diff": "none in src/, viewer/, or tests/"
+  },
+  "paper": {
+    "paper_id": "PMCID:PMC10770459",
+    "source_characters": 48203,
+    "source_sha256": "5b58cb81f2add5f1295313b08c07e575bffffa8c1a871f32436d278735b209a4",
+    "source_corpus_path": ".cache/ner_target_domain/target_corpus.json",
+    "source_corpus_file_sha256": "544cb37adee45fd7fe892c80b7aa4e8ba93e801212bc759e615e71d721ce4b55",
+    "frozen_entity_count": 874,
+    "frozen_entity_packet_path": "reports/luna_56_vs_6_fullpaper_11/papers/pmcid_pmc10770459/entities.json",
+    "frozen_entity_packet_sha256": "938cdc238e47c46ae7773129e3f0196027f5f676f74864f1fe72b845a79ca8c0",
+    "frozen_entity_input_path": "reports/luna_56_vs_6_fullpaper_11/papers/pmcid_pmc10770459/entity_input.json",
+    "frozen_entity_input_file_sha256": "6ba516059b9ab52717656d6868bc6c6b46d97b6089c8b457e730b31fa7649e75",
+    "frozen_entity_input_sha256": "b0e5d154c3dc8cc221c7f3553e42a1c24c0b8a13f28d4526e196dbbdb0ab2b9a",
+    "frozen_entity_input_expected_sha256": "b0e5d154c3dc8cc221c7f3553e42a1c24c0b8a13f28d4526e196dbbdb0ab2b9a",
+    "previous_preflight_path": "reports/luna_56_vs_6_fullpaper_11/preflight.json",
+    "previous_preflight_source_sha256": "5b58cb81f2add5f1295313b08c07e575bffffa8c1a871f32436d278735b209a4",
+    "previous_preflight_entity_packet_sha256": "938cdc238e47c46ae7773129e3f0196027f5f676f74864f1fe72b845a79ca8c0"
+  },
+  "chunking": {
+    "target_characters": 8000,
+    "hard_max_characters": 10000,
+    "boundary_preference": [
+      "section",
+      "paragraph",
+      "sentence",
+      "safe_whitespace"
+    ],
+    "non_overlapping": true,
+    "complete_source_coverage": true,
+    "chunk_count": 6,
+    "chunk_boundaries": [
+      {
+        "chunk_id": "chunk_001",
+        "start": 0,
+        "end": 9153,
+        "characters": 9153,
+        "boundary_kind": "section",
+        "source_text_sha256": "2a3ad71cb9f149cceda87dc8bc9af582a3982e98d5bf7f7b2dd21c161597d2fd",
+        "entity_count": 165,
+        "prompt_sha256": "7689a3d8df557f93560b712dc758cbe51351d800c5e02c70201807ca68e2b3f1"
+      },
+      {
+        "chunk_id": "chunk_002",
+        "start": 9153,
+        "end": 16930,
+        "characters": 7777,
+        "boundary_kind": "section",
+        "source_text_sha256": "1dbc554ff93dcde8fb62c8d70fb52ffd01108333f4a10020b9d334ef5468cb93",
+        "entity_count": 126,
+        "prompt_sha256": "183ff948abfff9ccfb28f9fd21ad53531b7fd88901730c1d2505e53968eb846c"
+      },
+      {
+        "chunk_id": "chunk_003",
+        "start": 16930,
+        "end": 24666,
+        "characters": 7736,
+        "boundary_kind": "section",
+        "source_text_sha256": "87cadd48d4de74c4d529c0d09bbc9ea6b5f01c38fb21f1a2861e2d7191790a59",
+        "entity_count": 179,
+        "prompt_sha256": "0004b45581726face2f32d8e63cc0a824b9ee4dbba359e01155326c721485c00"
+      },
+      {
+        "chunk_id": "chunk_004",
+        "start": 24666,
+        "end": 34169,
+        "characters": 9503,
+        "boundary_kind": "section",
+        "source_text_sha256": "e00f1ba67c55b49af711652038313870e4a1174ec4b72e04d96ae265140de571",
+        "entity_count": 185,
+        "prompt_sha256": "df19c5f4b104857b822ff455bf7a23370edfe479a58cf8415d46ef8d30059450"
+      },
+      {
+        "chunk_id": "chunk_005",
+        "start": 34169,
+        "end": 41222,
+        "characters": 7053,
+        "boundary_kind": "paragraph",
+        "source_text_sha256": "9c96af5f5b7dc5a4af6a5e53a749e8835b06b0b715d8ffc5bc806ec056b329ff",
+        "entity_count": 137,
+        "prompt_sha256": "ab97e0f5cb0f5da8c59282f7fc03d1b356e74ca199eaf8fae04360ce201d7fad"
+      },
+      {
+        "chunk_id": "chunk_006",
+        "start": 41222,
+        "end": 48203,
+        "characters": 6981,
+        "boundary_kind": "end_of_source",
+        "source_text_sha256": "29d9c7586d40f1076bf8481d8c2a75140864f41d54c0ab70239c3bca3b2ad84f",
+        "entity_count": 82,
+        "prompt_sha256": "071e87338abf749b36b23afa2111ef21c5b56f56876befe210f0577094d68d63"
+      }
+    ]
+  },
+  "model": "gpt-6-luna",
+  "provider": "OpenAI Responses API",
+  "reasoning_effort": "max",
+  "max_output_tokens": 128000,
+  "repair_budget": 2,
+  "provider_retries": 0,
+  "temperature": "not set",
+  "prompt_sha256": "13f38a6e94db74b534eb0df0b139287ace2e714fc908276ce4c3572f9b25836f",
+  "structured_schema_sha256": "023435da3fa18abb77987313626636eff7bedda28739603db54a2f2c8137c945",
+  "contract_10_prompt_matches_previous_preflight": true,
+  "contract_10_schema_matches_previous_preflight": true,
+  "credentials_available": true,
+  "scheduled_gpt6_jobs": 6,
+  "per_job_timeout_seconds": 600,
+  "paper_role_enrichment": "disabled"
+}

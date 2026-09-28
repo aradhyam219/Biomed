@@ -1,0 +1,3353 @@
+{
+  "chunk_id": "chunk_004",
+  "status": "not_attempted_due_stop_condition",
+  "paper_id": "PMCID:PMC10770459",
+  "absolute_source_range": {
+    "start": 24666,
+    "end": 34169
+  },
+  "source_text_sha256": "e00f1ba67c55b49af711652038313870e4a1174ec4b72e04d96ae265140de571",
+  "source_characters": 9503,
+  "entity_count": 185,
+  "entity_packet": [
+    {
+      "id": "E471",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 24693,
+      "end": 24698,
+      "score": 0.9999881982803345,
+      "absolute_start": 24693,
+      "absolute_end": 24698
+    },
+    {
+      "id": "E472",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 24708,
+      "end": 24711,
+      "score": 0.9999970197677612,
+      "absolute_start": 24708,
+      "absolute_end": 24711
+    },
+    {
+      "id": "E473",
+      "text": "iHMGB1",
+      "type": "Gene",
+      "start": 24716,
+      "end": 24722,
+      "score": 0.9999805688858032,
+      "absolute_start": 24716,
+      "absolute_end": 24722
+    },
+    {
+      "id": "E474",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 24730,
+      "end": 24733,
+      "score": 0.9999972581863403,
+      "absolute_start": 24730,
+      "absolute_end": 24733
+    },
+    {
+      "id": "E475",
+      "text": "mice",
+      "type": "Species",
+      "start": 24734,
+      "end": 24738,
+      "score": 0.9999878406524658,
+      "absolute_start": 24734,
+      "absolute_end": 24738
+    },
+    {
+      "id": "E476",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 24757,
+      "end": 24760,
+      "score": 0.9999972581863403,
+      "absolute_start": 24757,
+      "absolute_end": 24760
+    },
+    {
+      "id": "E477",
+      "text": "glucose",
+      "type": "Chemical",
+      "start": 24817,
+      "end": 24824,
+      "score": 0.9999971389770508,
+      "absolute_start": 24817,
+      "absolute_end": 24824
+    },
+    {
+      "id": "E478",
+      "text": "iHMGB1",
+      "type": "Gene",
+      "start": 24840,
+      "end": 24846,
+      "score": 0.9999728202819824,
+      "absolute_start": 24840,
+      "absolute_end": 24846
+    },
+    {
+      "id": "E479",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 24854,
+      "end": 24857,
+      "score": 0.9999973773956299,
+      "absolute_start": 24854,
+      "absolute_end": 24857
+    },
+    {
+      "id": "E480",
+      "text": "mice",
+      "type": "Species",
+      "start": 24858,
+      "end": 24862,
+      "score": 0.9999878406524658,
+      "absolute_start": 24858,
+      "absolute_end": 24862
+    },
+    {
+      "id": "E481",
+      "text": "blood glucose",
+      "type": "Chemical",
+      "start": 24915,
+      "end": 24928,
+      "score": 0.999985933303833,
+      "absolute_start": 24915,
+      "absolute_end": 24928
+    },
+    {
+      "id": "E482",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 24948,
+      "end": 24953,
+      "score": 0.9999877214431763,
+      "absolute_start": 24948,
+      "absolute_end": 24953
+    },
+    {
+      "id": "E483",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 24963,
+      "end": 24966,
+      "score": 0.9999972581863403,
+      "absolute_start": 24963,
+      "absolute_end": 24966
+    },
+    {
+      "id": "E484",
+      "text": "mice",
+      "type": "Species",
+      "start": 24967,
+      "end": 24971,
+      "score": 0.9999877214431763,
+      "absolute_start": 24967,
+      "absolute_end": 24971
+    },
+    {
+      "id": "E485",
+      "text": "blood glucose",
+      "type": "Chemical",
+      "start": 24979,
+      "end": 24992,
+      "score": 0.9999856948852539,
+      "absolute_start": 24979,
+      "absolute_end": 24992
+    },
+    {
+      "id": "E486",
+      "text": "blood glucose",
+      "type": "Chemical",
+      "start": 25189,
+      "end": 25202,
+      "score": 0.9999175667762756,
+      "absolute_start": 25189,
+      "absolute_end": 25202
+    },
+    {
+      "id": "E487",
+      "text": "iHMGB1",
+      "type": "Gene",
+      "start": 25213,
+      "end": 25219,
+      "score": 0.9975098371505737,
+      "absolute_start": 25213,
+      "absolute_end": 25219
+    },
+    {
+      "id": "E488",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 25227,
+      "end": 25230,
+      "score": 0.9999970197677612,
+      "absolute_start": 25227,
+      "absolute_end": 25230
+    },
+    {
+      "id": "E489",
+      "text": "mice",
+      "type": "Species",
+      "start": 25231,
+      "end": 25235,
+      "score": 0.9999877214431763,
+      "absolute_start": 25231,
+      "absolute_end": 25235
+    },
+    {
+      "id": "E490",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 25313,
+      "end": 25318,
+      "score": 0.9999860525131226,
+      "absolute_start": 25313,
+      "absolute_end": 25318
+    },
+    {
+      "id": "E491",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 25328,
+      "end": 25331,
+      "score": 0.9999969005584717,
+      "absolute_start": 25328,
+      "absolute_end": 25331
+    },
+    {
+      "id": "E492",
+      "text": "mice",
+      "type": "Species",
+      "start": 25332,
+      "end": 25336,
+      "score": 0.9999877214431763,
+      "absolute_start": 25332,
+      "absolute_end": 25336
+    },
+    {
+      "id": "E493",
+      "text": "blood glucose",
+      "type": "Chemical",
+      "start": 25369,
+      "end": 25382,
+      "score": 0.9999647736549377,
+      "absolute_start": 25369,
+      "absolute_end": 25382
+    },
+    {
+      "id": "E494",
+      "text": "blood",
+      "type": "Chemical",
+      "start": 25529,
+      "end": 25534,
+      "score": 0.8894771933555603,
+      "absolute_start": 25529,
+      "absolute_end": 25534
+    },
+    {
+      "id": "E495",
+      "text": "glucose",
+      "type": "Chemical",
+      "start": 25535,
+      "end": 25542,
+      "score": 0.7378107309341431,
+      "absolute_start": 25535,
+      "absolute_end": 25542
+    },
+    {
+      "id": "E496",
+      "text": "glucose",
+      "type": "Chemical",
+      "start": 25580,
+      "end": 25587,
+      "score": 0.9999964237213135,
+      "absolute_start": 25580,
+      "absolute_end": 25587
+    },
+    {
+      "id": "E497",
+      "text": "iHMGB1",
+      "type": "Gene",
+      "start": 25657,
+      "end": 25663,
+      "score": 0.9917258024215698,
+      "absolute_start": 25657,
+      "absolute_end": 25663
+    },
+    {
+      "id": "E498",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 25671,
+      "end": 25674,
+      "score": 0.9999873638153076,
+      "absolute_start": 25671,
+      "absolute_end": 25674
+    },
+    {
+      "id": "E499",
+      "text": "mice",
+      "type": "Species",
+      "start": 25675,
+      "end": 25679,
+      "score": 0.9999878406524658,
+      "absolute_start": 25675,
+      "absolute_end": 25679
+    },
+    {
+      "id": "E500",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 25692,
+      "end": 25697,
+      "score": 0.9999852180480957,
+      "absolute_start": 25692,
+      "absolute_end": 25697
+    },
+    {
+      "id": "E501",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 25707,
+      "end": 25710,
+      "score": 0.9999871253967285,
+      "absolute_start": 25707,
+      "absolute_end": 25710
+    },
+    {
+      "id": "E502",
+      "text": "mice",
+      "type": "Species",
+      "start": 25711,
+      "end": 25715,
+      "score": 0.9999878406524658,
+      "absolute_start": 25711,
+      "absolute_end": 25715
+    },
+    {
+      "id": "E503",
+      "text": "iHMGB1",
+      "type": "Gene",
+      "start": 25733,
+      "end": 25739,
+      "score": 0.9992530941963196,
+      "absolute_start": 25733,
+      "absolute_end": 25739
+    },
+    {
+      "id": "E504",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 25747,
+      "end": 25750,
+      "score": 0.9999867677688599,
+      "absolute_start": 25747,
+      "absolute_end": 25750
+    },
+    {
+      "id": "E505",
+      "text": "mice",
+      "type": "Species",
+      "start": 25751,
+      "end": 25755,
+      "score": 0.9999876022338867,
+      "absolute_start": 25751,
+      "absolute_end": 25755
+    },
+    {
+      "id": "E506",
+      "text": "glucose",
+      "type": "Chemical",
+      "start": 25764,
+      "end": 25771,
+      "score": 0.999994158744812,
+      "absolute_start": 25764,
+      "absolute_end": 25771
+    },
+    {
+      "id": "E507",
+      "text": "glucose",
+      "type": "Chemical",
+      "start": 25813,
+      "end": 25820,
+      "score": 0.9998329877853394,
+      "absolute_start": 25813,
+      "absolute_end": 25820
+    },
+    {
+      "id": "E508",
+      "text": "tolerance",
+      "type": "Disease",
+      "start": 25821,
+      "end": 25830,
+      "score": 0.5191864371299744,
+      "absolute_start": 25821,
+      "absolute_end": 25830
+    },
+    {
+      "id": "E509",
+      "text": "glucose",
+      "type": "Chemical",
+      "start": 25869,
+      "end": 25876,
+      "score": 0.9999973773956299,
+      "absolute_start": 25869,
+      "absolute_end": 25876
+    },
+    {
+      "id": "E510",
+      "text": "hyperglycemia",
+      "type": "Disease",
+      "start": 25924,
+      "end": 25937,
+      "score": 0.9999854564666748,
+      "absolute_start": 25924,
+      "absolute_end": 25937
+    },
+    {
+      "id": "E511",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 25953,
+      "end": 25958,
+      "score": 0.9999890327453613,
+      "absolute_start": 25953,
+      "absolute_end": 25958
+    },
+    {
+      "id": "E512",
+      "text": "glucose",
+      "type": "Chemical",
+      "start": 26031,
+      "end": 26038,
+      "score": 0.9999972581863403,
+      "absolute_start": 26031,
+      "absolute_end": 26038
+    },
+    {
+      "id": "E513",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 26128,
+      "end": 26133,
+      "score": 0.9999879598617554,
+      "absolute_start": 26128,
+      "absolute_end": 26133
+    },
+    {
+      "id": "E514",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 26143,
+      "end": 26146,
+      "score": 0.9999970197677612,
+      "absolute_start": 26143,
+      "absolute_end": 26146
+    },
+    {
+      "id": "E515",
+      "text": "iHMGB1",
+      "type": "Gene",
+      "start": 26151,
+      "end": 26157,
+      "score": 0.9997583031654358,
+      "absolute_start": 26151,
+      "absolute_end": 26157
+    },
+    {
+      "id": "E516",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 26165,
+      "end": 26168,
+      "score": 0.9999971389770508,
+      "absolute_start": 26165,
+      "absolute_end": 26168
+    },
+    {
+      "id": "E517",
+      "text": "mice",
+      "type": "Species",
+      "start": 26169,
+      "end": 26173,
+      "score": 0.9999877214431763,
+      "absolute_start": 26169,
+      "absolute_end": 26173
+    },
+    {
+      "id": "E518",
+      "text": "ALT",
+      "type": "Gene",
+      "start": 26236,
+      "end": 26239,
+      "score": 0.9999868869781494,
+      "absolute_start": 26236,
+      "absolute_end": 26239
+    },
+    {
+      "id": "E519",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 26287,
+      "end": 26292,
+      "score": 0.9999884366989136,
+      "absolute_start": 26287,
+      "absolute_end": 26292
+    },
+    {
+      "id": "E520",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 26302,
+      "end": 26305,
+      "score": 0.9999970197677612,
+      "absolute_start": 26302,
+      "absolute_end": 26305
+    },
+    {
+      "id": "E521",
+      "text": "mice",
+      "type": "Species",
+      "start": 26306,
+      "end": 26310,
+      "score": 0.9999876022338867,
+      "absolute_start": 26306,
+      "absolute_end": 26310
+    },
+    {
+      "id": "E522",
+      "text": "AST",
+      "type": "Gene",
+      "start": 26354,
+      "end": 26357,
+      "score": 0.9999856948852539,
+      "absolute_start": 26354,
+      "absolute_end": 26357
+    },
+    {
+      "id": "E523",
+      "text": "liver damage",
+      "type": "Disease",
+      "start": 26375,
+      "end": 26387,
+      "score": 0.9999902248382568,
+      "absolute_start": 26375,
+      "absolute_end": 26387
+    },
+    {
+      "id": "E524",
+      "text": "iHMGB1",
+      "type": "Gene",
+      "start": 26401,
+      "end": 26407,
+      "score": 0.9998071789741516,
+      "absolute_start": 26401,
+      "absolute_end": 26407
+    },
+    {
+      "id": "E525",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 26415,
+      "end": 26418,
+      "score": 0.9999970197677612,
+      "absolute_start": 26415,
+      "absolute_end": 26418
+    },
+    {
+      "id": "E526",
+      "text": "mice",
+      "type": "Species",
+      "start": 26419,
+      "end": 26423,
+      "score": 0.9999877214431763,
+      "absolute_start": 26419,
+      "absolute_end": 26423
+    },
+    {
+      "id": "E527",
+      "text": "AST",
+      "type": "Gene",
+      "start": 26516,
+      "end": 26519,
+      "score": 0.9999862909317017,
+      "absolute_start": 26516,
+      "absolute_end": 26519
+    },
+    {
+      "id": "E528",
+      "text": "ALT",
+      "type": "Gene",
+      "start": 26520,
+      "end": 26523,
+      "score": 0.9999879598617554,
+      "absolute_start": 26520,
+      "absolute_end": 26523
+    },
+    {
+      "id": "E529",
+      "text": "iHMGB1",
+      "type": "Gene",
+      "start": 26549,
+      "end": 26555,
+      "score": 0.5616253614425659,
+      "absolute_start": 26549,
+      "absolute_end": 26555
+    },
+    {
+      "id": "E530",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 26563,
+      "end": 26566,
+      "score": 0.9999964237213135,
+      "absolute_start": 26563,
+      "absolute_end": 26566
+    },
+    {
+      "id": "E531",
+      "text": "mice",
+      "type": "Species",
+      "start": 26567,
+      "end": 26571,
+      "score": 0.9999874830245972,
+      "absolute_start": 26567,
+      "absolute_end": 26571
+    },
+    {
+      "id": "E532",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 26612,
+      "end": 26617,
+      "score": 0.9999874830245972,
+      "absolute_start": 26612,
+      "absolute_end": 26617
+    },
+    {
+      "id": "E533",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 26627,
+      "end": 26630,
+      "score": 0.999996542930603,
+      "absolute_start": 26627,
+      "absolute_end": 26630
+    },
+    {
+      "id": "E534",
+      "text": "mice",
+      "type": "Species",
+      "start": 26631,
+      "end": 26635,
+      "score": 0.9999873638153076,
+      "absolute_start": 26631,
+      "absolute_end": 26635
+    },
+    {
+      "id": "E535",
+      "text": "AST",
+      "type": "Gene",
+      "start": 26669,
+      "end": 26672,
+      "score": 0.9999878406524658,
+      "absolute_start": 26669,
+      "absolute_end": 26672
+    },
+    {
+      "id": "E536",
+      "text": "ALT",
+      "type": "Gene",
+      "start": 26673,
+      "end": 26676,
+      "score": 0.9999890327453613,
+      "absolute_start": 26673,
+      "absolute_end": 26676
+    },
+    {
+      "id": "E537",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 26728,
+      "end": 26733,
+      "score": 0.9999889135360718,
+      "absolute_start": 26728,
+      "absolute_end": 26733
+    },
+    {
+      "id": "E538",
+      "text": "liver damage",
+      "type": "Disease",
+      "start": 26761,
+      "end": 26773,
+      "score": 0.9999919533729553,
+      "absolute_start": 26761,
+      "absolute_end": 26773
+    },
+    {
+      "id": "E539",
+      "text": "hyperglycemic",
+      "type": "Disease",
+      "start": 26780,
+      "end": 26793,
+      "score": 0.9999850988388062,
+      "absolute_start": 26780,
+      "absolute_end": 26793
+    },
+    {
+      "id": "E540",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 26864,
+      "end": 26869,
+      "score": 0.9999884366989136,
+      "absolute_start": 26864,
+      "absolute_end": 26869
+    },
+    {
+      "id": "E541",
+      "text": "liver damage",
+      "type": "Disease",
+      "start": 26873,
+      "end": 26885,
+      "score": 0.9999905824661255,
+      "absolute_start": 26873,
+      "absolute_end": 26885
+    },
+    {
+      "id": "E542",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 26927,
+      "end": 26932,
+      "score": 0.9999889135360718,
+      "absolute_start": 26927,
+      "absolute_end": 26932
+    },
+    {
+      "id": "E543",
+      "text": "hyperglycemic",
+      "type": "Disease",
+      "start": 26964,
+      "end": 26977,
+      "score": 0.9999843835830688,
+      "absolute_start": 26964,
+      "absolute_end": 26977
+    },
+    {
+      "id": "E544",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 26985,
+      "end": 26990,
+      "score": 0.9999872446060181,
+      "absolute_start": 26985,
+      "absolute_end": 26990
+    },
+    {
+      "id": "E545",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 27000,
+      "end": 27003,
+      "score": 0.9999960660934448,
+      "absolute_start": 27000,
+      "absolute_end": 27003
+    },
+    {
+      "id": "E546",
+      "text": "mice",
+      "type": "Species",
+      "start": 27004,
+      "end": 27008,
+      "score": 0.9999877214431763,
+      "absolute_start": 27004,
+      "absolute_end": 27008
+    },
+    {
+      "id": "E547",
+      "text": "lipid",
+      "type": "Chemical",
+      "start": 27049,
+      "end": 27054,
+      "score": 0.9119126796722412,
+      "absolute_start": 27049,
+      "absolute_end": 27054
+    },
+    {
+      "id": "E548",
+      "text": "inflammatory",
+      "type": "Disease",
+      "start": 27097,
+      "end": 27109,
+      "score": 0.9999804496765137,
+      "absolute_start": 27097,
+      "absolute_end": 27109
+    },
+    {
+      "id": "E549",
+      "text": "iHMGB1",
+      "type": "Gene",
+      "start": 27135,
+      "end": 27141,
+      "score": 0.9974823594093323,
+      "absolute_start": 27135,
+      "absolute_end": 27141
+    },
+    {
+      "id": "E550",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 27149,
+      "end": 27152,
+      "score": 0.9999957084655762,
+      "absolute_start": 27149,
+      "absolute_end": 27152
+    },
+    {
+      "id": "E551",
+      "text": "mice",
+      "type": "Species",
+      "start": 27153,
+      "end": 27157,
+      "score": 0.9999877214431763,
+      "absolute_start": 27153,
+      "absolute_end": 27157
+    },
+    {
+      "id": "E552",
+      "text": "PAS",
+      "type": "Chemical",
+      "start": 27196,
+      "end": 27199,
+      "score": 0.9230425357818604,
+      "absolute_start": 27196,
+      "absolute_end": 27199
+    },
+    {
+      "id": "E553",
+      "text": "Oil Red O",
+      "type": "Chemical",
+      "start": 27204,
+      "end": 27213,
+      "score": 0.9998689293861389,
+      "absolute_start": 27204,
+      "absolute_end": 27213
+    },
+    {
+      "id": "E554",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 27237,
+      "end": 27242,
+      "score": 0.9999879598617554,
+      "absolute_start": 27237,
+      "absolute_end": 27242
+    },
+    {
+      "id": "E555",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 27252,
+      "end": 27255,
+      "score": 0.9999964237213135,
+      "absolute_start": 27252,
+      "absolute_end": 27255
+    },
+    {
+      "id": "E556",
+      "text": "mice",
+      "type": "Species",
+      "start": 27256,
+      "end": 27260,
+      "score": 0.9999876022338867,
+      "absolute_start": 27256,
+      "absolute_end": 27260
+    },
+    {
+      "id": "E557",
+      "text": "glycogen",
+      "type": "Chemical",
+      "start": 27281,
+      "end": 27289,
+      "score": 0.9999958276748657,
+      "absolute_start": 27281,
+      "absolute_end": 27289
+    },
+    {
+      "id": "E558",
+      "text": "lipid",
+      "type": "Chemical",
+      "start": 27302,
+      "end": 27307,
+      "score": 0.9999946355819702,
+      "absolute_start": 27302,
+      "absolute_end": 27307
+    },
+    {
+      "id": "E559",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 27386,
+      "end": 27391,
+      "score": 0.9999879598617554,
+      "absolute_start": 27386,
+      "absolute_end": 27391
+    },
+    {
+      "id": "E560",
+      "text": "glucose",
+      "type": "Chemical",
+      "start": 27470,
+      "end": 27477,
+      "score": 0.9999969005584717,
+      "absolute_start": 27470,
+      "absolute_end": 27477
+    },
+    {
+      "id": "E561",
+      "text": "DM",
+      "type": "Disease",
+      "start": 27490,
+      "end": 27492,
+      "score": 0.999985933303833,
+      "absolute_start": 27490,
+      "absolute_end": 27492
+    },
+    {
+      "id": "E562",
+      "text": "patients",
+      "type": "Species",
+      "start": 27493,
+      "end": 27501,
+      "score": 0.9999854564666748,
+      "absolute_start": 27493,
+      "absolute_end": 27501
+    },
+    {
+      "id": "E563",
+      "text": "Cystatin C",
+      "type": "Gene",
+      "start": 27537,
+      "end": 27547,
+      "score": 0.9999759793281555,
+      "absolute_start": 27537,
+      "absolute_end": 27547
+    },
+    {
+      "id": "E564",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 27580,
+      "end": 27585,
+      "score": 0.999987006187439,
+      "absolute_start": 27580,
+      "absolute_end": 27585
+    },
+    {
+      "id": "E565",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 27595,
+      "end": 27598,
+      "score": 0.9999969005584717,
+      "absolute_start": 27595,
+      "absolute_end": 27598
+    },
+    {
+      "id": "E566",
+      "text": "iHMGB1",
+      "type": "Gene",
+      "start": 27603,
+      "end": 27609,
+      "score": 0.997413694858551,
+      "absolute_start": 27603,
+      "absolute_end": 27609
+    },
+    {
+      "id": "E567",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 27617,
+      "end": 27620,
+      "score": 0.9999969005584717,
+      "absolute_start": 27617,
+      "absolute_end": 27620
+    },
+    {
+      "id": "E568",
+      "text": "mice",
+      "type": "Species",
+      "start": 27621,
+      "end": 27625,
+      "score": 0.9999877214431763,
+      "absolute_start": 27621,
+      "absolute_end": 27625
+    },
+    {
+      "id": "E569",
+      "text": "hyperglycemia",
+      "type": "Disease",
+      "start": 27640,
+      "end": 27653,
+      "score": 0.9999856948852539,
+      "absolute_start": 27640,
+      "absolute_end": 27653
+    },
+    {
+      "id": "E570",
+      "text": "iHMGB1",
+      "type": "Gene",
+      "start": 27693,
+      "end": 27699,
+      "score": 0.9999324083328247,
+      "absolute_start": 27693,
+      "absolute_end": 27699
+    },
+    {
+      "id": "E571",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 27707,
+      "end": 27710,
+      "score": 0.9999970197677612,
+      "absolute_start": 27707,
+      "absolute_end": 27710
+    },
+    {
+      "id": "E572",
+      "text": "mice",
+      "type": "Species",
+      "start": 27711,
+      "end": 27715,
+      "score": 0.9999876022338867,
+      "absolute_start": 27711,
+      "absolute_end": 27715
+    },
+    {
+      "id": "E573",
+      "text": "Cystatin C",
+      "type": "Gene",
+      "start": 27759,
+      "end": 27769,
+      "score": 0.999976396560669,
+      "absolute_start": 27759,
+      "absolute_end": 27769
+    },
+    {
+      "id": "E574",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 27782,
+      "end": 27787,
+      "score": 0.999987006187439,
+      "absolute_start": 27782,
+      "absolute_end": 27787
+    },
+    {
+      "id": "E575",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 27797,
+      "end": 27800,
+      "score": 0.9999970197677612,
+      "absolute_start": 27797,
+      "absolute_end": 27800
+    },
+    {
+      "id": "E576",
+      "text": "mice",
+      "type": "Species",
+      "start": 27801,
+      "end": 27805,
+      "score": 0.9999876022338867,
+      "absolute_start": 27801,
+      "absolute_end": 27805
+    },
+    {
+      "id": "E577",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 28043,
+      "end": 28048,
+      "score": 0.999987006187439,
+      "absolute_start": 28043,
+      "absolute_end": 28048
+    },
+    {
+      "id": "E578",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 28058,
+      "end": 28061,
+      "score": 0.9999970197677612,
+      "absolute_start": 28058,
+      "absolute_end": 28061
+    },
+    {
+      "id": "E579",
+      "text": "iHMGB1",
+      "type": "Gene",
+      "start": 28066,
+      "end": 28072,
+      "score": 0.999969482421875,
+      "absolute_start": 28066,
+      "absolute_end": 28072
+    },
+    {
+      "id": "E580",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 28080,
+      "end": 28083,
+      "score": 0.9999970197677612,
+      "absolute_start": 28080,
+      "absolute_end": 28083
+    },
+    {
+      "id": "E581",
+      "text": "mice",
+      "type": "Species",
+      "start": 28084,
+      "end": 28088,
+      "score": 0.9999877214431763,
+      "absolute_start": 28084,
+      "absolute_end": 28088
+    },
+    {
+      "id": "E582",
+      "text": "hyperglycemia",
+      "type": "Disease",
+      "start": 28296,
+      "end": 28309,
+      "score": 0.9999847412109375,
+      "absolute_start": 28296,
+      "absolute_end": 28309
+    },
+    {
+      "id": "E583",
+      "text": "diabetes",
+      "type": "Disease",
+      "start": 28332,
+      "end": 28340,
+      "score": 0.9999858140945435,
+      "absolute_start": 28332,
+      "absolute_end": 28340
+    },
+    {
+      "id": "E584",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 28513,
+      "end": 28518,
+      "score": 0.9999890327453613,
+      "absolute_start": 28513,
+      "absolute_end": 28518
+    },
+    {
+      "id": "E585",
+      "text": "hyperglycemia",
+      "type": "Disease",
+      "start": 28545,
+      "end": 28558,
+      "score": 0.9999849796295166,
+      "absolute_start": 28545,
+      "absolute_end": 28558
+    },
+    {
+      "id": "E586",
+      "text": "mice",
+      "type": "Species",
+      "start": 28559,
+      "end": 28563,
+      "score": 0.999987006187439,
+      "absolute_start": 28559,
+      "absolute_end": 28563
+    },
+    {
+      "id": "E587",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 28699,
+      "end": 28704,
+      "score": 0.9999896287918091,
+      "absolute_start": 28699,
+      "absolute_end": 28704
+    },
+    {
+      "id": "E588",
+      "text": "NRF2-mediated",
+      "type": "Gene",
+      "start": 28830,
+      "end": 28843,
+      "score": 0.9999898672103882,
+      "absolute_start": 28830,
+      "absolute_end": 28843
+    },
+    {
+      "id": "E589",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 28987,
+      "end": 28992,
+      "score": 0.9999898672103882,
+      "absolute_start": 28987,
+      "absolute_end": 28992
+    },
+    {
+      "id": "E590",
+      "text": "FXR",
+      "type": "Gene",
+      "start": 29008,
+      "end": 29011,
+      "score": 0.9999901056289673,
+      "absolute_start": 29008,
+      "absolute_end": 29011
+    },
+    {
+      "id": "E591",
+      "text": "LXR",
+      "type": "Gene",
+      "start": 29012,
+      "end": 29015,
+      "score": 0.9999896287918091,
+      "absolute_start": 29012,
+      "absolute_end": 29015
+    },
+    {
+      "id": "E592",
+      "text": "RXR",
+      "type": "Gene",
+      "start": 29016,
+      "end": 29019,
+      "score": 0.9999898672103882,
+      "absolute_start": 29016,
+      "absolute_end": 29019
+    },
+    {
+      "id": "E593",
+      "text": "glucose",
+      "type": "Chemical",
+      "start": 29077,
+      "end": 29084,
+      "score": 0.9999963045120239,
+      "absolute_start": 29077,
+      "absolute_end": 29084
+    },
+    {
+      "id": "E594",
+      "text": "lipid",
+      "type": "Chemical",
+      "start": 29089,
+      "end": 29094,
+      "score": 0.9999961853027344,
+      "absolute_start": 29089,
+      "absolute_end": 29094
+    },
+    {
+      "id": "E595",
+      "text": "lipid",
+      "type": "Chemical",
+      "start": 29292,
+      "end": 29297,
+      "score": 0.9999929666519165,
+      "absolute_start": 29292,
+      "absolute_end": 29297
+    },
+    {
+      "id": "E596",
+      "text": "ABCG5/8",
+      "type": "Gene",
+      "start": 29367,
+      "end": 29374,
+      "score": 0.999979297320048,
+      "absolute_start": 29367,
+      "absolute_end": 29374
+    },
+    {
+      "id": "E597",
+      "text": "MLXIPL",
+      "type": "Gene",
+      "start": 29376,
+      "end": 29382,
+      "score": 0.9999721050262451,
+      "absolute_start": 29376,
+      "absolute_end": 29382
+    },
+    {
+      "id": "E598",
+      "text": "APOA4",
+      "type": "Gene",
+      "start": 29384,
+      "end": 29389,
+      "score": 0.9999727010726929,
+      "absolute_start": 29384,
+      "absolute_end": 29389
+    },
+    {
+      "id": "E599",
+      "text": "ULK1",
+      "type": "Gene",
+      "start": 29467,
+      "end": 29471,
+      "score": 0.9999598264694214,
+      "absolute_start": 29467,
+      "absolute_end": 29471
+    },
+    {
+      "id": "E600",
+      "text": "AYG2A",
+      "type": "Gene",
+      "start": 29473,
+      "end": 29478,
+      "score": 0.9999525547027588,
+      "absolute_start": 29473,
+      "absolute_end": 29478
+    },
+    {
+      "id": "E601",
+      "text": "WDR45",
+      "type": "Gene",
+      "start": 29480,
+      "end": 29485,
+      "score": 0.9998835325241089,
+      "absolute_start": 29480,
+      "absolute_end": 29485
+    },
+    {
+      "id": "E602",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 29658,
+      "end": 29663,
+      "score": 0.9999856948852539,
+      "absolute_start": 29658,
+      "absolute_end": 29663
+    },
+    {
+      "id": "E603",
+      "text": "liver lesion",
+      "type": "Disease",
+      "start": 29855,
+      "end": 29867,
+      "score": 0.9999920129776001,
+      "absolute_start": 29855,
+      "absolute_end": 29867
+    },
+    {
+      "id": "E604",
+      "text": "liver fibrosis",
+      "type": "Disease",
+      "start": 29872,
+      "end": 29886,
+      "score": 0.9999918341636658,
+      "absolute_start": 29872,
+      "absolute_end": 29886
+    },
+    {
+      "id": "E605",
+      "text": "iHMGB1",
+      "type": "Gene",
+      "start": 29890,
+      "end": 29896,
+      "score": 0.999969482421875,
+      "absolute_start": 29890,
+      "absolute_end": 29896
+    },
+    {
+      "id": "E606",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 29904,
+      "end": 29907,
+      "score": 0.9999793767929077,
+      "absolute_start": 29904,
+      "absolute_end": 29907
+    },
+    {
+      "id": "E607",
+      "text": "mice",
+      "type": "Species",
+      "start": 29908,
+      "end": 29912,
+      "score": 0.9999874830245972,
+      "absolute_start": 29908,
+      "absolute_end": 29912
+    },
+    {
+      "id": "E608",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 30288,
+      "end": 30293,
+      "score": 0.9999898672103882,
+      "absolute_start": 30288,
+      "absolute_end": 30293
+    },
+    {
+      "id": "E609",
+      "text": "hyperglycemic",
+      "type": "Disease",
+      "start": 30320,
+      "end": 30333,
+      "score": 0.999984622001648,
+      "absolute_start": 30320,
+      "absolute_end": 30333
+    },
+    {
+      "id": "E610",
+      "text": "mice",
+      "type": "Species",
+      "start": 30334,
+      "end": 30338,
+      "score": 0.9999873638153076,
+      "absolute_start": 30334,
+      "absolute_end": 30338
+    },
+    {
+      "id": "E611",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 30434,
+      "end": 30439,
+      "score": 0.9999895095825195,
+      "absolute_start": 30434,
+      "absolute_end": 30439
+    },
+    {
+      "id": "E612",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 30620,
+      "end": 30625,
+      "score": 0.9999895095825195,
+      "absolute_start": 30620,
+      "absolute_end": 30625
+    },
+    {
+      "id": "E613",
+      "text": "DM",
+      "type": "Disease",
+      "start": 31324,
+      "end": 31326,
+      "score": 0.9999862909317017,
+      "absolute_start": 31324,
+      "absolute_end": 31326
+    },
+    {
+      "id": "E614",
+      "text": "hyperglycemia",
+      "type": "Disease",
+      "start": 31331,
+      "end": 31344,
+      "score": 0.9999860525131226,
+      "absolute_start": 31331,
+      "absolute_end": 31344
+    },
+    {
+      "id": "E615",
+      "text": "iHMGB1",
+      "type": "Gene",
+      "start": 31497,
+      "end": 31503,
+      "score": 0.9999792575836182,
+      "absolute_start": 31497,
+      "absolute_end": 31503
+    },
+    {
+      "id": "E616",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 31511,
+      "end": 31514,
+      "score": 0.9999947547912598,
+      "absolute_start": 31511,
+      "absolute_end": 31514
+    },
+    {
+      "id": "E617",
+      "text": "mice",
+      "type": "Species",
+      "start": 31515,
+      "end": 31519,
+      "score": 0.9999876022338867,
+      "absolute_start": 31515,
+      "absolute_end": 31519
+    },
+    {
+      "id": "E618",
+      "text": "DM",
+      "type": "Disease",
+      "start": 31655,
+      "end": 31657,
+      "score": 0.9999860525131226,
+      "absolute_start": 31655,
+      "absolute_end": 31657
+    },
+    {
+      "id": "E619",
+      "text": "hyperglycemia",
+      "type": "Disease",
+      "start": 31662,
+      "end": 31675,
+      "score": 0.9999860525131226,
+      "absolute_start": 31662,
+      "absolute_end": 31675
+    },
+    {
+      "id": "E620",
+      "text": "insulin",
+      "type": "Gene",
+      "start": 31696,
+      "end": 31703,
+      "score": 0.9999853372573853,
+      "absolute_start": 31696,
+      "absolute_end": 31703
+    },
+    {
+      "id": "E621",
+      "text": "NRF2-mediated",
+      "type": "Gene",
+      "start": 31860,
+      "end": 31873,
+      "score": 0.99998939037323,
+      "absolute_start": 31860,
+      "absolute_end": 31873
+    },
+    {
+      "id": "E622",
+      "text": "RXR",
+      "type": "Gene",
+      "start": 31904,
+      "end": 31907,
+      "score": 0.9999886751174927,
+      "absolute_start": 31904,
+      "absolute_end": 31907
+    },
+    {
+      "id": "E623",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 32066,
+      "end": 32071,
+      "score": 0.9999887943267822,
+      "absolute_start": 32066,
+      "absolute_end": 32071
+    },
+    {
+      "id": "E624",
+      "text": "glucose",
+      "type": "Chemical",
+      "start": 32166,
+      "end": 32173,
+      "score": 0.9999957084655762,
+      "absolute_start": 32166,
+      "absolute_end": 32173
+    },
+    {
+      "id": "E625",
+      "text": "DM",
+      "type": "Disease",
+      "start": 32517,
+      "end": 32519,
+      "score": 0.9999858140945435,
+      "absolute_start": 32517,
+      "absolute_end": 32519
+    },
+    {
+      "id": "E626",
+      "text": "hyperglycemia",
+      "type": "Disease",
+      "start": 32524,
+      "end": 32537,
+      "score": 0.9999856948852539,
+      "absolute_start": 32524,
+      "absolute_end": 32537
+    },
+    {
+      "id": "E627",
+      "text": "GCK",
+      "type": "Gene",
+      "start": 32615,
+      "end": 32618,
+      "score": 0.9999889135360718,
+      "absolute_start": 32615,
+      "absolute_end": 32618
+    },
+    {
+      "id": "E628",
+      "text": "PRKCE",
+      "type": "Gene",
+      "start": 32620,
+      "end": 32625,
+      "score": 0.99998939037323,
+      "absolute_start": 32620,
+      "absolute_end": 32625
+    },
+    {
+      "id": "E629",
+      "text": "MAFA",
+      "type": "Gene",
+      "start": 32627,
+      "end": 32631,
+      "score": 0.9999895095825195,
+      "absolute_start": 32627,
+      "absolute_end": 32631
+    },
+    {
+      "id": "E630",
+      "text": "Adipoq",
+      "type": "Gene",
+      "start": 32637,
+      "end": 32643,
+      "score": 0.9999872446060181,
+      "absolute_start": 32637,
+      "absolute_end": 32643
+    },
+    {
+      "id": "E631",
+      "text": "pyruvate",
+      "type": "Chemical",
+      "start": 32708,
+      "end": 32716,
+      "score": 0.999990701675415,
+      "absolute_start": 32708,
+      "absolute_end": 32716
+    },
+    {
+      "id": "E632",
+      "text": "PDHA1",
+      "type": "Gene",
+      "start": 32791,
+      "end": 32796,
+      "score": 0.9999897480010986,
+      "absolute_start": 32791,
+      "absolute_end": 32796
+    },
+    {
+      "id": "E633",
+      "text": "ALDH2",
+      "type": "Gene",
+      "start": 32801,
+      "end": 32806,
+      "score": 0.9999902248382568,
+      "absolute_start": 32801,
+      "absolute_end": 32806
+    },
+    {
+      "id": "E634",
+      "text": "AGE",
+      "type": "Gene",
+      "start": 32884,
+      "end": 32887,
+      "score": 0.99998939037323,
+      "absolute_start": 32884,
+      "absolute_end": 32887
+    },
+    {
+      "id": "E635",
+      "text": "RAGE",
+      "type": "Gene",
+      "start": 32888,
+      "end": 32892,
+      "score": 0.9999902248382568,
+      "absolute_start": 32888,
+      "absolute_end": 32892
+    },
+    {
+      "id": "E636",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 32968,
+      "end": 32973,
+      "score": 0.9999899864196777,
+      "absolute_start": 32968,
+      "absolute_end": 32973
+    },
+    {
+      "id": "E637",
+      "text": "hyperglycemia",
+      "type": "Disease",
+      "start": 32987,
+      "end": 33000,
+      "score": 0.9999748468399048,
+      "absolute_start": 32987,
+      "absolute_end": 33000
+    },
+    {
+      "id": "E638",
+      "text": "mice",
+      "type": "Species",
+      "start": 33001,
+      "end": 33005,
+      "score": 0.999987006187439,
+      "absolute_start": 33001,
+      "absolute_end": 33005
+    },
+    {
+      "id": "E639",
+      "text": "RAGE",
+      "type": "Gene",
+      "start": 33050,
+      "end": 33054,
+      "score": 0.9999896287918091,
+      "absolute_start": 33050,
+      "absolute_end": 33054
+    },
+    {
+      "id": "E640",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 33110,
+      "end": 33115,
+      "score": 0.9999902248382568,
+      "absolute_start": 33110,
+      "absolute_end": 33115
+    },
+    {
+      "id": "E641",
+      "text": "FN1",
+      "type": "Gene",
+      "start": 33136,
+      "end": 33139,
+      "score": 0.9999901056289673,
+      "absolute_start": 33136,
+      "absolute_end": 33139
+    },
+    {
+      "id": "E642",
+      "text": "COL3A1",
+      "type": "Gene",
+      "start": 33141,
+      "end": 33147,
+      "score": 0.9999901056289673,
+      "absolute_start": 33141,
+      "absolute_end": 33147
+    },
+    {
+      "id": "E643",
+      "text": "CDKN1B",
+      "type": "Gene",
+      "start": 33149,
+      "end": 33155,
+      "score": 0.9999898672103882,
+      "absolute_start": 33149,
+      "absolute_end": 33155
+    },
+    {
+      "id": "E644",
+      "text": "PRKCE",
+      "type": "Gene",
+      "start": 33161,
+      "end": 33166,
+      "score": 0.9999899864196777,
+      "absolute_start": 33161,
+      "absolute_end": 33166
+    },
+    {
+      "id": "E645",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 33261,
+      "end": 33266,
+      "score": 0.9999903440475464,
+      "absolute_start": 33261,
+      "absolute_end": 33266
+    },
+    {
+      "id": "E646",
+      "text": "DM",
+      "type": "Disease",
+      "start": 33277,
+      "end": 33279,
+      "score": 0.9999860525131226,
+      "absolute_start": 33277,
+      "absolute_end": 33279
+    },
+    {
+      "id": "E647",
+      "text": "RAGE",
+      "type": "Gene",
+      "start": 33298,
+      "end": 33302,
+      "score": 0.9999898672103882,
+      "absolute_start": 33298,
+      "absolute_end": 33302
+    },
+    {
+      "id": "E648",
+      "text": "DM",
+      "type": "Disease",
+      "start": 33393,
+      "end": 33395,
+      "score": 0.9999841451644897,
+      "absolute_start": 33393,
+      "absolute_end": 33395
+    },
+    {
+      "id": "E649",
+      "text": "hyperglycemia",
+      "type": "Disease",
+      "start": 33400,
+      "end": 33413,
+      "score": 0.9999858140945435,
+      "absolute_start": 33400,
+      "absolute_end": 33413
+    },
+    {
+      "id": "E650",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 33435,
+      "end": 33440,
+      "score": 0.9999899864196777,
+      "absolute_start": 33435,
+      "absolute_end": 33440
+    },
+    {
+      "id": "E651",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 33608,
+      "end": 33613,
+      "score": 0.9999901056289673,
+      "absolute_start": 33608,
+      "absolute_end": 33613
+    },
+    {
+      "id": "E652",
+      "text": "hyperglycemic",
+      "type": "Disease",
+      "start": 33627,
+      "end": 33640,
+      "score": 0.9999693632125854,
+      "absolute_start": 33627,
+      "absolute_end": 33640
+    },
+    {
+      "id": "E653",
+      "text": "mice",
+      "type": "Species",
+      "start": 33641,
+      "end": 33645,
+      "score": 0.9999861717224121,
+      "absolute_start": 33641,
+      "absolute_end": 33645
+    },
+    {
+      "id": "E654",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 33825,
+      "end": 33830,
+      "score": 0.9999892711639404,
+      "absolute_start": 33825,
+      "absolute_end": 33830
+    },
+    {
+      "id": "E655",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 34056,
+      "end": 34061,
+      "score": 0.9999897480010986,
+      "absolute_start": 34056,
+      "absolute_end": 34061
+    }
+  ],
+  "provider_entities_with_chunk_local_offsets": [
+    {
+      "id": "E471",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 27,
+      "end": 32,
+      "score": 0.9999881982803345
+    },
+    {
+      "id": "E472",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 42,
+      "end": 45,
+      "score": 0.9999970197677612
+    },
+    {
+      "id": "E473",
+      "text": "iHMGB1",
+      "type": "Gene",
+      "start": 50,
+      "end": 56,
+      "score": 0.9999805688858032
+    },
+    {
+      "id": "E474",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 64,
+      "end": 67,
+      "score": 0.9999972581863403
+    },
+    {
+      "id": "E475",
+      "text": "mice",
+      "type": "Species",
+      "start": 68,
+      "end": 72,
+      "score": 0.9999878406524658
+    },
+    {
+      "id": "E476",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 91,
+      "end": 94,
+      "score": 0.9999972581863403
+    },
+    {
+      "id": "E477",
+      "text": "glucose",
+      "type": "Chemical",
+      "start": 151,
+      "end": 158,
+      "score": 0.9999971389770508
+    },
+    {
+      "id": "E478",
+      "text": "iHMGB1",
+      "type": "Gene",
+      "start": 174,
+      "end": 180,
+      "score": 0.9999728202819824
+    },
+    {
+      "id": "E479",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 188,
+      "end": 191,
+      "score": 0.9999973773956299
+    },
+    {
+      "id": "E480",
+      "text": "mice",
+      "type": "Species",
+      "start": 192,
+      "end": 196,
+      "score": 0.9999878406524658
+    },
+    {
+      "id": "E481",
+      "text": "blood glucose",
+      "type": "Chemical",
+      "start": 249,
+      "end": 262,
+      "score": 0.999985933303833
+    },
+    {
+      "id": "E482",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 282,
+      "end": 287,
+      "score": 0.9999877214431763
+    },
+    {
+      "id": "E483",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 297,
+      "end": 300,
+      "score": 0.9999972581863403
+    },
+    {
+      "id": "E484",
+      "text": "mice",
+      "type": "Species",
+      "start": 301,
+      "end": 305,
+      "score": 0.9999877214431763
+    },
+    {
+      "id": "E485",
+      "text": "blood glucose",
+      "type": "Chemical",
+      "start": 313,
+      "end": 326,
+      "score": 0.9999856948852539
+    },
+    {
+      "id": "E486",
+      "text": "blood glucose",
+      "type": "Chemical",
+      "start": 523,
+      "end": 536,
+      "score": 0.9999175667762756
+    },
+    {
+      "id": "E487",
+      "text": "iHMGB1",
+      "type": "Gene",
+      "start": 547,
+      "end": 553,
+      "score": 0.9975098371505737
+    },
+    {
+      "id": "E488",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 561,
+      "end": 564,
+      "score": 0.9999970197677612
+    },
+    {
+      "id": "E489",
+      "text": "mice",
+      "type": "Species",
+      "start": 565,
+      "end": 569,
+      "score": 0.9999877214431763
+    },
+    {
+      "id": "E490",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 647,
+      "end": 652,
+      "score": 0.9999860525131226
+    },
+    {
+      "id": "E491",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 662,
+      "end": 665,
+      "score": 0.9999969005584717
+    },
+    {
+      "id": "E492",
+      "text": "mice",
+      "type": "Species",
+      "start": 666,
+      "end": 670,
+      "score": 0.9999877214431763
+    },
+    {
+      "id": "E493",
+      "text": "blood glucose",
+      "type": "Chemical",
+      "start": 703,
+      "end": 716,
+      "score": 0.9999647736549377
+    },
+    {
+      "id": "E494",
+      "text": "blood",
+      "type": "Chemical",
+      "start": 863,
+      "end": 868,
+      "score": 0.8894771933555603
+    },
+    {
+      "id": "E495",
+      "text": "glucose",
+      "type": "Chemical",
+      "start": 869,
+      "end": 876,
+      "score": 0.7378107309341431
+    },
+    {
+      "id": "E496",
+      "text": "glucose",
+      "type": "Chemical",
+      "start": 914,
+      "end": 921,
+      "score": 0.9999964237213135
+    },
+    {
+      "id": "E497",
+      "text": "iHMGB1",
+      "type": "Gene",
+      "start": 991,
+      "end": 997,
+      "score": 0.9917258024215698
+    },
+    {
+      "id": "E498",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 1005,
+      "end": 1008,
+      "score": 0.9999873638153076
+    },
+    {
+      "id": "E499",
+      "text": "mice",
+      "type": "Species",
+      "start": 1009,
+      "end": 1013,
+      "score": 0.9999878406524658
+    },
+    {
+      "id": "E500",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 1026,
+      "end": 1031,
+      "score": 0.9999852180480957
+    },
+    {
+      "id": "E501",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 1041,
+      "end": 1044,
+      "score": 0.9999871253967285
+    },
+    {
+      "id": "E502",
+      "text": "mice",
+      "type": "Species",
+      "start": 1045,
+      "end": 1049,
+      "score": 0.9999878406524658
+    },
+    {
+      "id": "E503",
+      "text": "iHMGB1",
+      "type": "Gene",
+      "start": 1067,
+      "end": 1073,
+      "score": 0.9992530941963196
+    },
+    {
+      "id": "E504",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 1081,
+      "end": 1084,
+      "score": 0.9999867677688599
+    },
+    {
+      "id": "E505",
+      "text": "mice",
+      "type": "Species",
+      "start": 1085,
+      "end": 1089,
+      "score": 0.9999876022338867
+    },
+    {
+      "id": "E506",
+      "text": "glucose",
+      "type": "Chemical",
+      "start": 1098,
+      "end": 1105,
+      "score": 0.999994158744812
+    },
+    {
+      "id": "E507",
+      "text": "glucose",
+      "type": "Chemical",
+      "start": 1147,
+      "end": 1154,
+      "score": 0.9998329877853394
+    },
+    {
+      "id": "E508",
+      "text": "tolerance",
+      "type": "Disease",
+      "start": 1155,
+      "end": 1164,
+      "score": 0.5191864371299744
+    },
+    {
+      "id": "E509",
+      "text": "glucose",
+      "type": "Chemical",
+      "start": 1203,
+      "end": 1210,
+      "score": 0.9999973773956299
+    },
+    {
+      "id": "E510",
+      "text": "hyperglycemia",
+      "type": "Disease",
+      "start": 1258,
+      "end": 1271,
+      "score": 0.9999854564666748
+    },
+    {
+      "id": "E511",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 1287,
+      "end": 1292,
+      "score": 0.9999890327453613
+    },
+    {
+      "id": "E512",
+      "text": "glucose",
+      "type": "Chemical",
+      "start": 1365,
+      "end": 1372,
+      "score": 0.9999972581863403
+    },
+    {
+      "id": "E513",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 1462,
+      "end": 1467,
+      "score": 0.9999879598617554
+    },
+    {
+      "id": "E514",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 1477,
+      "end": 1480,
+      "score": 0.9999970197677612
+    },
+    {
+      "id": "E515",
+      "text": "iHMGB1",
+      "type": "Gene",
+      "start": 1485,
+      "end": 1491,
+      "score": 0.9997583031654358
+    },
+    {
+      "id": "E516",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 1499,
+      "end": 1502,
+      "score": 0.9999971389770508
+    },
+    {
+      "id": "E517",
+      "text": "mice",
+      "type": "Species",
+      "start": 1503,
+      "end": 1507,
+      "score": 0.9999877214431763
+    },
+    {
+      "id": "E518",
+      "text": "ALT",
+      "type": "Gene",
+      "start": 1570,
+      "end": 1573,
+      "score": 0.9999868869781494
+    },
+    {
+      "id": "E519",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 1621,
+      "end": 1626,
+      "score": 0.9999884366989136
+    },
+    {
+      "id": "E520",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 1636,
+      "end": 1639,
+      "score": 0.9999970197677612
+    },
+    {
+      "id": "E521",
+      "text": "mice",
+      "type": "Species",
+      "start": 1640,
+      "end": 1644,
+      "score": 0.9999876022338867
+    },
+    {
+      "id": "E522",
+      "text": "AST",
+      "type": "Gene",
+      "start": 1688,
+      "end": 1691,
+      "score": 0.9999856948852539
+    },
+    {
+      "id": "E523",
+      "text": "liver damage",
+      "type": "Disease",
+      "start": 1709,
+      "end": 1721,
+      "score": 0.9999902248382568
+    },
+    {
+      "id": "E524",
+      "text": "iHMGB1",
+      "type": "Gene",
+      "start": 1735,
+      "end": 1741,
+      "score": 0.9998071789741516
+    },
+    {
+      "id": "E525",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 1749,
+      "end": 1752,
+      "score": 0.9999970197677612
+    },
+    {
+      "id": "E526",
+      "text": "mice",
+      "type": "Species",
+      "start": 1753,
+      "end": 1757,
+      "score": 0.9999877214431763
+    },
+    {
+      "id": "E527",
+      "text": "AST",
+      "type": "Gene",
+      "start": 1850,
+      "end": 1853,
+      "score": 0.9999862909317017
+    },
+    {
+      "id": "E528",
+      "text": "ALT",
+      "type": "Gene",
+      "start": 1854,
+      "end": 1857,
+      "score": 0.9999879598617554
+    },
+    {
+      "id": "E529",
+      "text": "iHMGB1",
+      "type": "Gene",
+      "start": 1883,
+      "end": 1889,
+      "score": 0.5616253614425659
+    },
+    {
+      "id": "E530",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 1897,
+      "end": 1900,
+      "score": 0.9999964237213135
+    },
+    {
+      "id": "E531",
+      "text": "mice",
+      "type": "Species",
+      "start": 1901,
+      "end": 1905,
+      "score": 0.9999874830245972
+    },
+    {
+      "id": "E532",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 1946,
+      "end": 1951,
+      "score": 0.9999874830245972
+    },
+    {
+      "id": "E533",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 1961,
+      "end": 1964,
+      "score": 0.999996542930603
+    },
+    {
+      "id": "E534",
+      "text": "mice",
+      "type": "Species",
+      "start": 1965,
+      "end": 1969,
+      "score": 0.9999873638153076
+    },
+    {
+      "id": "E535",
+      "text": "AST",
+      "type": "Gene",
+      "start": 2003,
+      "end": 2006,
+      "score": 0.9999878406524658
+    },
+    {
+      "id": "E536",
+      "text": "ALT",
+      "type": "Gene",
+      "start": 2007,
+      "end": 2010,
+      "score": 0.9999890327453613
+    },
+    {
+      "id": "E537",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 2062,
+      "end": 2067,
+      "score": 0.9999889135360718
+    },
+    {
+      "id": "E538",
+      "text": "liver damage",
+      "type": "Disease",
+      "start": 2095,
+      "end": 2107,
+      "score": 0.9999919533729553
+    },
+    {
+      "id": "E539",
+      "text": "hyperglycemic",
+      "type": "Disease",
+      "start": 2114,
+      "end": 2127,
+      "score": 0.9999850988388062
+    },
+    {
+      "id": "E540",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 2198,
+      "end": 2203,
+      "score": 0.9999884366989136
+    },
+    {
+      "id": "E541",
+      "text": "liver damage",
+      "type": "Disease",
+      "start": 2207,
+      "end": 2219,
+      "score": 0.9999905824661255
+    },
+    {
+      "id": "E542",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 2261,
+      "end": 2266,
+      "score": 0.9999889135360718
+    },
+    {
+      "id": "E543",
+      "text": "hyperglycemic",
+      "type": "Disease",
+      "start": 2298,
+      "end": 2311,
+      "score": 0.9999843835830688
+    },
+    {
+      "id": "E544",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 2319,
+      "end": 2324,
+      "score": 0.9999872446060181
+    },
+    {
+      "id": "E545",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 2334,
+      "end": 2337,
+      "score": 0.9999960660934448
+    },
+    {
+      "id": "E546",
+      "text": "mice",
+      "type": "Species",
+      "start": 2338,
+      "end": 2342,
+      "score": 0.9999877214431763
+    },
+    {
+      "id": "E547",
+      "text": "lipid",
+      "type": "Chemical",
+      "start": 2383,
+      "end": 2388,
+      "score": 0.9119126796722412
+    },
+    {
+      "id": "E548",
+      "text": "inflammatory",
+      "type": "Disease",
+      "start": 2431,
+      "end": 2443,
+      "score": 0.9999804496765137
+    },
+    {
+      "id": "E549",
+      "text": "iHMGB1",
+      "type": "Gene",
+      "start": 2469,
+      "end": 2475,
+      "score": 0.9974823594093323
+    },
+    {
+      "id": "E550",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 2483,
+      "end": 2486,
+      "score": 0.9999957084655762
+    },
+    {
+      "id": "E551",
+      "text": "mice",
+      "type": "Species",
+      "start": 2487,
+      "end": 2491,
+      "score": 0.9999877214431763
+    },
+    {
+      "id": "E552",
+      "text": "PAS",
+      "type": "Chemical",
+      "start": 2530,
+      "end": 2533,
+      "score": 0.9230425357818604
+    },
+    {
+      "id": "E553",
+      "text": "Oil Red O",
+      "type": "Chemical",
+      "start": 2538,
+      "end": 2547,
+      "score": 0.9998689293861389
+    },
+    {
+      "id": "E554",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 2571,
+      "end": 2576,
+      "score": 0.9999879598617554
+    },
+    {
+      "id": "E555",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 2586,
+      "end": 2589,
+      "score": 0.9999964237213135
+    },
+    {
+      "id": "E556",
+      "text": "mice",
+      "type": "Species",
+      "start": 2590,
+      "end": 2594,
+      "score": 0.9999876022338867
+    },
+    {
+      "id": "E557",
+      "text": "glycogen",
+      "type": "Chemical",
+      "start": 2615,
+      "end": 2623,
+      "score": 0.9999958276748657
+    },
+    {
+      "id": "E558",
+      "text": "lipid",
+      "type": "Chemical",
+      "start": 2636,
+      "end": 2641,
+      "score": 0.9999946355819702
+    },
+    {
+      "id": "E559",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 2720,
+      "end": 2725,
+      "score": 0.9999879598617554
+    },
+    {
+      "id": "E560",
+      "text": "glucose",
+      "type": "Chemical",
+      "start": 2804,
+      "end": 2811,
+      "score": 0.9999969005584717
+    },
+    {
+      "id": "E561",
+      "text": "DM",
+      "type": "Disease",
+      "start": 2824,
+      "end": 2826,
+      "score": 0.999985933303833
+    },
+    {
+      "id": "E562",
+      "text": "patients",
+      "type": "Species",
+      "start": 2827,
+      "end": 2835,
+      "score": 0.9999854564666748
+    },
+    {
+      "id": "E563",
+      "text": "Cystatin C",
+      "type": "Gene",
+      "start": 2871,
+      "end": 2881,
+      "score": 0.9999759793281555
+    },
+    {
+      "id": "E564",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 2914,
+      "end": 2919,
+      "score": 0.999987006187439
+    },
+    {
+      "id": "E565",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 2929,
+      "end": 2932,
+      "score": 0.9999969005584717
+    },
+    {
+      "id": "E566",
+      "text": "iHMGB1",
+      "type": "Gene",
+      "start": 2937,
+      "end": 2943,
+      "score": 0.997413694858551
+    },
+    {
+      "id": "E567",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 2951,
+      "end": 2954,
+      "score": 0.9999969005584717
+    },
+    {
+      "id": "E568",
+      "text": "mice",
+      "type": "Species",
+      "start": 2955,
+      "end": 2959,
+      "score": 0.9999877214431763
+    },
+    {
+      "id": "E569",
+      "text": "hyperglycemia",
+      "type": "Disease",
+      "start": 2974,
+      "end": 2987,
+      "score": 0.9999856948852539
+    },
+    {
+      "id": "E570",
+      "text": "iHMGB1",
+      "type": "Gene",
+      "start": 3027,
+      "end": 3033,
+      "score": 0.9999324083328247
+    },
+    {
+      "id": "E571",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 3041,
+      "end": 3044,
+      "score": 0.9999970197677612
+    },
+    {
+      "id": "E572",
+      "text": "mice",
+      "type": "Species",
+      "start": 3045,
+      "end": 3049,
+      "score": 0.9999876022338867
+    },
+    {
+      "id": "E573",
+      "text": "Cystatin C",
+      "type": "Gene",
+      "start": 3093,
+      "end": 3103,
+      "score": 0.999976396560669
+    },
+    {
+      "id": "E574",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 3116,
+      "end": 3121,
+      "score": 0.999987006187439
+    },
+    {
+      "id": "E575",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 3131,
+      "end": 3134,
+      "score": 0.9999970197677612
+    },
+    {
+      "id": "E576",
+      "text": "mice",
+      "type": "Species",
+      "start": 3135,
+      "end": 3139,
+      "score": 0.9999876022338867
+    },
+    {
+      "id": "E577",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 3377,
+      "end": 3382,
+      "score": 0.999987006187439
+    },
+    {
+      "id": "E578",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 3392,
+      "end": 3395,
+      "score": 0.9999970197677612
+    },
+    {
+      "id": "E579",
+      "text": "iHMGB1",
+      "type": "Gene",
+      "start": 3400,
+      "end": 3406,
+      "score": 0.999969482421875
+    },
+    {
+      "id": "E580",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 3414,
+      "end": 3417,
+      "score": 0.9999970197677612
+    },
+    {
+      "id": "E581",
+      "text": "mice",
+      "type": "Species",
+      "start": 3418,
+      "end": 3422,
+      "score": 0.9999877214431763
+    },
+    {
+      "id": "E582",
+      "text": "hyperglycemia",
+      "type": "Disease",
+      "start": 3630,
+      "end": 3643,
+      "score": 0.9999847412109375
+    },
+    {
+      "id": "E583",
+      "text": "diabetes",
+      "type": "Disease",
+      "start": 3666,
+      "end": 3674,
+      "score": 0.9999858140945435
+    },
+    {
+      "id": "E584",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 3847,
+      "end": 3852,
+      "score": 0.9999890327453613
+    },
+    {
+      "id": "E585",
+      "text": "hyperglycemia",
+      "type": "Disease",
+      "start": 3879,
+      "end": 3892,
+      "score": 0.9999849796295166
+    },
+    {
+      "id": "E586",
+      "text": "mice",
+      "type": "Species",
+      "start": 3893,
+      "end": 3897,
+      "score": 0.999987006187439
+    },
+    {
+      "id": "E587",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 4033,
+      "end": 4038,
+      "score": 0.9999896287918091
+    },
+    {
+      "id": "E588",
+      "text": "NRF2-mediated",
+      "type": "Gene",
+      "start": 4164,
+      "end": 4177,
+      "score": 0.9999898672103882
+    },
+    {
+      "id": "E589",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 4321,
+      "end": 4326,
+      "score": 0.9999898672103882
+    },
+    {
+      "id": "E590",
+      "text": "FXR",
+      "type": "Gene",
+      "start": 4342,
+      "end": 4345,
+      "score": 0.9999901056289673
+    },
+    {
+      "id": "E591",
+      "text": "LXR",
+      "type": "Gene",
+      "start": 4346,
+      "end": 4349,
+      "score": 0.9999896287918091
+    },
+    {
+      "id": "E592",
+      "text": "RXR",
+      "type": "Gene",
+      "start": 4350,
+      "end": 4353,
+      "score": 0.9999898672103882
+    },
+    {
+      "id": "E593",
+      "text": "glucose",
+      "type": "Chemical",
+      "start": 4411,
+      "end": 4418,
+      "score": 0.9999963045120239
+    },
+    {
+      "id": "E594",
+      "text": "lipid",
+      "type": "Chemical",
+      "start": 4423,
+      "end": 4428,
+      "score": 0.9999961853027344
+    },
+    {
+      "id": "E595",
+      "text": "lipid",
+      "type": "Chemical",
+      "start": 4626,
+      "end": 4631,
+      "score": 0.9999929666519165
+    },
+    {
+      "id": "E596",
+      "text": "ABCG5/8",
+      "type": "Gene",
+      "start": 4701,
+      "end": 4708,
+      "score": 0.999979297320048
+    },
+    {
+      "id": "E597",
+      "text": "MLXIPL",
+      "type": "Gene",
+      "start": 4710,
+      "end": 4716,
+      "score": 0.9999721050262451
+    },
+    {
+      "id": "E598",
+      "text": "APOA4",
+      "type": "Gene",
+      "start": 4718,
+      "end": 4723,
+      "score": 0.9999727010726929
+    },
+    {
+      "id": "E599",
+      "text": "ULK1",
+      "type": "Gene",
+      "start": 4801,
+      "end": 4805,
+      "score": 0.9999598264694214
+    },
+    {
+      "id": "E600",
+      "text": "AYG2A",
+      "type": "Gene",
+      "start": 4807,
+      "end": 4812,
+      "score": 0.9999525547027588
+    },
+    {
+      "id": "E601",
+      "text": "WDR45",
+      "type": "Gene",
+      "start": 4814,
+      "end": 4819,
+      "score": 0.9998835325241089
+    },
+    {
+      "id": "E602",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 4992,
+      "end": 4997,
+      "score": 0.9999856948852539
+    },
+    {
+      "id": "E603",
+      "text": "liver lesion",
+      "type": "Disease",
+      "start": 5189,
+      "end": 5201,
+      "score": 0.9999920129776001
+    },
+    {
+      "id": "E604",
+      "text": "liver fibrosis",
+      "type": "Disease",
+      "start": 5206,
+      "end": 5220,
+      "score": 0.9999918341636658
+    },
+    {
+      "id": "E605",
+      "text": "iHMGB1",
+      "type": "Gene",
+      "start": 5224,
+      "end": 5230,
+      "score": 0.999969482421875
+    },
+    {
+      "id": "E606",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 5238,
+      "end": 5241,
+      "score": 0.9999793767929077
+    },
+    {
+      "id": "E607",
+      "text": "mice",
+      "type": "Species",
+      "start": 5242,
+      "end": 5246,
+      "score": 0.9999874830245972
+    },
+    {
+      "id": "E608",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 5622,
+      "end": 5627,
+      "score": 0.9999898672103882
+    },
+    {
+      "id": "E609",
+      "text": "hyperglycemic",
+      "type": "Disease",
+      "start": 5654,
+      "end": 5667,
+      "score": 0.999984622001648
+    },
+    {
+      "id": "E610",
+      "text": "mice",
+      "type": "Species",
+      "start": 5668,
+      "end": 5672,
+      "score": 0.9999873638153076
+    },
+    {
+      "id": "E611",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 5768,
+      "end": 5773,
+      "score": 0.9999895095825195
+    },
+    {
+      "id": "E612",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 5954,
+      "end": 5959,
+      "score": 0.9999895095825195
+    },
+    {
+      "id": "E613",
+      "text": "DM",
+      "type": "Disease",
+      "start": 6658,
+      "end": 6660,
+      "score": 0.9999862909317017
+    },
+    {
+      "id": "E614",
+      "text": "hyperglycemia",
+      "type": "Disease",
+      "start": 6665,
+      "end": 6678,
+      "score": 0.9999860525131226
+    },
+    {
+      "id": "E615",
+      "text": "iHMGB1",
+      "type": "Gene",
+      "start": 6831,
+      "end": 6837,
+      "score": 0.9999792575836182
+    },
+    {
+      "id": "E616",
+      "text": "STZ",
+      "type": "Chemical",
+      "start": 6845,
+      "end": 6848,
+      "score": 0.9999947547912598
+    },
+    {
+      "id": "E617",
+      "text": "mice",
+      "type": "Species",
+      "start": 6849,
+      "end": 6853,
+      "score": 0.9999876022338867
+    },
+    {
+      "id": "E618",
+      "text": "DM",
+      "type": "Disease",
+      "start": 6989,
+      "end": 6991,
+      "score": 0.9999860525131226
+    },
+    {
+      "id": "E619",
+      "text": "hyperglycemia",
+      "type": "Disease",
+      "start": 6996,
+      "end": 7009,
+      "score": 0.9999860525131226
+    },
+    {
+      "id": "E620",
+      "text": "insulin",
+      "type": "Gene",
+      "start": 7030,
+      "end": 7037,
+      "score": 0.9999853372573853
+    },
+    {
+      "id": "E621",
+      "text": "NRF2-mediated",
+      "type": "Gene",
+      "start": 7194,
+      "end": 7207,
+      "score": 0.99998939037323
+    },
+    {
+      "id": "E622",
+      "text": "RXR",
+      "type": "Gene",
+      "start": 7238,
+      "end": 7241,
+      "score": 0.9999886751174927
+    },
+    {
+      "id": "E623",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 7400,
+      "end": 7405,
+      "score": 0.9999887943267822
+    },
+    {
+      "id": "E624",
+      "text": "glucose",
+      "type": "Chemical",
+      "start": 7500,
+      "end": 7507,
+      "score": 0.9999957084655762
+    },
+    {
+      "id": "E625",
+      "text": "DM",
+      "type": "Disease",
+      "start": 7851,
+      "end": 7853,
+      "score": 0.9999858140945435
+    },
+    {
+      "id": "E626",
+      "text": "hyperglycemia",
+      "type": "Disease",
+      "start": 7858,
+      "end": 7871,
+      "score": 0.9999856948852539
+    },
+    {
+      "id": "E627",
+      "text": "GCK",
+      "type": "Gene",
+      "start": 7949,
+      "end": 7952,
+      "score": 0.9999889135360718
+    },
+    {
+      "id": "E628",
+      "text": "PRKCE",
+      "type": "Gene",
+      "start": 7954,
+      "end": 7959,
+      "score": 0.99998939037323
+    },
+    {
+      "id": "E629",
+      "text": "MAFA",
+      "type": "Gene",
+      "start": 7961,
+      "end": 7965,
+      "score": 0.9999895095825195
+    },
+    {
+      "id": "E630",
+      "text": "Adipoq",
+      "type": "Gene",
+      "start": 7971,
+      "end": 7977,
+      "score": 0.9999872446060181
+    },
+    {
+      "id": "E631",
+      "text": "pyruvate",
+      "type": "Chemical",
+      "start": 8042,
+      "end": 8050,
+      "score": 0.999990701675415
+    },
+    {
+      "id": "E632",
+      "text": "PDHA1",
+      "type": "Gene",
+      "start": 8125,
+      "end": 8130,
+      "score": 0.9999897480010986
+    },
+    {
+      "id": "E633",
+      "text": "ALDH2",
+      "type": "Gene",
+      "start": 8135,
+      "end": 8140,
+      "score": 0.9999902248382568
+    },
+    {
+      "id": "E634",
+      "text": "AGE",
+      "type": "Gene",
+      "start": 8218,
+      "end": 8221,
+      "score": 0.99998939037323
+    },
+    {
+      "id": "E635",
+      "text": "RAGE",
+      "type": "Gene",
+      "start": 8222,
+      "end": 8226,
+      "score": 0.9999902248382568
+    },
+    {
+      "id": "E636",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 8302,
+      "end": 8307,
+      "score": 0.9999899864196777
+    },
+    {
+      "id": "E637",
+      "text": "hyperglycemia",
+      "type": "Disease",
+      "start": 8321,
+      "end": 8334,
+      "score": 0.9999748468399048
+    },
+    {
+      "id": "E638",
+      "text": "mice",
+      "type": "Species",
+      "start": 8335,
+      "end": 8339,
+      "score": 0.999987006187439
+    },
+    {
+      "id": "E639",
+      "text": "RAGE",
+      "type": "Gene",
+      "start": 8384,
+      "end": 8388,
+      "score": 0.9999896287918091
+    },
+    {
+      "id": "E640",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 8444,
+      "end": 8449,
+      "score": 0.9999902248382568
+    },
+    {
+      "id": "E641",
+      "text": "FN1",
+      "type": "Gene",
+      "start": 8470,
+      "end": 8473,
+      "score": 0.9999901056289673
+    },
+    {
+      "id": "E642",
+      "text": "COL3A1",
+      "type": "Gene",
+      "start": 8475,
+      "end": 8481,
+      "score": 0.9999901056289673
+    },
+    {
+      "id": "E643",
+      "text": "CDKN1B",
+      "type": "Gene",
+      "start": 8483,
+      "end": 8489,
+      "score": 0.9999898672103882
+    },
+    {
+      "id": "E644",
+      "text": "PRKCE",
+      "type": "Gene",
+      "start": 8495,
+      "end": 8500,
+      "score": 0.9999899864196777
+    },
+    {
+      "id": "E645",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 8595,
+      "end": 8600,
+      "score": 0.9999903440475464
+    },
+    {
+      "id": "E646",
+      "text": "DM",
+      "type": "Disease",
+      "start": 8611,
+      "end": 8613,
+      "score": 0.9999860525131226
+    },
+    {
+      "id": "E647",
+      "text": "RAGE",
+      "type": "Gene",
+      "start": 8632,
+      "end": 8636,
+      "score": 0.9999898672103882
+    },
+    {
+      "id": "E648",
+      "text": "DM",
+      "type": "Disease",
+      "start": 8727,
+      "end": 8729,
+      "score": 0.9999841451644897
+    },
+    {
+      "id": "E649",
+      "text": "hyperglycemia",
+      "type": "Disease",
+      "start": 8734,
+      "end": 8747,
+      "score": 0.9999858140945435
+    },
+    {
+      "id": "E650",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 8769,
+      "end": 8774,
+      "score": 0.9999899864196777
+    },
+    {
+      "id": "E651",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 8942,
+      "end": 8947,
+      "score": 0.9999901056289673
+    },
+    {
+      "id": "E652",
+      "text": "hyperglycemic",
+      "type": "Disease",
+      "start": 8961,
+      "end": 8974,
+      "score": 0.9999693632125854
+    },
+    {
+      "id": "E653",
+      "text": "mice",
+      "type": "Species",
+      "start": 8975,
+      "end": 8979,
+      "score": 0.9999861717224121
+    },
+    {
+      "id": "E654",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 9159,
+      "end": 9164,
+      "score": 0.9999892711639404
+    },
+    {
+      "id": "E655",
+      "text": "HMGB1",
+      "type": "Gene",
+      "start": 9390,
+      "end": 9395,
+      "score": 0.9999897480010986
+    }
+  ],
+  "validated_relations": [],
+  "provider_attempts": 0,
+  "repair_attempts": 0,
+  "attempts": [],
+  "elapsed_seconds": 0,
+  "error_type": "StopCondition",
+  "exact_error": "failed_or_timed_out_fraction_exceeded_25_percent"
+}

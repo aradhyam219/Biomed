@@ -1,0 +1,18 @@
+{
+  "chunk_id": "chunk_001",
+  "attempts": [
+    {
+      "attempt": 1,
+      "repair": false,
+      "prompt_sha256": "7689a3d8df557f93560b712dc758cbe51351d800c5e02c70201807ca68e2b3f1",
+      "status": "provider_or_parser_error",
+      "started_utc": "2026-09-28T11:05:26.571290+00:00",
+      "input_tokens": null,
+      "output_tokens": null,
+      "total_tokens": null,
+      "elapsed_seconds": 0.109,
+      "error_type": "OpenAIConnectionError",
+      "error": "Connection error."
+    }
+  ]
+}
