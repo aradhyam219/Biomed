@@ -1,0 +1,48 @@
+{
+  "alias": "Model B",
+  "attempts": [
+    {
+      "attempt": 1,
+      "error_type": "OpenAITimeoutError",
+      "exact_error": "Request timed out.",
+      "latency_seconds": 300.125,
+      "prompt_sha256": "99db58b9b122f5cf7c4a7a5f7c3a0bcb8b53dd09676631af5dfe1e35bda7c3a6",
+      "provider_response_received": false,
+      "repair": false,
+      "started_utc": "2026-10-03T20:07:41.969883+00:00",
+      "status": "provider_or_parser_error",
+      "usage": null
+    }
+  ],
+  "causes": [
+    {
+      "error_type": "RelationExtractionError",
+      "exact_error": "LLM relation provider invocation failed: Request timed out."
+    },
+    {
+      "error_type": "OpenAITimeoutError",
+      "exact_error": "Request timed out."
+    },
+    {
+      "error_type": "APITimeoutError",
+      "exact_error": "Request timed out."
+    },
+    {
+      "error_type": "ReadTimeout",
+      "exact_error": "The read operation timed out"
+    },
+    {
+      "error_type": "ReadTimeout",
+      "exact_error": "The read operation timed out"
+    }
+  ],
+  "elapsed_seconds": 300.125,
+  "entity_packet_sha256": "7c0a08d1babec43272e7c48b4b65b3a61e657439ed62fe95afa109c6f9f7c198",
+  "exact_error": "LLM relation provider invocation failed: Request timed out.",
+  "paper_id": "PMCID:PMC11824863",
+  "repair_attempts": 0,
+  "sequence": 3,
+  "source_sha256": "604ce7f15b0ca00853cfc4cc07039d51059792e907d3da07c08be40730fb1b5b",
+  "status": "provider_failure",
+  "validated_relations": null
+}

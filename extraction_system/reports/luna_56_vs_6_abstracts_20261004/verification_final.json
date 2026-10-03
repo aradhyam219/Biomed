@@ -1,0 +1,13 @@
+{
+  "checked_utc": "2026-10-03T20:18:45.857242+00:00",
+  "status": "passed",
+  "frozen_inputs_code_and_review_hashes": "passed",
+  "attempted_jobs": 3,
+  "not_run_aborted": 13,
+  "provider_responses": 0,
+  "returned_usage_records": 0,
+  "successful_paired_papers": 0,
+  "source_reference_items_verified": 105,
+  "production_tests_viewer_changed": false,
+  "new_provider_calls_after_abort": 0
+}

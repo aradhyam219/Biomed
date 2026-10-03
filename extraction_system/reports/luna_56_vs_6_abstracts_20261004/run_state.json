@@ -1,0 +1,35 @@
+{
+  "completed": [
+    {
+      "alias": "Model A",
+      "attempts": 1,
+      "elapsed_seconds": 300.141,
+      "paper_id": "PMCID:PMC10770459",
+      "relations": 0,
+      "sequence": 1,
+      "status": "provider_failure"
+    },
+    {
+      "alias": "Model B",
+      "attempts": 1,
+      "elapsed_seconds": 300.125,
+      "paper_id": "PMCID:PMC10770459",
+      "relations": 0,
+      "sequence": 2,
+      "status": "provider_failure"
+    },
+    {
+      "alias": "Model B",
+      "attempts": 1,
+      "elapsed_seconds": 300.125,
+      "paper_id": "PMCID:PMC11824863",
+      "relations": 0,
+      "sequence": 3,
+      "status": "provider_failure"
+    }
+  ],
+  "completed_utc": "2026-10-03T20:12:42.314782+00:00",
+  "consecutive_operational_errors": 3,
+  "started_utc": "2026-10-03T19:57:36.447283+00:00",
+  "status": "aborted_stop_condition"
+}

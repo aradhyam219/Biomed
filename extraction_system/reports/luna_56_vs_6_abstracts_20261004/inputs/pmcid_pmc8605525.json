@@ -1,0 +1,556 @@
+{
+  "canonical_segments": [
+    {
+      "end": 163,
+      "section": "title",
+      "start": 0,
+      "text": "Overexpression of E3 ubiquitin ligase Cbl attenuates endothelial dysfunction in diabetes mellitus by inhibiting the JAK2/STAT4 signaling and Runx3-mediated H3K4me3"
+    },
+    {
+      "end": 2022,
+      "section": "abstract",
+      "start": 165,
+      "text": "BackgroundDiabetes mellitus (DM), a most common chronic disease, is featured with impaired endothelial function and bioavailability of nitric oxide (NO), while E3 ubiquitin ligase appears to alleviate endothelial dysfunction as a promising option for DM treatment. Herein, we aimed to determine whether E3 ubiquitin ligase casitas B-lineage lymphoma (Cbl) alleviates endothelial dysfunction in DM rats by JAK2/STAT4 pathway.MethodsA rat model of DM was developed through intraperitoneal injection of streptozotocin, followed by collection of aortic tissues to determine the expression of Cbl, JAK2, runt-related transcription factor 3 (Runx3) and STAT4. Human umbilical vein endothelial cells (HUVECs) were cultured in high glucose (HG) condition to induce DM as an in vitro model. With gain- and loss-function method, we assessed the aberrantly expressed Cb1 on endothelial dysfunction, NO production and apoptosis of HUVECs.ResultsCbl was reduced in DM rat tissues and HG-induced HUVECs, where JAK2, Runx3 and STAT4 were elevated. It was found that overexpression of Cbl alleviated endothelial dysfunction by increasing NO production and restoring vasodilation and suppressing apoptosis of HUVECs. Mechanistically, Cb1 enhanced JAK2 ubiquitination and decreased JAK2 and STAT4 expression, where STAT4 improved Runx3 expression by regulating histone H3 lysine 4 trimethylation level. Overexpression of JAK2 and STAT4, or Runx3 increased apoptosis of HUVECs, abrogating the effect of Cb1 on endothelial function.ConclusionIn conclusion, Cbl alleviates endothelial dysfunction by inactivation of the JAK2/STAT4 pathway and inhibition of Runx3 expression in DM. These evidence might underlie novel Cbl-based treatment against DM in the future.Supplementary InformationThe online version contains supplementary material available at 10.1186/s12967-021-03069-w."
+    }
+  ],
+  "entities": [
+    {
+      "end": 37,
+      "id": "E1",
+      "score": 0.9999783039093018,
+      "start": 18,
+      "text": "E3 ubiquitin ligase",
+      "type": "Gene"
+    },
+    {
+      "end": 41,
+      "id": "E2",
+      "score": 0.9999862909317017,
+      "start": 38,
+      "text": "Cbl",
+      "type": "Gene"
+    },
+    {
+      "end": 76,
+      "id": "E3",
+      "score": 0.999871551990509,
+      "start": 53,
+      "text": "endothelial dysfunction",
+      "type": "Disease"
+    },
+    {
+      "end": 97,
+      "id": "E4",
+      "score": 0.999988853931427,
+      "start": 80,
+      "text": "diabetes mellitus",
+      "type": "Disease"
+    },
+    {
+      "end": 120,
+      "id": "E5",
+      "score": 0.9999886751174927,
+      "start": 116,
+      "text": "JAK2",
+      "type": "Gene"
+    },
+    {
+      "end": 126,
+      "id": "E6",
+      "score": 0.9999867677688599,
+      "start": 121,
+      "text": "STAT4",
+      "type": "Gene"
+    },
+    {
+      "end": 155,
+      "id": "E7",
+      "score": 0.9999803304672241,
+      "start": 141,
+      "text": "Runx3-mediated",
+      "type": "Gene"
+    },
+    {
+      "end": 163,
+      "id": "E8",
+      "score": 0.997666597366333,
+      "start": 156,
+      "text": "H3K4me3",
+      "type": "Gene"
+    },
+    {
+      "end": 192,
+      "id": "E9",
+      "score": 0.9999890327453613,
+      "start": 184,
+      "text": "mellitus",
+      "type": "Disease"
+    },
+    {
+      "end": 196,
+      "id": "E10",
+      "score": 0.9999853372573853,
+      "start": 194,
+      "text": "DM",
+      "type": "Disease"
+    },
+    {
+      "end": 228,
+      "id": "E11",
+      "score": 0.9996799230575562,
+      "start": 213,
+      "text": "chronic disease",
+      "type": "Disease"
+    },
+    {
+      "end": 255,
+      "id": "E12",
+      "score": 0.9938340187072754,
+      "start": 247,
+      "text": "impaired",
+      "type": "Disease"
+    },
+    {
+      "end": 276,
+      "id": "E13",
+      "score": 0.9768061637878418,
+      "start": 268,
+      "text": "function",
+      "type": "Disease"
+    },
+    {
+      "end": 312,
+      "id": "E14",
+      "score": 0.9999964237213135,
+      "start": 300,
+      "text": "nitric oxide",
+      "type": "Chemical"
+    },
+    {
+      "end": 316,
+      "id": "E15",
+      "score": 0.9999924898147583,
+      "start": 314,
+      "text": "NO",
+      "type": "Chemical"
+    },
+    {
+      "end": 344,
+      "id": "E16",
+      "score": 0.9999768733978271,
+      "start": 325,
+      "text": "E3 ubiquitin ligase",
+      "type": "Gene"
+    },
+    {
+      "end": 389,
+      "id": "E17",
+      "score": 0.9999586939811707,
+      "start": 366,
+      "text": "endothelial dysfunction",
+      "type": "Disease"
+    },
+    {
+      "end": 418,
+      "id": "E18",
+      "score": 0.9999854564666748,
+      "start": 416,
+      "text": "DM",
+      "type": "Disease"
+    },
+    {
+      "end": 487,
+      "id": "E19",
+      "score": 0.9999799331029257,
+      "start": 468,
+      "text": "E3 ubiquitin ligase",
+      "type": "Gene"
+    },
+    {
+      "end": 514,
+      "id": "E20",
+      "score": 0.9999819755554199,
+      "start": 488,
+      "text": "casitas B-lineage lymphoma",
+      "type": "Gene"
+    },
+    {
+      "end": 519,
+      "id": "E21",
+      "score": 0.9999896287918091,
+      "start": 516,
+      "text": "Cbl",
+      "type": "Gene"
+    },
+    {
+      "end": 555,
+      "id": "E22",
+      "score": 0.9999818801879883,
+      "start": 532,
+      "text": "endothelial dysfunction",
+      "type": "Disease"
+    },
+    {
+      "end": 561,
+      "id": "E23",
+      "score": 0.9999850988388062,
+      "start": 559,
+      "text": "DM",
+      "type": "Disease"
+    },
+    {
+      "end": 566,
+      "id": "E24",
+      "score": 0.9999872446060181,
+      "start": 562,
+      "text": "rats",
+      "type": "Species"
+    },
+    {
+      "end": 574,
+      "id": "E25",
+      "score": 0.9999902248382568,
+      "start": 570,
+      "text": "JAK2",
+      "type": "Gene"
+    },
+    {
+      "end": 580,
+      "id": "E26",
+      "score": 0.9999897480010986,
+      "start": 575,
+      "text": "STAT4",
+      "type": "Gene"
+    },
+    {
+      "end": 601,
+      "id": "E27",
+      "score": 0.9999866485595703,
+      "start": 598,
+      "text": "rat",
+      "type": "Species"
+    },
+    {
+      "end": 613,
+      "id": "E28",
+      "score": 0.9999858140945435,
+      "start": 611,
+      "text": "DM",
+      "type": "Disease"
+    },
+    {
+      "end": 679,
+      "id": "E29",
+      "score": 0.9999963045120239,
+      "start": 665,
+      "text": "streptozotocin",
+      "type": "Chemical"
+    },
+    {
+      "end": 756,
+      "id": "E30",
+      "score": 0.9999892711639404,
+      "start": 753,
+      "text": "Cbl",
+      "type": "Gene"
+    },
+    {
+      "end": 762,
+      "id": "E31",
+      "score": 0.9999897480010986,
+      "start": 758,
+      "text": "JAK2",
+      "type": "Gene"
+    },
+    {
+      "end": 799,
+      "id": "E32",
+      "score": 0.999983012676239,
+      "start": 764,
+      "text": "runt-related transcription factor 3",
+      "type": "Gene"
+    },
+    {
+      "end": 806,
+      "id": "E33",
+      "score": 0.999980648358663,
+      "start": 801,
+      "text": "Runx3",
+      "type": "Gene"
+    },
+    {
+      "end": 817,
+      "id": "E34",
+      "score": 0.9999901056289673,
+      "start": 812,
+      "text": "STAT4",
+      "type": "Gene"
+    },
+    {
+      "end": 824,
+      "id": "E35",
+      "score": 0.9999827146530151,
+      "start": 819,
+      "text": "Human",
+      "type": "Species"
+    },
+    {
+      "end": 896,
+      "id": "E36",
+      "score": 0.9999963045120239,
+      "start": 889,
+      "text": "glucose",
+      "type": "Chemical"
+    },
+    {
+      "end": 924,
+      "id": "E37",
+      "score": 0.9999855756759644,
+      "start": 922,
+      "text": "DM",
+      "type": "Disease"
+    },
+    {
+      "end": 1024,
+      "id": "E38",
+      "score": 0.9999873638153076,
+      "start": 1021,
+      "text": "Cb1",
+      "type": "Gene"
+    },
+    {
+      "end": 1051,
+      "id": "E39",
+      "score": 0.9999860525131226,
+      "start": 1028,
+      "text": "endothelial dysfunction",
+      "type": "Disease"
+    },
+    {
+      "end": 1055,
+      "id": "E40",
+      "score": 0.9999934434890747,
+      "start": 1053,
+      "text": "NO",
+      "type": "Chemical"
+    },
+    {
+      "end": 1119,
+      "id": "E41",
+      "score": 0.9999845027923584,
+      "start": 1117,
+      "text": "DM",
+      "type": "Disease"
+    },
+    {
+      "end": 1123,
+      "id": "E42",
+      "score": 0.9999840259552002,
+      "start": 1120,
+      "text": "rat",
+      "type": "Species"
+    },
+    {
+      "end": 1165,
+      "id": "E43",
+      "score": 0.99998939037323,
+      "start": 1161,
+      "text": "JAK2",
+      "type": "Gene"
+    },
+    {
+      "end": 1172,
+      "id": "E44",
+      "score": 0.999977191289266,
+      "start": 1167,
+      "text": "Runx3",
+      "type": "Gene"
+    },
+    {
+      "end": 1182,
+      "id": "E45",
+      "score": 0.99998939037323,
+      "start": 1177,
+      "text": "STAT4",
+      "type": "Gene"
+    },
+    {
+      "end": 1237,
+      "id": "E46",
+      "score": 0.9999871253967285,
+      "start": 1234,
+      "text": "Cbl",
+      "type": "Gene"
+    },
+    {
+      "end": 1272,
+      "id": "E47",
+      "score": 0.999987781047821,
+      "start": 1249,
+      "text": "endothelial dysfunction",
+      "type": "Disease"
+    },
+    {
+      "end": 1289,
+      "id": "E48",
+      "score": 0.9999921321868896,
+      "start": 1287,
+      "text": "NO",
+      "type": "Chemical"
+    },
+    {
+      "end": 1385,
+      "id": "E49",
+      "score": 0.9999591112136841,
+      "start": 1382,
+      "text": "Cb1",
+      "type": "Gene"
+    },
+    {
+      "end": 1399,
+      "id": "E50",
+      "score": 0.9999778270721436,
+      "start": 1395,
+      "text": "JAK2",
+      "type": "Gene"
+    },
+    {
+      "end": 1433,
+      "id": "E51",
+      "score": 0.9999810457229614,
+      "start": 1429,
+      "text": "JAK2",
+      "type": "Gene"
+    },
+    {
+      "end": 1443,
+      "id": "E52",
+      "score": 0.9999762773513794,
+      "start": 1438,
+      "text": "STAT4",
+      "type": "Gene"
+    },
+    {
+      "end": 1467,
+      "id": "E53",
+      "score": 0.9999706745147705,
+      "start": 1462,
+      "text": "STAT4",
+      "type": "Gene"
+    },
+    {
+      "end": 1482,
+      "id": "E54",
+      "score": 0.9999797344207764,
+      "start": 1477,
+      "text": "Runx3",
+      "type": "Gene"
+    },
+    {
+      "end": 1572,
+      "id": "E55",
+      "score": 0.999987006187439,
+      "start": 1568,
+      "text": "JAK2",
+      "type": "Gene"
+    },
+    {
+      "end": 1582,
+      "id": "E56",
+      "score": 0.9999881982803345,
+      "start": 1577,
+      "text": "STAT4",
+      "type": "Gene"
+    },
+    {
+      "end": 1592,
+      "id": "E57",
+      "score": 0.9999801715215048,
+      "start": 1587,
+      "text": "Runx3",
+      "type": "Gene"
+    },
+    {
+      "end": 1652,
+      "id": "E58",
+      "score": 0.9999850988388062,
+      "start": 1649,
+      "text": "Cb1",
+      "type": "Gene"
+    },
+    {
+      "end": 1705,
+      "id": "E59",
+      "score": 0.718239426612854,
+      "start": 1702,
+      "text": "Cbl",
+      "type": "Gene"
+    },
+    {
+      "end": 1740,
+      "id": "E60",
+      "score": 0.999991238117218,
+      "start": 1717,
+      "text": "endothelial dysfunction",
+      "type": "Disease"
+    },
+    {
+      "end": 1768,
+      "id": "E61",
+      "score": 0.9999841451644897,
+      "start": 1764,
+      "text": "JAK2",
+      "type": "Gene"
+    },
+    {
+      "end": 1774,
+      "id": "E62",
+      "score": 0.9999856948852539,
+      "start": 1769,
+      "text": "STAT4",
+      "type": "Gene"
+    },
+    {
+      "end": 1806,
+      "id": "E63",
+      "score": 0.9999802907307943,
+      "start": 1801,
+      "text": "Runx3",
+      "type": "Gene"
+    },
+    {
+      "end": 1823,
+      "id": "E64",
+      "score": 0.9999862909317017,
+      "start": 1821,
+      "text": "DM",
+      "type": "Disease"
+    },
+    {
+      "end": 1864,
+      "id": "E65",
+      "score": 0.9838144183158875,
+      "start": 1861,
+      "text": "Cbl",
+      "type": "Gene"
+    },
+    {
+      "end": 1891,
+      "id": "E66",
+      "score": 0.9999865293502808,
+      "start": 1889,
+      "text": "DM",
+      "type": "Disease"
+    }
+  ],
+  "entity_packet_origin": "reports\\relation_generalization_09b\\papers\\pmcid_pmc8605525.json",
+  "entity_packet_origin_sha256": "c59df69cf2caa77dfd1b238b7a79da79474fe011f87a947aa3e76070c037a5ec",
+  "entity_packet_sha256": "d49550ebdc5eb3838fda29a9c9038658e742efba40290ca1c5bc1450a5f9e713",
+  "paper_id": "PMCID:PMC8605525",
+  "prior_relation_outputs_reused": false,
+  "prompt_sha256": "855161bdb0ac1c3fd283b5e999a0b69e005d87d52d2f1856c17aee2c0ca5d7f5",
+  "source_scope": "title plus complete abstract",
+  "source_sha256": "558fd77eab8e192fe9b7c625b3186a6b8f1c44bcad0c7430ba3dedc6ffb7c5a6",
+  "source_text": "Overexpression of E3 ubiquitin ligase Cbl attenuates endothelial dysfunction in diabetes mellitus by inhibiting the JAK2/STAT4 signaling and Runx3-mediated H3K4me3\n\nBackgroundDiabetes mellitus (DM), a most common chronic disease, is featured with impaired endothelial function and bioavailability of nitric oxide (NO), while E3 ubiquitin ligase appears to alleviate endothelial dysfunction as a promising option for DM treatment. Herein, we aimed to determine whether E3 ubiquitin ligase casitas B-lineage lymphoma (Cbl) alleviates endothelial dysfunction in DM rats by JAK2/STAT4 pathway.MethodsA rat model of DM was developed through intraperitoneal injection of streptozotocin, followed by collection of aortic tissues to determine the expression of Cbl, JAK2, runt-related transcription factor 3 (Runx3) and STAT4. Human umbilical vein endothelial cells (HUVECs) were cultured in high glucose (HG) condition to induce DM as an in vitro model. With gain- and loss-function method, we assessed the aberrantly expressed Cb1 on endothelial dysfunction, NO production and apoptosis of HUVECs.ResultsCbl was reduced in DM rat tissues and HG-induced HUVECs, where JAK2, Runx3 and STAT4 were elevated. It was found that overexpression of Cbl alleviated endothelial dysfunction by increasing NO production and restoring vasodilation and suppressing apoptosis of HUVECs. Mechanistically, Cb1 enhanced JAK2 ubiquitination and decreased JAK2 and STAT4 expression, where STAT4 improved Runx3 expression by regulating histone H3 lysine 4 trimethylation level. Overexpression of JAK2 and STAT4, or Runx3 increased apoptosis of HUVECs, abrogating the effect of Cb1 on endothelial function.ConclusionIn conclusion, Cbl alleviates endothelial dysfunction by inactivation of the JAK2/STAT4 pathway and inhibition of Runx3 expression in DM. These evidence might underlie novel Cbl-based treatment against DM in the future.Supplementary InformationThe online version contains supplementary material available at 10.1186/s12967-021-03069-w.",
+  "title": "Overexpression of E3 ubiquitin ligase Cbl attenuates endothelial dysfunction in diabetes mellitus by inhibiting the JAK2/STAT4 signaling and Runx3-mediated H3K4me3"
+}

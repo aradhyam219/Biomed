@@ -1,0 +1,67 @@
+{
+  "baseline_repository_sha": "7f388368a8bd06f35f60eda37eb2ccdce711eed8",
+  "completed_attempted_jobs": 3,
+  "completed_utc": "2026-10-03T20:12:42.314782+00:00",
+  "cost_status": "Unknown. No usage was returned; a timed-out request is not assumed free.",
+  "intelligence_comparison": "unresolved_no_outputs",
+  "model_mapping": {
+    "Model A": "gpt-6-luna",
+    "Model B": "gpt-5.6-luna"
+  },
+  "model_quality_winner": null,
+  "model_results": {
+    "gpt-5.6-luna": {
+      "alias": "Model B",
+      "attempts": [
+        {
+          "elapsed_seconds": 300.125,
+          "exact_error": "LLM relation provider invocation failed: Request timed out.",
+          "paper_id": "PMCID:PMC10770459"
+        },
+        {
+          "elapsed_seconds": 300.125,
+          "exact_error": "LLM relation provider invocation failed: Request timed out.",
+          "paper_id": "PMCID:PMC11824863"
+        }
+      ],
+      "estimated_actual_cost_usd": null,
+      "planned_jobs": 8,
+      "provider_requests": 2,
+      "provider_responses_received": 0,
+      "returned_token_usage": null,
+      "status_counts": {
+        "not_run_aborted": 6,
+        "provider_failure": 2
+      },
+      "successful_validated_outputs": 0
+    },
+    "gpt-6-luna": {
+      "alias": "Model A",
+      "attempts": [
+        {
+          "elapsed_seconds": 300.141,
+          "exact_error": "LLM relation provider invocation failed: Request timed out.",
+          "paper_id": "PMCID:PMC10770459"
+        }
+      ],
+      "estimated_actual_cost_usd": null,
+      "planned_jobs": 8,
+      "provider_requests": 1,
+      "provider_responses_received": 0,
+      "returned_token_usage": null,
+      "status_counts": {
+        "not_run_aborted": 7,
+        "provider_failure": 1
+      },
+      "successful_validated_outputs": 0
+    }
+  },
+  "planned_jobs": 16,
+  "production_changed": false,
+  "review_freeze_sha256": "bb0356908c3b27a35d8f98551bcf31f5685ce6850f009acf31975b6c58f7e17c",
+  "started_utc": "2026-10-03T19:57:36.447283+00:00",
+  "status": "aborted_stop_condition",
+  "successful_paired_papers": 0,
+  "unattempted_jobs": 13,
+  "unblinded_utc": "2026-10-03T20:15:14.591213+00:00"
+}

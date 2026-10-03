@@ -1,0 +1,14 @@
+{
+  "balanced_first_model_order": "4 A-first / 4 B-first",
+  "checked_utc": "2026-10-03T19:57:26.643278+00:00",
+  "input_and_code_hashes": "pass",
+  "offline_payload_checks": "pass",
+  "paid_requests_made": 0,
+  "paper_coverage": 8,
+  "previously_executed_unchanged_focused_tests": {
+    "count": 36,
+    "rerun": false,
+    "status": "passed"
+  },
+  "responses_payload_equal_except_model": true
+}

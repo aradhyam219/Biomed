@@ -1,0 +1,222 @@
+{
+  "authorization": "User requested the eight-abstract GPT-6 Luna max versus GPT-5.6 Luna max comparison and a thorough Codex review",
+  "baseline_head": "7f388368a8bd06f35f60eda37eb2ccdce711eed8",
+  "branch": "extraction_system_v2",
+  "configuration": {
+    "api": "Responses",
+    "base_url_override_configured": false,
+    "consecutive_operational_error_stop": 3,
+    "context": "one independent fresh request per attempt; no previous response or saved extraction supplied",
+    "credential_available": true,
+    "credential_env_name": "OPENAI_API_KEY",
+    "job_watchdog_seconds": 920,
+    "manual_transport_retries": 0,
+    "max_output_tokens": 128000,
+    "provider_retries": 0,
+    "reasoning": {
+      "effort": "max"
+    },
+    "reasoning_mode": "standard/default",
+    "repair_budget": 2,
+    "replicates_per_paper_model": 1,
+    "request_timeout_seconds": 300,
+    "sampling_parameters": "omitted"
+  },
+  "cost_rates_usd_per_million": {
+    "gpt-5.6-luna": {
+      "cache_write": 0.25,
+      "cached_input": 0.02,
+      "input": 0.2,
+      "output": 1.2
+    },
+    "gpt-6-luna": {
+      "cache_write": 0.125,
+      "cached_input": 0.01,
+      "input": 0.1,
+      "output": 0.5
+    }
+  },
+  "cost_source": "https://developers.openai.com/api/docs/models/",
+  "created_utc": "2026-10-03T19:55:22.155931+00:00",
+  "execution_order": [
+    {
+      "alias": "Model A",
+      "paper_id": "PMCID:PMC10770459",
+      "sequence": 1
+    },
+    {
+      "alias": "Model B",
+      "paper_id": "PMCID:PMC10770459",
+      "sequence": 2
+    },
+    {
+      "alias": "Model B",
+      "paper_id": "PMCID:PMC11824863",
+      "sequence": 3
+    },
+    {
+      "alias": "Model A",
+      "paper_id": "PMCID:PMC11824863",
+      "sequence": 4
+    },
+    {
+      "alias": "Model A",
+      "paper_id": "PMCID:PMC8605525",
+      "sequence": 5
+    },
+    {
+      "alias": "Model B",
+      "paper_id": "PMCID:PMC8605525",
+      "sequence": 6
+    },
+    {
+      "alias": "Model B",
+      "paper_id": "PMID:27172794",
+      "sequence": 7
+    },
+    {
+      "alias": "Model A",
+      "paper_id": "PMID:27172794",
+      "sequence": 8
+    },
+    {
+      "alias": "Model A",
+      "paper_id": "PMID:27370646",
+      "sequence": 9
+    },
+    {
+      "alias": "Model B",
+      "paper_id": "PMID:27370646",
+      "sequence": 10
+    },
+    {
+      "alias": "Model B",
+      "paper_id": "PMID:31324362",
+      "sequence": 11
+    },
+    {
+      "alias": "Model A",
+      "paper_id": "PMID:31324362",
+      "sequence": 12
+    },
+    {
+      "alias": "Model A",
+      "paper_id": "PMID:33652126",
+      "sequence": 13
+    },
+    {
+      "alias": "Model B",
+      "paper_id": "PMID:33652126",
+      "sequence": 14
+    },
+    {
+      "alias": "Model B",
+      "paper_id": "PMID:38569671",
+      "sequence": 15
+    },
+    {
+      "alias": "Model A",
+      "paper_id": "PMID:38569671",
+      "sequence": 16
+    }
+  ],
+  "mapping_disclosed_before_review": false,
+  "models": [
+    "gpt-5.6-luna",
+    "gpt-6-luna"
+  ],
+  "papers": [
+    {
+      "entity_count": 43,
+      "manifest_sha256": "c4a17ef0ace893c74877b6be724bc1301c6f1e2431a492026ca4f9ea8d7369b2",
+      "paper_id": "PMCID:PMC10770459",
+      "prompt_sha256": "04143631ba2b7960c68e20bdbf2cffbf1752b31187c4152cb9e80f7672f8c8d9",
+      "source_sha256": "aa7359e710f0da93c17f1c8276d16ea6b725de1ba124b6d05eb722148147de29"
+    },
+    {
+      "entity_count": 41,
+      "manifest_sha256": "260266589560edec2446c820773a507ef00c2ed816b02939054363dc679bdba8",
+      "paper_id": "PMCID:PMC11824863",
+      "prompt_sha256": "99db58b9b122f5cf7c4a7a5f7c3a0bcb8b53dd09676631af5dfe1e35bda7c3a6",
+      "source_sha256": "604ce7f15b0ca00853cfc4cc07039d51059792e907d3da07c08be40730fb1b5b"
+    },
+    {
+      "entity_count": 66,
+      "manifest_sha256": "5edd59126fd39676d935999f212b81a388b09f883c1019a1b2327ba261c0ac30",
+      "paper_id": "PMCID:PMC8605525",
+      "prompt_sha256": "855161bdb0ac1c3fd283b5e999a0b69e005d87d52d2f1856c17aee2c0ca5d7f5",
+      "source_sha256": "558fd77eab8e192fe9b7c625b3186a6b8f1c44bcad0c7430ba3dedc6ffb7c5a6"
+    },
+    {
+      "entity_count": 41,
+      "manifest_sha256": "a6a026d7d1cd9c68e608228fa2d8bfdf559ff3078b53e90327d49ed6ade4b5ba",
+      "paper_id": "PMID:27172794",
+      "prompt_sha256": "55049630cc7c3bbdf03320534a0d4c782ef066c869f0a28de898bc0e9e09f656",
+      "source_sha256": "50d58062a480653e0f414aad9e62aca434898fa3fcc6f372722454bd75407a0c"
+    },
+    {
+      "entity_count": 18,
+      "manifest_sha256": "b2725676f046f7b641d965188af96f11d11f87cfb49c0bd6929e8f6678945141",
+      "paper_id": "PMID:27370646",
+      "prompt_sha256": "e0b3d4d71c857368bda8844570dbb45839ca6440be2da7f8724d17c560b3f118",
+      "source_sha256": "e4e9073658c15ecdee8014aa584944b8dfdbd589aa11090156b8fef17eb84c82"
+    },
+    {
+      "entity_count": 50,
+      "manifest_sha256": "c4cfb1ef8ac68190d517d377c9461191544092953b950ae0c78c74ed5d784626",
+      "paper_id": "PMID:31324362",
+      "prompt_sha256": "b22cacb5ba488300dbf293f788ff32d8273f361a19dbfb4962d4a6b2ee8c50f4",
+      "source_sha256": "75c352846198e57b5bf66f031a22f88885df2892fd35d56366ba4cff14cc1d50"
+    },
+    {
+      "entity_count": 33,
+      "manifest_sha256": "e882894d4daf15f8a36a994c8591547fc7a6a9f7eb51e57593c3a8b87d3b180c",
+      "paper_id": "PMID:33652126",
+      "prompt_sha256": "2ada7700a05888320be803448da698ba5a8d0a53ffb14c5ee21d781f91307031",
+      "source_sha256": "44ee744a2e60c788db16927b63cda446174733d38c5e1cdb13e112af30f295e6"
+    },
+    {
+      "entity_count": 39,
+      "manifest_sha256": "3ce3e609b7e968d013117d3158aff4862c6ba66171d07cd8dad4c41d7b942a18",
+      "paper_id": "PMID:38569671",
+      "prompt_sha256": "d12f157ad1852bf5051b1f548dba0738e00463ce1e48aa3a2e15e6da8d1a6b1c",
+      "source_sha256": "39058e36f1b50e00fd7a154996f0fef4f82509c3b699d845fefad35742fa49e6"
+    }
+  ],
+  "pricing_checked_date": "2026-10-04",
+  "production_files_sha256": {
+    "entity_extraction.py": "071f8fa3bfda77d0c2e8e4b80a8e78fe865e9ddfc933df6c35628dc8823ec37d",
+    "llm_relation_extraction.py": "af50dd5445276da29ed62e689693f9c6c39d2d26d38112ee6fdc5530219ef752",
+    "relation_extraction.py": "ac5ec09b2178e23fe3795f3e4e0d3cc40f4de83769aeb7731c85d950dfcc022c"
+  },
+  "production_scope_status": "",
+  "review_policy": {
+    "all_final_relations_reviewed": true,
+    "dimensions": [
+      "endpoint identity",
+      "direction",
+      "negation",
+      "assertion support",
+      "intervention",
+      "effects",
+      "context",
+      "verbatim grounding",
+      "alias-only relations",
+      "omitted explicit claims"
+    ],
+    "human_gold": false,
+    "no_formal_precision_recall_f1_or_population_accuracy": true,
+    "no_quality_winner_from_operational_failures": true,
+    "reviewer": "Codex",
+    "source_only_reference_before_model_output_review": true
+  },
+  "runner_sha256": "69f740de9333b41e298175dd7eb28ca10ed9b41f3a1f0b0af1d9f6e2cff6c987",
+  "schema_sha256": "023435da3fa18abb77987313626636eff7bedda28739603db54a2f2c8137c945",
+  "source_corpus_sha256": "544cb37adee45fd7fe892c80b7aa4e8ba93e801212bc759e615e71d721ce4b55",
+  "system_prompt_sha256": "13f38a6e94db74b534eb0df0b139287ace2e714fc908276ce4c3572f9b25836f",
+  "versions": {
+    "langchain-core": "1.6.3",
+    "langchain-openai": "1.6.2",
+    "openai": "3.14.1"
+  }
+}

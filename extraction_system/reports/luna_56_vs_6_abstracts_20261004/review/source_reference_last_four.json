@@ -1,0 +1,556 @@
+{
+  "reviewer_model": "gpt-6-luna",
+  "phase": "source_only_before_output_review",
+  "reference_type": "codex_generated_source_only_claim_inventory",
+  "not_human_gold": true,
+  "limitations": "This is a Codex-generated source-only reference, not human gold and not formal precision/recall ground truth. It is limited to the supplied abstract text and entity IDs. Outcomes without an entity endpoint are recorded only as effects or limitations; absent or ambiguous endpoints are not invented. Repeated candidate IDs are grouped only where same-entity identity is clear.",
+  "papers": [
+    {
+      "pmid": "27370646",
+      "source_file": "pmid_27370646.json",
+      "clear_claims": [
+        {
+          "claim_id": "pmid_27370646_C01",
+          "source_label": "p53",
+          "source_entity_ids": ["E13"],
+          "target_label": "SSC-4",
+          "target_entity_ids": ["E14"],
+          "proposition": "In SSC-4 cells, inhibiting p53 expression decreased proliferation ability and induced apoptosis and autophagy.",
+          "negated": false,
+          "evidence": "We observed that inhibiting the expression of p53 decreased the proliferation ability and induced apoptosis/autophagy in SSC-4 cells.",
+          "intervention": "Inhibition of p53 expression; the abstract describes p53 knockdown by RNA interference in the study methods.",
+          "effects": ["Proliferation decreased", "Apoptosis induced", "Autophagy induced"],
+          "context": "SSC-4 cell experiments."
+        },
+        {
+          "claim_id": "pmid_27370646_C02",
+          "source_label": "p53",
+          "source_entity_ids": ["E13"],
+          "target_label": "SSC-4",
+          "target_entity_ids": ["E14"],
+          "proposition": "Inhibiting p53 expression decreased migration in the SSC-4 cell experiments.",
+          "negated": false,
+          "evidence": "We observed that inhibiting the expression of p53 decreased the proliferation ability and induced apoptosis/autophagy in SSC-4 cells. Moreover, we observed that this has decreased migration and has blocked the expression of VEGF.",
+          "intervention": "Inhibition of p53 expression.",
+          "effects": ["Migration decreased"],
+          "context": "The result sentence refers to p53 inhibition and SSC-4 cells in the immediately preceding sentence."
+        },
+        {
+          "claim_id": "pmid_27370646_C03",
+          "source_label": "p53",
+          "source_entity_ids": ["E13"],
+          "target_label": "VEGF",
+          "target_entity_ids": ["E15"],
+          "proposition": "Inhibiting p53 expression blocked VEGF expression.",
+          "negated": false,
+          "evidence": "We observed that inhibiting the expression of p53 decreased the proliferation ability and induced apoptosis/autophagy in SSC-4 cells. Moreover, we observed that this has decreased migration and has blocked the expression of VEGF.",
+          "intervention": "Inhibition of p53 expression.",
+          "effects": ["VEGF expression blocked"],
+          "context": "The preceding result sentence places the experiment in SSC-4 cells."
+        },
+        {
+          "claim_id": "pmid_27370646_C04",
+          "source_label": "p53",
+          "source_entity_ids": ["E16"],
+          "target_label": "OSCC",
+          "target_entity_ids": ["E17"],
+          "proposition": "The conclusion states a direct connection between p53 knockdown and OSCC cell death.",
+          "negated": false,
+          "evidence": "In conclusion, our research provides a proof that a direct connection between p53 knockdown and OSCC cell death can be established, therefore opening new potential directions in OSCC molecular therapeutics and management.",
+          "intervention": "p53 knockdown.",
+          "effects": ["OSCC cell death"],
+          "context": "Abstract conclusion.",
+          "ambiguity": "This is the authors' abstract-level summary; cell death has no supplied entity ID."
+        },
+        {
+          "claim_id": "pmid_27370646_C05",
+          "source_label": "p53",
+          "source_entity_ids": ["E8"],
+          "target_label": "malignant tumors",
+          "target_entity_ids": ["E9"],
+          "proposition": "The background states that p53 has a crucial role in proliferation and apoptosis during tumor occurrence and development.",
+          "negated": false,
+          "evidence": "p53 has a crucial role in proliferation and apoptosis during the occurrence and development of numerous malignant tumors.",
+          "effects": ["Role in proliferation and apoptosis"],
+          "context": "General background statement, not a result specific to this experiment."
+        }
+      ],
+      "tentative_claims": [
+        {
+          "claim_id": "pmid_27370646_T01",
+          "source_label": "p53",
+          "source_entity_ids": ["E10"],
+          "target_label": "OSCC",
+          "target_entity_ids": ["E11"],
+          "proposition": "The effect of mutated p53 on OSCC development and progression is explicitly described as unclear.",
+          "negated": false,
+          "evidence": "The impact of mutated p53 on the development and progression of OSCC is unclear and might have therapeutic implications.",
+          "effects": [],
+          "context": "Background and motivation.",
+          "ambiguity": "This is an explicitly unresolved question, not an asserted positive or negative relation; it is excluded from clear supported claims."
+        }
+      ],
+      "excluded_items": [
+        {
+          "evidence": "Oral squamous cell carcinoma (OSCC)",
+          "related_entity_ids": ["E4", "E5"],
+          "reason": "Parenthetical naming/abbreviation only; identity is not treated as a biological relation."
+        },
+        {
+          "evidence": "Using an in vitro RNA interference experiment, we have evaluated the impact of p53 knockdown on cell viability, apoptosis, migration, and gene expression for key genes involved in apoptosis and angiogenesis.",
+          "related_entity_ids": ["E12"],
+          "reason": "Study design describes outcomes evaluated but makes no result assertion in this sentence."
+        }
+      ]
+    },
+    {
+      "pmid": "31324362",
+      "source_file": "pmid_31324362.json",
+      "clear_claims": [
+        {
+          "claim_id": "pmid_31324362_C01",
+          "source_label": "GS",
+          "source_entity_ids": ["E30"],
+          "target_label": "TNM stage",
+          "target_entity_ids": ["E31", "E32"],
+          "proposition": "GS protein expression was correlated with TNM stage.",
+          "negated": false,
+          "evidence": "The protein expression of GS was correlated with the Tumor, Lymph Node, and Metastasis (TNM) stage.",
+          "effects": ["Correlation with stage; direction or sign is not specified"],
+          "context": "Clinical samples and clinicopathologic features are the stated study context."
+        },
+        {
+          "claim_id": "pmid_31324362_C02",
+          "source_label": "c-Myc",
+          "source_entity_ids": ["E33"],
+          "target_label": "GS",
+          "target_entity_ids": ["E34"],
+          "proposition": "c-Myc mRNA levels were positively correlated with GS mRNA levels.",
+          "negated": false,
+          "evidence": "In addition, c-Myc mRNA levels were positively correlated with GS mRNA levels.",
+          "effects": ["Positive mRNA-level correlation"],
+          "context": "Expression correlation."
+        },
+        {
+          "claim_id": "pmid_31324362_C03",
+          "source_label": "c-Myc",
+          "source_entity_ids": ["E35"],
+          "target_label": "oral cancer",
+          "target_entity_ids": ["E36"],
+          "proposition": "c-Myc overexpression increased colony formation and the number of cells in S phase in oral cancer cells.",
+          "negated": false,
+          "evidence": "Overexpression of c-Myc increased the colonies derived from oral cancer cells and caused more cells to be in S phase compared with the mock-vehicle group.",
+          "intervention": "c-Myc overexpression; mock-vehicle comparator.",
+          "effects": ["More colonies", "More cells in S phase"],
+          "context": "Oral cancer cells; the result sentence does not name the cell line."
+        },
+        {
+          "claim_id": "pmid_31324362_C04",
+          "source_label": "c-Myc",
+          "source_entity_ids": ["E38"],
+          "target_label": "KB",
+          "target_entity_ids": ["E37"],
+          "proposition": "c-Myc overexpression promoted migratory speed of KB cells.",
+          "negated": false,
+          "evidence": "The migratory speed of KB cells was promoted by overexpression of c-Myc compared to the mock-vehicle group.",
+          "intervention": "c-Myc overexpression; mock-vehicle comparator.",
+          "effects": ["Migratory speed increased"],
+          "context": "KB oral cancer cells."
+        },
+        {
+          "claim_id": "pmid_31324362_C05",
+          "source_label": "c-Myc",
+          "source_entity_ids": ["E41"],
+          "target_label": "E-cadherin",
+          "target_entity_ids": ["E42"],
+          "proposition": "c-Myc inhibited E-cadherin protein expression through enhanced GLS and GS activity.",
+          "negated": false,
+          "evidence": "Furthermore, c-Myc could inhibit E-cadherin protein expression while promoting N-cadherin expression by enhancing the activity of GLS and GS.",
+          "intervention": "c-Myc overexpression is the experimental context described in the preceding methods/results.",
+          "effects": ["E-cadherin protein expression inhibited"],
+          "mediators": [{"label": "GLS", "entity_ids": ["E44"]}, {"label": "GS", "entity_ids": ["E45"]}],
+          "context": "Mechanistic statement in oral cancer cell experiments."
+        },
+        {
+          "claim_id": "pmid_31324362_C06",
+          "source_label": "c-Myc",
+          "source_entity_ids": ["E41"],
+          "target_label": "N-cadherin",
+          "target_entity_ids": ["E43"],
+          "proposition": "c-Myc promoted N-cadherin expression through enhanced GLS and GS activity.",
+          "negated": false,
+          "evidence": "Furthermore, c-Myc could inhibit E-cadherin protein expression while promoting N-cadherin expression by enhancing the activity of GLS and GS.",
+          "intervention": "c-Myc overexpression is the experimental context described in the preceding methods/results.",
+          "effects": ["N-cadherin expression promoted"],
+          "mediators": [{"label": "GLS", "entity_ids": ["E44"]}, {"label": "GS", "entity_ids": ["E45"]}],
+          "context": "Mechanistic statement in oral cancer cell experiments."
+        },
+        {
+          "claim_id": "pmid_31324362_C07",
+          "source_label": "c-Myc",
+          "source_entity_ids": ["E46"],
+          "target_label": "GLS",
+          "target_entity_ids": ["E48"],
+          "proposition": "c-Myc overexpression enhanced GLS activity as a mechanism for oral cancer cell proliferation and migration.",
+          "negated": false,
+          "evidence": "c-Myc overexpression promotes oral cancer cell proliferation and migration by enhancing GLS and GS activity.",
+          "intervention": "c-Myc overexpression.",
+          "effects": ["GLS activity enhanced", "Oral cancer cell proliferation and migration promoted"],
+          "context": "Abstract conclusion."
+        },
+        {
+          "claim_id": "pmid_31324362_C08",
+          "source_label": "c-Myc",
+          "source_entity_ids": ["E46"],
+          "target_label": "GS",
+          "target_entity_ids": ["E49"],
+          "proposition": "c-Myc overexpression enhanced GS activity as a mechanism for oral cancer cell proliferation and migration.",
+          "negated": false,
+          "evidence": "c-Myc overexpression promotes oral cancer cell proliferation and migration by enhancing GLS and GS activity.",
+          "intervention": "c-Myc overexpression.",
+          "effects": ["GS activity enhanced", "Oral cancer cell proliferation and migration promoted"],
+          "context": "Abstract conclusion."
+        }
+      ],
+      "tentative_claims": [
+        {
+          "claim_id": "pmid_31324362_T01",
+          "source_label": "c-Myc",
+          "source_entity_ids": ["E38"],
+          "target_label": "GLS inhibitor target",
+          "target_entity_ids": ["E39"],
+          "proposition": "GLS inhibition reversed effects associated with c-Myc overexpression.",
+          "negated": false,
+          "evidence": "However, these effects were effectively reversed in the presence of GLS or GS inhibitor.",
+          "intervention": "Presence of a GLS inhibitor.",
+          "effects": ["Reversal of the preceding c-Myc-associated functional effects"],
+          "context": "The preceding results describe colony formation, S-phase distribution, and migration.",
+          "ambiguity": "The span E39 is annotated as Chemical and contains only GLS; no separate inhibitor entity is supplied. These effects is an anaphor whose scope is not individually enumerated here."
+        },
+        {
+          "claim_id": "pmid_31324362_T02",
+          "source_label": "c-Myc",
+          "source_entity_ids": ["E38"],
+          "target_label": "GS inhibitor target",
+          "target_entity_ids": ["E40"],
+          "proposition": "GS inhibition reversed effects associated with c-Myc overexpression.",
+          "negated": false,
+          "evidence": "However, these effects were effectively reversed in the presence of GLS or GS inhibitor.",
+          "intervention": "Presence of a GS inhibitor.",
+          "effects": ["Reversal of the preceding c-Myc-associated functional effects"],
+          "context": "The preceding results describe colony formation, S-phase distribution, and migration.",
+          "ambiguity": "The span E40 is GS, the inhibitor target; no separate inhibitor entity is supplied. These effects is an anaphor whose scope is not individually enumerated here."
+        }
+      ],
+      "excluded_items": [
+        {
+          "evidence": "This study aimed to investigate whether glutaminase (GLS) and glutamine synthetase (GS) are involved in c-Myc-mediated tumor development in oral cancer.",
+          "related_entity_ids": ["E5", "E6", "E7", "E8", "E9", "E10", "E11"],
+          "reason": "Study aim/question, not an asserted result. Parenthetical expansions glutaminase/GLS and glutamine synthetase/GS are naming constructions and are not relations."
+        },
+        {
+          "evidence": "The correlation between the expressions of c-Myc, GLS, and GS in clinical samples and the clinicopathologic features of oral cancer were examined using immunohistochemistry and quantitative real-time polymerase chain reaction.",
+          "related_entity_ids": ["E12", "E13", "E14", "E15"],
+          "reason": "Methods statement says the correlation was examined but does not report its result."
+        },
+        {
+          "evidence": "The expressions of E-cadherin and N-cadherin were determined by immunofluorescence assays in KB cells overexpressing c-Myc in the presence of GLS or GS inhibitors.",
+          "related_entity_ids": ["E24", "E25", "E26", "E27", "E28", "E29"],
+          "reason": "Assay description only; the later expression effects are represented from the explicit result sentence."
+        }
+      ]
+    },
+    {
+      "pmid": "33652126",
+      "source_file": "pmid_33652126.json",
+      "clear_claims": [
+        {
+          "claim_id": "pmid_33652126_C01",
+          "source_label": "acute myocardial infarction / AMI",
+          "source_entity_ids": ["E6", "E7"],
+          "target_label": "necrosis",
+          "target_entity_ids": ["E8"],
+          "proposition": "The pathogenesis of acute myocardial infarction is associated with cardiomyocyte necrosis.",
+          "negated": false,
+          "evidence": "The pathogenesis of acute myocardial infarction (AMI) is associated with cardiomyocyte necrosis and apoptosis.",
+          "effects": ["Association with necrosis"],
+          "context": "Background statement; cardiomyocyte is not a supplied entity, and apoptosis has no supplied entity ID."
+        },
+        {
+          "claim_id": "pmid_33652126_C02",
+          "source_label": "PTEN",
+          "source_entity_ids": ["E19"],
+          "target_label": "H9c2",
+          "target_entity_ids": ["E18"],
+          "proposition": "Serum deprivation increased PTEN expression in H9c2 cells.",
+          "negated": false,
+          "evidence": "As a result, we observed that serum deprivation in H9c2 cells increased PTEN expression.",
+          "intervention": "Serum deprivation.",
+          "effects": ["PTEN expression increased"],
+          "context": "H9c2 cell model."
+        },
+        {
+          "claim_id": "pmid_33652126_C03",
+          "source_label": "PTEN",
+          "source_entity_ids": ["E20"],
+          "target_label": "H9c2",
+          "target_entity_ids": ["E18"],
+          "proposition": "PTEN knockdown inhibited serum-deprivation-induced apoptosis and DNA damage and increased cell proliferation in the H9c2 experiment.",
+          "negated": false,
+          "evidence": "As a result, we observed that serum deprivation in H9c2 cells increased PTEN expression. Functionally, the PTEN knockdown experiment using siRNA inhibited serum deprivation-induced cell apoptosis, ROS production, and DNA damage, whereas increased cell proliferation.",
+          "intervention": "PTEN knockdown using siRNA, under serum deprivation.",
+          "effects": ["Cell apoptosis inhibited", "DNA damage inhibited", "Cell proliferation increased"],
+          "context": "H9c2 cells; outcome terms have no supplied entity IDs."
+        },
+        {
+          "claim_id": "pmid_33652126_C04",
+          "source_label": "PTEN",
+          "source_entity_ids": ["E20"],
+          "target_label": "ROS",
+          "target_entity_ids": ["E21"],
+          "proposition": "PTEN knockdown inhibited serum-deprivation-induced ROS production.",
+          "negated": false,
+          "evidence": "Functionally, the PTEN knockdown experiment using siRNA inhibited serum deprivation-induced cell apoptosis, ROS production, and DNA damage, whereas increased cell proliferation.",
+          "intervention": "PTEN knockdown using siRNA, under serum deprivation.",
+          "effects": ["ROS production inhibited"],
+          "context": "Cell experiment; the prior result sentence identifies H9c2 cells."
+        },
+        {
+          "claim_id": "pmid_33652126_C05",
+          "source_label": "PTEN",
+          "source_entity_ids": ["E1"],
+          "target_label": "cytotoxicity",
+          "target_entity_ids": ["E2"],
+          "proposition": "PTEN mediates serum-deprivation-induced cytotoxicity in H9c2 cells via the PI3K/AKT signaling pathway.",
+          "negated": false,
+          "evidence": "PTEN mediates serum deprivation-induced cytotoxicity in H9c2 cells via the PI3K/AKT signaling pathway.",
+          "effects": ["PTEN-mediated cytotoxicity under serum deprivation"],
+          "context": "H9c2 cells.",
+          "mediators": [{"label": "PI3K", "entity_ids": ["E4"]}, {"label": "AKT", "entity_ids": ["E5"]}]
+        },
+        {
+          "claim_id": "pmid_33652126_C06",
+          "source_label": "PTEN",
+          "source_entity_ids": ["E29"],
+          "target_label": "PI3K",
+          "target_entity_ids": ["E30"],
+          "proposition": "The conclusion implicates the PTEN/PI3K/AKT pathway in serum-deprivation-induced cytotoxicity in H9c2 cells.",
+          "negated": false,
+          "evidence": "In conclusion, our study indicated the role of the PTEN/PI3K/AKT pathway in serum deprivation-induced cytotoxicity in H9c2 cells.",
+          "effects": ["Pathway role in cytotoxicity"],
+          "context": "The target is the PI3K component of the named pathway; this does not assert direct PTEN regulation of PI3K."
+        },
+        {
+          "claim_id": "pmid_33652126_C07",
+          "source_label": "PTEN",
+          "source_entity_ids": ["E29"],
+          "target_label": "AKT",
+          "target_entity_ids": ["E31"],
+          "proposition": "The conclusion implicates the PTEN/PI3K/AKT pathway in serum-deprivation-induced cytotoxicity in H9c2 cells.",
+          "negated": false,
+          "evidence": "In conclusion, our study indicated the role of the PTEN/PI3K/AKT pathway in serum deprivation-induced cytotoxicity in H9c2 cells.",
+          "effects": ["Pathway role in cytotoxicity"],
+          "context": "The target is the AKT component of the named pathway; this does not assert direct PTEN regulation of AKT."
+        }
+      ],
+      "tentative_claims": [
+        {
+          "claim_id": "pmid_33652126_T01",
+          "source_label": "PTEN",
+          "source_entity_ids": ["E27"],
+          "target_label": "PI3K",
+          "target_entity_ids": ["E24"],
+          "proposition": "PI3K may be a critical component of PTEN effects during serum deficiency; a PI3K inhibitor could reverse the preceding effects of PTEN knockdown.",
+          "negated": false,
+          "evidence": "All these effects could be reversed by phosphatidylinositol 3-kinase (PI3K) inhibitor, which indicated the PI3K/protein kinase B (AKT) might be the critical component of the PTEN effects during serum deficiency.",
+          "intervention": "PI3K inhibitor; no separate inhibitor entity is supplied.",
+          "effects": ["Reversal of preceding PTEN-knockdown-associated outcomes; direction is preserved as inhibitor reversal"],
+          "context": "Serum deficiency.",
+          "ambiguity": "The text uses could and might; the proposed pathway role is tentative. All these effects refers to outcomes in the preceding sentence."
+        },
+        {
+          "claim_id": "pmid_33652126_T02",
+          "source_label": "PTEN",
+          "source_entity_ids": ["E27"],
+          "target_label": "AKT",
+          "target_entity_ids": ["E26"],
+          "proposition": "AKT may be a critical component of PTEN effects during serum deficiency; a PI3K inhibitor could reverse the preceding effects of PTEN knockdown.",
+          "negated": false,
+          "evidence": "All these effects could be reversed by phosphatidylinositol 3-kinase (PI3K) inhibitor, which indicated the PI3K/protein kinase B (AKT) might be the critical component of the PTEN effects during serum deficiency.",
+          "intervention": "PI3K inhibitor; no separate inhibitor entity is supplied.",
+          "effects": ["Reversal of preceding PTEN-knockdown-associated outcomes; direction is preserved as inhibitor reversal"],
+          "context": "Serum deficiency.",
+          "ambiguity": "The text uses could and might; the proposed pathway role is tentative. All these effects refers to outcomes in the preceding sentence."
+        }
+      ],
+      "excluded_items": [
+        {
+          "evidence": "Phosphatase and tensin homolog (PTEN)",
+          "related_entity_ids": ["E9", "E10"],
+          "reason": "Parenthetical expansion/abbreviation only; naming is not treated as a biological relation."
+        },
+        {
+          "evidence": "Numerous studies have determined the regulatory effects of Phosphatase and tensin homolog (PTEN) cell proliferation and apoptosis in other cell types. However, the potential role of PTEN in cardiomyocyte is unclear.",
+          "related_entity_ids": ["E9", "E10", "E11"],
+          "reason": "General background is not a result of this experiment; cardiomyocyte has no supplied entity ID and is not equated with H9c2."
+        },
+        {
+          "evidence": "In this study, we used H9c2 cells cultured under serum deprivation to simulate the apoptosis process of myocardial infarction.",
+          "related_entity_ids": ["E12", "E13"],
+          "reason": "Model-design statement, not a result claim."
+        }
+      ]
+    },
+    {
+      "pmid": "38569671",
+      "source_file": "pmid_38569671.json",
+      "clear_claims": [
+        {
+          "claim_id": "pmid_38569671_C01",
+          "source_label": "asthma",
+          "source_entity_ids": ["E17"],
+          "target_label": "caspase-3",
+          "target_entity_ids": ["E18"],
+          "proposition": "Caspase-3 levels were increased in the asthma model.",
+          "negated": false,
+          "evidence": "In the asthma model, the levels of caspase-3, IgG in serum and inflammatory factors (interleukin (IL)-1β, KC and tumour necrosis factor (TNF)-α) in serum and bronchoalveolar lavage fluid were increased.",
+          "effects": ["Caspase-3 level increased"],
+          "context": "Asthma model.",
+          "ambiguity": "The sentence does not clearly specify the sample compartment for caspase-3."
+        },
+        {
+          "claim_id": "pmid_38569671_C02",
+          "source_label": "asthma",
+          "source_entity_ids": ["E17"],
+          "target_label": "IgG",
+          "target_entity_ids": ["E19"],
+          "proposition": "IgG levels were increased in serum in the asthma model.",
+          "negated": false,
+          "evidence": "In the asthma model, the levels of caspase-3, IgG in serum and inflammatory factors (interleukin (IL)-1β, KC and tumour necrosis factor (TNF)-α) in serum and bronchoalveolar lavage fluid were increased.",
+          "effects": ["Serum IgG level increased"],
+          "context": "Asthma model; serum."
+        },
+        {
+          "claim_id": "pmid_38569671_C03",
+          "source_label": "asthma",
+          "source_entity_ids": ["E17"],
+          "target_label": "interleukin (IL)-1β",
+          "target_entity_ids": ["E21"],
+          "proposition": "Interleukin (IL)-1β levels were increased in the asthma model.",
+          "negated": false,
+          "evidence": "In the asthma model, the levels of caspase-3, IgG in serum and inflammatory factors (interleukin (IL)-1β, KC and tumour necrosis factor (TNF)-α) in serum and bronchoalveolar lavage fluid were increased.",
+          "effects": ["IL-1β level increased"],
+          "context": "Asthma model; serum and bronchoalveolar lavage fluid."
+        },
+        {
+          "claim_id": "pmid_38569671_C04",
+          "source_label": "asthma",
+          "source_entity_ids": ["E17"],
+          "target_label": "KC",
+          "target_entity_ids": ["E22"],
+          "proposition": "KC levels were increased in the asthma model.",
+          "negated": false,
+          "evidence": "In the asthma model, the levels of caspase-3, IgG in serum and inflammatory factors (interleukin (IL)-1β, KC and tumour necrosis factor (TNF)-α) in serum and bronchoalveolar lavage fluid were increased.",
+          "effects": ["KC level increased"],
+          "context": "Asthma model; serum and bronchoalveolar lavage fluid."
+        },
+        {
+          "claim_id": "pmid_38569671_C05",
+          "source_label": "asthma",
+          "source_entity_ids": ["E17"],
+          "target_label": "tumour necrosis factor (TNF)-α",
+          "target_entity_ids": ["E23"],
+          "proposition": "Tumour necrosis factor (TNF)-α levels were increased in the asthma model.",
+          "negated": false,
+          "evidence": "In the asthma model, the levels of caspase-3, IgG in serum and inflammatory factors (interleukin (IL)-1β, KC and tumour necrosis factor (TNF)-α) in serum and bronchoalveolar lavage fluid were increased.",
+          "effects": ["TNF-α level increased"],
+          "context": "Asthma model; serum and bronchoalveolar lavage fluid."
+        },
+        {
+          "claim_id": "pmid_38569671_C06",
+          "source_label": "KIF23",
+          "source_entity_ids": ["E26"],
+          "target_label": "BEAS-2B",
+          "target_entity_ids": ["E28"],
+          "proposition": "KIF23 knockdown increased proliferation and inhibited apoptosis and pyroptosis in BEAS-2B cells exposed to IL-13.",
+          "negated": false,
+          "evidence": "Knockdown of KIF23 increased cell proliferation and inhibited apoptosis, inflammation and pyroptosis of BEAS-2B cells induced by IL-13 in vitro.",
+          "intervention": "KIF23 knockdown.",
+          "effects": ["Cell proliferation increased", "Apoptosis inhibited", "Pyroptosis inhibited"],
+          "context": "BEAS-2B cells induced by IL-13 in vitro; IL-13 entity ID E29.",
+          "ambiguity": "Apoptosis and pyroptosis have no supplied entity IDs."
+        },
+        {
+          "claim_id": "pmid_38569671_C07",
+          "source_label": "KIF23",
+          "source_entity_ids": ["E26"],
+          "target_label": "inflammation",
+          "target_entity_ids": ["E27"],
+          "proposition": "KIF23 knockdown inhibited inflammation in BEAS-2B cells induced by IL-13 in vitro.",
+          "negated": false,
+          "evidence": "Knockdown of KIF23 increased cell proliferation and inhibited apoptosis, inflammation and pyroptosis of BEAS-2B cells induced by IL-13 in vitro.",
+          "intervention": "KIF23 knockdown.",
+          "effects": ["Inflammation inhibited"],
+          "context": "BEAS-2B cells induced by IL-13 in vitro; IL-13 entity ID E29."
+        },
+        {
+          "claim_id": "pmid_38569671_C08",
+          "source_label": "KIF23",
+          "source_entity_ids": ["E30"],
+          "target_label": "asthma",
+          "target_entity_ids": ["E33"],
+          "proposition": "In vivo, KIF23 knockdown inhibited oxidative stress, inflammation, and pyroptosis and alleviated OVA-induced asthma in mice.",
+          "negated": false,
+          "evidence": "In vivo experiments verified that knockdown of KIF23 inhibited oxidative stress, inflammation and pyroptosis to alleviate OVA-induced asthma mice.",
+          "intervention": "KIF23 knockdown.",
+          "effects": ["Oxidative stress inhibited", "Inflammation inhibited", "Pyroptosis inhibited", "Asthma progression alleviated"],
+          "context": "OVA-induced asthma mice; OVA entity ID E32 and mice entity ID E34.",
+          "ambiguity": "Oxidative stress and pyroptosis have no supplied entity IDs."
+        },
+        {
+          "claim_id": "pmid_38569671_C09",
+          "source_label": "KIF23",
+          "source_entity_ids": ["E30"],
+          "target_label": "inflammation",
+          "target_entity_ids": ["E31"],
+          "proposition": "In vivo, KIF23 knockdown inhibited inflammation in the OVA-induced asthma mouse model.",
+          "negated": false,
+          "evidence": "In vivo experiments verified that knockdown of KIF23 inhibited oxidative stress, inflammation and pyroptosis to alleviate OVA-induced asthma mice.",
+          "intervention": "KIF23 knockdown.",
+          "effects": ["Inflammation inhibited"],
+          "context": "OVA-induced asthma mice; OVA entity ID E32 and asthma entity ID E33."
+        },
+        {
+          "claim_id": "pmid_38569671_C10",
+          "source_label": "KIF23",
+          "source_entity_ids": ["E36"],
+          "target_label": "p53 signaling pathway",
+          "target_entity_ids": ["E35"],
+          "proposition": "KIF23 knockdown suppressed the p53 signaling pathway.",
+          "negated": false,
+          "evidence": "In addition, p53 signalling pathway was suppressed by KIF23 knockdown.",
+          "intervention": "KIF23 knockdown.",
+          "effects": ["p53 signaling pathway suppressed"]
+        }
+      ],
+      "tentative_claims": [],
+      "excluded_items": [
+        {
+          "evidence": "Asthma mouse model was established with ovalbumin (OVA).",
+          "related_entity_ids": ["E6", "E7", "E8", "E9"],
+          "reason": "Experimental model-design statement; parenthetical ovalbumin/OVA naming is not a biological relation."
+        },
+        {
+          "evidence": "The role of KIF23 silencing in cell viability, proliferation and apoptosis was explored by cell counting kit-8, EdU assay and flow cytometry. Effects of KIF23 knockdown on inflammation, oxidative stress and pyroptosis were detected by ELISA and western blot.",
+          "related_entity_ids": ["E11", "E12", "E13"],
+          "reason": "Methods statements specify measured outcomes but do not assert their results."
+        },
+        {
+          "evidence": "Transcriptome sequencing showed that there were 352 DEGs in the asthma model, and 7 hub genes including KIF23 were identified.",
+          "related_entity_ids": ["E24", "E25"],
+          "reason": "Gene-screening/identification result without an asserted biological relation between the entities."
+        }
+      ]
+    }
+  ]
+}

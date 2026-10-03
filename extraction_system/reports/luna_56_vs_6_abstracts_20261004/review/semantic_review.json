@@ -1,0 +1,166 @@
+{
+  "coverage": "Every clear, ambiguous, and tentative reference claim is not_assessable for both conditions; neither condition supplied any final relation output.",
+  "frozen_utc": "2026-10-03T20:14:52.835057+00:00",
+  "human_gold": false,
+  "model_quality_winner": null,
+  "observed_errors": [
+    {
+      "alias": "Model A",
+      "exact_error": "LLM relation provider invocation failed: Request timed out.",
+      "paper_id": "PMCID:PMC10770459",
+      "status": "provider_failure"
+    },
+    {
+      "alias": "Model B",
+      "exact_error": "LLM relation provider invocation failed: Request timed out.",
+      "paper_id": "PMCID:PMC10770459",
+      "status": "provider_failure"
+    },
+    {
+      "alias": "Model B",
+      "exact_error": "LLM relation provider invocation failed: Request timed out.",
+      "paper_id": "PMCID:PMC11824863",
+      "status": "provider_failure"
+    },
+    {
+      "alias": "Model A",
+      "exact_error": null,
+      "paper_id": "PMCID:PMC11824863",
+      "status": "not_run_aborted"
+    },
+    {
+      "alias": "Model A",
+      "exact_error": null,
+      "paper_id": "PMCID:PMC8605525",
+      "status": "not_run_aborted"
+    },
+    {
+      "alias": "Model B",
+      "exact_error": null,
+      "paper_id": "PMCID:PMC8605525",
+      "status": "not_run_aborted"
+    },
+    {
+      "alias": "Model B",
+      "exact_error": null,
+      "paper_id": "PMID:27172794",
+      "status": "not_run_aborted"
+    },
+    {
+      "alias": "Model A",
+      "exact_error": null,
+      "paper_id": "PMID:27172794",
+      "status": "not_run_aborted"
+    },
+    {
+      "alias": "Model A",
+      "exact_error": null,
+      "paper_id": "PMID:27370646",
+      "status": "not_run_aborted"
+    },
+    {
+      "alias": "Model B",
+      "exact_error": null,
+      "paper_id": "PMID:27370646",
+      "status": "not_run_aborted"
+    },
+    {
+      "alias": "Model B",
+      "exact_error": null,
+      "paper_id": "PMID:31324362",
+      "status": "not_run_aborted"
+    },
+    {
+      "alias": "Model A",
+      "exact_error": null,
+      "paper_id": "PMID:31324362",
+      "status": "not_run_aborted"
+    },
+    {
+      "alias": "Model A",
+      "exact_error": null,
+      "paper_id": "PMID:33652126",
+      "status": "not_run_aborted"
+    },
+    {
+      "alias": "Model B",
+      "exact_error": null,
+      "paper_id": "PMID:33652126",
+      "status": "not_run_aborted"
+    },
+    {
+      "alias": "Model B",
+      "exact_error": null,
+      "paper_id": "PMID:38569671",
+      "status": "not_run_aborted"
+    },
+    {
+      "alias": "Model A",
+      "exact_error": null,
+      "paper_id": "PMID:38569671",
+      "status": "not_run_aborted"
+    }
+  ],
+  "phase": "before_model_key_disclosure",
+  "reason": "Transport timeouts and unattempted jobs cannot establish omissions, direction errors, hallucinations, or an intelligence ranking.",
+  "reference_items_per_paper": {
+    "PMCID:PMC10770459": {
+      "ambiguous_claims": 3,
+      "clear_claims": 5,
+      "excluded_items": 0,
+      "excluded_study_aims_and_naming_constructions": 2,
+      "tentative_claims": 0
+    },
+    "PMCID:PMC11824863": {
+      "ambiguous_claims": 4,
+      "clear_claims": 6,
+      "excluded_items": 0,
+      "excluded_study_aims_and_naming_constructions": 2,
+      "tentative_claims": 0
+    },
+    "PMCID:PMC8605525": {
+      "ambiguous_claims": 7,
+      "clear_claims": 11,
+      "excluded_items": 0,
+      "excluded_study_aims_and_naming_constructions": 3,
+      "tentative_claims": 0
+    },
+    "PMID:27172794": {
+      "ambiguous_claims": 6,
+      "clear_claims": 7,
+      "excluded_items": 0,
+      "excluded_study_aims_and_naming_constructions": 3,
+      "tentative_claims": 0
+    },
+    "PMID:27370646": {
+      "ambiguous_claims": 0,
+      "clear_claims": 5,
+      "excluded_items": 2,
+      "excluded_study_aims_and_naming_constructions": 0,
+      "tentative_claims": 1
+    },
+    "PMID:31324362": {
+      "ambiguous_claims": 0,
+      "clear_claims": 8,
+      "excluded_items": 3,
+      "excluded_study_aims_and_naming_constructions": 0,
+      "tentative_claims": 2
+    },
+    "PMID:33652126": {
+      "ambiguous_claims": 0,
+      "clear_claims": 7,
+      "excluded_items": 3,
+      "excluded_study_aims_and_naming_constructions": 0,
+      "tentative_claims": 2
+    },
+    "PMID:38569671": {
+      "ambiguous_claims": 0,
+      "clear_claims": 10,
+      "excluded_items": 3,
+      "excluded_study_aims_and_naming_constructions": 0,
+      "tentative_claims": 0
+    }
+  },
+  "semantic_relation_review_performed": false,
+  "status": "not_assessable_no_provider_outputs"
+}

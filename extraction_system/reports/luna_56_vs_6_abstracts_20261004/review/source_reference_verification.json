@@ -1,0 +1,67 @@
+{
+  "status": "passed",
+  "scope": "Exact source quotes and candidate entity IDs; no semantic certification",
+  "items_per_paper": {
+    "PMCID:PMC10770459": {
+      "clear_claims": 5,
+      "ambiguous_claims": 3,
+      "tentative_claims": 0,
+      "excluded_study_aims_and_naming_constructions": 2,
+      "excluded_items": 0
+    },
+    "PMCID:PMC11824863": {
+      "clear_claims": 6,
+      "ambiguous_claims": 4,
+      "tentative_claims": 0,
+      "excluded_study_aims_and_naming_constructions": 2,
+      "excluded_items": 0
+    },
+    "PMCID:PMC8605525": {
+      "clear_claims": 11,
+      "ambiguous_claims": 7,
+      "tentative_claims": 0,
+      "excluded_study_aims_and_naming_constructions": 3,
+      "excluded_items": 0
+    },
+    "PMID:27172794": {
+      "clear_claims": 7,
+      "ambiguous_claims": 6,
+      "tentative_claims": 0,
+      "excluded_study_aims_and_naming_constructions": 3,
+      "excluded_items": 0
+    },
+    "PMID:27370646": {
+      "clear_claims": 5,
+      "ambiguous_claims": 0,
+      "tentative_claims": 1,
+      "excluded_study_aims_and_naming_constructions": 0,
+      "excluded_items": 2
+    },
+    "PMID:31324362": {
+      "clear_claims": 8,
+      "ambiguous_claims": 0,
+      "tentative_claims": 2,
+      "excluded_study_aims_and_naming_constructions": 0,
+      "excluded_items": 3
+    },
+    "PMID:33652126": {
+      "clear_claims": 7,
+      "ambiguous_claims": 0,
+      "tentative_claims": 2,
+      "excluded_study_aims_and_naming_constructions": 0,
+      "excluded_items": 3
+    },
+    "PMID:38569671": {
+      "clear_claims": 10,
+      "ambiguous_claims": 0,
+      "tentative_claims": 0,
+      "excluded_study_aims_and_naming_constructions": 0,
+      "excluded_items": 3
+    }
+  },
+  "total_review_items": 105,
+  "reference_file_sha256": {
+    "review\\source_reference_first_four.json": "2f68b353ce72e6a93914d9d101660c66c7fc4b5e0d885130b21ebb9f9fc8f7b5",
+    "review\\source_reference_last_four.json": "744a5c23552cb1b44f57b7fde615156015b59dc8338a637a101042088e336e04"
+  }
+}
