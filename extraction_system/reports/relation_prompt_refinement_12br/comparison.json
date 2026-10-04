@@ -1,0 +1,227 @@
+[
+  {
+    "control_edges": 13,
+    "counts": {
+      "12b": 13,
+      "12br": 11,
+      "control": 13
+    },
+    "matched_finding_richness": {
+      "12b": {
+        "context": 7,
+        "effects": 9,
+        "intervention": 7
+      },
+      "12br": {
+        "context": 7,
+        "effects": 1,
+        "intervention": 7
+      },
+      "control": {
+        "context": 7,
+        "effects": 1,
+        "intervention": 7
+      }
+    },
+    "matched_findings": 11,
+    "refined_edges": 11,
+    "richness": {
+      "12b": {
+        "context": 9,
+        "effects": 11,
+        "intervention": 9
+      },
+      "12br": {
+        "context": 7,
+        "effects": 1,
+        "intervention": 7
+      },
+      "control": {
+        "context": 9,
+        "effects": 3,
+        "intervention": 9
+      }
+    },
+    "slug": "pmcid_pmc11824863"
+  },
+  {
+    "control_edges": 25,
+    "counts": {
+      "12b": 33,
+      "12br": 23,
+      "control": 26
+    },
+    "matched_finding_richness": {
+      "12b": {
+        "context": 11,
+        "effects": 2,
+        "intervention": 9
+      },
+      "12br": {
+        "context": 10,
+        "effects": 2,
+        "intervention": 9
+      },
+      "control": {
+        "context": 11,
+        "effects": 2,
+        "intervention": 9
+      }
+    },
+    "matched_findings": 21,
+    "refined_edges": 20,
+    "richness": {
+      "12b": {
+        "context": 21,
+        "effects": 4,
+        "intervention": 15
+      },
+      "12br": {
+        "context": 10,
+        "effects": 4,
+        "intervention": 11
+      },
+      "control": {
+        "context": 15,
+        "effects": 2,
+        "intervention": 9
+      }
+    },
+    "slug": "pmcid_pmc8605525"
+  },
+  {
+    "control_edges": 18,
+    "counts": {
+      "12b": 20,
+      "12br": 19,
+      "control": 20
+    },
+    "matched_finding_richness": {
+      "12b": {
+        "context": 5,
+        "effects": 7,
+        "intervention": 5
+      },
+      "12br": {
+        "context": 3,
+        "effects": 4,
+        "intervention": 4
+      },
+      "control": {
+        "context": 3,
+        "effects": 7,
+        "intervention": 5
+      }
+    },
+    "matched_findings": 15,
+    "refined_edges": 17,
+    "richness": {
+      "12b": {
+        "context": 9,
+        "effects": 8,
+        "intervention": 5
+      },
+      "12br": {
+        "context": 4,
+        "effects": 4,
+        "intervention": 4
+      },
+      "control": {
+        "context": 5,
+        "effects": 7,
+        "intervention": 5
+      }
+    },
+    "slug": "pmid_27172794"
+  },
+  {
+    "control_edges": 6,
+    "counts": {
+      "12b": 11,
+      "12br": 6,
+      "control": 7
+    },
+    "matched_finding_richness": {
+      "12b": {
+        "context": 5,
+        "effects": 1,
+        "intervention": 1
+      },
+      "12br": {
+        "context": 4,
+        "effects": 0,
+        "intervention": 2
+      },
+      "control": {
+        "context": 4,
+        "effects": 0,
+        "intervention": 2
+      }
+    },
+    "matched_findings": 5,
+    "refined_edges": 5,
+    "richness": {
+      "12b": {
+        "context": 9,
+        "effects": 4,
+        "intervention": 5
+      },
+      "12br": {
+        "context": 5,
+        "effects": 0,
+        "intervention": 3
+      },
+      "control": {
+        "context": 5,
+        "effects": 0,
+        "intervention": 4
+      }
+    },
+    "slug": "pmid_33652126"
+  },
+  {
+    "control_edges": 10,
+    "counts": {
+      "12b": 12,
+      "12br": 12,
+      "control": 10
+    },
+    "matched_finding_richness": {
+      "12b": {
+        "context": 6,
+        "effects": 7,
+        "intervention": 1
+      },
+      "12br": {
+        "context": 6,
+        "effects": 0,
+        "intervention": 1
+      },
+      "control": {
+        "context": 4,
+        "effects": 2,
+        "intervention": 1
+      }
+    },
+    "matched_findings": 8,
+    "refined_edges": 11,
+    "richness": {
+      "12b": {
+        "context": 10,
+        "effects": 11,
+        "intervention": 1
+      },
+      "12br": {
+        "context": 10,
+        "effects": 2,
+        "intervention": 1
+      },
+      "control": {
+        "context": 4,
+        "effects": 2,
+        "intervention": 1
+      }
+    },
+    "slug": "contract11u_passage_001"
+  }
+]

@@ -1,0 +1,87 @@
+{
+  "gate": "PROMPT REFINEMENT FAILED — PRESERVE 12A CONTROL BEHAVIOR",
+  "review_author": "Codex primary agent; no subagents or independent adjudicator",
+  "review_basis": "Direct review of every normalized 12B-R relation, its supplied endpoints, assertion, populated intervention/effects/context, and exact saved evidence against the five frozen sources. Scientific equivalence is reviewer judgment, not gold annotation. Literal diagnostics do not establish semantic entailment.",
+  "index_convention": "Zero-based indices in saved normalized relation arrays. Control is 12A Sol medium for four papers and 11U Candidate C for passage_001.",
+  "stop_rule": "Final refinement failed material recall and richness gates. No 12B-R2, adaptive edits, completed scientific reruns, or production promotion.",
+  "target_findings": {
+    "JAK2": "Recovered: Cbl refined [16] E55 to E58; assertion explicitly describes joint JAK2 and STAT4 overexpression.",
+    "STAT4": "Recovered: Cbl refined [17] E56 to E58; same joint intervention, not an independent STAT4-only experiment.",
+    "Runx3": "Retained: Cbl refined [18] E57 to E58, alternative Runx3 overexpression finding.",
+    "PTEN_expression": "FAILED: explicit serum-deprivation/H9c2 increased-PTEN result is absent. No E19 to E18 equivalent of 12B [3].",
+    "PTEN_self_edge": "None in normalized output or graph.",
+    "glucose_gene_causal_inflation": "Zero known unsupported glucose-to-gene edges. The glucose-to-DM model-induction relation [9] is explicitly asserted and is not an expression-change edge.",
+    "other_setting_causality_inflation": "Zero known unsupported setting-to-causal-actor conversions after direct review.",
+    "evidence_locality": "Zero known 12B-R violations after direct review; mechanical diagnostics are not an entailment proof.",
+    "dual_DM_rat_HG_HUVEC_context": "FAILED: all four expression observations are omitted, so neither dual context nor the observation itself is preserved.",
+    "EZH2_maintenance": "Retained in effects on refined [10,11]; 12B maintenance-field regression corrected.",
+    "overall_richness": "FAILED: SFPQ outcome effects gains disappear; several important findings are omitted. Rich-field population counts must not override these losses.",
+    "11U_discipline": "All ten original relations remain with the same supplied endpoint IDs and direction. Two explicit AST/ALT ratio records add one graph edge; no gene-to-gene cohort substitution, measurement-to-subject reversal, or unsupported contextual edges."
+  },
+  "cases": {
+    "pmcid_pmc11824863": {
+      "reviewed_indices": [0,1,2,3,4,5,6,7,8,9,10],
+      "control_to_refined_pairs": [[0,0],[1,1],[2,2],[5,3],[6,4],[7,5],[8,6],[9,7],[10,8],[11,9],[12,10]],
+      "assessment": "Grounded retained relations, but scientific completeness and richness regress. Direct cognition/memory improvement and AAV hippocampal overexpression setup are omitted. APP/Tau/GST/HO-1 and phosphorylation ratios remain assertions; their 12B effects enrichment disappears. No near-duplicate title-result edge.",
+      "evidence_review_basis": "Each retained assertion and populated qualifier is supported inside its own saved span. GST/HO-1 and PI3K/AKT spans begin at the SFPQ overexpression result sentence, supplying their actor and AD-mouse setting. The longer PI3K/AKT spans are needed to link the subsequent ratio result to SFPQ, not expanded for AAV metadata.",
+      "evidence_locality_violations": [],
+      "unsupported_edges": [],
+      "unsupported_field_values": [],
+      "correctly_enriched": [],
+      "lost_outcomes": ["Control [4] explicit improved recognition and memory in AD mice omitted", "Control [3] AAV-mediated hippocampal SFPQ overexpression setup omitted", "Control [1] antioxidant-related functions and brain-neuron gene regulation no longer in assertion", "12B effects gains for APP reduction, Tau reduction, GST and HO-1 upregulation, Bcl-2/Bax ratio, PI3K and AKT phosphorylation ratios disappear; outcomes except cognition remain assertions"],
+      "flags": ["No known unsupported new edges or metadata. No title/abstract near-duplicate result edge. All seven inspected outcome effects fields are empty."]
+    },
+    "pmcid_pmc8605525": {
+      "reviewed_indices": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22],
+      "control_to_refined_pairs": [[0,0],[1,1],[2,2],[3,4],[4,3],[5,5],[7,6],[8,7],[9,8],[10,9],[15,10],[16,11],[17,12],[18,13],[19,14],[20,15],[21,18],[22,19],[23,20],[24,21],[25,22]],
+      "assessment": "JAK2 and STAT4 joint-intervention findings recovered and Runx3 retained without glucose-expression causal inflation. Four DM-rat/HG-HUVEC expression observations are lost. Grounding is achieved partly by omission, not by faithful dual-setting representation.",
+      "evidence_review_basis": "All 23 assertions and populated rich fields are directly supported by their saved evidence. Joint JAK2/STAT4 wording is retained in both [16,17] assertions. Glucose [9] is tied only to the explicitly stated in-vitro model induction. No contextual glucose entity is promoted to a gene-expression actor.",
+      "evidence_locality_violations": [],
+      "unsupported_edges": [],
+      "unsupported_field_values": [],
+      "correctly_enriched": ["Runx3 [18] effects now explicitly include abrogation of the Cb1 endothelial-function effect"],
+      "lost_outcomes": ["Control [11-14] reduced Cbl and elevated JAK2, Runx3, STAT4 observations omitted", "Control [6] DM characterized by impaired endothelial function omitted", "Runx3 HUVEC context field disappears, though HUVECs remain explicit in assertion/effects/evidence"],
+      "flags": ["JAK2/STAT4 intervention field is generic Overexpression; assertions preserve the joint manipulation and must govern interpretation", "[7] predicate alleviates is less qualified than control appears_to_alleviate; assertion still preserves appears", "Title and conclusion pathways remain separately represented as in control; no duplicate explosion"]
+    },
+    "pmid_27172794": {
+      "reviewed_indices": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18],
+      "control_to_refined_pairs": [[0,0],[1,1],[2,2],[6,4],[7,5],[8,6],[9,7],[10,8],[11,9],[12,10],[13,11],[15,14],[16,15],[17,16],[18,17],[19,18]],
+      "assessment": "Maintenance effects on both pathway edges are retained and title-pathway expansion outcomes are enriched. Important tumor-tissue high-expression and poor-prognosis relations are missing. Advanced-stage high expression remains with explicit patient-to-EZH2 grammar but changes topology. Several existing effects fields are emptied while assertions retain their outcomes.",
+      "evidence_review_basis": "All 19 assertions and populated fields are supported by their saved spans. Pathway-member edges describe the qualified Wnt/beta-catenin complex, not separate demonstrated pathways. p21cip1-mediated arrest [12,13] remains a stated requirement for EZH2 pathway activation, not a new unconditional activating edge. Patient-to-EZH2 [3] is directly predicated by the source and is not a patient-to-CRC co-occurrence edge.",
+      "evidence_locality_violations": [],
+      "unsupported_edges": [],
+      "unsupported_field_values": [],
+      "correctly_enriched": ["[1,2] effects preserve explicit CCS-like cell expansion from the title", "[10,11] maintenance outcomes preserved relative to control and restored relative to failed 12B"],
+      "lost_outcomes": ["Control [4] high EZH2 expression in tumor tissues omitted", "Control [5] high-expression association with poor patient prognosis omitted", "Control [6,9,10,11,18] proliferation, double-positive-subpopulation, initiating-capacity and progression effects fields emptied but outcomes remain assertions", "EPZ-6438 treatment intervention field disappears"],
+      "flags": ["Control [3] EZH2-to-CRC high-expression record changes to patient-to-EZH2 [3]; scientifically related high-expression observation, excluded from exact matched-finding diagnostics", "Control [14] p21cip1-to-EZH2 required-for record replaced by two pathway-member requirements [12,13]; qualification is retained but topology differs", "No low-value patient-to-CRC cohort edge or exact duplicate explosion"]
+    },
+    "contract11u_passage_001": {
+      "reviewed_indices": [0,1,2,3,4,5,6,7,8,9,10,11],
+      "control_to_refined_pairs": [[0,0],[1,1],[2,2],[3,3],[4,6],[5,7],[6,8],[7,9],[8,10],[9,11]],
+      "assessment": "All ten original findings preserve their endpoint IDs and directions. Two cohort-specific AST/ALT ratios are explicit and graphically defensible; they aggregate into one AST-to-ALT graph edge. No cohort gene substitution, measurement-to-subject topology, unsupported context edges or duplicates. Evidence locality improves by omitting liver/hyperglycemic setting rather than expanding the macrovesicular-droplet or infiltration spans.",
+      "evidence_review_basis": "Every assertion and populated field is supported inside its own saved span. [7,8] retain only the explicit cohort comparison; liver and hyperglycemic state are absent. Timing/plasma qualifiers on [1,2,11] occur in those saved spans. [11] spans the timing sentence and following Cystatin C result contiguously. Ratio [5] says substantially higher but does not invent a comparator absent from its shorter evidence.",
+      "evidence_locality_violations": [],
+      "unsupported_edges": [],
+      "unsupported_field_values": [],
+      "correctly_enriched": ["[1,2,11] explicit plasma, timing and cohorts separated in context", "[7-10] context preserves cohort identity from their own saved evidence", "[4,5] explicit cohort-specific AST/ALT ratios remain, with defensible measurement-to-measurement endpoints"],
+      "lost_outcomes": ["Original [0,4] hyperglycemia-reduction and liver-damage effects fields emptied; scientific outcomes remain asserted", "12B effects gains for ALT, AST, droplets, infiltration, glycogen, lipid uptake and Cystatin C disappear; findings remain assertions"],
+      "flags": ["[0] assertion says associated with reduction while predicate remains reduces; does not strengthen causal certainty relative to control", "[7,8] do not carry liver/hyperglycemic context from the preceding sentence", "AST/ALT ratio findings have different cohorts and one aggregated edge; no duplicate explosion"]
+    },
+    "pmid_33652126": {
+      "reviewed_indices": [0,1,2,3,4,5],
+      "control_to_refined_pairs": [[0,0],[1,1],[3,2],[5,4],[6,5]],
+      "assessment": "Required increased-PTEN expression result is absent. PTEN cytotoxicity and PI3K/AKT mechanism remain, with no PTEN self-edge. PI3K reversal is narrowed to ROS and changes its target from PTEN to ROS; this is supported but does not preserve the broader outcome statement.",
+      "evidence_review_basis": "All six assertions and populated intervention/context values are supported inside saved evidence. The PI3K-to-ROS reversal [3] includes both the knockdown result and the following inhibitor sentence contiguously; it does not rely on missing preceding text.",
+      "evidence_locality_violations": [],
+      "unsupported_edges": [],
+      "unsupported_field_values": [],
+      "correctly_enriched": [],
+      "lost_outcomes": ["Required serum-deprivation/H9c2 increased-PTEN expression finding not recovered", "Control [2] H9c2 serum-deprivation myocardial-infarction apoptosis model omitted", "Control [4] broad PI3K inhibitor reversal narrows to ROS; apoptosis, DNA damage and proliferation outcomes no longer represented in assertion/metadata though source evidence includes them", "12B rich effects gains are lost"],
+      "flags": ["No artificial PTEN knockdown self-edge", "Mechanism retains speculative might be qualification", "Narrower PI3K reversal is excluded from same-finding population counts"]
+    }
+  },
+  "known_12b_failures": [
+    {"slug":"pmcid_pmc8605525","indices":[15,16,17,18],"kind":"unsupported glucose-to-gene causal edges"},
+    {"slug":"contract11u_passage_001","indices":[7,8],"kind":"assertion and context Liver/Hyperglycemic state depend on preceding sentence outside evidence"}
+  ]
+}

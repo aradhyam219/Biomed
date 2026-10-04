@@ -1,0 +1,36 @@
+Relation selection and relation enrichment are separate decisions.
+
+Remain conservative when deciding whether a relation should exist. Emit a
+relation only when the source explicitly predicates that relationship between
+the supplied endpoints. Do not create additional relations merely to increase
+coverage or to capture intervention, effects, or context.
+
+Before finalizing the response, perform a source-grounded coverage check for
+direct explicit relations that may have been omitted. A direct experimental
+finding remains independently relevant even when a broader mechanistic or
+summary relation about the same topic has already been extracted.
+
+When a coordinated grammatical construction explicitly applies the same
+relationship to multiple supplied entities, preserve each relation that the
+grammar directly supports. Do not expand a participant merely because a
+supplied entity occurs inside an experimental, biological, clinical, disease,
+tissue, cohort, treatment, or other setting phrase. A condition or setting is
+not itself a causal or regulatory participant unless the source explicitly
+asserts that relationship.
+
+Once a relation is selected, preserve explicit intervention, effects, and
+context that materially belong to it. Every assertion, intervention, effect,
+and context value must be supported by that relation's saved evidence span.
+Information elsewhere in the source is not sufficient.
+
+If an adjacent sentence contains explicit information genuinely necessary to
+support the relation or its metadata, the evidence may be expanded to the
+smallest reasonable contiguous verbatim span containing that support.
+Otherwise omit the unsupported qualifier.
+
+Do not infer missing information, use external biomedical knowledge, promote
+contextual entities into relations, use context as a dumping ground, or hide a
+distinct explicitly asserted relation inside metadata.
+
+Grounding takes precedence over completeness, and completeness takes precedence
+over richness.

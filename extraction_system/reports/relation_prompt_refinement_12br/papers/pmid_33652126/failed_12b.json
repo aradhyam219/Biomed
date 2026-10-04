@@ -1,0 +1,800 @@
+{
+  "completed_at_utc": "2026-10-04T03:48:28.681982+00:00",
+  "elapsed_seconds": 53.055229,
+  "generation_diagnostics": [
+    {
+      "elapsed_seconds": 53.047,
+      "execution_mode": "background",
+      "generation_number": 1,
+      "initial_create_latency_seconds": 8.188,
+      "initial_status": "queued",
+      "input_tokens": 3394,
+      "observed_background": true,
+      "observed_model": "gpt-6.1-sol",
+      "observed_reasoning_effort": "medium",
+      "observed_service_tier": "default",
+      "output_tokens": 2707,
+      "poll_count": 13,
+      "poll_errors": 0,
+      "reasoning_tokens": 975,
+      "repair": false,
+      "requested_background": true,
+      "requested_model": "gpt-6.1-sol",
+      "requested_reasoning_effort": "medium",
+      "requested_service_tier": "default",
+      "response_id": "resp_03b214248af88c80006ac1cc624e7887d19b8a3c76bfbc54b4",
+      "status": "success",
+      "terminal_status": "completed",
+      "validated_relation_count": 11
+    }
+  ],
+  "graph": {
+    "document": {
+      "id": "PMID:33652126"
+    },
+    "edges": [
+      {
+        "evidence": [
+          {
+            "assertion": "PTEN mediates serum deprivation-induced cytotoxicity in H9c2 cells via the PI3K/AKT signaling pathway.",
+            "context": [
+              "H9c2 cells",
+              "serum deprivation"
+            ],
+            "effects": [],
+            "intervention": null,
+            "score": null,
+            "surface_form": "mediates",
+            "text": "PTEN mediates serum deprivation-induced cytotoxicity in H9c2 cells via the PI3K/AKT signaling pathway."
+          }
+        ],
+        "id": "doc_r_001",
+        "negated": false,
+        "predicate": "mediates",
+        "source": "doc_e_001",
+        "target": "doc_e_002"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "PTEN expression increased in H9c2 cells under serum deprivation.",
+            "context": [],
+            "effects": [
+              "increased PTEN expression"
+            ],
+            "intervention": "serum deprivation",
+            "score": null,
+            "surface_form": "increased PTEN expression",
+            "text": "As a result, we observed that serum deprivation in H9c2 cells increased PTEN expression."
+          }
+        ],
+        "id": "doc_r_002",
+        "negated": false,
+        "predicate": "expression_increased_in",
+        "source": "doc_e_001",
+        "target": "doc_e_003"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "PTEN knockdown using siRNA inhibited serum deprivation-induced ROS production.",
+            "context": [
+              "serum deprivation"
+            ],
+            "effects": [
+              "inhibited ROS production"
+            ],
+            "intervention": "PTEN knockdown using siRNA",
+            "score": null,
+            "surface_form": "inhibited",
+            "text": "Functionally, the PTEN knockdown experiment using siRNA inhibited serum deprivation-induced cell apoptosis, ROS production, and DNA damage, whereas increased cell proliferation."
+          }
+        ],
+        "id": "doc_r_003",
+        "negated": false,
+        "predicate": "knockdown_inhibits_production_of",
+        "source": "doc_e_001",
+        "target": "doc_e_009"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "H9c2 cells cultured under serum deprivation were used to simulate the apoptosis process of myocardial infarction.",
+            "context": [],
+            "effects": [],
+            "intervention": "serum deprivation",
+            "score": null,
+            "surface_form": "to simulate the apoptosis process of",
+            "text": "In this study, we used H9c2 cells cultured under serum deprivation to simulate the apoptosis process of myocardial infarction."
+          }
+        ],
+        "id": "doc_r_004",
+        "negated": false,
+        "predicate": "models_apoptosis_process_of",
+        "source": "doc_e_003",
+        "target": "doc_e_007"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "A phosphatidylinositol 3-kinase inhibitor could reverse the inhibition of cell apoptosis and DNA damage and the increase in cell proliferation produced by PTEN knockdown using siRNA under serum deprivation.",
+            "context": [
+              "serum deprivation"
+            ],
+            "effects": [
+              "reversal of inhibition of cell apoptosis",
+              "reversal of inhibition of DNA damage",
+              "reversal of increased cell proliferation"
+            ],
+            "intervention": "phosphatidylinositol 3-kinase inhibitor following PTEN knockdown using siRNA",
+            "score": null,
+            "surface_form": "All these effects could be reversed by",
+            "text": "Functionally, the PTEN knockdown experiment using siRNA inhibited serum deprivation-induced cell apoptosis, ROS production, and DNA damage, whereas increased cell proliferation. All these effects could be reversed by phosphatidylinositol 3-kinase (PI3K) inhibitor"
+          }
+        ],
+        "id": "doc_r_005",
+        "negated": false,
+        "predicate": "inhibition_reverses_knockdown_effects_of",
+        "source": "doc_e_004",
+        "target": "doc_e_001"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "PI3K, as part of the PI3K/AKT pathway, might be a critical component of PTEN effects during serum deficiency.",
+            "context": [
+              "serum deficiency"
+            ],
+            "effects": [],
+            "intervention": null,
+            "score": null,
+            "surface_form": "might be the critical component of",
+            "text": "which indicated the PI3K/protein kinase B (AKT) might be the critical component of the PTEN effects during serum deficiency."
+          },
+          {
+            "assertion": "Protein kinase B, as part of the PI3K/AKT pathway, might be a critical component of PTEN effects during serum deficiency.",
+            "context": [
+              "serum deficiency"
+            ],
+            "effects": [],
+            "intervention": null,
+            "score": null,
+            "surface_form": "might be the critical component of",
+            "text": "which indicated the PI3K/protein kinase B (AKT) might be the critical component of the PTEN effects during serum deficiency."
+          }
+        ],
+        "id": "doc_r_006",
+        "negated": false,
+        "predicate": "may_be_critical_component_of_effects_of",
+        "source": "doc_e_004",
+        "target": "doc_e_001"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "AKT participates in the PTEN/PI3K/AKT pathway implicated in serum deprivation-induced cytotoxicity in H9c2 cells.",
+            "context": [
+              "H9c2 cells",
+              "serum deprivation"
+            ],
+            "effects": [],
+            "intervention": null,
+            "score": null,
+            "surface_form": "the role of the PTEN/PI3K/AKT pathway in",
+            "text": "In conclusion, our study indicated the role of the PTEN/PI3K/AKT pathway in serum deprivation-induced cytotoxicity in H9c2 cells."
+          },
+          {
+            "assertion": "PI3K participates in the PTEN/PI3K/AKT pathway implicated in serum deprivation-induced cytotoxicity in H9c2 cells.",
+            "context": [
+              "H9c2 cells",
+              "serum deprivation"
+            ],
+            "effects": [],
+            "intervention": null,
+            "score": null,
+            "surface_form": "the role of the PTEN/PI3K/AKT pathway in",
+            "text": "In conclusion, our study indicated the role of the PTEN/PI3K/AKT pathway in serum deprivation-induced cytotoxicity in H9c2 cells."
+          }
+        ],
+        "id": "doc_r_007",
+        "negated": false,
+        "predicate": "participates_in_pathway_involved_in",
+        "source": "doc_e_004",
+        "target": "doc_e_002"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "A phosphatidylinositol 3-kinase inhibitor could reverse the suppression of serum deprivation-induced ROS production observed in the knockdown experiment.",
+            "context": [
+              "serum deprivation"
+            ],
+            "effects": [
+              "reversal of suppressed ROS production"
+            ],
+            "intervention": "phosphatidylinositol 3-kinase inhibitor in the siRNA knockdown experiment",
+            "score": null,
+            "surface_form": "All these effects could be reversed by",
+            "text": "Functionally, the PTEN knockdown experiment using siRNA inhibited serum deprivation-induced cell apoptosis, ROS production, and DNA damage, whereas increased cell proliferation. All these effects could be reversed by phosphatidylinositol 3-kinase (PI3K) inhibitor"
+          }
+        ],
+        "id": "doc_r_008",
+        "negated": false,
+        "predicate": "inhibition_reverses_suppression_of_production",
+        "source": "doc_e_004",
+        "target": "doc_e_009"
+      },
+      {
+        "evidence": [
+          {
+            "assertion": "The pathogenesis of acute myocardial infarction is associated with cardiomyocyte necrosis.",
+            "context": [
+              "cardiomyocytes"
+            ],
+            "effects": [],
+            "intervention": null,
+            "score": null,
+            "surface_form": "is associated with",
+            "text": "The pathogenesis of acute myocardial infarction (AMI) is associated with cardiomyocyte necrosis and apoptosis."
+          }
+        ],
+        "id": "doc_r_009",
+        "negated": false,
+        "predicate": "associated_with",
+        "source": "doc_e_005",
+        "target": "doc_e_006"
+      }
+    ],
+    "nodes": [
+      {
+        "aliases": [
+          "PTEN",
+          "Phosphatase and tensin homolog"
+        ],
+        "id": "doc_e_001",
+        "label": "PTEN",
+        "mentions": [
+          {
+            "end": 4,
+            "id": "E1",
+            "score": 0.99998939037323,
+            "start": 0,
+            "text": "PTEN",
+            "type": "Gene"
+          },
+          {
+            "end": 304,
+            "id": "E9",
+            "score": 0.9999800622463226,
+            "start": 274,
+            "text": "Phosphatase and tensin homolog",
+            "type": "Gene"
+          },
+          {
+            "end": 310,
+            "id": "E10",
+            "score": 0.9999897480010986,
+            "start": 306,
+            "text": "PTEN",
+            "type": "Gene"
+          },
+          {
+            "end": 401,
+            "id": "E11",
+            "score": 0.9999884366989136,
+            "start": 397,
+            "text": "PTEN",
+            "type": "Gene"
+          },
+          {
+            "end": 596,
+            "id": "E14",
+            "score": 0.9999872446060181,
+            "start": 592,
+            "text": "PTEN",
+            "type": "Gene"
+          },
+          {
+            "end": 642,
+            "id": "E15",
+            "score": 0.9999881982803345,
+            "start": 638,
+            "text": "PTEN",
+            "type": "Gene"
+          },
+          {
+            "end": 984,
+            "id": "E19",
+            "score": 0.9999884366989136,
+            "start": 980,
+            "text": "PTEN",
+            "type": "Gene"
+          },
+          {
+            "end": 1019,
+            "id": "E20",
+            "score": 0.9999884366989136,
+            "start": 1015,
+            "text": "PTEN",
+            "type": "Gene"
+          },
+          {
+            "end": 1353,
+            "id": "E27",
+            "score": 0.99998939037323,
+            "start": 1349,
+            "text": "PTEN",
+            "type": "Gene"
+          },
+          {
+            "end": 1442,
+            "id": "E29",
+            "score": 0.9999895095825195,
+            "start": 1438,
+            "text": "PTEN",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "cytotoxicity"
+        ],
+        "id": "doc_e_002",
+        "label": "cytotoxicity",
+        "mentions": [
+          {
+            "end": 52,
+            "id": "E2",
+            "score": 0.9999901453653971,
+            "start": 40,
+            "text": "cytotoxicity",
+            "type": "Disease"
+          },
+          {
+            "end": 1501,
+            "id": "E32",
+            "score": 0.9999916950861613,
+            "start": 1489,
+            "text": "cytotoxicity",
+            "type": "Disease"
+          }
+        ],
+        "type": "Disease"
+      },
+      {
+        "aliases": [
+          "H9c2"
+        ],
+        "id": "doc_e_003",
+        "label": "H9c2",
+        "mentions": [
+          {
+            "end": 60,
+            "id": "E3",
+            "score": 0.9947355389595032,
+            "start": 56,
+            "text": "H9c2",
+            "type": "CellLine"
+          },
+          {
+            "end": 458,
+            "id": "E12",
+            "score": 0.9949002861976624,
+            "start": 454,
+            "text": "H9c2",
+            "type": "CellLine"
+          },
+          {
+            "end": 963,
+            "id": "E18",
+            "score": 0.9945240020751953,
+            "start": 959,
+            "text": "H9c2",
+            "type": "CellLine"
+          },
+          {
+            "end": 1509,
+            "id": "E33",
+            "score": 0.9945874214172363,
+            "start": 1505,
+            "text": "H9c2",
+            "type": "CellLine"
+          }
+        ],
+        "type": "CellLine"
+      },
+      {
+        "aliases": [
+          "PI3K",
+          "AKT",
+          "phosphatidylinositol 3-kinase",
+          "protein kinase B"
+        ],
+        "id": "doc_e_004",
+        "label": "PI3K",
+        "mentions": [
+          {
+            "end": 79,
+            "id": "E4",
+            "score": 0.9999885559082031,
+            "start": 75,
+            "text": "PI3K",
+            "type": "Gene"
+          },
+          {
+            "end": 83,
+            "id": "E5",
+            "score": 0.9999896287918091,
+            "start": 80,
+            "text": "AKT",
+            "type": "Gene"
+          },
+          {
+            "end": 1243,
+            "id": "E22",
+            "score": 0.9999771118164062,
+            "start": 1214,
+            "text": "phosphatidylinositol 3-kinase",
+            "type": "Gene"
+          },
+          {
+            "end": 1249,
+            "id": "E23",
+            "score": 0.9999762177467346,
+            "start": 1245,
+            "text": "PI3K",
+            "type": "Gene"
+          },
+          {
+            "end": 1286,
+            "id": "E24",
+            "score": 0.9999890327453613,
+            "start": 1282,
+            "text": "PI3K",
+            "type": "Gene"
+          },
+          {
+            "end": 1303,
+            "id": "E25",
+            "score": 0.9999761978785197,
+            "start": 1287,
+            "text": "protein kinase B",
+            "type": "Gene"
+          },
+          {
+            "end": 1308,
+            "id": "E26",
+            "score": 0.9999895095825195,
+            "start": 1305,
+            "text": "AKT",
+            "type": "Gene"
+          },
+          {
+            "end": 1447,
+            "id": "E30",
+            "score": 0.9999897480010986,
+            "start": 1443,
+            "text": "PI3K",
+            "type": "Gene"
+          },
+          {
+            "end": 1451,
+            "id": "E31",
+            "score": 0.9999897480010986,
+            "start": 1448,
+            "text": "AKT",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "acute myocardial infarction",
+          "AMI"
+        ],
+        "id": "doc_e_005",
+        "label": "AMI",
+        "mentions": [
+          {
+            "end": 151,
+            "id": "E6",
+            "score": 0.9999921719233195,
+            "start": 124,
+            "text": "acute myocardial infarction",
+            "type": "Disease"
+          },
+          {
+            "end": 156,
+            "id": "E7",
+            "score": 0.9999850988388062,
+            "start": 153,
+            "text": "AMI",
+            "type": "Disease"
+          }
+        ],
+        "type": "Disease"
+      },
+      {
+        "aliases": [
+          "necrosis"
+        ],
+        "id": "doc_e_006",
+        "label": "necrosis",
+        "mentions": [
+          {
+            "end": 199,
+            "id": "E8",
+            "score": 0.9893016219139099,
+            "start": 191,
+            "text": "necrosis",
+            "type": "Disease"
+          }
+        ],
+        "type": "Disease"
+      },
+      {
+        "aliases": [
+          "myocardial infarction"
+        ],
+        "id": "doc_e_007",
+        "label": "myocardial infarction",
+        "mentions": [
+          {
+            "end": 556,
+            "id": "E13",
+            "score": 0.9999913573265076,
+            "start": 535,
+            "text": "myocardial infarction",
+            "type": "Disease"
+          }
+        ],
+        "type": "Disease"
+      },
+      {
+        "aliases": [
+          "Edu"
+        ],
+        "id": "doc_e_008",
+        "label": "Edu",
+        "mentions": [
+          {
+            "end": 722,
+            "id": "E16",
+            "score": 0.9904943108558655,
+            "start": 719,
+            "text": "Edu",
+            "type": "Chemical"
+          }
+        ],
+        "type": "Chemical"
+      },
+      {
+        "aliases": [
+          "ROS"
+        ],
+        "id": "doc_e_009",
+        "label": "ROS",
+        "mentions": [
+          {
+            "end": 829,
+            "id": "E17",
+            "score": 0.9999953508377075,
+            "start": 826,
+            "text": "ROS",
+            "type": "Chemical"
+          },
+          {
+            "end": 1108,
+            "id": "E21",
+            "score": 0.9999959468841553,
+            "start": 1105,
+            "text": "ROS",
+            "type": "Chemical"
+          }
+        ],
+        "type": "Chemical"
+      },
+      {
+        "aliases": [
+          "serum deficiency"
+        ],
+        "id": "doc_e_010",
+        "label": "serum deficiency",
+        "mentions": [
+          {
+            "end": 1385,
+            "id": "E28",
+            "score": 0.9951925277709961,
+            "start": 1369,
+            "text": "serum deficiency",
+            "type": "Disease"
+          }
+        ],
+        "type": "Disease"
+      }
+    ]
+  },
+  "initial_attempt_path": "reports/relation_prompt_refinement_12b/papers/pmid_33652126/refined.json",
+  "operational_recovery_number": 1,
+  "relations": [
+    {
+      "assertion": "PTEN mediates serum deprivation-induced cytotoxicity in H9c2 cells via the PI3K/AKT signaling pathway.",
+      "context": [
+        "H9c2 cells",
+        "serum deprivation"
+      ],
+      "effects": [],
+      "evidence": "PTEN mediates serum deprivation-induced cytotoxicity in H9c2 cells via the PI3K/AKT signaling pathway.",
+      "intervention": null,
+      "negated": false,
+      "predicate": "mediates",
+      "score": null,
+      "source": "E1",
+      "surface_form": "mediates",
+      "target": "E2"
+    },
+    {
+      "assertion": "The pathogenesis of acute myocardial infarction is associated with cardiomyocyte necrosis.",
+      "context": [
+        "cardiomyocytes"
+      ],
+      "effects": [],
+      "evidence": "The pathogenesis of acute myocardial infarction (AMI) is associated with cardiomyocyte necrosis and apoptosis.",
+      "intervention": null,
+      "negated": false,
+      "predicate": "associated_with",
+      "score": null,
+      "source": "E6",
+      "surface_form": "is associated with",
+      "target": "E8"
+    },
+    {
+      "assertion": "H9c2 cells cultured under serum deprivation were used to simulate the apoptosis process of myocardial infarction.",
+      "context": [],
+      "effects": [],
+      "evidence": "In this study, we used H9c2 cells cultured under serum deprivation to simulate the apoptosis process of myocardial infarction.",
+      "intervention": "serum deprivation",
+      "negated": false,
+      "predicate": "models_apoptosis_process_of",
+      "score": null,
+      "source": "E12",
+      "surface_form": "to simulate the apoptosis process of",
+      "target": "E13"
+    },
+    {
+      "assertion": "PTEN expression increased in H9c2 cells under serum deprivation.",
+      "context": [],
+      "effects": [
+        "increased PTEN expression"
+      ],
+      "evidence": "As a result, we observed that serum deprivation in H9c2 cells increased PTEN expression.",
+      "intervention": "serum deprivation",
+      "negated": false,
+      "predicate": "expression_increased_in",
+      "score": null,
+      "source": "E19",
+      "surface_form": "increased PTEN expression",
+      "target": "E18"
+    },
+    {
+      "assertion": "PTEN knockdown using siRNA inhibited serum deprivation-induced ROS production.",
+      "context": [
+        "serum deprivation"
+      ],
+      "effects": [
+        "inhibited ROS production"
+      ],
+      "evidence": "Functionally, the PTEN knockdown experiment using siRNA inhibited serum deprivation-induced cell apoptosis, ROS production, and DNA damage, whereas increased cell proliferation.",
+      "intervention": "PTEN knockdown using siRNA",
+      "negated": false,
+      "predicate": "knockdown_inhibits_production_of",
+      "score": null,
+      "source": "E20",
+      "surface_form": "inhibited",
+      "target": "E21"
+    },
+    {
+      "assertion": "A phosphatidylinositol 3-kinase inhibitor could reverse the inhibition of cell apoptosis and DNA damage and the increase in cell proliferation produced by PTEN knockdown using siRNA under serum deprivation.",
+      "context": [
+        "serum deprivation"
+      ],
+      "effects": [
+        "reversal of inhibition of cell apoptosis",
+        "reversal of inhibition of DNA damage",
+        "reversal of increased cell proliferation"
+      ],
+      "evidence": "Functionally, the PTEN knockdown experiment using siRNA inhibited serum deprivation-induced cell apoptosis, ROS production, and DNA damage, whereas increased cell proliferation. All these effects could be reversed by phosphatidylinositol 3-kinase (PI3K) inhibitor",
+      "intervention": "phosphatidylinositol 3-kinase inhibitor following PTEN knockdown using siRNA",
+      "negated": false,
+      "predicate": "inhibition_reverses_knockdown_effects_of",
+      "score": null,
+      "source": "E22",
+      "surface_form": "All these effects could be reversed by",
+      "target": "E20"
+    },
+    {
+      "assertion": "A phosphatidylinositol 3-kinase inhibitor could reverse the suppression of serum deprivation-induced ROS production observed in the knockdown experiment.",
+      "context": [
+        "serum deprivation"
+      ],
+      "effects": [
+        "reversal of suppressed ROS production"
+      ],
+      "evidence": "Functionally, the PTEN knockdown experiment using siRNA inhibited serum deprivation-induced cell apoptosis, ROS production, and DNA damage, whereas increased cell proliferation. All these effects could be reversed by phosphatidylinositol 3-kinase (PI3K) inhibitor",
+      "intervention": "phosphatidylinositol 3-kinase inhibitor in the siRNA knockdown experiment",
+      "negated": false,
+      "predicate": "inhibition_reverses_suppression_of_production",
+      "score": null,
+      "source": "E22",
+      "surface_form": "All these effects could be reversed by",
+      "target": "E21"
+    },
+    {
+      "assertion": "PI3K, as part of the PI3K/AKT pathway, might be a critical component of PTEN effects during serum deficiency.",
+      "context": [
+        "serum deficiency"
+      ],
+      "effects": [],
+      "evidence": "which indicated the PI3K/protein kinase B (AKT) might be the critical component of the PTEN effects during serum deficiency.",
+      "intervention": null,
+      "negated": false,
+      "predicate": "may_be_critical_component_of_effects_of",
+      "score": null,
+      "source": "E24",
+      "surface_form": "might be the critical component of",
+      "target": "E27"
+    },
+    {
+      "assertion": "Protein kinase B, as part of the PI3K/AKT pathway, might be a critical component of PTEN effects during serum deficiency.",
+      "context": [
+        "serum deficiency"
+      ],
+      "effects": [],
+      "evidence": "which indicated the PI3K/protein kinase B (AKT) might be the critical component of the PTEN effects during serum deficiency.",
+      "intervention": null,
+      "negated": false,
+      "predicate": "may_be_critical_component_of_effects_of",
+      "score": null,
+      "source": "E25",
+      "surface_form": "might be the critical component of",
+      "target": "E27"
+    },
+    {
+      "assertion": "PI3K participates in the PTEN/PI3K/AKT pathway implicated in serum deprivation-induced cytotoxicity in H9c2 cells.",
+      "context": [
+        "H9c2 cells",
+        "serum deprivation"
+      ],
+      "effects": [],
+      "evidence": "In conclusion, our study indicated the role of the PTEN/PI3K/AKT pathway in serum deprivation-induced cytotoxicity in H9c2 cells.",
+      "intervention": null,
+      "negated": false,
+      "predicate": "participates_in_pathway_involved_in",
+      "score": null,
+      "source": "E30",
+      "surface_form": "the role of the PTEN/PI3K/AKT pathway in",
+      "target": "E32"
+    },
+    {
+      "assertion": "AKT participates in the PTEN/PI3K/AKT pathway implicated in serum deprivation-induced cytotoxicity in H9c2 cells.",
+      "context": [
+        "H9c2 cells",
+        "serum deprivation"
+      ],
+      "effects": [],
+      "evidence": "In conclusion, our study indicated the role of the PTEN/PI3K/AKT pathway in serum deprivation-induced cytotoxicity in H9c2 cells.",
+      "intervention": null,
+      "negated": false,
+      "predicate": "participates_in_pathway_involved_in",
+      "score": null,
+      "source": "E31",
+      "surface_form": "the role of the PTEN/PI3K/AKT pathway in",
+      "target": "E32"
+    }
+  ],
+  "repair_attempts": 0,
+  "status": "success"
+}

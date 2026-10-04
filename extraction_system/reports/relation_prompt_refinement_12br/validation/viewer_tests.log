@@ -1,0 +1,21 @@
+✔ adapts graph nodes and edges without changing domain direction (1.3412ms)
+✔ preserves aliases, mentions, and all evidence records (0.3823ms)
+✔ marks negated relations for visual styling while retaining negated state (0.1941ms)
+✔ retains valid self-edges as Cytoscape edges (0.1319ms)
+✔ bundles same-direction relations while preserving reverse direction (0.2442ms)
+✔ multi-relation self-edges form a readable bundle (0.2045ms)
+✔ authentic Contract 05R fixture preserves domain and display counts (0.6796ms)
+✔ empty or partially absent graph arrays produce no elements (0.1571ms)
+✔ entity type keys remain presentation-only and extensible (0.1123ms)
+✔ hides unconnected nodes by default while retaining truthful canonical counts (0.7847ms)
+✔ preserves role metadata and gives Species an explicit presentation class (0.1477ms)
+✔ bundle warning CSS is a single wrapping block (0.2459ms)
+✔ viewer exposes unconnected role and reveal controls (0.3813ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 69.0785

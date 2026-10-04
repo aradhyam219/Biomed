@@ -1,0 +1,117 @@
+{
+  "all_relation_richness": {
+    "12b": {
+      "context": 58,
+      "effects": 38,
+      "intervention": 35
+    },
+    "12br": {
+      "context": 36,
+      "effects": 11,
+      "intervention": 26
+    },
+    "control": {
+      "context": 38,
+      "effects": 14,
+      "intervention": 28
+    }
+  },
+  "case_checks": [
+    {
+      "exact_duplicate_normalized_relations": 0,
+      "graph_replay_exact": true,
+      "nodes_identical": true,
+      "rich_projection_exact": true,
+      "slug": "pmcid_pmc11824863",
+      "valid_endpoint_ids": true,
+      "verbatim_contiguous_evidence": true
+    },
+    {
+      "exact_duplicate_normalized_relations": 0,
+      "graph_replay_exact": true,
+      "nodes_identical": true,
+      "rich_projection_exact": true,
+      "slug": "pmcid_pmc8605525",
+      "valid_endpoint_ids": true,
+      "verbatim_contiguous_evidence": true
+    },
+    {
+      "exact_duplicate_normalized_relations": 0,
+      "graph_replay_exact": true,
+      "nodes_identical": true,
+      "rich_projection_exact": true,
+      "slug": "pmid_27172794",
+      "valid_endpoint_ids": true,
+      "verbatim_contiguous_evidence": true
+    },
+    {
+      "exact_duplicate_normalized_relations": 0,
+      "graph_replay_exact": true,
+      "nodes_identical": true,
+      "rich_projection_exact": true,
+      "slug": "pmid_33652126",
+      "valid_endpoint_ids": true,
+      "verbatim_contiguous_evidence": true
+    },
+    {
+      "exact_duplicate_normalized_relations": 0,
+      "graph_replay_exact": true,
+      "nodes_identical": true,
+      "rich_projection_exact": true,
+      "slug": "contract11u_passage_001",
+      "valid_endpoint_ids": true,
+      "verbatim_contiguous_evidence": true
+    }
+  ],
+  "completed_scientific_reruns": 0,
+  "control_prompt_unchanged": true,
+  "five_inputs_unchanged": true,
+  "historical_artifacts_unchanged": true,
+  "known_evidence_locality_violations": 0,
+  "mechanical_only": true,
+  "paid_control_generations": 0,
+  "production_defaults_unchanged": true,
+  "prompt_adaptations": 0,
+  "repairs": 0,
+  "replacement_amendment_only": true,
+  "scientific_gate": "PROMPT REFINEMENT FAILED — PRESERVE 12A CONTROL BEHAVIOR",
+  "starting_sha": "f92ce7e91b62ed069c4479f75a0820ae24d0848f",
+  "status": "passed",
+  "successful_generations": 5,
+  "tests": [
+    {
+      "command": "python -m unittest discover -s tests -v",
+      "count": 170,
+      "lifecycle_cases_included": 25,
+      "log": "validation/python_tests.log",
+      "sha256": "11385d3fe7b968ea3402fe080456913212c07f627be93e6d779891c98984dcc5",
+      "status": "passed"
+    },
+    {
+      "command": "node --test viewer/tests/adapter.test.mjs",
+      "count": 13,
+      "log": "validation/viewer_tests.log",
+      "sha256": "6da1500f63e85a568fa9ab0d7b8c53684cb3c8737d47ed7f71feb6edd8eeeccb",
+      "status": "passed"
+    }
+  ],
+  "three_way_matched_findings": 60,
+  "three_way_matched_richness": {
+    "12b": {
+      "context": 34,
+      "effects": 26,
+      "intervention": 23
+    },
+    "12br": {
+      "context": 30,
+      "effects": 7,
+      "intervention": 23
+    },
+    "control": {
+      "context": 29,
+      "effects": 12,
+      "intervention": 24
+    }
+  },
+  "viewer_checks": 10
+}

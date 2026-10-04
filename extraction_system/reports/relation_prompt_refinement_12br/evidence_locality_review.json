@@ -1,0 +1,1978 @@
+{
+  "known_violations": [],
+  "mechanical_entailment_claim": false,
+  "relations": [
+    {
+      "evidence": "Alzheimer's disease (AD) is a complex neurodegenerative disorder with multifaceted pathogenesis",
+      "evidence_end": 160,
+      "evidence_start": 65,
+      "index": 0,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "Alzheimer's disease is a complex neurodegenerative disorder with multifaceted pathogenesis."
+          }
+        ],
+        "context": [],
+        "effects": [],
+        "intervention": []
+      },
+      "predicate": "is_a",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "Each retained assertion and populated qualifier is supported inside its own saved span. GST/HO-1 and PI3K/AKT spans begin at the SFPQ overexpression result sentence, supplying their actor and AD-mouse setting. The longer PI3K/AKT spans are needed to link the subsequent ratio result to SFPQ, not expanded for AAV metadata.",
+      "slug": "pmcid_pmc11824863",
+      "violations": []
+    },
+    {
+      "evidence": "Splicing factor proline and glutamine rich (SFPQ) is known to play a crucial role in neurodegenerative diseases",
+      "evidence_end": 355,
+      "evidence_start": 244,
+      "index": 1,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "SFPQ is known to play a crucial role in neurodegenerative diseases."
+          }
+        ],
+        "context": [],
+        "effects": [],
+        "intervention": []
+      },
+      "predicate": "plays_role_in",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "Each retained assertion and populated qualifier is supported inside its own saved span. GST/HO-1 and PI3K/AKT spans begin at the SFPQ overexpression result sentence, supplying their actor and AD-mouse setting. The longer PI3K/AKT spans are needed to link the subsequent ratio result to SFPQ, not expanded for AAV metadata.",
+      "slug": "pmcid_pmc11824863",
+      "violations": []
+    },
+    {
+      "evidence": "In this study, an AD mouse model was established through lateral ventricular injection of amyloid-beta1–42 (Aβ1–42).",
+      "evidence_end": 641,
+      "evidence_start": 525,
+      "index": 2,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "Lateral ventricular injection of amyloid-beta1–42 was used to establish an AD mouse model."
+          }
+        ],
+        "context": [
+          {
+            "literal_in_evidence": true,
+            "value": "Mouse model"
+          }
+        ],
+        "effects": [
+          {
+            "literal_in_evidence": false,
+            "value": "Establishment of an AD mouse model"
+          }
+        ],
+        "intervention": [
+          {
+            "literal_in_evidence": true,
+            "value": "Lateral ventricular injection of amyloid-beta1–42"
+          }
+        ]
+      },
+      "predicate": "establishes_model_of",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "Each retained assertion and populated qualifier is supported inside its own saved span. GST/HO-1 and PI3K/AKT spans begin at the SFPQ overexpression result sentence, supplying their actor and AD-mouse setting. The longer PI3K/AKT spans are needed to link the subsequent ratio result to SFPQ, not expanded for AAV metadata.",
+      "slug": "pmcid_pmc11824863",
+      "violations": []
+    },
+    {
+      "evidence": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau.",
+      "evidence_end": 930,
+      "evidence_start": 747,
+      "index": 3,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "SFPQ overexpression reduces the AD-related marker protein amyloid precursor protein in AD mice."
+          }
+        ],
+        "context": [
+          {
+            "literal_in_evidence": true,
+            "value": "AD mice"
+          }
+        ],
+        "effects": [],
+        "intervention": [
+          {
+            "literal_in_evidence": true,
+            "value": "SFPQ overexpression"
+          }
+        ]
+      },
+      "predicate": "reduces_protein_levels",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "Each retained assertion and populated qualifier is supported inside its own saved span. GST/HO-1 and PI3K/AKT spans begin at the SFPQ overexpression result sentence, supplying their actor and AD-mouse setting. The longer PI3K/AKT spans are needed to link the subsequent ratio result to SFPQ, not expanded for AAV metadata.",
+      "slug": "pmcid_pmc11824863",
+      "violations": []
+    },
+    {
+      "evidence": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau.",
+      "evidence_end": 930,
+      "evidence_start": 747,
+      "index": 4,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "SFPQ overexpression reduces the AD-related marker protein Tau in AD mice."
+          }
+        ],
+        "context": [
+          {
+            "literal_in_evidence": true,
+            "value": "AD mice"
+          }
+        ],
+        "effects": [],
+        "intervention": [
+          {
+            "literal_in_evidence": true,
+            "value": "SFPQ overexpression"
+          }
+        ]
+      },
+      "predicate": "reduces_protein_levels",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "Each retained assertion and populated qualifier is supported inside its own saved span. GST/HO-1 and PI3K/AKT spans begin at the SFPQ overexpression result sentence, supplying their actor and AD-mouse setting. The longer PI3K/AKT spans are needed to link the subsequent ratio result to SFPQ, not expanded for AAV metadata.",
+      "slug": "pmcid_pmc11824863",
+      "violations": []
+    },
+    {
+      "evidence": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated.",
+      "evidence_end": 1101,
+      "evidence_start": 747,
+      "index": 5,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "SFPQ overexpression upregulates the antioxidant protein glutathione S-transferase in AD mice."
+          }
+        ],
+        "context": [
+          {
+            "literal_in_evidence": true,
+            "value": "AD mice"
+          }
+        ],
+        "effects": [],
+        "intervention": [
+          {
+            "literal_in_evidence": true,
+            "value": "SFPQ overexpression"
+          }
+        ]
+      },
+      "predicate": "upregulates",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "Each retained assertion and populated qualifier is supported inside its own saved span. GST/HO-1 and PI3K/AKT spans begin at the SFPQ overexpression result sentence, supplying their actor and AD-mouse setting. The longer PI3K/AKT spans are needed to link the subsequent ratio result to SFPQ, not expanded for AAV metadata.",
+      "slug": "pmcid_pmc11824863",
+      "violations": []
+    },
+    {
+      "evidence": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated.",
+      "evidence_end": 1101,
+      "evidence_start": 747,
+      "index": 6,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "SFPQ overexpression upregulates the antioxidant protein heme oxygenase-1 in AD mice."
+          }
+        ],
+        "context": [
+          {
+            "literal_in_evidence": true,
+            "value": "AD mice"
+          }
+        ],
+        "effects": [],
+        "intervention": [
+          {
+            "literal_in_evidence": true,
+            "value": "SFPQ overexpression"
+          }
+        ]
+      },
+      "predicate": "upregulates",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "Each retained assertion and populated qualifier is supported inside its own saved span. GST/HO-1 and PI3K/AKT spans begin at the SFPQ overexpression result sentence, supplying their actor and AD-mouse setting. The longer PI3K/AKT spans are needed to link the subsequent ratio result to SFPQ, not expanded for AAV metadata.",
+      "slug": "pmcid_pmc11824863",
+      "violations": []
+    },
+    {
+      "evidence": "The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax also increased.",
+      "evidence_end": 1186,
+      "evidence_start": 1102,
+      "index": 7,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax increased."
+          }
+        ],
+        "context": [],
+        "effects": [],
+        "intervention": []
+      },
+      "predicate": "increased_ratio_to",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "Each retained assertion and populated qualifier is supported inside its own saved span. GST/HO-1 and PI3K/AKT spans begin at the SFPQ overexpression result sentence, supplying their actor and AD-mouse setting. The longer PI3K/AKT spans are needed to link the subsequent ratio result to SFPQ, not expanded for AAV metadata.",
+      "slug": "pmcid_pmc11824863",
+      "violations": []
+    },
+    {
+      "evidence": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated. The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax also increased. Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway.",
+      "evidence_end": 1381,
+      "evidence_start": 747,
+      "index": 8,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "SFPQ overexpression elevates the phosphorylated phosphoinositide 3-kinase to PI3K ratio in AD mice."
+          }
+        ],
+        "context": [
+          {
+            "literal_in_evidence": true,
+            "value": "AD mice"
+          }
+        ],
+        "effects": [],
+        "intervention": [
+          {
+            "literal_in_evidence": true,
+            "value": "SFPQ overexpression"
+          }
+        ]
+      },
+      "predicate": "increases_phosphorylated_to_total_ratio",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "Each retained assertion and populated qualifier is supported inside its own saved span. GST/HO-1 and PI3K/AKT spans begin at the SFPQ overexpression result sentence, supplying their actor and AD-mouse setting. The longer PI3K/AKT spans are needed to link the subsequent ratio result to SFPQ, not expanded for AAV metadata.",
+      "slug": "pmcid_pmc11824863",
+      "violations": []
+    },
+    {
+      "evidence": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated. The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax also increased. Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway.",
+      "evidence_end": 1381,
+      "evidence_start": 747,
+      "index": 9,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "SFPQ overexpression elevates the phosphorylated protein kinase B to AKT ratio in AD mice."
+          }
+        ],
+        "context": [
+          {
+            "literal_in_evidence": true,
+            "value": "AD mice"
+          }
+        ],
+        "effects": [],
+        "intervention": [
+          {
+            "literal_in_evidence": true,
+            "value": "SFPQ overexpression"
+          }
+        ]
+      },
+      "predicate": "increases_phosphorylated_to_total_ratio",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "Each retained assertion and populated qualifier is supported inside its own saved span. GST/HO-1 and PI3K/AKT spans begin at the SFPQ overexpression result sentence, supplying their actor and AD-mouse setting. The longer PI3K/AKT spans are needed to link the subsequent ratio result to SFPQ, not expanded for AAV metadata.",
+      "slug": "pmcid_pmc11824863",
+      "violations": []
+    },
+    {
+      "evidence": "These findings suggest that SFPQ may serve as a promising molecular target for the prevention and treatment of AD.",
+      "evidence_end": 1496,
+      "evidence_start": 1382,
+      "index": 10,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "The findings suggest that SFPQ may serve as a promising molecular target for the prevention and treatment of AD."
+          }
+        ],
+        "context": [],
+        "effects": [],
+        "intervention": []
+      },
+      "predicate": "potential_prevention_and_treatment_target_for",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "Each retained assertion and populated qualifier is supported inside its own saved span. GST/HO-1 and PI3K/AKT spans begin at the SFPQ overexpression result sentence, supplying their actor and AD-mouse setting. The longer PI3K/AKT spans are needed to link the subsequent ratio result to SFPQ, not expanded for AAV metadata.",
+      "slug": "pmcid_pmc11824863",
+      "violations": []
+    },
+    {
+      "evidence": "Overexpression of E3 ubiquitin ligase Cbl attenuates endothelial dysfunction in diabetes mellitus by inhibiting the JAK2/STAT4 signaling and Runx3-mediated H3K4me3",
+      "evidence_end": 163,
+      "evidence_start": 0,
+      "index": 0,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "Overexpression of Cbl attenuates endothelial dysfunction in diabetes mellitus."
+          }
+        ],
+        "context": [
+          {
+            "literal_in_evidence": true,
+            "value": "diabetes mellitus"
+          }
+        ],
+        "effects": [],
+        "intervention": [
+          {
+            "literal_in_evidence": false,
+            "value": "Overexpression of Cbl"
+          }
+        ]
+      },
+      "predicate": "alleviates",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "All 23 assertions and populated rich fields are directly supported by their saved evidence. Joint JAK2/STAT4 wording is retained in both [16,17] assertions. Glucose [9] is tied only to the explicitly stated in-vitro model induction. No contextual glucose entity is promoted to a gene-expression actor.",
+      "slug": "pmcid_pmc8605525",
+      "violations": []
+    },
+    {
+      "evidence": "Overexpression of E3 ubiquitin ligase Cbl attenuates endothelial dysfunction in diabetes mellitus by inhibiting the JAK2/STAT4 signaling and Runx3-mediated H3K4me3",
+      "evidence_end": 163,
+      "evidence_start": 0,
+      "index": 1,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "Overexpression of Cbl inhibits JAK2/STAT4 signaling in diabetes mellitus."
+          }
+        ],
+        "context": [
+          {
+            "literal_in_evidence": true,
+            "value": "diabetes mellitus"
+          }
+        ],
+        "effects": [],
+        "intervention": [
+          {
+            "literal_in_evidence": false,
+            "value": "Overexpression of Cbl"
+          }
+        ]
+      },
+      "predicate": "inhibits_signaling",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "All 23 assertions and populated rich fields are directly supported by their saved evidence. Joint JAK2/STAT4 wording is retained in both [16,17] assertions. Glucose [9] is tied only to the explicitly stated in-vitro model induction. No contextual glucose entity is promoted to a gene-expression actor.",
+      "slug": "pmcid_pmc8605525",
+      "violations": []
+    },
+    {
+      "evidence": "Overexpression of E3 ubiquitin ligase Cbl attenuates endothelial dysfunction in diabetes mellitus by inhibiting the JAK2/STAT4 signaling and Runx3-mediated H3K4me3",
+      "evidence_end": 163,
+      "evidence_start": 0,
+      "index": 2,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "Overexpression of Cbl inhibits JAK2/STAT4 signaling in diabetes mellitus."
+          }
+        ],
+        "context": [
+          {
+            "literal_in_evidence": true,
+            "value": "diabetes mellitus"
+          }
+        ],
+        "effects": [],
+        "intervention": [
+          {
+            "literal_in_evidence": false,
+            "value": "Overexpression of Cbl"
+          }
+        ]
+      },
+      "predicate": "inhibits_signaling",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "All 23 assertions and populated rich fields are directly supported by their saved evidence. Joint JAK2/STAT4 wording is retained in both [16,17] assertions. Glucose [9] is tied only to the explicitly stated in-vitro model induction. No contextual glucose entity is promoted to a gene-expression actor.",
+      "slug": "pmcid_pmc8605525",
+      "violations": []
+    },
+    {
+      "evidence": "Overexpression of E3 ubiquitin ligase Cbl attenuates endothelial dysfunction in diabetes mellitus by inhibiting the JAK2/STAT4 signaling and Runx3-mediated H3K4me3",
+      "evidence_end": 163,
+      "evidence_start": 0,
+      "index": 3,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "Overexpression of Cbl inhibits Runx3-mediated H3K4me3 in diabetes mellitus."
+          }
+        ],
+        "context": [
+          {
+            "literal_in_evidence": true,
+            "value": "diabetes mellitus"
+          }
+        ],
+        "effects": [],
+        "intervention": [
+          {
+            "literal_in_evidence": false,
+            "value": "Overexpression of Cbl"
+          }
+        ]
+      },
+      "predicate": "inhibits",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "All 23 assertions and populated rich fields are directly supported by their saved evidence. Joint JAK2/STAT4 wording is retained in both [16,17] assertions. Glucose [9] is tied only to the explicitly stated in-vitro model induction. No contextual glucose entity is promoted to a gene-expression actor.",
+      "slug": "pmcid_pmc8605525",
+      "violations": []
+    },
+    {
+      "evidence": "Runx3-mediated H3K4me3",
+      "evidence_end": 163,
+      "evidence_start": 141,
+      "index": 4,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "Runx3 mediates H3K4me3."
+          }
+        ],
+        "context": [],
+        "effects": [],
+        "intervention": []
+      },
+      "predicate": "mediates",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "All 23 assertions and populated rich fields are directly supported by their saved evidence. Joint JAK2/STAT4 wording is retained in both [16,17] assertions. Glucose [9] is tied only to the explicitly stated in-vitro model induction. No contextual glucose entity is promoted to a gene-expression actor.",
+      "slug": "pmcid_pmc8605525",
+      "violations": []
+    },
+    {
+      "evidence": "Diabetes mellitus (DM), a most common chronic disease",
+      "evidence_end": 228,
+      "evidence_start": 175,
+      "index": 5,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "Diabetes mellitus is described as a most common chronic disease."
+          }
+        ],
+        "context": [],
+        "effects": [],
+        "intervention": []
+      },
+      "predicate": "is_a",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "All 23 assertions and populated rich fields are directly supported by their saved evidence. Joint JAK2/STAT4 wording is retained in both [16,17] assertions. Glucose [9] is tied only to the explicitly stated in-vitro model induction. No contextual glucose entity is promoted to a gene-expression actor.",
+      "slug": "pmcid_pmc8605525",
+      "violations": []
+    },
+    {
+      "evidence": "Diabetes mellitus (DM), a most common chronic disease, is featured with impaired endothelial function and bioavailability of nitric oxide (NO)",
+      "evidence_end": 317,
+      "evidence_start": 175,
+      "index": 6,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "Diabetes mellitus is characterized by impaired bioavailability of nitric oxide."
+          }
+        ],
+        "context": [],
+        "effects": [],
+        "intervention": []
+      },
+      "predicate": "has_impaired_bioavailability_of",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "All 23 assertions and populated rich fields are directly supported by their saved evidence. Joint JAK2/STAT4 wording is retained in both [16,17] assertions. Glucose [9] is tied only to the explicitly stated in-vitro model induction. No contextual glucose entity is promoted to a gene-expression actor.",
+      "slug": "pmcid_pmc8605525",
+      "violations": []
+    },
+    {
+      "evidence": "E3 ubiquitin ligase appears to alleviate endothelial dysfunction as a promising option for DM treatment.",
+      "evidence_end": 429,
+      "evidence_start": 325,
+      "index": 7,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "E3 ubiquitin ligase appears to alleviate endothelial dysfunction."
+          }
+        ],
+        "context": [],
+        "effects": [],
+        "intervention": []
+      },
+      "predicate": "alleviates",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "All 23 assertions and populated rich fields are directly supported by their saved evidence. Joint JAK2/STAT4 wording is retained in both [16,17] assertions. Glucose [9] is tied only to the explicitly stated in-vitro model induction. No contextual glucose entity is promoted to a gene-expression actor.",
+      "slug": "pmcid_pmc8605525",
+      "violations": []
+    },
+    {
+      "evidence": "A rat model of DM was developed through intraperitoneal injection of streptozotocin",
+      "evidence_end": 679,
+      "evidence_start": 596,
+      "index": 8,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "Intraperitoneal injection of streptozotocin was used to develop a rat model of DM."
+          }
+        ],
+        "context": [
+          {
+            "literal_in_evidence": true,
+            "value": "rat model"
+          }
+        ],
+        "effects": [],
+        "intervention": [
+          {
+            "literal_in_evidence": true,
+            "value": "Intraperitoneal injection of streptozotocin"
+          }
+        ]
+      },
+      "predicate": "induces",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "All 23 assertions and populated rich fields are directly supported by their saved evidence. Joint JAK2/STAT4 wording is retained in both [16,17] assertions. Glucose [9] is tied only to the explicitly stated in-vitro model induction. No contextual glucose entity is promoted to a gene-expression actor.",
+      "slug": "pmcid_pmc8605525",
+      "violations": []
+    },
+    {
+      "evidence": "Human umbilical vein endothelial cells (HUVECs) were cultured in high glucose (HG) condition to induce DM as an in vitro model.",
+      "evidence_end": 946,
+      "evidence_start": 819,
+      "index": 9,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "HUVECs were cultured in high glucose to induce DM as an in vitro model."
+          }
+        ],
+        "context": [
+          {
+            "literal_in_evidence": true,
+            "value": "Human umbilical vein endothelial cells (HUVECs)"
+          },
+          {
+            "literal_in_evidence": true,
+            "value": "in vitro model"
+          }
+        ],
+        "effects": [],
+        "intervention": [
+          {
+            "literal_in_evidence": false,
+            "value": "Culture in high glucose"
+          }
+        ]
+      },
+      "predicate": "induces",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "All 23 assertions and populated rich fields are directly supported by their saved evidence. Joint JAK2/STAT4 wording is retained in both [16,17] assertions. Glucose [9] is tied only to the explicitly stated in-vitro model induction. No contextual glucose entity is promoted to a gene-expression actor.",
+      "slug": "pmcid_pmc8605525",
+      "violations": []
+    },
+    {
+      "evidence": "It was found that overexpression of Cbl alleviated endothelial dysfunction by increasing NO production and restoring vasodilation and suppressing apoptosis of HUVECs.",
+      "evidence_end": 1364,
+      "evidence_start": 1198,
+      "index": 10,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "Overexpression of Cbl alleviated endothelial dysfunction, restoring vasodilation and suppressing apoptosis of HUVECs."
+          }
+        ],
+        "context": [],
+        "effects": [
+          {
+            "literal_in_evidence": false,
+            "value": "Restored vasodilation"
+          },
+          {
+            "literal_in_evidence": false,
+            "value": "Suppressed apoptosis of HUVECs"
+          }
+        ],
+        "intervention": [
+          {
+            "literal_in_evidence": true,
+            "value": "Overexpression of Cbl"
+          }
+        ]
+      },
+      "predicate": "alleviates",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "All 23 assertions and populated rich fields are directly supported by their saved evidence. Joint JAK2/STAT4 wording is retained in both [16,17] assertions. Glucose [9] is tied only to the explicitly stated in-vitro model induction. No contextual glucose entity is promoted to a gene-expression actor.",
+      "slug": "pmcid_pmc8605525",
+      "violations": []
+    },
+    {
+      "evidence": "It was found that overexpression of Cbl alleviated endothelial dysfunction by increasing NO production and restoring vasodilation and suppressing apoptosis of HUVECs.",
+      "evidence_end": 1364,
+      "evidence_start": 1198,
+      "index": 11,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "Overexpression of Cbl increased NO production."
+          }
+        ],
+        "context": [],
+        "effects": [],
+        "intervention": [
+          {
+            "literal_in_evidence": true,
+            "value": "Overexpression of Cbl"
+          }
+        ]
+      },
+      "predicate": "increases_production",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "All 23 assertions and populated rich fields are directly supported by their saved evidence. Joint JAK2/STAT4 wording is retained in both [16,17] assertions. Glucose [9] is tied only to the explicitly stated in-vitro model induction. No contextual glucose entity is promoted to a gene-expression actor.",
+      "slug": "pmcid_pmc8605525",
+      "violations": []
+    },
+    {
+      "evidence": "Mechanistically, Cb1 enhanced JAK2 ubiquitination and decreased JAK2 and STAT4 expression",
+      "evidence_end": 1454,
+      "evidence_start": 1365,
+      "index": 12,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "Cb1 enhanced JAK2 ubiquitination."
+          }
+        ],
+        "context": [],
+        "effects": [],
+        "intervention": []
+      },
+      "predicate": "enhances_ubiquitination",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "All 23 assertions and populated rich fields are directly supported by their saved evidence. Joint JAK2/STAT4 wording is retained in both [16,17] assertions. Glucose [9] is tied only to the explicitly stated in-vitro model induction. No contextual glucose entity is promoted to a gene-expression actor.",
+      "slug": "pmcid_pmc8605525",
+      "violations": []
+    },
+    {
+      "evidence": "Mechanistically, Cb1 enhanced JAK2 ubiquitination and decreased JAK2 and STAT4 expression",
+      "evidence_end": 1454,
+      "evidence_start": 1365,
+      "index": 13,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "Cb1 decreased JAK2 expression."
+          }
+        ],
+        "context": [],
+        "effects": [],
+        "intervention": []
+      },
+      "predicate": "decreases_expression",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "All 23 assertions and populated rich fields are directly supported by their saved evidence. Joint JAK2/STAT4 wording is retained in both [16,17] assertions. Glucose [9] is tied only to the explicitly stated in-vitro model induction. No contextual glucose entity is promoted to a gene-expression actor.",
+      "slug": "pmcid_pmc8605525",
+      "violations": []
+    },
+    {
+      "evidence": "Mechanistically, Cb1 enhanced JAK2 ubiquitination and decreased JAK2 and STAT4 expression",
+      "evidence_end": 1454,
+      "evidence_start": 1365,
+      "index": 14,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "Cb1 decreased STAT4 expression."
+          }
+        ],
+        "context": [],
+        "effects": [],
+        "intervention": []
+      },
+      "predicate": "decreases_expression",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "All 23 assertions and populated rich fields are directly supported by their saved evidence. Joint JAK2/STAT4 wording is retained in both [16,17] assertions. Glucose [9] is tied only to the explicitly stated in-vitro model induction. No contextual glucose entity is promoted to a gene-expression actor.",
+      "slug": "pmcid_pmc8605525",
+      "violations": []
+    },
+    {
+      "evidence": "STAT4 improved Runx3 expression by regulating histone H3 lysine 4 trimethylation level.",
+      "evidence_end": 1549,
+      "evidence_start": 1462,
+      "index": 15,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": true,
+            "value": "STAT4 improved Runx3 expression by regulating histone H3 lysine 4 trimethylation level."
+          }
+        ],
+        "context": [],
+        "effects": [],
+        "intervention": []
+      },
+      "predicate": "increases_expression",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "All 23 assertions and populated rich fields are directly supported by their saved evidence. Joint JAK2/STAT4 wording is retained in both [16,17] assertions. Glucose [9] is tied only to the explicitly stated in-vitro model induction. No contextual glucose entity is promoted to a gene-expression actor.",
+      "slug": "pmcid_pmc8605525",
+      "violations": []
+    },
+    {
+      "evidence": "Overexpression of JAK2 and STAT4, or Runx3 increased apoptosis of HUVECs, abrogating the effect of Cb1 on endothelial function.",
+      "evidence_end": 1677,
+      "evidence_start": 1550,
+      "index": 16,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "Overexpression of JAK2 and STAT4 increased apoptosis of HUVECs and abrogated the effect of Cb1 on endothelial function."
+          }
+        ],
+        "context": [],
+        "effects": [
+          {
+            "literal_in_evidence": true,
+            "value": "Increased apoptosis of HUVECs"
+          },
+          {
+            "literal_in_evidence": false,
+            "value": "Abrogated the effect of Cb1 on endothelial function"
+          }
+        ],
+        "intervention": [
+          {
+            "literal_in_evidence": true,
+            "value": "Overexpression"
+          }
+        ]
+      },
+      "predicate": "abrogates_effect_of",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "All 23 assertions and populated rich fields are directly supported by their saved evidence. Joint JAK2/STAT4 wording is retained in both [16,17] assertions. Glucose [9] is tied only to the explicitly stated in-vitro model induction. No contextual glucose entity is promoted to a gene-expression actor.",
+      "slug": "pmcid_pmc8605525",
+      "violations": []
+    },
+    {
+      "evidence": "Overexpression of JAK2 and STAT4, or Runx3 increased apoptosis of HUVECs, abrogating the effect of Cb1 on endothelial function.",
+      "evidence_end": 1677,
+      "evidence_start": 1550,
+      "index": 17,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "Overexpression of JAK2 and STAT4 increased apoptosis of HUVECs and abrogated the effect of Cb1 on endothelial function."
+          }
+        ],
+        "context": [],
+        "effects": [
+          {
+            "literal_in_evidence": true,
+            "value": "Increased apoptosis of HUVECs"
+          },
+          {
+            "literal_in_evidence": false,
+            "value": "Abrogated the effect of Cb1 on endothelial function"
+          }
+        ],
+        "intervention": [
+          {
+            "literal_in_evidence": true,
+            "value": "Overexpression"
+          }
+        ]
+      },
+      "predicate": "abrogates_effect_of",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "All 23 assertions and populated rich fields are directly supported by their saved evidence. Joint JAK2/STAT4 wording is retained in both [16,17] assertions. Glucose [9] is tied only to the explicitly stated in-vitro model induction. No contextual glucose entity is promoted to a gene-expression actor.",
+      "slug": "pmcid_pmc8605525",
+      "violations": []
+    },
+    {
+      "evidence": "Overexpression of JAK2 and STAT4, or Runx3 increased apoptosis of HUVECs, abrogating the effect of Cb1 on endothelial function.",
+      "evidence_end": 1677,
+      "evidence_start": 1550,
+      "index": 18,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "Overexpression of Runx3 increased apoptosis of HUVECs and abrogated the effect of Cb1 on endothelial function."
+          }
+        ],
+        "context": [],
+        "effects": [
+          {
+            "literal_in_evidence": true,
+            "value": "Increased apoptosis of HUVECs"
+          },
+          {
+            "literal_in_evidence": false,
+            "value": "Abrogated the effect of Cb1 on endothelial function"
+          }
+        ],
+        "intervention": [
+          {
+            "literal_in_evidence": false,
+            "value": "Overexpression of Runx3"
+          }
+        ]
+      },
+      "predicate": "abrogates_effect_of",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "All 23 assertions and populated rich fields are directly supported by their saved evidence. Joint JAK2/STAT4 wording is retained in both [16,17] assertions. Glucose [9] is tied only to the explicitly stated in-vitro model induction. No contextual glucose entity is promoted to a gene-expression actor.",
+      "slug": "pmcid_pmc8605525",
+      "violations": []
+    },
+    {
+      "evidence": "In conclusion, Cbl alleviates endothelial dysfunction by inactivation of the JAK2/STAT4 pathway and inhibition of Runx3 expression in DM.",
+      "evidence_end": 1824,
+      "evidence_start": 1687,
+      "index": 19,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "Cbl alleviates endothelial dysfunction in DM."
+          }
+        ],
+        "context": [
+          {
+            "literal_in_evidence": true,
+            "value": "DM"
+          }
+        ],
+        "effects": [],
+        "intervention": []
+      },
+      "predicate": "alleviates",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "All 23 assertions and populated rich fields are directly supported by their saved evidence. Joint JAK2/STAT4 wording is retained in both [16,17] assertions. Glucose [9] is tied only to the explicitly stated in-vitro model induction. No contextual glucose entity is promoted to a gene-expression actor.",
+      "slug": "pmcid_pmc8605525",
+      "violations": []
+    },
+    {
+      "evidence": "In conclusion, Cbl alleviates endothelial dysfunction by inactivation of the JAK2/STAT4 pathway and inhibition of Runx3 expression in DM.",
+      "evidence_end": 1824,
+      "evidence_start": 1687,
+      "index": 20,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "Cbl inactivates the JAK2/STAT4 pathway in DM."
+          }
+        ],
+        "context": [
+          {
+            "literal_in_evidence": true,
+            "value": "DM"
+          }
+        ],
+        "effects": [],
+        "intervention": []
+      },
+      "predicate": "inactivates_signaling",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "All 23 assertions and populated rich fields are directly supported by their saved evidence. Joint JAK2/STAT4 wording is retained in both [16,17] assertions. Glucose [9] is tied only to the explicitly stated in-vitro model induction. No contextual glucose entity is promoted to a gene-expression actor.",
+      "slug": "pmcid_pmc8605525",
+      "violations": []
+    },
+    {
+      "evidence": "In conclusion, Cbl alleviates endothelial dysfunction by inactivation of the JAK2/STAT4 pathway and inhibition of Runx3 expression in DM.",
+      "evidence_end": 1824,
+      "evidence_start": 1687,
+      "index": 21,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "Cbl inactivates the JAK2/STAT4 pathway in DM."
+          }
+        ],
+        "context": [
+          {
+            "literal_in_evidence": true,
+            "value": "DM"
+          }
+        ],
+        "effects": [],
+        "intervention": []
+      },
+      "predicate": "inactivates_signaling",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "All 23 assertions and populated rich fields are directly supported by their saved evidence. Joint JAK2/STAT4 wording is retained in both [16,17] assertions. Glucose [9] is tied only to the explicitly stated in-vitro model induction. No contextual glucose entity is promoted to a gene-expression actor.",
+      "slug": "pmcid_pmc8605525",
+      "violations": []
+    },
+    {
+      "evidence": "In conclusion, Cbl alleviates endothelial dysfunction by inactivation of the JAK2/STAT4 pathway and inhibition of Runx3 expression in DM.",
+      "evidence_end": 1824,
+      "evidence_start": 1687,
+      "index": 22,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "Cbl inhibits Runx3 expression in DM."
+          }
+        ],
+        "context": [
+          {
+            "literal_in_evidence": true,
+            "value": "DM"
+          }
+        ],
+        "effects": [],
+        "intervention": []
+      },
+      "predicate": "inhibits_expression",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "All 23 assertions and populated rich fields are directly supported by their saved evidence. Joint JAK2/STAT4 wording is retained in both [16,17] assertions. Glucose [9] is tied only to the explicitly stated in-vitro model induction. No contextual glucose entity is promoted to a gene-expression actor.",
+      "slug": "pmcid_pmc8605525",
+      "violations": []
+    },
+    {
+      "evidence": "EZH2 promotes colorectal cancer stem-like cell expansion by activating p21cip1-Wnt/β-catenin signaling.",
+      "evidence_end": 103,
+      "evidence_start": 0,
+      "index": 0,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": true,
+            "value": "EZH2 promotes colorectal cancer stem-like cell expansion by activating p21cip1-Wnt/β-catenin signaling."
+          }
+        ],
+        "context": [],
+        "effects": [],
+        "intervention": []
+      },
+      "predicate": "promotes_stem_like_cell_expansion",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "All 19 assertions and populated fields are supported by their saved spans. Pathway-member edges describe the qualified Wnt/beta-catenin complex, not separate demonstrated pathways. p21cip1-mediated arrest [12,13] remains a stated requirement for EZH2 pathway activation, not a new unconditional activating edge. Patient-to-EZH2 [3] is directly predicated by the source and is not a patient-to-CRC co-occurrence edge.",
+      "slug": "pmid_27172794",
+      "violations": []
+    },
+    {
+      "evidence": "EZH2 promotes colorectal cancer stem-like cell expansion by activating p21cip1-Wnt/β-catenin signaling.",
+      "evidence_end": 103,
+      "evidence_start": 0,
+      "index": 1,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "EZH2 activates p21cip1-Wnt/β-catenin signaling, thereby promoting colorectal cancer stem-like cell expansion."
+          }
+        ],
+        "context": [],
+        "effects": [
+          {
+            "literal_in_evidence": true,
+            "value": "colorectal cancer stem-like cell expansion"
+          }
+        ],
+        "intervention": []
+      },
+      "predicate": "activates_signaling",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "All 19 assertions and populated fields are supported by their saved spans. Pathway-member edges describe the qualified Wnt/beta-catenin complex, not separate demonstrated pathways. p21cip1-mediated arrest [12,13] remains a stated requirement for EZH2 pathway activation, not a new unconditional activating edge. Patient-to-EZH2 [3] is directly predicated by the source and is not a patient-to-CRC co-occurrence edge.",
+      "slug": "pmid_27172794",
+      "violations": []
+    },
+    {
+      "evidence": "EZH2 promotes colorectal cancer stem-like cell expansion by activating p21cip1-Wnt/β-catenin signaling.",
+      "evidence_end": 103,
+      "evidence_start": 0,
+      "index": 2,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "EZH2 activates p21cip1-Wnt/β-catenin signaling, thereby promoting colorectal cancer stem-like cell expansion."
+          }
+        ],
+        "context": [],
+        "effects": [
+          {
+            "literal_in_evidence": true,
+            "value": "colorectal cancer stem-like cell expansion"
+          }
+        ],
+        "intervention": []
+      },
+      "predicate": "activates_signaling",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "All 19 assertions and populated fields are supported by their saved spans. Pathway-member edges describe the qualified Wnt/beta-catenin complex, not separate demonstrated pathways. p21cip1-mediated arrest [12,13] remains a stated requirement for EZH2 pathway activation, not a new unconditional activating edge. Patient-to-EZH2 [3] is directly predicated by the source and is not a patient-to-CRC co-occurrence edge.",
+      "slug": "pmid_27172794",
+      "violations": []
+    },
+    {
+      "evidence": "Here, we found that patients with advanced stage CRC expressed high levels of polycomb group protein enhancer of zeste homologue 2 (EZH2).",
+      "evidence_end": 493,
+      "evidence_start": 355,
+      "index": 3,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "Patients with advanced stage CRC expressed high levels of EZH2."
+          }
+        ],
+        "context": [
+          {
+            "literal_in_evidence": true,
+            "value": "advanced stage CRC"
+          }
+        ],
+        "effects": [],
+        "intervention": []
+      },
+      "predicate": "expresses_high_levels",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "All 19 assertions and populated fields are supported by their saved spans. Pathway-member edges describe the qualified Wnt/beta-catenin complex, not separate demonstrated pathways. p21cip1-mediated arrest [12,13] remains a stated requirement for EZH2 pathway activation, not a new unconditional activating edge. Patient-to-EZH2 [3] is directly predicated by the source and is not a patient-to-CRC co-occurrence edge.",
+      "slug": "pmid_27172794",
+      "violations": []
+    },
+    {
+      "evidence": "Conversely, silencing EZH2 reduced CRC cell proliferation.",
+      "evidence_end": 633,
+      "evidence_start": 575,
+      "index": 4,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": true,
+            "value": "Silencing EZH2 reduced CRC cell proliferation."
+          }
+        ],
+        "context": [],
+        "effects": [],
+        "intervention": [
+          {
+            "literal_in_evidence": true,
+            "value": "silencing EZH2"
+          }
+        ]
+      },
+      "predicate": "reduces_cell_proliferation",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "All 19 assertions and populated fields are supported by their saved spans. Pathway-member edges describe the qualified Wnt/beta-catenin complex, not separate demonstrated pathways. p21cip1-mediated arrest [12,13] remains a stated requirement for EZH2 pathway activation, not a new unconditional activating edge. Patient-to-EZH2 [3] is directly predicated by the source and is not a patient-to-CRC co-occurrence edge.",
+      "slug": "pmid_27172794",
+      "violations": []
+    },
+    {
+      "evidence": "Surprisingly, EZH2 was more highly expressed in the CCS-like cell subpopulation than in the non-CCS-like cell subpopulation.",
+      "evidence_end": 758,
+      "evidence_start": 634,
+      "index": 5,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": true,
+            "value": "EZH2 was more highly expressed in the CCS-like cell subpopulation than in the non-CCS-like cell subpopulation."
+          }
+        ],
+        "context": [],
+        "effects": [],
+        "intervention": []
+      },
+      "predicate": "preferentially_expressed_in",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "All 19 assertions and populated fields are supported by their saved spans. Pathway-member edges describe the qualified Wnt/beta-catenin complex, not separate demonstrated pathways. p21cip1-mediated arrest [12,13] remains a stated requirement for EZH2 pathway activation, not a new unconditional activating edge. Patient-to-EZH2 [3] is directly predicated by the source and is not a patient-to-CRC co-occurrence edge.",
+      "slug": "pmid_27172794",
+      "violations": []
+    },
+    {
+      "evidence": "Surprisingly, EZH2 was more highly expressed in the CCS-like cell subpopulation than in the non-CCS-like cell subpopulation.",
+      "evidence_end": 758,
+      "evidence_start": 634,
+      "index": 6,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "EZH2 expression was lower in the non-CCS-like cell subpopulation than in the CCS-like cell subpopulation."
+          }
+        ],
+        "context": [],
+        "effects": [],
+        "intervention": []
+      },
+      "predicate": "expressed_at_lower_levels_in",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "All 19 assertions and populated fields are supported by their saved spans. Pathway-member edges describe the qualified Wnt/beta-catenin complex, not separate demonstrated pathways. p21cip1-mediated arrest [12,13] remains a stated requirement for EZH2 pathway activation, not a new unconditional activating edge. Patient-to-EZH2 [3] is directly predicated by the source and is not a patient-to-CRC co-occurrence edge.",
+      "slug": "pmid_27172794",
+      "violations": []
+    },
+    {
+      "evidence": "EZH2 knockdown significantly reduced the CD133+/CD44+ subpopulation",
+      "evidence_end": 826,
+      "evidence_start": 759,
+      "index": 7,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "EZH2 knockdown significantly reduced the jointly CD133+/CD44+ cell subpopulation."
+          }
+        ],
+        "context": [],
+        "effects": [],
+        "intervention": [
+          {
+            "literal_in_evidence": true,
+            "value": "EZH2 knockdown"
+          }
+        ]
+      },
+      "predicate": "reduces_double_positive_cell_subpopulation",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "All 19 assertions and populated fields are supported by their saved spans. Pathway-member edges describe the qualified Wnt/beta-catenin complex, not separate demonstrated pathways. p21cip1-mediated arrest [12,13] remains a stated requirement for EZH2 pathway activation, not a new unconditional activating edge. Patient-to-EZH2 [3] is directly predicated by the source and is not a patient-to-CRC co-occurrence edge.",
+      "slug": "pmid_27172794",
+      "violations": []
+    },
+    {
+      "evidence": "EZH2 knockdown significantly reduced the CD133+/CD44+ subpopulation",
+      "evidence_end": 826,
+      "evidence_start": 759,
+      "index": 8,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "EZH2 knockdown significantly reduced the jointly CD133+/CD44+ cell subpopulation."
+          }
+        ],
+        "context": [],
+        "effects": [],
+        "intervention": [
+          {
+            "literal_in_evidence": true,
+            "value": "EZH2 knockdown"
+          }
+        ]
+      },
+      "predicate": "reduces_double_positive_cell_subpopulation",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "All 19 assertions and populated fields are supported by their saved spans. Pathway-member edges describe the qualified Wnt/beta-catenin complex, not separate demonstrated pathways. p21cip1-mediated arrest [12,13] remains a stated requirement for EZH2 pathway activation, not a new unconditional activating edge. Patient-to-EZH2 [3] is directly predicated by the source and is not a patient-to-CRC co-occurrence edge.",
+      "slug": "pmid_27172794",
+      "violations": []
+    },
+    {
+      "evidence": "EZH2 knockdown significantly reduced the CD133+/CD44+ subpopulation, suppressed mammosphere formation, and decreased the expression of self-renewal-related genes and strongly impaired tumor-initiating capacity in a re-implantation mouse model.",
+      "evidence_end": 1002,
+      "evidence_start": 759,
+      "index": 9,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "EZH2 knockdown strongly impaired tumor-initiating capacity in a re-implantation mouse model."
+          }
+        ],
+        "context": [
+          {
+            "literal_in_evidence": true,
+            "value": "a re-implantation mouse model"
+          }
+        ],
+        "effects": [],
+        "intervention": [
+          {
+            "literal_in_evidence": true,
+            "value": "EZH2 knockdown"
+          }
+        ]
+      },
+      "predicate": "impairs_tumor_initiating_capacity",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "All 19 assertions and populated fields are supported by their saved spans. Pathway-member edges describe the qualified Wnt/beta-catenin complex, not separate demonstrated pathways. p21cip1-mediated arrest [12,13] remains a stated requirement for EZH2 pathway activation, not a new unconditional activating edge. Patient-to-EZH2 [3] is directly predicated by the source and is not a patient-to-CRC co-occurrence edge.",
+      "slug": "pmid_27172794",
+      "violations": []
+    },
+    {
+      "evidence": "Gene expression data from 433 human CRC specimens from TCGA database and in vitro results revealed that EZH2 helped maintain CCS-like cell properties by activating the Wnt/β-catenin pathway.",
+      "evidence_end": 1193,
+      "evidence_start": 1003,
+      "index": 10,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "Gene expression data from 433 human CRC specimens from TCGA and in vitro results revealed that EZH2 activates the Wnt/β-catenin pathway to help maintain CCS-like cell properties."
+          }
+        ],
+        "context": [
+          {
+            "literal_in_evidence": true,
+            "value": "gene expression data from 433 human CRC specimens from TCGA database and in vitro results"
+          }
+        ],
+        "effects": [
+          {
+            "literal_in_evidence": false,
+            "value": "maintenance of CCS-like cell properties"
+          }
+        ],
+        "intervention": []
+      },
+      "predicate": "activates_pathway",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "All 19 assertions and populated fields are supported by their saved spans. Pathway-member edges describe the qualified Wnt/beta-catenin complex, not separate demonstrated pathways. p21cip1-mediated arrest [12,13] remains a stated requirement for EZH2 pathway activation, not a new unconditional activating edge. Patient-to-EZH2 [3] is directly predicated by the source and is not a patient-to-CRC co-occurrence edge.",
+      "slug": "pmid_27172794",
+      "violations": []
+    },
+    {
+      "evidence": "Gene expression data from 433 human CRC specimens from TCGA database and in vitro results revealed that EZH2 helped maintain CCS-like cell properties by activating the Wnt/β-catenin pathway.",
+      "evidence_end": 1193,
+      "evidence_start": 1003,
+      "index": 11,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "Gene expression data from 433 human CRC specimens from TCGA and in vitro results revealed that EZH2 activates the Wnt/β-catenin pathway to help maintain CCS-like cell properties."
+          }
+        ],
+        "context": [
+          {
+            "literal_in_evidence": true,
+            "value": "gene expression data from 433 human CRC specimens from TCGA database and in vitro results"
+          }
+        ],
+        "effects": [
+          {
+            "literal_in_evidence": false,
+            "value": "maintenance of CCS-like cell properties"
+          }
+        ],
+        "intervention": []
+      },
+      "predicate": "activates_pathway",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "All 19 assertions and populated fields are supported by their saved spans. Pathway-member edges describe the qualified Wnt/beta-catenin complex, not separate demonstrated pathways. p21cip1-mediated arrest [12,13] remains a stated requirement for EZH2 pathway activation, not a new unconditional activating edge. Patient-to-EZH2 [3] is directly predicated by the source and is not a patient-to-CRC co-occurrence edge.",
+      "slug": "pmid_27172794",
+      "violations": []
+    },
+    {
+      "evidence": "We further revealed that p21cip1-mediated arrest of the cell cycle at G1/S phase is required for EZH2 activation of the Wnt/β-catenin pathway.",
+      "evidence_end": 1336,
+      "evidence_start": 1194,
+      "index": 12,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": true,
+            "value": "p21cip1-mediated arrest of the cell cycle at G1/S phase is required for EZH2 activation of the Wnt/β-catenin pathway."
+          }
+        ],
+        "context": [],
+        "effects": [],
+        "intervention": []
+      },
+      "predicate": "required_for_pathway_activation",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "All 19 assertions and populated fields are supported by their saved spans. Pathway-member edges describe the qualified Wnt/beta-catenin complex, not separate demonstrated pathways. p21cip1-mediated arrest [12,13] remains a stated requirement for EZH2 pathway activation, not a new unconditional activating edge. Patient-to-EZH2 [3] is directly predicated by the source and is not a patient-to-CRC co-occurrence edge.",
+      "slug": "pmid_27172794",
+      "violations": []
+    },
+    {
+      "evidence": "We further revealed that p21cip1-mediated arrest of the cell cycle at G1/S phase is required for EZH2 activation of the Wnt/β-catenin pathway.",
+      "evidence_end": 1336,
+      "evidence_start": 1194,
+      "index": 13,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": true,
+            "value": "p21cip1-mediated arrest of the cell cycle at G1/S phase is required for EZH2 activation of the Wnt/β-catenin pathway."
+          }
+        ],
+        "context": [],
+        "effects": [],
+        "intervention": []
+      },
+      "predicate": "required_for_pathway_activation",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "All 19 assertions and populated fields are supported by their saved spans. Pathway-member edges describe the qualified Wnt/beta-catenin complex, not separate demonstrated pathways. p21cip1-mediated arrest [12,13] remains a stated requirement for EZH2 pathway activation, not a new unconditional activating edge. Patient-to-EZH2 [3] is directly predicated by the source and is not a patient-to-CRC co-occurrence edge.",
+      "slug": "pmid_27172794",
+      "violations": []
+    },
+    {
+      "evidence": "We further revealed that p21cip1-mediated arrest of the cell cycle at G1/S phase is required for EZH2 activation of the Wnt/β-catenin pathway.",
+      "evidence_end": 1336,
+      "evidence_start": 1194,
+      "index": 14,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "EZH2 activation of the Wnt/β-catenin pathway requires p21cip1-mediated arrest of the cell cycle at G1/S phase."
+          }
+        ],
+        "context": [],
+        "effects": [],
+        "intervention": []
+      },
+      "predicate": "activates_pathway",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "All 19 assertions and populated fields are supported by their saved spans. Pathway-member edges describe the qualified Wnt/beta-catenin complex, not separate demonstrated pathways. p21cip1-mediated arrest [12,13] remains a stated requirement for EZH2 pathway activation, not a new unconditional activating edge. Patient-to-EZH2 [3] is directly predicated by the source and is not a patient-to-CRC co-occurrence edge.",
+      "slug": "pmid_27172794",
+      "violations": []
+    },
+    {
+      "evidence": "We further revealed that p21cip1-mediated arrest of the cell cycle at G1/S phase is required for EZH2 activation of the Wnt/β-catenin pathway.",
+      "evidence_end": 1336,
+      "evidence_start": 1194,
+      "index": 15,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "EZH2 activation of the Wnt/β-catenin pathway requires p21cip1-mediated arrest of the cell cycle at G1/S phase."
+          }
+        ],
+        "context": [],
+        "effects": [],
+        "intervention": []
+      },
+      "predicate": "activates_pathway",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "All 19 assertions and populated fields are supported by their saved spans. Pathway-member edges describe the qualified Wnt/beta-catenin complex, not separate demonstrated pathways. p21cip1-mediated arrest [12,13] remains a stated requirement for EZH2 pathway activation, not a new unconditional activating edge. Patient-to-EZH2 [3] is directly predicated by the source and is not a patient-to-CRC co-occurrence edge.",
+      "slug": "pmid_27172794",
+      "violations": []
+    },
+    {
+      "evidence": "the specific EZH2 inhibitor EPZ-6438",
+      "evidence_end": 1383,
+      "evidence_start": 1347,
+      "index": 16,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "EPZ-6438 is a specific inhibitor of EZH2."
+          }
+        ],
+        "context": [],
+        "effects": [],
+        "intervention": []
+      },
+      "predicate": "inhibits",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "All 19 assertions and populated fields are supported by their saved spans. Pathway-member edges describe the qualified Wnt/beta-catenin complex, not separate demonstrated pathways. p21cip1-mediated arrest [12,13] remains a stated requirement for EZH2 pathway activation, not a new unconditional activating edge. Patient-to-EZH2 [3] is directly predicated by the source and is not a patient-to-CRC co-occurrence edge.",
+      "slug": "pmid_27172794",
+      "violations": []
+    },
+    {
+      "evidence": "Moreover, the specific EZH2 inhibitor EPZ-6438, a clinical trial drug, prevented CRC progression.",
+      "evidence_end": 1434,
+      "evidence_start": 1337,
+      "index": 17,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "EPZ-6438, a specific EZH2 inhibitor and clinical trial drug, prevented CRC progression."
+          }
+        ],
+        "context": [],
+        "effects": [],
+        "intervention": []
+      },
+      "predicate": "prevents_progression",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "All 19 assertions and populated fields are supported by their saved spans. Pathway-member edges describe the qualified Wnt/beta-catenin complex, not separate demonstrated pathways. p21cip1-mediated arrest [12,13] remains a stated requirement for EZH2 pathway activation, not a new unconditional activating edge. Patient-to-EZH2 [3] is directly predicated by the source and is not a patient-to-CRC co-occurrence edge.",
+      "slug": "pmid_27172794",
+      "violations": []
+    },
+    {
+      "evidence": "Collectively, these findings revealed EZH2 maintaining CCS-like cell characteristics by arresting the cell cycle at the G1/S phase.",
+      "evidence_end": 1566,
+      "evidence_start": 1435,
+      "index": 18,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "EZH2 maintains CCS-like cell characteristics by arresting the cell cycle at the G1/S phase."
+          }
+        ],
+        "context": [],
+        "effects": [],
+        "intervention": []
+      },
+      "predicate": "maintains_stem_like_cell_characteristics",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "All 19 assertions and populated fields are supported by their saved spans. Pathway-member edges describe the qualified Wnt/beta-catenin complex, not separate demonstrated pathways. p21cip1-mediated arrest [12,13] remains a stated requirement for EZH2 pathway activation, not a new unconditional activating edge. Patient-to-EZH2 [3] is directly predicated by the source and is not a patient-to-CRC co-occurrence edge.",
+      "slug": "pmid_27172794",
+      "violations": []
+    },
+    {
+      "evidence": "PTEN mediates serum deprivation-induced cytotoxicity in H9c2 cells via the PI3K/AKT signaling pathway.",
+      "evidence_end": 102,
+      "evidence_start": 0,
+      "index": 0,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": true,
+            "value": "PTEN mediates serum deprivation-induced cytotoxicity in H9c2 cells via the PI3K/AKT signaling pathway."
+          }
+        ],
+        "context": [
+          {
+            "literal_in_evidence": true,
+            "value": "H9c2 cells"
+          }
+        ],
+        "effects": [],
+        "intervention": [
+          {
+            "literal_in_evidence": true,
+            "value": "Serum deprivation"
+          }
+        ]
+      },
+      "predicate": "mediates",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "All six assertions and populated intervention/context values are supported inside saved evidence. The PI3K-to-ROS reversal [3] includes both the knockdown result and the following inhibitor sentence contiguously; it does not rely on missing preceding text.",
+      "slug": "pmid_33652126",
+      "violations": []
+    },
+    {
+      "evidence": "The pathogenesis of acute myocardial infarction (AMI) is associated with cardiomyocyte necrosis and apoptosis.",
+      "evidence_end": 214,
+      "evidence_start": 104,
+      "index": 1,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "The pathogenesis of acute myocardial infarction is associated with cardiomyocyte necrosis."
+          }
+        ],
+        "context": [],
+        "effects": [],
+        "intervention": []
+      },
+      "predicate": "associated_with",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "All six assertions and populated intervention/context values are supported inside saved evidence. The PI3K-to-ROS reversal [3] includes both the knockdown result and the following inhibitor sentence contiguously; it does not rely on missing preceding text.",
+      "slug": "pmid_33652126",
+      "violations": []
+    },
+    {
+      "evidence": "Functionally, the PTEN knockdown experiment using siRNA inhibited serum deprivation-induced cell apoptosis, ROS production, and DNA damage, whereas increased cell proliferation.",
+      "evidence_end": 1174,
+      "evidence_start": 997,
+      "index": 2,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "PTEN knockdown using siRNA inhibited ROS production under serum deprivation."
+          }
+        ],
+        "context": [
+          {
+            "literal_in_evidence": true,
+            "value": "Serum deprivation"
+          }
+        ],
+        "effects": [],
+        "intervention": [
+          {
+            "literal_in_evidence": false,
+            "value": "PTEN knockdown using siRNA"
+          }
+        ]
+      },
+      "predicate": "knockdown_inhibits_production_of",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "All six assertions and populated intervention/context values are supported inside saved evidence. The PI3K-to-ROS reversal [3] includes both the knockdown result and the following inhibitor sentence contiguously; it does not rely on missing preceding text.",
+      "slug": "pmid_33652126",
+      "violations": []
+    },
+    {
+      "evidence": "Functionally, the PTEN knockdown experiment using siRNA inhibited serum deprivation-induced cell apoptosis, ROS production, and DNA damage, whereas increased cell proliferation. All these effects could be reversed by phosphatidylinositol 3-kinase (PI3K) inhibitor, which indicated the PI3K/protein kinase B (AKT) might be the critical component of the PTEN effects during serum deficiency.",
+      "evidence_end": 1386,
+      "evidence_start": 997,
+      "index": 3,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "A phosphatidylinositol 3-kinase inhibitor could reverse the inhibition of ROS production caused by PTEN knockdown using siRNA under serum deprivation."
+          }
+        ],
+        "context": [
+          {
+            "literal_in_evidence": true,
+            "value": "Serum deprivation"
+          }
+        ],
+        "effects": [],
+        "intervention": [
+          {
+            "literal_in_evidence": true,
+            "value": "Phosphatidylinositol 3-kinase (PI3K) inhibitor"
+          }
+        ]
+      },
+      "predicate": "inhibition_reverses_suppression_of_production",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "All six assertions and populated intervention/context values are supported inside saved evidence. The PI3K-to-ROS reversal [3] includes both the knockdown result and the following inhibitor sentence contiguously; it does not rely on missing preceding text.",
+      "slug": "pmid_33652126",
+      "violations": []
+    },
+    {
+      "evidence": "which indicated the PI3K/protein kinase B (AKT) might be the critical component of the PTEN effects during serum deficiency.",
+      "evidence_end": 1386,
+      "evidence_start": 1262,
+      "index": 4,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "PI3K might be a critical component of PTEN effects during serum deficiency."
+          }
+        ],
+        "context": [
+          {
+            "literal_in_evidence": true,
+            "value": "Serum deficiency"
+          }
+        ],
+        "effects": [],
+        "intervention": []
+      },
+      "predicate": "may_be_critical_component_of_effects_of",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "All six assertions and populated intervention/context values are supported inside saved evidence. The PI3K-to-ROS reversal [3] includes both the knockdown result and the following inhibitor sentence contiguously; it does not rely on missing preceding text.",
+      "slug": "pmid_33652126",
+      "violations": []
+    },
+    {
+      "evidence": "which indicated the PI3K/protein kinase B (AKT) might be the critical component of the PTEN effects during serum deficiency.",
+      "evidence_end": 1386,
+      "evidence_start": 1262,
+      "index": 5,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "AKT might be a critical component of PTEN effects during serum deficiency."
+          }
+        ],
+        "context": [
+          {
+            "literal_in_evidence": true,
+            "value": "Serum deficiency"
+          }
+        ],
+        "effects": [],
+        "intervention": []
+      },
+      "predicate": "may_be_critical_component_of_effects_of",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "All six assertions and populated intervention/context values are supported inside saved evidence. The PI3K-to-ROS reversal [3] includes both the knockdown result and the following inhibitor sentence contiguously; it does not rely on missing preceding text.",
+      "slug": "pmid_33652126",
+      "violations": []
+    },
+    {
+      "evidence": "we also investigated the impact of hyperglycemia reduction upon HMGB1 knockdown on the liver and kidneys",
+      "evidence_end": 150,
+      "evidence_start": 46,
+      "index": 0,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "HMGB1 knockdown was associated with hyperglycemia reduction, whose impact on the liver and kidneys was investigated."
+          }
+        ],
+        "context": [],
+        "effects": [],
+        "intervention": [
+          {
+            "literal_in_evidence": true,
+            "value": "HMGB1 knockdown"
+          }
+        ]
+      },
+      "predicate": "reduces",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "Every assertion and populated field is supported inside its own saved span. [7,8] retain only the explicit cohort comparison; liver and hyperglycemic state are absent. Timing/plasma qualifiers on [1,2,11] occur in those saved spans. [11] spans the timing sentence and following Cystatin C result contiguously. Ratio [5] says substantially higher but does not invent a comparator absent from its shorter evidence.",
+      "slug": "contract11u_passage_001",
+      "violations": []
+    },
+    {
+      "evidence": "Our assessment of the plasma samples collected from HMGB1 Flox TMX STZ and iHMGB1 KO TMX STZ mice following 10 weeks post last injection revealed that although ALT levels were comparable between the two groups",
+      "evidence_end": 442,
+      "evidence_start": 233,
+      "index": 1,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "The HMGB1 Flox TMX STZ and iHMGB1 KO TMX STZ mouse groups had comparable plasma ALT levels 10 weeks after the last injection."
+          }
+        ],
+        "context": [
+          {
+            "literal_in_evidence": true,
+            "value": "Plasma samples"
+          },
+          {
+            "literal_in_evidence": false,
+            "value": "10 weeks after the last injection"
+          },
+          {
+            "literal_in_evidence": false,
+            "value": "HMGB1 Flox TMX STZ and iHMGB1 KO TMX STZ mouse groups"
+          }
+        ],
+        "effects": [],
+        "intervention": []
+      },
+      "predicate": "has_comparable_levels_of",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "Every assertion and populated field is supported inside its own saved span. [7,8] retain only the explicit cohort comparison; liver and hyperglycemic state are absent. Timing/plasma qualifiers on [1,2,11] occur in those saved spans. [11] spans the timing sentence and following Cystatin C result contiguously. Ratio [5] says substantially higher but does not invent a comparator absent from its shorter evidence.",
+      "slug": "contract11u_passage_001",
+      "violations": []
+    },
+    {
+      "evidence": "Our assessment of the plasma samples collected from HMGB1 Flox TMX STZ and iHMGB1 KO TMX STZ mice following 10 weeks post last injection revealed that although ALT levels were comparable between the two groups, HMGB1 Flox TMX STZ mice displayed significantly elevated levels of AST, an indicator of liver damage, compared to iHMGB1 KO TMX STZ mice",
+      "evidence_end": 580,
+      "evidence_start": 233,
+      "index": 2,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "HMGB1 Flox TMX STZ mice displayed significantly higher plasma AST levels than iHMGB1 KO TMX STZ mice 10 weeks after the last injection."
+          }
+        ],
+        "context": [
+          {
+            "literal_in_evidence": true,
+            "value": "Plasma samples"
+          },
+          {
+            "literal_in_evidence": false,
+            "value": "10 weeks after the last injection"
+          },
+          {
+            "literal_in_evidence": false,
+            "value": "HMGB1 Flox TMX STZ mice compared with iHMGB1 KO TMX STZ mice"
+          }
+        ],
+        "effects": [],
+        "intervention": []
+      },
+      "predicate": "has_elevated_levels_of",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "Every assertion and populated field is supported inside its own saved span. [7,8] retain only the explicit cohort comparison; liver and hyperglycemic state are absent. Timing/plasma qualifiers on [1,2,11] occur in those saved spans. [11] spans the timing sentence and following Cystatin C result contiguously. Ratio [5] says substantially higher but does not invent a comparator absent from its shorter evidence.",
+      "slug": "contract11u_passage_001",
+      "violations": []
+    },
+    {
+      "evidence": "AST, an indicator of liver damage",
+      "evidence_end": 544,
+      "evidence_start": 511,
+      "index": 3,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "AST is an indicator of liver damage."
+          }
+        ],
+        "context": [],
+        "effects": [],
+        "intervention": []
+      },
+      "predicate": "indicator_of",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "Every assertion and populated field is supported inside its own saved span. [7,8] retain only the explicit cohort comparison; liver and hyperglycemic state are absent. Timing/plasma qualifiers on [1,2,11] occur in those saved spans. [11] spans the timing sentence and following Cystatin C result contiguously. Ratio [5] says substantially higher but does not invent a comparator absent from its shorter evidence.",
+      "slug": "contract11u_passage_001",
+      "violations": []
+    },
+    {
+      "evidence": "we calculated the widely used AST/ALT ratio, which showed that iHMGB1 KO TMX STZ mice had a ratio of approximately 1",
+      "evidence_end": 759,
+      "evidence_start": 643,
+      "index": 4,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "The AST-to-ALT ratio was approximately 1 in iHMGB1 KO TMX STZ mice."
+          }
+        ],
+        "context": [
+          {
+            "literal_in_evidence": true,
+            "value": "iHMGB1 KO TMX STZ mice"
+          }
+        ],
+        "effects": [
+          {
+            "literal_in_evidence": true,
+            "value": "Ratio of approximately 1"
+          }
+        ],
+        "intervention": []
+      },
+      "predicate": "has_ratio_to",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "Every assertion and populated field is supported inside its own saved span. [7,8] retain only the explicit cohort comparison; liver and hyperglycemic state are absent. Timing/plasma qualifiers on [1,2,11] occur in those saved spans. [11] spans the timing sentence and following Cystatin C result contiguously. Ratio [5] says substantially higher but does not invent a comparator absent from its shorter evidence.",
+      "slug": "contract11u_passage_001",
+      "violations": []
+    },
+    {
+      "evidence": "HMGB1 Flox TMX STZ mice exhibited a substantially higher AST/ALT ratio of around 2",
+      "evidence_end": 851,
+      "evidence_start": 769,
+      "index": 5,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "HMGB1 Flox TMX STZ mice exhibited a substantially higher AST-to-ALT ratio of around 2."
+          }
+        ],
+        "context": [
+          {
+            "literal_in_evidence": true,
+            "value": "HMGB1 Flox TMX STZ mice"
+          }
+        ],
+        "effects": [
+          {
+            "literal_in_evidence": false,
+            "value": "Substantially higher ratio of around 2"
+          }
+        ],
+        "intervention": []
+      },
+      "predicate": "has_ratio_to",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "Every assertion and populated field is supported inside its own saved span. [7,8] retain only the explicit cohort comparison; liver and hyperglycemic state are absent. Timing/plasma qualifiers on [1,2,11] occur in those saved spans. [11] spans the timing sentence and following Cystatin C result contiguously. Ratio [5] says substantially higher but does not invent a comparator absent from its shorter evidence.",
+      "slug": "contract11u_passage_001",
+      "violations": []
+    },
+    {
+      "evidence": "suggesting that the presence of HMGB1 contributes to more severe liver damage under hyperglycemic conditions",
+      "evidence_end": 961,
+      "evidence_start": 853,
+      "index": 6,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "The findings suggest that the presence of HMGB1 contributes to more severe liver damage under hyperglycemic conditions."
+          }
+        ],
+        "context": [
+          {
+            "literal_in_evidence": true,
+            "value": "Hyperglycemic conditions"
+          }
+        ],
+        "effects": [],
+        "intervention": []
+      },
+      "predicate": "contributes_to",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "Every assertion and populated field is supported inside its own saved span. [7,8] retain only the explicit cohort comparison; liver and hyperglycemic state are absent. Timing/plasma qualifiers on [1,2,11] occur in those saved spans. [11] spans the timing sentence and following Cystatin C result contiguously. Ratio [5] says substantially higher but does not invent a comparator absent from its shorter evidence.",
+      "slug": "contract11u_passage_001",
+      "violations": []
+    },
+    {
+      "evidence": "HMGB1 Flox TMX STZ mice displayed an increase in macrovesicular lipid droplets and greater signs of mononuclear inflammatory infiltration compared to iHMGB1 KO TMX STZ mice",
+      "evidence_end": 1314,
+      "evidence_start": 1142,
+      "index": 7,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "HMGB1 Flox TMX STZ mice displayed increased macrovesicular lipid droplets compared with iHMGB1 KO TMX STZ mice."
+          }
+        ],
+        "context": [
+          {
+            "literal_in_evidence": false,
+            "value": "HMGB1 Flox TMX STZ mice compared with iHMGB1 KO TMX STZ mice"
+          }
+        ],
+        "effects": [],
+        "intervention": []
+      },
+      "predicate": "has_increased_droplets_of",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "Every assertion and populated field is supported inside its own saved span. [7,8] retain only the explicit cohort comparison; liver and hyperglycemic state are absent. Timing/plasma qualifiers on [1,2,11] occur in those saved spans. [11] spans the timing sentence and following Cystatin C result contiguously. Ratio [5] says substantially higher but does not invent a comparator absent from its shorter evidence.",
+      "slug": "contract11u_passage_001",
+      "violations": []
+    },
+    {
+      "evidence": "HMGB1 Flox TMX STZ mice displayed an increase in macrovesicular lipid droplets and greater signs of mononuclear inflammatory infiltration compared to iHMGB1 KO TMX STZ mice",
+      "evidence_end": 1314,
+      "evidence_start": 1142,
+      "index": 8,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "HMGB1 Flox TMX STZ mice displayed greater signs of mononuclear inflammatory infiltration compared with iHMGB1 KO TMX STZ mice."
+          }
+        ],
+        "context": [
+          {
+            "literal_in_evidence": false,
+            "value": "HMGB1 Flox TMX STZ mice compared with iHMGB1 KO TMX STZ mice"
+          }
+        ],
+        "effects": [],
+        "intervention": []
+      },
+      "predicate": "has_greater_signs_of",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "Every assertion and populated field is supported inside its own saved span. [7,8] retain only the explicit cohort comparison; liver and hyperglycemic state are absent. Timing/plasma qualifiers on [1,2,11] occur in those saved spans. [11] spans the timing sentence and following Cystatin C result contiguously. Ratio [5] says substantially higher but does not invent a comparator absent from its shorter evidence.",
+      "slug": "contract11u_passage_001",
+      "violations": []
+    },
+    {
+      "evidence": "Additionally, PAS and Oil Red O staining revealed that HMGB1 Flox TMX STZ mice exhibited increased glycogen storage and lipid uptake",
+      "evidence_end": 1471,
+      "evidence_start": 1339,
+      "index": 9,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "Staining revealed increased glycogen storage in HMGB1 Flox TMX STZ mice."
+          }
+        ],
+        "context": [
+          {
+            "literal_in_evidence": true,
+            "value": "HMGB1 Flox TMX STZ mice"
+          }
+        ],
+        "effects": [],
+        "intervention": []
+      },
+      "predicate": "has_increased_storage_of",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "Every assertion and populated field is supported inside its own saved span. [7,8] retain only the explicit cohort comparison; liver and hyperglycemic state are absent. Timing/plasma qualifiers on [1,2,11] occur in those saved spans. [11] spans the timing sentence and following Cystatin C result contiguously. Ratio [5] says substantially higher but does not invent a comparator absent from its shorter evidence.",
+      "slug": "contract11u_passage_001",
+      "violations": []
+    },
+    {
+      "evidence": "Additionally, PAS and Oil Red O staining revealed that HMGB1 Flox TMX STZ mice exhibited increased glycogen storage and lipid uptake",
+      "evidence_end": 1471,
+      "evidence_start": 1339,
+      "index": 10,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "Staining revealed increased lipid uptake in HMGB1 Flox TMX STZ mice."
+          }
+        ],
+        "context": [
+          {
+            "literal_in_evidence": true,
+            "value": "HMGB1 Flox TMX STZ mice"
+          }
+        ],
+        "effects": [],
+        "intervention": []
+      },
+      "predicate": "has_increased_uptake_of",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "Every assertion and populated field is supported inside its own saved span. [7,8] retain only the explicit cohort comparison; liver and hyperglycemic state are absent. Timing/plasma qualifiers on [1,2,11] occur in those saved spans. [11] spans the timing sentence and following Cystatin C result contiguously. Ratio [5] says substantially higher but does not invent a comparator absent from its shorter evidence.",
+      "slug": "contract11u_passage_001",
+      "violations": []
+    },
+    {
+      "evidence": "We measured circulating levels of Cystatin C in plasma samples obtained from HMGB1 Flox TMX STZ and iHMGB1 KO TMX STZ mice 10 weeks post hyperglycemia development. Our results indicate that iHMGB1 KO TMX STZ mice exhibited significantly elevated levels of Cystatin C compared to HMGB1 Flox TMX STZ mice",
+      "evidence_end": 1962,
+      "evidence_start": 1660,
+      "index": 11,
+      "literal_diagnostics": {
+        "assertion": [
+          {
+            "literal_in_evidence": false,
+            "value": "iHMGB1 KO TMX STZ mice exhibited significantly higher circulating plasma Cystatin C levels than HMGB1 Flox TMX STZ mice 10 weeks after hyperglycemia development."
+          }
+        ],
+        "context": [
+          {
+            "literal_in_evidence": false,
+            "value": "Circulating levels in plasma"
+          },
+          {
+            "literal_in_evidence": false,
+            "value": "10 weeks after hyperglycemia development"
+          },
+          {
+            "literal_in_evidence": false,
+            "value": "iHMGB1 KO TMX STZ mice compared with HMGB1 Flox TMX STZ mice"
+          }
+        ],
+        "effects": [],
+        "intervention": []
+      },
+      "predicate": "has_elevated_levels_of",
+      "semantic_review": "no_known_violation",
+      "semantic_review_basis": "Every assertion and populated field is supported inside its own saved span. [7,8] retain only the explicit cohort comparison; liver and hyperglycemic state are absent. Timing/plasma qualifiers on [1,2,11] occur in those saved spans. [11] spans the timing sentence and following Cystatin C result contiguously. Ratio [5] says substantially higher but does not invent a comparator absent from its shorter evidence.",
+      "slug": "contract11u_passage_001",
+      "violations": []
+    }
+  ],
+  "review_basis": "Direct review of every normalized 12B-R relation, its supplied endpoints, assertion, populated intervention/effects/context, and exact saved evidence against the five frozen sources. Scientific equivalence is reviewer judgment, not gold annotation. Literal diagnostics do not establish semantic entailment."
+}

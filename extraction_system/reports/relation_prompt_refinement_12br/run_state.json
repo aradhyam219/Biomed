@@ -1,0 +1,27 @@
+{
+  "cases": [
+    {
+      "slug": "pmcid_pmc11824863",
+      "status": "success"
+    },
+    {
+      "slug": "pmcid_pmc8605525",
+      "status": "success"
+    },
+    {
+      "slug": "pmid_27172794",
+      "status": "success"
+    },
+    {
+      "slug": "pmid_33652126",
+      "status": "success"
+    },
+    {
+      "slug": "contract11u_passage_001",
+      "status": "success"
+    }
+  ],
+  "completed_at_utc": "2026-10-04T04:52:20.044054+00:00",
+  "started_at_utc": "2026-10-04T04:47:40.775512+00:00",
+  "status": "complete"
+}
