@@ -318,6 +318,12 @@ The semantic relation schema, prompt, parsing, and local validation remain the
 Contract 10 control. Background transport uses the OpenAI SDK's strict Pydantic
 schema conversion and checks that the transport preserves the semantic fields;
 the resulting transport schema is not exposed as the application contract.
+`LLMRelationExtractor.from_openai(..., prompt=...)` accepts an explicit
+experimental system prompt for controlled comparisons. Omission preserves the
+Contract 10 prompt in both execution modes; the override does not change schema,
+repair, validation, model configuration, or ordinary defaults. The frozen
+Contract 12B amendment and comparison live under
+`reports/relation_prompt_refinement_12b/`; promotion requires separate review.
 The candidate can be explicitly selected with:
 
 ```python

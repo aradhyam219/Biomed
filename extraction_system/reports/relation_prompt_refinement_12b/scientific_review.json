@@ -1,0 +1,384 @@
+{
+  "review_author": "Codex primary agent; direct source review; no subagents",
+  "review_basis": "All five control and refined normalized relation arrays checked against exact frozen source text. Not independent adjudication or gold labels.",
+  "index_convention": "zero-based relation array indices; stable preserved input and output hashes in the manifest/review freeze",
+  "gate": "The refinement does not satisfy the required scientific gate in this run: four new Cbl glucose-to-gene causal edges overstate observational evidence, and the dual-context target remains unresolved. Preserve control behavior; scientific promotion remains Talia/user's decision. No winner is declared.",
+  "target_findings": {
+    "Cbl/JAK2 recovery": "Yes: refined [25] E55→E58 explicitly preserves the joint JAK2-and-STAT4 overexpression result. Do not interpret this as proof of an independently tested JAK2-only intervention.",
+    "Cbl/STAT4 recovery": "Yes: refined [26] E56→E58 preserves the same joint intervention and abrogation result.",
+    "Runx3 retained": "Yes: control [21] corresponds to refined [27] E57→E58.",
+    "HG-induced HUVEC context preservation": "Partial source coverage, not the requested clean metadata improvement. Refined [11–14] still retain only rat tissues; [15–18] add glucose→gene edges with HUVEC context and high-glucose intervention but unsupported causal predicates. The original dual setting is not preserved together in the existing DM edges.",
+    "Serum deprivation → increased PTEN expression": "Yes: refined PTEN [3] E19(PTEN)→E18(H9c2), expression_increased_in, with serum deprivation in intervention and increased PTEN expression in effects. Serum deprivation is not a supplied entity, so no invented condition endpoint was used.",
+    "PTEN artificial self-edge": "No PTEN self-edge in either output or graph.",
+    "11U endpoint/topology discipline": "Preserved for all ten original relations: same endpoint IDs and directions after scientific pairing. Two explicit cohort-specific AST→ALT ratio findings aggregate to one additional graph edge. No measurement→subject edges, gene→gene cohort substitution, standalone context-edge proliferation, or exact duplicates. However, two enriched liver/hyperglycemic context values are source-supported only by the preceding sentence absent from their saved evidence."
+  },
+  "remaining_risks": [
+    "Cbl [15–18] converts an expression observation in a high-glucose setting into glucose-driven decreases/increases. Exact verbatim evidence does not validate this causal edge meaning.",
+    "The requested DM-rat-tissue/HG-HUVEC dual setting is still missing from existing Cbl/JAK2/Runx3/STAT4 DM-edge context.",
+    "11U [7–8] adds liver/hyperglycemic-state context from an adjacent sentence outside saved evidence; source-level truth is not sufficient for the assertion-within-evidence requirement.",
+    "EZH2 loses explicit maintenance outcomes on the two Wnt/β-catenin pathway edges while adding a low-value patient→CRC edge and changing the representation of high EZH2 expression.",
+    "SFPQ adds a near-redundant title result edge with another predicate and substantially expands evidence/intervention wording. No exact duplicate explosion, but graph readability can worsen.",
+    "One generation per prompt/case is not a statistical estimate of improvement; Talia should review qualified pathway/member and joint-intervention representations before any later promotion."
+  ],
+  "cases": {
+    "pmcid_pmc11824863": {
+      "equivalent_relation_pairs": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          9,
+          9
+        ],
+        [
+          10,
+          10
+        ],
+        [
+          11,
+          11
+        ],
+        [
+          12,
+          12
+        ]
+      ],
+      "assessment": "All major SFPQ result/mechanism findings remain. Explicit APP, Tau, GST, HO-1, Bcl-2/Bax and PI3K/AKT ratio outcomes are more fully populated. AAV/hippocampal manipulation is carried in evidence and metadata, with longer evidence spans. Selection is not an unqualified improvement because a title result repeats the abstract result using a distinct predicate.",
+      "control_only_scientific": "Control [3] SFPQ overexpression in the hippocampus of AD mice is no longer a standalone setup edge; its explicit AAV/hippocampal information is retained on refined result edges [4–8,10–11]. No major scientifically distinct finding was lost.",
+      "refined_only_scientific": "Refined [0] is a title formulation of cognition/memory improvement already represented by refined [4]; it is additional source evidence rather than a new experimental finding.",
+      "flags": [
+        "Refined [0] and [4] share assembled SFPQ→AD endpoints but have different cognition/recognition predicates: near-redundant graph connections, not exact duplicates.",
+        "Evidence for refined [10–11] spans the setup and several result sentences so the extra AAV/hippocampal wording is traceable, but increases reading burden.",
+        "No unsupported new causal edges identified in this case. Brain-neuron wording remains in effects rather than a separately populated context field; completeness is still imperfect."
+      ]
+    },
+    "pmcid_pmc8605525": {
+      "equivalent_relation_pairs": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          6,
+          6
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          8,
+          8
+        ],
+        [
+          9,
+          9
+        ],
+        [
+          10,
+          10
+        ],
+        [
+          11,
+          11
+        ],
+        [
+          12,
+          12
+        ],
+        [
+          13,
+          13
+        ],
+        [
+          14,
+          14
+        ],
+        [
+          15,
+          19
+        ],
+        [
+          16,
+          20
+        ],
+        [
+          17,
+          21
+        ],
+        [
+          18,
+          22
+        ],
+        [
+          19,
+          23
+        ],
+        [
+          20,
+          24
+        ],
+        [
+          21,
+          27
+        ],
+        [
+          22,
+          28
+        ],
+        [
+          23,
+          29
+        ],
+        [
+          24,
+          30
+        ],
+        [
+          25,
+          31
+        ]
+      ],
+      "assessment": "The two targeted JAK2/STAT4 relationships are recovered and Runx3 remains. All control findings remain represented. However, four new glucose→gene causal predicates exceed the observational wording, so the required conservative selection gate is not satisfied.",
+      "control_only_scientific": "None identified after scientific equivalence pairing. Most apparent exact-key differences are predicate wording changes.",
+      "refined_only_scientific": "Refined [25–26] recover the JAK2/STAT4 joint-overexpression abrogation finding. [32] adds a tentative future Cbl-based DM-treatment interpretation explicitly qualified in the source. [15–18] attempt to express the omitted HG-HUVEC observations but misstate them as glucose-caused expression changes; do not accept these as recovered causal findings.",
+      "flags": [
+        "Material unsupported causal pattern: [15] glucose reduces Cbl expression; [16–18] glucose increases JAK2, Runx3 and STAT4 expression. Evidence says only that expression differs in DM rat tissues and HG-induced HUVECs.",
+        "Dual context unresolved: [11–14] still omit HG-induced HUVECs from DM gene-expression edges. Added causal edges do not cure that metadata omission.",
+        "Joint grammar: [25–26] retain intervention \"Overexpression of JAK2 and STAT4\" and the joint assertion. There is no evidence here of two independently tested individual overexpression experiments. Both supplied participants have explicit edges, so the other participant is not hidden solely in metadata.",
+        "No exact duplicate relation/graph-evidence explosion. Several Cbl→endothelial-dysfunction title/result/conclusion records remain semantically overlapping as in control. Effects/context on many existing edges remain empty despite fuller results being available."
+      ]
+    },
+    "pmid_27172794": {
+      "equivalent_relation_pairs": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          9,
+          9
+        ],
+        [
+          10,
+          10
+        ],
+        [
+          11,
+          11
+        ],
+        [
+          12,
+          12
+        ],
+        [
+          13,
+          13
+        ],
+        [
+          14,
+          14
+        ],
+        [
+          15,
+          15
+        ],
+        [
+          16,
+          16
+        ],
+        [
+          17,
+          17
+        ],
+        [
+          18,
+          18
+        ],
+        [
+          19,
+          19
+        ]
+      ],
+      "assessment": "Core EZH2 knockdown, marker-subpopulation, tumor-initiation, Wnt/β-catenin, p21cip1 requirement and EPZ-6438 findings remain. Richness is mixed: some outcomes/settings improve, while maintenance effects disappear from the two pathway edges. Representation of the advanced-stage expression finding changes endpoints/direction relative to control.",
+      "control_only_scientific": "Control [8] explicitly represented lower expression in non-CCS-like cells; refined [8] retains that comparison in the assertion/context of its CCS edge, so it is not a lost scientific observation. Control [3] EZH2→CRC high expression is recast as refined [4] patients→EZH2; the advanced-stage setting remains.",
+      "refined_only_scientific": "Refined [3] patients→CRC has_disease is explicit cohort information but adds a low-value context relation. It is not a new mechanism or experimental result.",
+      "flags": [
+        "Endpoint/direction representation change: control [3] E13(EZH2)→E10(CRC) becomes refined [4] E9(patients)→E12(EZH2). This is a different representation of the same observation, not a claimed reversal of biological regulation.",
+        "Control [12–13] effects contain maintenance of CCS-like properties; refined [12–13] effects are empty even though assertions retain that explicit outcome.",
+        "Refined [9–10] correctly keep CD133+/CD44+ as a jointly marker-defined subpopulation rather than inventing independent reductions of marker expression. The added explanatory wording is more verbose.",
+        "No newly unsupported biological causality identified; pre-existing group/pathway projection conventions remain for review."
+      ]
+    },
+    "pmid_33652126": {
+      "equivalent_relation_pairs": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          6,
+          8
+        ]
+      ],
+      "assessment": "The direct serum-deprivation PTEN-expression result is recovered with supplied PTEN/H9c2 endpoints and explicit serum-deprivation intervention. No PTEN knockdown self-edge is added. Original mechanisms and measured ROS effects remain; reversal metadata gains explicit outcomes.",
+      "control_only_scientific": "None. Control [6] uses AKT E26; refined [8] uses its explicit full-name protein kinase B E25, which assembles to the same node.",
+      "refined_only_scientific": "[3] recovers increased PTEN expression in serum-deprived H9c2 cells. [6] separately preserves PI3K-inhibitor reversal of ROS suppression from \"All these effects could be reversed\". [9–10] project the conclusion's PI3K/AKT pathway involvement onto supplied pathway members using qualified participates_in_pathway_involved_in predicates.",
+      "flags": [
+        "No artificial PTEN→PTEN relation or graph self-edge.",
+        "Refined [9–10] are qualified pathway-member projections of a group-level conclusion, not independently measured PI3K-only/AKT-only cytotoxicity effects. Their additional graph value is a reviewer judgment.",
+        "The title serum-deprivation information moves from intervention to context in [0]; the information is preserved despite one fewer populated intervention in that matched relation.",
+        "The inhibitor→PTEN reversal edge [5] omits ROS from its metadata while the separate grounded inhibitor→ROS edge [6] captures that supplied material participant."
+      ]
+    },
+    "contract11u_passage_001": {
+      "equivalent_relation_pairs": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          8,
+          10
+        ],
+        [
+          9,
+          11
+        ]
+      ],
+      "assessment": "All ten original scientific relations retain exactly the same supplied endpoint IDs/directions. Rich fields preserve explicitly measured outcomes, cohort identity, plasma sampling and times. Two new AST/ALT ratio relations are explicitly quantified and aggregate into one edge with separate evidence per cohort. Edge discipline stays clean, but two metadata entries are not bounded by their saved evidence.",
+      "control_only_scientific": "None after pairing.",
+      "refined_only_scientific": "[4] AST/ALT ratio ≈1 in iHMGB1 KO TMX STZ mice and [5] ratio ≈2 in HMGB1 Flox TMX STZ mice. These are source-explicit measurement relationships, not measurement→subject edges.",
+      "flags": [
+        "No gratuitous measurement→subject edges, gene→gene cohort substitution, new standalone context relations, or exact duplicate relations. Cohort names remain explicit qualifiers; mice endpoints remain the frozen species mentions.",
+        "Evidence fidelity regression at [7–8]: Liver and Hyperglycemic state are present in context/assertion but only the preceding sentence supplies them; the saved evidence begins with \"HMGB1 Flox TMX STZ mice displayed\". The values are source-supported, but strict assertion-within-supporting-evidence coverage is incomplete.",
+        "Ratios [4–5] share the AST→ALT graph key but contain distinct cohort-specific values; two evidence records on one edge are useful aggregation rather than duplication."
+      ]
+    }
+  }
+}

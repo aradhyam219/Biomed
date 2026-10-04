@@ -1,0 +1,10 @@
+{
+  "dns_checks": {
+    "configured_endpoint": {
+      "dns": "resolved"
+    }
+  },
+  "no_additional_generations": true,
+  "read_only_models_request": "APIConnectionError -> ConnectError -> ConnectError -> gaierror(11001)",
+  "recorded_at_utc": "2026-10-04T03:45:31.612921+00:00"
+}

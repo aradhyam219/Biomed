@@ -253,9 +253,14 @@ class LLMRelationExtractor:
         cls,
         config: OpenAIConfig | None = None,
         *,
+        prompt: str = RELATION_EXTRACTION_SYSTEM_PROMPT,
         diagnostics_callback: Callable[[dict[str, Any]], None] | None = None,
     ) -> LLMRelationExtractor:
-        """Construct the configured OpenAI path without changing local semantics."""
+        """Construct the OpenAI path with an optional explicit experimental prompt.
+
+        Omitting ``prompt`` preserves the ordinary Contract 10 system prompt;
+        overrides do not change parsing, repair, or semantic validation.
+        """
 
         config = config or OpenAIConfig.from_environment()
         api_key = config.resolved_api_key()
@@ -296,6 +301,7 @@ class LLMRelationExtractor:
             return cls(
                 executor,
                 max_retries=config.max_retries,
+                prompt=prompt,
                 diagnostics_callback=diagnostics_callback,
                 redaction_values=redaction_values,
             )
@@ -332,6 +338,7 @@ class LLMRelationExtractor:
         return cls(
             model,
             max_retries=config.max_retries,
+            prompt=prompt,
             diagnostics_callback=diagnostics_callback,
             redaction_values=redaction_values,
         )

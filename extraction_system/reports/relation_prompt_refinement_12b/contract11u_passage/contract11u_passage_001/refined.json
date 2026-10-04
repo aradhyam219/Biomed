@@ -1,0 +1,25 @@
+{
+  "completed_at_utc": "2026-10-04T03:43:01.901323+00:00",
+  "elapsed_seconds": 0.009017,
+  "error_class": "RelationExtractionError",
+  "generation_diagnostics": [
+    {
+      "elapsed_seconds": 0.0,
+      "error_type": "APIConnectionError",
+      "execution_mode": "background",
+      "generation_number": 1,
+      "http_status": null,
+      "poll_count": 0,
+      "poll_errors": 0,
+      "repair": false,
+      "requested_background": true,
+      "requested_model": "gpt-6.1-sol",
+      "requested_reasoning_effort": "medium",
+      "requested_service_tier": "default",
+      "response_id": null,
+      "status": "create_failed"
+    }
+  ],
+  "repair_attempts": 0,
+  "status": "failed"
+}

@@ -1,0 +1,102 @@
+{
+  "case_checks": [
+    {
+      "duplicate_graph_evidence": 0,
+      "duplicate_graph_keys": 0,
+      "endpoint_ids_valid": true,
+      "exact_duplicate_normalized_relations": 0,
+      "graph_replay_exact": true,
+      "nodes_identical": true,
+      "rich_projection_exact": true,
+      "slug": "pmcid_pmc11824863",
+      "source_and_entities_frozen": true,
+      "verbatim_contiguous_evidence": true
+    },
+    {
+      "duplicate_graph_evidence": 0,
+      "duplicate_graph_keys": 0,
+      "endpoint_ids_valid": true,
+      "exact_duplicate_normalized_relations": 0,
+      "graph_replay_exact": true,
+      "nodes_identical": true,
+      "rich_projection_exact": true,
+      "slug": "pmcid_pmc8605525",
+      "source_and_entities_frozen": true,
+      "verbatim_contiguous_evidence": true
+    },
+    {
+      "duplicate_graph_evidence": 0,
+      "duplicate_graph_keys": 0,
+      "endpoint_ids_valid": true,
+      "exact_duplicate_normalized_relations": 0,
+      "graph_replay_exact": true,
+      "nodes_identical": true,
+      "rich_projection_exact": true,
+      "slug": "pmid_27172794",
+      "source_and_entities_frozen": true,
+      "verbatim_contiguous_evidence": true
+    },
+    {
+      "duplicate_graph_evidence": 0,
+      "duplicate_graph_keys": 0,
+      "endpoint_ids_valid": true,
+      "exact_duplicate_normalized_relations": 0,
+      "graph_replay_exact": true,
+      "nodes_identical": true,
+      "rich_projection_exact": true,
+      "slug": "pmid_33652126",
+      "source_and_entities_frozen": true,
+      "verbatim_contiguous_evidence": true
+    },
+    {
+      "duplicate_graph_evidence": 0,
+      "duplicate_graph_keys": 0,
+      "endpoint_ids_valid": true,
+      "exact_duplicate_normalized_relations": 0,
+      "graph_replay_exact": true,
+      "nodes_identical": true,
+      "rich_projection_exact": true,
+      "slug": "contract11u_passage_001",
+      "source_and_entities_frozen": true,
+      "verbatim_contiguous_evidence": true
+    }
+  ],
+  "control_prompt_unchanged": true,
+  "defaults_unchanged": true,
+  "mechanical_only": true,
+  "operational_recovery": {
+    "completed_cases_rerun": 0,
+    "control_generations": 0,
+    "initial_create_failures": 3,
+    "prompt_adaptations": 0,
+    "repairs": 0,
+    "successful_generations": 5
+  },
+  "preserved_harness_ast_except_from_openai": true,
+  "protected_files_verified": true,
+  "refined_is_exact_append_only": true,
+  "scientific_gate": "The refinement does not satisfy the required scientific gate in this run: four new Cbl glucose-to-gene causal edges overstate observational evidence, and the dual-context target remains unresolved. Preserve control behavior; scientific promotion remains Talia/user's decision. No winner is declared.",
+  "starting_sha": "c8f37d4c3666d0bdd2a1b46f6a2f34f5569b48e2",
+  "status": "passed",
+  "tests": [
+    {
+      "command": ".venv\\Scripts\\python.exe -m unittest discover -s tests -p test_responses_execution.py -v",
+      "count": 25,
+      "status": "passed"
+    },
+    {
+      "command": ".venv\\Scripts\\python.exe -m unittest discover -s tests -v",
+      "count": 170,
+      "log": ".cache/contract12b_full_tests.log",
+      "sha256": "bbd45386fb255e02ed37c6c2c39f250ac6850173f670767db75201065c311b49",
+      "status": "passed"
+    },
+    {
+      "command": "node --test viewer/tests/adapter.test.mjs",
+      "count": 13,
+      "status": "passed"
+    }
+  ],
+  "transport_equivalence": null,
+  "viewer_compatibility": "viewer_smoke.json: all ten control/refined graphs; unchanged adapter and Cytoscape conversion"
+}

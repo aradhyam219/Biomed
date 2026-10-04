@@ -1,0 +1,19 @@
+{
+  "cases": [
+    {
+      "slug": "pmid_27172794",
+      "status": "success"
+    },
+    {
+      "slug": "pmid_33652126",
+      "status": "success"
+    },
+    {
+      "slug": "contract11u_passage_001",
+      "status": "success"
+    }
+  ],
+  "completed_at_utc": "2026-10-04T03:49:13.617293+00:00",
+  "reason": "Initial DNS transport failures; subsequent endpoint DNS resolved",
+  "status": "complete"
+}

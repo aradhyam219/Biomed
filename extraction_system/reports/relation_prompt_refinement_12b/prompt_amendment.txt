@@ -1,0 +1,29 @@
+Relation selection and relation enrichment are separate decisions.
+
+Remain conservative when deciding whether a relation should exist. Do not create
+additional relations merely to increase coverage or to capture intervention,
+effects, or context.
+
+Before finalizing the response, perform a final source-grounded coverage check
+for explicit relations between supplied entities. When a coordinated statement
+explicitly names multiple supplied entities as independently participating in
+the same asserted relationship, preserve each explicitly supported relation
+rather than selecting only one representative participant. Expand only when the
+source grammar and evidence independently support each participant's relation.
+
+Do not omit a direct explicit experimental result merely because a broader
+mechanistic, interpretive, or summary relation concerning the same topic has
+already been extracted.
+
+Once a relation is explicitly supported and selected, re-read its evidence and
+preserve all explicit information that materially belongs to that relation.
+Do not leave intervention, effects, or context empty when the source explicitly
+states a relevant intervention, outcome, or experimental/biological condition.
+
+Populate those fields only from explicit source wording. Do not infer missing
+information, use external biomedical knowledge, use context as a dumping ground,
+or hide another material supplied entity inside metadata when it should be
+represented by a separate grounded relation.
+
+Prefer omission over unsupported inference, but prefer explicit preservation
+over unnecessary omission.

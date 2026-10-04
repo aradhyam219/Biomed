@@ -560,6 +560,51 @@ class BackgroundLifecycleTests(unittest.TestCase):
 
 
 class ProductionBoundaryTests(unittest.TestCase):
+    def test_explicit_prompt_override_is_isolated_and_survives_background_repair(self):
+        experimental = RELATION_EXTRACTION_SYSTEM_PROMPT + "\nExperimental coverage audit.\n"
+        client = _FakeOpenAI()
+        client.responses = _FakeResponses([
+            _response("resp_invalid", output_text=json.dumps({"relations": [{**RELATION, "evidence": "absent"}]})),
+            _response("resp_valid", output_text=json.dumps({"relations": [RELATION]})),
+            _response("resp_control", output_text=json.dumps({"relations": [RELATION]})),
+        ])
+        config = OpenAIConfig(api_key=API_KEY, background=True, max_retries=1)
+        with patch("openai.OpenAI", return_value=client):
+            refined = LLMRelationExtractor.from_openai(config, prompt=experimental)
+            self.assertEqual(len(refined.extract_relations(TEXT, ENTITIES).relations), 1)
+            control = LLMRelationExtractor.from_openai(config)
+            self.assertEqual(len(control.extract_relations(TEXT, ENTITIES).relations), 1)
+        calls = client.responses.create_calls
+        self.assertEqual(calls[0]["input"], _build_prompt(TEXT, ENTITIES, experimental))
+        self.assertTrue(calls[1]["input"].startswith(calls[0]["input"]))
+        self.assertIn("REPAIR INSTRUCTION:", calls[1]["input"])
+        self.assertEqual(calls[2]["input"], _build_prompt(TEXT, ENTITIES, RELATION_EXTRACTION_SYSTEM_PROMPT))
+        self.assertEqual(calls[0]["text"], calls[2]["text"])
+
+    def test_explicit_prompt_override_reaches_foreground_without_changing_default(self):
+        prompts = []
+
+        class Runnable:
+            def invoke(self, prompt):
+                prompts.append(prompt)
+                return {"relations": [RELATION]}
+
+        class Chat:
+            def __init__(self, **kwargs):
+                pass
+
+            def with_structured_output(self, *args, **kwargs):
+                return Runnable()
+
+        config = OpenAIConfig(api_key=API_KEY)
+        with patch.dict(sys.modules, {"langchain_openai": SimpleNamespace(ChatOpenAI=Chat)}):
+            LLMRelationExtractor.from_openai(config, prompt="Explicit experimental prompt").extract_relations(TEXT, ENTITIES)
+            LLMRelationExtractor.from_openai(config).extract_relations(TEXT, ENTITIES)
+        self.assertEqual(prompts, [
+            _build_prompt(TEXT, ENTITIES, "Explicit experimental prompt"),
+            _build_prompt(TEXT, ENTITIES, RELATION_EXTRACTION_SYSTEM_PROMPT),
+        ])
+
     def setUp(self):
         _FakeOpenAI.instances.clear()
 

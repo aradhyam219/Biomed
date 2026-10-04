@@ -1,0 +1,2 @@
+# Exact frozen artifact bytes must survive Git round trips on Windows.
+* -text

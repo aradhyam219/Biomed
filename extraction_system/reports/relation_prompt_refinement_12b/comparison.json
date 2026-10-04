@@ -1,0 +1,197 @@
+[
+  {
+    "control_edges": 13,
+    "control_relations": 13,
+    "edges": 13,
+    "elapsed_seconds": 57.261381,
+    "input_tokens": 3834,
+    "matched_finding_richness": {
+      "control": {
+        "context": 8,
+        "effects": 2,
+        "intervention": 8
+      },
+      "refined": {
+        "context": 8,
+        "effects": 10,
+        "intervention": 8
+      }
+    },
+    "operational_recovery": false,
+    "output_tokens": 3229,
+    "reasoning_tokens": 990,
+    "relations": 13,
+    "repairs": 0,
+    "richness": {
+      "control": {
+        "context": 9,
+        "effects": 3,
+        "intervention": 9
+      },
+      "refined": {
+        "context": 9,
+        "effects": 11,
+        "intervention": 9
+      }
+    },
+    "service_tier": "default",
+    "slug": "pmcid_pmc11824863",
+    "status": "success"
+  },
+  {
+    "control_edges": 25,
+    "control_relations": 26,
+    "edges": 31,
+    "elapsed_seconds": 71.979585,
+    "input_tokens": 5372,
+    "matched_finding_richness": {
+      "control": {
+        "context": 15,
+        "effects": 2,
+        "intervention": 9
+      },
+      "refined": {
+        "context": 15,
+        "effects": 2,
+        "intervention": 9
+      }
+    },
+    "operational_recovery": false,
+    "output_tokens": 4454,
+    "reasoning_tokens": 1026,
+    "relations": 33,
+    "repairs": 0,
+    "richness": {
+      "control": {
+        "context": 15,
+        "effects": 2,
+        "intervention": 9
+      },
+      "refined": {
+        "context": 21,
+        "effects": 4,
+        "intervention": 15
+      }
+    },
+    "service_tier": "default",
+    "slug": "pmcid_pmc8605525",
+    "status": "success"
+  },
+  {
+    "control_edges": 18,
+    "control_relations": 20,
+    "edges": 18,
+    "elapsed_seconds": 67.012314,
+    "input_tokens": 3839,
+    "matched_finding_richness": {
+      "control": {
+        "context": 5,
+        "effects": 7,
+        "intervention": 5
+      },
+      "refined": {
+        "context": 8,
+        "effects": 8,
+        "intervention": 5
+      }
+    },
+    "operational_recovery": true,
+    "output_tokens": 3282,
+    "reasoning_tokens": 918,
+    "relations": 20,
+    "repairs": 0,
+    "richness": {
+      "control": {
+        "context": 5,
+        "effects": 7,
+        "intervention": 5
+      },
+      "refined": {
+        "context": 9,
+        "effects": 8,
+        "intervention": 5
+      }
+    },
+    "service_tier": "default",
+    "slug": "pmid_27172794",
+    "status": "success"
+  },
+  {
+    "control_edges": 6,
+    "control_relations": 7,
+    "edges": 9,
+    "elapsed_seconds": 53.055229,
+    "input_tokens": 3394,
+    "matched_finding_richness": {
+      "control": {
+        "context": 5,
+        "effects": 0,
+        "intervention": 4
+      },
+      "refined": {
+        "context": 6,
+        "effects": 2,
+        "intervention": 3
+      }
+    },
+    "operational_recovery": true,
+    "output_tokens": 2707,
+    "reasoning_tokens": 975,
+    "relations": 11,
+    "repairs": 0,
+    "richness": {
+      "control": {
+        "context": 5,
+        "effects": 0,
+        "intervention": 4
+      },
+      "refined": {
+        "context": 9,
+        "effects": 4,
+        "intervention": 5
+      }
+    },
+    "service_tier": "default",
+    "slug": "pmid_33652126",
+    "status": "success"
+  },
+  {
+    "control_edges": 10,
+    "control_relations": 10,
+    "edges": 11,
+    "elapsed_seconds": 44.915059,
+    "input_tokens": 5486,
+    "matched_finding_richness": {
+      "control": {
+        "context": 4,
+        "effects": 2,
+        "intervention": 1
+      },
+      "refined": {
+        "context": 8,
+        "effects": 9,
+        "intervention": 1
+      }
+    },
+    "operational_recovery": true,
+    "output_tokens": 2667,
+    "reasoning_tokens": 516,
+    "relations": 12,
+    "repairs": 0,
+    "richness": {
+      "control": {
+        "context": 4,
+        "effects": 2,
+        "intervention": 1
+      },
+      "refined": {
+        "context": 10,
+        "effects": 11,
+        "intervention": 1
+      }
+    },
+    "service_tier": "default",
+    "slug": "contract11u_passage_001",
+    "status": "success"
+  }
+]
