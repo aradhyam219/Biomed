@@ -296,11 +296,11 @@ for final evaluation.
 The controlled LLM relation implementation is an active downstream capability of
 the composed HunFlair2 path. It accepts only the normalized entities returned by
 the entity seam and returns relations after the existing evidence, endpoint, and
-negation validation. The OpenAI path keeps the existing LangChain Responses
-execution as its default and also supports opt-in background Responses execution
-inside `llm_relation_extraction` and `responses_execution`. `OpenAIConfig`
-defaults preserve `gpt-5.6-luna`, `reasoning.effort=max`, a `128000` output-token
-ceiling, synchronous execution, and no requested service tier. The public
+negation validation. The OpenAI path defaults to bounded background Responses
+execution inside `llm_relation_extraction` and `responses_execution`.
+`OpenAIConfig` defaults to `gpt-6.1-sol`, `reasoning.effort=medium`, a `128000`
+output-token ceiling, `background=True`, and `service_tier="default"` (Standard
+service). Explicit `background=False` retains the LangChain Responses path. The public
 `max_completion_tokens` configuration name remains for compatibility and maps to
 the Responses API output-token field.
 
@@ -321,10 +321,11 @@ the resulting transport schema is not exposed as the application contract.
 `LLMRelationExtractor.from_openai(..., prompt=...)` accepts an explicit
 experimental system prompt for controlled comparisons. Omission preserves the
 Contract 10 prompt in both execution modes; the override does not change schema,
-repair, validation, model configuration, or ordinary defaults. The frozen
-Contract 12B amendment and comparison live under
-`reports/relation_prompt_refinement_12b/`; promotion requires separate review.
-The candidate can be explicitly selected with:
+repair, validation, model configuration, or ordinary defaults. The 12B, 12B-R,
+and 12B-F prompts remain experiment history only and do not participate in
+ordinary request construction. The production prompt is the
+accepted Contract 10 / 12A control, protected by a UTF-8 SHA-256 regression guard.
+The ordinary default configuration is equivalent to:
 
 ```python
 OpenAIConfig(
@@ -344,9 +345,10 @@ the per-generation timeout defaults to 900 seconds through
 `BIOMEDICAL_RELATION_TIMEOUT_SECONDS`. That timeout bounds one provider
 generation and is an operational control, not a scientific pass/fail rule.
 Callers can read `last_generation_diagnostics` or provide a diagnostics callback.
-GPT-6.1 Sol with medium reasoning and Standard service has passed the frozen
-four-paper production-path regression. Scientific review and a separate
-promotion decision remain pending; production defaults remain unchanged.
+GPT-6.1 Sol with medium reasoning, Standard service, background execution, and
+the unchanged Contract 10 / 12A control prompt is the promoted production
+default. The previous Luna/max/foreground configuration remains available
+through explicit overrides.
 The legacy GLiREL-compatible relation/evaluation path and historical Contract 11
 reports remain preserved;
 the production provider does not depend on report-directory code.

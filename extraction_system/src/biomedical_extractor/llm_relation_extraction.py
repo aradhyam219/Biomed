@@ -3,8 +3,8 @@
 The harness owns prompt construction, OpenAI model creation, structured-output
 binding, and a small repair budget.  It returns only the local relation contract
 from :mod:`biomedical_extractor.relation_extraction`. The default OpenAI path
-uses LangChain; an explicit background setting uses the bounded Responses
-executor. Provider-specific objects remain behind this relation boundary.
+uses the bounded background Responses executor; an explicit foreground setting
+uses LangChain. Provider-specific objects remain behind this relation boundary.
 """
 
 from __future__ import annotations
@@ -31,8 +31,8 @@ from .responses_execution import (
     ResponsesExecutionError,
 )
 
-DEFAULT_LLM_RELATION_MODEL = "gpt-5.6-luna"
-DEFAULT_LLM_REASONING_EFFORT = "max"
+DEFAULT_LLM_RELATION_MODEL = "gpt-6.1-sol"
+DEFAULT_LLM_REASONING_EFFORT = "medium"
 DEFAULT_LLM_MAX_COMPLETION_TOKENS = 128000
 SUPPORTED_LLM_REASONING_EFFORTS = (
     "none",
@@ -107,8 +107,8 @@ class OpenAIConfig:
     reasoning_effort: str = DEFAULT_LLM_REASONING_EFFORT
     max_completion_tokens: int | None = DEFAULT_LLM_MAX_COMPLETION_TOKENS
     max_retries: int = 2
-    background: bool = False
-    service_tier: str | None = None
+    background: bool = True
+    service_tier: str | None = "default"
     poll_interval_seconds: float = 3.0
     generation_timeout_seconds: float = 900.0
 
@@ -156,7 +156,7 @@ class OpenAIConfig:
 
         max_completion_tokens = os.getenv("BIOMEDICAL_RELATION_MAX_COMPLETION_TOKENS")
         background = _parse_environment_bool(
-            os.getenv("BIOMEDICAL_RELATION_BACKGROUND", "false"),
+            os.getenv("BIOMEDICAL_RELATION_BACKGROUND", "true"),
             "BIOMEDICAL_RELATION_BACKGROUND",
         )
         poll_interval = os.getenv("BIOMEDICAL_RELATION_POLL_INTERVAL_SECONDS")
@@ -177,7 +177,7 @@ class OpenAIConfig:
             ),
             max_retries=int(os.getenv("BIOMEDICAL_RELATION_MAX_RETRIES", "2")),
             background=background,
-            service_tier=os.getenv("BIOMEDICAL_RELATION_SERVICE_TIER") or None,
+            service_tier=os.getenv("BIOMEDICAL_RELATION_SERVICE_TIER", "default") or None,
             poll_interval_seconds=(float(poll_interval) if poll_interval else 3.0),
             generation_timeout_seconds=(
                 float(generation_timeout) if generation_timeout else 900.0

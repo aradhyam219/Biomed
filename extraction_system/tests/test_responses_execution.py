@@ -13,8 +13,6 @@ from unittest.mock import patch
 from biomedical_extractor.entity_extraction import Entity
 from biomedical_extractor.llm_relation_extraction import (
     DEFAULT_LLM_MAX_COMPLETION_TOKENS,
-    DEFAULT_LLM_RELATION_MODEL,
-    DEFAULT_LLM_REASONING_EFFORT,
     LLMRelationExtractor,
     OpenAIConfig,
     RELATION_EXTRACTION_SYSTEM_PROMPT,
@@ -183,37 +181,37 @@ def _executor(
 
 
 class OpenAIConfigTests(unittest.TestCase):
-    def test_defaults_preserve_the_existing_foreground_candidate(self):
+    def test_defaults_select_sol_medium_standard_background(self):
         config = OpenAIConfig(api_key=API_KEY, base_url=BASE_URL)
 
-        self.assertEqual(config.model, DEFAULT_LLM_RELATION_MODEL)
-        self.assertEqual(config.reasoning_effort, DEFAULT_LLM_REASONING_EFFORT)
+        self.assertEqual(config.model, "gpt-6.1-sol")
+        self.assertEqual(config.reasoning_effort, "medium")
         self.assertEqual(config.max_completion_tokens, DEFAULT_LLM_MAX_COMPLETION_TOKENS)
         self.assertEqual(config.max_retries, 2)
-        self.assertFalse(config.background)
-        self.assertIsNone(config.service_tier)
+        self.assertTrue(config.background)
+        self.assertEqual(config.service_tier, "default")
         self.assertEqual(config.poll_interval_seconds, 3.0)
         self.assertEqual(config.generation_timeout_seconds, 900.0)
         self.assertNotIn(API_KEY, repr(config))
         self.assertNotIn(BASE_URL, repr(config))
 
-    def test_environment_can_explicitly_select_sol_medium_standard_background(self):
+    def test_environment_can_override_promoted_defaults(self):
         values = {
             "OPENAI_API_KEY": API_KEY,
-            "BIOMEDICAL_RELATION_MODEL": "gpt-6.1-sol",
-            "BIOMEDICAL_RELATION_REASONING_EFFORT": "medium",
-            "BIOMEDICAL_RELATION_BACKGROUND": "true",
-            "BIOMEDICAL_RELATION_SERVICE_TIER": "default",
+            "BIOMEDICAL_RELATION_MODEL": "gpt-5.6-luna",
+            "BIOMEDICAL_RELATION_REASONING_EFFORT": "max",
+            "BIOMEDICAL_RELATION_BACKGROUND": "false",
+            "BIOMEDICAL_RELATION_SERVICE_TIER": "flex",
             "BIOMEDICAL_RELATION_POLL_INTERVAL_SECONDS": "4.5",
             "BIOMEDICAL_RELATION_TIMEOUT_SECONDS": "720",
         }
         with patch.dict(os.environ, values, clear=True):
             config = OpenAIConfig.from_environment()
 
-        self.assertEqual(config.model, "gpt-6.1-sol")
-        self.assertEqual(config.reasoning_effort, "medium")
-        self.assertTrue(config.background)
-        self.assertEqual(config.service_tier, "default")
+        self.assertEqual(config.model, "gpt-5.6-luna")
+        self.assertEqual(config.reasoning_effort, "max")
+        self.assertFalse(config.background)
+        self.assertEqual(config.service_tier, "flex")
         self.assertEqual(config.poll_interval_seconds, 4.5)
         self.assertEqual(config.generation_timeout_seconds, 720.0)
         self.assertEqual(config.max_retries, 2)
@@ -238,6 +236,12 @@ class OpenAIConfigTests(unittest.TestCase):
 
 
 class StrictTransportTests(unittest.TestCase):
+    def test_production_prompt_is_accepted_contract_10_12a_control(self):
+        self.assertEqual(
+            hashlib.sha256(RELATION_EXTRACTION_SYSTEM_PROMPT.encode("utf-8")).hexdigest(),
+            "13f38a6e94db74b534eb0df0b139287ace2e714fc908276ce4c3572f9b25836f",
+        )
+
     def test_public_sdk_strict_transport_preserves_semantic_schema(self):
         semantic = SCHEMA.model_json_schema()
         transport = strict_transport_schema(SCHEMA)
@@ -596,7 +600,7 @@ class ProductionBoundaryTests(unittest.TestCase):
             def with_structured_output(self, *args, **kwargs):
                 return Runnable()
 
-        config = OpenAIConfig(api_key=API_KEY)
+        config = OpenAIConfig(api_key=API_KEY, background=False)
         with patch.dict(sys.modules, {"langchain_openai": SimpleNamespace(ChatOpenAI=Chat)}):
             LLMRelationExtractor.from_openai(config, prompt="Explicit experimental prompt").extract_relations(TEXT, ENTITIES)
             LLMRelationExtractor.from_openai(config).extract_relations(TEXT, ENTITIES)
@@ -608,16 +612,9 @@ class ProductionBoundaryTests(unittest.TestCase):
     def setUp(self):
         _FakeOpenAI.instances.clear()
 
-    def test_candidate_config_reaches_production_responses_boundary(self):
-        config = OpenAIConfig(
-            model="gpt-6.1-sol",
-            api_key=API_KEY,
-            base_url=BASE_URL,
-            reasoning_effort="medium",
-            background=True,
-            service_tier="default",
-            max_retries=2,
-        )
+    def test_ordinary_environment_defaults_reach_production_responses_boundary(self):
+        with patch.dict(os.environ, {"OPENAI_API_KEY": API_KEY, "OPENAI_BASE_URL": BASE_URL}, clear=True):
+            config = OpenAIConfig.from_environment()
         snapshots = []
         with patch("openai.OpenAI", _FakeOpenAI):
             extractor = LLMRelationExtractor.from_openai(
@@ -853,7 +850,7 @@ class ProductionBoundaryTests(unittest.TestCase):
             {"langchain_openai": SimpleNamespace(ChatOpenAI=_FakeChatOpenAI)},
         ):
             extractor = LLMRelationExtractor.from_openai(
-                OpenAIConfig(api_key=API_KEY, base_url=BASE_URL, max_retries=2)
+                OpenAIConfig(api_key=API_KEY, base_url=BASE_URL, max_retries=2, background=False)
             )
             with self.assertRaisesRegex(
                 RelationExtractionError, "provider invocation failed"

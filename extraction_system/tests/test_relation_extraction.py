@@ -354,7 +354,7 @@ class RelationContractTests(unittest.TestCase):
 
         self.assertEqual(len(runnable.prompts), 1)
 
-    def test_openai_defaults_use_luna_reasoning_without_sampling_parameters(self):
+    def test_explicit_foreground_uses_responses_without_sampling_parameters(self):
         captured = {}
 
         class _FakeChatOpenAI:
@@ -368,12 +368,12 @@ class RelationContractTests(unittest.TestCase):
             sys.modules,
             {"langchain_openai": SimpleNamespace(ChatOpenAI=_FakeChatOpenAI)},
         ):
-            LLMRelationExtractor.from_openai(OpenAIConfig(api_key="test-key"))
+            LLMRelationExtractor.from_openai(OpenAIConfig(api_key="test-key", background=False))
 
         self.assertEqual(OpenAIConfig().model, DEFAULT_LLM_RELATION_MODEL)
-        self.assertEqual(captured["model"], "gpt-5.6-luna")
+        self.assertEqual(captured["model"], "gpt-6.1-sol")
         self.assertTrue(captured["use_responses_api"])
-        self.assertEqual(captured["reasoning"], {"effort": "max"})
+        self.assertEqual(captured["reasoning"], {"effort": "medium"})
         self.assertNotIn("reasoning_effort", captured)
         self.assertEqual(captured["max_completion_tokens"], 128000)
         self.assertNotIn("temperature", captured)
@@ -400,14 +400,17 @@ class RelationContractTests(unittest.TestCase):
         self.assertIn("input", payload)
         self.assertNotIn("messages", payload)
 
-    def test_environment_defaults_match_luna_live_smoke_configuration(self):
+    def test_environment_defaults_match_promoted_configuration(self):
         with patch.dict(os.environ, {}, clear=True):
             config = OpenAIConfig.from_environment()
 
-        self.assertEqual(config.reasoning_effort, "max")
+        self.assertEqual(config.model, "gpt-6.1-sol")
+        self.assertEqual(config.reasoning_effort, "medium")
+        self.assertTrue(config.background)
+        self.assertEqual(config.service_tier, "default")
         self.assertEqual(config.max_completion_tokens, 128000)
 
-    def test_environment_overrides_luna_reasoning_and_completion_budget(self):
+    def test_environment_overrides_reasoning_and_completion_budget(self):
         with patch.dict(
             os.environ,
             {

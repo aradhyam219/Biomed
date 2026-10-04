@@ -13,8 +13,13 @@ mentions into document-local entities, and the composed prototype can expose
 those nodes with grounded relations as deterministic graph-ready JSON.
 
 The active prototype uses pretrained HunFlair2 for NER and the existing grounded
-LLM relation extractor downstream. Target-domain NER evaluation and fine-tuning
-remain postponed; biomedical entity normalization/linking remains a later stage.
+LLM relation extractor downstream. Ordinary relation extraction uses GPT-6.1 Sol
+with medium reasoning, Standard/default service tier, and bounded Responses API
+background execution. Its original Contract 10 / 12A conservative
+evidence-grounded prompt and semantic relation contract remain unchanged.
+Explicit model, reasoning, tier, and execution overrides remain supported.
+Target-domain NER evaluation and fine-tuning remain postponed; biomedical entity
+normalization/linking remains a later stage.
 
 ## Active product flow
 
@@ -65,7 +70,7 @@ AIONER / PubTator-style NER remains preserved as evaluation/history evidence.
 - the model-independent `EntityExtractor` / `Entity` contract;
 - source-span, schema, stable-ID, and confidence validation;
 - the existing grounded LLM relation extractor over supplied entities;
-- an opt-in background Responses execution mode for relation extraction, with
+- default background Responses execution for relation extraction, with
   strict provider transport kept separate from the unchanged semantic relation
   contract, prompt, parsing, and local validation;
 - NER evaluation artifacts as preserved evidence, without reopening target-domain
@@ -107,11 +112,9 @@ not include:
 - target-domain NER evaluation, model selection, or fine-tuning; the existing
   reconnaissance, pilot, validator, and training-readiness assets remain
   preserved for later use;
-- relation-model default promotion; GPT-6.1 Sol with medium reasoning and
-  Standard service is an explicitly selectable background candidate validated
-  through a frozen four-paper production-path regression. Existing production
-  defaults remain in place pending scientific review and a separate promotion
-  decision;
+- further relation-model selection or prompt refinement; the selected Sol medium
+  background configuration and Contract 10 / 12A control prompt are the
+  production default;
 - biomedical entity normalization/linking, meaning resolution of a mention to a
   canonical biomedical identity or identifier;
 - collapsing the isolated HunFlair2 runtime into the production dependency graph;

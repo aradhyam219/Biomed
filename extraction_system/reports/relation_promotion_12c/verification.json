@@ -1,0 +1,198 @@
+{
+  "contract": "12C",
+  "purpose": "Operational production-default promotion; no scientific evaluation",
+  "starting_sha": "487cbd6a1567bd008a4b05169b5f6cc39bcae65f",
+  "production_prompt_changed": false,
+  "production_prompt_sha256": "13f38a6e94db74b534eb0df0b139287ace2e714fc908276ce4c3572f9b25836f",
+  "python_validation": {
+    "status": "passed",
+    "test_count": 88,
+    "suites": {
+      "test_relation_extraction": 16,
+      "test_responses_execution": 26,
+      "test_relation_cli": 2,
+      "test_llm_cli": 4,
+      "test_graph": 13,
+      "test_llm_pipeline": 9,
+      "test_entity_assembly": 12,
+      "test_paper_roles": 6
+    }
+  },
+  "viewer_tests": {
+    "status": "passed",
+    "test_count": 13,
+    "command": "node --test viewer/tests/adapter.test.mjs"
+  },
+  "frozen_graph_compatibility": {
+    "status": "passed",
+    "mechanism": "unchanged viewer adapter and Cytoscape element conversion",
+    "checks": [
+      {
+        "graph": "reports/relation_migration_12a/graphs/baseline/pmcid_pmc11824863.json",
+        "status": "passed",
+        "canonical_nodes": 20,
+        "unconnected_nodes": 3,
+        "relations": 19,
+        "displayed_connections": 16,
+        "directional_bundles": 2,
+        "mixed_negation_bundles": 1,
+        "self_relations": 0,
+        "evidence_instances": 19,
+        "rich_evidence_preserved": true,
+        "hidden_and_revealed_nodes_checked": true
+      },
+      {
+        "graph": "reports/relation_migration_12a/graphs/baseline/pmcid_pmc8605525.json",
+        "status": "passed",
+        "canonical_nodes": 20,
+        "unconnected_nodes": 6,
+        "relations": 29,
+        "displayed_connections": 22,
+        "directional_bundles": 5,
+        "mixed_negation_bundles": 0,
+        "self_relations": 0,
+        "evidence_instances": 30,
+        "rich_evidence_preserved": true,
+        "hidden_and_revealed_nodes_checked": true
+      },
+      {
+        "graph": "reports/relation_migration_12a/graphs/baseline/pmid_27172794.json",
+        "status": "passed",
+        "canonical_nodes": 15,
+        "unconnected_nodes": 2,
+        "relations": 19,
+        "displayed_connections": 15,
+        "directional_bundles": 3,
+        "mixed_negation_bundles": 0,
+        "self_relations": 0,
+        "evidence_instances": 22,
+        "rich_evidence_preserved": true,
+        "hidden_and_revealed_nodes_checked": true
+      },
+      {
+        "graph": "reports/relation_migration_12a/graphs/baseline/pmid_33652126.json",
+        "status": "passed",
+        "canonical_nodes": 10,
+        "unconnected_nodes": 2,
+        "relations": 10,
+        "displayed_connections": 8,
+        "directional_bundles": 2,
+        "mixed_negation_bundles": 0,
+        "self_relations": 1,
+        "evidence_instances": 12,
+        "rich_evidence_preserved": true,
+        "hidden_and_revealed_nodes_checked": true
+      },
+      {
+        "graph": "reports/relation_migration_12a/graphs/candidate/pmcid_pmc11824863.json",
+        "status": "passed",
+        "canonical_nodes": 20,
+        "unconnected_nodes": 6,
+        "relations": 13,
+        "displayed_connections": 12,
+        "directional_bundles": 1,
+        "mixed_negation_bundles": 0,
+        "self_relations": 0,
+        "evidence_instances": 13,
+        "rich_evidence_preserved": true,
+        "hidden_and_revealed_nodes_checked": true
+      },
+      {
+        "graph": "reports/relation_migration_12a/graphs/candidate/pmcid_pmc8605525.json",
+        "status": "passed",
+        "canonical_nodes": 20,
+        "unconnected_nodes": 6,
+        "relations": 25,
+        "displayed_connections": 20,
+        "directional_bundles": 4,
+        "mixed_negation_bundles": 0,
+        "self_relations": 0,
+        "evidence_instances": 26,
+        "rich_evidence_preserved": true,
+        "hidden_and_revealed_nodes_checked": true
+      },
+      {
+        "graph": "reports/relation_migration_12a/graphs/candidate/pmid_27172794.json",
+        "status": "passed",
+        "canonical_nodes": 15,
+        "unconnected_nodes": 3,
+        "relations": 18,
+        "displayed_connections": 12,
+        "directional_bundles": 4,
+        "mixed_negation_bundles": 0,
+        "self_relations": 0,
+        "evidence_instances": 20,
+        "rich_evidence_preserved": true,
+        "hidden_and_revealed_nodes_checked": true
+      },
+      {
+        "graph": "reports/relation_migration_12a/graphs/candidate/pmid_33652126.json",
+        "status": "passed",
+        "canonical_nodes": 10,
+        "unconnected_nodes": 2,
+        "relations": 6,
+        "displayed_connections": 5,
+        "directional_bundles": 1,
+        "mixed_negation_bundles": 0,
+        "self_relations": 0,
+        "evidence_instances": 7,
+        "rich_evidence_preserved": true,
+        "hidden_and_revealed_nodes_checked": true
+      }
+    ]
+  },
+  "live_default_smoke": {
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "medium",
+    "background": true,
+    "service_tier": "default",
+    "max_output_tokens": 128000,
+    "prompt_sha256": "13f38a6e94db74b534eb0df0b139287ace2e714fc908276ce4c3572f9b25836f",
+    "valid_relation_count": 1,
+    "semantic_validation": "passed",
+    "status": "passed",
+    "diagnostics": [
+      {
+        "generation_number": 1,
+        "repair": false,
+        "execution_mode": "background",
+        "status": "success",
+        "requested_background": true,
+        "requested_model": "gpt-6.1-sol",
+        "requested_reasoning_effort": "medium",
+        "requested_service_tier": "default",
+        "response_id": "resp_033e4ca248f9851b006ac287057aa487d1868c9c8a2e57bfc2",
+        "poll_count": 1,
+        "poll_errors": 0,
+        "observed_model": "gpt-6.1-sol",
+        "observed_reasoning_effort": "medium",
+        "observed_service_tier": "default",
+        "observed_background": true,
+        "initial_status": "queued",
+        "initial_create_latency_seconds": 2.812,
+        "input_tokens": 1029,
+        "output_tokens": 76,
+        "reasoning_tokens": 0,
+        "elapsed_seconds": 6.265,
+        "terminal_status": "completed",
+        "output_text_received": true,
+        "validated_relation_count": 1
+      }
+    ]
+  },
+  "pre_submission_sandbox_attempt": {
+    "status": "create_failed",
+    "error_type": "APIConnectionError",
+    "response_id": null
+  },
+  "cli_help_default": "gpt-6.1-sol",
+  "boundaries": {
+    "prompt_refinement": false,
+    "schema_change": false,
+    "ner_change": false,
+    "entity_normalization": false,
+    "relation_normalization": false,
+    "graph_redesign": false,
+    "viewer_redesign": false
+  }
+}

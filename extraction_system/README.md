@@ -111,9 +111,12 @@ the source text; the initial LLM path does not apply a finite ontology or
 request a confidence score. The provider-independent relation contract can
 still preserve a score supplied by another implementation. LangChain/OpenAI
 objects stay inside the relation harness.
-The active OpenAI relation harness uses LangChain's explicit Responses API path
-with `gpt-5.6-luna`, standard/default reasoning mode, `max` reasoning effort,
-and a `128000` output-token ceiling. The compatibility
+The default OpenAI relation harness uses bounded Responses API background
+execution with `gpt-6.1-sol`, `medium` reasoning effort, Standard/default service
+tier (`service_tier=default`), and a `128000` output-token ceiling. The production
+prompt remains the original Contract 10 / 12A conservative evidence-grounded
+control prompt. Explicit configuration can still select foreground LangChain
+Responses execution or another supported model, reasoning effort, or tier. The compatibility
 `BIOMEDICAL_RELATION_MAX_COMPLETION_TOKENS` setting is mapped to the Responses
 API output-token field inside that provider seam.
 
@@ -121,8 +124,13 @@ For local configuration, copy `.env.example` to `.env` and add the key when the
 live smoke is authorized. The documented command uses uv's existing env-file
 support to load it; `.env` is ignored by Git. The model and bounded-repair
 settings can also be configured with `BIOMEDICAL_RELATION_MODEL`,
-`BIOMEDICAL_RELATION_MAX_COMPLETION_TOKENS`, and
-`BIOMEDICAL_RELATION_MAX_RETRIES`.
+`BIOMEDICAL_RELATION_MAX_COMPLETION_TOKENS`,
+`BIOMEDICAL_RELATION_MAX_RETRIES`,
+`BIOMEDICAL_RELATION_REASONING_EFFORT`, `BIOMEDICAL_RELATION_BACKGROUND`, and
+`BIOMEDICAL_RELATION_SERVICE_TIER`. Polling defaults to 3 seconds and each
+generation is bounded to 900 seconds; override these with
+`BIOMEDICAL_RELATION_POLL_INTERVAL_SECONDS` and
+`BIOMEDICAL_RELATION_TIMEOUT_SECONDS`.
 
 ```powershell
 Copy-Item .env.example .env

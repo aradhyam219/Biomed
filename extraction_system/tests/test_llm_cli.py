@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 import unittest
 from contextlib import redirect_stdout
 from io import StringIO
@@ -38,6 +39,11 @@ class _FakePipeline:
 
 
 class LLMCLITests(unittest.TestCase):
+    def setUp(self):
+        environment = patch.dict(os.environ, {}, clear=True)
+        environment.start()
+        self.addCleanup(environment.stop)
+
     def test_composed_command_constructs_llm_pipeline_without_running_real_models(self):
         output = StringIO()
         with patch(
@@ -66,7 +72,7 @@ class LLMCLITests(unittest.TestCase):
         self.assertEqual(kwargs["entity_threshold"], 0.5)
         self.assertEqual(kwargs["device"], "cpu")
         self.assertIsInstance(kwargs["llm_config"], OpenAIConfig)
-        self.assertEqual(kwargs["llm_config"].model, "gpt-5.6-luna")
+        self.assertEqual(kwargs["llm_config"].model, "gpt-6.1-sol")
         payload = json.loads(output.getvalue())
         self.assertEqual(payload["relations"][0]["target"], "E1")
 
