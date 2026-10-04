@@ -1,0 +1,20 @@
+{
+  "entity_input_sha256": "b0e5d154c3dc8cc221c7f3553e42a1c24c0b8a13f28d4526e196dbbdb0ab2b9a",
+  "entity_packet_sha256": "938cdc238e47c46ae7773129e3f0196027f5f676f74864f1fe72b845a79ca8c0",
+  "model": "Model B",
+  "paper_id": "PMCID:PMC10770459",
+  "prompt_schema_configuration": {
+    "bounded_repair_budget": 2,
+    "max_output_tokens": 128000,
+    "provider": "OpenAI Responses API",
+    "provider_retries": 0,
+    "reasoning_effort": "max"
+  },
+  "prompt_sha256": "9b828f6ebef1a50b900910d6831b072b17caa482c171ba7af996ea0a7ff7397f",
+  "replicate": 2,
+  "schema_sha256": "023435da3fa18abb77987313626636eff7bedda28739603db54a2f2c8137c945",
+  "source_characters": 48203,
+  "source_sha256": "5b58cb81f2add5f1295313b08c07e575bffffa8c1a871f32436d278735b209a4",
+  "started_utc": "2026-09-24T11:50:08.007203+00:00",
+  "status": "in_progress"
+}

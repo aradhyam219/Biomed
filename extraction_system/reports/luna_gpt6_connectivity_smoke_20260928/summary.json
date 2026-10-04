@@ -1,0 +1,32 @@
+{
+  "status": "success",
+  "provider_response_received": true,
+  "structured_output_received": true,
+  "provider_attempts": 1,
+  "repair_attempts": 0,
+  "elapsed_seconds": 3.922,
+  "provider_attempt_latency_seconds": 3.922,
+  "provider_attempt_latency_kind": "measured",
+  "input_tokens": 1029,
+  "output_tokens": 115,
+  "total_tokens": 1144,
+  "validated_relation_count": 1,
+  "validated_relations": [
+    {
+      "source": "E1",
+      "target": "E2",
+      "predicate": "inhibits",
+      "assertion": "Protein A inhibits Protein B.",
+      "evidence": "Protein A inhibits Protein B.",
+      "negated": false,
+      "intervention": null,
+      "effects": [],
+      "context": [],
+      "surface_form": "inhibits",
+      "score": null
+    }
+  ],
+  "exact_error": null,
+  "external_watchdog_seconds": 300,
+  "stopped_after_single_call": true
+}

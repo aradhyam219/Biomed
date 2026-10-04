@@ -1,0 +1,3988 @@
+{
+  "entities": [
+    {
+      "end": 22,
+      "id": "E1",
+      "score": 0.9999493360519409,
+      "start": 18,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 58,
+      "id": "E2",
+      "score": 0.9999332427978516,
+      "start": 56,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 63,
+      "id": "E3",
+      "score": 0.9999854564666748,
+      "start": 59,
+      "text": "Mice",
+      "type": "Species"
+    },
+    {
+      "end": 84,
+      "id": "E4",
+      "score": 0.9999909003575643,
+      "start": 65,
+      "text": "Alzheimer's disease",
+      "type": "Disease"
+    },
+    {
+      "end": 88,
+      "id": "E5",
+      "score": 0.999977707862854,
+      "start": 86,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 129,
+      "id": "E6",
+      "score": 0.9999899864196777,
+      "start": 103,
+      "text": "neurodegenerative disorder",
+      "type": "Disease"
+    },
+    {
+      "end": 286,
+      "id": "E7",
+      "score": 0.9998663514852524,
+      "start": 260,
+      "text": "proline and glutamine rich",
+      "type": "Gene"
+    },
+    {
+      "end": 292,
+      "id": "E8",
+      "score": 0.999971866607666,
+      "start": 288,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 355,
+      "id": "E9",
+      "score": 0.9999862909317017,
+      "start": 329,
+      "text": "neurodegenerative diseases",
+      "type": "Disease"
+    },
+    {
+      "end": 484,
+      "id": "E10",
+      "score": 0.9999781847000122,
+      "start": 480,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 490,
+      "id": "E11",
+      "score": 0.9999853372573853,
+      "start": 488,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 545,
+      "id": "E12",
+      "score": 0.9999839067459106,
+      "start": 543,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 551,
+      "id": "E13",
+      "score": 0.9999865293502808,
+      "start": 546,
+      "text": "mouse",
+      "type": "Species"
+    },
+    {
+      "end": 631,
+      "id": "E14",
+      "score": 0.9999810854593912,
+      "start": 615,
+      "text": "amyloid-beta1–42",
+      "type": "Gene"
+    },
+    {
+      "end": 639,
+      "id": "E15",
+      "score": 0.9999725818634033,
+      "start": 633,
+      "text": "Aβ1–42",
+      "type": "Gene"
+    },
+    {
+      "end": 715,
+      "id": "E16",
+      "score": 0.7522464394569397,
+      "start": 711,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 740,
+      "id": "E17",
+      "score": 0.9999804496765137,
+      "start": 738,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 745,
+      "id": "E18",
+      "score": 0.9999850988388062,
+      "start": 741,
+      "text": "mice",
+      "type": "Species"
+    },
+    {
+      "end": 780,
+      "id": "E19",
+      "score": 0.9999947547912598,
+      "start": 776,
+      "text": "SFPQ",
+      "type": "Chemical"
+    },
+    {
+      "end": 833,
+      "id": "E20",
+      "score": 0.9999840259552002,
+      "start": 831,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 838,
+      "id": "E21",
+      "score": 0.9999866485595703,
+      "start": 834,
+      "text": "mice",
+      "type": "Species"
+    },
+    {
+      "end": 857,
+      "id": "E22",
+      "score": 0.999984860420227,
+      "start": 855,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 915,
+      "id": "E23",
+      "score": 0.9999803304672241,
+      "start": 890,
+      "text": "amyloid precursor protein",
+      "type": "Gene"
+    },
+    {
+      "end": 920,
+      "id": "E24",
+      "score": 0.9999890327453613,
+      "start": 917,
+      "text": "APP",
+      "type": "Gene"
+    },
+    {
+      "end": 929,
+      "id": "E25",
+      "score": 0.9999507665634155,
+      "start": 926,
+      "text": "Tau",
+      "type": "Gene"
+    },
+    {
+      "end": 1048,
+      "id": "E26",
+      "score": 0.9999809861183167,
+      "start": 1023,
+      "text": "glutathione S-transferase",
+      "type": "Gene"
+    },
+    {
+      "end": 1053,
+      "id": "E27",
+      "score": 0.9999890327453613,
+      "start": 1050,
+      "text": "GST",
+      "type": "Gene"
+    },
+    {
+      "end": 1075,
+      "id": "E28",
+      "score": 0.9999811947345734,
+      "start": 1059,
+      "text": "heme oxygenase-1",
+      "type": "Gene"
+    },
+    {
+      "end": 1081,
+      "id": "E29",
+      "score": 0.9999898672103882,
+      "start": 1077,
+      "text": "HO-1",
+      "type": "Gene"
+    },
+    {
+      "end": 1142,
+      "id": "E30",
+      "score": 0.99998939037323,
+      "start": 1137,
+      "text": "Bcl-2",
+      "type": "Gene"
+    },
+    {
+      "end": 1170,
+      "id": "E31",
+      "score": 0.9999777674674988,
+      "start": 1167,
+      "text": "Bax",
+      "type": "Gene"
+    },
+    {
+      "end": 1240,
+      "id": "E32",
+      "score": 0.9999772906303406,
+      "start": 1215,
+      "text": "phosphoinositide 3-kinase",
+      "type": "Gene"
+    },
+    {
+      "end": 1248,
+      "id": "E33",
+      "score": 0.9999898672103882,
+      "start": 1244,
+      "text": "PI3K",
+      "type": "Gene"
+    },
+    {
+      "end": 1254,
+      "id": "E34",
+      "score": 0.9999768733978271,
+      "start": 1250,
+      "text": "PI3K",
+      "type": "Gene"
+    },
+    {
+      "end": 1290,
+      "id": "E35",
+      "score": 0.999980092048645,
+      "start": 1274,
+      "text": "protein kinase B",
+      "type": "Gene"
+    },
+    {
+      "end": 1297,
+      "id": "E36",
+      "score": 0.9999902248382568,
+      "start": 1294,
+      "text": "AKT",
+      "type": "Gene"
+    },
+    {
+      "end": 1302,
+      "id": "E37",
+      "score": 0.9999897480010986,
+      "start": 1299,
+      "text": "AKT",
+      "type": "Gene"
+    },
+    {
+      "end": 1358,
+      "id": "E38",
+      "score": 0.9999901056289673,
+      "start": 1354,
+      "text": "PI3K",
+      "type": "Gene"
+    },
+    {
+      "end": 1362,
+      "id": "E39",
+      "score": 0.9999902248382568,
+      "start": 1359,
+      "text": "AKT",
+      "type": "Gene"
+    },
+    {
+      "end": 1414,
+      "id": "E40",
+      "score": 0.9999641180038452,
+      "start": 1410,
+      "text": "SFPQ",
+      "type": "Chemical"
+    },
+    {
+      "end": 1495,
+      "id": "E41",
+      "score": 0.9999861717224121,
+      "start": 1493,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 1578,
+      "id": "E42",
+      "score": 0.9999906420707703,
+      "start": 1552,
+      "text": "neurodegenerative diseases",
+      "type": "Disease"
+    },
+    {
+      "end": 1680,
+      "id": "E43",
+      "score": 0.9999918142954508,
+      "start": 1661,
+      "text": "Alzheimer's disease",
+      "type": "Disease"
+    },
+    {
+      "end": 1684,
+      "id": "E44",
+      "score": 0.9999861717224121,
+      "start": 1682,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 1749,
+      "id": "E45",
+      "score": 0.9981911281744639,
+      "start": 1706,
+      "text": "degenerative disorder of the nervous system",
+      "type": "Disease"
+    },
+    {
+      "end": 1877,
+      "id": "E46",
+      "score": 0.9999861717224121,
+      "start": 1875,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 1914,
+      "id": "E47",
+      "score": 0.9999862909317017,
+      "start": 1906,
+      "text": "dementia",
+      "type": "Disease"
+    },
+    {
+      "end": 1960,
+      "id": "E48",
+      "score": 0.999985933303833,
+      "start": 1952,
+      "text": "Patients",
+      "type": "Species"
+    },
+    {
+      "end": 1968,
+      "id": "E49",
+      "score": 0.9999862909317017,
+      "start": 1966,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 2126,
+      "id": "E50",
+      "score": 0.9999862909317017,
+      "start": 2118,
+      "text": "dementia",
+      "type": "Disease"
+    },
+    {
+      "end": 2165,
+      "id": "E51",
+      "score": 0.9999831914901733,
+      "start": 2157,
+      "text": "patients",
+      "type": "Species"
+    },
+    {
+      "end": 2229,
+      "id": "E52",
+      "score": 0.9999854564666748,
+      "start": 2227,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 2468,
+      "id": "E53",
+      "score": 0.9994770884513855,
+      "start": 2453,
+      "text": "neuronal damage",
+      "type": "Disease"
+    },
+    {
+      "end": 2546,
+      "id": "E54",
+      "score": 0.9999847412109375,
+      "start": 2544,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 2664,
+      "id": "E55",
+      "score": 0.9999971389770508,
+      "start": 2658,
+      "text": "oxygen",
+      "type": "Chemical"
+    },
+    {
+      "end": 2723,
+      "id": "E56",
+      "score": 0.9999971389770508,
+      "start": 2696,
+      "text": "polyunsaturated fatty acids",
+      "type": "Chemical"
+    },
+    {
+      "end": 2931,
+      "id": "E57",
+      "score": 0.9987493753433228,
+      "start": 2929,
+      "text": "Aβ",
+      "type": "Gene"
+    },
+    {
+      "end": 3000,
+      "id": "E58",
+      "score": 0.9999972581863403,
+      "start": 2977,
+      "text": "reactive oxygen species",
+      "type": "Chemical"
+    },
+    {
+      "end": 3005,
+      "id": "E59",
+      "score": 0.9999403953552246,
+      "start": 3002,
+      "text": "ROS",
+      "type": "Chemical"
+    },
+    {
+      "end": 3160,
+      "id": "E60",
+      "score": 0.9352226654688517,
+      "start": 3148,
+      "text": "antioxidants",
+      "type": "Chemical"
+    },
+    {
+      "end": 3197,
+      "id": "E61",
+      "score": 0.999997079372406,
+      "start": 3188,
+      "text": "vitamin E",
+      "type": "Chemical"
+    },
+    {
+      "end": 3210,
+      "id": "E62",
+      "score": 0.9694550037384033,
+      "start": 3202,
+      "text": "catalase",
+      "type": "Gene"
+    },
+    {
+      "end": 3228,
+      "id": "E63",
+      "score": 0.9999595880508423,
+      "start": 3226,
+      "text": "Aβ",
+      "type": "Gene"
+    },
+    {
+      "end": 3330,
+      "id": "E64",
+      "score": 0.9999803304672241,
+      "start": 3327,
+      "text": "Tau",
+      "type": "Gene"
+    },
+    {
+      "end": 3354,
+      "id": "E65",
+      "score": 0.9999861717224121,
+      "start": 3346,
+      "text": "patients",
+      "type": "Species"
+    },
+    {
+      "end": 3362,
+      "id": "E66",
+      "score": 0.9999856948852539,
+      "start": 3360,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 3513,
+      "id": "E67",
+      "score": 0.9999845027923584,
+      "start": 3511,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 3522,
+      "id": "E68",
+      "score": 0.9999830722808838,
+      "start": 3514,
+      "text": "patients",
+      "type": "Species"
+    },
+    {
+      "end": 3584,
+      "id": "E69",
+      "score": 0.9849984645843506,
+      "start": 3578,
+      "text": "oxygen",
+      "type": "Chemical"
+    },
+    {
+      "end": 3627,
+      "id": "E70",
+      "score": 0.9990159273147583,
+      "start": 3624,
+      "text": "Tau",
+      "type": "Gene"
+    },
+    {
+      "end": 3689,
+      "id": "E71",
+      "score": 0.9953275918960571,
+      "start": 3686,
+      "text": "Tau",
+      "type": "Gene"
+    },
+    {
+      "end": 3724,
+      "id": "E72",
+      "score": 0.990149736404419,
+      "start": 3721,
+      "text": "Tau",
+      "type": "Gene"
+    },
+    {
+      "end": 3771,
+      "id": "E73",
+      "score": 0.9999518394470215,
+      "start": 3768,
+      "text": "ROS",
+      "type": "Chemical"
+    },
+    {
+      "end": 3867,
+      "id": "E74",
+      "score": 0.9979166388511658,
+      "start": 3864,
+      "text": "Tau",
+      "type": "Gene"
+    },
+    {
+      "end": 3874,
+      "id": "E75",
+      "score": 0.9929637908935547,
+      "start": 3871,
+      "text": "Tau",
+      "type": "Gene"
+    },
+    {
+      "end": 3979,
+      "id": "E76",
+      "score": 0.9999853372573853,
+      "start": 3977,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 3995,
+      "id": "E77",
+      "score": 0.9997792840003967,
+      "start": 3993,
+      "text": "Aβ",
+      "type": "Gene"
+    },
+    {
+      "end": 4011,
+      "id": "E78",
+      "score": 0.9997798800468445,
+      "start": 4008,
+      "text": "Tau",
+      "type": "Gene"
+    },
+    {
+      "end": 4170,
+      "id": "E79",
+      "score": 0.9999840259552002,
+      "start": 4168,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 4274,
+      "id": "E80",
+      "score": 0.9963513414065043,
+      "start": 4262,
+      "text": "antioxidants",
+      "type": "Chemical"
+    },
+    {
+      "end": 4315,
+      "id": "E81",
+      "score": 0.9999850988388062,
+      "start": 4313,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 4369,
+      "id": "E82",
+      "score": 0.9999798138936361,
+      "start": 4327,
+      "text": "Splicing factor proline and glutamine rich",
+      "type": "Gene"
+    },
+    {
+      "end": 4375,
+      "id": "E83",
+      "score": 0.9999876022338867,
+      "start": 4371,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 4406,
+      "id": "E84",
+      "score": 0.573738157749176,
+      "start": 4396,
+      "text": "Drosophila",
+      "type": "Species"
+    },
+    {
+      "end": 4430,
+      "id": "E85",
+      "score": 0.99993896484375,
+      "start": 4407,
+      "text": "behavior human splicing",
+      "type": "Gene"
+    },
+    {
+      "end": 4436,
+      "id": "E86",
+      "score": 0.9999867677688599,
+      "start": 4432,
+      "text": "DBHS",
+      "type": "Gene"
+    },
+    {
+      "end": 4468,
+      "id": "E87",
+      "score": 0.9999781250953674,
+      "start": 4448,
+      "text": "RNA-binding proteins",
+      "type": "Gene"
+    },
+    {
+      "end": 4666,
+      "id": "E88",
+      "score": 0.9999871253967285,
+      "start": 4662,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 4874,
+      "id": "E89",
+      "score": 0.9999854564666748,
+      "start": 4870,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 5026,
+      "id": "E90",
+      "score": 0.9999675750732422,
+      "start": 5022,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 5434,
+      "id": "E91",
+      "score": 0.9999825954437256,
+      "start": 5430,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 5593,
+      "id": "E92",
+      "score": 0.9999723434448242,
+      "start": 5589,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 5761,
+      "id": "E93",
+      "score": 0.9999641180038452,
+      "start": 5757,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 5828,
+      "id": "E94",
+      "score": 0.9999917149543762,
+      "start": 5801,
+      "text": "neurodegenerative disorders",
+      "type": "Disease"
+    },
+    {
+      "end": 5867,
+      "id": "E95",
+      "score": 0.9999929666519165,
+      "start": 5838,
+      "text": "amyotrophic lateral sclerosis",
+      "type": "Disease"
+    },
+    {
+      "end": 5872,
+      "id": "E96",
+      "score": 0.9999861717224121,
+      "start": 5869,
+      "text": "ALS",
+      "type": "Disease"
+    },
+    {
+      "end": 5908,
+      "id": "E97",
+      "score": 0.9999927679697672,
+      "start": 5875,
+      "text": "frontotemporal lobar degeneration",
+      "type": "Disease"
+    },
+    {
+      "end": 5914,
+      "id": "E98",
+      "score": 0.999985933303833,
+      "start": 5910,
+      "text": "FTLD",
+      "type": "Disease"
+    },
+    {
+      "end": 5923,
+      "id": "E99",
+      "score": 0.9999858140945435,
+      "start": 5921,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 5937,
+      "id": "E100",
+      "score": 0.99997878074646,
+      "start": 5933,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 6008,
+      "id": "E101",
+      "score": 0.9999831914901733,
+      "start": 6000,
+      "text": "patients",
+      "type": "Species"
+    },
+    {
+      "end": 6036,
+      "id": "E102",
+      "score": 0.9999854564666748,
+      "start": 6034,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 6042,
+      "id": "E103",
+      "score": 0.9999819993972778,
+      "start": 6038,
+      "text": "rpAD",
+      "type": "Disease"
+    },
+    {
+      "end": 6079,
+      "id": "E104",
+      "score": 0.9999918937683105,
+      "start": 6045,
+      "text": "sporadic Creutzfeldt–Jakob disease",
+      "type": "Disease"
+    },
+    {
+      "end": 6085,
+      "id": "E105",
+      "score": 0.9999858140945435,
+      "start": 6081,
+      "text": "sCJD",
+      "type": "Disease"
+    },
+    {
+      "end": 6125,
+      "id": "E106",
+      "score": 0.9999862909317017,
+      "start": 6117,
+      "text": "dementia",
+      "type": "Disease"
+    },
+    {
+      "end": 6166,
+      "id": "E107",
+      "score": 0.9999610582987467,
+      "start": 6141,
+      "text": "amyloid precursor protein",
+      "type": "Gene"
+    },
+    {
+      "end": 6171,
+      "id": "E108",
+      "score": 0.9999760389328003,
+      "start": 6168,
+      "text": "APP",
+      "type": "Gene"
+    },
+    {
+      "end": 6176,
+      "id": "E109",
+      "score": 0.9999841451644897,
+      "start": 6173,
+      "text": "PS1",
+      "type": "Gene"
+    },
+    {
+      "end": 6180,
+      "id": "E110",
+      "score": 0.9999790191650391,
+      "start": 6177,
+      "text": "Tau",
+      "type": "Gene"
+    },
+    {
+      "end": 6186,
+      "id": "E111",
+      "score": 0.999985933303833,
+      "start": 6182,
+      "text": "mice",
+      "type": "Species"
+    },
+    {
+      "end": 6214,
+      "id": "E112",
+      "score": 0.999981164932251,
+      "start": 6210,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 6241,
+      "id": "E113",
+      "score": 0.9999861717224121,
+      "start": 6237,
+      "text": "mice",
+      "type": "Species"
+    },
+    {
+      "end": 6255,
+      "id": "E114",
+      "score": 0.9999860525131226,
+      "start": 6251,
+      "text": "FTLD",
+      "type": "Disease"
+    },
+    {
+      "end": 6288,
+      "id": "E115",
+      "score": 0.9397004842758179,
+      "start": 6283,
+      "text": "p-Tau",
+      "type": "Gene"
+    },
+    {
+      "end": 6354,
+      "id": "E116",
+      "score": 0.9982682466506958,
+      "start": 6335,
+      "text": "hippocampal atrophy",
+      "type": "Disease"
+    },
+    {
+      "end": 6373,
+      "id": "E117",
+      "score": 0.9995157420635223,
+      "start": 6360,
+      "text": "neuronal loss",
+      "type": "Disease"
+    },
+    {
+      "end": 6459,
+      "id": "E118",
+      "score": 0.9999904632568359,
+      "start": 6455,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 6519,
+      "id": "E119",
+      "score": 0.9999855756759644,
+      "start": 6515,
+      "text": "rpAD",
+      "type": "Disease"
+    },
+    {
+      "end": 6577,
+      "id": "E120",
+      "score": 0.9999867677688599,
+      "start": 6573,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 6588,
+      "id": "E121",
+      "score": 0.9999151627222697,
+      "start": 6583,
+      "text": "p-Tau",
+      "type": "Gene"
+    },
+    {
+      "end": 6646,
+      "id": "E122",
+      "score": 0.9999896287918091,
+      "start": 6642,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 6654,
+      "id": "E123",
+      "score": 0.999987006187439,
+      "start": 6651,
+      "text": "Tau",
+      "type": "Gene"
+    },
+    {
+      "end": 6692,
+      "id": "E124",
+      "score": 0.999985933303833,
+      "start": 6688,
+      "text": "rpAD",
+      "type": "Disease"
+    },
+    {
+      "end": 6701,
+      "id": "E125",
+      "score": 0.9999780654907227,
+      "start": 6693,
+      "text": "patients",
+      "type": "Species"
+    },
+    {
+      "end": 6720,
+      "id": "E126",
+      "score": 0.9999892711639404,
+      "start": 6716,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 6812,
+      "id": "E127",
+      "score": 0.999985933303833,
+      "start": 6809,
+      "text": "Tau",
+      "type": "Gene"
+    },
+    {
+      "end": 6858,
+      "id": "E128",
+      "score": 0.9999873638153076,
+      "start": 6854,
+      "text": "mice",
+      "type": "Species"
+    },
+    {
+      "end": 6890,
+      "id": "E129",
+      "score": 0.9999889135360718,
+      "start": 6886,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 7032,
+      "id": "E130",
+      "score": 0.9999854564666748,
+      "start": 7028,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 7096,
+      "id": "E131",
+      "score": 0.9999850988388062,
+      "start": 7091,
+      "text": "TIA-1",
+      "type": "Gene"
+    },
+    {
+      "end": 7155,
+      "id": "E132",
+      "score": 0.9999885559082031,
+      "start": 7151,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 7187,
+      "id": "E133",
+      "score": 0.9999951124191284,
+      "start": 7184,
+      "text": "ROS",
+      "type": "Chemical"
+    },
+    {
+      "end": 7211,
+      "id": "E134",
+      "score": 0.9999911189079285,
+      "start": 7191,
+      "text": "colon adenocarcinoma",
+      "type": "Disease"
+    },
+    {
+      "end": 7256,
+      "id": "E135",
+      "score": 0.9999867677688599,
+      "start": 7252,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 7340,
+      "id": "E136",
+      "score": 0.9999772310256958,
+      "start": 7336,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 7378,
+      "id": "E137",
+      "score": 0.9999734163284302,
+      "start": 7373,
+      "text": "human",
+      "type": "Species"
+    },
+    {
+      "end": 7391,
+      "id": "E138",
+      "score": 0.9999883770942688,
+      "start": 7379,
+      "text": "colon cancer",
+      "type": "Disease"
+    },
+    {
+      "end": 7424,
+      "id": "E139",
+      "score": 0.9973783493041992,
+      "start": 7420,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 7486,
+      "id": "E140",
+      "score": 0.9970850348472595,
+      "start": 7482,
+      "text": "SFPQ",
+      "type": "Chemical"
+    },
+    {
+      "end": 7511,
+      "id": "E141",
+      "score": 0.9999827146530151,
+      "start": 7509,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 7576,
+      "id": "E142",
+      "score": 0.9999847412109375,
+      "start": 7574,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 7693,
+      "id": "E143",
+      "score": 0.9999960660934448,
+      "start": 7689,
+      "text": "SFPQ",
+      "type": "Chemical"
+    },
+    {
+      "end": 7722,
+      "id": "E144",
+      "score": 0.9999877214431763,
+      "start": 7718,
+      "text": "mice",
+      "type": "Species"
+    },
+    {
+      "end": 7785,
+      "id": "E145",
+      "score": 0.9999958276748657,
+      "start": 7781,
+      "text": "SFPQ",
+      "type": "Chemical"
+    },
+    {
+      "end": 7817,
+      "id": "E146",
+      "score": 0.9999808073043823,
+      "start": 7815,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 7822,
+      "id": "E147",
+      "score": 0.9999876022338867,
+      "start": 7818,
+      "text": "mice",
+      "type": "Species"
+    },
+    {
+      "end": 7870,
+      "id": "E148",
+      "score": 0.9999877214431763,
+      "start": 7866,
+      "text": "mice",
+      "type": "Species"
+    },
+    {
+      "end": 7937,
+      "id": "E149",
+      "score": 0.9999802112579346,
+      "start": 7935,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 7942,
+      "id": "E150",
+      "score": 0.9999878406524658,
+      "start": 7938,
+      "text": "mice",
+      "type": "Species"
+    },
+    {
+      "end": 7957,
+      "id": "E151",
+      "score": 0.9999972581863403,
+      "start": 7953,
+      "text": "SFPQ",
+      "type": "Chemical"
+    },
+    {
+      "end": 8071,
+      "id": "E152",
+      "score": 0.9999970197677612,
+      "start": 8067,
+      "text": "SFPQ",
+      "type": "Chemical"
+    },
+    {
+      "end": 8096,
+      "id": "E153",
+      "score": 0.9999774694442749,
+      "start": 8094,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 8101,
+      "id": "E154",
+      "score": 0.9999877214431763,
+      "start": 8097,
+      "text": "mice",
+      "type": "Species"
+    },
+    {
+      "end": 8233,
+      "id": "E155",
+      "score": 0.9999973773956299,
+      "start": 8229,
+      "text": "SFPQ",
+      "type": "Chemical"
+    },
+    {
+      "end": 8279,
+      "id": "E156",
+      "score": 0.9999797344207764,
+      "start": 8277,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 8284,
+      "id": "E157",
+      "score": 0.999987006187439,
+      "start": 8280,
+      "text": "mice",
+      "type": "Species"
+    },
+    {
+      "end": 8368,
+      "id": "E158",
+      "score": 0.9999970197677612,
+      "start": 8364,
+      "text": "SFPQ",
+      "type": "Chemical"
+    },
+    {
+      "end": 8467,
+      "id": "E159",
+      "score": 0.9999852180480957,
+      "start": 8465,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 8536,
+      "id": "E160",
+      "score": 0.9278271595637003,
+      "start": 8528,
+      "text": "C57BL/6J",
+      "type": "CellLine"
+    },
+    {
+      "end": 8548,
+      "id": "E161",
+      "score": 0.9999876022338867,
+      "start": 8544,
+      "text": "mice",
+      "type": "Species"
+    },
+    {
+      "end": 8691,
+      "id": "E162",
+      "score": 0.9999874830245972,
+      "start": 8687,
+      "text": "mice",
+      "type": "Species"
+    },
+    {
+      "end": 8741,
+      "id": "E163",
+      "score": 0.9999827146530151,
+      "start": 8739,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 8785,
+      "id": "E164",
+      "score": 0.9989411979913712,
+      "start": 8763,
+      "text": "adeno-associated virus",
+      "type": "Species"
+    },
+    {
+      "end": 8790,
+      "id": "E165",
+      "score": 0.9999356269836426,
+      "start": 8787,
+      "text": "AAV",
+      "type": "Species"
+    },
+    {
+      "end": 8813,
+      "id": "E166",
+      "score": 0.9999856948852539,
+      "start": 8809,
+      "text": "mice",
+      "type": "Species"
+    },
+    {
+      "end": 8942,
+      "id": "E167",
+      "score": 0.9999867677688599,
+      "start": 8938,
+      "text": "mice",
+      "type": "Species"
+    },
+    {
+      "end": 9282,
+      "id": "E168",
+      "score": 0.9999971389770508,
+      "start": 9272,
+      "text": "isoflurane",
+      "type": "Chemical"
+    },
+    {
+      "end": 9724,
+      "id": "E169",
+      "score": 0.9999858140945435,
+      "start": 9722,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 9775,
+      "id": "E170",
+      "score": 0.9999874830245972,
+      "start": 9770,
+      "text": "mouse",
+      "type": "Species"
+    },
+    {
+      "end": 9972,
+      "id": "E171",
+      "score": 0.9999803304672241,
+      "start": 9956,
+      "text": "amyloid-beta1–42",
+      "type": "Gene"
+    },
+    {
+      "end": 9980,
+      "id": "E172",
+      "score": 0.9996622800827026,
+      "start": 9974,
+      "text": "Aβ1–42",
+      "type": "Gene"
+    },
+    {
+      "end": 10105,
+      "id": "E173",
+      "score": 0.9823689162731171,
+      "start": 10092,
+      "text": "normal saline",
+      "type": "Chemical"
+    },
+    {
+      "end": 10133,
+      "id": "E174",
+      "score": 0.9999755620956421,
+      "start": 10127,
+      "text": "Aβ1–42",
+      "type": "Gene"
+    },
+    {
+      "end": 10639,
+      "id": "E175",
+      "score": 0.9999172687530518,
+      "start": 10634,
+      "text": "mouse",
+      "type": "Species"
+    },
+    {
+      "end": 10733,
+      "id": "E176",
+      "score": 0.9999769926071167,
+      "start": 10731,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 10739,
+      "id": "E177",
+      "score": 0.999852180480957,
+      "start": 10734,
+      "text": "mouse",
+      "type": "Species"
+    },
+    {
+      "end": 11016,
+      "id": "E178",
+      "score": 0.9972746968269348,
+      "start": 11012,
+      "text": "PMSF",
+      "type": "Chemical"
+    },
+    {
+      "end": 11307,
+      "id": "E179",
+      "score": 0.999997079372406,
+      "start": 11289,
+      "text": "bicinchoninic acid",
+      "type": "Chemical"
+    },
+    {
+      "end": 11312,
+      "id": "E180",
+      "score": 0.9999867677688599,
+      "start": 11309,
+      "text": "BCA",
+      "type": "Chemical"
+    },
+    {
+      "end": 11353,
+      "id": "E181",
+      "score": 0.9999960660934448,
+      "start": 11350,
+      "text": "SDS",
+      "type": "Chemical"
+    },
+    {
+      "end": 11482,
+      "id": "E182",
+      "score": 0.9999946355819702,
+      "start": 11478,
+      "text": "PVDF",
+      "type": "Chemical"
+    },
+    {
+      "end": 11702,
+      "id": "E183",
+      "score": 0.9998877048492432,
+      "start": 11698,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 11709,
+      "id": "E184",
+      "score": 0.9999527931213379,
+      "start": 11704,
+      "text": "Abcam",
+      "type": "Gene"
+    },
+    {
+      "end": 11725,
+      "id": "E185",
+      "score": 0.9999489784240723,
+      "start": 11722,
+      "text": "APP",
+      "type": "Gene"
+    },
+    {
+      "end": 11752,
+      "id": "E186",
+      "score": 0.9992842078208923,
+      "start": 11749,
+      "text": "Tau",
+      "type": "Gene"
+    },
+    {
+      "end": 11757,
+      "id": "E187",
+      "score": 0.9999303817749023,
+      "start": 11754,
+      "text": "CST",
+      "type": "Gene"
+    },
+    {
+      "end": 11771,
+      "id": "E188",
+      "score": 0.99997878074646,
+      "start": 11768,
+      "text": "GST",
+      "type": "Gene"
+    },
+    {
+      "end": 11798,
+      "id": "E189",
+      "score": 0.9999654293060303,
+      "start": 11773,
+      "text": "glutathione S-transferase",
+      "type": "Gene"
+    },
+    {
+      "end": 11806,
+      "id": "E190",
+      "score": 0.9999798536300659,
+      "start": 11801,
+      "text": "Abcam",
+      "type": "Gene"
+    },
+    {
+      "end": 11821,
+      "id": "E191",
+      "score": 0.999985933303833,
+      "start": 11817,
+      "text": "HO-1",
+      "type": "Gene"
+    },
+    {
+      "end": 11839,
+      "id": "E192",
+      "score": 0.9999747574329376,
+      "start": 11823,
+      "text": "heme oxygenase-1",
+      "type": "Gene"
+    },
+    {
+      "end": 11847,
+      "id": "E193",
+      "score": 0.9999692440032959,
+      "start": 11842,
+      "text": "Abcam",
+      "type": "Gene"
+    },
+    {
+      "end": 11863,
+      "id": "E194",
+      "score": 0.9999837875366211,
+      "start": 11858,
+      "text": "Bcl-2",
+      "type": "Gene"
+    },
+    {
+      "end": 11870,
+      "id": "E195",
+      "score": 0.9999775886535645,
+      "start": 11865,
+      "text": "Abcam",
+      "type": "Gene"
+    },
+    {
+      "end": 11884,
+      "id": "E196",
+      "score": 0.999971866607666,
+      "start": 11881,
+      "text": "Bax",
+      "type": "Gene"
+    },
+    {
+      "end": 11891,
+      "id": "E197",
+      "score": 0.9999792575836182,
+      "start": 11886,
+      "text": "Abcam",
+      "type": "Gene"
+    },
+    {
+      "end": 11908,
+      "id": "E198",
+      "score": 0.9999809265136719,
+      "start": 11903,
+      "text": "PSD95",
+      "type": "Gene"
+    },
+    {
+      "end": 11915,
+      "id": "E199",
+      "score": 0.9999743700027466,
+      "start": 11910,
+      "text": "Abcam",
+      "type": "Gene"
+    },
+    {
+      "end": 11932,
+      "id": "E200",
+      "score": 0.9999127388000488,
+      "start": 11926,
+      "text": "p-CREB",
+      "type": "Gene"
+    },
+    {
+      "end": 11963,
+      "id": "E201",
+      "score": 0.9999011397361756,
+      "start": 11934,
+      "text": "cAMP response element-binding",
+      "type": "Gene"
+    },
+    {
+      "end": 11971,
+      "id": "E202",
+      "score": 0.9999597072601318,
+      "start": 11966,
+      "text": "Abcam",
+      "type": "Gene"
+    },
+    {
+      "end": 11985,
+      "id": "E203",
+      "score": 0.9999736547470093,
+      "start": 11982,
+      "text": "AKT",
+      "type": "Gene"
+    },
+    {
+      "end": 11992,
+      "id": "E204",
+      "score": 0.9999538660049438,
+      "start": 11987,
+      "text": "Abcam",
+      "type": "Gene"
+    },
+    {
+      "end": 12034,
+      "id": "E205",
+      "score": 0.9997756481170654,
+      "start": 12018,
+      "text": "protein kinase B",
+      "type": "Gene"
+    },
+    {
+      "end": 12041,
+      "id": "E206",
+      "score": 0.9998831351598104,
+      "start": 12036,
+      "text": "p-AKT",
+      "type": "Gene"
+    },
+    {
+      "end": 12049,
+      "id": "E207",
+      "score": 0.9999313354492188,
+      "start": 12044,
+      "text": "Abcam",
+      "type": "Gene"
+    },
+    {
+      "end": 12064,
+      "id": "E208",
+      "score": 0.9999727606773376,
+      "start": 12060,
+      "text": "PI3K",
+      "type": "Gene"
+    },
+    {
+      "end": 12071,
+      "id": "E209",
+      "score": 0.9999678134918213,
+      "start": 12066,
+      "text": "Abcam",
+      "type": "Gene"
+    },
+    {
+      "end": 12122,
+      "id": "E210",
+      "score": 0.9998124241828918,
+      "start": 12097,
+      "text": "phosphoinositide 3-kinase",
+      "type": "Gene"
+    },
+    {
+      "end": 12130,
+      "id": "E211",
+      "score": 0.9999307096004486,
+      "start": 12124,
+      "text": "p-PI3K",
+      "type": "Gene"
+    },
+    {
+      "end": 12138,
+      "id": "E212",
+      "score": 0.9999370574951172,
+      "start": 12133,
+      "text": "Abcam",
+      "type": "Gene"
+    },
+    {
+      "end": 12158,
+      "id": "E213",
+      "score": 0.9999759594599406,
+      "start": 12149,
+      "text": "β-tubulin",
+      "type": "Gene"
+    },
+    {
+      "end": 12165,
+      "id": "E214",
+      "score": 0.9999613761901855,
+      "start": 12160,
+      "text": "Abcam",
+      "type": "Gene"
+    },
+    {
+      "end": 12185,
+      "id": "E215",
+      "score": 0.9999254941940308,
+      "start": 12180,
+      "text": "GAPDH",
+      "type": "Gene"
+    },
+    {
+      "end": 12192,
+      "id": "E216",
+      "score": 0.9999420642852783,
+      "start": 12187,
+      "text": "Abcam",
+      "type": "Gene"
+    },
+    {
+      "end": 12259,
+      "id": "E217",
+      "score": 0.569198489189148,
+      "start": 12255,
+      "text": "TBST",
+      "type": "Chemical"
+    },
+    {
+      "end": 12265,
+      "id": "E218",
+      "score": 0.9724130630493164,
+      "start": 12261,
+      "text": "Tris",
+      "type": "Chemical"
+    },
+    {
+      "end": 12274,
+      "id": "E219",
+      "score": 0.7862605452537537,
+      "start": 12266,
+      "text": "buffered",
+      "type": "Chemical"
+    },
+    {
+      "end": 12281,
+      "id": "E220",
+      "score": 0.8110077977180481,
+      "start": 12275,
+      "text": "saline",
+      "type": "Chemical"
+    },
+    {
+      "end": 12300,
+      "id": "E221",
+      "score": 0.9999259114265442,
+      "start": 12292,
+      "text": "Tween 20",
+      "type": "Chemical"
+    },
+    {
+      "end": 12374,
+      "id": "E222",
+      "score": 0.9998020132382711,
+      "start": 12364,
+      "text": "peroxidase",
+      "type": "Gene"
+    },
+    {
+      "end": 12379,
+      "id": "E223",
+      "score": 0.9994670748710632,
+      "start": 12376,
+      "text": "HRP",
+      "type": "Gene"
+    },
+    {
+      "end": 12393,
+      "id": "E224",
+      "score": 0.999352753162384,
+      "start": 12389,
+      "text": "goat",
+      "type": "Species"
+    },
+    {
+      "end": 12418,
+      "id": "E225",
+      "score": 0.9614376425743103,
+      "start": 12415,
+      "text": "IgG",
+      "type": "Gene"
+    },
+    {
+      "end": 12432,
+      "id": "E226",
+      "score": 0.9888111352920532,
+      "start": 12429,
+      "text": "HRP",
+      "type": "Gene"
+    },
+    {
+      "end": 12453,
+      "id": "E227",
+      "score": 0.796872615814209,
+      "start": 12450,
+      "text": "CST",
+      "type": "Gene"
+    },
+    {
+      "end": 12881,
+      "id": "E228",
+      "score": 0.9999856948852539,
+      "start": 12875,
+      "text": "Xylene",
+      "type": "Chemical"
+    },
+    {
+      "end": 12902,
+      "id": "E229",
+      "score": 0.9999909400939941,
+      "start": 12896,
+      "text": "Xylene",
+      "type": "Chemical"
+    },
+    {
+      "end": 12933,
+      "id": "E230",
+      "score": 0.9999958276748657,
+      "start": 12926,
+      "text": "ethanol",
+      "type": "Chemical"
+    },
+    {
+      "end": 12963,
+      "id": "E231",
+      "score": 0.9999961853027344,
+      "start": 12956,
+      "text": "ethanol",
+      "type": "Chemical"
+    },
+    {
+      "end": 12992,
+      "id": "E232",
+      "score": 0.9999955892562866,
+      "start": 12985,
+      "text": "alcohol",
+      "type": "Chemical"
+    },
+    {
+      "end": 13050,
+      "id": "E233",
+      "score": 0.8246957659721375,
+      "start": 13045,
+      "text": "water",
+      "type": "Chemical"
+    },
+    {
+      "end": 13107,
+      "id": "E234",
+      "score": 0.9999946355819702,
+      "start": 13105,
+      "text": "HE",
+      "type": "Chemical"
+    },
+    {
+      "end": 13299,
+      "id": "E235",
+      "score": 0.9999940097332001,
+      "start": 13268,
+      "text": "phosphate buffer solution tween",
+      "type": "Chemical"
+    },
+    {
+      "end": 13305,
+      "id": "E236",
+      "score": 0.9999945163726807,
+      "start": 13301,
+      "text": "PBST",
+      "type": "Chemical"
+    },
+    {
+      "end": 13575,
+      "id": "E237",
+      "score": 0.9999935626983643,
+      "start": 13571,
+      "text": "PBST",
+      "type": "Chemical"
+    },
+    {
+      "end": 13647,
+      "id": "E238",
+      "score": 0.9999939203262329,
+      "start": 13643,
+      "text": "PBST",
+      "type": "Chemical"
+    },
+    {
+      "end": 13678,
+      "id": "E239",
+      "score": 0.9999895095825195,
+      "start": 13674,
+      "text": "PBST",
+      "type": "Chemical"
+    },
+    {
+      "end": 13787,
+      "id": "E240",
+      "score": 0.9999847412109375,
+      "start": 13783,
+      "text": "goat",
+      "type": "Species"
+    },
+    {
+      "end": 14052,
+      "id": "E241",
+      "score": 0.9932252764701843,
+      "start": 14048,
+      "text": "PBST",
+      "type": "Chemical"
+    },
+    {
+      "end": 14235,
+      "id": "E242",
+      "score": 0.9999923706054688,
+      "start": 14231,
+      "text": "PBST",
+      "type": "Chemical"
+    },
+    {
+      "end": 14314,
+      "id": "E243",
+      "score": 0.9999964237213135,
+      "start": 14310,
+      "text": "DAPI",
+      "type": "Chemical"
+    },
+    {
+      "end": 14523,
+      "id": "E244",
+      "score": 0.9999881982803345,
+      "start": 14519,
+      "text": "mice",
+      "type": "Species"
+    },
+    {
+      "end": 14898,
+      "id": "E245",
+      "score": 0.9999877214431763,
+      "start": 14893,
+      "text": "mouse",
+      "type": "Species"
+    },
+    {
+      "end": 15022,
+      "id": "E246",
+      "score": 0.9999878406524658,
+      "start": 15017,
+      "text": "mouse",
+      "type": "Species"
+    },
+    {
+      "end": 15272,
+      "id": "E247",
+      "score": 0.9999877214431763,
+      "start": 15267,
+      "text": "mouse",
+      "type": "Species"
+    },
+    {
+      "end": 15505,
+      "id": "E248",
+      "score": 0.9999877214431763,
+      "start": 15500,
+      "text": "mouse",
+      "type": "Species"
+    },
+    {
+      "end": 15886,
+      "id": "E249",
+      "score": 0.9999880790710449,
+      "start": 15881,
+      "text": "mouse",
+      "type": "Species"
+    },
+    {
+      "end": 16039,
+      "id": "E250",
+      "score": 0.9999880790710449,
+      "start": 16034,
+      "text": "mouse",
+      "type": "Species"
+    },
+    {
+      "end": 16084,
+      "id": "E251",
+      "score": 0.9999880790710449,
+      "start": 16079,
+      "text": "mouse",
+      "type": "Species"
+    },
+    {
+      "end": 16152,
+      "id": "E252",
+      "score": 0.9999880790710449,
+      "start": 16147,
+      "text": "mouse",
+      "type": "Species"
+    },
+    {
+      "end": 16811,
+      "id": "E253",
+      "score": 0.9999921321868896,
+      "start": 16807,
+      "text": "NaCl",
+      "type": "Chemical"
+    },
+    {
+      "end": 16889,
+      "id": "E254",
+      "score": 0.9871883392333984,
+      "start": 16883,
+      "text": "saline",
+      "type": "Chemical"
+    },
+    {
+      "end": 16903,
+      "id": "E255",
+      "score": 0.8864560723304749,
+      "start": 16901,
+      "text": "Aβ",
+      "type": "Gene"
+    },
+    {
+      "end": 16942,
+      "id": "E256",
+      "score": 0.9999750852584839,
+      "start": 16936,
+      "text": "Aβ1–42",
+      "type": "Gene"
+    },
+    {
+      "end": 17145,
+      "id": "E257",
+      "score": 0.9999585151672363,
+      "start": 17141,
+      "text": "mice",
+      "type": "Species"
+    },
+    {
+      "end": 17184,
+      "id": "E258",
+      "score": 0.9999728202819824,
+      "start": 17181,
+      "text": "APP",
+      "type": "Gene"
+    },
+    {
+      "end": 17208,
+      "id": "E259",
+      "score": 0.9824984073638916,
+      "start": 17204,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 17273,
+      "id": "E260",
+      "score": 0.9989122152328491,
+      "start": 17269,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 17283,
+      "id": "E261",
+      "score": 0.9287443161010742,
+      "start": 17279,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 17328,
+      "id": "E262",
+      "score": 0.9999750852584839,
+      "start": 17326,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 17333,
+      "id": "E263",
+      "score": 0.9442020058631897,
+      "start": 17329,
+      "text": "mice",
+      "type": "Species"
+    },
+    {
+      "end": 17397,
+      "id": "E264",
+      "score": 0.9999111890792847,
+      "start": 17393,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 17492,
+      "id": "E265",
+      "score": 0.963676929473877,
+      "start": 17488,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 17582,
+      "id": "E266",
+      "score": 0.9999179840087891,
+      "start": 17578,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 17700,
+      "id": "E267",
+      "score": 0.9999260902404785,
+      "start": 17698,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 17705,
+      "id": "E268",
+      "score": 0.9999638795852661,
+      "start": 17701,
+      "text": "mice",
+      "type": "Species"
+    },
+    {
+      "end": 17728,
+      "id": "E269",
+      "score": 0.999950647354126,
+      "start": 17724,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 17849,
+      "id": "E270",
+      "score": 0.9999852180480957,
+      "start": 17845,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 17900,
+      "id": "E271",
+      "score": 0.999962568283081,
+      "start": 17898,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 17905,
+      "id": "E272",
+      "score": 0.9999794960021973,
+      "start": 17901,
+      "text": "mice",
+      "type": "Species"
+    },
+    {
+      "end": 17947,
+      "id": "E273",
+      "score": 0.9999680519104004,
+      "start": 17943,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 18079,
+      "id": "E274",
+      "score": 0.9999840259552002,
+      "start": 18075,
+      "text": "NeuN",
+      "type": "Gene"
+    },
+    {
+      "end": 18109,
+      "id": "E275",
+      "score": 0.9999865293502808,
+      "start": 18105,
+      "text": "GFAP",
+      "type": "Gene"
+    },
+    {
+      "end": 18145,
+      "id": "E276",
+      "score": 0.9999966621398926,
+      "start": 18141,
+      "text": "SFPQ",
+      "type": "Chemical"
+    },
+    {
+      "end": 18273,
+      "id": "E277",
+      "score": 0.9999967813491821,
+      "start": 18269,
+      "text": "SFPQ",
+      "type": "Chemical"
+    },
+    {
+      "end": 18374,
+      "id": "E278",
+      "score": 0.9999804496765137,
+      "start": 18372,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 18379,
+      "id": "E279",
+      "score": 0.999980092048645,
+      "start": 18375,
+      "text": "mice",
+      "type": "Species"
+    },
+    {
+      "end": 18394,
+      "id": "E280",
+      "score": 0.9999650716781616,
+      "start": 18390,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 18413,
+      "id": "E281",
+      "score": 0.9999624490737915,
+      "start": 18411,
+      "text": "HE",
+      "type": "Chemical"
+    },
+    {
+      "end": 18440,
+      "id": "E282",
+      "score": 0.9999370574951172,
+      "start": 18438,
+      "text": "HE",
+      "type": "Chemical"
+    },
+    {
+      "end": 18567,
+      "id": "E283",
+      "score": 0.9999505281448364,
+      "start": 18563,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 18790,
+      "id": "E284",
+      "score": 0.9999750852584839,
+      "start": 18788,
+      "text": "HE",
+      "type": "Chemical"
+    },
+    {
+      "end": 19250,
+      "id": "E285",
+      "score": 0.9999854564666748,
+      "start": 19248,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 19299,
+      "id": "E286",
+      "score": 0.9975343346595764,
+      "start": 19275,
+      "text": "neuronal disorganization",
+      "type": "Disease"
+    },
+    {
+      "end": 19332,
+      "id": "E287",
+      "score": 0.9998617470264435,
+      "start": 19312,
+      "text": "synaptic dysfunction",
+      "type": "Disease"
+    },
+    {
+      "end": 19366,
+      "id": "E288",
+      "score": 0.9999906420707703,
+      "start": 19349,
+      "text": "memory impairment",
+      "type": "Disease"
+    },
+    {
+      "end": 19408,
+      "id": "E289",
+      "score": 0.9999212026596069,
+      "start": 19404,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 19466,
+      "id": "E290",
+      "score": 0.9999703168869019,
+      "start": 19464,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 19471,
+      "id": "E291",
+      "score": 0.9999855756759644,
+      "start": 19467,
+      "text": "mice",
+      "type": "Species"
+    },
+    {
+      "end": 19600,
+      "id": "E292",
+      "score": 0.9999818801879883,
+      "start": 19597,
+      "text": "APP",
+      "type": "Gene"
+    },
+    {
+      "end": 19616,
+      "id": "E293",
+      "score": 0.9913619160652161,
+      "start": 19612,
+      "text": "SFPQ",
+      "type": "Chemical"
+    },
+    {
+      "end": 19686,
+      "id": "E294",
+      "score": 0.9999672174453735,
+      "start": 19683,
+      "text": "Tau",
+      "type": "Gene"
+    },
+    {
+      "end": 19804,
+      "id": "E295",
+      "score": 0.9999638795852661,
+      "start": 19800,
+      "text": "SFPQ",
+      "type": "Chemical"
+    },
+    {
+      "end": 19833,
+      "id": "E296",
+      "score": 0.9999858140945435,
+      "start": 19831,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 19876,
+      "id": "E297",
+      "score": 0.99998939037323,
+      "start": 19873,
+      "text": "APP",
+      "type": "Gene"
+    },
+    {
+      "end": 19884,
+      "id": "E298",
+      "score": 0.9999890327453613,
+      "start": 19881,
+      "text": "Tau",
+      "type": "Gene"
+    },
+    {
+      "end": 19937,
+      "id": "E299",
+      "score": 0.9999884366989136,
+      "start": 19933,
+      "text": "CREB",
+      "type": "Gene"
+    },
+    {
+      "end": 20022,
+      "id": "E300",
+      "score": 0.9999957084655762,
+      "start": 20018,
+      "text": "SFPQ",
+      "type": "Chemical"
+    },
+    {
+      "end": 20060,
+      "id": "E301",
+      "score": 0.9999840259552002,
+      "start": 20058,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 20065,
+      "id": "E302",
+      "score": 0.9999866485595703,
+      "start": 20061,
+      "text": "mice",
+      "type": "Species"
+    },
+    {
+      "end": 20108,
+      "id": "E303",
+      "score": 0.9999885559082031,
+      "start": 20104,
+      "text": "CREB",
+      "type": "Gene"
+    },
+    {
+      "end": 20116,
+      "id": "E304",
+      "score": 0.9999871253967285,
+      "start": 20112,
+      "text": "CREB",
+      "type": "Gene"
+    },
+    {
+      "end": 20161,
+      "id": "E305",
+      "score": 0.9999916553497314,
+      "start": 20157,
+      "text": "SFPQ",
+      "type": "Chemical"
+    },
+    {
+      "end": 20234,
+      "id": "E306",
+      "score": 0.9999862909317017,
+      "start": 20230,
+      "text": "CREB",
+      "type": "Gene"
+    },
+    {
+      "end": 20263,
+      "id": "E307",
+      "score": 0.9988856911659241,
+      "start": 20259,
+      "text": "SFPQ",
+      "type": "Chemical"
+    },
+    {
+      "end": 20298,
+      "id": "E308",
+      "score": 0.9999819993972778,
+      "start": 20294,
+      "text": "CREB",
+      "type": "Gene"
+    },
+    {
+      "end": 20374,
+      "id": "E309",
+      "score": 0.9999795854091644,
+      "start": 20343,
+      "text": "postsynaptic density protein 95",
+      "type": "Gene"
+    },
+    {
+      "end": 20381,
+      "id": "E310",
+      "score": 0.99998939037323,
+      "start": 20376,
+      "text": "PSD95",
+      "type": "Gene"
+    },
+    {
+      "end": 20449,
+      "id": "E311",
+      "score": 0.9999661445617676,
+      "start": 20445,
+      "text": "SFPQ",
+      "type": "Chemical"
+    },
+    {
+      "end": 20474,
+      "id": "E312",
+      "score": 0.9999865293502808,
+      "start": 20469,
+      "text": "PSD95",
+      "type": "Gene"
+    },
+    {
+      "end": 20661,
+      "id": "E313",
+      "score": 0.9999971389770508,
+      "start": 20657,
+      "text": "SFPQ",
+      "type": "Chemical"
+    },
+    {
+      "end": 20700,
+      "id": "E314",
+      "score": 0.9999836683273315,
+      "start": 20698,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 20705,
+      "id": "E315",
+      "score": 0.9999867677688599,
+      "start": 20701,
+      "text": "mice",
+      "type": "Species"
+    },
+    {
+      "end": 20724,
+      "id": "E316",
+      "score": 0.9999803304672241,
+      "start": 20720,
+      "text": "CREB",
+      "type": "Gene"
+    },
+    {
+      "end": 20800,
+      "id": "E317",
+      "score": 0.9999959468841553,
+      "start": 20796,
+      "text": "SFPQ",
+      "type": "Chemical"
+    },
+    {
+      "end": 20882,
+      "id": "E318",
+      "score": 0.9999961853027344,
+      "start": 20878,
+      "text": "SFPQ",
+      "type": "Chemical"
+    },
+    {
+      "end": 21122,
+      "id": "E319",
+      "score": 0.9999645948410034,
+      "start": 21119,
+      "text": "GST",
+      "type": "Gene"
+    },
+    {
+      "end": 21131,
+      "id": "E320",
+      "score": 0.9999620914459229,
+      "start": 21127,
+      "text": "HO-1",
+      "type": "Gene"
+    },
+    {
+      "end": 21273,
+      "id": "E321",
+      "score": 0.9999749660491943,
+      "start": 21268,
+      "text": "Bcl-2",
+      "type": "Gene"
+    },
+    {
+      "end": 21281,
+      "id": "E322",
+      "score": 0.9999760389328003,
+      "start": 21278,
+      "text": "Bax",
+      "type": "Gene"
+    },
+    {
+      "end": 21333,
+      "id": "E323",
+      "score": 0.9999741315841675,
+      "start": 21328,
+      "text": "Bcl-2",
+      "type": "Gene"
+    },
+    {
+      "end": 21337,
+      "id": "E324",
+      "score": 0.9999727606773376,
+      "start": 21334,
+      "text": "Bax",
+      "type": "Gene"
+    },
+    {
+      "end": 21443,
+      "id": "E325",
+      "score": 0.9848423004150391,
+      "start": 21439,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 21543,
+      "id": "E326",
+      "score": 0.999983549118042,
+      "start": 21541,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 21548,
+      "id": "E327",
+      "score": 0.9999852180480957,
+      "start": 21544,
+      "text": "mice",
+      "type": "Species"
+    },
+    {
+      "end": 21675,
+      "id": "E328",
+      "score": 0.9999767541885376,
+      "start": 21671,
+      "text": "PI3K",
+      "type": "Gene"
+    },
+    {
+      "end": 21811,
+      "id": "E329",
+      "score": 0.9999887943267822,
+      "start": 21807,
+      "text": "PI3K",
+      "type": "Gene"
+    },
+    {
+      "end": 21815,
+      "id": "E330",
+      "score": 0.9999898672103882,
+      "start": 21812,
+      "text": "AKT",
+      "type": "Gene"
+    },
+    {
+      "end": 21895,
+      "id": "E331",
+      "score": 0.9999853372573853,
+      "start": 21893,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 21914,
+      "id": "E332",
+      "score": 0.9999957084655762,
+      "start": 21910,
+      "text": "SFPQ",
+      "type": "Chemical"
+    },
+    {
+      "end": 21943,
+      "id": "E333",
+      "score": 0.9994923075040182,
+      "start": 21932,
+      "text": "antioxidant",
+      "type": "Chemical"
+    },
+    {
+      "end": 22050,
+      "id": "E334",
+      "score": 0.9999953508377075,
+      "start": 22046,
+      "text": "SFPQ",
+      "type": "Chemical"
+    },
+    {
+      "end": 22063,
+      "id": "E335",
+      "score": 0.9999881982803345,
+      "start": 22059,
+      "text": "PI3K",
+      "type": "Gene"
+    },
+    {
+      "end": 22067,
+      "id": "E336",
+      "score": 0.9999892711639404,
+      "start": 22064,
+      "text": "AKT",
+      "type": "Gene"
+    },
+    {
+      "end": 22115,
+      "id": "E337",
+      "score": 0.9999960660934448,
+      "start": 22111,
+      "text": "SFPQ",
+      "type": "Chemical"
+    },
+    {
+      "end": 22175,
+      "id": "E338",
+      "score": 0.9999765157699585,
+      "start": 22171,
+      "text": "PI3K",
+      "type": "Gene"
+    },
+    {
+      "end": 22183,
+      "id": "E339",
+      "score": 0.9999768137931824,
+      "start": 22179,
+      "text": "PI3K",
+      "type": "Gene"
+    },
+    {
+      "end": 22204,
+      "id": "E340",
+      "score": 0.9999892711639404,
+      "start": 22200,
+      "text": "PI3K",
+      "type": "Gene"
+    },
+    {
+      "end": 22209,
+      "id": "E341",
+      "score": 0.9999762773513794,
+      "start": 22205,
+      "text": "PI3K",
+      "type": "Gene"
+    },
+    {
+      "end": 22265,
+      "id": "E342",
+      "score": 0.9999886751174927,
+      "start": 22262,
+      "text": "AKT",
+      "type": "Gene"
+    },
+    {
+      "end": 22272,
+      "id": "E343",
+      "score": 0.9999887943267822,
+      "start": 22269,
+      "text": "AKT",
+      "type": "Gene"
+    },
+    {
+      "end": 22283,
+      "id": "E344",
+      "score": 0.9999885559082031,
+      "start": 22280,
+      "text": "AKT",
+      "type": "Gene"
+    },
+    {
+      "end": 22287,
+      "id": "E345",
+      "score": 0.999988317489624,
+      "start": 22284,
+      "text": "AKT",
+      "type": "Gene"
+    },
+    {
+      "end": 22358,
+      "id": "E346",
+      "score": 0.9999889135360718,
+      "start": 22354,
+      "text": "PI3K",
+      "type": "Gene"
+    },
+    {
+      "end": 22362,
+      "id": "E347",
+      "score": 0.99998939037323,
+      "start": 22359,
+      "text": "AKT",
+      "type": "Gene"
+    },
+    {
+      "end": 22420,
+      "id": "E348",
+      "score": 0.9999971389770508,
+      "start": 22416,
+      "text": "SFPQ",
+      "type": "Chemical"
+    },
+    {
+      "end": 22475,
+      "id": "E349",
+      "score": 0.9999966621398926,
+      "start": 22471,
+      "text": "SFPQ",
+      "type": "Chemical"
+    },
+    {
+      "end": 22565,
+      "id": "E350",
+      "score": 0.9999879598617554,
+      "start": 22561,
+      "text": "mice",
+      "type": "Species"
+    },
+    {
+      "end": 22599,
+      "id": "E351",
+      "score": 0.9999972581863403,
+      "start": 22595,
+      "text": "SFPQ",
+      "type": "Chemical"
+    },
+    {
+      "end": 22634,
+      "id": "E352",
+      "score": 0.9999841451644897,
+      "start": 22632,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 22640,
+      "id": "E353",
+      "score": 0.9999871253967285,
+      "start": 22635,
+      "text": "mouse",
+      "type": "Species"
+    },
+    {
+      "end": 22787,
+      "id": "E354",
+      "score": 0.9999823570251465,
+      "start": 22785,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 22792,
+      "id": "E355",
+      "score": 0.9999874830245972,
+      "start": 22788,
+      "text": "mice",
+      "type": "Species"
+    },
+    {
+      "end": 22807,
+      "id": "E356",
+      "score": 0.9999970197677612,
+      "start": 22803,
+      "text": "SFPQ",
+      "type": "Chemical"
+    },
+    {
+      "end": 22845,
+      "id": "E357",
+      "score": 0.9999969005584717,
+      "start": 22841,
+      "text": "SFPQ",
+      "type": "Chemical"
+    },
+    {
+      "end": 22885,
+      "id": "E358",
+      "score": 0.9999842643737793,
+      "start": 22883,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 22890,
+      "id": "E359",
+      "score": 0.9999877214431763,
+      "start": 22886,
+      "text": "mice",
+      "type": "Species"
+    },
+    {
+      "end": 23063,
+      "id": "E360",
+      "score": 0.99909508228302,
+      "start": 23059,
+      "text": "SFPQ",
+      "type": "Chemical"
+    },
+    {
+      "end": 23069,
+      "id": "E361",
+      "score": 0.999984860420227,
+      "start": 23067,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 23149,
+      "id": "E362",
+      "score": 0.9999864101409912,
+      "start": 23141,
+      "text": "dementia",
+      "type": "Disease"
+    },
+    {
+      "end": 23430,
+      "id": "E363",
+      "score": 0.9999768733978271,
+      "start": 23426,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 23520,
+      "id": "E364",
+      "score": 0.9999854564666748,
+      "start": 23516,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 23677,
+      "id": "E365",
+      "score": 0.9999873638153076,
+      "start": 23673,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 23772,
+      "id": "E366",
+      "score": 0.9999874830245972,
+      "start": 23768,
+      "text": "mice",
+      "type": "Species"
+    },
+    {
+      "end": 23780,
+      "id": "E367",
+      "score": 0.999985933303833,
+      "start": 23778,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 23901,
+      "id": "E368",
+      "score": 0.9999879598617554,
+      "start": 23898,
+      "text": "ROS",
+      "type": "Chemical"
+    },
+    {
+      "end": 24082,
+      "id": "E369",
+      "score": 0.9999861717224121,
+      "start": 24065,
+      "text": "neurodegeneration",
+      "type": "Disease"
+    },
+    {
+      "end": 24088,
+      "id": "E370",
+      "score": 0.9999841451644897,
+      "start": 24086,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 24145,
+      "id": "E371",
+      "score": 0.9968641400337219,
+      "start": 24141,
+      "text": "SFPQ",
+      "type": "Chemical"
+    },
+    {
+      "end": 24170,
+      "id": "E372",
+      "score": 0.9999810457229614,
+      "start": 24168,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 24175,
+      "id": "E373",
+      "score": 0.999985933303833,
+      "start": 24171,
+      "text": "mice",
+      "type": "Species"
+    },
+    {
+      "end": 24236,
+      "id": "E374",
+      "score": 0.999988317489624,
+      "start": 24233,
+      "text": "GST",
+      "type": "Gene"
+    },
+    {
+      "end": 24245,
+      "id": "E375",
+      "score": 0.9999896287918091,
+      "start": 24241,
+      "text": "HO-1",
+      "type": "Gene"
+    },
+    {
+      "end": 24250,
+      "id": "E376",
+      "score": 0.9999876022338867,
+      "start": 24247,
+      "text": "GST",
+      "type": "Gene"
+    },
+    {
+      "end": 24336,
+      "id": "E377",
+      "score": 0.9999892711639404,
+      "start": 24332,
+      "text": "HO-1",
+      "type": "Gene"
+    },
+    {
+      "end": 24387,
+      "id": "E378",
+      "score": 0.9999817411104838,
+      "start": 24344,
+      "text": "nuclear factor erythroid 2-related factor 2",
+      "type": "Gene"
+    },
+    {
+      "end": 24393,
+      "id": "E379",
+      "score": 0.9999890327453613,
+      "start": 24389,
+      "text": "NRF2",
+      "type": "Gene"
+    },
+    {
+      "end": 24597,
+      "id": "E380",
+      "score": 0.999992847442627,
+      "start": 24593,
+      "text": "SFPQ",
+      "type": "Chemical"
+    },
+    {
+      "end": 24732,
+      "id": "E381",
+      "score": 0.9999614953994751,
+      "start": 24730,
+      "text": "Aβ",
+      "type": "Gene"
+    },
+    {
+      "end": 24743,
+      "id": "E382",
+      "score": 0.9999798536300659,
+      "start": 24735,
+      "text": "Patients",
+      "type": "Species"
+    },
+    {
+      "end": 24751,
+      "id": "E383",
+      "score": 0.9999860525131226,
+      "start": 24749,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 24930,
+      "id": "E384",
+      "score": 0.9991847276687622,
+      "start": 24904,
+      "text": "neurodegenerative diseases",
+      "type": "Disease"
+    },
+    {
+      "end": 25027,
+      "id": "E385",
+      "score": 0.9999887943267822,
+      "start": 25023,
+      "text": "Aβ42",
+      "type": "Gene"
+    },
+    {
+      "end": 25148,
+      "id": "E386",
+      "score": 0.9999890327453613,
+      "start": 25143,
+      "text": "PSD95",
+      "type": "Gene"
+    },
+    {
+      "end": 25371,
+      "id": "E387",
+      "score": 0.9999898672103882,
+      "start": 25366,
+      "text": "PSD95",
+      "type": "Gene"
+    },
+    {
+      "end": 25526,
+      "id": "E388",
+      "score": 0.9999969005584717,
+      "start": 25522,
+      "text": "SFPQ",
+      "type": "Chemical"
+    },
+    {
+      "end": 25532,
+      "id": "E389",
+      "score": 0.9999812841415405,
+      "start": 25530,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 25537,
+      "id": "E390",
+      "score": 0.9999876022338867,
+      "start": 25533,
+      "text": "mice",
+      "type": "Species"
+    },
+    {
+      "end": 25553,
+      "id": "E391",
+      "score": 0.99998939037323,
+      "start": 25548,
+      "text": "PSD95",
+      "type": "Gene"
+    },
+    {
+      "end": 25589,
+      "id": "E392",
+      "score": 0.9999971389770508,
+      "start": 25585,
+      "text": "SFPQ",
+      "type": "Chemical"
+    },
+    {
+      "end": 25733,
+      "id": "E393",
+      "score": 0.9999876022338867,
+      "start": 25729,
+      "text": "mice",
+      "type": "Species"
+    },
+    {
+      "end": 25755,
+      "id": "E394",
+      "score": 0.9999967813491821,
+      "start": 25751,
+      "text": "SFPQ",
+      "type": "Chemical"
+    },
+    {
+      "end": 25824,
+      "id": "E395",
+      "score": 0.9047836065292358,
+      "start": 25816,
+      "text": "synaptic",
+      "type": "Disease"
+    },
+    {
+      "end": 25877,
+      "id": "E396",
+      "score": 0.9991253018379211,
+      "start": 25875,
+      "text": "Aβ",
+      "type": "Gene"
+    },
+    {
+      "end": 25894,
+      "id": "E397",
+      "score": 0.9999842643737793,
+      "start": 25892,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 25899,
+      "id": "E398",
+      "score": 0.9999874830245972,
+      "start": 25895,
+      "text": "mice",
+      "type": "Species"
+    },
+    {
+      "end": 25905,
+      "id": "E399",
+      "score": 0.9999065399169922,
+      "start": 25902,
+      "text": "Tau",
+      "type": "Gene"
+    },
+    {
+      "end": 25966,
+      "id": "E400",
+      "score": 0.9999856948852539,
+      "start": 25964,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 25972,
+      "id": "E401",
+      "score": 0.9999768733978271,
+      "start": 25968,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 26021,
+      "id": "E402",
+      "score": 0.9993482430775961,
+      "start": 26015,
+      "text": "4R-Tau",
+      "type": "Gene"
+    },
+    {
+      "end": 26060,
+      "id": "E403",
+      "score": 0.9999356269836426,
+      "start": 26057,
+      "text": "Tau",
+      "type": "Gene"
+    },
+    {
+      "end": 26097,
+      "id": "E404",
+      "score": 0.6195507049560547,
+      "start": 26094,
+      "text": "Tau",
+      "type": "Gene"
+    },
+    {
+      "end": 26109,
+      "id": "E405",
+      "score": 0.9999693632125854,
+      "start": 26105,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 26130,
+      "id": "E406",
+      "score": 0.9998993873596191,
+      "start": 26127,
+      "text": "Tau",
+      "type": "Gene"
+    },
+    {
+      "end": 26169,
+      "id": "E407",
+      "score": 0.6771687865257263,
+      "start": 26166,
+      "text": "Tau",
+      "type": "Gene"
+    },
+    {
+      "end": 26187,
+      "id": "E408",
+      "score": 0.9985683361689249,
+      "start": 26169,
+      "text": "-related disorders",
+      "type": "Disease"
+    },
+    {
+      "end": 26229,
+      "id": "E409",
+      "score": 0.9999809265136719,
+      "start": 26225,
+      "text": "mice",
+      "type": "Species"
+    },
+    {
+      "end": 26261,
+      "id": "E410",
+      "score": 0.9999886751174927,
+      "start": 26238,
+      "text": "frontotemporal dementia",
+      "type": "Disease"
+    },
+    {
+      "end": 26306,
+      "id": "E411",
+      "score": 0.9999498128890991,
+      "start": 26302,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 26337,
+      "id": "E412",
+      "score": 0.9999831914901733,
+      "start": 26333,
+      "text": "mice",
+      "type": "Species"
+    },
+    {
+      "end": 26448,
+      "id": "E413",
+      "score": 0.9996059238910675,
+      "start": 26435,
+      "text": "neuronal loss",
+      "type": "Disease"
+    },
+    {
+      "end": 26498,
+      "id": "E414",
+      "score": 0.9981936812400818,
+      "start": 26495,
+      "text": "Tau",
+      "type": "Gene"
+    },
+    {
+      "end": 26578,
+      "id": "E415",
+      "score": 0.9999821186065674,
+      "start": 26574,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 26629,
+      "id": "E416",
+      "score": 0.9998528957366943,
+      "start": 26626,
+      "text": "Tau",
+      "type": "Gene"
+    },
+    {
+      "end": 26644,
+      "id": "E417",
+      "score": 0.9999803304672241,
+      "start": 26640,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 26783,
+      "id": "E418",
+      "score": 0.9999889135360718,
+      "start": 26779,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 26834,
+      "id": "E419",
+      "score": 0.9999879598617554,
+      "start": 26830,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 26946,
+      "id": "E420",
+      "score": 0.9999899864196777,
+      "start": 26942,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 27164,
+      "id": "E421",
+      "score": 0.9999648332595825,
+      "start": 27160,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 27214,
+      "id": "E422",
+      "score": 0.9999845027923584,
+      "start": 27212,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 27257,
+      "id": "E423",
+      "score": 0.9999828338623047,
+      "start": 27253,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 27344,
+      "id": "E424",
+      "score": 0.9997665286064148,
+      "start": 27340,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 27798,
+      "id": "E425",
+      "score": 0.9996108412742615,
+      "start": 27794,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 27832,
+      "id": "E426",
+      "score": 0.9999887943267822,
+      "start": 27828,
+      "text": "PI3K",
+      "type": "Gene"
+    },
+    {
+      "end": 27836,
+      "id": "E427",
+      "score": 0.9999891519546509,
+      "start": 27833,
+      "text": "AKT",
+      "type": "Gene"
+    },
+    {
+      "end": 27896,
+      "id": "E428",
+      "score": 0.9999890327453613,
+      "start": 27892,
+      "text": "PI3K",
+      "type": "Gene"
+    },
+    {
+      "end": 27900,
+      "id": "E429",
+      "score": 0.99998939037323,
+      "start": 27897,
+      "text": "AKT",
+      "type": "Gene"
+    },
+    {
+      "end": 27969,
+      "id": "E430",
+      "score": 0.999975323677063,
+      "start": 27967,
+      "text": "Aβ",
+      "type": "Gene"
+    },
+    {
+      "end": 28011,
+      "id": "E431",
+      "score": 0.9999800523122152,
+      "start": 28000,
+      "text": "α-secretase",
+      "type": "Gene"
+    },
+    {
+      "end": 28061,
+      "id": "E432",
+      "score": 0.9999891519546509,
+      "start": 28058,
+      "text": "APP",
+      "type": "Gene"
+    },
+    {
+      "end": 28154,
+      "id": "E433",
+      "score": 0.9999889135360718,
+      "start": 28149,
+      "text": "Bcl-2",
+      "type": "Gene"
+    },
+    {
+      "end": 28163,
+      "id": "E434",
+      "score": 0.9999774098396301,
+      "start": 28159,
+      "text": "Bax.",
+      "type": "Gene"
+    },
+    {
+      "end": 28185,
+      "id": "E435",
+      "score": 0.9999786615371704,
+      "start": 28181,
+      "text": "PI3K",
+      "type": "Gene"
+    },
+    {
+      "end": 28369,
+      "id": "E436",
+      "score": 0.9999974966049194,
+      "start": 28365,
+      "text": "SFPQ",
+      "type": "Chemical"
+    },
+    {
+      "end": 28440,
+      "id": "E437",
+      "score": 0.9999890327453613,
+      "start": 28436,
+      "text": "PI3K",
+      "type": "Gene"
+    },
+    {
+      "end": 28444,
+      "id": "E438",
+      "score": 0.9999902248382568,
+      "start": 28441,
+      "text": "AKT",
+      "type": "Gene"
+    },
+    {
+      "end": 28578,
+      "id": "E439",
+      "score": 0.9999856948852539,
+      "start": 28576,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 28814,
+      "id": "E440",
+      "score": 0.9999860525131226,
+      "start": 28812,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 28852,
+      "id": "E441",
+      "score": 0.914965808391571,
+      "start": 28848,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 28862,
+      "id": "E442",
+      "score": 0.9999837875366211,
+      "start": 28860,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 28867,
+      "id": "E443",
+      "score": 0.9999866485595703,
+      "start": 28863,
+      "text": "mice",
+      "type": "Species"
+    },
+    {
+      "end": 29029,
+      "id": "E444",
+      "score": 0.9999831914901733,
+      "start": 29027,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 29034,
+      "id": "E445",
+      "score": 0.999987006187439,
+      "start": 29030,
+      "text": "mice",
+      "type": "Species"
+    },
+    {
+      "end": 29099,
+      "id": "E446",
+      "score": 0.999962329864502,
+      "start": 29095,
+      "text": "SFPQ",
+      "type": "Chemical"
+    },
+    {
+      "end": 29121,
+      "id": "E447",
+      "score": 0.9999858140945435,
+      "start": 29117,
+      "text": "SFPQ",
+      "type": "Chemical"
+    },
+    {
+      "end": 29167,
+      "id": "E448",
+      "score": 0.9949048757553101,
+      "start": 29161,
+      "text": "murine",
+      "type": "Species"
+    },
+    {
+      "end": 29267,
+      "id": "E449",
+      "score": 0.9999910593032837,
+      "start": 29263,
+      "text": "SFPQ",
+      "type": "Chemical"
+    },
+    {
+      "end": 29297,
+      "id": "E450",
+      "score": 0.9999854564666748,
+      "start": 29295,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 29393,
+      "id": "E451",
+      "score": 0.9999951124191284,
+      "start": 29389,
+      "text": "SFPQ",
+      "type": "Chemical"
+    },
+    {
+      "end": 29418,
+      "id": "E452",
+      "score": 0.9999849796295166,
+      "start": 29416,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 29568,
+      "id": "E453",
+      "score": 0.999983549118042,
+      "start": 29566,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 29657,
+      "id": "E454",
+      "score": 0.9999973773956299,
+      "start": 29653,
+      "text": "SFPQ",
+      "type": "Chemical"
+    },
+    {
+      "end": 29808,
+      "id": "E455",
+      "score": 0.9999895095825195,
+      "start": 29804,
+      "text": "PI3K",
+      "type": "Gene"
+    },
+    {
+      "end": 29812,
+      "id": "E456",
+      "score": 0.9999899864196777,
+      "start": 29809,
+      "text": "AKT",
+      "type": "Gene"
+    },
+    {
+      "end": 29844,
+      "id": "E457",
+      "score": 0.9999971389770508,
+      "start": 29840,
+      "text": "SFPQ",
+      "type": "Chemical"
+    },
+    {
+      "end": 29917,
+      "id": "E458",
+      "score": 0.9999973773956299,
+      "start": 29913,
+      "text": "SFPQ",
+      "type": "Chemical"
+    },
+    {
+      "end": 30007,
+      "id": "E459",
+      "score": 0.9999896287918091,
+      "start": 30003,
+      "text": "PI3K",
+      "type": "Gene"
+    },
+    {
+      "end": 30011,
+      "id": "E460",
+      "score": 0.9999902248382568,
+      "start": 30008,
+      "text": "AKT",
+      "type": "Gene"
+    }
+  ],
+  "ner": {
+    "document_count": 3,
+    "inference_duration_seconds": 71.07527960000152,
+    "inference_scope": "All supplied document text; SciSpacy sentence segmentation; Flair long-sentence striding when required; no truncation.",
+    "model_artifact_sha256": "245a099b660c1e2b682e0a1216feac140d5be36c4c6ca8c715af682efa685de6",
+    "model_identifier": "hunflair/hunflair2-ner",
+    "model_input": "C:\\Projects\\Biomed\\extraction_system\\.cache\\hunflair2\\flair\\models\\hunflair2-ner\\models--hunflair--hunflair2-ner\\snapshots\\3af2b8972f7af2910ce8d9ae724da09b3d7a166c\\pytorch_model.bin",
+    "model_revision": "3af2b8972f7af2910ce8d9ae724da09b3d7a166c",
+    "predicted_entity_count": 2271,
+    "runtime": {
+      "allow_long_sentences": true,
+      "cuda_available": false,
+      "cuda_device": null,
+      "cuda_version": null,
+      "device": "cpu",
+      "en_core_sci_sm": "0.5.1",
+      "flair": "0.15.1",
+      "label_type": "ner",
+      "model_max_length": 512,
+      "offset_mechanics": "Flair span text is resolved against the model sentence; that sentence is located in the untouched source and the lifted span is validated before serialization.",
+      "python": "3.11.16",
+      "python_implementation": "CPython",
+      "pytorch": "2.14.0+cpu",
+      "scispacy": "0.5.1",
+      "sentence_splitter": "SciSpacySentenceSplitter(en_core_sci_sm)",
+      "spacy": "3.4.4",
+      "stride": 256,
+      "tagger_class": "PrefixedSequenceTagger",
+      "transformer_model": "michiyasunaga/BioLinkBERT-base",
+      "transformers": "4.57.6",
+      "truncate": true
+    },
+    "sentence_count": 801,
+    "upstream_repository": "https://github.com/flairNLP/flair"
+  },
+  "paper_id": "PMCID:PMC11824863",
+  "source": {
+    "corpus_file_sha256": "544cb37adee45fd7fe892c80b7aa4e8ba93e801212bc759e615e71d721ce4b55",
+    "corpus_path": ".cache/ner_target_domain/target_corpus.json",
+    "section_availability": [
+      "title",
+      "abstract",
+      "1. Introduction",
+      "2. Materials and Methods / 2.1. Animals",
+      "2. Materials and Methods / 2.2. Brain Stereotaxic Instrument Injection",
+      "2. Materials and Methods / 2.3. Aβ1–42 Solution Preparation",
+      "2. Materials and Methods / 2.4. AAV9-Green Fluorescent Protein (GFP) Injection",
+      "2. Materials and Methods / 2.5. Western Blotting",
+      "2. Materials and Methods / 2.6. Hematoxylin and Eosin (HE) Staining",
+      "2. Materials and Methods / 2.7. Immunofluorescence Experiment",
+      "2. Materials and Methods / 2.8. Novel Object Recognition (NOR) Experiment",
+      "2. Materials and Methods / 2.9. Y-Maze Test",
+      "2. Materials and Methods / 2.10. Statistical Analysis",
+      "3. Results / 3.1. Successful Establishment of the AD Model and Improved Memory and Cognition in AD Mice Following SFPQ Overexpression",
+      "3. Results / 3.2. Overexpressed SFPQ Colocalized With CA1 Neurons and Improved the Arrangement of Hippocampal Cells in AD Mice",
+      "3. Results / 3.3. Overexpression of SFPQ Downregulated AD-Related Marker Proteins and Upregulated the Expression of Memory and Synapse-Associated Proteins",
+      "3. Results / 3.4. Overexpression of SFPQ Enhanced Antioxidant and Antiapoptotic Capacities in Hippocampal Cells of the AD Mouse Model",
+      "3. Results / 3.5. Overexpression of SFPQ Activated the PI3K/AKT Pathway",
+      "4. Discussion",
+      "5. Conclusions",
+      "6. Limitations"
+    ],
+    "segments": [
+      {
+        "characters": 63,
+        "end": 63,
+        "section": "title",
+        "start": 0
+      },
+      {
+        "characters": 1431,
+        "end": 1496,
+        "section": "abstract",
+        "start": 65
+      },
+      {
+        "characters": 702,
+        "end": 2200,
+        "section": "1. Introduction",
+        "start": 1498
+      },
+      {
+        "characters": 685,
+        "end": 2887,
+        "section": "1. Introduction",
+        "start": 2202
+      },
+      {
+        "characters": 1436,
+        "end": 4325,
+        "section": "1. Introduction",
+        "start": 2889
+      },
+      {
+        "characters": 1223,
+        "end": 5550,
+        "section": "1. Introduction",
+        "start": 4327
+      },
+      {
+        "characters": 2069,
+        "end": 7621,
+        "section": "1. Introduction",
+        "start": 5552
+      },
+      {
+        "characters": 845,
+        "end": 8468,
+        "section": "1. Introduction",
+        "start": 7623
+      },
+      {
+        "characters": 773,
+        "end": 9243,
+        "section": "2. Materials and Methods / 2.1. Animals",
+        "start": 8470
+      },
+      {
+        "characters": 445,
+        "end": 9690,
+        "section": "2. Materials and Methods / 2.1. Animals",
+        "start": 9245
+      },
+      {
+        "characters": 365,
+        "end": 10057,
+        "section": "2. Materials and Methods / 2.2. Brain Stereotaxic Instrument Injection",
+        "start": 9692
+      },
+      {
+        "characters": 275,
+        "end": 10334,
+        "section": "2. Materials and Methods / 2.3. Aβ1–42 Solution Preparation",
+        "start": 10059
+      },
+      {
+        "characters": 611,
+        "end": 10947,
+        "section": "2. Materials and Methods / 2.4. AAV9-Green Fluorescent Protein (GFP) Injection",
+        "start": 10336
+      },
+      {
+        "characters": 1860,
+        "end": 12809,
+        "section": "2. Materials and Methods / 2.5. Western Blotting",
+        "start": 10949
+      },
+      {
+        "characters": 376,
+        "end": 13187,
+        "section": "2. Materials and Methods / 2.6. Hematoxylin and Eosin (HE) Staining",
+        "start": 12811
+      },
+      {
+        "characters": 1296,
+        "end": 14485,
+        "section": "2. Materials and Methods / 2.7. Immunofluorescence Experiment",
+        "start": 13189
+      },
+      {
+        "characters": 152,
+        "end": 14639,
+        "section": "2. Materials and Methods / 2.8. Novel Object Recognition (NOR) Experiment",
+        "start": 14487
+      },
+      {
+        "characters": 451,
+        "end": 15092,
+        "section": "2. Materials and Methods / 2.8. Novel Object Recognition (NOR) Experiment",
+        "start": 14641
+      },
+      {
+        "characters": 323,
+        "end": 15417,
+        "section": "2. Materials and Methods / 2.8. Novel Object Recognition (NOR) Experiment",
+        "start": 15094
+      },
+      {
+        "characters": 284,
+        "end": 15703,
+        "section": "2. Materials and Methods / 2.8. Novel Object Recognition (NOR) Experiment",
+        "start": 15419
+      },
+      {
+        "characters": 535,
+        "end": 16240,
+        "section": "2. Materials and Methods / 2.9. Y-Maze Test",
+        "start": 15705
+      },
+      {
+        "characters": 544,
+        "end": 16786,
+        "section": "2. Materials and Methods / 2.10. Statistical Analysis",
+        "start": 16242
+      },
+      {
+        "characters": 1132,
+        "end": 17920,
+        "section": "3. Results / 3.1. Successful Establishment of the AD Model and Improved Memory and Cognition in AD Mice Following SFPQ Overexpression",
+        "start": 16788
+      },
+      {
+        "characters": 379,
+        "end": 18301,
+        "section": "3. Results / 3.2. Overexpressed SFPQ Colocalized With CA1 Neurons and Improved the Arrangement of Hippocampal Cells in AD Mice",
+        "start": 17922
+      },
+      {
+        "characters": 1244,
+        "end": 19547,
+        "section": "3. Results / 3.2. Overexpressed SFPQ Colocalized With CA1 Neurons and Improved the Arrangement of Hippocampal Cells in AD Mice",
+        "start": 18303
+      },
+      {
+        "characters": 347,
+        "end": 19896,
+        "section": "3. Results / 3.3. Overexpression of SFPQ Downregulated AD-Related Marker Proteins and Upregulated the Expression of Memory and Synapse-Associated Proteins",
+        "start": 19549
+      },
+      {
+        "characters": 863,
+        "end": 20761,
+        "section": "3. Results / 3.3. Overexpression of SFPQ Downregulated AD-Related Marker Proteins and Upregulated the Expression of Memory and Synapse-Associated Proteins",
+        "start": 19898
+      },
+      {
+        "characters": 902,
+        "end": 21665,
+        "section": "3. Results / 3.4. Overexpression of SFPQ Enhanced Antioxidant and Antiapoptotic Capacities in Hippocampal Cells of the AD Mouse Model",
+        "start": 20763
+      },
+      {
+        "characters": 754,
+        "end": 22421,
+        "section": "3. Results / 3.5. Overexpression of SFPQ Activated the PI3K/AKT Pathway",
+        "start": 21667
+      },
+      {
+        "characters": 699,
+        "end": 23122,
+        "section": "4. Discussion",
+        "start": 22423
+      },
+      {
+        "characters": 657,
+        "end": 23781,
+        "section": "4. Discussion",
+        "start": 23124
+      },
+      {
+        "characters": 950,
+        "end": 24733,
+        "section": "4. Discussion",
+        "start": 23783
+      },
+      {
+        "characters": 1165,
+        "end": 25900,
+        "section": "4. Discussion",
+        "start": 24735
+      },
+      {
+        "characters": 803,
+        "end": 26705,
+        "section": "4. Discussion",
+        "start": 25902
+      },
+      {
+        "characters": 1056,
+        "end": 27763,
+        "section": "4. Discussion",
+        "start": 26707
+      },
+      {
+        "characters": 780,
+        "end": 28545,
+        "section": "4. Discussion",
+        "start": 27765
+      },
+      {
+        "characters": 435,
+        "end": 28982,
+        "section": "4. Discussion",
+        "start": 28547
+      },
+      {
+        "characters": 500,
+        "end": 29484,
+        "section": "5. Conclusions",
+        "start": 28984
+      },
+      {
+        "characters": 534,
+        "end": 30020,
+        "section": "6. Limitations",
+        "start": 29486
+      }
+    ],
+    "source_characters": 30020,
+    "source_checksum": "7d67a720ddc0b04f5cd9dbae443b094df08120ff01f8c19fbcbd421933f91b75",
+    "source_format": "pmc_xml",
+    "source_sha256": "8a43f612139aa84939933831a5bc7f5420122549fd69081d635b7becb80d2a15"
+  },
+  "title": "Overexpression of SFPQ Improves Cognition and Memory in AD Mice"
+}

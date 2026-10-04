@@ -1,0 +1,9 @@
+{
+  "public_sdk_conversion": true,
+  "allowed_schema_differences_only": true,
+  "all_object_required_and_closed": true,
+  "field_types_and_nullability_preserved": true,
+  "empty_relations_round_trip": true,
+  "null_and_empty_fields_round_trip": true,
+  "normal_contract10_semantics_identical": true
+}

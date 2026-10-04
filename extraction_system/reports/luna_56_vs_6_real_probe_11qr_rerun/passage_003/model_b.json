@@ -1,0 +1,1318 @@
+{
+  "blinded_model": "Model B",
+  "configuration": {
+    "bounded_repair_budget": 2,
+    "max_output_tokens": 128000,
+    "prompt_sha256": "7017c9844dc3748f68d48333ce6bb143b9d5a981a566da446b0bcdc3542667df",
+    "provider": "OpenAI Responses API",
+    "provider_retries": 0,
+    "reasoning_effort": "max"
+  },
+  "entity_packet": [
+    {
+      "end": 86,
+      "id": "E648",
+      "score": 0.9999885559082031,
+      "start": 83,
+      "text": "Cbl",
+      "type": "Gene"
+    },
+    {
+      "end": 99,
+      "id": "E649",
+      "score": 0.9999791781107584,
+      "start": 94,
+      "text": "Runx3",
+      "type": "Gene"
+    },
+    {
+      "end": 110,
+      "id": "E650",
+      "score": 0.9999890327453613,
+      "start": 107,
+      "text": "Cbl",
+      "type": "Gene"
+    },
+    {
+      "end": 116,
+      "id": "E651",
+      "score": 0.9999902248382568,
+      "start": 112,
+      "text": "JAK2",
+      "type": "Gene"
+    },
+    {
+      "end": 126,
+      "id": "E652",
+      "score": 0.9999901056289673,
+      "start": 121,
+      "text": "STAT4",
+      "type": "Gene"
+    },
+    {
+      "end": 229,
+      "id": "E653",
+      "score": 0.9999881982803345,
+      "start": 226,
+      "text": "Cbl",
+      "type": "Gene"
+    },
+    {
+      "end": 239,
+      "id": "E654",
+      "score": 0.9999891519546509,
+      "start": 236,
+      "text": "Cbl",
+      "type": "Gene"
+    },
+    {
+      "end": 298,
+      "id": "E655",
+      "score": 0.9999901056289673,
+      "start": 294,
+      "text": "JAK2",
+      "type": "Gene"
+    },
+    {
+      "end": 306,
+      "id": "E656",
+      "score": 0.9999901056289673,
+      "start": 302,
+      "text": "JAK2",
+      "type": "Gene"
+    },
+    {
+      "end": 313,
+      "id": "E657",
+      "score": 0.9999903440475464,
+      "start": 308,
+      "text": "STAT4",
+      "type": "Gene"
+    },
+    {
+      "end": 322,
+      "id": "E658",
+      "score": 0.9999903440475464,
+      "start": 317,
+      "text": "STAT4",
+      "type": "Gene"
+    },
+    {
+      "end": 332,
+      "id": "E659",
+      "score": 0.9999801715215048,
+      "start": 327,
+      "text": "Runx3",
+      "type": "Gene"
+    },
+    {
+      "end": 372,
+      "id": "E660",
+      "score": 0.9999867677688599,
+      "start": 369,
+      "text": "Cbl",
+      "type": "Gene"
+    },
+    {
+      "end": 412,
+      "id": "E661",
+      "score": 0.9999886751174927,
+      "start": 409,
+      "text": "Cbl",
+      "type": "Gene"
+    },
+    {
+      "end": 425,
+      "id": "E662",
+      "score": 0.9999798933664957,
+      "start": 420,
+      "text": "Runx3",
+      "type": "Gene"
+    },
+    {
+      "end": 463,
+      "id": "E663",
+      "score": 0.9999891519546509,
+      "start": 460,
+      "text": "Cbl",
+      "type": "Gene"
+    },
+    {
+      "end": 469,
+      "id": "E664",
+      "score": 0.9999899864196777,
+      "start": 465,
+      "text": "JAK2",
+      "type": "Gene"
+    },
+    {
+      "end": 477,
+      "id": "E665",
+      "score": 0.9999898672103882,
+      "start": 473,
+      "text": "JAK2",
+      "type": "Gene"
+    },
+    {
+      "end": 484,
+      "id": "E666",
+      "score": 0.9999902248382568,
+      "start": 479,
+      "text": "STAT4",
+      "type": "Gene"
+    },
+    {
+      "end": 496,
+      "id": "E667",
+      "score": 0.9999902248382568,
+      "start": 491,
+      "text": "STAT4",
+      "type": "Gene"
+    },
+    {
+      "end": 533,
+      "id": "E668",
+      "score": 0.9999798536300659,
+      "start": 528,
+      "text": "Runx3",
+      "type": "Gene"
+    },
+    {
+      "end": 566,
+      "id": "E669",
+      "score": 0.9998670816421509,
+      "start": 564,
+      "text": "NO",
+      "type": "Chemical"
+    },
+    {
+      "end": 633,
+      "id": "E670",
+      "score": 0.9999874830245972,
+      "start": 630,
+      "text": "Cbl",
+      "type": "Gene"
+    },
+    {
+      "end": 646,
+      "id": "E671",
+      "score": 0.99994957447052,
+      "start": 644,
+      "text": "NO",
+      "type": "Chemical"
+    },
+    {
+      "end": 671,
+      "id": "E672",
+      "score": 0.9999850988388062,
+      "start": 668,
+      "text": "Cbl",
+      "type": "Gene"
+    },
+    {
+      "end": 708,
+      "id": "E673",
+      "score": 0.9999797741572062,
+      "start": 703,
+      "text": "Runx3",
+      "type": "Gene"
+    },
+    {
+      "end": 723,
+      "id": "E674",
+      "score": 0.9999549388885498,
+      "start": 721,
+      "text": "NO",
+      "type": "Chemical"
+    },
+    {
+      "end": 763,
+      "id": "E675",
+      "score": 0.9999837875366211,
+      "start": 759,
+      "text": "eNOS",
+      "type": "Gene"
+    },
+    {
+      "end": 797,
+      "id": "E676",
+      "score": 0.8987472057342529,
+      "start": 795,
+      "text": "HG",
+      "type": "Chemical"
+    },
+    {
+      "end": 831,
+      "id": "E677",
+      "score": 0.9999822378158569,
+      "start": 828,
+      "text": "Cbl",
+      "type": "Gene"
+    },
+    {
+      "end": 877,
+      "id": "E678",
+      "score": 0.9999799331029257,
+      "start": 872,
+      "text": "Runx3",
+      "type": "Gene"
+    },
+    {
+      "end": 960,
+      "id": "E679",
+      "score": 0.9999861717224121,
+      "start": 957,
+      "text": "Cbl",
+      "type": "Gene"
+    },
+    {
+      "end": 1035,
+      "id": "E680",
+      "score": 0.9999862909317017,
+      "start": 1032,
+      "text": "Cbl",
+      "type": "Gene"
+    },
+    {
+      "end": 1048,
+      "id": "E681",
+      "score": 0.9999797741572062,
+      "start": 1043,
+      "text": "Runx3",
+      "type": "Gene"
+    },
+    {
+      "end": 1134,
+      "id": "E682",
+      "score": 0.9999843835830688,
+      "start": 1131,
+      "text": "Cbl",
+      "type": "Gene"
+    },
+    {
+      "end": 1168,
+      "id": "E683",
+      "score": 0.9999797741572062,
+      "start": 1163,
+      "text": "Runx3",
+      "type": "Gene"
+    },
+    {
+      "end": 1209,
+      "id": "E684",
+      "score": 0.9999898672103882,
+      "start": 1205,
+      "text": "JAK2",
+      "type": "Gene"
+    },
+    {
+      "end": 1215,
+      "id": "E685",
+      "score": 0.9999903440475464,
+      "start": 1210,
+      "text": "STAT4",
+      "type": "Gene"
+    },
+    {
+      "end": 1263,
+      "id": "E686",
+      "score": 0.9105081558227539,
+      "start": 1261,
+      "text": "NO",
+      "type": "Chemical"
+    },
+    {
+      "end": 1286,
+      "id": "E687",
+      "score": 0.9999880790710449,
+      "start": 1282,
+      "text": "eNOS",
+      "type": "Gene"
+    },
+    {
+      "end": 1356,
+      "id": "E688",
+      "score": 0.9999852180480957,
+      "start": 1353,
+      "text": "Cbl",
+      "type": "Gene"
+    },
+    {
+      "end": 1398,
+      "id": "E689",
+      "score": 0.9999798138936361,
+      "start": 1384,
+      "text": "Runx3-mediated",
+      "type": "Gene"
+    },
+    {
+      "end": 1403,
+      "id": "E690",
+      "score": 0.9999891519546509,
+      "start": 1399,
+      "text": "JAK2",
+      "type": "Gene"
+    },
+    {
+      "end": 1409,
+      "id": "E691",
+      "score": 0.9999901056289673,
+      "start": 1404,
+      "text": "STAT4",
+      "type": "Gene"
+    },
+    {
+      "end": 1473,
+      "id": "E692",
+      "score": 0.9999878406524658,
+      "start": 1470,
+      "text": "Cbl",
+      "type": "Gene"
+    },
+    {
+      "end": 1479,
+      "id": "E693",
+      "score": 0.9999897480010986,
+      "start": 1475,
+      "text": "JAK2",
+      "type": "Gene"
+    },
+    {
+      "end": 1487,
+      "id": "E694",
+      "score": 0.9999896287918091,
+      "start": 1483,
+      "text": "JAK2",
+      "type": "Gene"
+    },
+    {
+      "end": 1494,
+      "id": "E695",
+      "score": 0.9999899864196777,
+      "start": 1489,
+      "text": "STAT4",
+      "type": "Gene"
+    },
+    {
+      "end": 1503,
+      "id": "E696",
+      "score": 0.9999902248382568,
+      "start": 1498,
+      "text": "STAT4",
+      "type": "Gene"
+    },
+    {
+      "end": 1513,
+      "id": "E697",
+      "score": 0.9999792575836182,
+      "start": 1508,
+      "text": "Runx3",
+      "type": "Gene"
+    },
+    {
+      "end": 1546,
+      "id": "E698",
+      "score": 0.9999675750732422,
+      "start": 1544,
+      "text": "HG",
+      "type": "Chemical"
+    },
+    {
+      "end": 1558,
+      "id": "E699",
+      "score": 0.9999523162841797,
+      "start": 1556,
+      "text": "HG",
+      "type": "Chemical"
+    },
+    {
+      "end": 1567,
+      "id": "E700",
+      "score": 0.9999887943267822,
+      "start": 1564,
+      "text": "Cb1",
+      "type": "Gene"
+    },
+    {
+      "end": 1582,
+      "id": "E701",
+      "score": 0.9999120235443115,
+      "start": 1580,
+      "text": "HG",
+      "type": "Chemical"
+    },
+    {
+      "end": 1591,
+      "id": "E702",
+      "score": 0.9999890327453613,
+      "start": 1588,
+      "text": "Cb1",
+      "type": "Gene"
+    },
+    {
+      "end": 1602,
+      "id": "E703",
+      "score": 0.9999794562657675,
+      "start": 1597,
+      "text": "Runx3",
+      "type": "Gene"
+    },
+    {
+      "end": 1626,
+      "id": "E704",
+      "score": 0.9999948740005493,
+      "start": 1624,
+      "text": "NO",
+      "type": "Chemical"
+    },
+    {
+      "end": 1667,
+      "id": "E705",
+      "score": 0.9999942779541016,
+      "start": 1665,
+      "text": "HG",
+      "type": "Chemical"
+    },
+    {
+      "end": 1679,
+      "id": "E706",
+      "score": 0.9999939203262329,
+      "start": 1677,
+      "text": "HG",
+      "type": "Chemical"
+    },
+    {
+      "end": 1688,
+      "id": "E707",
+      "score": 0.9999873638153076,
+      "start": 1685,
+      "text": "Cbl",
+      "type": "Gene"
+    },
+    {
+      "end": 1703,
+      "id": "E708",
+      "score": 0.9999927282333374,
+      "start": 1701,
+      "text": "HG",
+      "type": "Chemical"
+    },
+    {
+      "end": 1712,
+      "id": "E709",
+      "score": 0.9999884366989136,
+      "start": 1709,
+      "text": "Cbl",
+      "type": "Gene"
+    },
+    {
+      "end": 1723,
+      "id": "E710",
+      "score": 0.9999793370564779,
+      "start": 1718,
+      "text": "Runx3",
+      "type": "Gene"
+    },
+    {
+      "end": 1751,
+      "id": "E711",
+      "score": 0.9999860525131226,
+      "start": 1747,
+      "text": "eNOS",
+      "type": "Gene"
+    },
+    {
+      "end": 1771,
+      "id": "E712",
+      "score": 0.9999957084655762,
+      "start": 1769,
+      "text": "HG",
+      "type": "Chemical"
+    },
+    {
+      "end": 1919,
+      "id": "E713",
+      "score": 0.9999959468841553,
+      "start": 1917,
+      "text": "HG",
+      "type": "Chemical"
+    },
+    {
+      "end": 1931,
+      "id": "E714",
+      "score": 0.9999958276748657,
+      "start": 1929,
+      "text": "HG",
+      "type": "Chemical"
+    },
+    {
+      "end": 1940,
+      "id": "E715",
+      "score": 0.9999728202819824,
+      "start": 1937,
+      "text": "Cbl",
+      "type": "Gene"
+    },
+    {
+      "end": 1955,
+      "id": "E716",
+      "score": 0.9999947547912598,
+      "start": 1953,
+      "text": "HG",
+      "type": "Chemical"
+    },
+    {
+      "end": 1964,
+      "id": "E717",
+      "score": 0.9999769926071167,
+      "start": 1961,
+      "text": "Cb1",
+      "type": "Gene"
+    },
+    {
+      "end": 1975,
+      "id": "E718",
+      "score": 0.998380164305369,
+      "start": 1970,
+      "text": "Runx3",
+      "type": "Gene"
+    }
+  ],
+  "entity_packet_absolute": [
+    {
+      "absolute_end": 35506,
+      "absolute_start": 35503,
+      "id": "E648",
+      "passage_end": 86,
+      "passage_start": 83,
+      "score": 0.9999885559082031,
+      "text": "Cbl",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 35519,
+      "absolute_start": 35514,
+      "id": "E649",
+      "passage_end": 99,
+      "passage_start": 94,
+      "score": 0.9999791781107584,
+      "text": "Runx3",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 35530,
+      "absolute_start": 35527,
+      "id": "E650",
+      "passage_end": 110,
+      "passage_start": 107,
+      "score": 0.9999890327453613,
+      "text": "Cbl",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 35536,
+      "absolute_start": 35532,
+      "id": "E651",
+      "passage_end": 116,
+      "passage_start": 112,
+      "score": 0.9999902248382568,
+      "text": "JAK2",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 35546,
+      "absolute_start": 35541,
+      "id": "E652",
+      "passage_end": 126,
+      "passage_start": 121,
+      "score": 0.9999901056289673,
+      "text": "STAT4",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 35649,
+      "absolute_start": 35646,
+      "id": "E653",
+      "passage_end": 229,
+      "passage_start": 226,
+      "score": 0.9999881982803345,
+      "text": "Cbl",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 35659,
+      "absolute_start": 35656,
+      "id": "E654",
+      "passage_end": 239,
+      "passage_start": 236,
+      "score": 0.9999891519546509,
+      "text": "Cbl",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 35718,
+      "absolute_start": 35714,
+      "id": "E655",
+      "passage_end": 298,
+      "passage_start": 294,
+      "score": 0.9999901056289673,
+      "text": "JAK2",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 35726,
+      "absolute_start": 35722,
+      "id": "E656",
+      "passage_end": 306,
+      "passage_start": 302,
+      "score": 0.9999901056289673,
+      "text": "JAK2",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 35733,
+      "absolute_start": 35728,
+      "id": "E657",
+      "passage_end": 313,
+      "passage_start": 308,
+      "score": 0.9999903440475464,
+      "text": "STAT4",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 35742,
+      "absolute_start": 35737,
+      "id": "E658",
+      "passage_end": 322,
+      "passage_start": 317,
+      "score": 0.9999903440475464,
+      "text": "STAT4",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 35752,
+      "absolute_start": 35747,
+      "id": "E659",
+      "passage_end": 332,
+      "passage_start": 327,
+      "score": 0.9999801715215048,
+      "text": "Runx3",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 35792,
+      "absolute_start": 35789,
+      "id": "E660",
+      "passage_end": 372,
+      "passage_start": 369,
+      "score": 0.9999867677688599,
+      "text": "Cbl",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 35832,
+      "absolute_start": 35829,
+      "id": "E661",
+      "passage_end": 412,
+      "passage_start": 409,
+      "score": 0.9999886751174927,
+      "text": "Cbl",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 35845,
+      "absolute_start": 35840,
+      "id": "E662",
+      "passage_end": 425,
+      "passage_start": 420,
+      "score": 0.9999798933664957,
+      "text": "Runx3",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 35883,
+      "absolute_start": 35880,
+      "id": "E663",
+      "passage_end": 463,
+      "passage_start": 460,
+      "score": 0.9999891519546509,
+      "text": "Cbl",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 35889,
+      "absolute_start": 35885,
+      "id": "E664",
+      "passage_end": 469,
+      "passage_start": 465,
+      "score": 0.9999899864196777,
+      "text": "JAK2",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 35897,
+      "absolute_start": 35893,
+      "id": "E665",
+      "passage_end": 477,
+      "passage_start": 473,
+      "score": 0.9999898672103882,
+      "text": "JAK2",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 35904,
+      "absolute_start": 35899,
+      "id": "E666",
+      "passage_end": 484,
+      "passage_start": 479,
+      "score": 0.9999902248382568,
+      "text": "STAT4",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 35916,
+      "absolute_start": 35911,
+      "id": "E667",
+      "passage_end": 496,
+      "passage_start": 491,
+      "score": 0.9999902248382568,
+      "text": "STAT4",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 35953,
+      "absolute_start": 35948,
+      "id": "E668",
+      "passage_end": 533,
+      "passage_start": 528,
+      "score": 0.9999798536300659,
+      "text": "Runx3",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 35986,
+      "absolute_start": 35984,
+      "id": "E669",
+      "passage_end": 566,
+      "passage_start": 564,
+      "score": 0.9998670816421509,
+      "text": "NO",
+      "type": "Chemical"
+    },
+    {
+      "absolute_end": 36053,
+      "absolute_start": 36050,
+      "id": "E670",
+      "passage_end": 633,
+      "passage_start": 630,
+      "score": 0.9999874830245972,
+      "text": "Cbl",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 36066,
+      "absolute_start": 36064,
+      "id": "E671",
+      "passage_end": 646,
+      "passage_start": 644,
+      "score": 0.99994957447052,
+      "text": "NO",
+      "type": "Chemical"
+    },
+    {
+      "absolute_end": 36091,
+      "absolute_start": 36088,
+      "id": "E672",
+      "passage_end": 671,
+      "passage_start": 668,
+      "score": 0.9999850988388062,
+      "text": "Cbl",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 36128,
+      "absolute_start": 36123,
+      "id": "E673",
+      "passage_end": 708,
+      "passage_start": 703,
+      "score": 0.9999797741572062,
+      "text": "Runx3",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 36143,
+      "absolute_start": 36141,
+      "id": "E674",
+      "passage_end": 723,
+      "passage_start": 721,
+      "score": 0.9999549388885498,
+      "text": "NO",
+      "type": "Chemical"
+    },
+    {
+      "absolute_end": 36183,
+      "absolute_start": 36179,
+      "id": "E675",
+      "passage_end": 763,
+      "passage_start": 759,
+      "score": 0.9999837875366211,
+      "text": "eNOS",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 36217,
+      "absolute_start": 36215,
+      "id": "E676",
+      "passage_end": 797,
+      "passage_start": 795,
+      "score": 0.8987472057342529,
+      "text": "HG",
+      "type": "Chemical"
+    },
+    {
+      "absolute_end": 36251,
+      "absolute_start": 36248,
+      "id": "E677",
+      "passage_end": 831,
+      "passage_start": 828,
+      "score": 0.9999822378158569,
+      "text": "Cbl",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 36297,
+      "absolute_start": 36292,
+      "id": "E678",
+      "passage_end": 877,
+      "passage_start": 872,
+      "score": 0.9999799331029257,
+      "text": "Runx3",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 36380,
+      "absolute_start": 36377,
+      "id": "E679",
+      "passage_end": 960,
+      "passage_start": 957,
+      "score": 0.9999861717224121,
+      "text": "Cbl",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 36455,
+      "absolute_start": 36452,
+      "id": "E680",
+      "passage_end": 1035,
+      "passage_start": 1032,
+      "score": 0.9999862909317017,
+      "text": "Cbl",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 36468,
+      "absolute_start": 36463,
+      "id": "E681",
+      "passage_end": 1048,
+      "passage_start": 1043,
+      "score": 0.9999797741572062,
+      "text": "Runx3",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 36554,
+      "absolute_start": 36551,
+      "id": "E682",
+      "passage_end": 1134,
+      "passage_start": 1131,
+      "score": 0.9999843835830688,
+      "text": "Cbl",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 36588,
+      "absolute_start": 36583,
+      "id": "E683",
+      "passage_end": 1168,
+      "passage_start": 1163,
+      "score": 0.9999797741572062,
+      "text": "Runx3",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 36629,
+      "absolute_start": 36625,
+      "id": "E684",
+      "passage_end": 1209,
+      "passage_start": 1205,
+      "score": 0.9999898672103882,
+      "text": "JAK2",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 36635,
+      "absolute_start": 36630,
+      "id": "E685",
+      "passage_end": 1215,
+      "passage_start": 1210,
+      "score": 0.9999903440475464,
+      "text": "STAT4",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 36683,
+      "absolute_start": 36681,
+      "id": "E686",
+      "passage_end": 1263,
+      "passage_start": 1261,
+      "score": 0.9105081558227539,
+      "text": "NO",
+      "type": "Chemical"
+    },
+    {
+      "absolute_end": 36706,
+      "absolute_start": 36702,
+      "id": "E687",
+      "passage_end": 1286,
+      "passage_start": 1282,
+      "score": 0.9999880790710449,
+      "text": "eNOS",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 36776,
+      "absolute_start": 36773,
+      "id": "E688",
+      "passage_end": 1356,
+      "passage_start": 1353,
+      "score": 0.9999852180480957,
+      "text": "Cbl",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 36818,
+      "absolute_start": 36804,
+      "id": "E689",
+      "passage_end": 1398,
+      "passage_start": 1384,
+      "score": 0.9999798138936361,
+      "text": "Runx3-mediated",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 36823,
+      "absolute_start": 36819,
+      "id": "E690",
+      "passage_end": 1403,
+      "passage_start": 1399,
+      "score": 0.9999891519546509,
+      "text": "JAK2",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 36829,
+      "absolute_start": 36824,
+      "id": "E691",
+      "passage_end": 1409,
+      "passage_start": 1404,
+      "score": 0.9999901056289673,
+      "text": "STAT4",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 36893,
+      "absolute_start": 36890,
+      "id": "E692",
+      "passage_end": 1473,
+      "passage_start": 1470,
+      "score": 0.9999878406524658,
+      "text": "Cbl",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 36899,
+      "absolute_start": 36895,
+      "id": "E693",
+      "passage_end": 1479,
+      "passage_start": 1475,
+      "score": 0.9999897480010986,
+      "text": "JAK2",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 36907,
+      "absolute_start": 36903,
+      "id": "E694",
+      "passage_end": 1487,
+      "passage_start": 1483,
+      "score": 0.9999896287918091,
+      "text": "JAK2",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 36914,
+      "absolute_start": 36909,
+      "id": "E695",
+      "passage_end": 1494,
+      "passage_start": 1489,
+      "score": 0.9999899864196777,
+      "text": "STAT4",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 36923,
+      "absolute_start": 36918,
+      "id": "E696",
+      "passage_end": 1503,
+      "passage_start": 1498,
+      "score": 0.9999902248382568,
+      "text": "STAT4",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 36933,
+      "absolute_start": 36928,
+      "id": "E697",
+      "passage_end": 1513,
+      "passage_start": 1508,
+      "score": 0.9999792575836182,
+      "text": "Runx3",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 36966,
+      "absolute_start": 36964,
+      "id": "E698",
+      "passage_end": 1546,
+      "passage_start": 1544,
+      "score": 0.9999675750732422,
+      "text": "HG",
+      "type": "Chemical"
+    },
+    {
+      "absolute_end": 36978,
+      "absolute_start": 36976,
+      "id": "E699",
+      "passage_end": 1558,
+      "passage_start": 1556,
+      "score": 0.9999523162841797,
+      "text": "HG",
+      "type": "Chemical"
+    },
+    {
+      "absolute_end": 36987,
+      "absolute_start": 36984,
+      "id": "E700",
+      "passage_end": 1567,
+      "passage_start": 1564,
+      "score": 0.9999887943267822,
+      "text": "Cb1",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 37002,
+      "absolute_start": 37000,
+      "id": "E701",
+      "passage_end": 1582,
+      "passage_start": 1580,
+      "score": 0.9999120235443115,
+      "text": "HG",
+      "type": "Chemical"
+    },
+    {
+      "absolute_end": 37011,
+      "absolute_start": 37008,
+      "id": "E702",
+      "passage_end": 1591,
+      "passage_start": 1588,
+      "score": 0.9999890327453613,
+      "text": "Cb1",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 37022,
+      "absolute_start": 37017,
+      "id": "E703",
+      "passage_end": 1602,
+      "passage_start": 1597,
+      "score": 0.9999794562657675,
+      "text": "Runx3",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 37046,
+      "absolute_start": 37044,
+      "id": "E704",
+      "passage_end": 1626,
+      "passage_start": 1624,
+      "score": 0.9999948740005493,
+      "text": "NO",
+      "type": "Chemical"
+    },
+    {
+      "absolute_end": 37087,
+      "absolute_start": 37085,
+      "id": "E705",
+      "passage_end": 1667,
+      "passage_start": 1665,
+      "score": 0.9999942779541016,
+      "text": "HG",
+      "type": "Chemical"
+    },
+    {
+      "absolute_end": 37099,
+      "absolute_start": 37097,
+      "id": "E706",
+      "passage_end": 1679,
+      "passage_start": 1677,
+      "score": 0.9999939203262329,
+      "text": "HG",
+      "type": "Chemical"
+    },
+    {
+      "absolute_end": 37108,
+      "absolute_start": 37105,
+      "id": "E707",
+      "passage_end": 1688,
+      "passage_start": 1685,
+      "score": 0.9999873638153076,
+      "text": "Cbl",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 37123,
+      "absolute_start": 37121,
+      "id": "E708",
+      "passage_end": 1703,
+      "passage_start": 1701,
+      "score": 0.9999927282333374,
+      "text": "HG",
+      "type": "Chemical"
+    },
+    {
+      "absolute_end": 37132,
+      "absolute_start": 37129,
+      "id": "E709",
+      "passage_end": 1712,
+      "passage_start": 1709,
+      "score": 0.9999884366989136,
+      "text": "Cbl",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 37143,
+      "absolute_start": 37138,
+      "id": "E710",
+      "passage_end": 1723,
+      "passage_start": 1718,
+      "score": 0.9999793370564779,
+      "text": "Runx3",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 37171,
+      "absolute_start": 37167,
+      "id": "E711",
+      "passage_end": 1751,
+      "passage_start": 1747,
+      "score": 0.9999860525131226,
+      "text": "eNOS",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 37191,
+      "absolute_start": 37189,
+      "id": "E712",
+      "passage_end": 1771,
+      "passage_start": 1769,
+      "score": 0.9999957084655762,
+      "text": "HG",
+      "type": "Chemical"
+    },
+    {
+      "absolute_end": 37339,
+      "absolute_start": 37337,
+      "id": "E713",
+      "passage_end": 1919,
+      "passage_start": 1917,
+      "score": 0.9999959468841553,
+      "text": "HG",
+      "type": "Chemical"
+    },
+    {
+      "absolute_end": 37351,
+      "absolute_start": 37349,
+      "id": "E714",
+      "passage_end": 1931,
+      "passage_start": 1929,
+      "score": 0.9999958276748657,
+      "text": "HG",
+      "type": "Chemical"
+    },
+    {
+      "absolute_end": 37360,
+      "absolute_start": 37357,
+      "id": "E715",
+      "passage_end": 1940,
+      "passage_start": 1937,
+      "score": 0.9999728202819824,
+      "text": "Cbl",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 37375,
+      "absolute_start": 37373,
+      "id": "E716",
+      "passage_end": 1955,
+      "passage_start": 1953,
+      "score": 0.9999947547912598,
+      "text": "HG",
+      "type": "Chemical"
+    },
+    {
+      "absolute_end": 37384,
+      "absolute_start": 37381,
+      "id": "E717",
+      "passage_end": 1964,
+      "passage_start": 1961,
+      "score": 0.9999769926071167,
+      "text": "Cb1",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 37395,
+      "absolute_start": 37390,
+      "id": "E718",
+      "passage_end": 1975,
+      "passage_start": 1970,
+      "score": 0.998380164305369,
+      "text": "Runx3",
+      "type": "Gene"
+    }
+  ],
+  "entity_packet_sha256": "958ab3ef8ae6eee38f650ff3240e9a58ee66d6a81c8440fb93a9ec3f938e871f",
+  "error": {
+    "message": "three consecutive provider-error or timeout jobs before structured output",
+    "type": "ProbeAborted"
+  },
+  "finished_utc": null,
+  "full_entity_packet_sha256": "be25892f7e17eb3cccea412d8a0f3d3575bbfa3839a6ff19935f290cbabeb75e",
+  "latency_ms": null,
+  "paper_id": "PMCID:PMC8605525",
+  "passage_id": "passage_003",
+  "provider_attempt_details": [],
+  "provider_attempts": 0,
+  "provider_latency_ms": null,
+  "repair_attempts": 0,
+  "sequence": 6,
+  "source_range": {
+    "end": 37396,
+    "start": 35420
+  },
+  "source_sha256": "2416a5abcb2647efa449b79505182661114d7efe461f0acbec1bec9b7419b224",
+  "source_text": "To verify the hypothesis, HUVECs cultured with HG were further transfected with oe-Cbl and oe-Runx3, where Cbl, JAK2 and STAT4 expression was detected by Western blot analysis. It was observed that (Fig. 6A) the expression of Cbl in oe-Cbl-treated HUVECs was upregulated, and the expression of JAK2, p-JAK2, STAT4, p-STAT4 and Runx3 was downregulated. Compared with oe-Cbl + oe-NC, combined treatment with oe-Cbl and oe-Runx3 resulted in similar expression of Cbl, JAK2, p-JAK2, STAT4 and p-STAT4 (p > 0.05), except upregulated Runx3 expression (p < 0.05). As for NO content in the culture supernatant of HUVECs, we found that oe-Cbl increased NO content; based on oe-Cbl treatment, transfection for oe-Runx3 reduced the NO production (Fig. 6B). Furthermore, eNOS protein level was increased in HG-induced HUVECs overexpressing Cbl yet reduced by additional overexpressed Runx3 (Fig. 6C). Flow cytometry suggested that compared with controls, overexpressed Cbl resulted in decreased apoptosis of HUVECs but combined treatment of oe-Cbl and oe-Runx3 potentiated the capacity of apoptosis (Fig. 6D). The above results indicated that Cbl decreased the expression of Runx3 by inhibiting the activation of the JAK2/STAT4 pathway, thereby promoting the production of NO and expression of eNOS in HUVECs and inhibiting HUVEC apoptosis.Fig. 6Inhibitory role of Cbl in HUVEC apoptosis through Runx3-mediated JAK2/STAT4 signaling pathway. A Western blot analysis of expression of Cbl, JAK2, p-JAK2, STAT4, p-STAT4 and Runx3 in HUVECs upon treatment with HG + oe-NC, HG + oe-Cb1 + oe-NC, or HG + oe-Cb1 + oe-Runx3. B Quantification of NO content in HUVECs upon treatment with HG + oe-NC, HG + oe-Cbl + oe-NC, or HG + oe-Cbl + oe-Runx3 using Griess method. C eNOS protein level in HG-induced HUVECs determined by Western blot analysis. D Flow cytometry of apoptosis of HUVECs and corresponding quantification upon treatment with HG + oe-NC, HG + oe-Cbl + oe-NC, or HG + oe-Cb1 + oe-Runx3.",
+  "started_utc": null,
+  "status": "not_run_aborted",
+  "token_usage": null,
+  "validated_relations": null
+}

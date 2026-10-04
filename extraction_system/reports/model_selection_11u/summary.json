@@ -1,0 +1,28 @@
+{
+  "contract": "11U",
+  "execution_complete": true,
+  "candidate_terminal": {
+    "1": true,
+    "2": true,
+    "3": true
+  },
+  "production_code_unchanged": true,
+  "production_default_unchanged": true,
+  "existing_reports_preserved": true,
+  "nothing_committed_or_pushed": true,
+  "blind_review_packet": "C:\\Projects\\Biomed\\extraction_system\\reports\\model_selection_11u\\review\\blind_packet.json",
+  "model_key": "C:\\Projects\\Biomed\\extraction_system\\reports\\model_selection_11u\\review\\model_key.json",
+  "unblinded_operations": "C:\\Projects\\Biomed\\extraction_system\\reports\\model_selection_11u\\operations.json",
+  "cost_report": "C:\\Projects\\Biomed\\extraction_system\\reports\\model_selection_11u\\costs.json",
+  "interruption": null,
+  "final_baseline": {
+    "head": "fd66f9bb6d1a5c41ae147abfb5a7994c5bddae6c",
+    "branch": "extraction_system_v2",
+    "production_status": "",
+    "production_diff": "",
+    "production_model_default": "gpt-5.6-luna",
+    "contract11s_reference_head": "7f388368a8bd06f35f60eda37eb2ccdce711eed8",
+    "production_parity_diff": "",
+    "baseline_exception": "User authorized report-only fd66f9bb HEAD after production parity verification"
+  }
+}

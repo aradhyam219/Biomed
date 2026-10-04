@@ -1,0 +1,1048 @@
+{
+  "blinded_model": "Model B",
+  "configuration": {
+    "bounded_repair_budget": 2,
+    "max_output_tokens": 128000,
+    "prompt_sha256": "8d97de13f783ea7440428fbbfd783c585b8cf813c01c7f042c9c7d465bbf8578",
+    "provider": "OpenAI Responses API",
+    "provider_retries": 0,
+    "reasoning_effort": "max"
+  },
+  "entity_packet": [
+    {
+      "end": 63,
+      "id": "E179",
+      "score": 0.999997079372406,
+      "start": 45,
+      "text": "bicinchoninic acid",
+      "type": "Chemical"
+    },
+    {
+      "end": 68,
+      "id": "E180",
+      "score": 0.9999867677688599,
+      "start": 65,
+      "text": "BCA",
+      "type": "Chemical"
+    },
+    {
+      "end": 109,
+      "id": "E181",
+      "score": 0.9999960660934448,
+      "start": 106,
+      "text": "SDS",
+      "type": "Chemical"
+    },
+    {
+      "end": 238,
+      "id": "E182",
+      "score": 0.9999946355819702,
+      "start": 234,
+      "text": "PVDF",
+      "type": "Chemical"
+    },
+    {
+      "end": 458,
+      "id": "E183",
+      "score": 0.9998877048492432,
+      "start": 454,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 465,
+      "id": "E184",
+      "score": 0.9999527931213379,
+      "start": 460,
+      "text": "Abcam",
+      "type": "Gene"
+    },
+    {
+      "end": 481,
+      "id": "E185",
+      "score": 0.9999489784240723,
+      "start": 478,
+      "text": "APP",
+      "type": "Gene"
+    },
+    {
+      "end": 508,
+      "id": "E186",
+      "score": 0.9992842078208923,
+      "start": 505,
+      "text": "Tau",
+      "type": "Gene"
+    },
+    {
+      "end": 513,
+      "id": "E187",
+      "score": 0.9999303817749023,
+      "start": 510,
+      "text": "CST",
+      "type": "Gene"
+    },
+    {
+      "end": 527,
+      "id": "E188",
+      "score": 0.99997878074646,
+      "start": 524,
+      "text": "GST",
+      "type": "Gene"
+    },
+    {
+      "end": 554,
+      "id": "E189",
+      "score": 0.9999654293060303,
+      "start": 529,
+      "text": "glutathione S-transferase",
+      "type": "Gene"
+    },
+    {
+      "end": 562,
+      "id": "E190",
+      "score": 0.9999798536300659,
+      "start": 557,
+      "text": "Abcam",
+      "type": "Gene"
+    },
+    {
+      "end": 577,
+      "id": "E191",
+      "score": 0.999985933303833,
+      "start": 573,
+      "text": "HO-1",
+      "type": "Gene"
+    },
+    {
+      "end": 595,
+      "id": "E192",
+      "score": 0.9999747574329376,
+      "start": 579,
+      "text": "heme oxygenase-1",
+      "type": "Gene"
+    },
+    {
+      "end": 603,
+      "id": "E193",
+      "score": 0.9999692440032959,
+      "start": 598,
+      "text": "Abcam",
+      "type": "Gene"
+    },
+    {
+      "end": 619,
+      "id": "E194",
+      "score": 0.9999837875366211,
+      "start": 614,
+      "text": "Bcl-2",
+      "type": "Gene"
+    },
+    {
+      "end": 626,
+      "id": "E195",
+      "score": 0.9999775886535645,
+      "start": 621,
+      "text": "Abcam",
+      "type": "Gene"
+    },
+    {
+      "end": 640,
+      "id": "E196",
+      "score": 0.999971866607666,
+      "start": 637,
+      "text": "Bax",
+      "type": "Gene"
+    },
+    {
+      "end": 647,
+      "id": "E197",
+      "score": 0.9999792575836182,
+      "start": 642,
+      "text": "Abcam",
+      "type": "Gene"
+    },
+    {
+      "end": 664,
+      "id": "E198",
+      "score": 0.9999809265136719,
+      "start": 659,
+      "text": "PSD95",
+      "type": "Gene"
+    },
+    {
+      "end": 671,
+      "id": "E199",
+      "score": 0.9999743700027466,
+      "start": 666,
+      "text": "Abcam",
+      "type": "Gene"
+    },
+    {
+      "end": 688,
+      "id": "E200",
+      "score": 0.9999127388000488,
+      "start": 682,
+      "text": "p-CREB",
+      "type": "Gene"
+    },
+    {
+      "end": 719,
+      "id": "E201",
+      "score": 0.9999011397361756,
+      "start": 690,
+      "text": "cAMP response element-binding",
+      "type": "Gene"
+    },
+    {
+      "end": 727,
+      "id": "E202",
+      "score": 0.9999597072601318,
+      "start": 722,
+      "text": "Abcam",
+      "type": "Gene"
+    },
+    {
+      "end": 741,
+      "id": "E203",
+      "score": 0.9999736547470093,
+      "start": 738,
+      "text": "AKT",
+      "type": "Gene"
+    },
+    {
+      "end": 748,
+      "id": "E204",
+      "score": 0.9999538660049438,
+      "start": 743,
+      "text": "Abcam",
+      "type": "Gene"
+    },
+    {
+      "end": 790,
+      "id": "E205",
+      "score": 0.9997756481170654,
+      "start": 774,
+      "text": "protein kinase B",
+      "type": "Gene"
+    },
+    {
+      "end": 797,
+      "id": "E206",
+      "score": 0.9998831351598104,
+      "start": 792,
+      "text": "p-AKT",
+      "type": "Gene"
+    },
+    {
+      "end": 805,
+      "id": "E207",
+      "score": 0.9999313354492188,
+      "start": 800,
+      "text": "Abcam",
+      "type": "Gene"
+    },
+    {
+      "end": 820,
+      "id": "E208",
+      "score": 0.9999727606773376,
+      "start": 816,
+      "text": "PI3K",
+      "type": "Gene"
+    },
+    {
+      "end": 827,
+      "id": "E209",
+      "score": 0.9999678134918213,
+      "start": 822,
+      "text": "Abcam",
+      "type": "Gene"
+    },
+    {
+      "end": 878,
+      "id": "E210",
+      "score": 0.9998124241828918,
+      "start": 853,
+      "text": "phosphoinositide 3-kinase",
+      "type": "Gene"
+    },
+    {
+      "end": 886,
+      "id": "E211",
+      "score": 0.9999307096004486,
+      "start": 880,
+      "text": "p-PI3K",
+      "type": "Gene"
+    },
+    {
+      "end": 894,
+      "id": "E212",
+      "score": 0.9999370574951172,
+      "start": 889,
+      "text": "Abcam",
+      "type": "Gene"
+    },
+    {
+      "end": 914,
+      "id": "E213",
+      "score": 0.9999759594599406,
+      "start": 905,
+      "text": "β-tubulin",
+      "type": "Gene"
+    },
+    {
+      "end": 921,
+      "id": "E214",
+      "score": 0.9999613761901855,
+      "start": 916,
+      "text": "Abcam",
+      "type": "Gene"
+    },
+    {
+      "end": 941,
+      "id": "E215",
+      "score": 0.9999254941940308,
+      "start": 936,
+      "text": "GAPDH",
+      "type": "Gene"
+    },
+    {
+      "end": 948,
+      "id": "E216",
+      "score": 0.9999420642852783,
+      "start": 943,
+      "text": "Abcam",
+      "type": "Gene"
+    },
+    {
+      "end": 1015,
+      "id": "E217",
+      "score": 0.569198489189148,
+      "start": 1011,
+      "text": "TBST",
+      "type": "Chemical"
+    },
+    {
+      "end": 1021,
+      "id": "E218",
+      "score": 0.9724130630493164,
+      "start": 1017,
+      "text": "Tris",
+      "type": "Chemical"
+    },
+    {
+      "end": 1030,
+      "id": "E219",
+      "score": 0.7862605452537537,
+      "start": 1022,
+      "text": "buffered",
+      "type": "Chemical"
+    },
+    {
+      "end": 1037,
+      "id": "E220",
+      "score": 0.8110077977180481,
+      "start": 1031,
+      "text": "saline",
+      "type": "Chemical"
+    },
+    {
+      "end": 1056,
+      "id": "E221",
+      "score": 0.9999259114265442,
+      "start": 1048,
+      "text": "Tween 20",
+      "type": "Chemical"
+    },
+    {
+      "end": 1130,
+      "id": "E222",
+      "score": 0.9998020132382711,
+      "start": 1120,
+      "text": "peroxidase",
+      "type": "Gene"
+    },
+    {
+      "end": 1135,
+      "id": "E223",
+      "score": 0.9994670748710632,
+      "start": 1132,
+      "text": "HRP",
+      "type": "Gene"
+    },
+    {
+      "end": 1149,
+      "id": "E224",
+      "score": 0.999352753162384,
+      "start": 1145,
+      "text": "goat",
+      "type": "Species"
+    },
+    {
+      "end": 1174,
+      "id": "E225",
+      "score": 0.9614376425743103,
+      "start": 1171,
+      "text": "IgG",
+      "type": "Gene"
+    },
+    {
+      "end": 1188,
+      "id": "E226",
+      "score": 0.9888111352920532,
+      "start": 1185,
+      "text": "HRP",
+      "type": "Gene"
+    },
+    {
+      "end": 1209,
+      "id": "E227",
+      "score": 0.796872615814209,
+      "start": 1206,
+      "text": "CST",
+      "type": "Gene"
+    },
+    {
+      "end": 1637,
+      "id": "E228",
+      "score": 0.9999856948852539,
+      "start": 1631,
+      "text": "Xylene",
+      "type": "Chemical"
+    },
+    {
+      "end": 1658,
+      "id": "E229",
+      "score": 0.9999909400939941,
+      "start": 1652,
+      "text": "Xylene",
+      "type": "Chemical"
+    },
+    {
+      "end": 1689,
+      "id": "E230",
+      "score": 0.9999958276748657,
+      "start": 1682,
+      "text": "ethanol",
+      "type": "Chemical"
+    },
+    {
+      "end": 1719,
+      "id": "E231",
+      "score": 0.9999961853027344,
+      "start": 1712,
+      "text": "ethanol",
+      "type": "Chemical"
+    },
+    {
+      "end": 1748,
+      "id": "E232",
+      "score": 0.9999955892562866,
+      "start": 1741,
+      "text": "alcohol",
+      "type": "Chemical"
+    },
+    {
+      "end": 1806,
+      "id": "E233",
+      "score": 0.8246957659721375,
+      "start": 1801,
+      "text": "water",
+      "type": "Chemical"
+    },
+    {
+      "end": 1863,
+      "id": "E234",
+      "score": 0.9999946355819702,
+      "start": 1861,
+      "text": "HE",
+      "type": "Chemical"
+    }
+  ],
+  "entity_packet_absolute": [
+    {
+      "absolute_end": 11307,
+      "absolute_start": 11289,
+      "id": "E179",
+      "passage_end": 63,
+      "passage_start": 45,
+      "score": 0.999997079372406,
+      "text": "bicinchoninic acid",
+      "type": "Chemical"
+    },
+    {
+      "absolute_end": 11312,
+      "absolute_start": 11309,
+      "id": "E180",
+      "passage_end": 68,
+      "passage_start": 65,
+      "score": 0.9999867677688599,
+      "text": "BCA",
+      "type": "Chemical"
+    },
+    {
+      "absolute_end": 11353,
+      "absolute_start": 11350,
+      "id": "E181",
+      "passage_end": 109,
+      "passage_start": 106,
+      "score": 0.9999960660934448,
+      "text": "SDS",
+      "type": "Chemical"
+    },
+    {
+      "absolute_end": 11482,
+      "absolute_start": 11478,
+      "id": "E182",
+      "passage_end": 238,
+      "passage_start": 234,
+      "score": 0.9999946355819702,
+      "text": "PVDF",
+      "type": "Chemical"
+    },
+    {
+      "absolute_end": 11702,
+      "absolute_start": 11698,
+      "id": "E183",
+      "passage_end": 458,
+      "passage_start": 454,
+      "score": 0.9998877048492432,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 11709,
+      "absolute_start": 11704,
+      "id": "E184",
+      "passage_end": 465,
+      "passage_start": 460,
+      "score": 0.9999527931213379,
+      "text": "Abcam",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 11725,
+      "absolute_start": 11722,
+      "id": "E185",
+      "passage_end": 481,
+      "passage_start": 478,
+      "score": 0.9999489784240723,
+      "text": "APP",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 11752,
+      "absolute_start": 11749,
+      "id": "E186",
+      "passage_end": 508,
+      "passage_start": 505,
+      "score": 0.9992842078208923,
+      "text": "Tau",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 11757,
+      "absolute_start": 11754,
+      "id": "E187",
+      "passage_end": 513,
+      "passage_start": 510,
+      "score": 0.9999303817749023,
+      "text": "CST",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 11771,
+      "absolute_start": 11768,
+      "id": "E188",
+      "passage_end": 527,
+      "passage_start": 524,
+      "score": 0.99997878074646,
+      "text": "GST",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 11798,
+      "absolute_start": 11773,
+      "id": "E189",
+      "passage_end": 554,
+      "passage_start": 529,
+      "score": 0.9999654293060303,
+      "text": "glutathione S-transferase",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 11806,
+      "absolute_start": 11801,
+      "id": "E190",
+      "passage_end": 562,
+      "passage_start": 557,
+      "score": 0.9999798536300659,
+      "text": "Abcam",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 11821,
+      "absolute_start": 11817,
+      "id": "E191",
+      "passage_end": 577,
+      "passage_start": 573,
+      "score": 0.999985933303833,
+      "text": "HO-1",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 11839,
+      "absolute_start": 11823,
+      "id": "E192",
+      "passage_end": 595,
+      "passage_start": 579,
+      "score": 0.9999747574329376,
+      "text": "heme oxygenase-1",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 11847,
+      "absolute_start": 11842,
+      "id": "E193",
+      "passage_end": 603,
+      "passage_start": 598,
+      "score": 0.9999692440032959,
+      "text": "Abcam",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 11863,
+      "absolute_start": 11858,
+      "id": "E194",
+      "passage_end": 619,
+      "passage_start": 614,
+      "score": 0.9999837875366211,
+      "text": "Bcl-2",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 11870,
+      "absolute_start": 11865,
+      "id": "E195",
+      "passage_end": 626,
+      "passage_start": 621,
+      "score": 0.9999775886535645,
+      "text": "Abcam",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 11884,
+      "absolute_start": 11881,
+      "id": "E196",
+      "passage_end": 640,
+      "passage_start": 637,
+      "score": 0.999971866607666,
+      "text": "Bax",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 11891,
+      "absolute_start": 11886,
+      "id": "E197",
+      "passage_end": 647,
+      "passage_start": 642,
+      "score": 0.9999792575836182,
+      "text": "Abcam",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 11908,
+      "absolute_start": 11903,
+      "id": "E198",
+      "passage_end": 664,
+      "passage_start": 659,
+      "score": 0.9999809265136719,
+      "text": "PSD95",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 11915,
+      "absolute_start": 11910,
+      "id": "E199",
+      "passage_end": 671,
+      "passage_start": 666,
+      "score": 0.9999743700027466,
+      "text": "Abcam",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 11932,
+      "absolute_start": 11926,
+      "id": "E200",
+      "passage_end": 688,
+      "passage_start": 682,
+      "score": 0.9999127388000488,
+      "text": "p-CREB",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 11963,
+      "absolute_start": 11934,
+      "id": "E201",
+      "passage_end": 719,
+      "passage_start": 690,
+      "score": 0.9999011397361756,
+      "text": "cAMP response element-binding",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 11971,
+      "absolute_start": 11966,
+      "id": "E202",
+      "passage_end": 727,
+      "passage_start": 722,
+      "score": 0.9999597072601318,
+      "text": "Abcam",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 11985,
+      "absolute_start": 11982,
+      "id": "E203",
+      "passage_end": 741,
+      "passage_start": 738,
+      "score": 0.9999736547470093,
+      "text": "AKT",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 11992,
+      "absolute_start": 11987,
+      "id": "E204",
+      "passage_end": 748,
+      "passage_start": 743,
+      "score": 0.9999538660049438,
+      "text": "Abcam",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 12034,
+      "absolute_start": 12018,
+      "id": "E205",
+      "passage_end": 790,
+      "passage_start": 774,
+      "score": 0.9997756481170654,
+      "text": "protein kinase B",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 12041,
+      "absolute_start": 12036,
+      "id": "E206",
+      "passage_end": 797,
+      "passage_start": 792,
+      "score": 0.9998831351598104,
+      "text": "p-AKT",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 12049,
+      "absolute_start": 12044,
+      "id": "E207",
+      "passage_end": 805,
+      "passage_start": 800,
+      "score": 0.9999313354492188,
+      "text": "Abcam",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 12064,
+      "absolute_start": 12060,
+      "id": "E208",
+      "passage_end": 820,
+      "passage_start": 816,
+      "score": 0.9999727606773376,
+      "text": "PI3K",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 12071,
+      "absolute_start": 12066,
+      "id": "E209",
+      "passage_end": 827,
+      "passage_start": 822,
+      "score": 0.9999678134918213,
+      "text": "Abcam",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 12122,
+      "absolute_start": 12097,
+      "id": "E210",
+      "passage_end": 878,
+      "passage_start": 853,
+      "score": 0.9998124241828918,
+      "text": "phosphoinositide 3-kinase",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 12130,
+      "absolute_start": 12124,
+      "id": "E211",
+      "passage_end": 886,
+      "passage_start": 880,
+      "score": 0.9999307096004486,
+      "text": "p-PI3K",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 12138,
+      "absolute_start": 12133,
+      "id": "E212",
+      "passage_end": 894,
+      "passage_start": 889,
+      "score": 0.9999370574951172,
+      "text": "Abcam",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 12158,
+      "absolute_start": 12149,
+      "id": "E213",
+      "passage_end": 914,
+      "passage_start": 905,
+      "score": 0.9999759594599406,
+      "text": "β-tubulin",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 12165,
+      "absolute_start": 12160,
+      "id": "E214",
+      "passage_end": 921,
+      "passage_start": 916,
+      "score": 0.9999613761901855,
+      "text": "Abcam",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 12185,
+      "absolute_start": 12180,
+      "id": "E215",
+      "passage_end": 941,
+      "passage_start": 936,
+      "score": 0.9999254941940308,
+      "text": "GAPDH",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 12192,
+      "absolute_start": 12187,
+      "id": "E216",
+      "passage_end": 948,
+      "passage_start": 943,
+      "score": 0.9999420642852783,
+      "text": "Abcam",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 12259,
+      "absolute_start": 12255,
+      "id": "E217",
+      "passage_end": 1015,
+      "passage_start": 1011,
+      "score": 0.569198489189148,
+      "text": "TBST",
+      "type": "Chemical"
+    },
+    {
+      "absolute_end": 12265,
+      "absolute_start": 12261,
+      "id": "E218",
+      "passage_end": 1021,
+      "passage_start": 1017,
+      "score": 0.9724130630493164,
+      "text": "Tris",
+      "type": "Chemical"
+    },
+    {
+      "absolute_end": 12274,
+      "absolute_start": 12266,
+      "id": "E219",
+      "passage_end": 1030,
+      "passage_start": 1022,
+      "score": 0.7862605452537537,
+      "text": "buffered",
+      "type": "Chemical"
+    },
+    {
+      "absolute_end": 12281,
+      "absolute_start": 12275,
+      "id": "E220",
+      "passage_end": 1037,
+      "passage_start": 1031,
+      "score": 0.8110077977180481,
+      "text": "saline",
+      "type": "Chemical"
+    },
+    {
+      "absolute_end": 12300,
+      "absolute_start": 12292,
+      "id": "E221",
+      "passage_end": 1056,
+      "passage_start": 1048,
+      "score": 0.9999259114265442,
+      "text": "Tween 20",
+      "type": "Chemical"
+    },
+    {
+      "absolute_end": 12374,
+      "absolute_start": 12364,
+      "id": "E222",
+      "passage_end": 1130,
+      "passage_start": 1120,
+      "score": 0.9998020132382711,
+      "text": "peroxidase",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 12379,
+      "absolute_start": 12376,
+      "id": "E223",
+      "passage_end": 1135,
+      "passage_start": 1132,
+      "score": 0.9994670748710632,
+      "text": "HRP",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 12393,
+      "absolute_start": 12389,
+      "id": "E224",
+      "passage_end": 1149,
+      "passage_start": 1145,
+      "score": 0.999352753162384,
+      "text": "goat",
+      "type": "Species"
+    },
+    {
+      "absolute_end": 12418,
+      "absolute_start": 12415,
+      "id": "E225",
+      "passage_end": 1174,
+      "passage_start": 1171,
+      "score": 0.9614376425743103,
+      "text": "IgG",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 12432,
+      "absolute_start": 12429,
+      "id": "E226",
+      "passage_end": 1188,
+      "passage_start": 1185,
+      "score": 0.9888111352920532,
+      "text": "HRP",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 12453,
+      "absolute_start": 12450,
+      "id": "E227",
+      "passage_end": 1209,
+      "passage_start": 1206,
+      "score": 0.796872615814209,
+      "text": "CST",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 12881,
+      "absolute_start": 12875,
+      "id": "E228",
+      "passage_end": 1637,
+      "passage_start": 1631,
+      "score": 0.9999856948852539,
+      "text": "Xylene",
+      "type": "Chemical"
+    },
+    {
+      "absolute_end": 12902,
+      "absolute_start": 12896,
+      "id": "E229",
+      "passage_end": 1658,
+      "passage_start": 1652,
+      "score": 0.9999909400939941,
+      "text": "Xylene",
+      "type": "Chemical"
+    },
+    {
+      "absolute_end": 12933,
+      "absolute_start": 12926,
+      "id": "E230",
+      "passage_end": 1689,
+      "passage_start": 1682,
+      "score": 0.9999958276748657,
+      "text": "ethanol",
+      "type": "Chemical"
+    },
+    {
+      "absolute_end": 12963,
+      "absolute_start": 12956,
+      "id": "E231",
+      "passage_end": 1719,
+      "passage_start": 1712,
+      "score": 0.9999961853027344,
+      "text": "ethanol",
+      "type": "Chemical"
+    },
+    {
+      "absolute_end": 12992,
+      "absolute_start": 12985,
+      "id": "E232",
+      "passage_end": 1748,
+      "passage_start": 1741,
+      "score": 0.9999955892562866,
+      "text": "alcohol",
+      "type": "Chemical"
+    },
+    {
+      "absolute_end": 13050,
+      "absolute_start": 13045,
+      "id": "E233",
+      "passage_end": 1806,
+      "passage_start": 1801,
+      "score": 0.8246957659721375,
+      "text": "water",
+      "type": "Chemical"
+    },
+    {
+      "absolute_end": 13107,
+      "absolute_start": 13105,
+      "id": "E234",
+      "passage_end": 1863,
+      "passage_start": 1861,
+      "score": 0.9999946355819702,
+      "text": "HE",
+      "type": "Chemical"
+    }
+  ],
+  "entity_packet_sha256": "3dadba4e23d7811d5c94f97db47b8118875a535ab08213b2e33d99779a5b4e1f",
+  "error": {
+    "message": "job exceeded external wall-clock ceiling of 240 seconds and was terminated",
+    "type": "ExternalWatchdogTimeout"
+  },
+  "finished_utc": "2026-10-02T10:10:42.927064+00:00",
+  "full_entity_packet_sha256": "efb1578fb0c4b1d7335ec5aa31436f273a346c8b4a5fd9add10973c67b312d4e",
+  "latency_ms": 240008.625,
+  "paper_id": "PMCID:PMC11824863",
+  "passage_id": "passage_002",
+  "provider_attempt_details": [],
+  "provider_attempts": 0,
+  "provider_latency_ms": null,
+  "repair_attempts": 0,
+  "sequence": 3,
+  "source_range": {
+    "end": 13108,
+    "start": 11244
+  },
+  "source_sha256": "627267c0a2ae84683e0b7f9faa48cf7a378cab29643fdbbc30f961e66cea8e5e",
+  "source_text": "Protein concentration was determined using a bicinchoninic acid (BCA) assay kit (Biomed, Beijing, China). SDS-PAGE was performed, and the gel was cut according to molecular weight. The proteins on the gel were electrotransferred onto PVDF membranes and then membranes were blocked with a blocking solution for 2 h at room temperature, followed by incubation with a primary antibody at 4°C overnight. The primary antibodies used were those raised against SFPQ (Abcam, 1:10,000), APP (Proteintech, 1:1000), Tau (CST, 1:1000), GST (glutathione S-transferase) (Abcam, 1:5000), HO-1 (heme oxygenase-1) (Abcam, 1:2000), Bcl-2 (Abcam, 1:2000), Bax (Abcam, 1:2,000), PSD95 (Abcam, 1:2000), p-CREB (cAMP response element-binding) (Abcam, 1:5000), AKT (Abcam, 1:1000), phosphorylated protein kinase B (p-AKT) (Abcam, 1:1000), PI3K (Abcam, 1:1000), phosphorylated phosphoinositide 3-kinase (p-PI3K) (Abcam, 1:1000), β-tubulin (Abcam, 1:1000), and GAPDH (Abcam, 1:10,000) proteins. The membrane was washed three times with TBST (Tris-buffered saline with 0.1% Tween 20) for 15 min each time, followed by incubation with horseradish peroxidase (HRP)-labeled goat antirabbit/antimouse IgG (1:5000), HRP-linked antibody (CST, 1:2000) at room temperature for 2 h. The membrane was then washed three times with TBST for 15 min each time. Finally, enhanced chemiluminescence (ECL) reagents (Tanon, Shanghai, China) were used to display the protein bands, and ImageJ1.53a (National Institutes of Health, Bethesda, MD, USA) was employed to analyze the gray values of each protein band.\n\nThe slices were placed in the following solutions sequentially: Xylene 1 for 20 min, Xylene 2 for 20 min, absolute ethanol 1 for 5 min, absolute ethanol 2 for 5 min, and 75% alcohol for 5 min. Finally, the slices were washed with tap water. Afterward, the slices were sequentially stained with HE.",
+  "started_utc": "2026-10-02T10:10:42.927064+00:00",
+  "status": "timeout",
+  "token_usage": null,
+  "validated_relations": null
+}

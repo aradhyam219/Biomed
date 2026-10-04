@@ -1,0 +1,47 @@
+{
+  "Candidate A": {
+    "number": 3,
+    "directory": "gpt_6_luna_max_fast",
+    "model": "gpt-6-luna",
+    "effort": "max",
+    "tier": "fast",
+    "rates": {
+      "input": 0.2,
+      "cached": 0.02,
+      "cache_write": 0.25,
+      "output": 1.0
+    }
+  },
+  "Candidate B": {
+    "number": 1,
+    "directory": "gpt_56_luna_max_fast",
+    "model": "gpt-5.6-luna",
+    "effort": "max",
+    "tier": "fast",
+    "rates": {
+      "input": 0.4,
+      "cached": 0.04,
+      "cache_write": 0.5,
+      "output": 2.4
+    }
+  },
+  "Candidate C": {
+    "number": 2,
+    "directory": "gpt_61_sol_medium_standard",
+    "model": "gpt-6.1-sol",
+    "effort": "medium",
+    "tier": "default",
+    "rates": {
+      "input": 2.0,
+      "cached": 0.1,
+      "cache_write": 2.5,
+      "output": 10.0
+    }
+  },
+  "Candidate D": {
+    "model": "gpt-6.1-sol",
+    "effort": "xhigh",
+    "tier": "default",
+    "supplemental_run": true
+  }
+}

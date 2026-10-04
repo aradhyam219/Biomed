@@ -1,0 +1,68 @@
+[
+  {
+    "timestamp": "2026-10-03T21:51:21.816271+00:00",
+    "response_id": "resp_0eb85dda6a6c978a006ac178d8f40c87d1a6a739d68a9d3427",
+    "status": "completed",
+    "poll_latency_seconds": 0.438
+  },
+  {
+    "timestamp": "2026-10-03T21:51:26.376705+00:00",
+    "response_id": "resp_0f689f5514135c20006ac178dda55487d1a29ac4b651535715",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.359
+  },
+  {
+    "timestamp": "2026-10-03T21:51:29.842817+00:00",
+    "response_id": "resp_0f689f5514135c20006ac178dda55487d1a29ac4b651535715",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.375
+  },
+  {
+    "timestamp": "2026-10-03T21:51:33.318159+00:00",
+    "response_id": "resp_0f689f5514135c20006ac178dda55487d1a29ac4b651535715",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.312
+  },
+  {
+    "timestamp": "2026-10-03T21:51:36.745560+00:00",
+    "response_id": "resp_0f689f5514135c20006ac178dda55487d1a29ac4b651535715",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.343
+  },
+  {
+    "timestamp": "2026-10-03T21:51:40.194757+00:00",
+    "response_id": "resp_0f689f5514135c20006ac178dda55487d1a29ac4b651535715",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.359
+  },
+  {
+    "timestamp": "2026-10-03T21:51:43.658598+00:00",
+    "response_id": "resp_0f689f5514135c20006ac178dda55487d1a29ac4b651535715",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.453
+  },
+  {
+    "timestamp": "2026-10-03T21:51:47.209922+00:00",
+    "response_id": "resp_0f689f5514135c20006ac178dda55487d1a29ac4b651535715",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.422
+  },
+  {
+    "timestamp": "2026-10-03T21:51:50.745607+00:00",
+    "response_id": "resp_0f689f5514135c20006ac178dda55487d1a29ac4b651535715",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.359
+  },
+  {
+    "timestamp": "2026-10-03T21:51:54.200904+00:00",
+    "response_id": "resp_0f689f5514135c20006ac178dda55487d1a29ac4b651535715",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.328
+  },
+  {
+    "timestamp": "2026-10-03T21:51:57.640399+00:00",
+    "response_id": "resp_0f689f5514135c20006ac178dda55487d1a29ac4b651535715",
+    "status": "completed",
+    "poll_latency_seconds": 0.453
+  }
+]

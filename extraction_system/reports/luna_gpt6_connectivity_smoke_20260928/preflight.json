@@ -1,0 +1,56 @@
+{
+  "created_utc": "2026-10-02T09:48:32.076081+00:00",
+  "purpose": "single GPT-6 Luna connectivity and structured-output smoke",
+  "baseline": {
+    "branch": "extraction_system_v2",
+    "head": "7f388368a8bd06f35f60eda37eb2ccdce711eed8",
+    "production_scope_status": ""
+  },
+  "provider": "OpenAI Responses API",
+  "configuration": {
+    "model": "gpt-6-luna",
+    "reasoning": {
+      "effort": "max"
+    },
+    "use_responses_api": true,
+    "max_completion_tokens": 128000,
+    "provider_retries": 0,
+    "relation_extractor_repair_budget": 0,
+    "external_watchdog_seconds": 300,
+    "base_url_override_configured": false,
+    "credential_env_name": "OPENAI_API_KEY",
+    "credential_available": true
+  },
+  "runtime_versions": {
+    "langchain_openai": "1.6.2",
+    "langchain_core": "1.6.3",
+    "openai": "3.14.1"
+  },
+  "synthetic_input": {
+    "source": "Protein A inhibits Protein B.",
+    "source_sha256": "bc104c2cd1c427d50ee5568a9a1e4f42da5296b1aa069c4a6bb7ac47312226f6",
+    "entities": [
+      {
+        "id": "E1",
+        "text": "Protein A",
+        "type": "Protein",
+        "start": 0,
+        "end": 9,
+        "score": 1.0
+      },
+      {
+        "id": "E2",
+        "text": "Protein B",
+        "type": "Protein",
+        "start": 19,
+        "end": 28,
+        "score": 1.0
+      }
+    ],
+    "contract10_system_prompt_sha256": "13f38a6e94db74b534eb0df0b139287ace2e714fc908276ce4c3572f9b25836f",
+    "contract10_structured_schema_sha256": "023435da3fa18abb77987313626636eff7bedda28739603db54a2f2c8137c945",
+    "rendered_prompt_sha256": "5d15339a13385b512692c4825298126fc19b310c53e28b57657e15d78bf6945f"
+  },
+  "provider_calls_scheduled": 1,
+  "provider_response_detection": "LangChain on_llm_end callback; successful structured runnable return also sets true"
+}

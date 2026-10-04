@@ -1,0 +1,34 @@
+{
+  "attempts": [
+    {
+      "attempt": 1,
+      "repair": false,
+      "status": "response_received",
+      "started_utc": "2026-10-02T09:48:35.033366+00:00",
+      "prompt_sha256": "5d15339a13385b512692c4825298126fc19b310c53e28b57657e15d78bf6945f",
+      "provider_response_received": true,
+      "structured_output_received": true,
+      "input_tokens": 1029,
+      "output_tokens": 115,
+      "total_tokens": 1144,
+      "provider_invocation_started_utc": "2026-10-02T09:48:35.038886+00:00",
+      "elapsed_seconds": 3.922,
+      "structured_output": {
+        "relations": [
+          {
+            "source": "E1",
+            "target": "E2",
+            "predicate": "inhibits",
+            "assertion": "Protein A inhibits Protein B.",
+            "evidence": "Protein A inhibits Protein B.",
+            "negated": false,
+            "intervention": null,
+            "effects": [],
+            "context": [],
+            "surface_form": "inhibits"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "created_timestamp": "2026-10-03T21:58:28.695857+00:00",
+  "source_sha256": "ecd73abad943377d0d94e5937c61c1eab0799c4e70c0044202ac3910d412b087",
+  "entity_packet_sha256": "b35d86c489fb52755adb5dd7750dc86b045fefd405167a42cefeedc403377e56",
+  "validated_output_sha256": {
+    "Candidate A": "07498ca3759ee5364e939239a4d9cf663de5ecd9ffafd9f0b66415f9c759a7f5",
+    "Candidate B": "7e5e711c13d320767c9f8e1c871bdc462142d26744f0ece0ae44688efc4e1d63",
+    "Candidate C": "edcfc346facd7163f32eb6497029d5ec0075484eb961e818f197cbe5b9935d9e"
+  },
+  "blind_packet_sha256": "5b5b3490dc5f4080d43198811129d08a2ca0a01db3d554c18d53b0a5209a4e3c",
+  "model_key_sha256": "464bf799d8205d03ef5a71840b86c0592a1218888483efd40e423c336d55f84c",
+  "hash_conventions": {
+    "validated_output": "compact sorted JSON {relations: [...]}",
+    "entities": "indent=2 sorted JSON, frozen entity packet"
+  }
+}

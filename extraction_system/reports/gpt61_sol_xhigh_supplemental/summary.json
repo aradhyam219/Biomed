@@ -1,0 +1,995 @@
+{
+  "execution_complete": true,
+  "configuration": {
+    "number": 1,
+    "directory": "gpt_61_sol_xhigh_standard",
+    "model": "gpt-6.1-sol",
+    "effort": "xhigh",
+    "tier": "default",
+    "rates": {
+      "input": 2.0,
+      "cached": 0.1,
+      "cache_write": 2.5,
+      "output": 10.0
+    }
+  },
+  "synthetic": {
+    "status": "success",
+    "generations": [
+      {
+        "generation_number": 1,
+        "repair": false,
+        "configuration": {
+          "model": "gpt-6.1-sol",
+          "reasoning": {
+            "effort": "xhigh"
+          },
+          "max_output_tokens": 128000,
+          "background": true,
+          "store": false,
+          "service_tier": "default"
+        },
+        "prompt_sha256": "5d15339a13385b512692c4825298126fc19b310c53e28b57657e15d78bf6945f",
+        "schema_sha256": "023435da3fa18abb77987313626636eff7bedda28739603db54a2f2c8137c945",
+        "transport_schema_sha256": "b0506680756b7ad8332d976a419cdee57a81e1051dd115f291f65d77bd656510",
+        "create_requested_timestamp": "2026-10-04T00:53:44.168309+00:00",
+        "response_id": "resp_0e02491dc46cf12b006ac1a39cb92c87d190dc92401b0c9b6c",
+        "initial_status": "queued",
+        "status": "success",
+        "poll_count": 2,
+        "poll_errors": 0,
+        "structured_output_received": true,
+        "validated_relation_count": 1,
+        "validation_error": null,
+        "provider_sdk_retries": 0,
+        "terminal_status": "completed",
+        "usage": {
+          "input_tokens": 1029,
+          "input_tokens_details": {
+            "cache_write_tokens": 1026,
+            "cached_tokens": 0
+          },
+          "output_tokens": 117,
+          "output_tokens_details": {
+            "reasoning_tokens": 44
+          },
+          "total_tokens": 1146
+        },
+        "transport_success": true,
+        "created_timestamp": "2026-10-04T00:53:46.041599+00:00",
+        "provider_created_at": 1791075228.0,
+        "initial_create_latency_seconds": 1.875,
+        "terminal_timestamp": "2026-10-04T00:53:53.234629+00:00",
+        "background_elapsed_seconds": 7.188,
+        "elapsed_wall_seconds": 9.063,
+        "provider_error": null,
+        "incomplete_details": null,
+        "structured_output": "{\"relations\":[{\"predicate\":\"inhibits\",\"negated\":false,\"target\":\"E2\",\"evidence\":\"Protein A inhibits Protein B.\",\"context\":[],\"source\":\"E1\",\"assertion\":\"Protein A inhibits Protein B.\",\"surface_form\":\"inhibits\",\"intervention\":null,\"effects\":[]}]}",
+        "requested_service_tier": "default",
+        "returned_service_tiers": [
+          "default"
+        ],
+        "returned_service_tier": "default",
+        "service_tier_mismatch": false,
+        "service_tier_verified": true,
+        "status_history": [
+          {
+            "timestamp": "2026-10-04T00:53:46.040595+00:00",
+            "operation": "create",
+            "status": "queued",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:53:49.587207+00:00",
+            "operation": "retrieve",
+            "status": "in_progress",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:53:53.232138+00:00",
+            "operation": "retrieve",
+            "status": "completed",
+            "returned_service_tier": "default"
+          }
+        ],
+        "time_to_first_known_queued_seconds": 0.0,
+        "time_to_first_observed_in_progress_seconds": 3.547,
+        "approximate_queue_duration_seconds": 3.547,
+        "approximate_in_progress_duration_seconds": 3.645,
+        "timing_estimates": "poll-resolution observations; exact queue/inference boundaries unavailable",
+        "derived_usage": {
+          "cached_input_tokens": 0,
+          "cache_write_tokens": 1026,
+          "reasoning_tokens": 44,
+          "visible_output_tokens_derived": 73
+        },
+        "parser_result": "accepted",
+        "parsed_contract10_output": {
+          "relations": [
+            {
+              "predicate": "inhibits",
+              "negated": false,
+              "target": "E2",
+              "evidence": "Protein A inhibits Protein B.",
+              "context": [],
+              "source": "E1",
+              "assertion": "Protein A inhibits Protein B.",
+              "surface_form": "inhibits",
+              "intervention": null,
+              "effects": []
+            }
+          ]
+        },
+        "validation_result": "accepted"
+      }
+    ],
+    "provider_generation_count": 1,
+    "repair_count": 0,
+    "validated_relation_count": 1,
+    "unique_evidence_span_count": 1,
+    "transport_success": true,
+    "contract10_success": true,
+    "validated_relations": [
+      {
+        "source": "E1",
+        "target": "E2",
+        "predicate": "inhibits",
+        "assertion": "Protein A inhibits Protein B.",
+        "evidence": "Protein A inhibits Protein B.",
+        "negated": false,
+        "intervention": null,
+        "effects": [],
+        "context": [],
+        "surface_form": "inhibits",
+        "score": null
+      }
+    ],
+    "total_elapsed_seconds": 9.203,
+    "service_tier_mismatch": false,
+    "service_tier_verified": true
+  },
+  "real": {
+    "status": "success",
+    "generations": [
+      {
+        "generation_number": 1,
+        "repair": false,
+        "configuration": {
+          "model": "gpt-6.1-sol",
+          "reasoning": {
+            "effort": "xhigh"
+          },
+          "max_output_tokens": 128000,
+          "background": true,
+          "store": false,
+          "service_tier": "default"
+        },
+        "prompt_sha256": "ee73415e65f88d52e17c473eb2d5143940b19b9adfa7d4a6d117e5db450b0405",
+        "schema_sha256": "023435da3fa18abb77987313626636eff7bedda28739603db54a2f2c8137c945",
+        "transport_schema_sha256": "b0506680756b7ad8332d976a419cdee57a81e1051dd115f291f65d77bd656510",
+        "create_requested_timestamp": "2026-10-04T00:53:53.383236+00:00",
+        "response_id": "resp_0495db2d67c4fa47006ac1a3a5112887d196caff3b7b1c2b84",
+        "initial_status": "queued",
+        "status": "success",
+        "poll_count": 48,
+        "poll_errors": 0,
+        "structured_output_received": true,
+        "validated_relation_count": 12,
+        "validation_error": null,
+        "provider_sdk_retries": 0,
+        "terminal_status": "completed",
+        "usage": {
+          "input_tokens": 5223,
+          "input_tokens_details": {
+            "cache_write_tokens": 5220,
+            "cached_tokens": 0
+          },
+          "output_tokens": 10004,
+          "output_tokens_details": {
+            "reasoning_tokens": 7768
+          },
+          "total_tokens": 15227
+        },
+        "transport_success": true,
+        "created_timestamp": "2026-10-04T00:53:54.505353+00:00",
+        "provider_created_at": 1791075237.0,
+        "initial_create_latency_seconds": 1.125,
+        "terminal_timestamp": "2026-10-04T00:56:44.814581+00:00",
+        "background_elapsed_seconds": 170.297,
+        "elapsed_wall_seconds": 171.422,
+        "provider_error": null,
+        "incomplete_details": null,
+        "structured_output": "{\n  \"relations\": [\n    {\n      \"predicate\": \"reduces\",\n      \"negated\": false,\n      \"target\": \"E510\",\n      \"evidence\": \"hyperglycemia reduction upon HMGB1 knockdown\",\n      \"context\": [],\n      \"source\": \"E511\",\n      \"assertion\": \"Hyperglycemia reduction occurred upon HMGB1 knockdown.\",\n      \"surface_form\": \"hyperglycemia reduction upon HMGB1 knockdown\",\n      \"intervention\": \"HMGB1 knockdown\",\n      \"effects\": []\n    },\n    {\n      \"predicate\": \"has_comparable_levels_in\",\n      \"negated\": false,\n      \"target\": \"E517\",\n      \"evidence\": \"Our assessment of the plasma samples collected from HMGB1 Flox TMX STZ and iHMGB1 KO TMX STZ mice following 10 weeks post last injection revealed that although ALT levels were comparable between the two groups\",\n      \"context\": [\n        \"plasma\",\n        \"10 weeks post last injection\"\n      ],\n      \"source\": \"E518\",\n      \"assertion\": \"Plasma ALT levels were comparable between HMGB1 Flox TMX STZ and iHMGB1 KO TMX STZ mice 10 weeks after the last injection.\",\n      \"surface_form\": \"ALT levels were comparable between the two groups\",\n      \"intervention\": null,\n      \"effects\": []\n    },\n    {\n      \"predicate\": \"has_higher_levels_of\",\n      \"negated\": false,\n      \"target\": \"E522\",\n      \"evidence\": \"Our assessment of the plasma samples collected from HMGB1 Flox TMX STZ and iHMGB1 KO TMX STZ mice following 10 weeks post last injection revealed that although ALT levels were comparable between the two groups, HMGB1 Flox TMX STZ mice displayed significantly elevated levels of AST, an indicator of liver damage, compared to iHMGB1 KO TMX STZ mice\",\n      \"context\": [\n        \"plasma\",\n        \"10 weeks post last injection\"\n      ],\n      \"source\": \"E521\",\n      \"assertion\": \"HMGB1 Flox TMX STZ mice displayed significantly elevated plasma AST levels compared with iHMGB1 KO TMX STZ mice 10 weeks after the last injection.\",\n      \"surface_form\": \"displayed significantly elevated levels of AST\",\n      \"intervention\": null,\n      \"effects\": [\n        \"significantly elevated AST levels\"\n      ]\n    },\n    {\n      \"predicate\": \"indicator_of\",\n      \"negated\": false,\n      \"target\": \"E523\",\n      \"evidence\": \"AST, an indicator of liver damage\",\n      \"context\": [],\n      \"source\": \"E522\",\n      \"assertion\": \"AST is an indicator of liver damage.\",\n      \"surface_form\": \"an indicator of\",\n      \"intervention\": null,\n      \"effects\": []\n    },\n    {\n      \"predicate\": \"has_ratio_to\",\n      \"negated\": false,\n      \"target\": \"E528\",\n      \"evidence\": \"we calculated the widely used AST/ALT ratio, which showed that iHMGB1 KO TMX STZ mice had a ratio of approximately 1\",\n      \"context\": [\n        \"iHMGB1 KO TMX STZ mice\"\n      ],\n      \"source\": \"E527\",\n      \"assertion\": \"The AST/ALT ratio in iHMGB1 KO TMX STZ mice was approximately 1.\",\n      \"surface_form\": \"AST/ALT ratio\",\n      \"intervention\": null,\n      \"effects\": [\n        \"AST/ALT ratio of approximately 1\"\n      ]\n    },\n    {\n      \"predicate\": \"has_ratio_to\",\n      \"negated\": false,\n      \"target\": \"E536\",\n      \"evidence\": \"iHMGB1 KO TMX STZ mice had a ratio of approximately 1, whereas HMGB1 Flox TMX STZ mice exhibited a substantially higher AST/ALT ratio of around 2\",\n      \"context\": [\n        \"HMGB1 Flox TMX STZ mice\"\n      ],\n      \"source\": \"E535\",\n      \"assertion\": \"HMGB1 Flox TMX STZ mice exhibited an AST/ALT ratio of around 2, substantially higher than the approximately 1 ratio in iHMGB1 KO TMX STZ mice.\",\n      \"surface_form\": \"a substantially higher AST/ALT ratio of around 2\",\n      \"intervention\": null,\n      \"effects\": [\n        \"substantially higher AST/ALT ratio of around 2\"\n      ]\n    },\n    {\n      \"predicate\": \"contributes_to\",\n      \"negated\": false,\n      \"target\": \"E538\",\n      \"evidence\": \"suggesting that the presence of HMGB1 contributes to more severe liver damage under hyperglycemic conditions\",\n      \"context\": [\n        \"hyperglycemic conditions\"\n      ],\n      \"source\": \"E537\",\n      \"assertion\": \"The results suggest that the presence of HMGB1 contributes to more severe liver damage under hyperglycemic conditions.\",\n      \"surface_form\": \"contributes to more severe liver damage\",\n      \"intervention\": null,\n      \"effects\": [\n        \"more severe liver damage\"\n      ]\n    },\n    {\n      \"predicate\": \"has_increased_droplets_of\",\n      \"negated\": false,\n      \"target\": \"E547\",\n      \"evidence\": \"we examined the pathological effects of HMGB1 knockdown in the liver under a hyperglycemic state. HMGB1 Flox TMX STZ mice displayed an increase in macrovesicular lipid droplets and greater signs of mononuclear inflammatory infiltration compared to iHMGB1 KO TMX STZ mice\",\n      \"context\": [\n        \"liver\",\n        \"hyperglycemic state\"\n      ],\n      \"source\": \"E546\",\n      \"assertion\": \"In the liver under a hyperglycemic state, HMGB1 Flox TMX STZ mice displayed increased macrovesicular lipid droplets compared with iHMGB1 KO TMX STZ mice.\",\n      \"surface_form\": \"displayed an increase in macrovesicular lipid droplets\",\n      \"intervention\": null,\n      \"effects\": [\n        \"increased macrovesicular lipid droplets\"\n      ]\n    },\n    {\n      \"predicate\": \"has_greater_signs_of_infiltration\",\n      \"negated\": false,\n      \"target\": \"E548\",\n      \"evidence\": \"we examined the pathological effects of HMGB1 knockdown in the liver under a hyperglycemic state. HMGB1 Flox TMX STZ mice displayed an increase in macrovesicular lipid droplets and greater signs of mononuclear inflammatory infiltration compared to iHMGB1 KO TMX STZ mice\",\n      \"context\": [\n        \"liver\",\n        \"hyperglycemic state\"\n      ],\n      \"source\": \"E546\",\n      \"assertion\": \"In the liver under a hyperglycemic state, HMGB1 Flox TMX STZ mice displayed greater signs of mononuclear inflammatory infiltration compared with iHMGB1 KO TMX STZ mice.\",\n      \"surface_form\": \"greater signs of mononuclear inflammatory infiltration\",\n      \"intervention\": null,\n      \"effects\": [\n        \"greater signs of mononuclear inflammatory infiltration\"\n      ]\n    },\n    {\n      \"predicate\": \"has_increased_storage_of\",\n      \"negated\": false,\n      \"target\": \"E557\",\n      \"evidence\": \"we examined the pathological effects of HMGB1 knockdown in the liver under a hyperglycemic state. HMGB1 Flox TMX STZ mice displayed an increase in macrovesicular lipid droplets and greater signs of mononuclear inflammatory infiltration compared to iHMGB1 KO TMX STZ mice (Supplemental Fig. 3D). Additionally, PAS and Oil Red O staining revealed that HMGB1 Flox TMX STZ mice exhibited increased glycogen storage and lipid uptake\",\n      \"context\": [\n        \"liver\",\n        \"hyperglycemic state\"\n      ],\n      \"source\": \"E556\",\n      \"assertion\": \"Staining revealed that HMGB1 Flox TMX STZ mice exhibited increased glycogen storage in the liver under a hyperglycemic state.\",\n      \"surface_form\": \"exhibited increased glycogen storage\",\n      \"intervention\": null,\n      \"effects\": []\n    },\n    {\n      \"predicate\": \"has_increased_uptake_of\",\n      \"negated\": false,\n      \"target\": \"E558\",\n      \"evidence\": \"we examined the pathological effects of HMGB1 knockdown in the liver under a hyperglycemic state. HMGB1 Flox TMX STZ mice displayed an increase in macrovesicular lipid droplets and greater signs of mononuclear inflammatory infiltration compared to iHMGB1 KO TMX STZ mice (Supplemental Fig. 3D). Additionally, PAS and Oil Red O staining revealed that HMGB1 Flox TMX STZ mice exhibited increased glycogen storage and lipid uptake\",\n      \"context\": [\n        \"liver\",\n        \"hyperglycemic state\"\n      ],\n      \"source\": \"E556\",\n      \"assertion\": \"Staining revealed that HMGB1 Flox TMX STZ mice exhibited increased lipid uptake in the liver under a hyperglycemic state.\",\n      \"surface_form\": \"exhibited increased glycogen storage and lipid uptake\",\n      \"intervention\": null,\n      \"effects\": []\n    },\n    {\n      \"predicate\": \"has_higher_levels_of\",\n      \"negated\": false,\n      \"target\": \"E573\",\n      \"evidence\": \"We measured circulating levels of Cystatin C in plasma samples obtained from HMGB1 Flox TMX STZ and iHMGB1 KO TMX STZ mice 10 weeks post hyperglycemia development. Our results indicate that iHMGB1 KO TMX STZ mice exhibited significantly elevated levels of Cystatin C compared to HMGB1 Flox TMX STZ mice\",\n      \"context\": [\n        \"plasma\",\n        \"10 weeks post hyperglycemia development\"\n      ],\n      \"source\": \"E572\",\n      \"assertion\": \"At 10 weeks after hyperglycemia development, iHMGB1 KO TMX STZ mice exhibited significantly elevated circulating Cystatin C levels in plasma compared with HMGB1 Flox TMX STZ mice.\",\n      \"surface_form\": \"exhibited significantly elevated levels of Cystatin C\",\n      \"intervention\": null,\n      \"effects\": [\n        \"significantly elevated circulating Cystatin C levels\"\n      ]\n    }\n  ]\n}",
+        "requested_service_tier": "default",
+        "returned_service_tiers": [
+          "default"
+        ],
+        "returned_service_tier": "default",
+        "service_tier_mismatch": false,
+        "service_tier_verified": true,
+        "status_history": [
+          {
+            "timestamp": "2026-10-04T00:53:54.504349+00:00",
+            "operation": "create",
+            "status": "queued",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:53:58.035068+00:00",
+            "operation": "retrieve",
+            "status": "in_progress",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:54:01.544184+00:00",
+            "operation": "retrieve",
+            "status": "in_progress",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:54:05.047563+00:00",
+            "operation": "retrieve",
+            "status": "in_progress",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:54:08.558537+00:00",
+            "operation": "retrieve",
+            "status": "in_progress",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:54:12.124020+00:00",
+            "operation": "retrieve",
+            "status": "in_progress",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:54:15.668071+00:00",
+            "operation": "retrieve",
+            "status": "in_progress",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:54:19.155920+00:00",
+            "operation": "retrieve",
+            "status": "in_progress",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:54:22.667399+00:00",
+            "operation": "retrieve",
+            "status": "in_progress",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:54:26.199474+00:00",
+            "operation": "retrieve",
+            "status": "in_progress",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:54:29.680224+00:00",
+            "operation": "retrieve",
+            "status": "in_progress",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:54:33.161542+00:00",
+            "operation": "retrieve",
+            "status": "in_progress",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:54:36.702297+00:00",
+            "operation": "retrieve",
+            "status": "in_progress",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:54:40.218031+00:00",
+            "operation": "retrieve",
+            "status": "in_progress",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:54:43.743475+00:00",
+            "operation": "retrieve",
+            "status": "in_progress",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:54:47.256590+00:00",
+            "operation": "retrieve",
+            "status": "in_progress",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:54:50.778239+00:00",
+            "operation": "retrieve",
+            "status": "in_progress",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:54:54.300536+00:00",
+            "operation": "retrieve",
+            "status": "in_progress",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:54:58.555177+00:00",
+            "operation": "retrieve",
+            "status": "in_progress",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:55:02.033094+00:00",
+            "operation": "retrieve",
+            "status": "in_progress",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:55:05.554828+00:00",
+            "operation": "retrieve",
+            "status": "in_progress",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:55:09.087726+00:00",
+            "operation": "retrieve",
+            "status": "in_progress",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:55:12.597307+00:00",
+            "operation": "retrieve",
+            "status": "in_progress",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:55:16.109009+00:00",
+            "operation": "retrieve",
+            "status": "in_progress",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:55:19.624112+00:00",
+            "operation": "retrieve",
+            "status": "in_progress",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:55:23.121352+00:00",
+            "operation": "retrieve",
+            "status": "in_progress",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:55:26.624727+00:00",
+            "operation": "retrieve",
+            "status": "in_progress",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:55:30.592707+00:00",
+            "operation": "retrieve",
+            "status": "in_progress",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:55:34.101944+00:00",
+            "operation": "retrieve",
+            "status": "in_progress",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:55:37.641542+00:00",
+            "operation": "retrieve",
+            "status": "in_progress",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:55:41.173856+00:00",
+            "operation": "retrieve",
+            "status": "in_progress",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:55:44.664551+00:00",
+            "operation": "retrieve",
+            "status": "in_progress",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:55:48.203521+00:00",
+            "operation": "retrieve",
+            "status": "in_progress",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:55:51.753634+00:00",
+            "operation": "retrieve",
+            "status": "in_progress",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:55:55.290850+00:00",
+            "operation": "retrieve",
+            "status": "in_progress",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:55:58.783013+00:00",
+            "operation": "retrieve",
+            "status": "in_progress",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:56:02.272871+00:00",
+            "operation": "retrieve",
+            "status": "in_progress",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:56:05.777181+00:00",
+            "operation": "retrieve",
+            "status": "in_progress",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:56:09.422556+00:00",
+            "operation": "retrieve",
+            "status": "in_progress",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:56:12.910641+00:00",
+            "operation": "retrieve",
+            "status": "in_progress",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:56:16.480298+00:00",
+            "operation": "retrieve",
+            "status": "in_progress",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:56:19.997176+00:00",
+            "operation": "retrieve",
+            "status": "in_progress",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:56:23.514900+00:00",
+            "operation": "retrieve",
+            "status": "in_progress",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:56:26.996867+00:00",
+            "operation": "retrieve",
+            "status": "in_progress",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:56:30.503042+00:00",
+            "operation": "retrieve",
+            "status": "in_progress",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:56:33.997587+00:00",
+            "operation": "retrieve",
+            "status": "in_progress",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:56:37.603940+00:00",
+            "operation": "retrieve",
+            "status": "in_progress",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:56:41.120033+00:00",
+            "operation": "retrieve",
+            "status": "in_progress",
+            "returned_service_tier": "default"
+          },
+          {
+            "timestamp": "2026-10-04T00:56:44.812575+00:00",
+            "operation": "retrieve",
+            "status": "completed",
+            "returned_service_tier": "default"
+          }
+        ],
+        "time_to_first_known_queued_seconds": 0.0,
+        "time_to_first_observed_in_progress_seconds": 3.531,
+        "approximate_queue_duration_seconds": 3.531,
+        "approximate_in_progress_duration_seconds": 166.777,
+        "timing_estimates": "poll-resolution observations; exact queue/inference boundaries unavailable",
+        "derived_usage": {
+          "cached_input_tokens": 0,
+          "cache_write_tokens": 5220,
+          "reasoning_tokens": 7768,
+          "visible_output_tokens_derived": 2236
+        },
+        "parser_result": "accepted",
+        "parsed_contract10_output": {
+          "relations": [
+            {
+              "predicate": "reduces",
+              "negated": false,
+              "target": "E510",
+              "evidence": "hyperglycemia reduction upon HMGB1 knockdown",
+              "context": [],
+              "source": "E511",
+              "assertion": "Hyperglycemia reduction occurred upon HMGB1 knockdown.",
+              "surface_form": "hyperglycemia reduction upon HMGB1 knockdown",
+              "intervention": "HMGB1 knockdown",
+              "effects": []
+            },
+            {
+              "predicate": "has_comparable_levels_in",
+              "negated": false,
+              "target": "E517",
+              "evidence": "Our assessment of the plasma samples collected from HMGB1 Flox TMX STZ and iHMGB1 KO TMX STZ mice following 10 weeks post last injection revealed that although ALT levels were comparable between the two groups",
+              "context": [
+                "plasma",
+                "10 weeks post last injection"
+              ],
+              "source": "E518",
+              "assertion": "Plasma ALT levels were comparable between HMGB1 Flox TMX STZ and iHMGB1 KO TMX STZ mice 10 weeks after the last injection.",
+              "surface_form": "ALT levels were comparable between the two groups",
+              "intervention": null,
+              "effects": []
+            },
+            {
+              "predicate": "has_higher_levels_of",
+              "negated": false,
+              "target": "E522",
+              "evidence": "Our assessment of the plasma samples collected from HMGB1 Flox TMX STZ and iHMGB1 KO TMX STZ mice following 10 weeks post last injection revealed that although ALT levels were comparable between the two groups, HMGB1 Flox TMX STZ mice displayed significantly elevated levels of AST, an indicator of liver damage, compared to iHMGB1 KO TMX STZ mice",
+              "context": [
+                "plasma",
+                "10 weeks post last injection"
+              ],
+              "source": "E521",
+              "assertion": "HMGB1 Flox TMX STZ mice displayed significantly elevated plasma AST levels compared with iHMGB1 KO TMX STZ mice 10 weeks after the last injection.",
+              "surface_form": "displayed significantly elevated levels of AST",
+              "intervention": null,
+              "effects": [
+                "significantly elevated AST levels"
+              ]
+            },
+            {
+              "predicate": "indicator_of",
+              "negated": false,
+              "target": "E523",
+              "evidence": "AST, an indicator of liver damage",
+              "context": [],
+              "source": "E522",
+              "assertion": "AST is an indicator of liver damage.",
+              "surface_form": "an indicator of",
+              "intervention": null,
+              "effects": []
+            },
+            {
+              "predicate": "has_ratio_to",
+              "negated": false,
+              "target": "E528",
+              "evidence": "we calculated the widely used AST/ALT ratio, which showed that iHMGB1 KO TMX STZ mice had a ratio of approximately 1",
+              "context": [
+                "iHMGB1 KO TMX STZ mice"
+              ],
+              "source": "E527",
+              "assertion": "The AST/ALT ratio in iHMGB1 KO TMX STZ mice was approximately 1.",
+              "surface_form": "AST/ALT ratio",
+              "intervention": null,
+              "effects": [
+                "AST/ALT ratio of approximately 1"
+              ]
+            },
+            {
+              "predicate": "has_ratio_to",
+              "negated": false,
+              "target": "E536",
+              "evidence": "iHMGB1 KO TMX STZ mice had a ratio of approximately 1, whereas HMGB1 Flox TMX STZ mice exhibited a substantially higher AST/ALT ratio of around 2",
+              "context": [
+                "HMGB1 Flox TMX STZ mice"
+              ],
+              "source": "E535",
+              "assertion": "HMGB1 Flox TMX STZ mice exhibited an AST/ALT ratio of around 2, substantially higher than the approximately 1 ratio in iHMGB1 KO TMX STZ mice.",
+              "surface_form": "a substantially higher AST/ALT ratio of around 2",
+              "intervention": null,
+              "effects": [
+                "substantially higher AST/ALT ratio of around 2"
+              ]
+            },
+            {
+              "predicate": "contributes_to",
+              "negated": false,
+              "target": "E538",
+              "evidence": "suggesting that the presence of HMGB1 contributes to more severe liver damage under hyperglycemic conditions",
+              "context": [
+                "hyperglycemic conditions"
+              ],
+              "source": "E537",
+              "assertion": "The results suggest that the presence of HMGB1 contributes to more severe liver damage under hyperglycemic conditions.",
+              "surface_form": "contributes to more severe liver damage",
+              "intervention": null,
+              "effects": [
+                "more severe liver damage"
+              ]
+            },
+            {
+              "predicate": "has_increased_droplets_of",
+              "negated": false,
+              "target": "E547",
+              "evidence": "we examined the pathological effects of HMGB1 knockdown in the liver under a hyperglycemic state. HMGB1 Flox TMX STZ mice displayed an increase in macrovesicular lipid droplets and greater signs of mononuclear inflammatory infiltration compared to iHMGB1 KO TMX STZ mice",
+              "context": [
+                "liver",
+                "hyperglycemic state"
+              ],
+              "source": "E546",
+              "assertion": "In the liver under a hyperglycemic state, HMGB1 Flox TMX STZ mice displayed increased macrovesicular lipid droplets compared with iHMGB1 KO TMX STZ mice.",
+              "surface_form": "displayed an increase in macrovesicular lipid droplets",
+              "intervention": null,
+              "effects": [
+                "increased macrovesicular lipid droplets"
+              ]
+            },
+            {
+              "predicate": "has_greater_signs_of_infiltration",
+              "negated": false,
+              "target": "E548",
+              "evidence": "we examined the pathological effects of HMGB1 knockdown in the liver under a hyperglycemic state. HMGB1 Flox TMX STZ mice displayed an increase in macrovesicular lipid droplets and greater signs of mononuclear inflammatory infiltration compared to iHMGB1 KO TMX STZ mice",
+              "context": [
+                "liver",
+                "hyperglycemic state"
+              ],
+              "source": "E546",
+              "assertion": "In the liver under a hyperglycemic state, HMGB1 Flox TMX STZ mice displayed greater signs of mononuclear inflammatory infiltration compared with iHMGB1 KO TMX STZ mice.",
+              "surface_form": "greater signs of mononuclear inflammatory infiltration",
+              "intervention": null,
+              "effects": [
+                "greater signs of mononuclear inflammatory infiltration"
+              ]
+            },
+            {
+              "predicate": "has_increased_storage_of",
+              "negated": false,
+              "target": "E557",
+              "evidence": "we examined the pathological effects of HMGB1 knockdown in the liver under a hyperglycemic state. HMGB1 Flox TMX STZ mice displayed an increase in macrovesicular lipid droplets and greater signs of mononuclear inflammatory infiltration compared to iHMGB1 KO TMX STZ mice (Supplemental Fig. 3D). Additionally, PAS and Oil Red O staining revealed that HMGB1 Flox TMX STZ mice exhibited increased glycogen storage and lipid uptake",
+              "context": [
+                "liver",
+                "hyperglycemic state"
+              ],
+              "source": "E556",
+              "assertion": "Staining revealed that HMGB1 Flox TMX STZ mice exhibited increased glycogen storage in the liver under a hyperglycemic state.",
+              "surface_form": "exhibited increased glycogen storage",
+              "intervention": null,
+              "effects": []
+            },
+            {
+              "predicate": "has_increased_uptake_of",
+              "negated": false,
+              "target": "E558",
+              "evidence": "we examined the pathological effects of HMGB1 knockdown in the liver under a hyperglycemic state. HMGB1 Flox TMX STZ mice displayed an increase in macrovesicular lipid droplets and greater signs of mononuclear inflammatory infiltration compared to iHMGB1 KO TMX STZ mice (Supplemental Fig. 3D). Additionally, PAS and Oil Red O staining revealed that HMGB1 Flox TMX STZ mice exhibited increased glycogen storage and lipid uptake",
+              "context": [
+                "liver",
+                "hyperglycemic state"
+              ],
+              "source": "E556",
+              "assertion": "Staining revealed that HMGB1 Flox TMX STZ mice exhibited increased lipid uptake in the liver under a hyperglycemic state.",
+              "surface_form": "exhibited increased glycogen storage and lipid uptake",
+              "intervention": null,
+              "effects": []
+            },
+            {
+              "predicate": "has_higher_levels_of",
+              "negated": false,
+              "target": "E573",
+              "evidence": "We measured circulating levels of Cystatin C in plasma samples obtained from HMGB1 Flox TMX STZ and iHMGB1 KO TMX STZ mice 10 weeks post hyperglycemia development. Our results indicate that iHMGB1 KO TMX STZ mice exhibited significantly elevated levels of Cystatin C compared to HMGB1 Flox TMX STZ mice",
+              "context": [
+                "plasma",
+                "10 weeks post hyperglycemia development"
+              ],
+              "source": "E572",
+              "assertion": "At 10 weeks after hyperglycemia development, iHMGB1 KO TMX STZ mice exhibited significantly elevated circulating Cystatin C levels in plasma compared with HMGB1 Flox TMX STZ mice.",
+              "surface_form": "exhibited significantly elevated levels of Cystatin C",
+              "intervention": null,
+              "effects": [
+                "significantly elevated circulating Cystatin C levels"
+              ]
+            }
+          ]
+        },
+        "validation_result": "accepted"
+      }
+    ],
+    "provider_generation_count": 1,
+    "repair_count": 0,
+    "validated_relation_count": 12,
+    "unique_evidence_span_count": 10,
+    "transport_success": true,
+    "contract10_success": true,
+    "validated_relations": [
+      {
+        "source": "E511",
+        "target": "E510",
+        "predicate": "reduces",
+        "assertion": "Hyperglycemia reduction occurred upon HMGB1 knockdown.",
+        "evidence": "hyperglycemia reduction upon HMGB1 knockdown",
+        "negated": false,
+        "intervention": "HMGB1 knockdown",
+        "effects": [],
+        "context": [],
+        "surface_form": "hyperglycemia reduction upon HMGB1 knockdown",
+        "score": null
+      },
+      {
+        "source": "E518",
+        "target": "E517",
+        "predicate": "has_comparable_levels_in",
+        "assertion": "Plasma ALT levels were comparable between HMGB1 Flox TMX STZ and iHMGB1 KO TMX STZ mice 10 weeks after the last injection.",
+        "evidence": "Our assessment of the plasma samples collected from HMGB1 Flox TMX STZ and iHMGB1 KO TMX STZ mice following 10 weeks post last injection revealed that although ALT levels were comparable between the two groups",
+        "negated": false,
+        "intervention": null,
+        "effects": [],
+        "context": [
+          "plasma",
+          "10 weeks post last injection"
+        ],
+        "surface_form": "ALT levels were comparable between the two groups",
+        "score": null
+      },
+      {
+        "source": "E521",
+        "target": "E522",
+        "predicate": "has_higher_levels_of",
+        "assertion": "HMGB1 Flox TMX STZ mice displayed significantly elevated plasma AST levels compared with iHMGB1 KO TMX STZ mice 10 weeks after the last injection.",
+        "evidence": "Our assessment of the plasma samples collected from HMGB1 Flox TMX STZ and iHMGB1 KO TMX STZ mice following 10 weeks post last injection revealed that although ALT levels were comparable between the two groups, HMGB1 Flox TMX STZ mice displayed significantly elevated levels of AST, an indicator of liver damage, compared to iHMGB1 KO TMX STZ mice",
+        "negated": false,
+        "intervention": null,
+        "effects": [
+          "significantly elevated AST levels"
+        ],
+        "context": [
+          "plasma",
+          "10 weeks post last injection"
+        ],
+        "surface_form": "displayed significantly elevated levels of AST",
+        "score": null
+      },
+      {
+        "source": "E522",
+        "target": "E523",
+        "predicate": "indicator_of",
+        "assertion": "AST is an indicator of liver damage.",
+        "evidence": "AST, an indicator of liver damage",
+        "negated": false,
+        "intervention": null,
+        "effects": [],
+        "context": [],
+        "surface_form": "an indicator of",
+        "score": null
+      },
+      {
+        "source": "E527",
+        "target": "E528",
+        "predicate": "has_ratio_to",
+        "assertion": "The AST/ALT ratio in iHMGB1 KO TMX STZ mice was approximately 1.",
+        "evidence": "we calculated the widely used AST/ALT ratio, which showed that iHMGB1 KO TMX STZ mice had a ratio of approximately 1",
+        "negated": false,
+        "intervention": null,
+        "effects": [
+          "AST/ALT ratio of approximately 1"
+        ],
+        "context": [
+          "iHMGB1 KO TMX STZ mice"
+        ],
+        "surface_form": "AST/ALT ratio",
+        "score": null
+      },
+      {
+        "source": "E535",
+        "target": "E536",
+        "predicate": "has_ratio_to",
+        "assertion": "HMGB1 Flox TMX STZ mice exhibited an AST/ALT ratio of around 2, substantially higher than the approximately 1 ratio in iHMGB1 KO TMX STZ mice.",
+        "evidence": "iHMGB1 KO TMX STZ mice had a ratio of approximately 1, whereas HMGB1 Flox TMX STZ mice exhibited a substantially higher AST/ALT ratio of around 2",
+        "negated": false,
+        "intervention": null,
+        "effects": [
+          "substantially higher AST/ALT ratio of around 2"
+        ],
+        "context": [
+          "HMGB1 Flox TMX STZ mice"
+        ],
+        "surface_form": "a substantially higher AST/ALT ratio of around 2",
+        "score": null
+      },
+      {
+        "source": "E537",
+        "target": "E538",
+        "predicate": "contributes_to",
+        "assertion": "The results suggest that the presence of HMGB1 contributes to more severe liver damage under hyperglycemic conditions.",
+        "evidence": "suggesting that the presence of HMGB1 contributes to more severe liver damage under hyperglycemic conditions",
+        "negated": false,
+        "intervention": null,
+        "effects": [
+          "more severe liver damage"
+        ],
+        "context": [
+          "hyperglycemic conditions"
+        ],
+        "surface_form": "contributes to more severe liver damage",
+        "score": null
+      },
+      {
+        "source": "E546",
+        "target": "E547",
+        "predicate": "has_increased_droplets_of",
+        "assertion": "In the liver under a hyperglycemic state, HMGB1 Flox TMX STZ mice displayed increased macrovesicular lipid droplets compared with iHMGB1 KO TMX STZ mice.",
+        "evidence": "we examined the pathological effects of HMGB1 knockdown in the liver under a hyperglycemic state. HMGB1 Flox TMX STZ mice displayed an increase in macrovesicular lipid droplets and greater signs of mononuclear inflammatory infiltration compared to iHMGB1 KO TMX STZ mice",
+        "negated": false,
+        "intervention": null,
+        "effects": [
+          "increased macrovesicular lipid droplets"
+        ],
+        "context": [
+          "liver",
+          "hyperglycemic state"
+        ],
+        "surface_form": "displayed an increase in macrovesicular lipid droplets",
+        "score": null
+      },
+      {
+        "source": "E546",
+        "target": "E548",
+        "predicate": "has_greater_signs_of_infiltration",
+        "assertion": "In the liver under a hyperglycemic state, HMGB1 Flox TMX STZ mice displayed greater signs of mononuclear inflammatory infiltration compared with iHMGB1 KO TMX STZ mice.",
+        "evidence": "we examined the pathological effects of HMGB1 knockdown in the liver under a hyperglycemic state. HMGB1 Flox TMX STZ mice displayed an increase in macrovesicular lipid droplets and greater signs of mononuclear inflammatory infiltration compared to iHMGB1 KO TMX STZ mice",
+        "negated": false,
+        "intervention": null,
+        "effects": [
+          "greater signs of mononuclear inflammatory infiltration"
+        ],
+        "context": [
+          "liver",
+          "hyperglycemic state"
+        ],
+        "surface_form": "greater signs of mononuclear inflammatory infiltration",
+        "score": null
+      },
+      {
+        "source": "E556",
+        "target": "E557",
+        "predicate": "has_increased_storage_of",
+        "assertion": "Staining revealed that HMGB1 Flox TMX STZ mice exhibited increased glycogen storage in the liver under a hyperglycemic state.",
+        "evidence": "we examined the pathological effects of HMGB1 knockdown in the liver under a hyperglycemic state. HMGB1 Flox TMX STZ mice displayed an increase in macrovesicular lipid droplets and greater signs of mononuclear inflammatory infiltration compared to iHMGB1 KO TMX STZ mice (Supplemental Fig. 3D). Additionally, PAS and Oil Red O staining revealed that HMGB1 Flox TMX STZ mice exhibited increased glycogen storage and lipid uptake",
+        "negated": false,
+        "intervention": null,
+        "effects": [],
+        "context": [
+          "liver",
+          "hyperglycemic state"
+        ],
+        "surface_form": "exhibited increased glycogen storage",
+        "score": null
+      },
+      {
+        "source": "E556",
+        "target": "E558",
+        "predicate": "has_increased_uptake_of",
+        "assertion": "Staining revealed that HMGB1 Flox TMX STZ mice exhibited increased lipid uptake in the liver under a hyperglycemic state.",
+        "evidence": "we examined the pathological effects of HMGB1 knockdown in the liver under a hyperglycemic state. HMGB1 Flox TMX STZ mice displayed an increase in macrovesicular lipid droplets and greater signs of mononuclear inflammatory infiltration compared to iHMGB1 KO TMX STZ mice (Supplemental Fig. 3D). Additionally, PAS and Oil Red O staining revealed that HMGB1 Flox TMX STZ mice exhibited increased glycogen storage and lipid uptake",
+        "negated": false,
+        "intervention": null,
+        "effects": [],
+        "context": [
+          "liver",
+          "hyperglycemic state"
+        ],
+        "surface_form": "exhibited increased glycogen storage and lipid uptake",
+        "score": null
+      },
+      {
+        "source": "E572",
+        "target": "E573",
+        "predicate": "has_higher_levels_of",
+        "assertion": "At 10 weeks after hyperglycemia development, iHMGB1 KO TMX STZ mice exhibited significantly elevated circulating Cystatin C levels in plasma compared with HMGB1 Flox TMX STZ mice.",
+        "evidence": "We measured circulating levels of Cystatin C in plasma samples obtained from HMGB1 Flox TMX STZ and iHMGB1 KO TMX STZ mice 10 weeks post hyperglycemia development. Our results indicate that iHMGB1 KO TMX STZ mice exhibited significantly elevated levels of Cystatin C compared to HMGB1 Flox TMX STZ mice",
+        "negated": false,
+        "intervention": null,
+        "effects": [
+          "significantly elevated circulating Cystatin C levels"
+        ],
+        "context": [
+          "plasma",
+          "10 weeks post hyperglycemia development"
+        ],
+        "surface_form": "exhibited significantly elevated levels of Cystatin C",
+        "score": null
+      }
+    ],
+    "total_elapsed_seconds": 171.578,
+    "service_tier_mismatch": false,
+    "service_tier_verified": true
+  },
+  "costs": {
+    "currency": "USD",
+    "estimated_not_invoice": true,
+    "synthetic_requests": [
+      {
+        "response_id": "resp_0e02491dc46cf12b006ac1a39cb92c87d190dc92401b0c9b6c",
+        "repair": false,
+        "usage": {
+          "input_tokens": 1029,
+          "input_tokens_details": {
+            "cache_write_tokens": 1026,
+            "cached_tokens": 0
+          },
+          "output_tokens": 117,
+          "output_tokens_details": {
+            "reasoning_tokens": 44
+          },
+          "total_tokens": 1146
+        },
+        "estimated_request_cost_usd": 0.003741,
+        "regular_input_tokens": 3,
+        "cached_input_tokens": 0,
+        "cache_write_tokens": 1026,
+        "components_usd": {
+          "input_cost": 6e-06,
+          "cached_cost": 0.0,
+          "cache_write_cost": 0.002565,
+          "output_cost": 0.00117
+        }
+      }
+    ],
+    "real_requests": [
+      {
+        "response_id": "resp_0495db2d67c4fa47006ac1a3a5112887d196caff3b7b1c2b84",
+        "repair": false,
+        "usage": {
+          "input_tokens": 5223,
+          "input_tokens_details": {
+            "cache_write_tokens": 5220,
+            "cached_tokens": 0
+          },
+          "output_tokens": 10004,
+          "output_tokens_details": {
+            "reasoning_tokens": 7768
+          },
+          "total_tokens": 15227
+        },
+        "estimated_request_cost_usd": 0.113096,
+        "regular_input_tokens": 3,
+        "cached_input_tokens": 0,
+        "cache_write_tokens": 5220,
+        "components_usd": {
+          "input_cost": 6e-06,
+          "cached_cost": 0.0,
+          "cache_write_cost": 0.01305,
+          "output_cost": 0.10004
+        }
+      }
+    ],
+    "total_cost_usd": 0.116837,
+    "cost_complete": true
+  },
+  "production_code_unchanged": true,
+  "production_default_unchanged": true,
+  "existing_reports_preserved": true,
+  "nothing_committed_or_pushed": true,
+  "final_baseline": {
+    "head": "fd66f9bb6d1a5c41ae147abfb5a7994c5bddae6c",
+    "branch": "extraction_system_v2",
+    "production_status": "",
+    "production_diff": "",
+    "production_model_default": "gpt-5.6-luna",
+    "contract11s_reference_head": "7f388368a8bd06f35f60eda37eb2ccdce711eed8",
+    "production_parity_diff": "",
+    "baseline_exception": "User authorized report-only fd66f9bb HEAD after production parity verification"
+  }
+}

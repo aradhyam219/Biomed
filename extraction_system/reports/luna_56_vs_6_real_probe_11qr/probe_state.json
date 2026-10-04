@@ -1,0 +1,17 @@
+{
+  "completed_sequences": [
+    1,
+    2,
+    3
+  ],
+  "consecutive_provider_or_timeout_failures": 3,
+  "contract": "Codex Contract 11Q-R",
+  "elapsed_wall_seconds": 8.574,
+  "finished_utc": "2026-10-02T08:33:57.263457+00:00",
+  "last_status": "provider_failure",
+  "model_mapping_disclosed": false,
+  "scheduled_jobs": 10,
+  "started_utc": "2026-10-02T08:33:48.689082+00:00",
+  "status": "aborted_stop_condition",
+  "stop_condition": "three consecutive provider-error or timeout jobs before structured output"
+}

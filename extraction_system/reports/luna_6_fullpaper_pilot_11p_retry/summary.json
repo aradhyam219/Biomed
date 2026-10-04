@@ -1,0 +1,132 @@
+{
+  "contract": "Codex Contract 11P",
+  "baseline": {
+    "branch": "extraction_system_v2",
+    "repository_sha": "1f12923ce54ab6718a00b8d8e8126536285dc6a8",
+    "production_code_diff": "none in src/, viewer/, or tests/"
+  },
+  "paper": {
+    "paper_id": "PMCID:PMC10770459",
+    "source_characters": 48203,
+    "source_sha256": "5b58cb81f2add5f1295313b08c07e575bffffa8c1a871f32436d278735b209a4",
+    "frozen_entity_count": 874,
+    "chunk_count": 1
+  },
+  "execution": {
+    "total_chunks": 1,
+    "attempted_chunks": 1,
+    "successful_chunks": 0,
+    "validation_failures": 0,
+    "timeouts": 1,
+    "other_chunk_failures": 0,
+    "provider_attempts": 1,
+    "repair_attempts": 0,
+    "total_relations": 0,
+    "unique_evidence_spans": 0,
+    "evidence_span_method": "Count distinct exact occurrences of validated evidence strings within successful source chunks; repeated occurrences in a chunk are included as candidate spans.",
+    "relations_with_ambiguous_evidence_occurrence": 0,
+    "total_input_tokens": null,
+    "total_output_tokens": null,
+    "token_usage_attempts_with_input_count": 0,
+    "token_usage_attempts_with_output_count": 0,
+    "total_elapsed_seconds": 600.031,
+    "successful_source_characters": 0,
+    "source_coverage_percent": 0.0,
+    "graph_node_count": 114,
+    "graph_edge_count": 0,
+    "stop_reason": "failed_or_timed_out_fraction_exceeded_25_percent",
+    "viewer_smoke": "not run for this single-chunk transport retry",
+    "status": "timeout",
+    "provider_responses_received": 0,
+    "watchdog_seconds": 600,
+    "input_integrity": {
+      "verified_utc": "2026-09-28T11:43:02.840657+00:00",
+      "original_11p_report": "reports/luna_6_fullpaper_pilot_11p",
+      "original_preflight_sha256": "5b43f21b1a50e109ed7a210e4e1261b9ccbb083f98299da3b0e538cc9bfb1066",
+      "original_chunk_manifest_sha256": "656007f079bd7b253b1e375a0eb85a6e29cb4464fa6a3727e057a7f20ab9b8f5",
+      "original_chunk_result_sha256": "1f526b2d15bad4fd97f979a36538caecc45b1d8165817c49568e47b1e00635d3",
+      "current_execution_baseline": {
+        "branch": "extraction_system_v2",
+        "head": "7f388368a8bd06f35f60eda37eb2ccdce711eed8",
+        "src_viewer_tests_worktree_clean": true
+      },
+      "paper_source_corpus_file_sha256": "544cb37adee45fd7fe892c80b7aa4e8ba93e801212bc759e615e71d721ce4b55",
+      "paper_source_sha256": "5b58cb81f2add5f1295313b08c07e575bffffa8c1a871f32436d278735b209a4",
+      "chunk_id": "chunk_001",
+      "chunk_source_file_sha256": "2a3ad71cb9f149cceda87dc8bc9af582a3982e98d5bf7f7b2dd21c161597d2fd",
+      "chunk_source_sha256": "2a3ad71cb9f149cceda87dc8bc9af582a3982e98d5bf7f7b2dd21c161597d2fd",
+      "chunk_source_characters": 9153,
+      "chunk_absolute_source_range": {
+        "start": 0,
+        "end": 9153
+      },
+      "frozen_entity_packet_path": "reports/luna_56_vs_6_fullpaper_11/papers/pmcid_pmc10770459/entities.json",
+      "frozen_entity_packet_file_sha256": "938cdc238e47c46ae7773129e3f0196027f5f676f74864f1fe72b845a79ca8c0",
+      "frozen_entity_input_file_sha256": "6ba516059b9ab52717656d6868bc6c6b46d97b6089c8b457e730b31fa7649e75",
+      "chunk_entity_count": 165,
+      "chunk_absolute_entity_packet_sha256": "9d4e6bf6629747bca0d6aaf3042d59de1d43b30b1793cfa7132fc6e3b642259b",
+      "chunk_provider_entity_packet_sha256": "5aa94f7600639835755a899f2b4513cbd735f281b7111557c84c08457e396f6b",
+      "contract10_prompt_sha256": "13f38a6e94db74b534eb0df0b139287ace2e714fc908276ce4c3572f9b25836f",
+      "structured_schema_sha256": "023435da3fa18abb77987313626636eff7bedda28739603db54a2f2c8137c945",
+      "chunk_prompt_sha256": "7689a3d8df557f93560b712dc758cbe51351d800c5e02c70201807ca68e2b3f1",
+      "all_original_checksums_match": true,
+      "frozen_chunk_matches_source_prefix": true
+    }
+  },
+  "failures": [
+    {
+      "chunk_id": "chunk_001",
+      "source_range": {
+        "start": 0,
+        "end": 9153
+      },
+      "exact_failure": "Worker exceeded the 600-second wall-clock ceiling and was terminated; no manual rerun was made.",
+      "attempt_count": 1,
+      "repair_count": 0,
+      "elapsed_seconds": 600.016
+    }
+  ],
+  "artifacts": {
+    "preflight": "reports/luna_6_fullpaper_pilot_11p_retry/preflight.json",
+    "chunk_manifest": "reports/luna_6_fullpaper_pilot_11p_retry/chunk_manifest.json",
+    "chunk_results": "reports/luna_6_fullpaper_pilot_11p_retry/chunks",
+    "full_paper_relations": "reports/luna_6_fullpaper_pilot_11p_retry/full_paper_relations.json",
+    "full_paper_graph": "reports/luna_6_fullpaper_pilot_11p_retry/full_paper_graph.json",
+    "screenshot": null,
+    "summary_markdown": "reports/luna_6_fullpaper_pilot_11p_retry/summary.md",
+    "summary_json": "reports/luna_6_fullpaper_pilot_11p_retry/summary.json",
+    "screenshot_status": "not captured; viewer smoke was outside this retry contract"
+  },
+  "production_code_modified": false,
+  "status": "timeout",
+  "retry_execution_baseline": {
+    "branch": "extraction_system_v2",
+    "head": "7f388368a8bd06f35f60eda37eb2ccdce711eed8",
+    "src_viewer_tests_worktree_clean": true
+  },
+  "source_11p_baseline": {
+    "branch": "extraction_system_v2",
+    "repository_sha": "1f12923ce54ab6718a00b8d8e8126536285dc6a8",
+    "production_code_diff": "none in src/, viewer/, or tests/"
+  },
+  "original_11p_report": "reports/luna_6_fullpaper_pilot_11p",
+  "retry": {
+    "status": "timeout",
+    "paper_id": "PMCID:PMC10770459",
+    "chunk_id": "chunk_001",
+    "provider_responses_received": 0,
+    "provider_attempts": 1,
+    "repair_attempts": 0,
+    "elapsed_seconds": 600.031,
+    "external_watchdog_seconds": 600,
+    "input_tokens": null,
+    "output_tokens": null,
+    "validated_relation_count": 0,
+    "unique_evidence_span_count": 0,
+    "exact_final_error": "Worker exceeded the 600-second wall-clock ceiling and was terminated; no manual rerun was made.",
+    "successful_provider_attempt_seconds": null,
+    "last_attempt_state_at_watchdog": "running",
+    "stopped_after_this_chunk": true,
+    "scientific_quality_assessed": false
+  }
+}

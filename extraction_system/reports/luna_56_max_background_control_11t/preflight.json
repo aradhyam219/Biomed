@@ -1,0 +1,90 @@
+{
+  "created_timestamp": "2026-10-03T21:07:01.738164+00:00",
+  "baseline": {
+    "head": "fd66f9bb6d1a5c41ae147abfb5a7994c5bddae6c",
+    "branch": "extraction_system_v2",
+    "production_status": "",
+    "production_diff": "",
+    "production_model_default": "gpt-5.6-luna",
+    "contract11s_reference_head": "7f388368a8bd06f35f60eda37eb2ccdce711eed8",
+    "production_parity_diff": "",
+    "baseline_exception": "User authorized report-only fd66f9bb HEAD after production parity verification"
+  },
+  "runtime_versions": {
+    "openai": "3.14.1",
+    "langchain-openai": "1.6.2",
+    "langchain-core": "1.6.3"
+  },
+  "network_execution_mode": "require_escalated / network-capable; all provider operations",
+  "configuration": {
+    "model": "gpt-5.6-luna",
+    "reasoning": {
+      "effort": "max"
+    },
+    "max_output_tokens": 128000,
+    "background": true,
+    "store": false,
+    "provider_sdk_retries": 0,
+    "temperature": "unset",
+    "service_tier": "unset"
+  },
+  "contract10_system_prompt_sha256": "13f38a6e94db74b534eb0df0b139287ace2e714fc908276ce4c3572f9b25836f",
+  "contract10_schema_sha256": "023435da3fa18abb77987313626636eff7bedda28739603db54a2f2c8137c945",
+  "openai_transport_schema_sha256": "b0506680756b7ad8332d976a419cdee57a81e1051dd115f291f65d77bd656510",
+  "offline_equivalence_checks": {
+    "public_sdk_conversion": true,
+    "allowed_schema_differences_only": true,
+    "all_object_required_and_closed": true,
+    "field_types_and_nullability_preserved": true,
+    "empty_relations_round_trip": true,
+    "null_and_empty_fields_round_trip": true,
+    "normal_contract10_semantics_identical": true
+  },
+  "real_passage": {
+    "paper_id": "PMCID:PMC10770459",
+    "passage_id": "passage_001",
+    "source_range": {
+      "end": 27824,
+      "start": 25843
+    },
+    "source_sha256": "ecd73abad943377d0d94e5937c61c1eab0799c4e70c0044202ac3910d412b087",
+    "entity_packet_sha256": "b35d86c489fb52755adb5dd7750dc86b045fefd405167a42cefeedc403377e56",
+    "entity_count": 68,
+    "source_characters": 1981,
+    "prompt_sha256": "ee73415e65f88d52e17c473eb2d5143940b19b9adfa7d4a6d117e5db450b0405"
+  },
+  "poll_interval_seconds": 3,
+  "consecutive_poll_error_limit": 5,
+  "synthetic_deadline_seconds": 120,
+  "real_passage_deadline_seconds": 480,
+  "repair_budget": 2,
+  "schema_transport": "public SDK responses.parse Pydantic conversion captured with offline MockTransport; live responses.create",
+  "official_background_documentation": "https://developers.openai.com/api/docs/guides/background",
+  "contract": "11T",
+  "only_experimental_change": "model: gpt-6-luna -> gpt-5.6-luna",
+  "reused_adapter": "C:\\Projects\\Biomed\\extraction_system\\reports\\luna_gpt6_background_probe_11s\\scripts\\run_background_probe_11sr.py",
+  "reused_adapter_sha256": "9bfeabafb9c22606669fa857cf3af8c0eee8fcc255b1c87e4bf8e689b2a9ba10",
+  "reference_artifact_hashes": {
+    "poll_history.json": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+    "preflight.json": "9908911d863e9feb4b4e082da6f6f19418b5a1360f7806062aa15b903be3fbcd",
+    "real_passage_background.json": "aa91a5d77a4ee33c4a5cb2e01518b79eb0d5087f703424936e6a4e3163f6b95c",
+    "summary.json": "0139c0ed0637f4069d8539efba19ace22b36e253042b4dcdcfcd294df01fe5bd",
+    "summary.md": "d1a4ccac8b756459047f4afbc0d545f2ea66ac51dc373f36915545aa2c8c8ac5",
+    "synthetic_background.json": "f80c8a0be0eb4b8c977fa68741f39cb5adb8157daa2d201ce9b3ed3132185c01",
+    "rerun_11sr\\offline_equivalence.json": "5a98a7941fca91dfd56d5e7b8746d29d3a33a4871307135dd6a353aa0e7f80e6",
+    "rerun_11sr\\poll_history.json": "5b77c384fb56a8977762e7b6359292cb3ae19060911a95bdf5716c845b23294d",
+    "rerun_11sr\\preflight.json": "b42b45f8a65ccdc2705fe6c104164157975f5e45df6cb7449c980076c95c2037",
+    "rerun_11sr\\real_passage_background.json": "a4b9ee2d38f045f1fb4bd6b7b00fdcffab9df9bc6ddc9770787e14a9c016552c",
+    "rerun_11sr\\semantic_schema.json": "01c452532a32c87f6434fe662ad159af05bc0a563f17def73884f2bd70649457",
+    "rerun_11sr\\summary.json": "ac87395e53f5b737f29c368f9320d4818a0025d8d8c8a2b6b4cb51f25a583d7a",
+    "rerun_11sr\\summary.md": "d336037e55d0eeb976362e2efa5c57f2910b9cc2423db754ad9c0ea02ef1e11d",
+    "rerun_11sr\\synthetic_background.json": "49f1476c14a4956f27a1468d769355579c2ac124dce47948c2b6bef2431173de",
+    "rerun_11sr\\transport_schema.json": "3e4acedcea7b0c138857ec0a126728bd4af5adf5b4f5c3aa6cc5a2d5313dfce6",
+    "scripts\\check_adapter.py": "38d5cff0d2e6dfad977a6b6e70344c46d64c41092c16f595623c8208ac59ac35",
+    "scripts\\run_background_probe.py": "ff074581f020b52ba1031a822a7bd9ec74cc54c67f0d5087ef42eef3c81ba617",
+    "scripts\\run_background_probe_11sr.py": "9bfeabafb9c22606669fa857cf3af8c0eee8fcc255b1c87e4bf8e689b2a9ba10",
+    "scripts\\__pycache__\\run_background_probe.cpython-311.pyc": "89567547927daeea4a147511aef6ca1488e480d8eecfc1c0ef90c28503ba6d55",
+    "scripts\\__pycache__\\run_background_probe_11sr.cpython-311.pyc": "23f49e0952bd7cd70797d9a6a9a1eec430f8bf2ffea86a72b31f21ecffc3b0e0"
+  },
+  "all_same_condition_checks_passed": true
+}

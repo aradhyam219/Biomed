@@ -1,0 +1,260 @@
+{
+  "baseline": {
+    "branch": "extraction_system_v2",
+    "expected_repository_sha": "7f388368a8bd06f35f60eda37eb2ccdce711eed8",
+    "production_code_diff": "clean",
+    "production_paths_checked": [
+      "src",
+      "viewer",
+      "tests"
+    ],
+    "repository_sha": "7f388368a8bd06f35f60eda37eb2ccdce711eed8"
+  },
+  "blinding": {
+    "aliases": [
+      "Model A",
+      "Model B"
+    ],
+    "mapping_disclosed": false,
+    "model_key_path": ".cache/model_ab_11qr/model_key.json"
+  },
+  "configuration": {
+    "bounded_repair_budget": 2,
+    "max_output_tokens": 128000,
+    "model_id_is_explicit_in_benchmark_harness": true,
+    "parser_validator_source": "unchanged Contract 10 LLMRelationExtractor",
+    "prompt_source": "unchanged Contract 10 RELATION_EXTRACTION_SYSTEM_PROMPT",
+    "provider": "OpenAI Responses API",
+    "provider_retries": 0,
+    "reasoning_effort": "max",
+    "schema_sha256": "023435da3fa18abb77987313626636eff7bedda28739603db54a2f2c8137c945",
+    "structured_schema_source": "unchanged Contract 10 _structured_payload_schema",
+    "system_prompt_sha256": "13f38a6e94db74b534eb0df0b139287ace2e714fc908276ce4c3572f9b25836f"
+  },
+  "contract": "Codex Contract 11Q-R",
+  "created_utc": "2026-10-02T08:33:37.190443+00:00",
+  "execution_order": [
+    {
+      "model": "Model A",
+      "paper_id": "PMCID:PMC10770459",
+      "passage_id": "passage_001",
+      "sequence": 1
+    },
+    {
+      "model": "Model B",
+      "paper_id": "PMCID:PMC10770459",
+      "passage_id": "passage_001",
+      "sequence": 2
+    },
+    {
+      "model": "Model B",
+      "paper_id": "PMCID:PMC11824863",
+      "passage_id": "passage_002",
+      "sequence": 3
+    },
+    {
+      "model": "Model A",
+      "paper_id": "PMCID:PMC11824863",
+      "passage_id": "passage_002",
+      "sequence": 4
+    },
+    {
+      "model": "Model A",
+      "paper_id": "PMCID:PMC8605525",
+      "passage_id": "passage_003",
+      "sequence": 5
+    },
+    {
+      "model": "Model B",
+      "paper_id": "PMCID:PMC8605525",
+      "passage_id": "passage_003",
+      "sequence": 6
+    },
+    {
+      "model": "Model B",
+      "paper_id": "PMCID:PMC10770459",
+      "passage_id": "passage_004",
+      "sequence": 7
+    },
+    {
+      "model": "Model A",
+      "paper_id": "PMCID:PMC10770459",
+      "passage_id": "passage_004",
+      "sequence": 8
+    },
+    {
+      "model": "Model A",
+      "paper_id": "PMCID:PMC11824863",
+      "passage_id": "passage_005",
+      "sequence": 9
+    },
+    {
+      "model": "Model B",
+      "paper_id": "PMCID:PMC11824863",
+      "passage_id": "passage_005",
+      "sequence": 10
+    }
+  ],
+  "passages": [
+    {
+      "entity_count": 68,
+      "entity_packet_sha256": "b35d86c489fb52755adb5dd7750dc86b045fefd405167a42cefeedc403377e56",
+      "full_entity_packet_sha256": "938cdc238e47c46ae7773129e3f0196027f5f676f74864f1fe72b845a79ca8c0",
+      "full_source_sha256": "5b58cb81f2add5f1295313b08c07e575bffffa8c1a871f32436d278735b209a4",
+      "paper_id": "PMCID:PMC10770459",
+      "passage_id": "passage_001",
+      "prompt_sha256": "ee73415e65f88d52e17c473eb2d5143940b19b9adfa7d4a6d117e5db450b0405",
+      "selection": {
+        "characters": 1981,
+        "density_per_1000_chars": 34.326098,
+        "distance_from_target": 481,
+        "end": 27824,
+        "entity_count": 68,
+        "first_sentence_index": 191,
+        "last_sentence_index_exclusive": 204,
+        "start": 25843
+      },
+      "source_characters": 1981,
+      "source_range": {
+        "end": 27824,
+        "start": 25843
+      },
+      "source_sha256": "ecd73abad943377d0d94e5937c61c1eab0799c4e70c0044202ac3910d412b087"
+    },
+    {
+      "entity_count": 56,
+      "entity_packet_sha256": "3dadba4e23d7811d5c94f97db47b8118875a535ab08213b2e33d99779a5b4e1f",
+      "full_entity_packet_sha256": "efb1578fb0c4b1d7335ec5aa31436f273a346c8b4a5fd9add10973c67b312d4e",
+      "full_source_sha256": "8a43f612139aa84939933831a5bc7f5420122549fd69081d635b7becb80d2a15",
+      "paper_id": "PMCID:PMC11824863",
+      "passage_id": "passage_002",
+      "prompt_sha256": "8d97de13f783ea7440428fbbfd783c585b8cf813c01c7f042c9c7d465bbf8578",
+      "selection": {
+        "characters": 1864,
+        "density_per_1000_chars": 30.042918,
+        "distance_from_target": 364,
+        "end": 13108,
+        "entity_count": 56,
+        "first_sentence_index": 72,
+        "last_sentence_index_exclusive": 82,
+        "start": 11244
+      },
+      "source_characters": 1864,
+      "source_range": {
+        "end": 13108,
+        "start": 11244
+      },
+      "source_sha256": "627267c0a2ae84683e0b7f9faa48cf7a378cab29643fdbbc30f961e66cea8e5e"
+    },
+    {
+      "entity_count": 71,
+      "entity_packet_sha256": "958ab3ef8ae6eee38f650ff3240e9a58ee66d6a81c8440fb93a9ec3f938e871f",
+      "full_entity_packet_sha256": "be25892f7e17eb3cccea412d8a0f3d3575bbfa3839a6ff19935f290cbabeb75e",
+      "full_source_sha256": "99355676f17885e8920e1f56447b8c6aff219cb6be09d76777084e339261a39b",
+      "paper_id": "PMCID:PMC8605525",
+      "passage_id": "passage_003",
+      "prompt_sha256": "7017c9844dc3748f68d48333ce6bb143b9d5a981a566da446b0bcdc3542667df",
+      "selection": {
+        "characters": 1976,
+        "density_per_1000_chars": 35.931174,
+        "distance_from_target": 476,
+        "end": 37396,
+        "entity_count": 71,
+        "first_sentence_index": 291,
+        "last_sentence_index_exclusive": 307,
+        "start": 35420
+      },
+      "source_characters": 1976,
+      "source_range": {
+        "end": 37396,
+        "start": 35420
+      },
+      "source_sha256": "2416a5abcb2647efa449b79505182661114d7efe461f0acbec1bec9b7419b224"
+    },
+    {
+      "entity_count": 63,
+      "entity_packet_sha256": "4e03593d3ee09f34a9d2ac8c134832afd83254090a712015df50c7136c9bf4c2",
+      "full_entity_packet_sha256": "938cdc238e47c46ae7773129e3f0196027f5f676f74864f1fe72b845a79ca8c0",
+      "full_source_sha256": "5b58cb81f2add5f1295313b08c07e575bffffa8c1a871f32436d278735b209a4",
+      "paper_id": "PMCID:PMC10770459",
+      "passage_id": "passage_004",
+      "prompt_sha256": "8bc571df7f55a155559e18e8cbe36349a35aa68caa8dcfec94a58a189466a5f9",
+      "selection": {
+        "characters": 1949,
+        "density_per_1000_chars": 32.324269,
+        "distance_from_target": 449,
+        "end": 23316,
+        "entity_count": 63,
+        "first_sentence_index": 157,
+        "last_sentence_index_exclusive": 172,
+        "start": 21367
+      },
+      "source_characters": 1949,
+      "source_range": {
+        "end": 23316,
+        "start": 21367
+      },
+      "source_sha256": "5aff8725ddacb7784b4f0c0f1c9ffc9ae5d16eb059aae690e75b4d946bd23026"
+    },
+    {
+      "entity_count": 50,
+      "entity_packet_sha256": "91a931717ae1745f663dd1d0aa0714bc1e66745dfad5901c46ccbf651892e05c",
+      "full_entity_packet_sha256": "efb1578fb0c4b1d7335ec5aa31436f273a346c8b4a5fd9add10973c67b312d4e",
+      "full_source_sha256": "8a43f612139aa84939933831a5bc7f5420122549fd69081d635b7becb80d2a15",
+      "paper_id": "PMCID:PMC11824863",
+      "passage_id": "passage_005",
+      "prompt_sha256": "5f410cd064ec080dd3b942dab19cbc96665f36ebf648f267ec637dc2cbb5dc87",
+      "selection": {
+        "characters": 1908,
+        "density_per_1000_chars": 26.205451,
+        "distance_from_target": 408,
+        "end": 7621,
+        "entity_count": 50,
+        "first_sentence_index": 34,
+        "last_sentence_index_exclusive": 46,
+        "start": 5713
+      },
+      "source_characters": 1908,
+      "source_range": {
+        "end": 7621,
+        "start": 5713
+      },
+      "source_sha256": "5ebae4d97aef85c6ff5feb15d057149f9fda363b6e5450c00436074008e1cd5b"
+    }
+  ],
+  "reference_contract_11_preflight": {
+    "path": "reports/luna_56_vs_6_fullpaper_11/preflight.json",
+    "repository_sha": "1f12923ce54ab6718a00b8d8e8126536285dc6a8",
+    "source_and_entity_packet_checksums_verified": true,
+    "source_corpus_sha256_verified": true
+  },
+  "selection": {
+    "acceptable_characters": [
+      1200,
+      2000
+    ],
+    "candidate_rule": "contiguous sentence windows in range; reject any window that cuts a frozen entity",
+    "completed_before_first_provider_request": true,
+    "rank_rule": "descending contained entity count, then closest length to target, then earliest source position",
+    "second_window_rule": "rank again after excluding any source-character overlap with that paper's first window",
+    "sentence_boundary_rule": "(?<=[.!?])\\s+",
+    "sentence_splitter": "biomedical_extractor.ner_reconnaissance.sentence_spans",
+    "target_characters": 1500,
+    "tie_break": "earliest source position"
+  },
+  "source_corpus": {
+    "paper_ids": [
+      "PMCID:PMC10770459",
+      "PMCID:PMC11824863",
+      "PMCID:PMC8605525"
+    ],
+    "path": ".cache/ner_target_domain/target_corpus.json",
+    "sha256": "544cb37adee45fd7fe892c80b7aa4e8ba93e801212bc759e615e71d721ce4b55",
+    "source_text_mode": "complete frozen PMC full text"
+  },
+  "watchdog": {
+    "consecutive_provider_or_timeout_abort_threshold": 3,
+    "per_job_external_wall_clock_seconds": 240,
+    "timeouts_are_not_retried_manually": true
+  }
+}

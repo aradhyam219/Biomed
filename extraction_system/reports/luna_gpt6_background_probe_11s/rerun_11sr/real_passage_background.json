@@ -1,0 +1,58 @@
+{
+  "status": "background_timeout_cancelled",
+  "generations": [
+    {
+      "generation_number": 1,
+      "repair": false,
+      "configuration": {
+        "model": "gpt-6-luna",
+        "reasoning": {
+          "effort": "max"
+        },
+        "max_output_tokens": 128000,
+        "background": true,
+        "store": false
+      },
+      "prompt_sha256": "ee73415e65f88d52e17c473eb2d5143940b19b9adfa7d4a6d117e5db450b0405",
+      "schema_sha256": "023435da3fa18abb77987313626636eff7bedda28739603db54a2f2c8137c945",
+      "transport_schema_sha256": "b0506680756b7ad8332d976a419cdee57a81e1051dd115f291f65d77bd656510",
+      "create_requested_timestamp": "2026-10-03T20:32:26.451932+00:00",
+      "response_id": "resp_061ba37b3ed116e2006ac1665dc4f087d18406d79290020103",
+      "initial_status": "queued",
+      "status": "background_timeout_cancelled",
+      "poll_count": 138,
+      "poll_errors": 0,
+      "structured_output_received": false,
+      "validated_relation_count": 0,
+      "validation_error": null,
+      "provider_sdk_retries": 0,
+      "terminal_status": "cancelled",
+      "usage": null,
+      "transport_success": false,
+      "created_timestamp": "2026-10-03T20:32:27.357714+00:00",
+      "provider_created_at": 1791059549.0,
+      "initial_create_latency_seconds": 0.906,
+      "cancel_requested": true,
+      "cancel_requested_timestamp": "2026-10-03T20:40:27.356612+00:00",
+      "last_known_status": "in_progress",
+      "cancel_result": {
+        "id": "resp_061ba37b3ed116e2006ac1665dc4f087d18406d79290020103",
+        "status": "cancelled"
+      },
+      "terminal_timestamp": "2026-10-03T20:40:28.360138+00:00",
+      "background_elapsed_seconds": 481.0,
+      "elapsed_wall_seconds": 481.906,
+      "provider_error": null,
+      "incomplete_details": null,
+      "deadline_seconds": 480,
+      "deadline_reached_before_cancellation": true
+    }
+  ],
+  "provider_generation_count": 1,
+  "repair_count": 0,
+  "validated_relation_count": 0,
+  "unique_evidence_span_count": 0,
+  "transport_success": false,
+  "contract10_success": false,
+  "total_elapsed_seconds": 482.0
+}

@@ -1,0 +1,350 @@
+{
+  "status": "success",
+  "generations": [
+    {
+      "generation_number": 1,
+      "repair": false,
+      "configuration": {
+        "model": "gpt-5.6-luna",
+        "reasoning": {
+          "effort": "max"
+        },
+        "max_output_tokens": 128000,
+        "background": true,
+        "store": false
+      },
+      "prompt_sha256": "ee73415e65f88d52e17c473eb2d5143940b19b9adfa7d4a6d117e5db450b0405",
+      "schema_sha256": "023435da3fa18abb77987313626636eff7bedda28739603db54a2f2c8137c945",
+      "transport_schema_sha256": "b0506680756b7ad8332d976a419cdee57a81e1051dd115f291f65d77bd656510",
+      "create_requested_timestamp": "2026-10-03T21:07:07.212091+00:00",
+      "response_id": "resp_00cfbe85255146fa006ac16e7e7fac87d1b514a902571f69d5",
+      "initial_status": "queued",
+      "status": "success",
+      "poll_count": 137,
+      "poll_errors": 0,
+      "structured_output_received": true,
+      "validated_relation_count": 17,
+      "validation_error": null,
+      "provider_sdk_retries": 0,
+      "terminal_status": "completed",
+      "usage": {
+        "input_tokens": 5223,
+        "input_tokens_details": {
+          "cache_write_tokens": 5220,
+          "cached_tokens": 0
+        },
+        "output_tokens": 56702,
+        "output_tokens_details": {
+          "reasoning_tokens": 54383
+        },
+        "total_tokens": 61925
+      },
+      "transport_success": true,
+      "created_timestamp": "2026-10-03T21:07:08.077386+00:00",
+      "provider_created_at": 1791061630.0,
+      "initial_create_latency_seconds": 0.86,
+      "terminal_timestamp": "2026-10-03T21:15:07.637952+00:00",
+      "background_elapsed_seconds": 479.562,
+      "elapsed_wall_seconds": 480.422,
+      "provider_error": null,
+      "incomplete_details": null,
+      "structured_output": "{\"relations\":[{\"predicate\":\"has_comparable_levels_of\",\"negated\":false,\"target\":\"E518\",\"evidence\":\"although ALT levels were comparable between the two groups, HMGB1 Flox TMX STZ mice displayed significantly elevated levels of AST, an indicator of liver damage, compared to iHMGB1 KO TMX STZ mice\",\"context\":[\"plasma samples\",\"following 10 weeks post last injection\"],\"source\":\"E519\",\"assertion\":\"HMGB1 Flox TMX STZ mice and iHMGB1 KO TMX STZ mice had comparable ALT levels in plasma samples following 10 weeks post last injection.\",\"surface_form\":\"ALT levels were comparable between the two groups\",\"intervention\":null,\"effects\":[\"ALT levels were comparable\"]},{\"predicate\":\"has_comparable_ALT_levels_with\",\"negated\":false,\"target\":\"E524\",\"evidence\":\"although ALT levels were comparable between the two groups, HMGB1 Flox TMX STZ mice displayed significantly elevated levels of AST, an indicator of liver damage, compared to iHMGB1 KO TMX STZ mice\",\"context\":[\"plasma samples\",\"following 10 weeks post last injection\"],\"source\":\"E519\",\"assertion\":\"HMGB1 Flox TMX STZ mice and iHMGB1 KO TMX STZ mice had comparable ALT levels in plasma samples following 10 weeks post last injection.\",\"surface_form\":\"ALT levels were comparable between the two groups\",\"intervention\":null,\"effects\":[\"ALT levels were comparable\"]},{\"predicate\":\"has_elevated_levels_of\",\"negated\":false,\"target\":\"E522\",\"evidence\":\"although ALT levels were comparable between the two groups, HMGB1 Flox TMX STZ mice displayed significantly elevated levels of AST, an indicator of liver damage, compared to iHMGB1 KO TMX STZ mice\",\"context\":[\"plasma samples\",\"following 10 weeks post last injection\"],\"source\":\"E519\",\"assertion\":\"HMGB1 Flox TMX STZ mice displayed significantly elevated AST levels compared with iHMGB1 KO TMX STZ mice in plasma samples following 10 weeks post last injection.\",\"surface_form\":\"displayed significantly elevated levels of AST\",\"intervention\":null,\"effects\":[\"significantly elevated levels of AST\"]},{\"predicate\":\"has_higher_AST_levels_than\",\"negated\":false,\"target\":\"E524\",\"evidence\":\"HMGB1 Flox TMX STZ mice displayed significantly elevated levels of AST, an indicator of liver damage, compared to iHMGB1 KO TMX STZ mice\",\"context\":[\"plasma samples\",\"following 10 weeks post last injection\"],\"source\":\"E519\",\"assertion\":\"HMGB1 Flox TMX STZ mice had significantly higher AST levels than iHMGB1 KO TMX STZ mice in plasma samples following 10 weeks post last injection.\",\"surface_form\":\"displayed significantly elevated levels of AST\",\"intervention\":null,\"effects\":[\"significantly elevated levels of AST\"]},{\"predicate\":\"indicator_of\",\"negated\":false,\"target\":\"E523\",\"evidence\":\"AST, an indicator of liver damage\",\"context\":[],\"source\":\"E522\",\"assertion\":\"AST is an indicator of liver damage.\",\"surface_form\":\"an indicator of liver damage\",\"intervention\":null,\"effects\":[]},{\"predicate\":\"ratio_of\",\"negated\":false,\"target\":\"E528\",\"evidence\":\"we calculated the widely used AST/ALT ratio\",\"context\":[],\"source\":\"E527\",\"assertion\":\"The widely used AST/ALT ratio was calculated.\",\"surface_form\":\"AST/ALT ratio\",\"intervention\":null,\"effects\":[]},{\"predicate\":\"has_higher_AST_ALT_ratio_than\",\"negated\":false,\"target\":\"E529\",\"evidence\":\"iHMGB1 KO TMX STZ mice had a ratio of approximately 1, whereas HMGB1 Flox TMX STZ mice exhibited a substantially higher AST/ALT ratio of around 2\",\"context\":[],\"source\":\"E532\",\"assertion\":\"HMGB1 Flox TMX STZ mice exhibited a substantially higher AST/ALT ratio of around 2 than the approximately 1 ratio in iHMGB1 KO TMX STZ mice.\",\"surface_form\":\"substantially higher AST/ALT ratio of around 2\",\"intervention\":null,\"effects\":[\"AST/ALT ratio around 2 in HMGB1 Flox TMX STZ mice versus approximately 1 in iHMGB1 KO TMX STZ mice\"]},{\"predicate\":\"contributes_to\",\"negated\":false,\"target\":\"E538\",\"evidence\":\"suggesting that the presence of HMGB1 contributes to more severe liver damage under hyperglycemic conditions\",\"context\":[\"under hyperglycemic conditions\"],\"source\":\"E537\",\"assertion\":\"The presence of HMGB1 was suggested to contribute to more severe liver damage under hyperglycemic conditions.\",\"surface_form\":\"contributes to more severe liver damage\",\"intervention\":null,\"effects\":[\"more severe liver damage\"]},{\"predicate\":\"has_role_in\",\"negated\":false,\"target\":\"E541\",\"evidence\":\"To further investigate the role of HMGB1 in liver damage\",\"context\":[],\"source\":\"E540\",\"assertion\":\"The study investigated the role of HMGB1 in liver damage.\",\"surface_form\":\"role of HMGB1 in liver damage\",\"intervention\":null,\"effects\":[]},{\"predicate\":\"associated_with_increased_lipid_droplets\",\"negated\":false,\"target\":\"E547\",\"evidence\":\"HMGB1 Flox TMX STZ mice displayed an increase in macrovesicular lipid droplets and greater signs of mononuclear inflammatory infiltration compared to iHMGB1 KO TMX STZ mice\",\"context\":[\"in the liver\",\"under a hyperglycemic state\"],\"source\":\"E544\",\"assertion\":\"HMGB1 Flox TMX STZ mice displayed an increase in macrovesicular lipid droplets compared with iHMGB1 KO TMX STZ mice in the liver under a hyperglycemic state.\",\"surface_form\":\"displayed an increase in macrovesicular lipid droplets\",\"intervention\":null,\"effects\":[\"an increase in macrovesicular lipid droplets\"]},{\"predicate\":\"has_increased_lipid_droplets_relative_to\",\"negated\":false,\"target\":\"E549\",\"evidence\":\"HMGB1 Flox TMX STZ mice displayed an increase in macrovesicular lipid droplets and greater signs of mononuclear inflammatory infiltration compared to iHMGB1 KO TMX STZ mice\",\"context\":[\"in the liver\",\"under a hyperglycemic state\"],\"source\":\"E544\",\"assertion\":\"HMGB1 Flox TMX STZ mice displayed an increase in macrovesicular lipid droplets compared with iHMGB1 KO TMX STZ mice in the liver under a hyperglycemic state.\",\"surface_form\":\"compared to iHMGB1 KO TMX STZ mice\",\"intervention\":null,\"effects\":[\"an increase in macrovesicular lipid droplets\"]},{\"predicate\":\"associated_with_greater_inflammatory_infiltration\",\"negated\":false,\"target\":\"E548\",\"evidence\":\"HMGB1 Flox TMX STZ mice displayed an increase in macrovesicular lipid droplets and greater signs of mononuclear inflammatory infiltration compared to iHMGB1 KO TMX STZ mice\",\"context\":[\"in the liver\",\"under a hyperglycemic state\"],\"source\":\"E544\",\"assertion\":\"HMGB1 Flox TMX STZ mice displayed greater signs of mononuclear inflammatory infiltration compared with iHMGB1 KO TMX STZ mice in the liver under a hyperglycemic state.\",\"surface_form\":\"greater signs of mononuclear inflammatory infiltration\",\"intervention\":null,\"effects\":[\"greater signs of mononuclear inflammatory infiltration\"]},{\"predicate\":\"has_greater_inflammatory_infiltration_than\",\"negated\":false,\"target\":\"E549\",\"evidence\":\"HMGB1 Flox TMX STZ mice displayed an increase in macrovesicular lipid droplets and greater signs of mononuclear inflammatory infiltration compared to iHMGB1 KO TMX STZ mice\",\"context\":[\"in the liver\",\"under a hyperglycemic state\"],\"source\":\"E544\",\"assertion\":\"HMGB1 Flox TMX STZ mice displayed greater signs of mononuclear inflammatory infiltration than iHMGB1 KO TMX STZ mice in the liver under a hyperglycemic state.\",\"surface_form\":\"greater signs of mononuclear inflammatory infiltration compared to iHMGB1 KO TMX STZ mice\",\"intervention\":null,\"effects\":[\"greater signs of mononuclear inflammatory infiltration\"]},{\"predicate\":\"associated_with_increased_glycogen_storage\",\"negated\":false,\"target\":\"E557\",\"evidence\":\"PAS and Oil Red O staining revealed that HMGB1 Flox TMX STZ mice exhibited increased glycogen storage and lipid uptake\",\"context\":[\"in the liver\",\"under a hyperglycemic state\"],\"source\":\"E554\",\"assertion\":\"PAS and Oil Red O staining revealed that HMGB1 Flox TMX STZ mice exhibited increased glycogen storage.\",\"surface_form\":\"exhibited increased glycogen storage\",\"intervention\":null,\"effects\":[\"increased glycogen storage\"]},{\"predicate\":\"associated_with_increased_lipid_uptake\",\"negated\":false,\"target\":\"E558\",\"evidence\":\"PAS and Oil Red O staining revealed that HMGB1 Flox TMX STZ mice exhibited increased glycogen storage and lipid uptake\",\"context\":[\"in the liver\",\"under a hyperglycemic state\"],\"source\":\"E554\",\"assertion\":\"PAS and Oil Red O staining revealed that HMGB1 Flox TMX STZ mice exhibited increased lipid uptake.\",\"surface_form\":\"lipid uptake\",\"intervention\":null,\"effects\":[\"increased lipid uptake\"]},{\"predicate\":\"has_elevated_levels_of\",\"negated\":false,\"target\":\"E573\",\"evidence\":\"Our results indicate that iHMGB1 KO TMX STZ mice exhibited significantly elevated levels of Cystatin C compared to HMGB1 Flox TMX STZ mice\",\"context\":[\"plasma samples\",\"10 weeks post hyperglycemia development\"],\"source\":\"E570\",\"assertion\":\"In plasma samples obtained 10 weeks post hyperglycemia development, iHMGB1 KO TMX STZ mice exhibited significantly elevated levels of Cystatin C compared with HMGB1 Flox TMX STZ mice.\",\"surface_form\":\"exhibited significantly elevated levels of Cystatin C\",\"intervention\":null,\"effects\":[\"significantly elevated levels of Cystatin C\"]},{\"predicate\":\"has_higher_Cystatin_C_levels_than\",\"negated\":false,\"target\":\"E574\",\"evidence\":\"Our results indicate that iHMGB1 KO TMX STZ mice exhibited significantly elevated levels of Cystatin C compared to HMGB1 Flox TMX STZ mice\",\"context\":[\"plasma samples\",\"10 weeks post hyperglycemia development\"],\"source\":\"E570\",\"assertion\":\"iHMGB1 KO TMX STZ mice exhibited significantly higher Cystatin C levels than HMGB1 Flox TMX STZ mice in plasma samples obtained 10 weeks post hyperglycemia development.\",\"surface_form\":\"exhibited significantly elevated levels of Cystatin C compared to HMGB1 Flox TMX STZ mice\",\"intervention\":null,\"effects\":[\"significantly elevated levels of Cystatin C\"]}]}"
+    }
+  ],
+  "provider_generation_count": 1,
+  "repair_count": 0,
+  "validated_relation_count": 17,
+  "unique_evidence_span_count": 10,
+  "transport_success": true,
+  "contract10_success": true,
+  "validated_relations": [
+    {
+      "source": "E519",
+      "target": "E518",
+      "predicate": "has_comparable_levels_of",
+      "assertion": "HMGB1 Flox TMX STZ mice and iHMGB1 KO TMX STZ mice had comparable ALT levels in plasma samples following 10 weeks post last injection.",
+      "evidence": "although ALT levels were comparable between the two groups, HMGB1 Flox TMX STZ mice displayed significantly elevated levels of AST, an indicator of liver damage, compared to iHMGB1 KO TMX STZ mice",
+      "negated": false,
+      "intervention": null,
+      "effects": [
+        "ALT levels were comparable"
+      ],
+      "context": [
+        "plasma samples",
+        "following 10 weeks post last injection"
+      ],
+      "surface_form": "ALT levels were comparable between the two groups",
+      "score": null
+    },
+    {
+      "source": "E519",
+      "target": "E524",
+      "predicate": "has_comparable_ALT_levels_with",
+      "assertion": "HMGB1 Flox TMX STZ mice and iHMGB1 KO TMX STZ mice had comparable ALT levels in plasma samples following 10 weeks post last injection.",
+      "evidence": "although ALT levels were comparable between the two groups, HMGB1 Flox TMX STZ mice displayed significantly elevated levels of AST, an indicator of liver damage, compared to iHMGB1 KO TMX STZ mice",
+      "negated": false,
+      "intervention": null,
+      "effects": [
+        "ALT levels were comparable"
+      ],
+      "context": [
+        "plasma samples",
+        "following 10 weeks post last injection"
+      ],
+      "surface_form": "ALT levels were comparable between the two groups",
+      "score": null
+    },
+    {
+      "source": "E519",
+      "target": "E522",
+      "predicate": "has_elevated_levels_of",
+      "assertion": "HMGB1 Flox TMX STZ mice displayed significantly elevated AST levels compared with iHMGB1 KO TMX STZ mice in plasma samples following 10 weeks post last injection.",
+      "evidence": "although ALT levels were comparable between the two groups, HMGB1 Flox TMX STZ mice displayed significantly elevated levels of AST, an indicator of liver damage, compared to iHMGB1 KO TMX STZ mice",
+      "negated": false,
+      "intervention": null,
+      "effects": [
+        "significantly elevated levels of AST"
+      ],
+      "context": [
+        "plasma samples",
+        "following 10 weeks post last injection"
+      ],
+      "surface_form": "displayed significantly elevated levels of AST",
+      "score": null
+    },
+    {
+      "source": "E519",
+      "target": "E524",
+      "predicate": "has_higher_AST_levels_than",
+      "assertion": "HMGB1 Flox TMX STZ mice had significantly higher AST levels than iHMGB1 KO TMX STZ mice in plasma samples following 10 weeks post last injection.",
+      "evidence": "HMGB1 Flox TMX STZ mice displayed significantly elevated levels of AST, an indicator of liver damage, compared to iHMGB1 KO TMX STZ mice",
+      "negated": false,
+      "intervention": null,
+      "effects": [
+        "significantly elevated levels of AST"
+      ],
+      "context": [
+        "plasma samples",
+        "following 10 weeks post last injection"
+      ],
+      "surface_form": "displayed significantly elevated levels of AST",
+      "score": null
+    },
+    {
+      "source": "E522",
+      "target": "E523",
+      "predicate": "indicator_of",
+      "assertion": "AST is an indicator of liver damage.",
+      "evidence": "AST, an indicator of liver damage",
+      "negated": false,
+      "intervention": null,
+      "effects": [],
+      "context": [],
+      "surface_form": "an indicator of liver damage",
+      "score": null
+    },
+    {
+      "source": "E527",
+      "target": "E528",
+      "predicate": "ratio_of",
+      "assertion": "The widely used AST/ALT ratio was calculated.",
+      "evidence": "we calculated the widely used AST/ALT ratio",
+      "negated": false,
+      "intervention": null,
+      "effects": [],
+      "context": [],
+      "surface_form": "AST/ALT ratio",
+      "score": null
+    },
+    {
+      "source": "E532",
+      "target": "E529",
+      "predicate": "has_higher_AST_ALT_ratio_than",
+      "assertion": "HMGB1 Flox TMX STZ mice exhibited a substantially higher AST/ALT ratio of around 2 than the approximately 1 ratio in iHMGB1 KO TMX STZ mice.",
+      "evidence": "iHMGB1 KO TMX STZ mice had a ratio of approximately 1, whereas HMGB1 Flox TMX STZ mice exhibited a substantially higher AST/ALT ratio of around 2",
+      "negated": false,
+      "intervention": null,
+      "effects": [
+        "AST/ALT ratio around 2 in HMGB1 Flox TMX STZ mice versus approximately 1 in iHMGB1 KO TMX STZ mice"
+      ],
+      "context": [],
+      "surface_form": "substantially higher AST/ALT ratio of around 2",
+      "score": null
+    },
+    {
+      "source": "E537",
+      "target": "E538",
+      "predicate": "contributes_to",
+      "assertion": "The presence of HMGB1 was suggested to contribute to more severe liver damage under hyperglycemic conditions.",
+      "evidence": "suggesting that the presence of HMGB1 contributes to more severe liver damage under hyperglycemic conditions",
+      "negated": false,
+      "intervention": null,
+      "effects": [
+        "more severe liver damage"
+      ],
+      "context": [
+        "under hyperglycemic conditions"
+      ],
+      "surface_form": "contributes to more severe liver damage",
+      "score": null
+    },
+    {
+      "source": "E540",
+      "target": "E541",
+      "predicate": "has_role_in",
+      "assertion": "The study investigated the role of HMGB1 in liver damage.",
+      "evidence": "To further investigate the role of HMGB1 in liver damage",
+      "negated": false,
+      "intervention": null,
+      "effects": [],
+      "context": [],
+      "surface_form": "role of HMGB1 in liver damage",
+      "score": null
+    },
+    {
+      "source": "E544",
+      "target": "E547",
+      "predicate": "associated_with_increased_lipid_droplets",
+      "assertion": "HMGB1 Flox TMX STZ mice displayed an increase in macrovesicular lipid droplets compared with iHMGB1 KO TMX STZ mice in the liver under a hyperglycemic state.",
+      "evidence": "HMGB1 Flox TMX STZ mice displayed an increase in macrovesicular lipid droplets and greater signs of mononuclear inflammatory infiltration compared to iHMGB1 KO TMX STZ mice",
+      "negated": false,
+      "intervention": null,
+      "effects": [
+        "an increase in macrovesicular lipid droplets"
+      ],
+      "context": [
+        "in the liver",
+        "under a hyperglycemic state"
+      ],
+      "surface_form": "displayed an increase in macrovesicular lipid droplets",
+      "score": null
+    },
+    {
+      "source": "E544",
+      "target": "E549",
+      "predicate": "has_increased_lipid_droplets_relative_to",
+      "assertion": "HMGB1 Flox TMX STZ mice displayed an increase in macrovesicular lipid droplets compared with iHMGB1 KO TMX STZ mice in the liver under a hyperglycemic state.",
+      "evidence": "HMGB1 Flox TMX STZ mice displayed an increase in macrovesicular lipid droplets and greater signs of mononuclear inflammatory infiltration compared to iHMGB1 KO TMX STZ mice",
+      "negated": false,
+      "intervention": null,
+      "effects": [
+        "an increase in macrovesicular lipid droplets"
+      ],
+      "context": [
+        "in the liver",
+        "under a hyperglycemic state"
+      ],
+      "surface_form": "compared to iHMGB1 KO TMX STZ mice",
+      "score": null
+    },
+    {
+      "source": "E544",
+      "target": "E548",
+      "predicate": "associated_with_greater_inflammatory_infiltration",
+      "assertion": "HMGB1 Flox TMX STZ mice displayed greater signs of mononuclear inflammatory infiltration compared with iHMGB1 KO TMX STZ mice in the liver under a hyperglycemic state.",
+      "evidence": "HMGB1 Flox TMX STZ mice displayed an increase in macrovesicular lipid droplets and greater signs of mononuclear inflammatory infiltration compared to iHMGB1 KO TMX STZ mice",
+      "negated": false,
+      "intervention": null,
+      "effects": [
+        "greater signs of mononuclear inflammatory infiltration"
+      ],
+      "context": [
+        "in the liver",
+        "under a hyperglycemic state"
+      ],
+      "surface_form": "greater signs of mononuclear inflammatory infiltration",
+      "score": null
+    },
+    {
+      "source": "E544",
+      "target": "E549",
+      "predicate": "has_greater_inflammatory_infiltration_than",
+      "assertion": "HMGB1 Flox TMX STZ mice displayed greater signs of mononuclear inflammatory infiltration than iHMGB1 KO TMX STZ mice in the liver under a hyperglycemic state.",
+      "evidence": "HMGB1 Flox TMX STZ mice displayed an increase in macrovesicular lipid droplets and greater signs of mononuclear inflammatory infiltration compared to iHMGB1 KO TMX STZ mice",
+      "negated": false,
+      "intervention": null,
+      "effects": [
+        "greater signs of mononuclear inflammatory infiltration"
+      ],
+      "context": [
+        "in the liver",
+        "under a hyperglycemic state"
+      ],
+      "surface_form": "greater signs of mononuclear inflammatory infiltration compared to iHMGB1 KO TMX STZ mice",
+      "score": null
+    },
+    {
+      "source": "E554",
+      "target": "E557",
+      "predicate": "associated_with_increased_glycogen_storage",
+      "assertion": "PAS and Oil Red O staining revealed that HMGB1 Flox TMX STZ mice exhibited increased glycogen storage.",
+      "evidence": "PAS and Oil Red O staining revealed that HMGB1 Flox TMX STZ mice exhibited increased glycogen storage and lipid uptake",
+      "negated": false,
+      "intervention": null,
+      "effects": [
+        "increased glycogen storage"
+      ],
+      "context": [
+        "in the liver",
+        "under a hyperglycemic state"
+      ],
+      "surface_form": "exhibited increased glycogen storage",
+      "score": null
+    },
+    {
+      "source": "E554",
+      "target": "E558",
+      "predicate": "associated_with_increased_lipid_uptake",
+      "assertion": "PAS and Oil Red O staining revealed that HMGB1 Flox TMX STZ mice exhibited increased lipid uptake.",
+      "evidence": "PAS and Oil Red O staining revealed that HMGB1 Flox TMX STZ mice exhibited increased glycogen storage and lipid uptake",
+      "negated": false,
+      "intervention": null,
+      "effects": [
+        "increased lipid uptake"
+      ],
+      "context": [
+        "in the liver",
+        "under a hyperglycemic state"
+      ],
+      "surface_form": "lipid uptake",
+      "score": null
+    },
+    {
+      "source": "E570",
+      "target": "E573",
+      "predicate": "has_elevated_levels_of",
+      "assertion": "In plasma samples obtained 10 weeks post hyperglycemia development, iHMGB1 KO TMX STZ mice exhibited significantly elevated levels of Cystatin C compared with HMGB1 Flox TMX STZ mice.",
+      "evidence": "Our results indicate that iHMGB1 KO TMX STZ mice exhibited significantly elevated levels of Cystatin C compared to HMGB1 Flox TMX STZ mice",
+      "negated": false,
+      "intervention": null,
+      "effects": [
+        "significantly elevated levels of Cystatin C"
+      ],
+      "context": [
+        "plasma samples",
+        "10 weeks post hyperglycemia development"
+      ],
+      "surface_form": "exhibited significantly elevated levels of Cystatin C",
+      "score": null
+    },
+    {
+      "source": "E570",
+      "target": "E574",
+      "predicate": "has_higher_Cystatin_C_levels_than",
+      "assertion": "iHMGB1 KO TMX STZ mice exhibited significantly higher Cystatin C levels than HMGB1 Flox TMX STZ mice in plasma samples obtained 10 weeks post hyperglycemia development.",
+      "evidence": "Our results indicate that iHMGB1 KO TMX STZ mice exhibited significantly elevated levels of Cystatin C compared to HMGB1 Flox TMX STZ mice",
+      "negated": false,
+      "intervention": null,
+      "effects": [
+        "significantly elevated levels of Cystatin C"
+      ],
+      "context": [
+        "plasma samples",
+        "10 weeks post hyperglycemia development"
+      ],
+      "surface_form": "exhibited significantly elevated levels of Cystatin C compared to HMGB1 Flox TMX STZ mice",
+      "score": null
+    }
+  ],
+  "total_elapsed_seconds": 480.531
+}

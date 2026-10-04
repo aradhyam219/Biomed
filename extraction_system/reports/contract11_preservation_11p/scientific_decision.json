@@ -1,0 +1,26 @@
+{
+  "original_trial": "Contract 11U, original A/B/C frozen blind packet",
+  "scientific_winner": "Candidate C",
+  "selected_configuration": {
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "medium",
+    "service_tier": "Standard/default"
+  },
+  "decision_authority": "Talia, conveyed by the user in the preservation contract",
+  "decision_provenance": "preservation_contract.md section 4; user-supplied decision, not Codex scientific scoring",
+  "contract_sha256": "8828359a3e3c02ce37109ac1edbbc94b8a45a549835b26f2f6ab443e8d3a19bf",
+  "full_external_frozen_scientific_review_present_in_checkout": false,
+  "original_review_template_left_blank": true,
+  "supplemental_candidate_d": {
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "xhigh",
+    "service_tier": "Standard/default",
+    "supplemental_experiment": true,
+    "outside_original_11u_blind_trial": true,
+    "model_identity_known_before_scientific_comparison": true,
+    "operational_artifact": "reports/gpt61_sol_xhigh_supplemental/candidate_runs/gpt_61_sol_xhigh_standard/real.json",
+    "comparison_packet": "reports/model_selection_11u_with_candidate_d/review/blind_packet.json"
+  },
+  "production_promotion_authorized": false,
+  "production_model_default": "gpt-5.6-luna"
+}

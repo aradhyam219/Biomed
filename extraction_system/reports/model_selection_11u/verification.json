@@ -1,0 +1,12 @@
+{
+  "all_candidates_terminal": true,
+  "artifact_json_valid": true,
+  "adapter_syntax_valid": true,
+  "blind_source_and_entity_hashes_match": true,
+  "blind_mapping_and_output_freeze_hashes_match": true,
+  "blind_packet_identity_metadata_absent": true,
+  "review_template_unfilled": true,
+  "requested_tiers_verified": true,
+  "cost_components_and_totals_verified": true,
+  "existing_reports_preserved": true
+}

@@ -1,0 +1,108 @@
+{
+  "$defs": {
+    "StructuredRelation": {
+      "additionalProperties": false,
+      "properties": {
+        "source": {
+          "description": "Supplied source entity ID",
+          "title": "Source",
+          "type": "string"
+        },
+        "target": {
+          "description": "Supplied target entity ID",
+          "title": "Target",
+          "type": "string"
+        },
+        "predicate": {
+          "description": "Concise normalized predicate faithfully describing the asserted relation",
+          "title": "Predicate",
+          "type": "string"
+        },
+        "assertion": {
+          "description": "Complete source-grounded restatement of the scientific meaning; do not add information absent from the evidence",
+          "title": "Assertion",
+          "type": "string"
+        },
+        "evidence": {
+          "description": "Verbatim contiguous source-text evidence",
+          "title": "Evidence",
+          "type": "string"
+        },
+        "negated": {
+          "description": "Whether the asserted relation is explicitly negated",
+          "title": "Negated",
+          "type": "boolean"
+        },
+        "intervention": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Optional explicit intervention or perturbation material to the assertion; leave null when not applicable",
+          "title": "Intervention"
+        },
+        "effects": {
+          "description": "Optional explicit effects or outcomes; do not infer them and use an empty list when not applicable",
+          "items": {
+            "type": "string"
+          },
+          "title": "Effects",
+          "type": "array"
+        },
+        "context": {
+          "description": "Optional explicit biological, experimental, clinical, organismal, tissue, cellular, disease-state, cohort, environmental, or comparable setting/condition needed to interpret where or under what conditions the relation holds; do not use for mechanisms, another relation, or another entity interaction",
+          "items": {
+            "type": "string"
+          },
+          "title": "Context",
+          "type": "array"
+        },
+        "surface_form": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Optional verbatim relation wording",
+          "title": "Surface Form"
+        }
+      },
+      "required": [
+        "source",
+        "target",
+        "predicate",
+        "assertion",
+        "evidence",
+        "negated",
+        "intervention",
+        "effects",
+        "context",
+        "surface_form"
+      ],
+      "title": "StructuredRelation",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "relations": {
+      "items": {
+        "$ref": "#/$defs/StructuredRelation"
+      },
+      "title": "Relations",
+      "type": "array"
+    }
+  },
+  "title": "StructuredRelationPayload",
+  "type": "object",
+  "required": [
+    "relations"
+  ]
+}

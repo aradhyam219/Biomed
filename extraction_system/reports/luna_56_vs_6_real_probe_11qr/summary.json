@@ -1,0 +1,371 @@
+{
+  "artifact_paths": {
+    "disagreements": "reports/luna_56_vs_6_real_probe_11qr/disagreements.md",
+    "per_passage": "reports/luna_56_vs_6_real_probe_11qr/passage_<001-005>/model_<a,b>.json",
+    "preflight": "reports/luna_56_vs_6_real_probe_11qr/preflight.json",
+    "shared": "reports/luna_56_vs_6_real_probe_11qr/shared.md",
+    "summary": "reports/luna_56_vs_6_real_probe_11qr/summary.md",
+    "summary_json": "reports/luna_56_vs_6_real_probe_11qr/summary.json"
+  },
+  "baseline": {
+    "branch": "extraction_system_v2",
+    "head": "7f388368a8bd06f35f60eda37eb2ccdce711eed8",
+    "production_code_diff": "clean"
+  },
+  "comparisons": [
+    {
+      "disagreements": [],
+      "exact_relation_identity": {
+        "fields": [
+          "source",
+          "target",
+          "predicate",
+          "negated",
+          "evidence"
+        ],
+        "model_a_only": null,
+        "model_b_only": null,
+        "shared": null
+      },
+      "loose_alignment": [],
+      "paper_id": "PMCID:PMC10770459",
+      "passage_id": "passage_001",
+      "reason": "both blinded jobs did not return validated relations",
+      "shared_exact": [],
+      "status": "comparison_unavailable"
+    },
+    {
+      "disagreements": [],
+      "exact_relation_identity": {
+        "fields": [
+          "source",
+          "target",
+          "predicate",
+          "negated",
+          "evidence"
+        ],
+        "model_a_only": null,
+        "model_b_only": null,
+        "shared": null
+      },
+      "loose_alignment": [],
+      "paper_id": "PMCID:PMC11824863",
+      "passage_id": "passage_002",
+      "reason": "both blinded jobs did not return validated relations",
+      "shared_exact": [],
+      "status": "comparison_unavailable"
+    },
+    {
+      "disagreements": [],
+      "exact_relation_identity": {
+        "fields": [
+          "source",
+          "target",
+          "predicate",
+          "negated",
+          "evidence"
+        ],
+        "model_a_only": null,
+        "model_b_only": null,
+        "shared": null
+      },
+      "loose_alignment": [],
+      "paper_id": "PMCID:PMC8605525",
+      "passage_id": "passage_003",
+      "reason": "both blinded jobs did not return validated relations",
+      "shared_exact": [],
+      "status": "comparison_unavailable"
+    },
+    {
+      "disagreements": [],
+      "exact_relation_identity": {
+        "fields": [
+          "source",
+          "target",
+          "predicate",
+          "negated",
+          "evidence"
+        ],
+        "model_a_only": null,
+        "model_b_only": null,
+        "shared": null
+      },
+      "loose_alignment": [],
+      "paper_id": "PMCID:PMC10770459",
+      "passage_id": "passage_004",
+      "reason": "both blinded jobs did not return validated relations",
+      "shared_exact": [],
+      "status": "comparison_unavailable"
+    },
+    {
+      "disagreements": [],
+      "exact_relation_identity": {
+        "fields": [
+          "source",
+          "target",
+          "predicate",
+          "negated",
+          "evidence"
+        ],
+        "model_a_only": null,
+        "model_b_only": null,
+        "shared": null
+      },
+      "loose_alignment": [],
+      "paper_id": "PMCID:PMC11824863",
+      "passage_id": "passage_005",
+      "reason": "both blinded jobs did not return validated relations",
+      "shared_exact": [],
+      "status": "comparison_unavailable"
+    }
+  ],
+  "configuration": {
+    "bounded_repair_budget": 2,
+    "max_output_tokens": 128000,
+    "provider": "OpenAI Responses API",
+    "provider_retries": 0,
+    "reasoning_effort": "max",
+    "schema_sha256": "023435da3fa18abb77987313626636eff7bedda28739603db54a2f2c8137c945",
+    "system_prompt_sha256": "13f38a6e94db74b534eb0df0b139287ace2e714fc908276ce4c3572f9b25836f"
+  },
+  "contract": "Codex Contract 11Q-R",
+  "execution_order": [
+    {
+      "model": "Model A",
+      "paper_id": "PMCID:PMC10770459",
+      "passage_id": "passage_001",
+      "sequence": 1
+    },
+    {
+      "model": "Model B",
+      "paper_id": "PMCID:PMC10770459",
+      "passage_id": "passage_001",
+      "sequence": 2
+    },
+    {
+      "model": "Model B",
+      "paper_id": "PMCID:PMC11824863",
+      "passage_id": "passage_002",
+      "sequence": 3
+    },
+    {
+      "model": "Model A",
+      "paper_id": "PMCID:PMC11824863",
+      "passage_id": "passage_002",
+      "sequence": 4
+    },
+    {
+      "model": "Model A",
+      "paper_id": "PMCID:PMC8605525",
+      "passage_id": "passage_003",
+      "sequence": 5
+    },
+    {
+      "model": "Model B",
+      "paper_id": "PMCID:PMC8605525",
+      "passage_id": "passage_003",
+      "sequence": 6
+    },
+    {
+      "model": "Model B",
+      "paper_id": "PMCID:PMC10770459",
+      "passage_id": "passage_004",
+      "sequence": 7
+    },
+    {
+      "model": "Model A",
+      "paper_id": "PMCID:PMC10770459",
+      "passage_id": "passage_004",
+      "sequence": 8
+    },
+    {
+      "model": "Model A",
+      "paper_id": "PMCID:PMC11824863",
+      "passage_id": "passage_005",
+      "sequence": 9
+    },
+    {
+      "model": "Model B",
+      "paper_id": "PMCID:PMC11824863",
+      "passage_id": "passage_005",
+      "sequence": 10
+    }
+  ],
+  "model_mapping_disclosed": false,
+  "probe": {
+    "completed_jobs": 3,
+    "failures_or_timeouts": 3,
+    "passages": 5,
+    "repairs": 0,
+    "scheduled_jobs": 10,
+    "stop_condition": "three consecutive provider-error or timeout jobs before structured output",
+    "total_elapsed_wall_seconds": 8.574,
+    "validation_failures": 0
+  },
+  "quality_judgment": "not assigned by Codex",
+  "rows": [
+    {
+      "attempts": 1,
+      "chars": 1981,
+      "entities": 68,
+      "input_tokens": null,
+      "latency_ms": 104.321,
+      "model": "Model A",
+      "output_tokens": null,
+      "passage": "passage_001",
+      "relations": null,
+      "repairs": 0,
+      "status": "provider_failure"
+    },
+    {
+      "attempts": 1,
+      "chars": 1981,
+      "entities": 68,
+      "input_tokens": null,
+      "latency_ms": 84.215,
+      "model": "Model B",
+      "output_tokens": null,
+      "passage": "passage_001",
+      "relations": null,
+      "repairs": 0,
+      "status": "provider_failure"
+    },
+    {
+      "attempts": 0,
+      "chars": 1864,
+      "entities": 56,
+      "input_tokens": null,
+      "latency_ms": null,
+      "model": "Model A",
+      "output_tokens": null,
+      "passage": "passage_002",
+      "relations": null,
+      "repairs": 0,
+      "status": "not_run_aborted"
+    },
+    {
+      "attempts": 1,
+      "chars": 1864,
+      "entities": 56,
+      "input_tokens": null,
+      "latency_ms": 83.018,
+      "model": "Model B",
+      "output_tokens": null,
+      "passage": "passage_002",
+      "relations": null,
+      "repairs": 0,
+      "status": "provider_failure"
+    },
+    {
+      "attempts": 0,
+      "chars": 1976,
+      "entities": 71,
+      "input_tokens": null,
+      "latency_ms": null,
+      "model": "Model A",
+      "output_tokens": null,
+      "passage": "passage_003",
+      "relations": null,
+      "repairs": 0,
+      "status": "not_run_aborted"
+    },
+    {
+      "attempts": 0,
+      "chars": 1976,
+      "entities": 71,
+      "input_tokens": null,
+      "latency_ms": null,
+      "model": "Model B",
+      "output_tokens": null,
+      "passage": "passage_003",
+      "relations": null,
+      "repairs": 0,
+      "status": "not_run_aborted"
+    },
+    {
+      "attempts": 0,
+      "chars": 1949,
+      "entities": 63,
+      "input_tokens": null,
+      "latency_ms": null,
+      "model": "Model A",
+      "output_tokens": null,
+      "passage": "passage_004",
+      "relations": null,
+      "repairs": 0,
+      "status": "not_run_aborted"
+    },
+    {
+      "attempts": 0,
+      "chars": 1949,
+      "entities": 63,
+      "input_tokens": null,
+      "latency_ms": null,
+      "model": "Model B",
+      "output_tokens": null,
+      "passage": "passage_004",
+      "relations": null,
+      "repairs": 0,
+      "status": "not_run_aborted"
+    },
+    {
+      "attempts": 0,
+      "chars": 1908,
+      "entities": 50,
+      "input_tokens": null,
+      "latency_ms": null,
+      "model": "Model A",
+      "output_tokens": null,
+      "passage": "passage_005",
+      "relations": null,
+      "repairs": 0,
+      "status": "not_run_aborted"
+    },
+    {
+      "attempts": 0,
+      "chars": 1908,
+      "entities": 50,
+      "input_tokens": null,
+      "latency_ms": null,
+      "model": "Model B",
+      "output_tokens": null,
+      "passage": "passage_005",
+      "relations": null,
+      "repairs": 0,
+      "status": "not_run_aborted"
+    }
+  ],
+  "status": "aborted_stop_condition",
+  "totals": {
+    "Model A": {
+      "input_tokens": null,
+      "latency_aggregation": "executed jobs with numeric latency, including failures and watchdog timeouts; not-run jobs excluded",
+      "mean_latency_ms": 104.321,
+      "median_latency_ms": 104.321,
+      "not_run_aborted": 4,
+      "output_tokens": null,
+      "provider_failures": 1,
+      "successes": 0,
+      "timeouts": 0,
+      "timeouts_provider_failures": 1,
+      "total_relations": 0,
+      "total_tokens": null,
+      "validation_failures": 0
+    },
+    "Model B": {
+      "input_tokens": null,
+      "latency_aggregation": "executed jobs with numeric latency, including failures and watchdog timeouts; not-run jobs excluded",
+      "mean_latency_ms": 83.617,
+      "median_latency_ms": 83.617,
+      "not_run_aborted": 3,
+      "output_tokens": null,
+      "provider_failures": 2,
+      "successes": 0,
+      "timeouts": 0,
+      "timeouts_provider_failures": 2,
+      "total_relations": 0,
+      "total_tokens": null,
+      "validation_failures": 0
+    }
+  }
+}

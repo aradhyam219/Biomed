@@ -1,0 +1,23 @@
+{
+  "starting_primary_head": "fd66f9bb6d1a5c41ae147abfb5a7994c5bddae6c",
+  "primary_branch": "extraction_system_v2",
+  "protected_contract10_reference": "7f388368a8bd06f35f60eda37eb2ccdce711eed8",
+  "temporary_worktree": "C:/Users/Aincrad Empirium 3/.codex/worktrees/d17e/Biomed",
+  "worktree_head": "902dddb0e071ef002a075cb9674303fbc0c6b670",
+  "worktree_branch": "detached",
+  "worktree_only_commits": 0,
+  "worktree_modified_files": 0,
+  "worktree_untracked_files": 0,
+  "worktree_ignored_files": 0,
+  "all_contract11_work_was_already_in_primary": true,
+  "integration_mechanism": "Commit directly on primary extraction_system_v2; no worktree changes or commits require transfer",
+  "other_registered_worktrees_left_untouched": [
+    "484e",
+    "524d"
+  ],
+  "excluded_local_artifacts": [
+    "Python __pycache__",
+    "byte-identical unblinding package.zip",
+    "ignored provider/NER/runtime caches"
+  ]
+}

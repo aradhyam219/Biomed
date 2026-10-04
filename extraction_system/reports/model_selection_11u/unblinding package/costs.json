@@ -1,0 +1,237 @@
+{
+  "currency": "USD",
+  "estimated_not_invoice": true,
+  "candidates": [
+    {
+      "candidate": {
+        "number": 1,
+        "directory": "gpt_56_luna_max_fast",
+        "model": "gpt-5.6-luna",
+        "effort": "max",
+        "tier": "fast",
+        "rates": {
+          "input": 0.4,
+          "cached": 0.04,
+          "cache_write": 0.5,
+          "output": 2.4
+        }
+      },
+      "synthetic_requests": [
+        {
+          "response_id": "resp_02409fcec979841a006ac177fa0eec87d18c2ce9e1e8f3c32f",
+          "repair": false,
+          "usage": {
+            "input_tokens": 1029,
+            "input_tokens_details": {
+              "cache_write_tokens": 1026,
+              "cached_tokens": 0
+            },
+            "output_tokens": 150,
+            "output_tokens_details": {
+              "reasoning_tokens": 77
+            },
+            "total_tokens": 1179
+          },
+          "estimated_request_cost_usd": 0.0008742000000000001,
+          "regular_input_tokens": 3,
+          "cached_input_tokens": 0,
+          "cache_write_tokens": 1026,
+          "components_usd": {
+            "input_cost": 1.2000000000000002e-06,
+            "cached_cost": 0.0,
+            "cache_write_cost": 0.000513,
+            "output_cost": 0.00036
+          }
+        }
+      ],
+      "real_requests": [
+        {
+          "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+          "repair": false,
+          "usage": {
+            "input_tokens": 5223,
+            "input_tokens_details": {
+              "cache_write_tokens": 5220,
+              "cached_tokens": 0
+            },
+            "output_tokens": 48897,
+            "output_tokens_details": {
+              "reasoning_tokens": 46396
+            },
+            "total_tokens": 54120
+          },
+          "estimated_request_cost_usd": 0.119964,
+          "regular_input_tokens": 3,
+          "cached_input_tokens": 0,
+          "cache_write_tokens": 5220,
+          "components_usd": {
+            "input_cost": 1.2000000000000002e-06,
+            "cached_cost": 0.0,
+            "cache_write_cost": 0.00261,
+            "output_cost": 0.11735280000000001
+          }
+        }
+      ],
+      "synthetic_cost_usd": 0.0008742000000000001,
+      "primary_real_generation_cost_usd": 0.119964,
+      "repair_cost_usd": 0,
+      "total_candidate_cost_usd": 0.1208382,
+      "known_partial_cost_usd": 0.1208382,
+      "cost_complete": true
+    },
+    {
+      "candidate": {
+        "number": 2,
+        "directory": "gpt_61_sol_medium_standard",
+        "model": "gpt-6.1-sol",
+        "effort": "medium",
+        "tier": "default",
+        "rates": {
+          "input": 2.0,
+          "cached": 0.1,
+          "cache_write": 2.5,
+          "output": 10.0
+        }
+      },
+      "synthetic_requests": [
+        {
+          "response_id": "resp_0eb85dda6a6c978a006ac178d8f40c87d1a6a739d68a9d3427",
+          "repair": false,
+          "usage": {
+            "input_tokens": 1029,
+            "input_tokens_details": {
+              "cache_write_tokens": 1026,
+              "cached_tokens": 0
+            },
+            "output_tokens": 71,
+            "output_tokens_details": {
+              "reasoning_tokens": 0
+            },
+            "total_tokens": 1100
+          },
+          "estimated_request_cost_usd": 0.003281,
+          "regular_input_tokens": 3,
+          "cached_input_tokens": 0,
+          "cache_write_tokens": 1026,
+          "components_usd": {
+            "input_cost": 6e-06,
+            "cached_cost": 0.0,
+            "cache_write_cost": 0.002565,
+            "output_cost": 0.00071
+          }
+        }
+      ],
+      "real_requests": [
+        {
+          "response_id": "resp_0f689f5514135c20006ac178dda55487d1a29ac4b651535715",
+          "repair": false,
+          "usage": {
+            "input_tokens": 5223,
+            "input_tokens_details": {
+              "cache_write_tokens": 5220,
+              "cached_tokens": 0
+            },
+            "output_tokens": 1989,
+            "output_tokens_details": {
+              "reasoning_tokens": 761
+            },
+            "total_tokens": 7212
+          },
+          "estimated_request_cost_usd": 0.032946,
+          "regular_input_tokens": 3,
+          "cached_input_tokens": 0,
+          "cache_write_tokens": 5220,
+          "components_usd": {
+            "input_cost": 6e-06,
+            "cached_cost": 0.0,
+            "cache_write_cost": 0.01305,
+            "output_cost": 0.01989
+          }
+        }
+      ],
+      "synthetic_cost_usd": 0.003281,
+      "primary_real_generation_cost_usd": 0.032946,
+      "repair_cost_usd": 0,
+      "total_candidate_cost_usd": 0.036227,
+      "known_partial_cost_usd": 0.036227,
+      "cost_complete": true
+    },
+    {
+      "candidate": {
+        "number": 3,
+        "directory": "gpt_6_luna_max_fast",
+        "model": "gpt-6-luna",
+        "effort": "max",
+        "tier": "fast",
+        "rates": {
+          "input": 0.2,
+          "cached": 0.02,
+          "cache_write": 0.25,
+          "output": 1.0
+        }
+      },
+      "synthetic_requests": [
+        {
+          "response_id": "resp_0f0fa42af5612be0006ac17901983c87d18a1c4384d0fe24b8",
+          "repair": false,
+          "usage": {
+            "input_tokens": 1029,
+            "input_tokens_details": {
+              "cache_write_tokens": 1026,
+              "cached_tokens": 0
+            },
+            "output_tokens": 126,
+            "output_tokens_details": {
+              "reasoning_tokens": 53
+            },
+            "total_tokens": 1155
+          },
+          "estimated_request_cost_usd": 0.00038310000000000004,
+          "regular_input_tokens": 3,
+          "cached_input_tokens": 0,
+          "cache_write_tokens": 1026,
+          "components_usd": {
+            "input_cost": 6.000000000000001e-07,
+            "cached_cost": 0.0,
+            "cache_write_cost": 0.0002565,
+            "output_cost": 0.000126
+          }
+        }
+      ],
+      "real_requests": [
+        {
+          "response_id": "resp_043b371c9a2b348b006ac1790637e487d19de82219a707fce0",
+          "repair": false,
+          "usage": {
+            "input_tokens": 5223,
+            "input_tokens_details": {
+              "cache_write_tokens": 5220,
+              "cached_tokens": 0
+            },
+            "output_tokens": 71931,
+            "output_tokens_details": {
+              "reasoning_tokens": 70279
+            },
+            "total_tokens": 77154
+          },
+          "estimated_request_cost_usd": 0.0732366,
+          "regular_input_tokens": 3,
+          "cached_input_tokens": 0,
+          "cache_write_tokens": 5220,
+          "components_usd": {
+            "input_cost": 6.000000000000001e-07,
+            "cached_cost": 0.0,
+            "cache_write_cost": 0.001305,
+            "output_cost": 0.071931
+          }
+        }
+      ],
+      "synthetic_cost_usd": 0.00038310000000000004,
+      "primary_real_generation_cost_usd": 0.0732366,
+      "repair_cost_usd": 0,
+      "total_candidate_cost_usd": 0.0736197,
+      "known_partial_cost_usd": 0.0736197,
+      "cost_complete": true
+    }
+  ]
+}

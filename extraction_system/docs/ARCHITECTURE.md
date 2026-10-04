@@ -305,6 +305,17 @@ seam; structured output and bounded repair also remain inside the harness. The
 legacy GLiREL-compatible relation/evaluation path and its historical diagnostics
 remain preserved separately.
 
+Experimental Contract 11 background execution remains outside the production
+provider path. `tools/contract11/run.py` reuses the frozen benchmark lifecycle in
+`reports/luna_gpt6_background_probe_11s/scripts/run_background_probe_11sr.py`
+and the model-selection orchestration in `reports/model_selection_11u/scripts/`.
+It writes new runs to fresh report directories using tracked frozen source/entity
+inputs. Strict SDK transport-schema conversion precedes unchanged Contract 10
+parsing and validation; background polling, cancellation, usage, tiers, costs,
+and blind review packets belong to this experimental boundary. Preserved 11U
+A/B/C records and later known-identity supplemental D records remain distinct.
+Selection of GPT-6.1 Sol medium Standard has not changed production defaults.
+
 Target-domain NER evaluation, model selection, and fine-tuning remain postponed.
 External biomedical normalization remains outside this path. The graph boundary
 is limited to deterministic mention grouping, endpoint mapping, exact-key edge

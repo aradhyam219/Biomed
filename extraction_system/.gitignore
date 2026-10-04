@@ -6,3 +6,5 @@ __pycache__/
 *.py[cod]
 *.egg-info/
 .env
+# Redundant user-created handoff ZIP; its authoritative JSON files are tracked.
+/reports/model_selection_11u/unblinding package.zip

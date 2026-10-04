@@ -1,0 +1,940 @@
+{
+  "blinded_model": "Model B",
+  "configuration": {
+    "bounded_repair_budget": 2,
+    "max_output_tokens": 128000,
+    "prompt_sha256": "5f410cd064ec080dd3b942dab19cbc96665f36ebf648f267ec637dc2cbb5dc87",
+    "provider": "OpenAI Responses API",
+    "provider_retries": 0,
+    "reasoning_effort": "max"
+  },
+  "entity_packet": [
+    {
+      "end": 48,
+      "id": "E93",
+      "score": 0.9999641180038452,
+      "start": 44,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 115,
+      "id": "E94",
+      "score": 0.9999917149543762,
+      "start": 88,
+      "text": "neurodegenerative disorders",
+      "type": "Disease"
+    },
+    {
+      "end": 154,
+      "id": "E95",
+      "score": 0.9999929666519165,
+      "start": 125,
+      "text": "amyotrophic lateral sclerosis",
+      "type": "Disease"
+    },
+    {
+      "end": 159,
+      "id": "E96",
+      "score": 0.9999861717224121,
+      "start": 156,
+      "text": "ALS",
+      "type": "Disease"
+    },
+    {
+      "end": 195,
+      "id": "E97",
+      "score": 0.9999927679697672,
+      "start": 162,
+      "text": "frontotemporal lobar degeneration",
+      "type": "Disease"
+    },
+    {
+      "end": 201,
+      "id": "E98",
+      "score": 0.999985933303833,
+      "start": 197,
+      "text": "FTLD",
+      "type": "Disease"
+    },
+    {
+      "end": 210,
+      "id": "E99",
+      "score": 0.9999858140945435,
+      "start": 208,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 224,
+      "id": "E100",
+      "score": 0.99997878074646,
+      "start": 220,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 295,
+      "id": "E101",
+      "score": 0.9999831914901733,
+      "start": 287,
+      "text": "patients",
+      "type": "Species"
+    },
+    {
+      "end": 323,
+      "id": "E102",
+      "score": 0.9999854564666748,
+      "start": 321,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 329,
+      "id": "E103",
+      "score": 0.9999819993972778,
+      "start": 325,
+      "text": "rpAD",
+      "type": "Disease"
+    },
+    {
+      "end": 366,
+      "id": "E104",
+      "score": 0.9999918937683105,
+      "start": 332,
+      "text": "sporadic Creutzfeldt–Jakob disease",
+      "type": "Disease"
+    },
+    {
+      "end": 372,
+      "id": "E105",
+      "score": 0.9999858140945435,
+      "start": 368,
+      "text": "sCJD",
+      "type": "Disease"
+    },
+    {
+      "end": 412,
+      "id": "E106",
+      "score": 0.9999862909317017,
+      "start": 404,
+      "text": "dementia",
+      "type": "Disease"
+    },
+    {
+      "end": 453,
+      "id": "E107",
+      "score": 0.9999610582987467,
+      "start": 428,
+      "text": "amyloid precursor protein",
+      "type": "Gene"
+    },
+    {
+      "end": 458,
+      "id": "E108",
+      "score": 0.9999760389328003,
+      "start": 455,
+      "text": "APP",
+      "type": "Gene"
+    },
+    {
+      "end": 463,
+      "id": "E109",
+      "score": 0.9999841451644897,
+      "start": 460,
+      "text": "PS1",
+      "type": "Gene"
+    },
+    {
+      "end": 467,
+      "id": "E110",
+      "score": 0.9999790191650391,
+      "start": 464,
+      "text": "Tau",
+      "type": "Gene"
+    },
+    {
+      "end": 473,
+      "id": "E111",
+      "score": 0.999985933303833,
+      "start": 469,
+      "text": "mice",
+      "type": "Species"
+    },
+    {
+      "end": 501,
+      "id": "E112",
+      "score": 0.999981164932251,
+      "start": 497,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 528,
+      "id": "E113",
+      "score": 0.9999861717224121,
+      "start": 524,
+      "text": "mice",
+      "type": "Species"
+    },
+    {
+      "end": 542,
+      "id": "E114",
+      "score": 0.9999860525131226,
+      "start": 538,
+      "text": "FTLD",
+      "type": "Disease"
+    },
+    {
+      "end": 575,
+      "id": "E115",
+      "score": 0.9397004842758179,
+      "start": 570,
+      "text": "p-Tau",
+      "type": "Gene"
+    },
+    {
+      "end": 641,
+      "id": "E116",
+      "score": 0.9982682466506958,
+      "start": 622,
+      "text": "hippocampal atrophy",
+      "type": "Disease"
+    },
+    {
+      "end": 660,
+      "id": "E117",
+      "score": 0.9995157420635223,
+      "start": 647,
+      "text": "neuronal loss",
+      "type": "Disease"
+    },
+    {
+      "end": 746,
+      "id": "E118",
+      "score": 0.9999904632568359,
+      "start": 742,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 806,
+      "id": "E119",
+      "score": 0.9999855756759644,
+      "start": 802,
+      "text": "rpAD",
+      "type": "Disease"
+    },
+    {
+      "end": 864,
+      "id": "E120",
+      "score": 0.9999867677688599,
+      "start": 860,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 875,
+      "id": "E121",
+      "score": 0.9999151627222697,
+      "start": 870,
+      "text": "p-Tau",
+      "type": "Gene"
+    },
+    {
+      "end": 933,
+      "id": "E122",
+      "score": 0.9999896287918091,
+      "start": 929,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 941,
+      "id": "E123",
+      "score": 0.999987006187439,
+      "start": 938,
+      "text": "Tau",
+      "type": "Gene"
+    },
+    {
+      "end": 979,
+      "id": "E124",
+      "score": 0.999985933303833,
+      "start": 975,
+      "text": "rpAD",
+      "type": "Disease"
+    },
+    {
+      "end": 988,
+      "id": "E125",
+      "score": 0.9999780654907227,
+      "start": 980,
+      "text": "patients",
+      "type": "Species"
+    },
+    {
+      "end": 1007,
+      "id": "E126",
+      "score": 0.9999892711639404,
+      "start": 1003,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 1099,
+      "id": "E127",
+      "score": 0.999985933303833,
+      "start": 1096,
+      "text": "Tau",
+      "type": "Gene"
+    },
+    {
+      "end": 1145,
+      "id": "E128",
+      "score": 0.9999873638153076,
+      "start": 1141,
+      "text": "mice",
+      "type": "Species"
+    },
+    {
+      "end": 1177,
+      "id": "E129",
+      "score": 0.9999889135360718,
+      "start": 1173,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 1319,
+      "id": "E130",
+      "score": 0.9999854564666748,
+      "start": 1315,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 1383,
+      "id": "E131",
+      "score": 0.9999850988388062,
+      "start": 1378,
+      "text": "TIA-1",
+      "type": "Gene"
+    },
+    {
+      "end": 1442,
+      "id": "E132",
+      "score": 0.9999885559082031,
+      "start": 1438,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 1474,
+      "id": "E133",
+      "score": 0.9999951124191284,
+      "start": 1471,
+      "text": "ROS",
+      "type": "Chemical"
+    },
+    {
+      "end": 1498,
+      "id": "E134",
+      "score": 0.9999911189079285,
+      "start": 1478,
+      "text": "colon adenocarcinoma",
+      "type": "Disease"
+    },
+    {
+      "end": 1543,
+      "id": "E135",
+      "score": 0.9999867677688599,
+      "start": 1539,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 1627,
+      "id": "E136",
+      "score": 0.9999772310256958,
+      "start": 1623,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 1665,
+      "id": "E137",
+      "score": 0.9999734163284302,
+      "start": 1660,
+      "text": "human",
+      "type": "Species"
+    },
+    {
+      "end": 1678,
+      "id": "E138",
+      "score": 0.9999883770942688,
+      "start": 1666,
+      "text": "colon cancer",
+      "type": "Disease"
+    },
+    {
+      "end": 1711,
+      "id": "E139",
+      "score": 0.9973783493041992,
+      "start": 1707,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "end": 1773,
+      "id": "E140",
+      "score": 0.9970850348472595,
+      "start": 1769,
+      "text": "SFPQ",
+      "type": "Chemical"
+    },
+    {
+      "end": 1798,
+      "id": "E141",
+      "score": 0.9999827146530151,
+      "start": 1796,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "end": 1863,
+      "id": "E142",
+      "score": 0.9999847412109375,
+      "start": 1861,
+      "text": "AD",
+      "type": "Disease"
+    }
+  ],
+  "entity_packet_absolute": [
+    {
+      "absolute_end": 5761,
+      "absolute_start": 5757,
+      "id": "E93",
+      "passage_end": 48,
+      "passage_start": 44,
+      "score": 0.9999641180038452,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 5828,
+      "absolute_start": 5801,
+      "id": "E94",
+      "passage_end": 115,
+      "passage_start": 88,
+      "score": 0.9999917149543762,
+      "text": "neurodegenerative disorders",
+      "type": "Disease"
+    },
+    {
+      "absolute_end": 5867,
+      "absolute_start": 5838,
+      "id": "E95",
+      "passage_end": 154,
+      "passage_start": 125,
+      "score": 0.9999929666519165,
+      "text": "amyotrophic lateral sclerosis",
+      "type": "Disease"
+    },
+    {
+      "absolute_end": 5872,
+      "absolute_start": 5869,
+      "id": "E96",
+      "passage_end": 159,
+      "passage_start": 156,
+      "score": 0.9999861717224121,
+      "text": "ALS",
+      "type": "Disease"
+    },
+    {
+      "absolute_end": 5908,
+      "absolute_start": 5875,
+      "id": "E97",
+      "passage_end": 195,
+      "passage_start": 162,
+      "score": 0.9999927679697672,
+      "text": "frontotemporal lobar degeneration",
+      "type": "Disease"
+    },
+    {
+      "absolute_end": 5914,
+      "absolute_start": 5910,
+      "id": "E98",
+      "passage_end": 201,
+      "passage_start": 197,
+      "score": 0.999985933303833,
+      "text": "FTLD",
+      "type": "Disease"
+    },
+    {
+      "absolute_end": 5923,
+      "absolute_start": 5921,
+      "id": "E99",
+      "passage_end": 210,
+      "passage_start": 208,
+      "score": 0.9999858140945435,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "absolute_end": 5937,
+      "absolute_start": 5933,
+      "id": "E100",
+      "passage_end": 224,
+      "passage_start": 220,
+      "score": 0.99997878074646,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 6008,
+      "absolute_start": 6000,
+      "id": "E101",
+      "passage_end": 295,
+      "passage_start": 287,
+      "score": 0.9999831914901733,
+      "text": "patients",
+      "type": "Species"
+    },
+    {
+      "absolute_end": 6036,
+      "absolute_start": 6034,
+      "id": "E102",
+      "passage_end": 323,
+      "passage_start": 321,
+      "score": 0.9999854564666748,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "absolute_end": 6042,
+      "absolute_start": 6038,
+      "id": "E103",
+      "passage_end": 329,
+      "passage_start": 325,
+      "score": 0.9999819993972778,
+      "text": "rpAD",
+      "type": "Disease"
+    },
+    {
+      "absolute_end": 6079,
+      "absolute_start": 6045,
+      "id": "E104",
+      "passage_end": 366,
+      "passage_start": 332,
+      "score": 0.9999918937683105,
+      "text": "sporadic Creutzfeldt–Jakob disease",
+      "type": "Disease"
+    },
+    {
+      "absolute_end": 6085,
+      "absolute_start": 6081,
+      "id": "E105",
+      "passage_end": 372,
+      "passage_start": 368,
+      "score": 0.9999858140945435,
+      "text": "sCJD",
+      "type": "Disease"
+    },
+    {
+      "absolute_end": 6125,
+      "absolute_start": 6117,
+      "id": "E106",
+      "passage_end": 412,
+      "passage_start": 404,
+      "score": 0.9999862909317017,
+      "text": "dementia",
+      "type": "Disease"
+    },
+    {
+      "absolute_end": 6166,
+      "absolute_start": 6141,
+      "id": "E107",
+      "passage_end": 453,
+      "passage_start": 428,
+      "score": 0.9999610582987467,
+      "text": "amyloid precursor protein",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 6171,
+      "absolute_start": 6168,
+      "id": "E108",
+      "passage_end": 458,
+      "passage_start": 455,
+      "score": 0.9999760389328003,
+      "text": "APP",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 6176,
+      "absolute_start": 6173,
+      "id": "E109",
+      "passage_end": 463,
+      "passage_start": 460,
+      "score": 0.9999841451644897,
+      "text": "PS1",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 6180,
+      "absolute_start": 6177,
+      "id": "E110",
+      "passage_end": 467,
+      "passage_start": 464,
+      "score": 0.9999790191650391,
+      "text": "Tau",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 6186,
+      "absolute_start": 6182,
+      "id": "E111",
+      "passage_end": 473,
+      "passage_start": 469,
+      "score": 0.999985933303833,
+      "text": "mice",
+      "type": "Species"
+    },
+    {
+      "absolute_end": 6214,
+      "absolute_start": 6210,
+      "id": "E112",
+      "passage_end": 501,
+      "passage_start": 497,
+      "score": 0.999981164932251,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 6241,
+      "absolute_start": 6237,
+      "id": "E113",
+      "passage_end": 528,
+      "passage_start": 524,
+      "score": 0.9999861717224121,
+      "text": "mice",
+      "type": "Species"
+    },
+    {
+      "absolute_end": 6255,
+      "absolute_start": 6251,
+      "id": "E114",
+      "passage_end": 542,
+      "passage_start": 538,
+      "score": 0.9999860525131226,
+      "text": "FTLD",
+      "type": "Disease"
+    },
+    {
+      "absolute_end": 6288,
+      "absolute_start": 6283,
+      "id": "E115",
+      "passage_end": 575,
+      "passage_start": 570,
+      "score": 0.9397004842758179,
+      "text": "p-Tau",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 6354,
+      "absolute_start": 6335,
+      "id": "E116",
+      "passage_end": 641,
+      "passage_start": 622,
+      "score": 0.9982682466506958,
+      "text": "hippocampal atrophy",
+      "type": "Disease"
+    },
+    {
+      "absolute_end": 6373,
+      "absolute_start": 6360,
+      "id": "E117",
+      "passage_end": 660,
+      "passage_start": 647,
+      "score": 0.9995157420635223,
+      "text": "neuronal loss",
+      "type": "Disease"
+    },
+    {
+      "absolute_end": 6459,
+      "absolute_start": 6455,
+      "id": "E118",
+      "passage_end": 746,
+      "passage_start": 742,
+      "score": 0.9999904632568359,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 6519,
+      "absolute_start": 6515,
+      "id": "E119",
+      "passage_end": 806,
+      "passage_start": 802,
+      "score": 0.9999855756759644,
+      "text": "rpAD",
+      "type": "Disease"
+    },
+    {
+      "absolute_end": 6577,
+      "absolute_start": 6573,
+      "id": "E120",
+      "passage_end": 864,
+      "passage_start": 860,
+      "score": 0.9999867677688599,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 6588,
+      "absolute_start": 6583,
+      "id": "E121",
+      "passage_end": 875,
+      "passage_start": 870,
+      "score": 0.9999151627222697,
+      "text": "p-Tau",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 6646,
+      "absolute_start": 6642,
+      "id": "E122",
+      "passage_end": 933,
+      "passage_start": 929,
+      "score": 0.9999896287918091,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 6654,
+      "absolute_start": 6651,
+      "id": "E123",
+      "passage_end": 941,
+      "passage_start": 938,
+      "score": 0.999987006187439,
+      "text": "Tau",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 6692,
+      "absolute_start": 6688,
+      "id": "E124",
+      "passage_end": 979,
+      "passage_start": 975,
+      "score": 0.999985933303833,
+      "text": "rpAD",
+      "type": "Disease"
+    },
+    {
+      "absolute_end": 6701,
+      "absolute_start": 6693,
+      "id": "E125",
+      "passage_end": 988,
+      "passage_start": 980,
+      "score": 0.9999780654907227,
+      "text": "patients",
+      "type": "Species"
+    },
+    {
+      "absolute_end": 6720,
+      "absolute_start": 6716,
+      "id": "E126",
+      "passage_end": 1007,
+      "passage_start": 1003,
+      "score": 0.9999892711639404,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 6812,
+      "absolute_start": 6809,
+      "id": "E127",
+      "passage_end": 1099,
+      "passage_start": 1096,
+      "score": 0.999985933303833,
+      "text": "Tau",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 6858,
+      "absolute_start": 6854,
+      "id": "E128",
+      "passage_end": 1145,
+      "passage_start": 1141,
+      "score": 0.9999873638153076,
+      "text": "mice",
+      "type": "Species"
+    },
+    {
+      "absolute_end": 6890,
+      "absolute_start": 6886,
+      "id": "E129",
+      "passage_end": 1177,
+      "passage_start": 1173,
+      "score": 0.9999889135360718,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 7032,
+      "absolute_start": 7028,
+      "id": "E130",
+      "passage_end": 1319,
+      "passage_start": 1315,
+      "score": 0.9999854564666748,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 7096,
+      "absolute_start": 7091,
+      "id": "E131",
+      "passage_end": 1383,
+      "passage_start": 1378,
+      "score": 0.9999850988388062,
+      "text": "TIA-1",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 7155,
+      "absolute_start": 7151,
+      "id": "E132",
+      "passage_end": 1442,
+      "passage_start": 1438,
+      "score": 0.9999885559082031,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 7187,
+      "absolute_start": 7184,
+      "id": "E133",
+      "passage_end": 1474,
+      "passage_start": 1471,
+      "score": 0.9999951124191284,
+      "text": "ROS",
+      "type": "Chemical"
+    },
+    {
+      "absolute_end": 7211,
+      "absolute_start": 7191,
+      "id": "E134",
+      "passage_end": 1498,
+      "passage_start": 1478,
+      "score": 0.9999911189079285,
+      "text": "colon adenocarcinoma",
+      "type": "Disease"
+    },
+    {
+      "absolute_end": 7256,
+      "absolute_start": 7252,
+      "id": "E135",
+      "passage_end": 1543,
+      "passage_start": 1539,
+      "score": 0.9999867677688599,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 7340,
+      "absolute_start": 7336,
+      "id": "E136",
+      "passage_end": 1627,
+      "passage_start": 1623,
+      "score": 0.9999772310256958,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 7378,
+      "absolute_start": 7373,
+      "id": "E137",
+      "passage_end": 1665,
+      "passage_start": 1660,
+      "score": 0.9999734163284302,
+      "text": "human",
+      "type": "Species"
+    },
+    {
+      "absolute_end": 7391,
+      "absolute_start": 7379,
+      "id": "E138",
+      "passage_end": 1678,
+      "passage_start": 1666,
+      "score": 0.9999883770942688,
+      "text": "colon cancer",
+      "type": "Disease"
+    },
+    {
+      "absolute_end": 7424,
+      "absolute_start": 7420,
+      "id": "E139",
+      "passage_end": 1711,
+      "passage_start": 1707,
+      "score": 0.9973783493041992,
+      "text": "SFPQ",
+      "type": "Gene"
+    },
+    {
+      "absolute_end": 7486,
+      "absolute_start": 7482,
+      "id": "E140",
+      "passage_end": 1773,
+      "passage_start": 1769,
+      "score": 0.9970850348472595,
+      "text": "SFPQ",
+      "type": "Chemical"
+    },
+    {
+      "absolute_end": 7511,
+      "absolute_start": 7509,
+      "id": "E141",
+      "passage_end": 1798,
+      "passage_start": 1796,
+      "score": 0.9999827146530151,
+      "text": "AD",
+      "type": "Disease"
+    },
+    {
+      "absolute_end": 7576,
+      "absolute_start": 7574,
+      "id": "E142",
+      "passage_end": 1863,
+      "passage_start": 1861,
+      "score": 0.9999847412109375,
+      "text": "AD",
+      "type": "Disease"
+    }
+  ],
+  "entity_packet_sha256": "91a931717ae1745f663dd1d0aa0714bc1e66745dfad5901c46ccbf651892e05c",
+  "error": {
+    "message": "three consecutive provider-error or timeout jobs before structured output",
+    "type": "ProbeAborted"
+  },
+  "finished_utc": null,
+  "full_entity_packet_sha256": "efb1578fb0c4b1d7335ec5aa31436f273a346c8b4a5fd9add10973c67b312d4e",
+  "latency_ms": null,
+  "paper_id": "PMCID:PMC11824863",
+  "passage_id": "passage_005",
+  "provider_attempt_details": [],
+  "provider_attempts": 0,
+  "provider_latency_ms": null,
+  "repair_attempts": 0,
+  "sequence": 10,
+  "source_range": {
+    "end": 7621,
+    "start": 5713
+  },
+  "source_sha256": "5ebae4d97aef85c6ff5feb15d057149f9fda363b6e5450c00436074008e1cd5b",
+  "source_text": "This growing body of evidence suggests that SFPQ is significantly implicated in various neurodegenerative disorders, such as amyotrophic lateral sclerosis (ALS), frontotemporal lobar degeneration (FTLD), and AD [16–20]. SFPQ levels were found to be decreased in the postmortem brains of patients with rapidly progressing AD (rpAD), sporadic Creutzfeldt–Jakob disease (sCJD, a rapidly progressive form of dementia), and in 3xTg (amyloid precursor protein [APP]/PS1/Tau) mice. Specific knockdown of SFPQ in the hippocampus of mice leads to FTLD-like phenotypes, including p-Tau accumulation, reduced adult neurogenesis, and hippocampal atrophy with neuronal loss [21]. A subsequent investigation has revealed significant nuclear dislocation of SFPQ within the brain tissues of individuals suffering from rpAD. Additionally, there was a notable colocalization of SFPQ with p-Tau in the extranuclear space. This relationship between SFPQ and Tau oligomers found in the brains of rpAD patients suggests that SFPQ may play a crucial role in the oligomerization process and the subsequent misfolding of Tau proteins. In a study conducted with 3xTg mice, researchers observed that SFPQ expression levels were markedly increased during the early stages of the disease. Furthermore, after inducing oxidative stress in vitro, SFPQ was found within stress granules that tested positive for TIA-1. Previous studies have also indicated that inhibiting SFPQ can influence the levels of ROS in colon adenocarcinoma cells [22]. These findings suggest that SFPQ has a regulatory role in oxidative stress. Furthermore, it has been found that SFPQ knockdown promotes apoptosis in human colon cancer cells [23], indicating that SFPQ influences cell apoptosis. Therefore, it is evident that SFPQ is closely related to AD, oxidative stress, and apoptosis, and plays a crucial role in AD pathology, warranting further investigation.",
+  "started_utc": null,
+  "status": "not_run_aborted",
+  "token_usage": null,
+  "validated_relations": null
+}

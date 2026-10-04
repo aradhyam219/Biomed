@@ -1,0 +1,17 @@
+{
+  "status": "not_run",
+  "reason": "Contract stopped after background synthetic control failed",
+  "response_id": null,
+  "initial_create_latency_seconds": null,
+  "terminal_status": null,
+  "total_elapsed_seconds": null,
+  "poll_count": 0,
+  "poll_failures": 0,
+  "provider_generation_count": 0,
+  "repair_count": 0,
+  "usage": null,
+  "validated_relation_count": null,
+  "unique_evidence_span_count": null,
+  "transport_success": false,
+  "contract10_success": false
+}

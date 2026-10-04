@@ -1,0 +1,103 @@
+{
+  "status": "background_create_failure",
+  "baseline": {
+    "head": "7f388368a8bd06f35f60eda37eb2ccdce711eed8",
+    "branch": "extraction_system_v2",
+    "production_status": "",
+    "production_diff": "",
+    "production_model_default": "gpt-5.6-luna"
+  },
+  "background_control": {
+    "status": "background_create_failure",
+    "generations": [
+      {
+        "generation_number": 1,
+        "repair": false,
+        "configuration": {
+          "model": "gpt-6-luna",
+          "reasoning": {
+            "effort": "max"
+          },
+          "max_output_tokens": 128000,
+          "background": true,
+          "store": false
+        },
+        "prompt_sha256": "5d15339a13385b512692c4825298126fc19b310c53e28b57657e15d78bf6945f",
+        "schema_sha256": "023435da3fa18abb77987313626636eff7bedda28739603db54a2f2c8137c945",
+        "create_requested_timestamp": "2026-10-03T20:21:05.811234+00:00",
+        "response_id": null,
+        "initial_status": null,
+        "status": "background_create_failure",
+        "poll_count": 0,
+        "poll_errors": 0,
+        "structured_output_received": false,
+        "validated_relation_count": 0,
+        "validation_error": null,
+        "provider_sdk_retries": 0,
+        "error_chain": [
+          {
+            "type": "BadRequestError",
+            "message": "Error code: 400 - {'error': {'message': \"Invalid schema for response_format 'StructuredRelationPayload': In context=(), 'required' is required to be supplied and to be an array including every key in properties. Missing 'intervention'.\", 'type': 'invalid_request_error', 'param': 'text.format.schema', 'code': 'invalid_json_schema'}}",
+            "status_code": 400,
+            "request_id": "req_f95dd78a4b0f465db86392acd433671e"
+          }
+        ],
+        "initial_create_latency_seconds": 1.063,
+        "terminal_timestamp": "2026-10-03T20:21:06.878971+00:00",
+        "elapsed_wall_seconds": 1.063,
+        "terminal_status": null,
+        "background_elapsed_seconds": null,
+        "usage": null,
+        "transport_success": false,
+        "provider_job_created": false
+      }
+    ],
+    "provider_generation_count": 1,
+    "repair_count": 0,
+    "validated_relation_count": 0,
+    "unique_evidence_span_count": 0,
+    "transport_success": false,
+    "contract10_success": false,
+    "total_elapsed_seconds": 1.156,
+    "provider_create_attempt_count": 1,
+    "provider_job_created_count": 0,
+    "integration_blocker": "Direct strict Responses API rejected the unchanged Contract 10 schema; requiredness changes prohibited."
+  },
+  "real_passage": {
+    "status": "not_run",
+    "reason": "Contract stopped after background synthetic control failed",
+    "response_id": null,
+    "initial_create_latency_seconds": null,
+    "terminal_status": null,
+    "total_elapsed_seconds": null,
+    "poll_count": 0,
+    "poll_failures": 0,
+    "provider_generation_count": 0,
+    "repair_count": 0,
+    "usage": null,
+    "validated_relation_count": null,
+    "unique_evidence_span_count": null,
+    "transport_success": false,
+    "contract10_success": false
+  },
+  "final_baseline": {
+    "head": "7f388368a8bd06f35f60eda37eb2ccdce711eed8",
+    "branch": "extraction_system_v2",
+    "production_status": "",
+    "production_diff": "",
+    "production_model_default": "gpt-5.6-luna"
+  },
+  "production_code_unchanged": true,
+  "production_model_default_unchanged": true,
+  "nothing_committed_or_pushed": true,
+  "interpretation": "Integration blocker. No background job was created; real-passage background feasibility remains untested.",
+  "verification": {
+    "frozen_hashes": "all matched",
+    "frozen_entity_spans": "68/68 exact",
+    "offline_adapter_checks": "6 passed",
+    "production_diff": "empty",
+    "head_matches_required_baseline": true,
+    "unrelated_staged_report": "luna_56_vs_6_abstracts_20261004; staged externally during execution, untouched by this probe"
+  },
+  "exact_error": "Error code: 400 - {'error': {'message': \"Invalid schema for response_format 'StructuredRelationPayload': In context=(), 'required' is required to be supplied and to be an array including every key in properties. Missing 'intervention'.\", 'type': 'invalid_request_error', 'param': 'text.format.schema', 'code': 'invalid_json_schema'}}"
+}

@@ -1,0 +1,11 @@
+{
+  "contract": "Codex Contract 11Q-R rerun",
+  "copied_preflight_sha256": "ba617ce2fefee73a61c451480de6ff688641dd3b97747c0f642238b570cbffe1",
+  "fresh_report": "reports/luna_56_vs_6_real_probe_11qr_rerun",
+  "model_key_path": ".cache/model_ab_11qr/model_key.json",
+  "model_mapping_disclosed": false,
+  "original_aborted_report": "reports/luna_56_vs_6_real_probe_11qr",
+  "original_harness": "reports/luna_56_vs_6_real_probe_11qr/scripts/run_probe.py",
+  "provider_child_processes_inherit_mode": true,
+  "provider_execution_mode": "require_escalated"
+}

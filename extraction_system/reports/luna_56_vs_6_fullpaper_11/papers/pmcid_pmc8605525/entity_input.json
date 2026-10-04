@@ -1,0 +1,7498 @@
+[
+  {
+    "id": "E1",
+    "text": "E3 ubiquitin ligase",
+    "type": "Gene",
+    "start": 18,
+    "end": 37,
+    "score": 0.9999783039093018
+  },
+  {
+    "id": "E2",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 38,
+    "end": 41,
+    "score": 0.9999862909317017
+  },
+  {
+    "id": "E3",
+    "text": "endothelial dysfunction",
+    "type": "Disease",
+    "start": 53,
+    "end": 76,
+    "score": 0.999871551990509
+  },
+  {
+    "id": "E4",
+    "text": "diabetes mellitus",
+    "type": "Disease",
+    "start": 80,
+    "end": 97,
+    "score": 0.999988853931427
+  },
+  {
+    "id": "E5",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 116,
+    "end": 120,
+    "score": 0.9999886751174927
+  },
+  {
+    "id": "E6",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 121,
+    "end": 126,
+    "score": 0.9999867677688599
+  },
+  {
+    "id": "E7",
+    "text": "Runx3-mediated",
+    "type": "Gene",
+    "start": 141,
+    "end": 155,
+    "score": 0.9999803304672241
+  },
+  {
+    "id": "E8",
+    "text": "H3K4me3",
+    "type": "Gene",
+    "start": 156,
+    "end": 163,
+    "score": 0.997666597366333
+  },
+  {
+    "id": "E9",
+    "text": "mellitus",
+    "type": "Disease",
+    "start": 184,
+    "end": 192,
+    "score": 0.9999890327453613
+  },
+  {
+    "id": "E10",
+    "text": "DM",
+    "type": "Disease",
+    "start": 194,
+    "end": 196,
+    "score": 0.9999853372573853
+  },
+  {
+    "id": "E11",
+    "text": "chronic disease",
+    "type": "Disease",
+    "start": 213,
+    "end": 228,
+    "score": 0.9996799230575562
+  },
+  {
+    "id": "E12",
+    "text": "impaired",
+    "type": "Disease",
+    "start": 247,
+    "end": 255,
+    "score": 0.9938340187072754
+  },
+  {
+    "id": "E13",
+    "text": "function",
+    "type": "Disease",
+    "start": 268,
+    "end": 276,
+    "score": 0.9768064022064209
+  },
+  {
+    "id": "E14",
+    "text": "nitric oxide",
+    "type": "Chemical",
+    "start": 300,
+    "end": 312,
+    "score": 0.9999964237213135
+  },
+  {
+    "id": "E15",
+    "text": "NO",
+    "type": "Chemical",
+    "start": 314,
+    "end": 316,
+    "score": 0.9999924898147583
+  },
+  {
+    "id": "E16",
+    "text": "E3 ubiquitin ligase",
+    "type": "Gene",
+    "start": 325,
+    "end": 344,
+    "score": 0.9999768733978271
+  },
+  {
+    "id": "E17",
+    "text": "endothelial dysfunction",
+    "type": "Disease",
+    "start": 366,
+    "end": 389,
+    "score": 0.9999586939811707
+  },
+  {
+    "id": "E18",
+    "text": "DM",
+    "type": "Disease",
+    "start": 416,
+    "end": 418,
+    "score": 0.9999854564666748
+  },
+  {
+    "id": "E19",
+    "text": "E3 ubiquitin ligase",
+    "type": "Gene",
+    "start": 468,
+    "end": 487,
+    "score": 0.9999799331029257
+  },
+  {
+    "id": "E20",
+    "text": "casitas B-lineage lymphoma",
+    "type": "Gene",
+    "start": 488,
+    "end": 514,
+    "score": 0.9999819755554199
+  },
+  {
+    "id": "E21",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 516,
+    "end": 519,
+    "score": 0.9999896287918091
+  },
+  {
+    "id": "E22",
+    "text": "endothelial dysfunction",
+    "type": "Disease",
+    "start": 532,
+    "end": 555,
+    "score": 0.9999818801879883
+  },
+  {
+    "id": "E23",
+    "text": "DM",
+    "type": "Disease",
+    "start": 559,
+    "end": 561,
+    "score": 0.9999850988388062
+  },
+  {
+    "id": "E24",
+    "text": "rats",
+    "type": "Species",
+    "start": 562,
+    "end": 566,
+    "score": 0.9999872446060181
+  },
+  {
+    "id": "E25",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 570,
+    "end": 574,
+    "score": 0.9999902248382568
+  },
+  {
+    "id": "E26",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 575,
+    "end": 580,
+    "score": 0.9999897480010986
+  },
+  {
+    "id": "E27",
+    "text": "rat",
+    "type": "Species",
+    "start": 598,
+    "end": 601,
+    "score": 0.9999866485595703
+  },
+  {
+    "id": "E28",
+    "text": "DM",
+    "type": "Disease",
+    "start": 611,
+    "end": 613,
+    "score": 0.9999858140945435
+  },
+  {
+    "id": "E29",
+    "text": "streptozotocin",
+    "type": "Chemical",
+    "start": 665,
+    "end": 679,
+    "score": 0.9999963045120239
+  },
+  {
+    "id": "E30",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 753,
+    "end": 756,
+    "score": 0.9999892711639404
+  },
+  {
+    "id": "E31",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 758,
+    "end": 762,
+    "score": 0.9999897480010986
+  },
+  {
+    "id": "E32",
+    "text": "runt-related transcription factor 3",
+    "type": "Gene",
+    "start": 764,
+    "end": 799,
+    "score": 0.999983012676239
+  },
+  {
+    "id": "E33",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 801,
+    "end": 806,
+    "score": 0.999980648358663
+  },
+  {
+    "id": "E34",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 812,
+    "end": 817,
+    "score": 0.9999901056289673
+  },
+  {
+    "id": "E35",
+    "text": "Human",
+    "type": "Species",
+    "start": 819,
+    "end": 824,
+    "score": 0.9999827146530151
+  },
+  {
+    "id": "E36",
+    "text": "glucose",
+    "type": "Chemical",
+    "start": 889,
+    "end": 896,
+    "score": 0.9999963045120239
+  },
+  {
+    "id": "E37",
+    "text": "DM",
+    "type": "Disease",
+    "start": 922,
+    "end": 924,
+    "score": 0.9999855756759644
+  },
+  {
+    "id": "E38",
+    "text": "Cb1",
+    "type": "Gene",
+    "start": 1021,
+    "end": 1024,
+    "score": 0.9999873638153076
+  },
+  {
+    "id": "E39",
+    "text": "endothelial dysfunction",
+    "type": "Disease",
+    "start": 1028,
+    "end": 1051,
+    "score": 0.9999860525131226
+  },
+  {
+    "id": "E40",
+    "text": "NO",
+    "type": "Chemical",
+    "start": 1053,
+    "end": 1055,
+    "score": 0.9999934434890747
+  },
+  {
+    "id": "E41",
+    "text": "DM",
+    "type": "Disease",
+    "start": 1117,
+    "end": 1119,
+    "score": 0.9999845027923584
+  },
+  {
+    "id": "E42",
+    "text": "rat",
+    "type": "Species",
+    "start": 1120,
+    "end": 1123,
+    "score": 0.9999840259552002
+  },
+  {
+    "id": "E43",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 1161,
+    "end": 1165,
+    "score": 0.99998939037323
+  },
+  {
+    "id": "E44",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 1167,
+    "end": 1172,
+    "score": 0.999977191289266
+  },
+  {
+    "id": "E45",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 1177,
+    "end": 1182,
+    "score": 0.99998939037323
+  },
+  {
+    "id": "E46",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 1234,
+    "end": 1237,
+    "score": 0.9999871253967285
+  },
+  {
+    "id": "E47",
+    "text": "endothelial dysfunction",
+    "type": "Disease",
+    "start": 1249,
+    "end": 1272,
+    "score": 0.999987781047821
+  },
+  {
+    "id": "E48",
+    "text": "NO",
+    "type": "Chemical",
+    "start": 1287,
+    "end": 1289,
+    "score": 0.9999921321868896
+  },
+  {
+    "id": "E49",
+    "text": "Cb1",
+    "type": "Gene",
+    "start": 1382,
+    "end": 1385,
+    "score": 0.9999591112136841
+  },
+  {
+    "id": "E50",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 1395,
+    "end": 1399,
+    "score": 0.9999778270721436
+  },
+  {
+    "id": "E51",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 1429,
+    "end": 1433,
+    "score": 0.9999810457229614
+  },
+  {
+    "id": "E52",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 1438,
+    "end": 1443,
+    "score": 0.9999762773513794
+  },
+  {
+    "id": "E53",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 1462,
+    "end": 1467,
+    "score": 0.9999706745147705
+  },
+  {
+    "id": "E54",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 1477,
+    "end": 1482,
+    "score": 0.9999797344207764
+  },
+  {
+    "id": "E55",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 1568,
+    "end": 1572,
+    "score": 0.999987006187439
+  },
+  {
+    "id": "E56",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 1577,
+    "end": 1582,
+    "score": 0.9999881982803345
+  },
+  {
+    "id": "E57",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 1587,
+    "end": 1592,
+    "score": 0.9999801715215048
+  },
+  {
+    "id": "E58",
+    "text": "Cb1",
+    "type": "Gene",
+    "start": 1649,
+    "end": 1652,
+    "score": 0.9999850988388062
+  },
+  {
+    "id": "E59",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 1702,
+    "end": 1705,
+    "score": 0.9331601858139038
+  },
+  {
+    "id": "E60",
+    "text": "endothelial dysfunction",
+    "type": "Disease",
+    "start": 1717,
+    "end": 1740,
+    "score": 0.9999911785125732
+  },
+  {
+    "id": "E61",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 1764,
+    "end": 1768,
+    "score": 0.999984622001648
+  },
+  {
+    "id": "E62",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 1769,
+    "end": 1774,
+    "score": 0.9999862909317017
+  },
+  {
+    "id": "E63",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 1801,
+    "end": 1806,
+    "score": 0.9999802907307943
+  },
+  {
+    "id": "E64",
+    "text": "DM",
+    "type": "Disease",
+    "start": 1821,
+    "end": 1823,
+    "score": 0.9999862909317017
+  },
+  {
+    "id": "E65",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 1861,
+    "end": 1864,
+    "score": 0.9583933353424072
+  },
+  {
+    "id": "E66",
+    "text": "DM",
+    "type": "Disease",
+    "start": 1889,
+    "end": 1891,
+    "score": 0.9999864101409912
+  },
+  {
+    "id": "E67",
+    "text": "Diabetes mellitus",
+    "type": "Disease",
+    "start": 2024,
+    "end": 2041,
+    "score": 0.9999913573265076
+  },
+  {
+    "id": "E68",
+    "text": "DM",
+    "type": "Disease",
+    "start": 2043,
+    "end": 2045,
+    "score": 0.999985933303833
+  },
+  {
+    "id": "E69",
+    "text": "Diabetes",
+    "type": "Disease",
+    "start": 2226,
+    "end": 2234,
+    "score": 0.9999855756759644
+  },
+  {
+    "id": "E70",
+    "text": "patients",
+    "type": "Species",
+    "start": 2265,
+    "end": 2273,
+    "score": 0.999982476234436
+  },
+  {
+    "id": "E71",
+    "text": "DM",
+    "type": "Disease",
+    "start": 2279,
+    "end": 2281,
+    "score": 0.9999860525131226
+  },
+  {
+    "id": "E72",
+    "text": "DM",
+    "type": "Disease",
+    "start": 2320,
+    "end": 2322,
+    "score": 0.9999862909317017
+  },
+  {
+    "id": "E73",
+    "text": "glucose",
+    "type": "Chemical",
+    "start": 2349,
+    "end": 2356,
+    "score": 0.9999862909317017
+  },
+  {
+    "id": "E74",
+    "text": "insulin",
+    "type": "Gene",
+    "start": 2399,
+    "end": 2406,
+    "score": 0.9015218019485474
+  },
+  {
+    "id": "E75",
+    "text": "insulin",
+    "type": "Gene",
+    "start": 2418,
+    "end": 2425,
+    "score": 0.997847318649292
+  },
+  {
+    "id": "E76",
+    "text": "inflammation",
+    "type": "Disease",
+    "start": 2619,
+    "end": 2631,
+    "score": 0.9989369511604309
+  },
+  {
+    "id": "E77",
+    "text": "endothelial dysfunction",
+    "type": "Disease",
+    "start": 2636,
+    "end": 2659,
+    "score": 0.9999880194664001
+  },
+  {
+    "id": "E78",
+    "text": "DM",
+    "type": "Disease",
+    "start": 2695,
+    "end": 2697,
+    "score": 0.999985933303833
+  },
+  {
+    "id": "E79",
+    "text": "DM",
+    "type": "Disease",
+    "start": 2788,
+    "end": 2790,
+    "score": 0.9999860525131226
+  },
+  {
+    "id": "E80",
+    "text": "DM",
+    "type": "Disease",
+    "start": 2913,
+    "end": 2915,
+    "score": 0.999985933303833
+  },
+  {
+    "id": "E81",
+    "text": "DM",
+    "type": "Disease",
+    "start": 2936,
+    "end": 2938,
+    "score": 0.9999860525131226
+  },
+  {
+    "id": "E82",
+    "text": "nitric oxide",
+    "type": "Chemical",
+    "start": 2995,
+    "end": 3007,
+    "score": 0.9999975562095642
+  },
+  {
+    "id": "E83",
+    "text": "NO",
+    "type": "Chemical",
+    "start": 3009,
+    "end": 3011,
+    "score": 0.9999964237213135
+  },
+  {
+    "id": "E84",
+    "text": "DM",
+    "type": "Disease",
+    "start": 3151,
+    "end": 3153,
+    "score": 0.9999855756759644
+  },
+  {
+    "id": "E85",
+    "text": "NO",
+    "type": "Chemical",
+    "start": 3246,
+    "end": 3248,
+    "score": 0.9999957084655762
+  },
+  {
+    "id": "E86",
+    "text": "patient",
+    "type": "Species",
+    "start": 3302,
+    "end": 3309,
+    "score": 0.9999860525131226
+  },
+  {
+    "id": "E87",
+    "text": "glucose",
+    "type": "Chemical",
+    "start": 3319,
+    "end": 3326,
+    "score": 0.9999954700469971
+  },
+  {
+    "id": "E88",
+    "text": "DM",
+    "type": "Disease",
+    "start": 3332,
+    "end": 3334,
+    "score": 0.9999858140945435
+  },
+  {
+    "id": "E89",
+    "text": "NO synthase",
+    "type": "Gene",
+    "start": 3355,
+    "end": 3366,
+    "score": 0.9930097460746765
+  },
+  {
+    "id": "E90",
+    "text": "NO",
+    "type": "Chemical",
+    "start": 3404,
+    "end": 3406,
+    "score": 0.9999632835388184
+  },
+  {
+    "id": "E91",
+    "text": "Endothelial dysfunction",
+    "type": "Disease",
+    "start": 3477,
+    "end": 3500,
+    "score": 0.9999908804893494
+  },
+  {
+    "id": "E92",
+    "text": "metabolic",
+    "type": "Disease",
+    "start": 3512,
+    "end": 3521,
+    "score": 0.9633824229240417
+  },
+  {
+    "id": "E93",
+    "text": "endothelial and vascular dysfunction",
+    "type": "Disease",
+    "start": 3561,
+    "end": 3597,
+    "score": 0.9999908804893494
+  },
+  {
+    "id": "E94",
+    "text": "NO",
+    "type": "Chemical",
+    "start": 3655,
+    "end": 3657,
+    "score": 0.9999785423278809
+  },
+  {
+    "id": "E95",
+    "text": "NO deficiency",
+    "type": "Chemical",
+    "start": 3717,
+    "end": 3730,
+    "score": 0.9878012239933014
+  },
+  {
+    "id": "E96",
+    "text": "endothelial dysfunction",
+    "type": "Disease",
+    "start": 3734,
+    "end": 3757,
+    "score": 0.9999555945396423
+  },
+  {
+    "id": "E97",
+    "text": "nephropathy",
+    "type": "Disease",
+    "start": 3782,
+    "end": 3793,
+    "score": 0.9999788999557495
+  },
+  {
+    "id": "E98",
+    "text": "retinopathy",
+    "type": "Disease",
+    "start": 3798,
+    "end": 3809,
+    "score": 0.9999817609786987
+  },
+  {
+    "id": "E99",
+    "text": "patients",
+    "type": "Species",
+    "start": 3813,
+    "end": 3821,
+    "score": 0.9999871253967285
+  },
+  {
+    "id": "E100",
+    "text": "diabetes",
+    "type": "Disease",
+    "start": 3827,
+    "end": 3835,
+    "score": 0.9999845027923584
+  },
+  {
+    "id": "E101",
+    "text": "insulin",
+    "type": "Gene",
+    "start": 3872,
+    "end": 3879,
+    "score": 0.9980567097663879
+  },
+  {
+    "id": "E102",
+    "text": "NO",
+    "type": "Chemical",
+    "start": 3888,
+    "end": 3890,
+    "score": 0.9998793601989746
+  },
+  {
+    "id": "E103",
+    "text": "insulin",
+    "type": "Gene",
+    "start": 3952,
+    "end": 3959,
+    "score": 0.9992759823799133
+  },
+  {
+    "id": "E104",
+    "text": "endothelial dysfunction",
+    "type": "Disease",
+    "start": 4070,
+    "end": 4093,
+    "score": 0.9999908208847046
+  },
+  {
+    "id": "E105",
+    "text": "tumor necrosis factors",
+    "type": "Gene",
+    "start": 4103,
+    "end": 4125,
+    "score": 0.9999643564224243
+  },
+  {
+    "id": "E106",
+    "text": "DM",
+    "type": "Disease",
+    "start": 4163,
+    "end": 4165,
+    "score": 0.9999854564666748
+  },
+  {
+    "id": "E107",
+    "text": "endothelial dysfunction",
+    "type": "Disease",
+    "start": 4170,
+    "end": 4193,
+    "score": 0.9999901652336121
+  },
+  {
+    "id": "E108",
+    "text": "glucose",
+    "type": "Chemical",
+    "start": 4236,
+    "end": 4243,
+    "score": 0.9999877214431763
+  },
+  {
+    "id": "E109",
+    "text": "human",
+    "type": "Species",
+    "start": 4264,
+    "end": 4269,
+    "score": 0.9999806880950928
+  },
+  {
+    "id": "E110",
+    "text": "Casitas B-lineage lymphoma",
+    "type": "Gene",
+    "start": 4328,
+    "end": 4354,
+    "score": 0.9999684572219849
+  },
+  {
+    "id": "E111",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 4356,
+    "end": 4359,
+    "score": 0.9999881982803345
+  },
+  {
+    "id": "E112",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 4378,
+    "end": 4381,
+    "score": 0.9999876022338867
+  },
+  {
+    "id": "E113",
+    "text": "type II DM",
+    "type": "Disease",
+    "start": 4439,
+    "end": 4449,
+    "score": 0.9999910195668539
+  },
+  {
+    "id": "E114",
+    "text": "E3 ubiquitin ligase",
+    "type": "Gene",
+    "start": 4522,
+    "end": 4541,
+    "score": 0.9999804099400839
+  },
+  {
+    "id": "E115",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 4543,
+    "end": 4546,
+    "score": 0.9999890327453613
+  },
+  {
+    "id": "E116",
+    "text": "receptor tyrosine kinase",
+    "type": "Gene",
+    "start": 4572,
+    "end": 4596,
+    "score": 0.9999803304672241
+  },
+  {
+    "id": "E117",
+    "text": "Cbl-b",
+    "type": "Gene",
+    "start": 4664,
+    "end": 4669,
+    "score": 0.9999794960021973
+  },
+  {
+    "id": "E118",
+    "text": "tumor",
+    "type": "Disease",
+    "start": 4759,
+    "end": 4764,
+    "score": 0.9999715089797974
+  },
+  {
+    "id": "E119",
+    "text": "Cbl-b",
+    "type": "Gene",
+    "start": 4793,
+    "end": 4798,
+    "score": 0.9999776283899943
+  },
+  {
+    "id": "E120",
+    "text": "insulin resistance",
+    "type": "Disease",
+    "start": 4808,
+    "end": 4826,
+    "score": 0.9999841451644897
+  },
+  {
+    "id": "E121",
+    "text": "Cbl-b",
+    "type": "Gene",
+    "start": 4956,
+    "end": 4961,
+    "score": 0.9999784628550211
+  },
+  {
+    "id": "E122",
+    "text": "DM",
+    "type": "Disease",
+    "start": 5036,
+    "end": 5038,
+    "score": 0.9999858140945435
+  },
+  {
+    "id": "E123",
+    "text": "Cbl-b",
+    "type": "Gene",
+    "start": 5046,
+    "end": 5051,
+    "score": 0.9999777873357137
+  },
+  {
+    "id": "E124",
+    "text": "diabetes",
+    "type": "Disease",
+    "start": 5078,
+    "end": 5086,
+    "score": 0.999985933303833
+  },
+  {
+    "id": "E125",
+    "text": "mice",
+    "type": "Species",
+    "start": 5128,
+    "end": 5132,
+    "score": 0.9999861717224121
+  },
+  {
+    "id": "E126",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 5148,
+    "end": 5151,
+    "score": 0.9999874830245972
+  },
+  {
+    "id": "E127",
+    "text": "janus tyrosine kinase 2",
+    "type": "Gene",
+    "start": 5177,
+    "end": 5200,
+    "score": 0.9999816417694092
+  },
+  {
+    "id": "E128",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 5202,
+    "end": 5206,
+    "score": 0.9999904632568359
+  },
+  {
+    "id": "E129",
+    "text": "human",
+    "type": "Species",
+    "start": 5245,
+    "end": 5250,
+    "score": 0.9999831914901733
+  },
+  {
+    "id": "E130",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 5293,
+    "end": 5296,
+    "score": 0.9999876022338867
+  },
+  {
+    "id": "E131",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 5316,
+    "end": 5320,
+    "score": 0.9999899864196777
+  },
+  {
+    "id": "E132",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 5347,
+    "end": 5351,
+    "score": 0.9999902248382568
+  },
+  {
+    "id": "E133",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 5423,
+    "end": 5427,
+    "score": 0.9999901056289673
+  },
+  {
+    "id": "E134",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 5431,
+    "end": 5435,
+    "score": 0.9999899864196777
+  },
+  {
+    "id": "E135",
+    "text": "DM",
+    "type": "Disease",
+    "start": 5484,
+    "end": 5486,
+    "score": 0.9999576807022095
+  },
+  {
+    "id": "E136",
+    "text": "rats",
+    "type": "Species",
+    "start": 5487,
+    "end": 5491,
+    "score": 0.9999817609786987
+  },
+  {
+    "id": "E137",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 5498,
+    "end": 5502,
+    "score": 0.9999899864196777
+  },
+  {
+    "id": "E138",
+    "text": "diabetic neuropathy",
+    "type": "Disease",
+    "start": 5518,
+    "end": 5537,
+    "score": 0.9999889731407166
+  },
+  {
+    "id": "E139",
+    "text": "signal transducer and activator of transcription 4",
+    "type": "Gene",
+    "start": 5596,
+    "end": 5646,
+    "score": 0.9999822718756539
+  },
+  {
+    "id": "E140",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 5648,
+    "end": 5653,
+    "score": 0.9999902248382568
+  },
+  {
+    "id": "E141",
+    "text": "JAK",
+    "type": "Gene",
+    "start": 5720,
+    "end": 5723,
+    "score": 0.9999874830245972
+  },
+  {
+    "id": "E142",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 5781,
+    "end": 5784,
+    "score": 0.9999841451644897
+  },
+  {
+    "id": "E143",
+    "text": "293 T",
+    "type": "CellLine",
+    "start": 5798,
+    "end": 5803,
+    "score": 0.926903486251831
+  },
+  {
+    "id": "E144",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 5816,
+    "end": 5820,
+    "score": 0.9999889135360718
+  },
+  {
+    "id": "E145",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 5872,
+    "end": 5875,
+    "score": 0.9999868869781494
+  },
+  {
+    "id": "E146",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 5903,
+    "end": 5907,
+    "score": 0.9999886751174927
+  },
+  {
+    "id": "E147",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 5971,
+    "end": 5975,
+    "score": 0.9999889135360718
+  },
+  {
+    "id": "E148",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 5990,
+    "end": 5993,
+    "score": 0.9999873638153076
+  },
+  {
+    "id": "E149",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 6013,
+    "end": 6018,
+    "score": 0.9999862909317017
+  },
+  {
+    "id": "E150",
+    "text": "histone H3 lysine 4",
+    "type": "Gene",
+    "start": 6055,
+    "end": 6074,
+    "score": 0.9782996773719788
+  },
+  {
+    "id": "E151",
+    "text": "H3K4me3",
+    "type": "Gene",
+    "start": 6091,
+    "end": 6098,
+    "score": 0.9933191537857056
+  },
+  {
+    "id": "E152",
+    "text": "runt-related transcription factor 3",
+    "type": "Gene",
+    "start": 6126,
+    "end": 6161,
+    "score": 0.9999782840410868
+  },
+  {
+    "id": "E153",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 6163,
+    "end": 6168,
+    "score": 0.9999777475992838
+  },
+  {
+    "id": "E154",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 6223,
+    "end": 6228,
+    "score": 0.9999785423278809
+  },
+  {
+    "id": "E155",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 6284,
+    "end": 6289,
+    "score": 0.9999797741572062
+  },
+  {
+    "id": "E156",
+    "text": "endothelial dysfunction",
+    "type": "Disease",
+    "start": 6325,
+    "end": 6348,
+    "score": 0.9999880194664001
+  },
+  {
+    "id": "E157",
+    "text": "DM",
+    "type": "Disease",
+    "start": 6352,
+    "end": 6354,
+    "score": 0.9999856948852539
+  },
+  {
+    "id": "E158",
+    "text": "Cbl",
+    "type": "Chemical",
+    "start": 6418,
+    "end": 6421,
+    "score": 0.9999904632568359
+  },
+  {
+    "id": "E159",
+    "text": "endothelial dysfunction",
+    "type": "Disease",
+    "start": 6438,
+    "end": 6461,
+    "score": 0.9999889135360718
+  },
+  {
+    "id": "E160",
+    "text": "DM",
+    "type": "Disease",
+    "start": 6465,
+    "end": 6467,
+    "score": 0.9999860525131226
+  },
+  {
+    "id": "E161",
+    "text": "NO",
+    "type": "Chemical",
+    "start": 6481,
+    "end": 6483,
+    "score": 0.9999926090240479
+  },
+  {
+    "id": "E162",
+    "text": "human",
+    "type": "Species",
+    "start": 6510,
+    "end": 6515,
+    "score": 0.9999783039093018
+  },
+  {
+    "id": "E163",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 6592,
+    "end": 6597,
+    "score": 0.9999796549479166
+  },
+  {
+    "id": "E164",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 6618,
+    "end": 6622,
+    "score": 0.999988317489624
+  },
+  {
+    "id": "E165",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 6623,
+    "end": 6628,
+    "score": 0.9999891519546509
+  },
+  {
+    "id": "E166",
+    "text": "rat",
+    "type": "Species",
+    "start": 6673,
+    "end": 6676,
+    "score": 0.999985933303833
+  },
+  {
+    "id": "E167",
+    "text": "DM",
+    "type": "Disease",
+    "start": 6686,
+    "end": 6688,
+    "score": 0.9999853372573853
+  },
+  {
+    "id": "E168",
+    "text": "HG",
+    "type": "Chemical",
+    "start": 6693,
+    "end": 6695,
+    "score": 0.9992172718048096
+  },
+  {
+    "id": "E169",
+    "text": "NO",
+    "type": "Chemical",
+    "start": 6739,
+    "end": 6741,
+    "score": 0.9999936819076538
+  },
+  {
+    "id": "E170",
+    "text": "patient",
+    "type": "Species",
+    "start": 6959,
+    "end": 6966,
+    "score": 0.9999828338623047
+  },
+  {
+    "id": "E171",
+    "text": "DM",
+    "type": "Disease",
+    "start": 7182,
+    "end": 7184,
+    "score": 0.9999856948852539
+  },
+  {
+    "id": "E172",
+    "text": "DM",
+    "type": "Disease",
+    "start": 7289,
+    "end": 7291,
+    "score": 0.9999856948852539
+  },
+  {
+    "id": "E173",
+    "text": "DM",
+    "type": "Disease",
+    "start": 7389,
+    "end": 7391,
+    "score": 0.9999855756759644
+  },
+  {
+    "id": "E174",
+    "text": "DM",
+    "type": "Disease",
+    "start": 8224,
+    "end": 8226,
+    "score": 0.999984622001648
+  },
+  {
+    "id": "E175",
+    "text": "E3 ligase",
+    "type": "Gene",
+    "start": 8322,
+    "end": 8331,
+    "score": 0.9999727606773376
+  },
+  {
+    "id": "E176",
+    "text": "rats",
+    "type": "Species",
+    "start": 8584,
+    "end": 8588,
+    "score": 0.9999876022338867
+  },
+  {
+    "id": "E177",
+    "text": "rats",
+    "type": "Species",
+    "start": 8839,
+    "end": 8843,
+    "score": 0.9999872446060181
+  },
+  {
+    "id": "E178",
+    "text": "phosphate buffered saline",
+    "type": "Chemical",
+    "start": 8887,
+    "end": 8912,
+    "score": 0.9999972979227701
+  },
+  {
+    "id": "E179",
+    "text": "PBS",
+    "type": "Chemical",
+    "start": 8914,
+    "end": 8917,
+    "score": 0.9999977350234985
+  },
+  {
+    "id": "E180",
+    "text": "Streptozotocin",
+    "type": "Chemical",
+    "start": 8931,
+    "end": 8945,
+    "score": 0.999997615814209
+  },
+  {
+    "id": "E181",
+    "text": "STZ",
+    "type": "Chemical",
+    "start": 8947,
+    "end": 8950,
+    "score": 0.9999977350234985
+  },
+  {
+    "id": "E182",
+    "text": "citric acid",
+    "type": "Chemical",
+    "start": 8966,
+    "end": 8977,
+    "score": 0.9999969601631165
+  },
+  {
+    "id": "E183",
+    "text": "rat",
+    "type": "Species",
+    "start": 9056,
+    "end": 9059,
+    "score": 0.9999744892120361
+  },
+  {
+    "id": "E184",
+    "text": "glucose",
+    "type": "Chemical",
+    "start": 9060,
+    "end": 9067,
+    "score": 0.9999957084655762
+  },
+  {
+    "id": "E185",
+    "text": "glucose",
+    "type": "Chemical",
+    "start": 9109,
+    "end": 9116,
+    "score": 0.9999958276748657
+  },
+  {
+    "id": "E186",
+    "text": "rats",
+    "type": "Species",
+    "start": 9137,
+    "end": 9141,
+    "score": 0.9999876022338867
+  },
+  {
+    "id": "E187",
+    "text": "glucose",
+    "type": "Chemical",
+    "start": 9165,
+    "end": 9172,
+    "score": 0.6623522639274597
+  },
+  {
+    "id": "E188",
+    "text": "diabetic",
+    "type": "Disease",
+    "start": 9206,
+    "end": 9214,
+    "score": 0.9999855756759644
+  },
+  {
+    "id": "E189",
+    "text": "rats",
+    "type": "Species",
+    "start": 9227,
+    "end": 9231,
+    "score": 0.9999836683273315
+  },
+  {
+    "id": "E190",
+    "text": "glucose",
+    "type": "Chemical",
+    "start": 9298,
+    "end": 9305,
+    "score": 0.8408562541007996
+  },
+  {
+    "id": "E191",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 9409,
+    "end": 9412,
+    "score": 0.9999861717224121
+  },
+  {
+    "id": "E192",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 9417,
+    "end": 9420,
+    "score": 0.9999836683273315
+  },
+  {
+    "id": "E193",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 9426,
+    "end": 9431,
+    "score": 0.9999749660491943
+  },
+  {
+    "id": "E194",
+    "text": "DM",
+    "type": "Disease",
+    "start": 9559,
+    "end": 9561,
+    "score": 0.9999841451644897
+  },
+  {
+    "id": "E195",
+    "text": "rat",
+    "type": "Species",
+    "start": 9562,
+    "end": 9565,
+    "score": 0.9999804496765137
+  },
+  {
+    "id": "E196",
+    "text": "rats",
+    "type": "Species",
+    "start": 9597,
+    "end": 9601,
+    "score": 0.9999868869781494
+  },
+  {
+    "id": "E197",
+    "text": "DM",
+    "type": "Disease",
+    "start": 9637,
+    "end": 9639,
+    "score": 0.9999845027923584
+  },
+  {
+    "id": "E198",
+    "text": "rats",
+    "type": "Species",
+    "start": 9640,
+    "end": 9644,
+    "score": 0.9999865293502808
+  },
+  {
+    "id": "E199",
+    "text": "rats",
+    "type": "Species",
+    "start": 9697,
+    "end": 9701,
+    "score": 0.9999874830245972
+  },
+  {
+    "id": "E200",
+    "text": "paraffin",
+    "type": "Chemical",
+    "start": 9808,
+    "end": 9816,
+    "score": 0.9999929666519165
+  },
+  {
+    "id": "E201",
+    "text": "paraffin",
+    "type": "Chemical",
+    "start": 9822,
+    "end": 9830,
+    "score": 0.9999933242797852
+  },
+  {
+    "id": "E202",
+    "text": "xylene",
+    "type": "Chemical",
+    "start": 9874,
+    "end": 9880,
+    "score": 0.9999719858169556
+  },
+  {
+    "id": "E203",
+    "text": "ethanol",
+    "type": "Chemical",
+    "start": 9898,
+    "end": 9905,
+    "score": 0.9999947547912598
+  },
+  {
+    "id": "E204",
+    "text": "hematoxylin",
+    "type": "Chemical",
+    "start": 9951,
+    "end": 9962,
+    "score": 0.9999957879384359
+  },
+  {
+    "id": "E205",
+    "text": "eosin",
+    "type": "Chemical",
+    "start": 10034,
+    "end": 10039,
+    "score": 0.9999769926071167
+  },
+  {
+    "id": "E206",
+    "text": "xylene",
+    "type": "Chemical",
+    "start": 10099,
+    "end": 10105,
+    "score": 0.9999827146530151
+  },
+  {
+    "id": "E207",
+    "text": "ethanol",
+    "type": "Chemical",
+    "start": 10123,
+    "end": 10130,
+    "score": 0.9999938011169434
+  },
+  {
+    "id": "E208",
+    "text": "Rat",
+    "type": "Species",
+    "start": 10350,
+    "end": 10353,
+    "score": 0.9999871253967285
+  },
+  {
+    "id": "E209",
+    "text": "oxygen",
+    "type": "Chemical",
+    "start": 10385,
+    "end": 10391,
+    "score": 0.9999833106994629
+  },
+  {
+    "id": "E210",
+    "text": "K-H",
+    "type": "Chemical",
+    "start": 10402,
+    "end": 10405,
+    "score": 0.9994615316390991
+  },
+  {
+    "id": "E211",
+    "text": "K-H",
+    "type": "Chemical",
+    "start": 10559,
+    "end": 10562,
+    "score": 0.9999932448069254
+  },
+  {
+    "id": "E212",
+    "text": "carbogen",
+    "type": "Chemical",
+    "start": 10603,
+    "end": 10611,
+    "score": 0.9999575614929199
+  },
+  {
+    "id": "E213",
+    "text": "O2",
+    "type": "Chemical",
+    "start": 10617,
+    "end": 10619,
+    "score": 0.9999914169311523
+  },
+  {
+    "id": "E214",
+    "text": "CO2",
+    "type": "Chemical",
+    "start": 10627,
+    "end": 10630,
+    "score": 0.9999936819076538
+  },
+  {
+    "id": "E215",
+    "text": "norepinephrine",
+    "type": "Chemical",
+    "start": 10815,
+    "end": 10829,
+    "score": 0.9999969005584717
+  },
+  {
+    "id": "E216",
+    "text": "K-H solution",
+    "type": "Chemical",
+    "start": 10900,
+    "end": 10912,
+    "score": 0.9959846884012222
+  },
+  {
+    "id": "E217",
+    "text": "phenylephrine",
+    "type": "Chemical",
+    "start": 10964,
+    "end": 10977,
+    "score": 0.9999974966049194
+  },
+  {
+    "id": "E218",
+    "text": "PHE",
+    "type": "Chemical",
+    "start": 10979,
+    "end": 10982,
+    "score": 0.9999977350234985
+  },
+  {
+    "id": "E219",
+    "text": "acetylcholine",
+    "type": "Chemical",
+    "start": 11046,
+    "end": 11059,
+    "score": 0.9999974966049194
+  },
+  {
+    "id": "E220",
+    "text": "ACH",
+    "type": "Chemical",
+    "start": 11061,
+    "end": 11064,
+    "score": 0.9999977350234985
+  },
+  {
+    "id": "E221",
+    "text": "sodium nitroprusside",
+    "type": "Chemical",
+    "start": 11089,
+    "end": 11109,
+    "score": 0.9999964237213135
+  },
+  {
+    "id": "E222",
+    "text": "SNP",
+    "type": "Chemical",
+    "start": 11111,
+    "end": 11114,
+    "score": 0.999997615814209
+  },
+  {
+    "id": "E223",
+    "text": "ACH",
+    "type": "Chemical",
+    "start": 11203,
+    "end": 11206,
+    "score": 0.999997615814209
+  },
+  {
+    "id": "E224",
+    "text": "SNP",
+    "type": "Chemical",
+    "start": 11211,
+    "end": 11214,
+    "score": 0.999997615814209
+  },
+  {
+    "id": "E225",
+    "text": "PHE",
+    "type": "Chemical",
+    "start": 11266,
+    "end": 11269,
+    "score": 0.999997615814209
+  },
+  {
+    "id": "E226",
+    "text": "paraffin",
+    "type": "Chemical",
+    "start": 11276,
+    "end": 11284,
+    "score": 0.9999971389770508
+  },
+  {
+    "id": "E227",
+    "text": "rat",
+    "type": "Species",
+    "start": 11294,
+    "end": 11297,
+    "score": 0.9999876022338867
+  },
+  {
+    "id": "E228",
+    "text": "ethanol",
+    "type": "Chemical",
+    "start": 11382,
+    "end": 11389,
+    "score": 0.9999967813491821
+  },
+  {
+    "id": "E229",
+    "text": "potassium citrate",
+    "type": "Chemical",
+    "start": 11411,
+    "end": 11428,
+    "score": 0.9999974370002747
+  },
+  {
+    "id": "E230",
+    "text": "PBS",
+    "type": "Chemical",
+    "start": 11510,
+    "end": 11513,
+    "score": 0.9999921321868896
+  },
+  {
+    "id": "E231",
+    "text": "H2O2",
+    "type": "Chemical",
+    "start": 11549,
+    "end": 11553,
+    "score": 0.999995231628418
+  },
+  {
+    "id": "E232",
+    "text": "peroxidase",
+    "type": "Gene",
+    "start": 11579,
+    "end": 11589,
+    "score": 0.9999734163284302
+  },
+  {
+    "id": "E233",
+    "text": "goat",
+    "type": "Species",
+    "start": 11621,
+    "end": 11625,
+    "score": 0.9999843835830688
+  },
+  {
+    "id": "E234",
+    "text": "rabbit",
+    "type": "Species",
+    "start": 11709,
+    "end": 11715,
+    "score": 0.9999803304672241
+  },
+  {
+    "id": "E235",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 11716,
+    "end": 11719,
+    "score": 0.9999855756759644
+  },
+  {
+    "id": "E236",
+    "text": "rabbit",
+    "type": "Species",
+    "start": 11776,
+    "end": 11782,
+    "score": 0.9999804496765137
+  },
+  {
+    "id": "E237",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 11785,
+    "end": 11789,
+    "score": 0.9999791383743286
+  },
+  {
+    "id": "E238",
+    "text": "rabbit",
+    "type": "Species",
+    "start": 11826,
+    "end": 11832,
+    "score": 0.999980092048645
+  },
+  {
+    "id": "E239",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 11835,
+    "end": 11840,
+    "score": 0.9999852180480957
+  },
+  {
+    "id": "E240",
+    "text": "mouse",
+    "type": "Species",
+    "start": 11876,
+    "end": 11881,
+    "score": 0.9999815225601196
+  },
+  {
+    "id": "E241",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 11882,
+    "end": 11887,
+    "score": 0.9999738931655884
+  },
+  {
+    "id": "E242",
+    "text": "goat",
+    "type": "Species",
+    "start": 11980,
+    "end": 11984,
+    "score": 0.9999861717224121
+  },
+  {
+    "id": "E243",
+    "text": "mouse",
+    "type": "Species",
+    "start": 11990,
+    "end": 11995,
+    "score": 0.9999855756759644
+  },
+  {
+    "id": "E244",
+    "text": "immunoglobulin G",
+    "type": "Chemical",
+    "start": 11996,
+    "end": 12012,
+    "score": 0.747049555182457
+  },
+  {
+    "id": "E245",
+    "text": "IgG",
+    "type": "Chemical",
+    "start": 12014,
+    "end": 12017,
+    "score": 0.9987945556640625
+  },
+  {
+    "id": "E246",
+    "text": "goat",
+    "type": "Species",
+    "start": 12040,
+    "end": 12044,
+    "score": 0.9999864101409912
+  },
+  {
+    "id": "E247",
+    "text": "rabbit",
+    "type": "Species",
+    "start": 12050,
+    "end": 12056,
+    "score": 0.999985933303833
+  },
+  {
+    "id": "E248",
+    "text": "IgG",
+    "type": "Chemical",
+    "start": 12057,
+    "end": 12060,
+    "score": 0.9926003813743591
+  },
+  {
+    "id": "E249",
+    "text": "diaminobenzidine",
+    "type": "Chemical",
+    "start": 12150,
+    "end": 12166,
+    "score": 0.9999915361404419
+  },
+  {
+    "id": "E250",
+    "text": "DAB",
+    "type": "Chemical",
+    "start": 12168,
+    "end": 12171,
+    "score": 0.9999922513961792
+  },
+  {
+    "id": "E251",
+    "text": "women",
+    "type": "Species",
+    "start": 12441,
+    "end": 12446,
+    "score": 0.9999397993087769
+  },
+  {
+    "id": "E252",
+    "text": "saline",
+    "type": "Chemical",
+    "start": 12465,
+    "end": 12471,
+    "score": 0.919169545173645
+  },
+  {
+    "id": "E253",
+    "text": "normal saline",
+    "type": "Chemical",
+    "start": 12537,
+    "end": 12550,
+    "score": 0.916100949048996
+  },
+  {
+    "id": "E254",
+    "text": "water",
+    "type": "Chemical",
+    "start": 12719,
+    "end": 12724,
+    "score": 0.9999196529388428
+  },
+  {
+    "id": "E255",
+    "text": "199 medium",
+    "type": "Chemical",
+    "start": 12827,
+    "end": 12837,
+    "score": 0.9998796582221985
+  },
+  {
+    "id": "E256",
+    "text": "D-HANKS solution",
+    "type": "Chemical",
+    "start": 12902,
+    "end": 12918,
+    "score": 0.9998116046190262
+  },
+  {
+    "id": "E257",
+    "text": "D-HANKS",
+    "type": "Chemical",
+    "start": 13039,
+    "end": 13046,
+    "score": 0.9985386530558268
+  },
+  {
+    "id": "E258",
+    "text": "bovine",
+    "type": "Species",
+    "start": 13116,
+    "end": 13122,
+    "score": 0.9352631568908691
+  },
+  {
+    "id": "E259",
+    "text": "Dulbecco’s Modified Eagle Medium",
+    "type": "Chemical",
+    "start": 13456,
+    "end": 13488,
+    "score": 0.9999965190887451
+  },
+  {
+    "id": "E260",
+    "text": "DMEM",
+    "type": "Chemical",
+    "start": 13490,
+    "end": 13494,
+    "score": 0.9999854564666748
+  },
+  {
+    "id": "E261",
+    "text": "HG medium",
+    "type": "Chemical",
+    "start": 13533,
+    "end": 13542,
+    "score": 0.9999704360961914
+  },
+  {
+    "id": "E262",
+    "text": "CO2",
+    "type": "Chemical",
+    "start": 13568,
+    "end": 13571,
+    "score": 0.9999644756317139
+  },
+  {
+    "id": "E263",
+    "text": "DMEM",
+    "type": "Chemical",
+    "start": 13631,
+    "end": 13635,
+    "score": 0.9999676942825317
+  },
+  {
+    "id": "E264",
+    "text": "DMEM",
+    "type": "Chemical",
+    "start": 13712,
+    "end": 13716,
+    "score": 0.9995232820510864
+  },
+  {
+    "id": "E265",
+    "text": "HG medium",
+    "type": "Chemical",
+    "start": 13726,
+    "end": 13735,
+    "score": 0.9469054639339447
+  },
+  {
+    "id": "E266",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 13793,
+    "end": 13796,
+    "score": 0.999988317489624
+  },
+  {
+    "id": "E267",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 13801,
+    "end": 13806,
+    "score": 0.9999749660491943
+  },
+  {
+    "id": "E268",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 13811,
+    "end": 13816,
+    "score": 0.9999891519546509
+  },
+  {
+    "id": "E269",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 13821,
+    "end": 13825,
+    "score": 0.9999896287918091
+  },
+  {
+    "id": "E270",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 13861,
+    "end": 13866,
+    "score": 0.9999895095825195
+  },
+  {
+    "id": "E271",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 13871,
+    "end": 13876,
+    "score": 0.9999889135360718
+  },
+  {
+    "id": "E272",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 13891,
+    "end": 13894,
+    "score": 0.9999856948852539
+  },
+  {
+    "id": "E273",
+    "text": "acid",
+    "type": "Chemical",
+    "start": 14290,
+    "end": 14294,
+    "score": 0.9671847224235535
+  },
+  {
+    "id": "E274",
+    "text": "sodium dodecyl sulfate",
+    "type": "Chemical",
+    "start": 14352,
+    "end": 14374,
+    "score": 0.9999895890553793
+  },
+  {
+    "id": "E275",
+    "text": "SDS",
+    "type": "Chemical",
+    "start": 14411,
+    "end": 14414,
+    "score": 0.9999039173126221
+  },
+  {
+    "id": "E276",
+    "text": "polyvinylidene fluoride",
+    "type": "Chemical",
+    "start": 14442,
+    "end": 14465,
+    "score": 0.99996417760849
+  },
+  {
+    "id": "E277",
+    "text": "horseradish",
+    "type": "Species",
+    "start": 14642,
+    "end": 14653,
+    "score": 0.9835841059684753
+  },
+  {
+    "id": "E278",
+    "text": "peroxidase",
+    "type": "Gene",
+    "start": 14654,
+    "end": 14664,
+    "score": 0.9999415874481201
+  },
+  {
+    "id": "E279",
+    "text": "goat",
+    "type": "Species",
+    "start": 14673,
+    "end": 14677,
+    "score": 0.9999850988388062
+  },
+  {
+    "id": "E280",
+    "text": "rabbit",
+    "type": "Species",
+    "start": 14683,
+    "end": 14689,
+    "score": 0.9999852180480957
+  },
+  {
+    "id": "E281",
+    "text": "goat",
+    "type": "Species",
+    "start": 14693,
+    "end": 14697,
+    "score": 0.9999853372573853
+  },
+  {
+    "id": "E282",
+    "text": "mouse",
+    "type": "Species",
+    "start": 14703,
+    "end": 14708,
+    "score": 0.9999828338623047
+  },
+  {
+    "id": "E283",
+    "text": "β-actin",
+    "type": "Gene",
+    "start": 15033,
+    "end": 15040,
+    "score": 0.9999651908874512
+  },
+  {
+    "id": "E284",
+    "text": "rabbit",
+    "type": "Species",
+    "start": 15116,
+    "end": 15122,
+    "score": 0.9999727010726929
+  },
+  {
+    "id": "E285",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 15123,
+    "end": 15126,
+    "score": 0.999975323677063
+  },
+  {
+    "id": "E286",
+    "text": "rabbit",
+    "type": "Species",
+    "start": 15159,
+    "end": 15165,
+    "score": 0.9999756813049316
+  },
+  {
+    "id": "E287",
+    "text": "endothelial NO synthase",
+    "type": "Gene",
+    "start": 15166,
+    "end": 15189,
+    "score": 0.9999691645304362
+  },
+  {
+    "id": "E288",
+    "text": "eNOS",
+    "type": "Gene",
+    "start": 15191,
+    "end": 15195,
+    "score": 0.9999774694442749
+  },
+  {
+    "id": "E289",
+    "text": "rabbit",
+    "type": "Species",
+    "start": 15229,
+    "end": 15235,
+    "score": 0.9999642372131348
+  },
+  {
+    "id": "E290",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 15236,
+    "end": 15240,
+    "score": 0.9999749660491943
+  },
+  {
+    "id": "E291",
+    "text": "rabbit",
+    "type": "Species",
+    "start": 15274,
+    "end": 15280,
+    "score": 0.9999581575393677
+  },
+  {
+    "id": "E292",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 15283,
+    "end": 15287,
+    "score": 0.9979698061943054
+  },
+  {
+    "id": "E293",
+    "text": "rabbit",
+    "type": "Species",
+    "start": 15320,
+    "end": 15326,
+    "score": 0.9999659061431885
+  },
+  {
+    "id": "E294",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 15327,
+    "end": 15332,
+    "score": 0.9999831914901733
+  },
+  {
+    "id": "E295",
+    "text": "rabbit",
+    "type": "Species",
+    "start": 15366,
+    "end": 15372,
+    "score": 0.9999734163284302
+  },
+  {
+    "id": "E296",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 15375,
+    "end": 15380,
+    "score": 0.9995455145835876
+  },
+  {
+    "id": "E297",
+    "text": "mouse",
+    "type": "Species",
+    "start": 15413,
+    "end": 15418,
+    "score": 0.9999754428863525
+  },
+  {
+    "id": "E298",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 15419,
+    "end": 15424,
+    "score": 0.9999472697575887
+  },
+  {
+    "id": "E299",
+    "text": "mouse",
+    "type": "Species",
+    "start": 15462,
+    "end": 15467,
+    "score": 0.9999786615371704
+  },
+  {
+    "id": "E300",
+    "text": "β-actin",
+    "type": "Gene",
+    "start": 15468,
+    "end": 15475,
+    "score": 0.9998502333958944
+  },
+  {
+    "id": "E301",
+    "text": "Trizol",
+    "type": "Chemical",
+    "start": 15545,
+    "end": 15551,
+    "score": 0.9999792575836182
+  },
+  {
+    "id": "E302",
+    "text": "β-actin",
+    "type": "Gene",
+    "start": 15992,
+    "end": 15999,
+    "score": 0.9999552170435587
+  },
+  {
+    "id": "E303",
+    "text": "MG-132",
+    "type": "Chemical",
+    "start": 16174,
+    "end": 16180,
+    "score": 0.9999964237213135
+  },
+  {
+    "id": "E304",
+    "text": "agarose",
+    "type": "Chemical",
+    "start": 16464,
+    "end": 16471,
+    "score": 0.9990690350532532
+  },
+  {
+    "id": "E305",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 16509,
+    "end": 16513,
+    "score": 0.9999884366989136
+  },
+  {
+    "id": "E306",
+    "text": "Agarose",
+    "type": "Chemical",
+    "start": 16575,
+    "end": 16582,
+    "score": 0.9999479055404663
+  },
+  {
+    "id": "E307",
+    "text": "rabbit",
+    "type": "Species",
+    "start": 16827,
+    "end": 16833,
+    "score": 0.9999557733535767
+  },
+  {
+    "id": "E308",
+    "text": "ubiquitin",
+    "type": "Gene",
+    "start": 16834,
+    "end": 16843,
+    "score": 0.9893864393234253
+  },
+  {
+    "id": "E309",
+    "text": "HUVECs",
+    "type": "CellLine",
+    "start": 16873,
+    "end": 16879,
+    "score": 0.8841625452041626
+  },
+  {
+    "id": "E310",
+    "text": "DMEM",
+    "type": "Chemical",
+    "start": 16930,
+    "end": 16934,
+    "score": 0.9999139308929443
+  },
+  {
+    "id": "E311",
+    "text": "cycloheximide",
+    "type": "Chemical",
+    "start": 17082,
+    "end": 17095,
+    "score": 0.9999972581863403
+  },
+  {
+    "id": "E312",
+    "text": "CHX",
+    "type": "Chemical",
+    "start": 17097,
+    "end": 17100,
+    "score": 0.9999958276748657
+  },
+  {
+    "id": "E313",
+    "text": "SDS",
+    "type": "Chemical",
+    "start": 17155,
+    "end": 17158,
+    "score": 0.9999947547912598
+  },
+  {
+    "id": "E314",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 17231,
+    "end": 17235,
+    "score": 0.9999867677688599
+  },
+  {
+    "id": "E315",
+    "text": "NO",
+    "type": "Chemical",
+    "start": 17249,
+    "end": 17251,
+    "score": 0.999987006187439
+  },
+  {
+    "id": "E316",
+    "text": "rat",
+    "type": "Species",
+    "start": 17266,
+    "end": 17269,
+    "score": 0.999984860420227
+  },
+  {
+    "id": "E317",
+    "text": "HG",
+    "type": "Chemical",
+    "start": 17315,
+    "end": 17317,
+    "score": 0.9153895378112793
+  },
+  {
+    "id": "E318",
+    "text": "NO",
+    "type": "Chemical",
+    "start": 17344,
+    "end": 17346,
+    "score": 0.9999854564666748
+  },
+  {
+    "id": "E319",
+    "text": "Rat",
+    "type": "Species",
+    "start": 17390,
+    "end": 17393,
+    "score": 0.9999856948852539
+  },
+  {
+    "id": "E320",
+    "text": "NO",
+    "type": "Chemical",
+    "start": 17739,
+    "end": 17741,
+    "score": 0.9999532699584961
+  },
+  {
+    "id": "E321",
+    "text": "Annexin-V-fluorescein isothiocyanate",
+    "type": "Chemical",
+    "start": 17769,
+    "end": 17805,
+    "score": 0.9999945908784866
+  },
+  {
+    "id": "E322",
+    "text": "FITC",
+    "type": "Chemical",
+    "start": 17807,
+    "end": 17811,
+    "score": 0.999980092048645
+  },
+  {
+    "id": "E323",
+    "text": "Annexin-V-FITC",
+    "type": "Chemical",
+    "start": 17954,
+    "end": 17968,
+    "score": 0.9999974795750209
+  },
+  {
+    "id": "E324",
+    "text": "propidium iodide",
+    "type": "Chemical",
+    "start": 18018,
+    "end": 18034,
+    "score": 0.9999974966049194
+  },
+  {
+    "id": "E325",
+    "text": "rat",
+    "type": "Species",
+    "start": 18412,
+    "end": 18415,
+    "score": 0.9999856948852539
+  },
+  {
+    "id": "E326",
+    "text": "formaldehyde",
+    "type": "Chemical",
+    "start": 18450,
+    "end": 18462,
+    "score": 0.9999886751174927
+  },
+  {
+    "id": "E327",
+    "text": "SDS",
+    "type": "Chemical",
+    "start": 18536,
+    "end": 18539,
+    "score": 0.9999916553497314
+  },
+  {
+    "id": "E328",
+    "text": "SDS",
+    "type": "Chemical",
+    "start": 18606,
+    "end": 18609,
+    "score": 0.999992847442627
+  },
+  {
+    "id": "E329",
+    "text": "rabbit",
+    "type": "Species",
+    "start": 18767,
+    "end": 18773,
+    "score": 0.9999839067459106
+  },
+  {
+    "id": "E330",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 18774,
+    "end": 18779,
+    "score": 0.9999806880950928
+  },
+  {
+    "id": "E331",
+    "text": "mouse",
+    "type": "Species",
+    "start": 18837,
+    "end": 18842,
+    "score": 0.9999849796295166
+  },
+  {
+    "id": "E332",
+    "text": "H3K4me3",
+    "type": "Gene",
+    "start": 18843,
+    "end": 18850,
+    "score": 0.9999762773513794
+  },
+  {
+    "id": "E333",
+    "text": "paraffin",
+    "type": "Chemical",
+    "start": 19240,
+    "end": 19248,
+    "score": 0.9999951124191284
+  },
+  {
+    "id": "E334",
+    "text": "xylene",
+    "type": "Chemical",
+    "start": 19322,
+    "end": 19328,
+    "score": 0.9999856948852539
+  },
+  {
+    "id": "E335",
+    "text": "ethanol",
+    "type": "Chemical",
+    "start": 19347,
+    "end": 19354,
+    "score": 0.9999955892562866
+  },
+  {
+    "id": "E336",
+    "text": "H2O2",
+    "type": "Chemical",
+    "start": 19412,
+    "end": 19416,
+    "score": 0.9999872446060181
+  },
+  {
+    "id": "E337",
+    "text": "PBS",
+    "type": "Chemical",
+    "start": 19439,
+    "end": 19442,
+    "score": 0.9999841451644897
+  },
+  {
+    "id": "E338",
+    "text": "proteinase K",
+    "type": "Gene",
+    "start": 19486,
+    "end": 19498,
+    "score": 0.968086451292038
+  },
+  {
+    "id": "E339",
+    "text": "TdT",
+    "type": "Gene",
+    "start": 19628,
+    "end": 19631,
+    "score": 0.9999678134918213
+  },
+  {
+    "id": "E340",
+    "text": "TdT",
+    "type": "Gene",
+    "start": 19717,
+    "end": 19720,
+    "score": 0.999942421913147
+  },
+  {
+    "id": "E341",
+    "text": "peroxidase",
+    "type": "Gene",
+    "start": 19788,
+    "end": 19798,
+    "score": 0.9999713897705078
+  },
+  {
+    "id": "E342",
+    "text": "digoxigenin",
+    "type": "Chemical",
+    "start": 19812,
+    "end": 19823,
+    "score": 0.9999870459238688
+  },
+  {
+    "id": "E343",
+    "text": "DAB",
+    "type": "Chemical",
+    "start": 19890,
+    "end": 19893,
+    "score": 0.9992462396621704
+  },
+  {
+    "id": "E344",
+    "text": "hematoxylin",
+    "type": "Chemical",
+    "start": 19926,
+    "end": 19937,
+    "score": 0.9999934832255045
+  },
+  {
+    "id": "E345",
+    "text": "ANGPTL2",
+    "type": "Gene",
+    "start": 20858,
+    "end": 20865,
+    "score": 0.9999890327453613
+  },
+  {
+    "id": "E346",
+    "text": "CHST7",
+    "type": "Gene",
+    "start": 20867,
+    "end": 20872,
+    "score": 0.99998939037323
+  },
+  {
+    "id": "E347",
+    "text": "PRRX2",
+    "type": "Gene",
+    "start": 20874,
+    "end": 20879,
+    "score": 0.9999892711639404
+  },
+  {
+    "id": "E348",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 20885,
+    "end": 20888,
+    "score": 0.9999892711639404
+  },
+  {
+    "id": "E349",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 20963,
+    "end": 20966,
+    "score": 0.9999853372573853
+  },
+  {
+    "id": "E350",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 21126,
+    "end": 21129,
+    "score": 0.9999877214431763
+  },
+  {
+    "id": "E351",
+    "text": "type 2 DM",
+    "type": "Disease",
+    "start": 21168,
+    "end": 21177,
+    "score": 0.9999918540318807
+  },
+  {
+    "id": "E352",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 21224,
+    "end": 21227,
+    "score": 0.9999842643737793
+  },
+  {
+    "id": "E353",
+    "text": "DM",
+    "type": "Disease",
+    "start": 21252,
+    "end": 21254,
+    "score": 0.9999855756759644
+  },
+  {
+    "id": "E354",
+    "text": "rat",
+    "type": "Species",
+    "start": 21255,
+    "end": 21258,
+    "score": 0.9999626874923706
+  },
+  {
+    "id": "E355",
+    "text": "HG",
+    "type": "Chemical",
+    "start": 21270,
+    "end": 21272,
+    "score": 0.9999394416809082
+  },
+  {
+    "id": "E356",
+    "text": "DM",
+    "type": "Disease",
+    "start": 21323,
+    "end": 21325,
+    "score": 0.9999858140945435
+  },
+  {
+    "id": "E357",
+    "text": "DM",
+    "type": "Disease",
+    "start": 21391,
+    "end": 21393,
+    "score": 0.999982476234436
+  },
+  {
+    "id": "E358",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 21738,
+    "end": 21741,
+    "score": 0.9999821186065674
+  },
+  {
+    "id": "E359",
+    "text": "type 2 DM",
+    "type": "Disease",
+    "start": 21860,
+    "end": 21869,
+    "score": 0.9999921719233195
+  },
+  {
+    "id": "E360",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 21896,
+    "end": 21899,
+    "score": 0.9999808073043823
+  },
+  {
+    "id": "E361",
+    "text": "type 2 DM",
+    "type": "Disease",
+    "start": 22018,
+    "end": 22027,
+    "score": 0.9999916950861613
+  },
+  {
+    "id": "E362",
+    "text": "blood glucose",
+    "type": "Chemical",
+    "start": 22064,
+    "end": 22077,
+    "score": 0.999820739030838
+  },
+  {
+    "id": "E363",
+    "text": "rat",
+    "type": "Species",
+    "start": 22097,
+    "end": 22100,
+    "score": 0.9999812841415405
+  },
+  {
+    "id": "E364",
+    "text": "HE",
+    "type": "Chemical",
+    "start": 22130,
+    "end": 22132,
+    "score": 0.9999958276748657
+  },
+  {
+    "id": "E365",
+    "text": "DM",
+    "type": "Disease",
+    "start": 22163,
+    "end": 22165,
+    "score": 0.999982476234436
+  },
+  {
+    "id": "E366",
+    "text": "rats",
+    "type": "Species",
+    "start": 22166,
+    "end": 22170,
+    "score": 0.9999858140945435
+  },
+  {
+    "id": "E367",
+    "text": "rats",
+    "type": "Species",
+    "start": 22182,
+    "end": 22186,
+    "score": 0.9999855756759644
+  },
+  {
+    "id": "E368",
+    "text": "ACH",
+    "type": "Chemical",
+    "start": 22250,
+    "end": 22253,
+    "score": 0.9999963045120239
+  },
+  {
+    "id": "E369",
+    "text": "SNP",
+    "type": "Chemical",
+    "start": 22258,
+    "end": 22261,
+    "score": 0.9999963045120239
+  },
+  {
+    "id": "E370",
+    "text": "DM",
+    "type": "Disease",
+    "start": 22265,
+    "end": 22267,
+    "score": 0.9999821186065674
+  },
+  {
+    "id": "E371",
+    "text": "rats",
+    "type": "Species",
+    "start": 22268,
+    "end": 22272,
+    "score": 0.9999867677688599
+  },
+  {
+    "id": "E372",
+    "text": "rats",
+    "type": "Species",
+    "start": 22284,
+    "end": 22288,
+    "score": 0.9999865293502808
+  },
+  {
+    "id": "E373",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 22314,
+    "end": 22317,
+    "score": 0.9999790191650391
+  },
+  {
+    "id": "E374",
+    "text": "DM",
+    "type": "Disease",
+    "start": 22329,
+    "end": 22331,
+    "score": 0.9999819993972778
+  },
+  {
+    "id": "E375",
+    "text": "rat",
+    "type": "Species",
+    "start": 22332,
+    "end": 22335,
+    "score": 0.9999855756759644
+  },
+  {
+    "id": "E376",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 22497,
+    "end": 22500,
+    "score": 0.9999842643737793
+  },
+  {
+    "id": "E377",
+    "text": "STZ",
+    "type": "Chemical",
+    "start": 22901,
+    "end": 22904,
+    "score": 0.9999974966049194
+  },
+  {
+    "id": "E378",
+    "text": "diabetic",
+    "type": "Disease",
+    "start": 22913,
+    "end": 22921,
+    "score": 0.9999836683273315
+  },
+  {
+    "id": "E379",
+    "text": "rat",
+    "type": "Species",
+    "start": 22922,
+    "end": 22925,
+    "score": 0.9999850988388062
+  },
+  {
+    "id": "E380",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 22990,
+    "end": 22993,
+    "score": 0.9999744892120361
+  },
+  {
+    "id": "E381",
+    "text": "DM",
+    "type": "Disease",
+    "start": 23045,
+    "end": 23047,
+    "score": 0.9999852180480957
+  },
+  {
+    "id": "E382",
+    "text": "rats",
+    "type": "Species",
+    "start": 23048,
+    "end": 23052,
+    "score": 0.9999864101409912
+  },
+  {
+    "id": "E383",
+    "text": "blood glucose",
+    "type": "Chemical",
+    "start": 23082,
+    "end": 23095,
+    "score": 0.999937891960144
+  },
+  {
+    "id": "E384",
+    "text": "DM",
+    "type": "Disease",
+    "start": 23132,
+    "end": 23134,
+    "score": 0.9999847412109375
+  },
+  {
+    "id": "E385",
+    "text": "rats",
+    "type": "Species",
+    "start": 23135,
+    "end": 23139,
+    "score": 0.999985933303833
+  },
+  {
+    "id": "E386",
+    "text": "DM",
+    "type": "Disease",
+    "start": 23190,
+    "end": 23192,
+    "score": 0.9999849796295166
+  },
+  {
+    "id": "E387",
+    "text": "rat",
+    "type": "Species",
+    "start": 23193,
+    "end": 23196,
+    "score": 0.9999830722808838
+  },
+  {
+    "id": "E388",
+    "text": "rats",
+    "type": "Species",
+    "start": 23222,
+    "end": 23226,
+    "score": 0.999985933303833
+  },
+  {
+    "id": "E389",
+    "text": "HE",
+    "type": "Chemical",
+    "start": 23289,
+    "end": 23291,
+    "score": 0.9999951124191284
+  },
+  {
+    "id": "E390",
+    "text": "rats",
+    "type": "Species",
+    "start": 23437,
+    "end": 23441,
+    "score": 0.9999836683273315
+  },
+  {
+    "id": "E391",
+    "text": "DM",
+    "type": "Disease",
+    "start": 23448,
+    "end": 23450,
+    "score": 0.9999808073043823
+  },
+  {
+    "id": "E392",
+    "text": "rats",
+    "type": "Species",
+    "start": 23451,
+    "end": 23455,
+    "score": 0.9999823570251465
+  },
+  {
+    "id": "E393",
+    "text": "ACH",
+    "type": "Chemical",
+    "start": 23626,
+    "end": 23629,
+    "score": 0.9999973773956299
+  },
+  {
+    "id": "E394",
+    "text": "DM",
+    "type": "Disease",
+    "start": 23719,
+    "end": 23721,
+    "score": 0.9999840259552002
+  },
+  {
+    "id": "E395",
+    "text": "rats",
+    "type": "Species",
+    "start": 23722,
+    "end": 23726,
+    "score": 0.9999855756759644
+  },
+  {
+    "id": "E396",
+    "text": "SNP",
+    "type": "Chemical",
+    "start": 23757,
+    "end": 23760,
+    "score": 0.9999973773956299
+  },
+  {
+    "id": "E397",
+    "text": "rats",
+    "type": "Species",
+    "start": 23947,
+    "end": 23951,
+    "score": 0.9999866485595703
+  },
+  {
+    "id": "E398",
+    "text": "DM",
+    "type": "Disease",
+    "start": 23957,
+    "end": 23959,
+    "score": 0.9999853372573853
+  },
+  {
+    "id": "E399",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 23989,
+    "end": 23992,
+    "score": 0.9999850988388062
+  },
+  {
+    "id": "E400",
+    "text": "DM",
+    "type": "Disease",
+    "start": 24084,
+    "end": 24086,
+    "score": 0.9999854564666748
+  },
+  {
+    "id": "E401",
+    "text": "rats",
+    "type": "Species",
+    "start": 24087,
+    "end": 24091,
+    "score": 0.9999868869781494
+  },
+  {
+    "id": "E402",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 24162,
+    "end": 24165,
+    "score": 0.999984860420227
+  },
+  {
+    "id": "E403",
+    "text": "DM",
+    "type": "Disease",
+    "start": 24215,
+    "end": 24217,
+    "score": 0.9999854564666748
+  },
+  {
+    "id": "E404",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 24438,
+    "end": 24441,
+    "score": 0.9999854564666748
+  },
+  {
+    "id": "E405",
+    "text": "HG",
+    "type": "Chemical",
+    "start": 24488,
+    "end": 24490,
+    "score": 0.9700952768325806
+  },
+  {
+    "id": "E406",
+    "text": "rats",
+    "type": "Species",
+    "start": 24520,
+    "end": 24524,
+    "score": 0.9999872446060181
+  },
+  {
+    "id": "E407",
+    "text": "DM",
+    "type": "Disease",
+    "start": 24530,
+    "end": 24532,
+    "score": 0.999984860420227
+  },
+  {
+    "id": "E408",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 24616,
+    "end": 24619,
+    "score": 0.999988317489624
+  },
+  {
+    "id": "E409",
+    "text": "HG",
+    "type": "Chemical",
+    "start": 24625,
+    "end": 24627,
+    "score": 0.9995002746582031
+  },
+  {
+    "id": "E410",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 24658,
+    "end": 24661,
+    "score": 0.9999862909317017
+  },
+  {
+    "id": "E411",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 24675,
+    "end": 24678,
+    "score": 0.9999873638153076
+  },
+  {
+    "id": "E412",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 24786,
+    "end": 24790,
+    "score": 0.99998939037323
+  },
+  {
+    "id": "E413",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 24862,
+    "end": 24865,
+    "score": 0.999988317489624
+  },
+  {
+    "id": "E414",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 24873,
+    "end": 24877,
+    "score": 0.9999897480010986
+  },
+  {
+    "id": "E415",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 25025,
+    "end": 25029,
+    "score": 0.9999899864196777
+  },
+  {
+    "id": "E416",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 25036,
+    "end": 25041,
+    "score": 0.9999902248382568
+  },
+  {
+    "id": "E417",
+    "text": "DM",
+    "type": "Disease",
+    "start": 25067,
+    "end": 25069,
+    "score": 0.999984860420227
+  },
+  {
+    "id": "E418",
+    "text": "rats",
+    "type": "Species",
+    "start": 25070,
+    "end": 25074,
+    "score": 0.9999865293502808
+  },
+  {
+    "id": "E419",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 25098,
+    "end": 25102,
+    "score": 0.9999903440475464
+  },
+  {
+    "id": "E420",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 25109,
+    "end": 25114,
+    "score": 0.9999903440475464
+  },
+  {
+    "id": "E421",
+    "text": "DM",
+    "type": "Disease",
+    "start": 25242,
+    "end": 25244,
+    "score": 0.9999845027923584
+  },
+  {
+    "id": "E422",
+    "text": "rats",
+    "type": "Species",
+    "start": 25245,
+    "end": 25249,
+    "score": 0.999987006187439
+  },
+  {
+    "id": "E423",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 25309,
+    "end": 25313,
+    "score": 0.9999899864196777
+  },
+  {
+    "id": "E424",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 25317,
+    "end": 25321,
+    "score": 0.9999901056289673
+  },
+  {
+    "id": "E425",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 25323,
+    "end": 25328,
+    "score": 0.9999903440475464
+  },
+  {
+    "id": "E426",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 25336,
+    "end": 25341,
+    "score": 0.9999903440475464
+  },
+  {
+    "id": "E427",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 25527,
+    "end": 25530,
+    "score": 0.9999892711639404
+  },
+  {
+    "id": "E428",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 25607,
+    "end": 25610,
+    "score": 0.99998939037323
+  },
+  {
+    "id": "E429",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 25654,
+    "end": 25658,
+    "score": 0.9999902248382568
+  },
+  {
+    "id": "E430",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 25662,
+    "end": 25666,
+    "score": 0.9999901056289673
+  },
+  {
+    "id": "E431",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 25670,
+    "end": 25675,
+    "score": 0.9999902248382568
+  },
+  {
+    "id": "E432",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 25680,
+    "end": 25685,
+    "score": 0.9999904632568359
+  },
+  {
+    "id": "E433",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 25703,
+    "end": 25706,
+    "score": 0.9999892711639404
+  },
+  {
+    "id": "E434",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 25734,
+    "end": 25737,
+    "score": 0.9999887943267822
+  },
+  {
+    "id": "E435",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 25787,
+    "end": 25791,
+    "score": 0.9999903440475464
+  },
+  {
+    "id": "E436",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 25795,
+    "end": 25799,
+    "score": 0.9999901056289673
+  },
+  {
+    "id": "E437",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 25803,
+    "end": 25808,
+    "score": 0.9999902248382568
+  },
+  {
+    "id": "E438",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 25813,
+    "end": 25818,
+    "score": 0.9999903440475464
+  },
+  {
+    "id": "E439",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 25836,
+    "end": 25839,
+    "score": 0.9999886751174927
+  },
+  {
+    "id": "E440",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 25858,
+    "end": 25862,
+    "score": 0.9999902248382568
+  },
+  {
+    "id": "E441",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 25863,
+    "end": 25868,
+    "score": 0.9999903440475464
+  },
+  {
+    "id": "E442",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 25894,
+    "end": 25897,
+    "score": 0.9999884366989136
+  },
+  {
+    "id": "E443",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 25907,
+    "end": 25911,
+    "score": 0.9999901056289673
+  },
+  {
+    "id": "E444",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 25912,
+    "end": 25917,
+    "score": 0.9999903440475464
+  },
+  {
+    "id": "E445",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 25971,
+    "end": 25975,
+    "score": 0.9999901056289673
+  },
+  {
+    "id": "E446",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 25982,
+    "end": 25987,
+    "score": 0.9999902248382568
+  },
+  {
+    "id": "E447",
+    "text": "rat",
+    "type": "Species",
+    "start": 25999,
+    "end": 26002,
+    "score": 0.9999872446060181
+  },
+  {
+    "id": "E448",
+    "text": "DM",
+    "type": "Disease",
+    "start": 26031,
+    "end": 26033,
+    "score": 0.999984860420227
+  },
+  {
+    "id": "E449",
+    "text": "rats",
+    "type": "Species",
+    "start": 26034,
+    "end": 26038,
+    "score": 0.9999878406524658
+  },
+  {
+    "id": "E450",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 26112,
+    "end": 26115,
+    "score": 0.9999876022338867
+  },
+  {
+    "id": "E451",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 26221,
+    "end": 26224,
+    "score": 0.9999889135360718
+  },
+  {
+    "id": "E452",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 26226,
+    "end": 26230,
+    "score": 0.9999897480010986
+  },
+  {
+    "id": "E453",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 26234,
+    "end": 26238,
+    "score": 0.9999891519546509
+  },
+  {
+    "id": "E454",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 26242,
+    "end": 26247,
+    "score": 0.9999897480010986
+  },
+  {
+    "id": "E455",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 26252,
+    "end": 26257,
+    "score": 0.9999898672103882
+  },
+  {
+    "id": "E456",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 26329,
+    "end": 26332,
+    "score": 0.999983549118042
+  },
+  {
+    "id": "E457",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 26403,
+    "end": 26406,
+    "score": 0.9999667406082153
+  },
+  {
+    "id": "E458",
+    "text": "NO",
+    "type": "Chemical",
+    "start": 26434,
+    "end": 26436,
+    "score": 0.9999955892562866
+  },
+  {
+    "id": "E459",
+    "text": "HG",
+    "type": "Chemical",
+    "start": 26513,
+    "end": 26515,
+    "score": 0.9999949932098389
+  },
+  {
+    "id": "E460",
+    "text": "HG",
+    "type": "Chemical",
+    "start": 26529,
+    "end": 26531,
+    "score": 0.9999942779541016
+  },
+  {
+    "id": "E461",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 26537,
+    "end": 26540,
+    "score": 0.9999741315841675
+  },
+  {
+    "id": "E462",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 26636,
+    "end": 26639,
+    "score": 0.9914578795433044
+  },
+  {
+    "id": "E463",
+    "text": "eNOS",
+    "type": "Gene",
+    "start": 26649,
+    "end": 26653,
+    "score": 0.999985933303833
+  },
+  {
+    "id": "E464",
+    "text": "HG",
+    "type": "Chemical",
+    "start": 26671,
+    "end": 26673,
+    "score": 0.999995231628418
+  },
+  {
+    "id": "E465",
+    "text": "HG",
+    "type": "Chemical",
+    "start": 26832,
+    "end": 26834,
+    "score": 0.9999960660934448
+  },
+  {
+    "id": "E466",
+    "text": "HG",
+    "type": "Chemical",
+    "start": 26848,
+    "end": 26850,
+    "score": 0.9999955892562866
+  },
+  {
+    "id": "E467",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 26856,
+    "end": 26859,
+    "score": 0.9999607801437378
+  },
+  {
+    "id": "E468",
+    "text": "HG",
+    "type": "Chemical",
+    "start": 26921,
+    "end": 26923,
+    "score": 0.9999926090240479
+  },
+  {
+    "id": "E469",
+    "text": "NO",
+    "type": "Chemical",
+    "start": 27213,
+    "end": 27215,
+    "score": 0.9999953508377075
+  },
+  {
+    "id": "E470",
+    "text": "HG",
+    "type": "Chemical",
+    "start": 27487,
+    "end": 27489,
+    "score": 0.9999865293502808
+  },
+  {
+    "id": "E471",
+    "text": "NO",
+    "type": "Chemical",
+    "start": 27524,
+    "end": 27526,
+    "score": 0.9999949932098389
+  },
+  {
+    "id": "E472",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 27607,
+    "end": 27610,
+    "score": 0.9999853372573853
+  },
+  {
+    "id": "E473",
+    "text": "NO",
+    "type": "Chemical",
+    "start": 27637,
+    "end": 27639,
+    "score": 0.9999933242797852
+  },
+  {
+    "id": "E474",
+    "text": "eNOS",
+    "type": "Gene",
+    "start": 27703,
+    "end": 27707,
+    "score": 0.9999874830245972
+  },
+  {
+    "id": "E475",
+    "text": "HG",
+    "type": "Chemical",
+    "start": 27739,
+    "end": 27741,
+    "score": 0.9999752044677734
+  },
+  {
+    "id": "E476",
+    "text": "eNOS",
+    "type": "Gene",
+    "start": 27784,
+    "end": 27788,
+    "score": 0.9999884366989136
+  },
+  {
+    "id": "E477",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 27826,
+    "end": 27829,
+    "score": 0.9999878406524658
+  },
+  {
+    "id": "E478",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 27894,
+    "end": 27897,
+    "score": 0.9999817609786987
+  },
+  {
+    "id": "E479",
+    "text": "HG",
+    "type": "Chemical",
+    "start": 27953,
+    "end": 27955,
+    "score": 0.999907374382019
+  },
+  {
+    "id": "E480",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 28007,
+    "end": 28010,
+    "score": 0.9999873638153076
+  },
+  {
+    "id": "E481",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 28076,
+    "end": 28079,
+    "score": 0.9999886751174927
+  },
+  {
+    "id": "E482",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 28116,
+    "end": 28120,
+    "score": 0.9999896287918091
+  },
+  {
+    "id": "E483",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 28121,
+    "end": 28126,
+    "score": 0.9999901056289673
+  },
+  {
+    "id": "E484",
+    "text": "HG",
+    "type": "Chemical",
+    "start": 28166,
+    "end": 28168,
+    "score": 0.9978664517402649
+  },
+  {
+    "id": "E485",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 28252,
+    "end": 28255,
+    "score": 0.9999898672103882
+  },
+  {
+    "id": "E486",
+    "text": "E3 ubiquitin ligase",
+    "type": "Gene",
+    "start": 28269,
+    "end": 28288,
+    "score": 0.9999645948410034
+  },
+  {
+    "id": "E487",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 28292,
+    "end": 28296,
+    "score": 0.9999904632568359
+  },
+  {
+    "id": "E488",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 28340,
+    "end": 28343,
+    "score": 0.9999889135360718
+  },
+  {
+    "id": "E489",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 28443,
+    "end": 28447,
+    "score": 0.9999902248382568
+  },
+  {
+    "id": "E490",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 28452,
+    "end": 28457,
+    "score": 0.9999904632568359
+  },
+  {
+    "id": "E491",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 28541,
+    "end": 28544,
+    "score": 0.9999886751174927
+  },
+  {
+    "id": "E492",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 28574,
+    "end": 28578,
+    "score": 0.9999896287918091
+  },
+  {
+    "id": "E493",
+    "text": "DMEM",
+    "type": "Chemical",
+    "start": 28674,
+    "end": 28678,
+    "score": 0.9992565512657166
+  },
+  {
+    "id": "E494",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 28696,
+    "end": 28699,
+    "score": 0.999988317489624
+  },
+  {
+    "id": "E495",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 28734,
+    "end": 28738,
+    "score": 0.9999896287918091
+  },
+  {
+    "id": "E496",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 28742,
+    "end": 28746,
+    "score": 0.9999901056289673
+  },
+  {
+    "id": "E497",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 28748,
+    "end": 28753,
+    "score": 0.9999902248382568
+  },
+  {
+    "id": "E498",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 28760,
+    "end": 28765,
+    "score": 0.9999901056289673
+  },
+  {
+    "id": "E499",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 28796,
+    "end": 28799,
+    "score": 0.9999880790710449
+  },
+  {
+    "id": "E500",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 28845,
+    "end": 28849,
+    "score": 0.9999895095825195
+  },
+  {
+    "id": "E501",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 28853,
+    "end": 28857,
+    "score": 0.9999899864196777
+  },
+  {
+    "id": "E502",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 28859,
+    "end": 28864,
+    "score": 0.9999902248382568
+  },
+  {
+    "id": "E503",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 28871,
+    "end": 28876,
+    "score": 0.9999899864196777
+  },
+  {
+    "id": "E504",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 28903,
+    "end": 28907,
+    "score": 0.99998939037323
+  },
+  {
+    "id": "E505",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 28937,
+    "end": 28941,
+    "score": 0.9999889135360718
+  },
+  {
+    "id": "E506",
+    "text": "MG-132",
+    "type": "Chemical",
+    "start": 29001,
+    "end": 29007,
+    "score": 0.9999972581863403
+  },
+  {
+    "id": "E507",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 29018,
+    "end": 29022,
+    "score": 0.9999899864196777
+  },
+  {
+    "id": "E508",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 29060,
+    "end": 29064,
+    "score": 0.9999897480010986
+  },
+  {
+    "id": "E509",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 29097,
+    "end": 29100,
+    "score": 0.9999886751174927
+  },
+  {
+    "id": "E510",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 29114,
+    "end": 29118,
+    "score": 0.9999898672103882
+  },
+  {
+    "id": "E511",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 29161,
+    "end": 29165,
+    "score": 0.9999896287918091
+  },
+  {
+    "id": "E512",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 29238,
+    "end": 29241,
+    "score": 0.9999886751174927
+  },
+  {
+    "id": "E513",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 29256,
+    "end": 29260,
+    "score": 0.9999901056289673
+  },
+  {
+    "id": "E514",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 29261,
+    "end": 29266,
+    "score": 0.9999901056289673
+  },
+  {
+    "id": "E515",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 29300,
+    "end": 29304,
+    "score": 0.9999899864196777
+  },
+  {
+    "id": "E516",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 29330,
+    "end": 29334,
+    "score": 0.9999898672103882
+  },
+  {
+    "id": "E517",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 29375,
+    "end": 29378,
+    "score": 0.9999871253967285
+  },
+  {
+    "id": "E518",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 29382,
+    "end": 29386,
+    "score": 0.9999899864196777
+  },
+  {
+    "id": "E519",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 29411,
+    "end": 29415,
+    "score": 0.9999902248382568
+  },
+  {
+    "id": "E520",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 29416,
+    "end": 29421,
+    "score": 0.9999903440475464
+  },
+  {
+    "id": "E521",
+    "text": "E3 ubiquitin ligase",
+    "type": "Gene",
+    "start": 29471,
+    "end": 29490,
+    "score": 0.9999784628550211
+  },
+  {
+    "id": "E522",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 29494,
+    "end": 29498,
+    "score": 0.9999901056289673
+  },
+  {
+    "id": "E523",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 29517,
+    "end": 29520,
+    "score": 0.9999896287918091
+  },
+  {
+    "id": "E524",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 29522,
+    "end": 29526,
+    "score": 0.9999901056289673
+  },
+  {
+    "id": "E525",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 29724,
+    "end": 29727,
+    "score": 0.9999899864196777
+  },
+  {
+    "id": "E526",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 29729,
+    "end": 29733,
+    "score": 0.9999903440475464
+  },
+  {
+    "id": "E527",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 29737,
+    "end": 29741,
+    "score": 0.9999901056289673
+  },
+  {
+    "id": "E528",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 29743,
+    "end": 29748,
+    "score": 0.9999903440475464
+  },
+  {
+    "id": "E529",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 29755,
+    "end": 29760,
+    "score": 0.9999902248382568
+  },
+  {
+    "id": "E530",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 29825,
+    "end": 29828,
+    "score": 0.9999891519546509
+  },
+  {
+    "id": "E531",
+    "text": "Cb1",
+    "type": "Gene",
+    "start": 29835,
+    "end": 29838,
+    "score": 0.9999896287918091
+  },
+  {
+    "id": "E532",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 29946,
+    "end": 29950,
+    "score": 0.9999895095825195
+  },
+  {
+    "id": "E533",
+    "text": "MG132",
+    "type": "Chemical",
+    "start": 30002,
+    "end": 30007,
+    "score": 0.9999972581863403
+  },
+  {
+    "id": "E534",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 30022,
+    "end": 30025,
+    "score": 0.9999871253967285
+  },
+  {
+    "id": "E535",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 30055,
+    "end": 30059,
+    "score": 0.9999887943267822
+  },
+  {
+    "id": "E536",
+    "text": "HUVECs",
+    "type": "CellLine",
+    "start": 30081,
+    "end": 30087,
+    "score": 0.9755473732948303
+  },
+  {
+    "id": "E537",
+    "text": "CHX",
+    "type": "Chemical",
+    "start": 30100,
+    "end": 30103,
+    "score": 0.9999974966049194
+  },
+  {
+    "id": "E538",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 30433,
+    "end": 30438,
+    "score": 0.9999899864196777
+  },
+  {
+    "id": "E539",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 30479,
+    "end": 30484,
+    "score": 0.9999793767929077
+  },
+  {
+    "id": "E540",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 30545,
+    "end": 30550,
+    "score": 0.9999897480010986
+  },
+  {
+    "id": "E541",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 30572,
+    "end": 30577,
+    "score": 0.9999802112579346
+  },
+  {
+    "id": "E542",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 30647,
+    "end": 30652,
+    "score": 0.9999899864196777
+  },
+  {
+    "id": "E543",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 30687,
+    "end": 30692,
+    "score": 0.9999802112579346
+  },
+  {
+    "id": "E544",
+    "text": "rat",
+    "type": "Species",
+    "start": 30750,
+    "end": 30753,
+    "score": 0.9999866485595703
+  },
+  {
+    "id": "E545",
+    "text": "DM",
+    "type": "Disease",
+    "start": 30765,
+    "end": 30767,
+    "score": 0.9999815225601196
+  },
+  {
+    "id": "E546",
+    "text": "rats",
+    "type": "Species",
+    "start": 30768,
+    "end": 30772,
+    "score": 0.9999868869781494
+  },
+  {
+    "id": "E547",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 30788,
+    "end": 30793,
+    "score": 0.999980092048645
+  },
+  {
+    "id": "E548",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 30880,
+    "end": 30885,
+    "score": 0.9999800125757853
+  },
+  {
+    "id": "E549",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 30948,
+    "end": 30953,
+    "score": 0.9999801317850748
+  },
+  {
+    "id": "E550",
+    "text": "H3K4me3",
+    "type": "Gene",
+    "start": 31080,
+    "end": 31087,
+    "score": 0.9999808073043823
+  },
+  {
+    "id": "E551",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 31092,
+    "end": 31097,
+    "score": 0.9999877214431763
+  },
+  {
+    "id": "E552",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 31120,
+    "end": 31125,
+    "score": 0.9999804894129435
+  },
+  {
+    "id": "E553",
+    "text": "DM",
+    "type": "Disease",
+    "start": 31149,
+    "end": 31151,
+    "score": 0.9999850988388062
+  },
+  {
+    "id": "E554",
+    "text": "DMEM medium",
+    "type": "Chemical",
+    "start": 31241,
+    "end": 31252,
+    "score": 0.9995722472667694
+  },
+  {
+    "id": "E555",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 31314,
+    "end": 31319,
+    "score": 0.9999858140945435
+  },
+  {
+    "id": "E556",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 31398,
+    "end": 31403,
+    "score": 0.9999874830245972
+  },
+  {
+    "id": "E557",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 31443,
+    "end": 31448,
+    "score": 0.9999881982803345
+  },
+  {
+    "id": "E558",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 31453,
+    "end": 31458,
+    "score": 0.9999789794286092
+  },
+  {
+    "id": "E559",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 31493,
+    "end": 31498,
+    "score": 0.9999594688415527
+  },
+  {
+    "id": "E560",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 31515,
+    "end": 31520,
+    "score": 0.999948263168335
+  },
+  {
+    "id": "E561",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 31556,
+    "end": 31561,
+    "score": 0.9999871253967285
+  },
+  {
+    "id": "E562",
+    "text": "Run3",
+    "type": "Gene",
+    "start": 31566,
+    "end": 31570,
+    "score": 0.9999853372573853
+  },
+  {
+    "id": "E563",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 31579,
+    "end": 31584,
+    "score": 0.9999240636825562
+  },
+  {
+    "id": "E564",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 31643,
+    "end": 31648,
+    "score": 0.9993269443511963
+  },
+  {
+    "id": "E565",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 31747,
+    "end": 31752,
+    "score": 0.9999799728393555
+  },
+  {
+    "id": "E566",
+    "text": "H3K4me3",
+    "type": "Gene",
+    "start": 31804,
+    "end": 31811,
+    "score": 0.9999775886535645
+  },
+  {
+    "id": "E567",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 31816,
+    "end": 31821,
+    "score": 0.9999818801879883
+  },
+  {
+    "id": "E568",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 31848,
+    "end": 31853,
+    "score": 0.9999741713205973
+  },
+  {
+    "id": "E569",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 31863,
+    "end": 31868,
+    "score": 0.9984378218650818
+  },
+  {
+    "id": "E570",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 31945,
+    "end": 31950,
+    "score": 0.9999829530715942
+  },
+  {
+    "id": "E571",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 31967,
+    "end": 31972,
+    "score": 0.9999764760335287
+  },
+  {
+    "id": "E572",
+    "text": "H3K4me3",
+    "type": "Gene",
+    "start": 32000,
+    "end": 32007,
+    "score": 0.9999780654907227
+  },
+  {
+    "id": "E573",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 32036,
+    "end": 32041,
+    "score": 0.9999759991963705
+  },
+  {
+    "id": "E574",
+    "text": "H3K4me3",
+    "type": "Gene",
+    "start": 32079,
+    "end": 32086,
+    "score": 0.9999247789382935
+  },
+  {
+    "id": "E575",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 32106,
+    "end": 32111,
+    "score": 0.9999850988388062
+  },
+  {
+    "id": "E576",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 32115,
+    "end": 32120,
+    "score": 0.9999799331029257
+  },
+  {
+    "id": "E577",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 32194,
+    "end": 32199,
+    "score": 0.999984622001648
+  },
+  {
+    "id": "E578",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 32203,
+    "end": 32208,
+    "score": 0.999980092048645
+  },
+  {
+    "id": "E579",
+    "text": "Runx3-positive",
+    "type": "Gene",
+    "start": 32278,
+    "end": 32292,
+    "score": 0.9999804496765137
+  },
+  {
+    "id": "E580",
+    "text": "rat",
+    "type": "Species",
+    "start": 32302,
+    "end": 32305,
+    "score": 0.9999865293502808
+  },
+  {
+    "id": "E581",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 32420,
+    "end": 32425,
+    "score": 0.9999804496765137
+  },
+  {
+    "id": "E582",
+    "text": "H3K4me3",
+    "type": "Gene",
+    "start": 32542,
+    "end": 32549,
+    "score": 0.9999473094940186
+  },
+  {
+    "id": "E583",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 32554,
+    "end": 32559,
+    "score": 0.9999607801437378
+  },
+  {
+    "id": "E584",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 32585,
+    "end": 32590,
+    "score": 0.9999794960021973
+  },
+  {
+    "id": "E585",
+    "text": "rat",
+    "type": "Species",
+    "start": 32630,
+    "end": 32633,
+    "score": 0.9999843835830688
+  },
+  {
+    "id": "E586",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 32732,
+    "end": 32737,
+    "score": 0.9999578793843588
+  },
+  {
+    "id": "E587",
+    "text": "STAT4-",
+    "type": "Gene",
+    "start": 32789,
+    "end": 32795,
+    "score": 0.7693071067333221
+  },
+  {
+    "id": "E588",
+    "text": "STAT4-2",
+    "type": "Gene",
+    "start": 32807,
+    "end": 32814,
+    "score": 0.9071753025054932
+  },
+  {
+    "id": "E589",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 32825,
+    "end": 32830,
+    "score": 0.9997537732124329
+  },
+  {
+    "id": "E590",
+    "text": "H3K4me3",
+    "type": "Gene",
+    "start": 32947,
+    "end": 32954,
+    "score": 0.999920129776001
+  },
+  {
+    "id": "E591",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 32959,
+    "end": 32964,
+    "score": 0.9999439716339111
+  },
+  {
+    "id": "E592",
+    "text": "STAT4-",
+    "type": "Gene",
+    "start": 33038,
+    "end": 33044,
+    "score": 0.8217463791370392
+  },
+  {
+    "id": "E593",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 33050,
+    "end": 33055,
+    "score": 0.9999383687973022
+  },
+  {
+    "id": "E594",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 33423,
+    "end": 33428,
+    "score": 0.9999904632568359
+  },
+  {
+    "id": "E595",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 33433,
+    "end": 33438,
+    "score": 0.99997878074646
+  },
+  {
+    "id": "E596",
+    "text": "DM",
+    "type": "Disease",
+    "start": 33442,
+    "end": 33444,
+    "score": 0.99997878074646
+  },
+  {
+    "id": "E597",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 33508,
+    "end": 33513,
+    "score": 0.9999897480010986
+  },
+  {
+    "id": "E598",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 33521,
+    "end": 33526,
+    "score": 0.9999897480010986
+  },
+  {
+    "id": "E599",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 33620,
+    "end": 33625,
+    "score": 0.9999899864196777
+  },
+  {
+    "id": "E600",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 33634,
+    "end": 33639,
+    "score": 0.9999901056289673
+  },
+  {
+    "id": "E601",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 33644,
+    "end": 33649,
+    "score": 0.9999791383743286
+  },
+  {
+    "id": "E602",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 33695,
+    "end": 33700,
+    "score": 0.9999899864196777
+  },
+  {
+    "id": "E603",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 33708,
+    "end": 33713,
+    "score": 0.9999794562657675
+  },
+  {
+    "id": "E604",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 33724,
+    "end": 33729,
+    "score": 0.9999794562657675
+  },
+  {
+    "id": "E605",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 33755,
+    "end": 33760,
+    "score": 0.9999899864196777
+  },
+  {
+    "id": "E606",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 33790,
+    "end": 33795,
+    "score": 0.9999886751174927
+  },
+  {
+    "id": "E607",
+    "text": "NO",
+    "type": "Chemical",
+    "start": 33848,
+    "end": 33850,
+    "score": 0.9993723034858704
+  },
+  {
+    "id": "E608",
+    "text": "eNOS",
+    "type": "Gene",
+    "start": 33863,
+    "end": 33867,
+    "score": 0.9999876022338867
+  },
+  {
+    "id": "E609",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 33929,
+    "end": 33934,
+    "score": 0.9999898672103882
+  },
+  {
+    "id": "E610",
+    "text": "NO",
+    "type": "Chemical",
+    "start": 33949,
+    "end": 33951,
+    "score": 0.9994038343429565
+  },
+  {
+    "id": "E611",
+    "text": "eNOS",
+    "type": "Gene",
+    "start": 33964,
+    "end": 33968,
+    "score": 0.9999878406524658
+  },
+  {
+    "id": "E612",
+    "text": "HG",
+    "type": "Chemical",
+    "start": 33986,
+    "end": 33988,
+    "score": 0.9960122108459473
+  },
+  {
+    "id": "E613",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 34041,
+    "end": 34046,
+    "score": 0.9999798138936361
+  },
+  {
+    "id": "E614",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 34141,
+    "end": 34146,
+    "score": 0.9999897480010986
+  },
+  {
+    "id": "E615",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 34230,
+    "end": 34235,
+    "score": 0.9999797344207764
+  },
+  {
+    "id": "E616",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 34291,
+    "end": 34296,
+    "score": 0.9999899864196777
+  },
+  {
+    "id": "E617",
+    "text": "eNOS",
+    "type": "Gene",
+    "start": 34323,
+    "end": 34327,
+    "score": 0.9999897480010986
+  },
+  {
+    "id": "E618",
+    "text": "NO",
+    "type": "Chemical",
+    "start": 34351,
+    "end": 34353,
+    "score": 0.9995782971382141
+  },
+  {
+    "id": "E619",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 34407,
+    "end": 34412,
+    "score": 0.9999798933664957
+  },
+  {
+    "id": "E620",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 34471,
+    "end": 34476,
+    "score": 0.9999798536300659
+  },
+  {
+    "id": "E621",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 34515,
+    "end": 34520,
+    "score": 0.9999901056289673
+  },
+  {
+    "id": "E622",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 34525,
+    "end": 34530,
+    "score": 0.999979297320048
+  },
+  {
+    "id": "E623",
+    "text": "HG",
+    "type": "Chemical",
+    "start": 34580,
+    "end": 34582,
+    "score": 0.999993085861206
+  },
+  {
+    "id": "E624",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 34588,
+    "end": 34593,
+    "score": 0.9999901056289673
+  },
+  {
+    "id": "E625",
+    "text": "HG",
+    "type": "Chemical",
+    "start": 34603,
+    "end": 34605,
+    "score": 0.999990701675415
+  },
+  {
+    "id": "E626",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 34611,
+    "end": 34616,
+    "score": 0.9999897480010986
+  },
+  {
+    "id": "E627",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 34622,
+    "end": 34627,
+    "score": 0.9999791781107584
+  },
+  {
+    "id": "E628",
+    "text": "NO",
+    "type": "Chemical",
+    "start": 34662,
+    "end": 34664,
+    "score": 0.9999918937683105
+  },
+  {
+    "id": "E629",
+    "text": "HG",
+    "type": "Chemical",
+    "start": 34730,
+    "end": 34732,
+    "score": 0.9999933242797852
+  },
+  {
+    "id": "E630",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 34738,
+    "end": 34743,
+    "score": 0.9999902248382568
+  },
+  {
+    "id": "E631",
+    "text": "HG",
+    "type": "Chemical",
+    "start": 34753,
+    "end": 34755,
+    "score": 0.9999927282333374
+  },
+  {
+    "id": "E632",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 34761,
+    "end": 34766,
+    "score": 0.9999901056289673
+  },
+  {
+    "id": "E633",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 34772,
+    "end": 34777,
+    "score": 0.9999787012736002
+  },
+  {
+    "id": "E634",
+    "text": "eNOS",
+    "type": "Gene",
+    "start": 34819,
+    "end": 34823,
+    "score": 0.9999886751174927
+  },
+  {
+    "id": "E635",
+    "text": "HG",
+    "type": "Chemical",
+    "start": 34841,
+    "end": 34843,
+    "score": 0.9999881982803345
+  },
+  {
+    "id": "E636",
+    "text": "HG",
+    "type": "Chemical",
+    "start": 34989,
+    "end": 34991,
+    "score": 0.9999905824661255
+  },
+  {
+    "id": "E637",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 34997,
+    "end": 35002,
+    "score": 0.9999902248382568
+  },
+  {
+    "id": "E638",
+    "text": "HG",
+    "type": "Chemical",
+    "start": 35012,
+    "end": 35014,
+    "score": 0.9999895095825195
+  },
+  {
+    "id": "E639",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 35020,
+    "end": 35025,
+    "score": 0.9999901056289673
+  },
+  {
+    "id": "E640",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 35031,
+    "end": 35036,
+    "score": 0.9999787410100301
+  },
+  {
+    "id": "E641",
+    "text": "HG",
+    "type": "Chemical",
+    "start": 35070,
+    "end": 35072,
+    "score": 0.9999871253967285
+  },
+  {
+    "id": "E642",
+    "text": "HG",
+    "type": "Chemical",
+    "start": 35118,
+    "end": 35120,
+    "score": 0.9999904632568359
+  },
+  {
+    "id": "E643",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 35126,
+    "end": 35131,
+    "score": 0.9999899864196777
+  },
+  {
+    "id": "E644",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 35299,
+    "end": 35302,
+    "score": 0.999984860420227
+  },
+  {
+    "id": "E645",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 35331,
+    "end": 35336,
+    "score": 0.9999800125757853
+  },
+  {
+    "id": "E646",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 35357,
+    "end": 35361,
+    "score": 0.9999899864196777
+  },
+  {
+    "id": "E647",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 35362,
+    "end": 35367,
+    "score": 0.9999903440475464
+  },
+  {
+    "id": "E648",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 35503,
+    "end": 35506,
+    "score": 0.9999885559082031
+  },
+  {
+    "id": "E649",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 35514,
+    "end": 35519,
+    "score": 0.9999791781107584
+  },
+  {
+    "id": "E650",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 35527,
+    "end": 35530,
+    "score": 0.9999890327453613
+  },
+  {
+    "id": "E651",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 35532,
+    "end": 35536,
+    "score": 0.9999902248382568
+  },
+  {
+    "id": "E652",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 35541,
+    "end": 35546,
+    "score": 0.9999901056289673
+  },
+  {
+    "id": "E653",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 35646,
+    "end": 35649,
+    "score": 0.9999881982803345
+  },
+  {
+    "id": "E654",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 35656,
+    "end": 35659,
+    "score": 0.9999891519546509
+  },
+  {
+    "id": "E655",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 35714,
+    "end": 35718,
+    "score": 0.9999901056289673
+  },
+  {
+    "id": "E656",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 35722,
+    "end": 35726,
+    "score": 0.9999901056289673
+  },
+  {
+    "id": "E657",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 35728,
+    "end": 35733,
+    "score": 0.9999903440475464
+  },
+  {
+    "id": "E658",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 35737,
+    "end": 35742,
+    "score": 0.9999903440475464
+  },
+  {
+    "id": "E659",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 35747,
+    "end": 35752,
+    "score": 0.9999801715215048
+  },
+  {
+    "id": "E660",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 35789,
+    "end": 35792,
+    "score": 0.9999867677688599
+  },
+  {
+    "id": "E661",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 35829,
+    "end": 35832,
+    "score": 0.9999886751174927
+  },
+  {
+    "id": "E662",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 35840,
+    "end": 35845,
+    "score": 0.9999798933664957
+  },
+  {
+    "id": "E663",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 35880,
+    "end": 35883,
+    "score": 0.9999891519546509
+  },
+  {
+    "id": "E664",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 35885,
+    "end": 35889,
+    "score": 0.9999899864196777
+  },
+  {
+    "id": "E665",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 35893,
+    "end": 35897,
+    "score": 0.9999898672103882
+  },
+  {
+    "id": "E666",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 35899,
+    "end": 35904,
+    "score": 0.9999902248382568
+  },
+  {
+    "id": "E667",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 35911,
+    "end": 35916,
+    "score": 0.9999902248382568
+  },
+  {
+    "id": "E668",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 35948,
+    "end": 35953,
+    "score": 0.9999798536300659
+  },
+  {
+    "id": "E669",
+    "text": "NO",
+    "type": "Chemical",
+    "start": 35984,
+    "end": 35986,
+    "score": 0.9998670816421509
+  },
+  {
+    "id": "E670",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 36050,
+    "end": 36053,
+    "score": 0.9999874830245972
+  },
+  {
+    "id": "E671",
+    "text": "NO",
+    "type": "Chemical",
+    "start": 36064,
+    "end": 36066,
+    "score": 0.99994957447052
+  },
+  {
+    "id": "E672",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 36088,
+    "end": 36091,
+    "score": 0.9999850988388062
+  },
+  {
+    "id": "E673",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 36123,
+    "end": 36128,
+    "score": 0.9999797741572062
+  },
+  {
+    "id": "E674",
+    "text": "NO",
+    "type": "Chemical",
+    "start": 36141,
+    "end": 36143,
+    "score": 0.9999549388885498
+  },
+  {
+    "id": "E675",
+    "text": "eNOS",
+    "type": "Gene",
+    "start": 36179,
+    "end": 36183,
+    "score": 0.9999837875366211
+  },
+  {
+    "id": "E676",
+    "text": "HG",
+    "type": "Chemical",
+    "start": 36215,
+    "end": 36217,
+    "score": 0.8987472057342529
+  },
+  {
+    "id": "E677",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 36248,
+    "end": 36251,
+    "score": 0.9999822378158569
+  },
+  {
+    "id": "E678",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 36292,
+    "end": 36297,
+    "score": 0.9999799331029257
+  },
+  {
+    "id": "E679",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 36377,
+    "end": 36380,
+    "score": 0.9999861717224121
+  },
+  {
+    "id": "E680",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 36452,
+    "end": 36455,
+    "score": 0.9999862909317017
+  },
+  {
+    "id": "E681",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 36463,
+    "end": 36468,
+    "score": 0.9999797741572062
+  },
+  {
+    "id": "E682",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 36551,
+    "end": 36554,
+    "score": 0.9999843835830688
+  },
+  {
+    "id": "E683",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 36583,
+    "end": 36588,
+    "score": 0.9999797741572062
+  },
+  {
+    "id": "E684",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 36625,
+    "end": 36629,
+    "score": 0.9999898672103882
+  },
+  {
+    "id": "E685",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 36630,
+    "end": 36635,
+    "score": 0.9999903440475464
+  },
+  {
+    "id": "E686",
+    "text": "NO",
+    "type": "Chemical",
+    "start": 36681,
+    "end": 36683,
+    "score": 0.9105081558227539
+  },
+  {
+    "id": "E687",
+    "text": "eNOS",
+    "type": "Gene",
+    "start": 36702,
+    "end": 36706,
+    "score": 0.9999880790710449
+  },
+  {
+    "id": "E688",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 36773,
+    "end": 36776,
+    "score": 0.9999852180480957
+  },
+  {
+    "id": "E689",
+    "text": "Runx3-mediated",
+    "type": "Gene",
+    "start": 36804,
+    "end": 36818,
+    "score": 0.9999798138936361
+  },
+  {
+    "id": "E690",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 36819,
+    "end": 36823,
+    "score": 0.9999891519546509
+  },
+  {
+    "id": "E691",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 36824,
+    "end": 36829,
+    "score": 0.9999901056289673
+  },
+  {
+    "id": "E692",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 36890,
+    "end": 36893,
+    "score": 0.9999878406524658
+  },
+  {
+    "id": "E693",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 36895,
+    "end": 36899,
+    "score": 0.9999897480010986
+  },
+  {
+    "id": "E694",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 36903,
+    "end": 36907,
+    "score": 0.9999896287918091
+  },
+  {
+    "id": "E695",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 36909,
+    "end": 36914,
+    "score": 0.9999899864196777
+  },
+  {
+    "id": "E696",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 36918,
+    "end": 36923,
+    "score": 0.9999902248382568
+  },
+  {
+    "id": "E697",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 36928,
+    "end": 36933,
+    "score": 0.9999792575836182
+  },
+  {
+    "id": "E698",
+    "text": "HG",
+    "type": "Chemical",
+    "start": 36964,
+    "end": 36966,
+    "score": 0.9999675750732422
+  },
+  {
+    "id": "E699",
+    "text": "HG",
+    "type": "Chemical",
+    "start": 36976,
+    "end": 36978,
+    "score": 0.9999523162841797
+  },
+  {
+    "id": "E700",
+    "text": "Cb1",
+    "type": "Gene",
+    "start": 36984,
+    "end": 36987,
+    "score": 0.9999887943267822
+  },
+  {
+    "id": "E701",
+    "text": "HG",
+    "type": "Chemical",
+    "start": 37000,
+    "end": 37002,
+    "score": 0.9999120235443115
+  },
+  {
+    "id": "E702",
+    "text": "Cb1",
+    "type": "Gene",
+    "start": 37008,
+    "end": 37011,
+    "score": 0.9999890327453613
+  },
+  {
+    "id": "E703",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 37017,
+    "end": 37022,
+    "score": 0.9999794562657675
+  },
+  {
+    "id": "E704",
+    "text": "NO",
+    "type": "Chemical",
+    "start": 37044,
+    "end": 37046,
+    "score": 0.9999948740005493
+  },
+  {
+    "id": "E705",
+    "text": "HG",
+    "type": "Chemical",
+    "start": 37085,
+    "end": 37087,
+    "score": 0.9999942779541016
+  },
+  {
+    "id": "E706",
+    "text": "HG",
+    "type": "Chemical",
+    "start": 37097,
+    "end": 37099,
+    "score": 0.9999939203262329
+  },
+  {
+    "id": "E707",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 37105,
+    "end": 37108,
+    "score": 0.9999873638153076
+  },
+  {
+    "id": "E708",
+    "text": "HG",
+    "type": "Chemical",
+    "start": 37121,
+    "end": 37123,
+    "score": 0.9999927282333374
+  },
+  {
+    "id": "E709",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 37129,
+    "end": 37132,
+    "score": 0.9999884366989136
+  },
+  {
+    "id": "E710",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 37138,
+    "end": 37143,
+    "score": 0.9999793370564779
+  },
+  {
+    "id": "E711",
+    "text": "eNOS",
+    "type": "Gene",
+    "start": 37167,
+    "end": 37171,
+    "score": 0.9999860525131226
+  },
+  {
+    "id": "E712",
+    "text": "HG",
+    "type": "Chemical",
+    "start": 37189,
+    "end": 37191,
+    "score": 0.9999957084655762
+  },
+  {
+    "id": "E713",
+    "text": "HG",
+    "type": "Chemical",
+    "start": 37337,
+    "end": 37339,
+    "score": 0.9999959468841553
+  },
+  {
+    "id": "E714",
+    "text": "HG",
+    "type": "Chemical",
+    "start": 37349,
+    "end": 37351,
+    "score": 0.9999958276748657
+  },
+  {
+    "id": "E715",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 37357,
+    "end": 37360,
+    "score": 0.9999728202819824
+  },
+  {
+    "id": "E716",
+    "text": "HG",
+    "type": "Chemical",
+    "start": 37373,
+    "end": 37375,
+    "score": 0.9999947547912598
+  },
+  {
+    "id": "E717",
+    "text": "Cb1",
+    "type": "Gene",
+    "start": 37381,
+    "end": 37384,
+    "score": 0.9999769926071167
+  },
+  {
+    "id": "E718",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 37390,
+    "end": 37395,
+    "score": 0.998380164305369
+  },
+  {
+    "id": "E719",
+    "text": "HG",
+    "type": "Chemical",
+    "start": 37416,
+    "end": 37418,
+    "score": 0.9999953508377075
+  },
+  {
+    "id": "E720",
+    "text": "HG",
+    "type": "Chemical",
+    "start": 37456,
+    "end": 37458,
+    "score": 0.9999957084655762
+  },
+  {
+    "id": "E721",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 37464,
+    "end": 37467,
+    "score": 0.9999761581420898
+  },
+  {
+    "id": "E722",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 37739,
+    "end": 37742,
+    "score": 0.9999831914901733
+  },
+  {
+    "id": "E723",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 37796,
+    "end": 37800,
+    "score": 0.999987006187439
+  },
+  {
+    "id": "E724",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 37801,
+    "end": 37806,
+    "score": 0.9999881982803345
+  },
+  {
+    "id": "E725",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 37807,
+    "end": 37812,
+    "score": 0.9999788204828898
+  },
+  {
+    "id": "E726",
+    "text": "Cb1",
+    "type": "Gene",
+    "start": 37866,
+    "end": 37869,
+    "score": 0.9999856948852539
+  },
+  {
+    "id": "E727",
+    "text": "HUVEC dysfunction",
+    "type": "Disease",
+    "start": 37873,
+    "end": 37890,
+    "score": 0.9248653948307037
+  },
+  {
+    "id": "E728",
+    "text": "DM",
+    "type": "Disease",
+    "start": 37909,
+    "end": 37911,
+    "score": 0.9999855756759644
+  },
+  {
+    "id": "E729",
+    "text": "Rats",
+    "type": "Species",
+    "start": 37979,
+    "end": 37983,
+    "score": 0.9999861717224121
+  },
+  {
+    "id": "E730",
+    "text": "Cb1",
+    "type": "Gene",
+    "start": 38025,
+    "end": 38028,
+    "score": 0.9999878406524658
+  },
+  {
+    "id": "E731",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 38030,
+    "end": 38035,
+    "score": 0.9999791383743286
+  },
+  {
+    "id": "E732",
+    "text": "rats",
+    "type": "Species",
+    "start": 38061,
+    "end": 38065,
+    "score": 0.9999867677688599
+  },
+  {
+    "id": "E733",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 38193,
+    "end": 38196,
+    "score": 0.9999836683273315
+  },
+  {
+    "id": "E734",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 38246,
+    "end": 38249,
+    "score": 0.9999861717224121
+  },
+  {
+    "id": "E735",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 38297,
+    "end": 38301,
+    "score": 0.99998939037323
+  },
+  {
+    "id": "E736",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 38305,
+    "end": 38310,
+    "score": 0.9999897480010986
+  },
+  {
+    "id": "E737",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 38315,
+    "end": 38320,
+    "score": 0.9999800125757853
+  },
+  {
+    "id": "E738",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 38359,
+    "end": 38364,
+    "score": 0.9999800125757853
+  },
+  {
+    "id": "E739",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 38401,
+    "end": 38404,
+    "score": 0.9999871253967285
+  },
+  {
+    "id": "E740",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 38408,
+    "end": 38412,
+    "score": 0.9999895095825195
+  },
+  {
+    "id": "E741",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 38419,
+    "end": 38424,
+    "score": 0.9999896287918091
+  },
+  {
+    "id": "E742",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 38477,
+    "end": 38482,
+    "score": 0.9999800125757853
+  },
+  {
+    "id": "E743",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 38589,
+    "end": 38592,
+    "score": 0.9999878406524658
+  },
+  {
+    "id": "E744",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 38598,
+    "end": 38603,
+    "score": 0.9999796946843466
+  },
+  {
+    "id": "E745",
+    "text": "Cb1",
+    "type": "Gene",
+    "start": 38851,
+    "end": 38854,
+    "score": 0.9999814033508301
+  },
+  {
+    "id": "E746",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 38973,
+    "end": 38976,
+    "score": 0.999942421913147
+  },
+  {
+    "id": "E747",
+    "text": "aortic tissue lesions",
+    "type": "Disease",
+    "start": 38989,
+    "end": 39010,
+    "score": 0.9999908208847046
+  },
+  {
+    "id": "E748",
+    "text": "DM",
+    "type": "Disease",
+    "start": 39014,
+    "end": 39016,
+    "score": 0.9999843835830688
+  },
+  {
+    "id": "E749",
+    "text": "rats",
+    "type": "Species",
+    "start": 39017,
+    "end": 39021,
+    "score": 0.9999861717224121
+  },
+  {
+    "id": "E750",
+    "text": "Cb1-treated",
+    "type": "Gene",
+    "start": 39042,
+    "end": 39053,
+    "score": 0.9999873638153076
+  },
+  {
+    "id": "E751",
+    "text": "ACH",
+    "type": "Chemical",
+    "start": 39144,
+    "end": 39147,
+    "score": 0.9999972581863403
+  },
+  {
+    "id": "E752",
+    "text": "Cb1",
+    "type": "Gene",
+    "start": 39278,
+    "end": 39281,
+    "score": 0.999988317489624
+  },
+  {
+    "id": "E753",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 39289,
+    "end": 39294,
+    "score": 0.9999784231185913
+  },
+  {
+    "id": "E754",
+    "text": "ACH",
+    "type": "Chemical",
+    "start": 39324,
+    "end": 39327,
+    "score": 0.9999971389770508
+  },
+  {
+    "id": "E755",
+    "text": "SNP",
+    "type": "Chemical",
+    "start": 39365,
+    "end": 39368,
+    "score": 0.9999970197677612
+  },
+  {
+    "id": "E756",
+    "text": "NO",
+    "type": "Chemical",
+    "start": 39474,
+    "end": 39476,
+    "score": 0.9999949932098389
+  },
+  {
+    "id": "E757",
+    "text": "rat",
+    "type": "Species",
+    "start": 39488,
+    "end": 39491,
+    "score": 0.999985933303833
+  },
+  {
+    "id": "E758",
+    "text": "rats",
+    "type": "Species",
+    "start": 39555,
+    "end": 39559,
+    "score": 0.9999877214431763
+  },
+  {
+    "id": "E759",
+    "text": "NO",
+    "type": "Chemical",
+    "start": 39571,
+    "end": 39573,
+    "score": 0.9999865293502808
+  },
+  {
+    "id": "E760",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 39592,
+    "end": 39595,
+    "score": 0.9999771118164062
+  },
+  {
+    "id": "E761",
+    "text": "rats",
+    "type": "Species",
+    "start": 39612,
+    "end": 39616,
+    "score": 0.9999874830245972
+  },
+  {
+    "id": "E762",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 39653,
+    "end": 39658,
+    "score": 0.999980092048645
+  },
+  {
+    "id": "E763",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 39696,
+    "end": 39699,
+    "score": 0.999984860420227
+  },
+  {
+    "id": "E764",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 39736,
+    "end": 39739,
+    "score": 0.9999793767929077
+  },
+  {
+    "id": "E765",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 39744,
+    "end": 39749,
+    "score": 0.9999802907307943
+  },
+  {
+    "id": "E766",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 39842,
+    "end": 39845,
+    "score": 0.9999613761901855
+  },
+  {
+    "id": "E767",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 39910,
+    "end": 39915,
+    "score": 0.9999801715215048
+  },
+  {
+    "id": "E768",
+    "text": "Cbl",
+    "type": "Chemical",
+    "start": 39965,
+    "end": 39968,
+    "score": 0.999915599822998
+  },
+  {
+    "id": "E769",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 39997,
+    "end": 40002,
+    "score": 0.9999797741572062
+  },
+  {
+    "id": "E770",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 40039,
+    "end": 40043,
+    "score": 0.9999891519546509
+  },
+  {
+    "id": "E771",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 40044,
+    "end": 40049,
+    "score": 0.9999898672103882
+  },
+  {
+    "id": "E772",
+    "text": "NO",
+    "type": "Chemical",
+    "start": 40073,
+    "end": 40075,
+    "score": 0.9999854564666748
+  },
+  {
+    "id": "E773",
+    "text": "DM",
+    "type": "Disease",
+    "start": 40142,
+    "end": 40144,
+    "score": 0.9999845027923584
+  },
+  {
+    "id": "E774",
+    "text": "rats",
+    "type": "Species",
+    "start": 40145,
+    "end": 40149,
+    "score": 0.9999853372573853
+  },
+  {
+    "id": "E775",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 40201,
+    "end": 40206,
+    "score": 0.9999798933664957
+  },
+  {
+    "id": "E776",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 40235,
+    "end": 40239,
+    "score": 0.9999898672103882
+  },
+  {
+    "id": "E777",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 40240,
+    "end": 40245,
+    "score": 0.9999899864196777
+  },
+  {
+    "id": "E778",
+    "text": "Runx3-positive",
+    "type": "Gene",
+    "start": 40271,
+    "end": 40285,
+    "score": 0.9999795357386271
+  },
+  {
+    "id": "E779",
+    "text": "rat",
+    "type": "Species",
+    "start": 40300,
+    "end": 40303,
+    "score": 0.9999864101409912
+  },
+  {
+    "id": "E780",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 40382,
+    "end": 40385,
+    "score": 0.9999852180480957
+  },
+  {
+    "id": "E781",
+    "text": "Cb1",
+    "type": "Gene",
+    "start": 40401,
+    "end": 40404,
+    "score": 0.9999876022338867
+  },
+  {
+    "id": "E782",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 40410,
+    "end": 40415,
+    "score": 0.9999681313832601
+  },
+  {
+    "id": "E783",
+    "text": "HE",
+    "type": "Chemical",
+    "start": 40427,
+    "end": 40429,
+    "score": 0.9999785423278809
+  },
+  {
+    "id": "E784",
+    "text": "rat",
+    "type": "Species",
+    "start": 40442,
+    "end": 40445,
+    "score": 0.9999858140945435
+  },
+  {
+    "id": "E785",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 40524,
+    "end": 40527,
+    "score": 0.9999849796295166
+  },
+  {
+    "id": "E786",
+    "text": "Cb1",
+    "type": "Gene",
+    "start": 40543,
+    "end": 40546,
+    "score": 0.9999873638153076
+  },
+  {
+    "id": "E787",
+    "text": "ACH",
+    "type": "Chemical",
+    "start": 40621,
+    "end": 40624,
+    "score": 0.9999970197677612
+  },
+  {
+    "id": "E788",
+    "text": "SNP",
+    "type": "Chemical",
+    "start": 40629,
+    "end": 40632,
+    "score": 0.9999971389770508
+  },
+  {
+    "id": "E789",
+    "text": "DM",
+    "type": "Disease",
+    "start": 40636,
+    "end": 40638,
+    "score": 0.9999845027923584
+  },
+  {
+    "id": "E790",
+    "text": "rats",
+    "type": "Species",
+    "start": 40639,
+    "end": 40643,
+    "score": 0.9999871253967285
+  },
+  {
+    "id": "E791",
+    "text": "rats",
+    "type": "Species",
+    "start": 40655,
+    "end": 40659,
+    "score": 0.9999867677688599
+  },
+  {
+    "id": "E792",
+    "text": "NO",
+    "type": "Chemical",
+    "start": 40687,
+    "end": 40689,
+    "score": 0.9999830722808838
+  },
+  {
+    "id": "E793",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 40728,
+    "end": 40731,
+    "score": 0.9999728202819824
+  },
+  {
+    "id": "E794",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 40747,
+    "end": 40750,
+    "score": 0.9999771118164062
+  },
+  {
+    "id": "E795",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 40756,
+    "end": 40761,
+    "score": 0.9783221085866293
+  },
+  {
+    "id": "E796",
+    "text": "rat",
+    "type": "Species",
+    "start": 40808,
+    "end": 40811,
+    "score": 0.9999854564666748
+  },
+  {
+    "id": "E797",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 40890,
+    "end": 40893,
+    "score": 0.9999746084213257
+  },
+  {
+    "id": "E798",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 40915,
+    "end": 40920,
+    "score": 0.9995253682136536
+  },
+  {
+    "id": "E799",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 40987,
+    "end": 40990,
+    "score": 0.999944806098938
+  },
+  {
+    "id": "E800",
+    "text": "Endothelial dysfunction",
+    "type": "Disease",
+    "start": 41135,
+    "end": 41158,
+    "score": 0.9999805688858032
+  },
+  {
+    "id": "E801",
+    "text": "insulin",
+    "type": "Gene",
+    "start": 41267,
+    "end": 41274,
+    "score": 0.7944642901420593
+  },
+  {
+    "id": "E802",
+    "text": "resistance",
+    "type": "Disease",
+    "start": 41275,
+    "end": 41285,
+    "score": 0.9120915532112122
+  },
+  {
+    "id": "E803",
+    "text": "inflammation",
+    "type": "Disease",
+    "start": 41287,
+    "end": 41299,
+    "score": 0.9999852180480957
+  },
+  {
+    "id": "E804",
+    "text": "hyperglycemia",
+    "type": "Disease",
+    "start": 41304,
+    "end": 41317,
+    "score": 0.9999836683273315
+  },
+  {
+    "id": "E805",
+    "text": "DM",
+    "type": "Disease",
+    "start": 41362,
+    "end": 41364,
+    "score": 0.9999858140945435
+  },
+  {
+    "id": "E806",
+    "text": "diabetic",
+    "type": "Disease",
+    "start": 41526,
+    "end": 41534,
+    "score": 0.9999791383743286
+  },
+  {
+    "id": "E807",
+    "text": "patients",
+    "type": "Species",
+    "start": 41535,
+    "end": 41543,
+    "score": 0.9999852180480957
+  },
+  {
+    "id": "E808",
+    "text": "cardiovascular complications",
+    "type": "Disease",
+    "start": 41547,
+    "end": 41575,
+    "score": 0.9999879598617554
+  },
+  {
+    "id": "E809",
+    "text": "endothelial dysfunction",
+    "type": "Disease",
+    "start": 41621,
+    "end": 41644,
+    "score": 0.9999861121177673
+  },
+  {
+    "id": "E810",
+    "text": "DM",
+    "type": "Disease",
+    "start": 41687,
+    "end": 41689,
+    "score": 0.9999855756759644
+  },
+  {
+    "id": "E811",
+    "text": "E3 ubiquitin ligase",
+    "type": "Gene",
+    "start": 41800,
+    "end": 41819,
+    "score": 0.9999796152114868
+  },
+  {
+    "id": "E812",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 41820,
+    "end": 41823,
+    "score": 0.9999873638153076
+  },
+  {
+    "id": "E813",
+    "text": "NO",
+    "type": "Chemical",
+    "start": 41835,
+    "end": 41837,
+    "score": 0.9999896287918091
+  },
+  {
+    "id": "E814",
+    "text": "DM",
+    "type": "Disease",
+    "start": 41925,
+    "end": 41927,
+    "score": 0.9999827146530151
+  },
+  {
+    "id": "E815",
+    "text": "rats",
+    "type": "Species",
+    "start": 41928,
+    "end": 41932,
+    "score": 0.9999862909317017
+  },
+  {
+    "id": "E816",
+    "text": "NO",
+    "type": "Chemical",
+    "start": 41935,
+    "end": 41937,
+    "score": 0.9999959468841553
+  },
+  {
+    "id": "E817",
+    "text": "NO",
+    "type": "Chemical",
+    "start": 42089,
+    "end": 42091,
+    "score": 0.9999943971633911
+  },
+  {
+    "id": "E818",
+    "text": "eNOS",
+    "type": "Gene",
+    "start": 42105,
+    "end": 42109,
+    "score": 0.9999884366989136
+  },
+  {
+    "id": "E819",
+    "text": "DM",
+    "type": "Disease",
+    "start": 42225,
+    "end": 42227,
+    "score": 0.999983549118042
+  },
+  {
+    "id": "E820",
+    "text": "NO",
+    "type": "Chemical",
+    "start": 42229,
+    "end": 42231,
+    "score": 0.9999946355819702
+  },
+  {
+    "id": "E821",
+    "text": "free radicals",
+    "type": "Chemical",
+    "start": 42277,
+    "end": 42290,
+    "score": 0.99996018409729
+  },
+  {
+    "id": "E822",
+    "text": "reactive oxygen species",
+    "type": "Chemical",
+    "start": 42311,
+    "end": 42334,
+    "score": 0.999992823600769
+  },
+  {
+    "id": "E823",
+    "text": "NOS",
+    "type": "Gene",
+    "start": 42364,
+    "end": 42367,
+    "score": 0.9999886751174927
+  },
+  {
+    "id": "E824",
+    "text": "NO",
+    "type": "Chemical",
+    "start": 42405,
+    "end": 42407,
+    "score": 0.9999958276748657
+  },
+  {
+    "id": "E825",
+    "text": "NO",
+    "type": "Chemical",
+    "start": 42440,
+    "end": 42442,
+    "score": 0.999996542930603
+  },
+  {
+    "id": "E826",
+    "text": "NO",
+    "type": "Chemical",
+    "start": 42585,
+    "end": 42587,
+    "score": 0.9999970197677612
+  },
+  {
+    "id": "E827",
+    "text": "diabetic wound ulcers",
+    "type": "Disease",
+    "start": 42621,
+    "end": 42642,
+    "score": 0.9999817212422689
+  },
+  {
+    "id": "E828",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 42707,
+    "end": 42710,
+    "score": 0.9999876022338867
+  },
+  {
+    "id": "E829",
+    "text": "NO",
+    "type": "Chemical",
+    "start": 42737,
+    "end": 42739,
+    "score": 0.9999909400939941
+  },
+  {
+    "id": "E830",
+    "text": "rat",
+    "type": "Species",
+    "start": 42751,
+    "end": 42754,
+    "score": 0.9999840259552002
+  },
+  {
+    "id": "E831",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 42800,
+    "end": 42803,
+    "score": 0.9999872446060181
+  },
+  {
+    "id": "E832",
+    "text": "DM",
+    "type": "Disease",
+    "start": 42828,
+    "end": 42830,
+    "score": 0.9999790191650391
+  },
+  {
+    "id": "E833",
+    "text": "Cbl-b",
+    "type": "Gene",
+    "start": 42836,
+    "end": 42841,
+    "score": 0.9999792178471884
+  },
+  {
+    "id": "E834",
+    "text": "DM",
+    "type": "Disease",
+    "start": 42924,
+    "end": 42926,
+    "score": 0.999984622001648
+  },
+  {
+    "id": "E835",
+    "text": "Cbl-b",
+    "type": "Gene",
+    "start": 42928,
+    "end": 42933,
+    "score": 0.9999794960021973
+  },
+  {
+    "id": "E836",
+    "text": "diabetes",
+    "type": "Disease",
+    "start": 42960,
+    "end": 42968,
+    "score": 0.999985933303833
+  },
+  {
+    "id": "E837",
+    "text": "mice",
+    "type": "Species",
+    "start": 43010,
+    "end": 43014,
+    "score": 0.999987006187439
+  },
+  {
+    "id": "E838",
+    "text": "Cbl-b",
+    "type": "Gene",
+    "start": 43021,
+    "end": 43026,
+    "score": 0.9999756415685018
+  },
+  {
+    "id": "E839",
+    "text": "nuclear factor-kappa B",
+    "type": "Gene",
+    "start": 43048,
+    "end": 43070,
+    "score": 0.9999819755554199
+  },
+  {
+    "id": "E840",
+    "text": "NF-κB",
+    "type": "Gene",
+    "start": 43072,
+    "end": 43077,
+    "score": 0.9999800523122152
+  },
+  {
+    "id": "E841",
+    "text": "Cbl-b",
+    "type": "Gene",
+    "start": 43106,
+    "end": 43111,
+    "score": 0.9999743302663168
+  },
+  {
+    "id": "E842",
+    "text": "NF-κB",
+    "type": "Gene",
+    "start": 43146,
+    "end": 43151,
+    "score": 0.9999790986378988
+  },
+  {
+    "id": "E843",
+    "text": "T-cell antigen receptor",
+    "type": "Gene",
+    "start": 43157,
+    "end": 43180,
+    "score": 0.9999814987182617
+  },
+  {
+    "id": "E844",
+    "text": "insulin",
+    "type": "Gene",
+    "start": 43253,
+    "end": 43260,
+    "score": 0.9999364614486694
+  },
+  {
+    "id": "E845",
+    "text": "inflammation",
+    "type": "Disease",
+    "start": 43287,
+    "end": 43299,
+    "score": 0.9999788999557495
+  },
+  {
+    "id": "E846",
+    "text": "macrovascular",
+    "type": "Disease",
+    "start": 43320,
+    "end": 43333,
+    "score": 0.5263549089431763
+  },
+  {
+    "id": "E847",
+    "text": "microvascular",
+    "type": "Disease",
+    "start": 43338,
+    "end": 43351,
+    "score": 0.85587078332901
+  },
+  {
+    "id": "E848",
+    "text": "diabetes",
+    "type": "Disease",
+    "start": 43369,
+    "end": 43377,
+    "score": 0.997502863407135
+  },
+  {
+    "id": "E849",
+    "text": "DM",
+    "type": "Disease",
+    "start": 43404,
+    "end": 43406,
+    "score": 0.9999849796295166
+  },
+  {
+    "id": "E850",
+    "text": "rats",
+    "type": "Species",
+    "start": 43407,
+    "end": 43411,
+    "score": 0.9999830722808838
+  },
+  {
+    "id": "E851",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 43537,
+    "end": 43540,
+    "score": 0.9999817609786987
+  },
+  {
+    "id": "E852",
+    "text": "hyperglycemia",
+    "type": "Disease",
+    "start": 43611,
+    "end": 43624,
+    "score": 0.9999853372573853
+  },
+  {
+    "id": "E853",
+    "text": "vascular endothelial-cadherin",
+    "type": "Gene",
+    "start": 43709,
+    "end": 43738,
+    "score": 0.9999805092811584
+  },
+  {
+    "id": "E854",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 43852,
+    "end": 43855,
+    "score": 0.9999872446060181
+  },
+  {
+    "id": "E855",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 43869,
+    "end": 43873,
+    "score": 0.9999899864196777
+  },
+  {
+    "id": "E856",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 43874,
+    "end": 43879,
+    "score": 0.9999899864196777
+  },
+  {
+    "id": "E857",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 43929,
+    "end": 43933,
+    "score": 0.9999901056289673
+  },
+  {
+    "id": "E858",
+    "text": "NO",
+    "type": "Chemical",
+    "start": 43952,
+    "end": 43954,
+    "score": 0.9997187256813049
+  },
+  {
+    "id": "E859",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 44048,
+    "end": 44053,
+    "score": 0.9999898672103882
+  },
+  {
+    "id": "E860",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 44063,
+    "end": 44068,
+    "score": 0.9999895095825195
+  },
+  {
+    "id": "E861",
+    "text": "patients",
+    "type": "Species",
+    "start": 44128,
+    "end": 44136,
+    "score": 0.9999865293502808
+  },
+  {
+    "id": "E862",
+    "text": "DM",
+    "type": "Disease",
+    "start": 44142,
+    "end": 44144,
+    "score": 0.9999860525131226
+  },
+  {
+    "id": "E863",
+    "text": "autoimmune DM",
+    "type": "Disease",
+    "start": 44250,
+    "end": 44263,
+    "score": 0.9999887943267822
+  },
+  {
+    "id": "E864",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 44265,
+    "end": 44270,
+    "score": 0.9999881982803345
+  },
+  {
+    "id": "E865",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 44464,
+    "end": 44469,
+    "score": 0.9999879598617554
+  },
+  {
+    "id": "E866",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 44473,
+    "end": 44477,
+    "score": 0.999988317489624
+  },
+  {
+    "id": "E867",
+    "text": "NO",
+    "type": "Chemical",
+    "start": 44488,
+    "end": 44490,
+    "score": 0.5752950310707092
+  },
+  {
+    "id": "E868",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 44562,
+    "end": 44565,
+    "score": 0.9999831914901733
+  },
+  {
+    "id": "E869",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 44567,
+    "end": 44571,
+    "score": 0.9999889135360718
+  },
+  {
+    "id": "E870",
+    "text": "cytokine receptor",
+    "type": "Gene",
+    "start": 44598,
+    "end": 44615,
+    "score": 0.9934219419956207
+  },
+  {
+    "id": "E871",
+    "text": "leukemogenesis",
+    "type": "Disease",
+    "start": 44640,
+    "end": 44654,
+    "score": 0.9920422434806824
+  },
+  {
+    "id": "E872",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 44662,
+    "end": 44665,
+    "score": 0.9999886751174927
+  },
+  {
+    "id": "E873",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 44688,
+    "end": 44692,
+    "score": 0.9999896287918091
+  },
+  {
+    "id": "E874",
+    "text": "granulocyte–macrophage colony stimulating factor",
+    "type": "Gene",
+    "start": 44722,
+    "end": 44770,
+    "score": 0.9999824166297913
+  },
+  {
+    "id": "E875",
+    "text": "GM-CSF",
+    "type": "Gene",
+    "start": 44772,
+    "end": 44778,
+    "score": 0.9999796946843466
+  },
+  {
+    "id": "E876",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 44809,
+    "end": 44813,
+    "score": 0.9999899864196777
+  },
+  {
+    "id": "E877",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 44846,
+    "end": 44849,
+    "score": 0.999988317489624
+  },
+  {
+    "id": "E878",
+    "text": "c-Cbl",
+    "type": "Gene",
+    "start": 44891,
+    "end": 44896,
+    "score": 0.9999803702036539
+  },
+  {
+    "id": "E879",
+    "text": "JAK",
+    "type": "Gene",
+    "start": 44924,
+    "end": 44927,
+    "score": 0.999987006187439
+  },
+  {
+    "id": "E880",
+    "text": "STAT",
+    "type": "Gene",
+    "start": 44928,
+    "end": 44932,
+    "score": 0.9999872446060181
+  },
+  {
+    "id": "E881",
+    "text": "GM-CSF",
+    "type": "Gene",
+    "start": 44954,
+    "end": 44960,
+    "score": 0.9999803304672241
+  },
+  {
+    "id": "E882",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 45031,
+    "end": 45035,
+    "score": 0.9999901056289673
+  },
+  {
+    "id": "E883",
+    "text": "STAT",
+    "type": "Gene",
+    "start": 45036,
+    "end": 45040,
+    "score": 0.9999903440475464
+  },
+  {
+    "id": "E884",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 45116,
+    "end": 45120,
+    "score": 0.9999897480010986
+  },
+  {
+    "id": "E885",
+    "text": "STAT3",
+    "type": "Gene",
+    "start": 45121,
+    "end": 45126,
+    "score": 0.9999902248382568
+  },
+  {
+    "id": "E886",
+    "text": "SOCS",
+    "type": "Gene",
+    "start": 45127,
+    "end": 45131,
+    "score": 0.9999896287918091
+  },
+  {
+    "id": "E887",
+    "text": "DM",
+    "type": "Disease",
+    "start": 45171,
+    "end": 45173,
+    "score": 0.9999850988388062
+  },
+  {
+    "id": "E888",
+    "text": "inflammation",
+    "type": "Disease",
+    "start": 45187,
+    "end": 45199,
+    "score": 0.9999816417694092
+  },
+  {
+    "id": "E889",
+    "text": "Cryptotanshinone",
+    "type": "Chemical",
+    "start": 45266,
+    "end": 45282,
+    "score": 0.9999966621398926
+  },
+  {
+    "id": "E890",
+    "text": "phenanthrene quinone",
+    "type": "Chemical",
+    "start": 45296,
+    "end": 45316,
+    "score": 0.9999973177909851
+  },
+  {
+    "id": "E891",
+    "text": "lung tumors",
+    "type": "Disease",
+    "start": 45347,
+    "end": 45358,
+    "score": 0.9999889731407166
+  },
+  {
+    "id": "E892",
+    "text": "CD4",
+    "type": "Gene",
+    "start": 45373,
+    "end": 45376,
+    "score": 0.992831826210022
+  },
+  {
+    "id": "E893",
+    "text": "toxicity",
+    "type": "Disease",
+    "start": 45385,
+    "end": 45393,
+    "score": 0.9999866485595703
+  },
+  {
+    "id": "E894",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 45420,
+    "end": 45424,
+    "score": 0.9999896287918091
+  },
+  {
+    "id": "E895",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 45425,
+    "end": 45430,
+    "score": 0.9999897480010986
+  },
+  {
+    "id": "E896",
+    "text": "Tribulus terrestris",
+    "type": "Species",
+    "start": 45445,
+    "end": 45464,
+    "score": 0.9998537302017212
+  },
+  {
+    "id": "E897",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 45656,
+    "end": 45660,
+    "score": 0.9999897480010986
+  },
+  {
+    "id": "E898",
+    "text": "STAT3",
+    "type": "Gene",
+    "start": 45661,
+    "end": 45666,
+    "score": 0.9999901056289673
+  },
+  {
+    "id": "E899",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 45710,
+    "end": 45714,
+    "score": 0.9999903440475464
+  },
+  {
+    "id": "E900",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 45719,
+    "end": 45724,
+    "score": 0.9999903440475464
+  },
+  {
+    "id": "E901",
+    "text": "endothelial dysfunction",
+    "type": "Disease",
+    "start": 45741,
+    "end": 45764,
+    "score": 0.9999904632568359
+  },
+  {
+    "id": "E902",
+    "text": "DM",
+    "type": "Disease",
+    "start": 45768,
+    "end": 45770,
+    "score": 0.9999849796295166
+  },
+  {
+    "id": "E903",
+    "text": "rats",
+    "type": "Species",
+    "start": 45771,
+    "end": 45775,
+    "score": 0.9999867677688599
+  },
+  {
+    "id": "E904",
+    "text": "JAK1/2",
+    "type": "Gene",
+    "start": 45814,
+    "end": 45820,
+    "score": 0.9999775489171346
+  },
+  {
+    "id": "E905",
+    "text": "diabetic kidney disease",
+    "type": "Disease",
+    "start": 45891,
+    "end": 45914,
+    "score": 0.9999923706054688
+  },
+  {
+    "id": "E906",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 45935,
+    "end": 45940,
+    "score": 0.9999898672103882
+  },
+  {
+    "id": "E907",
+    "text": "diabetes",
+    "type": "Disease",
+    "start": 46003,
+    "end": 46011,
+    "score": 0.9999860525131226
+  },
+  {
+    "id": "E908",
+    "text": "mice",
+    "type": "Species",
+    "start": 46015,
+    "end": 46019,
+    "score": 0.9999877214431763
+  },
+  {
+    "id": "E909",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 46067,
+    "end": 46072,
+    "score": 0.9999896287918091
+  },
+  {
+    "id": "E910",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 46180,
+    "end": 46185,
+    "score": 0.9999796946843466
+  },
+  {
+    "id": "E911",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 46215,
+    "end": 46220,
+    "score": 0.9999797344207764
+  },
+  {
+    "id": "E912",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 46257,
+    "end": 46260,
+    "score": 0.9999845027923584
+  },
+  {
+    "id": "E913",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 46298,
+    "end": 46303,
+    "score": 0.9999799331029257
+  },
+  {
+    "id": "E914",
+    "text": "EPC dysfunction",
+    "type": "Disease",
+    "start": 46326,
+    "end": 46341,
+    "score": 0.9997503161430359
+  },
+  {
+    "id": "E915",
+    "text": "diabetic",
+    "type": "Disease",
+    "start": 46345,
+    "end": 46353,
+    "score": 0.9999570846557617
+  },
+  {
+    "id": "E916",
+    "text": "patients",
+    "type": "Species",
+    "start": 46354,
+    "end": 46362,
+    "score": 0.999980092048645
+  },
+  {
+    "id": "E917",
+    "text": "STAT4-mediated",
+    "type": "Gene",
+    "start": 46414,
+    "end": 46428,
+    "score": 0.9999892711639404
+  },
+  {
+    "id": "E918",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 46462,
+    "end": 46467,
+    "score": 0.9999798138936361
+  },
+  {
+    "id": "E919",
+    "text": "Runx1",
+    "type": "Gene",
+    "start": 46588,
+    "end": 46593,
+    "score": 0.9999795357386271
+  },
+  {
+    "id": "E920",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 46598,
+    "end": 46603,
+    "score": 0.9999795357386271
+  },
+  {
+    "id": "E921",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 46619,
+    "end": 46624,
+    "score": 0.9999890327453613
+  },
+  {
+    "id": "E922",
+    "text": "Cbl",
+    "type": "Chemical",
+    "start": 46688,
+    "end": 46691,
+    "score": 0.9999891519546509
+  },
+  {
+    "id": "E923",
+    "text": "endothelial dysfunction",
+    "type": "Disease",
+    "start": 46703,
+    "end": 46726,
+    "score": 0.9999796152114868
+  },
+  {
+    "id": "E924",
+    "text": "DM",
+    "type": "Disease",
+    "start": 46730,
+    "end": 46732,
+    "score": 0.9999861717224121
+  },
+  {
+    "id": "E925",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 46756,
+    "end": 46760,
+    "score": 0.9999871253967285
+  },
+  {
+    "id": "E926",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 46761,
+    "end": 46766,
+    "score": 0.9999891519546509
+  },
+  {
+    "id": "E927",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 46779,
+    "end": 46784,
+    "score": 0.9999799728393555
+  },
+  {
+    "id": "E928",
+    "text": "DM",
+    "type": "Disease",
+    "start": 46860,
+    "end": 46862,
+    "score": 0.9999860525131226
+  },
+  {
+    "id": "E929",
+    "text": "DM",
+    "type": "Disease",
+    "start": 46898,
+    "end": 46900,
+    "score": 0.9999858140945435
+  },
+  {
+    "id": "E930",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 46965,
+    "end": 46968,
+    "score": 0.9914828538894653
+  },
+  {
+    "id": "E931",
+    "text": "DM",
+    "type": "Disease",
+    "start": 46993,
+    "end": 46995,
+    "score": 0.9999860525131226
+  },
+  {
+    "id": "E932",
+    "text": "Cbl",
+    "type": "Gene",
+    "start": 46997,
+    "end": 47000,
+    "score": 0.9999109506607056
+  },
+  {
+    "id": "E933",
+    "text": "JAK2",
+    "type": "Gene",
+    "start": 47013,
+    "end": 47017,
+    "score": 0.9999881982803345
+  },
+  {
+    "id": "E934",
+    "text": "STAT4",
+    "type": "Gene",
+    "start": 47018,
+    "end": 47023,
+    "score": 0.9999891519546509
+  },
+  {
+    "id": "E935",
+    "text": "Runx3",
+    "type": "Gene",
+    "start": 47066,
+    "end": 47071,
+    "score": 0.9999797741572062
+  },
+  {
+    "id": "E936",
+    "text": "H3K4me3",
+    "type": "Gene",
+    "start": 47080,
+    "end": 47087,
+    "score": 0.9999817609786987
+  },
+  {
+    "id": "E937",
+    "text": "DM",
+    "type": "Disease",
+    "start": 47143,
+    "end": 47145,
+    "score": 0.9999852180480957
+  }
+]

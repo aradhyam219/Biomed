@@ -1,0 +1,174 @@
+{
+  "status": "background_timeout_cancelled",
+  "baseline": {
+    "head": "fd66f9bb6d1a5c41ae147abfb5a7994c5bddae6c",
+    "branch": "extraction_system_v2",
+    "production_status": "",
+    "production_diff": "",
+    "production_model_default": "gpt-5.6-luna",
+    "contract11s_reference_head": "7f388368a8bd06f35f60eda37eb2ccdce711eed8",
+    "production_parity_diff": "",
+    "baseline_exception": "User authorized report-only fd66f9bb HEAD after production parity verification"
+  },
+  "background_control": {
+    "status": "success",
+    "generations": [
+      {
+        "generation_number": 1,
+        "repair": false,
+        "configuration": {
+          "model": "gpt-6-luna",
+          "reasoning": {
+            "effort": "max"
+          },
+          "max_output_tokens": 128000,
+          "background": true,
+          "store": false
+        },
+        "prompt_sha256": "5d15339a13385b512692c4825298126fc19b310c53e28b57657e15d78bf6945f",
+        "schema_sha256": "023435da3fa18abb77987313626636eff7bedda28739603db54a2f2c8137c945",
+        "transport_schema_sha256": "b0506680756b7ad8332d976a419cdee57a81e1051dd115f291f65d77bd656510",
+        "create_requested_timestamp": "2026-10-03T20:32:21.154081+00:00",
+        "response_id": "resp_0a11cf7f032301b1006ac16659284087d195150b3cc9374033",
+        "initial_status": "queued",
+        "status": "success",
+        "poll_count": 1,
+        "poll_errors": 0,
+        "structured_output_received": true,
+        "validated_relation_count": 1,
+        "validation_error": null,
+        "provider_sdk_retries": 0,
+        "terminal_status": "completed",
+        "usage": {
+          "input_tokens": 1029,
+          "input_tokens_details": {
+            "cache_write_tokens": 1026,
+            "cached_tokens": 0
+          },
+          "output_tokens": 137,
+          "output_tokens_details": {
+            "reasoning_tokens": 64
+          },
+          "total_tokens": 1166
+        },
+        "transport_success": true,
+        "created_timestamp": "2026-10-03T20:32:22.759517+00:00",
+        "provider_created_at": 1791059545.0,
+        "initial_create_latency_seconds": 1.609,
+        "terminal_timestamp": "2026-10-03T20:32:26.347276+00:00",
+        "background_elapsed_seconds": 3.578,
+        "elapsed_wall_seconds": 5.187,
+        "provider_error": null,
+        "incomplete_details": null,
+        "structured_output": "{\"relations\":[{\"predicate\":\"inhibits\",\"negated\":false,\"target\":\"E2\",\"evidence\":\"Protein A inhibits Protein B.\",\"context\":[],\"source\":\"E1\",\"assertion\":\"Protein A inhibits Protein B.\",\"surface_form\":\"inhibits\",\"intervention\":null,\"effects\":[]}]}"
+      }
+    ],
+    "provider_generation_count": 1,
+    "repair_count": 0,
+    "validated_relation_count": 1,
+    "unique_evidence_span_count": 1,
+    "transport_success": true,
+    "contract10_success": true,
+    "validated_relations": [
+      {
+        "source": "E1",
+        "target": "E2",
+        "predicate": "inhibits",
+        "assertion": "Protein A inhibits Protein B.",
+        "evidence": "Protein A inhibits Protein B.",
+        "negated": false,
+        "intervention": null,
+        "effects": [],
+        "context": [],
+        "surface_form": "inhibits",
+        "score": null
+      }
+    ],
+    "total_elapsed_seconds": 5.297
+  },
+  "real_passage": {
+    "status": "background_timeout_cancelled",
+    "generations": [
+      {
+        "generation_number": 1,
+        "repair": false,
+        "configuration": {
+          "model": "gpt-6-luna",
+          "reasoning": {
+            "effort": "max"
+          },
+          "max_output_tokens": 128000,
+          "background": true,
+          "store": false
+        },
+        "prompt_sha256": "ee73415e65f88d52e17c473eb2d5143940b19b9adfa7d4a6d117e5db450b0405",
+        "schema_sha256": "023435da3fa18abb77987313626636eff7bedda28739603db54a2f2c8137c945",
+        "transport_schema_sha256": "b0506680756b7ad8332d976a419cdee57a81e1051dd115f291f65d77bd656510",
+        "create_requested_timestamp": "2026-10-03T20:32:26.451932+00:00",
+        "response_id": "resp_061ba37b3ed116e2006ac1665dc4f087d18406d79290020103",
+        "initial_status": "queued",
+        "status": "background_timeout_cancelled",
+        "poll_count": 138,
+        "poll_errors": 0,
+        "structured_output_received": false,
+        "validated_relation_count": 0,
+        "validation_error": null,
+        "provider_sdk_retries": 0,
+        "terminal_status": "cancelled",
+        "usage": null,
+        "transport_success": false,
+        "created_timestamp": "2026-10-03T20:32:27.357714+00:00",
+        "provider_created_at": 1791059549.0,
+        "initial_create_latency_seconds": 0.906,
+        "cancel_requested": true,
+        "cancel_requested_timestamp": "2026-10-03T20:40:27.356612+00:00",
+        "last_known_status": "in_progress",
+        "cancel_result": {
+          "id": "resp_061ba37b3ed116e2006ac1665dc4f087d18406d79290020103",
+          "status": "cancelled"
+        },
+        "terminal_timestamp": "2026-10-03T20:40:28.360138+00:00",
+        "background_elapsed_seconds": 481.0,
+        "elapsed_wall_seconds": 481.906,
+        "provider_error": null,
+        "incomplete_details": null,
+        "deadline_seconds": 480,
+        "deadline_reached_before_cancellation": true
+      }
+    ],
+    "provider_generation_count": 1,
+    "repair_count": 0,
+    "validated_relation_count": 0,
+    "unique_evidence_span_count": 0,
+    "transport_success": false,
+    "contract10_success": false,
+    "total_elapsed_seconds": 482.0
+  },
+  "final_baseline": {
+    "head": "fd66f9bb6d1a5c41ae147abfb5a7994c5bddae6c",
+    "branch": "extraction_system_v2",
+    "production_status": "",
+    "production_diff": "",
+    "production_model_default": "gpt-5.6-luna",
+    "contract11s_reference_head": "7f388368a8bd06f35f60eda37eb2ccdce711eed8",
+    "production_parity_diff": "",
+    "baseline_exception": "User authorized report-only fd66f9bb HEAD after production parity verification"
+  },
+  "production_code_unchanged": true,
+  "production_model_default_unchanged": true,
+  "nothing_committed_or_pushed": true,
+  "semantic_schema_sha256": "023435da3fa18abb77987313626636eff7bedda28739603db54a2f2c8137c945",
+  "transport_schema_sha256": "b0506680756b7ad8332d976a419cdee57a81e1051dd115f291f65d77bd656510",
+  "offline_equivalence": {
+    "public_sdk_conversion": true,
+    "allowed_schema_differences_only": true,
+    "all_object_required_and_closed": true,
+    "field_types_and_nullability_preserved": true,
+    "empty_relations_round_trip": true,
+    "null_and_empty_fields_round_trip": true,
+    "normal_contract10_semantics_identical": true
+  },
+  "interpretation": "Strict transport compatibility proven by a valid synthetic control. Real passage remained in_progress at the 480-second deadline; same-ID cancellation returned cancelled. No real structured output or Contract 10 result.",
+  "provider_generation_count": 2,
+  "repair_count": 0
+}

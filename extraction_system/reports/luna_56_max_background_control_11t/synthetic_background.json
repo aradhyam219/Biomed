@@ -1,0 +1,76 @@
+{
+  "status": "success",
+  "generations": [
+    {
+      "generation_number": 1,
+      "repair": false,
+      "configuration": {
+        "model": "gpt-5.6-luna",
+        "reasoning": {
+          "effort": "max"
+        },
+        "max_output_tokens": 128000,
+        "background": true,
+        "store": false
+      },
+      "prompt_sha256": "5d15339a13385b512692c4825298126fc19b310c53e28b57657e15d78bf6945f",
+      "schema_sha256": "023435da3fa18abb77987313626636eff7bedda28739603db54a2f2c8137c945",
+      "transport_schema_sha256": "b0506680756b7ad8332d976a419cdee57a81e1051dd115f291f65d77bd656510",
+      "create_requested_timestamp": "2026-10-03T21:07:01.952039+00:00",
+      "response_id": "resp_021e6dcf29c8d82c006ac16e79ca9087d1a8cad1bcc880edf8",
+      "initial_status": "queued",
+      "status": "success",
+      "poll_count": 1,
+      "poll_errors": 0,
+      "structured_output_received": true,
+      "validated_relation_count": 1,
+      "validation_error": null,
+      "provider_sdk_retries": 0,
+      "terminal_status": "completed",
+      "usage": {
+        "input_tokens": 1029,
+        "input_tokens_details": {
+          "cache_write_tokens": 1026,
+          "cached_tokens": 0
+        },
+        "output_tokens": 149,
+        "output_tokens_details": {
+          "reasoning_tokens": 76
+        },
+        "total_tokens": 1178
+      },
+      "transport_success": true,
+      "created_timestamp": "2026-10-03T21:07:03.494575+00:00",
+      "provider_created_at": 1791061625.0,
+      "initial_create_latency_seconds": 1.547,
+      "terminal_timestamp": "2026-10-03T21:07:07.106983+00:00",
+      "background_elapsed_seconds": 3.609,
+      "elapsed_wall_seconds": 5.156,
+      "provider_error": null,
+      "incomplete_details": null,
+      "structured_output": "{\"relations\":[{\"predicate\":\"inhibits\",\"negated\":false,\"target\":\"E2\",\"evidence\":\"Protein A inhibits Protein B.\",\"context\":[],\"source\":\"E1\",\"assertion\":\"Protein A inhibits Protein B.\",\"surface_form\":\"inhibits\",\"intervention\":null,\"effects\":[]}]}"
+    }
+  ],
+  "provider_generation_count": 1,
+  "repair_count": 0,
+  "validated_relation_count": 1,
+  "unique_evidence_span_count": 1,
+  "transport_success": true,
+  "contract10_success": true,
+  "validated_relations": [
+    {
+      "source": "E1",
+      "target": "E2",
+      "predicate": "inhibits",
+      "assertion": "Protein A inhibits Protein B.",
+      "evidence": "Protein A inhibits Protein B.",
+      "negated": false,
+      "intervention": null,
+      "effects": [],
+      "context": [],
+      "surface_form": "inhibits",
+      "score": null
+    }
+  ],
+  "total_elapsed_seconds": 5.266
+}

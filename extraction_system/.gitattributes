@@ -1,0 +1,12 @@
+# Frozen benchmark bytes and embedded freeze hashes must survive Git round trips.
+reports/gpt61_sol_xhigh_supplemental/** -text
+reports/luna_56_max_background_control_11t/** -text
+reports/luna_56_vs_6_fullpaper_11/** -text
+reports/luna_56_vs_6_real_probe_11qr/** -text
+reports/luna_56_vs_6_real_probe_11qr_rerun/** -text
+reports/luna_6_fullpaper_pilot_11p_retry/** -text
+reports/luna_gpt6_background_probe_11s/** -text
+reports/luna_gpt6_connectivity_smoke_20260928/** -text
+reports/model_selection_11u/** -text
+reports/model_selection_11u_with_candidate_d/** -text
+reports/contract11_preservation_11p/** -text

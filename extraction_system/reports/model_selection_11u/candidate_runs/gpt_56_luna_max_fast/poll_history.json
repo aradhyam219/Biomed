@@ -1,0 +1,380 @@
+[
+  {
+    "timestamp": "2026-10-03T21:47:38.776373+00:00",
+    "response_id": "resp_02409fcec979841a006ac177fa0eec87d18c2ce9e1e8f3c32f",
+    "status": "completed",
+    "poll_latency_seconds": 0.469
+  },
+  {
+    "timestamp": "2026-10-03T21:47:43.684652+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.359
+  },
+  {
+    "timestamp": "2026-10-03T21:47:47.147673+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.39
+  },
+  {
+    "timestamp": "2026-10-03T21:47:50.650867+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.359
+  },
+  {
+    "timestamp": "2026-10-03T21:47:54.120475+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.406
+  },
+  {
+    "timestamp": "2026-10-03T21:47:57.625851+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.39
+  },
+  {
+    "timestamp": "2026-10-03T21:48:01.110094+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.375
+  },
+  {
+    "timestamp": "2026-10-03T21:48:04.601389+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.359
+  },
+  {
+    "timestamp": "2026-10-03T21:48:08.073505+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.375
+  },
+  {
+    "timestamp": "2026-10-03T21:48:11.555475+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.344
+  },
+  {
+    "timestamp": "2026-10-03T21:48:15.011059+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.36
+  },
+  {
+    "timestamp": "2026-10-03T21:48:18.477851+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.344
+  },
+  {
+    "timestamp": "2026-10-03T21:48:21.920649+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.407
+  },
+  {
+    "timestamp": "2026-10-03T21:48:25.430805+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.359
+  },
+  {
+    "timestamp": "2026-10-03T21:48:28.901563+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.797
+  },
+  {
+    "timestamp": "2026-10-03T21:48:32.807887+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.359
+  },
+  {
+    "timestamp": "2026-10-03T21:48:36.264717+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.375
+  },
+  {
+    "timestamp": "2026-10-03T21:48:39.745484+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.375
+  },
+  {
+    "timestamp": "2026-10-03T21:48:43.229663+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.344
+  },
+  {
+    "timestamp": "2026-10-03T21:48:46.673017+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.375
+  },
+  {
+    "timestamp": "2026-10-03T21:48:50.152640+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.375
+  },
+  {
+    "timestamp": "2026-10-03T21:48:53.624899+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.375
+  },
+  {
+    "timestamp": "2026-10-03T21:48:57.099498+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.375
+  },
+  {
+    "timestamp": "2026-10-03T21:49:00.578913+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.359
+  },
+  {
+    "timestamp": "2026-10-03T21:49:04.030751+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.469
+  },
+  {
+    "timestamp": "2026-10-03T21:49:07.601653+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.391
+  },
+  {
+    "timestamp": "2026-10-03T21:49:11.091989+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.36
+  },
+  {
+    "timestamp": "2026-10-03T21:49:14.555438+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.344
+  },
+  {
+    "timestamp": "2026-10-03T21:49:18.011635+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.406
+  },
+  {
+    "timestamp": "2026-10-03T21:49:21.528719+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.359
+  },
+  {
+    "timestamp": "2026-10-03T21:49:24.996282+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.375
+  },
+  {
+    "timestamp": "2026-10-03T21:49:28.482466+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.359
+  },
+  {
+    "timestamp": "2026-10-03T21:49:31.939670+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.375
+  },
+  {
+    "timestamp": "2026-10-03T21:49:35.414962+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.375
+  },
+  {
+    "timestamp": "2026-10-03T21:49:38.903572+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.39
+  },
+  {
+    "timestamp": "2026-10-03T21:49:42.391807+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.36
+  },
+  {
+    "timestamp": "2026-10-03T21:49:45.854991+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.359
+  },
+  {
+    "timestamp": "2026-10-03T21:49:49.326320+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.375
+  },
+  {
+    "timestamp": "2026-10-03T21:49:52.796206+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.375
+  },
+  {
+    "timestamp": "2026-10-03T21:49:56.268469+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.344
+  },
+  {
+    "timestamp": "2026-10-03T21:49:59.711549+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.36
+  },
+  {
+    "timestamp": "2026-10-03T21:50:03.184427+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.344
+  },
+  {
+    "timestamp": "2026-10-03T21:50:06.637774+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.375
+  },
+  {
+    "timestamp": "2026-10-03T21:50:10.118444+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.359
+  },
+  {
+    "timestamp": "2026-10-03T21:50:13.585050+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.344
+  },
+  {
+    "timestamp": "2026-10-03T21:50:17.039521+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.422
+  },
+  {
+    "timestamp": "2026-10-03T21:50:20.565816+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.359
+  },
+  {
+    "timestamp": "2026-10-03T21:50:24.013835+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.453
+  },
+  {
+    "timestamp": "2026-10-03T21:50:27.563265+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.609
+  },
+  {
+    "timestamp": "2026-10-03T21:50:31.266437+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.375
+  },
+  {
+    "timestamp": "2026-10-03T21:50:34.731128+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.437
+  },
+  {
+    "timestamp": "2026-10-03T21:50:38.266735+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.391
+  },
+  {
+    "timestamp": "2026-10-03T21:50:41.751451+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.39
+  },
+  {
+    "timestamp": "2026-10-03T21:50:45.248134+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.375
+  },
+  {
+    "timestamp": "2026-10-03T21:50:48.726745+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.344
+  },
+  {
+    "timestamp": "2026-10-03T21:50:52.176247+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.532
+  },
+  {
+    "timestamp": "2026-10-03T21:50:55.798846+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.36
+  },
+  {
+    "timestamp": "2026-10-03T21:50:59.261837+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.36
+  },
+  {
+    "timestamp": "2026-10-03T21:51:02.724345+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.344
+  },
+  {
+    "timestamp": "2026-10-03T21:51:06.171743+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.454
+  },
+  {
+    "timestamp": "2026-10-03T21:51:09.731239+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.359
+  },
+  {
+    "timestamp": "2026-10-03T21:51:13.199535+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "in_progress",
+    "poll_latency_seconds": 0.375
+  },
+  {
+    "timestamp": "2026-10-03T21:51:16.687949+00:00",
+    "response_id": "resp_0d8499ca8bad2822006ac177feda6487d1aee42f89336780ee",
+    "status": "completed",
+    "poll_latency_seconds": 0.766
+  }
+]

@@ -1,0 +1,60 @@
+{
+  "gpt-5.6-luna max": {
+    "result": "success",
+    "response_ids": [
+      "resp_00cfbe85255146fa006ac16e7e7fac87d1b514a902571f69d5"
+    ],
+    "create_latency_seconds": 0.86,
+    "initial_status": "queued",
+    "terminal_status": "completed",
+    "background_elapsed_seconds": 479.562,
+    "total_wall_seconds": 480.531,
+    "polls": 137,
+    "poll_errors": 0,
+    "usage": [
+      {
+        "input_tokens": 5223,
+        "input_tokens_details": {
+          "cache_write_tokens": 5220,
+          "cached_tokens": 0
+        },
+        "output_tokens": 56702,
+        "output_tokens_details": {
+          "reasoning_tokens": 54383
+        },
+        "total_tokens": 61925
+      }
+    ],
+    "repairs": 0,
+    "validated_relations": 17,
+    "unique_evidence_spans": 10,
+    "structured_output_received": true,
+    "cancellation_result": null,
+    "error": null
+  },
+  "gpt-6-luna max": {
+    "result": "background_timeout_cancelled",
+    "response_ids": [
+      "resp_061ba37b3ed116e2006ac1665dc4f087d18406d79290020103"
+    ],
+    "create_latency_seconds": 0.906,
+    "initial_status": "queued",
+    "terminal_status": "cancelled",
+    "background_elapsed_seconds": 481.0,
+    "total_wall_seconds": 482.0,
+    "polls": 138,
+    "poll_errors": 0,
+    "usage": [
+      null
+    ],
+    "repairs": 0,
+    "validated_relations": 0,
+    "unique_evidence_spans": 0,
+    "structured_output_received": false,
+    "cancellation_result": {
+      "id": "resp_061ba37b3ed116e2006ac1665dc4f087d18406d79290020103",
+      "status": "cancelled"
+    },
+    "error": null
+  }
+}

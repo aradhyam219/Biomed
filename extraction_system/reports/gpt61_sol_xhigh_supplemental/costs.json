@@ -1,0 +1,62 @@
+{
+  "currency": "USD",
+  "estimated_not_invoice": true,
+  "synthetic_requests": [
+    {
+      "response_id": "resp_0e02491dc46cf12b006ac1a39cb92c87d190dc92401b0c9b6c",
+      "repair": false,
+      "usage": {
+        "input_tokens": 1029,
+        "input_tokens_details": {
+          "cache_write_tokens": 1026,
+          "cached_tokens": 0
+        },
+        "output_tokens": 117,
+        "output_tokens_details": {
+          "reasoning_tokens": 44
+        },
+        "total_tokens": 1146
+      },
+      "estimated_request_cost_usd": 0.003741,
+      "regular_input_tokens": 3,
+      "cached_input_tokens": 0,
+      "cache_write_tokens": 1026,
+      "components_usd": {
+        "input_cost": 6e-06,
+        "cached_cost": 0.0,
+        "cache_write_cost": 0.002565,
+        "output_cost": 0.00117
+      }
+    }
+  ],
+  "real_requests": [
+    {
+      "response_id": "resp_0495db2d67c4fa47006ac1a3a5112887d196caff3b7b1c2b84",
+      "repair": false,
+      "usage": {
+        "input_tokens": 5223,
+        "input_tokens_details": {
+          "cache_write_tokens": 5220,
+          "cached_tokens": 0
+        },
+        "output_tokens": 10004,
+        "output_tokens_details": {
+          "reasoning_tokens": 7768
+        },
+        "total_tokens": 15227
+      },
+      "estimated_request_cost_usd": 0.113096,
+      "regular_input_tokens": 3,
+      "cached_input_tokens": 0,
+      "cache_write_tokens": 5220,
+      "components_usd": {
+        "input_cost": 6e-06,
+        "cached_cost": 0.0,
+        "cache_write_cost": 0.01305,
+        "output_cost": 0.10004
+      }
+    }
+  ],
+  "total_cost_usd": 0.116837,
+  "cost_complete": true
+}

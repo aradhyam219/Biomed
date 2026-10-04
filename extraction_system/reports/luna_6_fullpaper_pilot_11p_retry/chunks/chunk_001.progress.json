@@ -1,0 +1,15 @@
+{
+  "chunk_id": "chunk_001",
+  "attempts": [
+    {
+      "attempt": 1,
+      "repair": false,
+      "prompt_sha256": "7689a3d8df557f93560b712dc758cbe51351d800c5e02c70201807ca68e2b3f1",
+      "status": "running",
+      "started_utc": "2026-09-28T11:43:20.502269+00:00",
+      "input_tokens": null,
+      "output_tokens": null,
+      "total_tokens": null
+    }
+  ]
+}

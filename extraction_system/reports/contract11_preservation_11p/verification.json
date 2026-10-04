@@ -1,0 +1,18 @@
+{
+  "offline_adapter_lifecycle_checks": 6,
+  "offline_accounting_and_tier_checks": 5,
+  "preservation_and_schema_checks": 4,
+  "existing_relation_tests": 16,
+  "existing_graph_tests": 13,
+  "total_focused_checks_passed": 44,
+  "fresh_offline_prepare_succeeded": true,
+  "new_provider_calls": 0,
+  "frozen_file_count_with_exact_index_hash_match": 161,
+  "secret_scan_passed": true,
+  "api_credential_values_not_present_in_staged_content": true,
+  "cache_zip_and_production_paths_not_staged": true,
+  "protected_production_parity_diff": "empty",
+  "production_model_default": "gpt-5.6-luna",
+  "schema_semantic_sha256": "023435da3fa18abb77987313626636eff7bedda28739603db54a2f2c8137c945",
+  "schema_transport_sha256": "b0506680756b7ad8332d976a419cdee57a81e1051dd115f291f65d77bd656510"
+}
