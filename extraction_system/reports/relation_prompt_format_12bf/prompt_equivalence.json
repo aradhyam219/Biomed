@@ -1,0 +1,21 @@
+{
+  "approved_tags": [
+    "grounding",
+    "identity",
+    "relation_semantics",
+    "rich_relation_fields",
+    "context_rules",
+    "final_constraints"
+  ],
+  "authoritative_start_sha": "78b656011c8a6bf0231c57d121bc7ea4fd465b5a",
+  "control_sha256": "13f38a6e94db74b534eb0df0b139287ace2e714fc908276ce4c3572f9b25836f",
+  "formatted_sha256": "fc25eef5257d23005a9db8488f7841068690d15d7f17e9c13aa6ecb1bb595e36",
+  "method": "Remove only six approved XML tag pairs and inserted **; normalize whitespace; compare full sequence including all substantive punctuation",
+  "normalized_sha256": "d2dd0a8488e2e07e5bf4a4a6253f6e88733afedea920a69ba70920812046ac77",
+  "passed": true,
+  "prompt_refined_is_harness_alias": true,
+  "same_order": true,
+  "same_sentences": true,
+  "same_words": true,
+  "substantive_punctuation_preserved": true
+}

@@ -1,0 +1,162 @@
+[
+  {
+    "all_record_richness": {
+      "control": {
+        "context": 9,
+        "effects": 3,
+        "intervention": 9
+      },
+      "formatted": {
+        "context": 8,
+        "effects": 9,
+        "intervention": 8
+      }
+    },
+    "control_edges": 13,
+    "control_relations": 13,
+    "formatted_edges": 14,
+    "formatted_relations": 14,
+    "matched_finding_richness": {
+      "control": {
+        "context": 8,
+        "effects": 2,
+        "intervention": 8
+      },
+      "formatted": {
+        "context": 8,
+        "effects": 9,
+        "intervention": 8
+      }
+    },
+    "matched_findings": 12,
+    "slug": "pmcid_pmc11824863"
+  },
+  {
+    "all_record_richness": {
+      "control": {
+        "context": 15,
+        "effects": 2,
+        "intervention": 9
+      },
+      "formatted": {
+        "context": 8,
+        "effects": 1,
+        "intervention": 4
+      }
+    },
+    "control_edges": 25,
+    "control_relations": 26,
+    "formatted_edges": 16,
+    "formatted_relations": 17,
+    "matched_finding_richness": {
+      "control": {
+        "context": 8,
+        "effects": 1,
+        "intervention": 4
+      },
+      "formatted": {
+        "context": 8,
+        "effects": 1,
+        "intervention": 4
+      }
+    },
+    "matched_findings": 15,
+    "slug": "pmcid_pmc8605525"
+  },
+  {
+    "all_record_richness": {
+      "control": {
+        "context": 5,
+        "effects": 7,
+        "intervention": 5
+      },
+      "formatted": {
+        "context": 6,
+        "effects": 7,
+        "intervention": 4
+      }
+    },
+    "control_edges": 18,
+    "control_relations": 20,
+    "formatted_edges": 17,
+    "formatted_relations": 17,
+    "matched_finding_richness": {
+      "control": {
+        "context": 4,
+        "effects": 6,
+        "intervention": 4
+      },
+      "formatted": {
+        "context": 6,
+        "effects": 7,
+        "intervention": 4
+      }
+    },
+    "matched_findings": 15,
+    "slug": "pmid_27172794"
+  },
+  {
+    "all_record_richness": {
+      "control": {
+        "context": 5,
+        "effects": 0,
+        "intervention": 4
+      },
+      "formatted": {
+        "context": 2,
+        "effects": 0,
+        "intervention": 3
+      }
+    },
+    "control_edges": 6,
+    "control_relations": 7,
+    "formatted_edges": 4,
+    "formatted_relations": 4,
+    "matched_finding_richness": {
+      "control": {
+        "context": 2,
+        "effects": 0,
+        "intervention": 3
+      },
+      "formatted": {
+        "context": 2,
+        "effects": 0,
+        "intervention": 3
+      }
+    },
+    "matched_findings": 4,
+    "slug": "pmid_33652126"
+  },
+  {
+    "all_record_richness": {
+      "control": {
+        "context": 4,
+        "effects": 2,
+        "intervention": 1
+      },
+      "formatted": {
+        "context": 2,
+        "effects": 0,
+        "intervention": 1
+      }
+    },
+    "control_edges": 10,
+    "control_relations": 10,
+    "formatted_edges": 10,
+    "formatted_relations": 10,
+    "matched_finding_richness": {
+      "control": {
+        "context": 4,
+        "effects": 2,
+        "intervention": 1
+      },
+      "formatted": {
+        "context": 2,
+        "effects": 0,
+        "intervention": 1
+      }
+    },
+    "matched_findings": 10,
+    "slug": "contract11u_passage_001"
+  }
+]

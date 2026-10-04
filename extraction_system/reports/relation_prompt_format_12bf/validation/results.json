@@ -1,0 +1,10 @@
+{
+  "python": [
+    {"command": "PYTHONPATH=src .venv/Scripts/python.exe -m unittest discover -s tests -p test_responses_execution.py -v", "tests": 25, "status": "passed", "seconds": 6.752},
+    {"command": "PYTHONPATH=src .venv/Scripts/python.exe -m unittest discover -s tests -p test_relation_extraction.py -v", "tests": 16, "status": "passed", "seconds": 1.861},
+    {"command": "PYTHONPATH=src .venv/Scripts/python.exe -m unittest discover -s tests -p test_graph.py -v", "tests": 13, "status": "passed", "seconds": 0.001}
+  ],
+  "viewer": {"command": "node --test viewer/tests/adapter.test.mjs", "tests": 13, "pass": 13, "fail": 0, "status": "passed"},
+  "production_code_changed": false,
+  "scope": "Background lifecycle and prompt override, parsing and local validation, deterministic graph and rich evidence propagation, viewer adapter behavior. No full-suite or browser interaction rerun."
+}

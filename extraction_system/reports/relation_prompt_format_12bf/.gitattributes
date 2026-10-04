@@ -1,0 +1,6 @@
+# Preserve report byte hashes across checkout platforms.
+* text eol=lf
+# Frozen prompt whitespace and unified-diff context are experimental evidence.
+prompt_formatted.txt whitespace=-blank-at-eol
+prompt_refined.txt whitespace=-blank-at-eol
+prompt_format_diff.txt whitespace=-blank-at-eol

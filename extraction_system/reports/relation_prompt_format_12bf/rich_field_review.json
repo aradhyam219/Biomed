@@ -1,0 +1,2114 @@
+[
+  {
+    "assertion": "Alzheimer's disease is a complex neurodegenerative disorder.",
+    "evidence": "Alzheimer's disease (AD) is a complex neurodegenerative disorder",
+    "evidence_end": 129,
+    "evidence_start": 65,
+    "index": 0,
+    "predicate": "is_a",
+    "rich_values": [],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "Disease classification is explicit; multifaceted pathogenesis detail is shortened.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmcid_pmc11824863",
+    "source": "E4",
+    "target": "E6"
+  },
+  {
+    "assertion": "SFPQ plays a crucial role in neurodegenerative diseases, including antioxidant-related functions and regulation of gene expression within brain neurons.",
+    "evidence": "Splicing factor proline and glutamine rich (SFPQ) is known to play a crucial role in neurodegenerative diseases, including antioxidant-related functions and regulating gene expression within brain neurons.",
+    "evidence_end": 449,
+    "evidence_start": 244,
+    "index": 1,
+    "predicate": "plays_role_in",
+    "rich_values": [],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "Role, antioxidant functions, and brain-neuron gene regulation are explicit in evidence.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmcid_pmc11824863",
+    "source": "E8",
+    "target": "E9"
+  },
+  {
+    "assertion": "Lateral ventricular injection of amyloid-beta1–42 established an AD mouse model in this study.",
+    "evidence": "In this study, an AD mouse model was established through lateral ventricular injection of amyloid-beta1–42 (Aβ1–42).",
+    "evidence_end": 641,
+    "evidence_start": 525,
+    "index": 2,
+    "predicate": "establishes_model_of",
+    "rich_values": [
+      {
+        "changed_or_added_vs_matched_control": true,
+        "field": "intervention",
+        "literal_in_evidence": true,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "Injection intervention, mouse context, and model establishment outcome are explicit and belong to amyloid-beta-to-AD model edge.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "Lateral ventricular injection of amyloid-beta1–42"
+      },
+      {
+        "changed_or_added_vs_matched_control": true,
+        "field": "effects",
+        "literal_in_evidence": false,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "Injection intervention, mouse context, and model establishment outcome are explicit and belong to amyloid-beta-to-AD model edge.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "Establishment of an AD mouse model"
+      },
+      {
+        "changed_or_added_vs_matched_control": true,
+        "field": "context",
+        "literal_in_evidence": true,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "Injection intervention, mouse context, and model establishment outcome are explicit and belong to amyloid-beta-to-AD model edge.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "Mouse model"
+      }
+    ],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "Injection intervention, mouse context, and model establishment outcome are explicit and belong to amyloid-beta-to-AD model edge.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmcid_pmc11824863",
+    "source": "E14",
+    "target": "E12"
+  },
+  {
+    "assertion": "SFPQ overexpression improves recognition and memory in AD mice.",
+    "evidence": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice",
+    "evidence_end": 838,
+    "evidence_start": 747,
+    "index": 3,
+    "predicate": "improves_recognition_and_memory_in",
+    "rich_values": [
+      {
+        "changed_or_added_vs_matched_control": false,
+        "field": "intervention",
+        "literal_in_evidence": true,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "Overexpression, mice context, recognition and memory effects are explicit; disease endpoint supplies AD. Cognition/memory retained.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "SFPQ overexpression"
+      },
+      {
+        "changed_or_added_vs_matched_control": true,
+        "field": "effects",
+        "literal_in_evidence": false,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "Overexpression, mice context, recognition and memory effects are explicit; disease endpoint supplies AD. Cognition/memory retained.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "Improved recognition"
+      },
+      {
+        "changed_or_added_vs_matched_control": true,
+        "field": "effects",
+        "literal_in_evidence": false,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "Overexpression, mice context, recognition and memory effects are explicit; disease endpoint supplies AD. Cognition/memory retained.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "Improved memory"
+      },
+      {
+        "changed_or_added_vs_matched_control": true,
+        "field": "context",
+        "literal_in_evidence": true,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "Overexpression, mice context, recognition and memory effects are explicit; disease endpoint supplies AD. Cognition/memory retained.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "Mice"
+      }
+    ],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "Overexpression, mice context, recognition and memory effects are explicit; disease endpoint supplies AD. Cognition/memory retained.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmcid_pmc11824863",
+    "source": "E19",
+    "target": "E20"
+  },
+  {
+    "assertion": "SFPQ overexpression reduces the AD-related marker protein amyloid precursor protein in AD mice.",
+    "evidence": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau.",
+    "evidence_end": 930,
+    "evidence_start": 747,
+    "index": 4,
+    "predicate": "reduces_protein_level",
+    "rich_values": [
+      {
+        "changed_or_added_vs_matched_control": false,
+        "field": "intervention",
+        "literal_in_evidence": true,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "SFPQ intervention, AD-mice setting, and reduced APP outcome are explicit in the same sentence; no new causal claim.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "SFPQ overexpression"
+      },
+      {
+        "changed_or_added_vs_matched_control": true,
+        "field": "effects",
+        "literal_in_evidence": false,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "SFPQ intervention, AD-mice setting, and reduced APP outcome are explicit in the same sentence; no new causal claim.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "Reduced amyloid precursor protein"
+      },
+      {
+        "changed_or_added_vs_matched_control": false,
+        "field": "context",
+        "literal_in_evidence": true,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "SFPQ intervention, AD-mice setting, and reduced APP outcome are explicit in the same sentence; no new causal claim.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "AD mice"
+      }
+    ],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "SFPQ intervention, AD-mice setting, and reduced APP outcome are explicit in the same sentence; no new causal claim.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmcid_pmc11824863",
+    "source": "E19",
+    "target": "E23"
+  },
+  {
+    "assertion": "SFPQ overexpression reduces the AD-related marker protein Tau in AD mice.",
+    "evidence": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau.",
+    "evidence_end": 930,
+    "evidence_start": 747,
+    "index": 5,
+    "predicate": "reduces_protein_level",
+    "rich_values": [
+      {
+        "changed_or_added_vs_matched_control": false,
+        "field": "intervention",
+        "literal_in_evidence": true,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "SFPQ intervention, AD-mice setting, and reduced Tau outcome are explicit in the same sentence.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "SFPQ overexpression"
+      },
+      {
+        "changed_or_added_vs_matched_control": true,
+        "field": "effects",
+        "literal_in_evidence": false,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "SFPQ intervention, AD-mice setting, and reduced Tau outcome are explicit in the same sentence.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "Reduced Tau"
+      },
+      {
+        "changed_or_added_vs_matched_control": false,
+        "field": "context",
+        "literal_in_evidence": true,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "SFPQ intervention, AD-mice setting, and reduced Tau outcome are explicit in the same sentence.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "AD mice"
+      }
+    ],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "SFPQ intervention, AD-mice setting, and reduced Tau outcome are explicit in the same sentence.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmcid_pmc11824863",
+    "source": "E19",
+    "target": "E25"
+  },
+  {
+    "assertion": "Amyloid precursor protein is an AD-related marker protein.",
+    "evidence": "AD-related marker proteins such as amyloid precursor protein (APP) and Tau",
+    "evidence_end": 929,
+    "evidence_start": 855,
+    "index": 6,
+    "predicate": "marker_of",
+    "rich_values": [],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "APP marker-of-AD classification is explicit; no invented intervention or outcome.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmcid_pmc11824863",
+    "source": "E23",
+    "target": "E22"
+  },
+  {
+    "assertion": "Tau is an AD-related marker protein.",
+    "evidence": "AD-related marker proteins such as amyloid precursor protein (APP) and Tau",
+    "evidence_end": 929,
+    "evidence_start": 855,
+    "index": 7,
+    "predicate": "marker_of",
+    "rich_values": [],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "Tau marker-of-AD classification is explicit; no invented intervention or outcome.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmcid_pmc11824863",
+    "source": "E25",
+    "target": "E22"
+  },
+  {
+    "assertion": "In the reported results of SFPQ overexpression in AD mice, the antioxidant protein glutathione S-transferase was upregulated.",
+    "evidence": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated.",
+    "evidence_end": 1101,
+    "evidence_start": 747,
+    "index": 8,
+    "predicate": "upregulates",
+    "rich_values": [
+      {
+        "changed_or_added_vs_matched_control": false,
+        "field": "intervention",
+        "literal_in_evidence": true,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "The contiguous results sentences connect SFPQ overexpression in AD mice to GST upregulation; all fields remain within that experimental finding.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "SFPQ overexpression"
+      },
+      {
+        "changed_or_added_vs_matched_control": true,
+        "field": "effects",
+        "literal_in_evidence": false,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "The contiguous results sentences connect SFPQ overexpression in AD mice to GST upregulation; all fields remain within that experimental finding.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "Upregulated glutathione S-transferase"
+      },
+      {
+        "changed_or_added_vs_matched_control": false,
+        "field": "context",
+        "literal_in_evidence": true,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "The contiguous results sentences connect SFPQ overexpression in AD mice to GST upregulation; all fields remain within that experimental finding.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "AD mice"
+      }
+    ],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "The contiguous results sentences connect SFPQ overexpression in AD mice to GST upregulation; all fields remain within that experimental finding.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmcid_pmc11824863",
+    "source": "E19",
+    "target": "E26"
+  },
+  {
+    "assertion": "In the reported results of SFPQ overexpression in AD mice, the antioxidant protein heme oxygenase-1 was upregulated.",
+    "evidence": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated.",
+    "evidence_end": 1101,
+    "evidence_start": 747,
+    "index": 9,
+    "predicate": "upregulates",
+    "rich_values": [
+      {
+        "changed_or_added_vs_matched_control": false,
+        "field": "intervention",
+        "literal_in_evidence": true,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "The contiguous results sentences connect SFPQ overexpression in AD mice to HO-1 upregulation; all fields remain within that experimental finding.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "SFPQ overexpression"
+      },
+      {
+        "changed_or_added_vs_matched_control": true,
+        "field": "effects",
+        "literal_in_evidence": false,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "The contiguous results sentences connect SFPQ overexpression in AD mice to HO-1 upregulation; all fields remain within that experimental finding.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "Upregulated heme oxygenase-1"
+      },
+      {
+        "changed_or_added_vs_matched_control": false,
+        "field": "context",
+        "literal_in_evidence": true,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "The contiguous results sentences connect SFPQ overexpression in AD mice to HO-1 upregulation; all fields remain within that experimental finding.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "AD mice"
+      }
+    ],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "The contiguous results sentences connect SFPQ overexpression in AD mice to HO-1 upregulation; all fields remain within that experimental finding.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmcid_pmc11824863",
+    "source": "E19",
+    "target": "E28"
+  },
+  {
+    "assertion": "The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax increased.",
+    "evidence": "The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax also increased.",
+    "evidence_end": 1186,
+    "evidence_start": 1102,
+    "index": 10,
+    "predicate": "ratio_to_increased",
+    "rich_values": [
+      {
+        "changed_or_added_vs_matched_control": true,
+        "field": "effects",
+        "literal_in_evidence": false,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "Increased Bcl-2:Bax ratio is explicit. Effect restates that ratio; no SFPQ causality added on this edge.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "Increased Bcl-2-to-Bax ratio"
+      }
+    ],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "Increased Bcl-2:Bax ratio is explicit. Effect restates that ratio; no SFPQ causality added on this edge.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmcid_pmc11824863",
+    "source": "E30",
+    "target": "E31"
+  },
+  {
+    "assertion": "In the reported results of SFPQ overexpression in AD mice, the phosphorylated phosphoinositide 3-kinase-to-PI3K ratio was elevated.",
+    "evidence": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated. The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax also increased. Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway.",
+    "evidence_end": 1381,
+    "evidence_start": 747,
+    "index": 11,
+    "predicate": "increases_phosphorylated_to_total_ratio",
+    "rich_values": [
+      {
+        "changed_or_added_vs_matched_control": false,
+        "field": "intervention",
+        "literal_in_evidence": true,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "Full contiguous results block supports SFPQ intervention, AD-mice context, and increased p-PI3K/PI3K ratio; evidence includes both subject setup and outcome.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "SFPQ overexpression"
+      },
+      {
+        "changed_or_added_vs_matched_control": true,
+        "field": "effects",
+        "literal_in_evidence": false,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "Full contiguous results block supports SFPQ intervention, AD-mice context, and increased p-PI3K/PI3K ratio; evidence includes both subject setup and outcome.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "Elevated p-PI3K/PI3K ratio"
+      },
+      {
+        "changed_or_added_vs_matched_control": false,
+        "field": "context",
+        "literal_in_evidence": true,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "Full contiguous results block supports SFPQ intervention, AD-mice context, and increased p-PI3K/PI3K ratio; evidence includes both subject setup and outcome.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "AD mice"
+      }
+    ],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "Full contiguous results block supports SFPQ intervention, AD-mice context, and increased p-PI3K/PI3K ratio; evidence includes both subject setup and outcome.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmcid_pmc11824863",
+    "source": "E19",
+    "target": "E32"
+  },
+  {
+    "assertion": "In the reported results of SFPQ overexpression in AD mice, the phosphorylated protein kinase B-to-AKT ratio was elevated.",
+    "evidence": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated. The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax also increased. Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway.",
+    "evidence_end": 1381,
+    "evidence_start": 747,
+    "index": 12,
+    "predicate": "increases_phosphorylated_to_total_ratio",
+    "rich_values": [
+      {
+        "changed_or_added_vs_matched_control": false,
+        "field": "intervention",
+        "literal_in_evidence": true,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "Full contiguous results block supports SFPQ intervention, AD-mice context, and increased p-AKT/AKT ratio; no inferred mechanism beyond reported result.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "SFPQ overexpression"
+      },
+      {
+        "changed_or_added_vs_matched_control": true,
+        "field": "effects",
+        "literal_in_evidence": false,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "Full contiguous results block supports SFPQ intervention, AD-mice context, and increased p-AKT/AKT ratio; no inferred mechanism beyond reported result.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "Elevated p-AKT/AKT ratio"
+      },
+      {
+        "changed_or_added_vs_matched_control": false,
+        "field": "context",
+        "literal_in_evidence": true,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "Full contiguous results block supports SFPQ intervention, AD-mice context, and increased p-AKT/AKT ratio; no inferred mechanism beyond reported result.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "AD mice"
+      }
+    ],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "Full contiguous results block supports SFPQ intervention, AD-mice context, and increased p-AKT/AKT ratio; no inferred mechanism beyond reported result.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmcid_pmc11824863",
+    "source": "E19",
+    "target": "E35"
+  },
+  {
+    "assertion": "The findings suggest that SFPQ may serve as a promising molecular target for the prevention and treatment of AD.",
+    "evidence": "These findings suggest that SFPQ may serve as a promising molecular target for the prevention and treatment of AD.",
+    "evidence_end": 1496,
+    "evidence_start": 1382,
+    "index": 13,
+    "predicate": "may_be_therapeutic_target_for",
+    "rich_values": [],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "Potential therapeutic-target status and prevention/treatment remain qualified in assertion and predicate.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmcid_pmc11824863",
+    "source": "E40",
+    "target": "E41"
+  },
+  {
+    "assertion": "E3 ubiquitin ligase appears to alleviate endothelial dysfunction.",
+    "evidence": "E3 ubiquitin ligase appears to alleviate endothelial dysfunction as a promising option for DM treatment.",
+    "evidence_end": 429,
+    "evidence_start": 325,
+    "index": 0,
+    "predicate": "alleviates",
+    "rich_values": [],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "Evidence/assertion preserve appears-to alleviate; predicate loses uncertainty, a graph-facing qualification regression. No unsupported rich field.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmcid_pmc8605525",
+    "source": "E16",
+    "target": "E17"
+  },
+  {
+    "assertion": "Diabetes mellitus is characterized by impaired nitric oxide bioavailability.",
+    "evidence": "Diabetes mellitus (DM), a most common chronic disease, is featured with impaired endothelial function and bioavailability of nitric oxide (NO)",
+    "evidence_end": 317,
+    "evidence_start": 175,
+    "index": 1,
+    "predicate": "has_impaired_bioavailability_of",
+    "rich_values": [],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "DM impaired nitric oxide bioavailability is explicit; no causal strengthening or added fields.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmcid_pmc8605525",
+    "source": "E10",
+    "target": "E14"
+  },
+  {
+    "assertion": "Intraperitoneal injection of streptozotocin was used to develop a rat model of DM.",
+    "evidence": "A rat model of DM was developed through intraperitoneal injection of streptozotocin",
+    "evidence_end": 679,
+    "evidence_start": 596,
+    "index": 2,
+    "predicate": "induces_disease_model",
+    "rich_values": [
+      {
+        "changed_or_added_vs_matched_control": false,
+        "field": "intervention",
+        "literal_in_evidence": true,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "Streptozotocin intraperitoneal injection and rat-model context are explicit; model induction is a supported experimental edge.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "Intraperitoneal injection of streptozotocin"
+      },
+      {
+        "changed_or_added_vs_matched_control": false,
+        "field": "context",
+        "literal_in_evidence": true,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "Streptozotocin intraperitoneal injection and rat-model context are explicit; model induction is a supported experimental edge.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "rat model"
+      }
+    ],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "Streptozotocin intraperitoneal injection and rat-model context are explicit; model induction is a supported experimental edge.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmcid_pmc8605525",
+    "source": "E29",
+    "target": "E28"
+  },
+  {
+    "assertion": "Culturing HUVECs in high glucose conditions was used to induce an in vitro model of DM.",
+    "evidence": "Human umbilical vein endothelial cells (HUVECs) were cultured in high glucose (HG) condition to induce DM as an in vitro model.",
+    "evidence_end": 946,
+    "evidence_start": 819,
+    "index": 3,
+    "predicate": "induces_disease_model",
+    "rich_values": [
+      {
+        "changed_or_added_vs_matched_control": true,
+        "field": "intervention",
+        "literal_in_evidence": false,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "High-glucose culture induces an in-vitro DM model in HUVECs, explicitly stated. This edge is supported; it is not a glucose-to-gene-expression claim.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "Culture in high glucose conditions"
+      },
+      {
+        "changed_or_added_vs_matched_control": true,
+        "field": "context",
+        "literal_in_evidence": true,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "High-glucose culture induces an in-vitro DM model in HUVECs, explicitly stated. This edge is supported; it is not a glucose-to-gene-expression claim.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "Human umbilical vein endothelial cells (HUVECs)"
+      },
+      {
+        "changed_or_added_vs_matched_control": true,
+        "field": "context",
+        "literal_in_evidence": true,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "High-glucose culture induces an in-vitro DM model in HUVECs, explicitly stated. This edge is supported; it is not a glucose-to-gene-expression claim.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "in vitro model"
+      }
+    ],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "High-glucose culture induces an in-vitro DM model in HUVECs, explicitly stated. This edge is supported; it is not a glucose-to-gene-expression claim.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmcid_pmc8605525",
+    "source": "E36",
+    "target": "E37"
+  },
+  {
+    "assertion": "JAK2 was elevated in DM rat tissues.",
+    "evidence": "Cbl was reduced in DM rat tissues and HG-induced HUVECs, where JAK2, Runx3 and STAT4 were elevated.",
+    "evidence_end": 1197,
+    "evidence_start": 1098,
+    "index": 4,
+    "predicate": "has_elevated_expression_in",
+    "rich_values": [
+      {
+        "changed_or_added_vs_matched_control": false,
+        "field": "context",
+        "literal_in_evidence": true,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "Elevated JAK2 in DM rat tissues is explicit; rat context belongs to the observation, but HG-HUVEC coverage is lost.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "rat tissues"
+      }
+    ],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "Elevated JAK2 in DM rat tissues is explicit; rat context belongs to the observation, but HG-HUVEC coverage is lost.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmcid_pmc8605525",
+    "source": "E43",
+    "target": "E41"
+  },
+  {
+    "assertion": "Runx3 was elevated in DM rat tissues.",
+    "evidence": "Cbl was reduced in DM rat tissues and HG-induced HUVECs, where JAK2, Runx3 and STAT4 were elevated.",
+    "evidence_end": 1197,
+    "evidence_start": 1098,
+    "index": 5,
+    "predicate": "has_elevated_expression_in",
+    "rich_values": [
+      {
+        "changed_or_added_vs_matched_control": false,
+        "field": "context",
+        "literal_in_evidence": true,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "Elevated Runx3 in DM rat tissues is explicit; rat context belongs to the observation, but HG-HUVEC coverage is lost.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "rat tissues"
+      }
+    ],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "Elevated Runx3 in DM rat tissues is explicit; rat context belongs to the observation, but HG-HUVEC coverage is lost.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmcid_pmc8605525",
+    "source": "E44",
+    "target": "E41"
+  },
+  {
+    "assertion": "STAT4 was elevated in DM rat tissues.",
+    "evidence": "Cbl was reduced in DM rat tissues and HG-induced HUVECs, where JAK2, Runx3 and STAT4 were elevated.",
+    "evidence_end": 1197,
+    "evidence_start": 1098,
+    "index": 6,
+    "predicate": "has_elevated_expression_in",
+    "rich_values": [
+      {
+        "changed_or_added_vs_matched_control": false,
+        "field": "context",
+        "literal_in_evidence": true,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "Elevated STAT4 in DM rat tissues is explicit; rat context belongs to the observation, but HG-HUVEC coverage is lost.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "rat tissues"
+      }
+    ],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "Elevated STAT4 in DM rat tissues is explicit; rat context belongs to the observation, but HG-HUVEC coverage is lost.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmcid_pmc8605525",
+    "source": "E45",
+    "target": "E41"
+  },
+  {
+    "assertion": "Overexpression of Cbl alleviated endothelial dysfunction, with restoration of vasodilation and suppression of HUVEC apoptosis.",
+    "evidence": "It was found that overexpression of Cbl alleviated endothelial dysfunction by increasing NO production and restoring vasodilation and suppressing apoptosis of HUVECs.",
+    "evidence_end": 1364,
+    "evidence_start": 1198,
+    "index": 7,
+    "predicate": "alleviates",
+    "rich_values": [
+      {
+        "changed_or_added_vs_matched_control": true,
+        "field": "intervention",
+        "literal_in_evidence": true,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "Cbl overexpression, endothelial dysfunction alleviation, restored vasodilation, and HUVEC apoptosis suppression are all in the evidence; outcomes belong to this intervention edge.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "Overexpression of Cbl"
+      },
+      {
+        "changed_or_added_vs_matched_control": true,
+        "field": "effects",
+        "literal_in_evidence": false,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "Cbl overexpression, endothelial dysfunction alleviation, restored vasodilation, and HUVEC apoptosis suppression are all in the evidence; outcomes belong to this intervention edge.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "Restored vasodilation"
+      },
+      {
+        "changed_or_added_vs_matched_control": true,
+        "field": "effects",
+        "literal_in_evidence": false,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "Cbl overexpression, endothelial dysfunction alleviation, restored vasodilation, and HUVEC apoptosis suppression are all in the evidence; outcomes belong to this intervention edge.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "Suppressed apoptosis of HUVECs"
+      }
+    ],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "Cbl overexpression, endothelial dysfunction alleviation, restored vasodilation, and HUVEC apoptosis suppression are all in the evidence; outcomes belong to this intervention edge.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmcid_pmc8605525",
+    "source": "E46",
+    "target": "E47"
+  },
+  {
+    "assertion": "Overexpression of Cbl increased NO production.",
+    "evidence": "It was found that overexpression of Cbl alleviated endothelial dysfunction by increasing NO production and restoring vasodilation and suppressing apoptosis of HUVECs.",
+    "evidence_end": 1364,
+    "evidence_start": 1198,
+    "index": 8,
+    "predicate": "increases_production_of",
+    "rich_values": [
+      {
+        "changed_or_added_vs_matched_control": true,
+        "field": "intervention",
+        "literal_in_evidence": true,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "Cbl overexpression increasing NO production is explicit and intervention is edge-specific.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "Overexpression of Cbl"
+      }
+    ],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "Cbl overexpression increasing NO production is explicit and intervention is edge-specific.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmcid_pmc8605525",
+    "source": "E46",
+    "target": "E48"
+  },
+  {
+    "assertion": "Cb1 enhanced JAK2 ubiquitination.",
+    "evidence": "Mechanistically, Cb1 enhanced JAK2 ubiquitination and decreased JAK2 and STAT4 expression",
+    "evidence_end": 1454,
+    "evidence_start": 1365,
+    "index": 9,
+    "predicate": "enhances_ubiquitination_of",
+    "rich_values": [],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "Cb1 enhancing JAK2 ubiquitination is explicit; no unsupported metadata.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmcid_pmc8605525",
+    "source": "E49",
+    "target": "E50"
+  },
+  {
+    "assertion": "Cb1 decreased JAK2 expression.",
+    "evidence": "Mechanistically, Cb1 enhanced JAK2 ubiquitination and decreased JAK2 and STAT4 expression",
+    "evidence_end": 1454,
+    "evidence_start": 1365,
+    "index": 10,
+    "predicate": "decreases_expression_of",
+    "rich_values": [],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "Cb1 decreasing JAK2 expression is explicit; no context causality is invented.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmcid_pmc8605525",
+    "source": "E49",
+    "target": "E51"
+  },
+  {
+    "assertion": "Cb1 decreased STAT4 expression.",
+    "evidence": "Mechanistically, Cb1 enhanced JAK2 ubiquitination and decreased JAK2 and STAT4 expression",
+    "evidence_end": 1454,
+    "evidence_start": 1365,
+    "index": 11,
+    "predicate": "decreases_expression_of",
+    "rich_values": [],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "Cb1 decreasing STAT4 expression is explicit; no context causality is invented.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmcid_pmc8605525",
+    "source": "E49",
+    "target": "E52"
+  },
+  {
+    "assertion": "STAT4 improved Runx3 expression.",
+    "evidence": "STAT4 improved Runx3 expression by regulating histone H3 lysine 4 trimethylation level.",
+    "evidence_end": 1549,
+    "evidence_start": 1462,
+    "index": 12,
+    "predicate": "increases_expression_of",
+    "rich_values": [],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "STAT4 increasing Runx3 expression is explicit, but histone trimethylation explanatory detail is omitted.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmcid_pmc8605525",
+    "source": "E53",
+    "target": "E54"
+  },
+  {
+    "assertion": "Cbl inactivates JAK2/STAT4 pathway signaling in DM.",
+    "evidence": "Cbl alleviates endothelial dysfunction by inactivation of the JAK2/STAT4 pathway and inhibition of Runx3 expression in DM.",
+    "evidence_end": 1824,
+    "evidence_start": 1702,
+    "index": 13,
+    "predicate": "inactivates_signaling",
+    "rich_values": [
+      {
+        "changed_or_added_vs_matched_control": true,
+        "field": "context",
+        "literal_in_evidence": true,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "Cbl inactivation of JAK2/STAT4 pathway in DM is explicit; DM context is an explicit disease setting.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "DM"
+      }
+    ],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "Cbl inactivation of JAK2/STAT4 pathway in DM is explicit; DM context is an explicit disease setting.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmcid_pmc8605525",
+    "source": "E59",
+    "target": "E61"
+  },
+  {
+    "assertion": "Cbl inactivates JAK2/STAT4 pathway signaling in DM.",
+    "evidence": "Cbl alleviates endothelial dysfunction by inactivation of the JAK2/STAT4 pathway and inhibition of Runx3 expression in DM.",
+    "evidence_end": 1824,
+    "evidence_start": 1702,
+    "index": 14,
+    "predicate": "inactivates_signaling",
+    "rich_values": [
+      {
+        "changed_or_added_vs_matched_control": true,
+        "field": "context",
+        "literal_in_evidence": true,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "Cbl inactivation of JAK2/STAT4 pathway in DM is explicit; split STAT4 endpoint retains pathway assertion.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "DM"
+      }
+    ],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "Cbl inactivation of JAK2/STAT4 pathway in DM is explicit; split STAT4 endpoint retains pathway assertion.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmcid_pmc8605525",
+    "source": "E59",
+    "target": "E62"
+  },
+  {
+    "assertion": "Cbl inhibits Runx3 expression in DM.",
+    "evidence": "Cbl alleviates endothelial dysfunction by inactivation of the JAK2/STAT4 pathway and inhibition of Runx3 expression in DM.",
+    "evidence_end": 1824,
+    "evidence_start": 1702,
+    "index": 15,
+    "predicate": "inhibits_expression_of",
+    "rich_values": [
+      {
+        "changed_or_added_vs_matched_control": true,
+        "field": "context",
+        "literal_in_evidence": true,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "Cbl inhibition of Runx3 expression in DM is explicit; this is not the lost Runx3 overexpression reversal finding.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "DM"
+      }
+    ],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "Cbl inhibition of Runx3 expression in DM is explicit; this is not the lost Runx3 overexpression reversal finding.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmcid_pmc8605525",
+    "source": "E59",
+    "target": "E63"
+  },
+  {
+    "assertion": "Runx3 mediates H3K4me3.",
+    "evidence": "Runx3-mediated H3K4me3",
+    "evidence_end": 163,
+    "evidence_start": 141,
+    "index": 16,
+    "predicate": "mediates",
+    "rich_values": [],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "Runx3-mediated H3K4me3 is explicit in title; no new qualifier or unsupported intervention.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmcid_pmc8605525",
+    "source": "E7",
+    "target": "E8"
+  },
+  {
+    "assertion": "EZH2 promotes expansion of colorectal cancer stem-like cells by activating p21cip1-Wnt/β-catenin signaling.",
+    "evidence": "EZH2 promotes colorectal cancer stem-like cell expansion by activating p21cip1-Wnt/β-catenin signaling.",
+    "evidence_end": 103,
+    "evidence_start": 0,
+    "index": 0,
+    "predicate": "promotes_stem_like_cell_expansion",
+    "rich_values": [
+      {
+        "changed_or_added_vs_matched_control": true,
+        "field": "effects",
+        "literal_in_evidence": false,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "Stem-like-cell expansion and pathway mechanism are explicit in title; effect belongs to EZH2-to-CRC expansion edge.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "Expansion of colorectal cancer stem-like cells"
+      }
+    ],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "Stem-like-cell expansion and pathway mechanism are explicit in title; effect belongs to EZH2-to-CRC expansion edge.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmid_27172794",
+    "source": "E1",
+    "target": "E2"
+  },
+  {
+    "assertion": "EZH2 activates p21cip1-Wnt/β-catenin signaling.",
+    "evidence": "EZH2 promotes colorectal cancer stem-like cell expansion by activating p21cip1-Wnt/β-catenin signaling.",
+    "evidence_end": 103,
+    "evidence_start": 0,
+    "index": 1,
+    "predicate": "activates_signaling",
+    "rich_values": [],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "EZH2 activation of compound p21cip1-Wnt/beta-catenin signaling is explicit; supplied compound endpoint is unchanged.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmid_27172794",
+    "source": "E1",
+    "target": "E3"
+  },
+  {
+    "assertion": "EZH2 activates β-catenin signaling as part of p21cip1-Wnt/β-catenin signaling.",
+    "evidence": "EZH2 promotes colorectal cancer stem-like cell expansion by activating p21cip1-Wnt/β-catenin signaling.",
+    "evidence_end": 103,
+    "evidence_start": 0,
+    "index": 2,
+    "predicate": "activates_signaling",
+    "rich_values": [],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "Beta-catenin activation is retained as part of the explicitly named pathway; assertion does not claim isolated activation.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmid_27172794",
+    "source": "E1",
+    "target": "E4"
+  },
+  {
+    "assertion": "Enhancer of zeste homologue 2 was expressed at high levels in patients with advanced-stage CRC.",
+    "evidence": "patients with advanced stage CRC expressed high levels of polycomb group protein enhancer of zeste homologue 2 (EZH2)",
+    "evidence_end": 492,
+    "evidence_start": 375,
+    "index": 3,
+    "predicate": "highly_expressed_in",
+    "rich_values": [
+      {
+        "changed_or_added_vs_matched_control": true,
+        "field": "context",
+        "literal_in_evidence": false,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "High expression in advanced-stage CRC patients is explicit; long-name EZH2 endpoint is source-explicit and assembly-compatible. Context is not a causal edge.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "Patients with advanced-stage CRC"
+      }
+    ],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "High expression in advanced-stage CRC patients is explicit; long-name EZH2 endpoint is source-explicit and assembly-compatible. Context is not a causal edge.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmid_27172794",
+    "source": "E12",
+    "target": "E10"
+  },
+  {
+    "assertion": "EZH2 was highly expressed in tumor tissues.",
+    "evidence": "High expression of EZH2 in tumor tissues correlated with poor patient prognosis.",
+    "evidence_end": 574,
+    "evidence_start": 494,
+    "index": 4,
+    "predicate": "highly_expressed_in",
+    "rich_values": [
+      {
+        "changed_or_added_vs_matched_control": true,
+        "field": "context",
+        "literal_in_evidence": true,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "Tumor tissue high expression and tumor-tissue setting are explicit; no new causality.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "Tumor tissues"
+      }
+    ],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "Tumor tissue high expression and tumor-tissue setting are explicit; no new causality.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmid_27172794",
+    "source": "E14",
+    "target": "E15"
+  },
+  {
+    "assertion": "High EZH2 expression in tumor tissues correlated with poor patient prognosis.",
+    "evidence": "High expression of EZH2 in tumor tissues correlated with poor patient prognosis.",
+    "evidence_end": 574,
+    "evidence_start": 494,
+    "index": 5,
+    "predicate": "associated_with_poor_prognosis_in",
+    "rich_values": [
+      {
+        "changed_or_added_vs_matched_control": true,
+        "field": "effects",
+        "literal_in_evidence": true,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "Poor prognosis is an explicitly correlated observed outcome; assertion and associated-with predicate preserve correlation, not causation. Effect belongs to this prognosis edge.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "Poor patient prognosis"
+      },
+      {
+        "changed_or_added_vs_matched_control": false,
+        "field": "context",
+        "literal_in_evidence": true,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "Poor prognosis is an explicitly correlated observed outcome; assertion and associated-with predicate preserve correlation, not causation. Effect belongs to this prognosis edge.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "Tumor tissues"
+      }
+    ],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "Poor prognosis is an explicitly correlated observed outcome; assertion and associated-with predicate preserve correlation, not causation. Effect belongs to this prognosis edge.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmid_27172794",
+    "source": "E14",
+    "target": "E16"
+  },
+  {
+    "assertion": "Silencing EZH2 reduced CRC cell proliferation.",
+    "evidence": "silencing EZH2 reduced CRC cell proliferation.",
+    "evidence_end": 633,
+    "evidence_start": 587,
+    "index": 6,
+    "predicate": "silencing_reduces_cell_proliferation",
+    "rich_values": [
+      {
+        "changed_or_added_vs_matched_control": false,
+        "field": "intervention",
+        "literal_in_evidence": false,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "EZH2 silencing and reduced CRC proliferation are explicit; intervention and effect match the edge.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "EZH2 silencing"
+      },
+      {
+        "changed_or_added_vs_matched_control": false,
+        "field": "effects",
+        "literal_in_evidence": true,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "EZH2 silencing and reduced CRC proliferation are explicit; intervention and effect match the edge.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "Reduced CRC cell proliferation"
+      }
+    ],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "EZH2 silencing and reduced CRC proliferation are explicit; intervention and effect match the edge.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmid_27172794",
+    "source": "E17",
+    "target": "E18"
+  },
+  {
+    "assertion": "EZH2 expression was higher in the CCS-like cell subpopulation than in the non-CCS-like cell subpopulation.",
+    "evidence": "EZH2 was more highly expressed in the CCS-like cell subpopulation than in the non-CCS-like cell subpopulation.",
+    "evidence_end": 758,
+    "evidence_start": 648,
+    "index": 7,
+    "predicate": "more_highly_expressed_in",
+    "rich_values": [
+      {
+        "changed_or_added_vs_matched_control": true,
+        "field": "context",
+        "literal_in_evidence": true,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "Higher EZH2 in CCS-like vs non-CCS-like cells is explicit; CCS context belongs to expression comparison.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "CCS-like cell subpopulation"
+      }
+    ],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "Higher EZH2 in CCS-like vs non-CCS-like cells is explicit; CCS context belongs to expression comparison.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmid_27172794",
+    "source": "E19",
+    "target": "E20"
+  },
+  {
+    "assertion": "EZH2 knockdown significantly reduced the CD133+/CD44+ cell subpopulation.",
+    "evidence": "EZH2 knockdown significantly reduced the CD133+/CD44+ subpopulation",
+    "evidence_end": 826,
+    "evidence_start": 759,
+    "index": 8,
+    "predicate": "knockdown_reduces_positive_cell_subpopulation",
+    "rich_values": [
+      {
+        "changed_or_added_vs_matched_control": false,
+        "field": "intervention",
+        "literal_in_evidence": true,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "EZH2 knockdown reduces the jointly CD133+/CD44+ positive population; assertion/effects preserve joint positivity rather than independent CD133 biology.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "EZH2 knockdown"
+      },
+      {
+        "changed_or_added_vs_matched_control": true,
+        "field": "effects",
+        "literal_in_evidence": false,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "EZH2 knockdown reduces the jointly CD133+/CD44+ positive population; assertion/effects preserve joint positivity rather than independent CD133 biology.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "Significantly reduced CD133+/CD44+ cell subpopulation"
+      }
+    ],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "EZH2 knockdown reduces the jointly CD133+/CD44+ positive population; assertion/effects preserve joint positivity rather than independent CD133 biology.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmid_27172794",
+    "source": "E22",
+    "target": "E23"
+  },
+  {
+    "assertion": "EZH2 knockdown significantly reduced the CD133+/CD44+ cell subpopulation.",
+    "evidence": "EZH2 knockdown significantly reduced the CD133+/CD44+ subpopulation",
+    "evidence_end": 826,
+    "evidence_start": 759,
+    "index": 9,
+    "predicate": "knockdown_reduces_positive_cell_subpopulation",
+    "rich_values": [
+      {
+        "changed_or_added_vs_matched_control": false,
+        "field": "intervention",
+        "literal_in_evidence": true,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "EZH2 knockdown reduces the jointly CD133+/CD44+ positive population; split CD44 endpoint retains the same joint qualification.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "EZH2 knockdown"
+      },
+      {
+        "changed_or_added_vs_matched_control": true,
+        "field": "effects",
+        "literal_in_evidence": false,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "EZH2 knockdown reduces the jointly CD133+/CD44+ positive population; split CD44 endpoint retains the same joint qualification.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "Significantly reduced CD133+/CD44+ cell subpopulation"
+      }
+    ],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "EZH2 knockdown reduces the jointly CD133+/CD44+ positive population; split CD44 endpoint retains the same joint qualification.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmid_27172794",
+    "source": "E22",
+    "target": "E24"
+  },
+  {
+    "assertion": "Gene expression data from 433 human CRC specimens and in vitro results revealed that EZH2 activates the Wnt/β-catenin pathway to help maintain CCS-like cell properties.",
+    "evidence": "Gene expression data from 433 human CRC specimens from TCGA database and in vitro results revealed that EZH2 helped maintain CCS-like cell properties by activating the Wnt/β-catenin pathway.",
+    "evidence_end": 1193,
+    "evidence_start": 1003,
+    "index": 10,
+    "predicate": "activates_pathway",
+    "rich_values": [
+      {
+        "changed_or_added_vs_matched_control": false,
+        "field": "context",
+        "literal_in_evidence": true,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "EZH2 pathway activation, CCS maintenance, TCGA 433-human-CRC dataset and in-vitro settings are explicit in one sentence. Context is supported; maintenance effects are lost.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "Gene expression data from 433 human CRC specimens from TCGA database"
+      },
+      {
+        "changed_or_added_vs_matched_control": false,
+        "field": "context",
+        "literal_in_evidence": true,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "EZH2 pathway activation, CCS maintenance, TCGA 433-human-CRC dataset and in-vitro settings are explicit in one sentence. Context is supported; maintenance effects are lost.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "In vitro results"
+      }
+    ],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "EZH2 pathway activation, CCS maintenance, TCGA 433-human-CRC dataset and in-vitro settings are explicit in one sentence. Context is supported; maintenance effects are lost.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmid_27172794",
+    "source": "E29",
+    "target": "E30"
+  },
+  {
+    "assertion": "Gene expression data from 433 human CRC specimens and in vitro results revealed that EZH2 activates the Wnt/β-catenin pathway to help maintain CCS-like cell properties.",
+    "evidence": "Gene expression data from 433 human CRC specimens from TCGA database and in vitro results revealed that EZH2 helped maintain CCS-like cell properties by activating the Wnt/β-catenin pathway.",
+    "evidence_end": 1193,
+    "evidence_start": 1003,
+    "index": 11,
+    "predicate": "activates_pathway",
+    "rich_values": [
+      {
+        "changed_or_added_vs_matched_control": false,
+        "field": "context",
+        "literal_in_evidence": true,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "Same explicit pathway and experimental setting for beta-catenin endpoint; maintenance effects are lost although assertion preserves them.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "Gene expression data from 433 human CRC specimens from TCGA database"
+      },
+      {
+        "changed_or_added_vs_matched_control": false,
+        "field": "context",
+        "literal_in_evidence": true,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "Same explicit pathway and experimental setting for beta-catenin endpoint; maintenance effects are lost although assertion preserves them.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "In vitro results"
+      }
+    ],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "Same explicit pathway and experimental setting for beta-catenin endpoint; maintenance effects are lost although assertion preserves them.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmid_27172794",
+    "source": "E29",
+    "target": "E31"
+  },
+  {
+    "assertion": "p21cip1-mediated cell-cycle arrest at G1/S is required for EZH2 activation of the Wnt/β-catenin pathway.",
+    "evidence": "p21cip1-mediated arrest of the cell cycle at G1/S phase is required for EZH2 activation of the Wnt/β-catenin pathway.",
+    "evidence_end": 1336,
+    "evidence_start": 1219,
+    "index": 12,
+    "predicate": "required_for_pathway_activation",
+    "rich_values": [],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "p21-mediated G1/S arrest requirement is explicit but concerns EZH2 activation of Wnt pathway. Changed conditional requirement endpoints hide EZH2 dependence in assertion; topology flagged, no rich additions.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmid_27172794",
+    "source": "E32",
+    "target": "E34"
+  },
+  {
+    "assertion": "p21cip1-mediated cell-cycle arrest at G1/S is required for EZH2 activation of the Wnt/β-catenin pathway.",
+    "evidence": "p21cip1-mediated arrest of the cell cycle at G1/S phase is required for EZH2 activation of the Wnt/β-catenin pathway.",
+    "evidence_end": 1336,
+    "evidence_start": 1219,
+    "index": 13,
+    "predicate": "required_for_pathway_activation",
+    "rich_values": [],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "p21-mediated G1/S arrest requirement is explicit but concerns EZH2 activation of beta-catenin pathway. Changed conditional endpoints are flagged and excluded from matched-finding gains.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmid_27172794",
+    "source": "E32",
+    "target": "E35"
+  },
+  {
+    "assertion": "EPZ-6438 is a specific inhibitor of EZH2.",
+    "evidence": "the specific EZH2 inhibitor EPZ-6438",
+    "evidence_end": 1383,
+    "evidence_start": 1347,
+    "index": 14,
+    "predicate": "specifically_inhibits",
+    "rich_values": [],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "Specific EPZ-6438 inhibition of EZH2 is explicit; no unsupported qualifiers.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmid_27172794",
+    "source": "E37",
+    "target": "E36"
+  },
+  {
+    "assertion": "EPZ-6438, described as a clinical trial drug and specific EZH2 inhibitor, prevented CRC progression.",
+    "evidence": "the specific EZH2 inhibitor EPZ-6438, a clinical trial drug, prevented CRC progression.",
+    "evidence_end": 1434,
+    "evidence_start": 1347,
+    "index": 15,
+    "predicate": "prevents_progression",
+    "rich_values": [
+      {
+        "changed_or_added_vs_matched_control": false,
+        "field": "intervention",
+        "literal_in_evidence": false,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "EPZ-6438 prevention of CRC progression is explicit; treatment intervention is supported by drug action and effect belongs to this edge. Clinical-trial descriptor stays in assertion, not context causality.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "EPZ-6438 treatment"
+      },
+      {
+        "changed_or_added_vs_matched_control": true,
+        "field": "effects",
+        "literal_in_evidence": true,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "EPZ-6438 prevention of CRC progression is explicit; treatment intervention is supported by drug action and effect belongs to this edge. Clinical-trial descriptor stays in assertion, not context causality.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "Prevented CRC progression"
+      }
+    ],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "EPZ-6438 prevention of CRC progression is explicit; treatment intervention is supported by drug action and effect belongs to this edge. Clinical-trial descriptor stays in assertion, not context causality.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmid_27172794",
+    "source": "E37",
+    "target": "E38"
+  },
+  {
+    "assertion": "EZH2 maintains CCS-like cell characteristics by arresting the cell cycle at G1/S.",
+    "evidence": "these findings revealed EZH2 maintaining CCS-like cell characteristics by arresting the cell cycle at the G1/S phase.",
+    "evidence_end": 1566,
+    "evidence_start": 1449,
+    "index": 16,
+    "predicate": "maintains_stem_like_cell_characteristics",
+    "rich_values": [
+      {
+        "changed_or_added_vs_matched_control": true,
+        "field": "effects",
+        "literal_in_evidence": false,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "EZH2 maintaining CCS characteristics by G1/S arrest is explicit; new maintenance effect directly belongs to this edge.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "Maintenance of CCS-like cell characteristics"
+      }
+    ],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "EZH2 maintaining CCS characteristics by G1/S arrest is explicit; new maintenance effect directly belongs to this edge.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmid_27172794",
+    "source": "E39",
+    "target": "E40"
+  },
+  {
+    "assertion": "PTEN mediates serum deprivation-induced cytotoxicity in H9c2 cells via the PI3K/AKT signaling pathway.",
+    "evidence": "PTEN mediates serum deprivation-induced cytotoxicity in H9c2 cells via the PI3K/AKT signaling pathway.",
+    "evidence_end": 102,
+    "evidence_start": 0,
+    "index": 0,
+    "predicate": "mediates",
+    "rich_values": [
+      {
+        "changed_or_added_vs_matched_control": false,
+        "field": "intervention",
+        "literal_in_evidence": true,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "PTEN mediation of cytotoxicity via PI3K/AKT under serum deprivation in H9c2 is explicit; intervention and cell context belong to edge.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "serum deprivation"
+      },
+      {
+        "changed_or_added_vs_matched_control": false,
+        "field": "context",
+        "literal_in_evidence": true,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "PTEN mediation of cytotoxicity via PI3K/AKT under serum deprivation in H9c2 is explicit; intervention and cell context belong to edge.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "H9c2 cells"
+      }
+    ],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "PTEN mediation of cytotoxicity via PI3K/AKT under serum deprivation in H9c2 is explicit; intervention and cell context belong to edge.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmid_33652126",
+    "source": "E1",
+    "target": "E2"
+  },
+  {
+    "assertion": "The pathogenesis of acute myocardial infarction is associated with cardiomyocyte necrosis.",
+    "evidence": "The pathogenesis of acute myocardial infarction (AMI) is associated with cardiomyocyte necrosis and apoptosis.",
+    "evidence_end": 214,
+    "evidence_start": 104,
+    "index": 1,
+    "predicate": "associated_with",
+    "rich_values": [],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "AMI association with cardiomyocyte necrosis is explicit; no unsupported causal promotion.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmid_33652126",
+    "source": "E6",
+    "target": "E8"
+  },
+  {
+    "assertion": "H9c2 cells cultured under serum deprivation were used to simulate the apoptosis process of myocardial infarction.",
+    "evidence": "In this study, we used H9c2 cells cultured under serum deprivation to simulate the apoptosis process of myocardial infarction.",
+    "evidence_end": 557,
+    "evidence_start": 431,
+    "index": 2,
+    "predicate": "used_to_model_apoptosis_of",
+    "rich_values": [
+      {
+        "changed_or_added_vs_matched_control": true,
+        "field": "intervention",
+        "literal_in_evidence": false,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "H9c2 serum-deprivation culture as myocardial-infarction apoptosis model is explicit; culture intervention belongs to the model relation.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "culture under serum deprivation"
+      }
+    ],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "H9c2 serum-deprivation culture as myocardial-infarction apoptosis model is explicit; culture intervention belongs to the model relation.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmid_33652126",
+    "source": "E12",
+    "target": "E13"
+  },
+  {
+    "assertion": "PTEN knockdown using siRNA inhibited serum deprivation-induced ROS production.",
+    "evidence": "Functionally, the PTEN knockdown experiment using siRNA inhibited serum deprivation-induced cell apoptosis, ROS production, and DNA damage, whereas increased cell proliferation.",
+    "evidence_end": 1174,
+    "evidence_start": 997,
+    "index": 3,
+    "predicate": "knockdown_inhibits_production_of",
+    "rich_values": [
+      {
+        "changed_or_added_vs_matched_control": false,
+        "field": "intervention",
+        "literal_in_evidence": false,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "PTEN siRNA knockdown inhibiting ROS under serum deprivation is explicit; intervention/context are supported. Other outcomes are not recovered.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "PTEN knockdown using siRNA"
+      },
+      {
+        "changed_or_added_vs_matched_control": false,
+        "field": "context",
+        "literal_in_evidence": true,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "PTEN siRNA knockdown inhibiting ROS under serum deprivation is explicit; intervention/context are supported. Other outcomes are not recovered.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "serum deprivation"
+      }
+    ],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "PTEN siRNA knockdown inhibiting ROS under serum deprivation is explicit; intervention/context are supported. Other outcomes are not recovered.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "pmid_33652126",
+    "source": "E20",
+    "target": "E21"
+  },
+  {
+    "assertion": "HMGB1 knockdown reduces hyperglycemia.",
+    "evidence": "hyperglycemia reduction upon HMGB1 knockdown",
+    "evidence_end": 125,
+    "evidence_start": 81,
+    "index": 0,
+    "predicate": "reduces",
+    "rich_values": [
+      {
+        "changed_or_added_vs_matched_control": false,
+        "field": "intervention",
+        "literal_in_evidence": true,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "HMGB1 knockdown reduces hyperglycemia, explicitly stated; same IDs/direction and intervention as control, but effects empty.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "HMGB1 knockdown"
+      }
+    ],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "HMGB1 knockdown reduces hyperglycemia, explicitly stated; same IDs/direction and intervention as control, but effects empty.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "contract11u_passage_001",
+    "source": "E511",
+    "target": "E510"
+  },
+  {
+    "assertion": "iHMGB1 KO TMX STZ mice had plasma ALT levels comparable to those of HMGB1 Flox TMX STZ mice 10 weeks after the last injection.",
+    "evidence": "Our assessment of the plasma samples collected from HMGB1 Flox TMX STZ and iHMGB1 KO TMX STZ mice following 10 weeks post last injection revealed that although ALT levels were comparable between the two groups",
+    "evidence_end": 442,
+    "evidence_start": 233,
+    "index": 1,
+    "predicate": "has_comparable_plasma_levels_of",
+    "rich_values": [
+      {
+        "changed_or_added_vs_matched_control": true,
+        "field": "context",
+        "literal_in_evidence": true,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "Comparable ALT between both mice cohorts is symmetric and explicit; plasma and last-injection 10-week contexts are in evidence. Source E517 is the supplied mice mention, unchanged.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "Plasma samples"
+      },
+      {
+        "changed_or_added_vs_matched_control": true,
+        "field": "context",
+        "literal_in_evidence": false,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "Comparable ALT between both mice cohorts is symmetric and explicit; plasma and last-injection 10-week contexts are in evidence. Source E517 is the supplied mice mention, unchanged.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "10 weeks after the last injection"
+      }
+    ],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "Comparable ALT between both mice cohorts is symmetric and explicit; plasma and last-injection 10-week contexts are in evidence. Source E517 is the supplied mice mention, unchanged.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "contract11u_passage_001",
+    "source": "E517",
+    "target": "E518"
+  },
+  {
+    "assertion": "HMGB1 Flox TMX STZ mice displayed significantly elevated AST levels compared with iHMGB1 KO TMX STZ mice.",
+    "evidence": "HMGB1 Flox TMX STZ mice displayed significantly elevated levels of AST, an indicator of liver damage, compared to iHMGB1 KO TMX STZ mice",
+    "evidence_end": 580,
+    "evidence_start": 444,
+    "index": 2,
+    "predicate": "has_elevated_levels_of",
+    "rich_values": [],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "Flox-cohort elevated AST vs KO cohort is explicit, same IDs/direction. Plasma/timing context omitted rather than unsupported import from absent evidence.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "contract11u_passage_001",
+    "source": "E521",
+    "target": "E522"
+  },
+  {
+    "assertion": "AST is an indicator of liver damage.",
+    "evidence": "AST, an indicator of liver damage",
+    "evidence_end": 544,
+    "evidence_start": 511,
+    "index": 3,
+    "predicate": "is_indicator_of",
+    "rich_values": [],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "AST as liver-damage indicator is explicit; unchanged endpoint and direction.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "contract11u_passage_001",
+    "source": "E522",
+    "target": "E523"
+  },
+  {
+    "assertion": "The findings suggest that the presence of HMGB1 contributes to more severe liver damage under hyperglycemic conditions.",
+    "evidence": "suggesting that the presence of HMGB1 contributes to more severe liver damage under hyperglycemic conditions",
+    "evidence_end": 961,
+    "evidence_start": 853,
+    "index": 4,
+    "predicate": "contributes_to",
+    "rich_values": [
+      {
+        "changed_or_added_vs_matched_control": false,
+        "field": "context",
+        "literal_in_evidence": true,
+        "semantic_judgment": {
+          "evidence_adequate_for_emitted_values": true,
+          "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+          "new_unsupported_causality": false,
+          "note": "HMGB1 contribution to more severe liver damage remains qualified by findings suggest and hyperglycemic setting. Evidence supports context; effects emptied.",
+          "rich_values_belong_to_edge": true
+        },
+        "value": "Hyperglycemic conditions"
+      }
+    ],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "HMGB1 contribution to more severe liver damage remains qualified by findings suggest and hyperglycemic setting. Evidence supports context; effects emptied.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "contract11u_passage_001",
+    "source": "E537",
+    "target": "E538"
+  },
+  {
+    "assertion": "HMGB1 Flox TMX STZ mice displayed increased macrovesicular lipid droplets compared with iHMGB1 KO TMX STZ mice.",
+    "evidence": "HMGB1 Flox TMX STZ mice displayed an increase in macrovesicular lipid droplets and greater signs of mononuclear inflammatory infiltration compared to iHMGB1 KO TMX STZ mice",
+    "evidence_end": 1314,
+    "evidence_start": 1142,
+    "index": 5,
+    "predicate": "has_increased_droplets_of",
+    "rich_values": [],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "Flox mice increased macrovesicular lipid droplets vs KO cohort is explicit; unchanged supplied mice/lipid endpoints, no gene-to-gene cohort replacement or imported liver context.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "contract11u_passage_001",
+    "source": "E546",
+    "target": "E547"
+  },
+  {
+    "assertion": "HMGB1 Flox TMX STZ mice displayed greater signs of mononuclear inflammatory infiltration compared with iHMGB1 KO TMX STZ mice.",
+    "evidence": "HMGB1 Flox TMX STZ mice displayed an increase in macrovesicular lipid droplets and greater signs of mononuclear inflammatory infiltration compared to iHMGB1 KO TMX STZ mice",
+    "evidence_end": 1314,
+    "evidence_start": 1142,
+    "index": 6,
+    "predicate": "has_greater_inflammatory_infiltration",
+    "rich_values": [],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "Flox mice greater mononuclear inflammatory infiltration vs KO cohort is explicit; unchanged supplied endpoints/direction, no imported liver context.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "contract11u_passage_001",
+    "source": "E546",
+    "target": "E548"
+  },
+  {
+    "assertion": "HMGB1 Flox TMX STZ mice exhibited increased glycogen storage.",
+    "evidence": "HMGB1 Flox TMX STZ mice exhibited increased glycogen storage and lipid uptake",
+    "evidence_end": 1471,
+    "evidence_start": 1394,
+    "index": 7,
+    "predicate": "has_increased_storage_of",
+    "rich_values": [],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "Flox mice increased glycogen storage is explicit; unchanged mice-to-measurement direction and no inferred staining intervention.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "contract11u_passage_001",
+    "source": "E556",
+    "target": "E557"
+  },
+  {
+    "assertion": "HMGB1 Flox TMX STZ mice exhibited increased lipid uptake.",
+    "evidence": "HMGB1 Flox TMX STZ mice exhibited increased glycogen storage and lipid uptake",
+    "evidence_end": 1471,
+    "evidence_start": 1394,
+    "index": 8,
+    "predicate": "has_increased_uptake_of",
+    "rich_values": [],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "Flox mice increased lipid uptake is explicit; unchanged mice-to-measurement direction and no inferred staining intervention.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "contract11u_passage_001",
+    "source": "E556",
+    "target": "E558"
+  },
+  {
+    "assertion": "iHMGB1 KO TMX STZ mice exhibited significantly elevated Cystatin C levels compared with HMGB1 Flox TMX STZ mice.",
+    "evidence": "Our results indicate that iHMGB1 KO TMX STZ mice exhibited significantly elevated levels of Cystatin C compared to HMGB1 Flox TMX STZ mice",
+    "evidence_end": 1962,
+    "evidence_start": 1824,
+    "index": 9,
+    "predicate": "has_elevated_levels_of",
+    "rich_values": [],
+    "semantic_judgment": {
+      "evidence_adequate_for_emitted_values": true,
+      "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+      "new_unsupported_causality": false,
+      "note": "KO mice elevated Cystatin C vs Flox cohort is explicit; unchanged IDs/direction. Circulating/plasma and 10-week qualifiers omitted rather than imported from outside saved evidence.",
+      "rich_values_belong_to_edge": true
+    },
+    "slug": "contract11u_passage_001",
+    "source": "E572",
+    "target": "E573"
+  }
+]

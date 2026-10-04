@@ -1,0 +1,263 @@
+{
+  "all_record_richness": {
+    "control": {
+      "context": 38,
+      "effects": 14,
+      "intervention": 28
+    },
+    "formatted": {
+      "context": 26,
+      "effects": 17,
+      "intervention": 20
+    }
+  },
+  "case_checks": [
+    {
+      "contiguous_verbatim_evidence": true,
+      "nodes_identical": true,
+      "normalized_exact_duplicates": 0,
+      "replay_exact": true,
+      "rich_projection_exact": true,
+      "slug": "pmcid_pmc11824863",
+      "valid_endpoints": true
+    },
+    {
+      "contiguous_verbatim_evidence": true,
+      "nodes_identical": true,
+      "normalized_exact_duplicates": 0,
+      "replay_exact": true,
+      "rich_projection_exact": true,
+      "slug": "pmcid_pmc8605525",
+      "valid_endpoints": true
+    },
+    {
+      "contiguous_verbatim_evidence": true,
+      "nodes_identical": true,
+      "normalized_exact_duplicates": 0,
+      "replay_exact": true,
+      "rich_projection_exact": true,
+      "slug": "pmid_27172794",
+      "valid_endpoints": true
+    },
+    {
+      "contiguous_verbatim_evidence": true,
+      "nodes_identical": true,
+      "normalized_exact_duplicates": 0,
+      "replay_exact": true,
+      "rich_projection_exact": true,
+      "slug": "pmid_33652126",
+      "valid_endpoints": true
+    },
+    {
+      "contiguous_verbatim_evidence": true,
+      "nodes_identical": true,
+      "normalized_exact_duplicates": 0,
+      "replay_exact": true,
+      "rich_projection_exact": true,
+      "slug": "contract11u_passage_001",
+      "valid_endpoints": true
+    }
+  ],
+  "control_prompt_unchanged": true,
+  "historical_artifacts_unchanged": true,
+  "limits": "Primary-agent semantic review, one completion per case, no independent adjudication or sampling-variability isolation; duplicate checks cover normalized outputs.",
+  "paid_control_generations": 0,
+  "production_defaults_unchanged": true,
+  "prompt_adaptations": 0,
+  "prompt_equivalence": true,
+  "protected_code_and_viewer_unchanged": true,
+  "repairs": 0,
+  "scientific_gate": "FORMATTING EXPERIMENT FAILED — PRESERVE 12A CONTROL PROMPT",
+  "scientific_generations": 5,
+  "starting_sha": "78b656011c8a6bf0231c57d121bc7ea4fd465b5a",
+  "status": "passed",
+  "tests": {
+    "production_code_changed": false,
+    "python": [
+      {
+        "command": "PYTHONPATH=src .venv/Scripts/python.exe -m unittest discover -s tests -p test_responses_execution.py -v",
+        "seconds": 6.752,
+        "status": "passed",
+        "tests": 25
+      },
+      {
+        "command": "PYTHONPATH=src .venv/Scripts/python.exe -m unittest discover -s tests -p test_relation_extraction.py -v",
+        "seconds": 1.861,
+        "status": "passed",
+        "tests": 16
+      },
+      {
+        "command": "PYTHONPATH=src .venv/Scripts/python.exe -m unittest discover -s tests -p test_graph.py -v",
+        "seconds": 0.001,
+        "status": "passed",
+        "tests": 13
+      }
+    ],
+    "scope": "Background lifecycle and prompt override, parsing and local validation, deterministic graph and rich evidence propagation, viewer adapter behavior. No full-suite or browser interaction rerun.",
+    "viewer": {
+      "command": "node --test viewer/tests/adapter.test.mjs",
+      "fail": 0,
+      "pass": 13,
+      "status": "passed",
+      "tests": 13
+    }
+  },
+  "valid_matched_finding_richness": {
+    "control": {
+      "context": 26,
+      "effects": 11,
+      "intervention": 20
+    },
+    "formatted": {
+      "context": 26,
+      "effects": 17,
+      "intervention": 20
+    }
+  },
+  "viewer_compatibility": {
+    "checks": [
+      {
+        "canonical_nodes": 18,
+        "directional_bundles": 1,
+        "displayed_connections": 9,
+        "evidence_instances": 10,
+        "graph": "reports/relation_prompt_format_12bf/graphs/control/contract11u_passage_001.json",
+        "hidden_and_revealed_nodes_checked": true,
+        "mixed_negation_bundles": 0,
+        "relations": 10,
+        "rich_evidence_preserved": true,
+        "self_relations": 0,
+        "status": "passed",
+        "unconnected_nodes": 8
+      },
+      {
+        "canonical_nodes": 20,
+        "directional_bundles": 1,
+        "displayed_connections": 12,
+        "evidence_instances": 13,
+        "graph": "reports/relation_prompt_format_12bf/graphs/control/pmcid_pmc11824863.json",
+        "hidden_and_revealed_nodes_checked": true,
+        "mixed_negation_bundles": 0,
+        "relations": 13,
+        "rich_evidence_preserved": true,
+        "self_relations": 0,
+        "status": "passed",
+        "unconnected_nodes": 6
+      },
+      {
+        "canonical_nodes": 20,
+        "directional_bundles": 4,
+        "displayed_connections": 20,
+        "evidence_instances": 26,
+        "graph": "reports/relation_prompt_format_12bf/graphs/control/pmcid_pmc8605525.json",
+        "hidden_and_revealed_nodes_checked": true,
+        "mixed_negation_bundles": 0,
+        "relations": 25,
+        "rich_evidence_preserved": true,
+        "self_relations": 0,
+        "status": "passed",
+        "unconnected_nodes": 6
+      },
+      {
+        "canonical_nodes": 15,
+        "directional_bundles": 4,
+        "displayed_connections": 12,
+        "evidence_instances": 20,
+        "graph": "reports/relation_prompt_format_12bf/graphs/control/pmid_27172794.json",
+        "hidden_and_revealed_nodes_checked": true,
+        "mixed_negation_bundles": 0,
+        "relations": 18,
+        "rich_evidence_preserved": true,
+        "self_relations": 0,
+        "status": "passed",
+        "unconnected_nodes": 3
+      },
+      {
+        "canonical_nodes": 10,
+        "directional_bundles": 1,
+        "displayed_connections": 5,
+        "evidence_instances": 7,
+        "graph": "reports/relation_prompt_format_12bf/graphs/control/pmid_33652126.json",
+        "hidden_and_revealed_nodes_checked": true,
+        "mixed_negation_bundles": 0,
+        "relations": 6,
+        "rich_evidence_preserved": true,
+        "self_relations": 0,
+        "status": "passed",
+        "unconnected_nodes": 2
+      },
+      {
+        "canonical_nodes": 18,
+        "directional_bundles": 1,
+        "displayed_connections": 9,
+        "evidence_instances": 10,
+        "graph": "reports/relation_prompt_format_12bf/graphs/refined/contract11u_passage_001.json",
+        "hidden_and_revealed_nodes_checked": true,
+        "mixed_negation_bundles": 0,
+        "relations": 10,
+        "rich_evidence_preserved": true,
+        "self_relations": 0,
+        "status": "passed",
+        "unconnected_nodes": 8
+      },
+      {
+        "canonical_nodes": 20,
+        "directional_bundles": 1,
+        "displayed_connections": 13,
+        "evidence_instances": 14,
+        "graph": "reports/relation_prompt_format_12bf/graphs/refined/pmcid_pmc11824863.json",
+        "hidden_and_revealed_nodes_checked": true,
+        "mixed_negation_bundles": 0,
+        "relations": 14,
+        "rich_evidence_preserved": true,
+        "self_relations": 0,
+        "status": "passed",
+        "unconnected_nodes": 6
+      },
+      {
+        "canonical_nodes": 20,
+        "directional_bundles": 1,
+        "displayed_connections": 15,
+        "evidence_instances": 17,
+        "graph": "reports/relation_prompt_format_12bf/graphs/refined/pmcid_pmc8605525.json",
+        "hidden_and_revealed_nodes_checked": true,
+        "mixed_negation_bundles": 0,
+        "relations": 16,
+        "rich_evidence_preserved": true,
+        "self_relations": 0,
+        "status": "passed",
+        "unconnected_nodes": 8
+      },
+      {
+        "canonical_nodes": 15,
+        "directional_bundles": 3,
+        "displayed_connections": 13,
+        "evidence_instances": 17,
+        "graph": "reports/relation_prompt_format_12bf/graphs/refined/pmid_27172794.json",
+        "hidden_and_revealed_nodes_checked": true,
+        "mixed_negation_bundles": 0,
+        "relations": 17,
+        "rich_evidence_preserved": true,
+        "self_relations": 0,
+        "status": "passed",
+        "unconnected_nodes": 3
+      },
+      {
+        "canonical_nodes": 10,
+        "directional_bundles": 0,
+        "displayed_connections": 4,
+        "evidence_instances": 4,
+        "graph": "reports/relation_prompt_format_12bf/graphs/refined/pmid_33652126.json",
+        "hidden_and_revealed_nodes_checked": true,
+        "mixed_negation_bundles": 0,
+        "relations": 4,
+        "rich_evidence_preserved": true,
+        "self_relations": 0,
+        "status": "passed",
+        "unconnected_nodes": 3
+      }
+    ],
+    "mechanism": "unchanged viewer adapter and Cytoscape element conversion",
+    "status": "passed"
+  }
+}

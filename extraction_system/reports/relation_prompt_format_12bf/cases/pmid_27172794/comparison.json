@@ -1,0 +1,2318 @@
+{
+  "all_record_richness": {
+    "control": {
+      "context": 5,
+      "effects": 7,
+      "intervention": 5
+    },
+    "formatted": {
+      "context": 6,
+      "effects": 7,
+      "intervention": 4
+    }
+  },
+  "graph_overview": {
+    "bidirectional_endpoint_pairs": [],
+    "connected_node_count": 12,
+    "directed_edge_bundles": [
+      {
+        "edge_count": 3,
+        "edges": [
+          {
+            "edge_id": "doc_r_001",
+            "evidence_count": 1,
+            "negated": false,
+            "predicate": "highly_expressed_in",
+            "source": "doc_e_001",
+            "target": "doc_e_002"
+          },
+          {
+            "edge_id": "doc_r_002",
+            "evidence_count": 1,
+            "negated": false,
+            "predicate": "promotes_stem_like_cell_expansion",
+            "source": "doc_e_001",
+            "target": "doc_e_002"
+          },
+          {
+            "edge_id": "doc_r_003",
+            "evidence_count": 1,
+            "negated": false,
+            "predicate": "silencing_reduces_cell_proliferation",
+            "source": "doc_e_001",
+            "target": "doc_e_002"
+          }
+        ],
+        "source_node": "doc_e_001",
+        "target_node": "doc_e_002"
+      },
+      {
+        "edge_count": 1,
+        "edges": [
+          {
+            "edge_id": "doc_r_004",
+            "evidence_count": 1,
+            "negated": false,
+            "predicate": "activates_signaling",
+            "source": "doc_e_001",
+            "target": "doc_e_003"
+          }
+        ],
+        "source_node": "doc_e_001",
+        "target_node": "doc_e_003"
+      },
+      {
+        "edge_count": 2,
+        "edges": [
+          {
+            "edge_id": "doc_r_005",
+            "evidence_count": 1,
+            "negated": false,
+            "predicate": "activates_pathway",
+            "source": "doc_e_001",
+            "target": "doc_e_004"
+          },
+          {
+            "edge_id": "doc_r_006",
+            "evidence_count": 1,
+            "negated": false,
+            "predicate": "activates_signaling",
+            "source": "doc_e_001",
+            "target": "doc_e_004"
+          }
+        ],
+        "source_node": "doc_e_001",
+        "target_node": "doc_e_004"
+      },
+      {
+        "edge_count": 1,
+        "edges": [
+          {
+            "edge_id": "doc_r_007",
+            "evidence_count": 1,
+            "negated": false,
+            "predicate": "associated_with_poor_prognosis_in",
+            "source": "doc_e_001",
+            "target": "doc_e_005"
+          }
+        ],
+        "source_node": "doc_e_001",
+        "target_node": "doc_e_005"
+      },
+      {
+        "edge_count": 1,
+        "edges": [
+          {
+            "edge_id": "doc_r_008",
+            "evidence_count": 1,
+            "negated": false,
+            "predicate": "highly_expressed_in",
+            "source": "doc_e_001",
+            "target": "doc_e_007"
+          }
+        ],
+        "source_node": "doc_e_001",
+        "target_node": "doc_e_007"
+      },
+      {
+        "edge_count": 2,
+        "edges": [
+          {
+            "edge_id": "doc_r_009",
+            "evidence_count": 1,
+            "negated": false,
+            "predicate": "maintains_stem_like_cell_characteristics",
+            "source": "doc_e_001",
+            "target": "doc_e_008"
+          },
+          {
+            "edge_id": "doc_r_010",
+            "evidence_count": 1,
+            "negated": false,
+            "predicate": "more_highly_expressed_in",
+            "source": "doc_e_001",
+            "target": "doc_e_008"
+          }
+        ],
+        "source_node": "doc_e_001",
+        "target_node": "doc_e_008"
+      },
+      {
+        "edge_count": 1,
+        "edges": [
+          {
+            "edge_id": "doc_r_011",
+            "evidence_count": 1,
+            "negated": false,
+            "predicate": "knockdown_reduces_positive_cell_subpopulation",
+            "source": "doc_e_001",
+            "target": "doc_e_009"
+          }
+        ],
+        "source_node": "doc_e_001",
+        "target_node": "doc_e_009"
+      },
+      {
+        "edge_count": 1,
+        "edges": [
+          {
+            "edge_id": "doc_r_012",
+            "evidence_count": 1,
+            "negated": false,
+            "predicate": "knockdown_reduces_positive_cell_subpopulation",
+            "source": "doc_e_001",
+            "target": "doc_e_010"
+          }
+        ],
+        "source_node": "doc_e_001",
+        "target_node": "doc_e_010"
+      },
+      {
+        "edge_count": 1,
+        "edges": [
+          {
+            "edge_id": "doc_r_013",
+            "evidence_count": 1,
+            "negated": false,
+            "predicate": "activates_pathway",
+            "source": "doc_e_001",
+            "target": "doc_e_013"
+          }
+        ],
+        "source_node": "doc_e_001",
+        "target_node": "doc_e_013"
+      },
+      {
+        "edge_count": 1,
+        "edges": [
+          {
+            "edge_id": "doc_r_014",
+            "evidence_count": 1,
+            "negated": false,
+            "predicate": "required_for_pathway_activation",
+            "source": "doc_e_014",
+            "target": "doc_e_004"
+          }
+        ],
+        "source_node": "doc_e_014",
+        "target_node": "doc_e_004"
+      },
+      {
+        "edge_count": 1,
+        "edges": [
+          {
+            "edge_id": "doc_r_015",
+            "evidence_count": 1,
+            "negated": false,
+            "predicate": "required_for_pathway_activation",
+            "source": "doc_e_014",
+            "target": "doc_e_013"
+          }
+        ],
+        "source_node": "doc_e_014",
+        "target_node": "doc_e_013"
+      },
+      {
+        "edge_count": 1,
+        "edges": [
+          {
+            "edge_id": "doc_r_016",
+            "evidence_count": 1,
+            "negated": false,
+            "predicate": "specifically_inhibits",
+            "source": "doc_e_015",
+            "target": "doc_e_001"
+          }
+        ],
+        "source_node": "doc_e_015",
+        "target_node": "doc_e_001"
+      },
+      {
+        "edge_count": 1,
+        "edges": [
+          {
+            "edge_id": "doc_r_017",
+            "evidence_count": 1,
+            "negated": false,
+            "predicate": "prevents_progression",
+            "source": "doc_e_015",
+            "target": "doc_e_002"
+          }
+        ],
+        "source_node": "doc_e_015",
+        "target_node": "doc_e_002"
+      }
+    ],
+    "duplicate_edge_identity_count": 0,
+    "duplicate_evidence_record_count": 0,
+    "edge_count": 17,
+    "edges_with_multiple_evidence": [],
+    "evidence_record_count": 17,
+    "node_count": 15,
+    "nodes": [
+      {
+        "aliases": [
+          "EZH2",
+          "enhancer of zeste homologue 2",
+          "polycomb group protein"
+        ],
+        "id": "doc_e_001",
+        "label": "EZH2",
+        "mentions": [
+          {
+            "end": 4,
+            "id": "E1",
+            "score": 0.9999901056289673,
+            "start": 0,
+            "text": "EZH2",
+            "type": "Gene"
+          },
+          {
+            "end": 485,
+            "id": "E12",
+            "score": 0.999967384338379,
+            "start": 456,
+            "text": "enhancer of zeste homologue 2",
+            "type": "Gene"
+          },
+          {
+            "end": 491,
+            "id": "E13",
+            "score": 0.9999867677688599,
+            "start": 487,
+            "text": "EZH2",
+            "type": "Gene"
+          },
+          {
+            "end": 517,
+            "id": "E14",
+            "score": 0.9999895095825195,
+            "start": 513,
+            "text": "EZH2",
+            "type": "Gene"
+          },
+          {
+            "end": 601,
+            "id": "E17",
+            "score": 0.9999901056289673,
+            "start": 597,
+            "text": "EZH2",
+            "type": "Gene"
+          },
+          {
+            "end": 652,
+            "id": "E19",
+            "score": 0.9999902248382568,
+            "start": 648,
+            "text": "EZH2",
+            "type": "Gene"
+          },
+          {
+            "end": 763,
+            "id": "E22",
+            "score": 0.9999899864196777,
+            "start": 759,
+            "text": "EZH2",
+            "type": "Gene"
+          },
+          {
+            "end": 1111,
+            "id": "E29",
+            "score": 0.9999903440475464,
+            "start": 1107,
+            "text": "EZH2",
+            "type": "Gene"
+          },
+          {
+            "end": 1295,
+            "id": "E33",
+            "score": 0.9999903440475464,
+            "start": 1291,
+            "text": "EZH2",
+            "type": "Gene"
+          },
+          {
+            "end": 1364,
+            "id": "E36",
+            "score": 0.9999903440475464,
+            "start": 1360,
+            "text": "EZH2",
+            "type": "Gene"
+          },
+          {
+            "end": 1477,
+            "id": "E39",
+            "score": 0.9999902248382568,
+            "start": 1473,
+            "text": "EZH2",
+            "type": "Gene"
+          },
+          {
+            "end": 455,
+            "id": "E11",
+            "score": 0.9594087799390157,
+            "start": 433,
+            "text": "polycomb group protein",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "colorectal cancer",
+          "CRC"
+        ],
+        "id": "doc_e_002",
+        "label": "CRC",
+        "mentions": [
+          {
+            "end": 31,
+            "id": "E2",
+            "score": 0.9999909996986389,
+            "start": 14,
+            "text": "colorectal cancer",
+            "type": "Disease"
+          },
+          {
+            "end": 130,
+            "id": "E5",
+            "score": 0.9999921321868896,
+            "start": 113,
+            "text": "colorectal cancer",
+            "type": "Disease"
+          },
+          {
+            "end": 135,
+            "id": "E6",
+            "score": 0.9999843835830688,
+            "start": 132,
+            "text": "CRC",
+            "type": "Disease"
+          },
+          {
+            "end": 250,
+            "id": "E8",
+            "score": 0.9999853372573853,
+            "start": 247,
+            "text": "CRC",
+            "type": "Disease"
+          },
+          {
+            "end": 407,
+            "id": "E10",
+            "score": 0.9999854564666748,
+            "start": 404,
+            "text": "CRC",
+            "type": "Disease"
+          },
+          {
+            "end": 613,
+            "id": "E18",
+            "score": 0.9999842643737793,
+            "start": 610,
+            "text": "CRC",
+            "type": "Disease"
+          },
+          {
+            "end": 1042,
+            "id": "E28",
+            "score": 0.999983549118042,
+            "start": 1039,
+            "text": "CRC",
+            "type": "Disease"
+          },
+          {
+            "end": 1421,
+            "id": "E38",
+            "score": 0.9999815225601196,
+            "start": 1418,
+            "text": "CRC",
+            "type": "Disease"
+          },
+          {
+            "end": 1611,
+            "id": "E41",
+            "score": 0.9999825954437256,
+            "start": 1608,
+            "text": "CRC",
+            "type": "Disease"
+          }
+        ],
+        "type": "Disease"
+      },
+      {
+        "aliases": [
+          "p21cip1-Wnt"
+        ],
+        "id": "doc_e_003",
+        "label": "p21cip1-Wnt",
+        "mentions": [
+          {
+            "end": 82,
+            "id": "E3",
+            "score": 0.9999901056289673,
+            "start": 71,
+            "text": "p21cip1-Wnt",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "β-catenin"
+        ],
+        "id": "doc_e_004",
+        "label": "β-catenin",
+        "mentions": [
+          {
+            "end": 92,
+            "id": "E4",
+            "score": 0.9999783039093018,
+            "start": 83,
+            "text": "β-catenin",
+            "type": "Gene"
+          },
+          {
+            "end": 1184,
+            "id": "E31",
+            "score": 0.9999792575836182,
+            "start": 1175,
+            "text": "β-catenin",
+            "type": "Gene"
+          },
+          {
+            "end": 1327,
+            "id": "E35",
+            "score": 0.9999796946843466,
+            "start": 1318,
+            "text": "β-catenin",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "patient"
+        ],
+        "id": "doc_e_005",
+        "label": "patient",
+        "mentions": [
+          {
+            "end": 196,
+            "id": "E7",
+            "score": 0.9999843835830688,
+            "start": 189,
+            "text": "patient",
+            "type": "Species"
+          },
+          {
+            "end": 563,
+            "id": "E16",
+            "score": 0.9999852180480957,
+            "start": 556,
+            "text": "patient",
+            "type": "Species"
+          }
+        ],
+        "type": "Species"
+      },
+      {
+        "aliases": [
+          "patients"
+        ],
+        "id": "doc_e_006",
+        "label": "patients",
+        "mentions": [
+          {
+            "end": 383,
+            "id": "E9",
+            "score": 0.9999865293502808,
+            "start": 375,
+            "text": "patients",
+            "type": "Species"
+          }
+        ],
+        "type": "Species"
+      },
+      {
+        "aliases": [
+          "tumor"
+        ],
+        "id": "doc_e_007",
+        "label": "tumor",
+        "mentions": [
+          {
+            "end": 526,
+            "id": "E15",
+            "score": 0.9999829530715942,
+            "start": 521,
+            "text": "tumor",
+            "type": "Disease"
+          },
+          {
+            "end": 948,
+            "id": "E25",
+            "score": 0.9999836683273315,
+            "start": 943,
+            "text": "tumor",
+            "type": "Disease"
+          }
+        ],
+        "type": "Disease"
+      },
+      {
+        "aliases": [
+          "CCS"
+        ],
+        "id": "doc_e_008",
+        "label": "CCS",
+        "mentions": [
+          {
+            "end": 689,
+            "id": "E20",
+            "score": 0.9984031319618225,
+            "start": 686,
+            "text": "CCS",
+            "type": "Disease"
+          },
+          {
+            "end": 733,
+            "id": "E21",
+            "score": 0.91731858253479,
+            "start": 730,
+            "text": "CCS",
+            "type": "Disease"
+          },
+          {
+            "end": 1493,
+            "id": "E40",
+            "score": 0.9999706745147705,
+            "start": 1490,
+            "text": "CCS",
+            "type": "Disease"
+          }
+        ],
+        "type": "Disease"
+      },
+      {
+        "aliases": [
+          "CD133+"
+        ],
+        "id": "doc_e_009",
+        "label": "CD133+",
+        "mentions": [
+          {
+            "end": 806,
+            "id": "E23",
+            "score": 0.9999890327453613,
+            "start": 800,
+            "text": "CD133+",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "CD44"
+        ],
+        "id": "doc_e_010",
+        "label": "CD44",
+        "mentions": [
+          {
+            "end": 811,
+            "id": "E24",
+            "score": 0.9999896287918091,
+            "start": 807,
+            "text": "CD44",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "mouse"
+        ],
+        "id": "doc_e_011",
+        "label": "mouse",
+        "mentions": [
+          {
+            "end": 995,
+            "id": "E26",
+            "score": 0.9999837875366211,
+            "start": 990,
+            "text": "mouse",
+            "type": "Species"
+          }
+        ],
+        "type": "Species"
+      },
+      {
+        "aliases": [
+          "human"
+        ],
+        "id": "doc_e_012",
+        "label": "human",
+        "mentions": [
+          {
+            "end": 1038,
+            "id": "E27",
+            "score": 0.9999767541885376,
+            "start": 1033,
+            "text": "human",
+            "type": "Species"
+          }
+        ],
+        "type": "Species"
+      },
+      {
+        "aliases": [
+          "Wnt"
+        ],
+        "id": "doc_e_013",
+        "label": "Wnt",
+        "mentions": [
+          {
+            "end": 1174,
+            "id": "E30",
+            "score": 0.999988317489624,
+            "start": 1171,
+            "text": "Wnt",
+            "type": "Gene"
+          },
+          {
+            "end": 1317,
+            "id": "E34",
+            "score": 0.9999891519546509,
+            "start": 1314,
+            "text": "Wnt",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "p21cip1-mediated"
+        ],
+        "id": "doc_e_014",
+        "label": "p21cip1-mediated",
+        "mentions": [
+          {
+            "end": 1235,
+            "id": "E32",
+            "score": 0.9999902248382568,
+            "start": 1219,
+            "text": "p21cip1-mediated",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "EPZ-6438"
+        ],
+        "id": "doc_e_015",
+        "label": "EPZ-6438",
+        "mentions": [
+          {
+            "end": 1383,
+            "id": "E37",
+            "score": 0.9999954700469971,
+            "start": 1375,
+            "text": "EPZ-6438",
+            "type": "Chemical"
+          }
+        ],
+        "type": "Chemical"
+      }
+    ],
+    "relation_count": 17,
+    "rich_evidence_propagation": {
+      "actual_graph_evidence_records": 17,
+      "alias_or_naming_self_relations_suppressed_by_graph_contract": [],
+      "collapsed_duplicate_relation_evidence_records": 0,
+      "duplicate_graph_evidence_records": 0,
+      "exact_match": true,
+      "projected_relation_evidence_records": 17,
+      "unexpected_graph_evidence": [],
+      "unique_actual_graph_evidence_records": 17,
+      "unique_projected_relation_evidence_records": 17,
+      "unrepresented_relation_evidence": []
+    },
+    "self_edges": [],
+    "unconnected_node_count": 3,
+    "unconnected_node_ids": [
+      "doc_e_006",
+      "doc_e_011",
+      "doc_e_012"
+    ]
+  },
+  "matched_finding_richness": {
+    "control": {
+      "context": 4,
+      "effects": 6,
+      "intervention": 4
+    },
+    "formatted": {
+      "context": 6,
+      "effects": 7,
+      "intervention": 4
+    }
+  },
+  "mechanical_delta": {
+    "baseline_count": 20,
+    "baseline_exact_duplicate_record_count": 0,
+    "baseline_only": [
+      {
+        "assertion": "EPZ-6438 is a specific inhibitor of EZH2.",
+        "context": [],
+        "effects": [],
+        "evidence": "the specific EZH2 inhibitor EPZ-6438",
+        "intervention": null,
+        "negated": false,
+        "predicate": "inhibits",
+        "score": null,
+        "source": "E37",
+        "surface_form": "specific EZH2 inhibitor",
+        "target": "E36"
+      },
+      {
+        "assertion": "EPZ-6438, described as a clinical trial drug, prevented CRC progression.",
+        "context": [],
+        "effects": [
+          "Prevention of CRC progression"
+        ],
+        "evidence": "Moreover, the specific EZH2 inhibitor EPZ-6438, a clinical trial drug, prevented CRC progression.",
+        "intervention": "EPZ-6438 treatment",
+        "negated": false,
+        "predicate": "prevents_progression",
+        "score": null,
+        "source": "E37",
+        "surface_form": "prevented CRC progression",
+        "target": "E38"
+      },
+      {
+        "assertion": "EZH2 activates p21cip1-Wnt/β-catenin signaling.",
+        "context": [],
+        "effects": [],
+        "evidence": "EZH2 promotes colorectal cancer stem-like cell expansion by activating p21cip1-Wnt/β-catenin signaling.",
+        "intervention": null,
+        "negated": false,
+        "predicate": "activates_signaling",
+        "score": null,
+        "source": "E1",
+        "surface_form": "activating",
+        "target": "E3"
+      },
+      {
+        "assertion": "EZH2 activates p21cip1-Wnt/β-catenin signaling.",
+        "context": [],
+        "effects": [],
+        "evidence": "EZH2 promotes colorectal cancer stem-like cell expansion by activating p21cip1-Wnt/β-catenin signaling.",
+        "intervention": null,
+        "negated": false,
+        "predicate": "activates_signaling",
+        "score": null,
+        "source": "E1",
+        "surface_form": "activating",
+        "target": "E4"
+      },
+      {
+        "assertion": "EZH2 activation of the Wnt/β-catenin pathway requires p21cip1-mediated cell-cycle arrest at G1/S.",
+        "context": [],
+        "effects": [],
+        "evidence": "p21cip1-mediated arrest of the cell cycle at G1/S phase is required for EZH2 activation of the Wnt/β-catenin pathway.",
+        "intervention": null,
+        "negated": false,
+        "predicate": "activates_pathway",
+        "score": null,
+        "source": "E33",
+        "surface_form": "activation of",
+        "target": "E34"
+      },
+      {
+        "assertion": "EZH2 activation of the Wnt/β-catenin pathway requires p21cip1-mediated cell-cycle arrest at G1/S.",
+        "context": [],
+        "effects": [],
+        "evidence": "p21cip1-mediated arrest of the cell cycle at G1/S phase is required for EZH2 activation of the Wnt/β-catenin pathway.",
+        "intervention": null,
+        "negated": false,
+        "predicate": "activates_pathway",
+        "score": null,
+        "source": "E33",
+        "surface_form": "activation of",
+        "target": "E35"
+      },
+      {
+        "assertion": "EZH2 expression was higher in the CCS-like cell subpopulation than in the non-CCS-like cell subpopulation.",
+        "context": [],
+        "effects": [],
+        "evidence": "EZH2 was more highly expressed in the CCS-like cell subpopulation than in the non-CCS-like cell subpopulation.",
+        "intervention": null,
+        "negated": false,
+        "predicate": "more_highly_expressed_in",
+        "score": null,
+        "source": "E19",
+        "surface_form": "more highly expressed in",
+        "target": "E20"
+      },
+      {
+        "assertion": "EZH2 expression was lower in the non-CCS-like cell subpopulation than in the CCS-like cell subpopulation.",
+        "context": [],
+        "effects": [],
+        "evidence": "EZH2 was more highly expressed in the CCS-like cell subpopulation than in the non-CCS-like cell subpopulation.",
+        "intervention": null,
+        "negated": false,
+        "predicate": "less_highly_expressed_in",
+        "score": null,
+        "source": "E19",
+        "surface_form": null,
+        "target": "E21"
+      },
+      {
+        "assertion": "EZH2 knockdown significantly reduced the CD133+/CD44+ double-positive subpopulation.",
+        "context": [],
+        "effects": [
+          "Significant reduction of the double-positive subpopulation"
+        ],
+        "evidence": "EZH2 knockdown significantly reduced the CD133+/CD44+ subpopulation",
+        "intervention": "EZH2 knockdown",
+        "negated": false,
+        "predicate": "reduces_marker_positive_subpopulation",
+        "score": null,
+        "source": "E22",
+        "surface_form": "significantly reduced",
+        "target": "E23"
+      },
+      {
+        "assertion": "EZH2 knockdown significantly reduced the CD133+/CD44+ double-positive subpopulation.",
+        "context": [],
+        "effects": [
+          "Significant reduction of the double-positive subpopulation"
+        ],
+        "evidence": "EZH2 knockdown significantly reduced the CD133+/CD44+ subpopulation",
+        "intervention": "EZH2 knockdown",
+        "negated": false,
+        "predicate": "reduces_marker_positive_subpopulation",
+        "score": null,
+        "source": "E22",
+        "surface_form": "significantly reduced",
+        "target": "E24"
+      },
+      {
+        "assertion": "EZH2 knockdown strongly impaired tumor-initiating capacity in a re-implantation mouse model.",
+        "context": [
+          "Re-implantation mouse model"
+        ],
+        "effects": [
+          "Strong impairment of tumor-initiating capacity"
+        ],
+        "evidence": "EZH2 knockdown significantly reduced the CD133+/CD44+ subpopulation, suppressed mammosphere formation, and decreased the expression of self-renewal-related genes and strongly impaired tumor-initiating capacity in a re-implantation mouse model.",
+        "intervention": "EZH2 knockdown",
+        "negated": false,
+        "predicate": "impairs_initiating_capacity",
+        "score": null,
+        "source": "E22",
+        "surface_form": "strongly impaired tumor-initiating capacity",
+        "target": "E25"
+      },
+      {
+        "assertion": "EZH2 maintains CCS-like cell characteristics by arresting the cell cycle at G1/S.",
+        "context": [],
+        "effects": [],
+        "evidence": "Collectively, these findings revealed EZH2 maintaining CCS-like cell characteristics by arresting the cell cycle at the G1/S phase.",
+        "intervention": null,
+        "negated": false,
+        "predicate": "maintains_stem_like_cell_characteristics",
+        "score": null,
+        "source": "E39",
+        "surface_form": "maintaining CCS-like cell characteristics",
+        "target": "E40"
+      },
+      {
+        "assertion": "EZH2 promotes colorectal cancer stem-like cell expansion by activating p21cip1-Wnt/β-catenin signaling.",
+        "context": [],
+        "effects": [],
+        "evidence": "EZH2 promotes colorectal cancer stem-like cell expansion by activating p21cip1-Wnt/β-catenin signaling.",
+        "intervention": null,
+        "negated": false,
+        "predicate": "promotes_stem_like_cell_expansion",
+        "score": null,
+        "source": "E1",
+        "surface_form": "promotes",
+        "target": "E2"
+      },
+      {
+        "assertion": "EZH2 was highly expressed in tumor tissues.",
+        "context": [],
+        "effects": [],
+        "evidence": "High expression of EZH2 in tumor tissues correlated with poor patient prognosis.",
+        "intervention": null,
+        "negated": false,
+        "predicate": "highly_expressed_in",
+        "score": null,
+        "source": "E14",
+        "surface_form": "High expression of EZH2 in tumor tissues",
+        "target": "E15"
+      },
+      {
+        "assertion": "Gene expression data from 433 human CRC specimens from TCGA and in vitro results indicated that EZH2 activates the Wnt/β-catenin pathway to help maintain CCS-like cell properties.",
+        "context": [
+          "Gene expression data from 433 human CRC specimens from TCGA database",
+          "In vitro results"
+        ],
+        "effects": [
+          "Maintenance of CCS-like cell properties"
+        ],
+        "evidence": "Gene expression data from 433 human CRC specimens from TCGA database and in vitro results revealed that EZH2 helped maintain CCS-like cell properties by activating the Wnt/β-catenin pathway.",
+        "intervention": null,
+        "negated": false,
+        "predicate": "activates_pathway",
+        "score": null,
+        "source": "E29",
+        "surface_form": "activating",
+        "target": "E30"
+      },
+      {
+        "assertion": "Gene expression data from 433 human CRC specimens from TCGA and in vitro results indicated that EZH2 activates the Wnt/β-catenin pathway to help maintain CCS-like cell properties.",
+        "context": [
+          "Gene expression data from 433 human CRC specimens from TCGA database",
+          "In vitro results"
+        ],
+        "effects": [
+          "Maintenance of CCS-like cell properties"
+        ],
+        "evidence": "Gene expression data from 433 human CRC specimens from TCGA database and in vitro results revealed that EZH2 helped maintain CCS-like cell properties by activating the Wnt/β-catenin pathway.",
+        "intervention": null,
+        "negated": false,
+        "predicate": "activates_pathway",
+        "score": null,
+        "source": "E29",
+        "surface_form": "activating",
+        "target": "E31"
+      },
+      {
+        "assertion": "High EZH2 expression in tumor tissues correlated with poor patient prognosis.",
+        "context": [
+          "Tumor tissues"
+        ],
+        "effects": [],
+        "evidence": "High expression of EZH2 in tumor tissues correlated with poor patient prognosis.",
+        "intervention": null,
+        "negated": false,
+        "predicate": "associated_with_poor_prognosis",
+        "score": null,
+        "source": "E14",
+        "surface_form": "correlated with poor patient prognosis",
+        "target": "E16"
+      },
+      {
+        "assertion": "High levels of EZH2 were expressed in patients with advanced-stage CRC.",
+        "context": [
+          "Advanced-stage CRC"
+        ],
+        "effects": [],
+        "evidence": "patients with advanced stage CRC expressed high levels of polycomb group protein enhancer of zeste homologue 2 (EZH2).",
+        "intervention": null,
+        "negated": false,
+        "predicate": "highly_expressed_in",
+        "score": null,
+        "source": "E13",
+        "surface_form": "expressed high levels",
+        "target": "E10"
+      },
+      {
+        "assertion": "Silencing EZH2 reduced CRC cell proliferation.",
+        "context": [],
+        "effects": [
+          "Reduced CRC cell proliferation"
+        ],
+        "evidence": "silencing EZH2 reduced CRC cell proliferation.",
+        "intervention": "EZH2 silencing",
+        "negated": false,
+        "predicate": "reduces_cell_proliferation",
+        "score": null,
+        "source": "E17",
+        "surface_form": "reduced",
+        "target": "E18"
+      },
+      {
+        "assertion": "p21cip1-mediated cell-cycle arrest at G1/S is required for EZH2 to activate the Wnt/β-catenin pathway.",
+        "context": [],
+        "effects": [],
+        "evidence": "p21cip1-mediated arrest of the cell cycle at G1/S phase is required for EZH2 activation of the Wnt/β-catenin pathway.",
+        "intervention": null,
+        "negated": false,
+        "predicate": "required_for_pathway_activation",
+        "score": null,
+        "source": "E32",
+        "surface_form": "is required for",
+        "target": "E33"
+      }
+    ],
+    "candidate_count": 17,
+    "candidate_exact_duplicate_record_count": 0,
+    "candidate_only": [
+      {
+        "assertion": "EPZ-6438 is a specific inhibitor of EZH2.",
+        "context": [],
+        "effects": [],
+        "evidence": "the specific EZH2 inhibitor EPZ-6438",
+        "intervention": null,
+        "negated": false,
+        "predicate": "specifically_inhibits",
+        "score": null,
+        "source": "E37",
+        "surface_form": "specific EZH2 inhibitor",
+        "target": "E36"
+      },
+      {
+        "assertion": "EPZ-6438, described as a clinical trial drug and specific EZH2 inhibitor, prevented CRC progression.",
+        "context": [],
+        "effects": [
+          "Prevented CRC progression"
+        ],
+        "evidence": "the specific EZH2 inhibitor EPZ-6438, a clinical trial drug, prevented CRC progression.",
+        "intervention": "EPZ-6438 treatment",
+        "negated": false,
+        "predicate": "prevents_progression",
+        "score": null,
+        "source": "E37",
+        "surface_form": "prevented CRC progression",
+        "target": "E38"
+      },
+      {
+        "assertion": "EZH2 activates p21cip1-Wnt/β-catenin signaling.",
+        "context": [],
+        "effects": [],
+        "evidence": "EZH2 promotes colorectal cancer stem-like cell expansion by activating p21cip1-Wnt/β-catenin signaling.",
+        "intervention": null,
+        "negated": false,
+        "predicate": "activates_signaling",
+        "score": null,
+        "source": "E1",
+        "surface_form": "activating p21cip1-Wnt/β-catenin signaling",
+        "target": "E3"
+      },
+      {
+        "assertion": "EZH2 activates β-catenin signaling as part of p21cip1-Wnt/β-catenin signaling.",
+        "context": [],
+        "effects": [],
+        "evidence": "EZH2 promotes colorectal cancer stem-like cell expansion by activating p21cip1-Wnt/β-catenin signaling.",
+        "intervention": null,
+        "negated": false,
+        "predicate": "activates_signaling",
+        "score": null,
+        "source": "E1",
+        "surface_form": "activating p21cip1-Wnt/β-catenin signaling",
+        "target": "E4"
+      },
+      {
+        "assertion": "EZH2 expression was higher in the CCS-like cell subpopulation than in the non-CCS-like cell subpopulation.",
+        "context": [
+          "CCS-like cell subpopulation"
+        ],
+        "effects": [],
+        "evidence": "EZH2 was more highly expressed in the CCS-like cell subpopulation than in the non-CCS-like cell subpopulation.",
+        "intervention": null,
+        "negated": false,
+        "predicate": "more_highly_expressed_in",
+        "score": null,
+        "source": "E19",
+        "surface_form": "more highly expressed in the CCS-like cell subpopulation",
+        "target": "E20"
+      },
+      {
+        "assertion": "EZH2 knockdown significantly reduced the CD133+/CD44+ cell subpopulation.",
+        "context": [],
+        "effects": [
+          "Significantly reduced CD133+/CD44+ cell subpopulation"
+        ],
+        "evidence": "EZH2 knockdown significantly reduced the CD133+/CD44+ subpopulation",
+        "intervention": "EZH2 knockdown",
+        "negated": false,
+        "predicate": "knockdown_reduces_positive_cell_subpopulation",
+        "score": null,
+        "source": "E22",
+        "surface_form": "knockdown significantly reduced the CD133+/CD44+ subpopulation",
+        "target": "E23"
+      },
+      {
+        "assertion": "EZH2 knockdown significantly reduced the CD133+/CD44+ cell subpopulation.",
+        "context": [],
+        "effects": [
+          "Significantly reduced CD133+/CD44+ cell subpopulation"
+        ],
+        "evidence": "EZH2 knockdown significantly reduced the CD133+/CD44+ subpopulation",
+        "intervention": "EZH2 knockdown",
+        "negated": false,
+        "predicate": "knockdown_reduces_positive_cell_subpopulation",
+        "score": null,
+        "source": "E22",
+        "surface_form": "knockdown significantly reduced the CD133+/CD44+ subpopulation",
+        "target": "E24"
+      },
+      {
+        "assertion": "EZH2 maintains CCS-like cell characteristics by arresting the cell cycle at G1/S.",
+        "context": [],
+        "effects": [
+          "Maintenance of CCS-like cell characteristics"
+        ],
+        "evidence": "these findings revealed EZH2 maintaining CCS-like cell characteristics by arresting the cell cycle at the G1/S phase.",
+        "intervention": null,
+        "negated": false,
+        "predicate": "maintains_stem_like_cell_characteristics",
+        "score": null,
+        "source": "E39",
+        "surface_form": "maintaining CCS-like cell characteristics",
+        "target": "E40"
+      },
+      {
+        "assertion": "EZH2 promotes expansion of colorectal cancer stem-like cells by activating p21cip1-Wnt/β-catenin signaling.",
+        "context": [],
+        "effects": [
+          "Expansion of colorectal cancer stem-like cells"
+        ],
+        "evidence": "EZH2 promotes colorectal cancer stem-like cell expansion by activating p21cip1-Wnt/β-catenin signaling.",
+        "intervention": null,
+        "negated": false,
+        "predicate": "promotes_stem_like_cell_expansion",
+        "score": null,
+        "source": "E1",
+        "surface_form": "promotes colorectal cancer stem-like cell expansion",
+        "target": "E2"
+      },
+      {
+        "assertion": "EZH2 was highly expressed in tumor tissues.",
+        "context": [
+          "Tumor tissues"
+        ],
+        "effects": [],
+        "evidence": "High expression of EZH2 in tumor tissues correlated with poor patient prognosis.",
+        "intervention": null,
+        "negated": false,
+        "predicate": "highly_expressed_in",
+        "score": null,
+        "source": "E14",
+        "surface_form": "High expression of EZH2 in tumor tissues",
+        "target": "E15"
+      },
+      {
+        "assertion": "Enhancer of zeste homologue 2 was expressed at high levels in patients with advanced-stage CRC.",
+        "context": [
+          "Patients with advanced-stage CRC"
+        ],
+        "effects": [],
+        "evidence": "patients with advanced stage CRC expressed high levels of polycomb group protein enhancer of zeste homologue 2 (EZH2)",
+        "intervention": null,
+        "negated": false,
+        "predicate": "highly_expressed_in",
+        "score": null,
+        "source": "E12",
+        "surface_form": "expressed high levels",
+        "target": "E10"
+      },
+      {
+        "assertion": "Gene expression data from 433 human CRC specimens and in vitro results revealed that EZH2 activates the Wnt/β-catenin pathway to help maintain CCS-like cell properties.",
+        "context": [
+          "Gene expression data from 433 human CRC specimens from TCGA database",
+          "In vitro results"
+        ],
+        "effects": [],
+        "evidence": "Gene expression data from 433 human CRC specimens from TCGA database and in vitro results revealed that EZH2 helped maintain CCS-like cell properties by activating the Wnt/β-catenin pathway.",
+        "intervention": null,
+        "negated": false,
+        "predicate": "activates_pathway",
+        "score": null,
+        "source": "E29",
+        "surface_form": "activating the Wnt/β-catenin pathway",
+        "target": "E30"
+      },
+      {
+        "assertion": "Gene expression data from 433 human CRC specimens and in vitro results revealed that EZH2 activates the Wnt/β-catenin pathway to help maintain CCS-like cell properties.",
+        "context": [
+          "Gene expression data from 433 human CRC specimens from TCGA database",
+          "In vitro results"
+        ],
+        "effects": [],
+        "evidence": "Gene expression data from 433 human CRC specimens from TCGA database and in vitro results revealed that EZH2 helped maintain CCS-like cell properties by activating the Wnt/β-catenin pathway.",
+        "intervention": null,
+        "negated": false,
+        "predicate": "activates_pathway",
+        "score": null,
+        "source": "E29",
+        "surface_form": "activating the Wnt/β-catenin pathway",
+        "target": "E31"
+      },
+      {
+        "assertion": "High EZH2 expression in tumor tissues correlated with poor patient prognosis.",
+        "context": [
+          "Tumor tissues"
+        ],
+        "effects": [
+          "Poor patient prognosis"
+        ],
+        "evidence": "High expression of EZH2 in tumor tissues correlated with poor patient prognosis.",
+        "intervention": null,
+        "negated": false,
+        "predicate": "associated_with_poor_prognosis_in",
+        "score": null,
+        "source": "E14",
+        "surface_form": "correlated with poor patient prognosis",
+        "target": "E16"
+      },
+      {
+        "assertion": "Silencing EZH2 reduced CRC cell proliferation.",
+        "context": [],
+        "effects": [
+          "Reduced CRC cell proliferation"
+        ],
+        "evidence": "silencing EZH2 reduced CRC cell proliferation.",
+        "intervention": "EZH2 silencing",
+        "negated": false,
+        "predicate": "silencing_reduces_cell_proliferation",
+        "score": null,
+        "source": "E17",
+        "surface_form": "silencing EZH2 reduced CRC cell proliferation",
+        "target": "E18"
+      },
+      {
+        "assertion": "p21cip1-mediated cell-cycle arrest at G1/S is required for EZH2 activation of the Wnt/β-catenin pathway.",
+        "context": [],
+        "effects": [],
+        "evidence": "p21cip1-mediated arrest of the cell cycle at G1/S phase is required for EZH2 activation of the Wnt/β-catenin pathway.",
+        "intervention": null,
+        "negated": false,
+        "predicate": "required_for_pathway_activation",
+        "score": null,
+        "source": "E32",
+        "surface_form": "is required for EZH2 activation of the Wnt/β-catenin pathway",
+        "target": "E34"
+      },
+      {
+        "assertion": "p21cip1-mediated cell-cycle arrest at G1/S is required for EZH2 activation of the Wnt/β-catenin pathway.",
+        "context": [],
+        "effects": [],
+        "evidence": "p21cip1-mediated arrest of the cell cycle at G1/S phase is required for EZH2 activation of the Wnt/β-catenin pathway.",
+        "intervention": null,
+        "negated": false,
+        "predicate": "required_for_pathway_activation",
+        "score": null,
+        "source": "E32",
+        "surface_form": "is required for EZH2 activation of the Wnt/β-catenin pathway",
+        "target": "E35"
+      }
+    ],
+    "exact_multiset_match": false,
+    "matched_changed_records": [
+      {
+        "baseline_relation": {
+          "assertion": "Gene expression data from 433 human CRC specimens from TCGA and in vitro results indicated that EZH2 activates the Wnt/β-catenin pathway to help maintain CCS-like cell properties.",
+          "context": [
+            "Gene expression data from 433 human CRC specimens from TCGA database",
+            "In vitro results"
+          ],
+          "effects": [
+            "Maintenance of CCS-like cell properties"
+          ],
+          "evidence": "Gene expression data from 433 human CRC specimens from TCGA database and in vitro results revealed that EZH2 helped maintain CCS-like cell properties by activating the Wnt/β-catenin pathway.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "activates_pathway",
+          "score": null,
+          "source": "E29",
+          "surface_form": "activating",
+          "target": "E30"
+        },
+        "candidate_relation": {
+          "assertion": "Gene expression data from 433 human CRC specimens and in vitro results revealed that EZH2 activates the Wnt/β-catenin pathway to help maintain CCS-like cell properties.",
+          "context": [
+            "Gene expression data from 433 human CRC specimens from TCGA database",
+            "In vitro results"
+          ],
+          "effects": [],
+          "evidence": "Gene expression data from 433 human CRC specimens from TCGA database and in vitro results revealed that EZH2 helped maintain CCS-like cell properties by activating the Wnt/β-catenin pathway.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "activates_pathway",
+          "score": null,
+          "source": "E29",
+          "surface_form": "activating the Wnt/β-catenin pathway",
+          "target": "E30"
+        },
+        "changed_fields": {
+          "assertion": {
+            "baseline": "Gene expression data from 433 human CRC specimens from TCGA and in vitro results indicated that EZH2 activates the Wnt/β-catenin pathway to help maintain CCS-like cell properties.",
+            "candidate": "Gene expression data from 433 human CRC specimens and in vitro results revealed that EZH2 activates the Wnt/β-catenin pathway to help maintain CCS-like cell properties."
+          },
+          "effects": {
+            "baseline": [
+              "Maintenance of CCS-like cell properties"
+            ],
+            "candidate": []
+          },
+          "surface_form": {
+            "baseline": "activating",
+            "candidate": "activating the Wnt/β-catenin pathway"
+          }
+        },
+        "semantic_key": {
+          "predicate": "activates_pathway",
+          "source": "E29",
+          "target": "E30"
+        }
+      },
+      {
+        "baseline_relation": {
+          "assertion": "Gene expression data from 433 human CRC specimens from TCGA and in vitro results indicated that EZH2 activates the Wnt/β-catenin pathway to help maintain CCS-like cell properties.",
+          "context": [
+            "Gene expression data from 433 human CRC specimens from TCGA database",
+            "In vitro results"
+          ],
+          "effects": [
+            "Maintenance of CCS-like cell properties"
+          ],
+          "evidence": "Gene expression data from 433 human CRC specimens from TCGA database and in vitro results revealed that EZH2 helped maintain CCS-like cell properties by activating the Wnt/β-catenin pathway.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "activates_pathway",
+          "score": null,
+          "source": "E29",
+          "surface_form": "activating",
+          "target": "E31"
+        },
+        "candidate_relation": {
+          "assertion": "Gene expression data from 433 human CRC specimens and in vitro results revealed that EZH2 activates the Wnt/β-catenin pathway to help maintain CCS-like cell properties.",
+          "context": [
+            "Gene expression data from 433 human CRC specimens from TCGA database",
+            "In vitro results"
+          ],
+          "effects": [],
+          "evidence": "Gene expression data from 433 human CRC specimens from TCGA database and in vitro results revealed that EZH2 helped maintain CCS-like cell properties by activating the Wnt/β-catenin pathway.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "activates_pathway",
+          "score": null,
+          "source": "E29",
+          "surface_form": "activating the Wnt/β-catenin pathway",
+          "target": "E31"
+        },
+        "changed_fields": {
+          "assertion": {
+            "baseline": "Gene expression data from 433 human CRC specimens from TCGA and in vitro results indicated that EZH2 activates the Wnt/β-catenin pathway to help maintain CCS-like cell properties.",
+            "candidate": "Gene expression data from 433 human CRC specimens and in vitro results revealed that EZH2 activates the Wnt/β-catenin pathway to help maintain CCS-like cell properties."
+          },
+          "effects": {
+            "baseline": [
+              "Maintenance of CCS-like cell properties"
+            ],
+            "candidate": []
+          },
+          "surface_form": {
+            "baseline": "activating",
+            "candidate": "activating the Wnt/β-catenin pathway"
+          }
+        },
+        "semantic_key": {
+          "predicate": "activates_pathway",
+          "source": "E29",
+          "target": "E31"
+        }
+      },
+      {
+        "baseline_relation": {
+          "assertion": "EZH2 activates p21cip1-Wnt/β-catenin signaling.",
+          "context": [],
+          "effects": [],
+          "evidence": "EZH2 promotes colorectal cancer stem-like cell expansion by activating p21cip1-Wnt/β-catenin signaling.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "activates_signaling",
+          "score": null,
+          "source": "E1",
+          "surface_form": "activating",
+          "target": "E3"
+        },
+        "candidate_relation": {
+          "assertion": "EZH2 activates p21cip1-Wnt/β-catenin signaling.",
+          "context": [],
+          "effects": [],
+          "evidence": "EZH2 promotes colorectal cancer stem-like cell expansion by activating p21cip1-Wnt/β-catenin signaling.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "activates_signaling",
+          "score": null,
+          "source": "E1",
+          "surface_form": "activating p21cip1-Wnt/β-catenin signaling",
+          "target": "E3"
+        },
+        "changed_fields": {
+          "surface_form": {
+            "baseline": "activating",
+            "candidate": "activating p21cip1-Wnt/β-catenin signaling"
+          }
+        },
+        "semantic_key": {
+          "predicate": "activates_signaling",
+          "source": "E1",
+          "target": "E3"
+        }
+      },
+      {
+        "baseline_relation": {
+          "assertion": "EZH2 activates p21cip1-Wnt/β-catenin signaling.",
+          "context": [],
+          "effects": [],
+          "evidence": "EZH2 promotes colorectal cancer stem-like cell expansion by activating p21cip1-Wnt/β-catenin signaling.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "activates_signaling",
+          "score": null,
+          "source": "E1",
+          "surface_form": "activating",
+          "target": "E4"
+        },
+        "candidate_relation": {
+          "assertion": "EZH2 activates β-catenin signaling as part of p21cip1-Wnt/β-catenin signaling.",
+          "context": [],
+          "effects": [],
+          "evidence": "EZH2 promotes colorectal cancer stem-like cell expansion by activating p21cip1-Wnt/β-catenin signaling.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "activates_signaling",
+          "score": null,
+          "source": "E1",
+          "surface_form": "activating p21cip1-Wnt/β-catenin signaling",
+          "target": "E4"
+        },
+        "changed_fields": {
+          "assertion": {
+            "baseline": "EZH2 activates p21cip1-Wnt/β-catenin signaling.",
+            "candidate": "EZH2 activates β-catenin signaling as part of p21cip1-Wnt/β-catenin signaling."
+          },
+          "surface_form": {
+            "baseline": "activating",
+            "candidate": "activating p21cip1-Wnt/β-catenin signaling"
+          }
+        },
+        "semantic_key": {
+          "predicate": "activates_signaling",
+          "source": "E1",
+          "target": "E4"
+        }
+      },
+      {
+        "baseline_relation": {
+          "assertion": "EZH2 was highly expressed in tumor tissues.",
+          "context": [],
+          "effects": [],
+          "evidence": "High expression of EZH2 in tumor tissues correlated with poor patient prognosis.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "highly_expressed_in",
+          "score": null,
+          "source": "E14",
+          "surface_form": "High expression of EZH2 in tumor tissues",
+          "target": "E15"
+        },
+        "candidate_relation": {
+          "assertion": "EZH2 was highly expressed in tumor tissues.",
+          "context": [
+            "Tumor tissues"
+          ],
+          "effects": [],
+          "evidence": "High expression of EZH2 in tumor tissues correlated with poor patient prognosis.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "highly_expressed_in",
+          "score": null,
+          "source": "E14",
+          "surface_form": "High expression of EZH2 in tumor tissues",
+          "target": "E15"
+        },
+        "changed_fields": {
+          "context": {
+            "baseline": [],
+            "candidate": [
+              "Tumor tissues"
+            ]
+          }
+        },
+        "semantic_key": {
+          "predicate": "highly_expressed_in",
+          "source": "E14",
+          "target": "E15"
+        }
+      },
+      {
+        "baseline_relation": {
+          "assertion": "EZH2 maintains CCS-like cell characteristics by arresting the cell cycle at G1/S.",
+          "context": [],
+          "effects": [],
+          "evidence": "Collectively, these findings revealed EZH2 maintaining CCS-like cell characteristics by arresting the cell cycle at the G1/S phase.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "maintains_stem_like_cell_characteristics",
+          "score": null,
+          "source": "E39",
+          "surface_form": "maintaining CCS-like cell characteristics",
+          "target": "E40"
+        },
+        "candidate_relation": {
+          "assertion": "EZH2 maintains CCS-like cell characteristics by arresting the cell cycle at G1/S.",
+          "context": [],
+          "effects": [
+            "Maintenance of CCS-like cell characteristics"
+          ],
+          "evidence": "these findings revealed EZH2 maintaining CCS-like cell characteristics by arresting the cell cycle at the G1/S phase.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "maintains_stem_like_cell_characteristics",
+          "score": null,
+          "source": "E39",
+          "surface_form": "maintaining CCS-like cell characteristics",
+          "target": "E40"
+        },
+        "changed_fields": {
+          "effects": {
+            "baseline": [],
+            "candidate": [
+              "Maintenance of CCS-like cell characteristics"
+            ]
+          },
+          "evidence": {
+            "baseline": "Collectively, these findings revealed EZH2 maintaining CCS-like cell characteristics by arresting the cell cycle at the G1/S phase.",
+            "candidate": "these findings revealed EZH2 maintaining CCS-like cell characteristics by arresting the cell cycle at the G1/S phase."
+          }
+        },
+        "semantic_key": {
+          "predicate": "maintains_stem_like_cell_characteristics",
+          "source": "E39",
+          "target": "E40"
+        }
+      },
+      {
+        "baseline_relation": {
+          "assertion": "EZH2 expression was higher in the CCS-like cell subpopulation than in the non-CCS-like cell subpopulation.",
+          "context": [],
+          "effects": [],
+          "evidence": "EZH2 was more highly expressed in the CCS-like cell subpopulation than in the non-CCS-like cell subpopulation.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "more_highly_expressed_in",
+          "score": null,
+          "source": "E19",
+          "surface_form": "more highly expressed in",
+          "target": "E20"
+        },
+        "candidate_relation": {
+          "assertion": "EZH2 expression was higher in the CCS-like cell subpopulation than in the non-CCS-like cell subpopulation.",
+          "context": [
+            "CCS-like cell subpopulation"
+          ],
+          "effects": [],
+          "evidence": "EZH2 was more highly expressed in the CCS-like cell subpopulation than in the non-CCS-like cell subpopulation.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "more_highly_expressed_in",
+          "score": null,
+          "source": "E19",
+          "surface_form": "more highly expressed in the CCS-like cell subpopulation",
+          "target": "E20"
+        },
+        "changed_fields": {
+          "context": {
+            "baseline": [],
+            "candidate": [
+              "CCS-like cell subpopulation"
+            ]
+          },
+          "surface_form": {
+            "baseline": "more highly expressed in",
+            "candidate": "more highly expressed in the CCS-like cell subpopulation"
+          }
+        },
+        "semantic_key": {
+          "predicate": "more_highly_expressed_in",
+          "source": "E19",
+          "target": "E20"
+        }
+      },
+      {
+        "baseline_relation": {
+          "assertion": "EPZ-6438, described as a clinical trial drug, prevented CRC progression.",
+          "context": [],
+          "effects": [
+            "Prevention of CRC progression"
+          ],
+          "evidence": "Moreover, the specific EZH2 inhibitor EPZ-6438, a clinical trial drug, prevented CRC progression.",
+          "intervention": "EPZ-6438 treatment",
+          "negated": false,
+          "predicate": "prevents_progression",
+          "score": null,
+          "source": "E37",
+          "surface_form": "prevented CRC progression",
+          "target": "E38"
+        },
+        "candidate_relation": {
+          "assertion": "EPZ-6438, described as a clinical trial drug and specific EZH2 inhibitor, prevented CRC progression.",
+          "context": [],
+          "effects": [
+            "Prevented CRC progression"
+          ],
+          "evidence": "the specific EZH2 inhibitor EPZ-6438, a clinical trial drug, prevented CRC progression.",
+          "intervention": "EPZ-6438 treatment",
+          "negated": false,
+          "predicate": "prevents_progression",
+          "score": null,
+          "source": "E37",
+          "surface_form": "prevented CRC progression",
+          "target": "E38"
+        },
+        "changed_fields": {
+          "assertion": {
+            "baseline": "EPZ-6438, described as a clinical trial drug, prevented CRC progression.",
+            "candidate": "EPZ-6438, described as a clinical trial drug and specific EZH2 inhibitor, prevented CRC progression."
+          },
+          "effects": {
+            "baseline": [
+              "Prevention of CRC progression"
+            ],
+            "candidate": [
+              "Prevented CRC progression"
+            ]
+          },
+          "evidence": {
+            "baseline": "Moreover, the specific EZH2 inhibitor EPZ-6438, a clinical trial drug, prevented CRC progression.",
+            "candidate": "the specific EZH2 inhibitor EPZ-6438, a clinical trial drug, prevented CRC progression."
+          }
+        },
+        "semantic_key": {
+          "predicate": "prevents_progression",
+          "source": "E37",
+          "target": "E38"
+        }
+      },
+      {
+        "baseline_relation": {
+          "assertion": "EZH2 promotes colorectal cancer stem-like cell expansion by activating p21cip1-Wnt/β-catenin signaling.",
+          "context": [],
+          "effects": [],
+          "evidence": "EZH2 promotes colorectal cancer stem-like cell expansion by activating p21cip1-Wnt/β-catenin signaling.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "promotes_stem_like_cell_expansion",
+          "score": null,
+          "source": "E1",
+          "surface_form": "promotes",
+          "target": "E2"
+        },
+        "candidate_relation": {
+          "assertion": "EZH2 promotes expansion of colorectal cancer stem-like cells by activating p21cip1-Wnt/β-catenin signaling.",
+          "context": [],
+          "effects": [
+            "Expansion of colorectal cancer stem-like cells"
+          ],
+          "evidence": "EZH2 promotes colorectal cancer stem-like cell expansion by activating p21cip1-Wnt/β-catenin signaling.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "promotes_stem_like_cell_expansion",
+          "score": null,
+          "source": "E1",
+          "surface_form": "promotes colorectal cancer stem-like cell expansion",
+          "target": "E2"
+        },
+        "changed_fields": {
+          "assertion": {
+            "baseline": "EZH2 promotes colorectal cancer stem-like cell expansion by activating p21cip1-Wnt/β-catenin signaling.",
+            "candidate": "EZH2 promotes expansion of colorectal cancer stem-like cells by activating p21cip1-Wnt/β-catenin signaling."
+          },
+          "effects": {
+            "baseline": [],
+            "candidate": [
+              "Expansion of colorectal cancer stem-like cells"
+            ]
+          },
+          "surface_form": {
+            "baseline": "promotes",
+            "candidate": "promotes colorectal cancer stem-like cell expansion"
+          }
+        },
+        "semantic_key": {
+          "predicate": "promotes_stem_like_cell_expansion",
+          "source": "E1",
+          "target": "E2"
+        }
+      }
+    ],
+    "unpaired_baseline_records": [
+      {
+        "assertion": "EZH2 activation of the Wnt/β-catenin pathway requires p21cip1-mediated cell-cycle arrest at G1/S.",
+        "context": [],
+        "effects": [],
+        "evidence": "p21cip1-mediated arrest of the cell cycle at G1/S phase is required for EZH2 activation of the Wnt/β-catenin pathway.",
+        "intervention": null,
+        "negated": false,
+        "predicate": "activates_pathway",
+        "score": null,
+        "source": "E33",
+        "surface_form": "activation of",
+        "target": "E34"
+      },
+      {
+        "assertion": "EZH2 activation of the Wnt/β-catenin pathway requires p21cip1-mediated cell-cycle arrest at G1/S.",
+        "context": [],
+        "effects": [],
+        "evidence": "p21cip1-mediated arrest of the cell cycle at G1/S phase is required for EZH2 activation of the Wnt/β-catenin pathway.",
+        "intervention": null,
+        "negated": false,
+        "predicate": "activates_pathway",
+        "score": null,
+        "source": "E33",
+        "surface_form": "activation of",
+        "target": "E35"
+      },
+      {
+        "assertion": "High EZH2 expression in tumor tissues correlated with poor patient prognosis.",
+        "context": [
+          "Tumor tissues"
+        ],
+        "effects": [],
+        "evidence": "High expression of EZH2 in tumor tissues correlated with poor patient prognosis.",
+        "intervention": null,
+        "negated": false,
+        "predicate": "associated_with_poor_prognosis",
+        "score": null,
+        "source": "E14",
+        "surface_form": "correlated with poor patient prognosis",
+        "target": "E16"
+      },
+      {
+        "assertion": "High levels of EZH2 were expressed in patients with advanced-stage CRC.",
+        "context": [
+          "Advanced-stage CRC"
+        ],
+        "effects": [],
+        "evidence": "patients with advanced stage CRC expressed high levels of polycomb group protein enhancer of zeste homologue 2 (EZH2).",
+        "intervention": null,
+        "negated": false,
+        "predicate": "highly_expressed_in",
+        "score": null,
+        "source": "E13",
+        "surface_form": "expressed high levels",
+        "target": "E10"
+      },
+      {
+        "assertion": "EZH2 knockdown strongly impaired tumor-initiating capacity in a re-implantation mouse model.",
+        "context": [
+          "Re-implantation mouse model"
+        ],
+        "effects": [
+          "Strong impairment of tumor-initiating capacity"
+        ],
+        "evidence": "EZH2 knockdown significantly reduced the CD133+/CD44+ subpopulation, suppressed mammosphere formation, and decreased the expression of self-renewal-related genes and strongly impaired tumor-initiating capacity in a re-implantation mouse model.",
+        "intervention": "EZH2 knockdown",
+        "negated": false,
+        "predicate": "impairs_initiating_capacity",
+        "score": null,
+        "source": "E22",
+        "surface_form": "strongly impaired tumor-initiating capacity",
+        "target": "E25"
+      },
+      {
+        "assertion": "EPZ-6438 is a specific inhibitor of EZH2.",
+        "context": [],
+        "effects": [],
+        "evidence": "the specific EZH2 inhibitor EPZ-6438",
+        "intervention": null,
+        "negated": false,
+        "predicate": "inhibits",
+        "score": null,
+        "source": "E37",
+        "surface_form": "specific EZH2 inhibitor",
+        "target": "E36"
+      },
+      {
+        "assertion": "EZH2 expression was lower in the non-CCS-like cell subpopulation than in the CCS-like cell subpopulation.",
+        "context": [],
+        "effects": [],
+        "evidence": "EZH2 was more highly expressed in the CCS-like cell subpopulation than in the non-CCS-like cell subpopulation.",
+        "intervention": null,
+        "negated": false,
+        "predicate": "less_highly_expressed_in",
+        "score": null,
+        "source": "E19",
+        "surface_form": null,
+        "target": "E21"
+      },
+      {
+        "assertion": "Silencing EZH2 reduced CRC cell proliferation.",
+        "context": [],
+        "effects": [
+          "Reduced CRC cell proliferation"
+        ],
+        "evidence": "silencing EZH2 reduced CRC cell proliferation.",
+        "intervention": "EZH2 silencing",
+        "negated": false,
+        "predicate": "reduces_cell_proliferation",
+        "score": null,
+        "source": "E17",
+        "surface_form": "reduced",
+        "target": "E18"
+      },
+      {
+        "assertion": "EZH2 knockdown significantly reduced the CD133+/CD44+ double-positive subpopulation.",
+        "context": [],
+        "effects": [
+          "Significant reduction of the double-positive subpopulation"
+        ],
+        "evidence": "EZH2 knockdown significantly reduced the CD133+/CD44+ subpopulation",
+        "intervention": "EZH2 knockdown",
+        "negated": false,
+        "predicate": "reduces_marker_positive_subpopulation",
+        "score": null,
+        "source": "E22",
+        "surface_form": "significantly reduced",
+        "target": "E23"
+      },
+      {
+        "assertion": "EZH2 knockdown significantly reduced the CD133+/CD44+ double-positive subpopulation.",
+        "context": [],
+        "effects": [
+          "Significant reduction of the double-positive subpopulation"
+        ],
+        "evidence": "EZH2 knockdown significantly reduced the CD133+/CD44+ subpopulation",
+        "intervention": "EZH2 knockdown",
+        "negated": false,
+        "predicate": "reduces_marker_positive_subpopulation",
+        "score": null,
+        "source": "E22",
+        "surface_form": "significantly reduced",
+        "target": "E24"
+      },
+      {
+        "assertion": "p21cip1-mediated cell-cycle arrest at G1/S is required for EZH2 to activate the Wnt/β-catenin pathway.",
+        "context": [],
+        "effects": [],
+        "evidence": "p21cip1-mediated arrest of the cell cycle at G1/S phase is required for EZH2 activation of the Wnt/β-catenin pathway.",
+        "intervention": null,
+        "negated": false,
+        "predicate": "required_for_pathway_activation",
+        "score": null,
+        "source": "E32",
+        "surface_form": "is required for",
+        "target": "E33"
+      }
+    ],
+    "unpaired_candidate_records": [
+      {
+        "assertion": "High EZH2 expression in tumor tissues correlated with poor patient prognosis.",
+        "context": [
+          "Tumor tissues"
+        ],
+        "effects": [
+          "Poor patient prognosis"
+        ],
+        "evidence": "High expression of EZH2 in tumor tissues correlated with poor patient prognosis.",
+        "intervention": null,
+        "negated": false,
+        "predicate": "associated_with_poor_prognosis_in",
+        "score": null,
+        "source": "E14",
+        "surface_form": "correlated with poor patient prognosis",
+        "target": "E16"
+      },
+      {
+        "assertion": "Enhancer of zeste homologue 2 was expressed at high levels in patients with advanced-stage CRC.",
+        "context": [
+          "Patients with advanced-stage CRC"
+        ],
+        "effects": [],
+        "evidence": "patients with advanced stage CRC expressed high levels of polycomb group protein enhancer of zeste homologue 2 (EZH2)",
+        "intervention": null,
+        "negated": false,
+        "predicate": "highly_expressed_in",
+        "score": null,
+        "source": "E12",
+        "surface_form": "expressed high levels",
+        "target": "E10"
+      },
+      {
+        "assertion": "EZH2 knockdown significantly reduced the CD133+/CD44+ cell subpopulation.",
+        "context": [],
+        "effects": [
+          "Significantly reduced CD133+/CD44+ cell subpopulation"
+        ],
+        "evidence": "EZH2 knockdown significantly reduced the CD133+/CD44+ subpopulation",
+        "intervention": "EZH2 knockdown",
+        "negated": false,
+        "predicate": "knockdown_reduces_positive_cell_subpopulation",
+        "score": null,
+        "source": "E22",
+        "surface_form": "knockdown significantly reduced the CD133+/CD44+ subpopulation",
+        "target": "E23"
+      },
+      {
+        "assertion": "EZH2 knockdown significantly reduced the CD133+/CD44+ cell subpopulation.",
+        "context": [],
+        "effects": [
+          "Significantly reduced CD133+/CD44+ cell subpopulation"
+        ],
+        "evidence": "EZH2 knockdown significantly reduced the CD133+/CD44+ subpopulation",
+        "intervention": "EZH2 knockdown",
+        "negated": false,
+        "predicate": "knockdown_reduces_positive_cell_subpopulation",
+        "score": null,
+        "source": "E22",
+        "surface_form": "knockdown significantly reduced the CD133+/CD44+ subpopulation",
+        "target": "E24"
+      },
+      {
+        "assertion": "p21cip1-mediated cell-cycle arrest at G1/S is required for EZH2 activation of the Wnt/β-catenin pathway.",
+        "context": [],
+        "effects": [],
+        "evidence": "p21cip1-mediated arrest of the cell cycle at G1/S phase is required for EZH2 activation of the Wnt/β-catenin pathway.",
+        "intervention": null,
+        "negated": false,
+        "predicate": "required_for_pathway_activation",
+        "score": null,
+        "source": "E32",
+        "surface_form": "is required for EZH2 activation of the Wnt/β-catenin pathway",
+        "target": "E34"
+      },
+      {
+        "assertion": "p21cip1-mediated cell-cycle arrest at G1/S is required for EZH2 activation of the Wnt/β-catenin pathway.",
+        "context": [],
+        "effects": [],
+        "evidence": "p21cip1-mediated arrest of the cell cycle at G1/S phase is required for EZH2 activation of the Wnt/β-catenin pathway.",
+        "intervention": null,
+        "negated": false,
+        "predicate": "required_for_pathway_activation",
+        "score": null,
+        "source": "E32",
+        "surface_form": "is required for EZH2 activation of the Wnt/β-catenin pathway",
+        "target": "E35"
+      },
+      {
+        "assertion": "Silencing EZH2 reduced CRC cell proliferation.",
+        "context": [],
+        "effects": [
+          "Reduced CRC cell proliferation"
+        ],
+        "evidence": "silencing EZH2 reduced CRC cell proliferation.",
+        "intervention": "EZH2 silencing",
+        "negated": false,
+        "predicate": "silencing_reduces_cell_proliferation",
+        "score": null,
+        "source": "E17",
+        "surface_form": "silencing EZH2 reduced CRC cell proliferation",
+        "target": "E18"
+      },
+      {
+        "assertion": "EPZ-6438 is a specific inhibitor of EZH2.",
+        "context": [],
+        "effects": [],
+        "evidence": "the specific EZH2 inhibitor EPZ-6438",
+        "intervention": null,
+        "negated": false,
+        "predicate": "specifically_inhibits",
+        "score": null,
+        "source": "E37",
+        "surface_form": "specific EZH2 inhibitor",
+        "target": "E36"
+      }
+    ]
+  },
+  "scientific_review": {
+    "flags": [
+      {
+        "detail": "Assertion preserves EZH2 dependence but endpoints replace EZH2 with Wnt/beta-catenin. Not treated as equivalent to control or credited as new clean coverage.",
+        "indices": [
+          12,
+          13
+        ],
+        "kind": "changed_conditional_requirement_topology"
+      }
+    ],
+    "gains": [
+      "Poor prognosis retained in [5] and additionally recorded as an observed effects value.",
+      "Title expansion effects [0] and final maintenance effects [16] populated; context added to tumor high expression [4] and CCS expression [7]."
+    ],
+    "losses": [
+      "Control [11] knockdown impairment of tumor-initiating capacity in re-implantation mouse model omitted; mammosphere/self-renewal outcomes are not recovered.",
+      "Maintenance effects empty on matched pathway relations control [12,13] to formatted [10,11]; maintenance remains in assertions.",
+      "Control [14-16] p21 requirement for EZH2 and EZH2-to-Wnt/beta-catenin conditional activation topology replaced by p21-to-Wnt/beta-catenin [12,13].",
+      "Inverse non-CCS comparison control [8] not emitted separately; comparative meaning is retained in [7], not scored as a material loss."
+    ],
+    "relation_judgments": {
+      "0": {
+        "evidence_adequate_for_emitted_values": true,
+        "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+        "new_unsupported_causality": false,
+        "note": "Stem-like-cell expansion and pathway mechanism are explicit in title; effect belongs to EZH2-to-CRC expansion edge.",
+        "rich_values_belong_to_edge": true
+      },
+      "1": {
+        "evidence_adequate_for_emitted_values": true,
+        "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+        "new_unsupported_causality": false,
+        "note": "EZH2 activation of compound p21cip1-Wnt/beta-catenin signaling is explicit; supplied compound endpoint is unchanged.",
+        "rich_values_belong_to_edge": true
+      },
+      "10": {
+        "evidence_adequate_for_emitted_values": true,
+        "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+        "new_unsupported_causality": false,
+        "note": "EZH2 pathway activation, CCS maintenance, TCGA 433-human-CRC dataset and in-vitro settings are explicit in one sentence. Context is supported; maintenance effects are lost.",
+        "rich_values_belong_to_edge": true
+      },
+      "11": {
+        "evidence_adequate_for_emitted_values": true,
+        "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+        "new_unsupported_causality": false,
+        "note": "Same explicit pathway and experimental setting for beta-catenin endpoint; maintenance effects are lost although assertion preserves them.",
+        "rich_values_belong_to_edge": true
+      },
+      "12": {
+        "evidence_adequate_for_emitted_values": true,
+        "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+        "new_unsupported_causality": false,
+        "note": "p21-mediated G1/S arrest requirement is explicit but concerns EZH2 activation of Wnt pathway. Changed conditional requirement endpoints hide EZH2 dependence in assertion; topology flagged, no rich additions.",
+        "rich_values_belong_to_edge": true
+      },
+      "13": {
+        "evidence_adequate_for_emitted_values": true,
+        "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+        "new_unsupported_causality": false,
+        "note": "p21-mediated G1/S arrest requirement is explicit but concerns EZH2 activation of beta-catenin pathway. Changed conditional endpoints are flagged and excluded from matched-finding gains.",
+        "rich_values_belong_to_edge": true
+      },
+      "14": {
+        "evidence_adequate_for_emitted_values": true,
+        "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+        "new_unsupported_causality": false,
+        "note": "Specific EPZ-6438 inhibition of EZH2 is explicit; no unsupported qualifiers.",
+        "rich_values_belong_to_edge": true
+      },
+      "15": {
+        "evidence_adequate_for_emitted_values": true,
+        "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+        "new_unsupported_causality": false,
+        "note": "EPZ-6438 prevention of CRC progression is explicit; treatment intervention is supported by drug action and effect belongs to this edge. Clinical-trial descriptor stays in assertion, not context causality.",
+        "rich_values_belong_to_edge": true
+      },
+      "16": {
+        "evidence_adequate_for_emitted_values": true,
+        "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+        "new_unsupported_causality": false,
+        "note": "EZH2 maintaining CCS characteristics by G1/S arrest is explicit; new maintenance effect directly belongs to this edge.",
+        "rich_values_belong_to_edge": true
+      },
+      "2": {
+        "evidence_adequate_for_emitted_values": true,
+        "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+        "new_unsupported_causality": false,
+        "note": "Beta-catenin activation is retained as part of the explicitly named pathway; assertion does not claim isolated activation.",
+        "rich_values_belong_to_edge": true
+      },
+      "3": {
+        "evidence_adequate_for_emitted_values": true,
+        "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+        "new_unsupported_causality": false,
+        "note": "High expression in advanced-stage CRC patients is explicit; long-name EZH2 endpoint is source-explicit and assembly-compatible. Context is not a causal edge.",
+        "rich_values_belong_to_edge": true
+      },
+      "4": {
+        "evidence_adequate_for_emitted_values": true,
+        "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+        "new_unsupported_causality": false,
+        "note": "Tumor tissue high expression and tumor-tissue setting are explicit; no new causality.",
+        "rich_values_belong_to_edge": true
+      },
+      "5": {
+        "evidence_adequate_for_emitted_values": true,
+        "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+        "new_unsupported_causality": false,
+        "note": "Poor prognosis is an explicitly correlated observed outcome; assertion and associated-with predicate preserve correlation, not causation. Effect belongs to this prognosis edge.",
+        "rich_values_belong_to_edge": true
+      },
+      "6": {
+        "evidence_adequate_for_emitted_values": true,
+        "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+        "new_unsupported_causality": false,
+        "note": "EZH2 silencing and reduced CRC proliferation are explicit; intervention and effect match the edge.",
+        "rich_values_belong_to_edge": true
+      },
+      "7": {
+        "evidence_adequate_for_emitted_values": true,
+        "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+        "new_unsupported_causality": false,
+        "note": "Higher EZH2 in CCS-like vs non-CCS-like cells is explicit; CCS context belongs to expression comparison.",
+        "rich_values_belong_to_edge": true
+      },
+      "8": {
+        "evidence_adequate_for_emitted_values": true,
+        "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+        "new_unsupported_causality": false,
+        "note": "EZH2 knockdown reduces the jointly CD133+/CD44+ positive population; assertion/effects preserve joint positivity rather than independent CD133 biology.",
+        "rich_values_belong_to_edge": true
+      },
+      "9": {
+        "evidence_adequate_for_emitted_values": true,
+        "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+        "new_unsupported_causality": false,
+        "note": "EZH2 knockdown reduces the jointly CD133+/CD44+ positive population; split CD44 endpoint retains the same joint qualification.",
+        "rich_values_belong_to_edge": true
+      }
+    },
+    "reviewed_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    "valid_matched_pairs": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        5,
+        5
+      ],
+      [
+        6,
+        6
+      ],
+      [
+        7,
+        7
+      ],
+      [
+        9,
+        8
+      ],
+      [
+        10,
+        9
+      ],
+      [
+        12,
+        10
+      ],
+      [
+        13,
+        11
+      ],
+      [
+        17,
+        14
+      ],
+      [
+        18,
+        15
+      ],
+      [
+        19,
+        16
+      ]
+    ]
+  },
+  "valid_matched_pairs": [
+    [
+      0,
+      0
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      3,
+      3
+    ],
+    [
+      4,
+      4
+    ],
+    [
+      5,
+      5
+    ],
+    [
+      6,
+      6
+    ],
+    [
+      7,
+      7
+    ],
+    [
+      9,
+      8
+    ],
+    [
+      10,
+      9
+    ],
+    [
+      12,
+      10
+    ],
+    [
+      13,
+      11
+    ],
+    [
+      17,
+      14
+    ],
+    [
+      18,
+      15
+    ],
+    [
+      19,
+      16
+    ]
+  ]
+}

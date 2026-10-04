@@ -1,0 +1,1771 @@
+{
+  "all_record_richness": {
+    "control": {
+      "context": 4,
+      "effects": 2,
+      "intervention": 1
+    },
+    "formatted": {
+      "context": 2,
+      "effects": 0,
+      "intervention": 1
+    }
+  },
+  "graph_overview": {
+    "bidirectional_endpoint_pairs": [],
+    "connected_node_count": 10,
+    "directed_edge_bundles": [
+      {
+        "edge_count": 1,
+        "edges": [
+          {
+            "edge_id": "doc_r_001",
+            "evidence_count": 1,
+            "negated": false,
+            "predicate": "reduces",
+            "source": "doc_e_003",
+            "target": "doc_e_002"
+          }
+        ],
+        "source_node": "doc_e_003",
+        "target_node": "doc_e_002"
+      },
+      {
+        "edge_count": 1,
+        "edges": [
+          {
+            "edge_id": "doc_r_002",
+            "evidence_count": 1,
+            "negated": false,
+            "predicate": "contributes_to",
+            "source": "doc_e_003",
+            "target": "doc_e_009"
+          }
+        ],
+        "source_node": "doc_e_003",
+        "target_node": "doc_e_009"
+      },
+      {
+        "edge_count": 1,
+        "edges": [
+          {
+            "edge_id": "doc_r_003",
+            "evidence_count": 1,
+            "negated": false,
+            "predicate": "has_comparable_plasma_levels_of",
+            "source": "doc_e_006",
+            "target": "doc_e_007"
+          }
+        ],
+        "source_node": "doc_e_006",
+        "target_node": "doc_e_007"
+      },
+      {
+        "edge_count": 1,
+        "edges": [
+          {
+            "edge_id": "doc_r_004",
+            "evidence_count": 1,
+            "negated": false,
+            "predicate": "has_elevated_levels_of",
+            "source": "doc_e_006",
+            "target": "doc_e_008"
+          }
+        ],
+        "source_node": "doc_e_006",
+        "target_node": "doc_e_008"
+      },
+      {
+        "edge_count": 2,
+        "edges": [
+          {
+            "edge_id": "doc_r_005",
+            "evidence_count": 1,
+            "negated": false,
+            "predicate": "has_increased_droplets_of",
+            "source": "doc_e_006",
+            "target": "doc_e_011"
+          },
+          {
+            "edge_id": "doc_r_006",
+            "evidence_count": 1,
+            "negated": false,
+            "predicate": "has_increased_uptake_of",
+            "source": "doc_e_006",
+            "target": "doc_e_011"
+          }
+        ],
+        "source_node": "doc_e_006",
+        "target_node": "doc_e_011"
+      },
+      {
+        "edge_count": 1,
+        "edges": [
+          {
+            "edge_id": "doc_r_007",
+            "evidence_count": 1,
+            "negated": false,
+            "predicate": "has_greater_inflammatory_infiltration",
+            "source": "doc_e_006",
+            "target": "doc_e_012"
+          }
+        ],
+        "source_node": "doc_e_006",
+        "target_node": "doc_e_012"
+      },
+      {
+        "edge_count": 1,
+        "edges": [
+          {
+            "edge_id": "doc_r_008",
+            "evidence_count": 1,
+            "negated": false,
+            "predicate": "has_increased_storage_of",
+            "source": "doc_e_006",
+            "target": "doc_e_015"
+          }
+        ],
+        "source_node": "doc_e_006",
+        "target_node": "doc_e_015"
+      },
+      {
+        "edge_count": 1,
+        "edges": [
+          {
+            "edge_id": "doc_r_009",
+            "evidence_count": 1,
+            "negated": false,
+            "predicate": "has_elevated_levels_of",
+            "source": "doc_e_006",
+            "target": "doc_e_018"
+          }
+        ],
+        "source_node": "doc_e_006",
+        "target_node": "doc_e_018"
+      },
+      {
+        "edge_count": 1,
+        "edges": [
+          {
+            "edge_id": "doc_r_010",
+            "evidence_count": 1,
+            "negated": false,
+            "predicate": "is_indicator_of",
+            "source": "doc_e_008",
+            "target": "doc_e_009"
+          }
+        ],
+        "source_node": "doc_e_008",
+        "target_node": "doc_e_009"
+      }
+    ],
+    "duplicate_edge_identity_count": 0,
+    "duplicate_evidence_record_count": 0,
+    "edge_count": 10,
+    "edges_with_multiple_evidence": [],
+    "evidence_record_count": 10,
+    "node_count": 18,
+    "nodes": [
+      {
+        "aliases": [
+          "glucose"
+        ],
+        "id": "doc_e_001",
+        "label": "glucose",
+        "mentions": [
+          {
+            "end": 33,
+            "id": "E509",
+            "score": 0.9999973773956299,
+            "start": 26,
+            "text": "glucose",
+            "type": "Chemical"
+          },
+          {
+            "end": 195,
+            "id": "E512",
+            "score": 0.9999972581863403,
+            "start": 188,
+            "text": "glucose",
+            "type": "Chemical"
+          },
+          {
+            "end": 1634,
+            "id": "E560",
+            "score": 0.9999969005584717,
+            "start": 1627,
+            "text": "glucose",
+            "type": "Chemical"
+          }
+        ],
+        "type": "Chemical"
+      },
+      {
+        "aliases": [
+          "hyperglycemia"
+        ],
+        "id": "doc_e_002",
+        "label": "hyperglycemia",
+        "mentions": [
+          {
+            "end": 94,
+            "id": "E510",
+            "score": 0.9999854564666748,
+            "start": 81,
+            "text": "hyperglycemia",
+            "type": "Disease"
+          },
+          {
+            "end": 1810,
+            "id": "E569",
+            "score": 0.9999856948852539,
+            "start": 1797,
+            "text": "hyperglycemia",
+            "type": "Disease"
+          }
+        ],
+        "type": "Disease"
+      },
+      {
+        "aliases": [
+          "HMGB1"
+        ],
+        "id": "doc_e_003",
+        "label": "HMGB1",
+        "mentions": [
+          {
+            "end": 115,
+            "id": "E511",
+            "score": 0.9999890327453613,
+            "start": 110,
+            "text": "HMGB1",
+            "type": "Gene"
+          },
+          {
+            "end": 290,
+            "id": "E513",
+            "score": 0.9999879598617554,
+            "start": 285,
+            "text": "HMGB1",
+            "type": "Gene"
+          },
+          {
+            "end": 449,
+            "id": "E519",
+            "score": 0.9999884366989136,
+            "start": 444,
+            "text": "HMGB1",
+            "type": "Gene"
+          },
+          {
+            "end": 774,
+            "id": "E532",
+            "score": 0.9999874830245972,
+            "start": 769,
+            "text": "HMGB1",
+            "type": "Gene"
+          },
+          {
+            "end": 890,
+            "id": "E537",
+            "score": 0.9999889135360718,
+            "start": 885,
+            "text": "HMGB1",
+            "type": "Gene"
+          },
+          {
+            "end": 1026,
+            "id": "E540",
+            "score": 0.9999884366989136,
+            "start": 1021,
+            "text": "HMGB1",
+            "type": "Gene"
+          },
+          {
+            "end": 1089,
+            "id": "E542",
+            "score": 0.9999889135360718,
+            "start": 1084,
+            "text": "HMGB1",
+            "type": "Gene"
+          },
+          {
+            "end": 1147,
+            "id": "E544",
+            "score": 0.9999872446060181,
+            "start": 1142,
+            "text": "HMGB1",
+            "type": "Gene"
+          },
+          {
+            "end": 1399,
+            "id": "E554",
+            "score": 0.9999879598617554,
+            "start": 1394,
+            "text": "HMGB1",
+            "type": "Gene"
+          },
+          {
+            "end": 1548,
+            "id": "E559",
+            "score": 0.9999879598617554,
+            "start": 1543,
+            "text": "HMGB1",
+            "type": "Gene"
+          },
+          {
+            "end": 1742,
+            "id": "E564",
+            "score": 0.999987006187439,
+            "start": 1737,
+            "text": "HMGB1",
+            "type": "Gene"
+          },
+          {
+            "end": 1944,
+            "id": "E574",
+            "score": 0.999987006187439,
+            "start": 1939,
+            "text": "HMGB1",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "STZ"
+        ],
+        "id": "doc_e_004",
+        "label": "STZ",
+        "mentions": [
+          {
+            "end": 303,
+            "id": "E514",
+            "score": 0.9999970197677612,
+            "start": 300,
+            "text": "STZ",
+            "type": "Chemical"
+          },
+          {
+            "end": 325,
+            "id": "E516",
+            "score": 0.9999971389770508,
+            "start": 322,
+            "text": "STZ",
+            "type": "Chemical"
+          },
+          {
+            "end": 462,
+            "id": "E520",
+            "score": 0.9999970197677612,
+            "start": 459,
+            "text": "STZ",
+            "type": "Chemical"
+          },
+          {
+            "end": 575,
+            "id": "E525",
+            "score": 0.9999970197677612,
+            "start": 572,
+            "text": "STZ",
+            "type": "Chemical"
+          },
+          {
+            "end": 723,
+            "id": "E530",
+            "score": 0.9999964237213135,
+            "start": 720,
+            "text": "STZ",
+            "type": "Chemical"
+          },
+          {
+            "end": 787,
+            "id": "E533",
+            "score": 0.999996542930603,
+            "start": 784,
+            "text": "STZ",
+            "type": "Chemical"
+          },
+          {
+            "end": 1160,
+            "id": "E545",
+            "score": 0.9999960660934448,
+            "start": 1157,
+            "text": "STZ",
+            "type": "Chemical"
+          },
+          {
+            "end": 1309,
+            "id": "E550",
+            "score": 0.9999957084655762,
+            "start": 1306,
+            "text": "STZ",
+            "type": "Chemical"
+          },
+          {
+            "end": 1412,
+            "id": "E555",
+            "score": 0.9999964237213135,
+            "start": 1409,
+            "text": "STZ",
+            "type": "Chemical"
+          },
+          {
+            "end": 1755,
+            "id": "E565",
+            "score": 0.9999969005584717,
+            "start": 1752,
+            "text": "STZ",
+            "type": "Chemical"
+          },
+          {
+            "end": 1777,
+            "id": "E567",
+            "score": 0.9999969005584717,
+            "start": 1774,
+            "text": "STZ",
+            "type": "Chemical"
+          },
+          {
+            "end": 1867,
+            "id": "E571",
+            "score": 0.9999970197677612,
+            "start": 1864,
+            "text": "STZ",
+            "type": "Chemical"
+          },
+          {
+            "end": 1957,
+            "id": "E575",
+            "score": 0.9999970197677612,
+            "start": 1954,
+            "text": "STZ",
+            "type": "Chemical"
+          }
+        ],
+        "type": "Chemical"
+      },
+      {
+        "aliases": [
+          "iHMGB1"
+        ],
+        "id": "doc_e_005",
+        "label": "iHMGB1",
+        "mentions": [
+          {
+            "end": 314,
+            "id": "E515",
+            "score": 0.9997583031654358,
+            "start": 308,
+            "text": "iHMGB1",
+            "type": "Gene"
+          },
+          {
+            "end": 564,
+            "id": "E524",
+            "score": 0.9998071789741516,
+            "start": 558,
+            "text": "iHMGB1",
+            "type": "Gene"
+          },
+          {
+            "end": 712,
+            "id": "E529",
+            "score": 0.5616253614425659,
+            "start": 706,
+            "text": "iHMGB1",
+            "type": "Gene"
+          },
+          {
+            "end": 1298,
+            "id": "E549",
+            "score": 0.9974823594093323,
+            "start": 1292,
+            "text": "iHMGB1",
+            "type": "Gene"
+          },
+          {
+            "end": 1766,
+            "id": "E566",
+            "score": 0.997413694858551,
+            "start": 1760,
+            "text": "iHMGB1",
+            "type": "Gene"
+          },
+          {
+            "end": 1856,
+            "id": "E570",
+            "score": 0.9999324083328247,
+            "start": 1850,
+            "text": "iHMGB1",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "mice"
+        ],
+        "id": "doc_e_006",
+        "label": "mice",
+        "mentions": [
+          {
+            "end": 330,
+            "id": "E517",
+            "score": 0.9999877214431763,
+            "start": 326,
+            "text": "mice",
+            "type": "Species"
+          },
+          {
+            "end": 467,
+            "id": "E521",
+            "score": 0.9999876022338867,
+            "start": 463,
+            "text": "mice",
+            "type": "Species"
+          },
+          {
+            "end": 580,
+            "id": "E526",
+            "score": 0.9999877214431763,
+            "start": 576,
+            "text": "mice",
+            "type": "Species"
+          },
+          {
+            "end": 728,
+            "id": "E531",
+            "score": 0.9999874830245972,
+            "start": 724,
+            "text": "mice",
+            "type": "Species"
+          },
+          {
+            "end": 792,
+            "id": "E534",
+            "score": 0.9999873638153076,
+            "start": 788,
+            "text": "mice",
+            "type": "Species"
+          },
+          {
+            "end": 1165,
+            "id": "E546",
+            "score": 0.9999877214431763,
+            "start": 1161,
+            "text": "mice",
+            "type": "Species"
+          },
+          {
+            "end": 1314,
+            "id": "E551",
+            "score": 0.9999877214431763,
+            "start": 1310,
+            "text": "mice",
+            "type": "Species"
+          },
+          {
+            "end": 1417,
+            "id": "E556",
+            "score": 0.9999876022338867,
+            "start": 1413,
+            "text": "mice",
+            "type": "Species"
+          },
+          {
+            "end": 1782,
+            "id": "E568",
+            "score": 0.9999877214431763,
+            "start": 1778,
+            "text": "mice",
+            "type": "Species"
+          },
+          {
+            "end": 1872,
+            "id": "E572",
+            "score": 0.9999876022338867,
+            "start": 1868,
+            "text": "mice",
+            "type": "Species"
+          },
+          {
+            "end": 1962,
+            "id": "E576",
+            "score": 0.9999876022338867,
+            "start": 1958,
+            "text": "mice",
+            "type": "Species"
+          }
+        ],
+        "type": "Species"
+      },
+      {
+        "aliases": [
+          "ALT"
+        ],
+        "id": "doc_e_007",
+        "label": "ALT",
+        "mentions": [
+          {
+            "end": 396,
+            "id": "E518",
+            "score": 0.9999868869781494,
+            "start": 393,
+            "text": "ALT",
+            "type": "Gene"
+          },
+          {
+            "end": 680,
+            "id": "E528",
+            "score": 0.9999879598617554,
+            "start": 677,
+            "text": "ALT",
+            "type": "Gene"
+          },
+          {
+            "end": 833,
+            "id": "E536",
+            "score": 0.9999890327453613,
+            "start": 830,
+            "text": "ALT",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "AST"
+        ],
+        "id": "doc_e_008",
+        "label": "AST",
+        "mentions": [
+          {
+            "end": 514,
+            "id": "E522",
+            "score": 0.9999856948852539,
+            "start": 511,
+            "text": "AST",
+            "type": "Gene"
+          },
+          {
+            "end": 676,
+            "id": "E527",
+            "score": 0.9999862909317017,
+            "start": 673,
+            "text": "AST",
+            "type": "Gene"
+          },
+          {
+            "end": 829,
+            "id": "E535",
+            "score": 0.9999878406524658,
+            "start": 826,
+            "text": "AST",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      },
+      {
+        "aliases": [
+          "liver damage"
+        ],
+        "id": "doc_e_009",
+        "label": "liver damage",
+        "mentions": [
+          {
+            "end": 544,
+            "id": "E523",
+            "score": 0.9999902248382568,
+            "start": 532,
+            "text": "liver damage",
+            "type": "Disease"
+          },
+          {
+            "end": 930,
+            "id": "E538",
+            "score": 0.9999919533729553,
+            "start": 918,
+            "text": "liver damage",
+            "type": "Disease"
+          },
+          {
+            "end": 1042,
+            "id": "E541",
+            "score": 0.9999905824661255,
+            "start": 1030,
+            "text": "liver damage",
+            "type": "Disease"
+          }
+        ],
+        "type": "Disease"
+      },
+      {
+        "aliases": [
+          "hyperglycemic"
+        ],
+        "id": "doc_e_010",
+        "label": "hyperglycemic",
+        "mentions": [
+          {
+            "end": 950,
+            "id": "E539",
+            "score": 0.9999850988388062,
+            "start": 937,
+            "text": "hyperglycemic",
+            "type": "Disease"
+          },
+          {
+            "end": 1134,
+            "id": "E543",
+            "score": 0.9999843835830688,
+            "start": 1121,
+            "text": "hyperglycemic",
+            "type": "Disease"
+          }
+        ],
+        "type": "Disease"
+      },
+      {
+        "aliases": [
+          "lipid"
+        ],
+        "id": "doc_e_011",
+        "label": "lipid",
+        "mentions": [
+          {
+            "end": 1211,
+            "id": "E547",
+            "score": 0.9119126796722412,
+            "start": 1206,
+            "text": "lipid",
+            "type": "Chemical"
+          },
+          {
+            "end": 1464,
+            "id": "E558",
+            "score": 0.9999946355819702,
+            "start": 1459,
+            "text": "lipid",
+            "type": "Chemical"
+          }
+        ],
+        "type": "Chemical"
+      },
+      {
+        "aliases": [
+          "inflammatory"
+        ],
+        "id": "doc_e_012",
+        "label": "inflammatory",
+        "mentions": [
+          {
+            "end": 1266,
+            "id": "E548",
+            "score": 0.9999804496765137,
+            "start": 1254,
+            "text": "inflammatory",
+            "type": "Disease"
+          }
+        ],
+        "type": "Disease"
+      },
+      {
+        "aliases": [
+          "PAS"
+        ],
+        "id": "doc_e_013",
+        "label": "PAS",
+        "mentions": [
+          {
+            "end": 1356,
+            "id": "E552",
+            "score": 0.9230425357818604,
+            "start": 1353,
+            "text": "PAS",
+            "type": "Chemical"
+          }
+        ],
+        "type": "Chemical"
+      },
+      {
+        "aliases": [
+          "Oil Red O"
+        ],
+        "id": "doc_e_014",
+        "label": "Oil Red O",
+        "mentions": [
+          {
+            "end": 1370,
+            "id": "E553",
+            "score": 0.9998689293861389,
+            "start": 1361,
+            "text": "Oil Red O",
+            "type": "Chemical"
+          }
+        ],
+        "type": "Chemical"
+      },
+      {
+        "aliases": [
+          "glycogen"
+        ],
+        "id": "doc_e_015",
+        "label": "glycogen",
+        "mentions": [
+          {
+            "end": 1446,
+            "id": "E557",
+            "score": 0.9999958276748657,
+            "start": 1438,
+            "text": "glycogen",
+            "type": "Chemical"
+          }
+        ],
+        "type": "Chemical"
+      },
+      {
+        "aliases": [
+          "DM"
+        ],
+        "id": "doc_e_016",
+        "label": "DM",
+        "mentions": [
+          {
+            "end": 1649,
+            "id": "E561",
+            "score": 0.999985933303833,
+            "start": 1647,
+            "text": "DM",
+            "type": "Disease"
+          }
+        ],
+        "type": "Disease"
+      },
+      {
+        "aliases": [
+          "patients"
+        ],
+        "id": "doc_e_017",
+        "label": "patients",
+        "mentions": [
+          {
+            "end": 1658,
+            "id": "E562",
+            "score": 0.9999854564666748,
+            "start": 1650,
+            "text": "patients",
+            "type": "Species"
+          }
+        ],
+        "type": "Species"
+      },
+      {
+        "aliases": [
+          "Cystatin C"
+        ],
+        "id": "doc_e_018",
+        "label": "Cystatin C",
+        "mentions": [
+          {
+            "end": 1704,
+            "id": "E563",
+            "score": 0.9999759793281555,
+            "start": 1694,
+            "text": "Cystatin C",
+            "type": "Gene"
+          },
+          {
+            "end": 1926,
+            "id": "E573",
+            "score": 0.999976396560669,
+            "start": 1916,
+            "text": "Cystatin C",
+            "type": "Gene"
+          }
+        ],
+        "type": "Gene"
+      }
+    ],
+    "relation_count": 10,
+    "rich_evidence_propagation": {
+      "actual_graph_evidence_records": 10,
+      "alias_or_naming_self_relations_suppressed_by_graph_contract": [],
+      "collapsed_duplicate_relation_evidence_records": 0,
+      "duplicate_graph_evidence_records": 0,
+      "exact_match": true,
+      "projected_relation_evidence_records": 10,
+      "unexpected_graph_evidence": [],
+      "unique_actual_graph_evidence_records": 10,
+      "unique_projected_relation_evidence_records": 10,
+      "unrepresented_relation_evidence": []
+    },
+    "self_edges": [],
+    "unconnected_node_count": 8,
+    "unconnected_node_ids": [
+      "doc_e_001",
+      "doc_e_004",
+      "doc_e_005",
+      "doc_e_010",
+      "doc_e_013",
+      "doc_e_014",
+      "doc_e_016",
+      "doc_e_017"
+    ]
+  },
+  "matched_finding_richness": {
+    "control": {
+      "context": 4,
+      "effects": 2,
+      "intervention": 1
+    },
+    "formatted": {
+      "context": 2,
+      "effects": 0,
+      "intervention": 1
+    }
+  },
+  "mechanical_delta": {
+    "baseline_count": 10,
+    "baseline_exact_duplicate_record_count": 0,
+    "baseline_only": [
+      {
+        "assertion": "HMGB1 Flox TMX STZ and iHMGB1 KO TMX STZ mice had comparable plasma ALT levels 10 weeks after the last injection.",
+        "context": [
+          "Plasma samples collected 10 weeks after the last injection"
+        ],
+        "effects": [],
+        "evidence": "Our assessment of the plasma samples collected from HMGB1 Flox TMX STZ and iHMGB1 KO TMX STZ mice following 10 weeks post last injection revealed that although ALT levels were comparable between the two groups",
+        "intervention": null,
+        "negated": false,
+        "predicate": "has_comparable_levels_of",
+        "score": null,
+        "source": "E517",
+        "surface_form": "ALT levels were comparable between the two groups",
+        "target": "E518"
+      },
+      {
+        "assertion": "HMGB1 Flox TMX STZ mice displayed an increase in macrovesicular lipid droplets compared with iHMGB1 KO TMX STZ mice.",
+        "context": [],
+        "effects": [],
+        "evidence": "HMGB1 Flox TMX STZ mice displayed an increase in macrovesicular lipid droplets and greater signs of mononuclear inflammatory infiltration compared to iHMGB1 KO TMX STZ mice",
+        "intervention": null,
+        "negated": false,
+        "predicate": "has_increased_droplets_of",
+        "score": null,
+        "source": "E546",
+        "surface_form": "displayed an increase in macrovesicular lipid droplets",
+        "target": "E547"
+      },
+      {
+        "assertion": "HMGB1 Flox TMX STZ mice displayed greater signs of mononuclear inflammatory infiltration compared with iHMGB1 KO TMX STZ mice.",
+        "context": [],
+        "effects": [],
+        "evidence": "HMGB1 Flox TMX STZ mice displayed an increase in macrovesicular lipid droplets and greater signs of mononuclear inflammatory infiltration compared to iHMGB1 KO TMX STZ mice",
+        "intervention": null,
+        "negated": false,
+        "predicate": "has_greater_infiltration",
+        "score": null,
+        "source": "E546",
+        "surface_form": "greater signs of mononuclear inflammatory infiltration",
+        "target": "E548"
+      },
+      {
+        "assertion": "HMGB1 Flox TMX STZ mice displayed significantly elevated plasma AST levels compared with iHMGB1 KO TMX STZ mice 10 weeks after the last injection.",
+        "context": [
+          "Plasma samples collected 10 weeks after the last injection"
+        ],
+        "effects": [],
+        "evidence": "Our assessment of the plasma samples collected from HMGB1 Flox TMX STZ and iHMGB1 KO TMX STZ mice following 10 weeks post last injection revealed that although ALT levels were comparable between the two groups, HMGB1 Flox TMX STZ mice displayed significantly elevated levels of AST, an indicator of liver damage, compared to iHMGB1 KO TMX STZ mice",
+        "intervention": null,
+        "negated": false,
+        "predicate": "has_elevated_levels_of",
+        "score": null,
+        "source": "E521",
+        "surface_form": "displayed significantly elevated levels of AST",
+        "target": "E522"
+      },
+      {
+        "assertion": "HMGB1 knockdown reduces hyperglycemia.",
+        "context": [],
+        "effects": [
+          "Hyperglycemia reduction"
+        ],
+        "evidence": "hyperglycemia reduction upon HMGB1 knockdown",
+        "intervention": "HMGB1 knockdown",
+        "negated": false,
+        "predicate": "reduces",
+        "score": null,
+        "source": "E511",
+        "surface_form": "reduction upon HMGB1 knockdown",
+        "target": "E510"
+      },
+      {
+        "assertion": "Staining revealed that HMGB1 Flox TMX STZ mice exhibited increased glycogen storage.",
+        "context": [],
+        "effects": [],
+        "evidence": "Additionally, PAS and Oil Red O staining revealed that HMGB1 Flox TMX STZ mice exhibited increased glycogen storage and lipid uptake",
+        "intervention": null,
+        "negated": false,
+        "predicate": "has_increased_storage_of",
+        "score": null,
+        "source": "E556",
+        "surface_form": "exhibited increased glycogen storage",
+        "target": "E557"
+      },
+      {
+        "assertion": "Staining revealed that HMGB1 Flox TMX STZ mice exhibited increased lipid uptake.",
+        "context": [],
+        "effects": [],
+        "evidence": "Additionally, PAS and Oil Red O staining revealed that HMGB1 Flox TMX STZ mice exhibited increased glycogen storage and lipid uptake",
+        "intervention": null,
+        "negated": false,
+        "predicate": "has_increased_uptake_of",
+        "score": null,
+        "source": "E556",
+        "surface_form": "increased glycogen storage and lipid uptake",
+        "target": "E558"
+      },
+      {
+        "assertion": "The findings suggest that the presence of HMGB1 contributes to more severe liver damage under hyperglycemic conditions.",
+        "context": [
+          "Hyperglycemic conditions"
+        ],
+        "effects": [
+          "More severe liver damage"
+        ],
+        "evidence": "suggesting that the presence of HMGB1 contributes to more severe liver damage under hyperglycemic conditions",
+        "intervention": null,
+        "negated": false,
+        "predicate": "contributes_to",
+        "score": null,
+        "source": "E537",
+        "surface_form": "contributes to more severe liver damage",
+        "target": "E538"
+      },
+      {
+        "assertion": "iHMGB1 KO TMX STZ mice exhibited significantly elevated circulating Cystatin C levels compared with HMGB1 Flox TMX STZ mice 10 weeks after hyperglycemia development.",
+        "context": [
+          "Plasma samples collected 10 weeks after hyperglycemia development"
+        ],
+        "effects": [],
+        "evidence": "We measured circulating levels of Cystatin C in plasma samples obtained from HMGB1 Flox TMX STZ and iHMGB1 KO TMX STZ mice 10 weeks post hyperglycemia development. Our results indicate that iHMGB1 KO TMX STZ mice exhibited significantly elevated levels of Cystatin C compared to HMGB1 Flox TMX STZ mice",
+        "intervention": null,
+        "negated": false,
+        "predicate": "has_elevated_levels_of",
+        "score": null,
+        "source": "E572",
+        "surface_form": "exhibited significantly elevated levels of Cystatin C",
+        "target": "E573"
+      }
+    ],
+    "candidate_count": 10,
+    "candidate_exact_duplicate_record_count": 0,
+    "candidate_only": [
+      {
+        "assertion": "HMGB1 Flox TMX STZ mice displayed greater signs of mononuclear inflammatory infiltration compared with iHMGB1 KO TMX STZ mice.",
+        "context": [],
+        "effects": [],
+        "evidence": "HMGB1 Flox TMX STZ mice displayed an increase in macrovesicular lipid droplets and greater signs of mononuclear inflammatory infiltration compared to iHMGB1 KO TMX STZ mice",
+        "intervention": null,
+        "negated": false,
+        "predicate": "has_greater_inflammatory_infiltration",
+        "score": null,
+        "source": "E546",
+        "surface_form": "greater signs of mononuclear inflammatory infiltration",
+        "target": "E548"
+      },
+      {
+        "assertion": "HMGB1 Flox TMX STZ mice displayed increased macrovesicular lipid droplets compared with iHMGB1 KO TMX STZ mice.",
+        "context": [],
+        "effects": [],
+        "evidence": "HMGB1 Flox TMX STZ mice displayed an increase in macrovesicular lipid droplets and greater signs of mononuclear inflammatory infiltration compared to iHMGB1 KO TMX STZ mice",
+        "intervention": null,
+        "negated": false,
+        "predicate": "has_increased_droplets_of",
+        "score": null,
+        "source": "E546",
+        "surface_form": "displayed an increase in macrovesicular lipid droplets",
+        "target": "E547"
+      },
+      {
+        "assertion": "HMGB1 Flox TMX STZ mice displayed significantly elevated AST levels compared with iHMGB1 KO TMX STZ mice.",
+        "context": [],
+        "effects": [],
+        "evidence": "HMGB1 Flox TMX STZ mice displayed significantly elevated levels of AST, an indicator of liver damage, compared to iHMGB1 KO TMX STZ mice",
+        "intervention": null,
+        "negated": false,
+        "predicate": "has_elevated_levels_of",
+        "score": null,
+        "source": "E521",
+        "surface_form": "displayed significantly elevated levels of",
+        "target": "E522"
+      },
+      {
+        "assertion": "HMGB1 Flox TMX STZ mice exhibited increased glycogen storage.",
+        "context": [],
+        "effects": [],
+        "evidence": "HMGB1 Flox TMX STZ mice exhibited increased glycogen storage and lipid uptake",
+        "intervention": null,
+        "negated": false,
+        "predicate": "has_increased_storage_of",
+        "score": null,
+        "source": "E556",
+        "surface_form": "exhibited increased glycogen storage",
+        "target": "E557"
+      },
+      {
+        "assertion": "HMGB1 Flox TMX STZ mice exhibited increased lipid uptake.",
+        "context": [],
+        "effects": [],
+        "evidence": "HMGB1 Flox TMX STZ mice exhibited increased glycogen storage and lipid uptake",
+        "intervention": null,
+        "negated": false,
+        "predicate": "has_increased_uptake_of",
+        "score": null,
+        "source": "E556",
+        "surface_form": "exhibited increased glycogen storage and lipid uptake",
+        "target": "E558"
+      },
+      {
+        "assertion": "HMGB1 knockdown reduces hyperglycemia.",
+        "context": [],
+        "effects": [],
+        "evidence": "hyperglycemia reduction upon HMGB1 knockdown",
+        "intervention": "HMGB1 knockdown",
+        "negated": false,
+        "predicate": "reduces",
+        "score": null,
+        "source": "E511",
+        "surface_form": "hyperglycemia reduction upon HMGB1 knockdown",
+        "target": "E510"
+      },
+      {
+        "assertion": "The findings suggest that the presence of HMGB1 contributes to more severe liver damage under hyperglycemic conditions.",
+        "context": [
+          "Hyperglycemic conditions"
+        ],
+        "effects": [],
+        "evidence": "suggesting that the presence of HMGB1 contributes to more severe liver damage under hyperglycemic conditions",
+        "intervention": null,
+        "negated": false,
+        "predicate": "contributes_to",
+        "score": null,
+        "source": "E537",
+        "surface_form": "contributes to more severe",
+        "target": "E538"
+      },
+      {
+        "assertion": "iHMGB1 KO TMX STZ mice exhibited significantly elevated Cystatin C levels compared with HMGB1 Flox TMX STZ mice.",
+        "context": [],
+        "effects": [],
+        "evidence": "Our results indicate that iHMGB1 KO TMX STZ mice exhibited significantly elevated levels of Cystatin C compared to HMGB1 Flox TMX STZ mice",
+        "intervention": null,
+        "negated": false,
+        "predicate": "has_elevated_levels_of",
+        "score": null,
+        "source": "E572",
+        "surface_form": "exhibited significantly elevated levels of",
+        "target": "E573"
+      },
+      {
+        "assertion": "iHMGB1 KO TMX STZ mice had plasma ALT levels comparable to those of HMGB1 Flox TMX STZ mice 10 weeks after the last injection.",
+        "context": [
+          "Plasma samples",
+          "10 weeks after the last injection"
+        ],
+        "effects": [],
+        "evidence": "Our assessment of the plasma samples collected from HMGB1 Flox TMX STZ and iHMGB1 KO TMX STZ mice following 10 weeks post last injection revealed that although ALT levels were comparable between the two groups",
+        "intervention": null,
+        "negated": false,
+        "predicate": "has_comparable_plasma_levels_of",
+        "score": null,
+        "source": "E517",
+        "surface_form": "ALT levels were comparable between the two groups",
+        "target": "E518"
+      }
+    ],
+    "exact_multiset_match": false,
+    "matched_changed_records": [
+      {
+        "baseline_relation": {
+          "assertion": "The findings suggest that the presence of HMGB1 contributes to more severe liver damage under hyperglycemic conditions.",
+          "context": [
+            "Hyperglycemic conditions"
+          ],
+          "effects": [
+            "More severe liver damage"
+          ],
+          "evidence": "suggesting that the presence of HMGB1 contributes to more severe liver damage under hyperglycemic conditions",
+          "intervention": null,
+          "negated": false,
+          "predicate": "contributes_to",
+          "score": null,
+          "source": "E537",
+          "surface_form": "contributes to more severe liver damage",
+          "target": "E538"
+        },
+        "candidate_relation": {
+          "assertion": "The findings suggest that the presence of HMGB1 contributes to more severe liver damage under hyperglycemic conditions.",
+          "context": [
+            "Hyperglycemic conditions"
+          ],
+          "effects": [],
+          "evidence": "suggesting that the presence of HMGB1 contributes to more severe liver damage under hyperglycemic conditions",
+          "intervention": null,
+          "negated": false,
+          "predicate": "contributes_to",
+          "score": null,
+          "source": "E537",
+          "surface_form": "contributes to more severe",
+          "target": "E538"
+        },
+        "changed_fields": {
+          "effects": {
+            "baseline": [
+              "More severe liver damage"
+            ],
+            "candidate": []
+          },
+          "surface_form": {
+            "baseline": "contributes to more severe liver damage",
+            "candidate": "contributes to more severe"
+          }
+        },
+        "semantic_key": {
+          "predicate": "contributes_to",
+          "source": "E537",
+          "target": "E538"
+        }
+      },
+      {
+        "baseline_relation": {
+          "assertion": "HMGB1 Flox TMX STZ mice displayed significantly elevated plasma AST levels compared with iHMGB1 KO TMX STZ mice 10 weeks after the last injection.",
+          "context": [
+            "Plasma samples collected 10 weeks after the last injection"
+          ],
+          "effects": [],
+          "evidence": "Our assessment of the plasma samples collected from HMGB1 Flox TMX STZ and iHMGB1 KO TMX STZ mice following 10 weeks post last injection revealed that although ALT levels were comparable between the two groups, HMGB1 Flox TMX STZ mice displayed significantly elevated levels of AST, an indicator of liver damage, compared to iHMGB1 KO TMX STZ mice",
+          "intervention": null,
+          "negated": false,
+          "predicate": "has_elevated_levels_of",
+          "score": null,
+          "source": "E521",
+          "surface_form": "displayed significantly elevated levels of AST",
+          "target": "E522"
+        },
+        "candidate_relation": {
+          "assertion": "HMGB1 Flox TMX STZ mice displayed significantly elevated AST levels compared with iHMGB1 KO TMX STZ mice.",
+          "context": [],
+          "effects": [],
+          "evidence": "HMGB1 Flox TMX STZ mice displayed significantly elevated levels of AST, an indicator of liver damage, compared to iHMGB1 KO TMX STZ mice",
+          "intervention": null,
+          "negated": false,
+          "predicate": "has_elevated_levels_of",
+          "score": null,
+          "source": "E521",
+          "surface_form": "displayed significantly elevated levels of",
+          "target": "E522"
+        },
+        "changed_fields": {
+          "assertion": {
+            "baseline": "HMGB1 Flox TMX STZ mice displayed significantly elevated plasma AST levels compared with iHMGB1 KO TMX STZ mice 10 weeks after the last injection.",
+            "candidate": "HMGB1 Flox TMX STZ mice displayed significantly elevated AST levels compared with iHMGB1 KO TMX STZ mice."
+          },
+          "context": {
+            "baseline": [
+              "Plasma samples collected 10 weeks after the last injection"
+            ],
+            "candidate": []
+          },
+          "evidence": {
+            "baseline": "Our assessment of the plasma samples collected from HMGB1 Flox TMX STZ and iHMGB1 KO TMX STZ mice following 10 weeks post last injection revealed that although ALT levels were comparable between the two groups, HMGB1 Flox TMX STZ mice displayed significantly elevated levels of AST, an indicator of liver damage, compared to iHMGB1 KO TMX STZ mice",
+            "candidate": "HMGB1 Flox TMX STZ mice displayed significantly elevated levels of AST, an indicator of liver damage, compared to iHMGB1 KO TMX STZ mice"
+          },
+          "surface_form": {
+            "baseline": "displayed significantly elevated levels of AST",
+            "candidate": "displayed significantly elevated levels of"
+          }
+        },
+        "semantic_key": {
+          "predicate": "has_elevated_levels_of",
+          "source": "E521",
+          "target": "E522"
+        }
+      },
+      {
+        "baseline_relation": {
+          "assertion": "iHMGB1 KO TMX STZ mice exhibited significantly elevated circulating Cystatin C levels compared with HMGB1 Flox TMX STZ mice 10 weeks after hyperglycemia development.",
+          "context": [
+            "Plasma samples collected 10 weeks after hyperglycemia development"
+          ],
+          "effects": [],
+          "evidence": "We measured circulating levels of Cystatin C in plasma samples obtained from HMGB1 Flox TMX STZ and iHMGB1 KO TMX STZ mice 10 weeks post hyperglycemia development. Our results indicate that iHMGB1 KO TMX STZ mice exhibited significantly elevated levels of Cystatin C compared to HMGB1 Flox TMX STZ mice",
+          "intervention": null,
+          "negated": false,
+          "predicate": "has_elevated_levels_of",
+          "score": null,
+          "source": "E572",
+          "surface_form": "exhibited significantly elevated levels of Cystatin C",
+          "target": "E573"
+        },
+        "candidate_relation": {
+          "assertion": "iHMGB1 KO TMX STZ mice exhibited significantly elevated Cystatin C levels compared with HMGB1 Flox TMX STZ mice.",
+          "context": [],
+          "effects": [],
+          "evidence": "Our results indicate that iHMGB1 KO TMX STZ mice exhibited significantly elevated levels of Cystatin C compared to HMGB1 Flox TMX STZ mice",
+          "intervention": null,
+          "negated": false,
+          "predicate": "has_elevated_levels_of",
+          "score": null,
+          "source": "E572",
+          "surface_form": "exhibited significantly elevated levels of",
+          "target": "E573"
+        },
+        "changed_fields": {
+          "assertion": {
+            "baseline": "iHMGB1 KO TMX STZ mice exhibited significantly elevated circulating Cystatin C levels compared with HMGB1 Flox TMX STZ mice 10 weeks after hyperglycemia development.",
+            "candidate": "iHMGB1 KO TMX STZ mice exhibited significantly elevated Cystatin C levels compared with HMGB1 Flox TMX STZ mice."
+          },
+          "context": {
+            "baseline": [
+              "Plasma samples collected 10 weeks after hyperglycemia development"
+            ],
+            "candidate": []
+          },
+          "evidence": {
+            "baseline": "We measured circulating levels of Cystatin C in plasma samples obtained from HMGB1 Flox TMX STZ and iHMGB1 KO TMX STZ mice 10 weeks post hyperglycemia development. Our results indicate that iHMGB1 KO TMX STZ mice exhibited significantly elevated levels of Cystatin C compared to HMGB1 Flox TMX STZ mice",
+            "candidate": "Our results indicate that iHMGB1 KO TMX STZ mice exhibited significantly elevated levels of Cystatin C compared to HMGB1 Flox TMX STZ mice"
+          },
+          "surface_form": {
+            "baseline": "exhibited significantly elevated levels of Cystatin C",
+            "candidate": "exhibited significantly elevated levels of"
+          }
+        },
+        "semantic_key": {
+          "predicate": "has_elevated_levels_of",
+          "source": "E572",
+          "target": "E573"
+        }
+      },
+      {
+        "baseline_relation": {
+          "assertion": "HMGB1 Flox TMX STZ mice displayed an increase in macrovesicular lipid droplets compared with iHMGB1 KO TMX STZ mice.",
+          "context": [],
+          "effects": [],
+          "evidence": "HMGB1 Flox TMX STZ mice displayed an increase in macrovesicular lipid droplets and greater signs of mononuclear inflammatory infiltration compared to iHMGB1 KO TMX STZ mice",
+          "intervention": null,
+          "negated": false,
+          "predicate": "has_increased_droplets_of",
+          "score": null,
+          "source": "E546",
+          "surface_form": "displayed an increase in macrovesicular lipid droplets",
+          "target": "E547"
+        },
+        "candidate_relation": {
+          "assertion": "HMGB1 Flox TMX STZ mice displayed increased macrovesicular lipid droplets compared with iHMGB1 KO TMX STZ mice.",
+          "context": [],
+          "effects": [],
+          "evidence": "HMGB1 Flox TMX STZ mice displayed an increase in macrovesicular lipid droplets and greater signs of mononuclear inflammatory infiltration compared to iHMGB1 KO TMX STZ mice",
+          "intervention": null,
+          "negated": false,
+          "predicate": "has_increased_droplets_of",
+          "score": null,
+          "source": "E546",
+          "surface_form": "displayed an increase in macrovesicular lipid droplets",
+          "target": "E547"
+        },
+        "changed_fields": {
+          "assertion": {
+            "baseline": "HMGB1 Flox TMX STZ mice displayed an increase in macrovesicular lipid droplets compared with iHMGB1 KO TMX STZ mice.",
+            "candidate": "HMGB1 Flox TMX STZ mice displayed increased macrovesicular lipid droplets compared with iHMGB1 KO TMX STZ mice."
+          }
+        },
+        "semantic_key": {
+          "predicate": "has_increased_droplets_of",
+          "source": "E546",
+          "target": "E547"
+        }
+      },
+      {
+        "baseline_relation": {
+          "assertion": "Staining revealed that HMGB1 Flox TMX STZ mice exhibited increased glycogen storage.",
+          "context": [],
+          "effects": [],
+          "evidence": "Additionally, PAS and Oil Red O staining revealed that HMGB1 Flox TMX STZ mice exhibited increased glycogen storage and lipid uptake",
+          "intervention": null,
+          "negated": false,
+          "predicate": "has_increased_storage_of",
+          "score": null,
+          "source": "E556",
+          "surface_form": "exhibited increased glycogen storage",
+          "target": "E557"
+        },
+        "candidate_relation": {
+          "assertion": "HMGB1 Flox TMX STZ mice exhibited increased glycogen storage.",
+          "context": [],
+          "effects": [],
+          "evidence": "HMGB1 Flox TMX STZ mice exhibited increased glycogen storage and lipid uptake",
+          "intervention": null,
+          "negated": false,
+          "predicate": "has_increased_storage_of",
+          "score": null,
+          "source": "E556",
+          "surface_form": "exhibited increased glycogen storage",
+          "target": "E557"
+        },
+        "changed_fields": {
+          "assertion": {
+            "baseline": "Staining revealed that HMGB1 Flox TMX STZ mice exhibited increased glycogen storage.",
+            "candidate": "HMGB1 Flox TMX STZ mice exhibited increased glycogen storage."
+          },
+          "evidence": {
+            "baseline": "Additionally, PAS and Oil Red O staining revealed that HMGB1 Flox TMX STZ mice exhibited increased glycogen storage and lipid uptake",
+            "candidate": "HMGB1 Flox TMX STZ mice exhibited increased glycogen storage and lipid uptake"
+          }
+        },
+        "semantic_key": {
+          "predicate": "has_increased_storage_of",
+          "source": "E556",
+          "target": "E557"
+        }
+      },
+      {
+        "baseline_relation": {
+          "assertion": "Staining revealed that HMGB1 Flox TMX STZ mice exhibited increased lipid uptake.",
+          "context": [],
+          "effects": [],
+          "evidence": "Additionally, PAS and Oil Red O staining revealed that HMGB1 Flox TMX STZ mice exhibited increased glycogen storage and lipid uptake",
+          "intervention": null,
+          "negated": false,
+          "predicate": "has_increased_uptake_of",
+          "score": null,
+          "source": "E556",
+          "surface_form": "increased glycogen storage and lipid uptake",
+          "target": "E558"
+        },
+        "candidate_relation": {
+          "assertion": "HMGB1 Flox TMX STZ mice exhibited increased lipid uptake.",
+          "context": [],
+          "effects": [],
+          "evidence": "HMGB1 Flox TMX STZ mice exhibited increased glycogen storage and lipid uptake",
+          "intervention": null,
+          "negated": false,
+          "predicate": "has_increased_uptake_of",
+          "score": null,
+          "source": "E556",
+          "surface_form": "exhibited increased glycogen storage and lipid uptake",
+          "target": "E558"
+        },
+        "changed_fields": {
+          "assertion": {
+            "baseline": "Staining revealed that HMGB1 Flox TMX STZ mice exhibited increased lipid uptake.",
+            "candidate": "HMGB1 Flox TMX STZ mice exhibited increased lipid uptake."
+          },
+          "evidence": {
+            "baseline": "Additionally, PAS and Oil Red O staining revealed that HMGB1 Flox TMX STZ mice exhibited increased glycogen storage and lipid uptake",
+            "candidate": "HMGB1 Flox TMX STZ mice exhibited increased glycogen storage and lipid uptake"
+          },
+          "surface_form": {
+            "baseline": "increased glycogen storage and lipid uptake",
+            "candidate": "exhibited increased glycogen storage and lipid uptake"
+          }
+        },
+        "semantic_key": {
+          "predicate": "has_increased_uptake_of",
+          "source": "E556",
+          "target": "E558"
+        }
+      },
+      {
+        "baseline_relation": {
+          "assertion": "HMGB1 knockdown reduces hyperglycemia.",
+          "context": [],
+          "effects": [
+            "Hyperglycemia reduction"
+          ],
+          "evidence": "hyperglycemia reduction upon HMGB1 knockdown",
+          "intervention": "HMGB1 knockdown",
+          "negated": false,
+          "predicate": "reduces",
+          "score": null,
+          "source": "E511",
+          "surface_form": "reduction upon HMGB1 knockdown",
+          "target": "E510"
+        },
+        "candidate_relation": {
+          "assertion": "HMGB1 knockdown reduces hyperglycemia.",
+          "context": [],
+          "effects": [],
+          "evidence": "hyperglycemia reduction upon HMGB1 knockdown",
+          "intervention": "HMGB1 knockdown",
+          "negated": false,
+          "predicate": "reduces",
+          "score": null,
+          "source": "E511",
+          "surface_form": "hyperglycemia reduction upon HMGB1 knockdown",
+          "target": "E510"
+        },
+        "changed_fields": {
+          "effects": {
+            "baseline": [
+              "Hyperglycemia reduction"
+            ],
+            "candidate": []
+          },
+          "surface_form": {
+            "baseline": "reduction upon HMGB1 knockdown",
+            "candidate": "hyperglycemia reduction upon HMGB1 knockdown"
+          }
+        },
+        "semantic_key": {
+          "predicate": "reduces",
+          "source": "E511",
+          "target": "E510"
+        }
+      }
+    ],
+    "unpaired_baseline_records": [
+      {
+        "assertion": "HMGB1 Flox TMX STZ and iHMGB1 KO TMX STZ mice had comparable plasma ALT levels 10 weeks after the last injection.",
+        "context": [
+          "Plasma samples collected 10 weeks after the last injection"
+        ],
+        "effects": [],
+        "evidence": "Our assessment of the plasma samples collected from HMGB1 Flox TMX STZ and iHMGB1 KO TMX STZ mice following 10 weeks post last injection revealed that although ALT levels were comparable between the two groups",
+        "intervention": null,
+        "negated": false,
+        "predicate": "has_comparable_levels_of",
+        "score": null,
+        "source": "E517",
+        "surface_form": "ALT levels were comparable between the two groups",
+        "target": "E518"
+      },
+      {
+        "assertion": "HMGB1 Flox TMX STZ mice displayed greater signs of mononuclear inflammatory infiltration compared with iHMGB1 KO TMX STZ mice.",
+        "context": [],
+        "effects": [],
+        "evidence": "HMGB1 Flox TMX STZ mice displayed an increase in macrovesicular lipid droplets and greater signs of mononuclear inflammatory infiltration compared to iHMGB1 KO TMX STZ mice",
+        "intervention": null,
+        "negated": false,
+        "predicate": "has_greater_infiltration",
+        "score": null,
+        "source": "E546",
+        "surface_form": "greater signs of mononuclear inflammatory infiltration",
+        "target": "E548"
+      }
+    ],
+    "unpaired_candidate_records": [
+      {
+        "assertion": "iHMGB1 KO TMX STZ mice had plasma ALT levels comparable to those of HMGB1 Flox TMX STZ mice 10 weeks after the last injection.",
+        "context": [
+          "Plasma samples",
+          "10 weeks after the last injection"
+        ],
+        "effects": [],
+        "evidence": "Our assessment of the plasma samples collected from HMGB1 Flox TMX STZ and iHMGB1 KO TMX STZ mice following 10 weeks post last injection revealed that although ALT levels were comparable between the two groups",
+        "intervention": null,
+        "negated": false,
+        "predicate": "has_comparable_plasma_levels_of",
+        "score": null,
+        "source": "E517",
+        "surface_form": "ALT levels were comparable between the two groups",
+        "target": "E518"
+      },
+      {
+        "assertion": "HMGB1 Flox TMX STZ mice displayed greater signs of mononuclear inflammatory infiltration compared with iHMGB1 KO TMX STZ mice.",
+        "context": [],
+        "effects": [],
+        "evidence": "HMGB1 Flox TMX STZ mice displayed an increase in macrovesicular lipid droplets and greater signs of mononuclear inflammatory infiltration compared to iHMGB1 KO TMX STZ mice",
+        "intervention": null,
+        "negated": false,
+        "predicate": "has_greater_inflammatory_infiltration",
+        "score": null,
+        "source": "E546",
+        "surface_form": "greater signs of mononuclear inflammatory infiltration",
+        "target": "E548"
+      }
+    ]
+  },
+  "scientific_review": {
+    "flags": [],
+    "gains": [],
+    "losses": [
+      "Effects removed from HMGB1 knockdown/hyperglycemia [0] and HMGB1/liver damage [4].",
+      "Plasma and 10-week context absent from AST [2] and Cystatin C [9]; evidence is narrowed to result sentence/fragment.",
+      "No AST/ALT ratio added; like the 11U Candidate C control, the explicit ratio observations remain unrepresented."
+    ],
+    "relation_judgments": {
+      "0": {
+        "evidence_adequate_for_emitted_values": true,
+        "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+        "new_unsupported_causality": false,
+        "note": "HMGB1 knockdown reduces hyperglycemia, explicitly stated; same IDs/direction and intervention as control, but effects empty.",
+        "rich_values_belong_to_edge": true
+      },
+      "1": {
+        "evidence_adequate_for_emitted_values": true,
+        "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+        "new_unsupported_causality": false,
+        "note": "Comparable ALT between both mice cohorts is symmetric and explicit; plasma and last-injection 10-week contexts are in evidence. Source E517 is the supplied mice mention, unchanged.",
+        "rich_values_belong_to_edge": true
+      },
+      "2": {
+        "evidence_adequate_for_emitted_values": true,
+        "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+        "new_unsupported_causality": false,
+        "note": "Flox-cohort elevated AST vs KO cohort is explicit, same IDs/direction. Plasma/timing context omitted rather than unsupported import from absent evidence.",
+        "rich_values_belong_to_edge": true
+      },
+      "3": {
+        "evidence_adequate_for_emitted_values": true,
+        "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+        "new_unsupported_causality": false,
+        "note": "AST as liver-damage indicator is explicit; unchanged endpoint and direction.",
+        "rich_values_belong_to_edge": true
+      },
+      "4": {
+        "evidence_adequate_for_emitted_values": true,
+        "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+        "new_unsupported_causality": false,
+        "note": "HMGB1 contribution to more severe liver damage remains qualified by findings suggest and hyperglycemic setting. Evidence supports context; effects emptied.",
+        "rich_values_belong_to_edge": true
+      },
+      "5": {
+        "evidence_adequate_for_emitted_values": true,
+        "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+        "new_unsupported_causality": false,
+        "note": "Flox mice increased macrovesicular lipid droplets vs KO cohort is explicit; unchanged supplied mice/lipid endpoints, no gene-to-gene cohort replacement or imported liver context.",
+        "rich_values_belong_to_edge": true
+      },
+      "6": {
+        "evidence_adequate_for_emitted_values": true,
+        "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+        "new_unsupported_causality": false,
+        "note": "Flox mice greater mononuclear inflammatory infiltration vs KO cohort is explicit; unchanged supplied endpoints/direction, no imported liver context.",
+        "rich_values_belong_to_edge": true
+      },
+      "7": {
+        "evidence_adequate_for_emitted_values": true,
+        "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+        "new_unsupported_causality": false,
+        "note": "Flox mice increased glycogen storage is explicit; unchanged mice-to-measurement direction and no inferred staining intervention.",
+        "rich_values_belong_to_edge": true
+      },
+      "8": {
+        "evidence_adequate_for_emitted_values": true,
+        "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+        "new_unsupported_causality": false,
+        "note": "Flox mice increased lipid uptake is explicit; unchanged mice-to-measurement direction and no inferred staining intervention.",
+        "rich_values_belong_to_edge": true
+      },
+      "9": {
+        "evidence_adequate_for_emitted_values": true,
+        "evidence_support": "no_known_unsupported_assertion_or_rich_value",
+        "new_unsupported_causality": false,
+        "note": "KO mice elevated Cystatin C vs Flox cohort is explicit; unchanged IDs/direction. Circulating/plasma and 10-week qualifiers omitted rather than imported from outside saved evidence.",
+        "rich_values_belong_to_edge": true
+      }
+    },
+    "reviewed_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "valid_matched_pairs": [
+      [
+        0,
+        0
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        4,
+        4
+      ],
+      [
+        5,
+        5
+      ],
+      [
+        6,
+        6
+      ],
+      [
+        7,
+        7
+      ],
+      [
+        8,
+        8
+      ],
+      [
+        9,
+        9
+      ]
+    ]
+  },
+  "valid_matched_pairs": [
+    [
+      0,
+      0
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      3,
+      3
+    ],
+    [
+      4,
+      4
+    ],
+    [
+      5,
+      5
+    ],
+    [
+      6,
+      6
+    ],
+    [
+      7,
+      7
+    ],
+    [
+      8,
+      8
+    ],
+    [
+      9,
+      9
+    ]
+  ]
+}
