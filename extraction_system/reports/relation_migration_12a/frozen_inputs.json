@@ -1,0 +1,2830 @@
+{
+  "baseline_commit": "96b8312879b337c57aba51342676890602b5c30d",
+  "contract": "12A",
+  "contract_10_selection_commit": "16b00b4e7ebe99ec257adf93917d3487629be257",
+  "papers": [
+    {
+      "baseline_relations": [
+        {
+          "assertion": "Overexpression of SFPQ improves cognition and memory in AD mice.",
+          "context": [
+            "mice"
+          ],
+          "effects": [
+            "improved cognition",
+            "improved memory"
+          ],
+          "evidence": "Overexpression of SFPQ Improves Cognition and Memory in AD Mice",
+          "intervention": "overexpression of SFPQ",
+          "negated": false,
+          "predicate": "improves_cognition_and_memory_in",
+          "score": null,
+          "source": "E1",
+          "surface_form": "Improves Cognition and Memory in AD Mice",
+          "target": "E2"
+        },
+        {
+          "assertion": "Alzheimer's disease is a complex neurodegenerative disorder.",
+          "context": [],
+          "effects": [],
+          "evidence": "Alzheimer's disease (AD) is a complex neurodegenerative disorder",
+          "intervention": null,
+          "negated": false,
+          "predicate": "is_a",
+          "score": null,
+          "source": "E4",
+          "surface_form": "is a",
+          "target": "E6"
+        },
+        {
+          "assertion": "SFPQ is known to play a crucial role in neurodegenerative diseases, including antioxidant-related functions and regulating gene expression within brain neurons.",
+          "context": [],
+          "effects": [],
+          "evidence": "Splicing factor proline and glutamine rich (SFPQ) is known to play a crucial role in neurodegenerative diseases, including antioxidant-related functions and regulating gene expression within brain neurons.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "plays_a_crucial_role_in",
+          "score": null,
+          "source": "E8",
+          "surface_form": "play a crucial role in",
+          "target": "E9"
+        },
+        {
+          "assertion": "The specific role of SFPQ in AD pathology is not well understood.",
+          "context": [],
+          "effects": [],
+          "evidence": "However, the specific role of SFPQ in AD pathology is not well understood.",
+          "intervention": null,
+          "negated": true,
+          "predicate": "role_in_is_well_understood",
+          "score": null,
+          "source": "E10",
+          "surface_form": "role of SFPQ in AD pathology is not well understood",
+          "target": "E11"
+        },
+        {
+          "assertion": "An AD mouse model was established through lateral ventricular injection of amyloid-beta1–42.",
+          "context": [],
+          "effects": [
+            "establishment of an AD mouse model"
+          ],
+          "evidence": "In this study, an AD mouse model was established through lateral ventricular injection of amyloid-beta1–42 (Aβ1–42).",
+          "intervention": "lateral ventricular injection of amyloid-beta1–42",
+          "negated": false,
+          "predicate": "is_modeled_in",
+          "score": null,
+          "source": "E12",
+          "surface_form": "AD mouse model",
+          "target": "E13"
+        },
+        {
+          "assertion": "Lateral ventricular injection of amyloid-beta1–42 was used to establish an AD mouse model.",
+          "context": [
+            "mouse model"
+          ],
+          "effects": [
+            "establishment of an AD mouse model"
+          ],
+          "evidence": "In this study, an AD mouse model was established through lateral ventricular injection of amyloid-beta1–42 (Aβ1–42).",
+          "intervention": "lateral ventricular injection",
+          "negated": false,
+          "predicate": "is_used_to_establish_model_of",
+          "score": null,
+          "source": "E14",
+          "surface_form": "lateral ventricular injection of amyloid-beta1–42",
+          "target": "E12"
+        },
+        {
+          "assertion": "Adeno-associated virus was administered to overexpress SFPQ in the hippocampus of AD mice.",
+          "context": [
+            "hippocampus",
+            "mice"
+          ],
+          "effects": [],
+          "evidence": "Subsequently, adeno-associated virus was administered to overexpress SFPQ in the hippocampus of AD mice.",
+          "intervention": "adeno-associated virus administration",
+          "negated": false,
+          "predicate": "is_overexpressed_in",
+          "score": null,
+          "source": "E16",
+          "surface_form": "administered to overexpress SFPQ in the hippocampus of AD mice",
+          "target": "E17"
+        },
+        {
+          "assertion": "SFPQ overexpression improves recognition and memory in AD mice.",
+          "context": [
+            "mice"
+          ],
+          "effects": [
+            "improved recognition",
+            "improved memory"
+          ],
+          "evidence": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice",
+          "intervention": "SFPQ overexpression",
+          "negated": false,
+          "predicate": "improves_recognition_and_memory_in",
+          "score": null,
+          "source": "E19",
+          "surface_form": "improves recognition and memory in AD mice",
+          "target": "E20"
+        },
+        {
+          "assertion": "SFPQ overexpression reduces amyloid precursor protein, an AD-related marker protein, in AD mice.",
+          "context": [
+            "AD mice"
+          ],
+          "effects": [
+            "reduced amyloid precursor protein"
+          ],
+          "evidence": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau.",
+          "intervention": "SFPQ overexpression",
+          "negated": false,
+          "predicate": "reduces",
+          "score": null,
+          "source": "E19",
+          "surface_form": "reducing AD-related marker proteins such as amyloid precursor protein (APP)",
+          "target": "E23"
+        },
+        {
+          "assertion": "SFPQ overexpression reduces Tau, an AD-related marker protein, in AD mice.",
+          "context": [
+            "AD mice"
+          ],
+          "effects": [
+            "reduced Tau"
+          ],
+          "evidence": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau.",
+          "intervention": "SFPQ overexpression",
+          "negated": false,
+          "predicate": "reduces",
+          "score": null,
+          "source": "E19",
+          "surface_form": "reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau",
+          "target": "E25"
+        },
+        {
+          "assertion": "Amyloid precursor protein is described as an AD-related marker protein.",
+          "context": [],
+          "effects": [],
+          "evidence": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "is_an_AD_related_marker_of",
+          "score": null,
+          "source": "E23",
+          "surface_form": "AD-related marker proteins such as amyloid precursor protein (APP)",
+          "target": "E22"
+        },
+        {
+          "assertion": "Tau is described as an AD-related marker protein.",
+          "context": [],
+          "effects": [],
+          "evidence": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "is_an_AD_related_marker_of",
+          "score": null,
+          "source": "E25",
+          "surface_form": "AD-related marker proteins such as amyloid precursor protein (APP) and Tau",
+          "target": "E22"
+        },
+        {
+          "assertion": "SFPQ overexpression was associated with upregulation of glutathione S-transferase in AD mice.",
+          "context": [
+            "AD mice"
+          ],
+          "effects": [
+            "upregulated glutathione S-transferase"
+          ],
+          "evidence": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated.",
+          "intervention": "SFPQ overexpression",
+          "negated": false,
+          "predicate": "is_associated_with_upregulation_of",
+          "score": null,
+          "source": "E19",
+          "surface_form": "were upregulated",
+          "target": "E26"
+        },
+        {
+          "assertion": "SFPQ overexpression was associated with upregulation of heme oxygenase-1 in AD mice.",
+          "context": [
+            "AD mice"
+          ],
+          "effects": [
+            "upregulated heme oxygenase-1"
+          ],
+          "evidence": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated.",
+          "intervention": "SFPQ overexpression",
+          "negated": false,
+          "predicate": "is_associated_with_upregulation_of",
+          "score": null,
+          "source": "E19",
+          "surface_form": "were upregulated",
+          "target": "E28"
+        },
+        {
+          "assertion": "The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax increased in the reported SFPQ-overexpression results.",
+          "context": [
+            "AD mice"
+          ],
+          "effects": [
+            "increased Bcl-2-to-Bax ratio"
+          ],
+          "evidence": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated. The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax also increased.",
+          "intervention": "SFPQ overexpression",
+          "negated": false,
+          "predicate": "has_increased_ratio_to",
+          "score": null,
+          "source": "E30",
+          "surface_form": "The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax also increased",
+          "target": "E31"
+        },
+        {
+          "assertion": "The phosphorylated phosphoinositide 3-kinase (p-PI3K)-to-PI3K ratio was elevated in the reported SFPQ-overexpression results.",
+          "context": [
+            "AD mice"
+          ],
+          "effects": [
+            "elevated phosphorylated PI3K-to-PI3K ratio"
+          ],
+          "evidence": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated. The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax also increased. Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway.",
+          "intervention": "SFPQ overexpression",
+          "negated": false,
+          "predicate": "phosphorylated_to_total_ratio_increased",
+          "score": null,
+          "source": "E32",
+          "surface_form": "phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K",
+          "target": "E34"
+        },
+        {
+          "assertion": "The phosphorylated protein kinase B (p-AKT)-to-AKT ratio was elevated in the reported SFPQ-overexpression results.",
+          "context": [
+            "AD mice"
+          ],
+          "effects": [
+            "elevated phosphorylated protein kinase B-to-AKT ratio"
+          ],
+          "evidence": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated. The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax also increased. Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway.",
+          "intervention": "SFPQ overexpression",
+          "negated": false,
+          "predicate": "phosphorylated_to_total_ratio_increased",
+          "score": null,
+          "source": "E35",
+          "surface_form": "phosphorylated protein kinase B (p-AKT)/AKT",
+          "target": "E37"
+        },
+        {
+          "assertion": "The elevated phosphorylated-to-total PI3K and AKT ratios indicated activation of the PI3K/AKT signaling pathway involving PI3K and AKT.",
+          "context": [
+            "AD mice"
+          ],
+          "effects": [
+            "activation of the PI3K/AKT signaling pathway"
+          ],
+          "evidence": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated. The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax also increased. Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway.",
+          "intervention": "SFPQ overexpression",
+          "negated": false,
+          "predicate": "co_participate_in_signaling_pathway",
+          "score": null,
+          "source": "E38",
+          "surface_form": "activation of the PI3K/AKT signaling pathway",
+          "target": "E39"
+        },
+        {
+          "assertion": "SFPQ may serve as a promising molecular target for the prevention and treatment of AD.",
+          "context": [],
+          "effects": [
+            "prevention of AD",
+            "treatment of AD"
+          ],
+          "evidence": "These findings suggest that SFPQ may serve as a promising molecular target for the prevention and treatment of AD.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "may_serve_as_molecular_target_for",
+          "score": null,
+          "source": "E40",
+          "surface_form": "may serve as a promising molecular target for the prevention and treatment of AD",
+          "target": "E41"
+        }
+      ],
+      "entities": [
+        {
+          "end": 22,
+          "id": "E1",
+          "score": 0.9999493360519409,
+          "start": 18,
+          "text": "SFPQ",
+          "type": "Gene"
+        },
+        {
+          "end": 292,
+          "id": "E8",
+          "score": 0.999971866607666,
+          "start": 288,
+          "text": "SFPQ",
+          "type": "Gene"
+        },
+        {
+          "end": 484,
+          "id": "E10",
+          "score": 0.9999781847000122,
+          "start": 480,
+          "text": "SFPQ",
+          "type": "Gene"
+        },
+        {
+          "end": 715,
+          "id": "E16",
+          "score": 0.7522382140159607,
+          "start": 711,
+          "text": "SFPQ",
+          "type": "Gene"
+        },
+        {
+          "end": 58,
+          "id": "E2",
+          "score": 0.9999332427978516,
+          "start": 56,
+          "text": "AD",
+          "type": "Disease"
+        },
+        {
+          "end": 84,
+          "id": "E4",
+          "score": 0.9999909003575643,
+          "start": 65,
+          "text": "Alzheimer's disease",
+          "type": "Disease"
+        },
+        {
+          "end": 88,
+          "id": "E5",
+          "score": 0.999977707862854,
+          "start": 86,
+          "text": "AD",
+          "type": "Disease"
+        },
+        {
+          "end": 490,
+          "id": "E11",
+          "score": 0.9999853372573853,
+          "start": 488,
+          "text": "AD",
+          "type": "Disease"
+        },
+        {
+          "end": 545,
+          "id": "E12",
+          "score": 0.9999839067459106,
+          "start": 543,
+          "text": "AD",
+          "type": "Disease"
+        },
+        {
+          "end": 740,
+          "id": "E17",
+          "score": 0.9999804496765137,
+          "start": 738,
+          "text": "AD",
+          "type": "Disease"
+        },
+        {
+          "end": 833,
+          "id": "E20",
+          "score": 0.9999840259552002,
+          "start": 831,
+          "text": "AD",
+          "type": "Disease"
+        },
+        {
+          "end": 857,
+          "id": "E22",
+          "score": 0.999984860420227,
+          "start": 855,
+          "text": "AD",
+          "type": "Disease"
+        },
+        {
+          "end": 1495,
+          "id": "E41",
+          "score": 0.9999860525131226,
+          "start": 1493,
+          "text": "AD",
+          "type": "Disease"
+        },
+        {
+          "end": 63,
+          "id": "E3",
+          "score": 0.9999854564666748,
+          "start": 59,
+          "text": "Mice",
+          "type": "Species"
+        },
+        {
+          "end": 745,
+          "id": "E18",
+          "score": 0.9999850988388062,
+          "start": 741,
+          "text": "mice",
+          "type": "Species"
+        },
+        {
+          "end": 838,
+          "id": "E21",
+          "score": 0.9999866485595703,
+          "start": 834,
+          "text": "mice",
+          "type": "Species"
+        },
+        {
+          "end": 129,
+          "id": "E6",
+          "score": 0.9999899864196777,
+          "start": 103,
+          "text": "neurodegenerative disorder",
+          "type": "Disease"
+        },
+        {
+          "end": 286,
+          "id": "E7",
+          "score": 0.9998663514852524,
+          "start": 260,
+          "text": "proline and glutamine rich",
+          "type": "Gene"
+        },
+        {
+          "end": 355,
+          "id": "E9",
+          "score": 0.9999862909317017,
+          "start": 329,
+          "text": "neurodegenerative diseases",
+          "type": "Disease"
+        },
+        {
+          "end": 551,
+          "id": "E13",
+          "score": 0.9999865293502808,
+          "start": 546,
+          "text": "mouse",
+          "type": "Species"
+        },
+        {
+          "end": 631,
+          "id": "E14",
+          "score": 0.9999810854593912,
+          "start": 615,
+          "text": "amyloid-beta1–42",
+          "type": "Gene"
+        },
+        {
+          "end": 639,
+          "id": "E15",
+          "score": 0.9999725818634033,
+          "start": 633,
+          "text": "Aβ1–42",
+          "type": "Gene"
+        },
+        {
+          "end": 780,
+          "id": "E19",
+          "score": 0.9999947547912598,
+          "start": 776,
+          "text": "SFPQ",
+          "type": "Chemical"
+        },
+        {
+          "end": 1414,
+          "id": "E40",
+          "score": 0.9999440908432007,
+          "start": 1410,
+          "text": "SFPQ",
+          "type": "Chemical"
+        },
+        {
+          "end": 915,
+          "id": "E23",
+          "score": 0.9999803304672241,
+          "start": 890,
+          "text": "amyloid precursor protein",
+          "type": "Gene"
+        },
+        {
+          "end": 920,
+          "id": "E24",
+          "score": 0.9999890327453613,
+          "start": 917,
+          "text": "APP",
+          "type": "Gene"
+        },
+        {
+          "end": 929,
+          "id": "E25",
+          "score": 0.9999507665634155,
+          "start": 926,
+          "text": "Tau",
+          "type": "Gene"
+        },
+        {
+          "end": 1048,
+          "id": "E26",
+          "score": 0.9999809861183167,
+          "start": 1023,
+          "text": "glutathione S-transferase",
+          "type": "Gene"
+        },
+        {
+          "end": 1053,
+          "id": "E27",
+          "score": 0.9999890327453613,
+          "start": 1050,
+          "text": "GST",
+          "type": "Gene"
+        },
+        {
+          "end": 1075,
+          "id": "E28",
+          "score": 0.9999811947345734,
+          "start": 1059,
+          "text": "heme oxygenase-1",
+          "type": "Gene"
+        },
+        {
+          "end": 1081,
+          "id": "E29",
+          "score": 0.9999898672103882,
+          "start": 1077,
+          "text": "HO-1",
+          "type": "Gene"
+        },
+        {
+          "end": 1142,
+          "id": "E30",
+          "score": 0.99998939037323,
+          "start": 1137,
+          "text": "Bcl-2",
+          "type": "Gene"
+        },
+        {
+          "end": 1170,
+          "id": "E31",
+          "score": 0.9999777674674988,
+          "start": 1167,
+          "text": "Bax",
+          "type": "Gene"
+        },
+        {
+          "end": 1240,
+          "id": "E32",
+          "score": 0.9999774694442749,
+          "start": 1215,
+          "text": "phosphoinositide 3-kinase",
+          "type": "Gene"
+        },
+        {
+          "end": 1248,
+          "id": "E33",
+          "score": 0.9999898672103882,
+          "start": 1244,
+          "text": "PI3K",
+          "type": "Gene"
+        },
+        {
+          "end": 1254,
+          "id": "E34",
+          "score": 0.9999769926071167,
+          "start": 1250,
+          "text": "PI3K",
+          "type": "Gene"
+        },
+        {
+          "end": 1358,
+          "id": "E38",
+          "score": 0.9999901056289673,
+          "start": 1354,
+          "text": "PI3K",
+          "type": "Gene"
+        },
+        {
+          "end": 1290,
+          "id": "E35",
+          "score": 0.9999801317850748,
+          "start": 1274,
+          "text": "protein kinase B",
+          "type": "Gene"
+        },
+        {
+          "end": 1297,
+          "id": "E36",
+          "score": 0.9999902248382568,
+          "start": 1294,
+          "text": "AKT",
+          "type": "Gene"
+        },
+        {
+          "end": 1302,
+          "id": "E37",
+          "score": 0.9999898672103882,
+          "start": 1299,
+          "text": "AKT",
+          "type": "Gene"
+        },
+        {
+          "end": 1362,
+          "id": "E39",
+          "score": 0.9999903440475464,
+          "start": 1359,
+          "text": "AKT",
+          "type": "Gene"
+        }
+      ],
+      "paper_id": "PMCID:PMC11824863",
+      "slug": "pmcid_pmc11824863",
+      "source": {
+        "acquisition_mode": "full_text",
+        "canonical_full_text_sha256": "8a43f612139aa84939933831a5bc7f5420122549fd69081d635b7becb80d2a15",
+        "canonical_source_checksum": "7d67a720ddc0b04f5cd9dbae443b094df08120ff01f8c19fbcbd421933f91b75",
+        "scope": "title plus complete abstract",
+        "segments": [
+          {
+            "end": 63,
+            "section": "title",
+            "start": 0,
+            "text": "Overexpression of SFPQ Improves Cognition and Memory in AD Mice"
+          },
+          {
+            "end": 1496,
+            "section": "abstract",
+            "start": 65,
+            "text": "Alzheimer's disease (AD) is a complex neurodegenerative disorder with multifaceted pathogenesis, which has been extensively investigated, yet effective treatments remain lacking. Splicing factor proline and glutamine rich (SFPQ) is known to play a crucial role in neurodegenerative diseases, including antioxidant-related functions and regulating gene expression within brain neurons. However, the specific role of SFPQ in AD pathology is not well understood. In this study, an AD mouse model was established through lateral ventricular injection of amyloid-beta1–42 (Aβ1–42). Subsequently, adeno-associated virus was administered to overexpress SFPQ in the hippocampus of AD mice. The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated. The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax also increased. Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway. These findings suggest that SFPQ may serve as a promising molecular target for the prevention and treatment of AD."
+          }
+        ],
+        "selected_source_sha256": "604ce7f15b0ca00853cfc4cc07039d51059792e907d3da07c08be40730fb1b5b",
+        "source_text": "Overexpression of SFPQ Improves Cognition and Memory in AD Mice\n\nAlzheimer's disease (AD) is a complex neurodegenerative disorder with multifaceted pathogenesis, which has been extensively investigated, yet effective treatments remain lacking. Splicing factor proline and glutamine rich (SFPQ) is known to play a crucial role in neurodegenerative diseases, including antioxidant-related functions and regulating gene expression within brain neurons. However, the specific role of SFPQ in AD pathology is not well understood. In this study, an AD mouse model was established through lateral ventricular injection of amyloid-beta1–42 (Aβ1–42). Subsequently, adeno-associated virus was administered to overexpress SFPQ in the hippocampus of AD mice. The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated. The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax also increased. Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway. These findings suggest that SFPQ may serve as a promising molecular target for the prevention and treatment of AD.",
+        "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11824863/"
+      },
+      "title": "Overexpression of SFPQ Improves Cognition and Memory in AD Mice"
+    },
+    {
+      "baseline_relations": [
+        {
+          "assertion": "Overexpression of Cbl attenuates endothelial dysfunction in diabetes mellitus by inhibiting JAK2/STAT4 signaling and Runx3-mediated H3K4me3.",
+          "context": [
+            "diabetes mellitus"
+          ],
+          "effects": [],
+          "evidence": "Overexpression of E3 ubiquitin ligase Cbl attenuates endothelial dysfunction in diabetes mellitus by inhibiting the JAK2/STAT4 signaling and Runx3-mediated H3K4me3",
+          "intervention": "overexpression of Cbl",
+          "negated": false,
+          "predicate": "attenuates",
+          "score": null,
+          "source": "E2",
+          "surface_form": "attenuates",
+          "target": "E3"
+        },
+        {
+          "assertion": "In diabetes mellitus, overexpression of Cbl inhibits the JAK2/STAT4 signaling.",
+          "context": [
+            "diabetes mellitus"
+          ],
+          "effects": [],
+          "evidence": "Overexpression of E3 ubiquitin ligase Cbl attenuates endothelial dysfunction in diabetes mellitus by inhibiting the JAK2/STAT4 signaling and Runx3-mediated H3K4me3",
+          "intervention": "overexpression of Cbl",
+          "negated": false,
+          "predicate": "inhibits signaling involving",
+          "score": null,
+          "source": "E2",
+          "surface_form": "inhibiting the JAK2/STAT4 signaling",
+          "target": "E5"
+        },
+        {
+          "assertion": "In diabetes mellitus, overexpression of Cbl inhibits the JAK2/STAT4 signaling.",
+          "context": [
+            "diabetes mellitus"
+          ],
+          "effects": [],
+          "evidence": "Overexpression of E3 ubiquitin ligase Cbl attenuates endothelial dysfunction in diabetes mellitus by inhibiting the JAK2/STAT4 signaling and Runx3-mediated H3K4me3",
+          "intervention": "overexpression of Cbl",
+          "negated": false,
+          "predicate": "inhibits signaling involving",
+          "score": null,
+          "source": "E2",
+          "surface_form": "inhibiting the JAK2/STAT4 signaling",
+          "target": "E6"
+        },
+        {
+          "assertion": "In diabetes mellitus, overexpression of Cbl inhibits Runx3-mediated H3K4me3.",
+          "context": [
+            "diabetes mellitus"
+          ],
+          "effects": [],
+          "evidence": "Overexpression of E3 ubiquitin ligase Cbl attenuates endothelial dysfunction in diabetes mellitus by inhibiting the JAK2/STAT4 signaling and Runx3-mediated H3K4me3",
+          "intervention": "overexpression of Cbl",
+          "negated": false,
+          "predicate": "inhibits",
+          "score": null,
+          "source": "E2",
+          "surface_form": "Runx3-mediated H3K4me3",
+          "target": "E8"
+        },
+        {
+          "assertion": "Runx3 mediates H3K4me3.",
+          "context": [],
+          "effects": [],
+          "evidence": "Overexpression of E3 ubiquitin ligase Cbl attenuates endothelial dysfunction in diabetes mellitus by inhibiting the JAK2/STAT4 signaling and Runx3-mediated H3K4me3",
+          "intervention": null,
+          "negated": false,
+          "predicate": "mediates",
+          "score": null,
+          "source": "E7",
+          "surface_form": "Runx3-mediated",
+          "target": "E8"
+        },
+        {
+          "assertion": "DM is described as a most common chronic disease.",
+          "context": [],
+          "effects": [],
+          "evidence": "Diabetes mellitus (DM), a most common chronic disease, is featured with impaired endothelial function and bioavailability of nitric oxide (NO), while E3 ubiquitin ligase appears to alleviate endothelial dysfunction as a promising option for DM treatment.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "is a",
+          "score": null,
+          "source": "E10",
+          "surface_form": "a most common chronic disease",
+          "target": "E11"
+        },
+        {
+          "assertion": "DM is featured with impaired endothelial function.",
+          "context": [],
+          "effects": [],
+          "evidence": "Diabetes mellitus (DM), a most common chronic disease, is featured with impaired endothelial function and bioavailability of nitric oxide (NO), while E3 ubiquitin ligase appears to alleviate endothelial dysfunction as a promising option for DM treatment.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "is featured with impaired",
+          "score": null,
+          "source": "E10",
+          "surface_form": "is featured with impaired endothelial function",
+          "target": "E13"
+        },
+        {
+          "assertion": "DM is featured with impaired bioavailability of nitric oxide.",
+          "context": [],
+          "effects": [],
+          "evidence": "Diabetes mellitus (DM), a most common chronic disease, is featured with impaired endothelial function and bioavailability of nitric oxide (NO), while E3 ubiquitin ligase appears to alleviate endothelial dysfunction as a promising option for DM treatment.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "is featured with impaired bioavailability of",
+          "score": null,
+          "source": "E10",
+          "surface_form": "bioavailability of nitric oxide (NO)",
+          "target": "E14"
+        },
+        {
+          "assertion": "E3 ubiquitin ligase appears to alleviate endothelial dysfunction as a promising option for DM treatment.",
+          "context": [
+            "DM treatment"
+          ],
+          "effects": [],
+          "evidence": "Diabetes mellitus (DM), a most common chronic disease, is featured with impaired endothelial function and bioavailability of nitric oxide (NO), while E3 ubiquitin ligase appears to alleviate endothelial dysfunction as a promising option for DM treatment.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "appears to alleviate",
+          "score": null,
+          "source": "E16",
+          "surface_form": "appears to alleviate",
+          "target": "E17"
+        },
+        {
+          "assertion": "E3 ubiquitin ligase appears to be a promising option for DM treatment.",
+          "context": [],
+          "effects": [],
+          "evidence": "Diabetes mellitus (DM), a most common chronic disease, is featured with impaired endothelial function and bioavailability of nitric oxide (NO), while E3 ubiquitin ligase appears to alleviate endothelial dysfunction as a promising option for DM treatment.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "appears to be a promising treatment option for",
+          "score": null,
+          "source": "E16",
+          "surface_form": "a promising option for DM treatment",
+          "target": "E18"
+        },
+        {
+          "assertion": "Intraperitoneal injection of streptozotocin was used to develop a rat model of DM.",
+          "context": [
+            "rat model"
+          ],
+          "effects": [],
+          "evidence": "A rat model of DM was developed through intraperitoneal injection of streptozotocin",
+          "intervention": "intraperitoneal injection of streptozotocin",
+          "negated": false,
+          "predicate": "used to develop a rat model of",
+          "score": null,
+          "source": "E29",
+          "surface_form": "developed through intraperitoneal injection of streptozotocin",
+          "target": "E28"
+        },
+        {
+          "assertion": "Culturing human umbilical vein endothelial cells in high glucose (HG) condition was used to induce DM as an in vitro model.",
+          "context": [
+            "human umbilical vein endothelial cells (HUVECs)",
+            "in vitro model"
+          ],
+          "effects": [],
+          "evidence": "Human umbilical vein endothelial cells (HUVECs) were cultured in high glucose (HG) condition to induce DM as an in vitro model.",
+          "intervention": "high glucose (HG) condition",
+          "negated": false,
+          "predicate": "used to induce",
+          "score": null,
+          "source": "E36",
+          "surface_form": "to induce DM",
+          "target": "E37"
+        },
+        {
+          "assertion": "Cbl was reduced in DM rat tissues and HG-induced HUVECs.",
+          "context": [
+            "DM rat tissues and HG-induced HUVECs"
+          ],
+          "effects": [],
+          "evidence": "Cbl was reduced in DM rat tissues and HG-induced HUVECs, where JAK2, Runx3 and STAT4 were elevated.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "is reduced in",
+          "score": null,
+          "source": "E46",
+          "surface_form": "was reduced in",
+          "target": "E41"
+        },
+        {
+          "assertion": "JAK2 was elevated in DM rat tissues and HG-induced HUVECs.",
+          "context": [
+            "DM rat tissues and HG-induced HUVECs"
+          ],
+          "effects": [],
+          "evidence": "Cbl was reduced in DM rat tissues and HG-induced HUVECs, where JAK2, Runx3 and STAT4 were elevated.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "is elevated in",
+          "score": null,
+          "source": "E43",
+          "surface_form": "were elevated",
+          "target": "E41"
+        },
+        {
+          "assertion": "Runx3 was elevated in DM rat tissues and HG-induced HUVECs.",
+          "context": [
+            "DM rat tissues and HG-induced HUVECs"
+          ],
+          "effects": [],
+          "evidence": "Cbl was reduced in DM rat tissues and HG-induced HUVECs, where JAK2, Runx3 and STAT4 were elevated.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "is elevated in",
+          "score": null,
+          "source": "E44",
+          "surface_form": "were elevated",
+          "target": "E41"
+        },
+        {
+          "assertion": "STAT4 was elevated in DM rat tissues and HG-induced HUVECs.",
+          "context": [
+            "DM rat tissues and HG-induced HUVECs"
+          ],
+          "effects": [],
+          "evidence": "Cbl was reduced in DM rat tissues and HG-induced HUVECs, where JAK2, Runx3 and STAT4 were elevated.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "is elevated in",
+          "score": null,
+          "source": "E45",
+          "surface_form": "were elevated",
+          "target": "E41"
+        },
+        {
+          "assertion": "Overexpression of Cbl alleviated endothelial dysfunction by increasing NO production, restoring vasodilation, and suppressing apoptosis of HUVECs.",
+          "context": [
+            "HUVECs"
+          ],
+          "effects": [
+            "increasing NO production",
+            "restoring vasodilation",
+            "suppressing apoptosis of HUVECs"
+          ],
+          "evidence": "It was found that overexpression of Cbl alleviated endothelial dysfunction by increasing NO production and restoring vasodilation and suppressing apoptosis of HUVECs.",
+          "intervention": "overexpression of Cbl",
+          "negated": false,
+          "predicate": "alleviates",
+          "score": null,
+          "source": "E46",
+          "surface_form": "overexpression of Cbl alleviated endothelial dysfunction",
+          "target": "E47"
+        },
+        {
+          "assertion": "Overexpression of Cbl increased NO production.",
+          "context": [
+            "HUVECs"
+          ],
+          "effects": [
+            "increasing NO production"
+          ],
+          "evidence": "It was found that overexpression of Cbl alleviated endothelial dysfunction by increasing NO production and restoring vasodilation and suppressing apoptosis of HUVECs.",
+          "intervention": "overexpression of Cbl",
+          "negated": false,
+          "predicate": "increases production of",
+          "score": null,
+          "source": "E46",
+          "surface_form": "increasing NO production",
+          "target": "E48"
+        },
+        {
+          "assertion": "Cb1 enhanced JAK2 ubiquitination.",
+          "context": [],
+          "effects": [],
+          "evidence": "Mechanistically, Cb1 enhanced JAK2 ubiquitination and decreased JAK2 and STAT4 expression, where STAT4 improved Runx3 expression by regulating histone H3 lysine 4 trimethylation level.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "enhances ubiquitination of",
+          "score": null,
+          "source": "E49",
+          "surface_form": "enhanced JAK2 ubiquitination",
+          "target": "E50"
+        },
+        {
+          "assertion": "Cb1 decreased JAK2 expression.",
+          "context": [],
+          "effects": [],
+          "evidence": "Mechanistically, Cb1 enhanced JAK2 ubiquitination and decreased JAK2 and STAT4 expression, where STAT4 improved Runx3 expression by regulating histone H3 lysine 4 trimethylation level.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "decreases expression of",
+          "score": null,
+          "source": "E49",
+          "surface_form": "decreased JAK2 and STAT4 expression",
+          "target": "E51"
+        },
+        {
+          "assertion": "Cb1 decreased STAT4 expression.",
+          "context": [],
+          "effects": [],
+          "evidence": "Mechanistically, Cb1 enhanced JAK2 ubiquitination and decreased JAK2 and STAT4 expression, where STAT4 improved Runx3 expression by regulating histone H3 lysine 4 trimethylation level.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "decreases expression of",
+          "score": null,
+          "source": "E49",
+          "surface_form": "decreased JAK2 and STAT4 expression",
+          "target": "E52"
+        },
+        {
+          "assertion": "STAT4 improved Runx3 expression by regulating histone H3 lysine 4 trimethylation level.",
+          "context": [],
+          "effects": [],
+          "evidence": "Mechanistically, Cb1 enhanced JAK2 ubiquitination and decreased JAK2 and STAT4 expression, where STAT4 improved Runx3 expression by regulating histone H3 lysine 4 trimethylation level.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "increases expression of",
+          "score": null,
+          "source": "E53",
+          "surface_form": "improved Runx3 expression",
+          "target": "E54"
+        },
+        {
+          "assertion": "Overexpression of JAK2 increased apoptosis of HUVECs, abrogating the effect of Cb1 on endothelial function.",
+          "context": [
+            "HUVECs"
+          ],
+          "effects": [
+            "increased apoptosis of HUVECs"
+          ],
+          "evidence": "Overexpression of JAK2 and STAT4, or Runx3 increased apoptosis of HUVECs, abrogating the effect of Cb1 on endothelial function.",
+          "intervention": "overexpression of JAK2",
+          "negated": false,
+          "predicate": "abrogates effect of",
+          "score": null,
+          "source": "E55",
+          "surface_form": "abrogating the effect of Cb1",
+          "target": "E58"
+        },
+        {
+          "assertion": "Overexpression of STAT4 increased apoptosis of HUVECs, abrogating the effect of Cb1 on endothelial function.",
+          "context": [
+            "HUVECs"
+          ],
+          "effects": [
+            "increased apoptosis of HUVECs"
+          ],
+          "evidence": "Overexpression of JAK2 and STAT4, or Runx3 increased apoptosis of HUVECs, abrogating the effect of Cb1 on endothelial function.",
+          "intervention": "overexpression of STAT4",
+          "negated": false,
+          "predicate": "abrogates effect of",
+          "score": null,
+          "source": "E56",
+          "surface_form": "abrogating the effect of Cb1",
+          "target": "E58"
+        },
+        {
+          "assertion": "Overexpression of Runx3 increased apoptosis of HUVECs, abrogating the effect of Cb1 on endothelial function.",
+          "context": [
+            "HUVECs"
+          ],
+          "effects": [
+            "increased apoptosis of HUVECs"
+          ],
+          "evidence": "Overexpression of JAK2 and STAT4, or Runx3 increased apoptosis of HUVECs, abrogating the effect of Cb1 on endothelial function.",
+          "intervention": "overexpression of Runx3",
+          "negated": false,
+          "predicate": "abrogates effect of",
+          "score": null,
+          "source": "E57",
+          "surface_form": "abrogating the effect of Cb1",
+          "target": "E58"
+        },
+        {
+          "assertion": "Cbl alleviates endothelial dysfunction in DM by inactivating the JAK2/STAT4 pathway and inhibiting Runx3 expression.",
+          "context": [
+            "DM"
+          ],
+          "effects": [],
+          "evidence": "Cbl alleviates endothelial dysfunction by inactivation of the JAK2/STAT4 pathway and inhibition of Runx3 expression in DM.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "alleviates",
+          "score": null,
+          "source": "E59",
+          "surface_form": "alleviates endothelial dysfunction",
+          "target": "E60"
+        },
+        {
+          "assertion": "Cbl alleviates endothelial dysfunction in DM by inactivating the JAK2/STAT4 pathway.",
+          "context": [
+            "DM"
+          ],
+          "effects": [],
+          "evidence": "Cbl alleviates endothelial dysfunction by inactivation of the JAK2/STAT4 pathway and inhibition of Runx3 expression in DM.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "inactivates pathway involving",
+          "score": null,
+          "source": "E59",
+          "surface_form": "inactivation of the JAK2/STAT4 pathway",
+          "target": "E61"
+        },
+        {
+          "assertion": "Cbl alleviates endothelial dysfunction in DM by inactivating the JAK2/STAT4 pathway.",
+          "context": [
+            "DM"
+          ],
+          "effects": [],
+          "evidence": "Cbl alleviates endothelial dysfunction by inactivation of the JAK2/STAT4 pathway and inhibition of Runx3 expression in DM.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "inactivates pathway involving",
+          "score": null,
+          "source": "E59",
+          "surface_form": "inactivation of the JAK2/STAT4 pathway",
+          "target": "E62"
+        },
+        {
+          "assertion": "In DM, Cbl inhibits Runx3 expression.",
+          "context": [
+            "DM"
+          ],
+          "effects": [],
+          "evidence": "Cbl alleviates endothelial dysfunction by inactivation of the JAK2/STAT4 pathway and inhibition of Runx3 expression in DM.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "inhibits expression of",
+          "score": null,
+          "source": "E59",
+          "surface_form": "inhibition of Runx3 expression",
+          "target": "E63"
+        },
+        {
+          "assertion": "These evidence might underlie novel Cbl-based treatment against DM in the future.",
+          "context": [],
+          "effects": [],
+          "evidence": "These evidence might underlie novel Cbl-based treatment against DM in the future.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "might underlie treatment against",
+          "score": null,
+          "source": "E65",
+          "surface_form": "Cbl-based treatment against DM",
+          "target": "E66"
+        }
+      ],
+      "entities": [
+        {
+          "end": 37,
+          "id": "E1",
+          "score": 0.9999783039093018,
+          "start": 18,
+          "text": "E3 ubiquitin ligase",
+          "type": "Gene"
+        },
+        {
+          "end": 344,
+          "id": "E16",
+          "score": 0.9999768733978271,
+          "start": 325,
+          "text": "E3 ubiquitin ligase",
+          "type": "Gene"
+        },
+        {
+          "end": 487,
+          "id": "E19",
+          "score": 0.9999799331029257,
+          "start": 468,
+          "text": "E3 ubiquitin ligase",
+          "type": "Gene"
+        },
+        {
+          "end": 41,
+          "id": "E2",
+          "score": 0.9999862909317017,
+          "start": 38,
+          "text": "Cbl",
+          "type": "Gene"
+        },
+        {
+          "end": 519,
+          "id": "E21",
+          "score": 0.9999896287918091,
+          "start": 516,
+          "text": "Cbl",
+          "type": "Gene"
+        },
+        {
+          "end": 756,
+          "id": "E30",
+          "score": 0.9999892711639404,
+          "start": 753,
+          "text": "Cbl",
+          "type": "Gene"
+        },
+        {
+          "end": 1237,
+          "id": "E46",
+          "score": 0.9999871253967285,
+          "start": 1234,
+          "text": "Cbl",
+          "type": "Gene"
+        },
+        {
+          "end": 1705,
+          "id": "E59",
+          "score": 0.718239426612854,
+          "start": 1702,
+          "text": "Cbl",
+          "type": "Gene"
+        },
+        {
+          "end": 1864,
+          "id": "E65",
+          "score": 0.9838144183158875,
+          "start": 1861,
+          "text": "Cbl",
+          "type": "Gene"
+        },
+        {
+          "end": 76,
+          "id": "E3",
+          "score": 0.999871551990509,
+          "start": 53,
+          "text": "endothelial dysfunction",
+          "type": "Disease"
+        },
+        {
+          "end": 389,
+          "id": "E17",
+          "score": 0.9999586939811707,
+          "start": 366,
+          "text": "endothelial dysfunction",
+          "type": "Disease"
+        },
+        {
+          "end": 555,
+          "id": "E22",
+          "score": 0.9999818801879883,
+          "start": 532,
+          "text": "endothelial dysfunction",
+          "type": "Disease"
+        },
+        {
+          "end": 1051,
+          "id": "E39",
+          "score": 0.9999860525131226,
+          "start": 1028,
+          "text": "endothelial dysfunction",
+          "type": "Disease"
+        },
+        {
+          "end": 1272,
+          "id": "E47",
+          "score": 0.999987781047821,
+          "start": 1249,
+          "text": "endothelial dysfunction",
+          "type": "Disease"
+        },
+        {
+          "end": 1740,
+          "id": "E60",
+          "score": 0.999991238117218,
+          "start": 1717,
+          "text": "endothelial dysfunction",
+          "type": "Disease"
+        },
+        {
+          "end": 97,
+          "id": "E4",
+          "score": 0.999988853931427,
+          "start": 80,
+          "text": "diabetes mellitus",
+          "type": "Disease"
+        },
+        {
+          "end": 120,
+          "id": "E5",
+          "score": 0.9999886751174927,
+          "start": 116,
+          "text": "JAK2",
+          "type": "Gene"
+        },
+        {
+          "end": 574,
+          "id": "E25",
+          "score": 0.9999902248382568,
+          "start": 570,
+          "text": "JAK2",
+          "type": "Gene"
+        },
+        {
+          "end": 762,
+          "id": "E31",
+          "score": 0.9999897480010986,
+          "start": 758,
+          "text": "JAK2",
+          "type": "Gene"
+        },
+        {
+          "end": 1165,
+          "id": "E43",
+          "score": 0.99998939037323,
+          "start": 1161,
+          "text": "JAK2",
+          "type": "Gene"
+        },
+        {
+          "end": 1399,
+          "id": "E50",
+          "score": 0.9999778270721436,
+          "start": 1395,
+          "text": "JAK2",
+          "type": "Gene"
+        },
+        {
+          "end": 1433,
+          "id": "E51",
+          "score": 0.9999810457229614,
+          "start": 1429,
+          "text": "JAK2",
+          "type": "Gene"
+        },
+        {
+          "end": 1572,
+          "id": "E55",
+          "score": 0.999987006187439,
+          "start": 1568,
+          "text": "JAK2",
+          "type": "Gene"
+        },
+        {
+          "end": 1768,
+          "id": "E61",
+          "score": 0.9999841451644897,
+          "start": 1764,
+          "text": "JAK2",
+          "type": "Gene"
+        },
+        {
+          "end": 126,
+          "id": "E6",
+          "score": 0.9999867677688599,
+          "start": 121,
+          "text": "STAT4",
+          "type": "Gene"
+        },
+        {
+          "end": 580,
+          "id": "E26",
+          "score": 0.9999897480010986,
+          "start": 575,
+          "text": "STAT4",
+          "type": "Gene"
+        },
+        {
+          "end": 817,
+          "id": "E34",
+          "score": 0.9999901056289673,
+          "start": 812,
+          "text": "STAT4",
+          "type": "Gene"
+        },
+        {
+          "end": 1182,
+          "id": "E45",
+          "score": 0.99998939037323,
+          "start": 1177,
+          "text": "STAT4",
+          "type": "Gene"
+        },
+        {
+          "end": 1443,
+          "id": "E52",
+          "score": 0.9999762773513794,
+          "start": 1438,
+          "text": "STAT4",
+          "type": "Gene"
+        },
+        {
+          "end": 1467,
+          "id": "E53",
+          "score": 0.9999706745147705,
+          "start": 1462,
+          "text": "STAT4",
+          "type": "Gene"
+        },
+        {
+          "end": 1582,
+          "id": "E56",
+          "score": 0.9999881982803345,
+          "start": 1577,
+          "text": "STAT4",
+          "type": "Gene"
+        },
+        {
+          "end": 1774,
+          "id": "E62",
+          "score": 0.9999856948852539,
+          "start": 1769,
+          "text": "STAT4",
+          "type": "Gene"
+        },
+        {
+          "end": 155,
+          "id": "E7",
+          "score": 0.9999803304672241,
+          "start": 141,
+          "text": "Runx3-mediated",
+          "type": "Gene"
+        },
+        {
+          "end": 163,
+          "id": "E8",
+          "score": 0.997666597366333,
+          "start": 156,
+          "text": "H3K4me3",
+          "type": "Gene"
+        },
+        {
+          "end": 192,
+          "id": "E9",
+          "score": 0.9999890327453613,
+          "start": 184,
+          "text": "mellitus",
+          "type": "Disease"
+        },
+        {
+          "end": 196,
+          "id": "E10",
+          "score": 0.9999853372573853,
+          "start": 194,
+          "text": "DM",
+          "type": "Disease"
+        },
+        {
+          "end": 418,
+          "id": "E18",
+          "score": 0.9999854564666748,
+          "start": 416,
+          "text": "DM",
+          "type": "Disease"
+        },
+        {
+          "end": 561,
+          "id": "E23",
+          "score": 0.9999850988388062,
+          "start": 559,
+          "text": "DM",
+          "type": "Disease"
+        },
+        {
+          "end": 613,
+          "id": "E28",
+          "score": 0.9999858140945435,
+          "start": 611,
+          "text": "DM",
+          "type": "Disease"
+        },
+        {
+          "end": 924,
+          "id": "E37",
+          "score": 0.9999855756759644,
+          "start": 922,
+          "text": "DM",
+          "type": "Disease"
+        },
+        {
+          "end": 1119,
+          "id": "E41",
+          "score": 0.9999845027923584,
+          "start": 1117,
+          "text": "DM",
+          "type": "Disease"
+        },
+        {
+          "end": 1823,
+          "id": "E64",
+          "score": 0.9999862909317017,
+          "start": 1821,
+          "text": "DM",
+          "type": "Disease"
+        },
+        {
+          "end": 1891,
+          "id": "E66",
+          "score": 0.9999865293502808,
+          "start": 1889,
+          "text": "DM",
+          "type": "Disease"
+        },
+        {
+          "end": 228,
+          "id": "E11",
+          "score": 0.9996799230575562,
+          "start": 213,
+          "text": "chronic disease",
+          "type": "Disease"
+        },
+        {
+          "end": 255,
+          "id": "E12",
+          "score": 0.9938340187072754,
+          "start": 247,
+          "text": "impaired",
+          "type": "Disease"
+        },
+        {
+          "end": 276,
+          "id": "E13",
+          "score": 0.9768061637878418,
+          "start": 268,
+          "text": "function",
+          "type": "Disease"
+        },
+        {
+          "end": 312,
+          "id": "E14",
+          "score": 0.9999964237213135,
+          "start": 300,
+          "text": "nitric oxide",
+          "type": "Chemical"
+        },
+        {
+          "end": 316,
+          "id": "E15",
+          "score": 0.9999924898147583,
+          "start": 314,
+          "text": "NO",
+          "type": "Chemical"
+        },
+        {
+          "end": 1055,
+          "id": "E40",
+          "score": 0.9999934434890747,
+          "start": 1053,
+          "text": "NO",
+          "type": "Chemical"
+        },
+        {
+          "end": 1289,
+          "id": "E48",
+          "score": 0.9999921321868896,
+          "start": 1287,
+          "text": "NO",
+          "type": "Chemical"
+        },
+        {
+          "end": 514,
+          "id": "E20",
+          "score": 0.9999819755554199,
+          "start": 488,
+          "text": "casitas B-lineage lymphoma",
+          "type": "Gene"
+        },
+        {
+          "end": 566,
+          "id": "E24",
+          "score": 0.9999872446060181,
+          "start": 562,
+          "text": "rats",
+          "type": "Species"
+        },
+        {
+          "end": 601,
+          "id": "E27",
+          "score": 0.9999866485595703,
+          "start": 598,
+          "text": "rat",
+          "type": "Species"
+        },
+        {
+          "end": 1123,
+          "id": "E42",
+          "score": 0.9999840259552002,
+          "start": 1120,
+          "text": "rat",
+          "type": "Species"
+        },
+        {
+          "end": 679,
+          "id": "E29",
+          "score": 0.9999963045120239,
+          "start": 665,
+          "text": "streptozotocin",
+          "type": "Chemical"
+        },
+        {
+          "end": 799,
+          "id": "E32",
+          "score": 0.999983012676239,
+          "start": 764,
+          "text": "runt-related transcription factor 3",
+          "type": "Gene"
+        },
+        {
+          "end": 806,
+          "id": "E33",
+          "score": 0.999980648358663,
+          "start": 801,
+          "text": "Runx3",
+          "type": "Gene"
+        },
+        {
+          "end": 1172,
+          "id": "E44",
+          "score": 0.999977191289266,
+          "start": 1167,
+          "text": "Runx3",
+          "type": "Gene"
+        },
+        {
+          "end": 1482,
+          "id": "E54",
+          "score": 0.9999797344207764,
+          "start": 1477,
+          "text": "Runx3",
+          "type": "Gene"
+        },
+        {
+          "end": 1592,
+          "id": "E57",
+          "score": 0.9999801715215048,
+          "start": 1587,
+          "text": "Runx3",
+          "type": "Gene"
+        },
+        {
+          "end": 1806,
+          "id": "E63",
+          "score": 0.9999802907307943,
+          "start": 1801,
+          "text": "Runx3",
+          "type": "Gene"
+        },
+        {
+          "end": 824,
+          "id": "E35",
+          "score": 0.9999827146530151,
+          "start": 819,
+          "text": "Human",
+          "type": "Species"
+        },
+        {
+          "end": 896,
+          "id": "E36",
+          "score": 0.9999963045120239,
+          "start": 889,
+          "text": "glucose",
+          "type": "Chemical"
+        },
+        {
+          "end": 1024,
+          "id": "E38",
+          "score": 0.9999873638153076,
+          "start": 1021,
+          "text": "Cb1",
+          "type": "Gene"
+        },
+        {
+          "end": 1385,
+          "id": "E49",
+          "score": 0.9999591112136841,
+          "start": 1382,
+          "text": "Cb1",
+          "type": "Gene"
+        },
+        {
+          "end": 1652,
+          "id": "E58",
+          "score": 0.9999850988388062,
+          "start": 1649,
+          "text": "Cb1",
+          "type": "Gene"
+        }
+      ],
+      "paper_id": "PMCID:PMC8605525",
+      "slug": "pmcid_pmc8605525",
+      "source": {
+        "acquisition_mode": "full_text",
+        "canonical_full_text_sha256": "99355676f17885e8920e1f56447b8c6aff219cb6be09d76777084e339261a39b",
+        "canonical_source_checksum": "263769c472b052a1b863becd98a6b85a33eb3f84548ba2999b67083042bab28f",
+        "scope": "title plus complete abstract",
+        "segments": [
+          {
+            "end": 163,
+            "section": "title",
+            "start": 0,
+            "text": "Overexpression of E3 ubiquitin ligase Cbl attenuates endothelial dysfunction in diabetes mellitus by inhibiting the JAK2/STAT4 signaling and Runx3-mediated H3K4me3"
+          },
+          {
+            "end": 2022,
+            "section": "abstract",
+            "start": 165,
+            "text": "BackgroundDiabetes mellitus (DM), a most common chronic disease, is featured with impaired endothelial function and bioavailability of nitric oxide (NO), while E3 ubiquitin ligase appears to alleviate endothelial dysfunction as a promising option for DM treatment. Herein, we aimed to determine whether E3 ubiquitin ligase casitas B-lineage lymphoma (Cbl) alleviates endothelial dysfunction in DM rats by JAK2/STAT4 pathway.MethodsA rat model of DM was developed through intraperitoneal injection of streptozotocin, followed by collection of aortic tissues to determine the expression of Cbl, JAK2, runt-related transcription factor 3 (Runx3) and STAT4. Human umbilical vein endothelial cells (HUVECs) were cultured in high glucose (HG) condition to induce DM as an in vitro model. With gain- and loss-function method, we assessed the aberrantly expressed Cb1 on endothelial dysfunction, NO production and apoptosis of HUVECs.ResultsCbl was reduced in DM rat tissues and HG-induced HUVECs, where JAK2, Runx3 and STAT4 were elevated. It was found that overexpression of Cbl alleviated endothelial dysfunction by increasing NO production and restoring vasodilation and suppressing apoptosis of HUVECs. Mechanistically, Cb1 enhanced JAK2 ubiquitination and decreased JAK2 and STAT4 expression, where STAT4 improved Runx3 expression by regulating histone H3 lysine 4 trimethylation level. Overexpression of JAK2 and STAT4, or Runx3 increased apoptosis of HUVECs, abrogating the effect of Cb1 on endothelial function.ConclusionIn conclusion, Cbl alleviates endothelial dysfunction by inactivation of the JAK2/STAT4 pathway and inhibition of Runx3 expression in DM. These evidence might underlie novel Cbl-based treatment against DM in the future.Supplementary InformationThe online version contains supplementary material available at 10.1186/s12967-021-03069-w."
+          }
+        ],
+        "selected_source_sha256": "558fd77eab8e192fe9b7c625b3186a6b8f1c44bcad0c7430ba3dedc6ffb7c5a6",
+        "source_text": "Overexpression of E3 ubiquitin ligase Cbl attenuates endothelial dysfunction in diabetes mellitus by inhibiting the JAK2/STAT4 signaling and Runx3-mediated H3K4me3\n\nBackgroundDiabetes mellitus (DM), a most common chronic disease, is featured with impaired endothelial function and bioavailability of nitric oxide (NO), while E3 ubiquitin ligase appears to alleviate endothelial dysfunction as a promising option for DM treatment. Herein, we aimed to determine whether E3 ubiquitin ligase casitas B-lineage lymphoma (Cbl) alleviates endothelial dysfunction in DM rats by JAK2/STAT4 pathway.MethodsA rat model of DM was developed through intraperitoneal injection of streptozotocin, followed by collection of aortic tissues to determine the expression of Cbl, JAK2, runt-related transcription factor 3 (Runx3) and STAT4. Human umbilical vein endothelial cells (HUVECs) were cultured in high glucose (HG) condition to induce DM as an in vitro model. With gain- and loss-function method, we assessed the aberrantly expressed Cb1 on endothelial dysfunction, NO production and apoptosis of HUVECs.ResultsCbl was reduced in DM rat tissues and HG-induced HUVECs, where JAK2, Runx3 and STAT4 were elevated. It was found that overexpression of Cbl alleviated endothelial dysfunction by increasing NO production and restoring vasodilation and suppressing apoptosis of HUVECs. Mechanistically, Cb1 enhanced JAK2 ubiquitination and decreased JAK2 and STAT4 expression, where STAT4 improved Runx3 expression by regulating histone H3 lysine 4 trimethylation level. Overexpression of JAK2 and STAT4, or Runx3 increased apoptosis of HUVECs, abrogating the effect of Cb1 on endothelial function.ConclusionIn conclusion, Cbl alleviates endothelial dysfunction by inactivation of the JAK2/STAT4 pathway and inhibition of Runx3 expression in DM. These evidence might underlie novel Cbl-based treatment against DM in the future.Supplementary InformationThe online version contains supplementary material available at 10.1186/s12967-021-03069-w.",
+        "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8605525/"
+      },
+      "title": "Overexpression of E3 ubiquitin ligase Cbl attenuates endothelial dysfunction in diabetes mellitus by inhibiting the JAK2/STAT4 signaling and Runx3-mediated H3K4me3"
+    },
+    {
+      "baseline_relations": [
+        {
+          "assertion": "EZH2 promotes colorectal cancer stem-like cell expansion by activating p21cip1-Wnt/β-catenin signaling.",
+          "context": [],
+          "effects": [
+            "colorectal cancer stem-like cell expansion"
+          ],
+          "evidence": "EZH2 promotes colorectal cancer stem-like cell expansion by activating p21cip1-Wnt/β-catenin signaling.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "promotes expansion",
+          "score": null,
+          "source": "E1",
+          "surface_form": "promotes colorectal cancer stem-like cell expansion",
+          "target": "E2"
+        },
+        {
+          "assertion": "EZH2 activates p21cip1-Wnt/β-catenin signaling.",
+          "context": [],
+          "effects": [],
+          "evidence": "EZH2 promotes colorectal cancer stem-like cell expansion by activating p21cip1-Wnt/β-catenin signaling.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "activates",
+          "score": null,
+          "source": "E1",
+          "surface_form": "activating p21cip1-Wnt/β-catenin signaling",
+          "target": "E3"
+        },
+        {
+          "assertion": "EZH2 activates p21cip1-Wnt/β-catenin signaling.",
+          "context": [],
+          "effects": [],
+          "evidence": "EZH2 promotes colorectal cancer stem-like cell expansion by activating p21cip1-Wnt/β-catenin signaling.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "activates",
+          "score": null,
+          "source": "E1",
+          "surface_form": "activating p21cip1-Wnt/β-catenin signaling",
+          "target": "E4"
+        },
+        {
+          "assertion": "Colorectal cancer stem-like cells contribute to poor patient prognosis.",
+          "context": [],
+          "effects": [
+            "poor patient prognosis"
+          ],
+          "evidence": "Because colorectal cancer (CRC) stem-like cells (CCS-like cells) contribute to poor patient prognosis, these cells are a potential target for CRC therapy.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "contributes to poor prognosis",
+          "score": null,
+          "source": "E5",
+          "surface_form": "contribute to poor patient prognosis",
+          "target": "E7"
+        },
+        {
+          "assertion": "Patients with advanced stage CRC expressed high levels of EZH2.",
+          "context": [
+            "advanced stage CRC"
+          ],
+          "effects": [],
+          "evidence": "Here, we found that patients with advanced stage CRC expressed high levels of polycomb group protein enhancer of zeste homologue 2 (EZH2).",
+          "intervention": null,
+          "negated": false,
+          "predicate": "expresses high levels of",
+          "score": null,
+          "source": "E9",
+          "surface_form": "expressed high levels of",
+          "target": "E13"
+        },
+        {
+          "assertion": "EZH2 has high expression in tumor tissues.",
+          "context": [],
+          "effects": [],
+          "evidence": "High expression of EZH2 in tumor tissues correlated with poor patient prognosis.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "is highly expressed in",
+          "score": null,
+          "source": "E14",
+          "surface_form": "High expression of EZH2 in tumor tissues",
+          "target": "E15"
+        },
+        {
+          "assertion": "High expression of EZH2 in tumor tissues correlated with poor patient prognosis.",
+          "context": [
+            "tumor tissues"
+          ],
+          "effects": [
+            "poor patient prognosis"
+          ],
+          "evidence": "High expression of EZH2 in tumor tissues correlated with poor patient prognosis.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "correlates with poor prognosis",
+          "score": null,
+          "source": "E14",
+          "surface_form": "correlated with poor patient prognosis",
+          "target": "E16"
+        },
+        {
+          "assertion": "Silencing EZH2 reduced CRC cell proliferation.",
+          "context": [],
+          "effects": [
+            "reduced CRC cell proliferation"
+          ],
+          "evidence": "Conversely, silencing EZH2 reduced CRC cell proliferation.",
+          "intervention": "silencing EZH2",
+          "negated": false,
+          "predicate": "silencing reduces proliferation",
+          "score": null,
+          "source": "E17",
+          "surface_form": "silencing EZH2 reduced CRC cell proliferation",
+          "target": "E18"
+        },
+        {
+          "assertion": "EZH2 was more highly expressed in the CCS-like cell subpopulation than in the non-CCS-like cell subpopulation.",
+          "context": [],
+          "effects": [],
+          "evidence": "Surprisingly, EZH2 was more highly expressed in the CCS-like cell subpopulation than in the non-CCS-like cell subpopulation.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "has higher expression in",
+          "score": null,
+          "source": "E19",
+          "surface_form": "was more highly expressed in the CCS-like cell subpopulation than in the non-CCS-like cell subpopulation",
+          "target": "E20"
+        },
+        {
+          "assertion": "EZH2 had lower expression in the non-CCS-like cell subpopulation than in the CCS-like cell subpopulation.",
+          "context": [],
+          "effects": [],
+          "evidence": "Surprisingly, EZH2 was more highly expressed in the CCS-like cell subpopulation than in the non-CCS-like cell subpopulation.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "has lower expression in",
+          "score": null,
+          "source": "E19",
+          "surface_form": "was more highly expressed in the CCS-like cell subpopulation than in the non-CCS-like cell subpopulation",
+          "target": "E21"
+        },
+        {
+          "assertion": "EZH2 knockdown significantly reduced the CD133+/CD44+ subpopulation.",
+          "context": [],
+          "effects": [
+            "significantly reduced the CD133+/CD44+ subpopulation"
+          ],
+          "evidence": "EZH2 knockdown significantly reduced the CD133+/CD44+ subpopulation, suppressed mammosphere formation, and decreased the expression of self-renewal-related genes and strongly impaired tumor-initiating capacity in a re-implantation mouse model.",
+          "intervention": "EZH2 knockdown",
+          "negated": false,
+          "predicate": "knockdown reduces subpopulation",
+          "score": null,
+          "source": "E22",
+          "surface_form": "EZH2 knockdown significantly reduced the CD133+/CD44+ subpopulation",
+          "target": "E23"
+        },
+        {
+          "assertion": "EZH2 knockdown significantly reduced the CD133+/CD44+ subpopulation.",
+          "context": [],
+          "effects": [
+            "significantly reduced the CD133+/CD44+ subpopulation"
+          ],
+          "evidence": "EZH2 knockdown significantly reduced the CD133+/CD44+ subpopulation, suppressed mammosphere formation, and decreased the expression of self-renewal-related genes and strongly impaired tumor-initiating capacity in a re-implantation mouse model.",
+          "intervention": "EZH2 knockdown",
+          "negated": false,
+          "predicate": "knockdown reduces subpopulation",
+          "score": null,
+          "source": "E22",
+          "surface_form": "EZH2 knockdown significantly reduced the CD133+/CD44+ subpopulation",
+          "target": "E24"
+        },
+        {
+          "assertion": "EZH2 knockdown strongly impaired tumor-initiating capacity in a re-implantation mouse model.",
+          "context": [
+            "re-implantation mouse model"
+          ],
+          "effects": [
+            "strongly impaired tumor-initiating capacity"
+          ],
+          "evidence": "EZH2 knockdown significantly reduced the CD133+/CD44+ subpopulation, suppressed mammosphere formation, and decreased the expression of self-renewal-related genes and strongly impaired tumor-initiating capacity in a re-implantation mouse model.",
+          "intervention": "EZH2 knockdown",
+          "negated": false,
+          "predicate": "knockdown impairs tumor-initiating capacity",
+          "score": null,
+          "source": "E22",
+          "surface_form": "strongly impaired tumor-initiating capacity in a re-implantation mouse model",
+          "target": "E25"
+        },
+        {
+          "assertion": "EZH2 helped maintain CCS-like cell properties by activating the Wnt/β-catenin pathway.",
+          "context": [
+            "human CRC specimens from TCGA database",
+            "in vitro results"
+          ],
+          "effects": [],
+          "evidence": "Gene expression data from 433 human CRC specimens from TCGA database and in vitro results revealed that EZH2 helped maintain CCS-like cell properties by activating the Wnt/β-catenin pathway.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "activates",
+          "score": null,
+          "source": "E29",
+          "surface_form": "activating the Wnt/β-catenin pathway",
+          "target": "E30"
+        },
+        {
+          "assertion": "EZH2 helped maintain CCS-like cell properties by activating the Wnt/β-catenin pathway.",
+          "context": [
+            "human CRC specimens from TCGA database",
+            "in vitro results"
+          ],
+          "effects": [],
+          "evidence": "Gene expression data from 433 human CRC specimens from TCGA database and in vitro results revealed that EZH2 helped maintain CCS-like cell properties by activating the Wnt/β-catenin pathway.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "activates",
+          "score": null,
+          "source": "E29",
+          "surface_form": "activating the Wnt/β-catenin pathway",
+          "target": "E31"
+        },
+        {
+          "assertion": "p21cip1-mediated arrest of the cell cycle at G1/S phase is required for EZH2 activation of the Wnt/β-catenin pathway.",
+          "context": [],
+          "effects": [],
+          "evidence": "We further revealed that p21cip1-mediated arrest of the cell cycle at G1/S phase is required for EZH2 activation of the Wnt/β-catenin pathway.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "is required for activation of",
+          "score": null,
+          "source": "E32",
+          "surface_form": "is required for EZH2 activation of the Wnt/β-catenin pathway",
+          "target": "E34"
+        },
+        {
+          "assertion": "p21cip1-mediated arrest of the cell cycle at G1/S phase is required for EZH2 activation of the Wnt/β-catenin pathway.",
+          "context": [],
+          "effects": [],
+          "evidence": "We further revealed that p21cip1-mediated arrest of the cell cycle at G1/S phase is required for EZH2 activation of the Wnt/β-catenin pathway.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "is required for activation of",
+          "score": null,
+          "source": "E32",
+          "surface_form": "is required for EZH2 activation of the Wnt/β-catenin pathway",
+          "target": "E35"
+        },
+        {
+          "assertion": "p21cip1-mediated arrest of the cell cycle at G1/S phase is required for EZH2 activation of the Wnt/β-catenin pathway.",
+          "context": [],
+          "effects": [],
+          "evidence": "We further revealed that p21cip1-mediated arrest of the cell cycle at G1/S phase is required for EZH2 activation of the Wnt/β-catenin pathway.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "activates",
+          "score": null,
+          "source": "E33",
+          "surface_form": "EZH2 activation of the Wnt/β-catenin pathway",
+          "target": "E34"
+        },
+        {
+          "assertion": "p21cip1-mediated arrest of the cell cycle at G1/S phase is required for EZH2 activation of the Wnt/β-catenin pathway.",
+          "context": [],
+          "effects": [],
+          "evidence": "We further revealed that p21cip1-mediated arrest of the cell cycle at G1/S phase is required for EZH2 activation of the Wnt/β-catenin pathway.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "activates",
+          "score": null,
+          "source": "E33",
+          "surface_form": "EZH2 activation of the Wnt/β-catenin pathway",
+          "target": "E35"
+        },
+        {
+          "assertion": "EPZ-6438 is a specific inhibitor of EZH2.",
+          "context": [],
+          "effects": [],
+          "evidence": "Moreover, the specific EZH2 inhibitor EPZ-6438, a clinical trial drug, prevented CRC progression.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "inhibits",
+          "score": null,
+          "source": "E37",
+          "surface_form": "specific EZH2 inhibitor EPZ-6438",
+          "target": "E36"
+        },
+        {
+          "assertion": "The specific EZH2 inhibitor EPZ-6438, a clinical trial drug, prevented CRC progression.",
+          "context": [],
+          "effects": [
+            "prevented CRC progression"
+          ],
+          "evidence": "Moreover, the specific EZH2 inhibitor EPZ-6438, a clinical trial drug, prevented CRC progression.",
+          "intervention": "EPZ-6438",
+          "negated": false,
+          "predicate": "prevents progression of",
+          "score": null,
+          "source": "E37",
+          "surface_form": "prevented CRC progression",
+          "target": "E38"
+        },
+        {
+          "assertion": "EZH2 maintains CCS-like cell characteristics by arresting the cell cycle at the G1/S phase.",
+          "context": [],
+          "effects": [],
+          "evidence": "Collectively, these findings revealed EZH2 maintaining CCS-like cell characteristics by arresting the cell cycle at the G1/S phase.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "maintains",
+          "score": null,
+          "source": "E39",
+          "surface_form": "EZH2 maintaining CCS-like cell characteristics",
+          "target": "E40"
+        }
+      ],
+      "entities": [
+        {
+          "end": 4,
+          "id": "E1",
+          "score": 0.9999901056289673,
+          "start": 0,
+          "text": "EZH2",
+          "type": "Gene"
+        },
+        {
+          "end": 485,
+          "id": "E12",
+          "score": 0.999967384338379,
+          "start": 456,
+          "text": "enhancer of zeste homologue 2",
+          "type": "Gene"
+        },
+        {
+          "end": 491,
+          "id": "E13",
+          "score": 0.9999867677688599,
+          "start": 487,
+          "text": "EZH2",
+          "type": "Gene"
+        },
+        {
+          "end": 517,
+          "id": "E14",
+          "score": 0.9999895095825195,
+          "start": 513,
+          "text": "EZH2",
+          "type": "Gene"
+        },
+        {
+          "end": 601,
+          "id": "E17",
+          "score": 0.9999901056289673,
+          "start": 597,
+          "text": "EZH2",
+          "type": "Gene"
+        },
+        {
+          "end": 652,
+          "id": "E19",
+          "score": 0.9999902248382568,
+          "start": 648,
+          "text": "EZH2",
+          "type": "Gene"
+        },
+        {
+          "end": 763,
+          "id": "E22",
+          "score": 0.9999899864196777,
+          "start": 759,
+          "text": "EZH2",
+          "type": "Gene"
+        },
+        {
+          "end": 1111,
+          "id": "E29",
+          "score": 0.9999903440475464,
+          "start": 1107,
+          "text": "EZH2",
+          "type": "Gene"
+        },
+        {
+          "end": 1295,
+          "id": "E33",
+          "score": 0.9999903440475464,
+          "start": 1291,
+          "text": "EZH2",
+          "type": "Gene"
+        },
+        {
+          "end": 1364,
+          "id": "E36",
+          "score": 0.9999903440475464,
+          "start": 1360,
+          "text": "EZH2",
+          "type": "Gene"
+        },
+        {
+          "end": 1477,
+          "id": "E39",
+          "score": 0.9999902248382568,
+          "start": 1473,
+          "text": "EZH2",
+          "type": "Gene"
+        },
+        {
+          "end": 31,
+          "id": "E2",
+          "score": 0.9999909996986389,
+          "start": 14,
+          "text": "colorectal cancer",
+          "type": "Disease"
+        },
+        {
+          "end": 130,
+          "id": "E5",
+          "score": 0.9999921321868896,
+          "start": 113,
+          "text": "colorectal cancer",
+          "type": "Disease"
+        },
+        {
+          "end": 135,
+          "id": "E6",
+          "score": 0.9999843835830688,
+          "start": 132,
+          "text": "CRC",
+          "type": "Disease"
+        },
+        {
+          "end": 250,
+          "id": "E8",
+          "score": 0.9999853372573853,
+          "start": 247,
+          "text": "CRC",
+          "type": "Disease"
+        },
+        {
+          "end": 407,
+          "id": "E10",
+          "score": 0.9999854564666748,
+          "start": 404,
+          "text": "CRC",
+          "type": "Disease"
+        },
+        {
+          "end": 613,
+          "id": "E18",
+          "score": 0.9999842643737793,
+          "start": 610,
+          "text": "CRC",
+          "type": "Disease"
+        },
+        {
+          "end": 1042,
+          "id": "E28",
+          "score": 0.999983549118042,
+          "start": 1039,
+          "text": "CRC",
+          "type": "Disease"
+        },
+        {
+          "end": 1421,
+          "id": "E38",
+          "score": 0.9999815225601196,
+          "start": 1418,
+          "text": "CRC",
+          "type": "Disease"
+        },
+        {
+          "end": 1611,
+          "id": "E41",
+          "score": 0.9999825954437256,
+          "start": 1608,
+          "text": "CRC",
+          "type": "Disease"
+        },
+        {
+          "end": 82,
+          "id": "E3",
+          "score": 0.9999901056289673,
+          "start": 71,
+          "text": "p21cip1-Wnt",
+          "type": "Gene"
+        },
+        {
+          "end": 92,
+          "id": "E4",
+          "score": 0.9999783039093018,
+          "start": 83,
+          "text": "β-catenin",
+          "type": "Gene"
+        },
+        {
+          "end": 1184,
+          "id": "E31",
+          "score": 0.9999792575836182,
+          "start": 1175,
+          "text": "β-catenin",
+          "type": "Gene"
+        },
+        {
+          "end": 1327,
+          "id": "E35",
+          "score": 0.9999796946843466,
+          "start": 1318,
+          "text": "β-catenin",
+          "type": "Gene"
+        },
+        {
+          "end": 196,
+          "id": "E7",
+          "score": 0.9999843835830688,
+          "start": 189,
+          "text": "patient",
+          "type": "Species"
+        },
+        {
+          "end": 563,
+          "id": "E16",
+          "score": 0.9999852180480957,
+          "start": 556,
+          "text": "patient",
+          "type": "Species"
+        },
+        {
+          "end": 383,
+          "id": "E9",
+          "score": 0.9999865293502808,
+          "start": 375,
+          "text": "patients",
+          "type": "Species"
+        },
+        {
+          "end": 455,
+          "id": "E11",
+          "score": 0.9594087799390157,
+          "start": 433,
+          "text": "polycomb group protein",
+          "type": "Gene"
+        },
+        {
+          "end": 526,
+          "id": "E15",
+          "score": 0.9999829530715942,
+          "start": 521,
+          "text": "tumor",
+          "type": "Disease"
+        },
+        {
+          "end": 948,
+          "id": "E25",
+          "score": 0.9999836683273315,
+          "start": 943,
+          "text": "tumor",
+          "type": "Disease"
+        },
+        {
+          "end": 689,
+          "id": "E20",
+          "score": 0.9984031319618225,
+          "start": 686,
+          "text": "CCS",
+          "type": "Disease"
+        },
+        {
+          "end": 733,
+          "id": "E21",
+          "score": 0.91731858253479,
+          "start": 730,
+          "text": "CCS",
+          "type": "Disease"
+        },
+        {
+          "end": 1493,
+          "id": "E40",
+          "score": 0.9999706745147705,
+          "start": 1490,
+          "text": "CCS",
+          "type": "Disease"
+        },
+        {
+          "end": 806,
+          "id": "E23",
+          "score": 0.9999890327453613,
+          "start": 800,
+          "text": "CD133+",
+          "type": "Gene"
+        },
+        {
+          "end": 811,
+          "id": "E24",
+          "score": 0.9999896287918091,
+          "start": 807,
+          "text": "CD44",
+          "type": "Gene"
+        },
+        {
+          "end": 995,
+          "id": "E26",
+          "score": 0.9999837875366211,
+          "start": 990,
+          "text": "mouse",
+          "type": "Species"
+        },
+        {
+          "end": 1038,
+          "id": "E27",
+          "score": 0.9999767541885376,
+          "start": 1033,
+          "text": "human",
+          "type": "Species"
+        },
+        {
+          "end": 1174,
+          "id": "E30",
+          "score": 0.999988317489624,
+          "start": 1171,
+          "text": "Wnt",
+          "type": "Gene"
+        },
+        {
+          "end": 1317,
+          "id": "E34",
+          "score": 0.9999891519546509,
+          "start": 1314,
+          "text": "Wnt",
+          "type": "Gene"
+        },
+        {
+          "end": 1235,
+          "id": "E32",
+          "score": 0.9999902248382568,
+          "start": 1219,
+          "text": "p21cip1-mediated",
+          "type": "Gene"
+        },
+        {
+          "end": 1383,
+          "id": "E37",
+          "score": 0.9999954700469971,
+          "start": 1375,
+          "text": "EPZ-6438",
+          "type": "Chemical"
+        }
+      ],
+      "paper_id": "PMID:27172794",
+      "slug": "pmid_27172794",
+      "source": {
+        "acquisition_mode": "abstract_only",
+        "canonical_full_text_sha256": "50d58062a480653e0f414aad9e62aca434898fa3fcc6f372722454bd75407a0c",
+        "canonical_source_checksum": "ab6a79cdf2f0e535593ef30397e37b90b09caaaffa97133e79da4d7d18a81112",
+        "scope": "title plus complete abstract",
+        "segments": [
+          {
+            "end": 103,
+            "section": "title",
+            "start": 0,
+            "text": "EZH2 promotes colorectal cancer stem-like cell expansion by activating p21cip1-Wnt/β-catenin signaling."
+          },
+          {
+            "end": 1620,
+            "section": "abstract",
+            "start": 105,
+            "text": "Because colorectal cancer (CRC) stem-like cells (CCS-like cells) contribute to poor patient prognosis, these cells are a potential target for CRC therapy. However, the mechanism underlying the maintenance of CCS-like cell properties remains unclear. Here, we found that patients with advanced stage CRC expressed high levels of polycomb group protein enhancer of zeste homologue 2 (EZH2). High expression of EZH2 in tumor tissues correlated with poor patient prognosis. Conversely, silencing EZH2 reduced CRC cell proliferation. Surprisingly, EZH2 was more highly expressed in the CCS-like cell subpopulation than in the non-CCS-like cell subpopulation. EZH2 knockdown significantly reduced the CD133+/CD44+ subpopulation, suppressed mammosphere formation, and decreased the expression of self-renewal-related genes and strongly impaired tumor-initiating capacity in a re-implantation mouse model. Gene expression data from 433 human CRC specimens from TCGA database and in vitro results revealed that EZH2 helped maintain CCS-like cell properties by activating the Wnt/β-catenin pathway. We further revealed that p21cip1-mediated arrest of the cell cycle at G1/S phase is required for EZH2 activation of the Wnt/β-catenin pathway. Moreover, the specific EZH2 inhibitor EPZ-6438, a clinical trial drug, prevented CRC progression. Collectively, these findings revealed EZH2 maintaining CCS-like cell characteristics by arresting the cell cycle at the G1/S phase. These results indicate a new approach to CRC therapy."
+          }
+        ],
+        "selected_source_sha256": "50d58062a480653e0f414aad9e62aca434898fa3fcc6f372722454bd75407a0c",
+        "source_text": "EZH2 promotes colorectal cancer stem-like cell expansion by activating p21cip1-Wnt/β-catenin signaling.\n\nBecause colorectal cancer (CRC) stem-like cells (CCS-like cells) contribute to poor patient prognosis, these cells are a potential target for CRC therapy. However, the mechanism underlying the maintenance of CCS-like cell properties remains unclear. Here, we found that patients with advanced stage CRC expressed high levels of polycomb group protein enhancer of zeste homologue 2 (EZH2). High expression of EZH2 in tumor tissues correlated with poor patient prognosis. Conversely, silencing EZH2 reduced CRC cell proliferation. Surprisingly, EZH2 was more highly expressed in the CCS-like cell subpopulation than in the non-CCS-like cell subpopulation. EZH2 knockdown significantly reduced the CD133+/CD44+ subpopulation, suppressed mammosphere formation, and decreased the expression of self-renewal-related genes and strongly impaired tumor-initiating capacity in a re-implantation mouse model. Gene expression data from 433 human CRC specimens from TCGA database and in vitro results revealed that EZH2 helped maintain CCS-like cell properties by activating the Wnt/β-catenin pathway. We further revealed that p21cip1-mediated arrest of the cell cycle at G1/S phase is required for EZH2 activation of the Wnt/β-catenin pathway. Moreover, the specific EZH2 inhibitor EPZ-6438, a clinical trial drug, prevented CRC progression. Collectively, these findings revealed EZH2 maintaining CCS-like cell characteristics by arresting the cell cycle at the G1/S phase. These results indicate a new approach to CRC therapy.",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/27172794/"
+      },
+      "title": "EZH2 promotes colorectal cancer stem-like cell expansion by activating p21cip1-Wnt/β-catenin signaling."
+    },
+    {
+      "baseline_relations": [
+        {
+          "assertion": "PTEN mediates serum deprivation-induced cytotoxicity in H9c2 cells via the PI3K/AKT signaling pathway.",
+          "context": [
+            "H9c2 cells"
+          ],
+          "effects": [],
+          "evidence": "PTEN mediates serum deprivation-induced cytotoxicity in H9c2 cells via the PI3K/AKT signaling pathway.",
+          "intervention": "serum deprivation",
+          "negated": false,
+          "predicate": "mediates",
+          "score": null,
+          "source": "E1",
+          "surface_form": "mediates",
+          "target": "E2"
+        },
+        {
+          "assertion": "The pathogenesis of acute myocardial infarction is associated with cardiomyocyte necrosis.",
+          "context": [
+            "cardiomyocyte"
+          ],
+          "effects": [],
+          "evidence": "The pathogenesis of acute myocardial infarction (AMI) is associated with cardiomyocyte necrosis and apoptosis.",
+          "intervention": null,
+          "negated": false,
+          "predicate": "associated_with",
+          "score": null,
+          "source": "E6",
+          "surface_form": "is associated with",
+          "target": "E8"
+        },
+        {
+          "assertion": "H9c2 cells cultured under serum deprivation were used to simulate the apoptosis process of myocardial infarction.",
+          "context": [],
+          "effects": [],
+          "evidence": "In this study, we used H9c2 cells cultured under serum deprivation to simulate the apoptosis process of myocardial infarction.",
+          "intervention": "serum deprivation",
+          "negated": false,
+          "predicate": "used_to_simulate",
+          "score": null,
+          "source": "E12",
+          "surface_form": "to simulate",
+          "target": "E13"
+        },
+        {
+          "assertion": "Small interference RNA (siRNA) of PTEN was used to knock down the expression of PTEN.",
+          "context": [],
+          "effects": [
+            "knockdown of PTEN expression"
+          ],
+          "evidence": "Small interference RNA (siRNA) of PTEN was used to knock down the expression of PTEN.",
+          "intervention": "small interference RNA (siRNA) of PTEN",
+          "negated": false,
+          "predicate": "knocks_down_expression_of",
+          "score": null,
+          "source": "E14",
+          "surface_form": "was used to knock down the expression of",
+          "target": "E15"
+        },
+        {
+          "assertion": "Serum deprivation in H9c2 cells increased PTEN expression.",
+          "context": [],
+          "effects": [
+            "increased PTEN expression"
+          ],
+          "evidence": "As a result, we observed that serum deprivation in H9c2 cells increased PTEN expression.",
+          "intervention": "serum deprivation",
+          "negated": false,
+          "predicate": "has_increased_expression_of",
+          "score": null,
+          "source": "E18",
+          "surface_form": "increased PTEN expression",
+          "target": "E19"
+        },
+        {
+          "assertion": "PTEN knockdown using siRNA inhibited serum deprivation-induced ROS production.",
+          "context": [
+            "serum deprivation"
+          ],
+          "effects": [
+            "inhibited serum deprivation-induced ROS production"
+          ],
+          "evidence": "Functionally, the PTEN knockdown experiment using siRNA inhibited serum deprivation-induced cell apoptosis, ROS production, and DNA damage, whereas increased cell proliferation.",
+          "intervention": "PTEN knockdown using siRNA",
+          "negated": false,
+          "predicate": "knockdown_inhibits",
+          "score": null,
+          "source": "E20",
+          "surface_form": "inhibited",
+          "target": "E21"
+        },
+        {
+          "assertion": "All effects of the PTEN knockdown experiment—including inhibition of serum deprivation-induced cell apoptosis, ROS production, and DNA damage and increased cell proliferation—could be reversed by a phosphatidylinositol 3-kinase (PI3K) inhibitor.",
+          "context": [
+            "serum deprivation"
+          ],
+          "effects": [
+            "reversal of the PTEN-knockdown effects on cell apoptosis, ROS production, DNA damage, and cell proliferation"
+          ],
+          "evidence": "Functionally, the PTEN knockdown experiment using siRNA inhibited serum deprivation-induced cell apoptosis, ROS production, and DNA damage, whereas increased cell proliferation. All these effects could be reversed by phosphatidylinositol 3-kinase (PI3K) inhibitor, which indicated the PI3K/protein kinase B (AKT) might be the critical component of the PTEN effects during serum deficiency.",
+          "intervention": "PTEN knockdown using siRNA and a phosphatidylinositol 3-kinase (PI3K) inhibitor",
+          "negated": false,
+          "predicate": "reverses_effects_of",
+          "score": null,
+          "source": "E22",
+          "surface_form": "could be reversed by phosphatidylinositol 3-kinase (PI3K) inhibitor",
+          "target": "E27"
+        },
+        {
+          "assertion": "Reversal of all these effects by a phosphatidylinositol 3-kinase (PI3K) inhibitor indicated that the PI3K/protein kinase B (AKT) might be the critical component of the PTEN effects during serum deficiency.",
+          "context": [
+            "serum deficiency"
+          ],
+          "effects": [
+            "reversal of all these effects"
+          ],
+          "evidence": "All these effects could be reversed by phosphatidylinositol 3-kinase (PI3K) inhibitor, which indicated the PI3K/protein kinase B (AKT) might be the critical component of the PTEN effects during serum deficiency.",
+          "intervention": "phosphatidylinositol 3-kinase (PI3K) inhibitor",
+          "negated": false,
+          "predicate": "may_be_critical_component_of_effects_of",
+          "score": null,
+          "source": "E24",
+          "surface_form": "might be the critical component of",
+          "target": "E27"
+        },
+        {
+          "assertion": "Reversal of all these effects by a phosphatidylinositol 3-kinase (PI3K) inhibitor indicated that the PI3K/protein kinase B (AKT) might be the critical component of the PTEN effects during serum deficiency.",
+          "context": [
+            "serum deficiency"
+          ],
+          "effects": [
+            "reversal of all these effects"
+          ],
+          "evidence": "All these effects could be reversed by phosphatidylinositol 3-kinase (PI3K) inhibitor, which indicated the PI3K/protein kinase B (AKT) might be the critical component of the PTEN effects during serum deficiency.",
+          "intervention": "phosphatidylinositol 3-kinase (PI3K) inhibitor",
+          "negated": false,
+          "predicate": "may_be_critical_component_of_effects_of",
+          "score": null,
+          "source": "E25",
+          "surface_form": "might be the critical component of",
+          "target": "E27"
+        },
+        {
+          "assertion": "PTEN is named as a component of the PTEN/PI3K/AKT pathway, which has a role in serum deprivation-induced cytotoxicity in H9c2 cells.",
+          "context": [
+            "H9c2 cells"
+          ],
+          "effects": [],
+          "evidence": "In conclusion, our study indicated the role of the PTEN/PI3K/AKT pathway in serum deprivation-induced cytotoxicity in H9c2 cells.",
+          "intervention": "serum deprivation",
+          "negated": false,
+          "predicate": "pathway_component_has_role_in",
+          "score": null,
+          "source": "E29",
+          "surface_form": "role of the PTEN/PI3K/AKT pathway in",
+          "target": "E32"
+        },
+        {
+          "assertion": "PI3K is named as a component of the PTEN/PI3K/AKT pathway, which has a role in serum deprivation-induced cytotoxicity in H9c2 cells.",
+          "context": [
+            "H9c2 cells"
+          ],
+          "effects": [],
+          "evidence": "In conclusion, our study indicated the role of the PTEN/PI3K/AKT pathway in serum deprivation-induced cytotoxicity in H9c2 cells.",
+          "intervention": "serum deprivation",
+          "negated": false,
+          "predicate": "pathway_component_has_role_in",
+          "score": null,
+          "source": "E30",
+          "surface_form": "role of the PTEN/PI3K/AKT pathway in",
+          "target": "E32"
+        },
+        {
+          "assertion": "AKT is named as a component of the PTEN/PI3K/AKT pathway, which has a role in serum deprivation-induced cytotoxicity in H9c2 cells.",
+          "context": [
+            "H9c2 cells"
+          ],
+          "effects": [],
+          "evidence": "In conclusion, our study indicated the role of the PTEN/PI3K/AKT pathway in serum deprivation-induced cytotoxicity in H9c2 cells.",
+          "intervention": "serum deprivation",
+          "negated": false,
+          "predicate": "pathway_component_has_role_in",
+          "score": null,
+          "source": "E31",
+          "surface_form": "role of the PTEN/PI3K/AKT pathway in",
+          "target": "E32"
+        }
+      ],
+      "entities": [
+        {
+          "end": 4,
+          "id": "E1",
+          "score": 0.99998939037323,
+          "start": 0,
+          "text": "PTEN",
+          "type": "Gene"
+        },
+        {
+          "end": 304,
+          "id": "E9",
+          "score": 0.9999800622463226,
+          "start": 274,
+          "text": "Phosphatase and tensin homolog",
+          "type": "Gene"
+        },
+        {
+          "end": 310,
+          "id": "E10",
+          "score": 0.9999897480010986,
+          "start": 306,
+          "text": "PTEN",
+          "type": "Gene"
+        },
+        {
+          "end": 401,
+          "id": "E11",
+          "score": 0.9999884366989136,
+          "start": 397,
+          "text": "PTEN",
+          "type": "Gene"
+        },
+        {
+          "end": 596,
+          "id": "E14",
+          "score": 0.9999872446060181,
+          "start": 592,
+          "text": "PTEN",
+          "type": "Gene"
+        },
+        {
+          "end": 642,
+          "id": "E15",
+          "score": 0.9999881982803345,
+          "start": 638,
+          "text": "PTEN",
+          "type": "Gene"
+        },
+        {
+          "end": 984,
+          "id": "E19",
+          "score": 0.9999884366989136,
+          "start": 980,
+          "text": "PTEN",
+          "type": "Gene"
+        },
+        {
+          "end": 1019,
+          "id": "E20",
+          "score": 0.9999884366989136,
+          "start": 1015,
+          "text": "PTEN",
+          "type": "Gene"
+        },
+        {
+          "end": 1353,
+          "id": "E27",
+          "score": 0.99998939037323,
+          "start": 1349,
+          "text": "PTEN",
+          "type": "Gene"
+        },
+        {
+          "end": 1442,
+          "id": "E29",
+          "score": 0.9999895095825195,
+          "start": 1438,
+          "text": "PTEN",
+          "type": "Gene"
+        },
+        {
+          "end": 52,
+          "id": "E2",
+          "score": 0.9999901453653971,
+          "start": 40,
+          "text": "cytotoxicity",
+          "type": "Disease"
+        },
+        {
+          "end": 1501,
+          "id": "E32",
+          "score": 0.9999916950861613,
+          "start": 1489,
+          "text": "cytotoxicity",
+          "type": "Disease"
+        },
+        {
+          "end": 60,
+          "id": "E3",
+          "score": 0.9947355389595032,
+          "start": 56,
+          "text": "H9c2",
+          "type": "CellLine"
+        },
+        {
+          "end": 458,
+          "id": "E12",
+          "score": 0.9949002861976624,
+          "start": 454,
+          "text": "H9c2",
+          "type": "CellLine"
+        },
+        {
+          "end": 963,
+          "id": "E18",
+          "score": 0.9945240020751953,
+          "start": 959,
+          "text": "H9c2",
+          "type": "CellLine"
+        },
+        {
+          "end": 1509,
+          "id": "E33",
+          "score": 0.9945874214172363,
+          "start": 1505,
+          "text": "H9c2",
+          "type": "CellLine"
+        },
+        {
+          "end": 79,
+          "id": "E4",
+          "score": 0.9999885559082031,
+          "start": 75,
+          "text": "PI3K",
+          "type": "Gene"
+        },
+        {
+          "end": 83,
+          "id": "E5",
+          "score": 0.9999896287918091,
+          "start": 80,
+          "text": "AKT",
+          "type": "Gene"
+        },
+        {
+          "end": 1243,
+          "id": "E22",
+          "score": 0.9999771118164062,
+          "start": 1214,
+          "text": "phosphatidylinositol 3-kinase",
+          "type": "Gene"
+        },
+        {
+          "end": 1249,
+          "id": "E23",
+          "score": 0.9999762177467346,
+          "start": 1245,
+          "text": "PI3K",
+          "type": "Gene"
+        },
+        {
+          "end": 1286,
+          "id": "E24",
+          "score": 0.9999890327453613,
+          "start": 1282,
+          "text": "PI3K",
+          "type": "Gene"
+        },
+        {
+          "end": 1303,
+          "id": "E25",
+          "score": 0.9999761978785197,
+          "start": 1287,
+          "text": "protein kinase B",
+          "type": "Gene"
+        },
+        {
+          "end": 1308,
+          "id": "E26",
+          "score": 0.9999895095825195,
+          "start": 1305,
+          "text": "AKT",
+          "type": "Gene"
+        },
+        {
+          "end": 1447,
+          "id": "E30",
+          "score": 0.9999897480010986,
+          "start": 1443,
+          "text": "PI3K",
+          "type": "Gene"
+        },
+        {
+          "end": 1451,
+          "id": "E31",
+          "score": 0.9999897480010986,
+          "start": 1448,
+          "text": "AKT",
+          "type": "Gene"
+        },
+        {
+          "end": 151,
+          "id": "E6",
+          "score": 0.9999921719233195,
+          "start": 124,
+          "text": "acute myocardial infarction",
+          "type": "Disease"
+        },
+        {
+          "end": 156,
+          "id": "E7",
+          "score": 0.9999850988388062,
+          "start": 153,
+          "text": "AMI",
+          "type": "Disease"
+        },
+        {
+          "end": 199,
+          "id": "E8",
+          "score": 0.9893016219139099,
+          "start": 191,
+          "text": "necrosis",
+          "type": "Disease"
+        },
+        {
+          "end": 556,
+          "id": "E13",
+          "score": 0.9999913573265076,
+          "start": 535,
+          "text": "myocardial infarction",
+          "type": "Disease"
+        },
+        {
+          "end": 722,
+          "id": "E16",
+          "score": 0.9904943108558655,
+          "start": 719,
+          "text": "Edu",
+          "type": "Chemical"
+        },
+        {
+          "end": 829,
+          "id": "E17",
+          "score": 0.9999953508377075,
+          "start": 826,
+          "text": "ROS",
+          "type": "Chemical"
+        },
+        {
+          "end": 1108,
+          "id": "E21",
+          "score": 0.9999959468841553,
+          "start": 1105,
+          "text": "ROS",
+          "type": "Chemical"
+        },
+        {
+          "end": 1385,
+          "id": "E28",
+          "score": 0.9951925277709961,
+          "start": 1369,
+          "text": "serum deficiency",
+          "type": "Disease"
+        }
+      ],
+      "paper_id": "PMID:33652126",
+      "slug": "pmid_33652126",
+      "source": {
+        "acquisition_mode": "abstract_only",
+        "canonical_full_text_sha256": "44ee744a2e60c788db16927b63cda446174733d38c5e1cdb13e112af30f295e6",
+        "canonical_source_checksum": "e3e8f47692be6518143088a39b29e7940768ae40bb515de9e6abe25b783d8924",
+        "scope": "title plus complete abstract",
+        "segments": [
+          {
+            "end": 102,
+            "section": "title",
+            "start": 0,
+            "text": "PTEN mediates serum deprivation-induced cytotoxicity in H9c2 cells via the PI3K/AKT signaling pathway."
+          },
+          {
+            "end": 1516,
+            "section": "abstract",
+            "start": 104,
+            "text": "The pathogenesis of acute myocardial infarction (AMI) is associated with cardiomyocyte necrosis and apoptosis. Numerous studies have determined the regulatory effects of Phosphatase and tensin homolog (PTEN) cell proliferation and apoptosis in other cell types. However, the potential role of PTEN in cardiomyocyte is unclear. In this study, we used H9c2 cells cultured under serum deprivation to simulate the apoptosis process of myocardial infarction. Small interference RNA (siRNA) of PTEN was used to knock down the expression of PTEN. Cell viability was determined by CCK-8. Cell proliferation was examined by Edu staining, and the protein expression was analyzed by Western blot. We also evaluated the generation of ROS, the degree of DNA damage, and cell apoptosis using immunofluorescence assay. As a result, we observed that serum deprivation in H9c2 cells increased PTEN expression. Functionally, the PTEN knockdown experiment using siRNA inhibited serum deprivation-induced cell apoptosis, ROS production, and DNA damage, whereas increased cell proliferation. All these effects could be reversed by phosphatidylinositol 3-kinase (PI3K) inhibitor, which indicated the PI3K/protein kinase B (AKT) might be the critical component of the PTEN effects during serum deficiency. In conclusion, our study indicated the role of the PTEN/PI3K/AKT pathway in serum deprivation-induced cytotoxicity in H9c2 cells."
+          }
+        ],
+        "selected_source_sha256": "44ee744a2e60c788db16927b63cda446174733d38c5e1cdb13e112af30f295e6",
+        "source_text": "PTEN mediates serum deprivation-induced cytotoxicity in H9c2 cells via the PI3K/AKT signaling pathway.\n\nThe pathogenesis of acute myocardial infarction (AMI) is associated with cardiomyocyte necrosis and apoptosis. Numerous studies have determined the regulatory effects of Phosphatase and tensin homolog (PTEN) cell proliferation and apoptosis in other cell types. However, the potential role of PTEN in cardiomyocyte is unclear. In this study, we used H9c2 cells cultured under serum deprivation to simulate the apoptosis process of myocardial infarction. Small interference RNA (siRNA) of PTEN was used to knock down the expression of PTEN. Cell viability was determined by CCK-8. Cell proliferation was examined by Edu staining, and the protein expression was analyzed by Western blot. We also evaluated the generation of ROS, the degree of DNA damage, and cell apoptosis using immunofluorescence assay. As a result, we observed that serum deprivation in H9c2 cells increased PTEN expression. Functionally, the PTEN knockdown experiment using siRNA inhibited serum deprivation-induced cell apoptosis, ROS production, and DNA damage, whereas increased cell proliferation. All these effects could be reversed by phosphatidylinositol 3-kinase (PI3K) inhibitor, which indicated the PI3K/protein kinase B (AKT) might be the critical component of the PTEN effects during serum deficiency. In conclusion, our study indicated the role of the PTEN/PI3K/AKT pathway in serum deprivation-induced cytotoxicity in H9c2 cells.",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/33652126/"
+      },
+      "title": "PTEN mediates serum deprivation-induced cytotoxicity in H9c2 cells via the PI3K/AKT signaling pathway."
+    }
+  ],
+  "selection_basis": "The complete frozen Contract 10 four-paper regression set, selected before its first inference; no candidate outputs were available at selection time.",
+  "semantic_schema_sha256": "023435da3fa18abb77987313626636eff7bedda28739603db54a2f2c8137c945",
+  "system_prompt_sha256": "13f38a6e94db74b534eb0df0b139287ace2e714fc908276ce4c3572f9b25836f"
+}

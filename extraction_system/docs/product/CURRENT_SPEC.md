@@ -65,6 +65,9 @@ AIONER / PubTator-style NER remains preserved as evaluation/history evidence.
 - the model-independent `EntityExtractor` / `Entity` contract;
 - source-span, schema, stable-ID, and confidence validation;
 - the existing grounded LLM relation extractor over supplied entities;
+- an opt-in background Responses execution mode for relation extraction, with
+  strict provider transport kept separate from the unchanged semantic relation
+  contract, prompt, parsing, and local validation;
 - NER evaluation artifacts as preserved evidence, without reopening target-domain
   model selection;
 - adapter/output normalization into the stable local entity representation;
@@ -104,8 +107,11 @@ not include:
 - target-domain NER evaluation, model selection, or fine-tuning; the existing
   reconnaissance, pilot, validator, and training-readiness assets remain
   preserved for later use;
-- relation-model quality evaluation or live external-provider smoke beyond the
-  existing grounded extraction seam;
+- relation-model default promotion; GPT-6.1 Sol with medium reasoning and
+  Standard service is an explicitly selectable background candidate validated
+  through a frozen four-paper production-path regression. Existing production
+  defaults remain in place pending scientific review and a separate promotion
+  decision;
 - biomedical entity normalization/linking, meaning resolution of a mention to a
   canonical biomedical identity or identifier;
 - collapsing the isolated HunFlair2 runtime into the production dependency graph;
@@ -338,6 +344,11 @@ runtime dependencies remain isolated from the main production environment.
   precedence logic.
 - Relations may be extracted only from supplied normalized entities and verbatim
   source evidence through the existing validation path.
+- Provider execution mode and strict transport conversion do not change the
+  relation prompt, semantic schema, parser, or local validation contract. The
+  background mode is opt-in; model, reasoning, service-tier, polling, and
+  per-generation timeout settings remain configurable, with the existing model
+  and synchronous execution preserved as defaults until a separate promotion.
 - Each grounded relation retains a concise graph-friendly predicate plus a
   required source-grounded assertion and optional explicit intervention,
   effects, and contextual qualifiers. These semantic qualifiers remain on the

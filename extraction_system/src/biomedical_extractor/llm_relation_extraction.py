@@ -2,17 +2,21 @@
 
 The harness owns prompt construction, OpenAI model creation, structured-output
 binding, and a small repair budget.  It returns only the local relation contract
-from :mod:`biomedical_extractor.relation_extraction`.  The active OpenAI path
-uses LangChain's explicit Responses API integration; provider-specific response
-objects remain inside this module.
+from :mod:`biomedical_extractor.relation_extraction`. The default OpenAI path
+uses LangChain; an explicit background setting uses the bounded Responses
+executor. Provider-specific objects remain behind this relation boundary.
 """
 
 from __future__ import annotations
 
 import json
+import math
 import os
+import re
+import time
+from copy import deepcopy
 from dataclasses import dataclass, field
-from typing import Any, Mapping, Sequence
+from typing import Any, Callable, Mapping, Sequence
 
 from .entity_extraction import Entity
 from .relation_extraction import (
@@ -20,6 +24,11 @@ from .relation_extraction import (
     RelationExtractionResult,
     RelationValidationError,
     validate_relations,
+)
+from .responses_execution import (
+    REQUEST_TIMEOUT_SECONDS,
+    ResponsesBackgroundExecutor,
+    ResponsesExecutionError,
 )
 
 DEFAULT_LLM_RELATION_MODEL = "gpt-5.6-luna"
@@ -32,6 +41,14 @@ SUPPORTED_LLM_REASONING_EFFORTS = (
     "high",
     "xhigh",
     "max",
+)
+SUPPORTED_LLM_SERVICE_TIERS = (
+    "auto",
+    "default",
+    "flex",
+    "scale",
+    "priority",
+    "fast",
 )
 
 RELATION_EXTRACTION_SYSTEM_PROMPT = """You are a conservative biomedical relation extractor.
@@ -76,20 +93,24 @@ useful. Do not emit explanations outside the structured response.
 
 @dataclass(frozen=True)
 class OpenAIConfig:
-    """External configuration for the initial OpenAI-backed relation path.
+    """External configuration for the OpenAI-backed relation path.
 
     API credentials are read from ``api_key_env`` unless an in-memory key is
-    explicitly supplied by application configuration.  The key is excluded from
-    the dataclass representation and is never serialized by this package.
+    explicitly supplied by application configuration. The key and base URL are
+    excluded from the dataclass representation and provider diagnostics.
     """
 
     model: str = DEFAULT_LLM_RELATION_MODEL
     api_key_env: str = "OPENAI_API_KEY"
     api_key: str | None = field(default=None, repr=False)
-    base_url: str | None = None
+    base_url: str | None = field(default=None, repr=False)
     reasoning_effort: str = DEFAULT_LLM_REASONING_EFFORT
     max_completion_tokens: int | None = DEFAULT_LLM_MAX_COMPLETION_TOKENS
     max_retries: int = 2
+    background: bool = False
+    service_tier: str | None = None
+    poll_interval_seconds: float = 3.0
+    generation_timeout_seconds: float = 900.0
 
     def __post_init__(self) -> None:
         if not isinstance(self.model, str) or not self.model.strip():
@@ -107,12 +128,39 @@ class OpenAIConfig:
             )
         if self.max_retries < 0:
             raise ValueError("OpenAI max_retries must not be negative")
+        if not isinstance(self.background, bool):
+            raise ValueError("OpenAI background must be a boolean")
+        if (
+            self.service_tier is not None
+            and self.service_tier not in SUPPORTED_LLM_SERVICE_TIERS
+        ):
+            raise ValueError(
+                "OpenAI service_tier must be one of: "
+                f"{', '.join(SUPPORTED_LLM_SERVICE_TIERS)}"
+            )
+        for name, value in (
+            ("poll_interval_seconds", self.poll_interval_seconds),
+            ("generation_timeout_seconds", self.generation_timeout_seconds),
+        ):
+            if (
+                isinstance(value, bool)
+                or not isinstance(value, (int, float))
+                or not math.isfinite(float(value))
+                or value <= 0
+            ):
+                raise ValueError(f"OpenAI {name} must be positive and finite")
 
     @classmethod
     def from_environment(cls) -> OpenAIConfig:
         """Read non-secret model settings and the optional API key from env vars."""
 
         max_completion_tokens = os.getenv("BIOMEDICAL_RELATION_MAX_COMPLETION_TOKENS")
+        background = _parse_environment_bool(
+            os.getenv("BIOMEDICAL_RELATION_BACKGROUND", "false"),
+            "BIOMEDICAL_RELATION_BACKGROUND",
+        )
+        poll_interval = os.getenv("BIOMEDICAL_RELATION_POLL_INTERVAL_SECONDS")
+        generation_timeout = os.getenv("BIOMEDICAL_RELATION_TIMEOUT_SECONDS")
         return cls(
             model=os.getenv("BIOMEDICAL_RELATION_MODEL", DEFAULT_LLM_RELATION_MODEL),
             api_key_env=os.getenv("OPENAI_API_KEY_ENV", "OPENAI_API_KEY"),
@@ -128,6 +176,12 @@ class OpenAIConfig:
                 else DEFAULT_LLM_MAX_COMPLETION_TOKENS
             ),
             max_retries=int(os.getenv("BIOMEDICAL_RELATION_MAX_RETRIES", "2")),
+            background=background,
+            service_tier=os.getenv("BIOMEDICAL_RELATION_SERVICE_TIER") or None,
+            poll_interval_seconds=(float(poll_interval) if poll_interval else 3.0),
+            generation_timeout_seconds=(
+                float(generation_timeout) if generation_timeout else 900.0
+            ),
         )
 
     def resolved_api_key(self) -> str:
@@ -143,7 +197,7 @@ class OpenAIConfig:
 
 
 class LLMRelationExtractor:
-    """Run a LangChain-compatible chat model behind the local RE contract."""
+    """Run OpenAI or injected models behind the local relation contract."""
 
     def __init__(
         self,
@@ -151,6 +205,8 @@ class LLMRelationExtractor:
         *,
         max_retries: int = 2,
         prompt: str = RELATION_EXTRACTION_SYSTEM_PROMPT,
+        diagnostics_callback: Callable[[dict[str, Any]], None] | None = None,
+        redaction_values: Sequence[str] = (),
     ) -> None:
         """Bind a chat/runnable model and a finite bounded repair budget.
 
@@ -161,9 +217,12 @@ class LLMRelationExtractor:
         does not impose a finite predicate ontology.
         """
 
-        if not callable(getattr(model, "invoke", None)) and not callable(
-            getattr(model, "with_structured_output", None)
-        ):
+        self._background_executor = (
+            model if isinstance(model, ResponsesBackgroundExecutor) else None
+        )
+        if self._background_executor is None and not callable(
+            getattr(model, "invoke", None)
+        ) and not callable(getattr(model, "with_structured_output", None)):
             raise TypeError(
                 "LLM relation model must expose invoke(prompt) or "
                 "with_structured_output(schema)"
@@ -172,18 +231,75 @@ class LLMRelationExtractor:
             raise ValueError("max_retries must not be negative")
         self._max_retries = max_retries
         self._prompt = prompt
-        self._model = _bind_structured_output(model)
-        if not callable(getattr(self._model, "invoke", None)):
+        self._model = (
+            None
+            if self._background_executor is not None
+            else _bind_structured_output(model)
+        )
+        if self._model is not None and not callable(getattr(self._model, "invoke", None)):
             raise TypeError("Structured relation model must expose callable invoke(prompt)")
+        self._diagnostics_callback = diagnostics_callback
+        self._redaction_values = tuple(value for value in redaction_values if value)
+        self._last_generation_diagnostics: list[dict[str, Any]] = []
+
+    @property
+    def last_generation_diagnostics(self) -> tuple[dict[str, Any], ...]:
+        """Return copied plain-data diagnostics for each generation in the last call."""
+
+        return tuple(deepcopy(self._last_generation_diagnostics))
 
     @classmethod
     def from_openai(
-        cls, config: OpenAIConfig | None = None
+        cls,
+        config: OpenAIConfig | None = None,
+        *,
+        diagnostics_callback: Callable[[dict[str, Any]], None] | None = None,
     ) -> LLMRelationExtractor:
-        """Construct the initial OpenAI provider path from external config."""
+        """Construct the configured OpenAI path without changing local semantics."""
 
         config = config or OpenAIConfig.from_environment()
         api_key = config.resolved_api_key()
+        redaction_values = (api_key, config.base_url or "")
+        if config.background:
+            try:
+                from openai import OpenAI
+            except ImportError:  # pragma: no cover - dependency install failure
+                raise RuntimeError(
+                    "The OpenAI background relation path requires the openai dependency"
+                ) from None
+            kwargs: dict[str, Any] = {
+                "api_key": api_key,
+                "max_retries": 0,
+                "timeout": REQUEST_TIMEOUT_SECONDS,
+            }
+            if config.base_url is not None:
+                kwargs["base_url"] = config.base_url
+            try:
+                client = OpenAI(**kwargs)
+            except Exception as error:
+                raise RuntimeError(
+                    "Could not initialize OpenAI background client "
+                    f"({_safe_error_type(error)})"
+                ) from None
+            executor = ResponsesBackgroundExecutor(
+                client,
+                model=config.model,
+                reasoning_effort=config.reasoning_effort,
+                max_output_tokens=config.max_completion_tokens,
+                service_tier=config.service_tier,
+                poll_interval_seconds=float(config.poll_interval_seconds),
+                generation_timeout_seconds=float(config.generation_timeout_seconds),
+                schema=_structured_payload_schema(),
+                diagnostics_callback=diagnostics_callback,
+                redaction_values=redaction_values,
+            )
+            return cls(
+                executor,
+                max_retries=config.max_retries,
+                diagnostics_callback=diagnostics_callback,
+                redaction_values=redaction_values,
+            )
+
         try:
             from langchain_openai import ChatOpenAI
         except ImportError as error:  # pragma: no cover - exercised in bad installs
@@ -204,10 +320,20 @@ class LLMRelationExtractor:
             kwargs["max_completion_tokens"] = config.max_completion_tokens
         if config.base_url is not None:
             kwargs["base_url"] = config.base_url
+        if config.service_tier is not None:
+            kwargs["service_tier"] = config.service_tier
 
+        try:
+            model = ChatOpenAI(**kwargs)
+        except Exception as error:
+            raise RuntimeError(
+                f"Could not initialize OpenAI relation client ({_safe_error_type(error)})"
+            ) from None
         return cls(
-            ChatOpenAI(**kwargs),
+            model,
             max_retries=config.max_retries,
+            diagnostics_callback=diagnostics_callback,
+            redaction_values=redaction_values,
         )
 
     def extract_relations(
@@ -215,6 +341,7 @@ class LLMRelationExtractor:
     ) -> RelationExtractionResult:
         """Extract, validate, and deduplicate grounded relations."""
 
+        self._last_generation_diagnostics = []
         if not isinstance(text, str):
             raise TypeError("text must be a string")
 
@@ -225,26 +352,82 @@ class LLMRelationExtractor:
 
         prompt = _build_prompt(text, entities, self._prompt)
         for attempt in range(self._max_retries + 1):
-            try:
-                response = self._model.invoke(prompt)
-            except Exception as error:
-                if not _is_generated_output_error(error):
+            generation_diagnostics = {
+                "generation_number": attempt + 1,
+                "repair": bool(attempt),
+                "execution_mode": (
+                    "background" if self._background_executor is not None else "invoke"
+                ),
+                "status": "started",
+            }
+            self._last_generation_diagnostics.append(generation_diagnostics)
+            generation_started = time.monotonic()
+            output_error: Exception | None = None
+            if self._background_executor is not None:
+                try:
+                    response = self._background_executor.execute(
+                        prompt, generation_diagnostics
+                    )
+                except ResponsesExecutionError as error:
+                    generation_diagnostics.update(error.diagnostics)
                     raise RelationExtractionError(
                         f"LLM relation provider invocation failed: {error}"
-                    ) from error
-                output_error = error
+                    ) from None
             else:
                 try:
+                    response = self._model.invoke(prompt)
+                except Exception as error:
+                    generation_diagnostics["elapsed_seconds"] = round(
+                        max(0.0, time.monotonic() - generation_started), 3
+                    )
+                    if not _is_generated_output_error(error):
+                        generation_diagnostics.update(
+                            status="provider_failed",
+                            error_type=_safe_error_type(error),
+                        )
+                        self._publish_diagnostics(generation_diagnostics)
+                        raise RelationExtractionError(
+                            "LLM relation provider invocation failed: "
+                            f"{_safe_exception_text(error, self._redaction_values)}"
+                        ) from None
+                    output_error = error
+                    generation_diagnostics.update(
+                        status="output_invalid",
+                        output_error_type=_safe_error_type(error),
+                    )
+
+            if output_error is None:
+                try:
                     raw_relations = _parse_structured_response(response)
-                    return validate_relations(text, entities, raw_relations)
+                    validated = validate_relations(text, entities, raw_relations)
                 except RelationValidationError as error:
                     output_error = error
+                    generation_diagnostics.update(
+                        status="output_invalid",
+                        output_error_type=_safe_error_type(error),
+                    )
+                else:
+                    generation_diagnostics.update(
+                        status="success",
+                        elapsed_seconds=round(
+                            max(0.0, time.monotonic() - generation_started), 3
+                        ),
+                        validated_relation_count=len(validated.relations),
+                    )
+                    self._publish_diagnostics(generation_diagnostics)
+                    return validated
+
+            generation_diagnostics["elapsed_seconds"] = round(
+                max(0.0, time.monotonic() - generation_started), 3
+            )
+            self._publish_diagnostics(generation_diagnostics)
 
             if attempt >= self._max_retries:
                 raise RelationExtractionError(
                     "LLM relation output remained invalid after "
-                    f"{attempt + 1} bounded attempt(s): {output_error}"
-                ) from output_error
+                    f"{attempt + 1} bounded attempt(s): "
+                    f"{_safe_exception_text(output_error, self._redaction_values)}"
+                ) from None
 
             prompt = _build_prompt(
                 text,
@@ -257,6 +440,22 @@ class LLMRelationExtractor:
         # The loop always returns or raises.  Keeping this guard makes the
         # invariant explicit if the retry implementation changes later.
         raise RelationExtractionError("LLM relation extraction stopped unexpectedly")
+
+    def _publish_diagnostics(self, diagnostics: dict[str, Any]) -> None:
+        """Send a detached copy of one safe generation snapshot to the caller."""
+
+        if self._diagnostics_callback is None:
+            return
+        try:
+            self._diagnostics_callback(deepcopy(diagnostics))
+        except BaseException as error:
+            diagnostics.update(
+                status="diagnostics_callback_failed",
+                diagnostics_callback_error_type=_safe_error_type(error),
+            )
+            raise RelationExtractionError(
+                "LLM relation diagnostics callback failed"
+            ) from None
 
 
 # The longer name is useful to callers that want to make the framework boundary
@@ -486,3 +685,45 @@ def _strip_code_fence(value: str) -> str:
     if lines and lines[-1].strip() == "```":
         lines = lines[:-1]
     return "\n".join(lines).strip()
+
+
+def _parse_environment_bool(value: str, name: str) -> bool:
+    """Parse a deliberate true/false environment setting without guessing."""
+
+    normalized = value.strip().lower()
+    if normalized in {"true", "1", "yes"}:
+        return True
+    if normalized in {"false", "0", "no"}:
+        return False
+    raise ValueError(f"{name} must be true or false")
+
+
+def _safe_error_type(error: BaseException) -> str:
+    """Return a bounded exception class label without its provider message."""
+
+    name = type(error).__name__
+    return name if re.fullmatch(r"[A-Za-z0-9_]{1,80}", name) else "ProviderError"
+
+
+def _safe_exception_text(error: BaseException, secrets: Sequence[str]) -> str:
+    """Keep useful local error context while stripping credentials and URLs."""
+
+    try:
+        message = str(error)
+    except BaseException:
+        return _safe_error_type(error)
+    for secret in secrets:
+        if secret:
+            message = message.replace(secret, "[REDACTED]")
+            trimmed = secret.rstrip("/")
+            if trimmed and trimmed != secret:
+                message = message.replace(trimmed, "[REDACTED]")
+    message = re.sub(r"(?i)https?://[^\s\"'<>]+", "[REDACTED_URL]", message)
+    message = re.sub(r"(?i)\bsk-[A-Za-z0-9_-]{8,}\b", "[REDACTED]", message)
+    message = re.sub(r"(?i)bearer\s+\S+", "Bearer [REDACTED]", message)
+    message = re.sub(
+        r"(?i)(api[_-]?key|authorization)(\s*[:=]\s*)[\"']?[^,\s\"']+",
+        r"\1\2[REDACTED]",
+        message,
+    )
+    return message[:500] if message else _safe_error_type(error)

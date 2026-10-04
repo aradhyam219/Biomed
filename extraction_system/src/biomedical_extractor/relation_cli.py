@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import json
 from collections.abc import Sequence
+from dataclasses import replace
 
 from .entity_extraction import Entity
 from .llm_relation_extraction import (
@@ -37,13 +38,9 @@ def openai_config_from_args(args: argparse.Namespace) -> OpenAIConfig:
     """Combine CLI overrides with non-secret environment configuration."""
 
     environment = OpenAIConfig.from_environment()
-    return OpenAIConfig(
+    return replace(
+        environment,
         model=args.model or environment.model,
-        api_key_env=environment.api_key_env,
-        api_key=environment.api_key,
-        base_url=environment.base_url,
-        reasoning_effort=environment.reasoning_effort,
-        max_completion_tokens=environment.max_completion_tokens,
         max_retries=(
             environment.max_retries
             if args.max_retries is None

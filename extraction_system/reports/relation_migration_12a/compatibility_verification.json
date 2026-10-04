@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "starting_sha": "96b8312879b337c57aba51342676890602b5c30d",
+  "protected_files_unchanged": {
+    "src/biomedical_extractor/entity_extraction.py": true,
+    "src/biomedical_extractor/hunflair2.py": true,
+    "src/biomedical_extractor/entity_assembly.py": true,
+    "src/biomedical_extractor/relation_extraction.py": true,
+    "src/biomedical_extractor/graph.py": true,
+    "src/biomedical_extractor/llm_pipeline.py": true,
+    "viewer/adapter.js": true,
+    "viewer/app.js": true
+  },
+  "semantic_functions_ast_identical": {
+    "_build_prompt": true,
+    "_structured_payload_schema": true,
+    "_parse_structured_response": true,
+    "_response_payload": true,
+    "_model_mapping": true,
+    "_strip_code_fence": true,
+    "_is_generated_output_error": true
+  },
+  "system_prompt_sha256": "13f38a6e94db74b534eb0df0b139287ace2e714fc908276ce4c3572f9b25836f",
+  "semantic_schema_sha256": "023435da3fa18abb77987313626636eff7bedda28739603db54a2f2c8137c945",
+  "strict_transport_sha256": "b0506680756b7ad8332d976a419cdee57a81e1051dd115f291f65d77bd656510",
+  "ordinary_defaults_unchanged": true,
+  "strict_transport_matches_successful_11sr_public_sdk_capture": true
+}

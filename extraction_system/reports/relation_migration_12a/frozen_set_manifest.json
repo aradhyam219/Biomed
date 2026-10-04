@@ -1,0 +1,228 @@
+{
+  "baseline_commit": "96b8312879b337c57aba51342676890602b5c30d",
+  "candidate": {
+    "background": true,
+    "service_label": "Standard",
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "medium",
+    "service_tier": "default"
+  },
+  "compatibility_notes": {
+    "10rc_10rd_policy": "Later identity-verifier/role graphs are recorded as history references, not used as the graph baseline. The selected control is the saved Contract 10 relations replayed through the current deterministic pipeline.",
+    "credentials": "No credentials or provider error bodies are stored in the frozen inputs.",
+    "entity_input": "The saved Contract 10 mention-level entity packet is embedded in frozen_inputs.json and must be returned unchanged by the injected extractor.",
+    "re_relation_source": "Exact saved title plus complete abstract text, even where the current corpus also stores full paper text.",
+    "role_policy": "Paper roles are omitted from both migration comparison paths. Existing Contract 10 and 10R-D role artifacts are provenance references only; no frozen roles are replayed onto candidate graphs."
+  },
+  "contract": "12A",
+  "contract_10_run_window": "2026-09-21; frozen four-paper run, completed before the Contract 10 report commit",
+  "contract_10_selection_commit": "16b00b4e7ebe99ec257adf93917d3487629be257",
+  "frozen_inputs_file_sha256": "1bae54816ced884e7e52cf763a77a2fcf1edd69ac9eeeaa1055f0550cc99ac93",
+  "frozen_inputs_path": "reports/relation_migration_12a/frozen_inputs.json",
+  "protected_start_invariants_path": "reports/relation_migration_12a/protected_start_invariants.json",
+  "protected_start_invariants_sha256": "f3299415a32250d256cd07ac0f8acac6ec692dbdc2f28adcb281d0bdaf48d5f2",
+  "historical_equivalence": {
+    "control_baseline": "Reuse saved Contract 10 relation outputs after source/entity/prompt/schema equivalence checks; rebuild both control and candidate graphs through current LLMExtractionPipeline.extract_graph.",
+    "paid_baseline_required": false,
+    "protected_git_blobs_identical_to_contract_10_commit": {
+      "src/biomedical_extractor/entity_assembly.py": {
+        "baseline_blob": "2b9dfbba636aee5ccfedab4f2cb99f6f50afad6b",
+        "contract_10_blob": "2b9dfbba636aee5ccfedab4f2cb99f6f50afad6b"
+      },
+      "src/biomedical_extractor/graph.py": {
+        "baseline_blob": "ccbc8672b01234be57c538abfdbca17d5d95e508",
+        "contract_10_blob": "ccbc8672b01234be57c538abfdbca17d5d95e508"
+      },
+      "src/biomedical_extractor/llm_pipeline.py": {
+        "baseline_blob": "a83437ea2db3b06acfe3ad798b64626c880d1746",
+        "contract_10_blob": "a83437ea2db3b06acfe3ad798b64626c880d1746"
+      },
+      "src/biomedical_extractor/llm_relation_extraction.py": {
+        "baseline_blob": "2759a09ef508b27a571f989e851dcd1e9992370b",
+        "contract_10_blob": "2759a09ef508b27a571f989e851dcd1e9992370b"
+      },
+      "src/biomedical_extractor/pipeline.py": {
+        "baseline_blob": "2f63458e07299ff1eeac4f5858296db75980f0f8",
+        "contract_10_blob": "2f63458e07299ff1eeac4f5858296db75980f0f8"
+      },
+      "src/biomedical_extractor/relation_extraction.py": {
+        "baseline_blob": "8f8ffaad75f8a2335e947597780ce99297cf73a3",
+        "contract_10_blob": "8f8ffaad75f8a2335e947597780ce99297cf73a3"
+      }
+    },
+    "semantic_schema_sha256": "023435da3fa18abb77987313626636eff7bedda28739603db54a2f2c8137c945",
+    "system_prompt_sha256": "13f38a6e94db74b534eb0df0b139287ace2e714fc908276ce4c3572f9b25836f"
+  },
+  "papers": [
+    {
+      "historical_contract_10_graph": {
+        "edges": 19,
+        "evidence_records": 19,
+        "genuine_self_edges": [],
+        "nodes": 20,
+        "path": "reports/relation_contract_10/graphs/pmcid_pmc11824863.json",
+        "sha256": "76d4c5b353e6d68a4c8a79d5e37a0486b63c435adc16a5632cb7ccc3b04fe47b",
+        "unconnected_nodes": 3
+      },
+      "later_10rc_graph_reference": {
+        "path": ".cache/contract_10r/final_10rc/graphs/pmcid_pmc11824863.json",
+        "role_cache_path": ".cache/contract_10r/role_runs_10rd/pmcid_pmc11824863.json",
+        "role_cache_sha256": "8078b8fcf279b48ea8a5ac6a6aad58584faa636a442437a0894dd5328972586d",
+        "sha256": "c86b630a1227c5f47ed01da02efb5b3eae6f0b674055430d1aabb7bebe5a2b1b"
+      },
+      "ner": {
+        "all_spans_match_source": true,
+        "entities_canonical_sha256": "7af02036660ba6d5581468deb3b777039c7a6912d4ea4c5ee1027387d10f5e0b",
+        "entity_count": 41
+      },
+      "paper_id": "PMCID:PMC11824863",
+      "relation_baseline": {
+        "model": "gpt-5.6-luna",
+        "provider_attempts": 1,
+        "reasoning_effort": "max",
+        "relation_count": 19,
+        "relations_canonical_sha256": "811609eeceba75d865638e9b1d24341b5513db271ac777d7be22f52d568bfce9",
+        "repair_attempts": 0
+      },
+      "slug": "pmcid_pmc11824863",
+      "source": {
+        "canonical_full_text_sha256": "8a43f612139aa84939933831a5bc7f5420122549fd69081d635b7becb80d2a15",
+        "canonical_source_checksum": "7d67a720ddc0b04f5cd9dbae443b094df08120ff01f8c19fbcbd421933f91b75",
+        "characters": 1496,
+        "scope": "title plus complete abstract",
+        "selected_text_sha256": "604ce7f15b0ca00853cfc4cc07039d51059792e907d3da07c08be40730fb1b5b"
+      }
+    },
+    {
+      "historical_contract_10_graph": {
+        "edges": 29,
+        "evidence_records": 30,
+        "genuine_self_edges": [],
+        "nodes": 20,
+        "path": "reports/relation_contract_10/graphs/pmcid_pmc8605525.json",
+        "sha256": "f854f1af9d1bfa854e5c1f9e538f2fa541bc769bc251fa6f44eaffba4694dc0a",
+        "unconnected_nodes": 6
+      },
+      "later_10rc_graph_reference": {
+        "path": ".cache/contract_10r/final_10rc/graphs/pmcid_pmc8605525.json",
+        "role_cache_path": ".cache/contract_10r/role_runs_10rd/pmcid_pmc8605525.json",
+        "role_cache_sha256": "993fb0a6f89e7c4b5dec714bc43f9510dd0805fa89dc63b3993984acf49ad2be",
+        "sha256": "0b67a48c7940fa258c0875ce4ac5c2bdbb5917f5008ef78f23e02b5e9f2062b4"
+      },
+      "ner": {
+        "all_spans_match_source": true,
+        "entities_canonical_sha256": "b057ae8af56a8430b3758804398d67843d5fbc5273b64910f7d861bcaac6a369",
+        "entity_count": 66
+      },
+      "paper_id": "PMCID:PMC8605525",
+      "relation_baseline": {
+        "model": "gpt-5.6-luna",
+        "provider_attempts": 1,
+        "reasoning_effort": "max",
+        "relation_count": 30,
+        "relations_canonical_sha256": "dd04cbf3a12392d0bb41237f1974ca4e08fdc86be47be3f223e03e0face8ffac",
+        "repair_attempts": 0
+      },
+      "slug": "pmcid_pmc8605525",
+      "source": {
+        "canonical_full_text_sha256": "99355676f17885e8920e1f56447b8c6aff219cb6be09d76777084e339261a39b",
+        "canonical_source_checksum": "263769c472b052a1b863becd98a6b85a33eb3f84548ba2999b67083042bab28f",
+        "characters": 2022,
+        "scope": "title plus complete abstract",
+        "selected_text_sha256": "558fd77eab8e192fe9b7c625b3186a6b8f1c44bcad0c7430ba3dedc6ffb7c5a6"
+      }
+    },
+    {
+      "historical_contract_10_graph": {
+        "edges": 19,
+        "evidence_records": 22,
+        "genuine_self_edges": [],
+        "nodes": 15,
+        "path": "reports/relation_contract_10/graphs/pmid_27172794.json",
+        "sha256": "dd4d88108a3b4b273e82caad8c8266e8f7c0e10179e1c5252d93c1aa5c267d31",
+        "unconnected_nodes": 2
+      },
+      "later_10rc_graph_reference": {
+        "path": ".cache/contract_10r/final_10rc/graphs/pmid_27172794.json",
+        "role_cache_path": ".cache/contract_10r/role_runs_10rd/pmid_27172794.json",
+        "role_cache_sha256": "5ae854db6de9709f558d50c7e4883af28b63030c9b9269bf27e74baa7692696d",
+        "sha256": "d2ba87bf85905181c8aebd3567738de487e830248c473456775348d0290d335f"
+      },
+      "ner": {
+        "all_spans_match_source": true,
+        "entities_canonical_sha256": "1de1109a365b2634285f9c669288ec33c4b159cf83895586e7a08d0eac00672e",
+        "entity_count": 41
+      },
+      "paper_id": "PMID:27172794",
+      "relation_baseline": {
+        "model": "gpt-5.6-luna",
+        "provider_attempts": 1,
+        "reasoning_effort": "max",
+        "relation_count": 22,
+        "relations_canonical_sha256": "090a4dafc574462aa409b6f0530398e362352a25440b3dc8d97681c233d1eb53",
+        "repair_attempts": 0
+      },
+      "slug": "pmid_27172794",
+      "source": {
+        "canonical_full_text_sha256": "50d58062a480653e0f414aad9e62aca434898fa3fcc6f372722454bd75407a0c",
+        "canonical_source_checksum": "ab6a79cdf2f0e535593ef30397e37b90b09caaaffa97133e79da4d7d18a81112",
+        "characters": 1620,
+        "scope": "title plus complete abstract",
+        "selected_text_sha256": "50d58062a480653e0f414aad9e62aca434898fa3fcc6f372722454bd75407a0c"
+      }
+    },
+    {
+      "historical_contract_10_graph": {
+        "edges": 10,
+        "evidence_records": 12,
+        "genuine_self_edges": [
+          {
+            "id": "doc_r_001",
+            "predicate": "knocks_down_expression_of",
+            "source": "doc_e_001",
+            "target": "doc_e_001"
+          }
+        ],
+        "nodes": 10,
+        "path": "reports/relation_contract_10/graphs/pmid_33652126.json",
+        "sha256": "e28963a39c0ee8e6014d6018a2cd9b1126bea011fe044ea472424e295be9b30b",
+        "unconnected_nodes": 2
+      },
+      "later_10rc_graph_reference": {
+        "path": ".cache/contract_10r/final_10rc/graphs/pmid_33652126.json",
+        "role_cache_path": ".cache/contract_10r/role_runs_10rd/pmid_33652126.json",
+        "role_cache_sha256": "1c2b92b7592e2d3378d937f7645fe9bb6af6bf067a172f50119d79d54f2a06b0",
+        "sha256": "a9571b3f378b0d3c6f0b76c919cc9c79e15e86ab77585d6c89a2d96f7851b9f0"
+      },
+      "ner": {
+        "all_spans_match_source": true,
+        "entities_canonical_sha256": "a1ebbe50f6cd19b51a81f56bd6735d7dbfe6b1f80479d6d4e9bc22642f3b7155",
+        "entity_count": 33
+      },
+      "paper_id": "PMID:33652126",
+      "relation_baseline": {
+        "model": "gpt-5.6-luna",
+        "provider_attempts": 1,
+        "reasoning_effort": "max",
+        "relation_count": 12,
+        "relations_canonical_sha256": "6b71e58694c9e524a50e359ee2e506d1f49575abbec95dc540287769d6e7676f",
+        "repair_attempts": 0
+      },
+      "slug": "pmid_33652126",
+      "source": {
+        "canonical_full_text_sha256": "44ee744a2e60c788db16927b63cda446174733d38c5e1cdb13e112af30f295e6",
+        "canonical_source_checksum": "e3e8f47692be6518143088a39b29e7940768ae40bb515de9e6abe25b783d8924",
+        "characters": 1516,
+        "scope": "title plus complete abstract",
+        "selected_text_sha256": "44ee744a2e60c788db16927b63cda446174733d38c5e1cdb13e112af30f295e6"
+      }
+    }
+  ],
+  "runtime_environment_at_freeze": {
+    "langchain-core": "1.6.3",
+    "langchain-openai": "1.6.2",
+    "openai": "3.14.1"
+  },
+  "selection_basis": "The complete frozen Contract 10 four-paper regression set, selected before its first inference; no candidate outputs were available at selection time.",
+  "status": "frozen_inputs_prepared_candidate_not_run"
+}

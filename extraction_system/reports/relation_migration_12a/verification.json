@@ -1,0 +1,95 @@
+{
+  "contract": "12A",
+  "status": "passed",
+  "starting_sha": "96b8312879b337c57aba51342676890602b5c30d",
+  "tests": [
+    {
+      "command": ".venv\\Scripts\\python.exe -m unittest discover -s tests -v",
+      "status": "passed",
+      "test_count": 164,
+      "cached_log_path": ".cache/relation_migration_12a/python_tests.log",
+      "cached_log_sha256": "d653ac9312ba98a6097ad2d6cbe91aaf605c845877da550b014c4c52f7b898fb",
+      "coverage_note": "Full suite before four additional lifecycle cases were added; the final 23-case lifecycle suite subsequently passed against the unchanged production implementation.",
+      "elapsed_seconds": 25.034
+    },
+    {
+      "command": ".venv\\Scripts\\python.exe -m unittest discover -s tests -p test_responses_execution.py -v",
+      "status": "passed",
+      "test_count": 23,
+      "cached_log_path": ".cache/relation_migration_12a/focused_execution_tests.log",
+      "cached_log_sha256": "4bc219cc7da0d678e43a08c69fa86e4409f086b58f15f696631f9b6df4ebf091",
+      "elapsed_seconds": 6.756
+    },
+    {
+      "command": "node --test viewer/tests/adapter.test.mjs",
+      "status": "passed",
+      "test_count": 13,
+      "cached_log_path": ".cache/relation_migration_12a/viewer_tests.log",
+      "cached_log_sha256": "64ac3629ddf51ee9153af31b72cdac0c9c1e8f5664bfebbeab53dc514ecdaf09"
+    }
+  ],
+  "offline_harness": {
+    "status": "passed",
+    "candidate_papers": 1,
+    "checks": [
+      "actual extract_graph seam with frozen entities",
+      "atomic response-ID and safe diagnostic persistence",
+      "review packet exact relation and graph equality",
+      "duplicate rich-field pairing and evidence projection",
+      "directed edge identity comparison",
+      "environment and .env credential loader without secret reporting"
+    ]
+  },
+  "compatibility_evidence": "reports/relation_migration_12a/compatibility_verification.json",
+  "live_regression": {
+    "status": "complete",
+    "completed_papers": 4,
+    "configuration_requested_and_observed": {
+      "model": "gpt-6.1-sol",
+      "reasoning_effort": "medium",
+      "service_tier": "default",
+      "service_label": "Standard",
+      "background": true
+    },
+    "aggregate": {
+      "elapsed_seconds": 206.963442,
+      "generation_attempts": 4,
+      "repair_attempts": 0,
+      "poll_count": 59,
+      "poll_errors": 0,
+      "input_tokens": 15387,
+      "output_tokens": 11938,
+      "reasoning_tokens": 4166
+    },
+    "validated_relation_count": 66,
+    "graph_edge_count": 62
+  },
+  "graph_viewer_evidence": "reports/relation_migration_12a/viewer_smoke.json",
+  "packet_integrity": {
+    "source_and_entities_match_frozen_inputs": true,
+    "relation_and_graph_outputs_match_live_cache": true,
+    "node_identities_preserved_for_all_four_papers": true,
+    "rich_evidence_projection_exact_for_all_eight_graphs": true,
+    "archived_baseline_entities_and_edges_equal_control_ignoring_only_paper_roles": true,
+    "staged_frozen_snapshot_bytes_match_pre_run_checksums": {
+      "frozen_inputs.json": true,
+      "protected_start_invariants.json": true
+    },
+    "frozen_snapshot_git_policy": "Scoped -text attributes preserve exact pre-run snapshot bytes across Git line-ending conversion."
+  },
+  "safety": {
+    "configured_credentials_absent_from_changed_files": true,
+    "safe_diagnostics_and_tracebacks_tested": true,
+    "provider_sdk_retries_disabled": true,
+    "finite_generation_and_repair_limits_tested": true,
+    "production_imports_no_report_runtime": true
+  },
+  "review": {
+    "bounded_implementation_and_independent_review_agents": "gpt-6-luna at max reasoning",
+    "primary_agent_independent_diff_and_verification_review": true,
+    "material_technical_findings_remaining": []
+  },
+  "ordinary_defaults_changed": false,
+  "remaining_promotion_gate": "Talia/user scientific review of the recorded semantic and graph differences; a separate task must authorize the default promotion.",
+  "comparison_scope_note": "Both RE comparison paths omit paper roles. The saved baseline was reused after equivalence proof, with no paid baseline rerun."
+}

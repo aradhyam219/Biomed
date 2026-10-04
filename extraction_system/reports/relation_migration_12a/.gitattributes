@@ -1,0 +1,3 @@
+# Pre-run snapshot checksums cover exact bytes, including line endings.
+frozen_inputs.json -text whitespace=trailing-space,space-before-tab,cr-at-eol
+protected_start_invariants.json -text whitespace=trailing-space,space-before-tab,cr-at-eol

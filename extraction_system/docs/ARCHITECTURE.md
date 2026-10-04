@@ -296,25 +296,54 @@ for final evaluation.
 The controlled LLM relation implementation is an active downstream capability of
 the composed HunFlair2 path. It accepts only the normalized entities returned by
 the entity seam and returns relations after the existing evidence, endpoint, and
-negation validation. Its active OpenAI provider path uses LangChain's explicit
-Responses API integration with `gpt-5.6-luna`, standard/default reasoning mode,
-`reasoning.effort=max`, and a `128000` output-token ceiling. The public
-`max_completion_tokens` configuration name remains for compatibility and is
-mapped to the Responses API output-token field below this provider-independent
-seam; structured output and bounded repair also remain inside the harness. The
-legacy GLiREL-compatible relation/evaluation path and its historical diagnostics
-remain preserved separately.
+negation validation. The OpenAI path keeps the existing LangChain Responses
+execution as its default and also supports opt-in background Responses execution
+inside `llm_relation_extraction` and `responses_execution`. `OpenAIConfig`
+defaults preserve `gpt-5.6-luna`, `reasoning.effort=max`, a `128000` output-token
+ceiling, synchronous execution, and no requested service tier. The public
+`max_completion_tokens` configuration name remains for compatibility and maps to
+the Responses API output-token field.
 
-Experimental Contract 11 background execution remains outside the production
-provider path. `tools/contract11/run.py` reuses the frozen benchmark lifecycle in
-`reports/luna_gpt6_background_probe_11s/scripts/run_background_probe_11sr.py`
-and the model-selection orchestration in `reports/model_selection_11u/scripts/`.
-It writes new runs to fresh report directories using tracked frozen source/entity
-inputs. Strict SDK transport-schema conversion precedes unchanged Contract 10
-parsing and validation; background polling, cancellation, usage, tiers, costs,
-and blind review packets belong to this experimental boundary. Preserved 11U
-A/B/C records and later known-identity supplemental D records remain distinct.
-Selection of GPT-6.1 Sol medium Standard has not changed production defaults.
+Background execution submits one generation, retains its stable response ID,
+polls at a configurable interval until a terminal state or configurable
+per-generation deadline, and attempts bounded cancellation after timeout or
+interruption. Provider SDK retries are disabled. Only parse or semantic
+validation failures consume the existing finite repair budget. Requested and
+observed model, reasoning effort, service tier, status, response ID, elapsed
+time, safe provider error fields, token usage, and repair-attempt state are
+available as plain-data diagnostics. Credentials, provider response objects, and
+SDK objects remain inside the provider boundary.
+
+The semantic relation schema, prompt, parsing, and local validation remain the
+Contract 10 control. Background transport uses the OpenAI SDK's strict Pydantic
+schema conversion and checks that the transport preserves the semantic fields;
+the resulting transport schema is not exposed as the application contract.
+The candidate can be explicitly selected with:
+
+```python
+OpenAIConfig(
+    model="gpt-6.1-sol",
+    reasoning_effort="medium",
+    background=True,
+    service_tier="default",
+)
+```
+
+The Responses API value `default` requests Standard service. The equivalent
+environment settings are `BIOMEDICAL_RELATION_MODEL`,
+`BIOMEDICAL_RELATION_REASONING_EFFORT`,
+`BIOMEDICAL_RELATION_BACKGROUND`, and `BIOMEDICAL_RELATION_SERVICE_TIER`.
+Polling defaults to 3 seconds through `BIOMEDICAL_RELATION_POLL_INTERVAL_SECONDS`;
+the per-generation timeout defaults to 900 seconds through
+`BIOMEDICAL_RELATION_TIMEOUT_SECONDS`. That timeout bounds one provider
+generation and is an operational control, not a scientific pass/fail rule.
+Callers can read `last_generation_diagnostics` or provide a diagnostics callback.
+GPT-6.1 Sol with medium reasoning and Standard service has passed the frozen
+four-paper production-path regression. Scientific review and a separate
+promotion decision remain pending; production defaults remain unchanged.
+The legacy GLiREL-compatible relation/evaluation path and historical Contract 11
+reports remain preserved;
+the production provider does not depend on report-directory code.
 
 Target-domain NER evaluation, model selection, and fine-tuning remain postponed.
 External biomedical normalization remains outside this path. The graph boundary

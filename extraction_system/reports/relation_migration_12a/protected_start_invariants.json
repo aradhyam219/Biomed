@@ -1,0 +1,20 @@
+{
+  "baseline_sha": "96b8312879b337c57aba51342676890602b5c30d",
+  "protected_sha256": {
+    "src/biomedical_extractor/entity_extraction.py": "071f8fa3bfda77d0c2e8e4b80a8e78fe865e9ddfc933df6c35628dc8823ec37d",
+    "src/biomedical_extractor/hunflair2.py": "14884e449f64ceb5955b52d2922dbf45f3764a66e16d6fc3ab9c0873543f2d27",
+    "src/biomedical_extractor/entity_assembly.py": "1a443939809e47b95a43929c7f083e11a2f27e99b872d89bb2f11a0b379ece1c",
+    "src/biomedical_extractor/relation_extraction.py": "ac5ec09b2178e23fe3795f3e4e0d3cc40f4de83769aeb7731c85d950dfcc022c",
+    "src/biomedical_extractor/graph.py": "5062ad26454cf5b56739d3404031c9d92457d797984a3075fb7d5a53bf85b21d",
+    "src/biomedical_extractor/llm_pipeline.py": "b65f4efa4a2325d3dd9cbaaaac424d2cf1da64deb657bf9d3bb8f0df3506297b",
+    "viewer/adapter.js": "dbebc19ae9736bd86718b9a3a956e8e53c52eae9aa8a8ddb520b525d9fc363c7",
+    "viewer/app.js": "534414c62fdaf2fdf44355715ade59a76ce727d7e0d33627015e2d8367d5ce21"
+  },
+  "system_prompt_sha256": "13f38a6e94db74b534eb0df0b139287ace2e714fc908276ce4c3572f9b25836f",
+  "semantic_schema_sha256": "023435da3fa18abb77987313626636eff7bedda28739603db54a2f2c8137c945",
+  "runtime": {
+    "openai": "3.14.1",
+    "langchain-openai": "1.6.2",
+    "langchain-core": "1.6.3"
+  }
+}
