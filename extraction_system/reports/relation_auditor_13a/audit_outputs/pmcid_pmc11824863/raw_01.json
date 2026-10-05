@@ -1,0 +1,43 @@
+{
+  "missing_relations": [],
+  "enrichment_patches": [
+    {
+      "context": [
+        {
+          "value": "AD mice",
+          "supporting_evidence": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated. The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax also increased."
+        }
+      ],
+      "relation_ref": "P1R010",
+      "intervention": [
+        {
+          "value": "SFPQ overexpression",
+          "supporting_evidence": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated. The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax also increased."
+        }
+      ],
+      "effects": []
+    },
+    {
+      "context": [],
+      "relation_ref": "P1R011",
+      "intervention": [],
+      "effects": [
+        {
+          "value": "Indication of activation of the PI3K/AKT signaling pathway",
+          "supporting_evidence": "Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway."
+        }
+      ]
+    },
+    {
+      "context": [],
+      "relation_ref": "P1R012",
+      "intervention": [],
+      "effects": [
+        {
+          "value": "Indication of activation of the PI3K/AKT signaling pathway",
+          "supporting_evidence": "Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway."
+        }
+      ]
+    }
+  ]
+}

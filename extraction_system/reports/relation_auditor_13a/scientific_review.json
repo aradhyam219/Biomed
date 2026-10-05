@@ -1,0 +1,1085 @@
+{
+  "contract": "13A",
+  "judgment": "SECOND-PASS AUDITOR FAILED — PRESERVE SINGLE-PASS PRODUCTION",
+  "review_method": "Manual comparison of every proposal with frozen source, supplied entities, all Pass-1 assertions and rich fields; no reviewer LLM call",
+  "limitation": "One frozen generation per case; classifications are review judgments, not independently annotated gold. Local structural validity does not establish scientific correctness.",
+  "rejection_reason": "Four of six missing proposals are admissible. One merely recasts an already represented mechanism; one misattributes a cell-subpopulation prognosis assertion to a generic disease endpoint. One of fifteen rich values hides a distinct supplied ROS interaction. These are material precision/topology-contract failures despite useful target recovery and no causal inflation.",
+  "cases": {
+    "pmcid_pmc11824863": {
+      "paper_id": "PMCID:PMC11824863",
+      "missing_relations": [],
+      "enrichment_values": [
+        {
+          "relation_ref": "P1R010",
+          "field": "intervention",
+          "value_index": 0,
+          "value": "SFPQ overexpression",
+          "supporting_evidence": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated. The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax also increased.",
+          "scientifically_supported": true,
+          "genuinely_missing": true,
+          "redundant": false,
+          "unsupported": false,
+          "wrong_relation": false,
+          "hidden_supplied_entity": false,
+          "admissible": true,
+          "classification": "VALID ENRICHMENT",
+          "justification": "The contiguous results paragraph attributes the coordinated Bcl-2/Bax ratio increase to the SFPQ overexpression experiment. The baseline ratio assertion has no intervention. This preserves the experiment on the ratio, without asserting separate marginal changes in Bcl-2 or Bax."
+        },
+        {
+          "relation_ref": "P1R010",
+          "field": "context",
+          "value_index": 0,
+          "value": "AD mice",
+          "supporting_evidence": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated. The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax also increased.",
+          "scientifically_supported": true,
+          "genuinely_missing": true,
+          "redundant": false,
+          "unsupported": false,
+          "wrong_relation": false,
+          "hidden_supplied_entity": false,
+          "admissible": true,
+          "classification": "VALID ENRICHMENT",
+          "justification": "AD mice is the local results setting for the ratio finding and is absent from this relation's assertion and rich fields."
+        },
+        {
+          "relation_ref": "P1R011",
+          "field": "effects",
+          "value_index": 0,
+          "value": "Indication of activation of the PI3K/AKT signaling pathway",
+          "supporting_evidence": "Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway.",
+          "scientifically_supported": true,
+          "genuinely_missing": true,
+          "redundant": false,
+          "unsupported": false,
+          "wrong_relation": false,
+          "hidden_supplied_entity": false,
+          "admissible": true,
+          "classification": "VALID ENRICHMENT",
+          "justification": "The ratio sentence explicitly says the elevated phosphorylation ratios indicate PI3K/AKT pathway activation. Pass 1 states the ratio change but omits that interpretive outcome. Both pathway components already have separate Pass-1 relations, so no absent component interaction is concealed."
+        },
+        {
+          "relation_ref": "P1R012",
+          "field": "effects",
+          "value_index": 0,
+          "value": "Indication of activation of the PI3K/AKT signaling pathway",
+          "supporting_evidence": "Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway.",
+          "scientifically_supported": true,
+          "genuinely_missing": true,
+          "redundant": false,
+          "unsupported": false,
+          "wrong_relation": false,
+          "hidden_supplied_entity": false,
+          "admissible": true,
+          "classification": "VALID ENRICHMENT",
+          "justification": "The same locally explicit activation interpretation applies to the coordinated AKT ratio finding and is absent from this relation. The related PI3K component already has its own Pass-1 relation."
+        }
+      ],
+      "richness_counts": {
+        "intervention": {
+          "proposed": 1,
+          "supported": 1,
+          "genuinely_missing": 1,
+          "valid": 1,
+          "redundant": 0,
+          "unsupported": 0,
+          "wrong_relation": 0,
+          "hidden_supplied_entity": 0
+        },
+        "effects": {
+          "proposed": 2,
+          "supported": 2,
+          "genuinely_missing": 2,
+          "valid": 2,
+          "redundant": 0,
+          "unsupported": 0,
+          "wrong_relation": 0,
+          "hidden_supplied_entity": 0
+        },
+        "context": {
+          "proposed": 1,
+          "supported": 1,
+          "genuinely_missing": 1,
+          "valid": 1,
+          "redundant": 0,
+          "unsupported": 0,
+          "wrong_relation": 0,
+          "hidden_supplied_entity": 0
+        }
+      },
+      "counts": {
+        "missing_proposed": 0,
+        "valid_material_omissions": 0,
+        "redundant": 0,
+        "unsupported": 0,
+        "wrong_endpoint": 0,
+        "wrong_direction": 0,
+        "causal_overreach": 0,
+        "alias_identity_only": 0,
+        "other_error": 0,
+        "enrichment_patches_proposed": 3,
+        "enrichment_values_proposed": 4,
+        "valid_enrichment_values": 4,
+        "invalid_enrichment_values": 0
+      },
+      "latency_seconds": 29.687,
+      "tokens": {
+        "input_tokens": 5669,
+        "output_tokens": 1278,
+        "reasoning_tokens": 740
+      },
+      "repairs": 0,
+      "hypothetical_delta": {
+        "missing_relations": [],
+        "rich_field_additions": [
+          {
+            "relation_ref": "P1R010",
+            "before": {
+              "intervention": null,
+              "effects": [],
+              "context": []
+            },
+            "hypothetical_admissible_additions": {
+              "intervention": [
+                "SFPQ overexpression"
+              ],
+              "effects": [],
+              "context": [
+                "AD mice"
+              ]
+            },
+            "protected_fields": {
+              "source": "E30",
+              "target": "E31",
+              "predicate": "increased_ratio_to",
+              "negated": false
+            },
+            "applied": false
+          },
+          {
+            "relation_ref": "P1R011",
+            "before": {
+              "intervention": "SFPQ overexpression",
+              "effects": [],
+              "context": [
+                "AD mice"
+              ]
+            },
+            "hypothetical_admissible_additions": {
+              "intervention": [],
+              "effects": [
+                "Indication of activation of the PI3K/AKT signaling pathway"
+              ],
+              "context": []
+            },
+            "protected_fields": {
+              "source": "E19",
+              "target": "E32",
+              "predicate": "increases_phosphorylated_to_total_ratio",
+              "negated": false
+            },
+            "applied": false
+          },
+          {
+            "relation_ref": "P1R012",
+            "before": {
+              "intervention": "SFPQ overexpression",
+              "effects": [],
+              "context": [
+                "AD mice"
+              ]
+            },
+            "hypothetical_admissible_additions": {
+              "intervention": [],
+              "effects": [
+                "Indication of activation of the PI3K/AKT signaling pathway"
+              ],
+              "context": []
+            },
+            "protected_fields": {
+              "source": "E19",
+              "target": "E35",
+              "predicate": "increases_phosphorylated_to_total_ratio",
+              "negated": false
+            },
+            "applied": false
+          }
+        ],
+        "applied": false
+      }
+    },
+    "pmcid_pmc8605525": {
+      "paper_id": "PMCID:PMC8605525",
+      "missing_relations": [
+        {
+          "proposal_index": 1,
+          "classification": "REDUNDANT / ALREADY REPRESENTED",
+          "justification": "Pass-1 P1R021 already states STAT4 improved Runx3 expression by regulating histone H3 lysine 4 trimethylation. Recasting its explicit mechanism as a STAT4-to-H3K4me3 edge changes granularity, not the represented scientific information. The Runx3 outcome also already exists in P1R021.",
+          "proposal": {
+            "source": "E53",
+            "target": "E8",
+            "predicate": "regulates_trimethylation_of",
+            "assertion": "STAT4 regulates the histone H3 lysine 4 trimethylation level to improve Runx3 expression.",
+            "evidence": "STAT4 improved Runx3 expression by regulating histone H3 lysine 4 trimethylation level.",
+            "negated": false,
+            "intervention": null,
+            "effects": [
+              "improved Runx3 expression"
+            ],
+            "context": [],
+            "surface_form": "regulating histone H3 lysine 4 trimethylation level"
+          }
+        },
+        {
+          "proposal_index": 2,
+          "classification": "VALID MATERIAL OMISSION",
+          "justification": "The source explicitly coordinates JAK2 and STAT4 overexpression as increasing HUVEC apoptosis and abrogating Cb1's endothelial effect. Pass 1 represents only the Runx3 alternative (P1R022); this JAK2-to-Cb1 assertion is absent. Joint intervention is preserved; no claim of independent JAK2 manipulation is added.",
+          "proposal": {
+            "source": "E55",
+            "target": "E58",
+            "predicate": "abrogates_endothelial_effect_of",
+            "assertion": "Overexpression of JAK2 together with STAT4 increased apoptosis of HUVECs and abrogated the effect of Cb1 on endothelial function.",
+            "evidence": "Overexpression of JAK2 and STAT4, or Runx3 increased apoptosis of HUVECs, abrogating the effect of Cb1 on endothelial function.",
+            "negated": false,
+            "intervention": "Overexpression of JAK2 and STAT4",
+            "effects": [
+              "increased apoptosis of HUVECs"
+            ],
+            "context": [
+              "human umbilical vein endothelial cells"
+            ],
+            "surface_form": "abrogating the effect of Cb1 on endothelial function"
+          }
+        },
+        {
+          "proposal_index": 3,
+          "classification": "VALID MATERIAL OMISSION",
+          "justification": "The same explicit coordinated overexpression statement supports the STAT4-to-Cb1 reversal assertion absent from Pass 1. Both proposed edges preserve the joint JAK2/STAT4 intervention and the HUVEC apoptosis outcome.",
+          "proposal": {
+            "source": "E56",
+            "target": "E58",
+            "predicate": "abrogates_endothelial_effect_of",
+            "assertion": "Overexpression of STAT4 together with JAK2 increased apoptosis of HUVECs and abrogated the effect of Cb1 on endothelial function.",
+            "evidence": "Overexpression of JAK2 and STAT4, or Runx3 increased apoptosis of HUVECs, abrogating the effect of Cb1 on endothelial function.",
+            "negated": false,
+            "intervention": "Overexpression of JAK2 and STAT4",
+            "effects": [
+              "increased apoptosis of HUVECs"
+            ],
+            "context": [
+              "human umbilical vein endothelial cells"
+            ],
+            "surface_form": "abrogating the effect of Cb1 on endothelial function"
+          }
+        }
+      ],
+      "enrichment_values": [
+        {
+          "relation_ref": "P1R012",
+          "field": "context",
+          "value_index": 0,
+          "value": "HG-induced HUVECs",
+          "supporting_evidence": "Cbl was reduced in DM rat tissues and HG-induced HUVECs",
+          "scientifically_supported": true,
+          "genuinely_missing": true,
+          "redundant": false,
+          "unsupported": false,
+          "wrong_relation": false,
+          "hidden_supplied_entity": false,
+          "admissible": true,
+          "classification": "VALID ENRICHMENT",
+          "justification": "The support explicitly says Cbl was reduced in both DM rat tissues and HG-induced HUVECs. The baseline captures only rat tissue; the new value adds the parallel in-vitro setting of the same expression observation without a glucose-to-Cbl causal edge."
+        },
+        {
+          "relation_ref": "P1R013",
+          "field": "context",
+          "value_index": 0,
+          "value": "HG-induced HUVECs",
+          "supporting_evidence": "Cbl was reduced in DM rat tissues and HG-induced HUVECs, where JAK2, Runx3 and STAT4 were elevated.",
+          "scientifically_supported": true,
+          "genuinely_missing": true,
+          "redundant": false,
+          "unsupported": false,
+          "wrong_relation": false,
+          "hidden_supplied_entity": false,
+          "admissible": true,
+          "classification": "VALID ENRICHMENT",
+          "justification": "The coordinated 'where JAK2, Runx3 and STAT4 were elevated' clause covers DM rat tissues and HG-induced HUVECs. JAK2's baseline has only rat-tissue context; this adds the explicit second setting, not causality."
+        },
+        {
+          "relation_ref": "P1R014",
+          "field": "context",
+          "value_index": 0,
+          "value": "HG-induced HUVECs",
+          "supporting_evidence": "Cbl was reduced in DM rat tissues and HG-induced HUVECs, where JAK2, Runx3 and STAT4 were elevated.",
+          "scientifically_supported": true,
+          "genuinely_missing": true,
+          "redundant": false,
+          "unsupported": false,
+          "wrong_relation": false,
+          "hidden_supplied_entity": false,
+          "admissible": true,
+          "classification": "VALID ENRICHMENT",
+          "justification": "Runx3 is explicitly coordinated in the same dual-setting expression observation. HG-induced HUVECs is absent from the baseline rat-tissue relation; no setting-to-gene causal claim is added."
+        },
+        {
+          "relation_ref": "P1R015",
+          "field": "context",
+          "value_index": 0,
+          "value": "HG-induced HUVECs",
+          "supporting_evidence": "Cbl was reduced in DM rat tissues and HG-induced HUVECs, where JAK2, Runx3 and STAT4 were elevated.",
+          "scientifically_supported": true,
+          "genuinely_missing": true,
+          "redundant": false,
+          "unsupported": false,
+          "wrong_relation": false,
+          "hidden_supplied_entity": false,
+          "admissible": true,
+          "classification": "VALID ENRICHMENT",
+          "justification": "STAT4 is explicitly coordinated in the same dual-setting expression observation. The second source-supported expression setting is omitted from Pass 1; the patch changes no endpoint or causal predicate."
+        }
+      ],
+      "richness_counts": {
+        "intervention": {
+          "proposed": 0,
+          "supported": 0,
+          "genuinely_missing": 0,
+          "valid": 0,
+          "redundant": 0,
+          "unsupported": 0,
+          "wrong_relation": 0,
+          "hidden_supplied_entity": 0
+        },
+        "effects": {
+          "proposed": 0,
+          "supported": 0,
+          "genuinely_missing": 0,
+          "valid": 0,
+          "redundant": 0,
+          "unsupported": 0,
+          "wrong_relation": 0,
+          "hidden_supplied_entity": 0
+        },
+        "context": {
+          "proposed": 4,
+          "supported": 4,
+          "genuinely_missing": 4,
+          "valid": 4,
+          "redundant": 0,
+          "unsupported": 0,
+          "wrong_relation": 0,
+          "hidden_supplied_entity": 0
+        }
+      },
+      "counts": {
+        "missing_proposed": 3,
+        "valid_material_omissions": 2,
+        "redundant": 1,
+        "unsupported": 0,
+        "wrong_endpoint": 0,
+        "wrong_direction": 0,
+        "causal_overreach": 0,
+        "alias_identity_only": 0,
+        "other_error": 0,
+        "enrichment_patches_proposed": 4,
+        "enrichment_values_proposed": 4,
+        "valid_enrichment_values": 4,
+        "invalid_enrichment_values": 0
+      },
+      "latency_seconds": 36.188,
+      "tokens": {
+        "input_tokens": 8114,
+        "output_tokens": 1603,
+        "reasoning_tokens": 734
+      },
+      "repairs": 0,
+      "hypothetical_delta": {
+        "missing_relations": [
+          {
+            "source": "E55",
+            "target": "E58",
+            "predicate": "abrogates_endothelial_effect_of",
+            "assertion": "Overexpression of JAK2 together with STAT4 increased apoptosis of HUVECs and abrogated the effect of Cb1 on endothelial function.",
+            "evidence": "Overexpression of JAK2 and STAT4, or Runx3 increased apoptosis of HUVECs, abrogating the effect of Cb1 on endothelial function.",
+            "negated": false,
+            "intervention": "Overexpression of JAK2 and STAT4",
+            "effects": [
+              "increased apoptosis of HUVECs"
+            ],
+            "context": [
+              "human umbilical vein endothelial cells"
+            ],
+            "surface_form": "abrogating the effect of Cb1 on endothelial function"
+          },
+          {
+            "source": "E56",
+            "target": "E58",
+            "predicate": "abrogates_endothelial_effect_of",
+            "assertion": "Overexpression of STAT4 together with JAK2 increased apoptosis of HUVECs and abrogated the effect of Cb1 on endothelial function.",
+            "evidence": "Overexpression of JAK2 and STAT4, or Runx3 increased apoptosis of HUVECs, abrogating the effect of Cb1 on endothelial function.",
+            "negated": false,
+            "intervention": "Overexpression of JAK2 and STAT4",
+            "effects": [
+              "increased apoptosis of HUVECs"
+            ],
+            "context": [
+              "human umbilical vein endothelial cells"
+            ],
+            "surface_form": "abrogating the effect of Cb1 on endothelial function"
+          }
+        ],
+        "rich_field_additions": [
+          {
+            "relation_ref": "P1R012",
+            "before": {
+              "intervention": null,
+              "effects": [],
+              "context": [
+                "rat tissues"
+              ]
+            },
+            "hypothetical_admissible_additions": {
+              "intervention": [],
+              "effects": [],
+              "context": [
+                "HG-induced HUVECs"
+              ]
+            },
+            "protected_fields": {
+              "source": "E46",
+              "target": "E41",
+              "predicate": "expression_decreased_in",
+              "negated": false
+            },
+            "applied": false
+          },
+          {
+            "relation_ref": "P1R013",
+            "before": {
+              "intervention": null,
+              "effects": [],
+              "context": [
+                "rat tissues"
+              ]
+            },
+            "hypothetical_admissible_additions": {
+              "intervention": [],
+              "effects": [],
+              "context": [
+                "HG-induced HUVECs"
+              ]
+            },
+            "protected_fields": {
+              "source": "E43",
+              "target": "E41",
+              "predicate": "expression_increased_in",
+              "negated": false
+            },
+            "applied": false
+          },
+          {
+            "relation_ref": "P1R014",
+            "before": {
+              "intervention": null,
+              "effects": [],
+              "context": [
+                "rat tissues"
+              ]
+            },
+            "hypothetical_admissible_additions": {
+              "intervention": [],
+              "effects": [],
+              "context": [
+                "HG-induced HUVECs"
+              ]
+            },
+            "protected_fields": {
+              "source": "E44",
+              "target": "E41",
+              "predicate": "expression_increased_in",
+              "negated": false
+            },
+            "applied": false
+          },
+          {
+            "relation_ref": "P1R015",
+            "before": {
+              "intervention": null,
+              "effects": [],
+              "context": [
+                "rat tissues"
+              ]
+            },
+            "hypothetical_admissible_additions": {
+              "intervention": [],
+              "effects": [],
+              "context": [
+                "HG-induced HUVECs"
+              ]
+            },
+            "protected_fields": {
+              "source": "E45",
+              "target": "E41",
+              "predicate": "expression_increased_in",
+              "negated": false
+            },
+            "applied": false
+          }
+        ],
+        "applied": false
+      }
+    },
+    "pmid_27172794": {
+      "paper_id": "PMID:27172794",
+      "missing_relations": [
+        {
+          "proposal_index": 1,
+          "classification": "WRONG ENDPOINT",
+          "justification": "The causal subject in the evidence is colorectal cancer stem-like cells, not generic colorectal cancer. E5 is the Disease mention 'colorectal cancer'; selecting it as source attributes a cell-subpopulation prognosis claim to the disease. Supplied CCS mentions exist (E20/E40). The full assertion preserves the subgroup in prose but does not fix the source endpoint. The existing EZH2 prognosis relation P1R006 has a different scientific subject and is not the reason for rejection.",
+          "proposal": {
+            "source": "E5",
+            "target": "E7",
+            "predicate": "contributes_to_poor_prognosis",
+            "assertion": "Colorectal cancer stem-like cells contribute to poor patient prognosis.",
+            "evidence": "Because colorectal cancer (CRC) stem-like cells (CCS-like cells) contribute to poor patient prognosis, these cells are a potential target for CRC therapy.",
+            "negated": false,
+            "intervention": null,
+            "effects": [],
+            "context": [],
+            "surface_form": "contribute to poor patient prognosis"
+          }
+        }
+      ],
+      "enrichment_values": [],
+      "richness_counts": {
+        "intervention": {
+          "proposed": 0,
+          "supported": 0,
+          "genuinely_missing": 0,
+          "valid": 0,
+          "redundant": 0,
+          "unsupported": 0,
+          "wrong_relation": 0,
+          "hidden_supplied_entity": 0
+        },
+        "effects": {
+          "proposed": 0,
+          "supported": 0,
+          "genuinely_missing": 0,
+          "valid": 0,
+          "redundant": 0,
+          "unsupported": 0,
+          "wrong_relation": 0,
+          "hidden_supplied_entity": 0
+        },
+        "context": {
+          "proposed": 0,
+          "supported": 0,
+          "genuinely_missing": 0,
+          "valid": 0,
+          "redundant": 0,
+          "unsupported": 0,
+          "wrong_relation": 0,
+          "hidden_supplied_entity": 0
+        }
+      },
+      "counts": {
+        "missing_proposed": 1,
+        "valid_material_omissions": 0,
+        "redundant": 0,
+        "unsupported": 0,
+        "wrong_endpoint": 1,
+        "wrong_direction": 0,
+        "causal_overreach": 0,
+        "alias_identity_only": 0,
+        "other_error": 0,
+        "enrichment_patches_proposed": 0,
+        "enrichment_values_proposed": 0,
+        "valid_enrichment_values": 0,
+        "invalid_enrichment_values": 0
+      },
+      "latency_seconds": 14.781,
+      "tokens": {
+        "input_tokens": 6182,
+        "output_tokens": 340,
+        "reasoning_tokens": 219
+      },
+      "repairs": 0,
+      "hypothetical_delta": {
+        "missing_relations": [],
+        "rich_field_additions": [],
+        "applied": false
+      }
+    },
+    "pmid_33652126": {
+      "paper_id": "PMID:33652126",
+      "missing_relations": [
+        {
+          "proposal_index": 1,
+          "classification": "VALID MATERIAL OMISSION",
+          "justification": "The exact observation says serum deprivation in H9c2 cells increased PTEN expression; no Pass-1 assertion includes it. E28 is the supplied 'serum deficiency' condition later in the same abstract, referring to the same deprivation experiment; E19 is PTEN in the observation. This is an explicitly asserted condition-to-gene effect, not mere setting coexistence, and is not a PTEN self-edge.",
+          "proposal": {
+            "source": "E28",
+            "target": "E19",
+            "predicate": "increases_expression_of",
+            "assertion": "Serum deprivation increased PTEN expression in H9c2 cells.",
+            "evidence": "As a result, we observed that serum deprivation in H9c2 cells increased PTEN expression.",
+            "negated": false,
+            "intervention": "serum deprivation",
+            "effects": [],
+            "context": [
+              "H9c2 cells"
+            ],
+            "surface_form": "increased"
+          }
+        }
+      ],
+      "enrichment_values": [
+        {
+          "relation_ref": "P1R004",
+          "field": "context",
+          "value_index": 0,
+          "value": "H9c2 cells",
+          "supporting_evidence": "As a result, we observed that serum deprivation in H9c2 cells increased PTEN expression. Functionally, the PTEN knockdown experiment using siRNA inhibited serum deprivation-induced cell apoptosis, ROS production, and DNA damage, whereas increased cell proliferation.",
+          "scientifically_supported": true,
+          "genuinely_missing": true,
+          "redundant": false,
+          "unsupported": false,
+          "wrong_relation": false,
+          "hidden_supplied_entity": false,
+          "admissible": true,
+          "classification": "VALID ENRICHMENT",
+          "justification": "The adjacent results sentences explicitly locate the PTEN-knockdown experiment in H9c2 cells. This adds cellular context to the baseline PTEN-to-ROS relation, whose rich context contains only serum deprivation."
+        },
+        {
+          "relation_ref": "P1R005",
+          "field": "effects",
+          "value_index": 0,
+          "value": "Reversal of the PTEN-knockdown-associated inhibition of cell apoptosis, ROS production, and DNA damage, and increase in cell proliferation.",
+          "supporting_evidence": "Functionally, the PTEN knockdown experiment using siRNA inhibited serum deprivation-induced cell apoptosis, ROS production, and DNA damage, whereas increased cell proliferation. All these effects could be reversed by phosphatidylinositol 3-kinase (PI3K) inhibitor",
+          "scientifically_supported": true,
+          "genuinely_missing": true,
+          "redundant": false,
+          "unsupported": false,
+          "wrong_relation": false,
+          "hidden_supplied_entity": true,
+          "admissible": false,
+          "classification": "HIDDEN SUPPLIED ENTITY",
+          "justification": "The outcomes are verbatim-supported and the PI3K-inhibitor reversal assignment is correct, but ROS is a supplied entity (E21). Reversal of the PTEN-knockdown-associated ROS reduction is a distinct explicit PI3K-to-ROS assertion absent from Pass 1; hiding it in a PI3K-to-PTEN effects patch violates the audit's third-entity constraint. Preserve as rejected, not an applied field gain."
+        },
+        {
+          "relation_ref": "P1R005",
+          "field": "context",
+          "value_index": 0,
+          "value": "H9c2 cells",
+          "supporting_evidence": "As a result, we observed that serum deprivation in H9c2 cells increased PTEN expression. Functionally, the PTEN knockdown experiment using siRNA inhibited serum deprivation-induced cell apoptosis, ROS production, and DNA damage, whereas increased cell proliferation. All these effects could be reversed by phosphatidylinositol 3-kinase (PI3K) inhibitor",
+          "scientifically_supported": true,
+          "genuinely_missing": true,
+          "redundant": false,
+          "unsupported": false,
+          "wrong_relation": false,
+          "hidden_supplied_entity": false,
+          "admissible": true,
+          "classification": "VALID ENRICHMENT",
+          "justification": "The local results chain identifies H9c2 as the cellular model for the PTEN knockdown and PI3K-inhibitor reversal; this context is absent from P1R005."
+        }
+      ],
+      "richness_counts": {
+        "intervention": {
+          "proposed": 0,
+          "supported": 0,
+          "genuinely_missing": 0,
+          "valid": 0,
+          "redundant": 0,
+          "unsupported": 0,
+          "wrong_relation": 0,
+          "hidden_supplied_entity": 0
+        },
+        "effects": {
+          "proposed": 1,
+          "supported": 1,
+          "genuinely_missing": 1,
+          "valid": 0,
+          "redundant": 0,
+          "unsupported": 0,
+          "wrong_relation": 0,
+          "hidden_supplied_entity": 1
+        },
+        "context": {
+          "proposed": 2,
+          "supported": 2,
+          "genuinely_missing": 2,
+          "valid": 2,
+          "redundant": 0,
+          "unsupported": 0,
+          "wrong_relation": 0,
+          "hidden_supplied_entity": 0
+        }
+      },
+      "counts": {
+        "missing_proposed": 1,
+        "valid_material_omissions": 1,
+        "redundant": 0,
+        "unsupported": 0,
+        "wrong_endpoint": 0,
+        "wrong_direction": 0,
+        "causal_overreach": 0,
+        "alias_identity_only": 0,
+        "other_error": 0,
+        "enrichment_patches_proposed": 2,
+        "enrichment_values_proposed": 3,
+        "valid_enrichment_values": 2,
+        "invalid_enrichment_values": 1
+      },
+      "latency_seconds": 38.391,
+      "tokens": {
+        "input_tokens": 4152,
+        "output_tokens": 1487,
+        "reasoning_tokens": 993
+      },
+      "repairs": 0,
+      "hypothetical_delta": {
+        "missing_relations": [
+          {
+            "source": "E28",
+            "target": "E19",
+            "predicate": "increases_expression_of",
+            "assertion": "Serum deprivation increased PTEN expression in H9c2 cells.",
+            "evidence": "As a result, we observed that serum deprivation in H9c2 cells increased PTEN expression.",
+            "negated": false,
+            "intervention": "serum deprivation",
+            "effects": [],
+            "context": [
+              "H9c2 cells"
+            ],
+            "surface_form": "increased"
+          }
+        ],
+        "rich_field_additions": [
+          {
+            "relation_ref": "P1R004",
+            "before": {
+              "intervention": "PTEN knockdown using siRNA",
+              "effects": [],
+              "context": [
+                "serum deprivation"
+              ]
+            },
+            "hypothetical_admissible_additions": {
+              "intervention": [],
+              "effects": [],
+              "context": [
+                "H9c2 cells"
+              ]
+            },
+            "protected_fields": {
+              "source": "E20",
+              "target": "E21",
+              "predicate": "knockdown_inhibits_production_of",
+              "negated": false
+            },
+            "applied": false
+          },
+          {
+            "relation_ref": "P1R005",
+            "before": {
+              "intervention": "PI3K inhibition following PTEN knockdown using siRNA",
+              "effects": [],
+              "context": [
+                "serum deprivation"
+              ]
+            },
+            "hypothetical_admissible_additions": {
+              "intervention": [],
+              "effects": [],
+              "context": [
+                "H9c2 cells"
+              ]
+            },
+            "protected_fields": {
+              "source": "E22",
+              "target": "E20",
+              "predicate": "inhibition_reverses_knockdown_effects_of",
+              "negated": false
+            },
+            "applied": false
+          }
+        ],
+        "applied": false
+      }
+    },
+    "contract11u_passage_001": {
+      "paper_id": "PMCID:PMC10770459",
+      "missing_relations": [
+        {
+          "proposal_index": 1,
+          "classification": "VALID MATERIAL OMISSION",
+          "justification": "The source explicitly reports the AST/ALT ratio of approximately 1 versus approximately 2 in the two named mouse groups. Pass 1 represents plasma AST, ALT comparability and suggested liver damage, but none of its assertions preserves these ratio values. AST and ALT are supplied endpoints; no process node or extra causal claim is introduced.",
+          "proposal": {
+            "source": "E527",
+            "target": "E528",
+            "predicate": "has_ratio_to",
+            "assertion": "The ratio of AST to ALT was approximately 1 in iHMGB1 KO TMX STZ mice, whereas it was substantially higher, around 2, in HMGB1 Flox TMX STZ mice.",
+            "evidence": "To better interpret our data, we calculated the widely used AST/ALT ratio, which showed that iHMGB1 KO TMX STZ mice had a ratio of approximately 1, whereas HMGB1 Flox TMX STZ mice exhibited a substantially higher AST/ALT ratio of around 2",
+            "negated": false,
+            "intervention": null,
+            "effects": [],
+            "context": [],
+            "surface_form": "AST/ALT ratio"
+          }
+        }
+      ],
+      "enrichment_values": [
+        {
+          "relation_ref": "P1R006",
+          "field": "context",
+          "value_index": 0,
+          "value": "Liver under a hyperglycemic state",
+          "supporting_evidence": "To further investigate the role of HMGB1 in liver damage, we examined the pathological effects of HMGB1 knockdown in the liver under a hyperglycemic state. HMGB1 Flox TMX STZ mice displayed an increase in macrovesicular lipid droplets and greater signs of mononuclear inflammatory infiltration compared to iHMGB1 KO TMX STZ mice",
+          "scientifically_supported": true,
+          "genuinely_missing": true,
+          "redundant": false,
+          "unsupported": false,
+          "wrong_relation": false,
+          "hidden_supplied_entity": false,
+          "admissible": true,
+          "classification": "VALID ENRICHMENT",
+          "justification": "The immediately preceding investigation sentence explicitly sets the lipid-droplet comparison in the liver under a hyperglycemic state; this setting is absent from the baseline relation."
+        },
+        {
+          "relation_ref": "P1R007",
+          "field": "context",
+          "value_index": 0,
+          "value": "Liver under a hyperglycemic state",
+          "supporting_evidence": "To further investigate the role of HMGB1 in liver damage, we examined the pathological effects of HMGB1 knockdown in the liver under a hyperglycemic state. HMGB1 Flox TMX STZ mice displayed an increase in macrovesicular lipid droplets and greater signs of mononuclear inflammatory infiltration compared to iHMGB1 KO TMX STZ mice",
+          "scientifically_supported": true,
+          "genuinely_missing": true,
+          "redundant": false,
+          "unsupported": false,
+          "wrong_relation": false,
+          "hidden_supplied_entity": false,
+          "admissible": true,
+          "classification": "VALID ENRICHMENT",
+          "justification": "The same local liver/hyperglycemia setting applies to the coordinated inflammatory-infiltration comparison and is omitted from its baseline relation."
+        },
+        {
+          "relation_ref": "P1R008",
+          "field": "context",
+          "value_index": 0,
+          "value": "Assessment by PAS and Oil Red O staining",
+          "supporting_evidence": "Additionally, PAS and Oil Red O staining revealed that HMGB1 Flox TMX STZ mice exhibited increased glycogen storage and lipid uptake",
+          "scientifically_supported": true,
+          "genuinely_missing": true,
+          "redundant": false,
+          "unsupported": false,
+          "wrong_relation": false,
+          "hidden_supplied_entity": false,
+          "admissible": true,
+          "classification": "VALID ENRICHMENT",
+          "justification": "The source explicitly names PAS and Oil Red O staining for the glycogen finding. Pass 1 says only 'Staining revealed'; this adds the omitted measurement method, not a chemical-to-glycogen causal interaction."
+        },
+        {
+          "relation_ref": "P1R009",
+          "field": "context",
+          "value_index": 0,
+          "value": "Assessment by PAS and Oil Red O staining",
+          "supporting_evidence": "Additionally, PAS and Oil Red O staining revealed that HMGB1 Flox TMX STZ mice exhibited increased glycogen storage and lipid uptake",
+          "scientifically_supported": true,
+          "genuinely_missing": true,
+          "redundant": false,
+          "unsupported": false,
+          "wrong_relation": false,
+          "hidden_supplied_entity": false,
+          "admissible": true,
+          "classification": "VALID ENRICHMENT",
+          "justification": "The same staining sentence supports the lipid-uptake finding. Naming both methods is source-supported additional measurement context; no distinct causal interaction is hidden."
+        }
+      ],
+      "richness_counts": {
+        "intervention": {
+          "proposed": 0,
+          "supported": 0,
+          "genuinely_missing": 0,
+          "valid": 0,
+          "redundant": 0,
+          "unsupported": 0,
+          "wrong_relation": 0,
+          "hidden_supplied_entity": 0
+        },
+        "effects": {
+          "proposed": 0,
+          "supported": 0,
+          "genuinely_missing": 0,
+          "valid": 0,
+          "redundant": 0,
+          "unsupported": 0,
+          "wrong_relation": 0,
+          "hidden_supplied_entity": 0
+        },
+        "context": {
+          "proposed": 4,
+          "supported": 4,
+          "genuinely_missing": 4,
+          "valid": 4,
+          "redundant": 0,
+          "unsupported": 0,
+          "wrong_relation": 0,
+          "hidden_supplied_entity": 0
+        }
+      },
+      "counts": {
+        "missing_proposed": 1,
+        "valid_material_omissions": 1,
+        "redundant": 0,
+        "unsupported": 0,
+        "wrong_endpoint": 0,
+        "wrong_direction": 0,
+        "causal_overreach": 0,
+        "alias_identity_only": 0,
+        "other_error": 0,
+        "enrichment_patches_proposed": 4,
+        "enrichment_values_proposed": 4,
+        "valid_enrichment_values": 4,
+        "invalid_enrichment_values": 0
+      },
+      "latency_seconds": 24.703,
+      "tokens": {
+        "input_tokens": 6419,
+        "output_tokens": 1173,
+        "reasoning_tokens": 516
+      },
+      "repairs": 0,
+      "hypothetical_delta": {
+        "missing_relations": [
+          {
+            "source": "E527",
+            "target": "E528",
+            "predicate": "has_ratio_to",
+            "assertion": "The ratio of AST to ALT was approximately 1 in iHMGB1 KO TMX STZ mice, whereas it was substantially higher, around 2, in HMGB1 Flox TMX STZ mice.",
+            "evidence": "To better interpret our data, we calculated the widely used AST/ALT ratio, which showed that iHMGB1 KO TMX STZ mice had a ratio of approximately 1, whereas HMGB1 Flox TMX STZ mice exhibited a substantially higher AST/ALT ratio of around 2",
+            "negated": false,
+            "intervention": null,
+            "effects": [],
+            "context": [],
+            "surface_form": "AST/ALT ratio"
+          }
+        ],
+        "rich_field_additions": [
+          {
+            "relation_ref": "P1R006",
+            "before": {
+              "intervention": null,
+              "effects": [],
+              "context": []
+            },
+            "hypothetical_admissible_additions": {
+              "intervention": [],
+              "effects": [],
+              "context": [
+                "Liver under a hyperglycemic state"
+              ]
+            },
+            "protected_fields": {
+              "source": "E546",
+              "target": "E547",
+              "predicate": "has_increased_droplets_of",
+              "negated": false
+            },
+            "applied": false
+          },
+          {
+            "relation_ref": "P1R007",
+            "before": {
+              "intervention": null,
+              "effects": [],
+              "context": []
+            },
+            "hypothetical_admissible_additions": {
+              "intervention": [],
+              "effects": [],
+              "context": [
+                "Liver under a hyperglycemic state"
+              ]
+            },
+            "protected_fields": {
+              "source": "E546",
+              "target": "E548",
+              "predicate": "has_greater_infiltration",
+              "negated": false
+            },
+            "applied": false
+          },
+          {
+            "relation_ref": "P1R008",
+            "before": {
+              "intervention": null,
+              "effects": [],
+              "context": []
+            },
+            "hypothetical_admissible_additions": {
+              "intervention": [],
+              "effects": [],
+              "context": [
+                "Assessment by PAS and Oil Red O staining"
+              ]
+            },
+            "protected_fields": {
+              "source": "E556",
+              "target": "E557",
+              "predicate": "has_increased_storage_of",
+              "negated": false
+            },
+            "applied": false
+          },
+          {
+            "relation_ref": "P1R009",
+            "before": {
+              "intervention": null,
+              "effects": [],
+              "context": []
+            },
+            "hypothetical_admissible_additions": {
+              "intervention": [],
+              "effects": [],
+              "context": [
+                "Assessment by PAS and Oil Red O staining"
+              ]
+            },
+            "protected_fields": {
+              "source": "E556",
+              "target": "E558",
+              "predicate": "has_increased_uptake_of",
+              "negated": false
+            },
+            "applied": false
+          }
+        ],
+        "applied": false
+      }
+    }
+  },
+  "operational_totals": {
+    "input_tokens": 30536,
+    "output_tokens": 5881,
+    "reasoning_tokens": 3202,
+    "latency_seconds": 143.75,
+    "scientific_generations": 5,
+    "repairs": 0,
+    "poll_count": 39,
+    "poll_errors": 0,
+    "cost": null,
+    "cost_reason": "Existing experiment tooling provides no reliable price or billed cost for this model; token totals are observed and cost is unavailable."
+  },
+  "target_findings": {
+    "jak2_overexpression_reversal": "Recovered with joint JAK2/STAT4 intervention",
+    "stat4_overexpression_reversal": "Recovered with joint JAK2/STAT4 intervention",
+    "coordinated_apoptosis_reversal": "Recovered for both JAK2 and STAT4; Runx3 already represented",
+    "pten_increased_expression": "Recovered, using supplied serum-deficiency condition E28; no PTEN self-edge",
+    "cbl_dual_context": "Four valid HG-induced-HUVEC context additions complement existing DM-rat expression context",
+    "sfpq": "Cognition/memory already present; no new relation required. Four valid rich values: ratio intervention/setting and two pathway-activation interpretations",
+    "ezh2": "EZH2 poor prognosis, tumor initiation and pathway-maintenance findings already present. New background cell-prognosis proposal rejected for disease-source endpoint",
+    "passage_11u": "Valid AST/ALT numerical comparison and four measurement/liver context additions. Plasma/timing already present and no redundant additions proposed",
+    "glucose_context_causal_inflation": false,
+    "other_unsupported_causal_edges": false,
+    "production_merge": false
+  }
+}

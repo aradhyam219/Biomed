@@ -1,0 +1,2 @@
+# Frozen requests, outputs and manifests retain their exact hashed bytes.
+* -text

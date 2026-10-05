@@ -1,0 +1,202 @@
+{
+  "paper_id": "PMCID:PMC11824863",
+  "missing_relations": [],
+  "enrichment_values": [
+    {
+      "relation_ref": "P1R010",
+      "field": "intervention",
+      "value_index": 0,
+      "value": "SFPQ overexpression",
+      "supporting_evidence": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated. The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax also increased.",
+      "scientifically_supported": true,
+      "genuinely_missing": true,
+      "redundant": false,
+      "unsupported": false,
+      "wrong_relation": false,
+      "hidden_supplied_entity": false,
+      "admissible": true,
+      "classification": "VALID ENRICHMENT",
+      "justification": "The contiguous results paragraph attributes the coordinated Bcl-2/Bax ratio increase to the SFPQ overexpression experiment. The baseline ratio assertion has no intervention. This preserves the experiment on the ratio, without asserting separate marginal changes in Bcl-2 or Bax."
+    },
+    {
+      "relation_ref": "P1R010",
+      "field": "context",
+      "value_index": 0,
+      "value": "AD mice",
+      "supporting_evidence": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated. The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax also increased.",
+      "scientifically_supported": true,
+      "genuinely_missing": true,
+      "redundant": false,
+      "unsupported": false,
+      "wrong_relation": false,
+      "hidden_supplied_entity": false,
+      "admissible": true,
+      "classification": "VALID ENRICHMENT",
+      "justification": "AD mice is the local results setting for the ratio finding and is absent from this relation's assertion and rich fields."
+    },
+    {
+      "relation_ref": "P1R011",
+      "field": "effects",
+      "value_index": 0,
+      "value": "Indication of activation of the PI3K/AKT signaling pathway",
+      "supporting_evidence": "Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway.",
+      "scientifically_supported": true,
+      "genuinely_missing": true,
+      "redundant": false,
+      "unsupported": false,
+      "wrong_relation": false,
+      "hidden_supplied_entity": false,
+      "admissible": true,
+      "classification": "VALID ENRICHMENT",
+      "justification": "The ratio sentence explicitly says the elevated phosphorylation ratios indicate PI3K/AKT pathway activation. Pass 1 states the ratio change but omits that interpretive outcome. Both pathway components already have separate Pass-1 relations, so no absent component interaction is concealed."
+    },
+    {
+      "relation_ref": "P1R012",
+      "field": "effects",
+      "value_index": 0,
+      "value": "Indication of activation of the PI3K/AKT signaling pathway",
+      "supporting_evidence": "Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway.",
+      "scientifically_supported": true,
+      "genuinely_missing": true,
+      "redundant": false,
+      "unsupported": false,
+      "wrong_relation": false,
+      "hidden_supplied_entity": false,
+      "admissible": true,
+      "classification": "VALID ENRICHMENT",
+      "justification": "The same locally explicit activation interpretation applies to the coordinated AKT ratio finding and is absent from this relation. The related PI3K component already has its own Pass-1 relation."
+    }
+  ],
+  "richness_counts": {
+    "intervention": {
+      "proposed": 1,
+      "supported": 1,
+      "genuinely_missing": 1,
+      "valid": 1,
+      "redundant": 0,
+      "unsupported": 0,
+      "wrong_relation": 0,
+      "hidden_supplied_entity": 0
+    },
+    "effects": {
+      "proposed": 2,
+      "supported": 2,
+      "genuinely_missing": 2,
+      "valid": 2,
+      "redundant": 0,
+      "unsupported": 0,
+      "wrong_relation": 0,
+      "hidden_supplied_entity": 0
+    },
+    "context": {
+      "proposed": 1,
+      "supported": 1,
+      "genuinely_missing": 1,
+      "valid": 1,
+      "redundant": 0,
+      "unsupported": 0,
+      "wrong_relation": 0,
+      "hidden_supplied_entity": 0
+    }
+  },
+  "counts": {
+    "missing_proposed": 0,
+    "valid_material_omissions": 0,
+    "redundant": 0,
+    "unsupported": 0,
+    "wrong_endpoint": 0,
+    "wrong_direction": 0,
+    "causal_overreach": 0,
+    "alias_identity_only": 0,
+    "other_error": 0,
+    "enrichment_patches_proposed": 3,
+    "enrichment_values_proposed": 4,
+    "valid_enrichment_values": 4,
+    "invalid_enrichment_values": 0
+  },
+  "latency_seconds": 29.687,
+  "tokens": {
+    "input_tokens": 5669,
+    "output_tokens": 1278,
+    "reasoning_tokens": 740
+  },
+  "repairs": 0,
+  "hypothetical_delta": {
+    "missing_relations": [],
+    "rich_field_additions": [
+      {
+        "relation_ref": "P1R010",
+        "before": {
+          "intervention": null,
+          "effects": [],
+          "context": []
+        },
+        "hypothetical_admissible_additions": {
+          "intervention": [
+            "SFPQ overexpression"
+          ],
+          "effects": [],
+          "context": [
+            "AD mice"
+          ]
+        },
+        "protected_fields": {
+          "source": "E30",
+          "target": "E31",
+          "predicate": "increased_ratio_to",
+          "negated": false
+        },
+        "applied": false
+      },
+      {
+        "relation_ref": "P1R011",
+        "before": {
+          "intervention": "SFPQ overexpression",
+          "effects": [],
+          "context": [
+            "AD mice"
+          ]
+        },
+        "hypothetical_admissible_additions": {
+          "intervention": [],
+          "effects": [
+            "Indication of activation of the PI3K/AKT signaling pathway"
+          ],
+          "context": []
+        },
+        "protected_fields": {
+          "source": "E19",
+          "target": "E32",
+          "predicate": "increases_phosphorylated_to_total_ratio",
+          "negated": false
+        },
+        "applied": false
+      },
+      {
+        "relation_ref": "P1R012",
+        "before": {
+          "intervention": "SFPQ overexpression",
+          "effects": [],
+          "context": [
+            "AD mice"
+          ]
+        },
+        "hypothetical_admissible_additions": {
+          "intervention": [],
+          "effects": [
+            "Indication of activation of the PI3K/AKT signaling pathway"
+          ],
+          "context": []
+        },
+        "protected_fields": {
+          "source": "E19",
+          "target": "E35",
+          "predicate": "increases_phosphorylated_to_total_ratio",
+          "negated": false
+        },
+        "applied": false
+      }
+    ],
+    "applied": false
+  }
+}

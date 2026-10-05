@@ -1,0 +1,7 @@
+{
+  "cause": "WinError 10013: socket access forbidden by sandbox",
+  "response_id": null,
+  "generation_reached_provider": false,
+  "outside_sandbox_unauthenticated_http_status": 404,
+  "paid_generation_resubmission": false
+}

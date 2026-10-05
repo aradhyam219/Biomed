@@ -1,0 +1,37 @@
+[
+  {
+    "case": "pmcid_pmc11824863",
+    "passed": true,
+    "canonical_nodes": 20,
+    "canonical_edges": 13,
+    "domain_mutation": false
+  },
+  {
+    "case": "pmcid_pmc8605525",
+    "passed": true,
+    "canonical_nodes": 20,
+    "canonical_edges": 25,
+    "domain_mutation": false
+  },
+  {
+    "case": "pmid_27172794",
+    "passed": true,
+    "canonical_nodes": 15,
+    "canonical_edges": 18,
+    "domain_mutation": false
+  },
+  {
+    "case": "pmid_33652126",
+    "passed": true,
+    "canonical_nodes": 10,
+    "canonical_edges": 6,
+    "domain_mutation": false
+  },
+  {
+    "case": "contract11u_passage_001",
+    "passed": true,
+    "canonical_nodes": 18,
+    "canonical_edges": 10,
+    "domain_mutation": false
+  }
+]

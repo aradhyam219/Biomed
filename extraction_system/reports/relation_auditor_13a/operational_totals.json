@@ -1,0 +1,12 @@
+{
+  "input_tokens": 30536,
+  "output_tokens": 5881,
+  "reasoning_tokens": 3202,
+  "latency_seconds": 143.75,
+  "scientific_generations": 5,
+  "repairs": 0,
+  "poll_count": 39,
+  "poll_errors": 0,
+  "cost": null,
+  "cost_reason": "Existing experiment tooling provides no reliable price or billed cost for this model; token totals are observed and cost is unavailable."
+}

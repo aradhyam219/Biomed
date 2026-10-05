@@ -1,0 +1,17 @@
+{
+  "missing_relations": [
+    {
+      "source": "E5",
+      "target": "E7",
+      "predicate": "contributes_to_poor_prognosis",
+      "assertion": "Colorectal cancer stem-like cells contribute to poor patient prognosis.",
+      "evidence": "Because colorectal cancer (CRC) stem-like cells (CCS-like cells) contribute to poor patient prognosis, these cells are a potential target for CRC therapy.",
+      "negated": false,
+      "intervention": null,
+      "effects": [],
+      "context": [],
+      "surface_form": "contribute to poor patient prognosis"
+    }
+  ],
+  "enrichment_patches": []
+}

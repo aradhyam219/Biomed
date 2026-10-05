@@ -1,0 +1,32 @@
+[
+  {
+    "case": "contract11u_passage_001",
+    "edges": 10,
+    "nodes": 18,
+    "passed": true
+  },
+  {
+    "case": "pmcid_pmc11824863",
+    "edges": 13,
+    "nodes": 20,
+    "passed": true
+  },
+  {
+    "case": "pmcid_pmc8605525",
+    "edges": 25,
+    "nodes": 20,
+    "passed": true
+  },
+  {
+    "case": "pmid_27172794",
+    "edges": 18,
+    "nodes": 15,
+    "passed": true
+  },
+  {
+    "case": "pmid_33652126",
+    "edges": 6,
+    "nodes": 10,
+    "passed": true
+  }
+]

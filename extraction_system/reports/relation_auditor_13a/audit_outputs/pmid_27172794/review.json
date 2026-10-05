@@ -1,0 +1,82 @@
+{
+  "paper_id": "PMID:27172794",
+  "missing_relations": [
+    {
+      "proposal_index": 1,
+      "classification": "WRONG ENDPOINT",
+      "justification": "The causal subject in the evidence is colorectal cancer stem-like cells, not generic colorectal cancer. E5 is the Disease mention 'colorectal cancer'; selecting it as source attributes a cell-subpopulation prognosis claim to the disease. Supplied CCS mentions exist (E20/E40). The full assertion preserves the subgroup in prose but does not fix the source endpoint. The existing EZH2 prognosis relation P1R006 has a different scientific subject and is not the reason for rejection.",
+      "proposal": {
+        "source": "E5",
+        "target": "E7",
+        "predicate": "contributes_to_poor_prognosis",
+        "assertion": "Colorectal cancer stem-like cells contribute to poor patient prognosis.",
+        "evidence": "Because colorectal cancer (CRC) stem-like cells (CCS-like cells) contribute to poor patient prognosis, these cells are a potential target for CRC therapy.",
+        "negated": false,
+        "intervention": null,
+        "effects": [],
+        "context": [],
+        "surface_form": "contribute to poor patient prognosis"
+      }
+    }
+  ],
+  "enrichment_values": [],
+  "richness_counts": {
+    "intervention": {
+      "proposed": 0,
+      "supported": 0,
+      "genuinely_missing": 0,
+      "valid": 0,
+      "redundant": 0,
+      "unsupported": 0,
+      "wrong_relation": 0,
+      "hidden_supplied_entity": 0
+    },
+    "effects": {
+      "proposed": 0,
+      "supported": 0,
+      "genuinely_missing": 0,
+      "valid": 0,
+      "redundant": 0,
+      "unsupported": 0,
+      "wrong_relation": 0,
+      "hidden_supplied_entity": 0
+    },
+    "context": {
+      "proposed": 0,
+      "supported": 0,
+      "genuinely_missing": 0,
+      "valid": 0,
+      "redundant": 0,
+      "unsupported": 0,
+      "wrong_relation": 0,
+      "hidden_supplied_entity": 0
+    }
+  },
+  "counts": {
+    "missing_proposed": 1,
+    "valid_material_omissions": 0,
+    "redundant": 0,
+    "unsupported": 0,
+    "wrong_endpoint": 1,
+    "wrong_direction": 0,
+    "causal_overreach": 0,
+    "alias_identity_only": 0,
+    "other_error": 0,
+    "enrichment_patches_proposed": 0,
+    "enrichment_values_proposed": 0,
+    "valid_enrichment_values": 0,
+    "invalid_enrichment_values": 0
+  },
+  "latency_seconds": 14.781,
+  "tokens": {
+    "input_tokens": 6182,
+    "output_tokens": 340,
+    "reasoning_tokens": 219
+  },
+  "repairs": 0,
+  "hypothetical_delta": {
+    "missing_relations": [],
+    "rich_field_additions": [],
+    "applied": false
+  }
+}

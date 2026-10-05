@@ -1,0 +1,69 @@
+{
+  "missing_relations": [
+    {
+      "source": "E28",
+      "target": "E19",
+      "predicate": "increases_expression_of",
+      "assertion": "Serum deprivation increased PTEN expression in H9c2 cells.",
+      "evidence": "As a result, we observed that serum deprivation in H9c2 cells increased PTEN expression.",
+      "negated": false,
+      "intervention": "serum deprivation",
+      "effects": [],
+      "context": [
+        "H9c2 cells"
+      ],
+      "surface_form": "increased"
+    }
+  ],
+  "rich_field_additions": [
+    {
+      "relation_ref": "P1R004",
+      "before": {
+        "intervention": "PTEN knockdown using siRNA",
+        "effects": [],
+        "context": [
+          "serum deprivation"
+        ]
+      },
+      "hypothetical_admissible_additions": {
+        "intervention": [],
+        "effects": [],
+        "context": [
+          "H9c2 cells"
+        ]
+      },
+      "protected_fields": {
+        "source": "E20",
+        "target": "E21",
+        "predicate": "knockdown_inhibits_production_of",
+        "negated": false
+      },
+      "applied": false
+    },
+    {
+      "relation_ref": "P1R005",
+      "before": {
+        "intervention": "PI3K inhibition following PTEN knockdown using siRNA",
+        "effects": [],
+        "context": [
+          "serum deprivation"
+        ]
+      },
+      "hypothetical_admissible_additions": {
+        "intervention": [],
+        "effects": [],
+        "context": [
+          "H9c2 cells"
+        ]
+      },
+      "protected_fields": {
+        "source": "E22",
+        "target": "E20",
+        "predicate": "inhibition_reverses_knockdown_effects_of",
+        "negated": false
+      },
+      "applied": false
+    }
+  ],
+  "applied": false
+}

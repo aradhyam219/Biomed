@@ -1,0 +1,96 @@
+{
+  "missing_relations": [
+    {
+      "source": "E53",
+      "target": "E8",
+      "predicate": "regulates_trimethylation_of",
+      "assertion": "STAT4 regulates the histone H3 lysine 4 trimethylation level to improve Runx3 expression.",
+      "evidence": "STAT4 improved Runx3 expression by regulating histone H3 lysine 4 trimethylation level.",
+      "negated": false,
+      "intervention": null,
+      "effects": [
+        "improved Runx3 expression"
+      ],
+      "context": [],
+      "surface_form": "regulating histone H3 lysine 4 trimethylation level"
+    },
+    {
+      "source": "E55",
+      "target": "E58",
+      "predicate": "abrogates_endothelial_effect_of",
+      "assertion": "Overexpression of JAK2 together with STAT4 increased apoptosis of HUVECs and abrogated the effect of Cb1 on endothelial function.",
+      "evidence": "Overexpression of JAK2 and STAT4, or Runx3 increased apoptosis of HUVECs, abrogating the effect of Cb1 on endothelial function.",
+      "negated": false,
+      "intervention": "Overexpression of JAK2 and STAT4",
+      "effects": [
+        "increased apoptosis of HUVECs"
+      ],
+      "context": [
+        "human umbilical vein endothelial cells"
+      ],
+      "surface_form": "abrogating the effect of Cb1 on endothelial function"
+    },
+    {
+      "source": "E56",
+      "target": "E58",
+      "predicate": "abrogates_endothelial_effect_of",
+      "assertion": "Overexpression of STAT4 together with JAK2 increased apoptosis of HUVECs and abrogated the effect of Cb1 on endothelial function.",
+      "evidence": "Overexpression of JAK2 and STAT4, or Runx3 increased apoptosis of HUVECs, abrogating the effect of Cb1 on endothelial function.",
+      "negated": false,
+      "intervention": "Overexpression of JAK2 and STAT4",
+      "effects": [
+        "increased apoptosis of HUVECs"
+      ],
+      "context": [
+        "human umbilical vein endothelial cells"
+      ],
+      "surface_form": "abrogating the effect of Cb1 on endothelial function"
+    }
+  ],
+  "enrichment_patches": [
+    {
+      "relation_ref": "P1R012",
+      "intervention": [],
+      "effects": [],
+      "context": [
+        {
+          "value": "HG-induced HUVECs",
+          "supporting_evidence": "Cbl was reduced in DM rat tissues and HG-induced HUVECs"
+        }
+      ]
+    },
+    {
+      "relation_ref": "P1R013",
+      "intervention": [],
+      "effects": [],
+      "context": [
+        {
+          "value": "HG-induced HUVECs",
+          "supporting_evidence": "Cbl was reduced in DM rat tissues and HG-induced HUVECs, where JAK2, Runx3 and STAT4 were elevated."
+        }
+      ]
+    },
+    {
+      "relation_ref": "P1R014",
+      "intervention": [],
+      "effects": [],
+      "context": [
+        {
+          "value": "HG-induced HUVECs",
+          "supporting_evidence": "Cbl was reduced in DM rat tissues and HG-induced HUVECs, where JAK2, Runx3 and STAT4 were elevated."
+        }
+      ]
+    },
+    {
+      "relation_ref": "P1R015",
+      "intervention": [],
+      "effects": [],
+      "context": [
+        {
+          "value": "HG-induced HUVECs",
+          "supporting_evidence": "Cbl was reduced in DM rat tissues and HG-induced HUVECs, where JAK2, Runx3 and STAT4 were elevated."
+        }
+      ]
+    }
+  ]
+}

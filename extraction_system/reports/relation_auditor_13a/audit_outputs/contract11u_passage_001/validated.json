@@ -1,0 +1,62 @@
+{
+  "missing_relations": [
+    {
+      "source": "E527",
+      "target": "E528",
+      "predicate": "has_ratio_to",
+      "assertion": "The ratio of AST to ALT was approximately 1 in iHMGB1 KO TMX STZ mice, whereas it was substantially higher, around 2, in HMGB1 Flox TMX STZ mice.",
+      "evidence": "To better interpret our data, we calculated the widely used AST/ALT ratio, which showed that iHMGB1 KO TMX STZ mice had a ratio of approximately 1, whereas HMGB1 Flox TMX STZ mice exhibited a substantially higher AST/ALT ratio of around 2",
+      "negated": false,
+      "intervention": null,
+      "effects": [],
+      "context": [],
+      "surface_form": "AST/ALT ratio"
+    }
+  ],
+  "enrichment_patches": [
+    {
+      "relation_ref": "P1R006",
+      "intervention": [],
+      "effects": [],
+      "context": [
+        {
+          "value": "Liver under a hyperglycemic state",
+          "supporting_evidence": "To further investigate the role of HMGB1 in liver damage, we examined the pathological effects of HMGB1 knockdown in the liver under a hyperglycemic state. HMGB1 Flox TMX STZ mice displayed an increase in macrovesicular lipid droplets and greater signs of mononuclear inflammatory infiltration compared to iHMGB1 KO TMX STZ mice"
+        }
+      ]
+    },
+    {
+      "relation_ref": "P1R007",
+      "intervention": [],
+      "effects": [],
+      "context": [
+        {
+          "value": "Liver under a hyperglycemic state",
+          "supporting_evidence": "To further investigate the role of HMGB1 in liver damage, we examined the pathological effects of HMGB1 knockdown in the liver under a hyperglycemic state. HMGB1 Flox TMX STZ mice displayed an increase in macrovesicular lipid droplets and greater signs of mononuclear inflammatory infiltration compared to iHMGB1 KO TMX STZ mice"
+        }
+      ]
+    },
+    {
+      "relation_ref": "P1R008",
+      "intervention": [],
+      "effects": [],
+      "context": [
+        {
+          "value": "Assessment by PAS and Oil Red O staining",
+          "supporting_evidence": "Additionally, PAS and Oil Red O staining revealed that HMGB1 Flox TMX STZ mice exhibited increased glycogen storage and lipid uptake"
+        }
+      ]
+    },
+    {
+      "relation_ref": "P1R009",
+      "intervention": [],
+      "effects": [],
+      "context": [
+        {
+          "value": "Assessment by PAS and Oil Red O staining",
+          "supporting_evidence": "Additionally, PAS and Oil Red O staining revealed that HMGB1 Flox TMX STZ mice exhibited increased glycogen storage and lipid uptake"
+        }
+      ]
+    }
+  ]
+}

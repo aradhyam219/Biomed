@@ -1,0 +1,89 @@
+{
+  "passed": true,
+  "production_prompt_changed": false,
+  "production_defaults_changed": false,
+  "relation_schema_changed": false,
+  "ordinary_graph_behavior_changed": false,
+  "automatic_audit_or_merge_enabled": false,
+  "production_prompt_sha256": "13f38a6e94db74b534eb0df0b139287ace2e714fc908276ce4c3572f9b25836f",
+  "production_defaults": {
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "medium",
+    "service_tier": "default",
+    "background": true
+  },
+  "production_and_historical_files_byte_identical": true,
+  "protected_file_count": 259,
+  "ordinary_pass1_requests": [
+    {
+      "case": "pmcid_pmc11824863",
+      "pass1_request_sha256": "b47a63b66b7a3e42d4d1a899de27965defa101f071cd859ec5225ebf5fc96228",
+      "unchanged": true
+    },
+    {
+      "case": "pmcid_pmc8605525",
+      "pass1_request_sha256": "aa16a8380468056a3101f97f9ee62157d070843ded8164da1520a57ed1349130",
+      "unchanged": true
+    },
+    {
+      "case": "pmid_27172794",
+      "pass1_request_sha256": "5e7251b398f34621c67c8e30891f0128daefc49dc1d5b61efcbcca871964b722",
+      "unchanged": true
+    },
+    {
+      "case": "pmid_33652126",
+      "pass1_request_sha256": "9f027ddb59b14c91832ebfe39e947ed5a2f61e2c98a59668cf24fe95ed288252",
+      "unchanged": true
+    },
+    {
+      "case": "contract11u_passage_001",
+      "pass1_request_sha256": "ee73415e65f88d52e17c473eb2d5143940b19b9adfa7d4a6d117e5db450b0405",
+      "unchanged": true
+    }
+  ],
+  "production_semantic_schema_sha256": "023435da3fa18abb77987313626636eff7bedda28739603db54a2f2c8137c945",
+  "production_transport_schema_sha256": "b0506680756b7ad8332d976a419cdee57a81e1051dd115f291f65d77bd656510",
+  "auditor_imported_by_production": false,
+  "tests": [
+    {
+      "command": ".venv/Scripts/python.exe -m unittest discover -s tests -p test_relation_auditor_13a.py -v",
+      "passed": true,
+      "count": 9
+    },
+    {
+      "command": ".venv/Scripts/python.exe -m unittest discover -s tests -p test_responses_execution.py -v",
+      "passed": true,
+      "count": 26
+    },
+    {
+      "command": ".venv/Scripts/python.exe -m unittest discover -s tests -p test_relation_extraction.py -v",
+      "passed": true,
+      "count": 16
+    },
+    {
+      "command": ".venv/Scripts/python.exe -m unittest discover -s tests -p test_graph.py -v",
+      "passed": true,
+      "count": 13
+    },
+    {
+      "command": ".venv/Scripts/python.exe -m unittest discover -s tests -p test_llm_pipeline.py -v",
+      "passed": true,
+      "count": 9
+    }
+  ],
+  "python_tests_passed": 73,
+  "viewer_tests": {
+    "command": "node --test viewer/tests/adapter.test.mjs",
+    "passed": true,
+    "count": 13
+  },
+  "five_frozen_graph_replays_passed": true,
+  "five_viewer_compatibility_checks_passed": true,
+  "audit_prompt_sha256": "dcd39070a4698df7f78dc83947f458536f52e85dbc2ba88e2ad885f8c6213e5c",
+  "scientific_inference_calls": 5,
+  "pass1_regenerations": 0,
+  "repairs": 0,
+  "reviewer_inference_calls": 0,
+  "local_submission_socket_denial_preserved": true,
+  "production_documentation_unchanged": true
+}

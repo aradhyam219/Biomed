@@ -1,0 +1,78 @@
+{
+  "missing_relations": [],
+  "rich_field_additions": [
+    {
+      "relation_ref": "P1R010",
+      "before": {
+        "intervention": null,
+        "effects": [],
+        "context": []
+      },
+      "hypothetical_admissible_additions": {
+        "intervention": [
+          "SFPQ overexpression"
+        ],
+        "effects": [],
+        "context": [
+          "AD mice"
+        ]
+      },
+      "protected_fields": {
+        "source": "E30",
+        "target": "E31",
+        "predicate": "increased_ratio_to",
+        "negated": false
+      },
+      "applied": false
+    },
+    {
+      "relation_ref": "P1R011",
+      "before": {
+        "intervention": "SFPQ overexpression",
+        "effects": [],
+        "context": [
+          "AD mice"
+        ]
+      },
+      "hypothetical_admissible_additions": {
+        "intervention": [],
+        "effects": [
+          "Indication of activation of the PI3K/AKT signaling pathway"
+        ],
+        "context": []
+      },
+      "protected_fields": {
+        "source": "E19",
+        "target": "E32",
+        "predicate": "increases_phosphorylated_to_total_ratio",
+        "negated": false
+      },
+      "applied": false
+    },
+    {
+      "relation_ref": "P1R012",
+      "before": {
+        "intervention": "SFPQ overexpression",
+        "effects": [],
+        "context": [
+          "AD mice"
+        ]
+      },
+      "hypothetical_admissible_additions": {
+        "intervention": [],
+        "effects": [
+          "Indication of activation of the PI3K/AKT signaling pathway"
+        ],
+        "context": []
+      },
+      "protected_fields": {
+        "source": "E19",
+        "target": "E35",
+        "predicate": "increases_phosphorylated_to_total_ratio",
+        "negated": false
+      },
+      "applied": false
+    }
+  ],
+  "applied": false
+}

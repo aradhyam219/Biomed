@@ -1,0 +1,321 @@
+{
+  "paper_id": "PMCID:PMC8605525",
+  "missing_relations": [
+    {
+      "proposal_index": 1,
+      "classification": "REDUNDANT / ALREADY REPRESENTED",
+      "justification": "Pass-1 P1R021 already states STAT4 improved Runx3 expression by regulating histone H3 lysine 4 trimethylation. Recasting its explicit mechanism as a STAT4-to-H3K4me3 edge changes granularity, not the represented scientific information. The Runx3 outcome also already exists in P1R021.",
+      "proposal": {
+        "source": "E53",
+        "target": "E8",
+        "predicate": "regulates_trimethylation_of",
+        "assertion": "STAT4 regulates the histone H3 lysine 4 trimethylation level to improve Runx3 expression.",
+        "evidence": "STAT4 improved Runx3 expression by regulating histone H3 lysine 4 trimethylation level.",
+        "negated": false,
+        "intervention": null,
+        "effects": [
+          "improved Runx3 expression"
+        ],
+        "context": [],
+        "surface_form": "regulating histone H3 lysine 4 trimethylation level"
+      }
+    },
+    {
+      "proposal_index": 2,
+      "classification": "VALID MATERIAL OMISSION",
+      "justification": "The source explicitly coordinates JAK2 and STAT4 overexpression as increasing HUVEC apoptosis and abrogating Cb1's endothelial effect. Pass 1 represents only the Runx3 alternative (P1R022); this JAK2-to-Cb1 assertion is absent. Joint intervention is preserved; no claim of independent JAK2 manipulation is added.",
+      "proposal": {
+        "source": "E55",
+        "target": "E58",
+        "predicate": "abrogates_endothelial_effect_of",
+        "assertion": "Overexpression of JAK2 together with STAT4 increased apoptosis of HUVECs and abrogated the effect of Cb1 on endothelial function.",
+        "evidence": "Overexpression of JAK2 and STAT4, or Runx3 increased apoptosis of HUVECs, abrogating the effect of Cb1 on endothelial function.",
+        "negated": false,
+        "intervention": "Overexpression of JAK2 and STAT4",
+        "effects": [
+          "increased apoptosis of HUVECs"
+        ],
+        "context": [
+          "human umbilical vein endothelial cells"
+        ],
+        "surface_form": "abrogating the effect of Cb1 on endothelial function"
+      }
+    },
+    {
+      "proposal_index": 3,
+      "classification": "VALID MATERIAL OMISSION",
+      "justification": "The same explicit coordinated overexpression statement supports the STAT4-to-Cb1 reversal assertion absent from Pass 1. Both proposed edges preserve the joint JAK2/STAT4 intervention and the HUVEC apoptosis outcome.",
+      "proposal": {
+        "source": "E56",
+        "target": "E58",
+        "predicate": "abrogates_endothelial_effect_of",
+        "assertion": "Overexpression of STAT4 together with JAK2 increased apoptosis of HUVECs and abrogated the effect of Cb1 on endothelial function.",
+        "evidence": "Overexpression of JAK2 and STAT4, or Runx3 increased apoptosis of HUVECs, abrogating the effect of Cb1 on endothelial function.",
+        "negated": false,
+        "intervention": "Overexpression of JAK2 and STAT4",
+        "effects": [
+          "increased apoptosis of HUVECs"
+        ],
+        "context": [
+          "human umbilical vein endothelial cells"
+        ],
+        "surface_form": "abrogating the effect of Cb1 on endothelial function"
+      }
+    }
+  ],
+  "enrichment_values": [
+    {
+      "relation_ref": "P1R012",
+      "field": "context",
+      "value_index": 0,
+      "value": "HG-induced HUVECs",
+      "supporting_evidence": "Cbl was reduced in DM rat tissues and HG-induced HUVECs",
+      "scientifically_supported": true,
+      "genuinely_missing": true,
+      "redundant": false,
+      "unsupported": false,
+      "wrong_relation": false,
+      "hidden_supplied_entity": false,
+      "admissible": true,
+      "classification": "VALID ENRICHMENT",
+      "justification": "The support explicitly says Cbl was reduced in both DM rat tissues and HG-induced HUVECs. The baseline captures only rat tissue; the new value adds the parallel in-vitro setting of the same expression observation without a glucose-to-Cbl causal edge."
+    },
+    {
+      "relation_ref": "P1R013",
+      "field": "context",
+      "value_index": 0,
+      "value": "HG-induced HUVECs",
+      "supporting_evidence": "Cbl was reduced in DM rat tissues and HG-induced HUVECs, where JAK2, Runx3 and STAT4 were elevated.",
+      "scientifically_supported": true,
+      "genuinely_missing": true,
+      "redundant": false,
+      "unsupported": false,
+      "wrong_relation": false,
+      "hidden_supplied_entity": false,
+      "admissible": true,
+      "classification": "VALID ENRICHMENT",
+      "justification": "The coordinated 'where JAK2, Runx3 and STAT4 were elevated' clause covers DM rat tissues and HG-induced HUVECs. JAK2's baseline has only rat-tissue context; this adds the explicit second setting, not causality."
+    },
+    {
+      "relation_ref": "P1R014",
+      "field": "context",
+      "value_index": 0,
+      "value": "HG-induced HUVECs",
+      "supporting_evidence": "Cbl was reduced in DM rat tissues and HG-induced HUVECs, where JAK2, Runx3 and STAT4 were elevated.",
+      "scientifically_supported": true,
+      "genuinely_missing": true,
+      "redundant": false,
+      "unsupported": false,
+      "wrong_relation": false,
+      "hidden_supplied_entity": false,
+      "admissible": true,
+      "classification": "VALID ENRICHMENT",
+      "justification": "Runx3 is explicitly coordinated in the same dual-setting expression observation. HG-induced HUVECs is absent from the baseline rat-tissue relation; no setting-to-gene causal claim is added."
+    },
+    {
+      "relation_ref": "P1R015",
+      "field": "context",
+      "value_index": 0,
+      "value": "HG-induced HUVECs",
+      "supporting_evidence": "Cbl was reduced in DM rat tissues and HG-induced HUVECs, where JAK2, Runx3 and STAT4 were elevated.",
+      "scientifically_supported": true,
+      "genuinely_missing": true,
+      "redundant": false,
+      "unsupported": false,
+      "wrong_relation": false,
+      "hidden_supplied_entity": false,
+      "admissible": true,
+      "classification": "VALID ENRICHMENT",
+      "justification": "STAT4 is explicitly coordinated in the same dual-setting expression observation. The second source-supported expression setting is omitted from Pass 1; the patch changes no endpoint or causal predicate."
+    }
+  ],
+  "richness_counts": {
+    "intervention": {
+      "proposed": 0,
+      "supported": 0,
+      "genuinely_missing": 0,
+      "valid": 0,
+      "redundant": 0,
+      "unsupported": 0,
+      "wrong_relation": 0,
+      "hidden_supplied_entity": 0
+    },
+    "effects": {
+      "proposed": 0,
+      "supported": 0,
+      "genuinely_missing": 0,
+      "valid": 0,
+      "redundant": 0,
+      "unsupported": 0,
+      "wrong_relation": 0,
+      "hidden_supplied_entity": 0
+    },
+    "context": {
+      "proposed": 4,
+      "supported": 4,
+      "genuinely_missing": 4,
+      "valid": 4,
+      "redundant": 0,
+      "unsupported": 0,
+      "wrong_relation": 0,
+      "hidden_supplied_entity": 0
+    }
+  },
+  "counts": {
+    "missing_proposed": 3,
+    "valid_material_omissions": 2,
+    "redundant": 1,
+    "unsupported": 0,
+    "wrong_endpoint": 0,
+    "wrong_direction": 0,
+    "causal_overreach": 0,
+    "alias_identity_only": 0,
+    "other_error": 0,
+    "enrichment_patches_proposed": 4,
+    "enrichment_values_proposed": 4,
+    "valid_enrichment_values": 4,
+    "invalid_enrichment_values": 0
+  },
+  "latency_seconds": 36.188,
+  "tokens": {
+    "input_tokens": 8114,
+    "output_tokens": 1603,
+    "reasoning_tokens": 734
+  },
+  "repairs": 0,
+  "hypothetical_delta": {
+    "missing_relations": [
+      {
+        "source": "E55",
+        "target": "E58",
+        "predicate": "abrogates_endothelial_effect_of",
+        "assertion": "Overexpression of JAK2 together with STAT4 increased apoptosis of HUVECs and abrogated the effect of Cb1 on endothelial function.",
+        "evidence": "Overexpression of JAK2 and STAT4, or Runx3 increased apoptosis of HUVECs, abrogating the effect of Cb1 on endothelial function.",
+        "negated": false,
+        "intervention": "Overexpression of JAK2 and STAT4",
+        "effects": [
+          "increased apoptosis of HUVECs"
+        ],
+        "context": [
+          "human umbilical vein endothelial cells"
+        ],
+        "surface_form": "abrogating the effect of Cb1 on endothelial function"
+      },
+      {
+        "source": "E56",
+        "target": "E58",
+        "predicate": "abrogates_endothelial_effect_of",
+        "assertion": "Overexpression of STAT4 together with JAK2 increased apoptosis of HUVECs and abrogated the effect of Cb1 on endothelial function.",
+        "evidence": "Overexpression of JAK2 and STAT4, or Runx3 increased apoptosis of HUVECs, abrogating the effect of Cb1 on endothelial function.",
+        "negated": false,
+        "intervention": "Overexpression of JAK2 and STAT4",
+        "effects": [
+          "increased apoptosis of HUVECs"
+        ],
+        "context": [
+          "human umbilical vein endothelial cells"
+        ],
+        "surface_form": "abrogating the effect of Cb1 on endothelial function"
+      }
+    ],
+    "rich_field_additions": [
+      {
+        "relation_ref": "P1R012",
+        "before": {
+          "intervention": null,
+          "effects": [],
+          "context": [
+            "rat tissues"
+          ]
+        },
+        "hypothetical_admissible_additions": {
+          "intervention": [],
+          "effects": [],
+          "context": [
+            "HG-induced HUVECs"
+          ]
+        },
+        "protected_fields": {
+          "source": "E46",
+          "target": "E41",
+          "predicate": "expression_decreased_in",
+          "negated": false
+        },
+        "applied": false
+      },
+      {
+        "relation_ref": "P1R013",
+        "before": {
+          "intervention": null,
+          "effects": [],
+          "context": [
+            "rat tissues"
+          ]
+        },
+        "hypothetical_admissible_additions": {
+          "intervention": [],
+          "effects": [],
+          "context": [
+            "HG-induced HUVECs"
+          ]
+        },
+        "protected_fields": {
+          "source": "E43",
+          "target": "E41",
+          "predicate": "expression_increased_in",
+          "negated": false
+        },
+        "applied": false
+      },
+      {
+        "relation_ref": "P1R014",
+        "before": {
+          "intervention": null,
+          "effects": [],
+          "context": [
+            "rat tissues"
+          ]
+        },
+        "hypothetical_admissible_additions": {
+          "intervention": [],
+          "effects": [],
+          "context": [
+            "HG-induced HUVECs"
+          ]
+        },
+        "protected_fields": {
+          "source": "E44",
+          "target": "E41",
+          "predicate": "expression_increased_in",
+          "negated": false
+        },
+        "applied": false
+      },
+      {
+        "relation_ref": "P1R015",
+        "before": {
+          "intervention": null,
+          "effects": [],
+          "context": [
+            "rat tissues"
+          ]
+        },
+        "hypothetical_admissible_additions": {
+          "intervention": [],
+          "effects": [],
+          "context": [
+            "HG-induced HUVECs"
+          ]
+        },
+        "protected_fields": {
+          "source": "E45",
+          "target": "E41",
+          "predicate": "expression_increased_in",
+          "negated": false
+        },
+        "applied": false
+      }
+    ],
+    "applied": false
+  }
+}

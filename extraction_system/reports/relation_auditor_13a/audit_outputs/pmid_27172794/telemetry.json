@@ -1,0 +1,27 @@
+[
+  {
+    "case": "pmid_27172794",
+    "generation_number": 1,
+    "repair": false,
+    "requested_background": true,
+    "requested_model": "gpt-6.1-sol",
+    "requested_reasoning_effort": "medium",
+    "requested_service_tier": "default",
+    "response_id": "resp_01816dfd88d8c688006ac356e119f087d1814f99dad28cede1",
+    "status": "completed",
+    "poll_count": 4,
+    "poll_errors": 0,
+    "observed_model": "gpt-6.1-sol",
+    "observed_reasoning_effort": "medium",
+    "observed_service_tier": "default",
+    "observed_background": true,
+    "initial_status": "queued",
+    "initial_create_latency_seconds": 1.25,
+    "elapsed_seconds": 14.781,
+    "input_tokens": 6182,
+    "output_tokens": 340,
+    "reasoning_tokens": 219,
+    "terminal_status": "completed",
+    "output_text_received": true
+  }
+]

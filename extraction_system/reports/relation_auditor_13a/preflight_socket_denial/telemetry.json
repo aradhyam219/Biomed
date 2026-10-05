@@ -1,0 +1,18 @@
+[
+  {
+    "case": "pmcid_pmc11824863",
+    "generation_number": 1,
+    "repair": false,
+    "requested_background": true,
+    "requested_model": "gpt-6.1-sol",
+    "requested_reasoning_effort": "medium",
+    "requested_service_tier": "default",
+    "response_id": null,
+    "status": "create_failed",
+    "poll_count": 0,
+    "poll_errors": 0,
+    "error_type": "APIConnectionError",
+    "http_status": null,
+    "elapsed_seconds": 0.453
+  }
+]

@@ -1,0 +1,107 @@
+{
+  "missing_relations": [
+    {
+      "source": "E527",
+      "target": "E528",
+      "predicate": "has_ratio_to",
+      "assertion": "The ratio of AST to ALT was approximately 1 in iHMGB1 KO TMX STZ mice, whereas it was substantially higher, around 2, in HMGB1 Flox TMX STZ mice.",
+      "evidence": "To better interpret our data, we calculated the widely used AST/ALT ratio, which showed that iHMGB1 KO TMX STZ mice had a ratio of approximately 1, whereas HMGB1 Flox TMX STZ mice exhibited a substantially higher AST/ALT ratio of around 2",
+      "negated": false,
+      "intervention": null,
+      "effects": [],
+      "context": [],
+      "surface_form": "AST/ALT ratio"
+    }
+  ],
+  "rich_field_additions": [
+    {
+      "relation_ref": "P1R006",
+      "before": {
+        "intervention": null,
+        "effects": [],
+        "context": []
+      },
+      "hypothetical_admissible_additions": {
+        "intervention": [],
+        "effects": [],
+        "context": [
+          "Liver under a hyperglycemic state"
+        ]
+      },
+      "protected_fields": {
+        "source": "E546",
+        "target": "E547",
+        "predicate": "has_increased_droplets_of",
+        "negated": false
+      },
+      "applied": false
+    },
+    {
+      "relation_ref": "P1R007",
+      "before": {
+        "intervention": null,
+        "effects": [],
+        "context": []
+      },
+      "hypothetical_admissible_additions": {
+        "intervention": [],
+        "effects": [],
+        "context": [
+          "Liver under a hyperglycemic state"
+        ]
+      },
+      "protected_fields": {
+        "source": "E546",
+        "target": "E548",
+        "predicate": "has_greater_infiltration",
+        "negated": false
+      },
+      "applied": false
+    },
+    {
+      "relation_ref": "P1R008",
+      "before": {
+        "intervention": null,
+        "effects": [],
+        "context": []
+      },
+      "hypothetical_admissible_additions": {
+        "intervention": [],
+        "effects": [],
+        "context": [
+          "Assessment by PAS and Oil Red O staining"
+        ]
+      },
+      "protected_fields": {
+        "source": "E556",
+        "target": "E557",
+        "predicate": "has_increased_storage_of",
+        "negated": false
+      },
+      "applied": false
+    },
+    {
+      "relation_ref": "P1R009",
+      "before": {
+        "intervention": null,
+        "effects": [],
+        "context": []
+      },
+      "hypothetical_admissible_additions": {
+        "intervention": [],
+        "effects": [],
+        "context": [
+          "Assessment by PAS and Oil Red O staining"
+        ]
+      },
+      "protected_fields": {
+        "source": "E556",
+        "target": "E558",
+        "predicate": "has_increased_uptake_of",
+        "negated": false
+      },
+      "applied": false
+    }
+  ],
+  "applied": false
+}

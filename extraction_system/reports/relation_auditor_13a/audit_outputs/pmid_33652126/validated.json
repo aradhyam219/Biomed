@@ -1,0 +1,47 @@
+{
+  "missing_relations": [
+    {
+      "source": "E28",
+      "target": "E19",
+      "predicate": "increases_expression_of",
+      "assertion": "Serum deprivation increased PTEN expression in H9c2 cells.",
+      "evidence": "As a result, we observed that serum deprivation in H9c2 cells increased PTEN expression.",
+      "negated": false,
+      "intervention": "serum deprivation",
+      "effects": [],
+      "context": [
+        "H9c2 cells"
+      ],
+      "surface_form": "increased"
+    }
+  ],
+  "enrichment_patches": [
+    {
+      "relation_ref": "P1R004",
+      "intervention": [],
+      "effects": [],
+      "context": [
+        {
+          "value": "H9c2 cells",
+          "supporting_evidence": "As a result, we observed that serum deprivation in H9c2 cells increased PTEN expression. Functionally, the PTEN knockdown experiment using siRNA inhibited serum deprivation-induced cell apoptosis, ROS production, and DNA damage, whereas increased cell proliferation."
+        }
+      ]
+    },
+    {
+      "relation_ref": "P1R005",
+      "intervention": [],
+      "effects": [
+        {
+          "value": "Reversal of the PTEN-knockdown-associated inhibition of cell apoptosis, ROS production, and DNA damage, and increase in cell proliferation.",
+          "supporting_evidence": "Functionally, the PTEN knockdown experiment using siRNA inhibited serum deprivation-induced cell apoptosis, ROS production, and DNA damage, whereas increased cell proliferation. All these effects could be reversed by phosphatidylinositol 3-kinase (PI3K) inhibitor"
+        }
+      ],
+      "context": [
+        {
+          "value": "H9c2 cells",
+          "supporting_evidence": "As a result, we observed that serum deprivation in H9c2 cells increased PTEN expression. Functionally, the PTEN knockdown experiment using siRNA inhibited serum deprivation-induced cell apoptosis, ROS production, and DNA damage, whereas increased cell proliferation. All these effects could be reversed by phosphatidylinositol 3-kinase (PI3K) inhibitor"
+        }
+      ]
+    }
+  ]
+}

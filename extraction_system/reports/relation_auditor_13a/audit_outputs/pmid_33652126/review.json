@@ -1,0 +1,197 @@
+{
+  "paper_id": "PMID:33652126",
+  "missing_relations": [
+    {
+      "proposal_index": 1,
+      "classification": "VALID MATERIAL OMISSION",
+      "justification": "The exact observation says serum deprivation in H9c2 cells increased PTEN expression; no Pass-1 assertion includes it. E28 is the supplied 'serum deficiency' condition later in the same abstract, referring to the same deprivation experiment; E19 is PTEN in the observation. This is an explicitly asserted condition-to-gene effect, not mere setting coexistence, and is not a PTEN self-edge.",
+      "proposal": {
+        "source": "E28",
+        "target": "E19",
+        "predicate": "increases_expression_of",
+        "assertion": "Serum deprivation increased PTEN expression in H9c2 cells.",
+        "evidence": "As a result, we observed that serum deprivation in H9c2 cells increased PTEN expression.",
+        "negated": false,
+        "intervention": "serum deprivation",
+        "effects": [],
+        "context": [
+          "H9c2 cells"
+        ],
+        "surface_form": "increased"
+      }
+    }
+  ],
+  "enrichment_values": [
+    {
+      "relation_ref": "P1R004",
+      "field": "context",
+      "value_index": 0,
+      "value": "H9c2 cells",
+      "supporting_evidence": "As a result, we observed that serum deprivation in H9c2 cells increased PTEN expression. Functionally, the PTEN knockdown experiment using siRNA inhibited serum deprivation-induced cell apoptosis, ROS production, and DNA damage, whereas increased cell proliferation.",
+      "scientifically_supported": true,
+      "genuinely_missing": true,
+      "redundant": false,
+      "unsupported": false,
+      "wrong_relation": false,
+      "hidden_supplied_entity": false,
+      "admissible": true,
+      "classification": "VALID ENRICHMENT",
+      "justification": "The adjacent results sentences explicitly locate the PTEN-knockdown experiment in H9c2 cells. This adds cellular context to the baseline PTEN-to-ROS relation, whose rich context contains only serum deprivation."
+    },
+    {
+      "relation_ref": "P1R005",
+      "field": "effects",
+      "value_index": 0,
+      "value": "Reversal of the PTEN-knockdown-associated inhibition of cell apoptosis, ROS production, and DNA damage, and increase in cell proliferation.",
+      "supporting_evidence": "Functionally, the PTEN knockdown experiment using siRNA inhibited serum deprivation-induced cell apoptosis, ROS production, and DNA damage, whereas increased cell proliferation. All these effects could be reversed by phosphatidylinositol 3-kinase (PI3K) inhibitor",
+      "scientifically_supported": true,
+      "genuinely_missing": true,
+      "redundant": false,
+      "unsupported": false,
+      "wrong_relation": false,
+      "hidden_supplied_entity": true,
+      "admissible": false,
+      "classification": "HIDDEN SUPPLIED ENTITY",
+      "justification": "The outcomes are verbatim-supported and the PI3K-inhibitor reversal assignment is correct, but ROS is a supplied entity (E21). Reversal of the PTEN-knockdown-associated ROS reduction is a distinct explicit PI3K-to-ROS assertion absent from Pass 1; hiding it in a PI3K-to-PTEN effects patch violates the audit's third-entity constraint. Preserve as rejected, not an applied field gain."
+    },
+    {
+      "relation_ref": "P1R005",
+      "field": "context",
+      "value_index": 0,
+      "value": "H9c2 cells",
+      "supporting_evidence": "As a result, we observed that serum deprivation in H9c2 cells increased PTEN expression. Functionally, the PTEN knockdown experiment using siRNA inhibited serum deprivation-induced cell apoptosis, ROS production, and DNA damage, whereas increased cell proliferation. All these effects could be reversed by phosphatidylinositol 3-kinase (PI3K) inhibitor",
+      "scientifically_supported": true,
+      "genuinely_missing": true,
+      "redundant": false,
+      "unsupported": false,
+      "wrong_relation": false,
+      "hidden_supplied_entity": false,
+      "admissible": true,
+      "classification": "VALID ENRICHMENT",
+      "justification": "The local results chain identifies H9c2 as the cellular model for the PTEN knockdown and PI3K-inhibitor reversal; this context is absent from P1R005."
+    }
+  ],
+  "richness_counts": {
+    "intervention": {
+      "proposed": 0,
+      "supported": 0,
+      "genuinely_missing": 0,
+      "valid": 0,
+      "redundant": 0,
+      "unsupported": 0,
+      "wrong_relation": 0,
+      "hidden_supplied_entity": 0
+    },
+    "effects": {
+      "proposed": 1,
+      "supported": 1,
+      "genuinely_missing": 1,
+      "valid": 0,
+      "redundant": 0,
+      "unsupported": 0,
+      "wrong_relation": 0,
+      "hidden_supplied_entity": 1
+    },
+    "context": {
+      "proposed": 2,
+      "supported": 2,
+      "genuinely_missing": 2,
+      "valid": 2,
+      "redundant": 0,
+      "unsupported": 0,
+      "wrong_relation": 0,
+      "hidden_supplied_entity": 0
+    }
+  },
+  "counts": {
+    "missing_proposed": 1,
+    "valid_material_omissions": 1,
+    "redundant": 0,
+    "unsupported": 0,
+    "wrong_endpoint": 0,
+    "wrong_direction": 0,
+    "causal_overreach": 0,
+    "alias_identity_only": 0,
+    "other_error": 0,
+    "enrichment_patches_proposed": 2,
+    "enrichment_values_proposed": 3,
+    "valid_enrichment_values": 2,
+    "invalid_enrichment_values": 1
+  },
+  "latency_seconds": 38.391,
+  "tokens": {
+    "input_tokens": 4152,
+    "output_tokens": 1487,
+    "reasoning_tokens": 993
+  },
+  "repairs": 0,
+  "hypothetical_delta": {
+    "missing_relations": [
+      {
+        "source": "E28",
+        "target": "E19",
+        "predicate": "increases_expression_of",
+        "assertion": "Serum deprivation increased PTEN expression in H9c2 cells.",
+        "evidence": "As a result, we observed that serum deprivation in H9c2 cells increased PTEN expression.",
+        "negated": false,
+        "intervention": "serum deprivation",
+        "effects": [],
+        "context": [
+          "H9c2 cells"
+        ],
+        "surface_form": "increased"
+      }
+    ],
+    "rich_field_additions": [
+      {
+        "relation_ref": "P1R004",
+        "before": {
+          "intervention": "PTEN knockdown using siRNA",
+          "effects": [],
+          "context": [
+            "serum deprivation"
+          ]
+        },
+        "hypothetical_admissible_additions": {
+          "intervention": [],
+          "effects": [],
+          "context": [
+            "H9c2 cells"
+          ]
+        },
+        "protected_fields": {
+          "source": "E20",
+          "target": "E21",
+          "predicate": "knockdown_inhibits_production_of",
+          "negated": false
+        },
+        "applied": false
+      },
+      {
+        "relation_ref": "P1R005",
+        "before": {
+          "intervention": "PI3K inhibition following PTEN knockdown using siRNA",
+          "effects": [],
+          "context": [
+            "serum deprivation"
+          ]
+        },
+        "hypothetical_admissible_additions": {
+          "intervention": [],
+          "effects": [],
+          "context": [
+            "H9c2 cells"
+          ]
+        },
+        "protected_fields": {
+          "source": "E22",
+          "target": "E20",
+          "predicate": "inhibition_reverses_knockdown_effects_of",
+          "negated": false
+        },
+        "applied": false
+      }
+    ],
+    "applied": false
+  }
+}
