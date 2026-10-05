@@ -1,6 +1,6 @@
 """Bounded OpenAI structured-output harness for paper-role enrichment.
 
-Provider-specific LangChain and Pydantic values stay in this module.  The
+Provider-specific SDK, LangChain, and Pydantic values stay in this module. The
 public result is converted immediately to the provider-independent
 ``PaperRoleExtractionResult`` contract before it reaches the graph pipeline.
 """
@@ -8,9 +8,15 @@ public result is converted immediately to the provider-independent
 from __future__ import annotations
 
 import json
+from copy import deepcopy
 from typing import Any, Mapping, Sequence
 
 from .llm_relation_extraction import OpenAIConfig
+from .responses_execution import (
+    REQUEST_TIMEOUT_SECONDS,
+    ResponsesBackgroundExecutor,
+    ResponsesExecutionError,
+)
 from .paper_roles import (
     PaperRole,
     PaperRoleExtractionResult,
@@ -21,8 +27,8 @@ from .paper_roles import (
 )
 
 
-DEFAULT_PAPER_ROLE_MODEL = "gpt-5.6-luna"
-DEFAULT_PAPER_ROLE_REASONING_EFFORT = "max"
+DEFAULT_PAPER_ROLE_MODEL = "gpt-6.1-sol"
+DEFAULT_PAPER_ROLE_REASONING_EFFORT = "medium"
 
 PAPER_ROLE_EXTRACTION_SYSTEM_PROMPT = """You are a conservative biomedical paper-role explainer.
 
@@ -50,8 +56,12 @@ class LLMPaperRoleExtractor:
         max_retries: int = 2,
         prompt: str = PAPER_ROLE_EXTRACTION_SYSTEM_PROMPT,
     ) -> None:
-        if not callable(getattr(model, "invoke", None)) and not callable(
-            getattr(model, "with_structured_output", None)
+        self._background_executor = (
+            model if isinstance(model, ResponsesBackgroundExecutor) else None
+        )
+        if self._background_executor is None and not (
+            callable(getattr(model, "invoke", None))
+            or callable(getattr(model, "with_structured_output", None))
         ):
             raise TypeError(
                 "Paper-role model must expose invoke(prompt) or "
@@ -61,8 +71,11 @@ class LLMPaperRoleExtractor:
             raise ValueError("Paper-role max_retries must not be negative")
         self._max_retries = max_retries
         self._prompt = prompt
-        self._model = _bind_structured_output(model)
-        if not callable(getattr(self._model, "invoke", None)):
+        self._model = (
+            None if self._background_executor is not None else _bind_structured_output(model)
+        )
+        self._last_generation_diagnostics: list[dict[str, Any]] = []
+        if self._background_executor is None and not callable(getattr(self._model, "invoke", None)):
             raise TypeError("Structured paper-role model must expose callable invoke(prompt)")
 
     @classmethod
@@ -79,24 +92,43 @@ class LLMPaperRoleExtractor:
         config = config or OpenAIConfig.from_environment()
         api_key = config.resolved_api_key()
         try:
-            from langchain_openai import ChatOpenAI
+            from openai import OpenAI
         except ImportError as error:  # pragma: no cover - bad installation
             raise RuntimeError(
-                "The OpenAI paper-role path requires the langchain-openai dependency"
+                "The OpenAI paper-role path requires the openai dependency"
             ) from error
 
         kwargs: dict[str, Any] = {
-            "model": DEFAULT_PAPER_ROLE_MODEL,
             "api_key": api_key,
-            "use_responses_api": True,
-            "reasoning": {"effort": DEFAULT_PAPER_ROLE_REASONING_EFFORT},
             "max_retries": 0,
+            "timeout": REQUEST_TIMEOUT_SECONDS,
         }
-        if config.max_completion_tokens is not None:
-            kwargs["max_completion_tokens"] = config.max_completion_tokens
         if config.base_url is not None:
             kwargs["base_url"] = config.base_url
-        return cls(ChatOpenAI(**kwargs), max_retries=config.max_retries)
+        try:
+            client = OpenAI(**kwargs)
+        except Exception as error:
+            raise RuntimeError(
+                f"Could not initialize OpenAI paper-role client ({type(error).__name__})"
+            ) from None
+        executor = ResponsesBackgroundExecutor(
+            client,
+            model=DEFAULT_PAPER_ROLE_MODEL,
+            reasoning_effort=DEFAULT_PAPER_ROLE_REASONING_EFFORT,
+            max_output_tokens=config.max_completion_tokens,
+            service_tier="default",
+            poll_interval_seconds=float(config.poll_interval_seconds),
+            generation_timeout_seconds=float(config.generation_timeout_seconds),
+            schema=_structured_payload_schema(),
+            redaction_values=(api_key, config.base_url or ""),
+        )
+        return cls(executor, max_retries=config.max_retries)
+
+    @property
+    def last_generation_diagnostics(self) -> list[dict[str, Any]]:
+        """Return safe provider diagnostics for the latest role batch and repairs."""
+
+        return deepcopy(self._last_generation_diagnostics)
 
     def extract_roles(
         self,
@@ -106,6 +138,7 @@ class LLMPaperRoleExtractor:
     ) -> PaperRoleExtractionResult:
         """Extract and validate all requested roles in one bounded call."""
 
+        self._last_generation_diagnostics = []
         if not isinstance(title, str) or not isinstance(text, str):
             raise TypeError("paper-role title and text must be strings")
         target_values = tuple(targets)
@@ -114,8 +147,19 @@ class LLMPaperRoleExtractor:
 
         prompt = _build_prompt(title, text, target_values, self._prompt)
         for attempt in range(self._max_retries + 1):
+            diagnostics = {"generation_number": attempt + 1, "repair": bool(attempt)}
+            self._last_generation_diagnostics.append(diagnostics)
             try:
-                response = self._model.invoke(prompt)
+                response = (
+                    self._background_executor.execute(prompt, diagnostics)
+                    if self._background_executor is not None
+                    else self._model.invoke(prompt)
+                )
+            except ResponsesExecutionError as error:
+                diagnostics.update(error.diagnostics)
+                raise PaperRoleExtractionError(
+                    f"Paper-role provider invocation failed: {error}"
+                ) from None
             except Exception as error:
                 if not _is_retryable_output_error(error):
                     raise PaperRoleExtractionError(
@@ -125,9 +169,16 @@ class LLMPaperRoleExtractor:
             else:
                 try:
                     result = _parse_result(response)
-                    return validate_paper_role_result(text, target_values, result)
+                    validated = validate_paper_role_result(text, target_values, result)
+                    diagnostics.update(
+                        validation_status="passed",
+                        validated_role_count=len(validated.records),
+                    )
+                    return validated
                 except (PaperRoleValidationError, ValueError, TypeError) as error:
                     output_error = error
+
+            diagnostics["validation_status"] = "failed"
 
             if attempt >= self._max_retries:
                 raise PaperRoleExtractionError(

@@ -163,7 +163,16 @@ source and target, predicate, and negation state; each contributing
 context, verbatim text, surface form, and score. `paper_roles` owns the
 provider-independent role value, target contract, exact-evidence validation,
 and node-only enrichment; `llm_paper_roles` owns the separate Responses API
-structured-output harness. Raw model/provider objects do not cross these seams. The
+structured-output harness using the shared `responses_execution` transport.
+Ordinary pretrained graph generation lazily constructs this role provider only
+after final degree-zero detection, then validates and attaches one batched role
+result for every degree-zero node. It uses GPT-6.1 Sol / medium / Standard
+(`default`) / background Responses independently of relation-task overrides.
+Credentials, endpoint, output ceiling, polling/deadline, and finite repair budget
+come from `OpenAIConfig`. Invalid or failed enrichment raises before returning a
+graph; attachment is atomic and topology is unchanged. Custom role injection and
+optional roles on low-level pipeline construction remain supported.
+Raw model/provider objects do not cross these seams. The
 existing GLiNER adapter and legacy
 `BiomedicalExtractor` path remain available for compatibility.
 

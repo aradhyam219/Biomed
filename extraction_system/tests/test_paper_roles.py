@@ -1,6 +1,10 @@
 from __future__ import annotations
 
 import unittest
+import json
+from unittest.mock import patch, Mock
+
+from biomedical_extractor.llm_relation_extraction import OpenAIConfig
 
 from biomedical_extractor.entity_assembly import assemble_document_entities
 from biomedical_extractor.entity_extraction import Entity
@@ -215,6 +219,111 @@ class PaperRoleContractTests(unittest.TestCase):
         self.assertEqual(len(role_extractor.calls[0][2]), 2)
         self.assertEqual(len(graph.edges), 0)
         self.assertEqual([node.paper_role.category for node in graph.nodes], ["substantive", "contextual"])
+
+
+    def _ordinary_pipeline(self, entities, relations, injected=None):
+        with (
+            patch("biomedical_extractor.llm_pipeline.HunFlair2BioMedExtractor.from_pretrained",
+                  return_value=_EntityExtractor(entities)),
+            patch("biomedical_extractor.llm_pipeline.LLMRelationExtractor.from_openai",
+                  return_value=relations),
+        ):
+            return LLMExtractionPipeline.from_pretrained(paper_role_extractor=injected)
+
+    def test_ordinary_graph_batches_zero_one_and_several_orphans_lazily(self):
+        text = "GeneA affects disease. GeneX was studied in mice."
+        entities = tuple(mention for node in self._graph_with_unconnected_nodes()[1].nodes
+                         for mention in node.mentions)
+        from biomedical_extractor.relation_extraction import Relation
+        relation = Relation("E1", "E2", "affects", "GeneA affects disease.",
+                            "GeneA affects disease", False)
+        connected = Mock()
+        connected.extract_relations.return_value = RelationExtractionResult((relation,))
+        for count in (0, 1, 2):
+            with self.subTest(orphans=count):
+                roles = _RoleExtractor()
+                pipeline = self._ordinary_pipeline(entities[:2 + count], connected)
+                with patch("biomedical_extractor.llm_pipeline.LLMPaperRoleExtractor.from_openai",
+                           return_value=roles) as factory:
+                    factory.assert_not_called()
+                    graph = pipeline.extract_graph(text)
+                    self.assertEqual(factory.call_count, int(count > 0))
+                self.assertEqual(len(roles.calls), int(count > 0))
+                self.assertEqual(sum(node.paper_role is not None for node in graph.nodes), count)
+                if count:
+                    self.assertEqual(len(roles.calls[0][2]), count)
+                before = build_graph_result("input", assemble_document_entities(entities[:2 + count], text),
+                                            (relation,)).to_dict()
+                after = graph.to_dict()
+                for node in after["nodes"]:
+                    node.pop("paper_role", None)
+                self.assertEqual(after, before)
+
+    def test_ordinary_injected_role_extractor_bypasses_default_factory(self):
+        text = "GeneX"
+        roles = _RoleExtractor()
+        pipeline = self._ordinary_pipeline((Entity("E1", text, "Gene", 0, 5),),
+                                           _RelationExtractor(), roles)
+        with patch("biomedical_extractor.llm_pipeline.LLMPaperRoleExtractor.from_openai") as factory:
+            self.assertIsNotNone(pipeline.extract_graph(text).nodes[0].paper_role)
+            factory.assert_not_called()
+
+    def test_missing_record_fails_atomically_and_preserves_original_graph(self):
+        text, graph = self._graph_with_unconnected_nodes()
+        original = graph.to_dict()
+        partial = PaperRoleExtractionResult((PaperRoleRecord(
+            graph.unconnected_nodes[0].id, PaperRole("substantive", ("GeneX was studied.",), ("GeneX",))),))
+        with self.assertRaisesRegex(PaperRoleValidationError, "missing node"):
+            apply_paper_roles(graph, text, partial)
+        self.assertEqual(graph.to_dict(), original)
+        broken = Mock()
+        broken.extract_roles.return_value = partial
+        entities = tuple(mention for node in graph.nodes for mention in node.mentions)
+        pipeline = self._ordinary_pipeline(entities, _RelationExtractor(), broken)
+        with self.assertRaisesRegex(PaperRoleValidationError, "missing node"):
+            pipeline.extract_graph(text)
+
+    def test_background_role_transport_configuration_and_bounded_repair(self):
+        client = Mock()
+        good = {"roles": [{"node_id": "N1", "category": "substantive",
+                           "paragraphs": ["GeneX was measured."], "evidence": ["GeneX"]}]}
+        client.responses.create.side_effect = [
+            Mock(id="resp_bad", status="completed", output_text=json.dumps({"roles": []}),
+                 output=[], error=None, incomplete_details=None),
+            Mock(id="resp_good", status="completed", output_text=json.dumps(good),
+                 output=[], error=None, incomplete_details=None),
+        ]
+        config = OpenAIConfig(api_key="test-key", model="custom-relation-model",
+                              reasoning_effort="low", background=False, service_tier="flex",
+                              max_retries=1)
+        with patch("openai.OpenAI", return_value=client) as factory:
+            extractor = LLMPaperRoleExtractor.from_openai(config)
+        target = PaperRoleTarget("N1", "GeneX", "Gene", (Entity("E1", "GeneX", "Gene", 0, 5),))
+        result = extractor.extract_roles("Title", "GeneX was measured.", (target,))
+        self.assertEqual(len(result.records), 1)
+        self.assertEqual(client.responses.create.call_count, 2)
+        request = client.responses.create.call_args_list[0].kwargs
+        self.assertEqual(request["model"], "gpt-6.1-sol")
+        self.assertEqual(request["reasoning"], {"effort": "medium"})
+        self.assertEqual(request["service_tier"], "default")
+        self.assertTrue(request["background"])
+        self.assertEqual(request["text"]["format"]["name"], "StructuredPaperRolePayload")
+        schema = request["text"]["format"]["schema"]
+        self.assertEqual(schema["required"], ["roles"])
+        self.assertFalse(schema["additionalProperties"])
+        self.assertEqual([d["repair"] for d in extractor.last_generation_diagnostics], [False, True])
+        self.assertEqual(factory.call_args.kwargs["max_retries"], 0)
+
+    def test_background_provider_failure_is_explicit_and_never_repaired(self):
+        from biomedical_extractor.llm_paper_roles import PaperRoleExtractionError
+        client = Mock()
+        client.responses.create.side_effect = RuntimeError("provider unavailable")
+        with patch("openai.OpenAI", return_value=client):
+            extractor = LLMPaperRoleExtractor.from_openai(OpenAIConfig(api_key="test-key"))
+        target = PaperRoleTarget("N1", "GeneX", "Gene", ())
+        with self.assertRaisesRegex(PaperRoleExtractionError, "provider invocation failed"):
+            extractor.extract_roles("Title", "GeneX", (target,))
+        self.assertEqual(client.responses.create.call_count, 1)
 
 
 if __name__ == "__main__":

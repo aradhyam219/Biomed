@@ -16,6 +16,7 @@ from .entity_assembly import assemble_document_entities
 from .graph import GraphResult, build_graph_result
 from .hunflair2 import HUNFLAIR2_MODEL_IDENTIFIER, HunFlair2BioMedExtractor
 from .llm_relation_extraction import LLMRelationExtractor, OpenAIConfig
+from .llm_paper_roles import LLMPaperRoleExtractor
 from .paper_roles import (
     PaperRoleExtractor,
     PaperRoleTarget,
@@ -63,6 +64,8 @@ class LLMExtractionPipeline:
         self.entity_extractor = entity_extractor
         self.relation_extractor = relation_extractor
         self.paper_role_extractor = paper_role_extractor
+        self._automatic_paper_roles = False
+        self._paper_role_config: OpenAIConfig | None = None
 
     @classmethod
     def from_pretrained(
@@ -110,7 +113,10 @@ class LLMExtractionPipeline:
                 "'gliner' or 'hunflair2'"
             )
         relation_extractor = LLMRelationExtractor.from_openai(llm_config)
-        return cls(entity_extractor, relation_extractor, paper_role_extractor)
+        pipeline = cls(entity_extractor, relation_extractor, paper_role_extractor)
+        pipeline._automatic_paper_roles = True
+        pipeline._paper_role_config = llm_config
+        return pipeline
 
     @classmethod
     def from_hunflair2(
@@ -188,7 +194,7 @@ class LLMExtractionPipeline:
 
         Assembly is completed before relation extraction so both the mention
         endpoint map and final graph use the same deterministic identity view.
-        Paper-role enrichment, when configured, runs once after graph cleanup
+        Ordinary pretrained pipelines automatically enrich roles after graph cleanup
         for all genuinely unconnected nodes and never changes edge topology.
         """
 
@@ -207,7 +213,12 @@ class LLMExtractionPipeline:
             if paper_role_extractor is not None
             else self.paper_role_extractor
         )
-        if role_extractor is None or not graph.unconnected_nodes:
+        if not graph.unconnected_nodes:
+            return graph
+        if role_extractor is None and self._automatic_paper_roles:
+            role_extractor = LLMPaperRoleExtractor.from_openai(self._paper_role_config)
+            self.paper_role_extractor = role_extractor
+        if role_extractor is None:
             return graph
 
         targets = tuple(

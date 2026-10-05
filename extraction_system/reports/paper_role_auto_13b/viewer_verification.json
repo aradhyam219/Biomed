@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "mechanism": "live browser UI inspection through computer-use",
+  "graph": "pmcid_pmc11824863.json",
+  "degree_zero_nodes": 6,
+  "expanded_role_panels": 6,
+  "panels_with_prose_and_source_evidence": 6,
+  "missing_role_messages": 0,
+  "console_errors": [],
+  "labels": [
+    "proline and glutamine rich",
+    "Aβ1–42",
+    "PI3K",
+    "AKT",
+    "Mice",
+    "mouse"
+  ],
+  "screenshot": "viewer_roles.jpg"
+}

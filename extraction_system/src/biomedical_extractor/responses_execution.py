@@ -1,9 +1,9 @@
-"""Bounded OpenAI Responses background execution for relation generations.
+"""Bounded OpenAI Responses background execution for structured generations.
 
 The module owns only provider transport: it submits one structured generation,
 polls its stable response ID, cancels an active job on local failure, and returns
 the completed JSON text with plain, credential-free diagnostics. Domain parsing
-and relation validation remain in :mod:`llm_relation_extraction`.
+and domain validation remain in the task-specific provider modules.
 """
 
 from __future__ import annotations
@@ -55,6 +55,7 @@ class ResponsesBackgroundExecutor:
         self._poll_interval_seconds = poll_interval_seconds
         self._generation_timeout_seconds = generation_timeout_seconds
         self._schema = strict_transport_schema(schema)
+        self._schema_name = schema.__name__
         self._diagnostics_callback = diagnostics_callback
         self._redaction_values = tuple(value for value in redaction_values if value)
 
@@ -92,7 +93,7 @@ class ResponsesBackgroundExecutor:
             "text": {
                 "format": {
                     "type": "json_schema",
-                    "name": "StructuredRelationPayload",
+                    "name": self._schema_name,
                     "schema": self._schema,
                     "strict": True,
                 }

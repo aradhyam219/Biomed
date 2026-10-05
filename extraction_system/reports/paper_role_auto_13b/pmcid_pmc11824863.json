@@ -1,0 +1,860 @@
+{
+  "document": {
+    "id": "PMCID:PMC11824863"
+  },
+  "nodes": [
+    {
+      "id": "doc_e_001",
+      "label": "SFPQ",
+      "type": "Gene",
+      "aliases": [
+        "SFPQ"
+      ],
+      "mentions": [
+        {
+          "id": "E1",
+          "text": "SFPQ",
+          "type": "Gene",
+          "start": 18,
+          "end": 22,
+          "score": 0.9999493360519409
+        },
+        {
+          "id": "E8",
+          "text": "SFPQ",
+          "type": "Gene",
+          "start": 288,
+          "end": 292,
+          "score": 0.999971866607666
+        },
+        {
+          "id": "E10",
+          "text": "SFPQ",
+          "type": "Gene",
+          "start": 480,
+          "end": 484,
+          "score": 0.9999781847000122
+        },
+        {
+          "id": "E16",
+          "text": "SFPQ",
+          "type": "Gene",
+          "start": 711,
+          "end": 715,
+          "score": 0.7522382140159607
+        }
+      ]
+    },
+    {
+      "id": "doc_e_002",
+      "label": "AD",
+      "type": "Disease",
+      "aliases": [
+        "AD",
+        "Alzheimer's disease"
+      ],
+      "mentions": [
+        {
+          "id": "E2",
+          "text": "AD",
+          "type": "Disease",
+          "start": 56,
+          "end": 58,
+          "score": 0.9999332427978516
+        },
+        {
+          "id": "E4",
+          "text": "Alzheimer's disease",
+          "type": "Disease",
+          "start": 65,
+          "end": 84,
+          "score": 0.9999909003575643
+        },
+        {
+          "id": "E5",
+          "text": "AD",
+          "type": "Disease",
+          "start": 86,
+          "end": 88,
+          "score": 0.999977707862854
+        },
+        {
+          "id": "E11",
+          "text": "AD",
+          "type": "Disease",
+          "start": 488,
+          "end": 490,
+          "score": 0.9999853372573853
+        },
+        {
+          "id": "E12",
+          "text": "AD",
+          "type": "Disease",
+          "start": 543,
+          "end": 545,
+          "score": 0.9999839067459106
+        },
+        {
+          "id": "E17",
+          "text": "AD",
+          "type": "Disease",
+          "start": 738,
+          "end": 740,
+          "score": 0.9999804496765137
+        },
+        {
+          "id": "E20",
+          "text": "AD",
+          "type": "Disease",
+          "start": 831,
+          "end": 833,
+          "score": 0.9999840259552002
+        },
+        {
+          "id": "E22",
+          "text": "AD",
+          "type": "Disease",
+          "start": 855,
+          "end": 857,
+          "score": 0.999984860420227
+        },
+        {
+          "id": "E41",
+          "text": "AD",
+          "type": "Disease",
+          "start": 1493,
+          "end": 1495,
+          "score": 0.9999860525131226
+        }
+      ]
+    },
+    {
+      "id": "doc_e_003",
+      "label": "Mice",
+      "type": "Species",
+      "aliases": [
+        "Mice",
+        "mice"
+      ],
+      "mentions": [
+        {
+          "id": "E3",
+          "text": "Mice",
+          "type": "Species",
+          "start": 59,
+          "end": 63,
+          "score": 0.9999854564666748
+        },
+        {
+          "id": "E18",
+          "text": "mice",
+          "type": "Species",
+          "start": 741,
+          "end": 745,
+          "score": 0.9999850988388062
+        },
+        {
+          "id": "E21",
+          "text": "mice",
+          "type": "Species",
+          "start": 834,
+          "end": 838,
+          "score": 0.9999866485595703
+        }
+      ],
+      "paper_role": {
+        "category": "contextual",
+        "paragraphs": [
+          "Mice provide the experimental context for studying SFPQ overexpression in AD. The authors established an AD model by lateral ventricular injection of amyloid-beta1–42, then used adeno-associated virus to overexpress SFPQ in the hippocampus and reported improved recognition and memory."
+        ],
+        "evidence": [
+          "In this study, an AD mouse model was established through lateral ventricular injection of amyloid-beta1–42 (Aβ1–42).",
+          "Subsequently, adeno-associated virus was administered to overexpress SFPQ in the hippocampus of AD mice.",
+          "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice"
+        ]
+      }
+    },
+    {
+      "id": "doc_e_004",
+      "label": "neurodegenerative disorder",
+      "type": "Disease",
+      "aliases": [
+        "neurodegenerative disorder"
+      ],
+      "mentions": [
+        {
+          "id": "E6",
+          "text": "neurodegenerative disorder",
+          "type": "Disease",
+          "start": 103,
+          "end": 129,
+          "score": 0.9999899864196777
+        }
+      ]
+    },
+    {
+      "id": "doc_e_005",
+      "label": "proline and glutamine rich",
+      "type": "Gene",
+      "aliases": [
+        "proline and glutamine rich"
+      ],
+      "mentions": [
+        {
+          "id": "E7",
+          "text": "proline and glutamine rich",
+          "type": "Gene",
+          "start": 260,
+          "end": 286,
+          "score": 0.9998663514852524
+        }
+      ],
+      "paper_role": {
+        "category": "substantive",
+        "paragraphs": [
+          "The phrase “proline and glutamine rich” appears within the name of SFPQ, whose role in AD pathology is the study's focus. The authors overexpressed SFPQ and reported improved recognition and memory in AD mice, with reduced APP and Tau, suggesting SFPQ as a potential molecular target for AD prevention and treatment."
+        ],
+        "evidence": [
+          "Splicing factor proline and glutamine rich (SFPQ)",
+          "However, the specific role of SFPQ in AD pathology is not well understood.",
+          "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau.",
+          "These findings suggest that SFPQ may serve as a promising molecular target for the prevention and treatment of AD."
+        ]
+      }
+    },
+    {
+      "id": "doc_e_006",
+      "label": "neurodegenerative diseases",
+      "type": "Disease",
+      "aliases": [
+        "neurodegenerative diseases"
+      ],
+      "mentions": [
+        {
+          "id": "E9",
+          "text": "neurodegenerative diseases",
+          "type": "Disease",
+          "start": 329,
+          "end": 355,
+          "score": 0.9999862909317017
+        }
+      ]
+    },
+    {
+      "id": "doc_e_007",
+      "label": "mouse",
+      "type": "Species",
+      "aliases": [
+        "mouse"
+      ],
+      "mentions": [
+        {
+          "id": "E13",
+          "text": "mouse",
+          "type": "Species",
+          "start": 546,
+          "end": 551,
+          "score": 0.9999865293502808
+        }
+      ],
+      "paper_role": {
+        "category": "contextual",
+        "paragraphs": [
+          "Mouse identifies the species used for the experimental AD model, which the authors established through lateral ventricular injection of amyloid-beta1–42."
+        ],
+        "evidence": [
+          "In this study, an AD mouse model was established through lateral ventricular injection of amyloid-beta1–42 (Aβ1–42)."
+        ]
+      }
+    },
+    {
+      "id": "doc_e_008",
+      "label": "amyloid-beta1–42",
+      "type": "Gene",
+      "aliases": [
+        "amyloid-beta1–42"
+      ],
+      "mentions": [
+        {
+          "id": "E14",
+          "text": "amyloid-beta1–42",
+          "type": "Gene",
+          "start": 615,
+          "end": 631,
+          "score": 0.9999810854593912
+        }
+      ]
+    },
+    {
+      "id": "doc_e_009",
+      "label": "Aβ1–42",
+      "type": "Gene",
+      "aliases": [
+        "Aβ1–42"
+      ],
+      "mentions": [
+        {
+          "id": "E15",
+          "text": "Aβ1–42",
+          "type": "Gene",
+          "start": 633,
+          "end": 639,
+          "score": 0.9999725818634033
+        }
+      ],
+      "paper_role": {
+        "category": "substantive",
+        "paragraphs": [
+          "Aβ1–42 was administered by lateral ventricular injection to establish the AD mouse model used in the study."
+        ],
+        "evidence": [
+          "In this study, an AD mouse model was established through lateral ventricular injection of amyloid-beta1–42 (Aβ1–42)."
+        ]
+      }
+    },
+    {
+      "id": "doc_e_010",
+      "label": "SFPQ",
+      "type": "Chemical",
+      "aliases": [
+        "SFPQ"
+      ],
+      "mentions": [
+        {
+          "id": "E19",
+          "text": "SFPQ",
+          "type": "Chemical",
+          "start": 776,
+          "end": 780,
+          "score": 0.9999947547912598
+        },
+        {
+          "id": "E40",
+          "text": "SFPQ",
+          "type": "Chemical",
+          "start": 1410,
+          "end": 1414,
+          "score": 0.9999440908432007
+        }
+      ]
+    },
+    {
+      "id": "doc_e_011",
+      "label": "APP",
+      "type": "Gene",
+      "aliases": [
+        "amyloid precursor protein",
+        "APP"
+      ],
+      "mentions": [
+        {
+          "id": "E23",
+          "text": "amyloid precursor protein",
+          "type": "Gene",
+          "start": 890,
+          "end": 915,
+          "score": 0.9999803304672241
+        },
+        {
+          "id": "E24",
+          "text": "APP",
+          "type": "Gene",
+          "start": 917,
+          "end": 920,
+          "score": 0.9999890327453613
+        }
+      ]
+    },
+    {
+      "id": "doc_e_012",
+      "label": "Tau",
+      "type": "Gene",
+      "aliases": [
+        "Tau"
+      ],
+      "mentions": [
+        {
+          "id": "E25",
+          "text": "Tau",
+          "type": "Gene",
+          "start": 926,
+          "end": 929,
+          "score": 0.9999507665634155
+        }
+      ]
+    },
+    {
+      "id": "doc_e_013",
+      "label": "GST",
+      "type": "Gene",
+      "aliases": [
+        "glutathione S-transferase",
+        "GST"
+      ],
+      "mentions": [
+        {
+          "id": "E26",
+          "text": "glutathione S-transferase",
+          "type": "Gene",
+          "start": 1023,
+          "end": 1048,
+          "score": 0.9999809861183167
+        },
+        {
+          "id": "E27",
+          "text": "GST",
+          "type": "Gene",
+          "start": 1050,
+          "end": 1053,
+          "score": 0.9999890327453613
+        }
+      ]
+    },
+    {
+      "id": "doc_e_014",
+      "label": "HO-1",
+      "type": "Gene",
+      "aliases": [
+        "heme oxygenase-1",
+        "HO-1"
+      ],
+      "mentions": [
+        {
+          "id": "E28",
+          "text": "heme oxygenase-1",
+          "type": "Gene",
+          "start": 1059,
+          "end": 1075,
+          "score": 0.9999811947345734
+        },
+        {
+          "id": "E29",
+          "text": "HO-1",
+          "type": "Gene",
+          "start": 1077,
+          "end": 1081,
+          "score": 0.9999898672103882
+        }
+      ]
+    },
+    {
+      "id": "doc_e_015",
+      "label": "Bcl-2",
+      "type": "Gene",
+      "aliases": [
+        "Bcl-2"
+      ],
+      "mentions": [
+        {
+          "id": "E30",
+          "text": "Bcl-2",
+          "type": "Gene",
+          "start": 1137,
+          "end": 1142,
+          "score": 0.99998939037323
+        }
+      ]
+    },
+    {
+      "id": "doc_e_016",
+      "label": "Bax",
+      "type": "Gene",
+      "aliases": [
+        "Bax"
+      ],
+      "mentions": [
+        {
+          "id": "E31",
+          "text": "Bax",
+          "type": "Gene",
+          "start": 1167,
+          "end": 1170,
+          "score": 0.9999777674674988
+        }
+      ]
+    },
+    {
+      "id": "doc_e_017",
+      "label": "phosphoinositide 3-kinase",
+      "type": "Gene",
+      "aliases": [
+        "phosphoinositide 3-kinase"
+      ],
+      "mentions": [
+        {
+          "id": "E32",
+          "text": "phosphoinositide 3-kinase",
+          "type": "Gene",
+          "start": 1215,
+          "end": 1240,
+          "score": 0.9999774694442749
+        }
+      ]
+    },
+    {
+      "id": "doc_e_018",
+      "label": "PI3K",
+      "type": "Gene",
+      "aliases": [
+        "PI3K"
+      ],
+      "mentions": [
+        {
+          "id": "E33",
+          "text": "PI3K",
+          "type": "Gene",
+          "start": 1244,
+          "end": 1248,
+          "score": 0.9999898672103882
+        },
+        {
+          "id": "E34",
+          "text": "PI3K",
+          "type": "Gene",
+          "start": 1250,
+          "end": 1254,
+          "score": 0.9999769926071167
+        },
+        {
+          "id": "E38",
+          "text": "PI3K",
+          "type": "Gene",
+          "start": 1354,
+          "end": 1358,
+          "score": 0.9999901056289673
+        }
+      ],
+      "paper_role": {
+        "category": "substantive",
+        "paragraphs": [
+          "PI3K contributes to the signaling readout reported in the SFPQ-overexpression study. The authors found an elevated p-PI3K/PI3K ratio and, together with the elevated p-AKT/AKT ratio, interpreted this as activation of the PI3K/AKT signaling pathway."
+        ],
+        "evidence": [
+          "Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway."
+        ]
+      }
+    },
+    {
+      "id": "doc_e_019",
+      "label": "protein kinase B",
+      "type": "Gene",
+      "aliases": [
+        "protein kinase B"
+      ],
+      "mentions": [
+        {
+          "id": "E35",
+          "text": "protein kinase B",
+          "type": "Gene",
+          "start": 1274,
+          "end": 1290,
+          "score": 0.9999801317850748
+        }
+      ]
+    },
+    {
+      "id": "doc_e_020",
+      "label": "AKT",
+      "type": "Gene",
+      "aliases": [
+        "AKT"
+      ],
+      "mentions": [
+        {
+          "id": "E36",
+          "text": "AKT",
+          "type": "Gene",
+          "start": 1294,
+          "end": 1297,
+          "score": 0.9999902248382568
+        },
+        {
+          "id": "E37",
+          "text": "AKT",
+          "type": "Gene",
+          "start": 1299,
+          "end": 1302,
+          "score": 0.9999898672103882
+        },
+        {
+          "id": "E39",
+          "text": "AKT",
+          "type": "Gene",
+          "start": 1359,
+          "end": 1362,
+          "score": 0.9999903440475464
+        }
+      ],
+      "paper_role": {
+        "category": "substantive",
+        "paragraphs": [
+          "AKT contributes to the signaling readout reported in the SFPQ-overexpression study. The authors found an elevated p-AKT/AKT ratio and, together with the elevated p-PI3K/PI3K ratio, interpreted this as activation of the PI3K/AKT signaling pathway."
+        ],
+        "evidence": [
+          "Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway."
+        ]
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "doc_r_001",
+      "source": "doc_e_001",
+      "target": "doc_e_002",
+      "predicate": "overexpressed_in_model_of",
+      "negated": false,
+      "evidence": [
+        {
+          "text": "Subsequently, adeno-associated virus was administered to overexpress SFPQ in the hippocampus of AD mice.",
+          "assertion": "Adeno-associated virus was administered to overexpress SFPQ in the hippocampus of AD mice.",
+          "intervention": "administration of adeno-associated virus to overexpress SFPQ",
+          "effects": [
+            "SFPQ overexpression"
+          ],
+          "context": [
+            "hippocampus of AD mice"
+          ],
+          "surface_form": "overexpress SFPQ in the hippocampus of AD mice",
+          "score": null
+        }
+      ]
+    },
+    {
+      "id": "doc_r_002",
+      "source": "doc_e_001",
+      "target": "doc_e_006",
+      "predicate": "plays_role_in",
+      "negated": false,
+      "evidence": [
+        {
+          "text": "Splicing factor proline and glutamine rich (SFPQ) is known to play a crucial role in neurodegenerative diseases, including antioxidant-related functions and regulating gene expression within brain neurons.",
+          "assertion": "SFPQ plays a crucial role in neurodegenerative diseases, including antioxidant-related functions and regulation of gene expression within brain neurons.",
+          "intervention": null,
+          "effects": [],
+          "context": [],
+          "surface_form": "play a crucial role in",
+          "score": null
+        }
+      ]
+    },
+    {
+      "id": "doc_r_003",
+      "source": "doc_e_002",
+      "target": "doc_e_004",
+      "predicate": "is_a",
+      "negated": false,
+      "evidence": [
+        {
+          "text": "Alzheimer's disease (AD) is a complex neurodegenerative disorder with multifaceted pathogenesis",
+          "assertion": "Alzheimer's disease is a complex neurodegenerative disorder with multifaceted pathogenesis.",
+          "intervention": null,
+          "effects": [],
+          "context": [],
+          "surface_form": "is a complex neurodegenerative disorder",
+          "score": null
+        }
+      ]
+    },
+    {
+      "id": "doc_r_004",
+      "source": "doc_e_008",
+      "target": "doc_e_002",
+      "predicate": "establishes_model_of",
+      "negated": false,
+      "evidence": [
+        {
+          "text": "In this study, an AD mouse model was established through lateral ventricular injection of amyloid-beta1–42 (Aβ1–42).",
+          "assertion": "Lateral ventricular injection of amyloid-beta1–42 was used to establish an AD mouse model.",
+          "intervention": "lateral ventricular injection of amyloid-beta1–42",
+          "effects": [
+            "establishment of an AD mouse model"
+          ],
+          "context": [
+            "mouse model"
+          ],
+          "surface_form": "was established through lateral ventricular injection of",
+          "score": null
+        }
+      ]
+    },
+    {
+      "id": "doc_r_005",
+      "source": "doc_e_010",
+      "target": "doc_e_002",
+      "predicate": "improves_recognition_and_memory_in",
+      "negated": false,
+      "evidence": [
+        {
+          "text": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice",
+          "assertion": "SFPQ overexpression improves recognition and memory in AD mice.",
+          "intervention": "SFPQ overexpression",
+          "effects": [
+            "improved recognition",
+            "improved memory"
+          ],
+          "context": [
+            "AD mice"
+          ],
+          "surface_form": "improves recognition and memory in",
+          "score": null
+        }
+      ]
+    },
+    {
+      "id": "doc_r_006",
+      "source": "doc_e_010",
+      "target": "doc_e_002",
+      "predicate": "potential_preventive_and_therapeutic_target_for",
+      "negated": false,
+      "evidence": [
+        {
+          "text": "These findings suggest that SFPQ may serve as a promising molecular target for the prevention and treatment of AD.",
+          "assertion": "The findings suggest that SFPQ may serve as a promising molecular target for the prevention and treatment of AD.",
+          "intervention": null,
+          "effects": [],
+          "context": [],
+          "surface_form": "may serve as a promising molecular target for the prevention and treatment of",
+          "score": null
+        }
+      ]
+    },
+    {
+      "id": "doc_r_007",
+      "source": "doc_e_010",
+      "target": "doc_e_011",
+      "predicate": "reduces_protein_levels",
+      "negated": false,
+      "evidence": [
+        {
+          "text": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau.",
+          "assertion": "SFPQ overexpression reduces the AD-related marker protein amyloid precursor protein in AD mice.",
+          "intervention": "SFPQ overexpression",
+          "effects": [],
+          "context": [
+            "AD mice"
+          ],
+          "surface_form": "reducing AD-related marker proteins",
+          "score": null
+        }
+      ]
+    },
+    {
+      "id": "doc_r_008",
+      "source": "doc_e_010",
+      "target": "doc_e_012",
+      "predicate": "reduces_protein_levels",
+      "negated": false,
+      "evidence": [
+        {
+          "text": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau.",
+          "assertion": "SFPQ overexpression reduces the AD-related marker protein Tau in AD mice.",
+          "intervention": "SFPQ overexpression",
+          "effects": [],
+          "context": [
+            "AD mice"
+          ],
+          "surface_form": "reducing AD-related marker proteins",
+          "score": null
+        }
+      ]
+    },
+    {
+      "id": "doc_r_009",
+      "source": "doc_e_010",
+      "target": "doc_e_013",
+      "predicate": "upregulates",
+      "negated": false,
+      "evidence": [
+        {
+          "text": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated.",
+          "assertion": "SFPQ overexpression upregulates the antioxidant protein glutathione S-transferase in AD mice.",
+          "intervention": "SFPQ overexpression",
+          "effects": [],
+          "context": [
+            "AD mice"
+          ],
+          "surface_form": "were upregulated",
+          "score": null
+        }
+      ]
+    },
+    {
+      "id": "doc_r_010",
+      "source": "doc_e_010",
+      "target": "doc_e_014",
+      "predicate": "upregulates",
+      "negated": false,
+      "evidence": [
+        {
+          "text": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated.",
+          "assertion": "SFPQ overexpression upregulates the antioxidant protein heme oxygenase-1 in AD mice.",
+          "intervention": "SFPQ overexpression",
+          "effects": [],
+          "context": [
+            "AD mice"
+          ],
+          "surface_form": "were upregulated",
+          "score": null
+        }
+      ]
+    },
+    {
+      "id": "doc_r_011",
+      "source": "doc_e_010",
+      "target": "doc_e_017",
+      "predicate": "increases_phosphorylated_to_total_ratio",
+      "negated": false,
+      "evidence": [
+        {
+          "text": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated. The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax also increased. Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway.",
+          "assertion": "SFPQ overexpression elevates the phosphorylated phosphoinositide 3-kinase to PI3K ratio in AD mice.",
+          "intervention": "SFPQ overexpression",
+          "effects": [],
+          "context": [
+            "AD mice"
+          ],
+          "surface_form": "ratios were elevated",
+          "score": null
+        }
+      ]
+    },
+    {
+      "id": "doc_r_012",
+      "source": "doc_e_010",
+      "target": "doc_e_019",
+      "predicate": "increases_phosphorylated_to_total_ratio",
+      "negated": false,
+      "evidence": [
+        {
+          "text": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated. The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax also increased. Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway.",
+          "assertion": "SFPQ overexpression elevates the phosphorylated protein kinase B to AKT ratio in AD mice.",
+          "intervention": "SFPQ overexpression",
+          "effects": [],
+          "context": [
+            "AD mice"
+          ],
+          "surface_form": "ratios were elevated",
+          "score": null
+        }
+      ]
+    },
+    {
+      "id": "doc_r_013",
+      "source": "doc_e_015",
+      "target": "doc_e_016",
+      "predicate": "increased_ratio_to",
+      "negated": false,
+      "evidence": [
+        {
+          "text": "The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax also increased.",
+          "assertion": "The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax increased.",
+          "intervention": null,
+          "effects": [],
+          "context": [],
+          "surface_form": "The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax also increased",
+          "score": null
+        }
+      ]
+    }
+  ]
+}

@@ -39,7 +39,7 @@ graph construction and alias/naming-only self-edge cleanup
     ↓
 genuinely unconnected-node detection
     ↓
-optional paper-role enrichment
+automatic post-topology paper-role enrichment
     ↓
 graph-ready result / JSON
 ```
@@ -220,12 +220,18 @@ constituent mentions; it does not create a second node identity system.
 
 After assembly, relation extraction, graph remapping, and alias/naming-only
 self-edge cleanup, a node has degree zero when it is genuinely unconnected.
-Canonical graph JSON retains every such node. An optional paper-role extractor
-may enrich all requested unconnected nodes in one bounded paper-level call using
+Canonical graph JSON retains every such node. Ordinary pretrained graph generation
+automatically enriches every degree-zero node in one batched initial call using
 the paper title, complete supplied text, and every source mention for each node.
 Role output is limited to `substantive` and `contextual`, contains one or two
 concise paragraphs, and retains exact verbatim source evidence. Role prose is
 node metadata only: it never creates, modifies, or implies a graph edge.
+The role provider uses GPT-6.1 Sol, medium reasoning, Standard (`default`) service,
+and the shared background Responses executor. No degree-zero nodes means no role
+provider setup or call. Provider or grounding failures raise explicitly before
+a graph is returned; incomplete batches are never partially attached. Explicit
+role injection remains supported, and low-level pipeline construction keeps
+roles optional.
 
 ## Normalization terminology
 

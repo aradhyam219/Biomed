@@ -1,0 +1,41 @@
+{
+  "status": "passed",
+  "tests": [
+    {
+      "suite": "paper_roles",
+      "passed": 11
+    },
+    {
+      "suite": "llm_cli_and_pipeline",
+      "passed": 13
+    },
+    {
+      "suite": "responses_execution",
+      "passed": 26
+    },
+    {
+      "suite": "graph",
+      "passed": 13
+    },
+    {
+      "suite": "relation",
+      "passed": 27
+    },
+    {
+      "suite": "entity_assembly",
+      "passed": 12
+    },
+    {
+      "suite": "viewer_adapter",
+      "passed": 13
+    }
+  ],
+  "python_total": 102,
+  "viewer_total": 13,
+  "live_initial_generations": 1,
+  "live_repairs": 0,
+  "re_prompt_sha256": "13f38a6e94db74b534eb0df0b139287ace2e714fc908276ce4c3572f9b25836f",
+  "topology_unchanged": true,
+  "ner_assembly_unchanged": true,
+  "contract13a_untouched": true
+}
