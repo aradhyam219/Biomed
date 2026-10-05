@@ -1,0 +1,15 @@
+{
+  "complete_baseline_relation_coverage": true,
+  "fresh_inference_cases": 4,
+  "identical_nodes_per_controlled_pair": true,
+  "offline_pipeline_graph_replays": 20,
+  "orphan_turnover_verified": true,
+  "paper_role_provider_calls": 0,
+  "production_code_changes": 0,
+  "protected_tracked_files_unchanged": true,
+  "repair_generations": 0,
+  "reused_cases": 4,
+  "source_and_raw_output_grounding_verified": true,
+  "successful_generation_count": 8,
+  "summary_arithmetic_verified": true
+}

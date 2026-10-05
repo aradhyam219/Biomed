@@ -1,0 +1,1461 @@
+{
+  "current_additions": [
+    {
+      "candidate_relation_index": 11,
+      "classification": "USEFUL CURRENT-ONLY",
+      "rationale": "Useful rat-tissue Cbl downregulation relative to 09B; already present in Contract10.",
+      "relation": {
+        "assertion": "Cbl expression was reduced in diabetic rat tissues.",
+        "context": [
+          "rat tissues"
+        ],
+        "effects": [],
+        "evidence": "Cbl was reduced in DM rat tissues and HG-induced HUVECs",
+        "intervention": null,
+        "negated": false,
+        "predicate": "expression_decreased_in",
+        "score": null,
+        "source": "E46",
+        "surface_form": "was reduced in",
+        "target": "E41"
+      }
+    }
+  ],
+  "noise_additions": [],
+  "paper_id": "PMCID:PMC8605525",
+  "severity": "ORANGE",
+  "severity_justification": "Core Cb1-JAK2-STAT4-Runx3 mechanism remains, but the joint JAK2/STAT4 rescue experiment and several HG-HUVEC expression findings disappear; treatment potential is also lost.",
+  "source_grounding_policy": "Exact frozen title plus complete abstract only. Findings must survive in structured predicate/assertion/intervention/effects/context; an evidence quote alone does not establish retention. Source quotations are retained for review.",
+  "title": "Overexpression of E3 ubiquitin ligase Cbl attenuates endothelial dysfunction in diabetes mellitus by inhibiting the JAK2/STAT4 signaling and Runx3-mediated H3K4me3",
+  "views": {
+    "baseline_09b": {
+      "classification_counts": {
+        "BENEFICIAL PRUNING": 3,
+        "EQUIVALENT / REPHRASED": 21,
+        "HARMFUL OMISSION": 5,
+        "RETAINED": 4,
+        "UNCERTAIN": 1
+      },
+      "controlled_counts": {
+        "baseline_edges": 31,
+        "baseline_nodes": 20,
+        "baseline_orphans": 5,
+        "baseline_relations": 35,
+        "beneficial_pruning": 3,
+        "current_edges": 25,
+        "current_nodes": 20,
+        "current_orphans": 6,
+        "current_relations": 26,
+        "harmful_topology_changes": 0,
+        "material_findings_lost": 5,
+        "new_orphans": 1,
+        "resolved_orphans": 0
+      },
+      "findings": [
+        {
+          "baseline_assertions": [
+            "Cbl is identified as an E3 ubiquitin ligase.",
+            "Casitas B-lineage lymphoma is identified as an E3 ubiquitin ligase."
+          ],
+          "baseline_relation_indices": [
+            0,
+            12
+          ],
+          "candidate_relation_indices": [],
+          "classification": "UNCERTAIN",
+          "finding_id": "baseline_09b:000",
+          "material": false,
+          "rationale": "Cbl's E3-ligase class/identity is explicit in source but these fragment-to-Cbl edges mix class and identity. The prompt confound and incomplete long-form fragment prevent a confident damage-versus-cleanup verdict.",
+          "source_evidence": [
+            "E3 ubiquitin ligase Cbl",
+            "E3 ubiquitin ligase casitas B-lineage lymphoma (Cbl)"
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Overexpression of E3 ubiquitin ligase Cbl attenuates endothelial dysfunction in diabetes mellitus by inhibiting the JAK2/STAT4 signaling and Runx3-mediated H3K4me3."
+          ],
+          "baseline_relation_indices": [
+            1
+          ],
+          "candidate_relation_indices": [
+            0
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:001",
+          "material": true,
+          "rationale": "Title-level endothelial dysfunction attenuation survives; pathway components survive in separate candidate claims.",
+          "source_evidence": [
+            "Overexpression of E3 ubiquitin ligase Cbl attenuates endothelial dysfunction in diabetes mellitus by inhibiting the JAK2/STAT4 signaling and Runx3-mediated H3K4me3"
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "In diabetes mellitus, overexpression of E3 ubiquitin ligase Cbl inhibits the JAK2/STAT4 signaling."
+          ],
+          "baseline_relation_indices": [
+            2
+          ],
+          "candidate_relation_indices": [
+            1
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:002",
+          "material": true,
+          "rationale": "JAK2 pathway inhibition survives.",
+          "source_evidence": [
+            "Overexpression of E3 ubiquitin ligase Cbl attenuates endothelial dysfunction in diabetes mellitus by inhibiting the JAK2/STAT4 signaling and Runx3-mediated H3K4me3"
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "In diabetes mellitus, overexpression of E3 ubiquitin ligase Cbl inhibits the JAK2/STAT4 signaling."
+          ],
+          "baseline_relation_indices": [
+            3
+          ],
+          "candidate_relation_indices": [
+            2
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:003",
+          "material": true,
+          "rationale": "STAT4 pathway inhibition survives.",
+          "source_evidence": [
+            "Overexpression of E3 ubiquitin ligase Cbl attenuates endothelial dysfunction in diabetes mellitus by inhibiting the JAK2/STAT4 signaling and Runx3-mediated H3K4me3"
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "In diabetes mellitus, overexpression of E3 ubiquitin ligase Cbl inhibits Runx3-mediated H3K4me3."
+          ],
+          "baseline_relation_indices": [
+            4
+          ],
+          "candidate_relation_indices": [
+            4
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:004",
+          "material": true,
+          "rationale": "Inhibition of Runx3-mediated H3K4me3 survives.",
+          "source_evidence": [
+            "Overexpression of E3 ubiquitin ligase Cbl attenuates endothelial dysfunction in diabetes mellitus by inhibiting the JAK2/STAT4 signaling and Runx3-mediated H3K4me3"
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "The source describes H3K4me3 as Runx3-mediated."
+          ],
+          "baseline_relation_indices": [
+            5
+          ],
+          "candidate_relation_indices": [
+            3
+          ],
+          "classification": "RETAINED",
+          "finding_id": "baseline_09b:005",
+          "material": true,
+          "rationale": "Runx3-mediated H3K4me3 relationship survives.",
+          "source_evidence": [
+            "Runx3-mediated H3K4me3"
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Diabetes mellitus (DM) is described as a most common chronic disease."
+          ],
+          "baseline_relation_indices": [
+            6
+          ],
+          "candidate_relation_indices": [
+            5
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:006",
+          "material": true,
+          "rationale": "Chronic disease description survives.",
+          "source_evidence": [
+            "Diabetes mellitus (DM), a most common chronic disease"
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Diabetes mellitus (DM) is featured with impaired endothelial function."
+          ],
+          "baseline_relation_indices": [
+            7
+          ],
+          "candidate_relation_indices": [
+            6
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:007",
+          "material": true,
+          "rationale": "Impaired endothelial function survives.",
+          "source_evidence": [
+            "Diabetes mellitus (DM), a most common chronic disease, is featured with impaired endothelial function and bioavailability of nitric oxide (NO)"
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Diabetes mellitus (DM) is featured with impaired bioavailability of nitric oxide (NO)."
+          ],
+          "baseline_relation_indices": [
+            8
+          ],
+          "candidate_relation_indices": [
+            7
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:008",
+          "material": true,
+          "rationale": "Impaired NO bioavailability survives.",
+          "source_evidence": [
+            "Diabetes mellitus (DM), a most common chronic disease, is featured with impaired endothelial function and bioavailability of nitric oxide (NO)"
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Nitric oxide is abbreviated as NO."
+          ],
+          "baseline_relation_indices": [
+            9
+          ],
+          "candidate_relation_indices": [],
+          "classification": "BENEFICIAL PRUNING",
+          "finding_id": "baseline_09b:009",
+          "material": false,
+          "rationale": "NO, Cbl and Runx3 abbreviation links are naming-only pruning under the prompt confound.",
+          "source_evidence": [
+            "nitric oxide (NO)"
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Casitas B-lineage lymphoma is abbreviated as Cbl."
+          ],
+          "baseline_relation_indices": [
+            13
+          ],
+          "candidate_relation_indices": [],
+          "classification": "BENEFICIAL PRUNING",
+          "finding_id": "baseline_09b:010",
+          "material": false,
+          "rationale": "NO, Cbl and Runx3 abbreviation links are naming-only pruning under the prompt confound.",
+          "source_evidence": [
+            "casitas B-lineage lymphoma (Cbl)"
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Runt-related transcription factor 3 is abbreviated as Runx3."
+          ],
+          "baseline_relation_indices": [
+            15
+          ],
+          "candidate_relation_indices": [],
+          "classification": "BENEFICIAL PRUNING",
+          "finding_id": "baseline_09b:011",
+          "material": false,
+          "rationale": "NO, Cbl and Runx3 abbreviation links are naming-only pruning under the prompt confound.",
+          "source_evidence": [
+            "runt-related transcription factor 3 (Runx3)"
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "E3 ubiquitin ligase appears to alleviate endothelial dysfunction as a promising option for DM treatment."
+          ],
+          "baseline_relation_indices": [
+            10
+          ],
+          "candidate_relation_indices": [
+            8
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:012",
+          "material": true,
+          "rationale": "E3-ligase alleviation claim survives, retaining appears-to uncertainty.",
+          "source_evidence": [
+            "E3 ubiquitin ligase appears to alleviate endothelial dysfunction as a promising option for DM treatment"
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "E3 ubiquitin ligase appears to be a promising option for DM treatment.",
+            "The evidence might underlie a novel Cbl-based treatment against DM in the future."
+          ],
+          "baseline_evidence_retained_in_candidate_quotes": false,
+          "baseline_relation_indices": [
+            11,
+            34
+          ],
+          "candidate_quote_indices": [],
+          "candidate_relation_indices": [],
+          "classification": "HARMFUL OMISSION",
+          "finding_id": "baseline_09b:013",
+          "loss_scope": "explicit structured scientific meaning; may remain recoverable from evidence quotes",
+          "lost_meaning_recoverable_from_evidence": false,
+          "lost_meaning_source_excerpt": "These evidence might underlie novel Cbl-based treatment against DM in the future.",
+          "material": true,
+          "rationale": "Potential E3/Cbl-based treatment against DM is not represented in current structured fields; retained DM disease context does not state therapeutic potential.",
+          "source_evidence": [
+            "E3 ubiquitin ligase appears to alleviate endothelial dysfunction as a promising option for DM treatment",
+            "These evidence might underlie novel Cbl-based treatment against DM in the future."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Intraperitoneal injection of streptozotocin was used to develop a rat model of DM."
+          ],
+          "baseline_relation_indices": [
+            14
+          ],
+          "candidate_relation_indices": [
+            9
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:014",
+          "material": true,
+          "rationale": "STZ DM rat-model induction survives.",
+          "source_evidence": [
+            "A rat model of DM was developed through intraperitoneal injection of streptozotocin"
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "High glucose (HG) condition was used to induce DM as an in vitro model."
+          ],
+          "baseline_relation_indices": [
+            16
+          ],
+          "candidate_relation_indices": [
+            10
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:015",
+          "material": true,
+          "rationale": "HG-HUVEC in-vitro DM model induction survives without turning glucose into a mechanistic gene regulator.",
+          "source_evidence": [
+            "Human umbilical vein endothelial cells (HUVECs) were cultured in high glucose (HG) condition to induce DM as an in vitro model"
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "JAK2 was elevated in the DM rat tissues and HG-induced HUVECs described in the results."
+          ],
+          "baseline_relation_indices": [
+            17
+          ],
+          "candidate_relation_indices": [
+            12
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:016",
+          "material": true,
+          "rationale": "JAK2 elevation survives in rat tissues; missing HG-HUVEC qualifier is assessed separately.",
+          "source_evidence": [
+            "Cbl was reduced in DM rat tissues and HG-induced HUVECs, where JAK2, Runx3 and STAT4 were elevated."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Runx3 was elevated in the DM rat tissues and HG-induced HUVECs described in the results."
+          ],
+          "baseline_relation_indices": [
+            18
+          ],
+          "candidate_relation_indices": [
+            13
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:017",
+          "material": true,
+          "rationale": "Runx3 elevation survives in rat tissues; missing HG-HUVEC qualifier is assessed separately.",
+          "source_evidence": [
+            "Cbl was reduced in DM rat tissues and HG-induced HUVECs, where JAK2, Runx3 and STAT4 were elevated."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "STAT4 was elevated in the DM rat tissues and HG-induced HUVECs described in the results."
+          ],
+          "baseline_relation_indices": [
+            19
+          ],
+          "candidate_relation_indices": [
+            14
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:018",
+          "material": true,
+          "rationale": "STAT4 elevation survives in rat tissues; missing HG-HUVEC qualifier is assessed separately.",
+          "source_evidence": [
+            "Cbl was reduced in DM rat tissues and HG-induced HUVECs, where JAK2, Runx3 and STAT4 were elevated."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "JAK2 was elevated in the DM rat tissues and HG-induced HUVECs described in the results."
+          ],
+          "baseline_evidence_retained_in_candidate_quotes": true,
+          "baseline_relation_indices": [
+            17
+          ],
+          "candidate_quote_indices": [
+            11,
+            12,
+            13,
+            14
+          ],
+          "candidate_relation_indices": [],
+          "classification": "HARMFUL OMISSION",
+          "finding_id": "baseline_09b:019",
+          "loss_scope": "explicit structured scientific meaning; may remain recoverable from evidence quotes",
+          "lost_meaning_recoverable_from_evidence": true,
+          "lost_meaning_source_excerpt": "HG-induced HUVECs",
+          "material": true,
+          "rationale": "JAK2 elevation in HG-induced HUVECs is lost; candidate restricts the expression result to diabetic rat tissues.",
+          "source_evidence": [
+            "Cbl was reduced in DM rat tissues and HG-induced HUVECs, where JAK2, Runx3 and STAT4 were elevated."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Runx3 was elevated in the DM rat tissues and HG-induced HUVECs described in the results."
+          ],
+          "baseline_evidence_retained_in_candidate_quotes": true,
+          "baseline_relation_indices": [
+            18
+          ],
+          "candidate_quote_indices": [
+            11,
+            12,
+            13,
+            14
+          ],
+          "candidate_relation_indices": [],
+          "classification": "HARMFUL OMISSION",
+          "finding_id": "baseline_09b:020",
+          "loss_scope": "explicit structured scientific meaning; may remain recoverable from evidence quotes",
+          "lost_meaning_recoverable_from_evidence": true,
+          "lost_meaning_source_excerpt": "HG-induced HUVECs",
+          "material": true,
+          "rationale": "Runx3 elevation in HG-induced HUVECs is lost; candidate restricts the expression result to diabetic rat tissues.",
+          "source_evidence": [
+            "Cbl was reduced in DM rat tissues and HG-induced HUVECs, where JAK2, Runx3 and STAT4 were elevated."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "STAT4 was elevated in the DM rat tissues and HG-induced HUVECs described in the results."
+          ],
+          "baseline_evidence_retained_in_candidate_quotes": true,
+          "baseline_relation_indices": [
+            19
+          ],
+          "candidate_quote_indices": [
+            11,
+            12,
+            13,
+            14
+          ],
+          "candidate_relation_indices": [],
+          "classification": "HARMFUL OMISSION",
+          "finding_id": "baseline_09b:021",
+          "loss_scope": "explicit structured scientific meaning; may remain recoverable from evidence quotes",
+          "lost_meaning_recoverable_from_evidence": true,
+          "lost_meaning_source_excerpt": "HG-induced HUVECs",
+          "material": true,
+          "rationale": "STAT4 elevation in HG-induced HUVECs is lost; candidate restricts the expression result to diabetic rat tissues.",
+          "source_evidence": [
+            "Cbl was reduced in DM rat tissues and HG-induced HUVECs, where JAK2, Runx3 and STAT4 were elevated."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Overexpression of Cbl alleviated endothelial dysfunction by increasing NO production, restoring vasodilation, and suppressing apoptosis of HUVECs."
+          ],
+          "baseline_relation_indices": [
+            20
+          ],
+          "candidate_relation_indices": [
+            15,
+            16
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:022",
+          "material": true,
+          "rationale": "Dysfunction improvement, restored vasodilation, suppressed HUVEC apoptosis and increased NO survive across two assertions.",
+          "source_evidence": [
+            "It was found that overexpression of Cbl alleviated endothelial dysfunction by increasing NO production and restoring vasodilation and suppressing apoptosis of HUVECs."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Overexpression of Cbl increased NO production in HUVECs."
+          ],
+          "baseline_relation_indices": [
+            21
+          ],
+          "candidate_relation_indices": [
+            16
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:023",
+          "material": true,
+          "rationale": "Increased NO survives; cellular setting is present in the adjacent linked result, though per-edge context is thinner.",
+          "source_evidence": [
+            "It was found that overexpression of Cbl alleviated endothelial dysfunction by increasing NO production and restoring vasodilation and suppressing apoptosis of HUVECs."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Cb1 enhanced JAK2 ubiquitination."
+          ],
+          "baseline_relation_indices": [
+            22
+          ],
+          "candidate_relation_indices": [
+            17
+          ],
+          "classification": "RETAINED",
+          "finding_id": "baseline_09b:024",
+          "material": true,
+          "rationale": "Cb1-enhanced JAK2 ubiquitination survives without merging Cb1 into Cbl.",
+          "source_evidence": [
+            "Mechanistically, Cb1 enhanced JAK2 ubiquitination and decreased JAK2 and STAT4 expression, where STAT4 improved Runx3 expression by regulating histone H3 lysine 4 trimethylation level."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Cb1 decreased JAK2 expression."
+          ],
+          "baseline_relation_indices": [
+            23
+          ],
+          "candidate_relation_indices": [
+            18
+          ],
+          "classification": "RETAINED",
+          "finding_id": "baseline_09b:025",
+          "material": true,
+          "rationale": "Cb1-decreased JAK2 expression survives.",
+          "source_evidence": [
+            "Mechanistically, Cb1 enhanced JAK2 ubiquitination and decreased JAK2 and STAT4 expression, where STAT4 improved Runx3 expression by regulating histone H3 lysine 4 trimethylation level."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Cb1 decreased STAT4 expression."
+          ],
+          "baseline_relation_indices": [
+            24
+          ],
+          "candidate_relation_indices": [
+            19
+          ],
+          "classification": "RETAINED",
+          "finding_id": "baseline_09b:026",
+          "material": true,
+          "rationale": "Cb1-decreased STAT4 expression survives.",
+          "source_evidence": [
+            "Mechanistically, Cb1 enhanced JAK2 ubiquitination and decreased JAK2 and STAT4 expression, where STAT4 improved Runx3 expression by regulating histone H3 lysine 4 trimethylation level."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "STAT4 improved Runx3 expression.",
+            "STAT4 regulated the histone H3 lysine 4 trimethylation level while improving Runx3 expression."
+          ],
+          "baseline_relation_indices": [
+            25,
+            26
+          ],
+          "candidate_relation_indices": [
+            20
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:027",
+          "material": true,
+          "rationale": "STAT4 improves Runx3 expression by regulating H3 trimethylation survives in one assertion; the separate H3K4me3 edge is gone, but the mechanism is explicit.",
+          "source_evidence": [
+            "Mechanistically, Cb1 enhanced JAK2 ubiquitination and decreased JAK2 and STAT4 expression, where STAT4 improved Runx3 expression by regulating histone H3 lysine 4 trimethylation level.",
+            "where STAT4 improved Runx3 expression by regulating histone H3 lysine 4 trimethylation level"
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Overexpression of JAK2 increased apoptosis of HUVECs and abrogated the effect of Cb1 on endothelial function.",
+            "Overexpression of STAT4 increased apoptosis of HUVECs and abrogated the effect of Cb1 on endothelial function."
+          ],
+          "baseline_evidence_retained_in_candidate_quotes": true,
+          "baseline_relation_indices": [
+            27,
+            28
+          ],
+          "candidate_quote_indices": [
+            21
+          ],
+          "candidate_relation_indices": [],
+          "classification": "HARMFUL OMISSION",
+          "finding_id": "baseline_09b:028",
+          "loss_scope": "explicit structured scientific meaning; may remain recoverable from evidence quotes",
+          "lost_meaning_recoverable_from_evidence": true,
+          "lost_meaning_source_excerpt": "Overexpression of JAK2 and STAT4, or Runx3",
+          "material": true,
+          "rationale": "The source's joint JAK2-and-STAT4 overexpression rescue/abrogation finding, including increased HUVEC apoptosis, is absent. Count one joint experiment, not two independent experiments.",
+          "source_evidence": [
+            "Overexpression of JAK2 and STAT4, or Runx3 increased apoptosis of HUVECs, abrogating the effect of Cb1 on endothelial function."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Overexpression of Runx3 increased apoptosis of HUVECs and abrogated the effect of Cb1 on endothelial function."
+          ],
+          "baseline_relation_indices": [
+            29
+          ],
+          "candidate_relation_indices": [
+            21
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:029",
+          "material": true,
+          "rationale": "Runx3 overexpression rescue/abrogation and apoptosis survives.",
+          "source_evidence": [
+            "Overexpression of JAK2 and STAT4, or Runx3 increased apoptosis of HUVECs, abrogating the effect of Cb1 on endothelial function."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "In DM, Cbl alleviates endothelial dysfunction by inactivating the JAK2/STAT4 pathway and inhibiting Runx3 expression."
+          ],
+          "baseline_relation_indices": [
+            30
+          ],
+          "candidate_relation_indices": [
+            22,
+            23,
+            24,
+            25
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:030",
+          "material": true,
+          "rationale": "Conclusion mechanism survives across explicit pathway-inactivation/Runx3 inhibition claims.",
+          "source_evidence": [
+            "In conclusion, Cbl alleviates endothelial dysfunction by inactivation of the JAK2/STAT4 pathway and inhibition of Runx3 expression in DM."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "In DM, Cbl inactivates the JAK2/STAT4 pathway."
+          ],
+          "baseline_relation_indices": [
+            31
+          ],
+          "candidate_relation_indices": [
+            23
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:031",
+          "material": true,
+          "rationale": "JAK2 pathway inactivation survives.",
+          "source_evidence": [
+            "In conclusion, Cbl alleviates endothelial dysfunction by inactivation of the JAK2/STAT4 pathway and inhibition of Runx3 expression in DM."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "In DM, Cbl inactivates the JAK2/STAT4 pathway."
+          ],
+          "baseline_relation_indices": [
+            32
+          ],
+          "candidate_relation_indices": [
+            24
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:032",
+          "material": true,
+          "rationale": "STAT4 pathway inactivation survives.",
+          "source_evidence": [
+            "In conclusion, Cbl alleviates endothelial dysfunction by inactivation of the JAK2/STAT4 pathway and inhibition of Runx3 expression in DM."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "In DM, Cbl inhibits Runx3 expression."
+          ],
+          "baseline_relation_indices": [
+            33
+          ],
+          "candidate_relation_indices": [
+            25
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:033",
+          "material": true,
+          "rationale": "Runx3 inhibition survives.",
+          "source_evidence": [
+            "In conclusion, Cbl alleviates endothelial dysfunction by inactivation of the JAK2/STAT4 pathway and inhibition of Runx3 expression in DM."
+          ]
+        }
+      ],
+      "historical_graph_counts": {
+        "edges": 33,
+        "nodes": 20,
+        "orphans": 5
+      },
+      "orphans": {
+        "INHERITED ORPHAN": [
+          {
+            "id": "doc_e_003",
+            "label": "diabetes mellitus",
+            "type": "Disease"
+          },
+          {
+            "id": "doc_e_010",
+            "label": "impaired",
+            "type": "Disease"
+          },
+          {
+            "id": "doc_e_013",
+            "label": "rats",
+            "type": "Species"
+          },
+          {
+            "id": "doc_e_014",
+            "label": "rat",
+            "type": "Species"
+          },
+          {
+            "id": "doc_e_018",
+            "label": "Human",
+            "type": "Species"
+          }
+        ],
+        "NEW NODE / IDENTITY DIFFERENCE": [],
+        "NEW ORPHAN": [
+          {
+            "cause": "beneficial cleanup",
+            "explanation": "Abbreviation-only Runx3 edge removed; assembled fragment identity is held identical on both sides.",
+            "id": "doc_e_016",
+            "label": "runt-related transcription factor 3",
+            "previous_relations": [
+              {
+                "assertion": "Runt-related transcription factor 3 is abbreviated as Runx3.",
+                "context": [],
+                "effects": [],
+                "evidence": "runt-related transcription factor 3 (Runx3)",
+                "index": 15,
+                "intervention": null,
+                "negated": false,
+                "predicate": "abbreviated_as",
+                "score": null,
+                "source": "E32",
+                "surface_form": "runt-related transcription factor 3 (Runx3)",
+                "target": "E33"
+              }
+            ],
+            "type": "Gene"
+          }
+        ],
+        "RESOLVED ORPHAN": []
+      }
+    },
+    "baseline_contract10": {
+      "classification_counts": {
+        "EQUIVALENT / REPHRASED": 22,
+        "HARMFUL OMISSION": 6,
+        "RETAINED": 4
+      },
+      "controlled_counts": {
+        "baseline_edges": 29,
+        "baseline_nodes": 20,
+        "baseline_orphans": 6,
+        "baseline_relations": 30,
+        "beneficial_pruning": 0,
+        "current_edges": 25,
+        "current_nodes": 20,
+        "current_orphans": 6,
+        "current_relations": 26,
+        "harmful_topology_changes": 0,
+        "material_findings_lost": 6,
+        "new_orphans": 0,
+        "resolved_orphans": 0
+      },
+      "findings": [
+        {
+          "baseline_assertions": [
+            "Overexpression of Cbl attenuates endothelial dysfunction in diabetes mellitus by inhibiting JAK2/STAT4 signaling and Runx3-mediated H3K4me3."
+          ],
+          "baseline_relation_indices": [
+            0
+          ],
+          "candidate_relation_indices": [
+            0
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:000",
+          "material": true,
+          "rationale": "Title-level endothelial dysfunction attenuation survives; pathway components survive in separate candidate claims.",
+          "source_evidence": [
+            "Overexpression of E3 ubiquitin ligase Cbl attenuates endothelial dysfunction in diabetes mellitus by inhibiting the JAK2/STAT4 signaling and Runx3-mediated H3K4me3"
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "In diabetes mellitus, overexpression of Cbl inhibits the JAK2/STAT4 signaling."
+          ],
+          "baseline_relation_indices": [
+            1
+          ],
+          "candidate_relation_indices": [
+            1
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:001",
+          "material": true,
+          "rationale": "JAK2 pathway inhibition survives.",
+          "source_evidence": [
+            "Overexpression of E3 ubiquitin ligase Cbl attenuates endothelial dysfunction in diabetes mellitus by inhibiting the JAK2/STAT4 signaling and Runx3-mediated H3K4me3"
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "In diabetes mellitus, overexpression of Cbl inhibits the JAK2/STAT4 signaling."
+          ],
+          "baseline_relation_indices": [
+            2
+          ],
+          "candidate_relation_indices": [
+            2
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:002",
+          "material": true,
+          "rationale": "STAT4 pathway inhibition survives.",
+          "source_evidence": [
+            "Overexpression of E3 ubiquitin ligase Cbl attenuates endothelial dysfunction in diabetes mellitus by inhibiting the JAK2/STAT4 signaling and Runx3-mediated H3K4me3"
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "In diabetes mellitus, overexpression of Cbl inhibits Runx3-mediated H3K4me3."
+          ],
+          "baseline_relation_indices": [
+            3
+          ],
+          "candidate_relation_indices": [
+            4
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:003",
+          "material": true,
+          "rationale": "Inhibition of Runx3-mediated H3K4me3 survives.",
+          "source_evidence": [
+            "Overexpression of E3 ubiquitin ligase Cbl attenuates endothelial dysfunction in diabetes mellitus by inhibiting the JAK2/STAT4 signaling and Runx3-mediated H3K4me3"
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Runx3 mediates H3K4me3."
+          ],
+          "baseline_relation_indices": [
+            4
+          ],
+          "candidate_relation_indices": [
+            3
+          ],
+          "classification": "RETAINED",
+          "finding_id": "baseline_contract10:004",
+          "material": true,
+          "rationale": "Runx3-mediated H3K4me3 relationship survives.",
+          "source_evidence": [
+            "Overexpression of E3 ubiquitin ligase Cbl attenuates endothelial dysfunction in diabetes mellitus by inhibiting the JAK2/STAT4 signaling and Runx3-mediated H3K4me3"
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "DM is described as a most common chronic disease."
+          ],
+          "baseline_relation_indices": [
+            5
+          ],
+          "candidate_relation_indices": [
+            5
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:005",
+          "material": true,
+          "rationale": "Chronic disease description survives.",
+          "source_evidence": [
+            "Diabetes mellitus (DM), a most common chronic disease, is featured with impaired endothelial function and bioavailability of nitric oxide (NO), while E3 ubiquitin ligase appears to alleviate endothelial dysfunction as a promising option for DM treatment."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "DM is featured with impaired endothelial function."
+          ],
+          "baseline_relation_indices": [
+            6
+          ],
+          "candidate_relation_indices": [
+            6
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:006",
+          "material": true,
+          "rationale": "Impaired endothelial function survives.",
+          "source_evidence": [
+            "Diabetes mellitus (DM), a most common chronic disease, is featured with impaired endothelial function and bioavailability of nitric oxide (NO), while E3 ubiquitin ligase appears to alleviate endothelial dysfunction as a promising option for DM treatment."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "DM is featured with impaired bioavailability of nitric oxide."
+          ],
+          "baseline_relation_indices": [
+            7
+          ],
+          "candidate_relation_indices": [
+            7
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:007",
+          "material": true,
+          "rationale": "Impaired NO bioavailability survives.",
+          "source_evidence": [
+            "Diabetes mellitus (DM), a most common chronic disease, is featured with impaired endothelial function and bioavailability of nitric oxide (NO), while E3 ubiquitin ligase appears to alleviate endothelial dysfunction as a promising option for DM treatment."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "E3 ubiquitin ligase appears to alleviate endothelial dysfunction as a promising option for DM treatment."
+          ],
+          "baseline_relation_indices": [
+            8
+          ],
+          "candidate_relation_indices": [
+            8
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:008",
+          "material": true,
+          "rationale": "E3-ligase alleviation claim survives, retaining appears-to uncertainty.",
+          "source_evidence": [
+            "Diabetes mellitus (DM), a most common chronic disease, is featured with impaired endothelial function and bioavailability of nitric oxide (NO), while E3 ubiquitin ligase appears to alleviate endothelial dysfunction as a promising option for DM treatment."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "E3 ubiquitin ligase appears to be a promising option for DM treatment.",
+            "These evidence might underlie novel Cbl-based treatment against DM in the future."
+          ],
+          "baseline_evidence_retained_in_candidate_quotes": false,
+          "baseline_relation_indices": [
+            9,
+            29
+          ],
+          "candidate_quote_indices": [],
+          "candidate_relation_indices": [],
+          "classification": "HARMFUL OMISSION",
+          "finding_id": "baseline_contract10:009",
+          "loss_scope": "explicit structured scientific meaning; may remain recoverable from evidence quotes",
+          "lost_meaning_recoverable_from_evidence": false,
+          "lost_meaning_source_excerpt": "These evidence might underlie novel Cbl-based treatment against DM in the future.",
+          "material": true,
+          "rationale": "Potential E3/Cbl-based treatment against DM is not represented in current structured fields; retained DM disease context does not state therapeutic potential.",
+          "source_evidence": [
+            "Diabetes mellitus (DM), a most common chronic disease, is featured with impaired endothelial function and bioavailability of nitric oxide (NO), while E3 ubiquitin ligase appears to alleviate endothelial dysfunction as a promising option for DM treatment.",
+            "These evidence might underlie novel Cbl-based treatment against DM in the future."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Intraperitoneal injection of streptozotocin was used to develop a rat model of DM."
+          ],
+          "baseline_relation_indices": [
+            10
+          ],
+          "candidate_relation_indices": [
+            9
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:010",
+          "material": true,
+          "rationale": "STZ DM rat-model induction survives.",
+          "source_evidence": [
+            "A rat model of DM was developed through intraperitoneal injection of streptozotocin"
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Culturing human umbilical vein endothelial cells in high glucose (HG) condition was used to induce DM as an in vitro model."
+          ],
+          "baseline_relation_indices": [
+            11
+          ],
+          "candidate_relation_indices": [
+            10
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:011",
+          "material": true,
+          "rationale": "HG-HUVEC in-vitro DM model induction survives without turning glucose into a mechanistic gene regulator.",
+          "source_evidence": [
+            "Human umbilical vein endothelial cells (HUVECs) were cultured in high glucose (HG) condition to induce DM as an in vitro model."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "JAK2 was elevated in DM rat tissues and HG-induced HUVECs."
+          ],
+          "baseline_relation_indices": [
+            13
+          ],
+          "candidate_relation_indices": [
+            12
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:012",
+          "material": true,
+          "rationale": "JAK2 elevation survives in rat tissues; missing HG-HUVEC qualifier is assessed separately.",
+          "source_evidence": [
+            "Cbl was reduced in DM rat tissues and HG-induced HUVECs, where JAK2, Runx3 and STAT4 were elevated."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Runx3 was elevated in DM rat tissues and HG-induced HUVECs."
+          ],
+          "baseline_relation_indices": [
+            14
+          ],
+          "candidate_relation_indices": [
+            13
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:013",
+          "material": true,
+          "rationale": "Runx3 elevation survives in rat tissues; missing HG-HUVEC qualifier is assessed separately.",
+          "source_evidence": [
+            "Cbl was reduced in DM rat tissues and HG-induced HUVECs, where JAK2, Runx3 and STAT4 were elevated."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "STAT4 was elevated in DM rat tissues and HG-induced HUVECs."
+          ],
+          "baseline_relation_indices": [
+            15
+          ],
+          "candidate_relation_indices": [
+            14
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:014",
+          "material": true,
+          "rationale": "STAT4 elevation survives in rat tissues; missing HG-HUVEC qualifier is assessed separately.",
+          "source_evidence": [
+            "Cbl was reduced in DM rat tissues and HG-induced HUVECs, where JAK2, Runx3 and STAT4 were elevated."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "JAK2 was elevated in DM rat tissues and HG-induced HUVECs."
+          ],
+          "baseline_evidence_retained_in_candidate_quotes": true,
+          "baseline_relation_indices": [
+            13
+          ],
+          "candidate_quote_indices": [
+            11,
+            12,
+            13,
+            14
+          ],
+          "candidate_relation_indices": [],
+          "classification": "HARMFUL OMISSION",
+          "finding_id": "baseline_contract10:015",
+          "loss_scope": "explicit structured scientific meaning; may remain recoverable from evidence quotes",
+          "lost_meaning_recoverable_from_evidence": true,
+          "lost_meaning_source_excerpt": "HG-induced HUVECs",
+          "material": true,
+          "rationale": "JAK2 elevation in HG-induced HUVECs is lost; candidate restricts the expression result to diabetic rat tissues.",
+          "source_evidence": [
+            "Cbl was reduced in DM rat tissues and HG-induced HUVECs, where JAK2, Runx3 and STAT4 were elevated."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Runx3 was elevated in DM rat tissues and HG-induced HUVECs."
+          ],
+          "baseline_evidence_retained_in_candidate_quotes": true,
+          "baseline_relation_indices": [
+            14
+          ],
+          "candidate_quote_indices": [
+            11,
+            12,
+            13,
+            14
+          ],
+          "candidate_relation_indices": [],
+          "classification": "HARMFUL OMISSION",
+          "finding_id": "baseline_contract10:016",
+          "loss_scope": "explicit structured scientific meaning; may remain recoverable from evidence quotes",
+          "lost_meaning_recoverable_from_evidence": true,
+          "lost_meaning_source_excerpt": "HG-induced HUVECs",
+          "material": true,
+          "rationale": "Runx3 elevation in HG-induced HUVECs is lost; candidate restricts the expression result to diabetic rat tissues.",
+          "source_evidence": [
+            "Cbl was reduced in DM rat tissues and HG-induced HUVECs, where JAK2, Runx3 and STAT4 were elevated."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "STAT4 was elevated in DM rat tissues and HG-induced HUVECs."
+          ],
+          "baseline_evidence_retained_in_candidate_quotes": true,
+          "baseline_relation_indices": [
+            15
+          ],
+          "candidate_quote_indices": [
+            11,
+            12,
+            13,
+            14
+          ],
+          "candidate_relation_indices": [],
+          "classification": "HARMFUL OMISSION",
+          "finding_id": "baseline_contract10:017",
+          "loss_scope": "explicit structured scientific meaning; may remain recoverable from evidence quotes",
+          "lost_meaning_recoverable_from_evidence": true,
+          "lost_meaning_source_excerpt": "HG-induced HUVECs",
+          "material": true,
+          "rationale": "STAT4 elevation in HG-induced HUVECs is lost; candidate restricts the expression result to diabetic rat tissues.",
+          "source_evidence": [
+            "Cbl was reduced in DM rat tissues and HG-induced HUVECs, where JAK2, Runx3 and STAT4 were elevated."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Overexpression of Cbl alleviated endothelial dysfunction by increasing NO production, restoring vasodilation, and suppressing apoptosis of HUVECs."
+          ],
+          "baseline_relation_indices": [
+            16
+          ],
+          "candidate_relation_indices": [
+            15,
+            16
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:018",
+          "material": true,
+          "rationale": "Dysfunction improvement, restored vasodilation, suppressed HUVEC apoptosis and increased NO survive across two assertions.",
+          "source_evidence": [
+            "It was found that overexpression of Cbl alleviated endothelial dysfunction by increasing NO production and restoring vasodilation and suppressing apoptosis of HUVECs."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Overexpression of Cbl increased NO production."
+          ],
+          "baseline_relation_indices": [
+            17
+          ],
+          "candidate_relation_indices": [
+            16
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:019",
+          "material": true,
+          "rationale": "Increased NO survives; cellular setting is present in the adjacent linked result, though per-edge context is thinner.",
+          "source_evidence": [
+            "It was found that overexpression of Cbl alleviated endothelial dysfunction by increasing NO production and restoring vasodilation and suppressing apoptosis of HUVECs."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Cb1 enhanced JAK2 ubiquitination."
+          ],
+          "baseline_relation_indices": [
+            18
+          ],
+          "candidate_relation_indices": [
+            17
+          ],
+          "classification": "RETAINED",
+          "finding_id": "baseline_contract10:020",
+          "material": true,
+          "rationale": "Cb1-enhanced JAK2 ubiquitination survives without merging Cb1 into Cbl.",
+          "source_evidence": [
+            "Mechanistically, Cb1 enhanced JAK2 ubiquitination and decreased JAK2 and STAT4 expression, where STAT4 improved Runx3 expression by regulating histone H3 lysine 4 trimethylation level."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Cb1 decreased JAK2 expression."
+          ],
+          "baseline_relation_indices": [
+            19
+          ],
+          "candidate_relation_indices": [
+            18
+          ],
+          "classification": "RETAINED",
+          "finding_id": "baseline_contract10:021",
+          "material": true,
+          "rationale": "Cb1-decreased JAK2 expression survives.",
+          "source_evidence": [
+            "Mechanistically, Cb1 enhanced JAK2 ubiquitination and decreased JAK2 and STAT4 expression, where STAT4 improved Runx3 expression by regulating histone H3 lysine 4 trimethylation level."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Cb1 decreased STAT4 expression."
+          ],
+          "baseline_relation_indices": [
+            20
+          ],
+          "candidate_relation_indices": [
+            19
+          ],
+          "classification": "RETAINED",
+          "finding_id": "baseline_contract10:022",
+          "material": true,
+          "rationale": "Cb1-decreased STAT4 expression survives.",
+          "source_evidence": [
+            "Mechanistically, Cb1 enhanced JAK2 ubiquitination and decreased JAK2 and STAT4 expression, where STAT4 improved Runx3 expression by regulating histone H3 lysine 4 trimethylation level."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "STAT4 improved Runx3 expression by regulating histone H3 lysine 4 trimethylation level."
+          ],
+          "baseline_relation_indices": [
+            21
+          ],
+          "candidate_relation_indices": [
+            20
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:023",
+          "material": true,
+          "rationale": "STAT4 improves Runx3 expression by regulating H3 trimethylation survives in one assertion; the separate H3K4me3 edge is gone, but the mechanism is explicit.",
+          "source_evidence": [
+            "Mechanistically, Cb1 enhanced JAK2 ubiquitination and decreased JAK2 and STAT4 expression, where STAT4 improved Runx3 expression by regulating histone H3 lysine 4 trimethylation level."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Overexpression of JAK2 increased apoptosis of HUVECs, abrogating the effect of Cb1 on endothelial function.",
+            "Overexpression of STAT4 increased apoptosis of HUVECs, abrogating the effect of Cb1 on endothelial function."
+          ],
+          "baseline_evidence_retained_in_candidate_quotes": true,
+          "baseline_relation_indices": [
+            22,
+            23
+          ],
+          "candidate_quote_indices": [
+            21
+          ],
+          "candidate_relation_indices": [],
+          "classification": "HARMFUL OMISSION",
+          "finding_id": "baseline_contract10:024",
+          "loss_scope": "explicit structured scientific meaning; may remain recoverable from evidence quotes",
+          "lost_meaning_recoverable_from_evidence": true,
+          "lost_meaning_source_excerpt": "Overexpression of JAK2 and STAT4, or Runx3",
+          "material": true,
+          "rationale": "The source's joint JAK2-and-STAT4 overexpression rescue/abrogation finding, including increased HUVEC apoptosis, is absent. Count one joint experiment, not two independent experiments.",
+          "source_evidence": [
+            "Overexpression of JAK2 and STAT4, or Runx3 increased apoptosis of HUVECs, abrogating the effect of Cb1 on endothelial function."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Overexpression of Runx3 increased apoptosis of HUVECs, abrogating the effect of Cb1 on endothelial function."
+          ],
+          "baseline_relation_indices": [
+            24
+          ],
+          "candidate_relation_indices": [
+            21
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:025",
+          "material": true,
+          "rationale": "Runx3 overexpression rescue/abrogation and apoptosis survives.",
+          "source_evidence": [
+            "Overexpression of JAK2 and STAT4, or Runx3 increased apoptosis of HUVECs, abrogating the effect of Cb1 on endothelial function."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Cbl alleviates endothelial dysfunction in DM by inactivating the JAK2/STAT4 pathway and inhibiting Runx3 expression."
+          ],
+          "baseline_relation_indices": [
+            25
+          ],
+          "candidate_relation_indices": [
+            22,
+            23,
+            24,
+            25
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:026",
+          "material": true,
+          "rationale": "Conclusion mechanism survives across explicit pathway-inactivation/Runx3 inhibition claims.",
+          "source_evidence": [
+            "Cbl alleviates endothelial dysfunction by inactivation of the JAK2/STAT4 pathway and inhibition of Runx3 expression in DM."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Cbl alleviates endothelial dysfunction in DM by inactivating the JAK2/STAT4 pathway."
+          ],
+          "baseline_relation_indices": [
+            26
+          ],
+          "candidate_relation_indices": [
+            23
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:027",
+          "material": true,
+          "rationale": "JAK2 pathway inactivation survives.",
+          "source_evidence": [
+            "Cbl alleviates endothelial dysfunction by inactivation of the JAK2/STAT4 pathway and inhibition of Runx3 expression in DM."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Cbl alleviates endothelial dysfunction in DM by inactivating the JAK2/STAT4 pathway."
+          ],
+          "baseline_relation_indices": [
+            27
+          ],
+          "candidate_relation_indices": [
+            24
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:028",
+          "material": true,
+          "rationale": "STAT4 pathway inactivation survives.",
+          "source_evidence": [
+            "Cbl alleviates endothelial dysfunction by inactivation of the JAK2/STAT4 pathway and inhibition of Runx3 expression in DM."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "In DM, Cbl inhibits Runx3 expression."
+          ],
+          "baseline_relation_indices": [
+            28
+          ],
+          "candidate_relation_indices": [
+            25
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:029",
+          "material": true,
+          "rationale": "Runx3 inhibition survives.",
+          "source_evidence": [
+            "Cbl alleviates endothelial dysfunction by inactivation of the JAK2/STAT4 pathway and inhibition of Runx3 expression in DM."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Cbl was reduced in DM rat tissues and HG-induced HUVECs."
+          ],
+          "baseline_relation_indices": [
+            12
+          ],
+          "candidate_relation_indices": [
+            11
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:030",
+          "material": true,
+          "rationale": "Cbl downregulation survives in rat tissues.",
+          "source_evidence": [
+            "Cbl was reduced in DM rat tissues and HG-induced HUVECs, where JAK2, Runx3 and STAT4 were elevated."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Cbl was reduced in DM rat tissues and HG-induced HUVECs."
+          ],
+          "baseline_evidence_retained_in_candidate_quotes": true,
+          "baseline_relation_indices": [
+            12
+          ],
+          "candidate_quote_indices": [
+            11,
+            12,
+            13,
+            14
+          ],
+          "candidate_relation_indices": [],
+          "classification": "HARMFUL OMISSION",
+          "finding_id": "baseline_contract10:031",
+          "loss_scope": "explicit structured scientific meaning; may remain recoverable from evidence quotes",
+          "lost_meaning_recoverable_from_evidence": true,
+          "lost_meaning_source_excerpt": "HG-induced HUVECs",
+          "material": true,
+          "rationale": "Cbl reduction in HG-induced HUVECs is absent; candidate states only diabetic rat tissues.",
+          "source_evidence": [
+            "Cbl was reduced in DM rat tissues and HG-induced HUVECs, where JAK2, Runx3 and STAT4 were elevated."
+          ]
+        }
+      ],
+      "historical_graph_counts": {
+        "edges": 29,
+        "nodes": 20,
+        "orphans": 6
+      },
+      "orphans": {
+        "INHERITED ORPHAN": [
+          {
+            "id": "doc_e_003",
+            "label": "diabetes mellitus",
+            "type": "Disease"
+          },
+          {
+            "id": "doc_e_010",
+            "label": "impaired",
+            "type": "Disease"
+          },
+          {
+            "id": "doc_e_013",
+            "label": "rats",
+            "type": "Species"
+          },
+          {
+            "id": "doc_e_014",
+            "label": "rat",
+            "type": "Species"
+          },
+          {
+            "id": "doc_e_016",
+            "label": "runt-related transcription factor 3",
+            "type": "Gene"
+          },
+          {
+            "id": "doc_e_018",
+            "label": "Human",
+            "type": "Species"
+          }
+        ],
+        "NEW NODE / IDENTITY DIFFERENCE": [],
+        "NEW ORPHAN": [],
+        "RESOLVED ORPHAN": []
+      }
+    }
+  }
+}

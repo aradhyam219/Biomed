@@ -1,0 +1,294 @@
+{
+  "configuration": {
+    "background": true,
+    "generation_timeout_seconds": 900.0,
+    "max_completion_tokens": 128000,
+    "max_retries": 2,
+    "model": "gpt-6.1-sol",
+    "poll_interval_seconds": 3.0,
+    "reasoning_effort": "medium",
+    "service_label": "Standard",
+    "service_tier": "default"
+  },
+  "contract": "13C",
+  "elapsed_seconds": 38.40600000000268,
+  "generation_diagnostics": [
+    {
+      "elapsed_seconds": 38.391,
+      "execution_mode": "background",
+      "generation_number": 1,
+      "initial_create_latency_seconds": 1.109,
+      "initial_status": "queued",
+      "input_tokens": 4148,
+      "observed_background": true,
+      "observed_model": "gpt-6.1-sol",
+      "observed_reasoning_effort": "medium",
+      "observed_service_tier": "default",
+      "output_text_received": true,
+      "output_tokens": 2330,
+      "poll_count": 11,
+      "poll_errors": 0,
+      "reasoning_tokens": 425,
+      "repair": false,
+      "requested_background": true,
+      "requested_model": "gpt-6.1-sol",
+      "requested_reasoning_effort": "medium",
+      "requested_service_tier": "default",
+      "response_id": "resp_0d827e6c8d2ef19b006ac3748b828c87d1ba7a491f7de3d5a6",
+      "status": "success",
+      "terminal_status": "completed",
+      "validated_relation_count": 16
+    }
+  ],
+  "paper_id": "PMID:31324362",
+  "relations": [
+    {
+      "assertion": "c-Myc overexpression promotes oral cancer cell proliferation and migration.",
+      "context": [],
+      "effects": [
+        "Increased cell proliferation",
+        "Increased cell migration"
+      ],
+      "evidence": "c-Myc Overexpression Promotes Oral Cancer Cell Proliferation and Migration by Enhancing Glutaminase and Glutamine Synthetase Activity.",
+      "intervention": "c-Myc overexpression",
+      "negated": false,
+      "predicate": "promotes_cell_proliferation_and_migration",
+      "score": null,
+      "source": "E1",
+      "surface_form": "Promotes Oral Cancer Cell Proliferation and Migration",
+      "target": "E2"
+    },
+    {
+      "assertion": "c-Myc overexpression enhances glutaminase activity.",
+      "context": [],
+      "effects": [
+        "Enhanced glutaminase activity"
+      ],
+      "evidence": "c-Myc Overexpression Promotes Oral Cancer Cell Proliferation and Migration by Enhancing Glutaminase and Glutamine Synthetase Activity.",
+      "intervention": "c-Myc overexpression",
+      "negated": false,
+      "predicate": "enhances_activity",
+      "score": null,
+      "source": "E1",
+      "surface_form": "Enhancing Glutaminase and Glutamine Synthetase Activity",
+      "target": "E3"
+    },
+    {
+      "assertion": "c-Myc overexpression enhances glutamine synthetase activity.",
+      "context": [],
+      "effects": [
+        "Enhanced glutamine synthetase activity"
+      ],
+      "evidence": "c-Myc Overexpression Promotes Oral Cancer Cell Proliferation and Migration by Enhancing Glutaminase and Glutamine Synthetase Activity.",
+      "intervention": "c-Myc overexpression",
+      "negated": false,
+      "predicate": "enhances_activity",
+      "score": null,
+      "source": "E1",
+      "surface_form": "Enhancing Glutaminase and Glutamine Synthetase Activity",
+      "target": "E4"
+    },
+    {
+      "assertion": "GS protein expression was correlated with Tumor, Lymph Node, and Metastasis stage.",
+      "context": [],
+      "effects": [],
+      "evidence": "The protein expression of GS was correlated with the Tumor, Lymph Node, and Metastasis (TNM) stage.",
+      "intervention": null,
+      "negated": false,
+      "predicate": "expression_correlates_with_stage",
+      "score": null,
+      "source": "E30",
+      "surface_form": "was correlated with",
+      "target": "E31"
+    },
+    {
+      "assertion": "c-Myc mRNA levels were positively correlated with GS mRNA levels.",
+      "context": [],
+      "effects": [],
+      "evidence": "In addition, c-Myc mRNA levels were positively correlated with GS mRNA levels.",
+      "intervention": null,
+      "negated": false,
+      "predicate": "mRNA_levels_positively_correlate_with",
+      "score": null,
+      "source": "E33",
+      "surface_form": "were positively correlated with",
+      "target": "E34"
+    },
+    {
+      "assertion": "c-Myc overexpression increased colonies derived from oral cancer cells and increased the number of cells in S phase compared with the mock-vehicle group.",
+      "context": [
+        "Compared with the mock-vehicle group"
+      ],
+      "effects": [
+        "Increased colonies derived from oral cancer cells",
+        "More cells in S phase"
+      ],
+      "evidence": "Overexpression of c-Myc increased the colonies derived from oral cancer cells and caused more cells to be in S phase compared with the mock-vehicle group.",
+      "intervention": "c-Myc overexpression",
+      "negated": false,
+      "predicate": "increases_colony_formation_and_S_phase_cells",
+      "score": null,
+      "source": "E35",
+      "surface_form": "increased the colonies derived from oral cancer cells and caused more cells to be in S phase",
+      "target": "E36"
+    },
+    {
+      "assertion": "c-Myc overexpression increased the migratory speed of KB cells compared to the mock-vehicle group.",
+      "context": [
+        "Compared to the mock-vehicle group"
+      ],
+      "effects": [
+        "Increased migratory speed"
+      ],
+      "evidence": "The migratory speed of KB cells was promoted by overexpression of c-Myc compared to the mock-vehicle group.",
+      "intervention": "c-Myc overexpression",
+      "negated": false,
+      "predicate": "increases_migratory_speed",
+      "score": null,
+      "source": "E38",
+      "surface_form": "was promoted by overexpression of c-Myc",
+      "target": "E37"
+    },
+    {
+      "assertion": "GLS inhibition effectively reversed the increases in colonies, cells in S phase, and migratory speed induced by c-Myc overexpression.",
+      "context": [],
+      "effects": [
+        "Reversal of increased colonies",
+        "Reversal of increased cells in S phase",
+        "Reversal of increased migratory speed"
+      ],
+      "evidence": "Overexpression of c-Myc increased the colonies derived from oral cancer cells and caused more cells to be in S phase compared with the mock-vehicle group. The migratory speed of KB cells was promoted by overexpression of c-Myc compared to the mock-vehicle group. However, these effects were effectively reversed in the presence of GLS or GS inhibitor.",
+      "intervention": "GLS inhibitor in the presence of c-Myc overexpression",
+      "negated": false,
+      "predicate": "inhibition_reverses_overexpression_effects",
+      "score": null,
+      "source": "E39",
+      "surface_form": "these effects were effectively reversed in the presence of GLS or GS inhibitor",
+      "target": "E38"
+    },
+    {
+      "assertion": "GS inhibition effectively reversed the increases in colonies, cells in S phase, and migratory speed induced by c-Myc overexpression.",
+      "context": [],
+      "effects": [
+        "Reversal of increased colonies",
+        "Reversal of increased cells in S phase",
+        "Reversal of increased migratory speed"
+      ],
+      "evidence": "Overexpression of c-Myc increased the colonies derived from oral cancer cells and caused more cells to be in S phase compared with the mock-vehicle group. The migratory speed of KB cells was promoted by overexpression of c-Myc compared to the mock-vehicle group. However, these effects were effectively reversed in the presence of GLS or GS inhibitor.",
+      "intervention": "GS inhibitor in the presence of c-Myc overexpression",
+      "negated": false,
+      "predicate": "inhibition_reverses_overexpression_effects",
+      "score": null,
+      "source": "E40",
+      "surface_form": "these effects were effectively reversed in the presence of GLS or GS inhibitor",
+      "target": "E38"
+    },
+    {
+      "assertion": "c-Myc could inhibit E-cadherin protein expression.",
+      "context": [],
+      "effects": [
+        "Inhibition of E-cadherin protein expression"
+      ],
+      "evidence": "Furthermore, c-Myc could inhibit E-cadherin protein expression while promoting N-cadherin expression by enhancing the activity of GLS and GS.",
+      "intervention": null,
+      "negated": false,
+      "predicate": "inhibits_protein_expression",
+      "score": null,
+      "source": "E41",
+      "surface_form": "could inhibit E-cadherin protein expression",
+      "target": "E42"
+    },
+    {
+      "assertion": "c-Myc could promote N-cadherin expression.",
+      "context": [],
+      "effects": [
+        "Increased N-cadherin expression"
+      ],
+      "evidence": "Furthermore, c-Myc could inhibit E-cadherin protein expression while promoting N-cadherin expression by enhancing the activity of GLS and GS.",
+      "intervention": null,
+      "negated": false,
+      "predicate": "promotes_expression",
+      "score": null,
+      "source": "E41",
+      "surface_form": "promoting N-cadherin expression",
+      "target": "E43"
+    },
+    {
+      "assertion": "c-Myc enhances GLS activity.",
+      "context": [],
+      "effects": [
+        "Enhanced GLS activity"
+      ],
+      "evidence": "Furthermore, c-Myc could inhibit E-cadherin protein expression while promoting N-cadherin expression by enhancing the activity of GLS and GS.",
+      "intervention": null,
+      "negated": false,
+      "predicate": "enhances_activity",
+      "score": null,
+      "source": "E41",
+      "surface_form": "enhancing the activity of GLS and GS",
+      "target": "E44"
+    },
+    {
+      "assertion": "c-Myc enhances GS activity.",
+      "context": [],
+      "effects": [
+        "Enhanced GS activity"
+      ],
+      "evidence": "Furthermore, c-Myc could inhibit E-cadherin protein expression while promoting N-cadherin expression by enhancing the activity of GLS and GS.",
+      "intervention": null,
+      "negated": false,
+      "predicate": "enhances_activity",
+      "score": null,
+      "source": "E41",
+      "surface_form": "enhancing the activity of GLS and GS",
+      "target": "E45"
+    },
+    {
+      "assertion": "c-Myc overexpression promotes oral cancer cell proliferation and migration.",
+      "context": [],
+      "effects": [
+        "Increased cell proliferation",
+        "Increased cell migration"
+      ],
+      "evidence": "c-Myc overexpression promotes oral cancer cell proliferation and migration by enhancing GLS and GS activity.",
+      "intervention": "c-Myc overexpression",
+      "negated": false,
+      "predicate": "promotes_cell_proliferation_and_migration",
+      "score": null,
+      "source": "E46",
+      "surface_form": "promotes oral cancer cell proliferation and migration",
+      "target": "E47"
+    },
+    {
+      "assertion": "c-Myc overexpression enhances GLS activity.",
+      "context": [],
+      "effects": [
+        "Enhanced GLS activity"
+      ],
+      "evidence": "c-Myc overexpression promotes oral cancer cell proliferation and migration by enhancing GLS and GS activity.",
+      "intervention": "c-Myc overexpression",
+      "negated": false,
+      "predicate": "enhances_activity",
+      "score": null,
+      "source": "E46",
+      "surface_form": "enhancing GLS and GS activity",
+      "target": "E48"
+    },
+    {
+      "assertion": "c-Myc overexpression enhances GS activity.",
+      "context": [],
+      "effects": [
+        "Enhanced GS activity"
+      ],
+      "evidence": "c-Myc overexpression promotes oral cancer cell proliferation and migration by enhancing GLS and GS activity.",
+      "intervention": "c-Myc overexpression",
+      "negated": false,
+      "predicate": "enhances_activity",
+      "score": null,
+      "source": "E46",
+      "surface_form": "enhancing GLS and GS activity",
+      "target": "E49"
+    }
+  ],
+  "status": "success"
+}

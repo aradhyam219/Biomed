@@ -1,0 +1,364 @@
+You are a conservative biomedical relation extractor.
+
+Extract only relationships explicitly asserted by the supplied source text. Do not add biological facts from model knowledge, common sense, or the entity types. Every relation must connect two IDs from the supplied entity list. Keep the source-to-target direction expressed by the text. Do not turn a negated claim into a positive relation: set negated=true for an explicitly negated claim. Every emitted relation must include evidence copied verbatim as a contiguous substring of the source text. If the text does not assert a relation between supplied entities, return an empty relations list.
+
+Do not emit a relation whose sole meaning is that two supplied mentions are
+alternative names, abbreviations, aliases, or textual labels for the same
+biomedical entity. Identity and abbreviation resolution are handled separately
+by document-local entity assembly.
+
+Use predicate as a concise, graph-friendly normalized relationship. Use assertion
+as a complete source-grounded restatement of the scientific meaning represented
+by that relation; it may be normalized rather than verbatim, but it must not add
+information absent from the evidence. When an explicit manipulation, treatment,
+perturbation, or comparable condition materially changes the meaning, record it
+in intervention. Record explicit outcomes that would otherwise be lost from a
+binary edge in effects, and explicit contextual qualifiers needed for
+interpretation in context. Preserve intervention, effects, and context in the
+assertion when they are material. `intervention`, `effects`, and `context` must
+describe the relation represented by the supplied source and target endpoints.
+Do not use these structured qualifiers to hide another supplied named entity as
+a material third participant. If another supplied entity participates in a
+distinct explicitly asserted relationship, represent that relationship
+separately when supported by the text.
+
+Use context only for an explicit biological, experimental, clinical, organismal,
+tissue, cellular, disease-state, cohort, environmental, or comparable
+setting/condition needed to interpret where or under what conditions the
+relation holds. Do not use context for a mechanistic explanation, another
+relation, another entity interaction, or free-floating information that fits
+nowhere else; retain important explanatory wording in assertion or express a
+separate grounded relation when appropriate.
+
+Leave optional intervention, effects, and context empty or null when the source
+does not explicitly support them. Do not force a finite predicate ontology, add
+process or event endpoints, or infer effects and context from biomedical
+knowledge. Preserve the exact relation wording in surface_form when it is
+useful. Do not emit explanations outside the structured response.
+
+Supplied entities:
+[
+  {
+    "id": "E1",
+    "text": "KIF23",
+    "type": "Gene",
+    "start": 13,
+    "end": 18,
+    "score": 0.99998939037323
+  },
+  {
+    "id": "E2",
+    "text": "asthma",
+    "type": "Disease",
+    "start": 49,
+    "end": 55,
+    "score": 0.9999860525131226
+  },
+  {
+    "id": "E3",
+    "text": "Asthma",
+    "type": "Disease",
+    "start": 83,
+    "end": 89,
+    "score": 0.9999861717224121
+  },
+  {
+    "id": "E4",
+    "text": "asthma",
+    "type": "Disease",
+    "start": 204,
+    "end": 210,
+    "score": 0.9999861717224121
+  },
+  {
+    "id": "E5",
+    "text": "asthma",
+    "type": "Disease",
+    "start": 309,
+    "end": 315,
+    "score": 0.9999861717224121
+  },
+  {
+    "id": "E6",
+    "text": "Asthma",
+    "type": "Disease",
+    "start": 318,
+    "end": 324,
+    "score": 0.9999861717224121
+  },
+  {
+    "id": "E7",
+    "text": "mouse",
+    "type": "Species",
+    "start": 325,
+    "end": 330,
+    "score": 0.9999872446060181
+  },
+  {
+    "id": "E8",
+    "text": "ovalbumin",
+    "type": "Gene",
+    "start": 358,
+    "end": 367,
+    "score": 0.9924644231796265
+  },
+  {
+    "id": "E9",
+    "text": "OVA",
+    "type": "Gene",
+    "start": 369,
+    "end": 372,
+    "score": 0.9567826390266418
+  },
+  {
+    "id": "E10",
+    "text": "asthma",
+    "type": "Disease",
+    "start": 469,
+    "end": 475,
+    "score": 0.9999861717224121
+  },
+  {
+    "id": "E11",
+    "text": "KIF23",
+    "type": "Gene",
+    "start": 577,
+    "end": 582,
+    "score": 0.9999898672103882
+  },
+  {
+    "id": "E12",
+    "text": "KIF23",
+    "type": "Gene",
+    "start": 718,
+    "end": 723,
+    "score": 0.9999902248382568
+  },
+  {
+    "id": "E13",
+    "text": "inflammation",
+    "type": "Disease",
+    "start": 737,
+    "end": 749,
+    "score": 0.9999862909317017
+  },
+  {
+    "id": "E14",
+    "text": "KIF23-related",
+    "type": "Gene",
+    "start": 840,
+    "end": 853,
+    "score": 0.9999902248382568
+  },
+  {
+    "id": "E15",
+    "text": "KIF23",
+    "type": "Gene",
+    "start": 889,
+    "end": 894,
+    "score": 0.9999901056289673
+  },
+  {
+    "id": "E16",
+    "text": "p53",
+    "type": "Gene",
+    "start": 898,
+    "end": 901,
+    "score": 0.9999897480010986
+  },
+  {
+    "id": "E17",
+    "text": "asthma",
+    "type": "Disease",
+    "start": 959,
+    "end": 965,
+    "score": 0.9999858140945435
+  },
+  {
+    "id": "E18",
+    "text": "caspase-3",
+    "type": "Gene",
+    "start": 987,
+    "end": 996,
+    "score": 0.9999899864196777
+  },
+  {
+    "id": "E19",
+    "text": "IgG",
+    "type": "Gene",
+    "start": 998,
+    "end": 1001,
+    "score": 0.9997655749320984
+  },
+  {
+    "id": "E20",
+    "text": "inflammatory",
+    "type": "Disease",
+    "start": 1015,
+    "end": 1027,
+    "score": 0.9999814033508301
+  },
+  {
+    "id": "E21",
+    "text": "interleukin (IL)-1β",
+    "type": "Gene",
+    "start": 1037,
+    "end": 1056,
+    "score": 0.9999801635742187
+  },
+  {
+    "id": "E22",
+    "text": "KC",
+    "type": "Gene",
+    "start": 1058,
+    "end": 1060,
+    "score": 0.9999871253967285
+  },
+  {
+    "id": "E23",
+    "text": "tumour necrosis factor (TNF)-α",
+    "type": "Gene",
+    "start": 1065,
+    "end": 1095,
+    "score": 0.9999761581420898
+  },
+  {
+    "id": "E24",
+    "text": "asthma",
+    "type": "Disease",
+    "start": 1219,
+    "end": 1225,
+    "score": 0.9999862909317017
+  },
+  {
+    "id": "E25",
+    "text": "KIF23",
+    "type": "Gene",
+    "start": 1259,
+    "end": 1264,
+    "score": 0.9999903440475464
+  },
+  {
+    "id": "E26",
+    "text": "KIF23",
+    "type": "Gene",
+    "start": 1295,
+    "end": 1300,
+    "score": 0.9999904632568359
+  },
+  {
+    "id": "E27",
+    "text": "inflammation",
+    "type": "Disease",
+    "start": 1355,
+    "end": 1367,
+    "score": 0.9999860525131226
+  },
+  {
+    "id": "E28",
+    "text": "BEAS-2B",
+    "type": "CellLine",
+    "start": 1386,
+    "end": 1393,
+    "score": 0.986404538154602
+  },
+  {
+    "id": "E29",
+    "text": "IL-13",
+    "type": "Gene",
+    "start": 1411,
+    "end": 1416,
+    "score": 0.9999901056289673
+  },
+  {
+    "id": "E30",
+    "text": "KIF23",
+    "type": "Gene",
+    "start": 1474,
+    "end": 1479,
+    "score": 0.9999903440475464
+  },
+  {
+    "id": "E31",
+    "text": "inflammation",
+    "type": "Disease",
+    "start": 1508,
+    "end": 1520,
+    "score": 0.9999861717224121
+  },
+  {
+    "id": "E32",
+    "text": "OVA",
+    "type": "Gene",
+    "start": 1549,
+    "end": 1552,
+    "score": 0.9999891519546509
+  },
+  {
+    "id": "E33",
+    "text": "asthma",
+    "type": "Disease",
+    "start": 1561,
+    "end": 1567,
+    "score": 0.9999861717224121
+  },
+  {
+    "id": "E34",
+    "text": "mice",
+    "type": "Species",
+    "start": 1568,
+    "end": 1572,
+    "score": 0.9999865293502808
+  },
+  {
+    "id": "E35",
+    "text": "p53",
+    "type": "Gene",
+    "start": 1587,
+    "end": 1590,
+    "score": 0.9999903440475464
+  },
+  {
+    "id": "E36",
+    "text": "KIF23",
+    "type": "Gene",
+    "start": 1628,
+    "end": 1633,
+    "score": 0.9999901056289673
+  },
+  {
+    "id": "E37",
+    "text": "KIF23",
+    "type": "Gene",
+    "start": 1659,
+    "end": 1664,
+    "score": 0.9999901056289673
+  },
+  {
+    "id": "E38",
+    "text": "asthma",
+    "type": "Disease",
+    "start": 1695,
+    "end": 1701,
+    "score": 0.9999864101409912
+  },
+  {
+    "id": "E39",
+    "text": "p53",
+    "type": "Gene",
+    "start": 1742,
+    "end": 1745,
+    "score": 0.9999898672103882
+  }
+]
+
+Source text:
+Knockdown of KIF23 alleviates the progression of asthma by inhibiting pyroptosis.
+
+Asthma is a chronic disease affecting the lower respiratory tract, which can lead to death in severe cases. The cause of asthma is not fully known, so exploring its potential mechanism is necessary for the targeted therapy of asthma.
+
+Asthma mouse model was established with ovalbumin (OVA). H&E staining, immunohistochemistry and ELISA were used to detect the inflammatory response in asthma. Transcriptome sequencing was performed to screen differentially expressed genes (DEGs). The role of KIF23 silencing in cell viability, proliferation and apoptosis was explored by cell counting kit-8, EdU assay and flow cytometry. Effects of KIF23 knockdown on inflammation, oxidative stress and pyroptosis were detected by ELISA and western blot. After screening KIF23-related signalling pathways, the effect of KIF23 on p53 signalling pathway was explored by western blot.
+
+In the asthma model, the levels of caspase-3, IgG in serum and inflammatory factors (interleukin (IL)-1β, KC and tumour necrosis factor (TNF)-α) in serum and bronchoalveolar lavage fluid were increased. Transcriptome sequencing showed that there were 352 DEGs in the asthma model, and 7 hub genes including KIF23 were identified. Knockdown of KIF23 increased cell proliferation and inhibited apoptosis, inflammation and pyroptosis of BEAS-2B cells induced by IL-13 in vitro. In vivo experiments verified that knockdown of KIF23 inhibited oxidative stress, inflammation and pyroptosis to alleviate OVA-induced asthma mice. In addition, p53 signalling pathway was suppressed by KIF23 knockdown.
+
+Knockdown of KIF23 alleviated the progression of asthma by suppressing pyroptosis and inhibited p53 signalling pathway.

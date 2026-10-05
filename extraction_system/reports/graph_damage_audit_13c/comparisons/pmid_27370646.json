@@ -1,0 +1,220 @@
+{
+  "current_additions": [
+    {
+      "candidate_relation_index": 1,
+      "classification": "USEFUL CURRENT-ONLY",
+      "rationale": "Useful SSC-4 cell-line disease relation, source-grounded in title.",
+      "relation": {
+        "assertion": "SSC-4 cells are oral squamous carcinoma cells.",
+        "context": [],
+        "effects": [],
+        "evidence": "SSC-4 oral squamous carcinoma cells",
+        "intervention": null,
+        "negated": false,
+        "predicate": "is_cell_line_of",
+        "score": null,
+        "source": "E2",
+        "surface_form": null,
+        "target": "E3"
+      }
+    }
+  ],
+  "noise_additions": [],
+  "paper_id": "PMID:27370646",
+  "severity": "GREEN",
+  "severity_justification": "All demonstrated p53 knockdown phenotypes and VEGF suppression survive; the added cell-line relation is useful. Omitted mutation knowledge-gap claim is separately uncertain.",
+  "source_grounding_policy": "Exact frozen title plus complete abstract only. Findings must survive in structured predicate/assertion/intervention/effects/context; an evidence quote alone does not establish retention. Source quotations are retained for review.",
+  "title": "Knocking down of p53 triggers apoptosis and autophagy, concomitantly with inhibition of migration on SSC-4 oral squamous carcinoma cells.",
+  "views": {
+    "baseline_09b": {
+      "classification_counts": {
+        "BENEFICIAL PRUNING": 2,
+        "EQUIVALENT / REPHRASED": 4,
+        "RETAINED": 1,
+        "UNCERTAIN": 1
+      },
+      "controlled_counts": {
+        "baseline_edges": 8,
+        "baseline_nodes": 9,
+        "baseline_orphans": 2,
+        "baseline_relations": 9,
+        "beneficial_pruning": 2,
+        "current_edges": 6,
+        "current_nodes": 9,
+        "current_orphans": 1,
+        "current_relations": 7,
+        "harmful_topology_changes": 0,
+        "material_findings_lost": 0,
+        "new_orphans": 0,
+        "resolved_orphans": 1
+      },
+      "findings": [
+        {
+          "baseline_assertions": [
+            "Knocking down of p53 triggers apoptosis and autophagy, concomitantly with inhibition of migration on SSC-4 oral squamous carcinoma cells.",
+            "In SSC-4 cells, inhibiting the expression of p53 decreased the proliferation ability, induced apoptosis/autophagy, and decreased migration."
+          ],
+          "baseline_relation_indices": [
+            0,
+            5
+          ],
+          "candidate_relation_indices": [
+            0,
+            4
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:000",
+          "material": true,
+          "rationale": "One knockdown phenotype experiment retains apoptosis/autophagy, reduced proliferation and reduced migration.",
+          "source_evidence": [
+            "Knocking down of p53 triggers apoptosis and autophagy, concomitantly with inhibition of migration on SSC-4 oral squamous carcinoma cells.",
+            "We observed that inhibiting the expression of p53 decreased the proliferation ability and induced apoptosis/autophagy in SSC-4 cells. Moreover, we observed that this has decreased migration and has blocked the expression of VEGF."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Oral squamous cell carcinoma is abbreviated as OSCC."
+          ],
+          "baseline_relation_indices": [
+            1
+          ],
+          "candidate_relation_indices": [],
+          "classification": "BENEFICIAL PRUNING",
+          "finding_id": "baseline_09b:001",
+          "material": false,
+          "rationale": "OSCC abbreviation-only edge is removed by the prompt change.",
+          "source_evidence": [
+            "Oral squamous cell carcinoma (OSCC)"
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Oral squamous cell carcinoma is a malignancy."
+          ],
+          "baseline_relation_indices": [
+            2
+          ],
+          "candidate_relation_indices": [
+            2
+          ],
+          "classification": "RETAINED",
+          "finding_id": "baseline_09b:002",
+          "material": true,
+          "rationale": "Disease malignancy classification survives.",
+          "source_evidence": [
+            "Oral squamous cell carcinoma (OSCC) is a malignancy with elevated prevalence and somber prognosis due to the fact that most of the patients are diagnosed at an advanced stage."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "p53 has a crucial role in proliferation and apoptosis during the occurrence and development of numerous malignant tumors."
+          ],
+          "baseline_relation_indices": [
+            3
+          ],
+          "candidate_relation_indices": [
+            3
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:003",
+          "material": true,
+          "rationale": "p53 proliferation/apoptosis role in malignant tumors survives.",
+          "source_evidence": [
+            "p53 has a crucial role in proliferation and apoptosis during the occurrence and development of numerous malignant tumors."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "The impact of mutated p53 on the development and progression of OSCC is unclear and might have therapeutic implications."
+          ],
+          "baseline_relation_indices": [
+            4
+          ],
+          "candidate_relation_indices": [],
+          "classification": "UNCERTAIN",
+          "finding_id": "baseline_09b:004",
+          "material": false,
+          "rationale": "The source's mutated-p53 knowledge gap/possible therapeutic implications is absent; this is not a demonstrated causal result and its materiality is uncertain.",
+          "source_evidence": [
+            "The impact of mutated p53 on the development and progression of OSCC is unclear and might have therapeutic implications."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "In SSC-4 cells, inhibiting the expression of p53 blocked the expression of VEGF."
+          ],
+          "baseline_relation_indices": [
+            6
+          ],
+          "candidate_relation_indices": [
+            5
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:005",
+          "material": true,
+          "rationale": "VEGF expression block survives.",
+          "source_evidence": [
+            "We observed that inhibiting the expression of p53 decreased the proliferation ability and induced apoptosis/autophagy in SSC-4 cells. Moreover, we observed that this has decreased migration and has blocked the expression of VEGF."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "The research provides a proof that a direct connection between p53 knockdown and OSCC cell death can be established."
+          ],
+          "baseline_relation_indices": [
+            7
+          ],
+          "candidate_relation_indices": [
+            6
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:006",
+          "material": true,
+          "rationale": "Knockdown-to-OSCC-cell-death connection survives.",
+          "source_evidence": [
+            "In conclusion, our research provides a proof that a direct connection between p53 knockdown and OSCC cell death can be established, therefore opening new potential directions in OSCC molecular therapeutics and management."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "The p53 knockdown research is stated to open new potential directions in OSCC molecular therapeutics and management."
+          ],
+          "baseline_relation_indices": [
+            8
+          ],
+          "candidate_relation_indices": [],
+          "classification": "BENEFICIAL PRUNING",
+          "finding_id": "baseline_09b:007",
+          "material": false,
+          "rationale": "Generic conclusion about opening new therapeutic directions adds no tested relation beyond retained cell-death/VEGF findings.",
+          "source_evidence": [
+            "In conclusion, our research provides a proof that a direct connection between p53 knockdown and OSCC cell death can be established, therefore opening new potential directions in OSCC molecular therapeutics and management."
+          ]
+        }
+      ],
+      "historical_graph_counts": {
+        "edges": 8,
+        "nodes": 8,
+        "orphans": 2
+      },
+      "orphans": {
+        "INHERITED ORPHAN": [
+          {
+            "id": "doc_e_007",
+            "label": "patients",
+            "type": "Species"
+          }
+        ],
+        "NEW NODE / IDENTITY DIFFERENCE": [],
+        "NEW ORPHAN": [],
+        "RESOLVED ORPHAN": [
+          {
+            "id": "doc_e_003",
+            "label": "oral squamous carcinoma",
+            "type": "Disease"
+          }
+        ]
+      }
+    }
+  }
+}

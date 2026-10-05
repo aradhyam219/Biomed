@@ -1,0 +1,587 @@
+{
+  "current_additions": [],
+  "noise_additions": [],
+  "paper_id": "PMID:33652126",
+  "severity": "ORANGE",
+  "severity_justification": "Central PTEN/PI3K/AKT framework remains, but specific apoptosis/DNA-damage/proliferation reversal outcomes disappear. Contract10 additionally reveals loss of serum-deprivation PTEN upregulation.",
+  "source_grounding_policy": "Exact frozen title plus complete abstract only. Findings must survive in structured predicate/assertion/intervention/effects/context; an evidence quote alone does not establish retention. Source quotations are retained for review.",
+  "title": "PTEN mediates serum deprivation-induced cytotoxicity in H9c2 cells via the PI3K/AKT signaling pathway.",
+  "views": {
+    "baseline_09b": {
+      "classification_counts": {
+        "EQUIVALENT / REPHRASED": 6,
+        "HARMFUL OMISSION": 3,
+        "RETAINED": 2
+      },
+      "controlled_counts": {
+        "baseline_edges": 8,
+        "baseline_nodes": 10,
+        "baseline_orphans": 2,
+        "baseline_relations": 10,
+        "beneficial_pruning": 0,
+        "current_edges": 6,
+        "current_nodes": 10,
+        "current_orphans": 2,
+        "current_relations": 7,
+        "harmful_topology_changes": 0,
+        "material_findings_lost": 3,
+        "new_orphans": 0,
+        "resolved_orphans": 0
+      },
+      "findings": [
+        {
+          "baseline_assertions": [
+            "PTEN mediates serum deprivation-induced cytotoxicity in H9c2 cells via the PI3K/AKT signaling pathway."
+          ],
+          "baseline_relation_indices": [
+            0
+          ],
+          "candidate_relation_indices": [
+            0
+          ],
+          "classification": "RETAINED",
+          "finding_id": "baseline_09b:000",
+          "material": true,
+          "rationale": "PTEN mediating cytotoxicity through PI3K/AKT in H9c2 survives.",
+          "source_evidence": [
+            "PTEN mediates serum deprivation-induced cytotoxicity in H9c2 cells via the PI3K/AKT signaling pathway."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "The pathogenesis of acute myocardial infarction is associated with cardiomyocyte necrosis."
+          ],
+          "baseline_relation_indices": [
+            1
+          ],
+          "candidate_relation_indices": [
+            1
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:001",
+          "material": true,
+          "rationale": "AMI/necrosis association survives.",
+          "source_evidence": [
+            "The pathogenesis of acute myocardial infarction (AMI) is associated with cardiomyocyte necrosis and apoptosis."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "H9c2 cells cultured under serum deprivation were used to simulate the apoptosis process of myocardial infarction."
+          ],
+          "baseline_relation_indices": [
+            2
+          ],
+          "candidate_relation_indices": [
+            2
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:002",
+          "material": true,
+          "rationale": "H9c2 serum-deprivation model of MI apoptosis survives.",
+          "source_evidence": [
+            "In this study, we used H9c2 cells cultured under serum deprivation to simulate the apoptosis process of myocardial infarction."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "siRNA-mediated PTEN knockdown inhibited serum deprivation-induced ROS production."
+          ],
+          "baseline_relation_indices": [
+            3
+          ],
+          "candidate_relation_indices": [
+            3
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:003",
+          "material": true,
+          "rationale": "siRNA-mediated ROS suppression survives.",
+          "source_evidence": [
+            "Functionally, the PTEN knockdown experiment using siRNA inhibited serum deprivation-induced cell apoptosis, ROS production, and DNA damage, whereas increased cell proliferation."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "The effects of the siRNA-mediated PTEN knockdown, including inhibition of serum deprivation-induced cell apoptosis, ROS production, and DNA damage and increased cell proliferation, could be reversed by a phosphatidylinositol 3-kinase (PI3K) inhibitor."
+          ],
+          "baseline_relation_indices": [
+            4
+          ],
+          "candidate_relation_indices": [
+            4
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:004",
+          "material": true,
+          "rationale": "PI3K-inhibitor reversal survives with scientifically faithful inhibitor-to-PTEN direction. Specific reversed outcomes are assessed separately.",
+          "source_evidence": [
+            "Functionally, the PTEN knockdown experiment using siRNA inhibited serum deprivation-induced cell apoptosis, ROS production, and DNA damage, whereas increased cell proliferation. All these effects could be reversed by phosphatidylinositol 3-kinase (PI3K) inhibitor, which indicated the PI3K/protein kinase B (AKT) might be the critical component of the PTEN effects during serum deficiency."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "The effects of the siRNA-mediated PTEN knockdown, including inhibition of serum deprivation-induced cell apoptosis, ROS production, and DNA damage and increased cell proliferation, could be reversed by a phosphatidylinositol 3-kinase (PI3K) inhibitor."
+          ],
+          "baseline_evidence_retained_in_candidate_quotes": false,
+          "baseline_relation_indices": [
+            4
+          ],
+          "candidate_quote_indices": [
+            3,
+            4
+          ],
+          "candidate_relation_indices": [],
+          "classification": "HARMFUL OMISSION",
+          "finding_id": "baseline_09b:005",
+          "loss_scope": "explicit structured scientific meaning; may remain recoverable from evidence quotes",
+          "lost_meaning_recoverable_from_evidence": true,
+          "lost_meaning_source_excerpt": "cell apoptosis",
+          "material": true,
+          "rationale": "Reversal of PTEN-knockdown suppression of apoptosis is lost from structured meaning; generic effects does not specify apoptosis.",
+          "source_evidence": [
+            "Functionally, the PTEN knockdown experiment using siRNA inhibited serum deprivation-induced cell apoptosis, ROS production, and DNA damage, whereas increased cell proliferation. All these effects could be reversed by phosphatidylinositol 3-kinase (PI3K) inhibitor, which indicated the PI3K/protein kinase B (AKT) might be the critical component of the PTEN effects during serum deficiency."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "The effects of the siRNA-mediated PTEN knockdown, including inhibition of serum deprivation-induced cell apoptosis, ROS production, and DNA damage and increased cell proliferation, could be reversed by a phosphatidylinositol 3-kinase (PI3K) inhibitor."
+          ],
+          "baseline_evidence_retained_in_candidate_quotes": false,
+          "baseline_relation_indices": [
+            4
+          ],
+          "candidate_quote_indices": [
+            3,
+            4
+          ],
+          "candidate_relation_indices": [],
+          "classification": "HARMFUL OMISSION",
+          "finding_id": "baseline_09b:006",
+          "loss_scope": "explicit structured scientific meaning; may remain recoverable from evidence quotes",
+          "lost_meaning_recoverable_from_evidence": true,
+          "lost_meaning_source_excerpt": "DNA damage",
+          "material": true,
+          "rationale": "Reversal of PTEN-knockdown suppression of DNA damage is lost from structured meaning.",
+          "source_evidence": [
+            "Functionally, the PTEN knockdown experiment using siRNA inhibited serum deprivation-induced cell apoptosis, ROS production, and DNA damage, whereas increased cell proliferation. All these effects could be reversed by phosphatidylinositol 3-kinase (PI3K) inhibitor, which indicated the PI3K/protein kinase B (AKT) might be the critical component of the PTEN effects during serum deficiency."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "The effects of the siRNA-mediated PTEN knockdown, including inhibition of serum deprivation-induced cell apoptosis, ROS production, and DNA damage and increased cell proliferation, could be reversed by a phosphatidylinositol 3-kinase (PI3K) inhibitor."
+          ],
+          "baseline_evidence_retained_in_candidate_quotes": false,
+          "baseline_relation_indices": [
+            4
+          ],
+          "candidate_quote_indices": [
+            3,
+            4
+          ],
+          "candidate_relation_indices": [],
+          "classification": "HARMFUL OMISSION",
+          "finding_id": "baseline_09b:007",
+          "loss_scope": "explicit structured scientific meaning; may remain recoverable from evidence quotes",
+          "lost_meaning_recoverable_from_evidence": true,
+          "lost_meaning_source_excerpt": "increased cell proliferation",
+          "material": true,
+          "rationale": "Reversal of PTEN-knockdown increased proliferation is lost from structured meaning.",
+          "source_evidence": [
+            "Functionally, the PTEN knockdown experiment using siRNA inhibited serum deprivation-induced cell apoptosis, ROS production, and DNA damage, whereas increased cell proliferation. All these effects could be reversed by phosphatidylinositol 3-kinase (PI3K) inhibitor, which indicated the PI3K/protein kinase B (AKT) might be the critical component of the PTEN effects during serum deficiency."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "PI3K, together with protein kinase B (AKT), might be the critical component of the PTEN effects during serum deficiency."
+          ],
+          "baseline_relation_indices": [
+            5
+          ],
+          "candidate_relation_indices": [
+            5
+          ],
+          "classification": "RETAINED",
+          "finding_id": "baseline_09b:008",
+          "material": true,
+          "rationale": "Tentative PI3K critical-component claim survives.",
+          "source_evidence": [
+            "which indicated the PI3K/protein kinase B (AKT) might be the critical component of the PTEN effects during serum deficiency."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Protein kinase B (AKT), together with PI3K, might be the critical component of the PTEN effects during serum deficiency."
+          ],
+          "baseline_relation_indices": [
+            6
+          ],
+          "candidate_relation_indices": [
+            6
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:009",
+          "material": true,
+          "rationale": "Tentative AKT component claim survives through assembled long/short-form aliases.",
+          "source_evidence": [
+            "which indicated the PI3K/protein kinase B (AKT) might be the critical component of the PTEN effects during serum deficiency."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "PTEN is part of the PTEN/PI3K/AKT pathway, which has a role in serum deprivation-induced cytotoxicity in H9c2 cells.",
+            "PI3K is part of the PTEN/PI3K/AKT pathway, which has a role in serum deprivation-induced cytotoxicity in H9c2 cells.",
+            "AKT is part of the PTEN/PI3K/AKT pathway, which has a role in serum deprivation-induced cytotoxicity in H9c2 cells."
+          ],
+          "baseline_relation_indices": [
+            7,
+            8,
+            9
+          ],
+          "candidate_relation_indices": [
+            0,
+            5,
+            6
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:010",
+          "material": true,
+          "rationale": "Role of the PTEN/PI3K/AKT pathway in serum-deprivation cytotoxicity survives in title assertion plus explicit component relations. Loss of direct component-to-cytotoxicity edges is not counted as loss of this scientific finding.",
+          "source_evidence": [
+            "In conclusion, our study indicated the role of the PTEN/PI3K/AKT pathway in serum deprivation-induced cytotoxicity in H9c2 cells."
+          ]
+        }
+      ],
+      "historical_graph_counts": {
+        "edges": 10,
+        "nodes": 11,
+        "orphans": 2
+      },
+      "orphans": {
+        "INHERITED ORPHAN": [
+          {
+            "id": "doc_e_008",
+            "label": "Edu",
+            "type": "Chemical"
+          },
+          {
+            "id": "doc_e_010",
+            "label": "serum deficiency",
+            "type": "Disease"
+          }
+        ],
+        "NEW NODE / IDENTITY DIFFERENCE": [],
+        "NEW ORPHAN": [],
+        "RESOLVED ORPHAN": []
+      }
+    },
+    "baseline_contract10": {
+      "classification_counts": {
+        "EQUIVALENT / REPHRASED": 7,
+        "HARMFUL OMISSION": 4,
+        "RETAINED": 2
+      },
+      "controlled_counts": {
+        "baseline_edges": 10,
+        "baseline_nodes": 10,
+        "baseline_orphans": 2,
+        "baseline_relations": 12,
+        "beneficial_pruning": 0,
+        "current_edges": 6,
+        "current_nodes": 10,
+        "current_orphans": 2,
+        "current_relations": 7,
+        "harmful_topology_changes": 0,
+        "material_findings_lost": 4,
+        "new_orphans": 0,
+        "resolved_orphans": 0
+      },
+      "findings": [
+        {
+          "baseline_assertions": [
+            "PTEN mediates serum deprivation-induced cytotoxicity in H9c2 cells via the PI3K/AKT signaling pathway."
+          ],
+          "baseline_relation_indices": [
+            0
+          ],
+          "candidate_relation_indices": [
+            0
+          ],
+          "classification": "RETAINED",
+          "finding_id": "baseline_contract10:000",
+          "material": true,
+          "rationale": "PTEN mediating cytotoxicity through PI3K/AKT in H9c2 survives.",
+          "source_evidence": [
+            "PTEN mediates serum deprivation-induced cytotoxicity in H9c2 cells via the PI3K/AKT signaling pathway."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "The pathogenesis of acute myocardial infarction is associated with cardiomyocyte necrosis."
+          ],
+          "baseline_relation_indices": [
+            1
+          ],
+          "candidate_relation_indices": [
+            1
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:001",
+          "material": true,
+          "rationale": "AMI/necrosis association survives.",
+          "source_evidence": [
+            "The pathogenesis of acute myocardial infarction (AMI) is associated with cardiomyocyte necrosis and apoptosis."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "H9c2 cells cultured under serum deprivation were used to simulate the apoptosis process of myocardial infarction."
+          ],
+          "baseline_relation_indices": [
+            2
+          ],
+          "candidate_relation_indices": [
+            2
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:002",
+          "material": true,
+          "rationale": "H9c2 serum-deprivation model of MI apoptosis survives.",
+          "source_evidence": [
+            "In this study, we used H9c2 cells cultured under serum deprivation to simulate the apoptosis process of myocardial infarction."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "PTEN knockdown using siRNA inhibited serum deprivation-induced ROS production."
+          ],
+          "baseline_relation_indices": [
+            5
+          ],
+          "candidate_relation_indices": [
+            3
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:003",
+          "material": true,
+          "rationale": "siRNA-mediated ROS suppression survives.",
+          "source_evidence": [
+            "Functionally, the PTEN knockdown experiment using siRNA inhibited serum deprivation-induced cell apoptosis, ROS production, and DNA damage, whereas increased cell proliferation."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "All effects of the PTEN knockdown experiment—including inhibition of serum deprivation-induced cell apoptosis, ROS production, and DNA damage and increased cell proliferation—could be reversed by a phosphatidylinositol 3-kinase (PI3K) inhibitor."
+          ],
+          "baseline_relation_indices": [
+            6
+          ],
+          "candidate_relation_indices": [
+            4
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:004",
+          "material": true,
+          "rationale": "PI3K-inhibitor reversal survives with scientifically faithful inhibitor-to-PTEN direction. Specific reversed outcomes are assessed separately.",
+          "source_evidence": [
+            "Functionally, the PTEN knockdown experiment using siRNA inhibited serum deprivation-induced cell apoptosis, ROS production, and DNA damage, whereas increased cell proliferation. All these effects could be reversed by phosphatidylinositol 3-kinase (PI3K) inhibitor, which indicated the PI3K/protein kinase B (AKT) might be the critical component of the PTEN effects during serum deficiency."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "All effects of the PTEN knockdown experiment—including inhibition of serum deprivation-induced cell apoptosis, ROS production, and DNA damage and increased cell proliferation—could be reversed by a phosphatidylinositol 3-kinase (PI3K) inhibitor."
+          ],
+          "baseline_evidence_retained_in_candidate_quotes": false,
+          "baseline_relation_indices": [
+            6
+          ],
+          "candidate_quote_indices": [
+            3,
+            4
+          ],
+          "candidate_relation_indices": [],
+          "classification": "HARMFUL OMISSION",
+          "finding_id": "baseline_contract10:005",
+          "loss_scope": "explicit structured scientific meaning; may remain recoverable from evidence quotes",
+          "lost_meaning_recoverable_from_evidence": true,
+          "lost_meaning_source_excerpt": "cell apoptosis",
+          "material": true,
+          "rationale": "Reversal of PTEN-knockdown suppression of apoptosis is lost from structured meaning; generic effects does not specify apoptosis.",
+          "source_evidence": [
+            "Functionally, the PTEN knockdown experiment using siRNA inhibited serum deprivation-induced cell apoptosis, ROS production, and DNA damage, whereas increased cell proliferation. All these effects could be reversed by phosphatidylinositol 3-kinase (PI3K) inhibitor, which indicated the PI3K/protein kinase B (AKT) might be the critical component of the PTEN effects during serum deficiency."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "All effects of the PTEN knockdown experiment—including inhibition of serum deprivation-induced cell apoptosis, ROS production, and DNA damage and increased cell proliferation—could be reversed by a phosphatidylinositol 3-kinase (PI3K) inhibitor."
+          ],
+          "baseline_evidence_retained_in_candidate_quotes": false,
+          "baseline_relation_indices": [
+            6
+          ],
+          "candidate_quote_indices": [
+            3,
+            4
+          ],
+          "candidate_relation_indices": [],
+          "classification": "HARMFUL OMISSION",
+          "finding_id": "baseline_contract10:006",
+          "loss_scope": "explicit structured scientific meaning; may remain recoverable from evidence quotes",
+          "lost_meaning_recoverable_from_evidence": true,
+          "lost_meaning_source_excerpt": "DNA damage",
+          "material": true,
+          "rationale": "Reversal of PTEN-knockdown suppression of DNA damage is lost from structured meaning.",
+          "source_evidence": [
+            "Functionally, the PTEN knockdown experiment using siRNA inhibited serum deprivation-induced cell apoptosis, ROS production, and DNA damage, whereas increased cell proliferation. All these effects could be reversed by phosphatidylinositol 3-kinase (PI3K) inhibitor, which indicated the PI3K/protein kinase B (AKT) might be the critical component of the PTEN effects during serum deficiency."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "All effects of the PTEN knockdown experiment—including inhibition of serum deprivation-induced cell apoptosis, ROS production, and DNA damage and increased cell proliferation—could be reversed by a phosphatidylinositol 3-kinase (PI3K) inhibitor."
+          ],
+          "baseline_evidence_retained_in_candidate_quotes": false,
+          "baseline_relation_indices": [
+            6
+          ],
+          "candidate_quote_indices": [
+            3,
+            4
+          ],
+          "candidate_relation_indices": [],
+          "classification": "HARMFUL OMISSION",
+          "finding_id": "baseline_contract10:007",
+          "loss_scope": "explicit structured scientific meaning; may remain recoverable from evidence quotes",
+          "lost_meaning_recoverable_from_evidence": true,
+          "lost_meaning_source_excerpt": "increased cell proliferation",
+          "material": true,
+          "rationale": "Reversal of PTEN-knockdown increased proliferation is lost from structured meaning.",
+          "source_evidence": [
+            "Functionally, the PTEN knockdown experiment using siRNA inhibited serum deprivation-induced cell apoptosis, ROS production, and DNA damage, whereas increased cell proliferation. All these effects could be reversed by phosphatidylinositol 3-kinase (PI3K) inhibitor, which indicated the PI3K/protein kinase B (AKT) might be the critical component of the PTEN effects during serum deficiency."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Reversal of all these effects by a phosphatidylinositol 3-kinase (PI3K) inhibitor indicated that the PI3K/protein kinase B (AKT) might be the critical component of the PTEN effects during serum deficiency."
+          ],
+          "baseline_relation_indices": [
+            7
+          ],
+          "candidate_relation_indices": [
+            5
+          ],
+          "classification": "RETAINED",
+          "finding_id": "baseline_contract10:008",
+          "material": true,
+          "rationale": "Tentative PI3K critical-component claim survives.",
+          "source_evidence": [
+            "All these effects could be reversed by phosphatidylinositol 3-kinase (PI3K) inhibitor, which indicated the PI3K/protein kinase B (AKT) might be the critical component of the PTEN effects during serum deficiency."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Reversal of all these effects by a phosphatidylinositol 3-kinase (PI3K) inhibitor indicated that the PI3K/protein kinase B (AKT) might be the critical component of the PTEN effects during serum deficiency."
+          ],
+          "baseline_relation_indices": [
+            8
+          ],
+          "candidate_relation_indices": [
+            6
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:009",
+          "material": true,
+          "rationale": "Tentative AKT component claim survives through assembled long/short-form aliases.",
+          "source_evidence": [
+            "All these effects could be reversed by phosphatidylinositol 3-kinase (PI3K) inhibitor, which indicated the PI3K/protein kinase B (AKT) might be the critical component of the PTEN effects during serum deficiency."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "PTEN is named as a component of the PTEN/PI3K/AKT pathway, which has a role in serum deprivation-induced cytotoxicity in H9c2 cells.",
+            "PI3K is named as a component of the PTEN/PI3K/AKT pathway, which has a role in serum deprivation-induced cytotoxicity in H9c2 cells.",
+            "AKT is named as a component of the PTEN/PI3K/AKT pathway, which has a role in serum deprivation-induced cytotoxicity in H9c2 cells."
+          ],
+          "baseline_relation_indices": [
+            9,
+            10,
+            11
+          ],
+          "candidate_relation_indices": [
+            0,
+            5,
+            6
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:010",
+          "material": true,
+          "rationale": "Role of the PTEN/PI3K/AKT pathway in serum-deprivation cytotoxicity survives in title assertion plus explicit component relations. Loss of direct component-to-cytotoxicity edges is not counted as loss of this scientific finding.",
+          "source_evidence": [
+            "In conclusion, our study indicated the role of the PTEN/PI3K/AKT pathway in serum deprivation-induced cytotoxicity in H9c2 cells."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Small interference RNA (siRNA) of PTEN was used to knock down the expression of PTEN."
+          ],
+          "baseline_relation_indices": [
+            3
+          ],
+          "candidate_relation_indices": [
+            3,
+            4
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:011",
+          "material": true,
+          "rationale": "siRNA of PTEN used to knock down PTEN survives as intervention in other assertions. Dropped self-edge is not treated as invalid biological noise.",
+          "source_evidence": [
+            "Small interference RNA (siRNA) of PTEN was used to knock down the expression of PTEN."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Serum deprivation in H9c2 cells increased PTEN expression."
+          ],
+          "baseline_evidence_retained_in_candidate_quotes": false,
+          "baseline_relation_indices": [
+            4
+          ],
+          "candidate_quote_indices": [],
+          "candidate_relation_indices": [],
+          "classification": "HARMFUL OMISSION",
+          "finding_id": "baseline_contract10:012",
+          "loss_scope": "explicit structured scientific meaning; may remain recoverable from evidence quotes",
+          "lost_meaning_recoverable_from_evidence": false,
+          "lost_meaning_source_excerpt": "serum deprivation in H9c2 cells increased PTEN expression",
+          "material": true,
+          "rationale": "Serum deprivation in H9c2 increased PTEN expression; no current assertion/intervention/effects/context states this finding.",
+          "source_evidence": [
+            "As a result, we observed that serum deprivation in H9c2 cells increased PTEN expression."
+          ]
+        }
+      ],
+      "historical_graph_counts": {
+        "edges": 10,
+        "nodes": 10,
+        "orphans": 2
+      },
+      "orphans": {
+        "INHERITED ORPHAN": [
+          {
+            "id": "doc_e_008",
+            "label": "Edu",
+            "type": "Chemical"
+          },
+          {
+            "id": "doc_e_010",
+            "label": "serum deficiency",
+            "type": "Disease"
+          }
+        ],
+        "NEW NODE / IDENTITY DIFFERENCE": [],
+        "NEW ORPHAN": [],
+        "RESOLVED ORPHAN": []
+      }
+    }
+  }
+}

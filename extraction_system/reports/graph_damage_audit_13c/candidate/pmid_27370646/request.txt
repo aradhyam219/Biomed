@@ -1,0 +1,190 @@
+You are a conservative biomedical relation extractor.
+
+Extract only relationships explicitly asserted by the supplied source text. Do not add biological facts from model knowledge, common sense, or the entity types. Every relation must connect two IDs from the supplied entity list. Keep the source-to-target direction expressed by the text. Do not turn a negated claim into a positive relation: set negated=true for an explicitly negated claim. Every emitted relation must include evidence copied verbatim as a contiguous substring of the source text. If the text does not assert a relation between supplied entities, return an empty relations list.
+
+Do not emit a relation whose sole meaning is that two supplied mentions are
+alternative names, abbreviations, aliases, or textual labels for the same
+biomedical entity. Identity and abbreviation resolution are handled separately
+by document-local entity assembly.
+
+Use predicate as a concise, graph-friendly normalized relationship. Use assertion
+as a complete source-grounded restatement of the scientific meaning represented
+by that relation; it may be normalized rather than verbatim, but it must not add
+information absent from the evidence. When an explicit manipulation, treatment,
+perturbation, or comparable condition materially changes the meaning, record it
+in intervention. Record explicit outcomes that would otherwise be lost from a
+binary edge in effects, and explicit contextual qualifiers needed for
+interpretation in context. Preserve intervention, effects, and context in the
+assertion when they are material. `intervention`, `effects`, and `context` must
+describe the relation represented by the supplied source and target endpoints.
+Do not use these structured qualifiers to hide another supplied named entity as
+a material third participant. If another supplied entity participates in a
+distinct explicitly asserted relationship, represent that relationship
+separately when supported by the text.
+
+Use context only for an explicit biological, experimental, clinical, organismal,
+tissue, cellular, disease-state, cohort, environmental, or comparable
+setting/condition needed to interpret where or under what conditions the
+relation holds. Do not use context for a mechanistic explanation, another
+relation, another entity interaction, or free-floating information that fits
+nowhere else; retain important explanatory wording in assertion or express a
+separate grounded relation when appropriate.
+
+Leave optional intervention, effects, and context empty or null when the source
+does not explicitly support them. Do not force a finite predicate ontology, add
+process or event endpoints, or infer effects and context from biomedical
+knowledge. Preserve the exact relation wording in surface_form when it is
+useful. Do not emit explanations outside the structured response.
+
+Supplied entities:
+[
+  {
+    "id": "E1",
+    "text": "p53",
+    "type": "Gene",
+    "start": 17,
+    "end": 20,
+    "score": 0.9999892711639404
+  },
+  {
+    "id": "E2",
+    "text": "SSC-4",
+    "type": "CellLine",
+    "start": 101,
+    "end": 106,
+    "score": 0.9910467267036438
+  },
+  {
+    "id": "E3",
+    "text": "oral squamous carcinoma",
+    "type": "Disease",
+    "start": 107,
+    "end": 130,
+    "score": 0.9999874035517374
+  },
+  {
+    "id": "E4",
+    "text": "Oral squamous cell carcinoma",
+    "type": "Disease",
+    "start": 139,
+    "end": 167,
+    "score": 0.9999928176403046
+  },
+  {
+    "id": "E5",
+    "text": "OSCC",
+    "type": "Disease",
+    "start": 169,
+    "end": 173,
+    "score": 0.9999860525131226
+  },
+  {
+    "id": "E6",
+    "text": "malignancy",
+    "type": "Disease",
+    "start": 180,
+    "end": 190,
+    "score": 0.9999858140945435
+  },
+  {
+    "id": "E7",
+    "text": "patients",
+    "type": "Species",
+    "start": 270,
+    "end": 278,
+    "score": 0.9999852180480957
+  },
+  {
+    "id": "E8",
+    "text": "p53",
+    "type": "Gene",
+    "start": 315,
+    "end": 318,
+    "score": 0.9999889135360718
+  },
+  {
+    "id": "E9",
+    "text": "malignant tumors",
+    "type": "Disease",
+    "start": 419,
+    "end": 435,
+    "score": 0.9999839663505554
+  },
+  {
+    "id": "E10",
+    "text": "p53",
+    "type": "Gene",
+    "start": 459,
+    "end": 462,
+    "score": 0.9999891519546509
+  },
+  {
+    "id": "E11",
+    "text": "OSCC",
+    "type": "Disease",
+    "start": 501,
+    "end": 505,
+    "score": 0.999985933303833
+  },
+  {
+    "id": "E12",
+    "text": "p53",
+    "type": "Gene",
+    "start": 637,
+    "end": 640,
+    "score": 0.9999895095825195
+  },
+  {
+    "id": "E13",
+    "text": "p53",
+    "type": "Gene",
+    "start": 812,
+    "end": 815,
+    "score": 0.9999889135360718
+  },
+  {
+    "id": "E14",
+    "text": "SSC-4",
+    "type": "CellLine",
+    "start": 887,
+    "end": 892,
+    "score": 0.9927547574043274
+  },
+  {
+    "id": "E15",
+    "text": "VEGF",
+    "type": "Gene",
+    "start": 990,
+    "end": 994,
+    "score": 0.9999880790710449
+  },
+  {
+    "id": "E16",
+    "text": "p53",
+    "type": "Gene",
+    "start": 1074,
+    "end": 1077,
+    "score": 0.9999890327453613
+  },
+  {
+    "id": "E17",
+    "text": "OSCC",
+    "type": "Disease",
+    "start": 1092,
+    "end": 1096,
+    "score": 0.9999849796295166
+  },
+  {
+    "id": "E18",
+    "text": "OSCC",
+    "type": "Disease",
+    "start": 1174,
+    "end": 1178,
+    "score": 0.9999849796295166
+  }
+]
+
+Source text:
+Knocking down of p53 triggers apoptosis and autophagy, concomitantly with inhibition of migration on SSC-4 oral squamous carcinoma cells.
+
+Oral squamous cell carcinoma (OSCC) is a malignancy with elevated prevalence and somber prognosis due to the fact that most of the patients are diagnosed at an advanced stage. p53 has a crucial role in proliferation and apoptosis during the occurrence and development of numerous malignant tumors. The impact of mutated p53 on the development and progression of OSCC is unclear and might have therapeutic implications. Using an in vitro RNA interference experiment, we have evaluated the impact of p53 knockdown on cell viability, apoptosis, migration, and gene expression for key genes involved in apoptosis and angiogenesis. We observed that inhibiting the expression of p53 decreased the proliferation ability and induced apoptosis/autophagy in SSC-4 cells. Moreover, we observed that this has decreased migration and has blocked the expression of VEGF. In conclusion, our research provides a proof that a direct connection between p53 knockdown and OSCC cell death can be established, therefore opening new potential directions in OSCC molecular therapeutics and management.

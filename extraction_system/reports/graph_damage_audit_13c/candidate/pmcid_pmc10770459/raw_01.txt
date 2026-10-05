@@ -1,0 +1,148 @@
+{
+  "relations": [
+    {
+      "predicate": "contributes_to_complications_of",
+      "negated": false,
+      "target": "E6",
+      "evidence": "Diabetes mellitus (DM) poses a significant global health burden, with hyperglycemia being a primary contributor to complications and high morbidity associated with this disorder.",
+      "context": [],
+      "source": "E8",
+      "assertion": "Hyperglycemia is a primary contributor to complications and high morbidity associated with diabetes mellitus.",
+      "surface_form": "being a primary contributor to complications and high morbidity associated with this disorder",
+      "intervention": null,
+      "effects": ["complications", "high morbidity"]
+    },
+    {
+      "predicate": "implicated_in_initiating",
+      "negated": false,
+      "target": "E13",
+      "evidence": "high mobility group box 1 (HMGB1) in hyperglycemia, a protein implicated in initiating inflammation",
+      "context": [],
+      "source": "E10",
+      "assertion": "High mobility group box 1 is implicated in initiating inflammation.",
+      "surface_form": "implicated in initiating",
+      "intervention": null,
+      "effects": []
+    },
+    {
+      "predicate": "correlated_with",
+      "negated": false,
+      "target": "E14",
+      "evidence": "high mobility group box 1 (HMGB1) in hyperglycemia, a protein implicated in initiating inflammation and strongly correlated with DM onset and progression.",
+      "context": [],
+      "source": "E10",
+      "assertion": "High mobility group box 1 is strongly correlated with DM onset and progression.",
+      "surface_form": "strongly correlated with",
+      "intervention": null,
+      "effects": ["DM onset and progression"]
+    },
+    {
+      "predicate": "hypothesized_to_mitigate",
+      "negated": false,
+      "target": "E16",
+      "evidence": "We hypothesized that HMGB1 knockdown will mitigate hyperglycemia severity and enhance glucose tolerance.",
+      "context": [],
+      "source": "E15",
+      "assertion": "The authors hypothesized that HMGB1 knockdown would mitigate hyperglycemia severity.",
+      "surface_form": "mitigate hyperglycemia severity",
+      "intervention": "HMGB1 knockdown",
+      "effects": ["reduced hyperglycemia severity"]
+    },
+    {
+      "predicate": "hypothesized_to_enhance_tolerance",
+      "negated": false,
+      "target": "E17",
+      "evidence": "We hypothesized that HMGB1 knockdown will mitigate hyperglycemia severity and enhance glucose tolerance.",
+      "context": [],
+      "source": "E15",
+      "assertion": "The authors hypothesized that HMGB1 knockdown would enhance glucose tolerance.",
+      "surface_form": "enhance glucose tolerance",
+      "intervention": "HMGB1 knockdown",
+      "effects": ["enhanced glucose tolerance"]
+    },
+    {
+      "predicate": "induces",
+      "negated": false,
+      "target": "E23",
+      "evidence": "Hyperglycemic phenotype was induced using low dose streptozotocin (STZ) injections",
+      "context": [],
+      "source": "E24",
+      "assertion": "Low-dose streptozotocin injections induced a hyperglycemic phenotype.",
+      "surface_form": "was induced using",
+      "intervention": "low dose streptozotocin injections",
+      "effects": ["hyperglycemic phenotype"]
+    },
+    {
+      "predicate": "knockdown_reduces_levels",
+      "negated": false,
+      "target": "E30",
+      "evidence": "Our findings showed a substantial reduction in glucose levels and enhanced glucose tolerance in HMGB1 knockdown mice.",
+      "context": ["mice"],
+      "source": "E32",
+      "assertion": "HMGB1 knockdown mice showed a substantial reduction in glucose levels.",
+      "surface_form": "a substantial reduction in glucose levels",
+      "intervention": "HMGB1 knockdown",
+      "effects": ["substantial reduction in glucose levels"]
+    },
+    {
+      "predicate": "knockdown_enhances_tolerance",
+      "negated": false,
+      "target": "E31",
+      "evidence": "Our findings showed a substantial reduction in glucose levels and enhanced glucose tolerance in HMGB1 knockdown mice.",
+      "context": ["mice"],
+      "source": "E32",
+      "assertion": "HMGB1 knockdown mice showed enhanced glucose tolerance.",
+      "surface_form": "enhanced glucose tolerance",
+      "intervention": "HMGB1 knockdown",
+      "effects": ["enhanced glucose tolerance"]
+    },
+    {
+      "predicate": "knockdown_causally_affects",
+      "negated": false,
+      "target": "E38",
+      "evidence": "our present study delivers the first direct evidence of a causal relationship between systemic HMGB1 knockdown and hyperglycemia in vivo",
+      "context": ["in vivo"],
+      "source": "E37",
+      "assertion": "The study provides direct evidence of a causal relationship between systemic HMGB1 knockdown and hyperglycemia in vivo.",
+      "surface_form": "a causal relationship between",
+      "intervention": "systemic HMGB1 knockdown",
+      "effects": []
+    },
+    {
+      "predicate": "knockdown_is_potential_therapy_for",
+      "negated": false,
+      "target": "E40",
+      "evidence": "This discovery positions HMGB1 knockdown as a potentially efficacious therapeutic target for addressing hyperglycemia and, by extension, the DM epidemic.",
+      "context": [],
+      "source": "E39",
+      "assertion": "HMGB1 knockdown is presented as a potentially efficacious therapeutic target for addressing hyperglycemia.",
+      "surface_form": "a potentially efficacious therapeutic target for addressing",
+      "intervention": "HMGB1 knockdown",
+      "effects": []
+    },
+    {
+      "predicate": "knockdown_is_potential_therapy_for",
+      "negated": false,
+      "target": "E41",
+      "evidence": "This discovery positions HMGB1 knockdown as a potentially efficacious therapeutic target for addressing hyperglycemia and, by extension, the DM epidemic.",
+      "context": [],
+      "source": "E39",
+      "assertion": "HMGB1 knockdown is presented, by extension, as a potentially efficacious therapeutic target for addressing the DM epidemic.",
+      "surface_form": "by extension, the DM epidemic",
+      "intervention": "HMGB1 knockdown",
+      "effects": []
+    },
+    {
+      "predicate": "has_potential_therapeutic_role_in",
+      "negated": false,
+      "target": "E43",
+      "evidence": "the promising therapeutic potential of HMGB1 in DM management.",
+      "context": [],
+      "source": "E42",
+      "assertion": "HMGB1 has promising therapeutic potential in DM management.",
+      "surface_form": "promising therapeutic potential",
+      "intervention": null,
+      "effects": []
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "configuration": {
+    "background": true,
+    "generation_timeout_seconds": 900.0,
+    "max_completion_tokens": 128000,
+    "max_retries": 2,
+    "model": "gpt-6.1-sol",
+    "poll_interval_seconds": 3.0,
+    "reasoning_effort": "medium",
+    "service_label": "Standard",
+    "service_tier": "default"
+  },
+  "contract": "13C",
+  "diagnostic_events": [
+    {
+      "execution_mode": "background",
+      "generation_number": 1,
+      "poll_count": 0,
+      "poll_errors": 0,
+      "repair": false,
+      "requested_background": true,
+      "requested_model": "gpt-6.1-sol",
+      "requested_reasoning_effort": "medium",
+      "requested_service_tier": "default",
+      "response_id": null,
+      "status": "create_requested"
+    },
+    {
+      "elapsed_seconds": 0.562,
+      "error_type": "APIConnectionError",
+      "execution_mode": "background",
+      "generation_number": 1,
+      "http_status": null,
+      "poll_count": 0,
+      "poll_errors": 0,
+      "repair": false,
+      "requested_background": true,
+      "requested_model": "gpt-6.1-sol",
+      "requested_reasoning_effort": "medium",
+      "requested_service_tier": "default",
+      "response_id": null,
+      "status": "create_failed"
+    }
+  ],
+  "entity_packet_sha256": "e20a88f8bf49b09fdd73c716fe558c6bb9be0021aeefb372d60042fe321f33b6",
+  "error_class": "RelationExtractionError",
+  "generation_diagnostics": [
+    {
+      "elapsed_seconds": 0.562,
+      "error_type": "APIConnectionError",
+      "execution_mode": "background",
+      "generation_number": 1,
+      "http_status": null,
+      "poll_count": 0,
+      "poll_errors": 0,
+      "repair": false,
+      "requested_background": true,
+      "requested_model": "gpt-6.1-sol",
+      "requested_reasoning_effort": "medium",
+      "requested_service_tier": "default",
+      "response_id": null,
+      "status": "create_failed"
+    }
+  ],
+  "paper_id": "PMCID:PMC10770459",
+  "source_sha256": "aa7359e710f0da93c17f1c8276d16ea6b725de1ba124b6d05eb722148147de29",
+  "status": "failed"
+}

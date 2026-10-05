@@ -1,0 +1,382 @@
+{
+  "current_additions": [
+    {
+      "candidate_relation_index": 0,
+      "classification": "USEFUL CURRENT-ONLY",
+      "rationale": "Useful explicit hyperglycemia contribution to DM complications/morbidity.",
+      "relation": {
+        "assertion": "Hyperglycemia is a primary contributor to complications and high morbidity associated with diabetes mellitus.",
+        "context": [],
+        "effects": [
+          "complications",
+          "high morbidity"
+        ],
+        "evidence": "Diabetes mellitus (DM) poses a significant global health burden, with hyperglycemia being a primary contributor to complications and high morbidity associated with this disorder.",
+        "intervention": null,
+        "negated": false,
+        "predicate": "contributes_to_complications_of",
+        "score": null,
+        "source": "E8",
+        "surface_form": "being a primary contributor to complications and high morbidity associated with this disorder",
+        "target": "E6"
+      }
+    }
+  ],
+  "noise_additions": [],
+  "paper_id": "PMCID:PMC10770459",
+  "severity": "GREEN",
+  "severity_justification": "Observed glucose reduction, tolerance improvement, in-vivo causality and therapeutic potential remain. New orphans are a method-only mouse edge and mis-typed tolerance fragment.",
+  "source_grounding_policy": "Exact frozen title plus complete abstract only. Findings must survive in structured predicate/assertion/intervention/effects/context; an evidence quote alone does not establish retention. Source quotations are retained for review.",
+  "title": "Restoring glucose balance: Conditional HMGB1 knockdown mitigates hyperglycemia in a Streptozotocin induced mouse model",
+  "views": {
+    "baseline_09b": {
+      "classification_counts": {
+        "BENEFICIAL PRUNING": 3,
+        "EQUIVALENT / REPHRASED": 9,
+        "RETAINED": 2
+      },
+      "controlled_counts": {
+        "baseline_edges": 15,
+        "baseline_nodes": 11,
+        "baseline_orphans": 2,
+        "baseline_relations": 15,
+        "beneficial_pruning": 3,
+        "current_edges": 12,
+        "current_nodes": 11,
+        "current_orphans": 4,
+        "current_relations": 12,
+        "harmful_topology_changes": 0,
+        "material_findings_lost": 0,
+        "new_orphans": 2,
+        "resolved_orphans": 0
+      },
+      "findings": [
+        {
+          "baseline_assertions": [
+            "Conditional HMGB1 knockdown mitigates hyperglycemia in a Streptozotocin induced mouse model.",
+            "A substantial reduction in glucose levels was observed in HMGB1 knockdown mice."
+          ],
+          "baseline_relation_indices": [
+            0,
+            9
+          ],
+          "candidate_relation_indices": [
+            6,
+            8
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:000",
+          "material": true,
+          "rationale": "Glucose reduction in knockdown mice and causal hyperglycemia relationship retain the title's mitigation finding.",
+          "source_evidence": [
+            "Restoring glucose balance: Conditional HMGB1 knockdown mitigates hyperglycemia in a Streptozotocin induced mouse model",
+            "Our findings showed a substantial reduction in glucose levels and enhanced glucose tolerance in HMGB1 knockdown mice."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "The study explored the role of high mobility group box 1 (HMGB1) in hyperglycemia."
+          ],
+          "baseline_relation_indices": [
+            1
+          ],
+          "candidate_relation_indices": [],
+          "classification": "BENEFICIAL PRUNING",
+          "finding_id": "baseline_09b:001",
+          "material": false,
+          "rationale": "Exploring a role/evaluating an effect are study-purpose statements; outcome relations now convey the actual results.",
+          "source_evidence": [
+            "In this study, we explored the role of high mobility group box 1 (HMGB1) in hyperglycemia, a protein implicated in initiating inflammation and strongly correlated with DM onset and progression."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Longitudinal glucose measurements and oral glucose tolerance tests were used to evaluate the effect of HMGB1 knockdown on glucose metabolism."
+          ],
+          "baseline_relation_indices": [
+            8
+          ],
+          "candidate_relation_indices": [],
+          "classification": "BENEFICIAL PRUNING",
+          "finding_id": "baseline_09b:002",
+          "material": false,
+          "rationale": "Exploring a role/evaluating an effect are study-purpose statements; outcome relations now convey the actual results.",
+          "source_evidence": [
+            "Hyperglycemic phenotype was induced using low dose streptozotocin (STZ) injections, followed by longitudinal glucose measurements and oral glucose tolerance tests to evaluate the effect of HMGB1 knockdown on glucose metabolism."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "HMGB1 is implicated in initiating inflammation."
+          ],
+          "baseline_relation_indices": [
+            2
+          ],
+          "candidate_relation_indices": [
+            1
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:003",
+          "material": true,
+          "rationale": "Inflammation initiation survives through the exact long-form HMGB1 alias.",
+          "source_evidence": [
+            "In this study, we explored the role of high mobility group box 1 (HMGB1) in hyperglycemia, a protein implicated in initiating inflammation and strongly correlated with DM onset and progression."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "HMGB1 is strongly correlated with DM onset and progression."
+          ],
+          "baseline_relation_indices": [
+            3
+          ],
+          "candidate_relation_indices": [
+            2
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:004",
+          "material": true,
+          "rationale": "Strong correlation with DM onset/progression survives through the long-form alias.",
+          "source_evidence": [
+            "In this study, we explored the role of high mobility group box 1 (HMGB1) in hyperglycemia, a protein implicated in initiating inflammation and strongly correlated with DM onset and progression."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "The study hypothesized that HMGB1 knockdown would mitigate hyperglycemia severity."
+          ],
+          "baseline_relation_indices": [
+            4
+          ],
+          "candidate_relation_indices": [
+            3
+          ],
+          "classification": "RETAINED",
+          "finding_id": "baseline_09b:005",
+          "material": true,
+          "rationale": "Hypothesis remains explicitly a hypothesis, not an observed result.",
+          "source_evidence": [
+            "We hypothesized that HMGB1 knockdown will mitigate hyperglycemia severity and enhance glucose tolerance."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "The study hypothesized that HMGB1 knockdown would enhance glucose tolerance."
+          ],
+          "baseline_relation_indices": [
+            5
+          ],
+          "candidate_relation_indices": [
+            4
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:006",
+          "material": true,
+          "rationale": "Glucose-tolerance hypothesis survives; using glucose avoids making the NER fragment tolerance a gene participant.",
+          "source_evidence": [
+            "We hypothesized that HMGB1 knockdown will mitigate hyperglycemia severity and enhance glucose tolerance."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "The novel inducible HMGB1 knockout (iHMGB1 KO) mouse model exhibited systemic HMGB1 knockdown."
+          ],
+          "baseline_relation_indices": [
+            6
+          ],
+          "candidate_relation_indices": [],
+          "classification": "BENEFICIAL PRUNING",
+          "finding_id": "baseline_09b:007",
+          "material": false,
+          "rationale": "Method-only mouse-model edge is removed; knockdown mice and systemic in-vivo knockdown remain in outcome assertions. Inducible-model detail is absent from structured fields, but is experimental setup rather than a lost observed finding.",
+          "source_evidence": [
+            "To test this hypothesis, we utilized a novel inducible HMGB1 knockout (iHMGB1 KO) mouse model exhibiting systemic HMGB1 knockdown."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Low dose streptozotocin (STZ) injections induced the hyperglycemic phenotype."
+          ],
+          "baseline_relation_indices": [
+            7
+          ],
+          "candidate_relation_indices": [
+            5
+          ],
+          "classification": "RETAINED",
+          "finding_id": "baseline_09b:008",
+          "material": true,
+          "rationale": "STZ induction of the hyperglycemic phenotype is retained.",
+          "source_evidence": [
+            "Hyperglycemic phenotype was induced using low dose streptozotocin (STZ) injections, followed by longitudinal glucose measurements and oral glucose tolerance tests to evaluate the effect of HMGB1 knockdown on glucose metabolism."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Enhanced glucose tolerance was observed in HMGB1 knockdown mice."
+          ],
+          "baseline_relation_indices": [
+            10
+          ],
+          "candidate_relation_indices": [
+            7
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:009",
+          "material": true,
+          "rationale": "Observed enhanced glucose tolerance in knockdown mice survives.",
+          "source_evidence": [
+            "Our findings showed a substantial reduction in glucose levels and enhanced glucose tolerance in HMGB1 knockdown mice."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "The study delivered the first direct evidence of a causal relationship between systemic HMGB1 knockdown and hyperglycemia in vivo; the association had remained unexamined prior to this research."
+          ],
+          "baseline_relation_indices": [
+            11
+          ],
+          "candidate_relation_indices": [
+            8
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:010",
+          "material": true,
+          "rationale": "Systemic knockdown/causal hyperglycemia relationship survives.",
+          "source_evidence": [
+            "In conclusion, our present study delivers the first direct evidence of a causal relationship between systemic HMGB1 knockdown and hyperglycemia in vivo, an association that had remained unexamined prior to this research."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "This discovery positions HMGB1 knockdown as a potentially efficacious therapeutic target for addressing hyperglycemia."
+          ],
+          "baseline_relation_indices": [
+            12
+          ],
+          "candidate_relation_indices": [
+            9
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:011",
+          "material": true,
+          "rationale": "Tentative therapeutic target for hyperglycemia survives without promotion to proven therapy.",
+          "source_evidence": [
+            "This discovery positions HMGB1 knockdown as a potentially efficacious therapeutic target for addressing hyperglycemia and, by extension, the DM epidemic."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "By extension, HMGB1 knockdown is positioned as a potentially efficacious therapeutic target for the DM epidemic."
+          ],
+          "baseline_relation_indices": [
+            13
+          ],
+          "candidate_relation_indices": [
+            10
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:012",
+          "material": true,
+          "rationale": "Tentative extension to DM therapy survives.",
+          "source_evidence": [
+            "This discovery positions HMGB1 knockdown as a potentially efficacious therapeutic target for addressing hyperglycemia and, by extension, the DM epidemic."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "The study revealed the promising therapeutic potential of HMGB1 in DM management."
+          ],
+          "baseline_relation_indices": [
+            14
+          ],
+          "candidate_relation_indices": [
+            11
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:013",
+          "material": true,
+          "rationale": "Therapeutic potential in DM management survives.",
+          "source_evidence": [
+            "Furthermore, we have revealed potential underlying mechanisms, establishing the essential groundwork for subsequent in-depth mechanistic investigations focused on further elucidating and harnessing the promising therapeutic potential of HMGB1 in DM management."
+          ]
+        }
+      ],
+      "historical_graph_counts": {
+        "edges": 15,
+        "nodes": 11,
+        "orphans": 2
+      },
+      "orphans": {
+        "INHERITED ORPHAN": [
+          {
+            "id": "doc_e_009",
+            "label": "iHMGB1",
+            "type": "Gene"
+          },
+          {
+            "id": "doc_e_011",
+            "label": "mice",
+            "type": "Species"
+          }
+        ],
+        "NEW NODE / IDENTITY DIFFERENCE": [],
+        "NEW ORPHAN": [
+          {
+            "cause": "relation represented through another alias/node",
+            "explanation": "Knockdown mice remain in outcome assertions/context; mouse-model edge omitted.",
+            "id": "doc_e_005",
+            "label": "mouse",
+            "previous_relations": [
+              {
+                "assertion": "The novel inducible HMGB1 knockout (iHMGB1 KO) mouse model exhibited systemic HMGB1 knockdown.",
+                "context": [
+                  "mouse model"
+                ],
+                "effects": [
+                  "systemic HMGB1 knockdown"
+                ],
+                "evidence": "To test this hypothesis, we utilized a novel inducible HMGB1 knockout (iHMGB1 KO) mouse model exhibiting systemic HMGB1 knockdown.",
+                "index": 6,
+                "intervention": "inducible HMGB1 knockout (iHMGB1 KO)",
+                "negated": false,
+                "predicate": "exhibits_knockdown_of",
+                "score": null,
+                "source": "E21",
+                "surface_form": "mouse model exhibiting systemic HMGB1 knockdown",
+                "target": "E22"
+              }
+            ],
+            "type": "Species"
+          },
+          {
+            "cause": "beneficial cleanup",
+            "explanation": "Glucose tolerance is now linked to glucose, rather than the NER fragment tolerance tagged Gene.",
+            "id": "doc_e_008",
+            "label": "tolerance",
+            "previous_relations": [
+              {
+                "assertion": "The study hypothesized that HMGB1 knockdown would enhance glucose tolerance.",
+                "context": [],
+                "effects": [
+                  "enhancement of glucose tolerance"
+                ],
+                "evidence": "We hypothesized that HMGB1 knockdown will mitigate hyperglycemia severity and enhance glucose tolerance.",
+                "index": 5,
+                "intervention": "HMGB1 knockdown",
+                "negated": false,
+                "predicate": "hypothesized_to_enhance",
+                "score": null,
+                "source": "E15",
+                "surface_form": "enhance glucose tolerance",
+                "target": "E18"
+              }
+            ],
+            "type": "Disease"
+          }
+        ],
+        "RESOLVED ORPHAN": []
+      }
+    }
+  }
+}

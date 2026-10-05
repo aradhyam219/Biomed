@@ -1,0 +1,452 @@
+You are a conservative biomedical relation extractor.
+
+Extract only relationships explicitly asserted by the supplied source text. Do not add biological facts from model knowledge, common sense, or the entity types. Every relation must connect two IDs from the supplied entity list. Keep the source-to-target direction expressed by the text. Do not turn a negated claim into a positive relation: set negated=true for an explicitly negated claim. Every emitted relation must include evidence copied verbatim as a contiguous substring of the source text. If the text does not assert a relation between supplied entities, return an empty relations list.
+
+Do not emit a relation whose sole meaning is that two supplied mentions are
+alternative names, abbreviations, aliases, or textual labels for the same
+biomedical entity. Identity and abbreviation resolution are handled separately
+by document-local entity assembly.
+
+Use predicate as a concise, graph-friendly normalized relationship. Use assertion
+as a complete source-grounded restatement of the scientific meaning represented
+by that relation; it may be normalized rather than verbatim, but it must not add
+information absent from the evidence. When an explicit manipulation, treatment,
+perturbation, or comparable condition materially changes the meaning, record it
+in intervention. Record explicit outcomes that would otherwise be lost from a
+binary edge in effects, and explicit contextual qualifiers needed for
+interpretation in context. Preserve intervention, effects, and context in the
+assertion when they are material. `intervention`, `effects`, and `context` must
+describe the relation represented by the supplied source and target endpoints.
+Do not use these structured qualifiers to hide another supplied named entity as
+a material third participant. If another supplied entity participates in a
+distinct explicitly asserted relationship, represent that relationship
+separately when supported by the text.
+
+Use context only for an explicit biological, experimental, clinical, organismal,
+tissue, cellular, disease-state, cohort, environmental, or comparable
+setting/condition needed to interpret where or under what conditions the
+relation holds. Do not use context for a mechanistic explanation, another
+relation, another entity interaction, or free-floating information that fits
+nowhere else; retain important explanatory wording in assertion or express a
+separate grounded relation when appropriate.
+
+Leave optional intervention, effects, and context empty or null when the source
+does not explicitly support them. Do not force a finite predicate ontology, add
+process or event endpoints, or infer effects and context from biomedical
+knowledge. Preserve the exact relation wording in surface_form when it is
+useful. Do not emit explanations outside the structured response.
+
+Supplied entities:
+[
+  {
+    "id": "E1",
+    "text": "c-Myc",
+    "type": "Gene",
+    "start": 0,
+    "end": 5,
+    "score": 0.9999794960021973
+  },
+  {
+    "id": "E2",
+    "text": "Oral Cancer",
+    "type": "Disease",
+    "start": 30,
+    "end": 41,
+    "score": 0.9999911189079285
+  },
+  {
+    "id": "E3",
+    "text": "Glutaminase",
+    "type": "Gene",
+    "start": 88,
+    "end": 99,
+    "score": 0.9999858140945435
+  },
+  {
+    "id": "E4",
+    "text": "Glutamine Synthetase",
+    "type": "Gene",
+    "start": 104,
+    "end": 124,
+    "score": 0.9999759793281555
+  },
+  {
+    "id": "E5",
+    "text": "glutaminase",
+    "type": "Gene",
+    "start": 176,
+    "end": 187,
+    "score": 0.9999864101409912
+  },
+  {
+    "id": "E6",
+    "text": "GLS",
+    "type": "Gene",
+    "start": 189,
+    "end": 192,
+    "score": 0.9999871253967285
+  },
+  {
+    "id": "E7",
+    "text": "glutamine synthetase",
+    "type": "Gene",
+    "start": 198,
+    "end": 218,
+    "score": 0.9999759793281555
+  },
+  {
+    "id": "E8",
+    "text": "GS",
+    "type": "Gene",
+    "start": 220,
+    "end": 222,
+    "score": 0.9999866485595703
+  },
+  {
+    "id": "E9",
+    "text": "c-Myc",
+    "type": "Gene",
+    "start": 240,
+    "end": 245,
+    "score": 0.9999796152114868
+  },
+  {
+    "id": "E10",
+    "text": "tumor",
+    "type": "Disease",
+    "start": 255,
+    "end": 260,
+    "score": 0.9999855756759644
+  },
+  {
+    "id": "E11",
+    "text": "oral cancer",
+    "type": "Disease",
+    "start": 276,
+    "end": 287,
+    "score": 0.999991774559021
+  },
+  {
+    "id": "E12",
+    "text": "c-Myc",
+    "type": "Gene",
+    "start": 333,
+    "end": 338,
+    "score": 0.9999798138936361
+  },
+  {
+    "id": "E13",
+    "text": "GLS",
+    "type": "Gene",
+    "start": 340,
+    "end": 343,
+    "score": 0.9999877214431763
+  },
+  {
+    "id": "E14",
+    "text": "GS",
+    "type": "Gene",
+    "start": 349,
+    "end": 351,
+    "score": 0.9999856948852539
+  },
+  {
+    "id": "E15",
+    "text": "oral cancer",
+    "type": "Disease",
+    "start": 410,
+    "end": 421,
+    "score": 0.9999919533729553
+  },
+  {
+    "id": "E16",
+    "text": "c-Myc",
+    "type": "Gene",
+    "start": 542,
+    "end": 547,
+    "score": 0.9999801715215048
+  },
+  {
+    "id": "E17",
+    "text": "GLS",
+    "type": "Gene",
+    "start": 579,
+    "end": 582,
+    "score": 0.9999123811721802
+  },
+  {
+    "id": "E18",
+    "text": "GS",
+    "type": "Gene",
+    "start": 586,
+    "end": 588,
+    "score": 0.9996700286865234
+  },
+  {
+    "id": "E19",
+    "text": "c-Myc",
+    "type": "Gene",
+    "start": 654,
+    "end": 659,
+    "score": 0.9999801715215048
+  },
+  {
+    "id": "E20",
+    "text": "GLS",
+    "type": "Gene",
+    "start": 661,
+    "end": 664,
+    "score": 0.9999644756317139
+  },
+  {
+    "id": "E21",
+    "text": "GS",
+    "type": "Gene",
+    "start": 669,
+    "end": 671,
+    "score": 0.9999558925628662
+  },
+  {
+    "id": "E22",
+    "text": "KB",
+    "type": "CellLine",
+    "start": 718,
+    "end": 720,
+    "score": 0.9940422177314758
+  },
+  {
+    "id": "E23",
+    "text": "oral cancer",
+    "type": "Disease",
+    "start": 721,
+    "end": 732,
+    "score": 0.9999887347221375
+  },
+  {
+    "id": "E24",
+    "text": "E-cadherin",
+    "type": "Gene",
+    "start": 759,
+    "end": 769,
+    "score": 0.9999803304672241
+  },
+  {
+    "id": "E25",
+    "text": "N-cadherin",
+    "type": "Gene",
+    "start": 774,
+    "end": 784,
+    "score": 0.9999800125757853
+  },
+  {
+    "id": "E26",
+    "text": "KB",
+    "type": "CellLine",
+    "start": 833,
+    "end": 835,
+    "score": 0.9942399263381958
+  },
+  {
+    "id": "E27",
+    "text": "c-Myc",
+    "type": "Gene",
+    "start": 857,
+    "end": 862,
+    "score": 0.9999796549479166
+  },
+  {
+    "id": "E28",
+    "text": "GLS",
+    "type": "Gene",
+    "start": 882,
+    "end": 885,
+    "score": 0.9999527931213379
+  },
+  {
+    "id": "E29",
+    "text": "GS",
+    "type": "Gene",
+    "start": 889,
+    "end": 891,
+    "score": 0.9999830722808838
+  },
+  {
+    "id": "E30",
+    "text": "GS",
+    "type": "Gene",
+    "start": 931,
+    "end": 933,
+    "score": 0.9999818801879883
+  },
+  {
+    "id": "E31",
+    "text": "Tumor, Lymph Node, and Metastasis",
+    "type": "Disease",
+    "start": 958,
+    "end": 991,
+    "score": 0.9822818722043719
+  },
+  {
+    "id": "E32",
+    "text": "TNM",
+    "type": "Disease",
+    "start": 993,
+    "end": 996,
+    "score": 0.9839352369308472
+  },
+  {
+    "id": "E33",
+    "text": "c-Myc",
+    "type": "Gene",
+    "start": 1018,
+    "end": 1023,
+    "score": 0.9999793370564779
+  },
+  {
+    "id": "E34",
+    "text": "GS",
+    "type": "Gene",
+    "start": 1068,
+    "end": 1070,
+    "score": 0.9999816417694092
+  },
+  {
+    "id": "E35",
+    "text": "c-Myc",
+    "type": "Gene",
+    "start": 1102,
+    "end": 1107,
+    "score": 0.9999793370564779
+  },
+  {
+    "id": "E36",
+    "text": "oral cancer",
+    "type": "Disease",
+    "start": 1144,
+    "end": 1155,
+    "score": 0.9999905824661255
+  },
+  {
+    "id": "E37",
+    "text": "KB",
+    "type": "CellLine",
+    "start": 1262,
+    "end": 1264,
+    "score": 0.9948225021362305
+  },
+  {
+    "id": "E38",
+    "text": "c-Myc",
+    "type": "Gene",
+    "start": 1305,
+    "end": 1310,
+    "score": 0.9999797741572062
+  },
+  {
+    "id": "E39",
+    "text": "GLS",
+    "type": "Chemical",
+    "start": 1415,
+    "end": 1418,
+    "score": 0.9999001026153564
+  },
+  {
+    "id": "E40",
+    "text": "GS",
+    "type": "Gene",
+    "start": 1422,
+    "end": 1424,
+    "score": 0.9998883008956909
+  },
+  {
+    "id": "E41",
+    "text": "c-Myc",
+    "type": "Gene",
+    "start": 1449,
+    "end": 1454,
+    "score": 0.9999800125757853
+  },
+  {
+    "id": "E42",
+    "text": "E-cadherin",
+    "type": "Gene",
+    "start": 1469,
+    "end": 1479,
+    "score": 0.9999802907307943
+  },
+  {
+    "id": "E43",
+    "text": "N-cadherin",
+    "type": "Gene",
+    "start": 1515,
+    "end": 1525,
+    "score": 0.9999801715215048
+  },
+  {
+    "id": "E44",
+    "text": "GLS",
+    "type": "Gene",
+    "start": 1566,
+    "end": 1569,
+    "score": 0.997153639793396
+  },
+  {
+    "id": "E45",
+    "text": "GS",
+    "type": "Gene",
+    "start": 1574,
+    "end": 1576,
+    "score": 0.9983605742454529
+  },
+  {
+    "id": "E46",
+    "text": "c-Myc",
+    "type": "Gene",
+    "start": 1579,
+    "end": 1584,
+    "score": 0.9999800523122152
+  },
+  {
+    "id": "E47",
+    "text": "oral cancer",
+    "type": "Disease",
+    "start": 1609,
+    "end": 1620,
+    "score": 0.9999918937683105
+  },
+  {
+    "id": "E48",
+    "text": "GLS",
+    "type": "Gene",
+    "start": 1667,
+    "end": 1670,
+    "score": 0.9999727010726929
+  },
+  {
+    "id": "E49",
+    "text": "GS",
+    "type": "Gene",
+    "start": 1675,
+    "end": 1677,
+    "score": 0.9999792575836182
+  },
+  {
+    "id": "E50",
+    "text": "oral cancer",
+    "type": "Disease",
+    "start": 1802,
+    "end": 1813,
+    "score": 0.9999915361404419
+  }
+]
+
+Source text:
+c-Myc Overexpression Promotes Oral Cancer Cell Proliferation and Migration by Enhancing Glutaminase and Glutamine Synthetase Activity.
+
+This study aimed to investigate whether glutaminase (GLS) and glutamine synthetase (GS) are involved in c-Myc-mediated tumor development in oral cancer.
+
+The correlation between the expressions of c-Myc, GLS, and GS in clinical samples and the clinicopathologic features of oral cancer were examined using immunohistochemistry and quantitative real-time polymerase chain reaction. After overexpressing the c-Myc gene and using an inhibitor of GLS or GS, functional experiments were performed to confirm the effects of c-Myc, GLS and GS on proliferation, cell cycle and migration in KB oral cancer cells. The expressions of E-cadherin and N-cadherin were determined by immunofluorescence assays in KB cells overexpressing c-Myc in the presence of GLS or GS inhibitors.
+
+The protein expression of GS was correlated with the Tumor, Lymph Node, and Metastasis (TNM) stage. In addition, c-Myc mRNA levels were positively correlated with GS mRNA levels. Overexpression of c-Myc increased the colonies derived from oral cancer cells and caused more cells to be in S phase compared with the mock-vehicle group. The migratory speed of KB cells was promoted by overexpression of c-Myc compared to the mock-vehicle group. However, these effects were effectively reversed in the presence of GLS or GS inhibitor. Furthermore, c-Myc could inhibit E-cadherin protein expression while promoting N-cadherin expression by enhancing the activity of GLS and GS.
+
+c-Myc overexpression promotes oral cancer cell proliferation and migration by enhancing GLS and GS activity. Our findings are beneficial for the identification of novel molecular targets for the prevention and treatment of oral cancer.

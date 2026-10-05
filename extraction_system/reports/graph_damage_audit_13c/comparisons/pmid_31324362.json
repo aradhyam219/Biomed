@@ -1,0 +1,331 @@
+{
+  "current_additions": [],
+  "noise_additions": [],
+  "paper_id": "PMID:31324362",
+  "severity": "YELLOW",
+  "severity_justification": "Core activity/outcome/inhibitor reversal findings survive, but GLS/GS mediation of both cadherin outcomes is no longer explicitly represented.",
+  "source_grounding_policy": "Exact frozen title plus complete abstract only. Findings must survive in structured predicate/assertion/intervention/effects/context; an evidence quote alone does not establish retention. Source quotations are retained for review.",
+  "title": "c-Myc Overexpression Promotes Oral Cancer Cell Proliferation and Migration by Enhancing Glutaminase and Glutamine Synthetase Activity.",
+  "views": {
+    "baseline_09b": {
+      "classification_counts": {
+        "EQUIVALENT / REPHRASED": 11,
+        "HARMFUL OMISSION": 2
+      },
+      "controlled_counts": {
+        "baseline_edges": 11,
+        "baseline_nodes": 10,
+        "baseline_orphans": 1,
+        "baseline_relations": 17,
+        "beneficial_pruning": 0,
+        "current_edges": 11,
+        "current_nodes": 10,
+        "current_orphans": 1,
+        "current_relations": 16,
+        "harmful_topology_changes": 0,
+        "material_findings_lost": 2,
+        "new_orphans": 0,
+        "resolved_orphans": 0
+      },
+      "findings": [
+        {
+          "baseline_assertions": [
+            "c-Myc overexpression promotes oral cancer cell proliferation and migration by enhancing glutaminase and glutamine synthetase activity.",
+            "c-Myc overexpression promotes oral cancer cell proliferation and migration by enhancing GLS and GS activity."
+          ],
+          "baseline_relation_indices": [
+            0,
+            14
+          ],
+          "candidate_relation_indices": [
+            0,
+            13
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:000",
+          "material": true,
+          "rationale": "Proliferation/migration outcome survives; mechanistic qualifiers are assessed separately.",
+          "source_evidence": [
+            "c-Myc Overexpression Promotes Oral Cancer Cell Proliferation and Migration by Enhancing Glutaminase and Glutamine Synthetase Activity.",
+            "c-Myc overexpression promotes oral cancer cell proliferation and migration by enhancing GLS and GS activity."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "c-Myc overexpression enhances glutaminase activity.",
+            "c-Myc could enhance GLS activity, with GLS and GS activity given as the basis for c-Myc's inhibition of E-cadherin and promotion of N-cadherin expression.",
+            "c-Myc overexpression enhances GLS activity."
+          ],
+          "baseline_relation_indices": [
+            1,
+            12,
+            15
+          ],
+          "candidate_relation_indices": [
+            1,
+            11,
+            14
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:001",
+          "material": true,
+          "rationale": "GLS activity enhancement survives through exact assembled aliases; repeated title/results/conclusion claims count once.",
+          "source_evidence": [
+            "c-Myc Overexpression Promotes Oral Cancer Cell Proliferation and Migration by Enhancing Glutaminase and Glutamine Synthetase Activity.",
+            "Furthermore, c-Myc could inhibit E-cadherin protein expression while promoting N-cadherin expression by enhancing the activity of GLS and GS.",
+            "c-Myc overexpression promotes oral cancer cell proliferation and migration by enhancing GLS and GS activity."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "c-Myc overexpression enhances glutamine synthetase activity.",
+            "c-Myc could enhance GS activity, with GLS and GS activity given as the basis for c-Myc's inhibition of E-cadherin and promotion of N-cadherin expression.",
+            "c-Myc overexpression enhances GS activity."
+          ],
+          "baseline_relation_indices": [
+            2,
+            13,
+            16
+          ],
+          "candidate_relation_indices": [
+            2,
+            12,
+            15
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:002",
+          "material": true,
+          "rationale": "GS activity enhancement survives through exact assembled aliases; repeated claims count once.",
+          "source_evidence": [
+            "c-Myc Overexpression Promotes Oral Cancer Cell Proliferation and Migration by Enhancing Glutaminase and Glutamine Synthetase Activity.",
+            "Furthermore, c-Myc could inhibit E-cadherin protein expression while promoting N-cadherin expression by enhancing the activity of GLS and GS.",
+            "c-Myc overexpression promotes oral cancer cell proliferation and migration by enhancing GLS and GS activity."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "GS protein expression was correlated with the Tumor, Lymph Node, and Metastasis stage.",
+            "GS protein expression was correlated with TNM stage."
+          ],
+          "baseline_relation_indices": [
+            3,
+            4
+          ],
+          "candidate_relation_indices": [
+            3
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:003",
+          "material": true,
+          "rationale": "GS protein correlation with TNM stage survives via full form; no loss from dropping duplicate alias wording.",
+          "source_evidence": [
+            "The protein expression of GS was correlated with the Tumor, Lymph Node, and Metastasis (TNM) stage."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "c-Myc mRNA levels were positively correlated with GS mRNA levels."
+          ],
+          "baseline_relation_indices": [
+            5
+          ],
+          "candidate_relation_indices": [
+            4
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:004",
+          "material": true,
+          "rationale": "Positive c-Myc/GS mRNA correlation survives.",
+          "source_evidence": [
+            "In addition, c-Myc mRNA levels were positively correlated with GS mRNA levels."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Overexpression of c-Myc increased the colonies derived from oral cancer cells and caused more cells to be in S phase compared with the mock-vehicle group."
+          ],
+          "baseline_relation_indices": [
+            6
+          ],
+          "candidate_relation_indices": [
+            5
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:005",
+          "material": true,
+          "rationale": "Increased colonies and S-phase fraction survive.",
+          "source_evidence": [
+            "Overexpression of c-Myc increased the colonies derived from oral cancer cells and caused more cells to be in S phase compared with the mock-vehicle group."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Overexpression of c-Myc promoted the migratory speed of KB cells compared to the mock-vehicle group."
+          ],
+          "baseline_relation_indices": [
+            7
+          ],
+          "candidate_relation_indices": [
+            6
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:006",
+          "material": true,
+          "rationale": "KB migration increase survives.",
+          "source_evidence": [
+            "The migratory speed of KB cells was promoted by overexpression of c-Myc compared to the mock-vehicle group."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "In the presence of an inhibitor of GLS, the effects of c-Myc overexpression, including increased colonies derived from oral cancer cells, more cells in S phase, and promoted migratory speed of KB cells, were effectively reversed."
+          ],
+          "baseline_relation_indices": [
+            8
+          ],
+          "candidate_relation_indices": [
+            7
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:007",
+          "material": true,
+          "rationale": "GLS-inhibitor reversal of colonies/S-phase/migration survives explicitly.",
+          "source_evidence": [
+            "Overexpression of c-Myc increased the colonies derived from oral cancer cells and caused more cells to be in S phase compared with the mock-vehicle group. The migratory speed of KB cells was promoted by overexpression of c-Myc compared to the mock-vehicle group. However, these effects were effectively reversed in the presence of GLS or GS inhibitor."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "In the presence of an inhibitor of GS, the effects of c-Myc overexpression, including increased colonies derived from oral cancer cells, more cells in S phase, and promoted migratory speed of KB cells, were effectively reversed."
+          ],
+          "baseline_relation_indices": [
+            9
+          ],
+          "candidate_relation_indices": [
+            8
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:008",
+          "material": true,
+          "rationale": "GS-inhibitor reversal survives explicitly.",
+          "source_evidence": [
+            "Overexpression of c-Myc increased the colonies derived from oral cancer cells and caused more cells to be in S phase compared with the mock-vehicle group. The migratory speed of KB cells was promoted by overexpression of c-Myc compared to the mock-vehicle group. However, these effects were effectively reversed in the presence of GLS or GS inhibitor."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "c-Myc could inhibit E-cadherin protein expression by enhancing the activity of GLS and GS."
+          ],
+          "baseline_relation_indices": [
+            10
+          ],
+          "candidate_relation_indices": [
+            9
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:009",
+          "material": true,
+          "rationale": "E-cadherin inhibition survives as an outcome.",
+          "source_evidence": [
+            "Furthermore, c-Myc could inhibit E-cadherin protein expression while promoting N-cadherin expression by enhancing the activity of GLS and GS."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "c-Myc could promote N-cadherin expression by enhancing the activity of GLS and GS."
+          ],
+          "baseline_relation_indices": [
+            11
+          ],
+          "candidate_relation_indices": [
+            10
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:010",
+          "material": true,
+          "rationale": "N-cadherin increase survives as an outcome.",
+          "source_evidence": [
+            "Furthermore, c-Myc could inhibit E-cadherin protein expression while promoting N-cadherin expression by enhancing the activity of GLS and GS."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "c-Myc could inhibit E-cadherin protein expression by enhancing the activity of GLS and GS.",
+            "c-Myc could enhance GLS activity, with GLS and GS activity given as the basis for c-Myc's inhibition of E-cadherin and promotion of N-cadherin expression.",
+            "c-Myc could enhance GS activity, with GLS and GS activity given as the basis for c-Myc's inhibition of E-cadherin and promotion of N-cadherin expression."
+          ],
+          "baseline_evidence_retained_in_candidate_quotes": true,
+          "baseline_relation_indices": [
+            10,
+            12,
+            13
+          ],
+          "candidate_quote_indices": [
+            9,
+            10,
+            11,
+            12
+          ],
+          "candidate_relation_indices": [],
+          "classification": "HARMFUL OMISSION",
+          "finding_id": "baseline_09b:011",
+          "loss_scope": "explicit structured scientific meaning; may remain recoverable from evidence quotes",
+          "lost_meaning_recoverable_from_evidence": true,
+          "lost_meaning_source_excerpt": "by enhancing the activity of GLS and GS",
+          "material": true,
+          "rationale": "The explicit dependence of E-cadherin inhibition on enhanced GLS and GS activity is absent from current structured assertions/intervention/effects/context. Coexisting activity edges are not a stated causal mediation.",
+          "source_evidence": [
+            "Furthermore, c-Myc could inhibit E-cadherin protein expression while promoting N-cadherin expression by enhancing the activity of GLS and GS."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "c-Myc could promote N-cadherin expression by enhancing the activity of GLS and GS.",
+            "c-Myc could enhance GLS activity, with GLS and GS activity given as the basis for c-Myc's inhibition of E-cadherin and promotion of N-cadherin expression.",
+            "c-Myc could enhance GS activity, with GLS and GS activity given as the basis for c-Myc's inhibition of E-cadherin and promotion of N-cadherin expression."
+          ],
+          "baseline_evidence_retained_in_candidate_quotes": true,
+          "baseline_relation_indices": [
+            11,
+            12,
+            13
+          ],
+          "candidate_quote_indices": [
+            9,
+            10,
+            11,
+            12
+          ],
+          "candidate_relation_indices": [],
+          "classification": "HARMFUL OMISSION",
+          "finding_id": "baseline_09b:012",
+          "loss_scope": "explicit structured scientific meaning; may remain recoverable from evidence quotes",
+          "lost_meaning_recoverable_from_evidence": true,
+          "lost_meaning_source_excerpt": "by enhancing the activity of GLS and GS",
+          "material": true,
+          "rationale": "The explicit dependence of N-cadherin promotion on enhanced GLS and GS activity is likewise absent. The outcome survives, but this mechanistic finding does not.",
+          "source_evidence": [
+            "Furthermore, c-Myc could inhibit E-cadherin protein expression while promoting N-cadherin expression by enhancing the activity of GLS and GS."
+          ]
+        }
+      ],
+      "historical_graph_counts": {
+        "edges": 11,
+        "nodes": 10,
+        "orphans": 1
+      },
+      "orphans": {
+        "INHERITED ORPHAN": [
+          {
+            "id": "doc_e_005",
+            "label": "tumor",
+            "type": "Disease"
+          }
+        ],
+        "NEW NODE / IDENTITY DIFFERENCE": [],
+        "NEW ORPHAN": [],
+        "RESOLVED ORPHAN": []
+      }
+    }
+  }
+}

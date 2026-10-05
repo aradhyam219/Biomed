@@ -1,0 +1,1198 @@
+{
+  "current_additions": [],
+  "noise_additions": [],
+  "paper_id": "PMCID:PMC11824863",
+  "severity": "ORANGE",
+  "severity_justification": "Most SFPQ outcomes survive, but explicit PI3K/AKT activation is lost and both ratio-denominator nodes become orphaned. These are meaningful signaling/topology regressions, not just alias pruning.",
+  "source_grounding_policy": "Exact frozen title plus complete abstract only. Findings must survive in structured predicate/assertion/intervention/effects/context; an evidence quote alone does not establish retention. Source quotations are retained for review.",
+  "title": "Overexpression of SFPQ Improves Cognition and Memory in AD Mice",
+  "views": {
+    "baseline_09b": {
+      "classification_counts": {
+        "BENEFICIAL PRUNING": 8,
+        "EQUIVALENT / REPHRASED": 12,
+        "HARMFUL OMISSION": 1,
+        "HARMFUL TOPOLOGY CHANGE": 2,
+        "RETAINED": 2,
+        "UNCERTAIN": 1
+      },
+      "controlled_counts": {
+        "baseline_edges": 23,
+        "baseline_nodes": 20,
+        "baseline_orphans": 1,
+        "baseline_relations": 27,
+        "beneficial_pruning": 8,
+        "current_edges": 13,
+        "current_nodes": 20,
+        "current_orphans": 6,
+        "current_relations": 13,
+        "harmful_topology_changes": 2,
+        "material_findings_lost": 1,
+        "new_orphans": 5,
+        "resolved_orphans": 0
+      },
+      "findings": [
+        {
+          "baseline_assertions": [
+            "Overexpression of SFPQ improves cognition and memory in AD mice.",
+            "SFPQ overexpression improves recognition and memory in AD mice."
+          ],
+          "baseline_relation_indices": [
+            0,
+            10
+          ],
+          "candidate_relation_indices": [
+            4
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:000",
+          "material": true,
+          "rationale": "Cognition/recognition and memory improvement survives once instead of title/result duplication.",
+          "source_evidence": [
+            "Overexpression of SFPQ Improves Cognition and Memory in AD Mice",
+            "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Alzheimer's disease is abbreviated as AD."
+          ],
+          "baseline_relation_indices": [
+            1
+          ],
+          "candidate_relation_indices": [],
+          "classification": "BENEFICIAL PRUNING",
+          "finding_id": "baseline_09b:001",
+          "material": false,
+          "rationale": "AD naming-only relation excluded by the Contract-10 prompt.",
+          "source_evidence": [
+            "Alzheimer's disease (AD)"
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Alzheimer's disease is a complex neurodegenerative disorder."
+          ],
+          "baseline_relation_indices": [
+            2
+          ],
+          "candidate_relation_indices": [
+            0
+          ],
+          "classification": "RETAINED",
+          "finding_id": "baseline_09b:002",
+          "material": true,
+          "rationale": "AD disease classification survives.",
+          "source_evidence": [
+            "Alzheimer's disease (AD) is a complex neurodegenerative disorder with multifaceted pathogenesis, which has been extensively investigated, yet effective treatments remain lacking."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Splicing factor proline and glutamine rich is abbreviated as SFPQ."
+          ],
+          "baseline_relation_indices": [
+            3
+          ],
+          "candidate_relation_indices": [],
+          "classification": "BENEFICIAL PRUNING",
+          "finding_id": "baseline_09b:003",
+          "material": false,
+          "rationale": "Fragmented proline and glutamine rich to SFPQ naming-only edge is removed; not an independent biological participant.",
+          "source_evidence": [
+            "Splicing factor proline and glutamine rich (SFPQ)"
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "SFPQ is known to play a crucial role in neurodegenerative diseases, including antioxidant-related functions and regulating gene expression within brain neurons."
+          ],
+          "baseline_relation_indices": [
+            4
+          ],
+          "candidate_relation_indices": [
+            1
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:004",
+          "material": true,
+          "rationale": "Neurodegenerative-disease role, antioxidant functions and neuronal gene regulation survive.",
+          "source_evidence": [
+            "Splicing factor proline and glutamine rich (SFPQ) is known to play a crucial role in neurodegenerative diseases, including antioxidant-related functions and regulating gene expression within brain neurons."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "The specific role of SFPQ in AD pathology is not well understood."
+          ],
+          "baseline_relation_indices": [
+            5
+          ],
+          "candidate_relation_indices": [],
+          "classification": "UNCERTAIN",
+          "finding_id": "baseline_09b:005",
+          "material": false,
+          "rationale": "The explicit knowledge-gap/negated well-understood claim is absent. It is a background uncertainty, not a positive experimental result; significance cannot be defensibly equated with a lost mechanism.",
+          "source_evidence": [
+            "However, the specific role of SFPQ in AD pathology is not well understood."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Amyloid-beta1–42 is also denoted as Aβ1–42."
+          ],
+          "baseline_relation_indices": [
+            6
+          ],
+          "candidate_relation_indices": [],
+          "classification": "BENEFICIAL PRUNING",
+          "finding_id": "baseline_09b:006",
+          "material": false,
+          "rationale": "Amyloid-beta/Aβ naming-only link is removed under the protected prompt; long-form model-induction relation survives.",
+          "source_evidence": [
+            "amyloid-beta1–42 (Aβ1–42)"
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Lateral ventricular injection of amyloid-beta1–42 established an AD mouse model."
+          ],
+          "baseline_relation_indices": [
+            7
+          ],
+          "candidate_relation_indices": [
+            2
+          ],
+          "classification": "RETAINED",
+          "finding_id": "baseline_09b:007",
+          "material": true,
+          "rationale": "Amyloid-beta injection establishing AD model survives.",
+          "source_evidence": [
+            "In this study, an AD mouse model was established through lateral ventricular injection of amyloid-beta1–42 (Aβ1–42)."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "The study established a mouse model of AD."
+          ],
+          "baseline_relation_indices": [
+            8
+          ],
+          "candidate_relation_indices": [
+            2,
+            3
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:008",
+          "material": true,
+          "rationale": "AD mouse model survives in assertions/context rather than a separate AD-to-mouse edge.",
+          "source_evidence": [
+            "In this study, an AD mouse model was established through lateral ventricular injection of amyloid-beta1–42 (Aβ1–42)."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Adeno-associated virus was administered to overexpress SFPQ in the hippocampus of AD mice."
+          ],
+          "baseline_relation_indices": [
+            9
+          ],
+          "candidate_relation_indices": [
+            3
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:009",
+          "material": true,
+          "rationale": "Viral hippocampal SFPQ overexpression in AD mice survives.",
+          "source_evidence": [
+            "Subsequently, adeno-associated virus was administered to overexpress SFPQ in the hippocampus of AD mice."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "SFPQ overexpression reduces amyloid precursor protein as an AD-related marker protein in AD mice."
+          ],
+          "baseline_relation_indices": [
+            11
+          ],
+          "candidate_relation_indices": [
+            5
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:010",
+          "material": true,
+          "rationale": "APP reduction survives.",
+          "source_evidence": [
+            "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "SFPQ overexpression reduces Tau as an AD-related marker protein in AD mice."
+          ],
+          "baseline_relation_indices": [
+            12
+          ],
+          "candidate_relation_indices": [
+            6
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:011",
+          "material": true,
+          "rationale": "Tau reduction survives.",
+          "source_evidence": [
+            "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Amyloid precursor protein is cited as an example of an AD-related marker protein."
+          ],
+          "baseline_relation_indices": [
+            13
+          ],
+          "candidate_relation_indices": [
+            5
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:012",
+          "material": true,
+          "rationale": "APP being an AD-related marker survives explicitly inside the reduction assertion.",
+          "source_evidence": [
+            "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Tau is cited as an example of an AD-related marker protein."
+          ],
+          "baseline_relation_indices": [
+            14
+          ],
+          "candidate_relation_indices": [
+            6
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:013",
+          "material": true,
+          "rationale": "Tau being an AD-related marker survives explicitly inside the reduction assertion.",
+          "source_evidence": [
+            "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Amyloid precursor protein is abbreviated as APP."
+          ],
+          "baseline_relation_indices": [
+            15
+          ],
+          "candidate_relation_indices": [],
+          "classification": "BENEFICIAL PRUNING",
+          "finding_id": "baseline_09b:014",
+          "material": false,
+          "rationale": "APP, GST and HO-1 naming-only relations are removed; substantive antioxidant/marker findings survive.",
+          "source_evidence": [
+            "amyloid precursor protein (APP)"
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Glutathione S-transferase is abbreviated as GST."
+          ],
+          "baseline_relation_indices": [
+            16
+          ],
+          "candidate_relation_indices": [],
+          "classification": "BENEFICIAL PRUNING",
+          "finding_id": "baseline_09b:015",
+          "material": false,
+          "rationale": "APP, GST and HO-1 naming-only relations are removed; substantive antioxidant/marker findings survive.",
+          "source_evidence": [
+            "glutathione S-transferase (GST)"
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Heme oxygenase-1 is abbreviated as HO-1."
+          ],
+          "baseline_relation_indices": [
+            17
+          ],
+          "candidate_relation_indices": [],
+          "classification": "BENEFICIAL PRUNING",
+          "finding_id": "baseline_09b:016",
+          "material": false,
+          "rationale": "APP, GST and HO-1 naming-only relations are removed; substantive antioxidant/marker findings survive.",
+          "source_evidence": [
+            "heme oxygenase-1 (HO-1)"
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "In the reported AD-mouse results, SFPQ overexpression was associated with upregulation of glutathione S-transferase."
+          ],
+          "baseline_relation_indices": [
+            18
+          ],
+          "candidate_relation_indices": [
+            7
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:017",
+          "material": true,
+          "rationale": "GST upregulation survives.",
+          "source_evidence": [
+            "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "In the reported AD-mouse results, SFPQ overexpression was associated with upregulation of heme oxygenase-1."
+          ],
+          "baseline_relation_indices": [
+            19
+          ],
+          "candidate_relation_indices": [
+            8
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:018",
+          "material": true,
+          "rationale": "HO-1 upregulation survives.",
+          "source_evidence": [
+            "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax increased."
+          ],
+          "baseline_relation_indices": [
+            20
+          ],
+          "candidate_relation_indices": [
+            9
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:019",
+          "material": true,
+          "rationale": "Bcl-2/Bax ratio increase survives.",
+          "source_evidence": [
+            "The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax also increased."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "The phosphorylated form of phosphoinositide 3-kinase is denoted p-PI3K."
+          ],
+          "baseline_relation_indices": [
+            21
+          ],
+          "candidate_relation_indices": [],
+          "classification": "BENEFICIAL PRUNING",
+          "finding_id": "baseline_09b:020",
+          "material": false,
+          "rationale": "Phosphorylated-form naming relations are removed; evaluate the actual ratio findings separately.",
+          "source_evidence": [
+            "phosphoinositide 3-kinase (p-PI3K)"
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "The phosphorylated form of protein kinase B is denoted p-AKT."
+          ],
+          "baseline_relation_indices": [
+            23
+          ],
+          "candidate_relation_indices": [],
+          "classification": "BENEFICIAL PRUNING",
+          "finding_id": "baseline_09b:021",
+          "material": false,
+          "rationale": "Phosphorylated-form naming relations are removed; evaluate the actual ratio findings separately.",
+          "source_evidence": [
+            "protein kinase B (p-AKT)"
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "The p-PI3K-to-PI3K ratio was elevated."
+          ],
+          "baseline_relation_indices": [
+            22
+          ],
+          "candidate_relation_indices": [
+            10
+          ],
+          "classification": "HARMFUL TOPOLOGY CHANGE",
+          "finding_id": "baseline_09b:022",
+          "material": true,
+          "rationale": "Elevated p-PI3K/PI3K ratio survives in assertion, but the edge now ends at phosphoinositide 3-kinase; supplied PI3K denominator node loses all connectivity.",
+          "source_evidence": [
+            "Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "The p-AKT-to-AKT ratio was elevated."
+          ],
+          "baseline_relation_indices": [
+            24
+          ],
+          "candidate_relation_indices": [
+            11
+          ],
+          "classification": "HARMFUL TOPOLOGY CHANGE",
+          "finding_id": "baseline_09b:023",
+          "material": true,
+          "rationale": "Elevated p-AKT/AKT ratio survives in assertion, but the edge now ends at protein kinase B; supplied AKT denominator node loses all connectivity.",
+          "source_evidence": [
+            "Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "The elevated phosphorylated PI3K/PI3K and phosphorylated AKT/AKT ratios indicated activation of the PI3K/AKT signaling pathway."
+          ],
+          "baseline_evidence_retained_in_candidate_quotes": true,
+          "baseline_relation_indices": [
+            25
+          ],
+          "candidate_quote_indices": [
+            10,
+            11
+          ],
+          "candidate_relation_indices": [],
+          "classification": "HARMFUL OMISSION",
+          "finding_id": "baseline_09b:024",
+          "loss_scope": "explicit structured scientific meaning; may remain recoverable from evidence quotes",
+          "lost_meaning_recoverable_from_evidence": true,
+          "lost_meaning_source_excerpt": "indicating activation of the PI3K/AKT signaling pathway",
+          "material": true,
+          "rationale": "Explicit activation of the PI3K/AKT signaling pathway is absent from candidate assertion/predicate/effects/context. Increased ratios alone do not explicitly represent the pathway-activation finding.",
+          "source_evidence": [
+            "Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "The findings suggest that SFPQ may serve as a promising molecular target for the prevention and treatment of AD."
+          ],
+          "baseline_relation_indices": [
+            26
+          ],
+          "candidate_relation_indices": [
+            12
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:025",
+          "material": true,
+          "rationale": "Potential prevention/treatment target survives.",
+          "source_evidence": [
+            "These findings suggest that SFPQ may serve as a promising molecular target for the prevention and treatment of AD."
+          ]
+        }
+      ],
+      "historical_graph_counts": {
+        "edges": 27,
+        "nodes": 19,
+        "orphans": 1
+      },
+      "orphans": {
+        "INHERITED ORPHAN": [
+          {
+            "id": "doc_e_003",
+            "label": "Mice",
+            "type": "Species"
+          }
+        ],
+        "NEW NODE / IDENTITY DIFFERENCE": [],
+        "NEW ORPHAN": [
+          {
+            "cause": "beneficial cleanup",
+            "explanation": "Naming-only fragmented long form edge removed.",
+            "id": "doc_e_005",
+            "label": "proline and glutamine rich",
+            "previous_relations": [
+              {
+                "assertion": "Splicing factor proline and glutamine rich is abbreviated as SFPQ.",
+                "context": [],
+                "effects": [],
+                "evidence": "Splicing factor proline and glutamine rich (SFPQ)",
+                "index": 3,
+                "intervention": null,
+                "negated": false,
+                "predicate": "abbreviated_as",
+                "score": null,
+                "source": "E7",
+                "surface_form": "Splicing factor proline and glutamine rich (SFPQ)",
+                "target": "E8"
+              }
+            ],
+            "type": "Gene"
+          },
+          {
+            "cause": "relation represented through another alias/node",
+            "explanation": "AD mouse model survives in assertion/context; no direct organism edge.",
+            "id": "doc_e_007",
+            "label": "mouse",
+            "previous_relations": [
+              {
+                "assertion": "The study established a mouse model of AD.",
+                "context": [],
+                "effects": [
+                  "AD mouse model established"
+                ],
+                "evidence": "In this study, an AD mouse model was established through lateral ventricular injection of amyloid-beta1–42 (Aβ1–42).",
+                "index": 8,
+                "intervention": null,
+                "negated": false,
+                "predicate": "is_modeled_in",
+                "score": null,
+                "source": "E12",
+                "surface_form": "AD mouse model",
+                "target": "E13"
+              }
+            ],
+            "type": "Species"
+          },
+          {
+            "cause": "beneficial cleanup",
+            "explanation": "Naming-only alias edge removed; amyloid-beta1–42 model-induction finding survives.",
+            "id": "doc_e_009",
+            "label": "Aβ1–42",
+            "previous_relations": [
+              {
+                "assertion": "Amyloid-beta1–42 is also denoted as Aβ1–42.",
+                "context": [],
+                "effects": [],
+                "evidence": "amyloid-beta1–42 (Aβ1–42)",
+                "index": 6,
+                "intervention": null,
+                "negated": false,
+                "predicate": "also_denoted_as",
+                "score": null,
+                "source": "E14",
+                "surface_form": "amyloid-beta1–42 (Aβ1–42)",
+                "target": "E15"
+              }
+            ],
+            "type": "Gene"
+          },
+          {
+            "cause": "endpoint changed",
+            "explanation": "Ratio assertion survives on the separate long-form target; supplied denominator PI3K loses topology, and pathway edge is omitted.",
+            "id": "doc_e_018",
+            "label": "PI3K",
+            "previous_relations": [
+              {
+                "assertion": "The phosphorylated form of phosphoinositide 3-kinase is denoted p-PI3K.",
+                "context": [],
+                "effects": [],
+                "evidence": "phosphoinositide 3-kinase (p-PI3K)",
+                "index": 21,
+                "intervention": null,
+                "negated": false,
+                "predicate": "is_denoted_in_phosphorylated_form_as",
+                "score": null,
+                "source": "E32",
+                "surface_form": "phosphoinositide 3-kinase (p-PI3K)",
+                "target": "E33"
+              },
+              {
+                "assertion": "The p-PI3K-to-PI3K ratio was elevated.",
+                "context": [],
+                "effects": [
+                  "elevated p-PI3K/PI3K ratio"
+                ],
+                "evidence": "Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway.",
+                "index": 22,
+                "intervention": null,
+                "negated": false,
+                "predicate": "phosphorylated_to_total_ratio_is_elevated",
+                "score": null,
+                "source": "E33",
+                "surface_form": "(p-PI3K)/PI3K",
+                "target": "E34"
+              },
+              {
+                "assertion": "The elevated phosphorylated PI3K/PI3K and phosphorylated AKT/AKT ratios indicated activation of the PI3K/AKT signaling pathway.",
+                "context": [],
+                "effects": [
+                  "activation of the PI3K/AKT signaling pathway indicated"
+                ],
+                "evidence": "Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway.",
+                "index": 25,
+                "intervention": null,
+                "negated": false,
+                "predicate": "co_participates_in_PI3K_AKT_signaling_pathway",
+                "score": null,
+                "source": "E38",
+                "surface_form": "PI3K/AKT signaling pathway",
+                "target": "E39"
+              }
+            ],
+            "type": "Gene"
+          },
+          {
+            "cause": "endpoint changed",
+            "explanation": "Ratio assertion survives on protein kinase B target; supplied denominator AKT loses topology, and pathway edge is omitted.",
+            "id": "doc_e_020",
+            "label": "AKT",
+            "previous_relations": [
+              {
+                "assertion": "The phosphorylated form of protein kinase B is denoted p-AKT.",
+                "context": [],
+                "effects": [],
+                "evidence": "protein kinase B (p-AKT)",
+                "index": 23,
+                "intervention": null,
+                "negated": false,
+                "predicate": "is_denoted_in_phosphorylated_form_as",
+                "score": null,
+                "source": "E35",
+                "surface_form": "protein kinase B (p-AKT)",
+                "target": "E36"
+              },
+              {
+                "assertion": "The p-AKT-to-AKT ratio was elevated.",
+                "context": [],
+                "effects": [
+                  "elevated p-AKT/AKT ratio"
+                ],
+                "evidence": "Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway.",
+                "index": 24,
+                "intervention": null,
+                "negated": false,
+                "predicate": "phosphorylated_to_total_ratio_is_elevated",
+                "score": null,
+                "source": "E36",
+                "surface_form": "(p-AKT)/AKT",
+                "target": "E37"
+              },
+              {
+                "assertion": "The elevated phosphorylated PI3K/PI3K and phosphorylated AKT/AKT ratios indicated activation of the PI3K/AKT signaling pathway.",
+                "context": [],
+                "effects": [
+                  "activation of the PI3K/AKT signaling pathway indicated"
+                ],
+                "evidence": "Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway.",
+                "index": 25,
+                "intervention": null,
+                "negated": false,
+                "predicate": "co_participates_in_PI3K_AKT_signaling_pathway",
+                "score": null,
+                "source": "E38",
+                "surface_form": "PI3K/AKT signaling pathway",
+                "target": "E39"
+              }
+            ],
+            "type": "Gene"
+          }
+        ],
+        "RESOLVED ORPHAN": []
+      }
+    },
+    "baseline_contract10": {
+      "classification_counts": {
+        "EQUIVALENT / REPHRASED": 12,
+        "HARMFUL OMISSION": 1,
+        "HARMFUL TOPOLOGY CHANGE": 2,
+        "RETAINED": 2,
+        "UNCERTAIN": 1
+      },
+      "controlled_counts": {
+        "baseline_edges": 19,
+        "baseline_nodes": 20,
+        "baseline_orphans": 3,
+        "baseline_relations": 19,
+        "beneficial_pruning": 0,
+        "current_edges": 13,
+        "current_nodes": 20,
+        "current_orphans": 6,
+        "current_relations": 13,
+        "harmful_topology_changes": 2,
+        "material_findings_lost": 1,
+        "new_orphans": 3,
+        "resolved_orphans": 0
+      },
+      "findings": [
+        {
+          "baseline_assertions": [
+            "Overexpression of SFPQ improves cognition and memory in AD mice.",
+            "SFPQ overexpression improves recognition and memory in AD mice."
+          ],
+          "baseline_relation_indices": [
+            0,
+            7
+          ],
+          "candidate_relation_indices": [
+            4
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:000",
+          "material": true,
+          "rationale": "Cognition/recognition and memory improvement survives once instead of title/result duplication.",
+          "source_evidence": [
+            "Overexpression of SFPQ Improves Cognition and Memory in AD Mice",
+            "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice"
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Alzheimer's disease is a complex neurodegenerative disorder."
+          ],
+          "baseline_relation_indices": [
+            1
+          ],
+          "candidate_relation_indices": [
+            0
+          ],
+          "classification": "RETAINED",
+          "finding_id": "baseline_contract10:001",
+          "material": true,
+          "rationale": "AD disease classification survives.",
+          "source_evidence": [
+            "Alzheimer's disease (AD) is a complex neurodegenerative disorder"
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "SFPQ is known to play a crucial role in neurodegenerative diseases, including antioxidant-related functions and regulating gene expression within brain neurons."
+          ],
+          "baseline_relation_indices": [
+            2
+          ],
+          "candidate_relation_indices": [
+            1
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:002",
+          "material": true,
+          "rationale": "Neurodegenerative-disease role, antioxidant functions and neuronal gene regulation survive.",
+          "source_evidence": [
+            "Splicing factor proline and glutamine rich (SFPQ) is known to play a crucial role in neurodegenerative diseases, including antioxidant-related functions and regulating gene expression within brain neurons."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "The specific role of SFPQ in AD pathology is not well understood."
+          ],
+          "baseline_relation_indices": [
+            3
+          ],
+          "candidate_relation_indices": [],
+          "classification": "UNCERTAIN",
+          "finding_id": "baseline_contract10:003",
+          "material": false,
+          "rationale": "The explicit knowledge-gap/negated well-understood claim is absent. It is a background uncertainty, not a positive experimental result; significance cannot be defensibly equated with a lost mechanism.",
+          "source_evidence": [
+            "However, the specific role of SFPQ in AD pathology is not well understood."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Lateral ventricular injection of amyloid-beta1–42 was used to establish an AD mouse model."
+          ],
+          "baseline_relation_indices": [
+            5
+          ],
+          "candidate_relation_indices": [
+            2
+          ],
+          "classification": "RETAINED",
+          "finding_id": "baseline_contract10:004",
+          "material": true,
+          "rationale": "Amyloid-beta injection establishing AD model survives.",
+          "source_evidence": [
+            "In this study, an AD mouse model was established through lateral ventricular injection of amyloid-beta1–42 (Aβ1–42)."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "An AD mouse model was established through lateral ventricular injection of amyloid-beta1–42."
+          ],
+          "baseline_relation_indices": [
+            4
+          ],
+          "candidate_relation_indices": [
+            2,
+            3
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:005",
+          "material": true,
+          "rationale": "AD mouse model survives in assertions/context rather than a separate AD-to-mouse edge.",
+          "source_evidence": [
+            "In this study, an AD mouse model was established through lateral ventricular injection of amyloid-beta1–42 (Aβ1–42)."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Adeno-associated virus was administered to overexpress SFPQ in the hippocampus of AD mice."
+          ],
+          "baseline_relation_indices": [
+            6
+          ],
+          "candidate_relation_indices": [
+            3
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:006",
+          "material": true,
+          "rationale": "Viral hippocampal SFPQ overexpression in AD mice survives.",
+          "source_evidence": [
+            "Subsequently, adeno-associated virus was administered to overexpress SFPQ in the hippocampus of AD mice."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "SFPQ overexpression reduces amyloid precursor protein, an AD-related marker protein, in AD mice."
+          ],
+          "baseline_relation_indices": [
+            8
+          ],
+          "candidate_relation_indices": [
+            5
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:007",
+          "material": true,
+          "rationale": "APP reduction survives.",
+          "source_evidence": [
+            "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "SFPQ overexpression reduces Tau, an AD-related marker protein, in AD mice."
+          ],
+          "baseline_relation_indices": [
+            9
+          ],
+          "candidate_relation_indices": [
+            6
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:008",
+          "material": true,
+          "rationale": "Tau reduction survives.",
+          "source_evidence": [
+            "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Amyloid precursor protein is described as an AD-related marker protein."
+          ],
+          "baseline_relation_indices": [
+            10
+          ],
+          "candidate_relation_indices": [
+            5
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:009",
+          "material": true,
+          "rationale": "APP being an AD-related marker survives explicitly inside the reduction assertion.",
+          "source_evidence": [
+            "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Tau is described as an AD-related marker protein."
+          ],
+          "baseline_relation_indices": [
+            11
+          ],
+          "candidate_relation_indices": [
+            6
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:010",
+          "material": true,
+          "rationale": "Tau being an AD-related marker survives explicitly inside the reduction assertion.",
+          "source_evidence": [
+            "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "SFPQ overexpression was associated with upregulation of glutathione S-transferase in AD mice."
+          ],
+          "baseline_relation_indices": [
+            12
+          ],
+          "candidate_relation_indices": [
+            7
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:011",
+          "material": true,
+          "rationale": "GST upregulation survives.",
+          "source_evidence": [
+            "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "SFPQ overexpression was associated with upregulation of heme oxygenase-1 in AD mice."
+          ],
+          "baseline_relation_indices": [
+            13
+          ],
+          "candidate_relation_indices": [
+            8
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:012",
+          "material": true,
+          "rationale": "HO-1 upregulation survives.",
+          "source_evidence": [
+            "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax increased in the reported SFPQ-overexpression results."
+          ],
+          "baseline_relation_indices": [
+            14
+          ],
+          "candidate_relation_indices": [
+            9
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:013",
+          "material": true,
+          "rationale": "Bcl-2/Bax ratio increase survives.",
+          "source_evidence": [
+            "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated. The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax also increased."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "The phosphorylated phosphoinositide 3-kinase (p-PI3K)-to-PI3K ratio was elevated in the reported SFPQ-overexpression results."
+          ],
+          "baseline_relation_indices": [
+            15
+          ],
+          "candidate_relation_indices": [
+            10
+          ],
+          "classification": "HARMFUL TOPOLOGY CHANGE",
+          "finding_id": "baseline_contract10:014",
+          "material": true,
+          "rationale": "Elevated p-PI3K/PI3K ratio survives in assertion, but the edge now ends at phosphoinositide 3-kinase; supplied PI3K denominator node loses all connectivity.",
+          "source_evidence": [
+            "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated. The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax also increased. Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "The phosphorylated protein kinase B (p-AKT)-to-AKT ratio was elevated in the reported SFPQ-overexpression results."
+          ],
+          "baseline_relation_indices": [
+            16
+          ],
+          "candidate_relation_indices": [
+            11
+          ],
+          "classification": "HARMFUL TOPOLOGY CHANGE",
+          "finding_id": "baseline_contract10:015",
+          "material": true,
+          "rationale": "Elevated p-AKT/AKT ratio survives in assertion, but the edge now ends at protein kinase B; supplied AKT denominator node loses all connectivity.",
+          "source_evidence": [
+            "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated. The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax also increased. Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "The elevated phosphorylated-to-total PI3K and AKT ratios indicated activation of the PI3K/AKT signaling pathway involving PI3K and AKT."
+          ],
+          "baseline_evidence_retained_in_candidate_quotes": true,
+          "baseline_relation_indices": [
+            17
+          ],
+          "candidate_quote_indices": [
+            10,
+            11
+          ],
+          "candidate_relation_indices": [],
+          "classification": "HARMFUL OMISSION",
+          "finding_id": "baseline_contract10:016",
+          "loss_scope": "explicit structured scientific meaning; may remain recoverable from evidence quotes",
+          "lost_meaning_recoverable_from_evidence": true,
+          "lost_meaning_source_excerpt": "indicating activation of the PI3K/AKT signaling pathway",
+          "material": true,
+          "rationale": "Explicit activation of the PI3K/AKT signaling pathway is absent from candidate assertion/predicate/effects/context. Increased ratios alone do not explicitly represent the pathway-activation finding.",
+          "source_evidence": [
+            "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated. The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax also increased. Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "SFPQ may serve as a promising molecular target for the prevention and treatment of AD."
+          ],
+          "baseline_relation_indices": [
+            18
+          ],
+          "candidate_relation_indices": [
+            12
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:017",
+          "material": true,
+          "rationale": "Potential prevention/treatment target survives.",
+          "source_evidence": [
+            "These findings suggest that SFPQ may serve as a promising molecular target for the prevention and treatment of AD."
+          ]
+        }
+      ],
+      "historical_graph_counts": {
+        "edges": 19,
+        "nodes": 20,
+        "orphans": 3
+      },
+      "orphans": {
+        "INHERITED ORPHAN": [
+          {
+            "id": "doc_e_003",
+            "label": "Mice",
+            "type": "Species"
+          },
+          {
+            "id": "doc_e_005",
+            "label": "proline and glutamine rich",
+            "type": "Gene"
+          },
+          {
+            "id": "doc_e_009",
+            "label": "Aβ1–42",
+            "type": "Gene"
+          }
+        ],
+        "NEW NODE / IDENTITY DIFFERENCE": [],
+        "NEW ORPHAN": [
+          {
+            "cause": "relation represented through another alias/node",
+            "explanation": "AD mouse model survives in assertion/context; no direct organism edge.",
+            "id": "doc_e_007",
+            "label": "mouse",
+            "previous_relations": [
+              {
+                "assertion": "An AD mouse model was established through lateral ventricular injection of amyloid-beta1–42.",
+                "context": [],
+                "effects": [
+                  "establishment of an AD mouse model"
+                ],
+                "evidence": "In this study, an AD mouse model was established through lateral ventricular injection of amyloid-beta1–42 (Aβ1–42).",
+                "index": 4,
+                "intervention": "lateral ventricular injection of amyloid-beta1–42",
+                "negated": false,
+                "predicate": "is_modeled_in",
+                "score": null,
+                "source": "E12",
+                "surface_form": "AD mouse model",
+                "target": "E13"
+              }
+            ],
+            "type": "Species"
+          },
+          {
+            "cause": "endpoint changed",
+            "explanation": "Ratio assertion survives on the separate long-form target; supplied denominator PI3K loses topology, and pathway edge is omitted.",
+            "id": "doc_e_018",
+            "label": "PI3K",
+            "previous_relations": [
+              {
+                "assertion": "The phosphorylated phosphoinositide 3-kinase (p-PI3K)-to-PI3K ratio was elevated in the reported SFPQ-overexpression results.",
+                "context": [
+                  "AD mice"
+                ],
+                "effects": [
+                  "elevated phosphorylated PI3K-to-PI3K ratio"
+                ],
+                "evidence": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated. The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax also increased. Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway.",
+                "index": 15,
+                "intervention": "SFPQ overexpression",
+                "negated": false,
+                "predicate": "phosphorylated_to_total_ratio_increased",
+                "score": null,
+                "source": "E32",
+                "surface_form": "phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K",
+                "target": "E34"
+              },
+              {
+                "assertion": "The elevated phosphorylated-to-total PI3K and AKT ratios indicated activation of the PI3K/AKT signaling pathway involving PI3K and AKT.",
+                "context": [
+                  "AD mice"
+                ],
+                "effects": [
+                  "activation of the PI3K/AKT signaling pathway"
+                ],
+                "evidence": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated. The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax also increased. Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway.",
+                "index": 17,
+                "intervention": "SFPQ overexpression",
+                "negated": false,
+                "predicate": "co_participate_in_signaling_pathway",
+                "score": null,
+                "source": "E38",
+                "surface_form": "activation of the PI3K/AKT signaling pathway",
+                "target": "E39"
+              }
+            ],
+            "type": "Gene"
+          },
+          {
+            "cause": "endpoint changed",
+            "explanation": "Ratio assertion survives on protein kinase B target; supplied denominator AKT loses topology, and pathway edge is omitted.",
+            "id": "doc_e_020",
+            "label": "AKT",
+            "previous_relations": [
+              {
+                "assertion": "The phosphorylated protein kinase B (p-AKT)-to-AKT ratio was elevated in the reported SFPQ-overexpression results.",
+                "context": [
+                  "AD mice"
+                ],
+                "effects": [
+                  "elevated phosphorylated protein kinase B-to-AKT ratio"
+                ],
+                "evidence": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated. The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax also increased. Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway.",
+                "index": 16,
+                "intervention": "SFPQ overexpression",
+                "negated": false,
+                "predicate": "phosphorylated_to_total_ratio_increased",
+                "score": null,
+                "source": "E35",
+                "surface_form": "phosphorylated protein kinase B (p-AKT)/AKT",
+                "target": "E37"
+              },
+              {
+                "assertion": "The elevated phosphorylated-to-total PI3K and AKT ratios indicated activation of the PI3K/AKT signaling pathway involving PI3K and AKT.",
+                "context": [
+                  "AD mice"
+                ],
+                "effects": [
+                  "activation of the PI3K/AKT signaling pathway"
+                ],
+                "evidence": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated. The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax also increased. Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway.",
+                "index": 17,
+                "intervention": "SFPQ overexpression",
+                "negated": false,
+                "predicate": "co_participate_in_signaling_pathway",
+                "score": null,
+                "source": "E38",
+                "surface_form": "activation of the PI3K/AKT signaling pathway",
+                "target": "E39"
+              }
+            ],
+            "type": "Gene"
+          }
+        ],
+        "RESOLVED ORPHAN": []
+      }
+    }
+  }
+}

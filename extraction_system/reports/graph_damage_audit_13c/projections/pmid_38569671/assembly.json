@@ -1,0 +1,519 @@
+{
+  "document_entities": [
+    {
+      "aliases": [
+        "KIF23"
+      ],
+      "id": "doc_e_001",
+      "label": "KIF23",
+      "mentions": [
+        {
+          "end": 18,
+          "id": "E1",
+          "score": 0.99998939037323,
+          "start": 13,
+          "text": "KIF23",
+          "type": "Gene"
+        },
+        {
+          "end": 582,
+          "id": "E11",
+          "score": 0.9999898672103882,
+          "start": 577,
+          "text": "KIF23",
+          "type": "Gene"
+        },
+        {
+          "end": 723,
+          "id": "E12",
+          "score": 0.9999902248382568,
+          "start": 718,
+          "text": "KIF23",
+          "type": "Gene"
+        },
+        {
+          "end": 894,
+          "id": "E15",
+          "score": 0.9999901056289673,
+          "start": 889,
+          "text": "KIF23",
+          "type": "Gene"
+        },
+        {
+          "end": 1264,
+          "id": "E25",
+          "score": 0.9999903440475464,
+          "start": 1259,
+          "text": "KIF23",
+          "type": "Gene"
+        },
+        {
+          "end": 1300,
+          "id": "E26",
+          "score": 0.9999904632568359,
+          "start": 1295,
+          "text": "KIF23",
+          "type": "Gene"
+        },
+        {
+          "end": 1479,
+          "id": "E30",
+          "score": 0.9999903440475464,
+          "start": 1474,
+          "text": "KIF23",
+          "type": "Gene"
+        },
+        {
+          "end": 1633,
+          "id": "E36",
+          "score": 0.9999901056289673,
+          "start": 1628,
+          "text": "KIF23",
+          "type": "Gene"
+        },
+        {
+          "end": 1664,
+          "id": "E37",
+          "score": 0.9999901056289673,
+          "start": 1659,
+          "text": "KIF23",
+          "type": "Gene"
+        }
+      ],
+      "type": "Gene"
+    },
+    {
+      "aliases": [
+        "asthma",
+        "Asthma"
+      ],
+      "id": "doc_e_002",
+      "label": "asthma",
+      "mentions": [
+        {
+          "end": 55,
+          "id": "E2",
+          "score": 0.9999860525131226,
+          "start": 49,
+          "text": "asthma",
+          "type": "Disease"
+        },
+        {
+          "end": 89,
+          "id": "E3",
+          "score": 0.9999861717224121,
+          "start": 83,
+          "text": "Asthma",
+          "type": "Disease"
+        },
+        {
+          "end": 210,
+          "id": "E4",
+          "score": 0.9999861717224121,
+          "start": 204,
+          "text": "asthma",
+          "type": "Disease"
+        },
+        {
+          "end": 315,
+          "id": "E5",
+          "score": 0.9999861717224121,
+          "start": 309,
+          "text": "asthma",
+          "type": "Disease"
+        },
+        {
+          "end": 324,
+          "id": "E6",
+          "score": 0.9999861717224121,
+          "start": 318,
+          "text": "Asthma",
+          "type": "Disease"
+        },
+        {
+          "end": 475,
+          "id": "E10",
+          "score": 0.9999861717224121,
+          "start": 469,
+          "text": "asthma",
+          "type": "Disease"
+        },
+        {
+          "end": 965,
+          "id": "E17",
+          "score": 0.9999858140945435,
+          "start": 959,
+          "text": "asthma",
+          "type": "Disease"
+        },
+        {
+          "end": 1225,
+          "id": "E24",
+          "score": 0.9999862909317017,
+          "start": 1219,
+          "text": "asthma",
+          "type": "Disease"
+        },
+        {
+          "end": 1567,
+          "id": "E33",
+          "score": 0.9999861717224121,
+          "start": 1561,
+          "text": "asthma",
+          "type": "Disease"
+        },
+        {
+          "end": 1701,
+          "id": "E38",
+          "score": 0.9999864101409912,
+          "start": 1695,
+          "text": "asthma",
+          "type": "Disease"
+        }
+      ],
+      "type": "Disease"
+    },
+    {
+      "aliases": [
+        "mouse"
+      ],
+      "id": "doc_e_003",
+      "label": "mouse",
+      "mentions": [
+        {
+          "end": 330,
+          "id": "E7",
+          "score": 0.9999872446060181,
+          "start": 325,
+          "text": "mouse",
+          "type": "Species"
+        }
+      ],
+      "type": "Species"
+    },
+    {
+      "aliases": [
+        "ovalbumin",
+        "OVA"
+      ],
+      "id": "doc_e_004",
+      "label": "OVA",
+      "mentions": [
+        {
+          "end": 367,
+          "id": "E8",
+          "score": 0.9924644231796265,
+          "start": 358,
+          "text": "ovalbumin",
+          "type": "Gene"
+        },
+        {
+          "end": 372,
+          "id": "E9",
+          "score": 0.9567826390266418,
+          "start": 369,
+          "text": "OVA",
+          "type": "Gene"
+        },
+        {
+          "end": 1552,
+          "id": "E32",
+          "score": 0.9999891519546509,
+          "start": 1549,
+          "text": "OVA",
+          "type": "Gene"
+        }
+      ],
+      "type": "Gene"
+    },
+    {
+      "aliases": [
+        "inflammation"
+      ],
+      "id": "doc_e_005",
+      "label": "inflammation",
+      "mentions": [
+        {
+          "end": 749,
+          "id": "E13",
+          "score": 0.9999862909317017,
+          "start": 737,
+          "text": "inflammation",
+          "type": "Disease"
+        },
+        {
+          "end": 1367,
+          "id": "E27",
+          "score": 0.9999860525131226,
+          "start": 1355,
+          "text": "inflammation",
+          "type": "Disease"
+        },
+        {
+          "end": 1520,
+          "id": "E31",
+          "score": 0.9999861717224121,
+          "start": 1508,
+          "text": "inflammation",
+          "type": "Disease"
+        }
+      ],
+      "type": "Disease"
+    },
+    {
+      "aliases": [
+        "KIF23-related"
+      ],
+      "id": "doc_e_006",
+      "label": "KIF23-related",
+      "mentions": [
+        {
+          "end": 853,
+          "id": "E14",
+          "score": 0.9999902248382568,
+          "start": 840,
+          "text": "KIF23-related",
+          "type": "Gene"
+        }
+      ],
+      "type": "Gene"
+    },
+    {
+      "aliases": [
+        "p53"
+      ],
+      "id": "doc_e_007",
+      "label": "p53",
+      "mentions": [
+        {
+          "end": 901,
+          "id": "E16",
+          "score": 0.9999897480010986,
+          "start": 898,
+          "text": "p53",
+          "type": "Gene"
+        },
+        {
+          "end": 1590,
+          "id": "E35",
+          "score": 0.9999903440475464,
+          "start": 1587,
+          "text": "p53",
+          "type": "Gene"
+        },
+        {
+          "end": 1745,
+          "id": "E39",
+          "score": 0.9999898672103882,
+          "start": 1742,
+          "text": "p53",
+          "type": "Gene"
+        }
+      ],
+      "type": "Gene"
+    },
+    {
+      "aliases": [
+        "caspase-3"
+      ],
+      "id": "doc_e_008",
+      "label": "caspase-3",
+      "mentions": [
+        {
+          "end": 996,
+          "id": "E18",
+          "score": 0.9999899864196777,
+          "start": 987,
+          "text": "caspase-3",
+          "type": "Gene"
+        }
+      ],
+      "type": "Gene"
+    },
+    {
+      "aliases": [
+        "IgG"
+      ],
+      "id": "doc_e_009",
+      "label": "IgG",
+      "mentions": [
+        {
+          "end": 1001,
+          "id": "E19",
+          "score": 0.9997655749320984,
+          "start": 998,
+          "text": "IgG",
+          "type": "Gene"
+        }
+      ],
+      "type": "Gene"
+    },
+    {
+      "aliases": [
+        "inflammatory"
+      ],
+      "id": "doc_e_010",
+      "label": "inflammatory",
+      "mentions": [
+        {
+          "end": 1027,
+          "id": "E20",
+          "score": 0.9999814033508301,
+          "start": 1015,
+          "text": "inflammatory",
+          "type": "Disease"
+        }
+      ],
+      "type": "Disease"
+    },
+    {
+      "aliases": [
+        "interleukin (IL)-1β"
+      ],
+      "id": "doc_e_011",
+      "label": "interleukin (IL)-1β",
+      "mentions": [
+        {
+          "end": 1056,
+          "id": "E21",
+          "score": 0.9999801635742187,
+          "start": 1037,
+          "text": "interleukin (IL)-1β",
+          "type": "Gene"
+        }
+      ],
+      "type": "Gene"
+    },
+    {
+      "aliases": [
+        "KC"
+      ],
+      "id": "doc_e_012",
+      "label": "KC",
+      "mentions": [
+        {
+          "end": 1060,
+          "id": "E22",
+          "score": 0.9999871253967285,
+          "start": 1058,
+          "text": "KC",
+          "type": "Gene"
+        }
+      ],
+      "type": "Gene"
+    },
+    {
+      "aliases": [
+        "tumour necrosis factor (TNF)-α"
+      ],
+      "id": "doc_e_013",
+      "label": "tumour necrosis factor (TNF)-α",
+      "mentions": [
+        {
+          "end": 1095,
+          "id": "E23",
+          "score": 0.9999761581420898,
+          "start": 1065,
+          "text": "tumour necrosis factor (TNF)-α",
+          "type": "Gene"
+        }
+      ],
+      "type": "Gene"
+    },
+    {
+      "aliases": [
+        "BEAS-2B"
+      ],
+      "id": "doc_e_014",
+      "label": "BEAS-2B",
+      "mentions": [
+        {
+          "end": 1393,
+          "id": "E28",
+          "score": 0.986404538154602,
+          "start": 1386,
+          "text": "BEAS-2B",
+          "type": "CellLine"
+        }
+      ],
+      "type": "CellLine"
+    },
+    {
+      "aliases": [
+        "IL-13"
+      ],
+      "id": "doc_e_015",
+      "label": "IL-13",
+      "mentions": [
+        {
+          "end": 1416,
+          "id": "E29",
+          "score": 0.9999901056289673,
+          "start": 1411,
+          "text": "IL-13",
+          "type": "Gene"
+        }
+      ],
+      "type": "Gene"
+    },
+    {
+      "aliases": [
+        "mice"
+      ],
+      "id": "doc_e_016",
+      "label": "mice",
+      "mentions": [
+        {
+          "end": 1572,
+          "id": "E34",
+          "score": 0.9999865293502808,
+          "start": 1568,
+          "text": "mice",
+          "type": "Species"
+        }
+      ],
+      "type": "Species"
+    }
+  ],
+  "mention_to_document_entity": {
+    "E1": "doc_e_001",
+    "E10": "doc_e_002",
+    "E11": "doc_e_001",
+    "E12": "doc_e_001",
+    "E13": "doc_e_005",
+    "E14": "doc_e_006",
+    "E15": "doc_e_001",
+    "E16": "doc_e_007",
+    "E17": "doc_e_002",
+    "E18": "doc_e_008",
+    "E19": "doc_e_009",
+    "E2": "doc_e_002",
+    "E20": "doc_e_010",
+    "E21": "doc_e_011",
+    "E22": "doc_e_012",
+    "E23": "doc_e_013",
+    "E24": "doc_e_002",
+    "E25": "doc_e_001",
+    "E26": "doc_e_001",
+    "E27": "doc_e_005",
+    "E28": "doc_e_014",
+    "E29": "doc_e_015",
+    "E3": "doc_e_002",
+    "E30": "doc_e_001",
+    "E31": "doc_e_005",
+    "E32": "doc_e_004",
+    "E33": "doc_e_002",
+    "E34": "doc_e_016",
+    "E35": "doc_e_007",
+    "E36": "doc_e_001",
+    "E37": "doc_e_001",
+    "E38": "doc_e_002",
+    "E39": "doc_e_007",
+    "E4": "doc_e_002",
+    "E5": "doc_e_002",
+    "E6": "doc_e_002",
+    "E7": "doc_e_003",
+    "E8": "doc_e_004",
+    "E9": "doc_e_004"
+  }
+}

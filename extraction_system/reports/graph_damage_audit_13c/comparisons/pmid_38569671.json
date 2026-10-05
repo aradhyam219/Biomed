@@ -1,0 +1,406 @@
+{
+  "current_additions": [
+    {
+      "candidate_relation_index": 9,
+      "classification": "USEFUL ADDED DETAIL",
+      "rationale": "In-vitro pyroptosis suppression is explicit in source and now included with BEAS cellular outcomes, while the other baseline findings remain.",
+      "relation": {
+        "assertion": "KIF23 knockdown increased proliferation and inhibited apoptosis and pyroptosis in BEAS-2B cells in vitro.",
+        "context": [
+          "in vitro"
+        ],
+        "effects": [
+          "increased cell proliferation",
+          "inhibited apoptosis",
+          "inhibited pyroptosis"
+        ],
+        "evidence": "Knockdown of KIF23 increased cell proliferation and inhibited apoptosis, inflammation and pyroptosis of BEAS-2B cells induced by IL-13 in vitro.",
+        "intervention": "KIF23 knockdown",
+        "negated": false,
+        "predicate": "alters_cellular_phenotypes",
+        "score": null,
+        "source": "E26",
+        "surface_form": "increased cell proliferation and inhibited apoptosis, inflammation and pyroptosis",
+        "target": "E28"
+      }
+    }
+  ],
+  "noise_additions": [],
+  "paper_id": "PMID:38569671",
+  "severity": "GREEN",
+  "severity_justification": "KIF23/pyroptosis/p53 mechanism, inflammatory factors and in-vitro/in-vivo results remain; method-only edges are replaced by results.",
+  "source_grounding_policy": "Exact frozen title plus complete abstract only. Findings must survive in structured predicate/assertion/intervention/effects/context; an evidence quote alone does not establish retention. Source quotations are retained for review.",
+  "title": "Knockdown of KIF23 alleviates the progression of asthma by inhibiting pyroptosis.",
+  "views": {
+    "baseline_09b": {
+      "classification_counts": {
+        "BENEFICIAL PRUNING": 2,
+        "EQUIVALENT / REPHRASED": 14,
+        "RETAINED": 1
+      },
+      "controlled_counts": {
+        "baseline_edges": 17,
+        "baseline_nodes": 16,
+        "baseline_orphans": 4,
+        "baseline_relations": 19,
+        "beneficial_pruning": 2,
+        "current_edges": 15,
+        "current_nodes": 16,
+        "current_orphans": 4,
+        "current_relations": 17,
+        "harmful_topology_changes": 0,
+        "material_findings_lost": 0,
+        "new_orphans": 0,
+        "resolved_orphans": 0
+      },
+      "findings": [
+        {
+          "baseline_assertions": [
+            "Knockdown of KIF23 alleviates the progression of asthma by inhibiting pyroptosis.",
+            "Knockdown of KIF23 alleviated the progression of asthma by suppressing pyroptosis."
+          ],
+          "baseline_relation_indices": [
+            0,
+            17
+          ],
+          "candidate_relation_indices": [
+            0,
+            15
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:000",
+          "material": true,
+          "rationale": "Asthma alleviation by pyroptosis suppression survives; title/conclusion duplicates count once.",
+          "source_evidence": [
+            "Knockdown of KIF23 alleviates the progression of asthma by inhibiting pyroptosis.",
+            "Knockdown of KIF23 alleviated the progression of asthma by suppressing pyroptosis and inhibited p53 signalling pathway."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Ovalbumin was used to establish the asthma mouse model."
+          ],
+          "baseline_relation_indices": [
+            1
+          ],
+          "candidate_relation_indices": [
+            1
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:001",
+          "material": true,
+          "rationale": "OVA asthma mouse-model establishment survives.",
+          "source_evidence": [
+            "Asthma mouse model was established with ovalbumin (OVA)."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Effects of KIF23 knockdown on inflammation were detected."
+          ],
+          "baseline_relation_indices": [
+            2
+          ],
+          "candidate_relation_indices": [],
+          "classification": "BENEFICIAL PRUNING",
+          "finding_id": "baseline_09b:002",
+          "material": false,
+          "rationale": "Method-only detection of effects is replaced by explicit inflammation result claims.",
+          "source_evidence": [
+            "Effects of KIF23 knockdown on inflammation, oxidative stress and pyroptosis were detected by ELISA and western blot."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "The effect of KIF23 on p53 signalling pathway was explored."
+          ],
+          "baseline_relation_indices": [
+            3
+          ],
+          "candidate_relation_indices": [],
+          "classification": "BENEFICIAL PRUNING",
+          "finding_id": "baseline_09b:003",
+          "material": false,
+          "rationale": "Investigated effect on p53 is replaced by actual suppression/inhibition results.",
+          "source_evidence": [
+            "After screening KIF23-related signalling pathways, the effect of KIF23 on p53 signalling pathway was explored by western blot."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Caspase-3 levels were increased in the asthma model."
+          ],
+          "baseline_relation_indices": [
+            4
+          ],
+          "candidate_relation_indices": [
+            2
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:004",
+          "material": true,
+          "rationale": "Caspase-3 increase survives.",
+          "source_evidence": [
+            "In the asthma model, the levels of caspase-3, IgG in serum and inflammatory factors (interleukin (IL)-1β, KC and tumour necrosis factor (TNF)-α) in serum and bronchoalveolar lavage fluid were increased."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "IgG levels in serum were increased in the asthma model."
+          ],
+          "baseline_relation_indices": [
+            5
+          ],
+          "candidate_relation_indices": [
+            3
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:005",
+          "material": true,
+          "rationale": "Serum IgG increase survives.",
+          "source_evidence": [
+            "In the asthma model, the levels of caspase-3, IgG in serum and inflammatory factors (interleukin (IL)-1β, KC and tumour necrosis factor (TNF)-α) in serum and bronchoalveolar lavage fluid were increased."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Interleukin (IL)-1β levels in serum and bronchoalveolar lavage fluid were increased in the asthma model."
+          ],
+          "baseline_relation_indices": [
+            6
+          ],
+          "candidate_relation_indices": [
+            4
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:006",
+          "material": true,
+          "rationale": "IL-1beta increase and compartment qualifiers survive.",
+          "source_evidence": [
+            "In the asthma model, the levels of caspase-3, IgG in serum and inflammatory factors (interleukin (IL)-1β, KC and tumour necrosis factor (TNF)-α) in serum and bronchoalveolar lavage fluid were increased."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "KC levels in serum and bronchoalveolar lavage fluid were increased in the asthma model."
+          ],
+          "baseline_relation_indices": [
+            7
+          ],
+          "candidate_relation_indices": [
+            5
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:007",
+          "material": true,
+          "rationale": "KC increase and compartment qualifiers survive.",
+          "source_evidence": [
+            "In the asthma model, the levels of caspase-3, IgG in serum and inflammatory factors (interleukin (IL)-1β, KC and tumour necrosis factor (TNF)-α) in serum and bronchoalveolar lavage fluid were increased."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Tumour necrosis factor (TNF)-α levels in serum and bronchoalveolar lavage fluid were increased in the asthma model."
+          ],
+          "baseline_relation_indices": [
+            8
+          ],
+          "candidate_relation_indices": [
+            6
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:008",
+          "material": true,
+          "rationale": "TNF-alpha increase and compartment qualifiers survive.",
+          "source_evidence": [
+            "In the asthma model, the levels of caspase-3, IgG in serum and inflammatory factors (interleukin (IL)-1β, KC and tumour necrosis factor (TNF)-α) in serum and bronchoalveolar lavage fluid were increased."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "KIF23 was identified as one of seven hub genes in the asthma model."
+          ],
+          "baseline_relation_indices": [
+            9
+          ],
+          "candidate_relation_indices": [
+            7
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:009",
+          "material": true,
+          "rationale": "Hub-gene identification survives.",
+          "source_evidence": [
+            "Transcriptome sequencing showed that there were 352 DEGs in the asthma model, and 7 hub genes including KIF23 were identified."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "In vitro, knockdown of KIF23 inhibited inflammation in BEAS-2B cells induced by IL-13."
+          ],
+          "baseline_relation_indices": [
+            10
+          ],
+          "candidate_relation_indices": [
+            8,
+            10
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:010",
+          "material": true,
+          "rationale": "In-vitro BEAS inflammation suppression survives; IL-13 induction is an explicit separate model relation.",
+          "source_evidence": [
+            "Knockdown of KIF23 increased cell proliferation and inhibited apoptosis, inflammation and pyroptosis of BEAS-2B cells induced by IL-13 in vitro."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "In vitro, knockdown of KIF23 increased cell proliferation and inhibited apoptosis of BEAS-2B cells induced by IL-13."
+          ],
+          "baseline_relation_indices": [
+            11
+          ],
+          "candidate_relation_indices": [
+            9,
+            10
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:011",
+          "material": true,
+          "rationale": "BEAS proliferation increase/apoptosis suppression survives; IL-13 model relation remains.",
+          "source_evidence": [
+            "Knockdown of KIF23 increased cell proliferation and inhibited apoptosis, inflammation and pyroptosis of BEAS-2B cells induced by IL-13 in vitro."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "BEAS-2B cells were induced by IL-13 in vitro."
+          ],
+          "baseline_relation_indices": [
+            12
+          ],
+          "candidate_relation_indices": [
+            10
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:012",
+          "material": true,
+          "rationale": "IL-13 induction survives.",
+          "source_evidence": [
+            "Knockdown of KIF23 increased cell proliferation and inhibited apoptosis, inflammation and pyroptosis of BEAS-2B cells induced by IL-13 in vitro."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "In vivo, knockdown of KIF23 inhibited inflammation in OVA-induced asthma mice."
+          ],
+          "baseline_relation_indices": [
+            13
+          ],
+          "candidate_relation_indices": [
+            11
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:013",
+          "material": true,
+          "rationale": "In-vivo inflammation suppression survives.",
+          "source_evidence": [
+            "In vivo experiments verified that knockdown of KIF23 inhibited oxidative stress, inflammation and pyroptosis to alleviate OVA-induced asthma mice."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "In vivo, knockdown of KIF23 inhibited oxidative stress, inflammation and pyroptosis to alleviate OVA-induced asthma in mice."
+          ],
+          "baseline_relation_indices": [
+            14
+          ],
+          "candidate_relation_indices": [
+            11,
+            12,
+            13
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:014",
+          "material": true,
+          "rationale": "OVA asthma improvement with oxidative-stress/inflammation/pyroptosis suppression survives across result/model claims.",
+          "source_evidence": [
+            "In vivo experiments verified that knockdown of KIF23 inhibited oxidative stress, inflammation and pyroptosis to alleviate OVA-induced asthma mice."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "OVA induced asthma in mice."
+          ],
+          "baseline_relation_indices": [
+            15
+          ],
+          "candidate_relation_indices": [
+            13
+          ],
+          "classification": "RETAINED",
+          "finding_id": "baseline_09b:015",
+          "material": true,
+          "rationale": "OVA-induced asthma survives.",
+          "source_evidence": [
+            "In vivo experiments verified that knockdown of KIF23 inhibited oxidative stress, inflammation and pyroptosis to alleviate OVA-induced asthma mice."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "The p53 signalling pathway was suppressed by KIF23 knockdown.",
+            "Knockdown of KIF23 inhibited p53 signalling pathway."
+          ],
+          "baseline_relation_indices": [
+            16,
+            18
+          ],
+          "candidate_relation_indices": [
+            14,
+            16
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:016",
+          "material": true,
+          "rationale": "One p53 suppression finding survives with both result/conclusion assertions.",
+          "source_evidence": [
+            "In addition, p53 signalling pathway was suppressed by KIF23 knockdown.",
+            "Knockdown of KIF23 alleviated the progression of asthma by suppressing pyroptosis and inhibited p53 signalling pathway."
+          ]
+        }
+      ],
+      "historical_graph_counts": {
+        "edges": 17,
+        "nodes": 16,
+        "orphans": 4
+      },
+      "orphans": {
+        "INHERITED ORPHAN": [
+          {
+            "id": "doc_e_003",
+            "label": "mouse",
+            "type": "Species"
+          },
+          {
+            "id": "doc_e_006",
+            "label": "KIF23-related",
+            "type": "Gene"
+          },
+          {
+            "id": "doc_e_010",
+            "label": "inflammatory",
+            "type": "Disease"
+          },
+          {
+            "id": "doc_e_016",
+            "label": "mice",
+            "type": "Species"
+          }
+        ],
+        "NEW NODE / IDENTITY DIFFERENCE": [],
+        "NEW ORPHAN": [],
+        "RESOLVED ORPHAN": []
+      }
+    }
+  }
+}

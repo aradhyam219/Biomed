@@ -1,0 +1,769 @@
+{
+  "current_additions": [],
+  "noise_additions": [],
+  "paper_id": "PMID:27172794",
+  "severity": "YELLOW",
+  "severity_justification": "The central EZH2/p21cip1/Wnt/beta-catenin mechanism and EPZ-6438 result remain; the explicit CCS contribution to poor prognosis is omitted.",
+  "source_grounding_policy": "Exact frozen title plus complete abstract only. Findings must survive in structured predicate/assertion/intervention/effects/context; an evidence quote alone does not establish retention. Source quotations are retained for review.",
+  "title": "EZH2 promotes colorectal cancer stem-like cell expansion by activating p21cip1-Wnt/β-catenin signaling.",
+  "views": {
+    "baseline_09b": {
+      "classification_counts": {
+        "EQUIVALENT / REPHRASED": 14,
+        "HARMFUL OMISSION": 1,
+        "RETAINED": 1
+      },
+      "controlled_counts": {
+        "baseline_edges": 19,
+        "baseline_nodes": 15,
+        "baseline_orphans": 2,
+        "baseline_relations": 21,
+        "beneficial_pruning": 0,
+        "current_edges": 18,
+        "current_nodes": 15,
+        "current_orphans": 3,
+        "current_relations": 20,
+        "harmful_topology_changes": 0,
+        "material_findings_lost": 1,
+        "new_orphans": 1,
+        "resolved_orphans": 0
+      },
+      "findings": [
+        {
+          "baseline_assertions": [
+            "EZH2 promotes colorectal cancer stem-like cell expansion by activating p21cip1-Wnt/β-catenin signaling."
+          ],
+          "baseline_relation_indices": [
+            0
+          ],
+          "candidate_relation_indices": [
+            0
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:000",
+          "material": true,
+          "rationale": "Stem-like-cell expansion and activation mechanism survive.",
+          "source_evidence": [
+            "EZH2 promotes colorectal cancer stem-like cell expansion by activating p21cip1-Wnt/β-catenin signaling."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "EZH2 promotes colorectal cancer stem-like cell expansion by activating p21cip1-Wnt/β-catenin signaling."
+          ],
+          "baseline_relation_indices": [
+            1
+          ],
+          "candidate_relation_indices": [
+            1
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:001",
+          "material": true,
+          "rationale": "p21cip1-Wnt signaling activation survives.",
+          "source_evidence": [
+            "EZH2 promotes colorectal cancer stem-like cell expansion by activating p21cip1-Wnt/β-catenin signaling."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "EZH2 promotes colorectal cancer stem-like cell expansion by activating p21cip1-Wnt/β-catenin signaling."
+          ],
+          "baseline_relation_indices": [
+            2
+          ],
+          "candidate_relation_indices": [
+            2
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:002",
+          "material": true,
+          "rationale": "Beta-catenin signaling activation survives.",
+          "source_evidence": [
+            "EZH2 promotes colorectal cancer stem-like cell expansion by activating p21cip1-Wnt/β-catenin signaling."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Colorectal cancer (CRC) stem-like cells (CCS-like cells) contribute to poor patient prognosis."
+          ],
+          "baseline_evidence_retained_in_candidate_quotes": false,
+          "baseline_relation_indices": [
+            3
+          ],
+          "candidate_quote_indices": [],
+          "candidate_relation_indices": [],
+          "classification": "HARMFUL OMISSION",
+          "finding_id": "baseline_09b:003",
+          "loss_scope": "explicit structured scientific meaning; may remain recoverable from evidence quotes",
+          "lost_meaning_recoverable_from_evidence": false,
+          "lost_meaning_source_excerpt": "Because colorectal cancer (CRC) stem-like cells (CCS-like cells) contribute to poor patient prognosis",
+          "material": true,
+          "rationale": "Explicit CRC stem-like cells contributing to poor patient prognosis is absent; EZH2-to-prognosis is a different finding. Historical disease-level endpoint was imprecise, but the assertion supplied the material stem-cell claim.",
+          "source_evidence": [
+            "Because colorectal cancer (CRC) stem-like cells (CCS-like cells) contribute to poor patient prognosis"
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Patients with advanced stage CRC expressed high levels of polycomb group protein enhancer of zeste homologue 2 (EZH2)."
+          ],
+          "baseline_relation_indices": [
+            4
+          ],
+          "candidate_relation_indices": [
+            3
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:004",
+          "material": true,
+          "rationale": "Advanced-stage CRC patients' high EZH2 expression survives; patients are assertion/cohort rather than endpoint.",
+          "source_evidence": [
+            "Here, we found that patients with advanced stage CRC expressed high levels of polycomb group protein enhancer of zeste homologue 2 (EZH2)."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "EZH2 was highly expressed in tumor tissues."
+          ],
+          "baseline_relation_indices": [
+            5
+          ],
+          "candidate_relation_indices": [
+            4
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:005",
+          "material": true,
+          "rationale": "Tumor-tissue EZH2 expression survives.",
+          "source_evidence": [
+            "High expression of EZH2 in tumor tissues correlated with poor patient prognosis."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "High expression of EZH2 in tumor tissues correlated with poor patient prognosis."
+          ],
+          "baseline_relation_indices": [
+            6
+          ],
+          "candidate_relation_indices": [
+            5
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:006",
+          "material": true,
+          "rationale": "EZH2 correlation with poor prognosis survives.",
+          "source_evidence": [
+            "High expression of EZH2 in tumor tissues correlated with poor patient prognosis."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Silencing EZH2 reduced CRC cell proliferation."
+          ],
+          "baseline_relation_indices": [
+            7
+          ],
+          "candidate_relation_indices": [
+            6
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:007",
+          "material": true,
+          "rationale": "Silencing reduces CRC proliferation survives.",
+          "source_evidence": [
+            "Conversely, silencing EZH2 reduced CRC cell proliferation."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "EZH2 was more highly expressed in the CCS-like cell subpopulation than in the non-CCS-like cell subpopulation.",
+            "EZH2 was expressed at a lower level in the non-CCS-like cell subpopulation than in the CCS-like cell subpopulation."
+          ],
+          "baseline_relation_indices": [
+            8,
+            9
+          ],
+          "candidate_relation_indices": [
+            7,
+            8
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:008",
+          "material": true,
+          "rationale": "One comparative expression finding survives in both directions; count one biological comparison.",
+          "source_evidence": [
+            "Surprisingly, EZH2 was more highly expressed in the CCS-like cell subpopulation than in the non-CCS-like cell subpopulation."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "EZH2 knockdown significantly reduced the CD133+/CD44+ subpopulation.",
+            "EZH2 knockdown significantly reduced the CD133+/CD44+ subpopulation."
+          ],
+          "baseline_relation_indices": [
+            10,
+            11
+          ],
+          "candidate_relation_indices": [
+            9,
+            10
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:009",
+          "material": true,
+          "rationale": "One double-positive CD133+/CD44+ subpopulation reduction survives with both supplied marker endpoints.",
+          "source_evidence": [
+            "EZH2 knockdown significantly reduced the CD133+/CD44+ subpopulation, suppressed mammosphere formation, and decreased the expression of self-renewal-related genes and strongly impaired tumor-initiating capacity in a re-implantation mouse model."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "EZH2 knockdown strongly impaired tumor-initiating capacity in a re-implantation mouse model."
+          ],
+          "baseline_relation_indices": [
+            12
+          ],
+          "candidate_relation_indices": [
+            11
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:010",
+          "material": true,
+          "rationale": "Tumor-initiating capacity impairment survives.",
+          "source_evidence": [
+            "EZH2 knockdown significantly reduced the CD133+/CD44+ subpopulation, suppressed mammosphere formation, and decreased the expression of self-renewal-related genes and strongly impaired tumor-initiating capacity in a re-implantation mouse model."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "EZH2 helped maintain CCS-like cell properties by activating the Wnt/β-catenin pathway.",
+            "EZH2 helped maintain CCS-like cell properties by activating the Wnt/β-catenin pathway."
+          ],
+          "baseline_relation_indices": [
+            13,
+            14
+          ],
+          "candidate_relation_indices": [
+            12,
+            13
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:011",
+          "material": true,
+          "rationale": "Wnt/beta-catenin activation for CCS maintenance survives with both components.",
+          "source_evidence": [
+            "Gene expression data from 433 human CRC specimens from TCGA database and in vitro results revealed that EZH2 helped maintain CCS-like cell properties by activating the Wnt/β-catenin pathway."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "p21cip1-mediated arrest of the cell cycle at G1/S phase is required for EZH2 activation of the Wnt/β-catenin pathway.",
+            "p21cip1-mediated arrest of the cell cycle at G1/S phase is required for EZH2 activation of the Wnt/β-catenin pathway.",
+            "p21cip1-mediated arrest of the cell cycle at G1/S phase is required for EZH2 activation of the Wnt/β-catenin pathway."
+          ],
+          "baseline_relation_indices": [
+            15,
+            16,
+            17
+          ],
+          "candidate_relation_indices": [
+            14,
+            15,
+            16
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:012",
+          "material": true,
+          "rationale": "p21cip1-mediated G1/S requirement and EZH2 pathway activation survive explicitly. Contract10's extra requirement endpoints are represented through EZH2; no material participant is lost.",
+          "source_evidence": [
+            "We further revealed that p21cip1-mediated arrest of the cell cycle at G1/S phase is required for EZH2 activation of the Wnt/β-catenin pathway."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "EPZ-6438 is a specific inhibitor of EZH2."
+          ],
+          "baseline_relation_indices": [
+            18
+          ],
+          "candidate_relation_indices": [
+            17
+          ],
+          "classification": "RETAINED",
+          "finding_id": "baseline_09b:013",
+          "material": true,
+          "rationale": "EPZ-6438 specific inhibition survives.",
+          "source_evidence": [
+            "the specific EZH2 inhibitor EPZ-6438"
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "The specific EZH2 inhibitor EPZ-6438, a clinical trial drug, prevented CRC progression."
+          ],
+          "baseline_relation_indices": [
+            19
+          ],
+          "candidate_relation_indices": [
+            18
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:014",
+          "material": true,
+          "rationale": "EPZ-6438 prevents CRC progression survives.",
+          "source_evidence": [
+            "Moreover, the specific EZH2 inhibitor EPZ-6438, a clinical trial drug, prevented CRC progression."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "EZH2 maintains CCS-like cell characteristics by arresting the cell cycle at the G1/S phase."
+          ],
+          "baseline_relation_indices": [
+            20
+          ],
+          "candidate_relation_indices": [
+            19
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_09b:015",
+          "material": true,
+          "rationale": "EZH2 G1/S arrest maintaining CCS characteristics survives.",
+          "source_evidence": [
+            "Collectively, these findings revealed EZH2 maintaining CCS-like cell characteristics by arresting the cell cycle at the G1/S phase."
+          ]
+        }
+      ],
+      "historical_graph_counts": {
+        "edges": 19,
+        "nodes": 16,
+        "orphans": 3
+      },
+      "orphans": {
+        "INHERITED ORPHAN": [
+          {
+            "id": "doc_e_011",
+            "label": "mouse",
+            "type": "Species"
+          },
+          {
+            "id": "doc_e_012",
+            "label": "human",
+            "type": "Species"
+          }
+        ],
+        "NEW NODE / IDENTITY DIFFERENCE": [],
+        "NEW ORPHAN": [
+          {
+            "cause": "endpoint changed",
+            "explanation": "Advanced-stage patients expressing EZH2 survives as EZH2-to-CRC assertion/cohort; plural patients node is no longer an endpoint.",
+            "id": "doc_e_006",
+            "label": "patients",
+            "previous_relations": [
+              {
+                "assertion": "Patients with advanced stage CRC expressed high levels of polycomb group protein enhancer of zeste homologue 2 (EZH2).",
+                "context": [
+                  "advanced stage CRC"
+                ],
+                "effects": [],
+                "evidence": "Here, we found that patients with advanced stage CRC expressed high levels of polycomb group protein enhancer of zeste homologue 2 (EZH2).",
+                "index": 4,
+                "intervention": null,
+                "negated": false,
+                "predicate": "expresses high levels of",
+                "score": null,
+                "source": "E9",
+                "surface_form": "expressed high levels of",
+                "target": "E13"
+              }
+            ],
+            "type": "Species"
+          }
+        ],
+        "RESOLVED ORPHAN": []
+      }
+    },
+    "baseline_contract10": {
+      "classification_counts": {
+        "EQUIVALENT / REPHRASED": 14,
+        "HARMFUL OMISSION": 1,
+        "RETAINED": 1
+      },
+      "controlled_counts": {
+        "baseline_edges": 19,
+        "baseline_nodes": 15,
+        "baseline_orphans": 2,
+        "baseline_relations": 22,
+        "beneficial_pruning": 0,
+        "current_edges": 18,
+        "current_nodes": 15,
+        "current_orphans": 3,
+        "current_relations": 20,
+        "harmful_topology_changes": 0,
+        "material_findings_lost": 1,
+        "new_orphans": 1,
+        "resolved_orphans": 0
+      },
+      "findings": [
+        {
+          "baseline_assertions": [
+            "EZH2 promotes colorectal cancer stem-like cell expansion by activating p21cip1-Wnt/β-catenin signaling."
+          ],
+          "baseline_relation_indices": [
+            0
+          ],
+          "candidate_relation_indices": [
+            0
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:000",
+          "material": true,
+          "rationale": "Stem-like-cell expansion and activation mechanism survive.",
+          "source_evidence": [
+            "EZH2 promotes colorectal cancer stem-like cell expansion by activating p21cip1-Wnt/β-catenin signaling."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "EZH2 activates p21cip1-Wnt/β-catenin signaling."
+          ],
+          "baseline_relation_indices": [
+            1
+          ],
+          "candidate_relation_indices": [
+            1
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:001",
+          "material": true,
+          "rationale": "p21cip1-Wnt signaling activation survives.",
+          "source_evidence": [
+            "EZH2 promotes colorectal cancer stem-like cell expansion by activating p21cip1-Wnt/β-catenin signaling."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "EZH2 activates p21cip1-Wnt/β-catenin signaling."
+          ],
+          "baseline_relation_indices": [
+            2
+          ],
+          "candidate_relation_indices": [
+            2
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:002",
+          "material": true,
+          "rationale": "Beta-catenin signaling activation survives.",
+          "source_evidence": [
+            "EZH2 promotes colorectal cancer stem-like cell expansion by activating p21cip1-Wnt/β-catenin signaling."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Colorectal cancer stem-like cells contribute to poor patient prognosis."
+          ],
+          "baseline_evidence_retained_in_candidate_quotes": false,
+          "baseline_relation_indices": [
+            3
+          ],
+          "candidate_quote_indices": [],
+          "candidate_relation_indices": [],
+          "classification": "HARMFUL OMISSION",
+          "finding_id": "baseline_contract10:003",
+          "loss_scope": "explicit structured scientific meaning; may remain recoverable from evidence quotes",
+          "lost_meaning_recoverable_from_evidence": false,
+          "lost_meaning_source_excerpt": "Because colorectal cancer (CRC) stem-like cells (CCS-like cells) contribute to poor patient prognosis",
+          "material": true,
+          "rationale": "Explicit CRC stem-like cells contributing to poor patient prognosis is absent; EZH2-to-prognosis is a different finding. Historical disease-level endpoint was imprecise, but the assertion supplied the material stem-cell claim.",
+          "source_evidence": [
+            "Because colorectal cancer (CRC) stem-like cells (CCS-like cells) contribute to poor patient prognosis, these cells are a potential target for CRC therapy."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Patients with advanced stage CRC expressed high levels of EZH2."
+          ],
+          "baseline_relation_indices": [
+            4
+          ],
+          "candidate_relation_indices": [
+            3
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:004",
+          "material": true,
+          "rationale": "Advanced-stage CRC patients' high EZH2 expression survives; patients are assertion/cohort rather than endpoint.",
+          "source_evidence": [
+            "Here, we found that patients with advanced stage CRC expressed high levels of polycomb group protein enhancer of zeste homologue 2 (EZH2)."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "EZH2 has high expression in tumor tissues."
+          ],
+          "baseline_relation_indices": [
+            5
+          ],
+          "candidate_relation_indices": [
+            4
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:005",
+          "material": true,
+          "rationale": "Tumor-tissue EZH2 expression survives.",
+          "source_evidence": [
+            "High expression of EZH2 in tumor tissues correlated with poor patient prognosis."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "High expression of EZH2 in tumor tissues correlated with poor patient prognosis."
+          ],
+          "baseline_relation_indices": [
+            6
+          ],
+          "candidate_relation_indices": [
+            5
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:006",
+          "material": true,
+          "rationale": "EZH2 correlation with poor prognosis survives.",
+          "source_evidence": [
+            "High expression of EZH2 in tumor tissues correlated with poor patient prognosis."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "Silencing EZH2 reduced CRC cell proliferation."
+          ],
+          "baseline_relation_indices": [
+            7
+          ],
+          "candidate_relation_indices": [
+            6
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:007",
+          "material": true,
+          "rationale": "Silencing reduces CRC proliferation survives.",
+          "source_evidence": [
+            "Conversely, silencing EZH2 reduced CRC cell proliferation."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "EZH2 was more highly expressed in the CCS-like cell subpopulation than in the non-CCS-like cell subpopulation.",
+            "EZH2 had lower expression in the non-CCS-like cell subpopulation than in the CCS-like cell subpopulation."
+          ],
+          "baseline_relation_indices": [
+            8,
+            9
+          ],
+          "candidate_relation_indices": [
+            7,
+            8
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:008",
+          "material": true,
+          "rationale": "One comparative expression finding survives in both directions; count one biological comparison.",
+          "source_evidence": [
+            "Surprisingly, EZH2 was more highly expressed in the CCS-like cell subpopulation than in the non-CCS-like cell subpopulation."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "EZH2 knockdown significantly reduced the CD133+/CD44+ subpopulation.",
+            "EZH2 knockdown significantly reduced the CD133+/CD44+ subpopulation."
+          ],
+          "baseline_relation_indices": [
+            10,
+            11
+          ],
+          "candidate_relation_indices": [
+            9,
+            10
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:009",
+          "material": true,
+          "rationale": "One double-positive CD133+/CD44+ subpopulation reduction survives with both supplied marker endpoints.",
+          "source_evidence": [
+            "EZH2 knockdown significantly reduced the CD133+/CD44+ subpopulation, suppressed mammosphere formation, and decreased the expression of self-renewal-related genes and strongly impaired tumor-initiating capacity in a re-implantation mouse model."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "EZH2 knockdown strongly impaired tumor-initiating capacity in a re-implantation mouse model."
+          ],
+          "baseline_relation_indices": [
+            12
+          ],
+          "candidate_relation_indices": [
+            11
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:010",
+          "material": true,
+          "rationale": "Tumor-initiating capacity impairment survives.",
+          "source_evidence": [
+            "EZH2 knockdown significantly reduced the CD133+/CD44+ subpopulation, suppressed mammosphere formation, and decreased the expression of self-renewal-related genes and strongly impaired tumor-initiating capacity in a re-implantation mouse model."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "EZH2 helped maintain CCS-like cell properties by activating the Wnt/β-catenin pathway.",
+            "EZH2 helped maintain CCS-like cell properties by activating the Wnt/β-catenin pathway."
+          ],
+          "baseline_relation_indices": [
+            13,
+            14
+          ],
+          "candidate_relation_indices": [
+            12,
+            13
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:011",
+          "material": true,
+          "rationale": "Wnt/beta-catenin activation for CCS maintenance survives with both components.",
+          "source_evidence": [
+            "Gene expression data from 433 human CRC specimens from TCGA database and in vitro results revealed that EZH2 helped maintain CCS-like cell properties by activating the Wnt/β-catenin pathway."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "p21cip1-mediated arrest of the cell cycle at G1/S phase is required for EZH2 activation of the Wnt/β-catenin pathway.",
+            "p21cip1-mediated arrest of the cell cycle at G1/S phase is required for EZH2 activation of the Wnt/β-catenin pathway.",
+            "p21cip1-mediated arrest of the cell cycle at G1/S phase is required for EZH2 activation of the Wnt/β-catenin pathway.",
+            "p21cip1-mediated arrest of the cell cycle at G1/S phase is required for EZH2 activation of the Wnt/β-catenin pathway."
+          ],
+          "baseline_relation_indices": [
+            15,
+            16,
+            17,
+            18
+          ],
+          "candidate_relation_indices": [
+            14,
+            15,
+            16
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:012",
+          "material": true,
+          "rationale": "p21cip1-mediated G1/S requirement and EZH2 pathway activation survive explicitly. Contract10's extra requirement endpoints are represented through EZH2; no material participant is lost.",
+          "source_evidence": [
+            "We further revealed that p21cip1-mediated arrest of the cell cycle at G1/S phase is required for EZH2 activation of the Wnt/β-catenin pathway."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "EPZ-6438 is a specific inhibitor of EZH2."
+          ],
+          "baseline_relation_indices": [
+            19
+          ],
+          "candidate_relation_indices": [
+            17
+          ],
+          "classification": "RETAINED",
+          "finding_id": "baseline_contract10:013",
+          "material": true,
+          "rationale": "EPZ-6438 specific inhibition survives.",
+          "source_evidence": [
+            "Moreover, the specific EZH2 inhibitor EPZ-6438, a clinical trial drug, prevented CRC progression."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "The specific EZH2 inhibitor EPZ-6438, a clinical trial drug, prevented CRC progression."
+          ],
+          "baseline_relation_indices": [
+            20
+          ],
+          "candidate_relation_indices": [
+            18
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:014",
+          "material": true,
+          "rationale": "EPZ-6438 prevents CRC progression survives.",
+          "source_evidence": [
+            "Moreover, the specific EZH2 inhibitor EPZ-6438, a clinical trial drug, prevented CRC progression."
+          ]
+        },
+        {
+          "baseline_assertions": [
+            "EZH2 maintains CCS-like cell characteristics by arresting the cell cycle at the G1/S phase."
+          ],
+          "baseline_relation_indices": [
+            21
+          ],
+          "candidate_relation_indices": [
+            19
+          ],
+          "classification": "EQUIVALENT / REPHRASED",
+          "finding_id": "baseline_contract10:015",
+          "material": true,
+          "rationale": "EZH2 G1/S arrest maintaining CCS characteristics survives.",
+          "source_evidence": [
+            "Collectively, these findings revealed EZH2 maintaining CCS-like cell characteristics by arresting the cell cycle at the G1/S phase."
+          ]
+        }
+      ],
+      "historical_graph_counts": {
+        "edges": 19,
+        "nodes": 15,
+        "orphans": 2
+      },
+      "orphans": {
+        "INHERITED ORPHAN": [
+          {
+            "id": "doc_e_011",
+            "label": "mouse",
+            "type": "Species"
+          },
+          {
+            "id": "doc_e_012",
+            "label": "human",
+            "type": "Species"
+          }
+        ],
+        "NEW NODE / IDENTITY DIFFERENCE": [],
+        "NEW ORPHAN": [
+          {
+            "cause": "endpoint changed",
+            "explanation": "Advanced-stage patients expressing EZH2 survives as EZH2-to-CRC assertion/cohort; plural patients node is no longer an endpoint.",
+            "id": "doc_e_006",
+            "label": "patients",
+            "previous_relations": [
+              {
+                "assertion": "Patients with advanced stage CRC expressed high levels of EZH2.",
+                "context": [
+                  "advanced stage CRC"
+                ],
+                "effects": [],
+                "evidence": "Here, we found that patients with advanced stage CRC expressed high levels of polycomb group protein enhancer of zeste homologue 2 (EZH2).",
+                "index": 4,
+                "intervention": null,
+                "negated": false,
+                "predicate": "expresses high levels of",
+                "score": null,
+                "source": "E9",
+                "surface_form": "expressed high levels of",
+                "target": "E13"
+              }
+            ],
+            "type": "Species"
+          }
+        ],
+        "RESOLVED ORPHAN": []
+      }
+    }
+  }
+}

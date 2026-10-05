@@ -1,0 +1,258 @@
+{
+  "document_entities": [
+    {
+      "aliases": [
+        "p53"
+      ],
+      "id": "doc_e_001",
+      "label": "p53",
+      "mentions": [
+        {
+          "end": 20,
+          "id": "E1",
+          "score": 0.9999892711639404,
+          "start": 17,
+          "text": "p53",
+          "type": "Gene"
+        },
+        {
+          "end": 318,
+          "id": "E8",
+          "score": 0.9999889135360718,
+          "start": 315,
+          "text": "p53",
+          "type": "Gene"
+        },
+        {
+          "end": 462,
+          "id": "E10",
+          "score": 0.9999891519546509,
+          "start": 459,
+          "text": "p53",
+          "type": "Gene"
+        },
+        {
+          "end": 640,
+          "id": "E12",
+          "score": 0.9999895095825195,
+          "start": 637,
+          "text": "p53",
+          "type": "Gene"
+        },
+        {
+          "end": 815,
+          "id": "E13",
+          "score": 0.9999889135360718,
+          "start": 812,
+          "text": "p53",
+          "type": "Gene"
+        },
+        {
+          "end": 1077,
+          "id": "E16",
+          "score": 0.9999890327453613,
+          "start": 1074,
+          "text": "p53",
+          "type": "Gene"
+        }
+      ],
+      "type": "Gene"
+    },
+    {
+      "aliases": [
+        "SSC-4"
+      ],
+      "id": "doc_e_002",
+      "label": "SSC-4",
+      "mentions": [
+        {
+          "end": 106,
+          "id": "E2",
+          "score": 0.9910467267036438,
+          "start": 101,
+          "text": "SSC-4",
+          "type": "CellLine"
+        },
+        {
+          "end": 892,
+          "id": "E14",
+          "score": 0.9927547574043274,
+          "start": 887,
+          "text": "SSC-4",
+          "type": "CellLine"
+        }
+      ],
+      "type": "CellLine"
+    },
+    {
+      "aliases": [
+        "oral squamous carcinoma"
+      ],
+      "id": "doc_e_003",
+      "label": "oral squamous carcinoma",
+      "mentions": [
+        {
+          "end": 130,
+          "id": "E3",
+          "score": 0.9999874035517374,
+          "start": 107,
+          "text": "oral squamous carcinoma",
+          "type": "Disease"
+        }
+      ],
+      "type": "Disease"
+    },
+    {
+      "aliases": [
+        "Oral squamous cell carcinoma"
+      ],
+      "id": "doc_e_004",
+      "label": "Oral squamous cell carcinoma",
+      "mentions": [
+        {
+          "end": 167,
+          "id": "E4",
+          "score": 0.9999928176403046,
+          "start": 139,
+          "text": "Oral squamous cell carcinoma",
+          "type": "Disease"
+        }
+      ],
+      "type": "Disease"
+    },
+    {
+      "aliases": [
+        "OSCC"
+      ],
+      "id": "doc_e_005",
+      "label": "OSCC",
+      "mentions": [
+        {
+          "end": 173,
+          "id": "E5",
+          "score": 0.9999860525131226,
+          "start": 169,
+          "text": "OSCC",
+          "type": "Disease"
+        },
+        {
+          "end": 505,
+          "id": "E11",
+          "score": 0.999985933303833,
+          "start": 501,
+          "text": "OSCC",
+          "type": "Disease"
+        },
+        {
+          "end": 1096,
+          "id": "E17",
+          "score": 0.9999849796295166,
+          "start": 1092,
+          "text": "OSCC",
+          "type": "Disease"
+        },
+        {
+          "end": 1178,
+          "id": "E18",
+          "score": 0.9999849796295166,
+          "start": 1174,
+          "text": "OSCC",
+          "type": "Disease"
+        }
+      ],
+      "type": "Disease"
+    },
+    {
+      "aliases": [
+        "malignancy"
+      ],
+      "id": "doc_e_006",
+      "label": "malignancy",
+      "mentions": [
+        {
+          "end": 190,
+          "id": "E6",
+          "score": 0.9999858140945435,
+          "start": 180,
+          "text": "malignancy",
+          "type": "Disease"
+        }
+      ],
+      "type": "Disease"
+    },
+    {
+      "aliases": [
+        "patients"
+      ],
+      "id": "doc_e_007",
+      "label": "patients",
+      "mentions": [
+        {
+          "end": 278,
+          "id": "E7",
+          "score": 0.9999852180480957,
+          "start": 270,
+          "text": "patients",
+          "type": "Species"
+        }
+      ],
+      "type": "Species"
+    },
+    {
+      "aliases": [
+        "malignant tumors"
+      ],
+      "id": "doc_e_008",
+      "label": "malignant tumors",
+      "mentions": [
+        {
+          "end": 435,
+          "id": "E9",
+          "score": 0.9999839663505554,
+          "start": 419,
+          "text": "malignant tumors",
+          "type": "Disease"
+        }
+      ],
+      "type": "Disease"
+    },
+    {
+      "aliases": [
+        "VEGF"
+      ],
+      "id": "doc_e_009",
+      "label": "VEGF",
+      "mentions": [
+        {
+          "end": 994,
+          "id": "E15",
+          "score": 0.9999880790710449,
+          "start": 990,
+          "text": "VEGF",
+          "type": "Gene"
+        }
+      ],
+      "type": "Gene"
+    }
+  ],
+  "mention_to_document_entity": {
+    "E1": "doc_e_001",
+    "E10": "doc_e_001",
+    "E11": "doc_e_005",
+    "E12": "doc_e_001",
+    "E13": "doc_e_001",
+    "E14": "doc_e_002",
+    "E15": "doc_e_009",
+    "E16": "doc_e_001",
+    "E17": "doc_e_005",
+    "E18": "doc_e_005",
+    "E2": "doc_e_002",
+    "E3": "doc_e_003",
+    "E4": "doc_e_004",
+    "E5": "doc_e_005",
+    "E6": "doc_e_006",
+    "E7": "doc_e_007",
+    "E8": "doc_e_001",
+    "E9": "doc_e_008"
+  }
+}

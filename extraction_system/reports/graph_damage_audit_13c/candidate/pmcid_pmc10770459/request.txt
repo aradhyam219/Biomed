@@ -1,0 +1,390 @@
+You are a conservative biomedical relation extractor.
+
+Extract only relationships explicitly asserted by the supplied source text. Do not add biological facts from model knowledge, common sense, or the entity types. Every relation must connect two IDs from the supplied entity list. Keep the source-to-target direction expressed by the text. Do not turn a negated claim into a positive relation: set negated=true for an explicitly negated claim. Every emitted relation must include evidence copied verbatim as a contiguous substring of the source text. If the text does not assert a relation between supplied entities, return an empty relations list.
+
+Do not emit a relation whose sole meaning is that two supplied mentions are
+alternative names, abbreviations, aliases, or textual labels for the same
+biomedical entity. Identity and abbreviation resolution are handled separately
+by document-local entity assembly.
+
+Use predicate as a concise, graph-friendly normalized relationship. Use assertion
+as a complete source-grounded restatement of the scientific meaning represented
+by that relation; it may be normalized rather than verbatim, but it must not add
+information absent from the evidence. When an explicit manipulation, treatment,
+perturbation, or comparable condition materially changes the meaning, record it
+in intervention. Record explicit outcomes that would otherwise be lost from a
+binary edge in effects, and explicit contextual qualifiers needed for
+interpretation in context. Preserve intervention, effects, and context in the
+assertion when they are material. `intervention`, `effects`, and `context` must
+describe the relation represented by the supplied source and target endpoints.
+Do not use these structured qualifiers to hide another supplied named entity as
+a material third participant. If another supplied entity participates in a
+distinct explicitly asserted relationship, represent that relationship
+separately when supported by the text.
+
+Use context only for an explicit biological, experimental, clinical, organismal,
+tissue, cellular, disease-state, cohort, environmental, or comparable
+setting/condition needed to interpret where or under what conditions the
+relation holds. Do not use context for a mechanistic explanation, another
+relation, another entity interaction, or free-floating information that fits
+nowhere else; retain important explanatory wording in assertion or express a
+separate grounded relation when appropriate.
+
+Leave optional intervention, effects, and context empty or null when the source
+does not explicitly support them. Do not force a finite predicate ontology, add
+process or event endpoints, or infer effects and context from biomedical
+knowledge. Preserve the exact relation wording in surface_form when it is
+useful. Do not emit explanations outside the structured response.
+
+Supplied entities:
+[
+  {
+    "id": "E1",
+    "text": "glucose",
+    "type": "Chemical",
+    "start": 10,
+    "end": 17,
+    "score": 0.9999959468841553
+  },
+  {
+    "id": "E2",
+    "text": "HMGB1",
+    "type": "Gene",
+    "start": 39,
+    "end": 44,
+    "score": 0.9999896287918091
+  },
+  {
+    "id": "E3",
+    "text": "hyperglycemia",
+    "type": "Disease",
+    "start": 65,
+    "end": 78,
+    "score": 0.9999860525131226
+  },
+  {
+    "id": "E4",
+    "text": "Streptozotocin",
+    "type": "Chemical",
+    "start": 84,
+    "end": 98,
+    "score": 0.9999970197677612
+  },
+  {
+    "id": "E5",
+    "text": "mouse",
+    "type": "Species",
+    "start": 107,
+    "end": 112,
+    "score": 0.9999873638153076
+  },
+  {
+    "id": "E6",
+    "text": "Diabetes mellitus",
+    "type": "Disease",
+    "start": 120,
+    "end": 137,
+    "score": 0.9999906420707703
+  },
+  {
+    "id": "E7",
+    "text": "DM",
+    "type": "Disease",
+    "start": 139,
+    "end": 141,
+    "score": 0.999985933303833
+  },
+  {
+    "id": "E8",
+    "text": "hyperglycemia",
+    "type": "Disease",
+    "start": 190,
+    "end": 203,
+    "score": 0.9999860525131226
+  },
+  {
+    "id": "E9",
+    "text": "glucose",
+    "type": "Chemical",
+    "start": 308,
+    "end": 315,
+    "score": 0.9999963045120239
+  },
+  {
+    "id": "E10",
+    "text": "high mobility group box 1",
+    "type": "Gene",
+    "start": 452,
+    "end": 477,
+    "score": 0.9999802708625793
+  },
+  {
+    "id": "E11",
+    "text": "HMGB1",
+    "type": "Gene",
+    "start": 479,
+    "end": 484,
+    "score": 0.9999892711639404
+  },
+  {
+    "id": "E12",
+    "text": "hyperglycemia",
+    "type": "Disease",
+    "start": 489,
+    "end": 502,
+    "score": 0.9999860525131226
+  },
+  {
+    "id": "E13",
+    "text": "inflammation",
+    "type": "Disease",
+    "start": 539,
+    "end": 551,
+    "score": 0.9999861717224121
+  },
+  {
+    "id": "E14",
+    "text": "DM",
+    "type": "Disease",
+    "start": 581,
+    "end": 583,
+    "score": 0.9999864101409912
+  },
+  {
+    "id": "E15",
+    "text": "HMGB1",
+    "type": "Gene",
+    "start": 628,
+    "end": 633,
+    "score": 0.9999890327453613
+  },
+  {
+    "id": "E16",
+    "text": "hyperglycemia",
+    "type": "Disease",
+    "start": 658,
+    "end": 671,
+    "score": 0.999985933303833
+  },
+  {
+    "id": "E17",
+    "text": "glucose",
+    "type": "Chemical",
+    "start": 693,
+    "end": 700,
+    "score": 0.9923303723335266
+  },
+  {
+    "id": "E18",
+    "text": "tolerance",
+    "type": "Disease",
+    "start": 701,
+    "end": 710,
+    "score": 0.9684579968452454
+  },
+  {
+    "id": "E19",
+    "text": "HMGB1",
+    "type": "Gene",
+    "start": 767,
+    "end": 772,
+    "score": 0.9999886751174927
+  },
+  {
+    "id": "E20",
+    "text": "iHMGB1",
+    "type": "Gene",
+    "start": 783,
+    "end": 789,
+    "score": 0.9962314963340759
+  },
+  {
+    "id": "E21",
+    "text": "mouse",
+    "type": "Species",
+    "start": 794,
+    "end": 799,
+    "score": 0.9999874830245972
+  },
+  {
+    "id": "E22",
+    "text": "HMGB1",
+    "type": "Gene",
+    "start": 826,
+    "end": 831,
+    "score": 0.9999892711639404
+  },
+  {
+    "id": "E23",
+    "text": "Hyperglycemic",
+    "type": "Disease",
+    "start": 843,
+    "end": 856,
+    "score": 0.9999839067459106
+  },
+  {
+    "id": "E24",
+    "text": "streptozotocin",
+    "type": "Chemical",
+    "start": 894,
+    "end": 908,
+    "score": 0.9999972581863403
+  },
+  {
+    "id": "E25",
+    "text": "STZ",
+    "type": "Chemical",
+    "start": 910,
+    "end": 913,
+    "score": 0.9999974966049194
+  },
+  {
+    "id": "E26",
+    "text": "glucose",
+    "type": "Chemical",
+    "start": 952,
+    "end": 959,
+    "score": 0.9999972581863403
+  },
+  {
+    "id": "E27",
+    "text": "glucose",
+    "type": "Chemical",
+    "start": 982,
+    "end": 989,
+    "score": 0.9999971389770508
+  },
+  {
+    "id": "E28",
+    "text": "HMGB1",
+    "type": "Gene",
+    "start": 1032,
+    "end": 1037,
+    "score": 0.9999890327453613
+  },
+  {
+    "id": "E29",
+    "text": "glucose",
+    "type": "Chemical",
+    "start": 1051,
+    "end": 1058,
+    "score": 0.9999969005584717
+  },
+  {
+    "id": "E30",
+    "text": "glucose",
+    "type": "Chemical",
+    "start": 1118,
+    "end": 1125,
+    "score": 0.9999973773956299
+  },
+  {
+    "id": "E31",
+    "text": "glucose",
+    "type": "Chemical",
+    "start": 1146,
+    "end": 1153,
+    "score": 0.999996542930603
+  },
+  {
+    "id": "E32",
+    "text": "HMGB1",
+    "type": "Gene",
+    "start": 1167,
+    "end": 1172,
+    "score": 0.9999889135360718
+  },
+  {
+    "id": "E33",
+    "text": "mice",
+    "type": "Species",
+    "start": 1183,
+    "end": 1187,
+    "score": 0.9999879598617554
+  },
+  {
+    "id": "E34",
+    "text": "hyperglycemic",
+    "type": "Disease",
+    "start": 1421,
+    "end": 1434,
+    "score": 0.9999817609786987
+  },
+  {
+    "id": "E35",
+    "text": "mice",
+    "type": "Species",
+    "start": 1435,
+    "end": 1439,
+    "score": 0.9999878406524658
+  },
+  {
+    "id": "E36",
+    "text": "HMGB1",
+    "type": "Gene",
+    "start": 1450,
+    "end": 1455,
+    "score": 0.9999895095825195
+  },
+  {
+    "id": "E37",
+    "text": "HMGB1",
+    "type": "Gene",
+    "start": 1577,
+    "end": 1582,
+    "score": 0.9999896287918091
+  },
+  {
+    "id": "E38",
+    "text": "hyperglycemia",
+    "type": "Disease",
+    "start": 1597,
+    "end": 1610,
+    "score": 0.9999861717224121
+  },
+  {
+    "id": "E39",
+    "text": "HMGB1",
+    "type": "Gene",
+    "start": 1713,
+    "end": 1718,
+    "score": 0.9999895095825195
+  },
+  {
+    "id": "E40",
+    "text": "hyperglycemia",
+    "type": "Disease",
+    "start": 1792,
+    "end": 1805,
+    "score": 0.9999861717224121
+  },
+  {
+    "id": "E41",
+    "text": "DM",
+    "type": "Disease",
+    "start": 1829,
+    "end": 1831,
+    "score": 0.9999861717224121
+  },
+  {
+    "id": "E42",
+    "text": "HMGB1",
+    "type": "Gene",
+    "start": 2079,
+    "end": 2084,
+    "score": 0.99998939037323
+  },
+  {
+    "id": "E43",
+    "text": "DM",
+    "type": "Disease",
+    "start": 2088,
+    "end": 2090,
+    "score": 0.9999861717224121
+  }
+]
+
+Source text:
+Restoring glucose balance: Conditional HMGB1 knockdown mitigates hyperglycemia in a Streptozotocin induced mouse model
+
+Diabetes mellitus (DM) poses a significant global health burden, with hyperglycemia being a primary contributor to complications and high morbidity associated with this disorder. Existing glucose management strategies have shown suboptimal effectiveness, necessitating alternative approaches. In this study, we explored the role of high mobility group box 1 (HMGB1) in hyperglycemia, a protein implicated in initiating inflammation and strongly correlated with DM onset and progression. We hypothesized that HMGB1 knockdown will mitigate hyperglycemia severity and enhance glucose tolerance. To test this hypothesis, we utilized a novel inducible HMGB1 knockout (iHMGB1 KO) mouse model exhibiting systemic HMGB1 knockdown. Hyperglycemic phenotype was induced using low dose streptozotocin (STZ) injections, followed by longitudinal glucose measurements and oral glucose tolerance tests to evaluate the effect of HMGB1 knockdown on glucose metabolism. Our findings showed a substantial reduction in glucose levels and enhanced glucose tolerance in HMGB1 knockdown mice. Additionally, we performed RNA sequencing analyses, which identified potential alternations in genes and molecular pathways within the liver and skeletal muscle tissue that may account for the in vivo phenotypic changes observed in hyperglycemic mice following HMGB1 knockdown. In conclusion, our present study delivers the first direct evidence of a causal relationship between systemic HMGB1 knockdown and hyperglycemia in vivo, an association that had remained unexamined prior to this research. This discovery positions HMGB1 knockdown as a potentially efficacious therapeutic target for addressing hyperglycemia and, by extension, the DM epidemic. Furthermore, we have revealed potential underlying mechanisms, establishing the essential groundwork for subsequent in-depth mechanistic investigations focused on further elucidating and harnessing the promising therapeutic potential of HMGB1 in DM management.
