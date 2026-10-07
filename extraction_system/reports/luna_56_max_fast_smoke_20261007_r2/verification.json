@@ -1,0 +1,27 @@
+{
+  "fast_tier_pass": true,
+  "frozen_preflight": {
+    "assembled_nodes": 20,
+    "mentions": 41,
+    "passed": true,
+    "provider_requests": 0,
+    "span_mismatches": 0
+  },
+  "grounded_roles_pass": true,
+  "migration_promoted": false,
+  "offline_tests": {
+    "passed": true,
+    "reused_after_exact_candidate_byte_hash_verification": true,
+    "tests_run": 71
+  },
+  "operational_pass": true,
+  "prompts_unchanged": {
+    "PAPER_ROLE_EXTRACTION_SYSTEM_PROMPT": true,
+    "RELATION_EXTRACTION_SYSTEM_PROMPT": true
+  },
+  "protected_modules_unchanged": true,
+  "provider_generations": 2,
+  "repair_generations": 0,
+  "schemas_unchanged": true,
+  "scientific_pass": false
+}

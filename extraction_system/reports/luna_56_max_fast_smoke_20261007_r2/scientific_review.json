@@ -1,0 +1,188 @@
+{
+  "counts_for_description_only": {
+    "baseline_relations": 19,
+    "candidate_relations": 19
+  },
+  "findings": [
+    {
+      "candidate_relation_indices": [
+        0,
+        6
+      ],
+      "finding_id": "baseline_contract10:000",
+      "judgment": "preserved",
+      "material": true,
+      "rationale": "Cognition, recognition and memory improvements retain overexpression and AD context."
+    },
+    {
+      "candidate_relation_indices": [
+        1
+      ],
+      "finding_id": "baseline_contract10:001",
+      "judgment": "preserved",
+      "material": true,
+      "rationale": "Neurodegenerative disorder characterization retained."
+    },
+    {
+      "candidate_relation_indices": [
+        2
+      ],
+      "finding_id": "baseline_contract10:002",
+      "judgment": "material_regression",
+      "material": true,
+      "rationale": "SFPQ background assertion and evidence omit antioxidant-related functions and regulation of gene expression within brain neurons. No other relation encodes these functions."
+    },
+    {
+      "candidate_relation_indices": [],
+      "finding_id": "baseline_contract10:003",
+      "judgment": "omitted_nonmaterial",
+      "material": false,
+      "rationale": "Explicit knowledge gap omitted; ledger marks this finding nonmaterial."
+    },
+    {
+      "candidate_relation_indices": [
+        4
+      ],
+      "finding_id": "baseline_contract10:004",
+      "judgment": "preserved",
+      "material": true,
+      "rationale": "Amyloid-beta injection, lateral ventricle intervention and AD mouse-model induction retained."
+    },
+    {
+      "candidate_relation_indices": [
+        3,
+        4
+      ],
+      "finding_id": "baseline_contract10:005",
+      "judgment": "preserved",
+      "material": true,
+      "rationale": "Mouse model and injection induction retained across two assertions."
+    },
+    {
+      "candidate_relation_indices": [
+        5
+      ],
+      "finding_id": "baseline_contract10:006",
+      "judgment": "preserved",
+      "material": true,
+      "rationale": "Viral administration, SFPQ overexpression and hippocampus of AD mice retained."
+    },
+    {
+      "candidate_relation_indices": [
+        7
+      ],
+      "finding_id": "baseline_contract10:007",
+      "judgment": "preserved",
+      "material": true,
+      "rationale": "APP reduction retains SFPQ intervention and AD mice context."
+    },
+    {
+      "candidate_relation_indices": [
+        8
+      ],
+      "finding_id": "baseline_contract10:008",
+      "judgment": "preserved",
+      "material": true,
+      "rationale": "Tau reduction retains SFPQ intervention and AD mice context."
+    },
+    {
+      "candidate_relation_indices": [
+        9
+      ],
+      "finding_id": "baseline_contract10:009",
+      "judgment": "preserved",
+      "material": true,
+      "rationale": "APP marker association with AD retained."
+    },
+    {
+      "candidate_relation_indices": [
+        10
+      ],
+      "finding_id": "baseline_contract10:010",
+      "judgment": "preserved",
+      "material": true,
+      "rationale": "Tau marker association with AD retained."
+    },
+    {
+      "candidate_relation_indices": [
+        11
+      ],
+      "finding_id": "baseline_contract10:011",
+      "judgment": "preserved",
+      "material": true,
+      "rationale": "GST upregulation retains SFPQ intervention and AD mice context; adjacent synaptic/memory and antioxidant descriptions remain in evidence."
+    },
+    {
+      "candidate_relation_indices": [
+        12
+      ],
+      "finding_id": "baseline_contract10:012",
+      "judgment": "preserved",
+      "material": true,
+      "rationale": "HO-1 upregulation retains SFPQ intervention and AD mice context; adjacent synaptic/memory and antioxidant descriptions remain in evidence."
+    },
+    {
+      "candidate_relation_indices": [
+        13
+      ],
+      "finding_id": "baseline_contract10:013",
+      "judgment": "material_regression",
+      "material": true,
+      "rationale": "Ratio direction, Bcl-2/Bax endpoints and anti/proapoptotic descriptions retained, but SFPQ-overexpression intervention and AD mice context removed from all structured fields and the evidence."
+    },
+    {
+      "candidate_relation_indices": [
+        14
+      ],
+      "finding_id": "baseline_contract10:014",
+      "judgment": "material_regression",
+      "material": true,
+      "rationale": "Phosphorylated-to-total PI3K ratio direction and endpoints retained, but SFPQ-overexpression intervention and AD mice context removed from ratio assertion, qualifiers and evidence. Endpoint selection also isolates the previously connected full-name kinase node."
+    },
+    {
+      "candidate_relation_indices": [
+        15
+      ],
+      "finding_id": "baseline_contract10:015",
+      "judgment": "material_regression",
+      "material": true,
+      "rationale": "Phosphorylated-to-total AKT ratio direction and endpoints retained, but SFPQ-overexpression intervention and AD mice context removed from ratio assertion, qualifiers and evidence. Endpoint selection also isolates the previously connected full-name kinase node."
+    },
+    {
+      "candidate_relation_indices": [
+        16,
+        17
+      ],
+      "finding_id": "baseline_contract10:016",
+      "judgment": "preserved_with_qualification",
+      "material": true,
+      "rationale": "PI3K/AKT activation explicitly structured with SFPQ intervention and AD mice context, rather than only quoted. Two source-to-component edges replace baseline component-to-component edge; source does not assert direct biochemical causality."
+    },
+    {
+      "candidate_relation_indices": [
+        18
+      ],
+      "finding_id": "baseline_contract10:017",
+      "judgment": "preserved",
+      "material": true,
+      "rationale": "Tentative may-serve prevention/treatment target claim retained without strengthened modality."
+    }
+  ],
+  "material_regressions": 4,
+  "migration_promoted": false,
+  "review_method": "Manual finding-level comparison of all frozen Contract 10 assertions to validated candidate structured fields and evidence; counts are not acceptance criteria.",
+  "scientific_pass": false,
+  "stop_rule": "No scientific repair requests, tuning, additional papers or additional smoke runs.",
+  "topology_review": {
+    "formerly_isolated_now_connected": [
+      "doc_e_003"
+    ],
+    "newly_isolated_nodes": [
+      "doc_e_017",
+      "doc_e_019"
+    ],
+    "node_count_unchanged": true,
+    "passed": false,
+    "reason": "Ratio endpoints changed from full-name phosphorylated kinase mentions E32/E35 to shorthand mentions E33/E36, isolating the previously connected full-name PI3K and AKT nodes. Ratio denominators remain connected, but grounded role metadata does not restore lost topology."
+  }
+}

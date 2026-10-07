@@ -1,0 +1,43 @@
+--- smoke_driver.py
++++ smoke_driver.py
+@@ -85,7 +85,7 @@
+     config = relation.OpenAIConfig()
+     assert (config.model, config.reasoning_effort, config.background, config.service_tier) == ("gpt-5.6-luna", "max", True, "fast")
+     assert role.DEFAULT_PAPER_ROLE_MODEL == config.model and role.DEFAULT_PAPER_ROLE_REASONING_EFFORT == config.reasoning_effort
+-    offline = json.loads((CACHE / "offline_verification.json").read_text())
++    offline = json.loads((CACHE / "offline_verification.json").read_text(encoding="utf-8"))
+     assert offline["passed"]
+     assert tier_passes("fast", "priority")
+     assert tier_passes("default", "default", deliberate_standard=True)
+@@ -108,11 +108,11 @@
+         write(REPORT / f"{name}_transport_schema.json", transport)
+     write(REPORT / "inputs.json", {key: packet[key] for key in ("paper_id", "title", "source", "entities", "baseline_relations")})
+     write(REPORT / "baseline_graph.json", graph.to_dict())
+-    ledger = json.loads(LEDGER.read_text())["views"]["baseline_contract10"]["findings"]
++    ledger = json.loads(LEDGER.read_text(encoding="utf-8"))["views"]["baseline_contract10"]["findings"]
+     write(REPORT / "frozen_findings.json", [{key: finding[key] for key in ("finding_id", "material", "baseline_relation_indices", "baseline_assertions", "source_evidence")} for finding in ledger])
+     diff = subprocess.check_output(["git", "-c", "safe.directory=C:/Projects/Biomed", "-C", "C:/Projects/Biomed", "diff", "--", "extraction_system"])
+     (REPORT / "candidate.patch").write_bytes(diff)
+-    tracked = json.loads((CACHE / "original_hashes.json").read_text())
++    tracked = json.loads((CACHE / "original_hashes.json").read_text(encoding="utf-8"))
+     write(CACHE / "candidate_hashes.json", {name: digest((ROOT/name).read_bytes()) for name in tracked})
+     write(REPORT / "preflight.json", {
+         "prepared_at_utc": datetime.now(timezone.utc).isoformat(),
+@@ -134,14 +134,14 @@
+ 
+ 
+ def run():
+-    preflight = json.loads((REPORT / "preflight.json").read_text())
++    preflight = json.loads((REPORT / "preflight.json").read_text(encoding="utf-8"))
+     assert not (REPORT / "run_started.json").exists(), "One-shot run has already started; do not resubmit"
+     assert digest(PACKET.read_bytes()) == preflight["input_packet_file_sha256"]
+     assert digest(LEDGER.read_bytes()) == preflight["finding_ledger_file_sha256"]
+     assert digest(Path(__file__).read_bytes()) == preflight["driver_sha256"]
+-    for name, expected in json.loads((CACHE/"candidate_hashes.json").read_text()).items():
++    for name, expected in json.loads((CACHE/"candidate_hashes.json").read_text(encoding="utf-8")).items():
+         assert digest((ROOT/name).read_bytes()) == expected, name
+-    packet = json.loads(PACKET.read_text())
++    packet = json.loads(PACKET.read_text(encoding="utf-8"))
+     frozen = FrozenEntities(packet)
+     key = env_value(env_value("OPENAI_API_KEY_ENV") or "OPENAI_API_KEY")
+     assert key, "Credentials unavailable"

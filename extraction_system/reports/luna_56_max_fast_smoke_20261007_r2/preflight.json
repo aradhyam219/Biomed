@@ -1,0 +1,69 @@
+{
+  "baseline_head": "5aa9e6b090a2cabfe31badf9f835638e80185c7f",
+  "baseline_relations_sha256": "811609eeceba75d865638e9b1d24341b5513db271ac777d7be22f52d568bfce9",
+  "budget": {
+    "initial_relation_generations": 1,
+    "initial_role_batches": 1,
+    "maximum_output_repairs_per_provider": 2,
+    "operational_resubmissions": 0,
+    "papers": 1,
+    "scientific_repairs": 0
+  },
+  "candidate": {
+    "background": true,
+    "generation_timeout_seconds": 900.0,
+    "max_completion_tokens": 128000,
+    "max_retries": 2,
+    "model": "gpt-5.6-luna",
+    "poll_interval_seconds": 3.0,
+    "reasoning_effort": "max",
+    "service_tier": "fast"
+  },
+  "driver_sha256": "76e024fd948f7109aad252745b89060f8132ed32ab1a60ff130e77eb637f8e62",
+  "entities_sha256": "7af02036660ba6d5581468deb3b777039c7a6912d4ea4c5ee1027387d10f5e0b",
+  "finding_ledger_file_sha256": "11796adfa7031f147ca2f9319cdbbd3a752f419babd4cfb6040e5c08730f23b8",
+  "input_packet_file_sha256": "bded650184e2954d52a652e31cd97d621df22537d52199f252cea61ab5dfb8b6",
+  "migration_promoted": false,
+  "offline_verification": {
+    "command": "existing .venv Python; focused unittest suites (uv cache unavailable in sandbox)",
+    "errors": 0,
+    "failures": 0,
+    "modules": [
+      "test_responses_execution",
+      "test_relation_extraction",
+      "test_relation_cli",
+      "test_llm_cli",
+      "test_llm_pipeline",
+      "test_paper_roles"
+    ],
+    "passed": true,
+    "skipped": 0,
+    "tests_run": 71
+  },
+  "paper_id": "PMCID:PMC11824863",
+  "prepared_at_utc": "2026-10-07T10:41:12.096134+00:00",
+  "protected_modules": {
+    "entity_assembly.py": "1a443939809e47b95a43929c7f083e11a2f27e99b872d89bb2f11a0b379ece1c",
+    "graph.py": "5062ad26454cf5b56739d3404031c9d92457d797984a3075fb7d5a53bf85b21d",
+    "llm_pipeline.py": "547441f18127bb9c5d134bdcbba5c6a04ff6d2954883ad298c6ea2f9abf95fa6",
+    "paper_roles.py": "68defa7f74558eb853ddc37b7e9215e44f2eee7454662ea3dcf12672ce4e6bbe",
+    "relation_extraction.py": "ac5ec09b2178e23fe3795f3e4e0d3cc40f4de83769aeb7731c85d950dfcc022c",
+    "responses_execution.py": "38cfd87727e7cd8c0f989afaebe2f38db566aa5747509b82455fd61719c32c41"
+  },
+  "provider_calls": 0,
+  "schemas": {
+    "relation": {
+      "prompt_sha256": "13f38a6e94db74b534eb0df0b139287ace2e714fc908276ce4c3572f9b25836f",
+      "semantic_sha256": "023435da3fa18abb77987313626636eff7bedda28739603db54a2f2c8137c945",
+      "transport_sha256": "b0506680756b7ad8332d976a419cdee57a81e1051dd115f291f65d77bd656510"
+    },
+    "role": {
+      "prompt_sha256": "dded1e4176f92a3872ef2b277d4ef7b261ba919e555cbdfdf210d0844a3d8e4a",
+      "semantic_sha256": "54d71c984369f1a2d5ec316ff60f1574ec033e122bb0526440bebed967a62c67",
+      "transport_sha256": "2eeaabad36930f66e004c48641fa559a387cd6b456840b69e246a0da3b0349ba"
+    }
+  },
+  "scientific_gate": "Preserve every material Contract 10 finding and grounded role; any material regression blocks migration without tuning.",
+  "source_sha256": "604ce7f15b0ca00853cfc4cc07039d51059792e907d3da07c08be40730fb1b5b",
+  "tier_gate": "Each default generation must independently record requested fast and observed priority; default/missing observation blocks migration."
+}

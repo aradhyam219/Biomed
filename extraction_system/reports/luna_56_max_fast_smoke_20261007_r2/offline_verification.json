@@ -1,0 +1,16 @@
+{
+  "modules": [
+    "test_responses_execution",
+    "test_relation_extraction",
+    "test_relation_cli",
+    "test_llm_cli",
+    "test_llm_pipeline",
+    "test_paper_roles"
+  ],
+  "tests_run": 71,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "passed": true,
+  "command": "existing .venv Python; focused unittest suites (uv cache unavailable in sandbox)"
+}

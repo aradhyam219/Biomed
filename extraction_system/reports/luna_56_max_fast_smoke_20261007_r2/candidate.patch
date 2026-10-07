@@ -1,0 +1,451 @@
+diff --git a/extraction_system/.env.example b/extraction_system/.env.example
+index 2c24b6a..7509467 100644
+--- a/extraction_system/.env.example
++++ b/extraction_system/.env.example
+@@ -1,6 +1,6 @@
+ OPENAI_API_KEY=
+-BIOMEDICAL_RELATION_MODEL=gpt-6.1-sol
+-BIOMEDICAL_RELATION_REASONING_EFFORT=medium
++BIOMEDICAL_RELATION_MODEL=gpt-5.6-luna
++BIOMEDICAL_RELATION_REASONING_EFFORT=max
+ BIOMEDICAL_RELATION_BACKGROUND=true
+-BIOMEDICAL_RELATION_SERVICE_TIER=default
++BIOMEDICAL_RELATION_SERVICE_TIER=fast
+ BIOMEDICAL_RELATION_MAX_COMPLETION_TOKENS=128000
+diff --git a/extraction_system/README.md b/extraction_system/README.md
+index 6464488..6360bab 100644
+--- a/extraction_system/README.md
++++ b/extraction_system/README.md
+@@ -112,14 +112,19 @@ request a confidence score. The provider-independent relation contract can
+ still preserve a score supplied by another implementation. LangChain/OpenAI
+ objects stay inside the relation harness.
+ The default OpenAI relation harness uses bounded Responses API background
+-execution with `gpt-6.1-sol`, `medium` reasoning effort, Standard/default service
+-tier (`service_tier=default`), and a `128000` output-token ceiling. The production
++execution with `gpt-5.6-luna`, `max` reasoning effort, Fast service
++tier (`service_tier=fast`), and a `128000` output-token ceiling. The production
+ prompt remains the original Contract 10 / 12A conservative evidence-grounded
+ control prompt. Explicit configuration can still select foreground LangChain
+ Responses execution or another supported model, reasoning effort, or tier. The compatibility
+ `BIOMEDICAL_RELATION_MAX_COMPLETION_TOKENS` setting is mapped to the Responses
+ API output-token field inside that provider seam.
+ 
++Automatic paper-role enrichment independently uses Luna/max/Fast background
++Responses. Diagnostics preserve requested and observed service tiers separately:
++GPT-5.6 Fast requests specify `fast` and successful Fast processing reports
++`priority`; a response reporting `default` was served as Standard.
++
+ For local configuration, copy `.env.example` to `.env` and add the key when the
+ live smoke is authorized. The documented command uses uv's existing env-file
+ support to load it; `.env` is ignored by Git. The model and bounded-repair
+diff --git a/extraction_system/docs/ARCHITECTURE.md b/extraction_system/docs/ARCHITECTURE.md
+index 94b738e..0cbfee1 100644
+--- a/extraction_system/docs/ARCHITECTURE.md
++++ b/extraction_system/docs/ARCHITECTURE.md
+@@ -166,8 +166,8 @@ and node-only enrichment; `llm_paper_roles` owns the separate Responses API
+ structured-output harness using the shared `responses_execution` transport.
+ Ordinary pretrained graph generation lazily constructs this role provider only
+ after final degree-zero detection, then validates and attaches one batched role
+-result for every degree-zero node. It uses GPT-6.1 Sol / medium / Standard
+-(`default`) / background Responses independently of relation-task overrides.
++result for every degree-zero node. It uses GPT-5.6 Luna / max / Fast
++(`fast`) / background Responses independently of relation-task overrides.
+ Credentials, endpoint, output ceiling, polling/deadline, and finite repair budget
+ come from `OpenAIConfig`. Invalid or failed enrichment raises before returning a
+ graph; attachment is atomic and topology is unchanged. Custom role injection and
+@@ -307,8 +307,8 @@ the composed HunFlair2 path. It accepts only the normalized entities returned by
+ the entity seam and returns relations after the existing evidence, endpoint, and
+ negation validation. The OpenAI path defaults to bounded background Responses
+ execution inside `llm_relation_extraction` and `responses_execution`.
+-`OpenAIConfig` defaults to `gpt-6.1-sol`, `reasoning.effort=medium`, a `128000`
+-output-token ceiling, `background=True`, and `service_tier="default"` (Standard
++`OpenAIConfig` defaults to `gpt-5.6-luna`, `reasoning.effort=max`, a `128000`
++output-token ceiling, `background=True`, and `service_tier="fast"` (Fast
+ service). Explicit `background=False` retains the LangChain Responses path. The public
+ `max_completion_tokens` configuration name remains for compatibility and maps to
+ the Responses API output-token field.
+@@ -338,14 +338,17 @@ The ordinary default configuration is equivalent to:
+ 
+ ```python
+ OpenAIConfig(
+-    model="gpt-6.1-sol",
+-    reasoning_effort="medium",
++    model="gpt-5.6-luna",
++    reasoning_effort="max",
+     background=True,
+-    service_tier="default",
++    service_tier="fast",
+ )
+ ```
+ 
+-The Responses API value `default` requests Standard service. The equivalent
++The Responses API value `fast` requests Fast service. GPT-5.6 reports `priority`
++when served with Fast processing. Requested and observed tiers are retained
++independently; an observed `default` is Standard processing, not verified Fast.
++Explicit `default` overrides continue to request Standard service. The equivalent
+ environment settings are `BIOMEDICAL_RELATION_MODEL`,
+ `BIOMEDICAL_RELATION_REASONING_EFFORT`,
+ `BIOMEDICAL_RELATION_BACKGROUND`, and `BIOMEDICAL_RELATION_SERVICE_TIER`.
+@@ -354,10 +357,10 @@ the per-generation timeout defaults to 900 seconds through
+ `BIOMEDICAL_RELATION_TIMEOUT_SECONDS`. That timeout bounds one provider
+ generation and is an operational control, not a scientific pass/fail rule.
+ Callers can read `last_generation_diagnostics` or provide a diagnostics callback.
+-GPT-6.1 Sol with medium reasoning, Standard service, background execution, and
++GPT-5.6 Luna with max reasoning, Fast service, background execution, and
+ the unchanged Contract 10 / 12A control prompt is the promoted production
+-default. The previous Luna/max/foreground configuration remains available
+-through explicit overrides.
++default. Other models, reasoning efforts, tiers, and foreground relation
++execution remain available through explicit overrides.
+ The legacy GLiREL-compatible relation/evaluation path and historical Contract 11
+ reports remain preserved;
+ the production provider does not depend on report-directory code.
+diff --git a/extraction_system/docs/product/CURRENT_SPEC.md b/extraction_system/docs/product/CURRENT_SPEC.md
+index 8085e41..3ba9f90 100644
+--- a/extraction_system/docs/product/CURRENT_SPEC.md
++++ b/extraction_system/docs/product/CURRENT_SPEC.md
+@@ -13,8 +13,8 @@ mentions into document-local entities, and the composed prototype can expose
+ those nodes with grounded relations as deterministic graph-ready JSON.
+ 
+ The active prototype uses pretrained HunFlair2 for NER and the existing grounded
+-LLM relation extractor downstream. Ordinary relation extraction uses GPT-6.1 Sol
+-with medium reasoning, Standard/default service tier, and bounded Responses API
++LLM relation extractor downstream. Ordinary relation extraction uses GPT-5.6 Luna
++with max reasoning, Fast service tier, and bounded Responses API
+ background execution. Its original Contract 10 / 12A conservative
+ evidence-grounded prompt and semantic relation contract remain unchanged.
+ Explicit model, reasoning, tier, and execution overrides remain supported.
+@@ -112,7 +112,7 @@ not include:
+ - target-domain NER evaluation, model selection, or fine-tuning; the existing
+   reconnaissance, pilot, validator, and training-readiness assets remain
+   preserved for later use;
+-- further relation-model selection or prompt refinement; the selected Sol medium
++- further relation-model selection or prompt refinement; the selected Luna max Fast
+   background configuration and Contract 10 / 12A control prompt are the
+   production default;
+ - biomedical entity normalization/linking, meaning resolution of a mention to a
+@@ -226,7 +226,7 @@ the paper title, complete supplied text, and every source mention for each node.
+ Role output is limited to `substantive` and `contextual`, contains one or two
+ concise paragraphs, and retains exact verbatim source evidence. Role prose is
+ node metadata only: it never creates, modifies, or implies a graph edge.
+-The role provider uses GPT-6.1 Sol, medium reasoning, Standard (`default`) service,
++The role provider uses GPT-5.6 Luna, max reasoning, Fast (`fast`) service,
+ and the shared background Responses executor. No degree-zero nodes means no role
+ provider setup or call. Provider or grounding failures raise explicitly before
+ a graph is returned; incomplete batches are never partially attached. Explicit
+@@ -355,9 +355,11 @@ runtime dependencies remain isolated from the main production environment.
+   source evidence through the existing validation path.
+ - Provider execution mode and strict transport conversion do not change the
+   relation prompt, semantic schema, parser, or local validation contract. The
+-  background mode is opt-in; model, reasoning, service-tier, polling, and
+-  per-generation timeout settings remain configurable, with the existing model
+-  and synchronous execution preserved as defaults until a separate promotion.
++  background mode is the default; model, reasoning, service-tier, polling, and
++  per-generation timeout settings remain configurable. Requested and observed
++  service tiers remain independent: default-path requests specify `fast`, while
++  verified Fast processing reports `priority`. Standard (`default`) is an
++  explicit override, not the ordinary default.
+ - Each grounded relation retains a concise graph-friendly predicate plus a
+   required source-grounded assertion and optional explicit intervention,
+   effects, and contextual qualifiers. These semantic qualifiers remain on the
+diff --git a/extraction_system/src/biomedical_extractor/llm_paper_roles.py b/extraction_system/src/biomedical_extractor/llm_paper_roles.py
+index 000de8d..66ed0ef 100644
+--- a/extraction_system/src/biomedical_extractor/llm_paper_roles.py
++++ b/extraction_system/src/biomedical_extractor/llm_paper_roles.py
+@@ -27,8 +27,8 @@ from .paper_roles import (
+ )
+ 
+ 
+-DEFAULT_PAPER_ROLE_MODEL = "gpt-6.1-sol"
+-DEFAULT_PAPER_ROLE_REASONING_EFFORT = "medium"
++DEFAULT_PAPER_ROLE_MODEL = "gpt-5.6-luna"
++DEFAULT_PAPER_ROLE_REASONING_EFFORT = "max"
+ 
+ PAPER_ROLE_EXTRACTION_SYSTEM_PROMPT = """You are a conservative biomedical paper-role explainer.
+ 
+@@ -116,7 +116,7 @@ class LLMPaperRoleExtractor:
+             model=DEFAULT_PAPER_ROLE_MODEL,
+             reasoning_effort=DEFAULT_PAPER_ROLE_REASONING_EFFORT,
+             max_output_tokens=config.max_completion_tokens,
+-            service_tier="default",
++            service_tier="fast",
+             poll_interval_seconds=float(config.poll_interval_seconds),
+             generation_timeout_seconds=float(config.generation_timeout_seconds),
+             schema=_structured_payload_schema(),
+diff --git a/extraction_system/src/biomedical_extractor/llm_relation_extraction.py b/extraction_system/src/biomedical_extractor/llm_relation_extraction.py
+index 814c36d..4559124 100644
+--- a/extraction_system/src/biomedical_extractor/llm_relation_extraction.py
++++ b/extraction_system/src/biomedical_extractor/llm_relation_extraction.py
+@@ -31,8 +31,8 @@ from .responses_execution import (
+     ResponsesExecutionError,
+ )
+ 
+-DEFAULT_LLM_RELATION_MODEL = "gpt-6.1-sol"
+-DEFAULT_LLM_REASONING_EFFORT = "medium"
++DEFAULT_LLM_RELATION_MODEL = "gpt-5.6-luna"
++DEFAULT_LLM_REASONING_EFFORT = "max"
+ DEFAULT_LLM_MAX_COMPLETION_TOKENS = 128000
+ SUPPORTED_LLM_REASONING_EFFORTS = (
+     "none",
+@@ -108,7 +108,7 @@ class OpenAIConfig:
+     max_completion_tokens: int | None = DEFAULT_LLM_MAX_COMPLETION_TOKENS
+     max_retries: int = 2
+     background: bool = True
+-    service_tier: str | None = "default"
++    service_tier: str | None = "fast"
+     poll_interval_seconds: float = 3.0
+     generation_timeout_seconds: float = 900.0
+ 
+@@ -177,7 +177,7 @@ class OpenAIConfig:
+             ),
+             max_retries=int(os.getenv("BIOMEDICAL_RELATION_MAX_RETRIES", "2")),
+             background=background,
+-            service_tier=os.getenv("BIOMEDICAL_RELATION_SERVICE_TIER", "default") or None,
++            service_tier=os.getenv("BIOMEDICAL_RELATION_SERVICE_TIER", "fast") or None,
+             poll_interval_seconds=(float(poll_interval) if poll_interval else 3.0),
+             generation_timeout_seconds=(
+                 float(generation_timeout) if generation_timeout else 900.0
+diff --git a/extraction_system/tests/test_llm_cli.py b/extraction_system/tests/test_llm_cli.py
+index 7392c47..4e2904b 100644
+--- a/extraction_system/tests/test_llm_cli.py
++++ b/extraction_system/tests/test_llm_cli.py
+@@ -72,7 +72,7 @@ class LLMCLITests(unittest.TestCase):
+         self.assertEqual(kwargs["entity_threshold"], 0.5)
+         self.assertEqual(kwargs["device"], "cpu")
+         self.assertIsInstance(kwargs["llm_config"], OpenAIConfig)
+-        self.assertEqual(kwargs["llm_config"].model, "gpt-6.1-sol")
++        self.assertEqual(kwargs["llm_config"].model, "gpt-5.6-luna")
+         payload = json.loads(output.getvalue())
+         self.assertEqual(payload["relations"][0]["target"], "E1")
+ 
+diff --git a/extraction_system/tests/test_paper_roles.py b/extraction_system/tests/test_paper_roles.py
+index f26f1e8..0c1accd 100644
+--- a/extraction_system/tests/test_paper_roles.py
++++ b/extraction_system/tests/test_paper_roles.py
+@@ -2,6 +2,7 @@ from __future__ import annotations
+ 
+ import unittest
+ import json
++import os
+ from unittest.mock import patch, Mock
+ 
+ from biomedical_extractor.llm_relation_extraction import OpenAIConfig
+@@ -283,6 +284,33 @@ class PaperRoleContractTests(unittest.TestCase):
+         with self.assertRaisesRegex(PaperRoleValidationError, "missing node"):
+             pipeline.extract_graph(text)
+ 
++    def test_empty_environment_role_defaults_reach_responses_boundary(self):
++        client = Mock()
++        payload = {"roles": [{"node_id": "N1", "category": "substantive",
++                             "paragraphs": ["GeneX was measured."], "evidence": ["GeneX"]}]}
++        client.responses.create.return_value = Mock(
++            id="resp_role", status="completed", output_text=json.dumps(payload),
++            output=[], error=None, incomplete_details=None, usage=None,
++            model="gpt-5.6-luna", reasoning={"effort": "max"},
++            service_tier="priority", background=True,
++        )
++        with patch.dict(os.environ, {"OPENAI_API_KEY": "test-key"}, clear=True), patch(
++            "openai.OpenAI", return_value=client
++        ):
++            extractor = LLMPaperRoleExtractor.from_openai()
++        target = PaperRoleTarget("N1", "GeneX", "Gene", (Entity("E1", "GeneX", "Gene", 0, 5),))
++        extractor.extract_roles("Title", "GeneX was measured.", (target,))
++
++        request = client.responses.create.call_args.kwargs
++        self.assertEqual(request["model"], "gpt-5.6-luna")
++        self.assertEqual(request["reasoning"], {"effort": "max"})
++        self.assertEqual(request["service_tier"], "fast")
++        self.assertEqual(request["max_output_tokens"], 128000)
++        self.assertTrue(request["background"])
++        diagnostics = extractor.last_generation_diagnostics[0]
++        self.assertEqual(diagnostics["requested_service_tier"], "fast")
++        self.assertEqual(diagnostics["observed_service_tier"], "priority")
++
+     def test_background_role_transport_configuration_and_bounded_repair(self):
+         client = Mock()
+         good = {"roles": [{"node_id": "N1", "category": "substantive",
+@@ -303,9 +331,9 @@ class PaperRoleContractTests(unittest.TestCase):
+         self.assertEqual(len(result.records), 1)
+         self.assertEqual(client.responses.create.call_count, 2)
+         request = client.responses.create.call_args_list[0].kwargs
+-        self.assertEqual(request["model"], "gpt-6.1-sol")
+-        self.assertEqual(request["reasoning"], {"effort": "medium"})
+-        self.assertEqual(request["service_tier"], "default")
++        self.assertEqual(request["model"], "gpt-5.6-luna")
++        self.assertEqual(request["reasoning"], {"effort": "max"})
++        self.assertEqual(request["service_tier"], "fast")
+         self.assertTrue(request["background"])
+         self.assertEqual(request["text"]["format"]["name"], "StructuredPaperRolePayload")
+         schema = request["text"]["format"]["schema"]
+diff --git a/extraction_system/tests/test_relation_cli.py b/extraction_system/tests/test_relation_cli.py
+index 7c33190..c60a80f 100644
+--- a/extraction_system/tests/test_relation_cli.py
++++ b/extraction_system/tests/test_relation_cli.py
+@@ -89,7 +89,7 @@ class RelationCLITests(unittest.TestCase):
+         self.assertEqual(result, 0)
+         config = load.call_args.args[0]
+         self.assertIsInstance(config, OpenAIConfig)
+-        self.assertEqual(config.model, "gpt-6.1-sol")
++        self.assertEqual(config.model, "gpt-5.6-luna")
+         payload = json.loads(output.getvalue())
+         self.assertEqual(payload["entities"], [{**entity, "score": None} for entity in entities])
+         self.assertEqual(payload["relations"][0]["source"], "E1")
+diff --git a/extraction_system/tests/test_relation_extraction.py b/extraction_system/tests/test_relation_extraction.py
+index b550bab..8ff1d7c 100644
+--- a/extraction_system/tests/test_relation_extraction.py
++++ b/extraction_system/tests/test_relation_extraction.py
+@@ -371,11 +371,12 @@ class RelationContractTests(unittest.TestCase):
+             LLMRelationExtractor.from_openai(OpenAIConfig(api_key="test-key", background=False))
+ 
+         self.assertEqual(OpenAIConfig().model, DEFAULT_LLM_RELATION_MODEL)
+-        self.assertEqual(captured["model"], "gpt-6.1-sol")
++        self.assertEqual(captured["model"], "gpt-5.6-luna")
+         self.assertTrue(captured["use_responses_api"])
+-        self.assertEqual(captured["reasoning"], {"effort": "medium"})
++        self.assertEqual(captured["reasoning"], {"effort": "max"})
+         self.assertNotIn("reasoning_effort", captured)
+         self.assertEqual(captured["max_completion_tokens"], 128000)
++        self.assertEqual(captured["service_tier"], "fast")
+         self.assertNotIn("temperature", captured)
+         self.assertNotIn("max_tokens", captured)
+ 
+@@ -404,10 +405,10 @@ class RelationContractTests(unittest.TestCase):
+         with patch.dict(os.environ, {}, clear=True):
+             config = OpenAIConfig.from_environment()
+ 
+-        self.assertEqual(config.model, "gpt-6.1-sol")
+-        self.assertEqual(config.reasoning_effort, "medium")
++        self.assertEqual(config.model, "gpt-5.6-luna")
++        self.assertEqual(config.reasoning_effort, "max")
+         self.assertTrue(config.background)
+-        self.assertEqual(config.service_tier, "default")
++        self.assertEqual(config.service_tier, "fast")
+         self.assertEqual(config.max_completion_tokens, 128000)
+ 
+     def test_environment_overrides_reasoning_and_completion_budget(self):
+diff --git a/extraction_system/tests/test_responses_execution.py b/extraction_system/tests/test_responses_execution.py
+index 86bd9e5..1eb8482 100644
+--- a/extraction_system/tests/test_responses_execution.py
++++ b/extraction_system/tests/test_responses_execution.py
+@@ -137,7 +137,8 @@ class _FakeOpenAI:
+     def __init__(self, **kwargs):
+         self.kwargs = kwargs
+         self.responses = _FakeResponses(
+-            [_response(output_text=json.dumps({"relations": [RELATION]}))]
++            [_response(output_text=json.dumps({"relations": [RELATION]}),
++                       model="gpt-5.6-luna", effort="max", service_tier="priority")]
+         )
+         type(self).instances.append(self)
+ 
+@@ -181,15 +182,24 @@ def _executor(
+ 
+ 
+ class OpenAIConfigTests(unittest.TestCase):
+-    def test_defaults_select_sol_medium_standard_background(self):
++    def test_empty_environment_selects_luna_max_fast_background(self):
++        with patch.dict(os.environ, {}, clear=True):
++            config = OpenAIConfig.from_environment()
++
++        self.assertEqual(config.model, "gpt-5.6-luna")
++        self.assertEqual(config.reasoning_effort, "max")
++        self.assertEqual(config.service_tier, "fast")
++        self.assertTrue(config.background)
++
++    def test_defaults_select_luna_max_fast_background(self):
+         config = OpenAIConfig(api_key=API_KEY, base_url=BASE_URL)
+ 
+-        self.assertEqual(config.model, "gpt-6.1-sol")
+-        self.assertEqual(config.reasoning_effort, "medium")
++        self.assertEqual(config.model, "gpt-5.6-luna")
++        self.assertEqual(config.reasoning_effort, "max")
+         self.assertEqual(config.max_completion_tokens, DEFAULT_LLM_MAX_COMPLETION_TOKENS)
+         self.assertEqual(config.max_retries, 2)
+         self.assertTrue(config.background)
+-        self.assertEqual(config.service_tier, "default")
++        self.assertEqual(config.service_tier, "fast")
+         self.assertEqual(config.poll_interval_seconds, 3.0)
+         self.assertEqual(config.generation_timeout_seconds, 900.0)
+         self.assertNotIn(API_KEY, repr(config))
+@@ -198,8 +208,8 @@ class OpenAIConfigTests(unittest.TestCase):
+     def test_environment_can_override_promoted_defaults(self):
+         values = {
+             "OPENAI_API_KEY": API_KEY,
+-            "BIOMEDICAL_RELATION_MODEL": "gpt-5.6-luna",
+-            "BIOMEDICAL_RELATION_REASONING_EFFORT": "max",
++            "BIOMEDICAL_RELATION_MODEL": "gpt-6.1-sol",
++            "BIOMEDICAL_RELATION_REASONING_EFFORT": "medium",
+             "BIOMEDICAL_RELATION_BACKGROUND": "false",
+             "BIOMEDICAL_RELATION_SERVICE_TIER": "flex",
+             "BIOMEDICAL_RELATION_POLL_INTERVAL_SECONDS": "4.5",
+@@ -208,8 +218,8 @@ class OpenAIConfigTests(unittest.TestCase):
+         with patch.dict(os.environ, values, clear=True):
+             config = OpenAIConfig.from_environment()
+ 
+-        self.assertEqual(config.model, "gpt-5.6-luna")
+-        self.assertEqual(config.reasoning_effort, "max")
++        self.assertEqual(config.model, "gpt-6.1-sol")
++        self.assertEqual(config.reasoning_effort, "medium")
+         self.assertFalse(config.background)
+         self.assertEqual(config.service_tier, "flex")
+         self.assertEqual(config.poll_interval_seconds, 4.5)
+@@ -299,6 +309,24 @@ class StrictTransportTests(unittest.TestCase):
+ 
+ 
+ class BackgroundLifecycleTests(unittest.TestCase):
++    def test_requested_and_observed_tiers_remain_independent(self):
++        for requested, observed in (
++            ("fast", "priority"),
++            ("default", "default"),
++            ("fast", "default"),
++            ("fast", None),
++        ):
++            with self.subTest(requested=requested, observed=observed):
++                responses = _FakeResponses([_response(service_tier=observed)])
++                executor = _executor(_FakeClient(responses), service_tier=requested)
++                diagnostics = {"generation_number": 1, "repair": False}
++
++                executor.execute("fixed prompt", diagnostics)
++
++                self.assertEqual(responses.create_calls[0]["service_tier"], requested)
++                self.assertEqual(diagnostics["requested_service_tier"], requested)
++                self.assertEqual(diagnostics["observed_service_tier"], observed)
++
+     def test_submission_without_response_id_fails_without_poll_cancel_or_resubmit(self):
+         responses = _FakeResponses(
+             [_response(response_id="", status="queued", output_text=None)]
+@@ -630,9 +658,9 @@ class ProductionBoundaryTests(unittest.TestCase):
+         self.assertEqual(client.kwargs["timeout"], 60.0)
+         request = client.responses.create_calls[0]
+         self.assertEqual(request["input"], _build_prompt(TEXT, ENTITIES, RELATION_EXTRACTION_SYSTEM_PROMPT))
+-        self.assertEqual(request["model"], "gpt-6.1-sol")
+-        self.assertEqual(request["reasoning"], {"effort": "medium"})
+-        self.assertEqual(request["service_tier"], "default")
++        self.assertEqual(request["model"], "gpt-5.6-luna")
++        self.assertEqual(request["reasoning"], {"effort": "max"})
++        self.assertEqual(request["service_tier"], "fast")
+         self.assertEqual(request["max_output_tokens"], 128000)
+         self.assertTrue(request["background"])
+         self.assertFalse(request["store"])
+@@ -642,9 +670,10 @@ class ProductionBoundaryTests(unittest.TestCase):
+         self.assertEqual(len(diagnostics), 1)
+         self.assertEqual(diagnostics[0]["generation_number"], 1)
+         self.assertFalse(diagnostics[0]["repair"])
+-        self.assertEqual(diagnostics[0]["requested_model"], "gpt-6.1-sol")
+-        self.assertEqual(diagnostics[0]["observed_reasoning_effort"], "medium")
+-        self.assertEqual(diagnostics[0]["observed_service_tier"], "default")
++        self.assertEqual(diagnostics[0]["requested_model"], "gpt-5.6-luna")
++        self.assertEqual(diagnostics[0]["observed_reasoning_effort"], "max")
++        self.assertEqual(diagnostics[0]["requested_service_tier"], "fast")
++        self.assertEqual(diagnostics[0]["observed_service_tier"], "priority")
+         self.assertIs(diagnostics[0]["observed_background"], True)
+         serialized = json.dumps(diagnostics)
+         self.assertNotIn(API_KEY, serialized)
+@@ -652,7 +681,7 @@ class ProductionBoundaryTests(unittest.TestCase):
+         snapshots[0]["requested_model"] = "changed copy"
+         self.assertEqual(
+             extractor.last_generation_diagnostics[0]["requested_model"],
+-            "gpt-6.1-sol",
++            "gpt-5.6-luna",
+         )
+ 
+     def test_background_repairs_are_bounded_and_empty_input_is_a_fast_path(self):

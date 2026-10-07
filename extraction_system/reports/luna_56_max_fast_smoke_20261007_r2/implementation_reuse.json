@@ -1,0 +1,17 @@
+{
+  "candidate_byte_identical_files": [
+    ".env.example",
+    "README.md",
+    "docs/ARCHITECTURE.md",
+    "docs/product/CURRENT_SPEC.md",
+    "src/biomedical_extractor/llm_paper_roles.py",
+    "src/biomedical_extractor/llm_relation_extraction.py",
+    "tests/test_llm_cli.py",
+    "tests/test_paper_roles.py",
+    "tests/test_relation_cli.py",
+    "tests/test_relation_extraction.py",
+    "tests/test_responses_execution.py"
+  ],
+  "prior_offline_tests_passed": 71,
+  "driver_semantic_change": "Only explicit UTF-8 decoding; fresh destination is administrative."
+}

@@ -1,0 +1,34 @@
+{
+  "all_evidence_verbatim": true,
+  "complete_isolated_node_coverage": true,
+  "edges_unchanged": true,
+  "limitation": "Valid node roles cannot compensate for lost structured relation findings or harmful isolated-node creation.",
+  "nodes_unchanged_except_paper_role": true,
+  "passed": true,
+  "roles": [
+    {
+      "category": "substantive",
+      "judgment": "Grounded and complete; concise role is supported by exact supplied-source evidence without external claims.",
+      "label": "proline and glutamine rich",
+      "node_id": "doc_e_005"
+    },
+    {
+      "category": "contextual",
+      "judgment": "Grounded and complete; concise role is supported by exact supplied-source evidence without external claims.",
+      "label": "Aβ1–42",
+      "node_id": "doc_e_009"
+    },
+    {
+      "category": "substantive",
+      "judgment": "Grounded and complete; concise role is supported by exact supplied-source evidence without external claims.",
+      "label": "phosphoinositide 3-kinase",
+      "node_id": "doc_e_017"
+    },
+    {
+      "category": "substantive",
+      "judgment": "Grounded and complete; concise role is supported by exact supplied-source evidence without external claims.",
+      "label": "protein kinase B",
+      "node_id": "doc_e_019"
+    }
+  ]
+}
