@@ -1,0 +1,48 @@
+{
+  "candidate_runtime_provenance": "Copied production package plus exact preserved reviewed candidate provider bytes. See runtime_reconstruction.json and request_parity.json.",
+  "contract": "14R",
+  "historical_and_prior_report_artifacts_unchanged": true,
+  "historical_order_reference": "reports/contract14_luna_historical_parity/historical_mentions_reconstructed.json",
+  "prior_referenced_cache_hashes_unchanged": true,
+  "prior_smoke": "reports/luna_56_max_fast_smoke_20261007_r2",
+  "production_unchanged": true,
+  "raw_artifacts": [
+    {
+      "kind": "original_run_artifact_in_ignored_cache",
+      "path": ".cache\\contract14r\\source_order_packet.json",
+      "sha256": "66f0b5e3536b60bf473dca60de763f8d3f4eb3851f88ad03e582e4018a667035"
+    },
+    {
+      "kind": "original_run_artifact_in_ignored_cache",
+      "path": ".cache\\contract14r\\relation_request_01.txt",
+      "sha256": "6b2c596bfabb085aff7d64db17da2908a414f2edda2a0b9be63ea3159eb938cc"
+    },
+    {
+      "kind": "original_run_artifact_in_ignored_cache",
+      "path": ".cache\\contract14r\\relation_raw_01.txt",
+      "sha256": "56e200d42a114a52cc3d12c7edd72b87e86776232ac6e4b2da158abd4b3b8dc7"
+    },
+    {
+      "kind": "original_run_artifact_in_ignored_cache",
+      "path": ".cache\\contract14r\\role_request_01.txt",
+      "sha256": "9a93f1c043bd3d2342c4c38c40bbb94fd2f7e7e37fa922ee2e7ba414620849c8"
+    },
+    {
+      "kind": "original_run_artifact_in_ignored_cache",
+      "path": ".cache\\contract14r\\role_raw_01.txt",
+      "sha256": "1f99ce6c96d9796294ddd8e4e33df347f48124cf55ecf07843cf0c812aa90ee1"
+    },
+    {
+      "kind": "original_run_artifact_in_ignored_cache",
+      "path": ".cache\\contract14r\\relation_diagnostics.json",
+      "sha256": "ec6c2a6bd3735b6d05d69b55cb6cbcb0221c0b5d4da4acc461f24812e84b127b"
+    },
+    {
+      "kind": "original_run_artifact_in_ignored_cache",
+      "path": ".cache\\contract14r\\role_diagnostics.json",
+      "sha256": "3c51fa6d804a3fa370563f4a3cff402325c6323510c62baee012f47decfea8fb"
+    }
+  ],
+  "reconstructed_material": "Only historical mention order/prompt carried from Contract 14; current raw outputs are actual provider outputs, not reconstructed.",
+  "start_head": "2c7c100394b73910a759a856c099a8a973f0b104"
+}

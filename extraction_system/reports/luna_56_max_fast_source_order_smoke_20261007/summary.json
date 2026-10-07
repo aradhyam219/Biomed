@@ -1,0 +1,26 @@
+{
+  "background": true,
+  "contract": "14R",
+  "edges": 18,
+  "experiment_valid": true,
+  "migration_promoted": false,
+  "model": "gpt-5.6-luna",
+  "nodes": 20,
+  "observed_service_tier": "priority",
+  "order_parity_pass": true,
+  "preflight": {
+    "assembled_nodes": 20,
+    "mentions": 41,
+    "passed": true
+  },
+  "production_changed": false,
+  "reasoning": "max",
+  "relation_generations": 1,
+  "relations": 18,
+  "repairs": 0,
+  "requested_service_tier": "fast",
+  "role_generations": 1,
+  "scientifically_viable_for_migration": false,
+  "unconnected_nodes": 6,
+  "verdict": 2
+}

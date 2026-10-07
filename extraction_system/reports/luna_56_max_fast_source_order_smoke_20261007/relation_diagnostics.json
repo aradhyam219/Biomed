@@ -1,0 +1,28 @@
+[
+  {
+    "elapsed_seconds": 211.391,
+    "execution_mode": "background",
+    "generation_number": 1,
+    "initial_create_latency_seconds": 3.11,
+    "initial_status": "queued",
+    "input_tokens": 3571,
+    "observed_background": true,
+    "observed_model": "gpt-5.6-luna",
+    "observed_reasoning_effort": "max",
+    "observed_service_tier": "priority",
+    "output_text_received": true,
+    "output_tokens": 43110,
+    "poll_count": 61,
+    "poll_errors": 0,
+    "reasoning_tokens": 41006,
+    "repair": false,
+    "requested_background": true,
+    "requested_model": "gpt-5.6-luna",
+    "requested_reasoning_effort": "max",
+    "requested_service_tier": "fast",
+    "response_id": "resp_0f40c80a7aee542c006ac63da731c887d1b37fcf824bff006c",
+    "status": "success",
+    "terminal_status": "completed",
+    "validated_relation_count": 18
+  }
+]

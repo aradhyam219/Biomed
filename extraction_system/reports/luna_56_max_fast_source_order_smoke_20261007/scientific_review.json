@@ -1,0 +1,195 @@
+{
+  "causal_limit": "A single source-order generation materially recovers the function assertion but cannot isolate ordering influence from stochastic variability. Remaining differences are not attributed to Luna intrinsically.",
+  "endpoint_representation_artifacts": [
+    "E33/E34 and E36/E37 ratio endpoints leave full-name E32/E35 nodes isolated; ratio biology remains explicit",
+    "Separate AD-to-mouse edge is omitted, but model induction remains explicit in the amyloid-beta relation",
+    "APP/Tau marker edges reverse with inverse predicates; marker association survives",
+    "Mice again isolated as in Contract 10; mouse remains a separate assembly node"
+  ],
+  "experiment_valid": true,
+  "findings": [
+    {
+      "baseline_material": true,
+      "candidate_relation_indices": [
+        0,
+        6
+      ],
+      "finding_id": "baseline_contract10:000",
+      "judgment": "PRESERVED",
+      "rationale": "Cognition, recognition and memory improvements preserve SFPQ overexpression and explicit AD mice setting."
+    },
+    {
+      "baseline_material": true,
+      "candidate_relation_indices": [
+        1
+      ],
+      "finding_id": "baseline_contract10:001",
+      "judgment": "PRESERVED",
+      "rationale": "Neurodegenerative disorder characterization retained."
+    },
+    {
+      "baseline_material": true,
+      "candidate_relation_indices": [
+        2
+      ],
+      "finding_id": "baseline_contract10:002",
+      "judgment": "RECOVERED",
+      "rationale": "Antioxidant-related functions and regulation of gene expression within brain neurons now appear in the raw assertion and exact evidence; omitted in the grouped-order smoke."
+    },
+    {
+      "baseline_material": false,
+      "candidate_relation_indices": [
+        3
+      ],
+      "finding_id": "baseline_contract10:003",
+      "judgment": "RECOVERED_NONMATERIAL",
+      "rationale": "Explicit knowledge-gap assertion is restored; baseline ledger marks nonmaterial."
+    },
+    {
+      "baseline_material": true,
+      "candidate_relation_indices": [
+        4
+      ],
+      "finding_id": "baseline_contract10:004",
+      "judgment": "PRESERVED",
+      "rationale": "Amyloid-beta lateral ventricular injection and model induction retained with explicit AD mouse-model context."
+    },
+    {
+      "baseline_material": true,
+      "candidate_relation_indices": [
+        4
+      ],
+      "finding_id": "baseline_contract10:005",
+      "judgment": "PRESERVED_WITH_ENDPOINT_REPRESENTATION_DIFFERENCE",
+      "rationale": "The separate AD-to-mouse edge is absent, but the full induction finding survives in relation 4. Mouse isolation is a representation difference rather than demonstrated loss of model-induction biology."
+    },
+    {
+      "baseline_material": true,
+      "candidate_relation_indices": [
+        5
+      ],
+      "finding_id": "baseline_contract10:006",
+      "judgment": "PRESERVED",
+      "rationale": "Viral administration, hippocampal SFPQ overexpression and AD mice context retained."
+    },
+    {
+      "baseline_material": true,
+      "candidate_relation_indices": [
+        7
+      ],
+      "finding_id": "baseline_contract10:007",
+      "judgment": "PRESERVED",
+      "rationale": "APP reduction includes SFPQ intervention, AD mice context and explicit marker role."
+    },
+    {
+      "baseline_material": true,
+      "candidate_relation_indices": [
+        8
+      ],
+      "finding_id": "baseline_contract10:008",
+      "judgment": "PRESERVED",
+      "rationale": "Tau reduction includes SFPQ intervention, AD mice context and explicit marker role."
+    },
+    {
+      "baseline_material": true,
+      "candidate_relation_indices": [
+        7,
+        9
+      ],
+      "finding_id": "baseline_contract10:009",
+      "judgment": "PRESERVED_WITH_DIRECTIONAL_REPRESENTATION_CHANGE",
+      "rationale": "APP is still an AD-related marker; graph direction changes from APP is-marker-of AD to AD has-marker APP with matching predicate meaning."
+    },
+    {
+      "baseline_material": true,
+      "candidate_relation_indices": [
+        8,
+        10
+      ],
+      "finding_id": "baseline_contract10:010",
+      "judgment": "PRESERVED_WITH_DIRECTIONAL_REPRESENTATION_CHANGE",
+      "rationale": "Tau is still an AD-related marker; graph direction changes from Tau is-marker-of AD to AD has-marker Tau with matching predicate meaning."
+    },
+    {
+      "baseline_material": true,
+      "candidate_relation_indices": [
+        11
+      ],
+      "finding_id": "baseline_contract10:011",
+      "judgment": "PRESERVED",
+      "rationale": "GST upregulation retains SFPQ intervention and AD mice context; effects array is restored compared with grouped-order smoke. Adjacent synaptic/memory-associated and antioxidant descriptions remain grounded in evidence."
+    },
+    {
+      "baseline_material": true,
+      "candidate_relation_indices": [
+        12
+      ],
+      "finding_id": "baseline_contract10:012",
+      "judgment": "PRESERVED",
+      "rationale": "HO-1 upregulation retains SFPQ intervention and AD mice context; effects array is restored compared with grouped-order smoke. Adjacent synaptic/memory-associated and antioxidant descriptions remain grounded in evidence."
+    },
+    {
+      "baseline_material": true,
+      "candidate_relation_indices": [
+        13
+      ],
+      "finding_id": "baseline_contract10:013",
+      "judgment": "MATERIAL_CONTEXT_INTERVENTION_LOSS",
+      "rationale": "Ratio direction, Bcl-2/Bax endpoints and anti/proapoptotic descriptions retained; raw intervention is null, context empty, and evidence lacks the SFPQ-overexpression/AD mice result setting."
+    },
+    {
+      "baseline_material": true,
+      "candidate_relation_indices": [
+        14
+      ],
+      "finding_id": "baseline_contract10:014",
+      "judgment": "MATERIAL_CONTEXT_INTERVENTION_LOSS",
+      "rationale": "Phosphorylated-to-total PI3K ratio direction and effects retained; raw intervention null and context empty. E33 rather than baseline E32 changes long-form attachment, but does not establish loss of the ratio biology."
+    },
+    {
+      "baseline_material": true,
+      "candidate_relation_indices": [
+        15
+      ],
+      "finding_id": "baseline_contract10:015",
+      "judgment": "MATERIAL_CONTEXT_INTERVENTION_LOSS",
+      "rationale": "Phosphorylated-to-total AKT ratio direction and effects retained; raw intervention null and context empty. E36 rather than baseline E35 changes long-form attachment, but does not establish loss of the ratio biology."
+    },
+    {
+      "baseline_material": true,
+      "candidate_relation_indices": [
+        16
+      ],
+      "finding_id": "baseline_contract10:016",
+      "judgment": "ACTIVATION_PRESERVED_EXPERIMENTAL_LINKAGE_LOST",
+      "rationale": "Activation is explicitly present in raw assertion/effects/evidence and the PI3K-to-AKT relation returns to baseline component endpoints. However SFPQ-overexpression intervention and AD mice context are absent, unlike Contract 10 and the preceding grouped smoke activation records."
+    },
+    {
+      "baseline_material": true,
+      "candidate_relation_indices": [
+        17
+      ],
+      "finding_id": "baseline_contract10:017",
+      "judgment": "PRESERVED",
+      "rationale": "Tentative may-serve prevention/treatment target claim preserved; its empty effects array does not remove science already present in assertion/predicate."
+    }
+  ],
+  "migration_promoted": false,
+  "recovered_material_findings": [
+    "SFPQ antioxidant-related functions and brain-neuron gene-expression regulation"
+  ],
+  "recovered_other_representation": [
+    "Explicit SFPQ knowledge gap",
+    "GST and HO-1 structured effects arrays",
+    "PI3K-to-AKT pathway component edge representation"
+  ],
+  "remaining_material_regressions": [
+    "Missing SFPQ-overexpression intervention and AD mice context in Bcl-2/Bax ratio record",
+    "Missing SFPQ-overexpression intervention and AD mice context in p-PI3K/PI3K ratio record",
+    "Missing SFPQ-overexpression intervention and AD mice context in p-AKT/AKT ratio record",
+    "Missing SFPQ-overexpression intervention and AD mice context in the explicit activation record"
+  ],
+  "review_basis": "Manual comparison of all 18 frozen Contract-10 findings with raw/validated relation fields; record counts are descriptive only.",
+  "scientifically_viable_for_migration": false,
+  "verdict": 2
+}

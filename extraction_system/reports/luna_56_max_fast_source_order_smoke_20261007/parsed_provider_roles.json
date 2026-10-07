@@ -1,0 +1,76 @@
+{
+  "raw_output_cache": "C:\\Projects\\Biomed\\extraction_system\\.cache\\contract14r\\role_raw_01.txt",
+  "raw_payload": {
+    "roles": [
+      {
+        "category": "contextual",
+        "evidence": [
+          "Overexpression of SFPQ Improves Cognition and Memory in AD Mice",
+          "In this study, an AD mouse model was established through lateral ventricular injection of amyloid-beta1–42 (Aβ1–42).",
+          "Subsequently, adeno-associated virus was administered to overexpress SFPQ in the hippocampus of AD mice.",
+          "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau."
+        ],
+        "node_id": "doc_e_003",
+        "paragraphs": [
+          "Mice provide the experimental model context for the study. The authors established an AD mouse model, overexpressed SFPQ in the hippocampus, and assessed recognition, memory, and AD-related molecular changes in these animals."
+        ]
+      },
+      {
+        "category": "substantive",
+        "evidence": [
+          "Splicing factor proline and glutamine rich (SFPQ) is known to play a crucial role in neurodegenerative diseases, including antioxidant-related functions and regulating gene expression within brain neurons.",
+          "However, the specific role of SFPQ in AD pathology is not well understood.",
+          "Subsequently, adeno-associated virus was administered to overexpress SFPQ in the hippocampus of AD mice.",
+          "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau.",
+          "These findings suggest that SFPQ may serve as a promising molecular target for the prevention and treatment of AD."
+        ],
+        "node_id": "doc_e_005",
+        "paragraphs": [
+          "The authors investigate SFPQ as the molecular intervention in AD by overexpressing it in the hippocampus of AD mice. They report improved recognition and memory, reduced APP and Tau, upregulation of synaptic, memory-associated, and antioxidant proteins, an increased Bcl-2/Bax ratio, and elevated PI3K/AKT pathway ratios. The findings position SFPQ as a possible target for AD prevention and treatment."
+        ]
+      },
+      {
+        "category": "contextual",
+        "evidence": [
+          "In this study, an AD mouse model was established through lateral ventricular injection of amyloid-beta1–42 (Aβ1–42).",
+          "Subsequently, adeno-associated virus was administered to overexpress SFPQ in the hippocampus of AD mice."
+        ],
+        "node_id": "doc_e_007",
+        "paragraphs": [
+          "Mouse supplies the disease-model context in which the authors tested hippocampal SFPQ overexpression and its effects on cognition, memory, and molecular markers."
+        ]
+      },
+      {
+        "category": "substantive",
+        "evidence": [
+          "In this study, an AD mouse model was established through lateral ventricular injection of amyloid-beta1–42 (Aβ1–42)."
+        ],
+        "node_id": "doc_e_009",
+        "paragraphs": [
+          "Aβ1–42 is used to establish the AD mouse model through lateral ventricular injection."
+        ]
+      },
+      {
+        "category": "substantive",
+        "evidence": [
+          "Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway."
+        ],
+        "node_id": "doc_e_017",
+        "paragraphs": [
+          "Phosphoinositide 3-kinase is evaluated through the phosphorylated-to-total p-PI3K/PI3K ratio as part of the PI3K/AKT signaling readout. The reported elevation of this ratio, together with the AKT ratio, is used to indicate activation of the pathway."
+        ]
+      },
+      {
+        "category": "substantive",
+        "evidence": [
+          "Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway."
+        ],
+        "node_id": "doc_e_019",
+        "paragraphs": [
+          "Protein kinase B is evaluated through the phosphorylated-to-total p-AKT/AKT ratio as part of the PI3K/AKT signaling readout. Its reported elevation contributes to the authors’ indication that the PI3K/AKT signaling pathway was activated."
+        ]
+      }
+    ]
+  },
+  "raw_utf8_sha256": "1f99ce6c96d9796294ddd8e4e33df347f48124cf55ecf07843cf0c812aa90ee1"
+}

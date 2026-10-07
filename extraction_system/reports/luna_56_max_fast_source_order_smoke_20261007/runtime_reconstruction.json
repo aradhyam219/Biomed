@@ -1,0 +1,7 @@
+{
+  "purpose": "Isolated reproduction of the already-reviewed candidate; production defaults unchanged.",
+  "provider_files_byte_identical_to_prior_candidate": true,
+  "runtime_source": "C:\\Projects\\Biomed\\extraction_system\\.cache\\contract14r\\runtime",
+  "candidate_patch_reference": "reports/luna_56_max_fast_smoke_20261007_r2/candidate.patch",
+  "offline_verification": "Reused 71 successful tests: exact prior candidate provider bytes and unchanged protected modules verified in request_parity.json."
+}

@@ -1,0 +1,9 @@
+{
+  "experiment_valid": true,
+  "fast_tier_pass": true,
+  "migration_promoted": false,
+  "operational_pass": true,
+  "provider_generations": 2,
+  "scientific_review": "partial_recovery",
+  "verdict": 2
+}

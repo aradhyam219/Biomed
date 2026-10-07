@@ -1,0 +1,1031 @@
+{
+  "historical_order_provenance": "Contract 14 deterministic reconstruction from Contract-10 NER enumeration/source ordering, not graph-node grouping",
+  "order_parity_pass": true,
+  "positions": [
+    {
+      "candidate": {
+        "end": 22,
+        "id": "E1",
+        "start": 18,
+        "text": "SFPQ",
+        "type": "Gene"
+      },
+      "contract10": {
+        "end": 22,
+        "id": "E1",
+        "start": 18,
+        "text": "SFPQ",
+        "type": "Gene"
+      },
+      "exact_ordered_parity": true,
+      "position": 1,
+      "previous_smoke": {
+        "end": 22,
+        "id": "E1",
+        "start": 18,
+        "text": "SFPQ",
+        "type": "Gene"
+      }
+    },
+    {
+      "candidate": {
+        "end": 58,
+        "id": "E2",
+        "start": 56,
+        "text": "AD",
+        "type": "Disease"
+      },
+      "contract10": {
+        "end": 58,
+        "id": "E2",
+        "start": 56,
+        "text": "AD",
+        "type": "Disease"
+      },
+      "exact_ordered_parity": true,
+      "position": 2,
+      "previous_smoke": {
+        "end": 292,
+        "id": "E8",
+        "start": 288,
+        "text": "SFPQ",
+        "type": "Gene"
+      }
+    },
+    {
+      "candidate": {
+        "end": 63,
+        "id": "E3",
+        "start": 59,
+        "text": "Mice",
+        "type": "Species"
+      },
+      "contract10": {
+        "end": 63,
+        "id": "E3",
+        "start": 59,
+        "text": "Mice",
+        "type": "Species"
+      },
+      "exact_ordered_parity": true,
+      "position": 3,
+      "previous_smoke": {
+        "end": 484,
+        "id": "E10",
+        "start": 480,
+        "text": "SFPQ",
+        "type": "Gene"
+      }
+    },
+    {
+      "candidate": {
+        "end": 84,
+        "id": "E4",
+        "start": 65,
+        "text": "Alzheimer's disease",
+        "type": "Disease"
+      },
+      "contract10": {
+        "end": 84,
+        "id": "E4",
+        "start": 65,
+        "text": "Alzheimer's disease",
+        "type": "Disease"
+      },
+      "exact_ordered_parity": true,
+      "position": 4,
+      "previous_smoke": {
+        "end": 715,
+        "id": "E16",
+        "start": 711,
+        "text": "SFPQ",
+        "type": "Gene"
+      }
+    },
+    {
+      "candidate": {
+        "end": 88,
+        "id": "E5",
+        "start": 86,
+        "text": "AD",
+        "type": "Disease"
+      },
+      "contract10": {
+        "end": 88,
+        "id": "E5",
+        "start": 86,
+        "text": "AD",
+        "type": "Disease"
+      },
+      "exact_ordered_parity": true,
+      "position": 5,
+      "previous_smoke": {
+        "end": 58,
+        "id": "E2",
+        "start": 56,
+        "text": "AD",
+        "type": "Disease"
+      }
+    },
+    {
+      "candidate": {
+        "end": 129,
+        "id": "E6",
+        "start": 103,
+        "text": "neurodegenerative disorder",
+        "type": "Disease"
+      },
+      "contract10": {
+        "end": 129,
+        "id": "E6",
+        "start": 103,
+        "text": "neurodegenerative disorder",
+        "type": "Disease"
+      },
+      "exact_ordered_parity": true,
+      "position": 6,
+      "previous_smoke": {
+        "end": 84,
+        "id": "E4",
+        "start": 65,
+        "text": "Alzheimer's disease",
+        "type": "Disease"
+      }
+    },
+    {
+      "candidate": {
+        "end": 286,
+        "id": "E7",
+        "start": 260,
+        "text": "proline and glutamine rich",
+        "type": "Gene"
+      },
+      "contract10": {
+        "end": 286,
+        "id": "E7",
+        "start": 260,
+        "text": "proline and glutamine rich",
+        "type": "Gene"
+      },
+      "exact_ordered_parity": true,
+      "position": 7,
+      "previous_smoke": {
+        "end": 88,
+        "id": "E5",
+        "start": 86,
+        "text": "AD",
+        "type": "Disease"
+      }
+    },
+    {
+      "candidate": {
+        "end": 292,
+        "id": "E8",
+        "start": 288,
+        "text": "SFPQ",
+        "type": "Gene"
+      },
+      "contract10": {
+        "end": 292,
+        "id": "E8",
+        "start": 288,
+        "text": "SFPQ",
+        "type": "Gene"
+      },
+      "exact_ordered_parity": true,
+      "position": 8,
+      "previous_smoke": {
+        "end": 490,
+        "id": "E11",
+        "start": 488,
+        "text": "AD",
+        "type": "Disease"
+      }
+    },
+    {
+      "candidate": {
+        "end": 355,
+        "id": "E9",
+        "start": 329,
+        "text": "neurodegenerative diseases",
+        "type": "Disease"
+      },
+      "contract10": {
+        "end": 355,
+        "id": "E9",
+        "start": 329,
+        "text": "neurodegenerative diseases",
+        "type": "Disease"
+      },
+      "exact_ordered_parity": true,
+      "position": 9,
+      "previous_smoke": {
+        "end": 545,
+        "id": "E12",
+        "start": 543,
+        "text": "AD",
+        "type": "Disease"
+      }
+    },
+    {
+      "candidate": {
+        "end": 484,
+        "id": "E10",
+        "start": 480,
+        "text": "SFPQ",
+        "type": "Gene"
+      },
+      "contract10": {
+        "end": 484,
+        "id": "E10",
+        "start": 480,
+        "text": "SFPQ",
+        "type": "Gene"
+      },
+      "exact_ordered_parity": true,
+      "position": 10,
+      "previous_smoke": {
+        "end": 740,
+        "id": "E17",
+        "start": 738,
+        "text": "AD",
+        "type": "Disease"
+      }
+    },
+    {
+      "candidate": {
+        "end": 490,
+        "id": "E11",
+        "start": 488,
+        "text": "AD",
+        "type": "Disease"
+      },
+      "contract10": {
+        "end": 490,
+        "id": "E11",
+        "start": 488,
+        "text": "AD",
+        "type": "Disease"
+      },
+      "exact_ordered_parity": true,
+      "position": 11,
+      "previous_smoke": {
+        "end": 833,
+        "id": "E20",
+        "start": 831,
+        "text": "AD",
+        "type": "Disease"
+      }
+    },
+    {
+      "candidate": {
+        "end": 545,
+        "id": "E12",
+        "start": 543,
+        "text": "AD",
+        "type": "Disease"
+      },
+      "contract10": {
+        "end": 545,
+        "id": "E12",
+        "start": 543,
+        "text": "AD",
+        "type": "Disease"
+      },
+      "exact_ordered_parity": true,
+      "position": 12,
+      "previous_smoke": {
+        "end": 857,
+        "id": "E22",
+        "start": 855,
+        "text": "AD",
+        "type": "Disease"
+      }
+    },
+    {
+      "candidate": {
+        "end": 551,
+        "id": "E13",
+        "start": 546,
+        "text": "mouse",
+        "type": "Species"
+      },
+      "contract10": {
+        "end": 551,
+        "id": "E13",
+        "start": 546,
+        "text": "mouse",
+        "type": "Species"
+      },
+      "exact_ordered_parity": true,
+      "position": 13,
+      "previous_smoke": {
+        "end": 1495,
+        "id": "E41",
+        "start": 1493,
+        "text": "AD",
+        "type": "Disease"
+      }
+    },
+    {
+      "candidate": {
+        "end": 631,
+        "id": "E14",
+        "start": 615,
+        "text": "amyloid-beta1–42",
+        "type": "Gene"
+      },
+      "contract10": {
+        "end": 631,
+        "id": "E14",
+        "start": 615,
+        "text": "amyloid-beta1–42",
+        "type": "Gene"
+      },
+      "exact_ordered_parity": true,
+      "position": 14,
+      "previous_smoke": {
+        "end": 63,
+        "id": "E3",
+        "start": 59,
+        "text": "Mice",
+        "type": "Species"
+      }
+    },
+    {
+      "candidate": {
+        "end": 639,
+        "id": "E15",
+        "start": 633,
+        "text": "Aβ1–42",
+        "type": "Gene"
+      },
+      "contract10": {
+        "end": 639,
+        "id": "E15",
+        "start": 633,
+        "text": "Aβ1–42",
+        "type": "Gene"
+      },
+      "exact_ordered_parity": true,
+      "position": 15,
+      "previous_smoke": {
+        "end": 745,
+        "id": "E18",
+        "start": 741,
+        "text": "mice",
+        "type": "Species"
+      }
+    },
+    {
+      "candidate": {
+        "end": 715,
+        "id": "E16",
+        "start": 711,
+        "text": "SFPQ",
+        "type": "Gene"
+      },
+      "contract10": {
+        "end": 715,
+        "id": "E16",
+        "start": 711,
+        "text": "SFPQ",
+        "type": "Gene"
+      },
+      "exact_ordered_parity": true,
+      "position": 16,
+      "previous_smoke": {
+        "end": 838,
+        "id": "E21",
+        "start": 834,
+        "text": "mice",
+        "type": "Species"
+      }
+    },
+    {
+      "candidate": {
+        "end": 740,
+        "id": "E17",
+        "start": 738,
+        "text": "AD",
+        "type": "Disease"
+      },
+      "contract10": {
+        "end": 740,
+        "id": "E17",
+        "start": 738,
+        "text": "AD",
+        "type": "Disease"
+      },
+      "exact_ordered_parity": true,
+      "position": 17,
+      "previous_smoke": {
+        "end": 129,
+        "id": "E6",
+        "start": 103,
+        "text": "neurodegenerative disorder",
+        "type": "Disease"
+      }
+    },
+    {
+      "candidate": {
+        "end": 745,
+        "id": "E18",
+        "start": 741,
+        "text": "mice",
+        "type": "Species"
+      },
+      "contract10": {
+        "end": 745,
+        "id": "E18",
+        "start": 741,
+        "text": "mice",
+        "type": "Species"
+      },
+      "exact_ordered_parity": true,
+      "position": 18,
+      "previous_smoke": {
+        "end": 286,
+        "id": "E7",
+        "start": 260,
+        "text": "proline and glutamine rich",
+        "type": "Gene"
+      }
+    },
+    {
+      "candidate": {
+        "end": 780,
+        "id": "E19",
+        "start": 776,
+        "text": "SFPQ",
+        "type": "Chemical"
+      },
+      "contract10": {
+        "end": 780,
+        "id": "E19",
+        "start": 776,
+        "text": "SFPQ",
+        "type": "Chemical"
+      },
+      "exact_ordered_parity": true,
+      "position": 19,
+      "previous_smoke": {
+        "end": 355,
+        "id": "E9",
+        "start": 329,
+        "text": "neurodegenerative diseases",
+        "type": "Disease"
+      }
+    },
+    {
+      "candidate": {
+        "end": 833,
+        "id": "E20",
+        "start": 831,
+        "text": "AD",
+        "type": "Disease"
+      },
+      "contract10": {
+        "end": 833,
+        "id": "E20",
+        "start": 831,
+        "text": "AD",
+        "type": "Disease"
+      },
+      "exact_ordered_parity": true,
+      "position": 20,
+      "previous_smoke": {
+        "end": 551,
+        "id": "E13",
+        "start": 546,
+        "text": "mouse",
+        "type": "Species"
+      }
+    },
+    {
+      "candidate": {
+        "end": 838,
+        "id": "E21",
+        "start": 834,
+        "text": "mice",
+        "type": "Species"
+      },
+      "contract10": {
+        "end": 838,
+        "id": "E21",
+        "start": 834,
+        "text": "mice",
+        "type": "Species"
+      },
+      "exact_ordered_parity": true,
+      "position": 21,
+      "previous_smoke": {
+        "end": 631,
+        "id": "E14",
+        "start": 615,
+        "text": "amyloid-beta1–42",
+        "type": "Gene"
+      }
+    },
+    {
+      "candidate": {
+        "end": 857,
+        "id": "E22",
+        "start": 855,
+        "text": "AD",
+        "type": "Disease"
+      },
+      "contract10": {
+        "end": 857,
+        "id": "E22",
+        "start": 855,
+        "text": "AD",
+        "type": "Disease"
+      },
+      "exact_ordered_parity": true,
+      "position": 22,
+      "previous_smoke": {
+        "end": 639,
+        "id": "E15",
+        "start": 633,
+        "text": "Aβ1–42",
+        "type": "Gene"
+      }
+    },
+    {
+      "candidate": {
+        "end": 915,
+        "id": "E23",
+        "start": 890,
+        "text": "amyloid precursor protein",
+        "type": "Gene"
+      },
+      "contract10": {
+        "end": 915,
+        "id": "E23",
+        "start": 890,
+        "text": "amyloid precursor protein",
+        "type": "Gene"
+      },
+      "exact_ordered_parity": true,
+      "position": 23,
+      "previous_smoke": {
+        "end": 780,
+        "id": "E19",
+        "start": 776,
+        "text": "SFPQ",
+        "type": "Chemical"
+      }
+    },
+    {
+      "candidate": {
+        "end": 920,
+        "id": "E24",
+        "start": 917,
+        "text": "APP",
+        "type": "Gene"
+      },
+      "contract10": {
+        "end": 920,
+        "id": "E24",
+        "start": 917,
+        "text": "APP",
+        "type": "Gene"
+      },
+      "exact_ordered_parity": true,
+      "position": 24,
+      "previous_smoke": {
+        "end": 1414,
+        "id": "E40",
+        "start": 1410,
+        "text": "SFPQ",
+        "type": "Chemical"
+      }
+    },
+    {
+      "candidate": {
+        "end": 929,
+        "id": "E25",
+        "start": 926,
+        "text": "Tau",
+        "type": "Gene"
+      },
+      "contract10": {
+        "end": 929,
+        "id": "E25",
+        "start": 926,
+        "text": "Tau",
+        "type": "Gene"
+      },
+      "exact_ordered_parity": true,
+      "position": 25,
+      "previous_smoke": {
+        "end": 915,
+        "id": "E23",
+        "start": 890,
+        "text": "amyloid precursor protein",
+        "type": "Gene"
+      }
+    },
+    {
+      "candidate": {
+        "end": 1048,
+        "id": "E26",
+        "start": 1023,
+        "text": "glutathione S-transferase",
+        "type": "Gene"
+      },
+      "contract10": {
+        "end": 1048,
+        "id": "E26",
+        "start": 1023,
+        "text": "glutathione S-transferase",
+        "type": "Gene"
+      },
+      "exact_ordered_parity": true,
+      "position": 26,
+      "previous_smoke": {
+        "end": 920,
+        "id": "E24",
+        "start": 917,
+        "text": "APP",
+        "type": "Gene"
+      }
+    },
+    {
+      "candidate": {
+        "end": 1053,
+        "id": "E27",
+        "start": 1050,
+        "text": "GST",
+        "type": "Gene"
+      },
+      "contract10": {
+        "end": 1053,
+        "id": "E27",
+        "start": 1050,
+        "text": "GST",
+        "type": "Gene"
+      },
+      "exact_ordered_parity": true,
+      "position": 27,
+      "previous_smoke": {
+        "end": 929,
+        "id": "E25",
+        "start": 926,
+        "text": "Tau",
+        "type": "Gene"
+      }
+    },
+    {
+      "candidate": {
+        "end": 1075,
+        "id": "E28",
+        "start": 1059,
+        "text": "heme oxygenase-1",
+        "type": "Gene"
+      },
+      "contract10": {
+        "end": 1075,
+        "id": "E28",
+        "start": 1059,
+        "text": "heme oxygenase-1",
+        "type": "Gene"
+      },
+      "exact_ordered_parity": true,
+      "position": 28,
+      "previous_smoke": {
+        "end": 1048,
+        "id": "E26",
+        "start": 1023,
+        "text": "glutathione S-transferase",
+        "type": "Gene"
+      }
+    },
+    {
+      "candidate": {
+        "end": 1081,
+        "id": "E29",
+        "start": 1077,
+        "text": "HO-1",
+        "type": "Gene"
+      },
+      "contract10": {
+        "end": 1081,
+        "id": "E29",
+        "start": 1077,
+        "text": "HO-1",
+        "type": "Gene"
+      },
+      "exact_ordered_parity": true,
+      "position": 29,
+      "previous_smoke": {
+        "end": 1053,
+        "id": "E27",
+        "start": 1050,
+        "text": "GST",
+        "type": "Gene"
+      }
+    },
+    {
+      "candidate": {
+        "end": 1142,
+        "id": "E30",
+        "start": 1137,
+        "text": "Bcl-2",
+        "type": "Gene"
+      },
+      "contract10": {
+        "end": 1142,
+        "id": "E30",
+        "start": 1137,
+        "text": "Bcl-2",
+        "type": "Gene"
+      },
+      "exact_ordered_parity": true,
+      "position": 30,
+      "previous_smoke": {
+        "end": 1075,
+        "id": "E28",
+        "start": 1059,
+        "text": "heme oxygenase-1",
+        "type": "Gene"
+      }
+    },
+    {
+      "candidate": {
+        "end": 1170,
+        "id": "E31",
+        "start": 1167,
+        "text": "Bax",
+        "type": "Gene"
+      },
+      "contract10": {
+        "end": 1170,
+        "id": "E31",
+        "start": 1167,
+        "text": "Bax",
+        "type": "Gene"
+      },
+      "exact_ordered_parity": true,
+      "position": 31,
+      "previous_smoke": {
+        "end": 1081,
+        "id": "E29",
+        "start": 1077,
+        "text": "HO-1",
+        "type": "Gene"
+      }
+    },
+    {
+      "candidate": {
+        "end": 1240,
+        "id": "E32",
+        "start": 1215,
+        "text": "phosphoinositide 3-kinase",
+        "type": "Gene"
+      },
+      "contract10": {
+        "end": 1240,
+        "id": "E32",
+        "start": 1215,
+        "text": "phosphoinositide 3-kinase",
+        "type": "Gene"
+      },
+      "exact_ordered_parity": true,
+      "position": 32,
+      "previous_smoke": {
+        "end": 1142,
+        "id": "E30",
+        "start": 1137,
+        "text": "Bcl-2",
+        "type": "Gene"
+      }
+    },
+    {
+      "candidate": {
+        "end": 1248,
+        "id": "E33",
+        "start": 1244,
+        "text": "PI3K",
+        "type": "Gene"
+      },
+      "contract10": {
+        "end": 1248,
+        "id": "E33",
+        "start": 1244,
+        "text": "PI3K",
+        "type": "Gene"
+      },
+      "exact_ordered_parity": true,
+      "position": 33,
+      "previous_smoke": {
+        "end": 1170,
+        "id": "E31",
+        "start": 1167,
+        "text": "Bax",
+        "type": "Gene"
+      }
+    },
+    {
+      "candidate": {
+        "end": 1254,
+        "id": "E34",
+        "start": 1250,
+        "text": "PI3K",
+        "type": "Gene"
+      },
+      "contract10": {
+        "end": 1254,
+        "id": "E34",
+        "start": 1250,
+        "text": "PI3K",
+        "type": "Gene"
+      },
+      "exact_ordered_parity": true,
+      "position": 34,
+      "previous_smoke": {
+        "end": 1240,
+        "id": "E32",
+        "start": 1215,
+        "text": "phosphoinositide 3-kinase",
+        "type": "Gene"
+      }
+    },
+    {
+      "candidate": {
+        "end": 1290,
+        "id": "E35",
+        "start": 1274,
+        "text": "protein kinase B",
+        "type": "Gene"
+      },
+      "contract10": {
+        "end": 1290,
+        "id": "E35",
+        "start": 1274,
+        "text": "protein kinase B",
+        "type": "Gene"
+      },
+      "exact_ordered_parity": true,
+      "position": 35,
+      "previous_smoke": {
+        "end": 1248,
+        "id": "E33",
+        "start": 1244,
+        "text": "PI3K",
+        "type": "Gene"
+      }
+    },
+    {
+      "candidate": {
+        "end": 1297,
+        "id": "E36",
+        "start": 1294,
+        "text": "AKT",
+        "type": "Gene"
+      },
+      "contract10": {
+        "end": 1297,
+        "id": "E36",
+        "start": 1294,
+        "text": "AKT",
+        "type": "Gene"
+      },
+      "exact_ordered_parity": true,
+      "position": 36,
+      "previous_smoke": {
+        "end": 1254,
+        "id": "E34",
+        "start": 1250,
+        "text": "PI3K",
+        "type": "Gene"
+      }
+    },
+    {
+      "candidate": {
+        "end": 1302,
+        "id": "E37",
+        "start": 1299,
+        "text": "AKT",
+        "type": "Gene"
+      },
+      "contract10": {
+        "end": 1302,
+        "id": "E37",
+        "start": 1299,
+        "text": "AKT",
+        "type": "Gene"
+      },
+      "exact_ordered_parity": true,
+      "position": 37,
+      "previous_smoke": {
+        "end": 1358,
+        "id": "E38",
+        "start": 1354,
+        "text": "PI3K",
+        "type": "Gene"
+      }
+    },
+    {
+      "candidate": {
+        "end": 1358,
+        "id": "E38",
+        "start": 1354,
+        "text": "PI3K",
+        "type": "Gene"
+      },
+      "contract10": {
+        "end": 1358,
+        "id": "E38",
+        "start": 1354,
+        "text": "PI3K",
+        "type": "Gene"
+      },
+      "exact_ordered_parity": true,
+      "position": 38,
+      "previous_smoke": {
+        "end": 1290,
+        "id": "E35",
+        "start": 1274,
+        "text": "protein kinase B",
+        "type": "Gene"
+      }
+    },
+    {
+      "candidate": {
+        "end": 1362,
+        "id": "E39",
+        "start": 1359,
+        "text": "AKT",
+        "type": "Gene"
+      },
+      "contract10": {
+        "end": 1362,
+        "id": "E39",
+        "start": 1359,
+        "text": "AKT",
+        "type": "Gene"
+      },
+      "exact_ordered_parity": true,
+      "position": 39,
+      "previous_smoke": {
+        "end": 1297,
+        "id": "E36",
+        "start": 1294,
+        "text": "AKT",
+        "type": "Gene"
+      }
+    },
+    {
+      "candidate": {
+        "end": 1414,
+        "id": "E40",
+        "start": 1410,
+        "text": "SFPQ",
+        "type": "Chemical"
+      },
+      "contract10": {
+        "end": 1414,
+        "id": "E40",
+        "start": 1410,
+        "text": "SFPQ",
+        "type": "Chemical"
+      },
+      "exact_ordered_parity": true,
+      "position": 40,
+      "previous_smoke": {
+        "end": 1302,
+        "id": "E37",
+        "start": 1299,
+        "text": "AKT",
+        "type": "Gene"
+      }
+    },
+    {
+      "candidate": {
+        "end": 1495,
+        "id": "E41",
+        "start": 1493,
+        "text": "AD",
+        "type": "Disease"
+      },
+      "contract10": {
+        "end": 1495,
+        "id": "E41",
+        "start": 1493,
+        "text": "AD",
+        "type": "Disease"
+      },
+      "exact_ordered_parity": true,
+      "position": 41,
+      "previous_smoke": {
+        "end": 1362,
+        "id": "E39",
+        "start": 1359,
+        "text": "AKT",
+        "type": "Gene"
+      }
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "background": true,
+    "generation_number": 1,
+    "model": "gpt-5.6-luna",
+    "observed_service_tier": "priority",
+    "prompt_sha256": "99db58b9b122f5cf7c4a7a5f7c3a0bcb8b53dd09676631af5dfe1e35bda7c3a6",
+    "reasoning": {
+      "effort": "max"
+    },
+    "requested_service_tier": "fast",
+    "response_id": "resp_0f40c80a7aee542c006ac63da731c887d1b37fcf824bff006c",
+    "status": "completed",
+    "task": "relation"
+  },
+  {
+    "background": true,
+    "generation_number": 1,
+    "model": "gpt-5.6-luna",
+    "observed_service_tier": "priority",
+    "prompt_sha256": "6d75d0e323d3d9adb472b31f088f592c4d95d30bed95f999dce3b7e18b8e309a",
+    "reasoning": {
+      "effort": "max"
+    },
+    "requested_service_tier": "fast",
+    "response_id": "resp_0629998c01f2b8e1006ac63e79e1c887d19570351f518e379f",
+    "status": "completed",
+    "task": "role"
+  }
+]

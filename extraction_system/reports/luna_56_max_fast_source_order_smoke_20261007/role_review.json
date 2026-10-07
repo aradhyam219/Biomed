@@ -1,0 +1,55 @@
+{
+  "all_evidence_exact_source_substrings": true,
+  "complete_isolated_node_coverage": true,
+  "edges_unchanged": true,
+  "limitation": "Grounded roles do not validate orphan status or compensate for missing intervention/context in relation records.",
+  "manual_judgments": [
+    {
+      "category": "contextual",
+      "label": "Mice",
+      "node_id": "doc_e_003",
+      "note": "Species provides experimental setting; molecular-role summary is supported by supplied abstract.",
+      "source_grounded": true
+    },
+    {
+      "category": "substantive",
+      "label": "proline and glutamine rich",
+      "node_id": "doc_e_005",
+      "note": "All claims are supported by the supplied abstract, but the returned quote list covers the intervention/APP/Tau findings rather than every upregulation/ratio detail in its paragraph. Citation coverage is incomplete; no external or unsupported biology was added.",
+      "source_grounded": true
+    },
+    {
+      "category": "contextual",
+      "label": "mouse",
+      "node_id": "doc_e_007",
+      "note": "Species provides experimental setting; molecular-role summary is supported by supplied abstract.",
+      "source_grounded": true
+    },
+    {
+      "category": "substantive",
+      "label": "Aβ1–42",
+      "node_id": "doc_e_009",
+      "note": "Species provides experimental setting; molecular-role summary is supported by supplied abstract.",
+      "source_grounded": true
+    },
+    {
+      "category": "substantive",
+      "label": "phosphoinositide 3-kinase",
+      "node_id": "doc_e_017",
+      "note": "Species provides experimental setting; molecular-role summary is supported by supplied abstract.",
+      "source_grounded": true
+    },
+    {
+      "category": "substantive",
+      "label": "protein kinase B",
+      "node_id": "doc_e_019",
+      "note": "Species provides experimental setting; molecular-role summary is supported by supplied abstract.",
+      "source_grounded": true
+    }
+  ],
+  "nodes_unchanged_except_role_metadata": true,
+  "paragraph_limits_pass": true,
+  "records": 6,
+  "source_grounding_pass": true,
+  "species_contextual": true
+}

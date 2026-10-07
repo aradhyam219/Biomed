@@ -1,0 +1,261 @@
+{
+  "raw_output_cache": "C:\\Projects\\Biomed\\extraction_system\\.cache\\contract14r\\relation_raw_01.txt",
+  "raw_utf8_sha256": "56e200d42a114a52cc3d12c7edd72b87e86776232ac6e4b2da158abd4b3b8dc7",
+  "relations": [
+    {
+      "assertion": "Overexpression of SFPQ improves cognition and memory in AD mice.",
+      "context": [
+        "AD mice"
+      ],
+      "effects": [
+        "improved cognition and memory"
+      ],
+      "evidence": "Overexpression of SFPQ Improves Cognition and Memory in AD Mice",
+      "intervention": "overexpression of SFPQ",
+      "negated": false,
+      "predicate": "improves cognition and memory in",
+      "source": "E1",
+      "surface_form": "Improves Cognition and Memory in",
+      "target": "E2"
+    },
+    {
+      "assertion": "Alzheimer's disease (AD) is a complex neurodegenerative disorder.",
+      "context": [],
+      "effects": [],
+      "evidence": "Alzheimer's disease (AD) is a complex neurodegenerative disorder",
+      "intervention": null,
+      "negated": false,
+      "predicate": "is a",
+      "source": "E4",
+      "surface_form": "is a complex neurodegenerative disorder",
+      "target": "E6"
+    },
+    {
+      "assertion": "SFPQ is known to play a crucial role in neurodegenerative diseases, including antioxidant-related functions and regulating gene expression within brain neurons.",
+      "context": [],
+      "effects": [],
+      "evidence": "Splicing factor proline and glutamine rich (SFPQ) is known to play a crucial role in neurodegenerative diseases, including antioxidant-related functions and regulating gene expression within brain neurons.",
+      "intervention": null,
+      "negated": false,
+      "predicate": "is known to play a crucial role in",
+      "source": "E8",
+      "surface_form": "play a crucial role in neurodegenerative diseases",
+      "target": "E9"
+    },
+    {
+      "assertion": "The specific role of SFPQ in AD pathology is not well understood.",
+      "context": [],
+      "effects": [],
+      "evidence": "However, the specific role of SFPQ in AD pathology is not well understood.",
+      "intervention": null,
+      "negated": false,
+      "predicate": "has a role in pathology that is not well understood",
+      "source": "E10",
+      "surface_form": "role of SFPQ in AD pathology is not well understood",
+      "target": "E11"
+    },
+    {
+      "assertion": "Lateral ventricular injection of amyloid-beta1–42 was used to establish an AD mouse model.",
+      "context": [
+        "AD mouse model"
+      ],
+      "effects": [
+        "establishment of an AD mouse model"
+      ],
+      "evidence": "In this study, an AD mouse model was established through lateral ventricular injection of amyloid-beta1–42 (Aβ1–42).",
+      "intervention": "lateral ventricular injection of amyloid-beta1–42",
+      "negated": false,
+      "predicate": "used to establish a model of",
+      "source": "E14",
+      "surface_form": "established through lateral ventricular injection of amyloid-beta1–42",
+      "target": "E12"
+    },
+    {
+      "assertion": "An adeno-associated virus was administered to overexpress SFPQ in the hippocampus of AD mice.",
+      "context": [
+        "hippocampus of AD mice"
+      ],
+      "effects": [],
+      "evidence": "Subsequently, adeno-associated virus was administered to overexpress SFPQ in the hippocampus of AD mice.",
+      "intervention": "adeno-associated virus administration",
+      "negated": false,
+      "predicate": "targeted for overexpression in",
+      "source": "E16",
+      "surface_form": "to overexpress SFPQ in the hippocampus of AD mice",
+      "target": "E17"
+    },
+    {
+      "assertion": "SFPQ overexpression improves recognition and memory in AD mice.",
+      "context": [
+        "AD mice"
+      ],
+      "effects": [
+        "improved recognition and memory"
+      ],
+      "evidence": "SFPQ overexpression improves recognition and memory in AD mice",
+      "intervention": "SFPQ overexpression",
+      "negated": false,
+      "predicate": "improves recognition and memory in",
+      "source": "E19",
+      "surface_form": "improves recognition and memory in",
+      "target": "E20"
+    },
+    {
+      "assertion": "SFPQ overexpression reduces the AD-related marker protein amyloid precursor protein in AD mice.",
+      "context": [
+        "AD mice"
+      ],
+      "effects": [
+        "reduction of amyloid precursor protein"
+      ],
+      "evidence": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau.",
+      "intervention": "SFPQ overexpression",
+      "negated": false,
+      "predicate": "reduces",
+      "source": "E19",
+      "surface_form": "reducing AD-related marker proteins such as amyloid precursor protein",
+      "target": "E23"
+    },
+    {
+      "assertion": "SFPQ overexpression reduces the AD-related marker protein Tau in AD mice.",
+      "context": [
+        "AD mice"
+      ],
+      "effects": [
+        "reduction of Tau"
+      ],
+      "evidence": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau.",
+      "intervention": "SFPQ overexpression",
+      "negated": false,
+      "predicate": "reduces",
+      "source": "E19",
+      "surface_form": "reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau",
+      "target": "E25"
+    },
+    {
+      "assertion": "Amyloid precursor protein is described as an AD-related marker protein.",
+      "context": [],
+      "effects": [],
+      "evidence": "AD-related marker proteins such as amyloid precursor protein (APP) and Tau",
+      "intervention": null,
+      "negated": false,
+      "predicate": "has AD-related marker protein",
+      "source": "E22",
+      "surface_form": "AD-related marker proteins",
+      "target": "E23"
+    },
+    {
+      "assertion": "Tau is described as an AD-related marker protein.",
+      "context": [],
+      "effects": [],
+      "evidence": "AD-related marker proteins such as amyloid precursor protein (APP) and Tau",
+      "intervention": null,
+      "negated": false,
+      "predicate": "has AD-related marker protein",
+      "source": "E22",
+      "surface_form": "AD-related marker proteins",
+      "target": "E25"
+    },
+    {
+      "assertion": "In the reported results, SFPQ overexpression in AD mice was associated with upregulation of glutathione S-transferase.",
+      "context": [
+        "AD mice"
+      ],
+      "effects": [
+        "upregulation of glutathione S-transferase"
+      ],
+      "evidence": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated.",
+      "intervention": "SFPQ overexpression",
+      "negated": false,
+      "predicate": "is associated with upregulation of",
+      "source": "E19",
+      "surface_form": "were upregulated",
+      "target": "E26"
+    },
+    {
+      "assertion": "In the reported results, SFPQ overexpression in AD mice was associated with upregulation of heme oxygenase-1.",
+      "context": [
+        "AD mice"
+      ],
+      "effects": [
+        "upregulation of heme oxygenase-1"
+      ],
+      "evidence": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated.",
+      "intervention": "SFPQ overexpression",
+      "negated": false,
+      "predicate": "is associated with upregulation of",
+      "source": "E19",
+      "surface_form": "were upregulated",
+      "target": "E28"
+    },
+    {
+      "assertion": "The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax increased.",
+      "context": [],
+      "effects": [
+        "increased Bcl-2-to-Bax ratio"
+      ],
+      "evidence": "The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax also increased.",
+      "intervention": null,
+      "negated": false,
+      "predicate": "has an increased ratio relative to",
+      "source": "E30",
+      "surface_form": "ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax also increased",
+      "target": "E31"
+    },
+    {
+      "assertion": "The phosphorylated PI3K-to-PI3K ratio was elevated.",
+      "context": [],
+      "effects": [
+        "elevated p-PI3K/PI3K ratio"
+      ],
+      "evidence": "Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway.",
+      "intervention": null,
+      "negated": false,
+      "predicate": "has elevated phosphorylated-to-total ratio relative to",
+      "source": "E33",
+      "surface_form": null,
+      "target": "E34"
+    },
+    {
+      "assertion": "The phosphorylated AKT-to-AKT ratio was elevated.",
+      "context": [],
+      "effects": [
+        "elevated p-AKT/AKT ratio"
+      ],
+      "evidence": "Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway.",
+      "intervention": null,
+      "negated": false,
+      "predicate": "has elevated phosphorylated-to-total ratio relative to",
+      "source": "E36",
+      "surface_form": null,
+      "target": "E37"
+    },
+    {
+      "assertion": "The text identifies PI3K and AKT together in the PI3K/AKT signaling pathway and indicates activation of that pathway.",
+      "context": [],
+      "effects": [
+        "activation of the PI3K/AKT signaling pathway was indicated"
+      ],
+      "evidence": "Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway.",
+      "intervention": null,
+      "negated": false,
+      "predicate": "shares a signaling pathway with",
+      "source": "E38",
+      "surface_form": "PI3K/AKT signaling pathway",
+      "target": "E39"
+    },
+    {
+      "assertion": "The findings suggest that SFPQ may serve as a promising molecular target for the prevention and treatment of AD.",
+      "context": [],
+      "effects": [],
+      "evidence": "These findings suggest that SFPQ may serve as a promising molecular target for the prevention and treatment of AD.",
+      "intervention": null,
+      "negated": false,
+      "predicate": "may serve as a molecular target for prevention and treatment of",
+      "source": "E40",
+      "surface_form": "may serve as a promising molecular target for the prevention and treatment of",
+      "target": "E41"
+    }
+  ],
+  "stage": "Immediately after JSON parsing; before validation or graph processing"
+}
