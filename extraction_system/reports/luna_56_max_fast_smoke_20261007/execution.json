@@ -1,0 +1,8 @@
+{
+  "error_type": "ValueError",
+  "fast_tier_pass": false,
+  "migration_promoted": false,
+  "operational_pass": false,
+  "provider_generations": 0,
+  "stop_rule": "No resubmission or tuning"
+}

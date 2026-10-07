@@ -1,0 +1,13 @@
+{
+  "src/biomedical_extractor/llm_relation_extraction.py": "11a149942ab5114e5a0c26e11d520e6144ce2999ce7dff246c18457011a01e6c",
+  "src/biomedical_extractor/llm_paper_roles.py": "35a4aae963baa44d45c2aa5e3284993e3370840442f75e09df91803c28d4933b",
+  ".env.example": "56ddafcb2ec67c295332bc27412d28c751b3881068cf3ff98aed67467d52dc26",
+  "README.md": "41a8c84bea6ccca35830caf405c4921b090e3f3269a0330bc53fd3dbec76df38",
+  "docs/product/CURRENT_SPEC.md": "9a8cb84ec4512ab911fa56b9910ec25307f293b9d69c190ee6acc76440669293",
+  "docs/ARCHITECTURE.md": "7ff487f8c72d0897d54e12ba256aad517a3aadd1cfb69732a9c8ba6fadc5a579",
+  "tests/test_responses_execution.py": "b407fbddfc2f9e91d4aad3235727989859c31228fcf5209bfc5b2ac898fbfd88",
+  "tests/test_relation_extraction.py": "3b191948a934872f7b3010b264699b3743c4de2d943aa7278e7a09255d701b30",
+  "tests/test_paper_roles.py": "5b6dd8a65d88463b3a6479aaffe7344a0f070606879dffc9914d8eb377f1f4b3",
+  "tests/test_relation_cli.py": "bf15fc3ea2b3d3aae1ee2ba0465da0642321bc5f5d90f58ac117daeedffeaeec",
+  "tests/test_llm_cli.py": "dadcafcd622b4467e9a123cff6d801f2150364f29bec1a6fb19eef2a99ea9a39"
+}

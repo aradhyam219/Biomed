@@ -1,0 +1,6 @@
+{
+  "status": "NOT_RUN",
+  "subject": "Live Fast processing",
+  "reason": "The local setup failure occurred before any Responses.create request. No live outputs exist; no quality or tier judgment is inferred from offline tests.",
+  "migration_blocked": true
+}

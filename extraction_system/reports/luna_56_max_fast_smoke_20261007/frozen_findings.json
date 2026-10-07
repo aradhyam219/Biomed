@@ -1,0 +1,239 @@
+[
+  {
+    "baseline_assertions": [
+      "Overexpression of SFPQ improves cognition and memory in AD mice.",
+      "SFPQ overexpression improves recognition and memory in AD mice."
+    ],
+    "baseline_relation_indices": [
+      0,
+      7
+    ],
+    "finding_id": "baseline_contract10:000",
+    "material": true,
+    "source_evidence": [
+      "Overexpression of SFPQ Improves Cognition and Memory in AD Mice",
+      "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice"
+    ]
+  },
+  {
+    "baseline_assertions": [
+      "Alzheimer's disease is a complex neurodegenerative disorder."
+    ],
+    "baseline_relation_indices": [
+      1
+    ],
+    "finding_id": "baseline_contract10:001",
+    "material": true,
+    "source_evidence": [
+      "Alzheimer's disease (AD) is a complex neurodegenerative disorder"
+    ]
+  },
+  {
+    "baseline_assertions": [
+      "SFPQ is known to play a crucial role in neurodegenerative diseases, including antioxidant-related functions and regulating gene expression within brain neurons."
+    ],
+    "baseline_relation_indices": [
+      2
+    ],
+    "finding_id": "baseline_contract10:002",
+    "material": true,
+    "source_evidence": [
+      "Splicing factor proline and glutamine rich (SFPQ) is known to play a crucial role in neurodegenerative diseases, including antioxidant-related functions and regulating gene expression within brain neurons."
+    ]
+  },
+  {
+    "baseline_assertions": [
+      "The specific role of SFPQ in AD pathology is not well understood."
+    ],
+    "baseline_relation_indices": [
+      3
+    ],
+    "finding_id": "baseline_contract10:003",
+    "material": false,
+    "source_evidence": [
+      "However, the specific role of SFPQ in AD pathology is not well understood."
+    ]
+  },
+  {
+    "baseline_assertions": [
+      "Lateral ventricular injection of amyloid-beta1â€“42 was used to establish an AD mouse model."
+    ],
+    "baseline_relation_indices": [
+      5
+    ],
+    "finding_id": "baseline_contract10:004",
+    "material": true,
+    "source_evidence": [
+      "In this study, an AD mouse model was established through lateral ventricular injection of amyloid-beta1â€“42 (AÎ²1â€“42)."
+    ]
+  },
+  {
+    "baseline_assertions": [
+      "An AD mouse model was established through lateral ventricular injection of amyloid-beta1â€“42."
+    ],
+    "baseline_relation_indices": [
+      4
+    ],
+    "finding_id": "baseline_contract10:005",
+    "material": true,
+    "source_evidence": [
+      "In this study, an AD mouse model was established through lateral ventricular injection of amyloid-beta1â€“42 (AÎ²1â€“42)."
+    ]
+  },
+  {
+    "baseline_assertions": [
+      "Adeno-associated virus was administered to overexpress SFPQ in the hippocampus of AD mice."
+    ],
+    "baseline_relation_indices": [
+      6
+    ],
+    "finding_id": "baseline_contract10:006",
+    "material": true,
+    "source_evidence": [
+      "Subsequently, adeno-associated virus was administered to overexpress SFPQ in the hippocampus of AD mice."
+    ]
+  },
+  {
+    "baseline_assertions": [
+      "SFPQ overexpression reduces amyloid precursor protein, an AD-related marker protein, in AD mice."
+    ],
+    "baseline_relation_indices": [
+      8
+    ],
+    "finding_id": "baseline_contract10:007",
+    "material": true,
+    "source_evidence": [
+      "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau."
+    ]
+  },
+  {
+    "baseline_assertions": [
+      "SFPQ overexpression reduces Tau, an AD-related marker protein, in AD mice."
+    ],
+    "baseline_relation_indices": [
+      9
+    ],
+    "finding_id": "baseline_contract10:008",
+    "material": true,
+    "source_evidence": [
+      "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau."
+    ]
+  },
+  {
+    "baseline_assertions": [
+      "Amyloid precursor protein is described as an AD-related marker protein."
+    ],
+    "baseline_relation_indices": [
+      10
+    ],
+    "finding_id": "baseline_contract10:009",
+    "material": true,
+    "source_evidence": [
+      "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau."
+    ]
+  },
+  {
+    "baseline_assertions": [
+      "Tau is described as an AD-related marker protein."
+    ],
+    "baseline_relation_indices": [
+      11
+    ],
+    "finding_id": "baseline_contract10:010",
+    "material": true,
+    "source_evidence": [
+      "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau."
+    ]
+  },
+  {
+    "baseline_assertions": [
+      "SFPQ overexpression was associated with upregulation of glutathione S-transferase in AD mice."
+    ],
+    "baseline_relation_indices": [
+      12
+    ],
+    "finding_id": "baseline_contract10:011",
+    "material": true,
+    "source_evidence": [
+      "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated."
+    ]
+  },
+  {
+    "baseline_assertions": [
+      "SFPQ overexpression was associated with upregulation of heme oxygenase-1 in AD mice."
+    ],
+    "baseline_relation_indices": [
+      13
+    ],
+    "finding_id": "baseline_contract10:012",
+    "material": true,
+    "source_evidence": [
+      "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated."
+    ]
+  },
+  {
+    "baseline_assertions": [
+      "The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax increased in the reported SFPQ-overexpression results."
+    ],
+    "baseline_relation_indices": [
+      14
+    ],
+    "finding_id": "baseline_contract10:013",
+    "material": true,
+    "source_evidence": [
+      "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated. The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax also increased."
+    ]
+  },
+  {
+    "baseline_assertions": [
+      "The phosphorylated phosphoinositide 3-kinase (p-PI3K)-to-PI3K ratio was elevated in the reported SFPQ-overexpression results."
+    ],
+    "baseline_relation_indices": [
+      15
+    ],
+    "finding_id": "baseline_contract10:014",
+    "material": true,
+    "source_evidence": [
+      "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated. The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax also increased. Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway."
+    ]
+  },
+  {
+    "baseline_assertions": [
+      "The phosphorylated protein kinase B (p-AKT)-to-AKT ratio was elevated in the reported SFPQ-overexpression results."
+    ],
+    "baseline_relation_indices": [
+      16
+    ],
+    "finding_id": "baseline_contract10:015",
+    "material": true,
+    "source_evidence": [
+      "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated. The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax also increased. Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway."
+    ]
+  },
+  {
+    "baseline_assertions": [
+      "The elevated phosphorylated-to-total PI3K and AKT ratios indicated activation of the PI3K/AKT signaling pathway involving PI3K and AKT."
+    ],
+    "baseline_relation_indices": [
+      17
+    ],
+    "finding_id": "baseline_contract10:016",
+    "material": true,
+    "source_evidence": [
+      "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated. The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax also increased. Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway."
+    ]
+  },
+  {
+    "baseline_assertions": [
+      "SFPQ may serve as a promising molecular target for the prevention and treatment of AD."
+    ],
+    "baseline_relation_indices": [
+      18
+    ],
+    "finding_id": "baseline_contract10:017",
+    "material": true,
+    "source_evidence": [
+      "These findings suggest that SFPQ may serve as a promising molecular target for the prevention and treatment of AD."
+    ]
+  }
+]

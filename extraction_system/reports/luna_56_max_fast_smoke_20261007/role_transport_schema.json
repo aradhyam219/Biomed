@@ -1,0 +1,58 @@
+{
+  "$defs": {
+    "StructuredPaperRole": {
+      "additionalProperties": false,
+      "properties": {
+        "category": {
+          "description": "substantive or contextual",
+          "title": "Category",
+          "type": "string"
+        },
+        "evidence": {
+          "description": "Exact non-empty source substrings supporting the paragraphs",
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence",
+          "type": "array"
+        },
+        "node_id": {
+          "description": "Requested graph node ID",
+          "title": "Node Id",
+          "type": "string"
+        },
+        "paragraphs": {
+          "description": "One or two concise grounded paragraphs",
+          "items": {
+            "type": "string"
+          },
+          "title": "Paragraphs",
+          "type": "array"
+        }
+      },
+      "required": [
+        "node_id",
+        "category",
+        "paragraphs",
+        "evidence"
+      ],
+      "title": "StructuredPaperRole",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "roles": {
+      "items": {
+        "$ref": "#/$defs/StructuredPaperRole"
+      },
+      "title": "Roles",
+      "type": "array"
+    }
+  },
+  "required": [
+    "roles"
+  ],
+  "title": "StructuredPaperRolePayload",
+  "type": "object"
+}

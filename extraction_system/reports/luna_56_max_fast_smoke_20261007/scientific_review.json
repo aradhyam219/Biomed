@@ -1,0 +1,6 @@
+{
+  "status": "NOT_RUN",
+  "subject": "Scientific preservation and automatic roles",
+  "reason": "The local setup failure occurred before any Responses.create request. No live outputs exist; no quality or tier judgment is inferred from offline tests.",
+  "migration_blocked": true
+}

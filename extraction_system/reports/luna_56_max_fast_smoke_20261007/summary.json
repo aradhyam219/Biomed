@@ -1,0 +1,32 @@
+{
+  "candidate": {
+    "background": true,
+    "model": "gpt-5.6-luna",
+    "reasoning_effort": "max",
+    "service_tier": "fast"
+  },
+  "defaults_restored": true,
+  "failure": "Windows CP1252 decoded the UTF-8 frozen input during smoke execution; entity span validation rejected it before any provider request.",
+  "fast_tier_verification": "NOT_RUN",
+  "local_dotenv_modified": false,
+  "migration_promoted": false,
+  "offline_tests": {
+    "errors": 0,
+    "failures": 0,
+    "passed": 71,
+    "run": 71
+  },
+  "prompts_schemas_extraction_roles_graph_semantics_changed": false,
+  "provider_create_calls": 0,
+  "relation_generations": 0,
+  "retained_code_defaults": {
+    "background": true,
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "medium",
+    "service_tier": "default"
+  },
+  "role_generations": 0,
+  "scientific_review": "NOT_RUN",
+  "status": "BLOCKED_LOCAL_SETUP_FAILURE",
+  "stop_rule": "No inference retry, tuning, or automatic fallback. Proposed migration retained as candidate.patch; original code, tests, docs, and environment template restored."
+}

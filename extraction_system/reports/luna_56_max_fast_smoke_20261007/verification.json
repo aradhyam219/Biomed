@@ -1,0 +1,11 @@
+{
+  "production_change_diff_expected_empty": true,
+  "original_prompt_bytes_preserved": true,
+  "protected_module_bytes_preserved": true,
+  "report_secret_scan_passed": true,
+  "ignored_local_dotenv_unchanged": true,
+  "provider_calls": 0,
+  "scientific_gate": "NOT_RUN",
+  "fast_gate": "NOT_RUN",
+  "migration_promoted": false
+}

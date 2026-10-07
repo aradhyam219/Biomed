@@ -1,0 +1,20 @@
+{
+  "cause": "Smoke driver used platform-default CP1252 to read UTF-8 JSON during execution; offline preparation explicitly used UTF-8.",
+  "correct_utf8_assembly_nodes": 20,
+  "correct_utf8_span_mismatches": 0,
+  "default_encoding": "cp1252",
+  "error_message": "Entity 'E16' does not resolve to its source text",
+  "error_type": "ValueError",
+  "failed_runtime_source_sha256": "7324a9faf6286348b996dc8c78e23c8592080c70ee6bd49ff6fb02eb49da01e3",
+  "failed_runtime_span_mismatches": 27,
+  "failure_phase": "local frozen-entity assembly before the first Responses.create call",
+  "frozen_source_sha256": "604ce7f15b0ca00853cfc4cc07039d51059792e907d3da07c08be40730fb1b5b",
+  "migration_blocked": true,
+  "offline_root_cause_confirmation_only": true,
+  "operational_resubmissions": 0,
+  "provider_create_calls": 0,
+  "role_calls": 0,
+  "scientific_regression_observed": null,
+  "scientific_review_performed": false,
+  "stop_rule_honored": true
+}
