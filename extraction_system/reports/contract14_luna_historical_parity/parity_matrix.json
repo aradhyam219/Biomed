@@ -1,0 +1,553 @@
+{
+  "historical_raw_stop_condition": true,
+  "primary_verdict": "B",
+  "rows": [
+    {
+      "can_affect_model_output": "YES",
+      "contract10": "gpt-5.6-luna",
+      "evidence": [
+        ".cache/relation_contract_10/papers/pmcid_pmc11824863.json",
+        "reports/luna_56_max_fast_smoke_20261007_r2/relation_diagnostics.json"
+      ],
+      "note": "",
+      "parity": "IDENTICAL",
+      "recent_luna_smoke": "gpt-5.6-luna",
+      "variable": "Model"
+    },
+    {
+      "can_affect_model_output": "YES",
+      "contract10": "max",
+      "evidence": [
+        ".cache/relation_contract_10/papers/pmcid_pmc11824863.json",
+        "reports/luna_56_max_fast_smoke_20261007_r2/relation_diagnostics.json"
+      ],
+      "note": "",
+      "parity": "IDENTICAL",
+      "recent_luna_smoke": "max",
+      "variable": "Reasoning"
+    },
+    {
+      "can_affect_model_output": "YES",
+      "contract10": "PMCID:PMC11824863 / title plus complete abstract",
+      "evidence": [
+        ".cache/relation_contract_10/papers/pmcid_pmc11824863.json",
+        "reports/luna_56_max_fast_smoke_20261007_r2/inputs.json"
+      ],
+      "note": "",
+      "parity": "IDENTICAL",
+      "recent_luna_smoke": "PMCID:PMC11824863 / title plus complete abstract",
+      "variable": "Paper / source mode"
+    },
+    {
+      "can_affect_model_output": "YES",
+      "contract10": "604ce7f15b0ca00853cfc4cc07039d51059792e907d3da07c08be40730fb1b5b",
+      "evidence": [
+        ".cache/relation_contract_10/papers/pmcid_pmc11824863.json",
+        "reports/luna_56_max_fast_smoke_20261007_r2/inputs.json"
+      ],
+      "note": "",
+      "parity": "IDENTICAL",
+      "recent_luna_smoke": "604ce7f15b0ca00853cfc4cc07039d51059792e907d3da07c08be40730fb1b5b",
+      "variable": "Source SHA-256"
+    },
+    {
+      "can_affect_model_output": "YES",
+      "contract10": {
+        "bytes": 1501,
+        "characters": 1496
+      },
+      "evidence": [
+        ".cache/relation_contract_10/papers/pmcid_pmc11824863.json",
+        "reports/luna_56_max_fast_smoke_20261007_r2/inputs.json"
+      ],
+      "note": "",
+      "parity": "IDENTICAL",
+      "recent_luna_smoke": {
+        "bytes": 1501,
+        "characters": 1496
+      },
+      "variable": "Source characters / UTF-8 bytes"
+    },
+    {
+      "can_affect_model_output": "YES",
+      "contract10": {
+        "CR": 0,
+        "LF": 2,
+        "NFC": true
+      },
+      "evidence": [
+        ".cache/relation_contract_10/papers/pmcid_pmc11824863.json",
+        "reports/luna_56_max_fast_smoke_20261007_r2/inputs.json"
+      ],
+      "note": "Extracted source strings compared as UTF-8 bytes; enclosing JSON file bytes need not match.",
+      "parity": "IDENTICAL",
+      "recent_luna_smoke": {
+        "CR": 0,
+        "LF": 2,
+        "NFC": true
+      },
+      "variable": "Newline / Unicode"
+    },
+    {
+      "can_affect_model_output": "YES",
+      "contract10": "ebb0ba78d17b25c2a1ca0bc8e99a7bd4d84428349d446f3d03251bdf21ae355f",
+      "evidence": [
+        ".cache/relation_contract_10/papers/pmcid_pmc11824863.json",
+        "reports/luna_56_max_fast_smoke_20261007_r2/inputs.json"
+      ],
+      "note": "41 IDs, texts, types, offsets and scores match exactly; repeated mentions are retained.",
+      "parity": "IDENTICAL",
+      "recent_luna_smoke": "ebb0ba78d17b25c2a1ca0bc8e99a7bd4d84428349d446f3d03251bdf21ae355f",
+      "variable": "Mention records by ID"
+    },
+    {
+      "can_affect_model_output": "YES",
+      "contract10": "63032955590e93eef90c0dfd87c99e653454f22dde4f3e1b069a7952ddb4433a",
+      "evidence": [
+        "entity_mapping_comparison.json",
+        "src/biomedical_extractor/hunflair2.py@1f12923ce54ab6718a00b8d8e8126536285dc6a8",
+        ".cache/relation_contract_10/run_contract_10.py"
+      ],
+      "note": "Historical input order reconstructed from E IDs assigned by enumerate; saved historical cache was already reordered after graph construction.",
+      "parity": "DIFFERENT",
+      "recent_luna_smoke": "7af02036660ba6d5581468deb3b777039c7a6912d4ea4c5ee1027387d10f5e0b",
+      "variable": "Model-facing ordered entity packet SHA-256"
+    },
+    {
+      "can_affect_model_output": "YES",
+      "contract10": [
+        "E1",
+        "E2",
+        "E3",
+        "E4",
+        "E5",
+        "E6",
+        "E7",
+        "E8",
+        "E9",
+        "E10",
+        "E11",
+        "E12",
+        "E13",
+        "E14",
+        "E15",
+        "E16",
+        "E17",
+        "E18",
+        "E19",
+        "E20",
+        "E21",
+        "E22",
+        "E23",
+        "E24",
+        "E25",
+        "E26",
+        "E27",
+        "E28",
+        "E29",
+        "E30",
+        "E31",
+        "E32",
+        "E33",
+        "E34",
+        "E35",
+        "E36",
+        "E37",
+        "E38",
+        "E39",
+        "E40",
+        "E41"
+      ],
+      "evidence": [
+        "entity_mapping_comparison.json",
+        ".cache/luna_56_max_fast_smoke_20261007_r2/relation_request_01.txt"
+      ],
+      "note": "",
+      "parity": "DIFFERENT",
+      "recent_luna_smoke": [
+        "E1",
+        "E8",
+        "E10",
+        "E16",
+        "E2",
+        "E4",
+        "E5",
+        "E11",
+        "E12",
+        "E17",
+        "E20",
+        "E22",
+        "E41",
+        "E3",
+        "E18",
+        "E21",
+        "E6",
+        "E7",
+        "E9",
+        "E13",
+        "E14",
+        "E15",
+        "E19",
+        "E40",
+        "E23",
+        "E24",
+        "E25",
+        "E26",
+        "E27",
+        "E28",
+        "E29",
+        "E30",
+        "E31",
+        "E32",
+        "E33",
+        "E34",
+        "E38",
+        "E35",
+        "E36",
+        "E37",
+        "E39"
+      ],
+      "variable": "Entity ordering"
+    },
+    {
+      "can_affect_model_output": "YES",
+      "contract10": "mention-level",
+      "evidence": [
+        "src/biomedical_extractor/llm_pipeline.py@1f12923ce54ab6718a00b8d8e8126536285dc6a8",
+        "reports/luna_56_max_fast_smoke_20261007_r2/smoke_driver.py"
+      ],
+      "note": "",
+      "parity": "IDENTICAL",
+      "recent_luna_smoke": "mention-level",
+      "variable": "RE entity granularity"
+    },
+    {
+      "can_affect_model_output": "NO",
+      "contract10": "79646a2ab181dbb0e11dcbc338bff4dba6e3d925c512701d4bd8c03b8e714239",
+      "evidence": [
+        "entity_mapping_comparison.json"
+      ],
+      "note": "Both orders deterministically yield the same 20-node identity view; mappings are not added to the RE prompt.",
+      "parity": "IDENTICAL",
+      "recent_luna_smoke": "79646a2ab181dbb0e11dcbc338bff4dba6e3d925c512701d4bd8c03b8e714239",
+      "variable": "Mention-to-node mapping"
+    },
+    {
+      "can_affect_model_output": "YES",
+      "contract10": "13f38a6e94db74b534eb0df0b139287ace2e714fc908276ce4c3572f9b25836f",
+      "evidence": [
+        "src/biomedical_extractor/llm_relation_extraction.py@1f12923ce54ab6718a00b8d8e8126536285dc6a8",
+        "reports/luna_56_max_fast_smoke_20261007_r2/preflight.json"
+      ],
+      "note": "",
+      "parity": "IDENTICAL",
+      "recent_luna_smoke": "13f38a6e94db74b534eb0df0b139287ace2e714fc908276ce4c3572f9b25836f",
+      "variable": "System prompt SHA-256"
+    },
+    {
+      "can_affect_model_output": "YES",
+      "contract10": "99db58b9b122f5cf7c4a7a5f7c3a0bcb8b53dd09676631af5dfe1e35bda7c3a6",
+      "evidence": [
+        "historical_prompt_reconstructed.txt",
+        ".cache/luna_56_max_fast_smoke_20261007_r2/relation_request_01.txt"
+      ],
+      "note": "Historical value is explicitly reconstructed; recent value hashes the preserved exact input string.",
+      "parity": "DIFFERENT",
+      "recent_luna_smoke": "b47a63b66b7a3e42d4d1a899de27965defa101f071cd859ec5225ebf5fc96228",
+      "variable": "Complete model-input prompt SHA-256"
+    },
+    {
+      "can_affect_model_output": "POSSIBLY",
+      "contract10": "LangChain string input converted to a human/user message (historical code; exact wire envelope UNKNOWN / NOT PRESERVED)",
+      "evidence": [
+        "src/biomedical_extractor/llm_relation_extraction.py@1f12923ce54ab6718a00b8d8e8126536285dc6a8",
+        "reports/luna_56_max_fast_smoke_20261007_r2/smoke_driver.py"
+      ],
+      "note": "The so-called system prompt is prepended to the user/input string in both paths; no distinct developer/system message established.",
+      "parity": "DIFFERENT",
+      "recent_luna_smoke": "Direct Responses input string",
+      "variable": "Message envelope"
+    },
+    {
+      "can_affect_model_output": "YES",
+      "contract10": "023435da3fa18abb77987313626636eff7bedda28739603db54a2f2c8137c945",
+      "evidence": [
+        "historical_semantic_schema_reconstructed.json",
+        "reports/luna_56_max_fast_smoke_20261007_r2/relation_semantic_schema.json"
+      ],
+      "note": "",
+      "parity": "IDENTICAL",
+      "recent_luna_smoke": "023435da3fa18abb77987313626636eff7bedda28739603db54a2f2c8137c945",
+      "variable": "Semantic schema SHA-256"
+    },
+    {
+      "can_affect_model_output": "YES",
+      "contract10": {
+        "actual_wire": "UNKNOWN / NOT PRESERVED",
+        "lock_version_reconstruction": "b0506680756b7ad8332d976a419cdee57a81e1051dd115f291f65d77bd656510"
+      },
+      "evidence": [
+        "historical_transport_schema_lock_version_reconstructed.json",
+        "reports/luna_56_max_fast_smoke_20261007_r2/relation_transport_schema.json",
+        ".venv/Lib/site-packages/openai/lib/_parsing/_responses.py"
+      ],
+      "note": "Lock-version wrapper uses responses.parse(text_format=Pydantic) and SDK strict conversion; its reconstructed transport matches the recent schema. Do not equate semantic versus transport hashes with historical schema drift.",
+      "parity": "UNKNOWN",
+      "recent_luna_smoke": "b0506680756b7ad8332d976a419cdee57a81e1051dd115f291f65d77bd656510",
+      "variable": "Transport schema SHA-256"
+    },
+    {
+      "can_affect_model_output": "POSSIBLY",
+      "contract10": "LangChain with_structured_output(Pydantic), nonstreaming Responses parse path inferred from locked wrapper",
+      "evidence": [
+        "src/biomedical_extractor/llm_relation_extraction.py@1f12923ce54ab6718a00b8d8e8126536285dc6a8",
+        "src/biomedical_extractor/responses_execution.py"
+      ],
+      "note": "Actual historical wire request not preserved.",
+      "parity": "DIFFERENT",
+      "recent_luna_smoke": "Direct SDK Responses create with text.format json_schema strict=True",
+      "variable": "Response-format mechanism"
+    },
+    {
+      "can_affect_model_output": "POSSIBLY",
+      "contract10": "Not specified by historical factory; synchronous wrapper invocation",
+      "evidence": [
+        "src/biomedical_extractor/llm_relation_extraction.py@1f12923ce54ab6718a00b8d8e8126536285dc6a8",
+        "reports/luna_56_max_fast_smoke_20261007_r2/requests.json"
+      ],
+      "note": "",
+      "parity": "DIFFERENT",
+      "recent_luna_smoke": "True, background create/retrieve polling",
+      "variable": "Background"
+    },
+    {
+      "can_affect_model_output": "UNKNOWN",
+      "contract10": {
+        "observed": "UNKNOWN / NOT PRESERVED",
+        "requested": "Not specified by historical factory"
+      },
+      "evidence": [
+        "src/biomedical_extractor/llm_relation_extraction.py@1f12923ce54ab6718a00b8d8e8126536285dc6a8",
+        "reports/luna_56_max_fast_smoke_20261007_r2/relation_diagnostics.json"
+      ],
+      "note": "Historical Standard processing is not asserted. No evidence establishes tier as the cause of scientific output differences.",
+      "parity": "DIFFERENT",
+      "recent_luna_smoke": {
+        "observed": "priority",
+        "requested": "fast"
+      },
+      "variable": "Service tier"
+    },
+    {
+      "can_affect_model_output": "YES",
+      "contract10": 128000,
+      "evidence": [
+        ".cache/relation_contract_10/papers/pmcid_pmc11824863.json",
+        "reports/luna_56_max_fast_smoke_20261007_r2/preflight.json"
+      ],
+      "note": "",
+      "parity": "IDENTICAL",
+      "recent_luna_smoke": 128000,
+      "variable": "Max output tokens"
+    },
+    {
+      "can_affect_model_output": "NO",
+      "contract10": {
+        "actual": 0,
+        "maximum": 2
+      },
+      "evidence": [
+        ".cache/relation_contract_10/run_contract_10.py",
+        "reports/relation_contract_10/summary.json",
+        "reports/luna_56_max_fast_smoke_20261007_r2/relation_diagnostics.json"
+      ],
+      "note": "",
+      "parity": "IDENTICAL",
+      "recent_luna_smoke": {
+        "actual": 0,
+        "maximum": 2
+      },
+      "variable": "Repair budget / actual repairs"
+    },
+    {
+      "can_affect_model_output": "NO",
+      "contract10": "0 configured by factory",
+      "evidence": [
+        "src/biomedical_extractor/llm_relation_extraction.py@1f12923ce54ab6718a00b8d8e8126536285dc6a8",
+        "src/biomedical_extractor/llm_relation_extraction.py"
+      ],
+      "note": "",
+      "parity": "IDENTICAL",
+      "recent_luna_smoke": "0 configured by factory",
+      "variable": "SDK retries"
+    },
+    {
+      "can_affect_model_output": "POSSIBLY",
+      "contract10": {
+        "installed_at_historical_execution": "UNKNOWN / NOT PRESERVED",
+        "lock": {
+          "langchain-core": "1.6.3",
+          "langchain-openai": "1.6.2",
+          "openai": "3.14.1",
+          "pydantic": "2.13.5"
+        }
+      },
+      "evidence": [
+        "uv.lock@1f12923ce54ab6718a00b8d8e8126536285dc6a8",
+        "uv.lock@HEAD"
+      ],
+      "note": "Dependency lock is identical; historical runtime installation was not recorded.",
+      "parity": "UNKNOWN",
+      "recent_luna_smoke": {
+        "installed": {
+          "langchain-core": "1.6.3",
+          "langchain-openai": "1.6.2",
+          "openai": "3.14.1",
+          "pydantic": "2.13.5"
+        },
+        "lock": {
+          "langchain-core": "1.6.3",
+          "langchain-openai": "1.6.2",
+          "openai": "3.14.1",
+          "pydantic": "2.13.5"
+        }
+      },
+      "variable": "Dependencies"
+    },
+    {
+      "can_affect_model_output": "UNKNOWN",
+      "contract10": {
+        "actual_wire": "UNKNOWN / NOT PRESERVED",
+        "historical_factory": "not explicitly configured"
+      },
+      "evidence": [
+        "src/biomedical_extractor/llm_relation_extraction.py@1f12923ce54ab6718a00b8d8e8126536285dc6a8",
+        "src/biomedical_extractor/responses_execution.py"
+      ],
+      "note": "Recent executor explicitly sends store=False. Historical effective value was not retained.",
+      "parity": "UNKNOWN",
+      "recent_luna_smoke": false,
+      "variable": "store"
+    },
+    {
+      "can_affect_model_output": "POSSIBLY",
+      "contract10": {
+        "actual_wire": "UNKNOWN / NOT PRESERVED",
+        "historical_factory": "not explicitly configured"
+      },
+      "evidence": [
+        "src/biomedical_extractor/llm_relation_extraction.py@1f12923ce54ab6718a00b8d8e8126536285dc6a8",
+        "reports/luna_56_max_fast_smoke_20261007_r2/smoke_driver.py"
+      ],
+      "note": "Smoke capture saves selected parameters, not a complete serialized wire request. No historical effective value inferred.",
+      "parity": "UNKNOWN",
+      "recent_luna_smoke": {
+        "actual_wire": "UNKNOWN / NOT PRESERVED",
+        "factory": "not explicitly configured"
+      },
+      "variable": "temperature"
+    },
+    {
+      "can_affect_model_output": "POSSIBLY",
+      "contract10": {
+        "actual_wire": "UNKNOWN / NOT PRESERVED",
+        "historical_factory": "not explicitly configured"
+      },
+      "evidence": [
+        "src/biomedical_extractor/llm_relation_extraction.py@1f12923ce54ab6718a00b8d8e8126536285dc6a8",
+        "reports/luna_56_max_fast_smoke_20261007_r2/smoke_driver.py"
+      ],
+      "note": "Smoke capture saves selected parameters, not a complete serialized wire request. No historical effective value inferred.",
+      "parity": "UNKNOWN",
+      "recent_luna_smoke": {
+        "actual_wire": "UNKNOWN / NOT PRESERVED",
+        "factory": "not explicitly configured"
+      },
+      "variable": "top_p"
+    },
+    {
+      "can_affect_model_output": "POSSIBLY",
+      "contract10": {
+        "actual_wire": "UNKNOWN / NOT PRESERVED",
+        "historical_factory": "not explicitly configured"
+      },
+      "evidence": [
+        "src/biomedical_extractor/llm_relation_extraction.py@1f12923ce54ab6718a00b8d8e8126536285dc6a8",
+        "reports/luna_56_max_fast_smoke_20261007_r2/smoke_driver.py"
+      ],
+      "note": "Smoke capture saves selected parameters, not a complete serialized wire request. No historical effective value inferred.",
+      "parity": "UNKNOWN",
+      "recent_luna_smoke": {
+        "actual_wire": "UNKNOWN / NOT PRESERVED",
+        "factory": "not explicitly configured"
+      },
+      "variable": "seed"
+    },
+    {
+      "can_affect_model_output": "POSSIBLY",
+      "contract10": {
+        "actual_wire": "UNKNOWN / NOT PRESERVED",
+        "historical_factory": "not explicitly configured"
+      },
+      "evidence": [
+        "src/biomedical_extractor/llm_relation_extraction.py@1f12923ce54ab6718a00b8d8e8126536285dc6a8",
+        "reports/luna_56_max_fast_smoke_20261007_r2/smoke_driver.py"
+      ],
+      "note": "Smoke capture saves selected parameters, not a complete serialized wire request. No historical effective value inferred.",
+      "parity": "UNKNOWN",
+      "recent_luna_smoke": {
+        "actual_wire": "UNKNOWN / NOT PRESERVED",
+        "factory": "not explicitly configured"
+      },
+      "variable": "parallel/tool settings"
+    },
+    {
+      "can_affect_model_output": "NO",
+      "contract10": "UNKNOWN / NOT PRESERVED",
+      "evidence": [
+        ".cache/relation_contract_10/run_contract_10.py",
+        ".cache/luna_56_max_fast_smoke_20261007_r2/relation_raw_01.txt"
+      ],
+      "note": "",
+      "parity": "UNKNOWN",
+      "recent_luna_smoke": 19,
+      "variable": "Raw relation count"
+    },
+    {
+      "can_affect_model_output": "NO",
+      "contract10": 19,
+      "evidence": [
+        ".cache/relation_contract_10/papers/pmcid_pmc11824863.json",
+        "reports/luna_56_max_fast_smoke_20261007_r2/relations.json"
+      ],
+      "note": "",
+      "parity": "IDENTICAL",
+      "recent_luna_smoke": 19,
+      "variable": "Validated relation count"
+    },
+    {
+      "can_affect_model_output": "NO",
+      "contract10": 19,
+      "evidence": [
+        "reports/relation_contract_10/graphs/pmcid_pmc11824863.json",
+        "reports/luna_56_max_fast_smoke_20261007_r2/graph.json"
+      ],
+      "note": "",
+      "parity": "IDENTICAL",
+      "recent_luna_smoke": 19,
+      "variable": "Graph relation / edge count"
+    },
+    {
+      "can_affect_model_output": "NO",
+      "contract10": 3,
+      "evidence": [
+        "reports/relation_contract_10/graphs/pmcid_pmc11824863.json",
+        "reports/luna_56_max_fast_smoke_20261007_r2/graph.json"
+      ],
+      "note": "Two new isolated kinase long-form nodes, one formerly isolated Mice node now connected; counts alone do not score quality.",
+      "parity": "DIFFERENT",
+      "recent_luna_smoke": 4,
+      "variable": "Unconnected nodes"
+    }
+  ]
+}

@@ -1,0 +1,224 @@
+{
+  "domain_semantic_equivalence": true,
+  "fields": [
+    {
+      "field": "source",
+      "semantic": {
+        "description": "Supplied source entity ID",
+        "title": "Source",
+        "type": "string"
+      },
+      "semantic_required": true,
+      "strict": {
+        "description": "Supplied source entity ID",
+        "title": "Source",
+        "type": "string"
+      },
+      "strict_required": true
+    },
+    {
+      "field": "target",
+      "semantic": {
+        "description": "Supplied target entity ID",
+        "title": "Target",
+        "type": "string"
+      },
+      "semantic_required": true,
+      "strict": {
+        "description": "Supplied target entity ID",
+        "title": "Target",
+        "type": "string"
+      },
+      "strict_required": true
+    },
+    {
+      "field": "predicate",
+      "semantic": {
+        "description": "Concise normalized predicate faithfully describing the asserted relation",
+        "title": "Predicate",
+        "type": "string"
+      },
+      "semantic_required": true,
+      "strict": {
+        "description": "Concise normalized predicate faithfully describing the asserted relation",
+        "title": "Predicate",
+        "type": "string"
+      },
+      "strict_required": true
+    },
+    {
+      "field": "assertion",
+      "semantic": {
+        "description": "Complete source-grounded restatement of the scientific meaning; do not add information absent from the evidence",
+        "title": "Assertion",
+        "type": "string"
+      },
+      "semantic_required": true,
+      "strict": {
+        "description": "Complete source-grounded restatement of the scientific meaning; do not add information absent from the evidence",
+        "title": "Assertion",
+        "type": "string"
+      },
+      "strict_required": true
+    },
+    {
+      "field": "evidence",
+      "semantic": {
+        "description": "Verbatim contiguous source-text evidence",
+        "title": "Evidence",
+        "type": "string"
+      },
+      "semantic_required": true,
+      "strict": {
+        "description": "Verbatim contiguous source-text evidence",
+        "title": "Evidence",
+        "type": "string"
+      },
+      "strict_required": true
+    },
+    {
+      "field": "negated",
+      "semantic": {
+        "description": "Whether the asserted relation is explicitly negated",
+        "title": "Negated",
+        "type": "boolean"
+      },
+      "semantic_required": true,
+      "strict": {
+        "description": "Whether the asserted relation is explicitly negated",
+        "title": "Negated",
+        "type": "boolean"
+      },
+      "strict_required": true
+    },
+    {
+      "field": "intervention",
+      "semantic": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Optional explicit intervention or perturbation material to the assertion; leave null when not applicable",
+        "title": "Intervention"
+      },
+      "semantic_required": false,
+      "strict": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "description": "Optional explicit intervention or perturbation material to the assertion; leave null when not applicable",
+        "title": "Intervention"
+      },
+      "strict_required": true
+    },
+    {
+      "field": "effects",
+      "semantic": {
+        "description": "Optional explicit effects or outcomes; do not infer them and use an empty list when not applicable",
+        "items": {
+          "type": "string"
+        },
+        "title": "Effects",
+        "type": "array"
+      },
+      "semantic_required": false,
+      "strict": {
+        "description": "Optional explicit effects or outcomes; do not infer them and use an empty list when not applicable",
+        "items": {
+          "type": "string"
+        },
+        "title": "Effects",
+        "type": "array"
+      },
+      "strict_required": true
+    },
+    {
+      "field": "context",
+      "semantic": {
+        "description": "Optional explicit biological, experimental, clinical, organismal, tissue, cellular, disease-state, cohort, environmental, or comparable setting/condition needed to interpret where or under what conditions the relation holds; do not use for mechanisms, another relation, or another entity interaction",
+        "items": {
+          "type": "string"
+        },
+        "title": "Context",
+        "type": "array"
+      },
+      "semantic_required": false,
+      "strict": {
+        "description": "Optional explicit biological, experimental, clinical, organismal, tissue, cellular, disease-state, cohort, environmental, or comparable setting/condition needed to interpret where or under what conditions the relation holds; do not use for mechanisms, another relation, or another entity interaction",
+        "items": {
+          "type": "string"
+        },
+        "title": "Context",
+        "type": "array"
+      },
+      "strict_required": true
+    },
+    {
+      "field": "surface_form",
+      "semantic": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "default": null,
+        "description": "Optional verbatim relation wording",
+        "title": "Surface Form"
+      },
+      "semantic_required": false,
+      "strict": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "description": "Optional verbatim relation wording",
+        "title": "Surface Form"
+      },
+      "strict_required": true
+    }
+  ],
+  "historical_actual_model_facing_equivalence": "UNKNOWN / NOT PRESERVED",
+  "locked_wrapper_reconstruction_matches_recent_transport": true,
+  "object_closure": {
+    "semantic": false,
+    "strict": false
+  },
+  "relation_array": {
+    "semantic": {
+      "items": {
+        "$ref": "#/$defs/StructuredRelation"
+      },
+      "title": "Relations",
+      "type": "array"
+    },
+    "strict": {
+      "items": {
+        "$ref": "#/$defs/StructuredRelation"
+      },
+      "title": "Relations",
+      "type": "array"
+    }
+  },
+  "schema_hashes": {
+    "semantic": "023435da3fa18abb77987313626636eff7bedda28739603db54a2f2c8137c945",
+    "transport": "b0506680756b7ad8332d976a419cdee57a81e1051dd115f291f65d77bd656510"
+  },
+  "warning": "Both SDK paths perform strict conversion in the locked dependency versions. Semantic versus strict transport differences alone do not establish a change between invocations."
+}

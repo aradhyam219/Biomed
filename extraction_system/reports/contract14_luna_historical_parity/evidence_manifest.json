@@ -1,0 +1,301 @@
+{
+  "accepted_report_commit": "16b00b4e7ebe99ec257adf93917d3487629be257",
+  "branch": "extraction_system_v2",
+  "future_experiment_not_run": "Only under a new contract: capture full requests and raw responses while holding source, mention ordering, prompt, strict schema and provider settings fixed. It cannot recover the missing historical raw output or by itself prove the cause of this historical run.",
+  "initial_status": "?? extraction_system/reports/contract14_luna_historical_parity/\n",
+  "missing": [
+    "Historical raw provider response/output_text",
+    "Historical serialized request envelope and actual transport schema",
+    "Historical runtime-installed dependency versions and observed service tier"
+  ],
+  "original_artifacts": [
+    {
+      "commit": "1f12923ce54ab6718a00b8d8e8126536285dc6a8",
+      "git_blob": "9bef036ff5c0908ec2e2d07d9a5eefcb29e1ed8e",
+      "kind": "archived_original",
+      "note": "",
+      "path": "reports/relation_contract_10/graphs/pmcid_pmc11824863.json",
+      "sha256": "1d6a226715cba321ce21d40f450d4ed0a2f966dc2b2311f57e1a7c1d6b4c26e8"
+    },
+    {
+      "commit": null,
+      "kind": "archived_original",
+      "note": "Earliest preserved Contract-10 relation representation is post-parser/post-validator. Raw provider output is not retained.",
+      "path": ".cache/relation_contract_10/papers/pmcid_pmc11824863.json",
+      "sha256": "b34b3e76f6b2bfb9509366d069d36995c3576163847cea84f9b473dd9f9bff88"
+    },
+    {
+      "commit": null,
+      "kind": "archived_original",
+      "note": "",
+      "path": ".cache/relation_contract_10/run_contract_10.py",
+      "sha256": "7c2f158b983a00a2230a06332252ec3b4d611046cb41913e45e9ca20e46e0911"
+    },
+    {
+      "commit": null,
+      "kind": "archived_original",
+      "note": "",
+      "path": ".cache/relation_contract_10/repair_artifacts.py",
+      "sha256": "2e667928a8d251bed4906a48f57ade55f7ec1e95fa6edc40236a921df9ac4811"
+    },
+    {
+      "commit": null,
+      "kind": "archived_original",
+      "note": "",
+      "path": "reports/relation_contract_10/summary.json",
+      "sha256": "072788a5f65e04b0aa808e8bbf8ae93f19e84d496883a43bbb7e3d13422c8fc2"
+    },
+    {
+      "commit": null,
+      "kind": "archived_original",
+      "note": "",
+      "path": "reports/relation_migration_12a/frozen_set_manifest.json",
+      "sha256": "2b6ee792c252c229180293718aae947b1f40a8f4ff4c4072bb58979cfa1aa0e3"
+    },
+    {
+      "commit": null,
+      "kind": "archived_original",
+      "note": "",
+      "path": "reports/relation_migration_12a/papers/pmcid_pmc11824863.json",
+      "sha256": "bded650184e2954d52a652e31cd97d621df22537d52199f252cea61ab5dfb8b6"
+    },
+    {
+      "commit": null,
+      "kind": "archived_original",
+      "note": "",
+      "path": "reports/luna_56_max_fast_smoke_20261007_r2/inputs.json",
+      "sha256": "21ca6db4bcd6e5d3126fd10fa316ed082d58693de22cf995fe61371c72e432b0"
+    },
+    {
+      "commit": null,
+      "kind": "archived_original",
+      "note": "",
+      "path": "reports/luna_56_max_fast_smoke_20261007_r2/preflight.json",
+      "sha256": "bcc651cf213368247f866c63feb903b4f41320d20208560426cae8cfcb2f068a"
+    },
+    {
+      "commit": null,
+      "kind": "archived_original",
+      "note": "",
+      "path": "reports/luna_56_max_fast_smoke_20261007_r2/requests.json",
+      "sha256": "1fe40d5f7831d36bce543c3b89e3e7b2626ede622ddfe1b75c83becce4293eff"
+    },
+    {
+      "commit": null,
+      "kind": "archived_original",
+      "note": "",
+      "path": "reports/luna_56_max_fast_smoke_20261007_r2/relations.json",
+      "sha256": "e0c8f4438cd54ac15c9af9c50ace7b6aeb274d94596f9cf21fe089a2675cde54"
+    },
+    {
+      "commit": null,
+      "kind": "archived_original",
+      "note": "",
+      "path": "reports/luna_56_max_fast_smoke_20261007_r2/graph.json",
+      "sha256": "742a4bbb435d3002d83e1a2f5e1d64265604b765f2bdd4cf04c7c24cfa89c562"
+    },
+    {
+      "commit": null,
+      "kind": "archived_original",
+      "note": "",
+      "path": "reports/luna_56_max_fast_smoke_20261007_r2/graph_before_roles.json",
+      "sha256": "83489cbfcb2c8b8d78ae8326c2690655628d65eb3b74e32c278057c5d3a8cd5c"
+    },
+    {
+      "commit": null,
+      "kind": "archived_original",
+      "note": "",
+      "path": "reports/luna_56_max_fast_smoke_20261007_r2/relation_diagnostics.json",
+      "sha256": "0646ffca65287b8b487ff7ab150b8f8691063502ac4fc8ecce3fa2840409e16c"
+    },
+    {
+      "commit": null,
+      "kind": "archived_original",
+      "note": "",
+      "path": "reports/luna_56_max_fast_smoke_20261007_r2/role_diagnostics.json",
+      "sha256": "72ff54629d644d62f7dcab118d0af7920dc22723f64b3d0444e0f8cebdabfac5"
+    },
+    {
+      "commit": null,
+      "kind": "archived_original",
+      "note": "",
+      "path": "reports/luna_56_max_fast_smoke_20261007_r2/scientific_review.json",
+      "sha256": "35e22e1c70c87e0d8c96a12c8a1ae0de183ad10a6243a00683a24dbf004c4280"
+    },
+    {
+      "commit": null,
+      "kind": "archived_original",
+      "note": "",
+      "path": "reports/luna_56_max_fast_smoke_20261007_r2/smoke_driver.py",
+      "sha256": "76e024fd948f7109aad252745b89060f8132ed32ab1a60ff130e77eb637f8e62"
+    },
+    {
+      "commit": null,
+      "kind": "archived_original",
+      "note": "",
+      "path": "reports/luna_56_max_fast_smoke_20261007_r2/relation_semantic_schema.json",
+      "sha256": "7a97105ead66cc915cf7a4c5f0fe93e90094bf4912a8d9aa39de3707388f9b84"
+    },
+    {
+      "commit": null,
+      "kind": "archived_original",
+      "note": "",
+      "path": "reports/luna_56_max_fast_smoke_20261007_r2/relation_transport_schema.json",
+      "sha256": "4b5fc17d48240fdc0839a2f91b5e55409d52bb59b8edf138f005ee626578129d"
+    },
+    {
+      "commit": null,
+      "kind": "archived_original",
+      "note": "",
+      "path": "reports/luna_56_max_fast_smoke_20261007_r2/candidate.patch",
+      "sha256": "05a71d92ea26981074052e78c3aca64dd60fe55379ca41521391191e97931d4f"
+    },
+    {
+      "commit": null,
+      "kind": "archived_original",
+      "note": "Original ignored cache, not rewritten or replaced by reconstruction.",
+      "path": ".cache/luna_56_max_fast_smoke_20261007_r2/relation_request_01.txt",
+      "sha256": "6a6b7fa261c87aeeb8f3ffa679cc21ebbc5df3b3bd94aa8d115df7e485f4ba84"
+    },
+    {
+      "commit": null,
+      "kind": "archived_original",
+      "note": "Original ignored cache, not rewritten or replaced by reconstruction.",
+      "path": ".cache/luna_56_max_fast_smoke_20261007_r2/relation_raw_01.txt",
+      "sha256": "ecccb422bbf01c3bff24c46ef826ac42b33514d1b3c453e144ac0cc405d81185"
+    },
+    {
+      "commit": "1f12923ce54ab6718a00b8d8e8126536285dc6a8",
+      "git_blob": "2759a09ef508b27a571f989e851dcd1e9992370b",
+      "kind": "historical_git_source",
+      "note": "",
+      "path": "src/biomedical_extractor/llm_relation_extraction.py",
+      "sha256": "063ec74c061751cca8deba7779510da26e59ad52a36d72f30ac5f81a48fb96cb"
+    },
+    {
+      "commit": "1f12923ce54ab6718a00b8d8e8126536285dc6a8",
+      "git_blob": "2b9dfbba636aee5ccfedab4f2cb99f6f50afad6b",
+      "kind": "historical_git_source",
+      "note": "",
+      "path": "src/biomedical_extractor/entity_assembly.py",
+      "sha256": "c7e38a01a88e87fb4572f6f7e46c86e60a9a342e49fd2e3e4faa7d4256b5e6b5"
+    },
+    {
+      "commit": "1f12923ce54ab6718a00b8d8e8126536285dc6a8",
+      "git_blob": "ccbc8672b01234be57c538abfdbca17d5d95e508",
+      "kind": "historical_git_source",
+      "note": "",
+      "path": "src/biomedical_extractor/graph.py",
+      "sha256": "5062ad26454cf5b56739d3404031c9d92457d797984a3075fb7d5a53bf85b21d"
+    },
+    {
+      "commit": "1f12923ce54ab6718a00b8d8e8126536285dc6a8",
+      "git_blob": "a83437ea2db3b06acfe3ad798b64626c880d1746",
+      "kind": "historical_git_source",
+      "note": "",
+      "path": "src/biomedical_extractor/llm_pipeline.py",
+      "sha256": "daea627146b897577f4a758ab2d45457018e429dc73b3c7d5e33e5ab4afb09f9"
+    },
+    {
+      "commit": "1f12923ce54ab6718a00b8d8e8126536285dc6a8",
+      "git_blob": "aa694369b601ce2698f0059969f1567955c03f3e",
+      "kind": "historical_git_source",
+      "note": "",
+      "path": "src/biomedical_extractor/hunflair2.py",
+      "sha256": "dbdd52c320cf3835a385e95bd2724bb2c919de8a3ef2ba706e035f9a0fb4792c"
+    },
+    {
+      "commit": "1f12923ce54ab6718a00b8d8e8126536285dc6a8",
+      "git_blob": "6549b983c3fbd897363f1c456dcfb2c262168e25",
+      "kind": "historical_git_source",
+      "note": "",
+      "path": "src/biomedical_extractor/hunflair2_runtime.py",
+      "sha256": "c9bcfd25b4ee499ca5863bbc05e9c7cc3c0f1f89e82dbf33c83165033d69a24c"
+    },
+    {
+      "commit": null,
+      "kind": "installed_lock_version_source",
+      "note": "Supports conditional reconstruction, not proof of the historical installed runtime.",
+      "path": ".venv/Lib/site-packages/langchain_openai/chat_models/base.py",
+      "sha256": "256282e30b6d13913942b1f8986320537d42da90f7d6118c7790270c953f8229"
+    },
+    {
+      "commit": null,
+      "kind": "installed_lock_version_source",
+      "note": "Supports conditional reconstruction, not proof of the historical installed runtime.",
+      "path": ".venv/Lib/site-packages/openai/lib/_parsing/_responses.py",
+      "sha256": "ab061e335d80d3024edceccbc0f608556076bef28e502b123186a942bd8a54bb"
+    },
+    {
+      "commit": null,
+      "kind": "installed_lock_version_source",
+      "note": "Supports conditional reconstruction, not proof of the historical installed runtime.",
+      "path": ".venv/Lib/site-packages/openai/lib/_pydantic.py",
+      "sha256": "09fd2f1b0b9674d12e21483c58d4448d644602930e6e097c0e374b5387f98c07"
+    },
+    {
+      "commit": "1f12923ce54ab6718a00b8d8e8126536285dc6a8",
+      "git_blob": "217d10be65635cfcd88f74afbbf0ec2a5a30e631",
+      "kind": "historical_git_source",
+      "note": "",
+      "path": "uv.lock",
+      "sha256": "ba7479017416603d11d39300fd4eac2f171b110b39e0bb79fb147b251805a82d"
+    },
+    {
+      "commit": "HEAD",
+      "git_blob": "217d10be65635cfcd88f74afbbf0ec2a5a30e631",
+      "kind": "historical_git_source",
+      "note": "",
+      "path": "uv.lock",
+      "sha256": "ba7479017416603d11d39300fd4eac2f171b110b39e0bb79fb147b251805a82d"
+    },
+    {
+      "commit": null,
+      "kind": "archived_original",
+      "note": "",
+      "path": "src/biomedical_extractor/responses_execution.py",
+      "sha256": "38cfd87727e7cd8c0f989afaebe2f38db566aa5747509b82455fd61719c32c41"
+    }
+  ],
+  "reconstructed_artifacts": [
+    {
+      "kind": "reconstructed_not_archived",
+      "note": "Historical code plus archived mention fields; see audit.py. Not a recovered request or provider output.",
+      "path": "historical_mentions_reconstructed.json",
+      "sha256": "7c0a08d1babec43272e7c48b4b65b3a61e657439ed62fe95afa109c6f9f7c198"
+    },
+    {
+      "kind": "reconstructed_not_archived",
+      "note": "Historical code plus archived mention fields; see audit.py. Not a recovered request or provider output.",
+      "path": "historical_prompt_reconstructed.txt",
+      "sha256": "99db58b9b122f5cf7c4a7a5f7c3a0bcb8b53dd09676631af5dfe1e35bda7c3a6"
+    },
+    {
+      "kind": "reconstructed_not_archived",
+      "note": "Historical code plus archived mention fields; see audit.py. Not a recovered request or provider output.",
+      "path": "historical_semantic_schema_reconstructed.json",
+      "sha256": "e8701f47758222d4b15895f0550b1e4c78a241fdea179042586bba05c32cedc7"
+    },
+    {
+      "kind": "reconstructed_not_archived",
+      "note": "Historical code plus archived mention fields; see audit.py. Not a recovered request or provider output.",
+      "path": "historical_transport_schema_lock_version_reconstructed.json",
+      "sha256": "2f710140481f4e968007e848ab6b01eaf18b8ca065c9a874bc2f578b4bbc191a"
+    }
+  ],
+  "reference_commit": "1f12923ce54ab6718a00b8d8e8126536285dc6a8",
+  "reference_confirmation": "Relevant NER, RE, assembly, graph and pipeline Git blobs match the accepted Contract-10 report commit; graph is byte-derived JSON-equivalent at both commits.",
+  "start_head": "d94e99c35886ae681b3381af0386f8591b70215f",
+  "stop_condition": "Historical raw provider output unavailable and cannot be deterministically reconstructed; audit stops with bounded findings and explicit unknowns. No inference or guess substitutes for it.",
+  "validation": {
+    "all_prior_tracked_file_hashes_verified": 825,
+    "branch_and_head_unchanged_during_audit": true,
+    "no_reset": true,
+    "production_and_prior_tracked_files_unchanged": true,
+    "provider_api_calls": 0,
+    "provider_clients_created": 0,
+    "reconstruction_labelled": true,
+    "referenced_cache_and_historical_artifacts_unchanged": true,
+    "socket_connection_attempts": 0
+  }
+}

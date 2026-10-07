@@ -1,0 +1,374 @@
+You are a conservative biomedical relation extractor.
+
+Extract only relationships explicitly asserted by the supplied source text. Do not add biological facts from model knowledge, common sense, or the entity types. Every relation must connect two IDs from the supplied entity list. Keep the source-to-target direction expressed by the text. Do not turn a negated claim into a positive relation: set negated=true for an explicitly negated claim. Every emitted relation must include evidence copied verbatim as a contiguous substring of the source text. If the text does not assert a relation between supplied entities, return an empty relations list.
+
+Do not emit a relation whose sole meaning is that two supplied mentions are
+alternative names, abbreviations, aliases, or textual labels for the same
+biomedical entity. Identity and abbreviation resolution are handled separately
+by document-local entity assembly.
+
+Use predicate as a concise, graph-friendly normalized relationship. Use assertion
+as a complete source-grounded restatement of the scientific meaning represented
+by that relation; it may be normalized rather than verbatim, but it must not add
+information absent from the evidence. When an explicit manipulation, treatment,
+perturbation, or comparable condition materially changes the meaning, record it
+in intervention. Record explicit outcomes that would otherwise be lost from a
+binary edge in effects, and explicit contextual qualifiers needed for
+interpretation in context. Preserve intervention, effects, and context in the
+assertion when they are material. `intervention`, `effects`, and `context` must
+describe the relation represented by the supplied source and target endpoints.
+Do not use these structured qualifiers to hide another supplied named entity as
+a material third participant. If another supplied entity participates in a
+distinct explicitly asserted relationship, represent that relationship
+separately when supported by the text.
+
+Use context only for an explicit biological, experimental, clinical, organismal,
+tissue, cellular, disease-state, cohort, environmental, or comparable
+setting/condition needed to interpret where or under what conditions the
+relation holds. Do not use context for a mechanistic explanation, another
+relation, another entity interaction, or free-floating information that fits
+nowhere else; retain important explanatory wording in assertion or express a
+separate grounded relation when appropriate.
+
+Leave optional intervention, effects, and context empty or null when the source
+does not explicitly support them. Do not force a finite predicate ontology, add
+process or event endpoints, or infer effects and context from biomedical
+knowledge. Preserve the exact relation wording in surface_form when it is
+useful. Do not emit explanations outside the structured response.
+
+Supplied entities:
+[
+  {
+    "id": "E1",
+    "text": "SFPQ",
+    "type": "Gene",
+    "start": 18,
+    "end": 22,
+    "score": 0.9999493360519409
+  },
+  {
+    "id": "E2",
+    "text": "AD",
+    "type": "Disease",
+    "start": 56,
+    "end": 58,
+    "score": 0.9999332427978516
+  },
+  {
+    "id": "E3",
+    "text": "Mice",
+    "type": "Species",
+    "start": 59,
+    "end": 63,
+    "score": 0.9999854564666748
+  },
+  {
+    "id": "E4",
+    "text": "Alzheimer's disease",
+    "type": "Disease",
+    "start": 65,
+    "end": 84,
+    "score": 0.9999909003575643
+  },
+  {
+    "id": "E5",
+    "text": "AD",
+    "type": "Disease",
+    "start": 86,
+    "end": 88,
+    "score": 0.999977707862854
+  },
+  {
+    "id": "E6",
+    "text": "neurodegenerative disorder",
+    "type": "Disease",
+    "start": 103,
+    "end": 129,
+    "score": 0.9999899864196777
+  },
+  {
+    "id": "E7",
+    "text": "proline and glutamine rich",
+    "type": "Gene",
+    "start": 260,
+    "end": 286,
+    "score": 0.9998663514852524
+  },
+  {
+    "id": "E8",
+    "text": "SFPQ",
+    "type": "Gene",
+    "start": 288,
+    "end": 292,
+    "score": 0.999971866607666
+  },
+  {
+    "id": "E9",
+    "text": "neurodegenerative diseases",
+    "type": "Disease",
+    "start": 329,
+    "end": 355,
+    "score": 0.9999862909317017
+  },
+  {
+    "id": "E10",
+    "text": "SFPQ",
+    "type": "Gene",
+    "start": 480,
+    "end": 484,
+    "score": 0.9999781847000122
+  },
+  {
+    "id": "E11",
+    "text": "AD",
+    "type": "Disease",
+    "start": 488,
+    "end": 490,
+    "score": 0.9999853372573853
+  },
+  {
+    "id": "E12",
+    "text": "AD",
+    "type": "Disease",
+    "start": 543,
+    "end": 545,
+    "score": 0.9999839067459106
+  },
+  {
+    "id": "E13",
+    "text": "mouse",
+    "type": "Species",
+    "start": 546,
+    "end": 551,
+    "score": 0.9999865293502808
+  },
+  {
+    "id": "E14",
+    "text": "amyloid-beta1–42",
+    "type": "Gene",
+    "start": 615,
+    "end": 631,
+    "score": 0.9999810854593912
+  },
+  {
+    "id": "E15",
+    "text": "Aβ1–42",
+    "type": "Gene",
+    "start": 633,
+    "end": 639,
+    "score": 0.9999725818634033
+  },
+  {
+    "id": "E16",
+    "text": "SFPQ",
+    "type": "Gene",
+    "start": 711,
+    "end": 715,
+    "score": 0.7522382140159607
+  },
+  {
+    "id": "E17",
+    "text": "AD",
+    "type": "Disease",
+    "start": 738,
+    "end": 740,
+    "score": 0.9999804496765137
+  },
+  {
+    "id": "E18",
+    "text": "mice",
+    "type": "Species",
+    "start": 741,
+    "end": 745,
+    "score": 0.9999850988388062
+  },
+  {
+    "id": "E19",
+    "text": "SFPQ",
+    "type": "Chemical",
+    "start": 776,
+    "end": 780,
+    "score": 0.9999947547912598
+  },
+  {
+    "id": "E20",
+    "text": "AD",
+    "type": "Disease",
+    "start": 831,
+    "end": 833,
+    "score": 0.9999840259552002
+  },
+  {
+    "id": "E21",
+    "text": "mice",
+    "type": "Species",
+    "start": 834,
+    "end": 838,
+    "score": 0.9999866485595703
+  },
+  {
+    "id": "E22",
+    "text": "AD",
+    "type": "Disease",
+    "start": 855,
+    "end": 857,
+    "score": 0.999984860420227
+  },
+  {
+    "id": "E23",
+    "text": "amyloid precursor protein",
+    "type": "Gene",
+    "start": 890,
+    "end": 915,
+    "score": 0.9999803304672241
+  },
+  {
+    "id": "E24",
+    "text": "APP",
+    "type": "Gene",
+    "start": 917,
+    "end": 920,
+    "score": 0.9999890327453613
+  },
+  {
+    "id": "E25",
+    "text": "Tau",
+    "type": "Gene",
+    "start": 926,
+    "end": 929,
+    "score": 0.9999507665634155
+  },
+  {
+    "id": "E26",
+    "text": "glutathione S-transferase",
+    "type": "Gene",
+    "start": 1023,
+    "end": 1048,
+    "score": 0.9999809861183167
+  },
+  {
+    "id": "E27",
+    "text": "GST",
+    "type": "Gene",
+    "start": 1050,
+    "end": 1053,
+    "score": 0.9999890327453613
+  },
+  {
+    "id": "E28",
+    "text": "heme oxygenase-1",
+    "type": "Gene",
+    "start": 1059,
+    "end": 1075,
+    "score": 0.9999811947345734
+  },
+  {
+    "id": "E29",
+    "text": "HO-1",
+    "type": "Gene",
+    "start": 1077,
+    "end": 1081,
+    "score": 0.9999898672103882
+  },
+  {
+    "id": "E30",
+    "text": "Bcl-2",
+    "type": "Gene",
+    "start": 1137,
+    "end": 1142,
+    "score": 0.99998939037323
+  },
+  {
+    "id": "E31",
+    "text": "Bax",
+    "type": "Gene",
+    "start": 1167,
+    "end": 1170,
+    "score": 0.9999777674674988
+  },
+  {
+    "id": "E32",
+    "text": "phosphoinositide 3-kinase",
+    "type": "Gene",
+    "start": 1215,
+    "end": 1240,
+    "score": 0.9999774694442749
+  },
+  {
+    "id": "E33",
+    "text": "PI3K",
+    "type": "Gene",
+    "start": 1244,
+    "end": 1248,
+    "score": 0.9999898672103882
+  },
+  {
+    "id": "E34",
+    "text": "PI3K",
+    "type": "Gene",
+    "start": 1250,
+    "end": 1254,
+    "score": 0.9999769926071167
+  },
+  {
+    "id": "E35",
+    "text": "protein kinase B",
+    "type": "Gene",
+    "start": 1274,
+    "end": 1290,
+    "score": 0.9999801317850748
+  },
+  {
+    "id": "E36",
+    "text": "AKT",
+    "type": "Gene",
+    "start": 1294,
+    "end": 1297,
+    "score": 0.9999902248382568
+  },
+  {
+    "id": "E37",
+    "text": "AKT",
+    "type": "Gene",
+    "start": 1299,
+    "end": 1302,
+    "score": 0.9999898672103882
+  },
+  {
+    "id": "E38",
+    "text": "PI3K",
+    "type": "Gene",
+    "start": 1354,
+    "end": 1358,
+    "score": 0.9999901056289673
+  },
+  {
+    "id": "E39",
+    "text": "AKT",
+    "type": "Gene",
+    "start": 1359,
+    "end": 1362,
+    "score": 0.9999903440475464
+  },
+  {
+    "id": "E40",
+    "text": "SFPQ",
+    "type": "Chemical",
+    "start": 1410,
+    "end": 1414,
+    "score": 0.9999440908432007
+  },
+  {
+    "id": "E41",
+    "text": "AD",
+    "type": "Disease",
+    "start": 1493,
+    "end": 1495,
+    "score": 0.9999860525131226
+  }
+]
+
+Source text:
+Overexpression of SFPQ Improves Cognition and Memory in AD Mice
+
+Alzheimer's disease (AD) is a complex neurodegenerative disorder with multifaceted pathogenesis, which has been extensively investigated, yet effective treatments remain lacking. Splicing factor proline and glutamine rich (SFPQ) is known to play a crucial role in neurodegenerative diseases, including antioxidant-related functions and regulating gene expression within brain neurons. However, the specific role of SFPQ in AD pathology is not well understood. In this study, an AD mouse model was established through lateral ventricular injection of amyloid-beta1–42 (Aβ1–42). Subsequently, adeno-associated virus was administered to overexpress SFPQ in the hippocampus of AD mice. The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau. Additionally, synaptic and memory-associated proteins, as well as antioxidant proteins like glutathione S-transferase (GST) and heme oxygenase-1 (HO-1), were upregulated. The ratio of antiapoptotic protein Bcl-2 to proapoptotic protein Bax also increased. Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway. These findings suggest that SFPQ may serve as a promising molecular target for the prevention and treatment of AD.

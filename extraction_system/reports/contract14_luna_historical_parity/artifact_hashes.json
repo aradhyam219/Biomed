@@ -1,0 +1,15 @@
+{
+  ".gitattributes": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da",
+  "audit.py": "3263c727f8bc393d801850ac92021c6e39354aaad9dfa0b8a0316e5ae0a15a69",
+  "entity_mapping_comparison.json": "0553fa808942d6d47c4b60290298ac7f29fab2d4a982773e67bfb22739f8df15",
+  "evidence_manifest.json": "6d29fea65992f5b1ef7d7b54ed921042de9ec64ced322f1e61c6316e4f557e9e",
+  "historical_mentions_reconstructed.json": "7c0a08d1babec43272e7c48b4b65b3a61e657439ed62fe95afa109c6f9f7c198",
+  "historical_prompt_reconstructed.txt": "99db58b9b122f5cf7c4a7a5f7c3a0bcb8b53dd09676631af5dfe1e35bda7c3a6",
+  "historical_semantic_schema_reconstructed.json": "e8701f47758222d4b15895f0550b1e4c78a241fdea179042586bba05c32cedc7",
+  "historical_transport_schema_lock_version_reconstructed.json": "2f710140481f4e968007e848ab6b01eaf18b8ca065c9a874bc2f578b4bbc191a",
+  "parity_matrix.json": "48840c928680e3cf583519678eed76a4a797ba6f31f1b8ee4297cc8c88296e45",
+  "relation_causal_diff.json": "73a0fa903bf08aa5471a8380be9640a9283a498907e28c5f58e79b3121f39e8c",
+  "request_diff.md": "93961ebc9e9852c50053f9f1acc28e59298216cbb9c5fcff8409b1efc1951e96",
+  "schema_comparison.json": "bd404e58cbf6b6ec6e84e2c2c6011979b8666b9442b358d2e092589541b6c16e",
+  "summary.md": "baaa6d29123035c1ad0340f9918efa7e5fd97f7f2d7744ae9ab1b3397f3c78b9"
+}
