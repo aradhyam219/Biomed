@@ -1,0 +1,325 @@
+{
+  "baseline_git_sha": "214f3be09aebd972d2e2471a167da884566e11ed",
+  "baseline_tag": "extraction-system-baseline-2026-10-12",
+  "research_branch": "extraction_system_v2",
+  "delivery_branch": "delivery/extraction-system-v1",
+  "policy": "Tags are immutable by policy. This is an accepted functional baseline, not scientific gold.",
+  "main_runtime": {
+    "python": "3.11.16",
+    "uv_lock_sha256": "ba7479017416603d11d39300fd4eac2f171b110b39e0bb79fb147b251805a82d",
+    "installed_packages": {
+      "aiohappyeyeballs": "2.7.1",
+      "aiohttp": "3.14.3",
+      "aiosignal": "1.4.0",
+      "annotated-types": "0.8.0",
+      "anyio": "4.15.1",
+      "attrs": "26.1.0",
+      "biomedical-extractor": "0.1.0",
+      "certifi": "2026.7.22",
+      "charset-normalizer": "3.5.1",
+      "cloudpickle": "3.1.2",
+      "colorama": "0.4.6",
+      "datasets": "5.0.1",
+      "dill": "0.4.1",
+      "distro": "1.9.0",
+      "filelock": "3.32.6",
+      "frozenlist": "1.8.0",
+      "fsspec": "2026.6.0",
+      "gliner": "0.2.29",
+      "glirel": "1.2.1",
+      "h11": "0.16.0",
+      "httpcore": "1.0.9",
+      "httpcore2": "2.13.0",
+      "httpx": "0.28.1",
+      "httpx2": "2.13.0",
+      "huggingface_hub": "0.36.2",
+      "idna": "3.19",
+      "Jinja2": "3.1.6",
+      "jiter": "0.17.0",
+      "joblib": "1.6.0",
+      "jsonpatch": "1.33",
+      "jsonpointer": "3.1.1",
+      "langchain-core": "1.6.3",
+      "langchain-openai": "1.6.2",
+      "langchain-protocol": "0.0.19",
+      "langsmith": "0.12.6",
+      "loguru": "0.7.3",
+      "MarkupSafe": "3.0.3",
+      "mpmath": "1.3.0",
+      "multidict": "6.8.0",
+      "multiprocess": "0.70.19",
+      "narwhals": "2.26.0",
+      "networkx": "3.6.1",
+      "numpy": "2.4.6",
+      "openai": "3.14.1",
+      "orjson": "3.12.0",
+      "packaging": "26.3",
+      "pandas": "3.0.5",
+      "propcache": "0.5.2",
+      "protobuf": "6.33.6",
+      "pyarrow": "25.0.1",
+      "pydantic": "2.13.5",
+      "pydantic_core": "2.46.5",
+      "python-dateutil": "2.9.0.post0",
+      "PyYAML": "6.0.3",
+      "regex": "2026.9.10",
+      "requests": "2.34.2",
+      "requests-toolbelt": "1.0.0",
+      "safetensors": "0.8.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.17.1",
+      "sentencepiece": "0.2.2",
+      "seqeval": "1.2.2",
+      "setuptools": "84.0.0",
+      "six": "1.17.0",
+      "sniffio": "1.3.1",
+      "sympy": "1.14.0",
+      "tenacity": "9.1.4",
+      "threadpoolctl": "3.6.0",
+      "tiktoken": "0.14.0",
+      "tokenizers": "0.21.4",
+      "torch": "2.14.0",
+      "tqdm": "4.70.1",
+      "transformers": "4.51.3",
+      "truststore": "0.10.4",
+      "typing_extensions": "4.16.0",
+      "typing-inspection": "0.4.4",
+      "tzdata": "2026.4",
+      "urllib3": "2.7.0",
+      "uuid_utils": "0.17.1",
+      "websockets": "17.1",
+      "win32_setctime": "1.2.0",
+      "xxhash": "4.0.1",
+      "yarl": "1.24.5",
+      "zstandard": "0.25.0"
+    }
+  },
+  "hunflair2": {
+    "model_identifier": "hunflair/hunflair2-ner",
+    "model_revision": "3af2b8972f7af2910ce8d9ae724da09b3d7a166c",
+    "model_artifact_sha256": "245a099b660c1e2b682e0a1216feac140d5be36c4c6ca8c715af682efa685de6",
+    "runtime": {
+      "allow_long_sentences": true,
+      "device": "cpu",
+      "en_core_sci_sm": "0.5.1",
+      "flair": "0.15.1",
+      "label_type": "ner",
+      "model_max_length": 512,
+      "offset_mechanics": "SciSpaCy sentence boundaries retain each sentence.start_position; Flair span offsets are lifted to the untouched document text and validated before serialization.",
+      "python": "3.11.16",
+      "python_implementation": "CPython",
+      "pytorch": "2.14.0",
+      "scispacy": "0.5.1",
+      "sentence_splitter": "SciSpacySentenceSplitter(en_core_sci_sm)",
+      "spacy": "3.4.4",
+      "stride": 256,
+      "tagger_class": "PrefixedSequenceTagger",
+      "transformer_model": "michiyasunaga/BioLinkBERT-base",
+      "transformers": "4.57.6",
+      "truncate": true
+    }
+  },
+  "relation": {
+    "configuration": {
+      "model": "gpt-6.1-sol",
+      "api_key_env": "OPENAI_API_KEY",
+      "reasoning_effort": "medium",
+      "max_completion_tokens": 128000,
+      "max_retries": 2,
+      "background": true,
+      "service_tier": "default",
+      "poll_interval_seconds": 3.0,
+      "generation_timeout_seconds": 900.0
+    },
+    "prompt_sha256": "13f38a6e94db74b534eb0df0b139287ace2e714fc908276ce4c3572f9b25836f",
+    "semantic_schema": {
+      "$defs": {
+        "StructuredRelation": {
+          "additionalProperties": false,
+          "properties": {
+            "source": {
+              "description": "Supplied source entity ID",
+              "title": "Source",
+              "type": "string"
+            },
+            "target": {
+              "description": "Supplied target entity ID",
+              "title": "Target",
+              "type": "string"
+            },
+            "predicate": {
+              "description": "Concise normalized predicate faithfully describing the asserted relation",
+              "title": "Predicate",
+              "type": "string"
+            },
+            "assertion": {
+              "description": "Complete source-grounded restatement of the scientific meaning; do not add information absent from the evidence",
+              "title": "Assertion",
+              "type": "string"
+            },
+            "evidence": {
+              "description": "Verbatim contiguous source-text evidence",
+              "title": "Evidence",
+              "type": "string"
+            },
+            "negated": {
+              "description": "Whether the asserted relation is explicitly negated",
+              "title": "Negated",
+              "type": "boolean"
+            },
+            "intervention": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "Optional explicit intervention or perturbation material to the assertion; leave null when not applicable",
+              "title": "Intervention"
+            },
+            "effects": {
+              "description": "Optional explicit effects or outcomes; do not infer them and use an empty list when not applicable",
+              "items": {
+                "type": "string"
+              },
+              "title": "Effects",
+              "type": "array"
+            },
+            "context": {
+              "description": "Optional explicit biological, experimental, clinical, organismal, tissue, cellular, disease-state, cohort, environmental, or comparable setting/condition needed to interpret where or under what conditions the relation holds; do not use for mechanisms, another relation, or another entity interaction",
+              "items": {
+                "type": "string"
+              },
+              "title": "Context",
+              "type": "array"
+            },
+            "surface_form": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "Optional verbatim relation wording",
+              "title": "Surface Form"
+            }
+          },
+          "required": [
+            "source",
+            "target",
+            "predicate",
+            "assertion",
+            "evidence",
+            "negated"
+          ],
+          "title": "StructuredRelation",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "relations": {
+          "items": {
+            "$ref": "#/$defs/StructuredRelation"
+          },
+          "title": "Relations",
+          "type": "array"
+        }
+      },
+      "title": "StructuredRelationPayload",
+      "type": "object"
+    }
+  },
+  "paper_roles": {
+    "model": "gpt-6.1-sol",
+    "reasoning_effort": "medium",
+    "background": true,
+    "service_tier": "default",
+    "prompt_sha256": "dded1e4176f92a3872ef2b277d4ef7b261ba919e555cbdfdf210d0844a3d8e4a",
+    "semantic_schema": {
+      "$defs": {
+        "StructuredPaperRole": {
+          "additionalProperties": false,
+          "properties": {
+            "node_id": {
+              "description": "Requested graph node ID",
+              "title": "Node Id",
+              "type": "string"
+            },
+            "category": {
+              "description": "substantive or contextual",
+              "title": "Category",
+              "type": "string"
+            },
+            "paragraphs": {
+              "description": "One or two concise grounded paragraphs",
+              "items": {
+                "type": "string"
+              },
+              "title": "Paragraphs",
+              "type": "array"
+            },
+            "evidence": {
+              "description": "Exact non-empty source substrings supporting the paragraphs",
+              "items": {
+                "type": "string"
+              },
+              "title": "Evidence",
+              "type": "array"
+            }
+          },
+          "required": [
+            "node_id",
+            "category",
+            "paragraphs",
+            "evidence"
+          ],
+          "title": "StructuredPaperRole",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "roles": {
+          "items": {
+            "$ref": "#/$defs/StructuredPaperRole"
+          },
+          "title": "Roles",
+          "type": "array"
+        }
+      },
+      "title": "StructuredPaperRolePayload",
+      "type": "object"
+    }
+  },
+  "protected_source_sha256": {
+    "src\\biomedical_extractor\\entity_assembly.py": "1a443939809e47b95a43929c7f083e11a2f27e99b872d89bb2f11a0b379ece1c",
+    "src\\biomedical_extractor\\graph.py": "5062ad26454cf5b56739d3404031c9d92457d797984a3075fb7d5a53bf85b21d",
+    "src\\biomedical_extractor\\paper_roles.py": "68defa7f74558eb853ddc37b7e9215e44f2eee7454662ea3dcf12672ce4e6bbe",
+    "src\\biomedical_extractor\\llm_relation_extraction.py": "af03e784a839534280e0adb674a9d064c26bf82beb8d9debe514c486f3bbac53",
+    "src\\biomedical_extractor\\llm_paper_roles.py": "aecefff97458a8a85b5542568d8bacbd7a7a030f9d33ff813849b727a8ee04a8",
+    "src\\biomedical_extractor\\responses_execution.py": "38cfd87727e7cd8c0f989afaebe2f38db566aa5747509b82455fd61719c32c41",
+    "src\\biomedical_extractor\\hunflair2.py": "14884e449f64ceb5955b52d2922dbf45f3764a66e16d6fc3ab9c0873543f2d27",
+    "src\\biomedical_extractor\\hunflair2_runtime.py": "3e0c30b41b446fb6e530ae5d6e87f99709143ea9d65513b58dbbcd93c7c3dec7",
+    "viewer\\adapter.js": "dbebc19ae9736bd86718b9a3a956e8e53c52eae9aa8a8ddb520b525d9fc363c7",
+    "viewer\\app.js": "534414c62fdaf2fdf44355715ade59a76ce727d7e0d33627015e2d8367d5ce21",
+    "viewer\\index.html": "8628c9529303af5e58d74903e633c67417dbadd0065a6c307b620c22765225f6",
+    "viewer\\styles.css": "859945058537d27754f792e496ce215f33f8f042ec0b20a6ab5cd97017a08f4a"
+  },
+  "external_configuration": {
+    "secrets": "OPENAI_API_KEY supplied externally; no credentials preserved",
+    "defaults": ".env.example",
+    "runtime_cache": ".cache/hunflair2",
+    "device": "cpu or explicit cuda"
+  },
+  "fixtures": {
+    "additional.json": "1a18d281f460bccfe2a8d956b1e44b88e1d1291a077104ece0f0d32033710e1d",
+    "sfpq.json": "6fe1acd829a61760d6c4db93aab944a84150265f04e9504375e3dc17df69da23"
+  }
+}
