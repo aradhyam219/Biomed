@@ -92,10 +92,10 @@ roles optional.
 reuse assembled entity IDs. Every canonical node remains, including degree-zero
 nodes. Directed edge identity is exactly remapped source, target, predicate and
 negation; contributing evidence remains independently retained. Each evidence
-record preserves assertion, intervention, effects, context, source mention IDs,
-verbatim evidence, optional surface form and score. Graph construction does not
-rewrite predicates or infer new findings. Naming-only self-edges are suppressed
-after identity collapse; grounded biological self-edges remain.
+record preserves assertion, intervention, effects, context, verbatim evidence,
+optional surface form and score. Graph construction does not rewrite predicates
+or infer new findings. Naming-only self-edges are suppressed after identity
+collapse; grounded biological self-edges remain.
 
 ## Accepted limitations and scope
 
