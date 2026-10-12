@@ -18,7 +18,7 @@ def _parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description=(
             "Extract biomedical entities, then grounded LLM relations using "
-            "GLiNER or pretrained HunFlair2."
+            "pretrained HunFlair2."
         )
     )
     parser.add_argument("--text", required=True, help="Biomedical text to process")
@@ -36,23 +36,12 @@ def _parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--entity-backend",
         "--ner-backend",
-        choices=("gliner", "hunflair2"),
+        choices=("hunflair2",),
         default="hunflair2",
         help=(
             "Entity model backend; defaults to pretrained HunFlair2. "
-            "Select gliner for the compatibility path."
         ),
     )
-    parser.add_argument(
-        "--entity-label",
-        action="append",
-        dest="entity_labels",
-        help=(
-            "Allowed GLiNER entity label (repeatable; requires "
-            "--entity-backend gliner)."
-        ),
-    )
-    parser.add_argument("--entity-threshold", type=float, default=0.5)
     parser.add_argument("--device", choices=("cpu", "cuda"))
     parser.add_argument(
         "--hunflair2-model",
@@ -88,10 +77,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     """Parse options, run NER followed by LLM RE, and print JSON."""
 
     args = _parser().parse_args(argv)
-    entity_labels = tuple(args.entity_labels) if args.entity_labels else None
     extractor = LLMExtractionPipeline.from_pretrained(
-        entity_labels=entity_labels,
-        entity_threshold=args.entity_threshold,
         device=args.device,
         llm_config=openai_config_from_args(args),
         entity_backend=args.entity_backend,

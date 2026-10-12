@@ -19,24 +19,21 @@ class NERCLITests(unittest.TestCase):
     def test_standalone_command_prints_entity_only_contract(self):
         output = StringIO()
         with patch(
-            "biomedical_extractor.ner_cli.GLiNERBioMedExtractor.from_pretrained",
+            "biomedical_extractor.ner_cli.HunFlair2BioMedExtractor.from_pretrained",
             return_value=_FakeEntityExtractor(),
         ) as load, redirect_stdout(output):
             result = main(
                 [
                     "--text",
                     "BRCA1",
-                    "--entity-label",
-                    "gene",
-                    "--entity-threshold",
-                    "0.4",
                     "--device",
                     "cpu",
                 ]
             )
 
         self.assertEqual(result, 0)
-        load.assert_called_once_with(labels=("gene",), threshold=0.4, device="cpu")
+        self.assertEqual(load.call_args.kwargs["device"], "cpu")
+        self.assertFalse(load.call_args.kwargs["offline"])
         self.assertEqual(
             json.loads(output.getvalue()),
             {

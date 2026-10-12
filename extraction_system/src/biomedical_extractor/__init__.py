@@ -10,12 +10,8 @@ from .hunflair2 import (
     normalize_hunflair2_predictions,
 )
 from .entity_extraction import (
-    DEFAULT_CORE_ENTITY_LABELS,
-    DEFAULT_ENTITY_LABELS,
-    DEFAULT_ENTITY_MODEL,
     Entity,
     EntityExtractor,
-    GLiNERBioMedExtractor,
 )
 from .entity_assembly import (
     DocumentEntity,
@@ -31,7 +27,6 @@ from .graph import (
     GraphResult,
     build_graph_result,
 )
-from .pipeline import BiomedicalExtractor, ExtractionConfig, ExtractionResult, Relation
 from .llm_pipeline import (
     BiomedicalLLMExtractor,
     ComposedExtractionResult,
@@ -66,6 +61,7 @@ from .paper_roles import (
 )
 from .relation_extraction import (
     GroundedRelation,
+    Relation,
     RelationExtractionError,
     RelationExtractionResult,
     RelationExtractor,
@@ -74,16 +70,12 @@ from .relation_extraction import (
 )
 
 __all__ = [
-    "BiomedicalExtractor",
     "BiomedicalLLMExtractor",
     "ComposedExtractionResult",
     "HUNFLAIR2_LABEL_TO_CANONICAL",
     "HUNFLAIR2_MODEL_IDENTIFIER",
     "HUNFLAIR2_OFFICIAL_REPOSITORY",
     "HUNFLAIR2_SUPPORTED_CANONICAL_TYPES",
-    "DEFAULT_CORE_ENTITY_LABELS",
-    "DEFAULT_ENTITY_LABELS",
-    "DEFAULT_ENTITY_MODEL",
     "DEFAULT_LLM_RELATION_MODEL",
     "DEFAULT_LLM_REASONING_EFFORT",
     "DEFAULT_PAPER_ROLE_MODEL",
@@ -98,10 +90,7 @@ __all__ = [
     "GraphEvidence",
     "GraphNode",
     "GraphResult",
-    "ExtractionConfig",
-    "ExtractionResult",
     "GroundedRelation",
-    "GLiNERBioMedExtractor",
     "HunFlair2BioMedExtractor",
     "HunFlair2IsolatedRuntime",
     "HunFlair2PredictionRuntime",

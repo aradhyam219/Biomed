@@ -7,10 +7,8 @@ from pathlib import Path
 from typing import Any, Sequence
 
 from .entity_extraction import (
-    DEFAULT_ENTITY_MODEL,
     Entity,
     EntityExtractor,
-    GLiNERBioMedExtractor,
 )
 from .entity_assembly import assemble_document_entities
 from .graph import GraphResult, build_graph_result
@@ -71,9 +69,6 @@ class LLMExtractionPipeline:
     def from_pretrained(
         cls,
         *,
-        entity_model: str = DEFAULT_ENTITY_MODEL,
-        entity_labels: Sequence[str] | None = None,
-        entity_threshold: float = 0.5,
         device: str | None = None,
         llm_config: OpenAIConfig | None = None,
         entity_backend: str = "hunflair2",
@@ -84,34 +79,18 @@ class LLMExtractionPipeline:
         hunflair2_offline: bool = False,
         paper_role_extractor: PaperRoleExtractor | None = None,
     ) -> LLMExtractionPipeline:
-        """Load the selected NER backend, HunFlair2 by default, and the LLM harness."""
+        """Load the isolated HunFlair2 backend and the existing grounded LLM harness."""
 
-        if entity_backend == "gliner":
-            entity_extractor = GLiNERBioMedExtractor.from_pretrained(
-                model_name=entity_model,
-                labels=entity_labels,
-                threshold=entity_threshold,
-                device=device,
-            )
-        elif entity_backend == "hunflair2":
-            if entity_labels is not None:
-                raise ValueError(
-                    "HunFlair2 uses its official labels; entity_labels are only "
-                    "supported by the GLiNER backend"
-                )
-            entity_extractor = HunFlair2BioMedExtractor.from_pretrained(
-                model_identifier=hunflair2_model,
-                runtime_python=hunflair2_runtime_python,
-                runtime_script=hunflair2_runtime_script,
-                runtime_cache=hunflair2_runtime_cache,
-                device=device,
-                offline=hunflair2_offline,
-            )
-        else:
-            raise ValueError(
-                f"Unsupported entity backend {entity_backend!r}; expected "
-                "'gliner' or 'hunflair2'"
-            )
+        if entity_backend != "hunflair2":
+            raise ValueError(f"Unsupported entity backend {entity_backend!r}; expected 'hunflair2'")
+        entity_extractor = HunFlair2BioMedExtractor.from_pretrained(
+            model_identifier=hunflair2_model,
+            runtime_python=hunflair2_runtime_python,
+            runtime_script=hunflair2_runtime_script,
+            runtime_cache=hunflair2_runtime_cache,
+            device=device,
+            offline=hunflair2_offline,
+        )
         relation_extractor = LLMRelationExtractor.from_openai(llm_config)
         pipeline = cls(entity_extractor, relation_extractor, paper_role_extractor)
         pipeline._automatic_paper_roles = True

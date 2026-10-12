@@ -1,55 +1,23 @@
-"""Standalone command-line entry point for biomedical entity extraction."""
-
+"""Inspect normalized entities from the isolated pretrained HunFlair2 runtime."""
 from __future__ import annotations
-
 import argparse
 import json
+from pathlib import Path
 from collections.abc import Sequence
-
-from .entity_extraction import (
-    DEFAULT_ENTITY_LABELS,
-    GLiNERBioMedExtractor,
-)
-
-
-def _parser() -> argparse.ArgumentParser:
-    """Build the entity-only inspection command."""
-
-    parser = argparse.ArgumentParser(
-        description="Extract biomedical entities from text with GLiNER-BioMed."
-    )
-    parser.add_argument("--text", required=True, help="Biomedical text to process")
-    parser.add_argument(
-        "--entity-label",
-        action="append",
-        dest="entity_labels",
-        help="Allowed entity label (repeatable)",
-    )
-    parser.add_argument("--entity-threshold", type=float, default=0.5)
-    parser.add_argument("--device", choices=("cpu", "cuda"))
-    return parser
-
+from .hunflair2 import HunFlair2BioMedExtractor
 
 def main(argv: Sequence[str] | None = None) -> int:
-    """Load only the entity model, run one extraction, and print JSON."""
-
-    args = _parser().parse_args(argv)
-    labels = tuple(args.entity_labels or DEFAULT_ENTITY_LABELS)
-    extractor = GLiNERBioMedExtractor.from_pretrained(
-        labels=labels,
-        threshold=args.entity_threshold,
-        device=args.device,
-    )
-    entities = extractor.extract_entities(args.text)
-    print(
-        json.dumps(
-            {"input": args.text, "entities": [entity.to_dict() for entity in entities]},
-            indent=2,
-            ensure_ascii=False,
-        )
-    )
+    """Run entity-only inference on ordinary biomedical text and print JSON."""
+    parser = argparse.ArgumentParser(description="Extract biomedical entities with HunFlair2.")
+    parser.add_argument("--text", required=True)
+    parser.add_argument("--device", choices=("cpu", "cuda"))
+    parser.add_argument("--runtime-python", type=Path)
+    parser.add_argument("--runtime-cache", type=Path, default=Path(".cache/hunflair2"))
+    parser.add_argument("--offline", action="store_true")
+    args = parser.parse_args(argv)
+    extractor = HunFlair2BioMedExtractor.from_pretrained(runtime_python=args.runtime_python, runtime_cache=args.runtime_cache, device=args.device, offline=args.offline)
+    print(json.dumps({"input": args.text, "entities": [e.to_dict() for e in extractor.extract_entities(args.text)]}, indent=2, ensure_ascii=False))
     return 0
-
 
 if __name__ == "__main__":
     raise SystemExit(main())

@@ -44,37 +44,6 @@ class LLMCLITests(unittest.TestCase):
         environment.start()
         self.addCleanup(environment.stop)
 
-    def test_composed_command_constructs_llm_pipeline_without_running_real_models(self):
-        output = StringIO()
-        with patch(
-            "biomedical_extractor.llm_cli.LLMExtractionPipeline.from_pretrained",
-            return_value=_FakePipeline(),
-        ) as load, redirect_stdout(output):
-            result = main(
-                [
-                    "--text",
-                    "BRCA1",
-                    "--entity-backend",
-                    "gliner",
-                    "--entity-label",
-                    "gene",
-                    "--max-retries",
-                    "0",
-                    "--device",
-                    "cpu",
-                ]
-            )
-
-        self.assertEqual(result, 0)
-        kwargs = load.call_args.kwargs
-        self.assertEqual(kwargs["entity_backend"], "gliner")
-        self.assertEqual(kwargs["entity_labels"], ("gene",))
-        self.assertEqual(kwargs["entity_threshold"], 0.5)
-        self.assertEqual(kwargs["device"], "cpu")
-        self.assertIsInstance(kwargs["llm_config"], OpenAIConfig)
-        self.assertEqual(kwargs["llm_config"].model, "gpt-6.1-sol")
-        payload = json.loads(output.getvalue())
-        self.assertEqual(payload["relations"][0]["target"], "E1")
 
     def test_composed_command_defaults_to_hunflair2(self):
         output = StringIO()
