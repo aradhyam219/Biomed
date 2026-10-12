@@ -80,8 +80,7 @@ class Relation:
         return asdict(self)
 
 
-# This name makes the grounded nature of the value explicit for callers that
-# already use ``Relation`` for the legacy GLiREL result contract.
+# Explicit spelling of the grounded relation contract.
 GroundedRelation = Relation
 
 
