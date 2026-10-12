@@ -234,7 +234,8 @@
       },
       "title": "StructuredRelationPayload",
       "type": "object"
-    }
+    },
+    "semantic_schema_sha256": "023435da3fa18abb77987313626636eff7bedda28739603db54a2f2c8137c945"
   },
   "paper_roles": {
     "model": "gpt-6.1-sol",
@@ -296,7 +297,8 @@
       },
       "title": "StructuredPaperRolePayload",
       "type": "object"
-    }
+    },
+    "semantic_schema_sha256": "54d71c984369f1a2d5ec316ff60f1574ec033e122bb0526440bebed967a62c67"
   },
   "protected_source_sha256": {
     "src\\biomedical_extractor\\entity_assembly.py": "1a443939809e47b95a43929c7f083e11a2f27e99b872d89bb2f11a0b379ece1c",
@@ -319,7 +321,22 @@
     "device": "cpu or explicit cuda"
   },
   "fixtures": {
-    "additional.json": "1a18d281f460bccfe2a8d956b1e44b88e1d1291a077104ece0f0d32033710e1d",
-    "sfpq.json": "6fe1acd829a61760d6c4db93aab944a84150265f04e9504375e3dc17df69da23"
+    "additional.json": "65d056c36fb3dc1c6850a7001f3eb233c9c6a71d20b05bb9a140d1e9cb757064",
+    "sfpq.json": "2b2b301b0cbe5713237d13342ded01240189917542c062fa1ba332bfe4f3c57f"
+  },
+  "schema_hash_encoding": "UTF-8 JSON, sorted keys, compact separators",
+  "protected_git_blob_sha256": {
+    "src/biomedical_extractor/entity_assembly.py": "c7e38a01a88e87fb4572f6f7e46c86e60a9a342e49fd2e3e4faa7d4256b5e6b5",
+    "src/biomedical_extractor/graph.py": "5062ad26454cf5b56739d3404031c9d92457d797984a3075fb7d5a53bf85b21d",
+    "src/biomedical_extractor/paper_roles.py": "68defa7f74558eb853ddc37b7e9215e44f2eee7454662ea3dcf12672ce4e6bbe",
+    "src/biomedical_extractor/llm_relation_extraction.py": "11a149942ab5114e5a0c26e11d520e6144ce2999ce7dff246c18457011a01e6c",
+    "src/biomedical_extractor/llm_paper_roles.py": "35a4aae963baa44d45c2aa5e3284993e3370840442f75e09df91803c28d4933b",
+    "src/biomedical_extractor/responses_execution.py": "38cfd87727e7cd8c0f989afaebe2f38db566aa5747509b82455fd61719c32c41",
+    "src/biomedical_extractor/hunflair2.py": "dbdd52c320cf3835a385e95bd2724bb2c919de8a3ef2ba706e035f9a0fb4792c",
+    "src/biomedical_extractor/hunflair2_runtime.py": "c9bcfd25b4ee499ca5863bbc05e9c7cc3c0f1f89e82dbf33c83165033d69a24c",
+    "viewer/adapter.js": "d03a4aa00b577d857df8802f4acc9becaf1b0cbffbeeff2e836837604561b7c4",
+    "viewer/app.js": "8c690e0dc862bf462dc60c7425c22335ad37323789a3095c2e8755b94d36f3fc",
+    "viewer/index.html": "3bebb53cf268763c8fbf49e51f1d15e1ed4bfdff9bbd5c2329621c3097f29251",
+    "viewer/styles.css": "859945058537d27754f792e496ce215f33f8f042ec0b20a6ab5cd97017a08f4a"
   }
 }

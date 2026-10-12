@@ -22,6 +22,9 @@ class BaselineReplayTests(unittest.TestCase):
                         return validate_relations(text, entities, case['relations'])
                 class Roles:
                     def extract_roles(self, paper_title, text, targets):
+                        self_test.assertEqual(text, case['text'])
+                        self_test.assertEqual(paper_title, case['paper_title'])
+                        self_test.assertEqual({t.node_id for t in targets}, {r['node_id'] for r in case['roles']})
                         return PaperRoleExtractionResult(tuple(PaperRoleRecord(r['node_id'], PaperRole(**r['paper_role'])) for r in case['roles']))
                 self_test = self
                 normalized = HunFlair2BioMedExtractor(NER()).extract_entities(case['text'])
