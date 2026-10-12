@@ -1,11 +1,3 @@
-from .aioner import (
-    AIONERBioMedExtractor,
-    AIONER_LABEL_TO_CANONICAL,
-    AIONERPredictionRuntime,
-    AIONERRawPrediction,
-    AIONER_SUPPORTED_CANONICAL_TYPES,
-    normalize_aioner_predictions,
-)
 from .hunflair2 import (
     HUNFLAIR2_LABEL_TO_CANONICAL,
     HUNFLAIR2_MODEL_IDENTIFIER,
@@ -85,11 +77,6 @@ __all__ = [
     "BiomedicalExtractor",
     "BiomedicalLLMExtractor",
     "ComposedExtractionResult",
-    "AIONERBioMedExtractor",
-    "AIONER_LABEL_TO_CANONICAL",
-    "AIONERPredictionRuntime",
-    "AIONERRawPrediction",
-    "AIONER_SUPPORTED_CANONICAL_TYPES",
     "HUNFLAIR2_LABEL_TO_CANONICAL",
     "HUNFLAIR2_MODEL_IDENTIFIER",
     "HUNFLAIR2_OFFICIAL_REPOSITORY",
@@ -145,6 +132,5 @@ __all__ = [
     "apply_paper_roles",
     "build_graph_result",
     "validate_paper_role_result",
-    "normalize_aioner_predictions",
     "normalize_hunflair2_predictions",
 ]

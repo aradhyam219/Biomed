@@ -5,7 +5,6 @@ import unittest
 from pathlib import Path
 from unittest import mock
 
-from biomedical_extractor.biored import BioREDDataset, BioREDDocument
 from biomedical_extractor.hunflair2 import (
     HUNFLAIR2_LABEL_TO_CANONICAL,
     HUNFLAIR2_SUPPORTED_CANONICAL_TYPES,
@@ -13,10 +12,6 @@ from biomedical_extractor.hunflair2 import (
     HunFlair2IsolatedRuntime,
     HunFlair2PredictionRuntime,
     normalize_hunflair2_predictions,
-)
-from biomedical_extractor.hunflair2_evaluation_cli import (
-    FROZEN_BIORED_TEST_SHA256,
-    _validate_dataset_identity,
 )
 from biomedical_extractor.hunflair2_runtime import _prediction_for_span
 from biomedical_extractor.ner_runners import RunnerOutput
@@ -186,30 +181,6 @@ class HunFlair2AdapterTests(unittest.TestCase):
     def test_evaluation_runtime_module_does_not_load_flair_at_import(self):
         self.assertNotIn("flair", sys.modules)
 
-    def test_frozen_dataset_identity_requires_test_hash_and_document_count(self):
-        dataset = BioREDDataset(
-            path=Path("Test.BioC.JSON"),
-            split="test",
-            sha256=FROZEN_BIORED_TEST_SHA256,
-            source="BioC",
-            date="date",
-            key="key",
-            documents=tuple(
-                BioREDDocument(str(index), "", (), ()) for index in range(100)
-            ),
-        )
-        _validate_dataset_identity(dataset)
-        bad_hash = BioREDDataset(
-            path=dataset.path,
-            split=dataset.split,
-            sha256="different",
-            source=dataset.source,
-            date=dataset.date,
-            key=dataset.key,
-            documents=dataset.documents,
-        )
-        with self.assertRaisesRegex(ValueError, "SHA-256"):
-            _validate_dataset_identity(bad_hash)
 
 
 if __name__ == "__main__":

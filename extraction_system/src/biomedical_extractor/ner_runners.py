@@ -1,4 +1,4 @@
-"""Isolated orchestration for the cached AIONER and HunFlair2 runners."""
+"""Isolated orchestration for the current HunFlair2 runtime."""
 
 from __future__ import annotations
 
@@ -10,9 +10,6 @@ from pathlib import Path
 import subprocess
 from typing import Any, Mapping, Sequence
 
-from .aioner import normalize_aioner_predictions
-from .entity_extraction import Entity
-from .hunflair2 import normalize_hunflair2_predictions
 
 
 @dataclass(frozen=True)
@@ -39,7 +36,7 @@ def write_runner_input(
     documents: Sequence[Mapping[str, str]],
     path: Path,
 ) -> None:
-    """Write identical source documents for both isolated model runners."""
+    """Write source documents for the isolated HunFlair2 runner."""
 
     seen: set[str] = set()
     normalized: list[dict[str, str]] = []
@@ -89,45 +86,6 @@ def _load_runner_output(path: Path, model: str) -> RunnerOutput:
     return RunnerOutput(model, path, dict(metadata), records)
 
 
-def load_cached_runner_output(
-    path: Path,
-    model: str,
-    documents: Sequence[Mapping[str, str]],
-    *,
-    expected_model_artifact_sha256: str | None = None,
-) -> RunnerOutput:
-    """Load cached predictions only when input and artifact identity still match.
-
-    The isolated runtimes write a checksum for every supplied source document.
-    Comparing those checksums, coverage, and the cached model artifact digest is
-    sufficient to reuse a prediction file without rerunning inference.
-    """
-
-    run = _load_runner_output(path, model)
-    expected = {
-        str(document["id"]): hashlib.sha256(
-            str(document["text"]).encode("utf-8")
-        ).hexdigest()
-        for document in documents
-    }
-    if set(run.records) != set(expected):
-        raise ValueError(f"{model} cached predictions do not cover the supplied documents")
-    raw_payload = json.loads(path.read_text(encoding="utf-8"))
-    raw_documents = raw_payload.get("documents", ())
-    by_id = {str(item.get("id")): item for item in raw_documents}
-    for document_id, expected_digest in expected.items():
-        actual_digest = by_id[document_id].get("text_sha256")
-        if actual_digest != expected_digest:
-            raise ValueError(
-                f"{model} cached prediction input checksum mismatch for {document_id}"
-            )
-    if (
-        expected_model_artifact_sha256 is not None
-        and run.metadata.get("model_artifact_sha256")
-        != expected_model_artifact_sha256
-    ):
-        raise ValueError(f"{model} cached prediction artifact checksum mismatch")
-    return run
 
 
 def _run_command(
@@ -152,62 +110,6 @@ def _run_command(
         raise RuntimeError(f"{model} runner failed with exit code {result.returncode}: {detail}")
 
 
-def run_aioner(
-    documents: Sequence[Mapping[str, str]],
-    *,
-    input_path: Path,
-    output_path: Path,
-    python_path: Path = Path(".cache/aioner/legacy-venv/Scripts/python.exe"),
-    upstream_root: Path = Path(".cache/aioner-upstream"),
-    model_path: Path = Path(
-        ".cache/aioner-upstream/pretrained_models/AIONER/PubmedBERT-CRF-AIONER.h5"
-    ),
-    vocab_path: Path = Path(".cache/aioner-upstream/vocab/AIO_label.vocab"),
-    stanza_resources: Path = Path(".cache/aioner/stanza_resources"),
-) -> RunnerOutput:
-    """Run the exact cached official AIONER PubMedBERT-CRF artifact."""
-
-    write_runner_input(documents, input_path)
-    input_path = input_path.resolve()
-    output_path = output_path.resolve()
-    python_path = python_path.resolve()
-    upstream_root = upstream_root.resolve()
-    model_path = model_path.resolve()
-    vocab_path = vocab_path.resolve()
-    stanza_resources = stanza_resources.resolve()
-    command = [
-        str(python_path),
-        str((Path(__file__).with_name("aioner_runtime.py")).resolve()),
-        "--input",
-        str(input_path),
-        "--output",
-        str(output_path),
-        "--upstream-root",
-        str(upstream_root),
-        "--model",
-        str(model_path),
-        "--vocabfile",
-        str(vocab_path),
-        "--model-artifact-sha256",
-        _sha256_file(model_path) if model_path.is_file() else "",
-        "--stanza-resources",
-        str(stanza_resources),
-    ]
-    environment = os.environ.copy()
-    environment.update(
-        {
-            "CUDA_VISIBLE_DEVICES": "",
-            "TF_CPP_MIN_LOG_LEVEL": "2",
-            "PYTHONIOENCODING": "utf-8",
-        }
-    )
-    _run_command(
-        command,
-        cwd=upstream_root / "src",
-        environment=environment,
-        model="AIONER",
-    )
-    return _load_runner_output(output_path, "AIONER")
 
 
 def _hunflair2_artifact(
@@ -327,37 +229,6 @@ def run_hunflair2(
     return _load_runner_output(output_path, "HunFlair2")
 
 
-def normalize_runner_predictions(
-    run: RunnerOutput,
-    documents: Sequence[Mapping[str, str]],
-) -> dict[str, tuple[Entity, ...]]:
-    """Convert plain runner records through the existing model adapters."""
-
-    document_map = {str(document["id"]): str(document["text"]) for document in documents}
-    if set(run.records) != set(document_map):
-        missing = sorted(set(document_map) - set(run.records))
-        extra = sorted(set(run.records) - set(document_map))
-        raise ValueError(
-            f"{run.model} prediction coverage mismatch; missing={missing}, extra={extra}"
-        )
-    normalized: dict[str, tuple[Entity, ...]] = {}
-    for document_id, text in document_map.items():
-        raw = run.records[document_id]
-        if run.model == "AIONER":
-            entities = normalize_aioner_predictions(text, raw)
-        elif run.model == "HunFlair2":
-            entities = normalize_hunflair2_predictions(text, raw)
-        else:
-            raise ValueError(f"Unsupported model runner: {run.model}")
-        normalized[document_id] = entities
-    return normalized
 
 
-__all__ = [
-    "RunnerOutput",
-    "load_cached_runner_output",
-    "normalize_runner_predictions",
-    "run_aioner",
-    "run_hunflair2",
-    "write_runner_input",
-]
+__all__ = ["RunnerOutput", "run_hunflair2", "write_runner_input"]

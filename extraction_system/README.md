@@ -1,193 +1,26 @@
-# Biomedical Extractor
+# Entity Extraction System
 
-The active path is core biomedical named-entity recognition (NER) using the
-model-independent `EntityExtractor` contract. Legacy relation implementations
-remain preserved for later work; the composed HunFlair2 plus grounded LLM
-relation prototype is available downstream but is not the active NER quality
-target.
+Ordinary biomedical text becomes evidence-backed Graph JSON through pretrained
+HunFlair2, document-local assembly, grounded LLM relations and paper roles.
+The current implementation is an accepted functional baseline with documented
+scientific limitations.
 
-## Setup
-
-With [uv](https://docs.astral.sh/uv/) available:
-
-```powershell
-uv sync
-```
-
-The first run downloads model weights. Model caches, local runtimes, and virtual environments are ignored by Git.
-
-## Current focus
-
-```text
-biomedical text -> core biomedical NER -> NER evaluation / model selection
-                 -> future biomedical entity normalization -> STOP
-```
-
-The entity-only GLiNER path runs one core-label pass, while the composed
-`biomedical-extract-llm` path defaults to pretrained HunFlair2. Biological-process
-extraction, biomedical identity linking, and live LLM calls are not part of the
-current NER quality workstream. See [`docs/product/CURRENT_SPEC.md`](docs/product/CURRENT_SPEC.md)
-and [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) for the current contracts.
-
-## Active NER inspection
-
-```powershell
-uv run biomedical-ner --text "BRCA1 mutations are associated with breast cancer." --entity-label gene --entity-label disease
-```
-
-This entity-only command does not load GLiREL. Programmatic callers use the
-model-independent entity contract:
+See [provisioning](docs/PROVISIONING.md), [product specification](docs/product/CURRENT_SPEC.md)
+and [architecture](docs/ARCHITECTURE.md). Runtime/model identities and frozen prompt
+hashes are recorded in `provisioning/baseline.json`.
 
 ```python
-from biomedical_extractor import GLiNERBioMedExtractor
-
-extractor = GLiNERBioMedExtractor.from_pretrained()
-entities = extractor.extract_entities("BRCA1 mutations are associated with breast cancer.")
+from biomedical_extractor import LLMExtractionPipeline
+pipeline = LLMExtractionPipeline.from_hunflair2(offline=True)
+graph = pipeline.extract_graph(text, document_id="paper-1", paper_title=title)
+print(graph.to_json())
 ```
 
-Each returned entity exposes `id`, `text`, `type`, half-open `start`/`end`
-character offsets, and `score` when the model supplies one.
+Supply provider credentials externally. The main locked environment and isolated
+HunFlair2 environment are both required. Research history remains on
+`extraction_system_v2` and the immutable baseline tag.
 
-## Graph JSON viewer
-
-The graph-ready JSON boundary has a small Cytoscape.js browser viewer. Launch it
-from the repository root after setup:
-
-```powershell
-.\.venv\Scripts\python.exe -m http.server 8765 --directory viewer
-```
-
-Open <http://127.0.0.1:8765/>. The viewer loads the tracked
-`viewer/graph-fixture.json` smoke/demo payload through the thin
-`viewer/adapter.js` layer. A future serialized `GraphResult.to_json()` payload
-can enter through the same adapter without exposing model/provider internals to
-the browser.
-
-The summary distinguishes the underlying directed relation count from displayed
-connections. A single relation remains a directly inspectable edge; multiple
-relations with the same source and target direction become one count-labeled
-bundle. Reverse-direction relations remain separate. Click a bundle to choose an
-underlying predicate, then use the back control to return to the bundle list;
-the relation detail view still exposes negation and every retained evidence
-record, with each record showing its assertion first and any present
-intervention, effects, context, verbatim evidence, surface form, and score.
-Node types use distinct shapes, selected elements focus their local neighborhood,
-and pan, zoom, and node dragging are provided by Cytoscape.js.
-Bundling and routing are presentation-only: the supplied graph JSON and its
-scientific relations are not rewritten.
-
-Run the focused adapter tests with:
-
-```powershell
-npm test --prefix viewer
-```
-
-## Preserved/deferred relation paths
-
-The following relation paths are preserved and remain callable for existing
-consumers, but they are not the active quality target and are not changed by the
-current NER refocus.
-
-The old interactive `demo.py` command is retained as a deferred GLiNER-to-GLiREL
-relation-pipeline demo. It loads relation tooling and prints entities plus
-relations; it is not the active NER demo:
-
-```powershell
-uv run python demo.py
-```
-
-For scripted use, the preserved `biomedical-extract` command remains available.
-Entity/relation labels and confidence thresholds can be supplied with
-`--entity-label`, `--relation-label`, `--entity-threshold`, and
-`--relation-threshold`.
-
-The LLM relation path accepts the normalized entities above and returns directed
-relations with source/target IDs, a concise predicate, a required complete
-source-grounded `assertion`, verbatim source evidence, an explicit `negated`
-flag, and optional exact relation wording. Optional `intervention`, `effects`,
-and `context` fields preserve explicit semantic qualifiers without creating
-process or event endpoints. Predicates are normalized descriptions faithful to
-the source text; the initial LLM path does not apply a finite ontology or
-request a confidence score. The provider-independent relation contract can
-still preserve a score supplied by another implementation. LangChain/OpenAI
-objects stay inside the relation harness.
-The default OpenAI relation harness uses bounded Responses API background
-execution with `gpt-6.1-sol`, `medium` reasoning effort, Standard/default service
-tier (`service_tier=default`), and a `128000` output-token ceiling. The production
-prompt remains the original Contract 10 / 12A conservative evidence-grounded
-control prompt. Explicit configuration can still select foreground LangChain
-Responses execution or another supported model, reasoning effort, or tier. The compatibility
-`BIOMEDICAL_RELATION_MAX_COMPLETION_TOKENS` setting is mapped to the Responses
-API output-token field inside that provider seam.
-
-For local configuration, copy `.env.example` to `.env` and add the key when the
-live smoke is authorized. The documented command uses uv's existing env-file
-support to load it; `.env` is ignored by Git. The model and bounded-repair
-settings can also be configured with `BIOMEDICAL_RELATION_MODEL`,
-`BIOMEDICAL_RELATION_MAX_COMPLETION_TOKENS`,
-`BIOMEDICAL_RELATION_MAX_RETRIES`,
-`BIOMEDICAL_RELATION_REASONING_EFFORT`, `BIOMEDICAL_RELATION_BACKGROUND`, and
-`BIOMEDICAL_RELATION_SERVICE_TIER`. Polling defaults to 3 seconds and each
-generation is bounded to 900 seconds; override these with
-`BIOMEDICAL_RELATION_POLL_INTERVAL_SECONDS` and
-`BIOMEDICAL_RELATION_TIMEOUT_SECONDS`.
-
-```powershell
-Copy-Item .env.example .env
-```
-
-Run relation extraction independently with supplied entity JSON:
-
-```powershell
-$entities = '[{"id":"E1","text":"BRCA1","type":"gene","start":0,"end":5},{"id":"E2","text":"breast cancer","type":"disease","start":24,"end":37}]'
-uv run --env-file .env biomedical-re `
-  --text "BRCA1 is associated with breast cancer." `
-  --entities $entities
-```
-
-Run the composed HunFlair2 → LLM relation path:
-
-```powershell
-uv run --env-file .env biomedical-extract-llm `
-  --text "BRCA1 is associated with breast cancer." `
-  --device cpu
-```
-
-The compatibility GLiNER path remains available with
-`--entity-backend gliner` and explicit `--entity-label` values.
-
-Programmatic composition uses `LLMExtractionPipeline`; relation-only callers
-can instantiate `LLMRelationExtractor` with their own `Entity` values. The
-normal test suite uses fake model responses and never requires an API key.
-
-## BioRED core NER evaluation
-
-The model-independent evaluator compares any normalized `EntityExtractor` output
-with BioRED gold mentions using exact half-open character spans and an explicit
-taxonomy mapping. The current GLiNER-BioMed baseline can be run with:
-
-```powershell
-uv run biomedical-ner-evaluate --dataset C:\path\to\BioRED --device cpu
-```
-
-The command uses the existing default labels and threshold, reports comparable
-micro/per-type metrics, keeps sequence-variant and unsupported predictor labels as
-schema-coverage diagnostics, and writes JSON plus Markdown reports under
-`reports/` for a full run. It does not invoke GLiREL or an LLM. See the committed
-baseline report for the evaluated split and limitations.
-
-## Preserved BioRED relation evaluation
-
-Download the official NCBI BioRED archive, extract it locally, and run the
-gold-entity development baseline with an explicit dataset path:
-
-```powershell
-uv run biored-evaluate --dataset C:\path\to\BioRED --split dev
-```
-
-Use `--limit 1` for a real-model smoke test. Raw inference scores and the
-machine-readable summary default to gitignored `.cache/` files, so later threshold
-scoring reuses the same inference rather than rerunning GLiREL. See
-[`docs/EVALUATION.md`](docs/EVALUATION.md) for the methodology and limitations.
-The current official dev split includes one 554-token document; the full command
-fails fast rather than let GLiREL silently truncate its 512-token input.
+Run current deterministic tests with `uv run --locked python -m unittest discover
+-s tests -v` and graph consumer checks with `node --test viewer/tests/adapter.test.mjs`.
+The existing viewer can be served with `uv run --locked python -m http.server 8765
+--directory viewer` and opened at http://127.0.0.1:8765/.
