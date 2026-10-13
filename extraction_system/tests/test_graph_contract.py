@@ -209,6 +209,99 @@ class GraphContractTests(unittest.TestCase):
             runtime._last_metadata = observed
             verify_graph_profile(pipeline, bound, text='BRCA1')
 
+    def _prepared_role_pipeline(self):
+        ctx = context()
+        profile = ctx.configuration
+        pipeline = LLMExtractionPipeline.from_pretrained(
+            llm_config=OpenAIConfig(api_key='offline-test'),
+            hunflair2_runtime_python='isolated-python')
+        versions = {key: profile['ner']['runtime'][key] for key in
+                    ('python', 'flair', 'pytorch', 'transformers', 'scispacy', 'spacy', 'en_core_sci_sm')}
+        with patch('biomedical_extractor.graph_profile._hunflair2_artifact',
+                   return_value=(Path('artifact'), profile['ner']['model_revision'])), \
+             patch('biomedical_extractor.graph_profile._sha256_file',
+                   return_value=profile['ner']['model_artifact_sha256']), \
+             patch('biomedical_extractor.graph_profile.subprocess.check_output',
+                   return_value=json.dumps(versions)):
+            prepare_graph_export(pipeline, text='BRCA1', document_id='d', context=ctx)
+        pipeline.entity_extractor._runtime._last_metadata = {
+            **{key: profile['ner'][key] for key in
+               ('model_identifier', 'model_revision', 'model_artifact_sha256')},
+            'runtime': copy.deepcopy(profile['ner']['runtime'])}
+        return pipeline, ctx
+
+    def test_prepared_per_call_role_bypass_fails_before_any_extraction(self):
+        from unittest.mock import Mock
+        from biomedical_extractor.llm_paper_roles import LLMPaperRoleExtractor
+        from biomedical_extractor.relation_extraction import RelationExtractionResult
+        # Exercise both original bypass forms: no stored producer, and a valid
+        # producer retained from an earlier graph extraction.
+        for retained in (False, True):
+            pipeline, ctx = self._prepared_role_pipeline()
+            if retained:
+                pipeline.paper_role_extractor = LLMPaperRoleExtractor.from_openai(OpenAIConfig(api_key='offline-test'))
+            unsupported = Mock()
+            with patch.object(pipeline.entity_extractor, 'extract_entities', return_value=()) as ner, \
+                 patch.object(pipeline.relation_extractor, 'extract_relations', return_value=RelationExtractionResult(())) as relations, \
+                 patch('biomedical_extractor.llm_pipeline.LLMPaperRoleExtractor.from_openai') as roles:
+                with self.subTest(retained=retained), self.assertRaisesRegex(GraphValidationError, 'injected roles producer'):
+                    pipeline.extract_graph('BRCA1', document_id='d', paper_role_extractor=unsupported)
+                ner.assert_not_called()
+                relations.assert_not_called()
+                roles.assert_not_called()
+                unsupported.extract_roles.assert_not_called()
+
+    def test_prepared_supported_roles_verify_actual_per_call_producer(self):
+        from biomedical_extractor.llm_paper_roles import LLMPaperRoleExtractor
+        from biomedical_extractor.relation_extraction import RelationExtractionResult
+        from biomedical_extractor import PaperRoleRecord, PaperRoleExtractionResult
+        pipeline, ctx = self._prepared_role_pipeline()
+        stored = LLMPaperRoleExtractor.from_openai(OpenAIConfig(api_key='offline-test'))
+        supplied = LLMPaperRoleExtractor.from_openai(OpenAIConfig(api_key='offline-test'))
+        result = PaperRoleExtractionResult((PaperRoleRecord('doc_e_001', PaperRole('substantive', ('Paraphrased role.',), ('BRCA1',))),))
+        with patch.object(pipeline.entity_extractor, 'extract_entities', return_value=(Entity('E1', 'BRCA1', 'Gene', 0, 5, None),)), \
+             patch.object(pipeline.relation_extractor, 'extract_relations', return_value=RelationExtractionResult(())), \
+             patch.object(stored, 'extract_roles', return_value=result) as previous, \
+             patch.object(supplied, 'extract_roles', return_value=result) as actual:
+            with patch('biomedical_extractor.llm_pipeline.LLMPaperRoleExtractor.from_openai', return_value=stored):
+                baseline = pipeline.extract_graph('BRCA1', document_id='d', paper_title='Title')
+            previous.assert_called_once()
+            self.assertIs(pipeline.paper_role_extractor, stored)
+            verify_graph_profile(pipeline, ctx, text='BRCA1')
+            export_graph(baseline, text='BRCA1', paper_title='Title', context=ctx)
+            previous.reset_mock()
+            graph = pipeline.extract_graph('BRCA1', document_id='d', paper_title='Title', paper_role_extractor=supplied)
+            previous.assert_not_called()
+            actual.assert_called_once()
+            self.assertEqual(actual.call_args.args[:2], ('Title', 'BRCA1'))
+            self.assertEqual(graph.nodes[0].paper_role, result.records[0].role)
+            verify_graph_profile(pipeline, ctx, text='BRCA1')
+            export_graph(graph, text='BRCA1', paper_title='Title', context=ctx)
+            # The valid stored producer must not hide drift in the actual one.
+            supplied._background_executor._model = 'unsupported'
+            with self.assertRaisesRegex(GraphValidationError, 'roles.model'):
+                verify_graph_profile(pipeline, ctx, text='BRCA1')
+            # A later call using no roles must not reuse the preceding call's
+            # producer as proof of its effective configuration.
+            with patch.object(pipeline.entity_extractor, 'extract_entities', return_value=()):
+                pipeline.extract_graph('BRCA1', document_id='d')
+            verify_graph_profile(pipeline, ctx, text='BRCA1')
+
+    def test_unprepared_low_level_per_call_role_injection_remains_available(self):
+        from unittest.mock import Mock
+        from biomedical_extractor.relation_extraction import RelationExtractionResult
+        from biomedical_extractor import PaperRoleRecord, PaperRoleExtractionResult
+        ner, relations, roles = Mock(), Mock(), Mock()
+        ner.extract_entities.return_value = (Entity('E1', 'BRCA1', 'Gene', 0, 5, None),)
+        relations.extract_relations.return_value = RelationExtractionResult(())
+        result = PaperRoleExtractionResult((PaperRoleRecord('doc_e_001', PaperRole('substantive', ('Paraphrased role.',), ('BRCA1',))),))
+        roles.extract_roles.return_value = result
+        pipeline = LLMExtractionPipeline(ner, relations)
+        graph = pipeline.extract_graph('BRCA1', document_id='d', paper_title='Title', paper_role_extractor=roles)
+        roles.extract_roles.assert_called_once()
+        self.assertEqual(graph.nodes[0].paper_role, result.records[0].role)
+        self.assertIsNone(pipeline.paper_role_extractor)
+
     def test_preflight_revalidates_mutable_recorded_context_before_providers(self):
         ctx = context()
         ctx.configuration['roles']['model'] = 'unsupported'

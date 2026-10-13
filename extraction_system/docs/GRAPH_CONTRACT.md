@@ -90,7 +90,10 @@ For live baseline extraction call `prepare_graph_export` before extraction,
 then `verify_graph_profile` after it and export with the returned context.
 Preflight verifies bound providers, local model bytes and isolated distribution
 versions without importing models; actual returned NER metadata is checked
-before relation submission. This requires an already provisioned baseline;
+before relation submission. Prepared pipelines also validate the selected per-call
+role producer before extraction, and postflight checks the producer actually
+invoked on that call. Unprepared low-level per-call injection remains available.
+This requires an already provisioned baseline;
 contract operations and fixed-stage replay themselves require no model runtime.
 Explicit ExportContext is a caller attestation of recorded release/configuration,
 intended for offline replay or an independently verified build; it does not

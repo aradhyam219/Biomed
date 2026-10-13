@@ -126,6 +126,8 @@ def prepare_graph_export(pipeline, *, text: str, document_id: str, paper_title: 
             _fail(f'NER runtime {key}')
     runtime._last_metadata = None
     runtime._v1_expected_profile = p
+    pipeline._v1_expected_profile = p
+    pipeline._last_graph_role_extractor = None
     return context
 
 
@@ -137,8 +139,8 @@ def verify_graph_profile(pipeline, context, *, text: str):
     runtime = _runtime(pipeline, p)
     if text.strip():
         verify_ner_metadata(runtime._last_metadata, p)
-    if pipeline.paper_role_extractor is not None:
-        _provider(pipeline.paper_role_extractor, 'roles', p)
+    if pipeline._last_graph_role_extractor is not None:
+        _provider(pipeline._last_graph_role_extractor, 'roles', p)
 
 
 def verify_ner_metadata(observed, profile):

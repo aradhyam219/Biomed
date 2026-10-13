@@ -64,6 +64,7 @@ class LLMExtractionPipeline:
         self.paper_role_extractor = paper_role_extractor
         self._automatic_paper_roles = False
         self._paper_role_config: OpenAIConfig | None = None
+        self._last_graph_role_extractor: PaperRoleExtractor | None = None
 
     @classmethod
     def from_pretrained(
@@ -179,6 +180,16 @@ class LLMExtractionPipeline:
 
         if not isinstance(text, str):
             raise TypeError("text must be a string")
+        self._last_graph_role_extractor = None
+        role_extractor = (
+            paper_role_extractor
+            if paper_role_extractor is not None
+            else self.paper_role_extractor
+        )
+        profile = getattr(self, "_v1_expected_profile", None)
+        if profile is not None and role_extractor is not None:
+            from .graph_profile import _provider
+            _provider(role_extractor, "roles", profile)
         if not text.strip():
             return build_graph_result(document_id, assemble_document_entities((), text), ())
 
@@ -187,11 +198,6 @@ class LLMExtractionPipeline:
         relation_result = self.extract_relations(text, entities)
         graph = build_graph_result(document_id, assembly, relation_result)
 
-        role_extractor = (
-            paper_role_extractor
-            if paper_role_extractor is not None
-            else self.paper_role_extractor
-        )
         if not graph.unconnected_nodes:
             return graph
         if role_extractor is None and self._automatic_paper_roles:
@@ -209,6 +215,11 @@ class LLMExtractionPipeline:
             )
             for node in graph.unconnected_nodes
         )
+        if profile is not None:
+            from .graph_profile import _provider
+            _provider(role_extractor, "roles", profile)
+        # Record the producer actually invoked, not a cached producer from another call.
+        self._last_graph_role_extractor = role_extractor
         roles = role_extractor.extract_roles(paper_title, text, targets)
         return apply_paper_roles(graph, text, roles)
 
