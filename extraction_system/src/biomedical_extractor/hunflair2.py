@@ -84,6 +84,7 @@ class HunFlair2IsolatedRuntime:
         self._runtime_cache = Path(runtime_cache)
         self._device = device or "cpu"
         self._offline = offline
+        self._last_metadata = None
 
     def predict_entities(self, text: str) -> Sequence[object]:
         """Run one source text through the shared isolated runner."""
@@ -109,6 +110,10 @@ class HunFlair2IsolatedRuntime:
                 offline=self._offline,
             )
 
+        self._last_metadata = dict(run.metadata)
+        if getattr(self, "_v1_expected_profile", None) is not None:
+            from .graph_profile import verify_ner_metadata
+            verify_ner_metadata(self._last_metadata, self._v1_expected_profile)
         try:
             return tuple(run.records[self._DOCUMENT_ID])
         except KeyError as error:

@@ -1,0 +1,26 @@
+[
+  {
+    "text": "",
+    "paper_title": "",
+    "text_utf8_length": 0,
+    "title_utf8_length": 0,
+    "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "extraction_input_sha256": "a45329a4035be777b5a6256ef0c7b283d09522416374b04acd63d8946e2af4b3"
+  },
+  {
+    "text": "BRCA1",
+    "paper_title": "",
+    "text_utf8_length": 5,
+    "title_utf8_length": 0,
+    "source_sha256": "d530eaadc912e1c847dc5af6d819d857ca7b517729b2ed8da80b1d0f8074922d",
+    "extraction_input_sha256": "6b68810f5c302fd0c80bc9421faafd9ce1bc11f533e3858bb67e4e0abdd71d69"
+  },
+  {
+    "text": "αβ 🧬\r\nX",
+    "paper_title": "Title 🧪",
+    "text_utf8_length": 12,
+    "title_utf8_length": 10,
+    "source_sha256": "d3dad2b98aaf880525d7abc7962eb8762305a949b6318b97e96f07371add0027",
+    "extraction_input_sha256": "d3df05a609cc87308151096aa5ef4a1f9a4a291d43727aca4388cbe8f13f384b"
+  }
+]

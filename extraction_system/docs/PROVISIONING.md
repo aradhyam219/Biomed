@@ -41,8 +41,9 @@ uv run --locked biomedical-extract-llm --text "BRCA1 is associated with breast c
 This live command may invoke both relation and degree-zero role providers. Run it
 only after deterministic checks. Provider generation is variable: a live smoke
 proves integration, not exact graph equivalence. The saved stage fixtures are the
-primary behavior-preservation gate. The existing viewer consumes `GraphResult`
-JSON without a backend change; serve it with Python's HTTP server as described
+primary behavior-preservation gate. The graph CLI emits versioned Graph Contract v1 through the export boundary
+(see GRAPH_CONTRACT.md); raw GraphResult serialization remains available. The
+existing viewer consumes both shapes without a backend change; serve it with Python's HTTP server as described
 in the product specification.
 
 ## Baseline identities

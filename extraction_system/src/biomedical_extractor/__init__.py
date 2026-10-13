@@ -123,3 +123,12 @@ __all__ = [
     "validate_paper_role_result",
     "normalize_hunflair2_predictions",
 ]
+
+from .graph_contract import (ExportContext, GraphValidationError, ValidationResult, CacheEligibility,
+    input_fingerprints, export_graph, graph_json, validate_graph, cache_eligibility,
+    profile_identity, release_context, contract_resource)
+from .graph_profile import prepare_graph_export, verify_graph_profile
+
+__all__ += ["ExportContext", "GraphValidationError", "ValidationResult", "CacheEligibility",
+    "input_fingerprints", "export_graph", "graph_json", "validate_graph", "cache_eligibility",
+    "profile_identity", "release_context", "contract_resource", "prepare_graph_export", "verify_graph_profile"]

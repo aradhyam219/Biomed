@@ -2,6 +2,7 @@
 
 Current product truth: `docs/product/CURRENT_SPEC.md`.
 Current architecture: `docs/ARCHITECTURE.md`.
+Graph export/validation contract: `docs/GRAPH_CONTRACT.md`.
 Provisioning: `docs/PROVISIONING.md` and `provisioning/`.
 Production package: `src/biomedical_extractor/`; focused tests: `tests/`;
 fixed regression fixtures: `tests/fixtures/baseline/`; graph consumer: `viewer/`.
@@ -15,7 +16,7 @@ Commands (from extraction_system):
 - Main environment: `uv sync --locked`.
 - Tests: `uv run --locked python -m unittest discover -s tests -v`.
 - NER: `uv run --locked biomedical-ner --text "..." --offline`.
-- Composed graph: `uv run --locked biomedical-extract-llm --text "..." --output-format graph --document-id paper-1`.
+- Composed graph: `uv run --locked biomedical-extract-llm --text "..." --output-format graph --document-id paper-1 --paper-title "..."` (v1).
 - Consumer tests: `node --test viewer/tests/adapter.test.mjs`.
 
 Production must accept ordinary biomedical text, retain exact source spans and

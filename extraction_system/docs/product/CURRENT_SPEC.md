@@ -97,6 +97,19 @@ optional surface form and score. Graph construction does not rewrite predicates
 or infer new findings. Naming-only self-edges are suppressed after identity
 collapse; grounded biological self-edges remain.
 
+Public delivery uses Graph Contract v1 through `export_graph` and `graph_json`.
+The graph CLI now emits v1 and accepts `--paper-title`, passing the exact same
+value to role extraction and fingerprinting. Raw GraphResult serialization stays
+unversioned. See [Graph Contract v1](../GRAPH_CONTRACT.md) for payload/null/offset
+rules, exact UTF-8 text/title fingerprinting, immutable effective profile identity,
+release provenance, serialized/source-aware validation and legacy/cache policy.
+Offsets count Unicode code points; no Unicode or newline normalization occurs.
+Legacy graphs remain displayable without fabricated provenance, but cannot be
+verified cache hits. Exact literal document ID/text/title governs v1 reuse;
+software or profile upgrades alone do not regenerate stored science. The initial
+v1 producer supports only the verified CPU baseline; raw overrides remain
+available. Validation does not certify entailment, completeness or authenticity.
+
 ## Accepted limitations and scope
 
 This is an accepted functional baseline, not scientific gold. Source-explicit

@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "biomedical-extractor"
-version = "0.1.0"
+version = "0.2.0"
 description = "Biomedical graph extraction with isolated HunFlair2 and grounded LLM relations"
 requires-python = ">=3.11,<3.13"
 dependencies = [
@@ -12,6 +12,7 @@ dependencies = [
     "langchain-openai==1.6.2",
     "openai==3.14.1",
     "pydantic==2.13.5",
+    "jsonschema==4.26.0",
 ]
 
 [project.scripts]
@@ -21,3 +22,6 @@ biomedical-extract-llm = "biomedical_extractor.llm_cli:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/biomedical_extractor"]
+
+[tool.hatch.build.hooks.custom]
+path = "build_hook.py"

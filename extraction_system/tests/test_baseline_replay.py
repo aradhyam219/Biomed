@@ -38,6 +38,12 @@ class BaselineReplayTests(unittest.TestCase):
                 graph = pipeline.extract_graph(case['text'], document_id=case['document_id'], paper_title=case['paper_title'])
                 self.assertEqual(graph.to_dict(), case['expected_graph'])
                 self.assertEqual(json.loads(graph.to_json()), case['expected_graph'])
+                from biomedical_extractor import export_graph, ExportContext, contract_resource, validate_graph
+                from importlib.metadata import version
+                context = ExportContext(version('biomedical-extractor'), 'a' * 40, contract_resource('baseline-profile.json'))
+                exported = export_graph(graph, text=case['text'], paper_title=case['paper_title'], context=context, generated_at='2026-10-13T00:00:00Z')
+                self.assertEqual({k: exported[k] for k in ('document', 'nodes', 'edges')}, case['expected_graph'])
+                validate_graph(exported, text=case['text'], paper_title=case['paper_title'])
 
 if __name__ == '__main__':
     unittest.main()

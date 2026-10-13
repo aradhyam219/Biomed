@@ -32,7 +32,7 @@ class _FakePipeline:
             ),
         )
 
-    def extract_graph(self, text, *, document_id):
+    def extract_graph(self, text, *, document_id, paper_title=""):
         entity = Entity("E1", text, "gene", 0, len(text), None)
         assembly = assemble_document_entities((entity,), text)
         return build_graph_result(document_id, assembly, ())
@@ -85,30 +85,39 @@ class LLMCLITests(unittest.TestCase):
         self.assertEqual(kwargs["hunflair2_runtime_cache"].name, "runtime-cache")
 
     def test_composed_command_can_emit_graph_json(self):
+        from biomedical_extractor import ExportContext, contract_resource
+        from importlib.metadata import version
+        context = ExportContext(version('biomedical-extractor'), 'a'*40, contract_resource('baseline-profile.json'))
+        fake = _FakePipeline()
         output = StringIO()
-        with patch(
-            "biomedical_extractor.llm_cli.LLMExtractionPipeline.from_pretrained",
-            return_value=_FakePipeline(),
-        ) as load, redirect_stdout(output):
-            result = main(
-                [
-                    "--text",
-                    "BRCA1",
-                    "--output-format",
-                    "graph",
-                    "--document-id",
-                    "paper-1",
-                    "--max-retries",
-                    "0",
-                ]
-            )
-
+        with patch("biomedical_extractor.llm_cli.release_context", return_value=context), \
+             patch("biomedical_extractor.llm_cli.prepare_graph_export", return_value=context), \
+             patch("biomedical_extractor.llm_cli.verify_graph_profile"), \
+             patch.object(fake, "extract_graph", wraps=fake.extract_graph) as extract, \
+             patch("biomedical_extractor.llm_cli.LLMExtractionPipeline.from_pretrained", return_value=fake), redirect_stdout(output):
+            result = main(["--text", "BRCA1", "--output-format", "graph", "--document-id", "paper-1", "--paper-title", "Title"])
         self.assertEqual(result, 0)
-        self.assertEqual(load.call_args.kwargs["entity_backend"], "hunflair2")
+        extract.assert_called_once_with("BRCA1", document_id="paper-1", paper_title="Title")
         payload = json.loads(output.getvalue())
+        self.assertEqual(payload["schema_version"], "1.0")
         self.assertEqual(payload["document"], {"id": "paper-1"})
         self.assertEqual(payload["nodes"][0]["id"], "doc_e_001")
-        self.assertEqual(payload["edges"], [])
+        from biomedical_extractor import input_fingerprints
+        self.assertEqual(payload["provenance"]["extraction_input_sha256"], input_fingerprints("BRCA1", "Title")["extraction_input_sha256"])
+
+    def test_graph_upfront_errors_never_construct_provider(self):
+        from biomedical_extractor import ExportContext, contract_resource, GraphValidationError
+        from importlib.metadata import version
+        context = ExportContext(version('biomedical-extractor'), 'a'*40, contract_resource('baseline-profile.json'))
+        for options in (["--model", "other"], ["--max-retries", "0"], ["--device", "cuda"], ["--document-id", " "]):
+            with patch("biomedical_extractor.llm_cli.release_context", return_value=context), \
+                 patch("biomedical_extractor.llm_cli.LLMExtractionPipeline.from_pretrained") as load:
+                with self.assertRaises(GraphValidationError):main(["--text", "BRCA1", "--output-format", "graph", *options])
+                load.assert_not_called()
+        with patch("biomedical_extractor.llm_cli.release_context", side_effect=GraphValidationError("missing revision")), \
+             patch("biomedical_extractor.llm_cli.LLMExtractionPipeline.from_pretrained") as load:
+            with self.assertRaises(GraphValidationError):main(["--text", "BRCA1", "--output-format", "graph"])
+            load.assert_not_called()
 
 
 if __name__ == "__main__":

@@ -10,10 +10,28 @@ and [architecture](docs/ARCHITECTURE.md). Runtime/model identities and frozen pr
 hashes are recorded in `provisioning/baseline.json`.
 
 ```python
-from biomedical_extractor import LLMExtractionPipeline
+from biomedical_extractor import (
+    LLMExtractionPipeline, prepare_graph_export, verify_graph_profile,
+    export_graph, graph_json, validate_graph, input_fingerprints,
+)
 pipeline = LLMExtractionPipeline.from_hunflair2(offline=True)
+context = prepare_graph_export(pipeline, text=text, document_id="paper-1", paper_title=title)
 graph = pipeline.extract_graph(text, document_id="paper-1", paper_title=title)
-print(graph.to_json())
+verify_graph_profile(pipeline, context, text=text)
+artifact = export_graph(graph, text=text, paper_title=title, context=context)
+print(graph_json(artifact))
+validate_graph(artifact, text=text, paper_title=title)
+```
+
+Install a release wheel for packaged build identity. The isolated baseline NER
+runtime must be provisioned separately. Graph delivery supports the verified CPU
+baseline; raw `graph.to_json()` remains unversioned for existing internal callers.
+Contract validation/fingerprints work offline without the model runtime. See
+[Graph Contract v1](docs/GRAPH_CONTRACT.md) for explicit recorded replay contexts,
+legacy display compatibility, pure cache eligibility and validation limitations.
+
+```powershell
+biomedical-extract-llm --text "BRCA1 is associated with breast cancer." --document-id paper-1 --paper-title "Exact title" --output-format graph --hunflair2-offline
 ```
 
 Supply provider credentials externally. The main locked environment and isolated

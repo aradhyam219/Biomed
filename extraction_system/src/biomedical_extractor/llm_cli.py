@@ -7,6 +7,8 @@ import json
 from pathlib import Path
 from collections.abc import Sequence
 
+from .graph_contract import export_graph, graph_json, input_fingerprints, release_context, _document_id
+from .graph_profile import check_graph_options, prepare_graph_export, verify_graph_profile
 from .hunflair2 import HUNFLAIR2_MODEL_IDENTIFIER
 from .llm_pipeline import LLMExtractionPipeline
 from .relation_cli import add_llm_arguments, openai_config_from_args
@@ -69,6 +71,7 @@ def _parser() -> argparse.ArgumentParser:
         action="store_true",
         help="Require the isolated HunFlair2 runtime to use cached artifacts only.",
     )
+    parser.add_argument("--paper-title", default="", help="Exact title supplied to paper roles and fingerprinting.")
     add_llm_arguments(parser)
     return parser
 
@@ -77,9 +80,17 @@ def main(argv: Sequence[str] | None = None) -> int:
     """Parse options, run NER followed by LLM RE, and print JSON."""
 
     args = _parser().parse_args(argv)
+    config = openai_config_from_args(args)
+    context = None
+    if args.output_format == "graph":
+        input_fingerprints(args.text, args.paper_title)
+        _document_id(args.document_id)
+        context = release_context()
+        check_graph_options(config, model=args.hunflair2_model, device=args.device,
+                            runtime_script=args.hunflair2_runtime_script)
     extractor = LLMExtractionPipeline.from_pretrained(
         device=args.device,
-        llm_config=openai_config_from_args(args),
+        llm_config=config,
         entity_backend=args.entity_backend,
         hunflair2_model=args.hunflair2_model,
         hunflair2_runtime_python=args.hunflair2_runtime_python,
@@ -88,7 +99,11 @@ def main(argv: Sequence[str] | None = None) -> int:
         hunflair2_offline=args.hunflair2_offline,
     )
     if args.output_format == "graph":
-        print(extractor.extract_graph(args.text, document_id=args.document_id).to_json())
+        context = prepare_graph_export(extractor, text=args.text, document_id=args.document_id,
+                                       paper_title=args.paper_title, context=context)
+        graph = extractor.extract_graph(args.text, document_id=args.document_id, paper_title=args.paper_title)
+        verify_graph_profile(extractor, context, text=args.text)
+        print(graph_json(export_graph(graph, text=args.text, paper_title=args.paper_title, context=context)))
     else:
         result = extractor.extract(args.text)
         print(

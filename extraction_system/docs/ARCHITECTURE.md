@@ -5,7 +5,8 @@
 Ordinary biomedical text -> isolated HunFlair2 -> validated Entity mentions ->
 document-local assembly -> grounded LLM relations -> graph construction and
 naming-only self-edge cleanup -> degree-zero detection -> batched paper roles ->
-Graph JSON -> existing Cytoscape viewer.
+deterministic GraphResult -> versioned export/serialized validation ->
+Graph Contract v1 JSON -> existing Cytoscape viewer.
 
 ## Ownership and boundaries
 
@@ -28,6 +29,16 @@ Graph JSON -> existing Cytoscape viewer.
   unconnected nodes; roles never alter topology.
 - `graph.py`: stable assembled node IDs, endpoint mapping, evidence-preserving
   edge aggregation, self-edge cleanup and deterministic JSON serialization.
+- `graph_contract.py`: pure exact-input fingerprints, versioned export, strict
+  serialization, packaged offline schemas, graph/source validation and pure cache
+  eligibility. It surrounds the unchanged graph core without a second graph model.
+- `graph_profile.py`: narrow baseline preflight and verification of effective
+  bound providers, pinned NER artifacts/runtime and actual returned metadata.
+  Raw producer seams do not require profile adoption. Unsupported v1 scientific
+  overrides fail before paid extraction; NER drift fails before relation submission.
+- `contract_resources/`: installed schemas, normative vectors and minimal recorded
+  profile material. The wheel build hook embeds a clean delivered revision and
+  production-resource digests; installed contract operations require no Git/cwd.
 - `viewer/`: unchanged presentation adapter and Cytoscape UI. Bundles, reveal
   controls and routing affect presentation only.
 
@@ -50,3 +61,6 @@ seams support injected implementations without exposing provider SDK objects.
 Graph JSON remains the frontend-neutral consumer boundary. Accepted product
 behavior and limitations are in product/CURRENT_SPEC.md. The immutable baseline
 manifest and deterministic fixtures record delivery behavior, not scientific gold.
+
+See [Graph Contract v1](GRAPH_CONTRACT.md) for public compatibility and input
+identity rules. Legacy validation/classification needs no viewer adapter or migration.

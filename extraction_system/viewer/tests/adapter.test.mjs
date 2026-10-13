@@ -348,3 +348,18 @@ test("viewer exposes unconnected role and reveal controls", () => {
   assert.match(app, /ROLE IN PAPER/);
   assert.match(app, /SOURCE EVIDENCE/);
 });
+
+
+test("v1 root metadata preserves baseline consumer direction, bundles, evidence and roles", () => {
+  for (const name of ["sfpq", "additional"]) {
+    const fixture = JSON.parse(readFileSync(new URL(`../../tests/fixtures/baseline/${name}.json`, import.meta.url), "utf8"));
+    const graph = fixture.expected_graph;
+    const versioned = { ...graph, schema_version: "1.0", provenance: {
+      extractor_version: "0.2.0", extraction_profile: "recorded-profile",
+      source_sha256: "a".repeat(64), extraction_input_sha256: "b".repeat(64),
+      generated_at: "2026-10-13T00:00:00Z", build_revision: "c".repeat(40),
+    }};
+    assert.deepEqual(buildDisplayModel(versioned), buildDisplayModel(graph));
+    assert.deepEqual(toCytoscapeElements(versioned), toCytoscapeElements(graph));
+  }
+});
