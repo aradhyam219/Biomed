@@ -128,6 +128,8 @@ def validate_graph(data: dict, *, text: str | None = None, paper_title: str = ''
             for j, evidence in enumerate(edge['evidence']):
                 if evidence['text'] not in text:
                     raise GraphValidationError(f'$.edges[{i}].evidence[{j}].text: not a source substring')
+                if evidence['surface_form'] is not None and evidence['surface_form'] not in text:
+                    raise GraphValidationError(f'$.edges[{i}].evidence[{j}].surface_form: not a source substring')
     for i, node in enumerate(nodes):
         for j, mention in enumerate(node['mentions']):
             path = f'$.nodes[{i}].mentions[{j}]'
@@ -212,7 +214,7 @@ def profile_identity(configuration: dict) -> str:
     expected = contract_resource('baseline-profile.json')
     if configuration != expected:
         raise GraphValidationError('unsupported effective extraction configuration for v1 baseline profile')
-    return 'ees-' + sha256(json.dumps(configuration, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
+    return 'ees-' + sha256(json.dumps(expected, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
 
 
 def release_context() -> ExportContext:

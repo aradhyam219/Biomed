@@ -134,6 +134,48 @@ class GraphContractTests(unittest.TestCase):
         with self.assertRaises(GraphValidationError):validate_graph(d,text=text+' ')
         with self.assertRaises(GraphValidationError):validate_graph(d,text=text,paper_title='changed')
 
+    def test_source_aware_surface_forms_for_v1_and_legacy(self):
+        text, _ = graph()
+        versioned = payload()
+        rich_legacy = {key: copy.deepcopy(versioned[key]) for key in ('document', 'nodes', 'edges')}
+        older_legacy = copy.deepcopy(rich_legacy)
+        older_legacy['edges'][0]['evidence'][0] = {
+            'text': 'BRCA1', 'surface_form': None, 'score': None}
+        for original in (versioned, rich_legacy, older_legacy):
+            for surface in (None, 'BRCA1', text):
+                accepted = copy.deepcopy(original)
+                accepted['edges'][0]['evidence'][0]['surface_form'] = surface
+                before = copy.deepcopy(accepted)
+                validate_graph(accepted, text=text)
+                self.assertEqual(accepted, before)
+            fabricated = copy.deepcopy(original)
+            fabricated['edges'][0]['evidence'][0]['surface_form'] = 'fabricated wording'
+            self.assertFalse(validate_graph(fabricated).source_checked)
+            with self.assertRaisesRegex(GraphValidationError, r'edges\[0\]\.evidence\[0\]\.surface_form'):
+                validate_graph(fabricated, text=text)
+            if 'schema_version' in fabricated:
+                eligibility = cache_eligibility(fabricated, document_id=fabricated['document']['id'], text=text)
+                self.assertFalse(eligibility.eligible)
+                self.assertIn('surface_form', eligibility.reason)
+
+    def test_equivalent_profile_descriptors_use_canonical_identity_and_provenance(self):
+        canonical = context()
+        equivalent = copy.deepcopy(canonical.configuration)
+        equivalent['ner']['runtime']['stride'] = 256.0
+        equivalent['relation']['configuration']['max_retries'] = 2.0
+        equivalent['roles']['poll_interval_seconds'] = 3
+        self.assertEqual(equivalent, canonical.configuration)
+        recorded = ExportContext(canonical.extractor_version, canonical.build_revision, equivalent)
+        self.assertEqual(profile_identity(canonical.configuration), 'ees-cfeec6ccd400b9f44abbef35551944aa074ee3d79d3e5ec18dd7d7551c76e0de')
+        self.assertEqual(profile_identity(recorded.configuration), 'ees-cfeec6ccd400b9f44abbef35551944aa074ee3d79d3e5ec18dd7d7551c76e0de')
+        text, result = graph()
+        first = export_graph(result, text=text, context=canonical, generated_at=STAMP)
+        second = export_graph(result, text=text, context=recorded, generated_at=STAMP)
+        self.assertEqual(first, second)
+        equivalent['ner']['runtime']['stride'] = 257.0
+        with self.assertRaises(GraphValidationError):
+            profile_identity(equivalent)
+
     def test_legacy_shapes_no_mutation_or_fallback(self):
         cases=[json.loads(p.read_text(encoding='utf-8'))['expected_graph'] for p in (ROOT/'tests/fixtures/baseline').glob('*.json')]
         cases.append(json.loads((ROOT/'viewer/graph-fixture.json').read_text(encoding='utf-8')))

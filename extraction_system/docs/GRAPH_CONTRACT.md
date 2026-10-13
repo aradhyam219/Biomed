@@ -32,7 +32,9 @@ characters and non-BMP characters are not normalized.
 
 `validate_graph(plain_data, text=..., paper_title=...)` checks shapes, finite JSON,
 unique node/edge IDs in the shared viewer namespace, unique mention membership,
-endpoints, spans, roles, hashes and verbatim edge/role evidence. Assertions,
+endpoints, spans, roles, hashes and verbatim edge/role evidence. Every non-null
+evidence surface_form must also be a verbatim source substring, for v1 and
+supported legacy data. Assertions,
 interventions, effects, context and role paragraphs may be paraphrases. Without
 text it checks only structure/integrity and explicitly reports that limitation.
 It never repairs data. It performs no network schema resolution. Source-aware
@@ -84,7 +86,10 @@ The immutable original baseline manifest remains untouched. Profile material is
 packaged; no profile registry or generic override support is introduced. Cache
 locations and credential values are excluded. Unsupported CUDA, models, prompts,
 producer injections or other scientific settings fail at the v1 boundary.
-Raw low-level APIs still support their existing configurations.
+Raw low-level APIs still support their existing configurations. Once a descriptor
+is validated as equivalent to the supported baseline, its profile ID is derived
+from the authoritative packaged descriptor; equivalent accepted numeric
+representations share the canonical ID.
 
 For live baseline extraction call `prepare_graph_export` before extraction,
 then `verify_graph_profile` after it and export with the returned context.
