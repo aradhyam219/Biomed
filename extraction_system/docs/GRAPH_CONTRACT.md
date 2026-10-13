@@ -133,3 +133,25 @@ viewer consumes additive v1 root metadata unchanged.
 Offline mechanical compatibility is not scientific acceptance. This phase adds
 no service, cache storage, deployment, viewer implementation change, model work
 or scientific repair.
+
+## CPU distribution release and module build
+
+The original immutable descriptor's `ner.runtime.pytorch = "2.14.0"` records
+PyTorch's installed distribution release, read through `importlib.metadata` in
+the selected isolated interpreter. The demonstrated CPU module reports the
+literal build `2.14.0+cpu`. Verification accepts that additional value only for
+the original CPU descriptor, with corroborating distribution release `2.14.0`,
+actual device `cpu`, CUDA runtime version null and CUDA availability false.
+Missing corroboration, CUDA/custom suffixes, different releases and contradictory
+CUDA evidence fail. No suffix stripping or generic version normalization occurs.
+Compatible original exact-version observations retain their existing behavior;
+explicit CUDA evidence is rejected even when the module version matches exactly.
+
+Live preflight reads the selected inference interpreter's distribution metadata.
+A private runtime binding in the verification layer lets the protected NER bridge
+read that same interpreter again when corroborating the additional module build,
+before relation submission. The binding is outside the scientific descriptor and
+public JSON; descriptor bytes and canonical CPU identity remain unchanged.
+Postflight retains model/runtime/producer checks and per-call role verification.
+Retained-run revalidation uses the captured isolated inventory together with the
+actual inference metadata. This correction establishes no CUDA support.

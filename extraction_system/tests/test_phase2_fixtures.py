@@ -77,8 +77,27 @@ class Phase2FixtureTests(unittest.TestCase):
                 # Invalid source spans must fail even for diagnostic observations.
                 documents[0]['predictions'][0]['text']='not the source slice'
                 phase2_reference.write(output/'raw.json',{'metadata':metadata,'documents':documents})
+                (evidence/'cpu-reference.json').unlink()
                 with self.assertRaises(ValueError):
                     phase2_reference.inspect_cpu(output)
+
+    def test_python_source_attestation_handles_bom_and_line_endings_only(self):
+        source='print("Greek: \u03b2")\n# second line\n'
+        expected=hashlib.sha256(source.encode('utf-8')).hexdigest()
+        with tempfile.TemporaryDirectory() as temporary:
+            path=Path(temporary)/'capture.py'
+            for data in (source.encode('utf-8'), b'\xef\xbb\xbf'+source.replace('\n','\r\n').encode('utf-8'), source.replace('\n','\r').encode('utf-8')):
+                path.write_bytes(data)
+                self.assertEqual(phase2_reference.python_source_sha256(path),expected)
+                byte_digest=hashlib.sha256(data).hexdigest()
+                phase2_reference.verify_capture_tool(path,source_sha256=expected,byte_sha256=byte_digest)
+                with self.assertRaises(ValueError):
+                    phase2_reference.verify_capture_tool(path,source_sha256='0'*64,byte_sha256=byte_digest)
+                with self.assertRaises(ValueError):
+                    phase2_reference.verify_capture_tool(path,source_sha256=expected,byte_sha256='0'*64)
+            path.write_bytes(source.replace('second','changed').encode('utf-8'))
+            self.assertNotEqual(phase2_reference.python_source_sha256(path),expected)
+        self.assertNotEqual(input_fingerprints('text\r\n','title'),input_fingerprints('text\n','title'))
 
 if __name__ == '__main__':
     unittest.main()

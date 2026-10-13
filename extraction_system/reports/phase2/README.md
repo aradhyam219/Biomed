@@ -1,103 +1,112 @@
 # Phase 2 compatibility investigation
 
-Disposition: **BLOCKED**. Stage A ends with incomplete prerequisite evidence;
-no Linux/CUDA candidate was established or promoted. This is not completion of
-Phase 2's CUDA delivery objective.
+Disposition: **BLOCKED on the missing Linux/NVIDIA target**. The CPU reference
+prerequisite is now **verified** under the CPU Runtime Identity amendment.
+CUDA compatibility is not established and profile promotion was not performed.
+Provider attempts: **0 / 24**. Repairs: **0 / 4**.
 
 ## Frozen boundary
 
-Started clean on `delivery/extraction-system-v1` at
-`e9a3184b9e76f12370657dab5f2a6457807a57c2`. The original CPU descriptor and
-all protected scientific files remain unchanged. CPU identity:
+Original local preparation started clean at
+`e9a3184b9e76f12370657dab5f2a6457807a57c2`; the CPU identity amendment started
+clean at `a52474f7176082e59938e04eb0cf7e82b7a5822b`, with no intervening changes.
+The seven exact sources, titles, literal IDs, fingerprints, accepted configuration,
+paid subset and smoke input remain frozen in `manifest.json` and the maintained
+source-only compatibility fixtures. All seven contract text hashes match.
+The source-grounded checklist was prepared before any provider calls.
+
+The original descriptor and canonical CPU identity remain unchanged:
 `ees-cfeec6ccd400b9f44abbef35551944aa074ee3d79d3e5ec18dd7d7551c76e0de`.
-No candidate CUDA descriptor exists. Baseline/delivery tags remain unchanged.
-The research checkout was used only for read-only acquisition of the five
-specified corpus entries.
+All protected scientific implementation files, model artifacts, prompts, schemas
+and accepted baseline fixtures remain unchanged. No candidate CUDA descriptor
+exists and no tags or release identity were changed. The research checkout remains
+untouched apart from the original read-only acquisition of five source entries.
 
-`manifest.json` freezes the seven exact inputs, literal IDs, exact titles,
-acquisition provenance, strict UTF-8 identities, Graph Contract fingerprints,
-accepted configuration, paid subset and smoke case. All seven contract text
-hashes match. Maintained fixtures contain sources only, never historical NER
-outputs. `scientific-checklist.json` contains exact source slices and review
-questions prepared before any paid calls. These are review assets, not gold.
+## Historical capture and separate successful revalidation
 
-## Actual CPU observation and blocking conflict
+One fresh offline CPU inference captured all seven sources in retained run
+`.cache/phase2/20261013T103713Z-6ce48f02`. Its original verification failed:
+installed distribution release `2.14.0` versus actual module build `2.14.0+cpu`.
+Historical `cpu-reference.json` and ignored `run.json` preserve that failure.
+They were not rewritten as successful capture events.
 
-One fresh offline multi-document CPU inference completed on all seven sources.
-The model revision and artifact digest match the contract. The actual raw output,
-normalized Entity values with full scores/order, source inputs, complete installed
-inventories, exact capture-wrapper source/digest and run diagnostics remain under the ignored directory identified in
-`cpu-reference.json`. All 2,452 normalized mentions resolve exactly to their
-source slices and all provided scores are finite.
+The amendment corrects the existing profile-verification layer. The literal
+module build `2.14.0+cpu` is accepted only with the original descriptor, captured
+or same-interpreter distribution release `2.14.0`, actual device `cpu`, CUDA
+runtime null and CUDA availability false. CUDA/custom suffixes, other releases,
+missing evidence and contradictions remain rejected. No general version
+normalization, runtime reporting rewrite or bypass was added.
 
-The accepted descriptor records `ner.runtime.pytorch = "2.14.0"`. Installed
-`importlib.metadata.version("torch")` also reports `2.14.0`, but the actual
-inference process reports `torch.__version__ = "2.14.0+cpu"`. The existing
-`verify_ner_metadata` check rejects this value. All other checked runtime/model
-fields match. Distribution metadata and module build identity are distinct
-observations; this investigation does not silently equate them.
+`cpu-revalidation.json` records successful retained-run verification separately:
 
-The raw inference is **not an accepted CPU comparator**. Runtime comparison
-stopped at this prerequisite gate. No inference was repeated to seek a matching
-result. Fixing or relaxing protected runtime reporting, or changing the original
-profile, would conflict with this contract and needs an explicit revised boundary.
+- Original raw-output SHA-256 matches `11a245455e1b067742f3e24daa3338763631fed1dcc3f62d10735f368ccf57fa`.
+- Retained capture source and byte attestations match their declared conventions.
+- Captured isolated inventory and actual model/runtime metadata satisfy the corrected check.
+- All seven source identities and exact runner inputs match the frozen manifest.
+- All 2,452 normalized Entity values, IDs and array order match the retained values.
+- Every mention resolves to its exact source slice and every provided score is finite.
+- Protected scientific implementation hashes match the unchanged original descriptor.
 
-## Missing Linux prerequisite
+No NER was rerun, model downloaded, dependency reinstalled or provider request
+submitted during the amendment. The runtime, model and scientific behavior were
+not replaced. The user's independent inspection reported matching `version.py`,
+`torch_cpu.dll` and `c10.dll` hashes in the research and delivery environments;
+this amendment does not repeat or fabricate that inspection.
 
-No Linux/NVIDIA target host or connection was supplied. Local WSL inventory
-contains only Docker Desktop's internal distribution, which was not used as a
-substitute. No infrastructure was allocated and no drivers were modified.
-Provider credentials were absent from this process environment; credentials in
-the eventual Linux provider runtime remain unverified. No secrets were read or
-copied for this investigation.
+## Tool provenance
 
-## Gates and budget
+The original capture digest uses this Python-source convention: decode UTF-8,
+remove an optional UTF-8 BOM, normalize CRLF and CR to LF, encode UTF-8 without a
+BOM, then compute SHA-256.
 
-- Phase 1 grounding and canonical-identity regressions: pass (19 Graph Contract tests).
-- Frozen fixture/checklist checks: pass (3 tests), including rejection of actual build drift and invalid spans.
-- Both saved baseline graph replays, including source-aware v1 validation: exact (1 test covering both).
-- Existing viewer checks: pass (14 tests).
-- Protected scientific implementation hashes: unchanged and verified.
-- Accepted CPU runtime identity: blocked on actual PyTorch build string.
-- Linux dual-runtime provisioning, independent artifact acquisition, CUDA execution proof: not run.
-- CPU/CUDA NER and relation/role request comparisons: not run.
-- Conditional Linux/CPU diagnostics and controlled live scientific review: not run.
-- Raw composed Linux/CUDA smoke and installed public CUDA smoke: not run.
-- Profile promotion, release identity changes and clean-wheel CUDA verification: not performed.
+- Original normalized-source digest: `4c91aa5bf35300640c277a37ff5832f82712ad3e56da35098a8e7273a3857c9d`.
+- Retained-file byte digest: `167dbab44af49c49fce7797345995d361aefa7f2df1c8c5866a95cf90a6b399d`.
 
-Provider generation attempts: **0 / 24**. Repairs: **0 / 4**.
-`provider-ledger.json` is an empty ledger, not an implemented budget-enforcement
-mechanism. Before any future paid submission, enforcement must be installed at
-the submission boundary, covering repairs and uncertain/failed submissions.
-Unused slots do not authorize different inputs or additional experiments.
+The retained `capture-tool.py` is the original wrapper. The modified inspection/
+revalidation tool is `tools/phase2_reference.py`; its separate source/byte hashes
+are recorded in `cpu-revalidation.json`, along with the corrected verifier's
+source hash. It is not represented as the original capture tool.
+This source normalization applies only to Python-source attestation. Scientific
+text and titles, Graph Contract fingerprints and raw-output digests retain their
+existing exact-input rules.
 
-No Green/Yellow/Red NER classification or downstream compatibility conclusion is
-possible from this evidence. Existing scientific limitations remain unchanged.
-No performance or scientific-quality claim follows from mention counts.
+## Verification and remaining scope
+
+The amendment passed 8 focused profile regressions, 19 Graph Contract tests,
+4 Phase 2 fixture/attestation checks and 1 replay test covering both accepted
+baseline graphs exactly. Interpreter-binding regression uses fake inference and
+provider boundaries, never real NER/provider execution. Original viewer checks
+remain the previously passed 14 checks; they were not repeated for this change.
+
+No Linux/NVIDIA target or connection was supplied. Docker Desktop's internal WSL
+distribution was left alone; no infrastructure was allocated or drivers modified.
+Linux dual-runtime provisioning, independent artifact acquisition, CUDA execution
+proof, CPU/CUDA NER and downstream request comparison, conditional Linux/CPU
+checks, live scientific review and raw/public CUDA smokes remain unperformed.
+No downstream compatibility or scientific-quality claim is made.
+
+`provider-ledger.json` remains an empty ledger, not implemented submission-budget
+enforcement. Before future paid calls, enforcement must cover initial, repair,
+failed and uncertain submissions within the original 24-generation/4-repair cap.
+The existing scientific limitations remain unchanged. Mention counts are only
+diagnostic. Development tooling, fixtures and review evidence remain outside the
+client package; no release wheel was built for this amendment.
 
 ## Resume
 
-Resolve the accepted CPU runtime identity conflict under an explicit contract
-amendment, and supply one existing Linux/NVIDIA host and its provider credential
-mechanism. Inspect retained CPU observations before authorizing any further
-capture; do not reconstruct a comparator from saved baseline predictions.
-Then continue the original sequence, budget, source selections and review gate.
-Explicit approval of the exact tested candidate/evidence is still required
-before promotion. Push authorization permits delivery of this blocked evidence;
-it does not authorize promotion, release publication or new tags.
+Supply one existing Linux/NVIDIA host and its credential mechanism, then continue
+the original Phase 2 sequence using these verified retained CPU observations.
+Do not repeat NER or substitute historical fixture predictions. The original
+source selections, paid subset, budget and explicit candidate-promotion approval
+gate remain in force. The amendment authorizes no remote publication, CUDA
+provisioning, live calls or profile promotion; its changes remain local.
 
-Development commands (from the delivery `extraction_system` directory):
+To revalidate retained evidence without inference or scientific-input acquisition:
 
 ```powershell
-.venv/Scripts/python.exe tools/phase2_reference.py freeze --corpus C:/Projects/Biomed/extraction_system/.cache/ner_target_domain/target_corpus.json
-.venv/Scripts/python.exe tools/phase2_reference.py capture-cpu
-.venv/Scripts/python.exe tools/phase2_reference.py inspect-cpu --run-directory .cache/phase2/20261013T103713Z-6ce48f02
-.venv/Scripts/python.exe -m unittest discover -s tests -p test_phase2_fixtures.py -v
+.venv/Scripts/python.exe tools/phase2_reference.py revalidate-cpu --run-directory .cache/phase2/20261013T103713Z-6ce48f02
 ```
 
-Acquisition is the only command that reads the research cache. Frozen fixtures
-and subsequent inference/inspection do not depend on it. `capture-cpu` refuses a
-second attempt when a prior run is present. `inspect-cpu` makes no model/provider
-calls and does not turn a rejected observation into an accepted comparator.
-The existing wheel target packages only `src/biomedical_extractor`; fixtures,
-reports and this development tool are outside it. No release wheel was built.
+`capture-cpu` refuses another attempt. `inspect-cpu` cannot overwrite an existing
+historical summary. Revalidation writes a separate report and does not change
+original raw predictions, normalized values, inventories or capture diagnostics.

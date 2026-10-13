@@ -10,7 +10,7 @@ from pathlib import Path
 import subprocess
 
 from .graph_contract import (GraphValidationError, contract_resource, input_fingerprints,
-                             release_context, _document_id)
+                             release_context, profile_identity, _document_id)
 from .hunflair2 import HunFlair2BioMedExtractor, HunFlair2IsolatedRuntime
 from .llm_relation_extraction import LLMRelationExtractor, OpenAIConfig
 from .llm_paper_roles import LLMPaperRoleExtractor
@@ -111,21 +111,12 @@ def prepare_graph_export(pipeline, *, text: str, document_id: str, paper_title: 
     artifact, revision = _hunflair2_artifact(runtime._runtime_cache, runtime._model_identifier)
     if artifact is None or revision != p['ner']['model_revision'] or _sha256_file(artifact) != p['ner']['model_artifact_sha256']:
         _fail('NER artifact/revision')
-    executable = runtime._runtime_python
-    if executable is None:
-        candidates = [Path('.cache/hunflair2/runtime/bin/python'), Path('.cache/hunflair2/runtime/Scripts/python.exe')]
-        executable = next((v for v in candidates if v.is_file()), candidates[0])
-    packages = {'flair':'flair','pytorch':'torch','transformers':'transformers','scispacy':'scispacy','spacy':'spacy','en_core_sci_sm':'en-core-sci-sm'}
-    code = 'import importlib.metadata as m,json,platform; print(json.dumps({"python":platform.python_version(),**{k:m.version(v) for k,v in '+repr(packages)+'.items()}}))'
-    try:
-        observed = json.loads(subprocess.check_output([str(executable),'-c',code], text=True, timeout=30))
-    except (OSError, ValueError, subprocess.SubprocessError) as error:
-        raise GraphValidationError('isolated runtime identity unavailable') from error
-    for key, value in observed.items():
-        if value != p['ner']['runtime'][key]:
+    observed = _isolated_versions(runtime)
+    for key in ('python', 'flair', 'pytorch', 'transformers', 'scispacy', 'spacy', 'en_core_sci_sm'):
+        if observed.get(key) != p['ner']['runtime'][key]:
             _fail(f'NER runtime {key}')
     runtime._last_metadata = None
-    runtime._v1_expected_profile = p
+    runtime._v1_expected_profile = _LiveNERProfile(p, runtime)
     pipeline._v1_expected_profile = p
     pipeline._last_graph_role_extractor = None
     return context
@@ -138,18 +129,74 @@ def verify_graph_profile(pipeline, context, *, text: str):
     _provider(pipeline.relation_extractor, 'relation', p)
     runtime = _runtime(pipeline, p)
     if text.strip():
-        verify_ner_metadata(runtime._last_metadata, p)
+        verify_ner_metadata(runtime._last_metadata, _LiveNERProfile(p, runtime))
     if pipeline._last_graph_role_extractor is not None:
         _provider(pipeline._last_graph_role_extractor, 'roles', p)
 
 
-def verify_ner_metadata(observed, profile):
-    """Fail on actual runtime drift before NER results reach a paid provider."""
-    if not isinstance(observed, dict):
+class _LiveNERProfile(dict):
+    """Carry interpreter binding outside the unchanged scientific descriptor.
+
+    The protected NER bridge passes only its expected profile to post-NER
+    verification. This private binding lets that check observe distribution
+    metadata from the same selected interpreter, before any relation submission.
+    Descriptor values remain identical; the binding never enters public JSON.
+    """
+
+    def __init__(self, descriptor, runtime):
+        super().__init__(descriptor)
+        self.runtime = runtime
+
+
+def _isolated_versions(runtime):
+    """Read release metadata using the interpreter selected by the NER bridge."""
+    executable = runtime._runtime_python
+    if executable is None:
+        candidates = [Path('.cache/hunflair2/runtime/bin/python'), Path('.cache/hunflair2/runtime/Scripts/python.exe')]
+        executable = next((v for v in candidates if v.is_file()), candidates[0])
+    packages = {'flair':'flair','pytorch':'torch','transformers':'transformers','scispacy':'scispacy','spacy':'spacy','en_core_sci_sm':'en-core-sci-sm'}
+    code = 'import importlib.metadata as m,json,platform; print(json.dumps({"python":platform.python_version(),**{k:m.version(v) for k,v in '+repr(packages)+'.items()}}))'
+    try:
+        observed = json.loads(subprocess.check_output([str(executable),'-c',code], text=True, timeout=30))
+        if not isinstance(observed, dict):
+            raise ValueError('distribution metadata must be an object')
+        return observed
+    except (OSError, ValueError, subprocess.SubprocessError) as error:
+        raise GraphValidationError('isolated runtime identity unavailable') from error
+
+
+def verify_ner_metadata(observed, profile, *, pytorch_distribution=None):
+    """Check actual model/build metadata, with one corroborated CPU-only pair.
+
+    The descriptor records the distribution release. Literal module build
+    2.14.0+cpu additionally requires distribution 2.14.0, actual CPU, no CUDA
+    runtime and CUDA unavailable. Live evidence comes from the bound inference
+    interpreter; retained-run callers supply the captured distribution release.
+    No suffix normalization or other local-build acceptance occurs.
+    """
+    if not isinstance(observed, dict) or not isinstance(observed.get('runtime'), dict):
         _fail('missing actual NER metadata')
     for key in ('model_identifier', 'model_revision', 'model_artifact_sha256'):
         if observed.get(key) != profile['ner'][key]:
             _fail(f'actual NER {key}')
+    runtime = observed['runtime']
+    # Even exact version observations must not contradict the CPU-only policy.
+    if runtime.get('cuda_available', False) is not False or runtime.get('cuda_version') is not None:
+        _fail('actual NER CUDA-backed runtime')
+    expected_release = profile['ner']['runtime']['pytorch']
+    if pytorch_distribution is not None and pytorch_distribution != expected_release:
+        _fail('actual NER PyTorch distribution release')
     for key, expected in profile['ner']['runtime'].items():
-        if key != 'offset_mechanics' and observed.get('runtime', {}).get(key) != expected:
-            _fail(f'actual NER runtime {key}')
+        if key == 'offset_mechanics' or runtime.get(key) == expected:
+            continue
+        if key == 'pytorch' and expected == '2.14.0' and runtime.get(key) == '2.14.0+cpu':
+            descriptor = dict(profile) if isinstance(profile, _LiveNERProfile) else profile
+            profile_identity(descriptor)  # Exception applies only to the original descriptor.
+            if isinstance(profile, _LiveNERProfile):
+                pytorch_distribution = _isolated_versions(profile.runtime).get('pytorch')
+            if (pytorch_distribution != '2.14.0' or runtime.get('device') != 'cpu'
+                    or 'cuda_version' not in runtime or runtime['cuda_version'] is not None
+                    or runtime.get('cuda_available') is not False):
+                _fail('uncorroborated CPU PyTorch module build')
+            continue
+        _fail(f'actual NER runtime {key}')

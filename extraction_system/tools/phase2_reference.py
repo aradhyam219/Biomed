@@ -137,7 +137,10 @@ def capture_cpu():
     output.mkdir(parents=True, exist_ok=False)
     status = {'run_id': run_id, 'status':'started', 'arm':'accepted-windows-cpu',
               'requested_device':'cpu', 'cpu_profile_identity': manifest['cpu_profile_identity'],
-              'tool_sha256': _sha256_file(Path(__file__)), 'platform': platform.platform(),
+              'tool_sha256': python_source_sha256(Path(__file__)),
+              'tool_byte_sha256': _sha256_file(Path(__file__)),
+              'tool_digest_convention': 'normalized UTF-8 Python source with LF and no BOM',
+              'platform': platform.platform(),
               'machine': platform.machine(), 'main_inventory': inventory(Path(sys.executable)),
               'isolated_inventory': isolated_inventory, 'model_artifact_sha256': _sha256_file(artifact),
               'model_revision': revision, 'provider_submission_attempts': 0}
@@ -169,6 +172,8 @@ def inspect_cpu(output):
     A profile mismatch remains BLOCKED. These values are diagnostic observations,
     never an accepted CPU comparator. Raw and normalized array order is retained.
     """
+    if (EVIDENCE / 'cpu-reference.json').exists():
+        raise ValueError('Historical CPU summary already exists; use revalidate-cpu')
     output = output.resolve()
     output.relative_to((ROOT / '.cache/phase2').resolve())
     manifest = read(EVIDENCE / 'manifest.json')
@@ -216,6 +221,108 @@ def inspect_cpu(output):
     print(json.dumps({'disposition':summary['disposition'], 'accepted_cpu_comparator':verified, 'entity_counts':counts}))
 
 
+def python_source_sha256(path):
+    """Attest Python source only: UTF-8-sig decode, CRLF/CR to LF, UTF-8 encode."""
+    source = path.read_bytes().decode('utf-8-sig').replace('\r\n', '\n').replace('\r', '\n')
+    return hashlib.sha256(source.encode('utf-8')).hexdigest()
+
+
+def verify_capture_tool(path, *, source_sha256, byte_sha256):
+    """Require both declared attestations of the retained capture wrapper."""
+    if python_source_sha256(path) != source_sha256 or _sha256_file(path) != byte_sha256:
+        raise ValueError('Retained capture-tool identity mismatch')
+
+
+def revalidate_cpu(output):
+    """Verify the retained CPU run without modifying its historical evidence.
+
+    Raw/input/tool digests and normalized values are checked before acceptance.
+    Captured inventory supplies distribution evidence; no interpreter inference,
+    downloads, installation, or provider submissions occur in this operation.
+    """
+    output = output.resolve()
+    output.relative_to((ROOT / '.cache/phase2').resolve())
+    manifest = read(EVIDENCE / 'manifest.json')
+    reference = read(EVIDENCE / 'cpu-reference.json')
+    status = read(output / 'run.json')
+    profile = manifest['cpu_profile']
+    if profile != contract_resource('baseline-profile.json') or profile_identity(profile) != manifest['cpu_profile_identity']:
+        raise ValueError('Original CPU descriptor or identity changed')
+    if status['run_id'] != reference['run_id'] or status['cpu_profile_identity'] != manifest['cpu_profile_identity']:
+        raise ValueError('Retained run/profile identity mismatch')
+    if _sha256_file(output/'raw.json') != reference['raw_sha256']:
+        raise ValueError('Retained raw-output digest mismatch')
+    if status['tool_sha256'] != reference['capture_tool_sha256']:
+        raise ValueError('Recorded capture-tool identities disagree')
+    capture_bytes = '167dbab44af49c49fce7797345995d361aefa7f2df1c8c5866a95cf90a6b399d'
+    verify_capture_tool(output/'capture-tool.py', source_sha256=status['tool_sha256'], byte_sha256=capture_bytes)
+    inventory = status['isolated_inventory']
+    versions = {}
+    for package in inventory['packages']:
+        name = package['name'].lower().replace('_', '-')
+        if name in versions:
+            raise ValueError('Duplicate captured distribution')
+        versions[name] = package['version']
+    for field in ('python', 'python_implementation'):
+        if inventory.get(field) != profile['ner']['runtime'][field]:
+            raise ValueError(f'Captured inventory mismatch: {field}')
+    for field, distribution in {'flair':'flair', 'pytorch':'torch', 'transformers':'transformers', 'spacy':'spacy', 'scispacy':'scispacy', 'en_core_sci_sm':'en-core-sci-sm'}.items():
+        if versions.get(distribution) != profile['ner']['runtime'][field]:
+            raise ValueError(f'Captured inventory mismatch: {distribution}')
+    _implementation(profile)
+    raw = read(output/'raw.json')
+    verify_ner_metadata(raw['metadata'], profile, pytorch_distribution=versions['torch'])
+    for field in ('model_revision', 'model_artifact_sha256'):
+        if status[field] != profile['ner'][field]:
+            raise ValueError(f'Captured model mismatch: {field}')
+    if status['requested_device'] != 'cpu':
+        raise ValueError('Captured requested device mismatch')
+    if [case['case_id'] for case in manifest['cases']] != [case[0] for case in CASES]:
+        raise ValueError('Frozen case selections changed')
+    if [document['id'] for document in raw['documents']] != [case[0] for case in CASES]:
+        raise ValueError('Runtime case order/count mismatch')
+    expected_inputs, counts = [], {}
+    for case, document, (_, _, text_digest) in zip(manifest['cases'], raw['documents'], CASES):
+        packet = read(ROOT/case['fixture'])
+        hashes = input_fingerprints(packet['text'], packet['paper_title'])
+        if (packet['case_id'] != case['case_id'] or packet['document_id'] != case['document_id']
+                or packet['paper_title'] != case['paper_title'] or sha_text(packet['paper_title']) != case['title_sha256']
+                or hashes != {key:case[key] for key in hashes}
+                or hashes['source_sha256'] != text_digest or document['text_sha256'] != text_digest):
+            raise ValueError('Frozen/runtime input identity mismatch')
+        expected_inputs.append({'id':case['case_id'], 'text':packet['text']})
+        entities = normalize_hunflair2_predictions(packet['text'], document['predictions'])
+        if any(entity.score is not None and not math.isfinite(entity.score) for entity in entities):
+            raise ValueError('Non-finite retained score')
+        expected = {'case_id':case['case_id'], 'document_id':case['document_id'], **hashes,
+                    'entities':[entity.to_dict() for entity in entities]}
+        if read(output/f"{case['case_id']}-entities.json") != expected:
+            raise ValueError('Retained normalized entity values/order changed')
+        counts[case['case_id']] = len(entities)
+    if read(output/'input.json') != {'documents':expected_inputs}:
+        raise ValueError('Retained runner input differs from frozen sources')
+    result = {
+        'disposition':'BLOCKED', 'cpu_reference_prerequisite':'verified',
+        'linux_nvidia_target':'still_missing', 'cuda_compatibility':'not_established',
+        'profile_promotion':'not_performed', 'accepted_cpu_comparator':True,
+        'run_id':status['run_id'], 'revalidated_at':datetime.now(timezone.utc).isoformat(),
+        'cpu_profile_identity':manifest['cpu_profile_identity'],
+        'historical_capture':{'status':status['status'], 'error_type':status.get('error_type'), 'error':status.get('error'), 'run_json_byte_sha256':_sha256_file(output/'run.json'), 'original_summary_byte_sha256':_sha256_file(EVIDENCE/'cpu-reference.json')},
+        'capture_tool':{'normalized_source_sha256':status['tool_sha256'], 'byte_sha256':capture_bytes,
+                        'source_convention':'Decode UTF-8 removing optional BOM; normalize CRLF and CR to LF; encode UTF-8 without BOM; SHA-256.'},
+        'revalidation_tool':{'path':'tools/phase2_reference.py', 'normalized_source_sha256':python_source_sha256(Path(__file__)), 'byte_sha256':_sha256_file(Path(__file__))},
+        'verification_layer_source_sha256':python_source_sha256(ROOT/'src/biomedical_extractor/graph_profile.py'),
+        'pytorch_distribution':'2.14.0', 'pytorch_module_build':raw['metadata']['runtime']['pytorch'],
+        'actual_device':raw['metadata']['runtime']['device'], 'cuda_available':raw['metadata']['runtime']['cuda_available'], 'cuda_runtime_version':raw['metadata']['runtime']['cuda_version'],
+        'raw_byte_sha256':reference['raw_sha256'], 'entity_counts':counts,
+        'all_seven_input_identities_verified':True, 'normalized_values_and_order_preserved':True,
+        'source_spans_and_finite_scores_verified':True, 'protected_scientific_hashes_verified':True,
+        'provider_attempts':0, 'repair_attempts':0,
+    }
+    write(EVIDENCE/'cpu-revalidation.json', result)
+    print(json.dumps({'cpu_reference_prerequisite':'verified', 'disposition':'BLOCKED', 'entity_counts':counts}))
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     sub = parser.add_subparsers(dest='action', required=True)
@@ -224,13 +331,17 @@ def main():
     sub.add_parser('capture-cpu')
     inspect = sub.add_parser('inspect-cpu')
     inspect.add_argument('--run-directory', type=Path, required=True)
+    revalidate = sub.add_parser('revalidate-cpu')
+    revalidate.add_argument('--run-directory', type=Path, required=True)
     args = parser.parse_args()
     if args.action == 'freeze':
         freeze(args.corpus)
     elif args.action == 'capture-cpu':
         capture_cpu()
-    else:
+    elif args.action == 'inspect-cpu':
         inspect_cpu(args.run_directory)
+    else:
+        revalidate_cpu(args.run_directory)
 
 
 if __name__ == '__main__':

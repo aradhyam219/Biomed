@@ -54,13 +54,30 @@ Its source-byte hashes describe the research working files at freeze time;
 Git checkout CRLF/LF differences must be normalized when comparing source text.
 The baseline tag is the authoritative committed source. No fixture is scientific gold.
 
-## Phase 2 prerequisite evidence
+## Phase 2 CPU identity evidence
 
-The fresh seven-input CPU observation in `reports/phase2/` is blocked: installed
-PyTorch distribution metadata reports `2.14.0`, but the actual inference module
-reports `2.14.0+cpu`, which the original immutable v1 descriptor rejects. The
-original profile and protected implementations are unchanged. No Linux/CUDA
-configuration has been provisioned, verified or promoted; an existing target host
-and resolution of the CPU identity conflict are required before comparison.
-Development fixtures/tooling remain outside the client package. See
-`../reports/phase2/README.md` for retained evidence and the explicit resume boundary.
+The fresh seven-input CPU capture initially failed because installed PyTorch
+release metadata reports `2.14.0`, while the inference module reports `2.14.0+cpu`.
+The CPU identity amendment corrects verification, without reinstalling or changing
+that runtime: this exact pair requires actual CPU execution, CUDA runtime null
+and CUDA unavailable. Live release evidence is read from the same isolated
+interpreter selected for inference. Retained evidence uses its captured isolated
+inventory. Other builds/releases and missing or contradictory corroboration fail.
+
+The existing retained run now passes corrected revalidation; its original failed
+capture event remains unchanged. `reports/phase2/cpu-revalidation.json` records
+success separately from historical `cpu-reference.json` and ignored `run.json`.
+The original CPU descriptor, canonical identity and protected scientific modules
+are unchanged. No NER rerun, model download, dependency reinstall or provider
+submission was used for this correction.
+
+Python-source attestations decode UTF-8 with an optional BOM removed, normalize
+CRLF and CR to LF, encode UTF-8 without a BOM and then hash with SHA-256. Capture
+and revalidation tools each record a separate normalized-source identity and
+byte identity. This convention applies only to Python-source attestation:
+scientific text/title identities, Graph Contract fingerprints and raw-output
+hashes preserve their existing exact-input/byte rules.
+
+An existing Linux/NVIDIA host is still required. No CUDA configuration has been
+provisioned, verified or promoted. Development fixtures/tooling remain outside the
+client package. See `../reports/phase2/README.md` for current evidence and limits.

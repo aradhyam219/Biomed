@@ -34,7 +34,9 @@ Graph Contract v1 JSON -> existing Cytoscape viewer.
   eligibility. It surrounds the unchanged graph core without a second graph model.
 - `graph_profile.py`: narrow baseline preflight and verification of effective
   bound providers, pinned NER artifacts/runtime and actual returned metadata.
-  Raw producer seams do not require profile adoption. Unsupported v1 scientific
+  A private NER profile binding carries the selected interpreter outside the
+  descriptor so the CPU-only module-build check can corroborate its distribution
+  release before relations. Raw producer seams do not require profile adoption. Unsupported v1 scientific
   overrides fail before paid extraction; NER drift fails before relation submission.
 - `contract_resources/`: installed schemas, normative vectors and minimal recorded
   profile material. The wheel build hook embeds a clean delivered revision and
