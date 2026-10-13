@@ -209,6 +209,14 @@ class GraphContractTests(unittest.TestCase):
             runtime._last_metadata = observed
             verify_graph_profile(pipeline, bound, text='BRCA1')
 
+    def test_preflight_revalidates_mutable_recorded_context_before_providers(self):
+        ctx = context()
+        ctx.configuration['roles']['model'] = 'unsupported'
+        with patch('biomedical_extractor.graph_profile._provider') as producer_check:
+            with self.assertRaises(GraphValidationError):
+                prepare_graph_export(object(), text='x', document_id='d', context=ctx)
+            producer_check.assert_not_called()
+
     def test_bound_providers_cannot_keep_profile_after_mutation(self):
         from biomedical_extractor.graph_profile import _provider
         from biomedical_extractor.llm_paper_roles import LLMPaperRoleExtractor

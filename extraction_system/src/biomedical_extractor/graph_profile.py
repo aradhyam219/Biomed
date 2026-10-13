@@ -95,6 +95,7 @@ def prepare_graph_export(pipeline, *, text: str, document_id: str, paper_title: 
     input_fingerprints(text, paper_title)
     _document_id(document_id)
     context = context or release_context()
+    context.__post_init__()
     p = context.configuration
     _implementation(p)
     _provider(pipeline.relation_extractor, 'relation', p)
