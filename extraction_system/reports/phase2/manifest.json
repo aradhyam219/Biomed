@@ -1,0 +1,359 @@
+{
+  "starting_revision": "e9a3184b9e76f12370657dab5f2a6457807a57c2",
+  "cases": [
+    {
+      "case_id": "sfpq-passage",
+      "document_id": "PMCID:PMC11824863",
+      "paper_title": "Overexpression of SFPQ Improves Cognition and Memory in AD Mice",
+      "fixture": "tests/fixtures/compatibility/sfpq-passage.json",
+      "provenance": {
+        "repository_path": "tests/fixtures/baseline/sfpq.json",
+        "acquisition_mode": "preserved_passage"
+      },
+      "title_sha256": "d1cbade706af186092c1fea82809bf0e1b070ba4f18032469eb393967b229100",
+      "source_sha256": "604ce7f15b0ca00853cfc4cc07039d51059792e907d3da07c08be40730fb1b5b",
+      "extraction_input_sha256": "551bf27b9666b2ada7d3249aeb0ada14b97c445cfa2b18e1505ddf4341f08029"
+    },
+    {
+      "case_id": "cbl-passage",
+      "document_id": "PMCID:PMC8605525",
+      "paper_title": "Overexpression of E3 ubiquitin ligase Cbl attenuates endothelial dysfunction in diabetes mellitus by inhibiting the JAK2/STAT4 signaling and Runx3-mediated H3K4me3",
+      "fixture": "tests/fixtures/compatibility/cbl-passage.json",
+      "provenance": {
+        "repository_path": "tests/fixtures/baseline/additional.json",
+        "acquisition_mode": "preserved_passage"
+      },
+      "title_sha256": "766b38a0049ca87702c4a9f90a533871c3e58844a94af99fe39d2ad661f25207",
+      "source_sha256": "558fd77eab8e192fe9b7c625b3186a6b8f1c44bcad0c7430ba3dedc6ffb7c5a6",
+      "extraction_input_sha256": "628c125d83690a9221fa2811ce94a497e532bc010e0030a31fc471d22d933ade"
+    },
+    {
+      "case_id": "sfpq-full",
+      "document_id": "PMCID:PMC11824863",
+      "paper_title": "Overexpression of SFPQ Improves Cognition and Memory in AD Mice",
+      "fixture": "tests/fixtures/compatibility/sfpq-full.json",
+      "provenance": {
+        "acquisition_mode": "full_text",
+        "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11824863/",
+        "source_format": "pmc_xml",
+        "source_checksum": "7d67a720ddc0b04f5cd9dbae443b094df08120ff01f8c19fbcbd421933f91b75",
+        "pmcid": "PMC11824863",
+        "pmid": "39949834",
+        "acquisition_path": "C:\\Projects\\Biomed\\extraction_system\\.cache\\ner_target_domain\\target_corpus.json"
+      },
+      "title_sha256": "d1cbade706af186092c1fea82809bf0e1b070ba4f18032469eb393967b229100",
+      "source_sha256": "8a43f612139aa84939933831a5bc7f5420122549fd69081d635b7becb80d2a15",
+      "extraction_input_sha256": "5bde95c4eb395b77005b8866f2a8c71ceb90d9c31d449e07d4580181cafe8726"
+    },
+    {
+      "case_id": "cbl-full",
+      "document_id": "PMCID:PMC8605525",
+      "paper_title": "Overexpression of E3 ubiquitin ligase Cbl attenuates endothelial dysfunction in diabetes mellitus by inhibiting the JAK2/STAT4 signaling and Runx3-mediated H3K4me3",
+      "fixture": "tests/fixtures/compatibility/cbl-full.json",
+      "provenance": {
+        "acquisition_mode": "full_text",
+        "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8605525/",
+        "source_format": "pmc_xml",
+        "source_checksum": "263769c472b052a1b863becd98a6b85a33eb3f84548ba2999b67083042bab28f",
+        "pmcid": "PMC8605525",
+        "pmid": "34798872",
+        "acquisition_path": "C:\\Projects\\Biomed\\extraction_system\\.cache\\ner_target_domain\\target_corpus.json"
+      },
+      "title_sha256": "766b38a0049ca87702c4a9f90a533871c3e58844a94af99fe39d2ad661f25207",
+      "source_sha256": "99355676f17885e8920e1f56447b8c6aff219cb6be09d76777084e339261a39b",
+      "extraction_input_sha256": "3b6e0bae8e5400a4efcd3e0643709ce7f715a6d2ab8c56e060da86bad6e55e44"
+    },
+    {
+      "case_id": "hmgb1-full",
+      "document_id": "PMCID:PMC10770459",
+      "paper_title": "Restoring glucose balance: Conditional HMGB1 knockdown mitigates hyperglycemia in a Streptozotocin induced mouse model",
+      "fixture": "tests/fixtures/compatibility/hmgb1-full.json",
+      "provenance": {
+        "acquisition_mode": "full_text",
+        "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10770459/",
+        "source_format": "pmc_xml",
+        "source_checksum": "54b50737cc0396039b9e747d9fcaebf43c686239de29e634c0b51b5cf496afbb",
+        "pmcid": "PMC10770459",
+        "pmid": "38187339",
+        "acquisition_path": "C:\\Projects\\Biomed\\extraction_system\\.cache\\ner_target_domain\\target_corpus.json"
+      },
+      "title_sha256": "c4e5113a6ae56ba688295b47c5be01469c28f89c4548748b2a3c5b3c04c9a1b7",
+      "source_sha256": "5b58cb81f2add5f1295313b08c07e575bffffa8c1a871f32436d278735b209a4",
+      "extraction_input_sha256": "2a77717dcba269637b134df2067051adc2c12f5fe93e8ffc28ae9c85c05adcf5"
+    },
+    {
+      "case_id": "pten-abstract",
+      "document_id": "PMID:33652126",
+      "paper_title": "PTEN mediates serum deprivation-induced cytotoxicity in H9c2 cells via the PI3K/AKT signaling pathway.",
+      "fixture": "tests/fixtures/compatibility/pten-abstract.json",
+      "provenance": {
+        "acquisition_mode": "abstract_only",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/33652126/",
+        "source_format": "pubmed_xml",
+        "source_checksum": "e3e8f47692be6518143088a39b29e7940768ae40bb515de9e6abe25b783d8924",
+        "pmcid": null,
+        "pmid": "33652126",
+        "acquisition_path": "C:\\Projects\\Biomed\\extraction_system\\.cache\\ner_target_domain\\target_corpus.json"
+      },
+      "title_sha256": "8822c578c6a4121f8c29b8d619aa0dceef4b49398d30682a37147270382e26ad",
+      "source_sha256": "44ee744a2e60c788db16927b63cda446174733d38c5e1cdb13e112af30f295e6",
+      "extraction_input_sha256": "9c15f8fd83f51e2589671d0e90c32fa0e66bd4acc6d980c3965b8d91c5a2a104"
+    },
+    {
+      "case_id": "ezh2-abstract",
+      "document_id": "PMID:27172794",
+      "paper_title": "EZH2 promotes colorectal cancer stem-like cell expansion by activating p21cip1-Wnt/\u03b2-catenin signaling.",
+      "fixture": "tests/fixtures/compatibility/ezh2-abstract.json",
+      "provenance": {
+        "acquisition_mode": "abstract_only",
+        "source_url": "https://pubmed.ncbi.nlm.nih.gov/27172794/",
+        "source_format": "pubmed_xml",
+        "source_checksum": "ab6a79cdf2f0e535593ef30397e37b90b09caaaffa97133e79da4d7d18a81112",
+        "pmcid": null,
+        "pmid": "27172794",
+        "acquisition_path": "C:\\Projects\\Biomed\\extraction_system\\.cache\\ner_target_domain\\target_corpus.json"
+      },
+      "title_sha256": "413978decffe5253fd2a4f3462d9d0c3c0142708245c383d25ea39c54725755e",
+      "source_sha256": "50d58062a480653e0f414aad9e62aca434898fa3fcc6f372722454bd75407a0c",
+      "extraction_input_sha256": "e378357e8bb56f7041eb3e0ca093960341dce49fb591401812d6091ea5ced863"
+    }
+  ],
+  "paid_subset": [
+    "sfpq-full",
+    "cbl-full"
+  ],
+  "end_to_end_case": "sfpq-full",
+  "cpu_profile": {
+    "implementation_sha256": {
+      "entity_assembly.py": "c7e38a01a88e87fb4572f6f7e46c86e60a9a342e49fd2e3e4faa7d4256b5e6b5",
+      "graph.py": "5062ad26454cf5b56739d3404031c9d92457d797984a3075fb7d5a53bf85b21d",
+      "hunflair2.py": "0c1ec4017054fb93033a68f9abb2d0587f06663d146245edd9af52e51b531b55",
+      "hunflair2_runtime.py": "c9bcfd25b4ee499ca5863bbc05e9c7cc3c0f1f89e82dbf33c83165033d69a24c",
+      "llm_paper_roles.py": "35a4aae963baa44d45c2aa5e3284993e3370840442f75e09df91803c28d4933b",
+      "llm_pipeline.py": "2963de023ce9969bc480d924e81590ba27b44b5fb330580a586a9a1198439af7",
+      "llm_relation_extraction.py": "11a149942ab5114e5a0c26e11d520e6144ce2999ce7dff246c18457011a01e6c",
+      "ner_runners.py": "9d06c98b2f6fc9b67dcf71926226ae302310e8b4a0906ddd5b1d60b8843384d4",
+      "paper_roles.py": "68defa7f74558eb853ddc37b7e9215e44f2eee7454662ea3dcf12672ce4e6bbe",
+      "responses_execution.py": "38cfd87727e7cd8c0f989afaebe2f38db566aa5747509b82455fd61719c32c41"
+    },
+    "ner": {
+      "model_artifact_sha256": "245a099b660c1e2b682e0a1216feac140d5be36c4c6ca8c715af682efa685de6",
+      "model_identifier": "hunflair/hunflair2-ner",
+      "model_revision": "3af2b8972f7af2910ce8d9ae724da09b3d7a166c",
+      "runtime": {
+        "allow_long_sentences": true,
+        "device": "cpu",
+        "en_core_sci_sm": "0.5.1",
+        "flair": "0.15.1",
+        "label_type": "ner",
+        "model_max_length": 512,
+        "offset_mechanics": "SciSpaCy sentence boundaries retain each sentence.start_position; Flair span offsets are lifted to the untouched document text and validated before serialization.",
+        "python": "3.11.16",
+        "python_implementation": "CPython",
+        "pytorch": "2.14.0",
+        "scispacy": "0.5.1",
+        "sentence_splitter": "SciSpacySentenceSplitter(en_core_sci_sm)",
+        "spacy": "3.4.4",
+        "stride": 256,
+        "tagger_class": "PrefixedSequenceTagger",
+        "transformer_model": "michiyasunaga/BioLinkBERT-base",
+        "transformers": "4.57.6",
+        "truncate": true
+      }
+    },
+    "relation": {
+      "configuration": {
+        "background": true,
+        "generation_timeout_seconds": 900.0,
+        "max_completion_tokens": 128000,
+        "max_retries": 2,
+        "model": "gpt-6.1-sol",
+        "poll_interval_seconds": 3.0,
+        "reasoning_effort": "medium",
+        "service_tier": "default"
+      },
+      "prompt_sha256": "13f38a6e94db74b534eb0df0b139287ace2e714fc908276ce4c3572f9b25836f",
+      "semantic_schema": {
+        "$defs": {
+          "StructuredRelation": {
+            "additionalProperties": false,
+            "properties": {
+              "assertion": {
+                "description": "Complete source-grounded restatement of the scientific meaning; do not add information absent from the evidence",
+                "title": "Assertion",
+                "type": "string"
+              },
+              "context": {
+                "description": "Optional explicit biological, experimental, clinical, organismal, tissue, cellular, disease-state, cohort, environmental, or comparable setting/condition needed to interpret where or under what conditions the relation holds; do not use for mechanisms, another relation, or another entity interaction",
+                "items": {
+                  "type": "string"
+                },
+                "title": "Context",
+                "type": "array"
+              },
+              "effects": {
+                "description": "Optional explicit effects or outcomes; do not infer them and use an empty list when not applicable",
+                "items": {
+                  "type": "string"
+                },
+                "title": "Effects",
+                "type": "array"
+              },
+              "evidence": {
+                "description": "Verbatim contiguous source-text evidence",
+                "title": "Evidence",
+                "type": "string"
+              },
+              "intervention": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "description": "Optional explicit intervention or perturbation material to the assertion; leave null when not applicable",
+                "title": "Intervention"
+              },
+              "negated": {
+                "description": "Whether the asserted relation is explicitly negated",
+                "title": "Negated",
+                "type": "boolean"
+              },
+              "predicate": {
+                "description": "Concise normalized predicate faithfully describing the asserted relation",
+                "title": "Predicate",
+                "type": "string"
+              },
+              "source": {
+                "description": "Supplied source entity ID",
+                "title": "Source",
+                "type": "string"
+              },
+              "surface_form": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "description": "Optional verbatim relation wording",
+                "title": "Surface Form"
+              },
+              "target": {
+                "description": "Supplied target entity ID",
+                "title": "Target",
+                "type": "string"
+              }
+            },
+            "required": [
+              "source",
+              "target",
+              "predicate",
+              "assertion",
+              "evidence",
+              "negated"
+            ],
+            "title": "StructuredRelation",
+            "type": "object"
+          }
+        },
+        "additionalProperties": false,
+        "properties": {
+          "relations": {
+            "items": {
+              "$ref": "#/$defs/StructuredRelation"
+            },
+            "title": "Relations",
+            "type": "array"
+          }
+        },
+        "title": "StructuredRelationPayload",
+        "type": "object"
+      },
+      "semantic_schema_sha256": "023435da3fa18abb77987313626636eff7bedda28739603db54a2f2c8137c945"
+    },
+    "roles": {
+      "background": true,
+      "generation_timeout_seconds": 900.0,
+      "max_completion_tokens": 128000,
+      "max_retries": 2,
+      "model": "gpt-6.1-sol",
+      "poll_interval_seconds": 3.0,
+      "prompt_sha256": "dded1e4176f92a3872ef2b277d4ef7b261ba919e555cbdfdf210d0844a3d8e4a",
+      "reasoning_effort": "medium",
+      "semantic_schema": {
+        "$defs": {
+          "StructuredPaperRole": {
+            "additionalProperties": false,
+            "properties": {
+              "category": {
+                "description": "substantive or contextual",
+                "title": "Category",
+                "type": "string"
+              },
+              "evidence": {
+                "description": "Exact non-empty source substrings supporting the paragraphs",
+                "items": {
+                  "type": "string"
+                },
+                "title": "Evidence",
+                "type": "array"
+              },
+              "node_id": {
+                "description": "Requested graph node ID",
+                "title": "Node Id",
+                "type": "string"
+              },
+              "paragraphs": {
+                "description": "One or two concise grounded paragraphs",
+                "items": {
+                  "type": "string"
+                },
+                "title": "Paragraphs",
+                "type": "array"
+              }
+            },
+            "required": [
+              "node_id",
+              "category",
+              "paragraphs",
+              "evidence"
+            ],
+            "title": "StructuredPaperRole",
+            "type": "object"
+          }
+        },
+        "additionalProperties": false,
+        "properties": {
+          "roles": {
+            "items": {
+              "$ref": "#/$defs/StructuredPaperRole"
+            },
+            "title": "Roles",
+            "type": "array"
+          }
+        },
+        "title": "StructuredPaperRolePayload",
+        "type": "object"
+      },
+      "semantic_schema_sha256": "54d71c984369f1a2d5ec316ff60f1574ec033e122bb0526440bebed967a62c67",
+      "service_tier": "default"
+    }
+  },
+  "cpu_profile_identity": "ees-cfeec6ccd400b9f44abbef35551944aa074ee3d79d3e5ec18dd7d7551c76e0de",
+  "provider_submission_cap": 24,
+  "shared_repair_cap": 4,
+  "sdk_submission_retries": 0,
+  "conditional_live_order": [
+    "cpu-run-1",
+    "cuda-run-1",
+    "cpu-repeat",
+    "cuda-repeat"
+  ]
+}

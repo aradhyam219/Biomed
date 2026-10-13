@@ -1,0 +1,15 @@
+{
+  "generation_submission_cap": 24,
+  "shared_output_repair_cap": 4,
+  "submission_attempts": [],
+  "attempts_consumed": 0,
+  "repairs_consumed": 0,
+  "status": "no_provider_execution_implemented_or_performed",
+  "resume_requirement": "Install budget enforcement before every submission, including repairs, before enabling any live call. Failed and uncertain submissions count; no fresh invocation after provider failure.",
+  "conditional_initial_order": [
+    "cpu-run-1",
+    "cuda-run-1",
+    "cpu-repeat",
+    "cuda-repeat"
+  ]
+}

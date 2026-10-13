@@ -53,3 +53,14 @@ semantic schemas, runtime/model identities and representative fixture digests.
 Its source-byte hashes describe the research working files at freeze time;
 Git checkout CRLF/LF differences must be normalized when comparing source text.
 The baseline tag is the authoritative committed source. No fixture is scientific gold.
+
+## Phase 2 prerequisite evidence
+
+The fresh seven-input CPU observation in `reports/phase2/` is blocked: installed
+PyTorch distribution metadata reports `2.14.0`, but the actual inference module
+reports `2.14.0+cpu`, which the original immutable v1 descriptor rejects. The
+original profile and protected implementations are unchanged. No Linux/CUDA
+configuration has been provisioned, verified or promoted; an existing target host
+and resolution of the CPU identity conflict are required before comparison.
+Development fixtures/tooling remain outside the client package. See
+`../reports/phase2/README.md` for retained evidence and the explicit resume boundary.

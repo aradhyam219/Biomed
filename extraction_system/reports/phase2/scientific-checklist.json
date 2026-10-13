@@ -1,0 +1,80 @@
+{
+  "status": "prepared_before_provider_calls",
+  "cases": [
+    {
+      "case_id": "sfpq-full",
+      "document_id": "PMCID:PMC11824863",
+      "passages": [
+        {
+          "start": 747,
+          "end": 930,
+          "evidence": "The results demonstrate that SFPQ overexpression improves recognition and memory in AD mice, while reducing AD-related marker proteins such as amyloid precursor protein (APP) and Tau.",
+          "inspect": "Check SFPQ overexpression, recognition/memory outcomes, APP/Tau decrease and AD mouse context; preserve direction and avoid invented human efficacy."
+        },
+        {
+          "start": 1187,
+          "end": 1381,
+          "evidence": "Furthermore, phosphorylated phosphoinositide 3-kinase (p-PI3K)/PI3K and phosphorylated protein kinase B (p-AKT)/AKT ratios were elevated, indicating activation of the PI3K/AKT signaling pathway.",
+          "inspect": "Distinguish phosphorylated/total ratios from simple protein abundance; preserve pathway activation and source modality."
+        },
+        {
+          "start": 17615,
+          "end": 17920,
+          "evidence": "Four weeks postinjection, behavioral experiments were repeated, demonstrating that AD mice injected with AAV-SFPQ exhibited enhanced cognitive performance in the NOR and Y-maze tests compared to the control group, indicating that SFPQ overexpression improves cognition and memory in AD mice (Figure 1G,H).",
+          "inspect": "Retain AAV-SFPQ intervention, control comparison, timing, NOR/Y-maze endpoints and AD mouse context."
+        },
+        {
+          "start": 21411,
+          "end": 21665,
+          "evidence": "These findings suggest that SFPQ overexpression enhances the antioxidant and antiapoptotic capabilities of hippocampal neurons in AD mice, effectively protecting hippocampal neuronal function and improving cognitive and memory abilities in these animals.",
+          "inspect": "Inspect antioxidant/antiapoptotic outcomes and hippocampal-neuron context without reducing the finding to a bare association."
+        }
+      ]
+    },
+    {
+      "case_id": "cbl-full",
+      "document_id": "PMCID:PMC8605525",
+      "passages": [
+        {
+          "start": 1365,
+          "end": 1549,
+          "evidence": "Mechanistically, Cb1 enhanced JAK2 ubiquitination and decreased JAK2 and STAT4 expression, where STAT4 improved Runx3 expression by regulating histone H3 lysine 4 trimethylation level.",
+          "inspect": "Inspect literal Cb1/Cbl endpoint grounding, JAK2 ubiquitination, JAK2/STAT4 expression direction, Runx3 and H3K4me3; do not repair source spelling."
+        },
+        {
+          "start": 28459,
+          "end": 28594,
+          "evidence": "In this work, we infected HUVECs with lentivirus harboring overexpressed/silenced Cbl to observe the alteration of JAK2 ubiquitination.",
+          "inspect": "Preserve overexpressed/silenced Cbl intervention and HUVEC context; distinguish experimental results from cited background."
+        },
+        {
+          "start": 28971,
+          "end": 29186,
+          "evidence": "We found that the addition of MG-132 inhibited JAK2 ubiquitination level and upregulated JAK2 expression, and treatment of oe-Cbl elevated the JAK2 ubiquitination level in HUVECs as well as JAK2 protein degradation.",
+          "inspect": "Inspect combined MG-132 and oe-Cbl conditions, ubiquitination versus expression outcomes, and source wording without scientific repair."
+        },
+        {
+          "start": 41767,
+          "end": 41933,
+          "evidence": "Herein, our work elucidated that E3 ubiquitin ligase Cbl stimulates NO production and inhibits apoptosis of HUVECs, thereby improving endothelial function in DM rats.",
+          "inspect": "Preserve NO production, apoptosis direction, HUVEC and DM rat context and the intervention underlying endothelial effects."
+        }
+      ]
+    }
+  ],
+  "relation_review": [
+    "endpoint identity and direction",
+    "predicate, assertion, negation and modality",
+    "intervention, joint conditions, effects and biological context",
+    "verbatim evidence and surface-form grounding"
+  ],
+  "role_review": [
+    "substantive/contextual category and meaning",
+    "supporting exact evidence",
+    "species contextual rule",
+    "no implied edges or altered topology"
+  ],
+  "comparison_rule": "Compare cross-arm material findings with same-arm repeat variation. Unclear attribution or control disagreement remains UNCERTAIN. Counts are diagnostic only.",
+  "shared_limitations": "Accepted assembly and relation limitations remain unchanged; no generated outputs have yet been reviewed.",
+  "permitted_positive_conclusion": "No material downstream incompatibility was observed on the tested inputs under the bounded comparison."
+}
