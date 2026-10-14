@@ -134,17 +134,18 @@ def verify_graph_profile(pipeline, context, *, text: str):
         _provider(pipeline._last_graph_role_extractor, 'roles', p)
 
 
-class _LiveNERProfile(dict):
+class _LiveNERProfile:
     """Carry interpreter binding outside the unchanged scientific descriptor.
 
     The protected NER bridge passes only its expected profile to post-NER
     verification. This private binding lets that check observe distribution
     metadata from the same selected interpreter, before any relation submission.
-    Descriptor values remain identical; the binding never enters public JSON.
+    Retain the authoritative descriptor by reference so replaced sections are
+    revalidated at the post-NER checkpoint. The binding never enters public JSON.
     """
 
     def __init__(self, descriptor, runtime):
-        super().__init__(descriptor)
+        self.descriptor = descriptor
         self.runtime = runtime
 
 
@@ -174,6 +175,11 @@ def verify_ner_metadata(observed, profile, *, pytorch_distribution=None):
     interpreter; retained-run callers supply the captured distribution release.
     No suffix normalization or other local-build acceptance occurs.
     """
+    live_runtime = None
+    if isinstance(profile, _LiveNERProfile):
+        live_runtime = profile.runtime
+        profile = profile.descriptor
+        profile_identity(profile)  # Revalidate all current sections before relations.
     if not isinstance(observed, dict) or not isinstance(observed.get('runtime'), dict):
         _fail('missing actual NER metadata')
     for key in ('model_identifier', 'model_revision', 'model_artifact_sha256'):
@@ -190,10 +196,9 @@ def verify_ner_metadata(observed, profile, *, pytorch_distribution=None):
         if key == 'offset_mechanics' or runtime.get(key) == expected:
             continue
         if key == 'pytorch' and expected == '2.14.0' and runtime.get(key) == '2.14.0+cpu':
-            descriptor = dict(profile) if isinstance(profile, _LiveNERProfile) else profile
-            profile_identity(descriptor)  # Exception applies only to the original descriptor.
-            if isinstance(profile, _LiveNERProfile):
-                pytorch_distribution = _isolated_versions(profile.runtime).get('pytorch')
+            profile_identity(profile)  # Exception applies only to the original descriptor.
+            if live_runtime is not None:
+                pytorch_distribution = _isolated_versions(live_runtime).get('pytorch')
             if (pytorch_distribution != '2.14.0' or runtime.get('device') != 'cpu'
                     or 'cuda_version' not in runtime or runtime['cuda_version'] is not None
                     or runtime.get('cuda_available') is not False):

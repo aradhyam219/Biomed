@@ -6,7 +6,7 @@
   "profile_promotion": "not_performed",
   "accepted_cpu_comparator": true,
   "run_id": "20261013T103713Z-6ce48f02",
-  "revalidated_at": "2026-10-13T11:09:44.536783+00:00",
+  "revalidated_at": "2026-10-14T08:38:08.015511+00:00",
   "cpu_profile_identity": "ees-cfeec6ccd400b9f44abbef35551944aa074ee3d79d3e5ec18dd7d7551c76e0de",
   "historical_capture": {
     "status": "failed",
@@ -25,7 +25,7 @@
     "normalized_source_sha256": "3b159b8e4b965ad49329fc54c2ba051a84b76e37f26347fd35f700117fa14bef",
     "byte_sha256": "9429134f18a4b3df57c5eaaad0e4cfde9e9ebb9aa0727d6e906b8af9687ae220"
   },
-  "verification_layer_source_sha256": "1c963607bb7c8a59d0a3524a89918d594c985ed1308e71d9b7133d0ba7b314fd",
+  "verification_layer_source_sha256": "f1e0c16910da149f392ae231b00873de84a625441ec410b6de3e7f7137cc067f",
   "pytorch_distribution": "2.14.0",
   "pytorch_module_build": "2.14.0+cpu",
   "actual_device": "cpu",

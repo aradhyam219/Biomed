@@ -150,7 +150,10 @@ explicit CUDA evidence is rejected even when the module version matches exactly.
 Live preflight reads the selected inference interpreter's distribution metadata.
 A private runtime binding in the verification layer lets the protected NER bridge
 read that same interpreter again when corroborating the additional module build,
-before relation submission. The binding is outside the scientific descriptor and
+before relation submission. The binding retains the authoritative descriptor by
+reference and validates its complete canonical configuration at every post-NER
+checkpoint; unsupported in-place mutations and replaced sections fail before
+relations, for both accepted module values. The binding is outside the scientific descriptor and
 public JSON; descriptor bytes and canonical CPU identity remain unchanged.
 Postflight retains model/runtime/producer checks and per-call role verification.
 Retained-run revalidation uses the captured isolated inventory together with the

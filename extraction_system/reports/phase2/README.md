@@ -92,6 +92,24 @@ The existing scientific limitations remain unchanged. Mention counts are only
 diagnostic. Development tooling, fixtures and review evidence remain outside the
 client package; no release wheel was built for this amendment.
 
+## Live CPU binding correction
+
+The follow-up correction started clean at
+`2cebf867d6e4a1f4896f781fa83b548745f4f9f8`. Composed-path regressions first
+reproduced a relation invocation after replacing the NER or relation section.
+The private binding now retains the authoritative descriptor by reference and
+validates its complete canonical configuration at the post-NER checkpoint,
+for both accepted module versions. Replaced sections and in-place NER drift now
+raise before either relation or role extraction; unchanged operation still
+reaches the mocked providers. All 12 focused profile tests, 19 Graph Contract
+tests and the replay test covering both baselines passed.
+
+The existing seven-input observations were revalidated without fresh inference;
+`cpu-revalidation.json` now identifies the corrected verification-layer source.
+Capture-tool/raw-output identities, original capture failure, normalized values,
+CPU profile identity and protected scientific files remain unchanged. No viewer
+checks were repeated. The correction is committed locally and remains unpushed.
+
 ## Resume
 
 Supply one existing Linux/NVIDIA host and its credential mechanism, then continue

@@ -10,6 +10,9 @@ from biomedical_extractor.graph_profile import prepare_graph_export, verify_grap
 from biomedical_extractor.llm_pipeline import LLMExtractionPipeline
 from biomedical_extractor.llm_relation_extraction import OpenAIConfig
 from biomedical_extractor.ner_runners import RunnerOutput
+from biomedical_extractor.llm_paper_roles import LLMPaperRoleExtractor
+from biomedical_extractor.paper_roles import PaperRole, PaperRoleRecord, PaperRoleExtractionResult
+from biomedical_extractor.relation_extraction import RelationExtractionResult
 from importlib.metadata import version
 
 IDENTITY = 'ees-cfeec6ccd400b9f44abbef35551944aa074ee3d79d3e5ec18dd7d7551c76e0de'
@@ -88,7 +91,7 @@ class CPUProfileVerificationTests(unittest.TestCase):
              patch('biomedical_extractor.graph_profile.subprocess.check_output',return_value=json.dumps(versions)):
             prepare_graph_export(pipeline,text='BRCA1',document_id='d',context=ctx)
         runtime=pipeline.entity_extractor._runtime
-        self.assertEqual(profile_identity(dict(runtime._v1_expected_profile)),IDENTITY)
+        self.assertEqual(profile_identity(runtime._v1_expected_profile.descriptor),IDENTITY)
         run=RunnerOutput('HunFlair2',Path('unused'),self.observed,{runtime._DOCUMENT_ID:[]})
         with patch('biomedical_extractor.ner_runners.run_hunflair2',return_value=run) as ner, \
              patch('biomedical_extractor.graph_profile.subprocess.check_output',return_value=json.dumps(versions)) as metadata, \
@@ -107,6 +110,71 @@ class CPUProfileVerificationTests(unittest.TestCase):
             ctx.configuration['ner']['runtime']['stride']=257
             with self.assertRaises(GraphValidationError):
                 verify_graph_profile(pipeline,ctx,text='BRCA1')
+
+    def _assert_composed_checkpoint(self, mutate=None, *, module_build='2.14.0+cpu'):
+        profile=copy.deepcopy(self.profile)
+        config=OpenAIConfig(api_key='offline-test')
+        pipeline=LLMExtractionPipeline.from_pretrained(llm_config=config,
+                                                      hunflair2_runtime_python='selected-isolated-python')
+        roles=LLMPaperRoleExtractor.from_openai(config)
+        pipeline.paper_role_extractor=roles
+        ctx=ExportContext(version('biomedical-extractor'),'a'*40,profile)
+        versions={key:profile['ner']['runtime'][key] for key in ('python','flair','pytorch','transformers','scispacy','spacy','en_core_sci_sm')}
+        with patch('biomedical_extractor.graph_profile._hunflair2_artifact', return_value=(Path('artifact'),profile['ner']['model_revision'])), \
+             patch('biomedical_extractor.graph_profile._sha256_file', return_value=profile['ner']['model_artifact_sha256']), \
+             patch('biomedical_extractor.graph_profile.subprocess.check_output',return_value=json.dumps(versions)):
+            prepare_graph_export(pipeline,text='BRCA1',document_id='d',context=ctx)
+        if mutate is not None:
+            mutate(ctx.configuration)
+        observed=copy.deepcopy(self.observed)
+        observed['runtime']['pytorch']=module_build
+        runtime=pipeline.entity_extractor._runtime
+        run=RunnerOutput('HunFlair2',Path('unused'),observed,{runtime._DOCUMENT_ID:[
+            {'start':0,'end':5,'text':'BRCA1','label':'Gene','score':0.875}]})
+        role_result=PaperRoleExtractionResult((PaperRoleRecord('doc_e_001',
+            PaperRole('substantive',('BRCA1 is discussed.',),('BRCA1',))),))
+        with patch('biomedical_extractor.ner_runners.run_hunflair2',return_value=run) as ner, \
+             patch('biomedical_extractor.graph_profile.subprocess.check_output',return_value=json.dumps(versions)), \
+             patch.object(pipeline.relation_extractor,'extract_relations',return_value=RelationExtractionResult(())) as relations, \
+             patch.object(roles,'extract_roles',return_value=role_result) as role_calls:
+            if mutate is None:
+                graph=pipeline.extract_graph('BRCA1',document_id='d')
+                ner.assert_called_once()
+                relations.assert_called_once()
+                role_calls.assert_called_once()
+                self.assertEqual(graph.nodes[0].mentions[0].score,0.875)
+            else:
+                try:
+                    with self.assertRaises(GraphValidationError):
+                        pipeline.extract_graph('BRCA1',document_id='d')
+                finally:
+                    ner.assert_called_once()
+                    relations.assert_not_called()
+                    role_calls.assert_not_called()
+
+    def test_composed_unchanged_descriptor_reaches_relations(self):
+        for build in ('2.14.0','2.14.0+cpu'):
+            with self.subTest(build=build):
+                self._assert_composed_checkpoint(module_build=build)
+
+    def test_composed_replaced_ner_section_fails_before_providers(self):
+        def replace(profile):
+            profile['ner']=copy.deepcopy(profile['ner'])
+            profile['ner']['runtime']['stride']=257
+        for build in ('2.14.0','2.14.0+cpu'):
+            with self.subTest(build=build):
+                self._assert_composed_checkpoint(replace,module_build=build)
+
+    def test_composed_in_place_ner_mutation_fails_before_providers(self):
+        self._assert_composed_checkpoint(lambda profile:profile['ner']['runtime'].update(stride=257))
+
+    def test_composed_other_section_replacement_fails_before_providers(self):
+        def replace(profile):
+            profile['relation']=copy.deepcopy(profile['relation'])
+            profile['relation']['configuration']['reasoning_effort']='high'
+        for build in ('2.14.0','2.14.0+cpu'):
+            with self.subTest(build=build):
+                self._assert_composed_checkpoint(replace,module_build=build)
 
 if __name__ == '__main__':
     unittest.main()
