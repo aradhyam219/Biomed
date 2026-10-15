@@ -43,5 +43,7 @@
   "original_cpu_profile_identity": "ees-cfeec6ccd400b9f44abbef35551944aa074ee3d79d3e5ec18dd7d7551c76e0de",
   "luna_cpu_profile_identity": "ees-5ac91fa129c8e7309964cc94440897f24f0f9fe4473049a211ad6ad652ba6436",
   "linux_cuda_candidate_profile_identity": "ees-784d918be59ea5c55135196874550bdba46e3acb84dc2ad23927635927aa4d0f",
-  "status": "freeze_verified_cuda_smoke_pending"
+  "status": "freeze_verified_retry_operationally_blocked",
+  "smoke_report": "reports/phase2/luna-cuda-retry-smoke.json",
+  "profile_promoted": false
 }

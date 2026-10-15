@@ -110,8 +110,10 @@ verified cache hits. Exact literal document ID/text/title governs v1 reuse;
 software or profile upgrades alone do not regenerate stored science. The initial
 v1 producer preserves the original CPU descriptor and has separate derived
 Luna/CPU and Linux/CUDA descriptors. Explicit `--device cuda` selects the latter;
-its Phase 2 composed smoke stopped at an uncertain initial provider create timeout;
-the CUDA profile is not promoted and Phase 2 remains blocked. Raw overrides remain
+the transport-only create deadline correction has separate derived descriptors.
+The single authorized retry passed CUDA NER, RE and pre-role graph validation but
+exhausted normal role-output repairs. Phase 2 remains operationally blocked; the
+CUDA profile is not promoted and no further generation is authorized. Raw overrides remain
 available. Validation does not certify entailment, completeness or authenticity.
 
 ## Accepted limitations and scope

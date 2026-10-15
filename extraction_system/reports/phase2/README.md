@@ -4,10 +4,57 @@ Current delivery RE freeze: **GPT-5.6 Luna / max / Fast / background Responses**
 Offline downstream disposition remains **NUMERIC_ONLY**. The prior Sol A/B's
 **MATERIAL_DIVERGENCE** remains historical evidence and does not govern the
 frozen delivery compatibility decision. Composed Luna/CUDA smoke: **BLOCKED**
-by an uncertain initial provider submission (SDK create timeout).
+by exhausted production role-output validation repairs on the single authorized
+retry. The transport cutoff is corrected; no further generation is authorized.
 The Linux/NVIDIA target is available and real CUDA inference is retained.
 The CPU reference is verified; CUDA profile promotion was not performed.
-Provider attempts: **3 / 24**. Repairs: **0 / 4**.
+Provider attempts: **8 / 24**. Repairs: **3 / 4**. Unused budget is not authorization.
+
+## Final retry result — operationally blocked; execution stopped
+
+The corrected build `98e24a6c99436948c1a9ba773daa6c83b1767c7a` ran exactly one
+additional composed `sfpq-full` attempt. Actual Tesla T4 CUDA NER produced **460**
+mentions. The captured initial relation requests from the two attempts are exactly
+identical except for the transport `timeout` (60 versus 899.995 seconds); no
+scientific setting, source, entity, score, prompt, schema or ordering changed.
+The retry obtained its initial response ID in **1.981 seconds**. All five provider
+generations completed; requested Fast was observed as `priority` throughout.
+
+The initial relation output failed a verbatim `surface_form` check. One normal
+production repair succeeded with **75 validated relations**. Accepted assembly and
+graph construction produced **98 nodes, 73 edges and all 460 source mentions**.
+Every validated relation references supplied entities; all 75 evidence strings
+are exact source substrings. The pre-role legacy graph passes source-aware Graph
+Contract validation. A bounded review found no obvious catastrophic corruption;
+this is not an entailment/completeness or model-quality certification.
+
+Automatic roles naturally targeted **57 degree-zero nodes**. All three allowed
+role outputs failed the unchanged validator, in order:
+
+- Initial: evidence for `doc_e_033` was not a verbatim source substring.
+- First repair: species target `doc_e_051` was not assigned `contextual`.
+- Final repair: evidence for `doc_e_007` was not a verbatim source substring.
+
+No role output was manually repaired, dropped or attached to bypass validation.
+The genuine composed extraction therefore did **not** finish, and final Graph
+Contract v1 export/postflight was **not reached**. There is no evidence tying these
+provider-output failures to CUDA. Phase 2 is **operationally BLOCKED**; no Linux/
+CUDA compatibility closure or profile promotion is claimed. The user explicitly
+ended further execution, pass or fail: **no more submissions, repairs or smokes**.
+
+Retry usage: **5 submissions = 2 initial requests + 3 repairs** (one RE repair,
+two role repairs). Cumulative Phase 2: **8 submissions, 3 repairs**, permanently
+including two historical Sol generations and the first uncertain Luna attempt.
+Raw outputs remain under `.cache/phase2/20261015T100110167945Z-luna-cuda-composed-retry`.
+[luna-cuda-retry-smoke.json](luna-cuda-retry-smoke.json) contains current results;
+the first smoke report and historical Sol evidence are unchanged.
+
+Before execution, **67 focused tests passed**, including the slow-create timeout
+regression, unchanged polling limits and deadline cancellation, one-shot retry,
+durable budget preservation, profiles and Graph Contract. Post-execution Graph
+Contract/profile/baseline replay checks passed **32 tests**. Original evidence and
+prompt/schema integrity, credential exclusion and `git diff --check` also passed.
+No additional experiment is part of this finalization.
 
 ## Authorized transport correction and single retry
 
@@ -29,9 +76,9 @@ No automatic third attempt is possible. New `*-create-deadline-profile.json`
 descriptors derive new identities for the changed transport source; previous CPU
 and CUDA descriptors remain unchanged. The candidate CUDA identity is now
 `ees-784d918be59ea5c55135196874550bdba46e3acb84dc2ad23927635927aa4d0f`.
-The authorized retry is pending; no additional provider submission has yet occurred.
+The authorized retry has completed and stopped as recorded above.
 
-## Composed smoke result — stopped without retry
+## Historical first composed attempt — stopped before retry authorization
 
 The corrected baseline was committed as
 `ee44c19fe3d702dc71074dd04c20bfdcea8759a4` before execution. On 2026-10-15,
@@ -44,7 +91,7 @@ were mechanically checked before submission. Background Responses, strict schema
 The initial relation create call raised `APITimeoutError` after **60.114 seconds**,
 before any response ID or service-tier observation. Provider acceptance and final
 execution are **unknown**, not confirmed rejected or cancelled. Conservatively,
-this consumes **1 initial submission, 0 repairs**; Phase 2 cumulative usage is
+this consumed **1 initial submission, 0 repairs**; Phase 2 cumulative usage then was
 **3 submissions, 0 repairs**, including the two historical Sol generations.
 No retry, polling without an ID, role call, CPU control or additional paper ran.
 
@@ -56,7 +103,7 @@ integrated assembly/graph completion and Graph Contract smoke validation were
 no evidence that this provider timeout was caused by CUDA. The prior seven-case
 **NUMERIC_ONLY** result remains unchanged.
 
-Phase 2 remains **BLOCKED**. The Linux/CUDA descriptor
+At that gate Phase 2 remained **BLOCKED**. The initial Linux/CUDA descriptor
 `ees-97242b8f8534e7e114c148f09fac723778cc9d0496cfb1f87d40760621ab5a04`
 is a candidate, **not promoted**. No compatibility closure or Phase 3 advancement
 is claimed. Talia must review the uncertain submission before authorizing any

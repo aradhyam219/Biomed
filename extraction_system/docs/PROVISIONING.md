@@ -99,7 +99,9 @@ the seven-case NER study on the already provisioned execution host.
 
 Current relation and naturally invoked role requests use Luna/max/Fast background
 Responses, two output repairs per task, 128000 output tokens, 3-second polls and
-a 900-second deadline; SDK retries remain disabled. Prompt and both schema
+a 900-second deadline; background create uses the remaining deadline rather than
+an independent 60-second cutoff. Poll requests retain their 60-second cap and SDK
+retries remain disabled. Prompt and both schema
 identities are verified against the recorded Contract 14R evidence before live
 execution. Requested `fast` and observed `priority` remain distinct diagnostics.
 The composed Linux/CUDA smoke and profile promotion are gated in
