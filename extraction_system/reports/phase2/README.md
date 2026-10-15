@@ -1,9 +1,81 @@
 # Phase 2 compatibility investigation
 
-Disposition: **BLOCKED on the missing Linux/NVIDIA target**. The CPU reference
-prerequisite is now **verified** under the CPU Runtime Identity amendment.
-CUDA compatibility is not established and profile promotion was not performed.
+Offline downstream disposition: **NUMERIC_ONLY**. Phase 2 remains **YELLOW**:
+confidence literals change the exact relation and exercised role requests.
+The Linux/NVIDIA target is available and real CUDA inference is retained.
+The CPU reference is verified; CUDA profile promotion was not performed.
 Provider attempts: **0 / 24**. Repairs: **0 / 4**.
+
+## CUDA YELLOW offline downstream gate
+
+Started clean on `delivery/extraction-system-v1` at
+`38c9d03bea65f8b09f9e00db4f6faf32a3a7ea82`, also the local origin tracking tip.
+The original CPU and CUDA evidence directories were read without modification:
+`.cache/phase2/20261013T103713Z-6ce48f02` and
+`.cache/phase2/20261015T061416Z-cuda`. CPU raw SHA-256 remains
+`11a245455e1b067742f3e24daa3338763631fed1dcc3f62d10735f368ccf57fa`.
+All seven frozen source/title/document identities, runner inputs, raw-to-normalized
+values, counts, finite scores and the complete CUDA `comparison.json` were checked.
+No NER was rerun. Retained CUDA metadata identifies Tesla T4, `cuda:0`, CUDA 13.0,
+Python 3.11.16 and PyTorch module `2.14.0+cu130`, using the pinned HunFlair2 revision
+and artifact. No runtime or accepted CPU descriptor changed.
+
+`tools/phase2_downstream.py` exercises production assembly, provider factories,
+prompt builders, Responses request construction and graph construction. SDK clients
+are recording doubles; real client construction and socket connections are blocked.
+Relation recordings return valid empty structured results. Role recordings stop
+immediately after request capture, without inventing role judgments.
+
+| Case | Mentions | Assembled nodes | Changed RE scores | Max absolute delta | Score literal length changes |
+|---|---:|---:|---:|---:|---:|
+| sfpq-passage | 41 | 20 | 31 | 3.5762786865234375e-07 | 5 |
+| cbl-passage | 66 | 20 | 44 | 2.4437904357910156e-06 | 13 |
+| sfpq-full | 460 | 98 | 308 | 1.2576580047607422e-05 | 54 |
+| cbl-full | 937 | 153 | 648 | 1.0609626770019531e-05 | 125 |
+| hmgb1-full | 874 | 114 | 588 | 1.519918441772461e-05 | 117 |
+| pten-abstract | 33 | 10 | 19 | 3.5762786865234375e-07 | 3 |
+| ezh2-abstract | 41 | 15 | 27 | 1.6093254089355469e-06 | 4 |
+
+Every hard NER field, including ID and array order, agrees. All assembly labels,
+IDs, types, aliases, mention grouping/order, offsets and endpoint maps agree.
+Complete serialized assembly differences are exclusively preserved mention scores;
+there is no additional representative/score-derived field. All seven initial RE
+requests differ, with **1,665 score literal differences and zero non-score
+differences**. Exact comparison after masking only JSON confidence-number tokens
+proves all other characters equal, including full source, boundaries and wording.
+Request envelopes, system prompt hashes and structured schemas agree.
+
+Role coverage uses the two saved passage relation baselines: 13 SFPQ relations
+and 26 CBL relations. Saved endpoint IDs are rebound one-to-one by exact
+`(text,type,start,end)` because historical mention order differs from retained NER.
+Both arms preserve retained IDs/order and receive the same saved relations.
+Both passages have six degree-zero targets. Node IDs, target order, names, types
+and all mention identities/text/offsets agree. **Role targets serialize scores**:
+SFPQ has eight differing score literals (maximum delta `2.384185791015625e-07`),
+CBL four (`1.1920928955078125e-07`). Both role requests are score-only, with zero
+non-score differences; title and complete source are exact. CBL has one changed
+score-literal length; SFPQ has none. The saved CBL baseline has no role judgments,
+but its fixed relations do support target/request construction. No role topology
+was fabricated for the other five sources, which lack saved relation evidence.
+
+Graph comparisons cover all seven empty-response harness graphs and both saved
+passage relation topologies, including production endpoint remapping/self-edge
+cleanup. Graph-facing identity, aliases, mentions and edges agree; retained node
+mention scores differ. This does not establish equivalence of future live relation
+responses or scientific quality.
+
+Machine-readable results, per-case exact prompt/request hashes, lengths and evidence
+digests are in [downstream-drift.json](downstream-drift.json). Its separate ignored
+detail artifact retains every differing field location, exact recorded requests,
+role targets and fixed-topology replay data. Original evidence is not overwritten.
+Protected implementation/profile hashes, prompt/schema hashes and accepted fixture
+byte hashes pass. All **68** focused tests passed: new comparison/zero-network
+checks, Phase 2 fixtures, relations, paper roles, Graph Contract, CPU profile and
+both baseline replays. Production scientific sources/configuration remain unchanged.
+
+Stop here for Talia's review. No SFPQ/CBL live experiment, repeat controls, profile
+promotion, composed live smoke or Phase 3 is authorized by this gate. The remaining
+question concerns provider sensitivity to these score-only input differences.
 
 ## Frozen boundary
 
@@ -78,12 +150,11 @@ baseline graphs exactly. Interpreter-binding regression uses fake inference and
 provider boundaries, never real NER/provider execution. Original viewer checks
 remain the previously passed 14 checks; they were not repeated for this change.
 
-No Linux/NVIDIA target or connection was supplied. Docker Desktop's internal WSL
-distribution was left alone; no infrastructure was allocated or drivers modified.
-Linux dual-runtime provisioning, independent artifact acquisition, CUDA execution
-proof, CPU/CUDA NER and downstream request comparison, conditional Linux/CPU
-checks, live scientific review and raw/public CUDA smokes remain unperformed.
-No downstream compatibility or scientific-quality claim is made.
+At the CPU amendment, no Linux/NVIDIA target had been supplied. That historical
+blocker is resolved by the existing AWS host and retained CUDA run described above.
+The amendment itself left Docker Desktop/WSL and infrastructure untouched.
+Live scientific review, conditional repeat controls, profile promotion and composed
+live smoke remain outside this completed offline gate.
 
 `provider-ledger.json` remains an empty ledger, not implemented submission-budget
 enforcement. Before future paid calls, enforcement must cover initial, repair,
@@ -108,16 +179,28 @@ The existing seven-input observations were revalidated without fresh inference;
 `cpu-revalidation.json` now identifies the corrected verification-layer source.
 Capture-tool/raw-output identities, original capture failure, normalized values,
 CPU profile identity and protected scientific files remain unchanged. No viewer
-checks were repeated. The correction is committed locally and remains unpushed.
+checks were repeated. That correction is included in the starting delivery HEAD
+and its origin tracking tip; it is no longer an unpushed local correction.
 
 ## Resume
 
-Supply one existing Linux/NVIDIA host and its credential mechanism, then continue
-the original Phase 2 sequence using these verified retained CPU observations.
-Do not repeat NER or substitute historical fixture predictions. The original
-source selections, paid subset, budget and explicit candidate-promotion approval
-gate remain in force. The amendment authorizes no remote publication, CUDA
-provisioning, live calls or profile promotion; its changes remain local.
+The host prerequisite and offline downstream gate are complete. Await Talia's
+decision on a narrowly bounded SFPQ live comparison; do not automatically start it.
+The original source selections, budget and explicit candidate-promotion approval
+gate remain in force. This task authorizes no provider submissions. Its focused
+commit remains local because delivery-branch publication requires explicit
+authorization under the repository guide.
+
+To reproduce the offline downstream observation using retained evidence:
+
+```bash
+.venv/bin/python -m tools.phase2_downstream
+```
+
+Each execution creates a separate ignored detail directory and updates the current
+summary. It never changes either retained NER run. The older CPU revalidation
+report preserves the historical missing-host disposition; the current gate is
+recorded separately in `downstream-drift.json`.
 
 To revalidate retained evidence without inference or scientific-input acquisition:
 
