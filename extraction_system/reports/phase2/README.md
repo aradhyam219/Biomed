@@ -6,6 +6,57 @@ The Linux/NVIDIA target is available and real CUDA inference is retained.
 The CPU reference is verified; CUDA profile promotion was not performed.
 Provider attempts: **0 / 24**. Repairs: **0 / 4**.
 
+## SFPQ live A/B authorization and current blocker
+
+The subsequent contract authorizes two initial `sfpq-full` RE submissions in fixed
+CPU-then-CUDA order, with only accepted production-required repairs (at most two
+per arm/four shared). Starting state was clean at
+`096ce0d0491a634687625e57def7fa3104173c4c` on the same delivery branch.
+**No live experiment has been performed:** the process has no accepted OpenAI
+credential. The credential source/injection mechanism has been requested; no key
+should be placed in reports, commands, or chat. No provider connection was attempted.
+
+`tools/phase2_sfpq_live.py` is prepared and offline-tested. Preflight revalidates
+retained evidence and the exact accepted runtime configuration: `gpt-6.1-sol`,
+medium reasoning, background Responses, default service, 128000 output tokens,
+unchanged prompt/schema/validator and two-repair production limit. SFPQ has 460
+mentions in each arm; all initial-request differences remain confined to 308 score
+literals, maximum delta `1.2576580047607422e-05`, with zero non-score differences.
+The exact request hashes still match the completed offline gate.
+
+The runner records requests/responses, parsed and validated output, diagnostics,
+timestamps and IDs separately per generation. An exclusive local execution lock
+and durable ledger reservations enforce counting before every SDK create call;
+SDK retries remain disabled. Failed/uncertain attempts consume budget and stop the
+experiment without a balancing rerun. Previously consumed submissions block a new
+execution. Production bounded output repairs remain unchanged. Credential values
+are excluded/redacted from retained evidence; no exception messages or client
+objects are serialized. No NER or role path is invoked.
+
+All **59** focused checks passed: eight new runner tests, five downstream tests,
+four Phase 2 fixture tests, accepted Responses lifecycle/prompt/schema regressions
+and relation contract checks. These cover both selected retained inputs, fixed
+order/exactly two initial fake calls, repair exhaustion, uncertain submission
+counting, pre-network request mutation rejection, evidence redaction and preserving
+multiple/unmatched relations during alignment. Protected production sources,
+configuration and fixtures remain unchanged.
+
+[sfpq-live-comparison.json](sfpq-live-comparison.json) records the blocked preflight
+and points to separate ignored request evidence. Provider usage remains **0**,
+repairs **0**. Relation counts, scientific alignment, negation/qualifier/grounding
+comparison and a scientific outcome cannot yet be measured. Its provisional
+`AMBIGUOUS` field denotes an unperformed experiment, not observed scientific drift.
+After secure credential injection, the authorized command is:
+
+```bash
+.venv/bin/python -m tools.phase2_sfpq_live --live
+```
+
+Following both validated outputs, source-grounded scientific review is required;
+the runner conservatively leaves classification `AMBIGUOUS` until that review.
+CBL, repeat controls, roles, composed CUDA smoke, promotion and Phase 3 remain
+unauthorized. Tooling/preflight evidence are committed locally; no push is authorized.
+
 ## CUDA YELLOW offline downstream gate
 
 Started clean on `delivery/extraction-system-v1` at
@@ -73,8 +124,9 @@ byte hashes pass. All **68** focused tests passed: new comparison/zero-network
 checks, Phase 2 fixtures, relations, paper roles, Graph Contract, CPU profile and
 both baseline replays. Production scientific sources/configuration remain unchanged.
 
-Stop here for Talia's review. No SFPQ/CBL live experiment, repeat controls, profile
-promotion, composed live smoke or Phase 3 is authorized by this gate. The remaining
+The offline gate stopped for Talia's review without live execution. Its successor
+SFPQ authorization and credential blocker are recorded above. CBL, repeat controls,
+promotion, composed live smoke and Phase 3 remain later decisions. The remaining
 question concerns provider sensitivity to these score-only input differences.
 
 ## Frozen boundary
@@ -156,9 +208,10 @@ The amendment itself left Docker Desktop/WSL and infrastructure untouched.
 Live scientific review, conditional repeat controls, profile promotion and composed
 live smoke remain outside this completed offline gate.
 
-`provider-ledger.json` remains an empty ledger, not implemented submission-budget
-enforcement. Before future paid calls, enforcement must cover initial, repair,
-failed and uncertain submissions within the original 24-generation/4-repair cap.
+At the amendment, `provider-ledger.json` was an empty ledger without executable
+enforcement. The SFPQ runner now enforces durable accounting for initial, repair,
+failed and uncertain submissions within the original 24-generation/4-repair cap;
+the ledger still contains no submissions.
 The existing scientific limitations remain unchanged. Mention counts are only
 diagnostic. Development tooling, fixtures and review evidence remain outside the
 client package; no release wheel was built for this amendment.
@@ -184,10 +237,10 @@ and its origin tracking tip; it is no longer an unpushed local correction.
 
 ## Resume
 
-The host prerequisite and offline downstream gate are complete. Await Talia's
-decision on a narrowly bounded SFPQ live comparison; do not automatically start it.
+The host prerequisite and offline downstream gate are complete. The SFPQ live
+comparison is authorized but awaits an external secure credential source.
 The original source selections, budget and explicit candidate-promotion approval
-gate remain in force. This task authorizes no provider submissions. Its focused
+gate remain in force. The offline gate consumed no provider submissions. Its focused
 commit remains local because delivery-branch publication requires explicit
 authorization under the repository guide.
 

@@ -1,0 +1,166 @@
+{
+  "experiment": "sfpq-cpu-cuda-live-1",
+  "repository_revision": "096ce0d0491a634687625e57def7fa3104173c4c",
+  "tool_sha256": "724b4dd4a5ade03d9cc5a21f029238840910e4230279221bf172f5c04cfd45d5",
+  "timestamp": "2026-10-15T06:51:58.120121+00:00",
+  "case_id": "sfpq-full",
+  "evidence_directory": "/home/ubuntu/Biomed-delivery/extraction_system/.cache/phase2/20261015T065158117206Z-sfpq-live-preflight",
+  "status": "blocked_missing_credential",
+  "execution_order": [
+    "cpu",
+    "cuda"
+  ],
+  "cpu_evidence": "/home/ubuntu/Biomed-delivery/extraction_system/.cache/phase2/20261013T103713Z-6ce48f02",
+  "cuda_evidence": "/home/ubuntu/Biomed-delivery/extraction_system/.cache/phase2/20261015T061416Z-cuda",
+  "source_sha256": "8a43f612139aa84939933831a5bc7f5420122549fd69081d635b7becb80d2a15",
+  "preflight": {
+    "classification": "SCORE_ONLY",
+    "exact_equal": false,
+    "score_difference_count": 308,
+    "non_score_difference_count": 0,
+    "max_abs_score_delta": 1.2576580047607422e-05,
+    "cpu_sha256": "dbedb142ef8b59ddc8fe52b323abdf8c3bfd1a257e50aa22ad5f9077f7356187",
+    "cuda_sha256": "758feffc68dd2196ea8b774bb2250d3d8e9217587ce360d5cadf8f7c8a42f66f",
+    "non_score_characters_equal": true,
+    "envelope_equal": true,
+    "cpu_prompt_sha256": "d7afd33a2f7d85361ddd764790c8c7fc06c0d1e8106a0bcc7aa123a6459b31c5",
+    "cuda_prompt_sha256": "c51358cbb3c7ea52481db0450c99e7ef377c0bd4f6c9ddd87b04c179f66f59e8",
+    "cpu_prompt_characters": 97092,
+    "cuda_prompt_characters": 97104,
+    "cpu_prompt_utf8_bytes": 97180,
+    "cuda_prompt_utf8_bytes": 97192,
+    "cpu_request_utf8_bytes": 111611,
+    "cuda_request_utf8_bytes": 111623,
+    "score_literal_count": 460,
+    "different_score_literals": 308,
+    "score_literal_length_changes": 54
+  },
+  "document_id": "PMCID:PMC11824863",
+  "title_sha256": "d1cbade706af186092c1fea82809bf0e1b070ba4f18032469eb393967b229100",
+  "entity_digests": {
+    "cpu": "89a837efd97dab5c796d6e3f862520295eee61929da2bbea6839dd68493ce3d5",
+    "cuda": "5fa0e0daabf3ad4e1b752e6fa7c2764e7786cb6870571ed86a98e0358929b1ac"
+  },
+  "configuration": {
+    "configuration": {
+      "background": true,
+      "generation_timeout_seconds": 900.0,
+      "max_completion_tokens": 128000,
+      "max_retries": 2,
+      "model": "gpt-6.1-sol",
+      "poll_interval_seconds": 3.0,
+      "reasoning_effort": "medium",
+      "service_tier": "default"
+    },
+    "prompt_sha256": "13f38a6e94db74b534eb0df0b139287ace2e714fc908276ce4c3572f9b25836f",
+    "semantic_schema": {
+      "$defs": {
+        "StructuredRelation": {
+          "additionalProperties": false,
+          "properties": {
+            "assertion": {
+              "description": "Complete source-grounded restatement of the scientific meaning; do not add information absent from the evidence",
+              "title": "Assertion",
+              "type": "string"
+            },
+            "context": {
+              "description": "Optional explicit biological, experimental, clinical, organismal, tissue, cellular, disease-state, cohort, environmental, or comparable setting/condition needed to interpret where or under what conditions the relation holds; do not use for mechanisms, another relation, or another entity interaction",
+              "items": {
+                "type": "string"
+              },
+              "title": "Context",
+              "type": "array"
+            },
+            "effects": {
+              "description": "Optional explicit effects or outcomes; do not infer them and use an empty list when not applicable",
+              "items": {
+                "type": "string"
+              },
+              "title": "Effects",
+              "type": "array"
+            },
+            "evidence": {
+              "description": "Verbatim contiguous source-text evidence",
+              "title": "Evidence",
+              "type": "string"
+            },
+            "intervention": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "Optional explicit intervention or perturbation material to the assertion; leave null when not applicable",
+              "title": "Intervention"
+            },
+            "negated": {
+              "description": "Whether the asserted relation is explicitly negated",
+              "title": "Negated",
+              "type": "boolean"
+            },
+            "predicate": {
+              "description": "Concise normalized predicate faithfully describing the asserted relation",
+              "title": "Predicate",
+              "type": "string"
+            },
+            "source": {
+              "description": "Supplied source entity ID",
+              "title": "Source",
+              "type": "string"
+            },
+            "surface_form": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "Optional verbatim relation wording",
+              "title": "Surface Form"
+            },
+            "target": {
+              "description": "Supplied target entity ID",
+              "title": "Target",
+              "type": "string"
+            }
+          },
+          "required": [
+            "source",
+            "target",
+            "predicate",
+            "assertion",
+            "evidence",
+            "negated"
+          ],
+          "title": "StructuredRelation",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "relations": {
+          "items": {
+            "$ref": "#/$defs/StructuredRelation"
+          },
+          "title": "Relations",
+          "type": "array"
+        }
+      },
+      "title": "StructuredRelationPayload",
+      "type": "object"
+    },
+    "semantic_schema_sha256": "023435da3fa18abb77987313626636eff7bedda28739603db54a2f2c8137c945"
+  },
+  "provider_submission_count": 0,
+  "repair_count": 0,
+  "validated_relations": null,
+  "provisional_scientific_classification": "AMBIGUOUS",
+  "rationale": "No live experiment performed; scientific equivalence cannot be assessed. No accepted OpenAI credential is available in this process."
+}

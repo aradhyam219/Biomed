@@ -4,8 +4,8 @@
   "submission_attempts": [],
   "attempts_consumed": 0,
   "repairs_consumed": 0,
-  "status": "no_provider_execution_implemented_or_performed",
-  "resume_requirement": "Install budget enforcement before every submission, including repairs, before enabling any live call. Failed and uncertain submissions count; no fresh invocation after provider failure.",
+  "status": "bounded_sfpq_runner_implemented_no_submissions_missing_credential",
+  "resume_requirement": "Supply an accepted OpenAI credential externally, then use tools/phase2_sfpq_live.py with --live. Durable reservations precede every create; failed and uncertain submissions count. Only CPU then CUDA initial submissions and production-required repairs are authorized. No repeats or role calls.",
   "conditional_initial_order": [
     "cpu-run-1",
     "cuda-run-1",
