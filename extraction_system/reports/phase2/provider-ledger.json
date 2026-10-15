@@ -25,12 +25,23 @@
       "response_id": "resp_0f140068bdc2f1d0006ad081a3656087d1bb8a11c7a4cd7057",
       "provider_status": "completed",
       "last_observed_at": "2026-10-15T07:34:52.081100+00:00"
+    },
+    {
+      "experiment": "phase2-luna-cuda-composed-1",
+      "run_id": "20261015T093450344934Z-luna-cuda-composed",
+      "arm": "relation",
+      "generation": 1,
+      "repair": false,
+      "reserved_at": "2026-10-15T09:35:11.078209+00:00",
+      "submission_state": "uncertain_until_observed",
+      "error_type": "APITimeoutError",
+      "failed_at": "2026-10-15T09:36:11.165877+00:00"
     }
   ],
-  "attempts_consumed": 2,
+  "attempts_consumed": 3,
   "repairs_consumed": 0,
-  "status": "both_arms_validated",
-  "resume_requirement": "Authorized SFPQ CPU-then-CUDA A/B completed with two initial submissions and zero repairs. Scientific review found MATERIAL_DIVERGENCE. STOP for Talia review; no further provider submissions, repeats, CBL, roles, smoke or promotion are authorized.",
+  "status": "blocked",
+  "resume_requirement": "Stop for Phase 2 closure review; no automatic retries, additional papers, controls or Phase 3.",
   "conditional_initial_order": [
     "cpu-run-1",
     "cuda-run-1",

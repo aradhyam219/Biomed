@@ -3,10 +3,50 @@
 Current delivery RE freeze: **GPT-5.6 Luna / max / Fast / background Responses**.
 Offline downstream disposition remains **NUMERIC_ONLY**. The prior Sol A/B's
 **MATERIAL_DIVERGENCE** remains historical evidence and does not govern the
-frozen delivery compatibility decision. Composed Luna/CUDA smoke: **pending**.
+frozen delivery compatibility decision. Composed Luna/CUDA smoke: **BLOCKED**
+by an uncertain initial provider submission (SDK create timeout).
 The Linux/NVIDIA target is available and real CUDA inference is retained.
 The CPU reference is verified; CUDA profile promotion was not performed.
-Provider attempts: **2 / 24**. Repairs: **0 / 4**.
+Provider attempts: **3 / 24**. Repairs: **0 / 4**.
+
+## Composed smoke result — stopped without retry
+
+The corrected baseline was committed as
+`ee44c19fe3d702dc71074dd04c20bfdcea8759a4` before execution. On 2026-10-15,
+the one authorized composed `sfpq-full` smoke performed actual HunFlair2 CUDA
+inference on Tesla T4 / CUDA 13.0 / PyTorch `2.14.0+cu130`, producing **460**
+normalized mentions. The unchanged frozen source and exact Luna/max/Fast request
+were mechanically checked before submission. Background Responses, strict schema,
+128000 output tokens and zero SDK retries were preserved.
+
+The initial relation create call raised `APITimeoutError` after **60.114 seconds**,
+before any response ID or service-tier observation. Provider acceptance and final
+execution are **unknown**, not confirmed rejected or cancelled. Conservatively,
+this consumes **1 initial submission, 0 repairs**; Phase 2 cumulative usage is
+**3 submissions, 0 repairs**, including the two historical Sol generations.
+No retry, polling without an ID, role call, CPU control or additional paper ran.
+
+[luna-cuda-smoke.json](luna-cuda-smoke.json) records the request digest, runtime,
+freeze identities and failure. Raw evidence remains separately under
+`.cache/phase2/20261015T093450344934Z-luna-cuda-composed`. Relation output,
+integrated assembly/graph completion and Graph Contract smoke validation were
+**not reached**; relation/node/edge counts are unavailable, not zero. There is
+no evidence that this provider timeout was caused by CUDA. The prior seven-case
+**NUMERIC_ONLY** result remains unchanged.
+
+Phase 2 remains **BLOCKED**. The Linux/CUDA descriptor
+`ees-97242b8f8534e7e114c148f09fac723778cc9d0496cfb1f87d40760621ab5a04`
+is a candidate, **not promoted**. No compatibility closure or Phase 3 advancement
+is claimed. Talia must review the uncertain submission before authorizing any
+further execution; neither a transport change nor another generation is automatic.
+
+Post-attempt validation passed **40 focused tests** across Luna/CUDA orchestration,
+profile verification, Graph Contract and accepted baseline replay. Exact frozen
+prompt/schema checks, actual saved CUDA metadata/profile checks, retained original
+evidence digests and byte-preservation of the original CPU descriptor, manifest
+and historical Sol report also passed. The credential remains absent from Phase 2
+JSON reports and new raw evidence; `.env` remains ignored. `git diff --check`
+passed. No saved final graph exists to validate.
 
 ## Restored leadership-approved freeze and composed smoke gate
 
@@ -35,7 +75,8 @@ specific GPU serial number. The prepared smoke runner executes real CUDA NER
 through normal pretrained composition and records every provider submission in
 the existing ledger. Automatic roles are enabled only through the genuine
 degree-zero pipeline stage. No CPU control, CBL, repeat or model comparison is
-authorized. Profile promotion awaits the one composed smoke and validation.
+authorized. Profile promotion requires a successful composed smoke and validation;
+the attempted smoke is blocked as recorded above.
 
 Before live execution, 115 focused tests completed successfully (109 passed;
 six historical Sol request-runner tests are explicitly inapplicable under the
@@ -45,12 +86,12 @@ roles, persisted budgets, secret-safe evidence, immutable CPU identity, exact
 CUDA build checks, and rejection of missing NVIDIA additions before inference.
 No seven-case experiment was repeated. Historical deterministic results are
 checked as retained artifacts rather than regenerated with changed provider
-defaults. The correction will be committed before live execution so graph
-provenance identifies the exact tested build.
+defaults. The correction was committed before live execution so provenance
+identifies the exact tested build. Post-attempt checks are recorded below.
 
 The credential file still contains explicit Sol/medium/default non-secret
 overrides. A read-only preflight rejected those settings without inference or
-submission. The authorized smoke will explicitly bind the recovered
+submission. The authorized smoke explicitly bound the recovered
 Luna/max/Fast settings in its execution environment after sourcing credentials;
 the secret file and credential value are not modified or copied into evidence.
 
