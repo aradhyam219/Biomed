@@ -1,20 +1,21 @@
 # Phase 2 compatibility investigation
 
-Offline downstream disposition: **NUMERIC_ONLY**. Phase 2 remains **YELLOW**:
-confidence literals change the exact relation and exercised role requests.
+Offline downstream disposition: **NUMERIC_ONLY**. SFPQ live A/B provisional
+scientific result: **MATERIAL_DIVERGENCE**; stop for Talia review.
 The Linux/NVIDIA target is available and real CUDA inference is retained.
 The CPU reference is verified; CUDA profile promotion was not performed.
-Provider attempts: **0 / 24**. Repairs: **0 / 4**.
+Provider attempts: **2 / 24**. Repairs: **0 / 4**.
 
-## SFPQ live A/B authorization and current blocker
+## SFPQ live A/B result
 
 The subsequent contract authorizes two initial `sfpq-full` RE submissions in fixed
 CPU-then-CUDA order, with only accepted production-required repairs (at most two
-per arm/four shared). Starting state was clean at
-`096ce0d0491a634687625e57def7fa3104173c4c` on the same delivery branch.
-**No live experiment has been performed:** the process has no accepted OpenAI
-credential. The credential source/injection mechanism has been requested; no key
-should be placed in reports, commands, or chat. No provider connection was attempted.
+per arm/four shared). Preparation started clean at
+`096ce0d0491a634687625e57def7fa3104173c4c`; the live run started clean at
+`862d9ebf689a4df6a7ddb85e7e2361ae9276d971` on the same delivery branch.
+The earlier missing-credential blocker was resolved by the user-authorized,
+gitignored `.env`, sourced only into the execution shell. No credential value was
+displayed or retained. The prepared runner was reused unchanged.
 
 `tools/phase2_sfpq_live.py` is prepared and offline-tested. Preflight revalidates
 retained evidence and the exact accepted runtime configuration: `gpt-6.1-sol`,
@@ -41,21 +42,70 @@ counting, pre-network request mutation rejection, evidence redaction and preserv
 multiple/unmatched relations during alignment. Protected production sources,
 configuration and fixtures remain unchanged.
 
-[sfpq-live-comparison.json](sfpq-live-comparison.json) records the blocked preflight
-and points to separate ignored request evidence. Provider usage remains **0**,
-repairs **0**. Relation counts, scientific alignment, negation/qualifier/grounding
-comparison and a scientific outcome cannot yet be measured. Its provisional
-`AMBIGUOUS` field denotes an unperformed experiment, not observed scientific drift.
-After secure credential injection, the authorized command is:
+[sfpq-live-comparison.json](sfpq-live-comparison.json) contains both validated
+outputs, exact request hashes/lengths, diagnostics, deterministic alignment,
+topology/grounding comparisons and the source-grounded scientific review.
+Raw evidence is retained separately at
+`.cache/phase2/20261015T073050708525Z-sfpq-live`; earlier preflight and NER evidence
+remain intact. The raw runner snapshot is preserved; the tracked report adds the
+review without rewriting provider output.
 
-```bash
-.venv/bin/python -m tools.phase2_sfpq_live --live
-```
+CPU ran first at 07:30:51 UTC on 2026-10-15, validated **50 relations** in about
+118.5 seconds, then CUDA validated **62 relations** in about 121.2 seconds.
+Both initial generations passed production validation. Exactly **2 initial
+submissions, 0 repairs, 2 total generations**, with no transport failures,
+timeouts, uncertain final states or poll errors. No role calls occurred.
 
-Following both validated outputs, source-grounded scientific review is required;
-the runner conservatively leaves classification `AMBIGUOUS` until that review.
-CBL, repeat controls, roles, composed CUDA smoke, promotion and Phase 3 remain
-unauthorized. Tooling/preflight evidence are committed locally; no push is authorized.
+The 47 deterministic one-to-one alignments were reviewed, plus two supplemental
+pairs: CPU 27/CUDA 30 preserve the same potential Tau oligomerization/misfolding
+claim; CPU 40/CUDA 48 encode the same HO-1-is-NRF2-target assertion with inverse
+directed target-gene predicates. All indices here are zero-based. After these
+supplemental pairs, one CPU output and 13 CUDA outputs remain separately listed;
+several CUDA additions repeat shared results with different evidence. Nothing was
+discarded or collapsed. Raw directed endpoint sets have **35 shared pairs,
+1 CPU-only pair, 9 CUDA-only pairs** (36 CPU / 44 CUDA total). Accepted graph
+construction yields **49 CPU / 60 CUDA edges**. No self-edges occur.
+
+The decisive finding is CPU relation **41** versus CUDA relation **49**, both
+using source mention `E380` (SFPQ) and target `E381` (Aβ), mapping to
+`doc_e_010 -> doc_e_027`:
+
+- CPU predicate: `may_mitigate_induced_oxidative_damage`.
+- CUDA predicate: `induces_oxidative_damage`.
+- Both assertions describe potential mitigation after SFPQ overexpression.
+- The exact source at `[24565:24733]` says SFPQ overexpression could increase
+  antioxidant enzymes/function and **mitigate** Aβ-induced oxidative damage.
+
+CUDA's predicate contradicts both its own assertion/effects and the source. This
+is a meaning-changing scientific graph label, not harmless wording. Production
+graph construction preserves it unchanged; no score, prompt, predicate or output
+was repaired for agreement. This supports provisional **MATERIAL_DIVERGENCE**.
+
+Other variation is retained explicitly: a reverse NRF2/HO-1 endpoint encoding;
+source-supported background/method relations; an additional hippocampal-morphology
+finding; and additional PI3K/AKT pathway edges using Gene-typed SFPQ instead of
+the Chemical-typed SFPQ used in both arms' phosphorylation findings. The shared
+NER/assembly already contains both SFPQ types; this was not new NER drift.
+Every relation has exact source-substring evidence (50/50 and 62/62), but that
+mechanical grounding does not make CUDA 49's predicate scientifically supported.
+Both arms set `negated=false` throughout; no negation-flag disagreement occurred.
+Both preserve the important overexpression/AD-mouse, APP/Tau, antioxidant,
+CREB/PSD95 and phosphorylated/total PI3K/AKT findings. Shared omissions, including
+the explicit Bcl-2/Bax ratio and detailed cognitive-test timing/control context,
+remain accepted-output limitations.
+
+This one A/B cannot distinguish stochastic provider variation from sensitivity
+to microscopic score literals. **The classification concerns the observed
+scientific graph-output discrepancy, not proof that CUDA caused it or that CUDA
+NER is invalid.** No migration failure or promotion decision is inferred.
+Post-run replay revalidated saved parsed/validated outputs, both legacy Graph
+Contract payloads, actual initial request hashes and zero non-score differences,
+the decisive source slice, unchanged retained NER evidence and protected sources,
+and absence of the credential value from retained JSON evidence. All **20** Graph
+Contract and accepted baseline replay regression tests passed. Only the three
+Phase 2 report/ledger files changed; the prepared runner remains unchanged.
+STOP for Talia review: no CBL, repeats, roles, composed CUDA smoke, profile
+promotion, scientific fixes or Phase 3. No push is authorized.
 
 ## CUDA YELLOW offline downstream gate
 
@@ -125,7 +175,7 @@ checks, Phase 2 fixtures, relations, paper roles, Graph Contract, CPU profile an
 both baseline replays. Production scientific sources/configuration remain unchanged.
 
 The offline gate stopped for Talia's review without live execution. Its successor
-SFPQ authorization and credential blocker are recorded above. CBL, repeat controls,
+SFPQ authorization and completed live result are recorded above. CBL, repeat controls,
 promotion, composed live smoke and Phase 3 remain later decisions. The remaining
 question concerns provider sensitivity to these score-only input differences.
 
@@ -211,7 +261,7 @@ live smoke remain outside this completed offline gate.
 At the amendment, `provider-ledger.json` was an empty ledger without executable
 enforcement. The SFPQ runner now enforces durable accounting for initial, repair,
 failed and uncertain submissions within the original 24-generation/4-repair cap;
-the ledger still contains no submissions.
+the ledger now records the two authorized SFPQ initial submissions and no repairs.
 The existing scientific limitations remain unchanged. Mention counts are only
 diagnostic. Development tooling, fixtures and review evidence remain outside the
 client package; no release wheel was built for this amendment.
@@ -237,8 +287,8 @@ and its origin tracking tip; it is no longer an unpushed local correction.
 
 ## Resume
 
-The host prerequisite and offline downstream gate are complete. The SFPQ live
-comparison is authorized but awaits an external secure credential source.
+The host prerequisite, offline downstream gate and authorized SFPQ live comparison
+are complete. The provisional MATERIAL_DIVERGENCE result awaits Talia review.
 The original source selections, budget and explicit candidate-promotion approval
 gate remain in force. The offline gate consumed no provider submissions. Its focused
 commit remains local because delivery-branch publication requires explicit
