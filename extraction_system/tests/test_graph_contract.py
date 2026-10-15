@@ -20,7 +20,7 @@ ROOT = Path(__file__).resolve().parent.parent
 
 
 def context():
-    return ExportContext(version('biomedical-extractor'), 'a'*40, contract_resource('baseline-profile.json'))
+    return ExportContext(version('biomedical-extractor'), 'a'*40, contract_resource('luna-cpu-profile.json'))
 
 
 def graph():
@@ -166,8 +166,9 @@ class GraphContractTests(unittest.TestCase):
         equivalent['roles']['poll_interval_seconds'] = 3
         self.assertEqual(equivalent, canonical.configuration)
         recorded = ExportContext(canonical.extractor_version, canonical.build_revision, equivalent)
-        self.assertEqual(profile_identity(canonical.configuration), 'ees-cfeec6ccd400b9f44abbef35551944aa074ee3d79d3e5ec18dd7d7551c76e0de')
-        self.assertEqual(profile_identity(recorded.configuration), 'ees-cfeec6ccd400b9f44abbef35551944aa074ee3d79d3e5ec18dd7d7551c76e0de')
+        expected = profile_identity(contract_resource('luna-cpu-profile.json'))
+        self.assertEqual(profile_identity(canonical.configuration), expected)
+        self.assertEqual(profile_identity(recorded.configuration), expected)
         text, result = graph()
         first = export_graph(result, text=text, context=canonical, generated_at=STAMP)
         second = export_graph(result, text=text, context=recorded, generated_at=STAMP)
@@ -200,16 +201,16 @@ class GraphContractTests(unittest.TestCase):
     def test_profile_immutable_binding_and_overrides(self):
         p=context().configuration
         self.assertEqual(profile_identity(p),profile_identity(copy.deepcopy(p)))
-        for section,key,value in [('relation','model','other'),('relation','reasoning_effort','high'),('relation','service_tier','fast'),('relation','background',False),('relation','max_retries',0)]:
+        for section,key,value in [('relation','model','other'),('relation','reasoning_effort','high'),('relation','service_tier','default'),('relation','background',False),('relation','max_retries',0)]:
             altered=copy.deepcopy(p);altered[section]['configuration'][key]=value
             with self.assertRaises(GraphValidationError):profile_identity(altered)
         for mutate in [lambda d:d['roles'].update(model='other'),lambda d:d['roles'].update(prompt_sha256='a'*64),lambda d:d['ner'].update(model_revision='a'*40),lambda d:d['ner']['runtime'].update(stride=1),lambda d:d['relation'].update(semantic_schema={})]:
             altered=copy.deepcopy(p);mutate(altered)
             with self.assertRaises(GraphValidationError):profile_identity(altered)
-        for kwargs in [dict(model='other'),dict(reasoning_effort='high'),dict(service_tier='fast'),dict(background=False),dict(max_retries=0),dict(max_completion_tokens=42)]:
+        for kwargs in [dict(model='other'),dict(reasoning_effort='high'),dict(service_tier='default'),dict(background=False),dict(max_retries=0),dict(max_completion_tokens=42)]:
             with self.assertRaises(GraphValidationError):check_graph_options(OpenAIConfig(**kwargs),model='hunflair/hunflair2-ner',device=None)
         check_graph_options(OpenAIConfig(api_key='rotation',api_key_env='ANOTHER'),model='hunflair/hunflair2-ner',device=None)
-        with self.assertRaises(GraphValidationError):check_graph_options(OpenAIConfig(),model='hunflair/hunflair2-ner',device='cuda')
+        with self.assertRaises(GraphValidationError):check_graph_options(OpenAIConfig(),model='hunflair/hunflair2-ner',device='cuda:1')
         with self.assertRaises(GraphValidationError):prepare_graph_export(LLMExtractionPipeline(object(),object()),text='x',document_id='d',context=context())
 
     def test_actual_runtime_and_provider_configuration(self):
@@ -357,7 +358,7 @@ class GraphContractTests(unittest.TestCase):
         from biomedical_extractor.llm_paper_roles import LLMPaperRoleExtractor
         p = context().configuration
         for section in ('relation', 'roles'):
-            for field, value in [('_model', 'changed'), ('_reasoning_effort', 'high'), ('_service_tier', 'fast'), ('_max_output_tokens', 1), ('_schema', {})]:
+            for field, value in [('_model', 'changed'), ('_reasoning_effort', 'high'), ('_service_tier', 'default'), ('_max_output_tokens', 1), ('_schema', {})]:
                 producer = (LLMExtractionPipeline.from_pretrained(llm_config=OpenAIConfig(api_key='offline-test')).relation_extractor if section == 'relation' else LLMPaperRoleExtractor.from_openai(OpenAIConfig(api_key='offline-test')))
                 setattr(producer._background_executor, field, value)
                 with self.subTest(section=section, field=field), self.assertRaises(GraphValidationError): _provider(producer, section, p)

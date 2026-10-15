@@ -303,9 +303,9 @@ class PaperRoleContractTests(unittest.TestCase):
         self.assertEqual(len(result.records), 1)
         self.assertEqual(client.responses.create.call_count, 2)
         request = client.responses.create.call_args_list[0].kwargs
-        self.assertEqual(request["model"], "gpt-6.1-sol")
-        self.assertEqual(request["reasoning"], {"effort": "medium"})
-        self.assertEqual(request["service_tier"], "default")
+        self.assertEqual(request["model"], "gpt-5.6-luna")
+        self.assertEqual(request["reasoning"], {"effort": "max"})
+        self.assertEqual(request["service_tier"], "fast")
         self.assertTrue(request["background"])
         self.assertEqual(request["text"]["format"]["name"], "StructuredPaperRolePayload")
         schema = request["text"]["format"]["schema"]

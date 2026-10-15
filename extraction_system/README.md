@@ -7,7 +7,10 @@ scientific limitations.
 
 See [provisioning](docs/PROVISIONING.md), [product specification](docs/product/CURRENT_SPEC.md)
 and [architecture](docs/ARCHITECTURE.md). Runtime/model identities and frozen prompt
-hashes are recorded in `provisioning/baseline.json`.
+hashes are recorded in the packaged CPU/CUDA profiles and
+`reports/phase2/luna-freeze.json`. The current delivery provider path is frozen
+GPT-5.6 Luna / max / Fast / background Responses; `provisioning/baseline.json`
+preserves the original historical baseline.
 
 ```python
 from biomedical_extractor import (
@@ -24,8 +27,9 @@ validate_graph(artifact, text=text, paper_title=title)
 ```
 
 Install a release wheel for packaged build identity. The isolated baseline NER
-runtime must be provisioned separately. Graph delivery supports the verified CPU
-baseline; raw `graph.to_json()` remains unversioned for existing internal callers.
+runtime must be provisioned separately. Graph delivery preserves CPU support and
+has a separately gated Linux/CUDA profile (`--device cuda`); raw `graph.to_json()`
+remains unversioned for existing internal callers.
 Contract validation/fingerprints work offline without the model runtime. See
 [Graph Contract v1](docs/GRAPH_CONTRACT.md) for explicit recorded replay contexts,
 legacy display compatibility, pure cache eligibility and validation limitations.

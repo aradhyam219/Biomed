@@ -52,7 +52,12 @@ class DownstreamDriftTests(unittest.TestCase):
 
     @unittest.skipUnless((gate.CPU / 'raw.json').exists() and (gate.CUDA / 'raw.json').exists(), 'Retained AWS evidence required')
     def test_all_seven_retained_cases_and_fixed_baseline_role_requests(self):
-        summary, details = gate.analyze()
+        # The Sol observation is immutable history; do not replay its factories
+        # under the restored Luna baseline or rerun the seven-case comparison.
+        summary = gate.read(gate.ROOT / 'reports/phase2/downstream-drift.json')
+        detail_path = gate.ROOT / summary['detail_artifact']
+        self.assertEqual(gate.digest(detail_path), summary['detail_sha256'])
+        details = gate.read(detail_path)
         self.assertEqual(summary['final_disposition'], 'NUMERIC_ONLY')
         self.assertEqual(summary['provider_submission_count'], 0)
         self.assertEqual(set(summary['cases']), set(gate.COUNTS))
@@ -84,7 +89,8 @@ class DownstreamDriftTests(unittest.TestCase):
                 value['cases']['sfpq-passage']['score_difference_count'] += 1
             return value
 
-        with patch.object(gate, 'read', side_effect=corrupted), self.assertRaisesRegex(ValueError, 'does not represent'):
+        # Isolate retained-data rejection from the historical implementation pin.
+        with patch.object(gate, '_implementation'), patch.object(gate, 'read', side_effect=corrupted), self.assertRaisesRegex(ValueError, 'does not represent'):
             gate.verify_evidence()
 
 

@@ -109,7 +109,7 @@ class LLMCLITests(unittest.TestCase):
         from biomedical_extractor import ExportContext, contract_resource, GraphValidationError
         from importlib.metadata import version
         context = ExportContext(version('biomedical-extractor'), 'a'*40, contract_resource('baseline-profile.json'))
-        for options in (["--model", "other"], ["--max-retries", "0"], ["--device", "cuda"], ["--document-id", " "]):
+        for options in (["--model", "other"], ["--max-retries", "0"], ["--hunflair2-model", "other"], ["--document-id", " "]):
             with patch("biomedical_extractor.llm_cli.release_context", return_value=context), \
                  patch("biomedical_extractor.llm_cli.LLMExtractionPipeline.from_pretrained") as load:
                 with self.assertRaises(GraphValidationError):main(["--text", "BRCA1", "--output-format", "graph", *options])

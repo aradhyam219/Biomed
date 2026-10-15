@@ -1,0 +1,4 @@
+# Verified Linux/CUDA additions; keep the complete accepted base inventory.
+-r hunflair2-requirements.txt
+nvidia-cusparselt-cu13==0.8.1
+nvidia-nvshmem-cu13==3.4.5

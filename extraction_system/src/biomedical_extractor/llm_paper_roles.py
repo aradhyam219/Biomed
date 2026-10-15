@@ -27,8 +27,8 @@ from .paper_roles import (
 )
 
 
-DEFAULT_PAPER_ROLE_MODEL = "gpt-6.1-sol"
-DEFAULT_PAPER_ROLE_REASONING_EFFORT = "medium"
+DEFAULT_PAPER_ROLE_MODEL = "gpt-5.6-luna"
+DEFAULT_PAPER_ROLE_REASONING_EFFORT = "max"
 
 PAPER_ROLE_EXTRACTION_SYSTEM_PROMPT = """You are a conservative biomedical paper-role explainer.
 
@@ -116,7 +116,7 @@ class LLMPaperRoleExtractor:
             model=DEFAULT_PAPER_ROLE_MODEL,
             reasoning_effort=DEFAULT_PAPER_ROLE_REASONING_EFFORT,
             max_output_tokens=config.max_completion_tokens,
-            service_tier="default",
+            service_tier="fast",
             poll_interval_seconds=float(config.poll_interval_seconds),
             generation_timeout_seconds=float(config.generation_timeout_seconds),
             schema=_structured_payload_schema(),

@@ -8,10 +8,11 @@ is the composed entry point. `extract()` returns normalized mentions and relatio
 
 HunFlair2 uses its official Gene, Chemical, Disease, Species and CellLine labels.
 Entities retain source text, half-open spans, IDs and optional confidence.
-Relation defaults are GPT-6.1 Sol, medium reasoning, background Responses and
-Standard/default service tier. Explicit provider configuration overrides remain
+Relation defaults are GPT-5.6 Luna, max reasoning, background Responses and
+Fast service (`fast` requested, `priority` observed). Explicit provider configuration overrides remain
 supported. The production prompts and semantic schemas are frozen in
-`provisioning/baseline.json`. Provider retries are disabled; malformed or invalid
+the Contract 14R artifacts referenced in `reports/phase2/luna-freeze.json`.
+Provider SDK retries are disabled; malformed or invalid
 output may consume the finite repair budget. Provider/role failures surface explicitly.
 
 The delivery branch contains current runtime and tests. Research and evaluation
@@ -79,7 +80,7 @@ the paper title, complete supplied text, and every source mention for each node.
 Role output is limited to `substantive` and `contextual`, contains one or two
 concise paragraphs, and retains exact verbatim source evidence. Role prose is
 node metadata only: it never creates, modifies, or implies a graph edge.
-The role provider uses GPT-6.1 Sol, medium reasoning, Standard (`default`) service,
+The role provider uses GPT-5.6 Luna, max reasoning, Fast (`fast`) service,
 and the shared background Responses executor. No degree-zero nodes means no role
 provider setup or call. Provider or grounding failures raise explicitly before
 a graph is returned; incomplete batches are never partially attached. Explicit
@@ -107,7 +108,9 @@ Offsets count Unicode code points; no Unicode or newline normalization occurs.
 Legacy graphs remain displayable without fabricated provenance, but cannot be
 verified cache hits. Exact literal document ID/text/title governs v1 reuse;
 software or profile upgrades alone do not regenerate stored science. The initial
-v1 producer supports only the verified CPU baseline; raw overrides remain
+v1 producer preserves the original CPU descriptor and has separate derived
+Luna/CPU and Linux/CUDA descriptors. Explicit `--device cuda` selects the latter;
+its composed integration smoke is gated by Phase 2. Raw overrides remain
 available. Validation does not certify entailment, completeness or authenticity.
 
 ## Accepted limitations and scope

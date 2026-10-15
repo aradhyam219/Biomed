@@ -137,7 +137,7 @@ class _FakeOpenAI:
     def __init__(self, **kwargs):
         self.kwargs = kwargs
         self.responses = _FakeResponses(
-            [_response(output_text=json.dumps({"relations": [RELATION]}))]
+            [_response(output_text=json.dumps({"relations": [RELATION]}), model="gpt-5.6-luna", effort="max", service_tier="priority")]
         )
         type(self).instances.append(self)
 
@@ -181,15 +181,15 @@ def _executor(
 
 
 class OpenAIConfigTests(unittest.TestCase):
-    def test_defaults_select_sol_medium_standard_background(self):
+    def test_defaults_select_luna_max_fast_background(self):
         config = OpenAIConfig(api_key=API_KEY, base_url=BASE_URL)
 
-        self.assertEqual(config.model, "gpt-6.1-sol")
-        self.assertEqual(config.reasoning_effort, "medium")
+        self.assertEqual(config.model, "gpt-5.6-luna")
+        self.assertEqual(config.reasoning_effort, "max")
         self.assertEqual(config.max_completion_tokens, DEFAULT_LLM_MAX_COMPLETION_TOKENS)
         self.assertEqual(config.max_retries, 2)
         self.assertTrue(config.background)
-        self.assertEqual(config.service_tier, "default")
+        self.assertEqual(config.service_tier, "fast")
         self.assertEqual(config.poll_interval_seconds, 3.0)
         self.assertEqual(config.generation_timeout_seconds, 900.0)
         self.assertNotIn(API_KEY, repr(config))
@@ -630,9 +630,9 @@ class ProductionBoundaryTests(unittest.TestCase):
         self.assertEqual(client.kwargs["timeout"], 60.0)
         request = client.responses.create_calls[0]
         self.assertEqual(request["input"], _build_prompt(TEXT, ENTITIES, RELATION_EXTRACTION_SYSTEM_PROMPT))
-        self.assertEqual(request["model"], "gpt-6.1-sol")
-        self.assertEqual(request["reasoning"], {"effort": "medium"})
-        self.assertEqual(request["service_tier"], "default")
+        self.assertEqual(request["model"], "gpt-5.6-luna")
+        self.assertEqual(request["reasoning"], {"effort": "max"})
+        self.assertEqual(request["service_tier"], "fast")
         self.assertEqual(request["max_output_tokens"], 128000)
         self.assertTrue(request["background"])
         self.assertFalse(request["store"])
@@ -642,9 +642,9 @@ class ProductionBoundaryTests(unittest.TestCase):
         self.assertEqual(len(diagnostics), 1)
         self.assertEqual(diagnostics[0]["generation_number"], 1)
         self.assertFalse(diagnostics[0]["repair"])
-        self.assertEqual(diagnostics[0]["requested_model"], "gpt-6.1-sol")
-        self.assertEqual(diagnostics[0]["observed_reasoning_effort"], "medium")
-        self.assertEqual(diagnostics[0]["observed_service_tier"], "default")
+        self.assertEqual(diagnostics[0]["requested_model"], "gpt-5.6-luna")
+        self.assertEqual(diagnostics[0]["observed_reasoning_effort"], "max")
+        self.assertEqual(diagnostics[0]["observed_service_tier"], "priority")
         self.assertIs(diagnostics[0]["observed_background"], True)
         serialized = json.dumps(diagnostics)
         self.assertNotIn(API_KEY, serialized)
@@ -652,7 +652,7 @@ class ProductionBoundaryTests(unittest.TestCase):
         snapshots[0]["requested_model"] = "changed copy"
         self.assertEqual(
             extractor.last_generation_diagnostics[0]["requested_model"],
-            "gpt-6.1-sol",
+            "gpt-5.6-luna",
         )
 
     def test_background_repairs_are_bounded_and_empty_input_is_a_fast_path(self):

@@ -10,7 +10,7 @@ from pathlib import Path
 import subprocess
 
 from .graph_contract import (GraphValidationError, contract_resource, input_fingerprints,
-                             release_context, profile_identity, _document_id)
+                             release_context, profile_identity, delivery_profile, _document_id)
 from .hunflair2 import HunFlair2BioMedExtractor, HunFlair2IsolatedRuntime
 from .llm_relation_extraction import LLMRelationExtractor, OpenAIConfig
 from .llm_paper_roles import LLMPaperRoleExtractor
@@ -31,15 +31,17 @@ def _implementation(profile):
 
 
 def check_graph_options(config: OpenAIConfig, *, model: str, device: str | None,
-                        runtime_script=None):
+                        runtime_script=None, profile=None):
     """Reject unsupported scientific CLI/env overrides before producer construction."""
-    p = contract_resource('baseline-profile.json')
+    p = profile if profile is not None else delivery_profile(device)
+    profile_identity(p)
     for name, expected in p['relation']['configuration'].items():
         if getattr(config, name) != expected:
             _fail(f'relation.{name}')
     if config.base_url not in (None, 'https://api.openai.com/v1'):
         _fail('provider endpoint')
-    if model != p['ner']['model_identifier'] or device not in (None, 'cpu'):
+    requested_device = 'cuda:0' if device == 'cuda' else device or 'cpu'
+    if model != p['ner']['model_identifier'] or requested_device != p['ner']['runtime']['device']:
         _fail('NER model/device')
     if runtime_script is not None and Path(runtime_script).resolve() != Path(__file__).with_name('hunflair2_runtime.py').resolve():
         _fail('runtime script override')
@@ -79,7 +81,8 @@ def _runtime(pipeline, p):
     runtime = pipeline.entity_extractor._runtime
     if type(runtime) is not HunFlair2IsolatedRuntime:
         _fail('injected NER runtime')
-    if runtime._model_identifier != p['ner']['model_identifier'] or runtime._device != 'cpu':
+    device = 'cuda:0' if runtime._device == 'cuda' else runtime._device
+    if runtime._model_identifier != p['ner']['model_identifier'] or device != p['ner']['runtime']['device']:
         _fail('NER model/device')
     if runtime._runtime_script.resolve() != Path(__file__).with_name('hunflair2_runtime.py').resolve():
         _fail('runtime script')
@@ -90,11 +93,11 @@ def prepare_graph_export(pipeline, *, text: str, document_id: str, paper_title: 
     """Preflight a real baseline pipeline before any paid extraction submission.
 
     Runtime paths and credentials are excluded from identity. Only a provisioned
-    CPU baseline is initially supported. Reads metadata without model imports.
+    CPU and Linux/CUDA descriptors are checked without importing models.
     """
     input_fingerprints(text, paper_title)
     _document_id(document_id)
-    context = context or release_context()
+    context = context or release_context(device=pipeline.entity_extractor._runtime._device)
     context.__post_init__()
     p = context.configuration
     _implementation(p)
@@ -105,7 +108,7 @@ def prepare_graph_export(pipeline, *, text: str, document_id: str, paper_title: 
     if pipeline.paper_role_extractor is not None:
         _provider(pipeline.paper_role_extractor, 'roles', p)
     config = pipeline._paper_role_config or OpenAIConfig.from_environment()
-    check_graph_options(config, model=runtime._model_identifier, device=runtime._device)
+    check_graph_options(config, model=runtime._model_identifier, device=runtime._device, profile=p)
     # Freeze the effective lazy-role configuration now, not after NER/relations.
     pipeline._paper_role_config = config
     artifact, revision = _hunflair2_artifact(runtime._runtime_cache, runtime._model_identifier)
@@ -115,6 +118,7 @@ def prepare_graph_export(pipeline, *, text: str, document_id: str, paper_title: 
     for key in ('python', 'flair', 'pytorch', 'transformers', 'scispacy', 'spacy', 'en_core_sci_sm'):
         if observed.get(key) != p['ner']['runtime'][key]:
             _fail(f'NER runtime {key}')
+    _cuda_distributions(observed, p)
     runtime._last_metadata = None
     runtime._v1_expected_profile = _LiveNERProfile(p, runtime)
     pipeline._v1_expected_profile = p
@@ -156,7 +160,11 @@ def _isolated_versions(runtime):
         candidates = [Path('.cache/hunflair2/runtime/bin/python'), Path('.cache/hunflair2/runtime/Scripts/python.exe')]
         executable = next((v for v in candidates if v.is_file()), candidates[0])
     packages = {'flair':'flair','pytorch':'torch','transformers':'transformers','scispacy':'scispacy','spacy':'spacy','en_core_sci_sm':'en-core-sci-sm'}
-    code = 'import importlib.metadata as m,json,platform; print(json.dumps({"python":platform.python_version(),**{k:m.version(v) for k,v in '+repr(packages)+'.items()}}))'
+    code = ('import importlib.metadata as m,json,platform; '
+            'installed={d.metadata["Name"].lower().replace("_","-"):d.version for d in m.distributions()}; '
+            'print(json.dumps({"python":platform.python_version(),"platform":platform.system(),'
+            '**{k:m.version(v) for k,v in '+repr(packages)+'.items()},'
+            '"distribution_additions":{k:v for k,v in installed.items() if k.startswith("nvidia-")}}))')
     try:
         observed = json.loads(subprocess.check_output([str(executable),'-c',code], text=True, timeout=30))
         if not isinstance(observed, dict):
@@ -164,6 +172,18 @@ def _isolated_versions(runtime):
         return observed
     except (OSError, ValueError, subprocess.SubprocessError) as error:
         raise GraphValidationError('isolated runtime identity unavailable') from error
+
+
+def _cuda_distributions(observed, profile):
+    """Require the demonstrated Linux additions only for the CUDA descriptor."""
+    ner = profile['ner']
+    if ner['runtime']['device'] != 'cuda:0':
+        return
+    if observed.get('platform') != ner['platform']:
+        _fail('NER platform')
+    for name, expected in ner['distribution_additions'].items():
+        if observed.get('distribution_additions', {}).get(name) != expected:
+            _fail(f'NER distribution {name}')
 
 
 def verify_ner_metadata(observed, profile, *, pytorch_distribution=None):
@@ -186,6 +206,21 @@ def verify_ner_metadata(observed, profile, *, pytorch_distribution=None):
         if observed.get(key) != profile['ner'][key]:
             _fail(f'actual NER {key}')
     runtime = observed['runtime']
+    if profile['ner']['runtime']['device'] == 'cuda:0':
+        profile_identity(profile)
+        if live_runtime is not None:
+            versions = _isolated_versions(live_runtime)
+            _cuda_distributions(versions, profile)
+            pytorch_distribution = versions.get('pytorch')
+        expected = profile['ner']['runtime']
+        if pytorch_distribution != expected['pytorch']:
+            _fail('actual CUDA PyTorch distribution release')
+        if runtime.get('cuda_available') is not True or runtime.get('pytorch') != expected['pytorch_module']:
+            _fail('actual CUDA PyTorch module/device')
+        for key, value in expected.items():
+            if key not in ('pytorch', 'pytorch_module') and runtime.get(key) != value:
+                _fail(f'actual CUDA NER runtime {key}')
+        return
     # Even exact version observations must not contradict the CPU-only policy.
     if runtime.get('cuda_available', False) is not False or runtime.get('cuda_version') is not None:
         _fail('actual NER CUDA-backed runtime')

@@ -82,6 +82,7 @@ class CPUProfileVerificationTests(unittest.TestCase):
         self.assertEqual(self.profile,contract_resource('baseline-profile.json'))
 
     def test_live_bridge_reads_the_inference_interpreter_before_relations(self):
+        self.profile = contract_resource('luna-cpu-profile.json')
         pipeline=LLMExtractionPipeline.from_pretrained(llm_config=OpenAIConfig(api_key='offline-test'),
                                                       hunflair2_runtime_python='selected-isolated-python')
         ctx=ExportContext(version('biomedical-extractor'),'a'*40,self.profile)
@@ -91,7 +92,7 @@ class CPUProfileVerificationTests(unittest.TestCase):
              patch('biomedical_extractor.graph_profile.subprocess.check_output',return_value=json.dumps(versions)):
             prepare_graph_export(pipeline,text='BRCA1',document_id='d',context=ctx)
         runtime=pipeline.entity_extractor._runtime
-        self.assertEqual(profile_identity(runtime._v1_expected_profile.descriptor),IDENTITY)
+        self.assertEqual(profile_identity(runtime._v1_expected_profile.descriptor),profile_identity(self.profile))
         run=RunnerOutput('HunFlair2',Path('unused'),self.observed,{runtime._DOCUMENT_ID:[]})
         with patch('biomedical_extractor.ner_runners.run_hunflair2',return_value=run) as ner, \
              patch('biomedical_extractor.graph_profile.subprocess.check_output',return_value=json.dumps(versions)) as metadata, \
@@ -112,7 +113,7 @@ class CPUProfileVerificationTests(unittest.TestCase):
                 verify_graph_profile(pipeline,ctx,text='BRCA1')
 
     def _assert_composed_checkpoint(self, mutate=None, *, module_build='2.14.0+cpu'):
-        profile=copy.deepcopy(self.profile)
+        profile=contract_resource('luna-cpu-profile.json')
         config=OpenAIConfig(api_key='offline-test')
         pipeline=LLMExtractionPipeline.from_pretrained(llm_config=config,
                                                       hunflair2_runtime_python='selected-isolated-python')

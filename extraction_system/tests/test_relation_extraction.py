@@ -371,9 +371,9 @@ class RelationContractTests(unittest.TestCase):
             LLMRelationExtractor.from_openai(OpenAIConfig(api_key="test-key", background=False))
 
         self.assertEqual(OpenAIConfig().model, DEFAULT_LLM_RELATION_MODEL)
-        self.assertEqual(captured["model"], "gpt-6.1-sol")
+        self.assertEqual(captured["model"], "gpt-5.6-luna")
         self.assertTrue(captured["use_responses_api"])
-        self.assertEqual(captured["reasoning"], {"effort": "medium"})
+        self.assertEqual(captured["reasoning"], {"effort": "max"})
         self.assertNotIn("reasoning_effort", captured)
         self.assertEqual(captured["max_completion_tokens"], 128000)
         self.assertNotIn("temperature", captured)
@@ -404,10 +404,10 @@ class RelationContractTests(unittest.TestCase):
         with patch.dict(os.environ, {}, clear=True):
             config = OpenAIConfig.from_environment()
 
-        self.assertEqual(config.model, "gpt-6.1-sol")
-        self.assertEqual(config.reasoning_effort, "medium")
+        self.assertEqual(config.model, "gpt-5.6-luna")
+        self.assertEqual(config.reasoning_effort, "max")
         self.assertTrue(config.background)
-        self.assertEqual(config.service_tier, "default")
+        self.assertEqual(config.service_tier, "fast")
         self.assertEqual(config.max_completion_tokens, 128000)
 
     def test_environment_overrides_reasoning_and_completion_budget(self):

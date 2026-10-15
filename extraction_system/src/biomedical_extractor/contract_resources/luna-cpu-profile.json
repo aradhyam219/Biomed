@@ -1,0 +1,223 @@
+{
+  "implementation_sha256": {
+    "entity_assembly.py": "c7e38a01a88e87fb4572f6f7e46c86e60a9a342e49fd2e3e4faa7d4256b5e6b5",
+    "graph.py": "5062ad26454cf5b56739d3404031c9d92457d797984a3075fb7d5a53bf85b21d",
+    "hunflair2.py": "0c1ec4017054fb93033a68f9abb2d0587f06663d146245edd9af52e51b531b55",
+    "hunflair2_runtime.py": "c9bcfd25b4ee499ca5863bbc05e9c7cc3c0f1f89e82dbf33c83165033d69a24c",
+    "llm_paper_roles.py": "1cb31c815aa7e487df8878ef4d46e7c9afc5cb7940dad92742ce855ee87d7de2",
+    "llm_pipeline.py": "2963de023ce9969bc480d924e81590ba27b44b5fb330580a586a9a1198439af7",
+    "llm_relation_extraction.py": "db9502d60118ac0bca8ab7f160614f9ef7966a4ed4e20b91ce2200b4ce899302",
+    "ner_runners.py": "9d06c98b2f6fc9b67dcf71926226ae302310e8b4a0906ddd5b1d60b8843384d4",
+    "paper_roles.py": "68defa7f74558eb853ddc37b7e9215e44f2eee7454662ea3dcf12672ce4e6bbe",
+    "responses_execution.py": "38cfd87727e7cd8c0f989afaebe2f38db566aa5747509b82455fd61719c32c41"
+  },
+  "ner": {
+    "model_artifact_sha256": "245a099b660c1e2b682e0a1216feac140d5be36c4c6ca8c715af682efa685de6",
+    "model_identifier": "hunflair/hunflair2-ner",
+    "model_revision": "3af2b8972f7af2910ce8d9ae724da09b3d7a166c",
+    "runtime": {
+      "allow_long_sentences": true,
+      "device": "cpu",
+      "en_core_sci_sm": "0.5.1",
+      "flair": "0.15.1",
+      "label_type": "ner",
+      "model_max_length": 512,
+      "offset_mechanics": "SciSpaCy sentence boundaries retain each sentence.start_position; Flair span offsets are lifted to the untouched document text and validated before serialization.",
+      "python": "3.11.16",
+      "python_implementation": "CPython",
+      "pytorch": "2.14.0",
+      "scispacy": "0.5.1",
+      "sentence_splitter": "SciSpacySentenceSplitter(en_core_sci_sm)",
+      "spacy": "3.4.4",
+      "stride": 256,
+      "tagger_class": "PrefixedSequenceTagger",
+      "transformer_model": "michiyasunaga/BioLinkBERT-base",
+      "transformers": "4.57.6",
+      "truncate": true
+    }
+  },
+  "relation": {
+    "configuration": {
+      "background": true,
+      "generation_timeout_seconds": 900.0,
+      "max_completion_tokens": 128000,
+      "max_retries": 2,
+      "model": "gpt-5.6-luna",
+      "poll_interval_seconds": 3.0,
+      "reasoning_effort": "max",
+      "service_tier": "fast"
+    },
+    "prompt_sha256": "13f38a6e94db74b534eb0df0b139287ace2e714fc908276ce4c3572f9b25836f",
+    "semantic_schema": {
+      "$defs": {
+        "StructuredRelation": {
+          "additionalProperties": false,
+          "properties": {
+            "assertion": {
+              "description": "Complete source-grounded restatement of the scientific meaning; do not add information absent from the evidence",
+              "title": "Assertion",
+              "type": "string"
+            },
+            "context": {
+              "description": "Optional explicit biological, experimental, clinical, organismal, tissue, cellular, disease-state, cohort, environmental, or comparable setting/condition needed to interpret where or under what conditions the relation holds; do not use for mechanisms, another relation, or another entity interaction",
+              "items": {
+                "type": "string"
+              },
+              "title": "Context",
+              "type": "array"
+            },
+            "effects": {
+              "description": "Optional explicit effects or outcomes; do not infer them and use an empty list when not applicable",
+              "items": {
+                "type": "string"
+              },
+              "title": "Effects",
+              "type": "array"
+            },
+            "evidence": {
+              "description": "Verbatim contiguous source-text evidence",
+              "title": "Evidence",
+              "type": "string"
+            },
+            "intervention": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "Optional explicit intervention or perturbation material to the assertion; leave null when not applicable",
+              "title": "Intervention"
+            },
+            "negated": {
+              "description": "Whether the asserted relation is explicitly negated",
+              "title": "Negated",
+              "type": "boolean"
+            },
+            "predicate": {
+              "description": "Concise normalized predicate faithfully describing the asserted relation",
+              "title": "Predicate",
+              "type": "string"
+            },
+            "source": {
+              "description": "Supplied source entity ID",
+              "title": "Source",
+              "type": "string"
+            },
+            "surface_form": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "Optional verbatim relation wording",
+              "title": "Surface Form"
+            },
+            "target": {
+              "description": "Supplied target entity ID",
+              "title": "Target",
+              "type": "string"
+            }
+          },
+          "required": [
+            "source",
+            "target",
+            "predicate",
+            "assertion",
+            "evidence",
+            "negated"
+          ],
+          "title": "StructuredRelation",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "relations": {
+          "items": {
+            "$ref": "#/$defs/StructuredRelation"
+          },
+          "title": "Relations",
+          "type": "array"
+        }
+      },
+      "title": "StructuredRelationPayload",
+      "type": "object"
+    },
+    "semantic_schema_sha256": "023435da3fa18abb77987313626636eff7bedda28739603db54a2f2c8137c945"
+  },
+  "roles": {
+    "background": true,
+    "generation_timeout_seconds": 900.0,
+    "max_completion_tokens": 128000,
+    "max_retries": 2,
+    "model": "gpt-5.6-luna",
+    "poll_interval_seconds": 3.0,
+    "prompt_sha256": "dded1e4176f92a3872ef2b277d4ef7b261ba919e555cbdfdf210d0844a3d8e4a",
+    "reasoning_effort": "max",
+    "semantic_schema": {
+      "$defs": {
+        "StructuredPaperRole": {
+          "additionalProperties": false,
+          "properties": {
+            "category": {
+              "description": "substantive or contextual",
+              "title": "Category",
+              "type": "string"
+            },
+            "evidence": {
+              "description": "Exact non-empty source substrings supporting the paragraphs",
+              "items": {
+                "type": "string"
+              },
+              "title": "Evidence",
+              "type": "array"
+            },
+            "node_id": {
+              "description": "Requested graph node ID",
+              "title": "Node Id",
+              "type": "string"
+            },
+            "paragraphs": {
+              "description": "One or two concise grounded paragraphs",
+              "items": {
+                "type": "string"
+              },
+              "title": "Paragraphs",
+              "type": "array"
+            }
+          },
+          "required": [
+            "node_id",
+            "category",
+            "paragraphs",
+            "evidence"
+          ],
+          "title": "StructuredPaperRole",
+          "type": "object"
+        }
+      },
+      "additionalProperties": false,
+      "properties": {
+        "roles": {
+          "items": {
+            "$ref": "#/$defs/StructuredPaperRole"
+          },
+          "title": "Roles",
+          "type": "array"
+        }
+      },
+      "title": "StructuredPaperRolePayload",
+      "type": "object"
+    },
+    "semantic_schema_sha256": "54d71c984369f1a2d5ec316ff60f1574ec033e122bb0526440bebed967a62c67",
+    "service_tier": "fast"
+  }
+}

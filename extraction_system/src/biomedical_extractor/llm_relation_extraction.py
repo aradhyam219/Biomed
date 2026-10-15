@@ -31,8 +31,8 @@ from .responses_execution import (
     ResponsesExecutionError,
 )
 
-DEFAULT_LLM_RELATION_MODEL = "gpt-6.1-sol"
-DEFAULT_LLM_REASONING_EFFORT = "medium"
+DEFAULT_LLM_RELATION_MODEL = "gpt-5.6-luna"
+DEFAULT_LLM_REASONING_EFFORT = "max"
 DEFAULT_LLM_MAX_COMPLETION_TOKENS = 128000
 SUPPORTED_LLM_REASONING_EFFORTS = (
     "none",
@@ -108,7 +108,7 @@ class OpenAIConfig:
     max_completion_tokens: int | None = DEFAULT_LLM_MAX_COMPLETION_TOKENS
     max_retries: int = 2
     background: bool = True
-    service_tier: str | None = "default"
+    service_tier: str | None = "fast"
     poll_interval_seconds: float = 3.0
     generation_timeout_seconds: float = 900.0
 
@@ -177,7 +177,7 @@ class OpenAIConfig:
             ),
             max_retries=int(os.getenv("BIOMEDICAL_RELATION_MAX_RETRIES", "2")),
             background=background,
-            service_tier=os.getenv("BIOMEDICAL_RELATION_SERVICE_TIER", "default") or None,
+            service_tier=os.getenv("BIOMEDICAL_RELATION_SERVICE_TIER", "fast") or None,
             poll_interval_seconds=(float(poll_interval) if poll_interval else 3.0),
             generation_timeout_seconds=(
                 float(generation_timeout) if generation_timeout else 900.0

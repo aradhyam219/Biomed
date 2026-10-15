@@ -1,0 +1,45 @@
+{
+  "freeze_commit": "214f3be09aebd972d2e2471a167da884566e11ed",
+  "freeze_directory": "reports/luna_56_max_fast_source_order_smoke_20261007",
+  "artifact_sha256": {
+    "relation_semantic_schema.json": "7a97105ead66cc915cf7a4c5f0fe93e90094bf4912a8d9aa39de3707388f9b84",
+    "relation_transport_schema.json": "4b5fc17d48240fdc0839a2f91b5e55409d52bb59b8edf138f005ee626578129d",
+    "role_semantic_schema.json": "7474084f9d63bbe096ef0b114eb6a750ba0bfa39304200d9443cab27375fe32e",
+    "role_transport_schema.json": "fb332f8750bd9d9bcd8078a56c1c785686f9269b4de255b47b99241ec2b9484a",
+    "preflight.json": "3c974e2310d383e7ba42022489a138a66180e5961ef5fc06cc6041ec9225c455",
+    "request_parity.json": "aacddd8f756712fc0aacd642327e586fb81c9ffd8914035c656a9bc4bb1cbff8",
+    "requests.json": "468b554f859c0757f7ea7302faa170fd74ae1fc19f7137a0ec64a03b7ae67b20",
+    "candidate.patch": "05a71d92ea26981074052e78c3aca64dd60fe55379ca41521391191e97931d4f",
+    "inputs.json": "5e4c615fdda91a2378035b41963d2e70016465e6ea06d26a2d82e41da1633112"
+  },
+  "configuration": {
+    "background": true,
+    "generation_timeout_seconds": 900.0,
+    "max_completion_tokens": 128000,
+    "max_retries": 2,
+    "model": "gpt-5.6-luna",
+    "poll_interval_seconds": 3.0,
+    "reasoning_effort": "max",
+    "service_tier": "fast"
+  },
+  "schemas": {
+    "relation": {
+      "prompt_sha256": "13f38a6e94db74b534eb0df0b139287ace2e714fc908276ce4c3572f9b25836f",
+      "semantic_sha256": "023435da3fa18abb77987313626636eff7bedda28739603db54a2f2c8137c945",
+      "transport_sha256": "b0506680756b7ad8332d976a419cdee57a81e1051dd115f291f65d77bd656510"
+    },
+    "role": {
+      "prompt_sha256": "dded1e4176f92a3872ef2b277d4ef7b261ba919e555cbdfdf210d0844a3d8e4a",
+      "semantic_sha256": "54d71c984369f1a2d5ec316ff60f1574ec033e122bb0526440bebed967a62c67",
+      "transport_sha256": "2eeaabad36930f66e004c48641fa559a387cd6b456840b69e246a0da3b0349ba"
+    }
+  },
+  "source_order_fixture_prompt_sha256": "99db58b9b122f5cf7c4a7a5f7c3a0bcb8b53dd09676631af5dfe1e35bda7c3a6",
+  "ordering": "Original source-order normalized mention sequence; no score or ordering changes.",
+  "api_path": "OpenAI Responses SDK; background=True, store=False, strict JSON schema; SDK retries=0.",
+  "approval_basis": "Current leadership instruction restores the recorded 14R path. The archived report-only/not-promoted status remains historical truth.",
+  "original_cpu_profile_identity": "ees-cfeec6ccd400b9f44abbef35551944aa074ee3d79d3e5ec18dd7d7551c76e0de",
+  "luna_cpu_profile_identity": "ees-3c6b73863c3cdeed49cfe1eb6433c7dceb94c9dfe7df7291bb4478c831f61bb0",
+  "linux_cuda_candidate_profile_identity": "ees-97242b8f8534e7e114c148f09fac723778cc9d0496cfb1f87d40760621ab5a04",
+  "status": "freeze_verified_cuda_smoke_pending"
+}

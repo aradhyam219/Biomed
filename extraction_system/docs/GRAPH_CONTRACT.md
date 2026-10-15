@@ -78,7 +78,7 @@ editable checkouts may discover their source revision using Git. Dirty editable
 checkouts require explicit test provenance and cannot advertise an automatic
 clean revision. Wheel builds refuse uncommitted source changes.
 
-The sole initial profile binds the recorded CPU HunFlair2 artifact/revision,
+Each supported immutable profile binds the recorded HunFlair2 artifact/revision,
 runtime/preprocessing/settings, scientific implementation digests, relation
 model/reasoning/tier/mode/prompt/semantic schema and generation/repair settings,
 and the independent fixed role model/reasoning/tier/mode/prompt/schema/settings.
@@ -157,4 +157,16 @@ relations, for both accepted module values. The binding is outside the scientifi
 public JSON; descriptor bytes and canonical CPU identity remain unchanged.
 Postflight retains model/runtime/producer checks and per-call role verification.
 Retained-run revalidation uses the captured isolated inventory together with the
-actual inference metadata. This correction establishes no CUDA support.
+actual inference metadata. The original CPU correction itself established no
+CUDA support. The original `baseline-profile.json` remains unchanged, with its
+original identity. Separate `luna-cpu-profile.json` and `linux-cuda-profile.json`
+derive new canonical identities for the restored Luna/max/Fast freeze.
+
+The Linux/CUDA descriptor requires actual `cuda:0`, CUDA 13.0, module build
+`2.14.0+cu130` and separately corroborated distribution release `2.14.0` from
+the selected interpreter. Linux and the exact two NVIDIA additions are checked
+before NER and again before relations. A CPU descriptor never accepts CUDA
+metadata; no suffix normalization, fallback or weakened profile check is added.
+`release_context(device='cuda')` selects this descriptor; the CLI passes its
+explicit device selection. No device flag retains the CPU default. Linux/CUDA
+promotion is gated on the composed smoke in the current Phase 2 report.

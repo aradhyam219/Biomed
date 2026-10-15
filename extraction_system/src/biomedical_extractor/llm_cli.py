@@ -85,7 +85,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     if args.output_format == "graph":
         input_fingerprints(args.text, args.paper_title)
         _document_id(args.document_id)
-        context = release_context()
+        context = release_context(device=args.device)
         check_graph_options(config, model=args.hunflair2_model, device=args.device,
                             runtime_script=args.hunflair2_runtime_script)
     extractor = LLMExtractionPipeline.from_pretrained(

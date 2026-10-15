@@ -1,12 +1,65 @@
 # Phase 2 compatibility investigation
 
-Offline downstream disposition: **NUMERIC_ONLY**. SFPQ live A/B provisional
-scientific result: **MATERIAL_DIVERGENCE**; stop for Talia review.
+Current delivery RE freeze: **GPT-5.6 Luna / max / Fast / background Responses**.
+Offline downstream disposition remains **NUMERIC_ONLY**. The prior Sol A/B's
+**MATERIAL_DIVERGENCE** remains historical evidence and does not govern the
+frozen delivery compatibility decision. Composed Luna/CUDA smoke: **pending**.
 The Linux/NVIDIA target is available and real CUDA inference is retained.
 The CPU reference is verified; CUDA profile promotion was not performed.
 Provider attempts: **2 / 24**. Repairs: **0 / 4**.
 
-## SFPQ live A/B result
+## Restored leadership-approved freeze and composed smoke gate
+
+The correction starts clean at `7164351473ac4d16bb74e22738e6f4d7e68095d5` on
+`delivery/extraction-system-v1`; a fresh origin fetch confirmed the same remote
+tip. The most recent archived candidate is Contract 14R at
+`214f3be09aebd972d2e2471a167da884566e11ed`,
+`reports/luna_56_max_fast_source_order_smoke_20261007`. Its archived status was
+report-only/not-promoted; the current leadership instruction supplies the
+decision to restore that exact path, without reopening model selection.
+
+`luna-freeze.json` records exact Git artifact hashes, configuration and prompt/
+semantic/transport schema identities. Both relations and naturally invoked roles
+use Luna/max, requested `fast`, background Responses, 128000 output tokens, two
+output repairs, 900-second deadline, 3-second polls, SDK retries zero, and
+`store=False`. The complete historical source-order prompt is reproduced exactly;
+current NER normalization/order, all scores, assembly, prompts, schemas, provider
+transport and graph semantics are unchanged. Only the evidenced provider defaults
+are restored.
+
+The original CPU/Sol descriptor and identity remain intact. New Luna/CPU and
+Linux/CUDA descriptors derive separate canonical identities; CUDA binds the
+actual cu130 module, CUDA 13.0, corroborated distribution release, Linux and the
+two verified NVIDIA package additions. It does not bind hostname, paths or a
+specific GPU serial number. The prepared smoke runner executes real CUDA NER
+through normal pretrained composition and records every provider submission in
+the existing ledger. Automatic roles are enabled only through the genuine
+degree-zero pipeline stage. No CPU control, CBL, repeat or model comparison is
+authorized. Profile promotion awaits the one composed smoke and validation.
+
+Before live execution, 115 focused tests completed successfully (109 passed;
+six historical Sol request-runner tests are explicitly inapplicable under the
+restored Luna defaults). The new dry smokes verify real pipeline orchestration
+with fake external seams, one NER invocation, one initial RE, naturally conditional
+roles, persisted budgets, secret-safe evidence, immutable CPU identity, exact
+CUDA build checks, and rejection of missing NVIDIA additions before inference.
+No seven-case experiment was repeated. Historical deterministic results are
+checked as retained artifacts rather than regenerated with changed provider
+defaults. The correction will be committed before live execution so graph
+provenance identifies the exact tested build.
+
+The credential file still contains explicit Sol/medium/default non-secret
+overrides. A read-only preflight rejected those settings without inference or
+submission. The authorized smoke will explicitly bind the recovered
+Luna/max/Fast settings in its execution environment after sourcing credentials;
+the secret file and credential value are not modified or copied into evidence.
+
+The Sol live A/B was performed against a configuration later determined not to
+be the authoritative frozen delivery RE configuration. It therefore does not
+govern the delivery compatibility decision. Its JSON outputs, request identities,
+MATERIAL_DIVERGENCE review, raw evidence and commit are preserved without change.
+
+## Historical Sol SFPQ live A/B result (non-authoritative for current delivery)
 
 The subsequent contract authorizes two initial `sfpq-full` RE submissions in fixed
 CPU-then-CUDA order, with only accepted production-required repairs (at most two
@@ -287,8 +340,8 @@ and its origin tracking tip; it is no longer an unpushed local correction.
 
 ## Resume
 
-The host prerequisite, offline downstream gate and authorized SFPQ live comparison
-are complete. The provisional MATERIAL_DIVERGENCE result awaits Talia review.
+The host prerequisite and offline downstream gate are complete. The historical
+Sol A/B is preserved; the current gate is the composed Luna/CUDA smoke above.
 The original source selections, budget and explicit candidate-promotion approval
 gate remain in force. The offline gate consumed no provider submissions. Its focused
 commit remains local because delivery-branch publication requires explicit

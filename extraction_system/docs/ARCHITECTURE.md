@@ -35,8 +35,10 @@ Graph Contract v1 JSON -> existing Cytoscape viewer.
 - `graph_profile.py`: narrow baseline preflight and verification of effective
   bound providers, pinned NER artifacts/runtime and actual returned metadata.
   A private NER profile binding carries the selected interpreter outside the
-  descriptor so the CPU-only module-build check can corroborate its distribution
-  release before relations. Raw producer seams do not require profile adoption. Unsupported v1 scientific
+  descriptor so exact CPU/CUDA module-build checks can corroborate the selected
+  interpreter's distribution release before relations. CUDA also requires the
+  recorded Linux platform and two pinned NVIDIA distribution additions.
+  Raw producer seams do not require profile adoption. Unsupported v1 scientific
   overrides fail before paid extraction; NER drift fails before relation submission.
 - `contract_resources/`: installed schemas, normative vectors and minimal recorded
   profile material. The wheel build hook embeds a clean delivered revision and
@@ -63,6 +65,15 @@ seams support injected implementations without exposing provider SDK objects.
 Graph JSON remains the frontend-neutral consumer boundary. Accepted product
 behavior and limitations are in product/CURRENT_SPEC.md. The immutable baseline
 manifest and deterministic fixtures record delivery behavior, not scientific gold.
+
+The current provider freeze is Contract 14R's Luna/max/Fast background Responses
+path, including its automatic role configuration. Prompts, semantic/transport
+schemas, input ordering and bounded repairs remain unchanged. The original
+`baseline-profile.json` retains its old CPU/Sol identity for historical replay;
+`luna-cpu-profile.json` and `linux-cuda-profile.json` derive new identities from
+their full descriptors. Device selection chooses the delivery descriptor without
+changing the NER CPU default. Linux/CUDA promotion remains gated on the composed
+Phase 2 smoke. No graph payload or cache-eligibility rule changes.
 
 See [Graph Contract v1](GRAPH_CONTRACT.md) for public compatibility and input
 identity rules. Legacy validation/classification needs no viewer adapter or migration.

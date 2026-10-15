@@ -18,7 +18,8 @@ The isolated environment installs the exact accepted package inventory from
 versions. This intentionally preserves the existing runtime, including its
 legacy SciSpaCy/spaCy dependency combination, rather than upgrading it during
 cleanup. `hunflair2-installed.json` records the observed baseline inventory.
-The recipe is Windows-specific; another OS has not been validated.
+This original recipe is Windows-specific. The Linux/CUDA additions and its
+separate profile are described below; the original CPU inventory remains intact.
 
 `provision_models.py` downloads HunFlair2 revision
 `3af2b8972f7af2910ce8d9ae724da09b3d7a166c`, verifies its SHA-256 against
@@ -32,7 +33,9 @@ Supply `OPENAI_API_KEY` externally. The application reads environment settings;
 loaded. Do not commit secrets or copy the research `.env`. `OPENAI_BASE_URL` and
 `OPENAI_API_KEY_ENV` can configure an external provider connection. Default model,
 reasoning, background mode, service tier, finite repair budget, poll interval and
-generation timeout are recorded in `baseline.json`; preserve them for the baseline.
+generation timeout for current delivery are recorded in the packaged Luna
+profiles and `reports/phase2/luna-freeze.json`. `baseline.json` preserves the
+original historical CPU/Sol freeze and must not be relabeled as Luna.
 
 ```powershell
 uv run --locked biomedical-extract-llm --text "BRCA1 is associated with breast cancer." --output-format graph --document-id smoke --hunflair2-offline
@@ -78,6 +81,35 @@ byte identity. This convention applies only to Python-source attestation:
 scientific text/title identities, Graph Contract fingerprints and raw-output
 hashes preserve their existing exact-input/byte rules.
 
-An existing Linux/NVIDIA host is still required. No CUDA configuration has been
-provisioned, verified or promoted. Development fixtures/tooling remain outside the
-client package. See `../reports/phase2/README.md` for current evidence and limits.
+## Existing Linux/CUDA host
+
+The AWS host is provisioned and real T4 CUDA execution is proven. Its isolated
+Python 3.11.16 inventory matches the complete CPU inventory, plus exactly
+`nvidia-cusparselt-cu13==0.8.1` and `nvidia-nvshmem-cu13==3.4.5`. These additions
+are recorded in `hunflair2-linux-cuda-requirements.txt`, which includes the
+unchanged base requirements. It uses PyTorch distribution 2.14.0, actual module
+2.14.0+cu130 and CUDA runtime 13.0. Keep the two environments isolated.
+
+For a fresh Linux environment, create `.cache/hunflair2/runtime` with Python
+3.11.16 and install the Linux requirements with `uv pip install --no-deps
+--python .cache/hunflair2/runtime/bin/python -r
+provisioning/hunflair2-linux-cuda-requirements.txt`. Use the existing artifact
+provisioner to acquire/verify the same pinned model. Do not reinstall or repeat
+the seven-case NER study on the already provisioned execution host.
+
+Current relation and naturally invoked role requests use Luna/max/Fast background
+Responses, two output repairs per task, 128000 output tokens, 3-second polls and
+a 900-second deadline; SDK retries remain disabled. Prompt and both schema
+identities are verified against the recorded Contract 14R evidence before live
+execution. Requested `fast` and observed `priority` remain distinct diagnostics.
+The composed Linux/CUDA smoke and profile promotion are gated in
+`../reports/phase2/README.md`. Development tooling/evidence stay outside the client
+package; no container or new serving infrastructure is introduced.
+
+An existing `.env` can still explicitly override those defaults. The execution
+host's old file selects Sol/medium/default; do not mistake that external override
+for the current freeze. The composed smoke loads only the existing credentials
+from that file, then explicitly binds `BIOMEDICAL_RELATION_MODEL=gpt-5.6-luna`,
+`BIOMEDICAL_RELATION_REASONING_EFFORT=max` and
+`BIOMEDICAL_RELATION_SERVICE_TIER=fast` in its execution environment. The runner
+rejects any remaining frozen-setting mismatch before inference/submission.

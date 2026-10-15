@@ -209,15 +209,25 @@ class ExportContext:
 
 
 def profile_identity(configuration: dict) -> str:
-    """Bind the sole supported immutable profile to its complete recorded descriptor."""
+    """Bind a supported immutable profile to its complete recorded descriptor."""
     _plain(configuration)
-    expected = contract_resource('baseline-profile.json')
-    if configuration != expected:
-        raise GraphValidationError('unsupported effective extraction configuration for v1 baseline profile')
-    return 'ees-' + sha256(json.dumps(expected, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
+    for name in ('baseline-profile.json', 'luna-cpu-profile.json', 'linux-cuda-profile.json'):
+        expected = contract_resource(name)
+        if configuration == expected:
+            return 'ees-' + sha256(json.dumps(expected, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
+    raise GraphValidationError('unsupported effective extraction configuration for v1 baseline profile')
 
 
-def release_context() -> ExportContext:
+def delivery_profile(device: str | None = None) -> dict:
+    """Select the frozen Luna descriptor without changing NER's CPU default."""
+    if device in (None, 'cpu'):
+        return contract_resource('luna-cpu-profile.json')
+    if device in ('cuda', 'cuda:0'):
+        return contract_resource('linux-cuda-profile.json')
+    raise GraphValidationError('unsupported delivery device')
+
+
+def release_context(*, device: str | None = None) -> ExportContext:
     """Read wheel build identity without Git; clean source checkouts may use Git.
 
     Wheel source digests detect modified installed production files. A checkout
@@ -244,7 +254,7 @@ def release_context() -> ExportContext:
             version = tomllib.loads((root/'pyproject.toml').read_text(encoding='utf-8'))['project']['version']
         except (OSError, subprocess.CalledProcessError) as error:
             raise GraphValidationError('required clean source build metadata unavailable') from error
-    return ExportContext(version, revision, contract_resource('baseline-profile.json'))
+    return ExportContext(version, revision, delivery_profile(device))
 
 
 def export_graph(graph: GraphResult, *, text: str, paper_title: str = '', context: ExportContext,
