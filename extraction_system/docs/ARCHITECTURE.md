@@ -70,8 +70,10 @@ The current provider freeze is Contract 14R's Luna/max/Fast background Responses
 path, including its automatic role configuration. Prompts, semantic/transport
 schemas, input ordering and bounded repairs remain unchanged. The original
 `baseline-profile.json` retains its old CPU/Sol identity for historical replay;
-`luna-cpu-profile.json` and `linux-cuda-profile.json` derive new identities from
-their full descriptors. Device selection chooses the delivery descriptor without
+`luna-cpu-profile.json` and `linux-cuda-profile.json` preserve the first restored
+identities. Current `*-create-deadline-profile.json` descriptors derive new
+identities for the authorized transport-only create deadline correction.
+Device selection chooses the delivery descriptor without
 changing the NER CPU default. Linux/CUDA promotion remains gated on the composed
 Phase 2 smoke. No graph payload or cache-eligibility rule changes.
 

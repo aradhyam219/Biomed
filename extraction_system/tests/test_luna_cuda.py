@@ -15,6 +15,12 @@ from biomedical_extractor.ner_runners import RunnerOutput
 from tools import phase2_luna_cuda as smoke
 
 
+def prior_submissions():
+    return [{'experiment': 'historical-sol', 'repair': False} for _ in range(2)] + [
+        {'experiment': smoke.PRIOR_EXPERIMENT, 'repair': False, 'generation': 1,
+         'submission_state': 'uncertain_until_observed'}]
+
+
 class Response:
     status = 'completed'
     service_tier = 'priority'
@@ -105,8 +111,8 @@ class LunaCUDAProfileTests(TestCase):
         freeze_path, ledger, report = root / 'freeze.json', root / 'ledger.json', root / 'report.json'
         smoke.save(freeze_path, freeze)
         smoke.save(ledger, {'generation_submission_cap': 24, 'shared_output_repair_cap': 4,
-            'attempts_consumed': 2, 'repairs_consumed': 0,
-            'submission_attempts': [{'experiment': 'historical-sol', 'repair': False} for _ in range(2)]})
+            'attempts_consumed': 3, 'repairs_consumed': 0,
+            'submission_attempts': prior_submissions()})
         (root / '.cache/phase2').mkdir(parents=True)
         versions = {k: profile['ner']['runtime'][k] for k in ('python', 'flair', 'pytorch', 'transformers', 'scispacy', 'spacy', 'en_core_sci_sm')}
         versions.update(platform='Linux', distribution_additions=deepcopy(profile['ner']['distribution_additions']))
@@ -148,7 +154,7 @@ class LunaCUDAProfileTests(TestCase):
         self.assertEqual(ner[0]['device'], 'cuda')
         self.assertEqual(len(calls), 1)
         self.assertEqual(summary['smoke_submissions'], 1)
-        self.assertEqual(summary['phase2_total_submissions'], 3)
+        self.assertEqual(summary['phase2_total_submissions'], 4)
         self.assertFalse(summary['role_generation_occurred'])
         output = root / summary['evidence_directory']
         self.assertTrue(validate_graph(smoke.read(output / 'graph-v1.json'), text=smoke.read(root / 'tests/fixtures/compatibility/sfpq-full.json')['text'],
@@ -182,8 +188,8 @@ class LunaCUDAProfileTests(TestCase):
         with tempfile.TemporaryDirectory() as temporary:
             ledger = Path(temporary) / 'ledger.json'
             smoke.save(ledger, {'generation_submission_cap': 24, 'shared_output_repair_cap': 4,
-                'attempts_consumed': 2, 'repairs_consumed': 0,
-                'submission_attempts': [{'experiment': 'historical-sol', 'repair': False} for _ in range(2)]})
+                'attempts_consumed': 3, 'repairs_consumed': 0,
+                'submission_attempts': prior_submissions()})
             budget = smoke.SmokeBudget(ledger, 'test')
             with self.assertRaises(ValueError):
                 budget.reserve('roles', 1)
@@ -193,9 +199,12 @@ class LunaCUDAProfileTests(TestCase):
                 with self.assertRaises(ValueError):
                     budget.reserve(task, 4)
             saved = smoke.read(ledger)
-            self.assertEqual(saved['attempts_consumed'], 8)
+            self.assertEqual(saved['attempts_consumed'], 9)
             self.assertEqual(saved['repairs_consumed'], 4)
             self.assertEqual(saved['submission_attempts'][:2], [{'experiment': 'historical-sol', 'repair': False}] * 2)
+            self.assertEqual(saved['submission_attempts'][2], prior_submissions()[2])
+            with self.assertRaises(ValueError):
+                smoke.SmokeBudget(ledger, 'forbidden-third-attempt')
 
 
 if __name__ == '__main__':

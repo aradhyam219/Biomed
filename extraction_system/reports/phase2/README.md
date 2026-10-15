@@ -9,6 +9,28 @@ The Linux/NVIDIA target is available and real CUDA inference is retained.
 The CPU reference is verified; CUDA profile promotion was not performed.
 Provider attempts: **3 / 24**. Repairs: **0 / 4**.
 
+## Authorized transport correction and single retry
+
+The initial failure was localized to the executor's explicit create-call timeout:
+`min(60, remaining_generation_seconds)` overrode the declared 900-second generation
+deadline. The sole transport correction passes the remaining generation budget to
+`responses.create`. Poll requests remain capped at 60 seconds, cancellation and
+the overall deadline remain unchanged, and SDK retries remain zero. A fake slow
+create regression exceeds 60 seconds without resubmitting; the frozen transport
+source is verified byte-for-byte after reversing only this one-line correction.
+Model, reasoning, Fast tier, background mode, prompts, schemas, ordering, token
+ceiling and repairs are unchanged.
+
+The user authorized exactly one additional composed SFPQ attempt. Its separate
+experiment ID, immutable raw directory, report (`luna-cuda-retry-smoke.json`) and
+one-shot marker preserve the first attempt. The runner requires the existing
+three-entry ledger, including the uncertain first smoke, before it can submit.
+No automatic third attempt is possible. New `*-create-deadline-profile.json`
+descriptors derive new identities for the changed transport source; previous CPU
+and CUDA descriptors remain unchanged. The candidate CUDA identity is now
+`ees-784d918be59ea5c55135196874550bdba46e3acb84dc2ad23927635927aa4d0f`.
+The authorized retry is pending; no additional provider submission has yet occurred.
+
 ## Composed smoke result — stopped without retry
 
 The corrected baseline was committed as

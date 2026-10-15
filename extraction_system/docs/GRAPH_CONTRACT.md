@@ -160,7 +160,10 @@ Retained-run revalidation uses the captured isolated inventory together with the
 actual inference metadata. The original CPU correction itself established no
 CUDA support. The original `baseline-profile.json` remains unchanged, with its
 original identity. Separate `luna-cpu-profile.json` and `linux-cuda-profile.json`
-derive new canonical identities for the restored Luna/max/Fast freeze.
+derive new canonical identities for the restored Luna/max/Fast freeze. These
+remain immutable; current `*-create-deadline-profile.json` descriptors bind the
+transport-only correction letting background create use the remaining generation
+deadline. Scientific configuration and graph semantics are unchanged.
 
 The Linux/CUDA descriptor requires actual `cuda:0`, CUDA 13.0, module build
 `2.14.0+cu130` and separately corroborated distribution release `2.14.0` from

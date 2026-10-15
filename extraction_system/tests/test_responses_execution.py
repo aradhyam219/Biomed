@@ -299,6 +299,24 @@ class StrictTransportTests(unittest.TestCase):
 
 
 class BackgroundLifecycleTests(unittest.TestCase):
+    def test_slow_background_create_can_exceed_sixty_seconds_without_resubmission(self):
+        clock = _FakeClock()
+        responses = _FakeResponses()
+
+        def slow_create(**request):
+            responses.create_calls.append(request)
+            if request['timeout'] <= 60:
+                raise TimeoutError('simulated prior transport cutoff')
+            clock.advance(61)
+            return _response(status='completed', output_text='{"relations": []}')
+
+        responses.create = slow_create
+        with patch.object(responses_execution.time, 'monotonic', side_effect=clock.monotonic):
+            result = _executor(_FakeClient(responses)).execute('fixed prompt', {})
+        self.assertEqual(result, '{"relations": []}')
+        self.assertEqual(len(responses.create_calls), 1)
+        self.assertEqual(responses.create_calls[0]['timeout'], 900)
+
     def test_submission_without_response_id_fails_without_poll_cancel_or_resubmit(self):
         responses = _FakeResponses(
             [_response(response_id="", status="queued", output_text=None)]
@@ -345,7 +363,7 @@ class BackgroundLifecycleTests(unittest.TestCase):
         self.assertFalse(request["store"])
         self.assertEqual(request["max_output_tokens"], 128000)
         self.assertTrue(request["text"]["format"]["strict"])
-        self.assertLessEqual(request["timeout"], 900)
+        self.assertEqual(request["timeout"], 900.0)
         self.assertEqual(diagnostics["status"], "completed")
         self.assertEqual(diagnostics["response_id"], "resp_test_001")
         self.assertEqual(diagnostics["input_tokens"], 120)

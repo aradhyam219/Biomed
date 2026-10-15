@@ -20,7 +20,7 @@ ROOT = Path(__file__).resolve().parent.parent
 
 
 def context():
-    return ExportContext(version('biomedical-extractor'), 'a'*40, contract_resource('luna-cpu-profile.json'))
+    return ExportContext(version('biomedical-extractor'), 'a'*40, contract_resource('luna-cpu-create-deadline-profile.json'))
 
 
 def graph():
@@ -166,7 +166,7 @@ class GraphContractTests(unittest.TestCase):
         equivalent['roles']['poll_interval_seconds'] = 3
         self.assertEqual(equivalent, canonical.configuration)
         recorded = ExportContext(canonical.extractor_version, canonical.build_revision, equivalent)
-        expected = profile_identity(contract_resource('luna-cpu-profile.json'))
+        expected = profile_identity(contract_resource('luna-cpu-create-deadline-profile.json'))
         self.assertEqual(profile_identity(canonical.configuration), expected)
         self.assertEqual(profile_identity(recorded.configuration), expected)
         text, result = graph()

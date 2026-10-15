@@ -211,7 +211,8 @@ class ExportContext:
 def profile_identity(configuration: dict) -> str:
     """Bind a supported immutable profile to its complete recorded descriptor."""
     _plain(configuration)
-    for name in ('baseline-profile.json', 'luna-cpu-profile.json', 'linux-cuda-profile.json'):
+    for name in ('baseline-profile.json', 'luna-cpu-profile.json', 'linux-cuda-profile.json',
+                 'luna-cpu-create-deadline-profile.json', 'linux-cuda-create-deadline-profile.json'):
         expected = contract_resource(name)
         if configuration == expected:
             return 'ees-' + sha256(json.dumps(expected, sort_keys=True, separators=(',', ':')).encode()).hexdigest()
@@ -221,9 +222,9 @@ def profile_identity(configuration: dict) -> str:
 def delivery_profile(device: str | None = None) -> dict:
     """Select the frozen Luna descriptor without changing NER's CPU default."""
     if device in (None, 'cpu'):
-        return contract_resource('luna-cpu-profile.json')
+        return contract_resource('luna-cpu-create-deadline-profile.json')
     if device in ('cuda', 'cuda:0'):
-        return contract_resource('linux-cuda-profile.json')
+        return contract_resource('linux-cuda-create-deadline-profile.json')
     raise GraphValidationError('unsupported delivery device')
 
 

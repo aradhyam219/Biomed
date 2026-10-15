@@ -38,10 +38,10 @@
   "ordering": "Original source-order normalized mention sequence; no score or ordering changes.",
   "api_path": "OpenAI Responses SDK; background=True, store=False, strict JSON schema; SDK retries=0.",
   "approval_basis": "Current leadership instruction restores the recorded 14R path. The archived report-only/not-promoted status remains historical truth.",
+  "transport_correction": "User-authorized create timeout uses remaining generation deadline; polling/cancellation/SDK retries unchanged.",
+  "transport_sha256": "1e4829af46b1ded87fb678766584051ae4d7fb74d3702259de2b072ad7fe5e2c",
   "original_cpu_profile_identity": "ees-cfeec6ccd400b9f44abbef35551944aa074ee3d79d3e5ec18dd7d7551c76e0de",
-  "luna_cpu_profile_identity": "ees-3c6b73863c3cdeed49cfe1eb6433c7dceb94c9dfe7df7291bb4478c831f61bb0",
-  "linux_cuda_candidate_profile_identity": "ees-97242b8f8534e7e114c148f09fac723778cc9d0496cfb1f87d40760621ab5a04",
-  "status": "freeze_verified_cuda_smoke_blocked",
-  "smoke_report": "reports/phase2/luna-cuda-smoke.json",
-  "profile_promoted": false
+  "luna_cpu_profile_identity": "ees-5ac91fa129c8e7309964cc94440897f24f0f9fe4473049a211ad6ad652ba6436",
+  "linux_cuda_candidate_profile_identity": "ees-784d918be59ea5c55135196874550bdba46e3acb84dc2ad23927635927aa4d0f",
+  "status": "freeze_verified_cuda_smoke_pending"
 }

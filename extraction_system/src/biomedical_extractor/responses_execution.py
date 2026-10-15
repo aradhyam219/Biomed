@@ -98,7 +98,7 @@ class ResponsesBackgroundExecutor:
                     "strict": True,
                 }
             },
-            "timeout": min(REQUEST_TIMEOUT_SECONDS, remaining),
+            "timeout": remaining,
         }
         if self._max_output_tokens is not None:
             request["max_output_tokens"] = self._max_output_tokens

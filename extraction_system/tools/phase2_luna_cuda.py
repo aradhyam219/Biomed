@@ -33,9 +33,10 @@ FREEZE_COMMIT = '214f3be09aebd972d2e2471a167da884566e11ed'
 FREEZE_DIR = 'reports/luna_56_max_fast_source_order_smoke_20261007'
 RESOURCES = ROOT / 'src/biomedical_extractor/contract_resources'
 FREEZE_REPORT = ROOT / 'reports/phase2/luna-freeze.json'
-SMOKE_REPORT = ROOT / 'reports/phase2/luna-cuda-smoke.json'
+SMOKE_REPORT = ROOT / 'reports/phase2/luna-cuda-retry-smoke.json'
 LEDGER = ROOT / 'reports/phase2/provider-ledger.json'
-EXPERIMENT = 'phase2-luna-cuda-composed-1'
+PRIOR_EXPERIMENT = 'phase2-luna-cuda-composed-1'
+EXPERIMENT = 'phase2-luna-cuda-composed-2'
 
 
 def stamp():
@@ -72,7 +73,10 @@ def verify_freeze():
     require(list(mentions) == sorted(mentions, key=lambda e: (e.start, e.end, e.type)), 'Frozen source order mismatch')
     prompt = relation._build_prompt(packet['source']['source_text'], mentions, relation.RELATION_EXTRACTION_SYSTEM_PROMPT)
     require(sha_text(prompt) == parity['new_complete_prompt_sha256'], 'Frozen full request construction mismatch')
-    require(digest(ROOT / 'src/biomedical_extractor/responses_execution.py') == parity['loaded_module_hashes']['responses_execution.py'], 'Frozen transport implementation changed')
+    transport = (ROOT / 'src/biomedical_extractor/responses_execution.py').read_text()
+    require(transport.count('"timeout": remaining,') == 1, 'Create deadline correction missing/ambiguous')
+    restored = transport.replace('"timeout": remaining,', '"timeout": min(REQUEST_TIMEOUT_SECONDS, remaining),', 1)
+    require(sha_text(restored) == parity['loaded_module_hashes']['responses_execution.py'], 'Transport differs beyond authorized create deadline correction')
     requests = json.loads(frozen('requests.json'))
     require(all(r['model'] == expected['model'] and r['reasoning'] == {'effort': expected['reasoning_effort']}
                 and r['requested_service_tier'] == expected['service_tier'] and r['background'] is True
@@ -83,7 +87,9 @@ def verify_freeze():
             'source_order_fixture_prompt_sha256': sha_text(prompt),
             'ordering': 'Original source-order normalized mention sequence; no score or ordering changes.',
             'api_path': 'OpenAI Responses SDK; background=True, store=False, strict JSON schema; SDK retries=0.',
-            'approval_basis': 'Current leadership instruction restores the recorded 14R path. The archived report-only/not-promoted status remains historical truth.'}
+            'approval_basis': 'Current leadership instruction restores the recorded 14R path. The archived report-only/not-promoted status remains historical truth.',
+            'transport_correction': 'User-authorized create timeout uses remaining generation deadline; polling/cancellation/SDK retries unchanged.',
+            'transport_sha256': sha_text(transport)}
 
 
 def prepare():
@@ -102,7 +108,7 @@ def prepare():
                                   cuda_available=True, cuda_version=observed['cuda_version'])
     cuda['ner'].update(platform='Linux', distribution_additions={
         'nvidia-cusparselt-cu13': '0.8.1', 'nvidia-nvshmem-cu13': '3.4.5'})
-    for name, profile in (('luna-cpu-profile.json', cpu), ('linux-cuda-profile.json', cuda)):
+    for name, profile in (('luna-cpu-create-deadline-profile.json', cpu), ('linux-cuda-create-deadline-profile.json', cuda)):
         path = RESOURCES / name
         if path.exists():
             require(read(path) == profile, 'Existing derived profile differs; review before replacement')
@@ -123,8 +129,10 @@ class SmokeBudget(Budget):
         self.value = read(path)
         entries = self.value['submission_attempts']
         require(self.value['generation_submission_cap'] == 24 and self.value['shared_output_repair_cap'] == 4, 'Phase 2 caps changed')
-        require(self.value['attempts_consumed'] == len(entries) == 2 and self.value['repairs_consumed'] == 0,
-                'Expected exactly the two historical Sol submissions')
+        require(self.value['attempts_consumed'] == len(entries) == 3 and self.value['repairs_consumed'] == 0,
+                'Expected historical Sol submissions plus the permanently consumed uncertain smoke')
+        require(entries[-1]['experiment'] == PRIOR_EXPERIMENT and entries[-1]['generation'] == 1
+                and entries[-1]['submission_state'] == 'uncertain_until_observed', 'Prior uncertain attempt must remain consumed')
         require(all(e['experiment'] != EXPERIMENT for e in entries), 'Composed smoke already attempted')
 
     def reserve(self, arm, generation):
@@ -157,9 +165,9 @@ def run():
     case = next(c for c in manifest['cases'] if c['case_id'] == 'sfpq-full')
     require(packet['document_id'] == case['document_id'] and packet['paper_title'] == case['paper_title']
             and sha_text(packet['text']) == case['source_sha256'], 'Frozen source identity differs')
-    marker = ROOT / '.cache/phase2/luna-cuda-composed-started.json'
+    marker = ROOT / '.cache/phase2/luna-cuda-composed-retry-started.json'
     require(not marker.exists(), 'Composed smoke already started; no repeats')
-    output = ROOT / '.cache/phase2' / (datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ') + '-luna-cuda-composed')
+    output = ROOT / '.cache/phase2' / (datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ') + '-luna-cuda-composed-retry')
     budget = SmokeBudget(LEDGER, output.name)
     summary = {'status': 'started', 'disposition': 'BLOCKED', 'started_at': stamp(),
                'repository_revision': context.build_revision, 'tool_sha256': digest(Path(__file__)),
@@ -169,6 +177,8 @@ def run():
                'candidate_profile_identity': profile_identity(context.configuration),
                'profile_promoted': False, 'smoke_submissions': 0, 'smoke_repairs': 0,
                'role_generation_occurred': False}
+    summary['transport_correction'] = freeze['transport_correction']
+    summary['prior_uncertain_attempt_consumed'] = True
     save(marker, summary)
     save(output / 'started.json', summary)
     holders = {}
