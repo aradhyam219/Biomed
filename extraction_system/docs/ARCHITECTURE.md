@@ -76,8 +76,10 @@ schemas, input ordering and bounded repairs remain unchanged. The original
 identities. Current `*-create-deadline-profile.json` descriptors derive new
 identities for the authorized transport-only create deadline correction.
 Device selection chooses the delivery descriptor without
-changing the NER CPU default. Linux/CUDA promotion remains gated on the composed
-Phase 2 smoke. No graph payload or cache-eligibility rule changes.
+changing the NER CPU default. The user-approved Linux/CUDA profile is supported
+only for the recorded Phase 2 configuration, demonstrated on Ubuntu 22.04 and
+Tesla T4. Existing exact preflight, post-NER and postflight checks remain active.
+No graph payload or cache-eligibility rule changes.
 
 See [Graph Contract v1](GRAPH_CONTRACT.md) for public compatibility and input
 identity rules. Legacy validation/classification needs no viewer adapter or migration.

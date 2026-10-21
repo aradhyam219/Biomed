@@ -9,6 +9,7 @@ from biomedical_extractor import (contract_resource, input_fingerprints, validat
     release_context, export_graph, graph_json, cache_eligibility, GraphValidationError,
     LLMExtractionPipeline, Entity, PaperRole, PaperRoleRecord, PaperRoleExtractionResult)
 from biomedical_extractor.relation_extraction import validate_relations
+from biomedical_extractor.graph_contract import delivery_profile, profile_identity
 import biomedical_extractor.graph_contract as contract
 
 
@@ -16,6 +17,11 @@ def main(directory):
     fixtures = Path(directory)
     with patch('subprocess.check_output', side_effect=AssertionError('Git/process access forbidden in installed gate')):
         ctx = release_context()
+        cuda = release_context(device='cuda')
+        assert profile_identity(ctx.configuration) == 'ees-35a70f202f4e6659fd1578a8df14243243bbabe011b3379ee154704dacf3d76f'
+        assert profile_identity(cuda.configuration) == 'ees-9c3d817bf294bab6b6335a362e5aed289f9d004401bdb67f915746a6dafc5ed8'
+        assert cuda.configuration == delivery_profile('cuda:0')
+        assert profile_identity(contract_resource('baseline-profile.json')) == 'ees-cfeec6ccd400b9f44abbef35551944aa074ee3d79d3e5ec18dd7d7551c76e0de'
         for name in ('graph-v1.schema.json', 'graph-legacy.schema.json'):
             Draft202012Validator.check_schema(contract_resource(name))
         for row in contract_resource('fingerprint-examples.json'):

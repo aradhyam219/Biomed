@@ -119,8 +119,11 @@ and targets repairs to failed IDs. The saved-state role-only confirmation
 passed after credential recovery: all 57 roles validated in the initial generation,
 with no repairs. Attachment preserved the 98-node/73-edge graph, and final
 source-aware Graph Contract v1 validation passed
-(reports/phase2/sfpq-role-reliability.json). The CUDA profile is not promoted,
-and no further generation is authorized.
+(reports/phase2/sfpq-role-reliability.json). The user-approved Linux/CUDA profile
+is supported for the exact recorded Ubuntu 22.04/Tesla T4 configuration; CPU
+support and canonical identities remain unchanged. The final clean installed-v1
+smoke gate is recorded in reports/phase2/README.md. This is bounded compatibility,
+not a claim of equivalence across CUDA environments.
 Raw overrides remain available. Validation does not certify entailment, completeness or authenticity.
 
 ## Accepted limitations and scope

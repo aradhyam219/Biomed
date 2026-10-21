@@ -177,5 +177,48 @@ class CPUProfileVerificationTests(unittest.TestCase):
             with self.subTest(build=build):
                 self._assert_composed_checkpoint(replace,module_build=build)
 
+class CUDADeliveryProfileTests(unittest.TestCase):
+    def setUp(self):
+        self.profile = contract_resource('linux-cuda-create-deadline-profile.json')
+        self.pipeline = LLMExtractionPipeline.from_pretrained(
+            device='cuda', llm_config=OpenAIConfig(api_key='offline-test'),
+            hunflair2_runtime_python='selected-cuda-python')
+        self.context = ExportContext(version('biomedical-extractor'), 'a' * 40, self.profile)
+        self.versions = {key: self.profile['ner']['runtime'][key] for key in
+                         ('python', 'flair', 'pytorch', 'transformers', 'scispacy', 'spacy', 'en_core_sci_sm')}
+        self.versions.update(platform='Linux', distribution_additions=copy.deepcopy(self.profile['ner']['distribution_additions']))
+        self.enterContext(patch('biomedical_extractor.graph_profile._hunflair2_artifact',
+                                return_value=(Path('artifact'), self.profile['ner']['model_revision'])))
+        self.enterContext(patch('biomedical_extractor.graph_profile._sha256_file',
+                                return_value=self.profile['ner']['model_artifact_sha256']))
+        self.metadata = self.enterContext(patch('biomedical_extractor.graph_profile.subprocess.check_output',
+                                               side_effect=lambda *a, **k: json.dumps(self.versions)))
+
+    def test_verified_cuda_preflight_and_post_ner_use_selected_runtime(self):
+        prepare_graph_export(self.pipeline, text='BRCA1', document_id='d', context=self.context)
+        runtime = self.pipeline.entity_extractor._runtime
+        observed = {key: self.profile['ner'][key] for key in
+                    ('model_identifier', 'model_revision', 'model_artifact_sha256')}
+        observed['runtime'] = copy.deepcopy(self.profile['ner']['runtime'])
+        observed['runtime']['pytorch'] = observed['runtime'].pop('pytorch_module')
+        run = RunnerOutput('HunFlair2', Path('unused'), observed, {runtime._DOCUMENT_ID: []})
+        with patch('biomedical_extractor.ner_runners.run_hunflair2', return_value=run), \
+             patch.object(self.pipeline.relation_extractor, 'extract_relations') as paid:
+            runtime.predict_entities('BRCA1')
+            verify_graph_profile(self.pipeline, self.context, text='BRCA1')
+            self.assertEqual(self.metadata.call_args.args[0][0], 'selected-cuda-python')
+            self.versions['distribution_additions']['nvidia-nvshmem-cu13'] = '0.0.0'
+            with self.assertRaises(GraphValidationError):
+                runtime.predict_entities('BRCA1')
+            paid.assert_not_called()
+
+    def test_unsupported_platform_or_missing_cuda_package_fails_preflight(self):
+        for field in ('platform', 'distribution_additions'):
+            previous = self.versions.pop(field)
+            with self.subTest(field=field), self.assertRaises(GraphValidationError):
+                prepare_graph_export(self.pipeline, text='BRCA1', document_id='d', context=self.context)
+            self.versions[field] = previous
+
+
 if __name__ == '__main__':
     unittest.main()

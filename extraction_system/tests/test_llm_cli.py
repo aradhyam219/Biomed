@@ -119,6 +119,26 @@ class LLMCLITests(unittest.TestCase):
             with self.assertRaises(GraphValidationError):main(["--text", "BRCA1", "--output-format", "graph"])
             load.assert_not_called()
 
+    def test_graph_cuda_selection_records_verified_profile(self):
+        from biomedical_extractor import ExportContext, profile_identity
+        from biomedical_extractor.graph_contract import delivery_profile
+        from importlib.metadata import version
+        profile = delivery_profile('cuda')
+        context = ExportContext(version('biomedical-extractor'), 'a' * 40, profile)
+        output = StringIO()
+        with patch('biomedical_extractor.llm_cli.release_context', return_value=context) as release, \
+             patch('biomedical_extractor.llm_cli.prepare_graph_export', return_value=context) as prepare, \
+             patch('biomedical_extractor.llm_cli.verify_graph_profile') as verify, \
+             patch('biomedical_extractor.llm_cli.LLMExtractionPipeline.from_pretrained', return_value=_FakePipeline()) as load, \
+             redirect_stdout(output):
+            result = main(['--text', 'BRCA1', '--output-format', 'graph', '--device', 'cuda'])
+        self.assertEqual(result, 0)
+        release.assert_called_once_with(device='cuda')
+        self.assertEqual(load.call_args.kwargs['device'], 'cuda')
+        self.assertEqual(prepare.call_count, 1)
+        self.assertEqual(verify.call_count, 1)
+        self.assertEqual(json.loads(output.getvalue())['provenance']['extraction_profile'], profile_identity(profile))
+
 
 if __name__ == "__main__":
     unittest.main()

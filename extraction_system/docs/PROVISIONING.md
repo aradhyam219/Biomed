@@ -81,7 +81,7 @@ byte identity. This convention applies only to Python-source attestation:
 scientific text/title identities, Graph Contract fingerprints and raw-output
 hashes preserve their existing exact-input/byte rules.
 
-## Existing Linux/CUDA host
+## Supported Linux/CUDA configuration
 
 The AWS host is provisioned and real T4 CUDA execution is proven. Its isolated
 Python 3.11.16 inventory matches the complete CPU inventory, plus exactly
@@ -104,9 +104,12 @@ an independent 60-second cutoff. Poll requests retain their 60-second cap and SD
 retries remain disabled. Prompt and both schema
 identities are verified against the recorded Contract 14R evidence before live
 execution. Requested `fast` and observed `priority` remain distinct diagnostics.
-The composed Linux/CUDA smoke and profile promotion are gated in
-`../reports/phase2/README.md`. Development tooling/evidence stay outside the client
-package; no container or new serving infrastructure is introduced.
+The user-approved CUDA descriptor is supported only for the demonstrated
+Ubuntu 22.04 / AWS g4dn / Tesla T4 configuration; other CUDA environments are
+not certified. CPU support remains unchanged. Phase 2 closure and the clean
+installed public-v1 smoke are recorded in `../reports/phase2/README.md`.
+Development tooling/evidence stay outside the client package; no container or
+new serving infrastructure is introduced.
 
 An existing `.env` can still explicitly override those defaults. The execution
 host's old file selects Sol/medium/default; do not mistake that external override
@@ -115,3 +118,27 @@ from that file, then explicitly binds `BIOMEDICAL_RELATION_MODEL=gpt-5.6-luna`,
 `BIOMEDICAL_RELATION_REASONING_EFFORT=max` and
 `BIOMEDICAL_RELATION_SERVICE_TIER=fast` in its execution environment. The runner
 rejects any remaining frozen-setting mismatch before inference/submission.
+
+## Clean installed verification on Linux
+
+Build from a clean committed tree with `uv build --wheel --out-dir /tmp/ees-wheel`.
+Create a fresh main venv outside the checkout with Python 3.11.16 and install that
+wheel with `uv pip install --python /tmp/ees-verify/main/bin/python /tmp/ees-wheel/*.whl`.
+Run verification from `/tmp/ees-verify` with `PYTHONPATH` unset. The wheel embeds
+release provenance, schemas, profiles and the isolated runner; Git is not needed.
+
+For a fresh isolated runtime outside the checkout, copy the tracked
+`provisioning/` directory to `/tmp/ees-verify/provisioning`, create
+`/tmp/ees-verify/.cache/hunflair2/runtime` with Python 3.11.16, then install with
+`uv pip install --no-deps --python /tmp/ees-verify/.cache/hunflair2/runtime/bin/python -r /tmp/ees-verify/provisioning/hunflair2-linux-cuda-requirements.txt`.
+Cached package downloads may be reused. Run the copied `provision_models.py`
+with this interpreter. Its root-relative cache stays outside the checkout;
+verified pinned model/tokenizer downloads may be reused there. Do not copy a
+scientific implementation from another checkout or alter pinned versions.
+
+Invoke installed `biomedical-extract-llm` with `--output-format graph --device cuda`,
+exact input text/title/document ID, `--hunflair2-runtime-python` pointing to the
+external isolated interpreter, and `--hunflair2-runtime-cache` pointing to its
+external cache. `--hunflair2-offline` verifies that model provisioning is complete.
+Load the credential explicitly without loading unrelated `.env` overrides.
+Use the frozen Luna/max/Fast background defaults and normal bounded repairs.

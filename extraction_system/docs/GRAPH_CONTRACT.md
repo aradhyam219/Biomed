@@ -171,5 +171,8 @@ the selected interpreter. Linux and the exact two NVIDIA additions are checked
 before NER and again before relations. A CPU descriptor never accepts CUDA
 metadata; no suffix normalization, fallback or weakened profile check is added.
 `release_context(device='cuda')` selects this descriptor; the CLI passes its
-explicit device selection. No device flag retains the CPU default. Linux/CUDA
-promotion is gated on the composed smoke in the current Phase 2 report.
+explicit device selection. No device flag retains the CPU default. This profile
+is promoted with explicit user approval for the recorded Linux/Ubuntu 22.04,
+Tesla T4 configuration. Support does not establish equivalence for other CUDA
+builds, GPUs or platforms. See reports/phase2/README.md for the installed smoke
+gate. Both CPU descriptors and their canonical identities remain unchanged.

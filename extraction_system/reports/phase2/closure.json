@@ -1,0 +1,28 @@
+{
+  "status": "installed_smoke_pending",
+  "starting_head": "1d2aaf638146934d4d590561d97aab11caf1576d",
+  "promotion_authority": "Explicit user Phase 2 final closure contract; exact verified Linux/Ubuntu 22.04, AWS g4dn Tesla T4 configuration only.",
+  "implementation_delta": "Existing public CUDA descriptor selection and strict runtime verification already implement the approved configuration; no production code or profile resource changes required.",
+  "profiles": {
+    "baseline-profile.json": {
+      "identity": "ees-cfeec6ccd400b9f44abbef35551944aa074ee3d79d3e5ec18dd7d7551c76e0de",
+      "resource_sha256": "1c9eb5d28f3d0debc9f3f9d0e6b7f5f51b0df9df8e83c220b428ab44624f8498"
+    },
+    "luna-cpu-create-deadline-profile.json": {
+      "identity": "ees-35a70f202f4e6659fd1578a8df14243243bbabe011b3379ee154704dacf3d76f",
+      "resource_sha256": "dc9dc62ea9bf6248465c361d57e8effba38d5ae5567e1af34ffcbe3118a22a19"
+    },
+    "linux-cuda-create-deadline-profile.json": {
+      "identity": "ees-9c3d817bf294bab6b6335a362e5aed289f9d004401bdb67f915746a6dafc5ed8",
+      "resource_sha256": "7f9dd38456801293f3845c4be776dc15645b534161f6e388983fb023f2f41a5e"
+    }
+  },
+  "cpu_profiles_unchanged": true,
+  "smoke_case": "sfpq-full",
+  "focused_tests": {
+    "passed": 60,
+    "historical_runner_tests_inapplicable": 5,
+    "historical_runner_reason": "The archived composed runner requires the pre-repair Role-in-Paper prompt; the accepted targeted-repair prompt is verified by current role/profile tests instead."
+  },
+  "diff_check": "passed"
+}

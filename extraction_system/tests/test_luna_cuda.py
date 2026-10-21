@@ -73,6 +73,9 @@ class LunaCUDAProfileTests(TestCase):
         self.assertEqual(len({profile_identity(p) for p in (old, delivery_profile(), delivery_profile('cuda'))}), 3)
         check_graph_options(OpenAIConfig(), model=old['ner']['model_identifier'], device='cuda')
         self.assertEqual(delivery_profile()['ner'], old['ner'])
+        self.assertEqual(profile_identity(delivery_profile()), 'ees-35a70f202f4e6659fd1578a8df14243243bbabe011b3379ee154704dacf3d76f')
+        self.assertEqual(profile_identity(delivery_profile('cuda')), 'ees-9c3d817bf294bab6b6335a362e5aed289f9d004401bdb67f915746a6dafc5ed8')
+        self.assertEqual(delivery_profile('cuda:0'), delivery_profile('cuda'))
         counterfeit = deepcopy(delivery_profile('cuda'))
         counterfeit['ner']['runtime']['pytorch_module'] = '2.14.0+custom'
         with self.assertRaises(GraphValidationError):
