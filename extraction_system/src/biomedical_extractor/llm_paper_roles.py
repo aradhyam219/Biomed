@@ -36,7 +36,7 @@ Explain only the role of each requested entity within the supplied paper. Summar
 
 Use only information explicitly supported by the supplied title and complete abstract. Do not add external biomedical knowledge, assumptions, or general facts about the entity. Do not invent relationships merely because an entity was mentioned.
 
-For each requested node ID, return one independent role record. Use category "substantive" when the entity materially participates in the scientific subject matter, and "contextual" when it primarily supplies study setting, model-organism, species, population, cohort, or experimental context. Isolated Species entities should normally be contextual.
+For each requested node ID, return one independent role record. Use category "substantive" when the entity materially participates in the scientific subject matter, and "contextual" when it primarily supplies study setting, model-organism, species, population, cohort, or experimental context. Targets whose type is Species or Organism MUST use category "contextual".
 
 Produce at most two concise paragraphs per entity. If the source provides only limited information, produce a shorter explanation rather than extrapolating. Provide one or more exact verbatim source substrings supporting the explanation. Role prose is node metadata only; it must not imply a graph edge or an ontology assertion.
 """
@@ -75,6 +75,7 @@ class LLMPaperRoleExtractor:
             None if self._background_executor is not None else _bind_structured_output(model)
         )
         self._last_generation_diagnostics: list[dict[str, Any]] = []
+        self._last_validated_result = PaperRoleExtractionResult(())
         if self._background_executor is None and not callable(getattr(self._model, "invoke", None)):
             raise TypeError("Structured paper-role model must expose callable invoke(prompt)")
 
@@ -130,25 +131,41 @@ class LLMPaperRoleExtractor:
 
         return deepcopy(self._last_generation_diagnostics)
 
+    @property
+    def last_validated_result(self) -> PaperRoleExtractionResult:
+        """Retain validated records even when bounded repairs fail."""
+
+        return self._last_validated_result
+
     def extract_roles(
         self,
         title: str,
         text: str,
         targets: Sequence[PaperRoleTarget],
     ) -> PaperRoleExtractionResult:
-        """Extract and validate all requested roles in one bounded call."""
+        """Preserve valid records and repair only unresolved targets, boundedly."""
 
         self._last_generation_diagnostics = []
+        self._last_validated_result = PaperRoleExtractionResult(())
         if not isinstance(title, str) or not isinstance(text, str):
             raise TypeError("paper-role title and text must be strings")
         target_values = tuple(targets)
+        if any(not isinstance(target, PaperRoleTarget) for target in target_values):
+            raise PaperRoleValidationError("Paper-role targets must contain PaperRoleTarget values")
+        if len({target.node_id for target in target_values}) != len(target_values):
+            raise PaperRoleValidationError("Paper-role targets contain duplicate node IDs")
         if not target_values:
             return PaperRoleExtractionResult(())
 
-        prompt = _build_prompt(title, text, target_values, self._prompt)
+        accepted: dict[str, PaperRoleRecord] = {}
+        pending = target_values
+        repair = None
         for attempt in range(self._max_retries + 1):
-            diagnostics = {"generation_number": attempt + 1, "repair": bool(attempt)}
+            prompt = _build_prompt(title, text, pending, self._prompt, repair=repair)
+            diagnostics = {"generation_number": attempt + 1, "repair": bool(attempt),
+                           "requested_target_ids": [target.node_id for target in pending]}
             self._last_generation_diagnostics.append(diagnostics)
+            protocol_errors: list[str] = []
             try:
                 response = (
                     self._background_executor.execute(prompt, diagnostics)
@@ -165,38 +182,79 @@ class LLMPaperRoleExtractor:
                     raise PaperRoleExtractionError(
                         f"Paper-role provider invocation failed: {error}"
                     ) from error
-                output_error = error
+                errors = {target.node_id: str(error) for target in pending}
             else:
                 try:
-                    result = _parse_result(response)
-                    validated = validate_paper_role_result(text, target_values, result)
-                    diagnostics.update(
-                        validation_status="passed",
-                        validated_role_count=len(validated.records),
-                    )
-                    return validated
+                    valid, errors, protocol_errors = _partition_result(response, text, pending)
+                    accepted.update(valid)
                 except (PaperRoleValidationError, ValueError, TypeError) as error:
-                    output_error = error
+                    errors = {target.node_id: str(error) for target in pending}
 
-            diagnostics["validation_status"] = "failed"
-
+            self._last_validated_result = PaperRoleExtractionResult(tuple(
+                accepted[target.node_id] for target in target_values if target.node_id in accepted
+            ))
+            pending = tuple(target for target in target_values if target.node_id not in accepted)
+            diagnostics.update(
+                validation_status="failed" if pending or protocol_errors else "passed",
+                validated_role_count=len(accepted),
+                validated_target_ids=[record.node_id for record in self._last_validated_result.records],
+                failed_target_errors=errors,
+                protocol_errors=protocol_errors,
+            )
+            # Unsolicited records cannot overwrite an accepted record or create
+            # a repair target outside the current request.
+            if protocol_errors:
+                raise PaperRoleExtractionError(
+                    f"Paper-role output has invalid record IDs: {protocol_errors}"
+                )
+            if not pending:
+                return validate_paper_role_result(text, target_values, self._last_validated_result)
             if attempt >= self._max_retries:
                 raise PaperRoleExtractionError(
                     "Paper-role output remained invalid after "
-                    f"{attempt + 1} bounded attempt(s): {output_error}"
-                ) from output_error
-            prompt = _build_prompt(
-                title,
-                text,
-                target_values,
-                self._prompt,
-                repair=(
-                    f"The previous response failed validation: {output_error}. "
-                    "Return a corrected structured response only."
-                ),
+                    f"{attempt + 1} bounded attempt(s): {errors}"
+                )
+            repair = (
+                "Return exactly one corrected record for each requested target ID only. "
+                "Previously validated records are retained; do not return them. "
+                f"Validation errors by target ID: {json.dumps(errors, ensure_ascii=False)}"
             )
 
         raise PaperRoleExtractionError("Paper-role extraction stopped unexpectedly")
+
+
+def _partition_result(
+    response: Any, text: str, targets: Sequence[PaperRoleTarget]
+) -> tuple[dict[str, PaperRoleRecord], dict[str, str], list[str]]:
+    """Validate attributable records independently using the strict contract."""
+
+    payload = _response_payload(response)
+    if not isinstance(payload, Mapping) or set(payload) != {"roles"}:
+        raise PaperRoleValidationError("Structured paper-role output must contain only roles")
+    if not isinstance(payload["roles"], (list, tuple)):
+        raise PaperRoleValidationError("Structured paper-role roles must be a list")
+    by_id: dict[str, list[Any]] = {target.node_id: [] for target in targets}
+    protocol_errors = []
+    for index, raw in enumerate(payload["roles"]):
+        mapping = _model_mapping(raw)
+        node_id = mapping.get("node_id") if mapping is not None else None
+        if not isinstance(node_id, str) or node_id not in by_id:
+            protocol_errors.append(f"Unknown or missing node ID at record index {index}")
+        else:
+            by_id[node_id].append(raw)
+    valid, errors = {}, {}
+    for target in targets:
+        records = by_id[target.node_id]
+        if len(records) != 1:
+            errors[target.node_id] = "Missing record" if not records else "Duplicate records"
+            continue
+        try:
+            result = _parse_result({"roles": records})
+            validated = validate_paper_role_result(text, (target,), result)
+            valid[target.node_id] = validated.records[0]
+        except (PaperRoleValidationError, ValueError, TypeError) as error:
+            errors[target.node_id] = str(error)
+    return valid, errors, protocol_errors
 
 
 def _build_prompt(

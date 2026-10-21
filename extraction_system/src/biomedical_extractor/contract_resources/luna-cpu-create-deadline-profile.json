@@ -4,7 +4,7 @@
     "graph.py": "5062ad26454cf5b56739d3404031c9d92457d797984a3075fb7d5a53bf85b21d",
     "hunflair2.py": "0c1ec4017054fb93033a68f9abb2d0587f06663d146245edd9af52e51b531b55",
     "hunflair2_runtime.py": "c9bcfd25b4ee499ca5863bbc05e9c7cc3c0f1f89e82dbf33c83165033d69a24c",
-    "llm_paper_roles.py": "1cb31c815aa7e487df8878ef4d46e7c9afc5cb7940dad92742ce855ee87d7de2",
+    "llm_paper_roles.py": "bc63ba9501a28fffebc61238cfd31cc24ff9b020e62efc9641270492d6cfa85d",
     "llm_pipeline.py": "2963de023ce9969bc480d924e81590ba27b44b5fb330580a586a9a1198439af7",
     "llm_relation_extraction.py": "db9502d60118ac0bca8ab7f160614f9ef7966a4ed4e20b91ce2200b4ce899302",
     "ner_runners.py": "9d06c98b2f6fc9b67dcf71926226ae302310e8b4a0906ddd5b1d60b8843384d4",
@@ -160,7 +160,7 @@
     "max_retries": 2,
     "model": "gpt-5.6-luna",
     "poll_interval_seconds": 3.0,
-    "prompt_sha256": "dded1e4176f92a3872ef2b277d4ef7b261ba919e555cbdfdf210d0844a3d8e4a",
+    "prompt_sha256": "3079f89443fe8c67e9cb23e2b58677ae467e7ea8a41ee738951d7679950dd6d4",
     "reasoning_effort": "max",
     "semantic_schema": {
       "$defs": {

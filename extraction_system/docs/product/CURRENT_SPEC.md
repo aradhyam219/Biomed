@@ -83,9 +83,11 @@ node metadata only: it never creates, modifies, or implies a graph edge.
 The role provider uses GPT-5.6 Luna, max reasoning, Fast (`fast`) service,
 and the shared background Responses executor. No degree-zero nodes means no role
 provider setup or call. Provider or grounding failures raise explicitly before
-a graph is returned; incomplete batches are never partially attached. Explicit
-role injection remains supported, and low-level pipeline construction keeps
-roles optional.
+a graph is returned; incomplete batches are never partially attached. Validated
+records survive output repairs; at most two repairs request only failed or missing
+target IDs. Species and Organism roles must be contextual. Unknown or
+unattributable IDs fail explicitly. Explicit role injection remains supported,
+and low-level pipeline construction keeps roles optional.
 
 ## Graph contract
 

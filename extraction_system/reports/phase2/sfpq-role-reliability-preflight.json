@@ -1,0 +1,66 @@
+{
+  "starting_head": "87e2f8bafa3cea298d714bc6a6a7211ce9273d81",
+  "synchronized_head": "87e2f8bafa3cea298d714bc6a6a7211ce9273d81",
+  "remote_freshness_basis": "Independently verified by user; host GitHub DNS unavailable.",
+  "saved_state": "Exact graph roundtrip; source-checked; exact ordered target equality.",
+  "saved_state_sha256": {
+    ".cache/phase2/20261015T100110167945Z-luna-cuda-composed-retry/graph-before-roles.json": "6db2ada67c77a36ebdff4372e0ab642aa849e47a65b17aefdab91d35123fad9c",
+    ".cache/phase2/20261015T100110167945Z-luna-cuda-composed-retry/roles/targets.json": "e99375eeb0293e8ea1e3a36135b32e43167d896e3f9b90d99e3ce5b737cb7a81",
+    ".cache/phase2/20261015T100110167945Z-luna-cuda-composed-retry/roles/generation-1/request.json": "da5d7eb8b73f937a9bc70077a7d3b34a0d35a3dd24061dd3092f406fd556a7f8",
+    "tests/fixtures/compatibility/sfpq-full.json": "ac22397db1094159c8d9137b95d0f48ed85b461a858792975287a208f25d2f22"
+  },
+  "nodes": 98,
+  "edges": 73,
+  "targets": 57,
+  "historical_role_validation": [
+    {
+      "generation": 1,
+      "valid_records": 53,
+      "invalid_ids": [
+        "doc_e_033",
+        "doc_e_048",
+        "doc_e_049",
+        "doc_e_073"
+      ]
+    },
+    {
+      "generation": 2,
+      "valid_records": 53,
+      "invalid_ids": [
+        "doc_e_051",
+        "doc_e_072",
+        "doc_e_073",
+        "doc_e_088"
+      ]
+    },
+    {
+      "generation": 3,
+      "valid_records": 51,
+      "invalid_ids": [
+        "doc_e_007",
+        "doc_e_048",
+        "doc_e_049",
+        "doc_e_071",
+        "doc_e_072",
+        "doc_e_073"
+      ]
+    }
+  ],
+  "root_cause": "Whole-batch parsing/validation failed at the first invalid record; repairs regenerated every target, discarded valid roles and introduced new failures. Prompt said Species normally contextual while validator requires Species/Organism contextual.",
+  "role_configuration": {
+    "model": "gpt-5.6-luna",
+    "reasoning": "max",
+    "service_tier": "fast",
+    "background": true
+  },
+  "local_dotenv": "Contains historical relation Sol/medium/default overrides. Not loaded; unchanged. Role factory independently fixes model/reasoning/tier; live runner loads credential only.",
+  "offline_verification": {
+    "role_contract_and_repairs": 19,
+    "graph_contract_and_profile": 31,
+    "role_replay": 2,
+    "all_passed": true,
+    "diff_check": "passed"
+  },
+  "live_authorization": "One new SFPQ saved-state role-only confirmation, up to one initial plus two targeted output repairs. Separate durable ledger; historical Phase 2 ledger/caps unchanged.",
+  "scientific_scope": "No NER, entity assembly, relation extraction, topology changes or orphan-count investigation."
+}

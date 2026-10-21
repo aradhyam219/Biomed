@@ -26,7 +26,9 @@ Graph Contract v1 JSON -> existing Cytoscape viewer.
   pretrained construction enables automatic roles, with lazy provider setup
   only when final degree-zero nodes exist. Low-level injection keeps roles optional.
 - `paper_roles.py` and `llm_paper_roles.py`: atomic, grounded node metadata for
-  unconnected nodes; roles never alter topology.
+  unconnected nodes; records validate independently and only failed/missing IDs
+  consume bounded output repairs. Complete validated results attach atomically;
+  roles never alter topology.
 - `graph.py`: stable assembled node IDs, endpoint mapping, evidence-preserving
   edge aggregation, self-edge cleanup and deterministic JSON serialization.
 - `graph_contract.py`: pure exact-input fingerprints, versioned export, strict
