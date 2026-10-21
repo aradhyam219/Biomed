@@ -115,10 +115,12 @@ Luna/CPU and Linux/CUDA descriptors. Explicit `--device cuda` selects the latter
 the transport-only create deadline correction has separate derived descriptors.
 The single authorized retry passed CUDA NER, RE and pre-role graph validation but
 exhausted normal role-output repairs. Role reliability now preserves valid records
-and targets repairs to failed IDs. The single saved-state role-only confirmation
-stopped at provider submission because host DNS failed; final export remains
-unconfirmed (reports/phase2/sfpq-role-reliability.json). Phase 2 remains operationally
-blocked, the CUDA profile is not promoted, and no further generation is authorized.
+and targets repairs to failed IDs. The first saved-state role-only confirmation
+stopped at submission because host DNS failed. After connectivity recovered, the
+single authorized continuation stopped at HTTP 401 authentication failure without
+a response ID; no repair was submitted. Final export remains unconfirmed
+(reports/phase2/sfpq-role-reliability.json). Phase 2 remains operationally blocked,
+the CUDA profile is not promoted, and no further generation is authorized.
 Raw overrides remain available. Validation does not certify entailment, completeness or authenticity.
 
 ## Accepted limitations and scope
