@@ -1,7 +1,7 @@
 # Phase 2 runtime compatibility
 
-Status: **PHASE 2 BLOCKED** — the final installed smoke stopped at strict role
-evidence validation and the historical shared repair cap. See [closure.json](closure.json). The user explicitly approved promotion
+Status: **PHASE 2 COMPLETE** after the explicitly authorized one-target closure
+repair described below. See [closure.json](closure.json). The user approved promotion
 of the verified Linux/NVIDIA configuration. No scientific behavior is changed.
 
 The supported CUDA descriptor is
@@ -48,8 +48,22 @@ No grounding rule or budget was weakened. Three new submissions completed:
 initial RE, initial roles, one role repair. All requested Luna/max/Fast/background;
 Fast was observed as `priority`.
 
-Final v1 export was not reached. A deterministic replay of captured installed
-NER/RE outputs validates the pre-role graph (98 nodes / 99 edges) against source.
+Before the closure exception, final v1 export was not reached. A deterministic
+replay of captured installed NER/RE outputs validates the pre-role graph
+(98 nodes / 99 edges) against source.
 That replay is evidence preservation, not another smoke or final v1 completion.
-The approved bounded runtime profile and CPU identities remain intact; Phase 2
-cannot be declared complete. No repeat, extra repair or next phase is authorized.
+That was the retained blocked result, before the explicit closure exception.
+
+The user then authorized exactly one additional repair for `doc_e_033` only,
+separately from the exhausted **4/4** shared allowance. That single response
+validated, including exact/verbatim evidence. The original 53 accepted roles were
+preserved exactly and the completed 54/54 set was merged in original target order.
+No NER, assembly, RE, initial roles or previous repair was rerun. Attachment kept
+98 nodes / 99 edges unchanged, and final source-aware Graph Contract v1 passed
+using the same installed wheel. Requested Fast was observed as `priority`.
+
+Accounting now records 12 Phase 2 ledger submissions plus four separately tracked
+role-reliability attempts: 16 relevant attempts total. Historical shared repairs
+remain 4/4, with one separately authorized/consumed closure-exception repair.
+The general policy and CPU/CUDA profiles are unchanged. Phase 2 is complete;
+no further execution or next phase is authorized.

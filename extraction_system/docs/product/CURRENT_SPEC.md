@@ -122,9 +122,11 @@ source-aware Graph Contract v1 validation passed
 (reports/phase2/sfpq-role-reliability.json). The user-approved Linux/CUDA profile
 is supported for the exact recorded Ubuntu 22.04/Tesla T4 configuration; CPU
 support and canonical identities remain unchanged. The clean installed-v1 smoke
-passed CUDA NER and RE but stopped with 53/54 valid roles: one verbatim-evidence
-failure remained when the historical shared repair budget reached 4/4. Final v1
-export was not reached; Phase 2 remains blocked (reports/phase2/closure.json).
+initially stopped at 53/54 roles when the historical shared repair budget reached
+4/4. A separately authorized single repair for `doc_e_033` completed the retained
+state without upstream reruns: 54/54 valid roles, unchanged 98-node/99-edge topology,
+and final source-aware Graph Contract v1 passed. Phase 2 is complete; the closure
+exception does not change the normal repair policy (reports/phase2/closure.json).
 This is bounded compatibility, not equivalence across CUDA environments.
 Raw overrides remain available. Validation does not certify entailment, completeness or authenticity.
 

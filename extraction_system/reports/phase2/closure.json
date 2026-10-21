@@ -1,5 +1,5 @@
 {
-  "status": "blocked",
+  "status": "complete",
   "starting_head": "1d2aaf638146934d4d590561d97aab11caf1576d",
   "promotion_authority": "Explicit user Phase 2 final closure contract; exact verified Linux/Ubuntu 22.04, AWS g4dn Tesla T4 configuration only.",
   "implementation_delta": "Existing public CUDA descriptor selection and strict runtime verification already implement the approved configuration; no production code or profile resource changes required.",
@@ -26,8 +26,7 @@
   },
   "diff_check": "passed",
   "profile_promoted": true,
-  "phase2_complete": false,
-  "blocker": "Installed public-v1 smoke retained 53/54 roles; doc_e_033 evidence is not a verbatim source substring. The historical shared output-repair cap reached 4/4 after one new repair; the guard prevented a second role repair before SDK submission.",
+  "phase2_complete": true,
   "evidence_directory": ".cache/phase2/final-installed-v1",
   "installation": {
     "wheel_sha256": "632176a117a0c1e4b1619325478e96b4f2f2734ce1b964a144f77b83715af226",
@@ -134,11 +133,15 @@
     "strict_evidence_validation_unchanged": true
   },
   "provider_accounting": {
-    "phase2_ledger_attempts": 11,
+    "phase2_ledger_attempts": 12,
     "separate_role_reliability_attempts": 4,
-    "total_relevant_attempts": 15,
+    "total_relevant_attempts": 16,
     "shared_repairs_consumed": 4,
-    "shared_repair_cap": 4
+    "shared_repair_cap": 4,
+    "closure_exception_repairs": 1,
+    "closure_exception_cap": 1,
+    "total_output_repairs": 5,
+    "completed_generations": 12
   },
   "preserved_evidence_sha256": {
     ".cache/phase2/final-installed-v1/run.json": "cd2fdde0ccb190c907e5bc5df5b5ece01d3ba2b62693177f95fbe009ef7b3c70",
@@ -149,5 +152,100 @@
     ".cache/phase2/final-installed-v1/installed_smoke.py": "8bb7c817f7fceeb5f23c10787f35d6987866e291ea3c33290a5cfd1bd2969593",
     ".cache/phase2/final-installed-v1/main-installed.txt": "4aacb99913b79ab5d45adcafa0b912b76fc4619d191457d2a4fc5cd422f6f5c5",
     ".cache/phase2/final-installed-v1/isolated-installed.txt": "0115fb739fc674e15cd364f0582c227023c00be766b303926e487f2544f8961c"
+  },
+  "pre_exception_blocker": "Installed public-v1 smoke retained 53/54 roles; doc_e_033 evidence is not a verbatim source substring. The historical shared output-repair cap reached 4/4 after one new repair; the guard prevented a second role repair before SDK submission.",
+  "closure_exception": {
+    "status": "passed",
+    "started_at": "2026-10-21T10:54:03.109535+00:00",
+    "starting_head": "479868fe74f3d3ed866c2fc296ecdc573688354c",
+    "target_ids": [
+      "doc_e_033"
+    ],
+    "authorization": "Explicit user one-submission Phase 2 closure exception, doc_e_033 only; no policy change.",
+    "historical_shared_repairs_consumed": 4,
+    "historical_shared_repair_cap": 4,
+    "exception_submission_cap": 1,
+    "original_smoke_evidence_directory": ".cache/phase2/final-installed-v1",
+    "installed_build_revision": "029be54988d46ce99d13ddf36912495320dbfbff",
+    "profile": "ees-9c3d817bf294bab6b6335a362e5aed289f9d004401bdb67f915746a6dafc5ed8",
+    "configuration": {
+      "background": true,
+      "generation_timeout_seconds": 900.0,
+      "max_completion_tokens": 128000,
+      "max_retries": 2,
+      "model": "gpt-5.6-luna",
+      "poll_interval_seconds": 3.0,
+      "reasoning_effort": "max",
+      "service_tier": "fast"
+    },
+    "upstream_invocations": 0,
+    "accepted_roles_before": 53,
+    "accepted_role_file_sha256": "c84e87dca70c423e2dc6209804166c88c1e1b6c7095b000bf2bc11b972da80b1",
+    "graph_contract_result": "v1",
+    "validation_errors": {},
+    "protocol_errors": [],
+    "valid_roles": 54,
+    "graph_nodes": 98,
+    "graph_edges": 99,
+    "source_checked": true,
+    "original_53_roles_unchanged": true,
+    "target_order_preserved": true,
+    "topology_unchanged": true,
+    "exact_evidence_grounding": true,
+    "finished_at": "2026-10-21T11:00:08.673498+00:00",
+    "provider_submissions": 1,
+    "closure_exception_repairs": 1,
+    "completed_generations": 1,
+    "diagnostics": {
+      "generation_number": 3,
+      "repair": true,
+      "requested_target_ids": [
+        "doc_e_033"
+      ],
+      "closure_exception": true,
+      "requested_background": true,
+      "requested_model": "gpt-5.6-luna",
+      "requested_reasoning_effort": "max",
+      "requested_service_tier": "fast",
+      "response_id": "resp_085c5260811f8afd006ad899cc0dd487d2b3953727739042f9",
+      "status": "completed",
+      "poll_count": 107,
+      "poll_errors": 0,
+      "observed_model": "gpt-5.6-luna",
+      "observed_reasoning_effort": "max",
+      "observed_service_tier": "priority",
+      "observed_background": true,
+      "initial_status": "queued",
+      "initial_create_latency_seconds": 1.25,
+      "elapsed_seconds": 364.913,
+      "input_tokens": 7005,
+      "output_tokens": 1191,
+      "reasoning_tokens": 1034,
+      "terminal_status": "completed",
+      "output_text_received": true
+    },
+    "preserved_evidence_sha256": {
+      ".cache/phase2/final-installed-v1-closure-exception/run.json": "74ed88b088749dd19a4060e99cdcf8536cfcb2091c2d7f92d2e7bb9a2eafac78",
+      ".cache/phase2/final-installed-v1-closure-exception/ledger.json": "2ad1dab3f35a7566ae70d4007d20b97c56008604d3ad8073a4c5577f5f1a5a81",
+      ".cache/phase2/final-installed-v1-closure-exception/request.json": "5f9352331b43196a82d6b7d2e9589a2d53b477d37c4f4f006afdac081aca4e40",
+      ".cache/phase2/final-installed-v1-closure-exception/terminal-response.json": "7f8c99780341a7b36af36699e7e84abddd13fa29e9c0c0acd04ec489d56eb7c2",
+      ".cache/phase2/final-installed-v1-closure-exception/repaired-record.json": "df5d780dc7ba1f76fc39551cd173296d792c1a6da207e48961931e3fb8d57684",
+      ".cache/phase2/final-installed-v1-closure-exception/roles-complete.json": "69e6ec333904bfb71e02affb34c3d0660dff8308eac3719403a0730ab8ba623b",
+      ".cache/phase2/final-installed-v1-closure-exception/graph-v1.json": "1cb892c2860a03ff6f342f836867d47cdb61a844e9c84d33ed1cf624507771a9",
+      ".cache/phase2/final-installed-v1-closure-exception/closure_exception.py": "ee4f2445a2c8d4e213d3d53742e8d5c8d1531f7d7c3933c671149121672c5d97"
+    }
+  },
+  "final_result": {
+    "roles": 54,
+    "role_targets": 54,
+    "nodes": 98,
+    "edges": 99,
+    "graph_contract": "v1",
+    "source_checked": true,
+    "original_53_roles_unchanged": true,
+    "deterministic_target_order": true,
+    "topology_unchanged": true,
+    "exact_source_evidence": true,
+    "scientific_code_and_profiles_unchanged": true
   }
 }

@@ -132,12 +132,27 @@
       "response_id": "resp_05a6ca6bb63493a7006ad895cba73887d29c987fc0ac5f0bad",
       "provider_status": "completed",
       "last_observed_at": "2026-10-21T10:37:13.690376+00:00"
+    },
+    {
+      "experiment": "phase2-final-installed-v1",
+      "arm": "roles",
+      "generation": 3,
+      "repair": true,
+      "budget_scope": "one_target_closure_exception",
+      "target_ids": [
+        "doc_e_033"
+      ],
+      "reserved_at": "2026-10-21T10:54:03.573675+00:00",
+      "submission_state": "response_observed",
+      "response_id": "resp_085c5260811f8afd006ad899cc0dd487d2b3953727739042f9",
+      "provider_status": "completed",
+      "last_observed_at": "2026-10-21T11:00:08.485525+00:00"
     }
   ],
-  "attempts_consumed": 11,
+  "attempts_consumed": 12,
   "repairs_consumed": 4,
-  "status": "blocked",
-  "resume_requirement": "Final installed-v1 smoke stopped: doc_e_033 still has non-verbatim evidence after one targeted repair; historical shared repair cap is now 4/4. No new run or repair is authorized.",
+  "status": "complete",
+  "resume_requirement": "Phase 2 complete after the single explicitly authorized doc_e_033 closure repair. No further provider execution, repeats or next phase authorized.",
   "further_provider_generations_authorized": false,
   "conditional_initial_order": [
     "cpu-run-1",
@@ -151,5 +166,18 @@
     "completed_generations": 1,
     "repairs": 0
   },
-  "total_relevant_submission_attempts": 15
+  "total_relevant_submission_attempts": 16,
+  "total_output_repairs_consumed": 5,
+  "closure_exception": {
+    "authorization": "Explicit user Phase 2 final targeted role repair contract; not a general repair-policy change.",
+    "target_ids": [
+      "doc_e_033"
+    ],
+    "submission_cap": 1,
+    "submissions_consumed": 1,
+    "repairs_consumed": 1,
+    "result": "passed",
+    "historical_shared_budget_unchanged": "4/4 consumed",
+    "evidence_directory": ".cache/phase2/final-installed-v1-closure-exception"
+  }
 }
