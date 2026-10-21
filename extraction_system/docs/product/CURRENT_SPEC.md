@@ -121,9 +121,11 @@ with no repairs. Attachment preserved the 98-node/73-edge graph, and final
 source-aware Graph Contract v1 validation passed
 (reports/phase2/sfpq-role-reliability.json). The user-approved Linux/CUDA profile
 is supported for the exact recorded Ubuntu 22.04/Tesla T4 configuration; CPU
-support and canonical identities remain unchanged. The final clean installed-v1
-smoke gate is recorded in reports/phase2/README.md. This is bounded compatibility,
-not a claim of equivalence across CUDA environments.
+support and canonical identities remain unchanged. The clean installed-v1 smoke
+passed CUDA NER and RE but stopped with 53/54 valid roles: one verbatim-evidence
+failure remained when the historical shared repair budget reached 4/4. Final v1
+export was not reached; Phase 2 remains blocked (reports/phase2/closure.json).
+This is bounded compatibility, not equivalence across CUDA environments.
 Raw overrides remain available. Validation does not certify entailment, completeness or authenticity.
 
 ## Accepted limitations and scope

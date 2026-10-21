@@ -1,5 +1,5 @@
 {
-  "status": "installed_smoke_pending",
+  "status": "blocked",
   "starting_head": "1d2aaf638146934d4d590561d97aab11caf1576d",
   "promotion_authority": "Explicit user Phase 2 final closure contract; exact verified Linux/Ubuntu 22.04, AWS g4dn Tesla T4 configuration only.",
   "implementation_delta": "Existing public CUDA descriptor selection and strict runtime verification already implement the approved configuration; no production code or profile resource changes required.",
@@ -24,5 +24,130 @@
     "historical_runner_tests_inapplicable": 5,
     "historical_runner_reason": "The archived composed runner requires the pre-repair Role-in-Paper prompt; the accepted targeted-repair prompt is verified by current role/profile tests instead."
   },
-  "diff_check": "passed"
+  "diff_check": "passed",
+  "profile_promoted": true,
+  "phase2_complete": false,
+  "blocker": "Installed public-v1 smoke retained 53/54 roles; doc_e_033 evidence is not a verbatim source substring. The historical shared output-repair cap reached 4/4 after one new repair; the guard prevented a second role repair before SDK submission.",
+  "evidence_directory": ".cache/phase2/final-installed-v1",
+  "installation": {
+    "wheel_sha256": "632176a117a0c1e4b1619325478e96b4f2f2734ce1b964a144f77b83715af226",
+    "wheel_build_revision": "029be54988d46ce99d13ddf36912495320dbfbff",
+    "installed_source_digests_verified": true,
+    "installed_resource_gate": "passed",
+    "git_forbidden_in_installed_resource_gate": true,
+    "fresh_external_main_environment": "/tmp/phase2-final/main",
+    "fresh_external_isolated_runtime": "/tmp/phase2-final/.cache/hunflair2/runtime",
+    "provisioning_recipe": "hunflair2-linux-cuda-requirements.txt; --no-deps; cached package downloads",
+    "model_provisioner": "copied tracked provisioning/provision_models.py; pinned checksum passed",
+    "checked_out_production_code_changed": false
+  },
+  "actual_ner_metadata": {
+    "document_count": 1,
+    "inference_duration_seconds": 4.728306537999742,
+    "inference_scope": "All supplied document text; SciSpacy sentence segmentation; Flair long-sentence striding when required; no truncation.",
+    "model_artifact_sha256": "245a099b660c1e2b682e0a1216feac140d5be36c4c6ca8c715af682efa685de6",
+    "model_identifier": "hunflair/hunflair2-ner",
+    "model_input": "/tmp/phase2-final/.cache/hunflair2/flair/models/hunflair2-ner/models--hunflair--hunflair2-ner/snapshots/3af2b8972f7af2910ce8d9ae724da09b3d7a166c/pytorch_model.bin",
+    "model_revision": "3af2b8972f7af2910ce8d9ae724da09b3d7a166c",
+    "predicted_entity_count": 460,
+    "runtime": {
+      "allow_long_sentences": true,
+      "cuda_available": true,
+      "cuda_device": "Tesla T4",
+      "cuda_version": "13.0",
+      "device": "cuda:0",
+      "en_core_sci_sm": "0.5.1",
+      "flair": "0.15.1",
+      "label_type": "ner",
+      "model_max_length": 512,
+      "offset_mechanics": "Flair span text is resolved against the model sentence; that sentence is located in the untouched source and the lifted span is validated before serialization.",
+      "python": "3.11.16",
+      "python_implementation": "CPython",
+      "pytorch": "2.14.0+cu130",
+      "scispacy": "0.5.1",
+      "sentence_splitter": "SciSpacySentenceSplitter(en_core_sci_sm)",
+      "spacy": "3.4.4",
+      "stride": 256,
+      "tagger_class": "PrefixedSequenceTagger",
+      "transformer_model": "michiyasunaga/BioLinkBERT-base",
+      "transformers": "4.57.6",
+      "truncate": true
+    },
+    "sentence_count": 200,
+    "upstream_repository": "https://github.com/flairNLP/flair"
+  },
+  "public_smoke": {
+    "entry_point": "installed biomedical-extract-llm console script; graph output; --device cuda; offline pinned HunFlair2",
+    "case_id": "sfpq-full",
+    "source_sha256": "8a43f612139aa84939933831a5bc7f5420122549fd69081d635b7becb80d2a15",
+    "stage_invocations": {
+      "relation": 1,
+      "roles": 1,
+      "ner": 1
+    },
+    "relation_count": 105,
+    "relation_generations": 1,
+    "relation_repairs": 0,
+    "role_target_count": 54,
+    "initial_valid_roles": 51,
+    "initial_invalid_ids": [
+      "doc_e_033",
+      "doc_e_072",
+      "doc_e_073"
+    ],
+    "repair_requested_ids": [
+      "doc_e_033",
+      "doc_e_072",
+      "doc_e_073"
+    ],
+    "retained_valid_roles": 53,
+    "unresolved_errors": {
+      "doc_e_033": "Paper-role evidence for 'doc_e_033' is not a verbatim source substring"
+    },
+    "second_role_repair_submitted": false,
+    "second_role_repair_blocker": "Shared historical repair cap exhausted before SDK invocation; per-task limit unchanged.",
+    "pre_role_graph_nodes": 98,
+    "pre_role_graph_edges": 99,
+    "pre_role_graph_validation": "legacy source-aware passed; deterministic replay of the captured installed NER/RE outputs",
+    "final_graph_nodes": null,
+    "final_graph_edges": null,
+    "graph_contract_v1": "not_reached",
+    "provider_submissions": 3,
+    "provider_repairs": 1,
+    "completed_generations": 3,
+    "requested_configuration": {
+      "background": true,
+      "generation_timeout_seconds": 900.0,
+      "max_completion_tokens": 128000,
+      "max_retries": 2,
+      "model": "gpt-5.6-luna",
+      "poll_interval_seconds": 3.0,
+      "reasoning_effort": "max",
+      "service_tier": "fast"
+    },
+    "observed_models": [
+      "gpt-5.6-luna"
+    ],
+    "requested_service_tier": "fast",
+    "observed_service_tier": "priority",
+    "preserved_valid_roles_not_regenerated": true,
+    "strict_evidence_validation_unchanged": true
+  },
+  "provider_accounting": {
+    "phase2_ledger_attempts": 11,
+    "separate_role_reliability_attempts": 4,
+    "total_relevant_attempts": 15,
+    "shared_repairs_consumed": 4,
+    "shared_repair_cap": 4
+  },
+  "preserved_evidence_sha256": {
+    ".cache/phase2/final-installed-v1/run.json": "cd2fdde0ccb190c907e5bc5df5b5ece01d3ba2b62693177f95fbe009ef7b3c70",
+    ".cache/phase2/final-installed-v1/ledger.json": "f5a99d3c616b4bdffab872c1ed458236094790fdcedc842dbb9f48835138f5dc",
+    ".cache/phase2/final-installed-v1/ner-raw.json": "7302c525b52614d5b988d20e1c631b5a8e2fc0db815e61339e2ea154689659ca",
+    ".cache/phase2/final-installed-v1/graph-before-roles.json": "17525f2826d4b1797f1fb9b3c8bbc4aeafe805bfd3ada33604b9761a3b709ae3",
+    ".cache/phase2/final-installed-v1/roles-retained-valid.json": "c84e87dca70c423e2dc6209804166c88c1e1b6c7095b000bf2bc11b972da80b1",
+    ".cache/phase2/final-installed-v1/installed_smoke.py": "8bb7c817f7fceeb5f23c10787f35d6987866e291ea3c33290a5cfd1bd2969593",
+    ".cache/phase2/final-installed-v1/main-installed.txt": "4aacb99913b79ab5d45adcafa0b912b76fc4619d191457d2a4fc5cd422f6f5c5",
+    ".cache/phase2/final-installed-v1/isolated-installed.txt": "0115fb739fc674e15cd364f0582c227023c00be766b303926e487f2544f8961c"
+  }
 }

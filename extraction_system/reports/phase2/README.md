@@ -1,6 +1,7 @@
 # Phase 2 runtime compatibility
 
-Status: **FINAL INSTALLED SMOKE PENDING**. The user explicitly approved promotion
+Status: **PHASE 2 BLOCKED** — the final installed smoke stopped at strict role
+evidence validation and the historical shared repair cap. See [closure.json](closure.json). The user explicitly approved promotion
 of the verified Linux/NVIDIA configuration. No scientific behavior is changed.
 
 The supported CUDA descriptor is
@@ -32,8 +33,23 @@ Retained evidence:
   zero repairs; exact evidence, contextual Species/Organism, deterministic order,
   unchanged 98-node/73-edge topology and source-aware Graph Contract v1 passed.
 
-The final authorized gate builds a clean wheel and installs it outside the
-checkout, provisions/attaches the recorded isolated runtime and pinned downloads,
-and runs the public v1 path once on `sfpq-full`. Existing bounded repairs and
-conservative submission accounting apply. Historical provider attempts remain
-consumed. No quality investigation, comparison, repeat or next phase is authorized.
+The final authorized gate built a clean wheel from `029be54988d46ce99d13ddf36912495320dbfbff`
+and installed it outside the checkout. Fresh external main and isolated runtimes,
+pinned model provisioning, installed resources/provenance and 60 current focused
+tests passed. Checkout/Git access was forbidden during the installed public smoke.
+
+Exactly one public `sfpq-full` invocation performed real Tesla T4 CUDA NER (460
+mentions), accepted 105 relations without repairs and naturally requested 54 roles.
+The initial role output retained 51 valid records. One targeted repair requested
+only `doc_e_033`, `doc_e_072`, `doc_e_073`; 53 roles were then valid, but
+`doc_e_033` still failed verbatim evidence validation. The historical shared repair
+cap reached **4/4**, so its guard prevented a second role repair before submission.
+No grounding rule or budget was weakened. Three new submissions completed:
+initial RE, initial roles, one role repair. All requested Luna/max/Fast/background;
+Fast was observed as `priority`.
+
+Final v1 export was not reached. A deterministic replay of captured installed
+NER/RE outputs validates the pre-role graph (98 nodes / 99 edges) against source.
+That replay is evidence preservation, not another smoke or final v1 completion.
+The approved bounded runtime profile and CPU identities remain intact; Phase 2
+cannot be declared complete. No repeat, extra repair or next phase is authorized.

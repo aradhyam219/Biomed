@@ -96,17 +96,60 @@
       "response_id": "resp_0395c2ac74c8f8c8006ad0a7a8f2dc87d1bdf9e45a34581f6c",
       "provider_status": "completed",
       "last_observed_at": "2026-10-15T10:17:06.436814+00:00"
+    },
+    {
+      "experiment": "phase2-final-installed-v1",
+      "run_id": "phase2-final-installed-v1",
+      "arm": "relation",
+      "generation": 1,
+      "repair": false,
+      "reserved_at": "2026-10-21T10:28:54.089093+00:00",
+      "submission_state": "response_observed",
+      "response_id": "resp_074778b73c3ba518006ad893e68e8c87d2b7331375856815ce",
+      "provider_status": "completed",
+      "last_observed_at": "2026-10-21T10:34:56.407198+00:00"
+    },
+    {
+      "experiment": "phase2-final-installed-v1",
+      "run_id": "phase2-final-installed-v1",
+      "arm": "roles",
+      "generation": 1,
+      "repair": false,
+      "reserved_at": "2026-10-21T10:34:56.432876+00:00",
+      "submission_state": "response_observed",
+      "response_id": "resp_0419525e94329ba9006ad89550e2a487d299f51e555999de32",
+      "provider_status": "completed",
+      "last_observed_at": "2026-10-21T10:36:59.493391+00:00"
+    },
+    {
+      "experiment": "phase2-final-installed-v1",
+      "run_id": "phase2-final-installed-v1",
+      "arm": "roles",
+      "generation": 2,
+      "repair": true,
+      "reserved_at": "2026-10-21T10:36:59.495506+00:00",
+      "submission_state": "response_observed",
+      "response_id": "resp_05a6ca6bb63493a7006ad895cba73887d29c987fc0ac5f0bad",
+      "provider_status": "completed",
+      "last_observed_at": "2026-10-21T10:37:13.690376+00:00"
     }
   ],
-  "attempts_consumed": 8,
-  "repairs_consumed": 3,
+  "attempts_consumed": 11,
+  "repairs_consumed": 4,
   "status": "blocked",
-  "resume_requirement": "Final authorized retry exhausted production role repairs. User explicitly ended further execution, pass or fail. No more provider submissions, repairs, smokes, additional papers, controls, promotion or Phase 3 are authorized.",
+  "resume_requirement": "Final installed-v1 smoke stopped: doc_e_033 still has non-verbatim evidence after one targeted repair; historical shared repair cap is now 4/4. No new run or repair is authorized.",
   "further_provider_generations_authorized": false,
   "conditional_initial_order": [
     "cpu-run-1",
     "cuda-run-1",
     "cpu-repeat",
     "cuda-repeat"
-  ]
+  ],
+  "separate_role_reliability_accounting": {
+    "report": "sfpq-role-reliability.json",
+    "submission_attempts": 4,
+    "completed_generations": 1,
+    "repairs": 0
+  },
+  "total_relevant_submission_attempts": 15
 }
